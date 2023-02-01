@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudbilling1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220423")
+            .version("0.1.0-20221206")
             .about("Allows developers to manage billing for their Google Cloud Platform projects programmatically.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")

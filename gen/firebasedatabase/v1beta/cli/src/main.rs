@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("firebasedatabase1_beta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
-            .about("The Firebase Realtime Database Management API enables programmatic provisioning and management of Realtime Database instances.")
+            .version("0.1.0-20230130")
+            .about("The Firebase Realtime Database API enables programmatic provisioning and management of Realtime Database instances.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -47,7 +47,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances2 = instances2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Marks a DatabaseInstance to be deleted. The DatabaseInstance will be purged within 30 days. The default database cannot be deleted. IDs for deleted database instances may never be recovered or re-used. The Database may only be deleted if it is already in a DISABLED state.");
+            let mcmd = SubCommand::with_name("delete").about("Marks a DatabaseInstance to be deleted. The DatabaseInstance will be set to the DELETED state for 20 days, and will be purged within 30 days. The default database cannot be deleted. IDs for deleted database instances may never be recovered or re-used. The Database may only be deleted if it is already in a DISABLED state.");
             instances2 = instances2.subcommand(mcmd);
         }
         {
@@ -68,7 +68,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances2 = instances2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("undelete").about("Restores a DatabaseInstance that was previously marked to be deleted. This may only be used on a DatabaseInstance in the DELETED state. Purged DatabaseInstance's may not be recovered.");
+            let mcmd = SubCommand::with_name("undelete").about("Restores a DatabaseInstance that was previously marked to be deleted. After the delete method is used, DatabaseInstances are set to the DELETED state for 20 days, and will be purged within 30 days. Databases in the DELETED state can be undeleted without losing any data. This method may only be used on a DatabaseInstance in the DELETED state. Purged DatabaseInstances may not be recovered.");
             instances2 = instances2.subcommand(mcmd);
         }
         locations1 = locations1.subcommand(instances2);

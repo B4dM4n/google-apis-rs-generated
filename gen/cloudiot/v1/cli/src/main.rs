@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudiot1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220330")
+            .version("0.1.0-20230102")
             .about("Registers and manages IoT (Internet of Things) devices that connect to the Google Cloud Platform. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")

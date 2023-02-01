@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dataproc1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220419")
+            .version("0.1.0-20230103")
             .about("Manages Hadoop-based clusters and jobs on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: locations and regions");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: autoscaling_policies, batches and workflow_templates");
+            .about(
+                "sub-resources: autoscaling_policies, batches, operations and workflow_templates",
+            );
         let mut regions1 = SubCommand::with_name("regions")
                         .setting(AppSettings::ColoredHelp)
                         .about("sub-resources: autoscaling_policies, clusters, jobs, operations and workflow_templates");
@@ -98,6 +100,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list").about("Lists batch workloads.");
             batches2 = batches2.subcommand(mcmd);
+        }
+        let mut operations2 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: cancel, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns UNIMPLEMENTED.NOTE: the name binding allows API services to override the binding to use different resource name schemes, such as users/*/operations. To override the binding, API services can add a binding such as \"/v1/{name=users/*}/operations\" to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations2 = operations2.subcommand(mcmd);
         }
         let mut workflow_templates2 = SubCommand::with_name("workflow_templates")
                         .setting(AppSettings::ColoredHelp)
@@ -359,12 +380,30 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update").about("Updates (replaces) workflow template. The updated template must contain version that matches the current server version.");
             workflow_templates2 = workflow_templates2.subcommand(mcmd);
         }
+        let mut node_groups3 = SubCommand::with_name("node_groups")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, get and resize");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a node group in a cluster. The returned Operation.metadata is NodeGroupOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).");
+            node_groups3 = node_groups3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets the resource representation for a node group in a cluster.");
+            node_groups3 = node_groups3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("resize").about("Resizes a node group in a cluster. The returned Operation.metadata is NodeGroupOperationMetadata (https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).");
+            node_groups3 = node_groups3.subcommand(mcmd);
+        }
+        clusters2 = clusters2.subcommand(node_groups3);
         regions1 = regions1.subcommand(workflow_templates2);
         regions1 = regions1.subcommand(operations2);
         regions1 = regions1.subcommand(jobs2);
         regions1 = regions1.subcommand(clusters2);
         regions1 = regions1.subcommand(autoscaling_policies2);
         locations1 = locations1.subcommand(workflow_templates2);
+        locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(batches2);
         locations1 = locations1.subcommand(autoscaling_policies2);
         projects0 = projects0.subcommand(regions1);

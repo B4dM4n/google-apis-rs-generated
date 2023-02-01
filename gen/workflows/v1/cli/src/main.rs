@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("workflows1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220406")
+            .version("0.1.0-20230123")
             .about("Manage workflow definitions. To execute workflows and manage executions, see the Workflows Executions API.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -67,7 +67,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new workflow. If a workflow with the specified name already exists in the specified project and location, the long running operation will return ALREADY_EXISTS error.");
+            let mcmd = SubCommand::with_name("create").about("Creates a new workflow. If a workflow with the specified name already exists in the specified project and location, the long running operation returns a ALREADY_EXISTS error.");
             workflows2 = workflows2.subcommand(mcmd);
         }
         {
@@ -75,15 +75,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             workflows2 = workflows2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets details of a single Workflow.");
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single workflow.");
             workflows2 = workflows2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists Workflows in a given project and location. The default order is not specified.");
+            let mcmd = SubCommand::with_name("list").about("Lists workflows in a given project and location. The default order is not specified.");
             workflows2 = workflows2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates an existing workflow. Running this method has no impact on already running executions of the workflow. A new revision of the workflow may be created as a result of a successful update operation. In that case, such revision will be used in new workflow executions.");
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing workflow. Running this method has no impact on already running executions of the workflow. A new revision of the workflow might be created as a result of a successful update operation. In that case, the new revision is used in new workflow executions.");
             workflows2 = workflows2.subcommand(mcmd);
         }
         locations1 = locations1.subcommand(workflows2);

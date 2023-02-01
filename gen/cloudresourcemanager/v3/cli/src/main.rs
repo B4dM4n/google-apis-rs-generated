@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudresourcemanager3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220424")
+            .version("0.1.0-20230129")
             .about("Creates, reads, and updates metadata for Google Cloud Platform resource containers.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -37,7 +37,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Return a list of effective tags for the given cloud resource, as specified in `parent`.");
+            let mcmd = SubCommand::with_name("list").about("Return a list of effective tags for the given Google Cloud resource, as specified in `parent`.");
             effective_tags0 = effective_tags0.subcommand(mcmd);
         }
         let mut folders0 = SubCommand::with_name("folders")
@@ -174,7 +174,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             projects0 = projects0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the IAM access control policy for the specified project, in the format `projects/{ProjectIdOrNumber}` e.g. projects/123. CAUTION: This method will replace the existing policy, and cannot be used to append additional IAM settings. Note: Removing service accounts from policies or changing their roles can render services completely inoperable. It is important to understand how the service account is being used before removing or updating its roles. The following constraints apply when using `setIamPolicy()`: + Project does not support `allUsers` and `allAuthenticatedUsers` as `members` in a `Binding` of a `Policy`. + The owner role can be granted to a `user`, `serviceAccount`, or a group that is part of an organization. For example, group@myownpersonaldomain.com could be added as an owner to a project in the myownpersonaldomain.com organization, but not the examplepetstore.com organization. + Service accounts can be made owners of a project directly without any restrictions. However, to be added as an owner, a user must be invited using the Cloud Platform console and must accept the invitation. + A user cannot be granted the owner role using `setIamPolicy()`. The user must be granted the owner role using the Cloud Platform Console and must explicitly accept the invitation. + Invitations to grant the owner role cannot be sent using `setIamPolicy()`; they must be sent only using the Cloud Platform Console. + If the project is not part of an organization, there must be at least one owner who has accepted the Terms of Service (ToS) agreement in the policy. Calling `setIamPolicy()` to remove the last ToS-accepted owner from the policy will fail. This restriction also applies to legacy projects that no longer have owners who have accepted the ToS. Edits to IAM policies will be rejected until the lack of a ToS-accepting owner is rectified. If the project is part of an organization, you can remove all owners, potentially making the organization inaccessible. + Calling this method requires enabling the App Engine Admin API.");
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the IAM access control policy for the specified project, in the format `projects/{ProjectIdOrNumber}` e.g. projects/123. CAUTION: This method will replace the existing policy, and cannot be used to append additional IAM settings. Note: Removing service accounts from policies or changing their roles can render services completely inoperable. It is important to understand how the service account is being used before removing or updating its roles. The following constraints apply when using `setIamPolicy()`: + Project does not support `allUsers` and `allAuthenticatedUsers` as `members` in a `Binding` of a `Policy`. + The owner role can be granted to a `user`, `serviceAccount`, or a group that is part of an organization. For example, group@myownpersonaldomain.com could be added as an owner to a project in the myownpersonaldomain.com organization, but not the examplepetstore.com organization. + Service accounts can be made owners of a project directly without any restrictions. However, to be added as an owner, a user must be invited using the Cloud Platform console and must accept the invitation. + A user cannot be granted the owner role using `setIamPolicy()`. The user must be granted the owner role using the Cloud Platform Console and must explicitly accept the invitation. + Invitations to grant the owner role cannot be sent using `setIamPolicy()`; they must be sent only using the Cloud Platform Console. + If the project is not part of an organization, there must be at least one owner who has accepted the Terms of Service (ToS) agreement in the policy. Calling `setIamPolicy()` to remove the last ToS-accepted owner from the policy will fail. This restriction also applies to legacy projects that no longer have owners who have accepted the ToS. Edits to IAM policies will be rejected until the lack of a ToS-accepting owner is rectified. If the project is part of an organization, you can remove all owners, potentially making the organization inaccessible.");
             projects0 = projects0.subcommand(mcmd);
         }
         {
@@ -189,7 +189,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a TagBinding between a TagValue and a cloud resource (currently project, folder, or organization).");
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a TagBinding between a TagValue and a Google Cloud resource.");
             tag_bindings0 = tag_bindings0.subcommand(mcmd);
         }
         {
@@ -197,14 +198,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tag_bindings0 = tag_bindings0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the TagBindings for the given cloud resource, as specified with `parent`. NOTE: The `parent` field is expected to be a full resource name: https://cloud.google.com/apis/design/resource_names#full_resource_name");
+            let mcmd = SubCommand::with_name("list").about("Lists the TagBindings for the given Google Cloud resource, as specified with `parent`. NOTE: The `parent` field is expected to be a full resource name: https://cloud.google.com/apis/design/resource_names#full_resource_name");
             tag_bindings0 = tag_bindings0.subcommand(mcmd);
         }
         let mut tag_keys0 = SubCommand::with_name("tag_keys")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new TagKey. If another request with the same parameters is sent while the original request is in process, the second request will receive an error. A maximum of 300 TagKeys can exist under a parent at any given time.");
+            let mcmd = SubCommand::with_name("create").about("Creates a new TagKey. If another request with the same parameters is sent while the original request is in process, the second request will receive an error. A maximum of 1000 TagKeys can exist under a parent at any given time.");
             tag_keys0 = tag_keys0.subcommand(mcmd);
         }
         {
@@ -243,7 +244,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a TagValue as a child of the specified TagKey. If a another request with the same parameters is sent while the original request is in process the second request will receive an error. A maximum of 300 TagValues can exist under a TagKey at any given time.");
+            let mcmd = SubCommand::with_name("create").about("Creates a TagValue as a child of the specified TagKey. If a another request with the same parameters is sent while the original request is in process the second request will receive an error. A maximum of 1000 TagValues can exist under a TagKey at any given time.");
             tag_values0 = tag_values0.subcommand(mcmd);
         }
         {
@@ -253,7 +254,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tag_values0 = tag_values0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves TagValue. If the TagValue or namespaced name does not exist, or if the user does not have permission to view it, this method will return `PERMISSION_DENIED`.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the value does not exist or the user does not have permission to view it.");
             tag_values0 = tag_values0.subcommand(mcmd);
         }
         {

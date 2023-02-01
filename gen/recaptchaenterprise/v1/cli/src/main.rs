@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("recaptchaenterprise1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220422")
-            .about("")
+            .version("0.1.0-20230129")
+            .about("Help protect your website from fraudulent activity, spam, and abuse without creating friction.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -49,8 +49,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             assessments1 = assessments1.subcommand(mcmd);
         }
         let mut keys1 = SubCommand::with_name("keys")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, get_metrics, list, migrate and patch");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_metrics, list, migrate, patch and retrieve_legacy_secret_key");
         {
             let mcmd =
                 SubCommand::with_name("create").about("Creates a new reCAPTCHA Enterprise key.");
@@ -83,6 +83,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("patch").about("Updates the specified key.");
             keys1 = keys1.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("retrieve_legacy_secret_key").about("Returns the secret key related to the specified public key. You must use the legacy secret key only in a 3rd party integration with legacy reCAPTCHA.");
+            keys1 = keys1.subcommand(mcmd);
+        }
         let mut relatedaccountgroupmemberships1 =
             SubCommand::with_name("relatedaccountgroupmemberships")
                 .setting(AppSettings::ColoredHelp)
@@ -104,7 +108,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: list");
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Get the memberships in a group of related accounts.");
+                .about("Get memberships in a group of related accounts.");
             memberships2 = memberships2.subcommand(mcmd);
         }
         relatedaccountgroups1 = relatedaccountgroups1.subcommand(memberships2);

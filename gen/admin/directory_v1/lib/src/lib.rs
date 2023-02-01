@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [asps](resources/asps/struct.AspsActions.html)\n  * [*delete*](resources/asps/struct.DeleteRequestBuilder.html), [*get*](resources/asps/struct.GetRequestBuilder.html), [*list*](resources/asps/struct.ListRequestBuilder.html)\n* [channels](resources/channels/struct.ChannelsActions.html)\n  * [*stop*](resources/channels/struct.StopRequestBuilder.html)\n* [chromeosdevices](resources/chromeosdevices/struct.ChromeosdevicesActions.html)\n  * [*action*](resources/chromeosdevices/struct.ActionRequestBuilder.html), [*get*](resources/chromeosdevices/struct.GetRequestBuilder.html), [*list*](resources/chromeosdevices/struct.ListRequestBuilder.html), [*moveDevicesToOu*](resources/chromeosdevices/struct.MoveDevicesToOuRequestBuilder.html), [*patch*](resources/chromeosdevices/struct.PatchRequestBuilder.html), [*update*](resources/chromeosdevices/struct.UpdateRequestBuilder.html)\n* [customer](resources/customer/struct.CustomerActions.html)\n  * [devices](resources/customer/devices/struct.DevicesActions.html)\n    * [chromeos](resources/customer/devices/chromeos/struct.ChromeosActions.html)\n      * [*issueCommand*](resources/customer/devices/chromeos/struct.IssueCommandRequestBuilder.html)\n      * [commands](resources/customer/devices/chromeos/commands/struct.CommandsActions.html)\n        * [*get*](resources/customer/devices/chromeos/commands/struct.GetRequestBuilder.html)\n* [customers](resources/customers/struct.CustomersActions.html)\n  * [*get*](resources/customers/struct.GetRequestBuilder.html), [*patch*](resources/customers/struct.PatchRequestBuilder.html), [*update*](resources/customers/struct.UpdateRequestBuilder.html)\n  * [chrome](resources/customers/chrome/struct.ChromeActions.html)\n    * [printers](resources/customers/chrome/printers/struct.PrintersActions.html)\n      * [*batchCreatePrinters*](resources/customers/chrome/printers/struct.BatchCreatePrintersRequestBuilder.html), [*batchDeletePrinters*](resources/customers/chrome/printers/struct.BatchDeletePrintersRequestBuilder.html), [*create*](resources/customers/chrome/printers/struct.CreateRequestBuilder.html), [*delete*](resources/customers/chrome/printers/struct.DeleteRequestBuilder.html), [*get*](resources/customers/chrome/printers/struct.GetRequestBuilder.html), [*list*](resources/customers/chrome/printers/struct.ListRequestBuilder.html), [*listPrinterModels*](resources/customers/chrome/printers/struct.ListPrinterModelsRequestBuilder.html), [*patch*](resources/customers/chrome/printers/struct.PatchRequestBuilder.html)\n* [domain_aliases](resources/domain_aliases/struct.DomainAliasesActions.html)\n  * [*delete*](resources/domain_aliases/struct.DeleteRequestBuilder.html), [*get*](resources/domain_aliases/struct.GetRequestBuilder.html), [*insert*](resources/domain_aliases/struct.InsertRequestBuilder.html), [*list*](resources/domain_aliases/struct.ListRequestBuilder.html)\n* [domains](resources/domains/struct.DomainsActions.html)\n  * [*delete*](resources/domains/struct.DeleteRequestBuilder.html), [*get*](resources/domains/struct.GetRequestBuilder.html), [*insert*](resources/domains/struct.InsertRequestBuilder.html), [*list*](resources/domains/struct.ListRequestBuilder.html)\n* [groups](resources/groups/struct.GroupsActions.html)\n  * [*delete*](resources/groups/struct.DeleteRequestBuilder.html), [*get*](resources/groups/struct.GetRequestBuilder.html), [*insert*](resources/groups/struct.InsertRequestBuilder.html), [*list*](resources/groups/struct.ListRequestBuilder.html), [*patch*](resources/groups/struct.PatchRequestBuilder.html), [*update*](resources/groups/struct.UpdateRequestBuilder.html)\n  * [aliases](resources/groups/aliases/struct.AliasesActions.html)\n    * [*delete*](resources/groups/aliases/struct.DeleteRequestBuilder.html), [*insert*](resources/groups/aliases/struct.InsertRequestBuilder.html), [*list*](resources/groups/aliases/struct.ListRequestBuilder.html)\n* [members](resources/members/struct.MembersActions.html)\n  * [*delete*](resources/members/struct.DeleteRequestBuilder.html), [*get*](resources/members/struct.GetRequestBuilder.html), [*hasMember*](resources/members/struct.HasMemberRequestBuilder.html), [*insert*](resources/members/struct.InsertRequestBuilder.html), [*list*](resources/members/struct.ListRequestBuilder.html), [*patch*](resources/members/struct.PatchRequestBuilder.html), [*update*](resources/members/struct.UpdateRequestBuilder.html)\n* [mobiledevices](resources/mobiledevices/struct.MobiledevicesActions.html)\n  * [*action*](resources/mobiledevices/struct.ActionRequestBuilder.html), [*delete*](resources/mobiledevices/struct.DeleteRequestBuilder.html), [*get*](resources/mobiledevices/struct.GetRequestBuilder.html), [*list*](resources/mobiledevices/struct.ListRequestBuilder.html)\n* [orgunits](resources/orgunits/struct.OrgunitsActions.html)\n  * [*delete*](resources/orgunits/struct.DeleteRequestBuilder.html), [*get*](resources/orgunits/struct.GetRequestBuilder.html), [*insert*](resources/orgunits/struct.InsertRequestBuilder.html), [*list*](resources/orgunits/struct.ListRequestBuilder.html), [*patch*](resources/orgunits/struct.PatchRequestBuilder.html), [*update*](resources/orgunits/struct.UpdateRequestBuilder.html)\n* [privileges](resources/privileges/struct.PrivilegesActions.html)\n  * [*list*](resources/privileges/struct.ListRequestBuilder.html)\n* [resources](resources/resources/struct.ResourcesActions.html)\n  * [buildings](resources/resources/buildings/struct.BuildingsActions.html)\n    * [*delete*](resources/resources/buildings/struct.DeleteRequestBuilder.html), [*get*](resources/resources/buildings/struct.GetRequestBuilder.html), [*insert*](resources/resources/buildings/struct.InsertRequestBuilder.html), [*list*](resources/resources/buildings/struct.ListRequestBuilder.html), [*patch*](resources/resources/buildings/struct.PatchRequestBuilder.html), [*update*](resources/resources/buildings/struct.UpdateRequestBuilder.html)\n  * [calendars](resources/resources/calendars/struct.CalendarsActions.html)\n    * [*delete*](resources/resources/calendars/struct.DeleteRequestBuilder.html), [*get*](resources/resources/calendars/struct.GetRequestBuilder.html), [*insert*](resources/resources/calendars/struct.InsertRequestBuilder.html), [*list*](resources/resources/calendars/struct.ListRequestBuilder.html), [*patch*](resources/resources/calendars/struct.PatchRequestBuilder.html), [*update*](resources/resources/calendars/struct.UpdateRequestBuilder.html)\n  * [features](resources/resources/features/struct.FeaturesActions.html)\n    * [*delete*](resources/resources/features/struct.DeleteRequestBuilder.html), [*get*](resources/resources/features/struct.GetRequestBuilder.html), [*insert*](resources/resources/features/struct.InsertRequestBuilder.html), [*list*](resources/resources/features/struct.ListRequestBuilder.html), [*patch*](resources/resources/features/struct.PatchRequestBuilder.html), [*rename*](resources/resources/features/struct.RenameRequestBuilder.html), [*update*](resources/resources/features/struct.UpdateRequestBuilder.html)\n* [role_assignments](resources/role_assignments/struct.RoleAssignmentsActions.html)\n  * [*delete*](resources/role_assignments/struct.DeleteRequestBuilder.html), [*get*](resources/role_assignments/struct.GetRequestBuilder.html), [*insert*](resources/role_assignments/struct.InsertRequestBuilder.html), [*list*](resources/role_assignments/struct.ListRequestBuilder.html)\n* [roles](resources/roles/struct.RolesActions.html)\n  * [*delete*](resources/roles/struct.DeleteRequestBuilder.html), [*get*](resources/roles/struct.GetRequestBuilder.html), [*insert*](resources/roles/struct.InsertRequestBuilder.html), [*list*](resources/roles/struct.ListRequestBuilder.html), [*patch*](resources/roles/struct.PatchRequestBuilder.html), [*update*](resources/roles/struct.UpdateRequestBuilder.html)\n* [schemas](resources/schemas/struct.SchemasActions.html)\n  * [*delete*](resources/schemas/struct.DeleteRequestBuilder.html), [*get*](resources/schemas/struct.GetRequestBuilder.html), [*insert*](resources/schemas/struct.InsertRequestBuilder.html), [*list*](resources/schemas/struct.ListRequestBuilder.html), [*patch*](resources/schemas/struct.PatchRequestBuilder.html), [*update*](resources/schemas/struct.UpdateRequestBuilder.html)\n* [tokens](resources/tokens/struct.TokensActions.html)\n  * [*delete*](resources/tokens/struct.DeleteRequestBuilder.html), [*get*](resources/tokens/struct.GetRequestBuilder.html), [*list*](resources/tokens/struct.ListRequestBuilder.html)\n* [two_step_verification](resources/two_step_verification/struct.TwoStepVerificationActions.html)\n  * [*turnOff*](resources/two_step_verification/struct.TurnOffRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*get*](resources/users/struct.GetRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*makeAdmin*](resources/users/struct.MakeAdminRequestBuilder.html), [*patch*](resources/users/struct.PatchRequestBuilder.html), [*signOut*](resources/users/struct.SignOutRequestBuilder.html), [*undelete*](resources/users/struct.UndeleteRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html), [*watch*](resources/users/struct.WatchRequestBuilder.html)\n  * [aliases](resources/users/aliases/struct.AliasesActions.html)\n    * [*delete*](resources/users/aliases/struct.DeleteRequestBuilder.html), [*insert*](resources/users/aliases/struct.InsertRequestBuilder.html), [*list*](resources/users/aliases/struct.ListRequestBuilder.html), [*watch*](resources/users/aliases/struct.WatchRequestBuilder.html)\n  * [photos](resources/users/photos/struct.PhotosActions.html)\n    * [*delete*](resources/users/photos/struct.DeleteRequestBuilder.html), [*get*](resources/users/photos/struct.GetRequestBuilder.html), [*patch*](resources/users/photos/struct.PatchRequestBuilder.html), [*update*](resources/users/photos/struct.UpdateRequestBuilder.html)\n* [verification_codes](resources/verification_codes/struct.VerificationCodesActions.html)\n  * [*generate*](resources/verification_codes/struct.GenerateRequestBuilder.html), [*invalidate*](resources/verification_codes/struct.InvalidateRequestBuilder.html), [*list*](resources/verification_codes/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [asps](resources/asps/struct.AspsActions.html)\n  * [*delete*](resources/asps/struct.DeleteRequestBuilder.html), [*get*](resources/asps/struct.GetRequestBuilder.html), [*list*](resources/asps/struct.ListRequestBuilder.html)\n* [channels](resources/channels/struct.ChannelsActions.html)\n  * [*stop*](resources/channels/struct.StopRequestBuilder.html)\n* [chromeosdevices](resources/chromeosdevices/struct.ChromeosdevicesActions.html)\n  * [*action*](resources/chromeosdevices/struct.ActionRequestBuilder.html), [*get*](resources/chromeosdevices/struct.GetRequestBuilder.html), [*list*](resources/chromeosdevices/struct.ListRequestBuilder.html), [*moveDevicesToOu*](resources/chromeosdevices/struct.MoveDevicesToOuRequestBuilder.html), [*patch*](resources/chromeosdevices/struct.PatchRequestBuilder.html), [*update*](resources/chromeosdevices/struct.UpdateRequestBuilder.html)\n* [customer](resources/customer/struct.CustomerActions.html)\n  * [devices](resources/customer/devices/struct.DevicesActions.html)\n    * [chromeos](resources/customer/devices/chromeos/struct.ChromeosActions.html)\n      * [*issueCommand*](resources/customer/devices/chromeos/struct.IssueCommandRequestBuilder.html)\n      * [commands](resources/customer/devices/chromeos/commands/struct.CommandsActions.html)\n        * [*get*](resources/customer/devices/chromeos/commands/struct.GetRequestBuilder.html)\n* [customers](resources/customers/struct.CustomersActions.html)\n  * [*get*](resources/customers/struct.GetRequestBuilder.html), [*patch*](resources/customers/struct.PatchRequestBuilder.html), [*update*](resources/customers/struct.UpdateRequestBuilder.html)\n  * [chrome](resources/customers/chrome/struct.ChromeActions.html)\n    * [print_servers](resources/customers/chrome/print_servers/struct.PrintServersActions.html)\n      * [*batchCreatePrintServers*](resources/customers/chrome/print_servers/struct.BatchCreatePrintServersRequestBuilder.html), [*batchDeletePrintServers*](resources/customers/chrome/print_servers/struct.BatchDeletePrintServersRequestBuilder.html), [*create*](resources/customers/chrome/print_servers/struct.CreateRequestBuilder.html), [*delete*](resources/customers/chrome/print_servers/struct.DeleteRequestBuilder.html), [*get*](resources/customers/chrome/print_servers/struct.GetRequestBuilder.html), [*list*](resources/customers/chrome/print_servers/struct.ListRequestBuilder.html), [*patch*](resources/customers/chrome/print_servers/struct.PatchRequestBuilder.html)\n    * [printers](resources/customers/chrome/printers/struct.PrintersActions.html)\n      * [*batchCreatePrinters*](resources/customers/chrome/printers/struct.BatchCreatePrintersRequestBuilder.html), [*batchDeletePrinters*](resources/customers/chrome/printers/struct.BatchDeletePrintersRequestBuilder.html), [*create*](resources/customers/chrome/printers/struct.CreateRequestBuilder.html), [*delete*](resources/customers/chrome/printers/struct.DeleteRequestBuilder.html), [*get*](resources/customers/chrome/printers/struct.GetRequestBuilder.html), [*list*](resources/customers/chrome/printers/struct.ListRequestBuilder.html), [*listPrinterModels*](resources/customers/chrome/printers/struct.ListPrinterModelsRequestBuilder.html), [*patch*](resources/customers/chrome/printers/struct.PatchRequestBuilder.html)\n* [domain_aliases](resources/domain_aliases/struct.DomainAliasesActions.html)\n  * [*delete*](resources/domain_aliases/struct.DeleteRequestBuilder.html), [*get*](resources/domain_aliases/struct.GetRequestBuilder.html), [*insert*](resources/domain_aliases/struct.InsertRequestBuilder.html), [*list*](resources/domain_aliases/struct.ListRequestBuilder.html)\n* [domains](resources/domains/struct.DomainsActions.html)\n  * [*delete*](resources/domains/struct.DeleteRequestBuilder.html), [*get*](resources/domains/struct.GetRequestBuilder.html), [*insert*](resources/domains/struct.InsertRequestBuilder.html), [*list*](resources/domains/struct.ListRequestBuilder.html)\n* [groups](resources/groups/struct.GroupsActions.html)\n  * [*delete*](resources/groups/struct.DeleteRequestBuilder.html), [*get*](resources/groups/struct.GetRequestBuilder.html), [*insert*](resources/groups/struct.InsertRequestBuilder.html), [*list*](resources/groups/struct.ListRequestBuilder.html), [*patch*](resources/groups/struct.PatchRequestBuilder.html), [*update*](resources/groups/struct.UpdateRequestBuilder.html)\n  * [aliases](resources/groups/aliases/struct.AliasesActions.html)\n    * [*delete*](resources/groups/aliases/struct.DeleteRequestBuilder.html), [*insert*](resources/groups/aliases/struct.InsertRequestBuilder.html), [*list*](resources/groups/aliases/struct.ListRequestBuilder.html)\n* [members](resources/members/struct.MembersActions.html)\n  * [*delete*](resources/members/struct.DeleteRequestBuilder.html), [*get*](resources/members/struct.GetRequestBuilder.html), [*hasMember*](resources/members/struct.HasMemberRequestBuilder.html), [*insert*](resources/members/struct.InsertRequestBuilder.html), [*list*](resources/members/struct.ListRequestBuilder.html), [*patch*](resources/members/struct.PatchRequestBuilder.html), [*update*](resources/members/struct.UpdateRequestBuilder.html)\n* [mobiledevices](resources/mobiledevices/struct.MobiledevicesActions.html)\n  * [*action*](resources/mobiledevices/struct.ActionRequestBuilder.html), [*delete*](resources/mobiledevices/struct.DeleteRequestBuilder.html), [*get*](resources/mobiledevices/struct.GetRequestBuilder.html), [*list*](resources/mobiledevices/struct.ListRequestBuilder.html)\n* [orgunits](resources/orgunits/struct.OrgunitsActions.html)\n  * [*delete*](resources/orgunits/struct.DeleteRequestBuilder.html), [*get*](resources/orgunits/struct.GetRequestBuilder.html), [*insert*](resources/orgunits/struct.InsertRequestBuilder.html), [*list*](resources/orgunits/struct.ListRequestBuilder.html), [*patch*](resources/orgunits/struct.PatchRequestBuilder.html), [*update*](resources/orgunits/struct.UpdateRequestBuilder.html)\n* [privileges](resources/privileges/struct.PrivilegesActions.html)\n  * [*list*](resources/privileges/struct.ListRequestBuilder.html)\n* [resources](resources/resources/struct.ResourcesActions.html)\n  * [buildings](resources/resources/buildings/struct.BuildingsActions.html)\n    * [*delete*](resources/resources/buildings/struct.DeleteRequestBuilder.html), [*get*](resources/resources/buildings/struct.GetRequestBuilder.html), [*insert*](resources/resources/buildings/struct.InsertRequestBuilder.html), [*list*](resources/resources/buildings/struct.ListRequestBuilder.html), [*patch*](resources/resources/buildings/struct.PatchRequestBuilder.html), [*update*](resources/resources/buildings/struct.UpdateRequestBuilder.html)\n  * [calendars](resources/resources/calendars/struct.CalendarsActions.html)\n    * [*delete*](resources/resources/calendars/struct.DeleteRequestBuilder.html), [*get*](resources/resources/calendars/struct.GetRequestBuilder.html), [*insert*](resources/resources/calendars/struct.InsertRequestBuilder.html), [*list*](resources/resources/calendars/struct.ListRequestBuilder.html), [*patch*](resources/resources/calendars/struct.PatchRequestBuilder.html), [*update*](resources/resources/calendars/struct.UpdateRequestBuilder.html)\n  * [features](resources/resources/features/struct.FeaturesActions.html)\n    * [*delete*](resources/resources/features/struct.DeleteRequestBuilder.html), [*get*](resources/resources/features/struct.GetRequestBuilder.html), [*insert*](resources/resources/features/struct.InsertRequestBuilder.html), [*list*](resources/resources/features/struct.ListRequestBuilder.html), [*patch*](resources/resources/features/struct.PatchRequestBuilder.html), [*rename*](resources/resources/features/struct.RenameRequestBuilder.html), [*update*](resources/resources/features/struct.UpdateRequestBuilder.html)\n* [role_assignments](resources/role_assignments/struct.RoleAssignmentsActions.html)\n  * [*delete*](resources/role_assignments/struct.DeleteRequestBuilder.html), [*get*](resources/role_assignments/struct.GetRequestBuilder.html), [*insert*](resources/role_assignments/struct.InsertRequestBuilder.html), [*list*](resources/role_assignments/struct.ListRequestBuilder.html)\n* [roles](resources/roles/struct.RolesActions.html)\n  * [*delete*](resources/roles/struct.DeleteRequestBuilder.html), [*get*](resources/roles/struct.GetRequestBuilder.html), [*insert*](resources/roles/struct.InsertRequestBuilder.html), [*list*](resources/roles/struct.ListRequestBuilder.html), [*patch*](resources/roles/struct.PatchRequestBuilder.html), [*update*](resources/roles/struct.UpdateRequestBuilder.html)\n* [schemas](resources/schemas/struct.SchemasActions.html)\n  * [*delete*](resources/schemas/struct.DeleteRequestBuilder.html), [*get*](resources/schemas/struct.GetRequestBuilder.html), [*insert*](resources/schemas/struct.InsertRequestBuilder.html), [*list*](resources/schemas/struct.ListRequestBuilder.html), [*patch*](resources/schemas/struct.PatchRequestBuilder.html), [*update*](resources/schemas/struct.UpdateRequestBuilder.html)\n* [tokens](resources/tokens/struct.TokensActions.html)\n  * [*delete*](resources/tokens/struct.DeleteRequestBuilder.html), [*get*](resources/tokens/struct.GetRequestBuilder.html), [*list*](resources/tokens/struct.ListRequestBuilder.html)\n* [two_step_verification](resources/two_step_verification/struct.TwoStepVerificationActions.html)\n  * [*turnOff*](resources/two_step_verification/struct.TurnOffRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*get*](resources/users/struct.GetRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*makeAdmin*](resources/users/struct.MakeAdminRequestBuilder.html), [*patch*](resources/users/struct.PatchRequestBuilder.html), [*signOut*](resources/users/struct.SignOutRequestBuilder.html), [*undelete*](resources/users/struct.UndeleteRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html), [*watch*](resources/users/struct.WatchRequestBuilder.html)\n  * [aliases](resources/users/aliases/struct.AliasesActions.html)\n    * [*delete*](resources/users/aliases/struct.DeleteRequestBuilder.html), [*insert*](resources/users/aliases/struct.InsertRequestBuilder.html), [*list*](resources/users/aliases/struct.ListRequestBuilder.html), [*watch*](resources/users/aliases/struct.WatchRequestBuilder.html)\n  * [photos](resources/users/photos/struct.PhotosActions.html)\n    * [*delete*](resources/users/photos/struct.DeleteRequestBuilder.html), [*get*](resources/users/photos/struct.GetRequestBuilder.html), [*patch*](resources/users/photos/struct.PatchRequestBuilder.html), [*update*](resources/users/photos/struct.UpdateRequestBuilder.html)\n* [verification_codes](resources/verification_codes/struct.VerificationCodesActions.html)\n  * [*generate*](resources/verification_codes/struct.GenerateRequestBuilder.html), [*invalidate*](resources/verification_codes/struct.InvalidateRequestBuilder.html), [*list*](resources/verification_codes/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, add, edit, and permanently delete the printers that your organization can use with Chrome\n\n`https://www.googleapis.com/auth/admin.chrome.printers`"]
     pub const ADMIN_CHROME_PRINTERS: &str = "https://www.googleapis.com/auth/admin.chrome.printers";
@@ -428,6 +429,75 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct BatchCreatePrintServersRequest {
+        #[doc = "Required. A list of `PrintServer` resources to be created (max `50` per batch)."]
+        #[serde(
+            rename = "requests",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub requests: ::std::option::Option<Vec<crate::schemas::CreatePrintServerRequest>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchCreatePrintServersRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchCreatePrintServersRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchCreatePrintServersResponse {
+        #[doc = "A list of create failures. `PrintServer` IDs are not populated, as print servers were not created."]
+        #[serde(
+            rename = "failures",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failures: ::std::option::Option<Vec<crate::schemas::PrintServerFailureInfo>>,
+        #[doc = "A list of successfully created print servers with their IDs populated."]
+        #[serde(
+            rename = "printServers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub print_servers: ::std::option::Option<Vec<crate::schemas::PrintServer>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchCreatePrintServersResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchCreatePrintServersResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct BatchCreatePrintersRequest {
         #[doc = "A list of Printers to be created. Max 50 at a time."]
         #[serde(
@@ -481,6 +551,76 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for BatchCreatePrintersResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchDeletePrintServersRequest {
+        #[doc = "A list of print server IDs that should be deleted (max `100` per batch)."]
+        #[serde(
+            rename = "printServerIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub print_server_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchDeletePrintServersRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchDeletePrintServersRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchDeletePrintServersResponse {
+        #[doc = "A list of update failures."]
+        #[serde(
+            rename = "failedPrintServers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failed_print_servers:
+            ::std::option::Option<Vec<crate::schemas::PrintServerFailureInfo>>,
+        #[doc = "A list of print server IDs that were successfully deleted."]
+        #[serde(
+            rename = "printServerIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub print_server_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchDeletePrintServersResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchDeletePrintServersResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -770,7 +910,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Buildings {
+    impl crate::GetNextPageToken<String> for Buildings {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -934,7 +1074,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CalendarResources {
+    impl crate::GetNextPageToken<String> for CalendarResources {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -981,7 +1121,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Additional parameters controlling delivery channel behavior. Optional."]
+        #[doc = "Additional parameters controlling delivery channel behavior. Optional. For example, `params.ttl` specifies the time-to-live in seconds for the notification channel, where the default is 2 hours and the maximum TTL is 2 days."]
         #[serde(
             rename = "params",
             default,
@@ -1047,7 +1187,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChromeOsDevice {
-        #[doc = "List of active time ranges (Read-only)."]
+        #[doc = "A list of active time ranges (Read-only)."]
         #[serde(
             rename = "activeTimeRanges",
             default,
@@ -1106,7 +1246,15 @@ pub mod schemas {
         )]
         pub cpu_status_reports:
             ::std::option::Option<Vec<crate::schemas::ChromeOsDeviceCpuStatusReportsItems>>,
-        #[doc = "List of device files to download (Read-only)"]
+        #[doc = "(Read-only) Deprovision reason."]
+        #[serde(
+            rename = "deprovisionReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deprovision_reason:
+            ::std::option::Option<crate::schemas::ChromeOsDeviceDeprovisionReason>,
+        #[doc = "A list of device files to download (Read-only)"]
         #[serde(
             rename = "deviceFiles",
             default,
@@ -1164,6 +1312,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub firmware_version: ::std::option::Option<String>,
+        #[doc = "Date and time for the first time the device was enrolled."]
+        #[serde(
+            rename = "firstEnrollmentTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub first_enrollment_time: ::std::option::Option<String>,
         #[doc = "The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`."]
         #[serde(
             rename = "kind",
@@ -1171,6 +1326,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
+        #[doc = "(Read-only) Date and time for the last deprovision of the device."]
+        #[serde(
+            rename = "lastDeprovisionTimestamp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_deprovision_timestamp: ::std::option::Option<String>,
         #[doc = "Date and time the device was last enrolled (Read-only)"]
         #[serde(
             rename = "lastEnrollmentTime",
@@ -1249,6 +1411,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub org_unit_path: ::std::option::Option<String>,
+        #[doc = "The status of the OS updates for the device."]
+        #[serde(
+            rename = "osUpdateStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub os_update_status: ::std::option::Option<crate::schemas::OsUpdateStatus>,
         #[doc = "The Chrome device’s operating system version."]
         #[serde(
             rename = "osVersion",
@@ -1263,7 +1432,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub platform_version: ::std::option::Option<String>,
-        #[doc = "List of recent device users, in descending order, by last login time."]
+        #[doc = "A list of recent device users, in descending order, by last login time."]
         #[serde(
             rename = "recentUsers",
             default,
@@ -1271,7 +1440,7 @@ pub mod schemas {
         )]
         pub recent_users:
             ::std::option::Option<Vec<crate::schemas::ChromeOsDeviceRecentUsersItems>>,
-        #[doc = "List of screenshot files to download. Type is always “SCREENSHOT_FILE”. (Read-only)"]
+        #[doc = "A list of screenshot files to download. Type is always “SCREENSHOT_FILE”. (Read-only)"]
         #[serde(
             rename = "screenshotFiles",
             default,
@@ -1541,7 +1710,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChromeOsDeviceCpuStatusReportsItems {
-        #[doc = "List of CPU temperature samples."]
+        #[doc = "A list of CPU temperature samples."]
         #[serde(
             rename = "cpuTemperatureInfo",
             default,
@@ -1612,6 +1781,182 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for ChromeOsDeviceCpuStatusReportsItemsCpuTemperatureInfoItems
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ChromeOsDeviceDeprovisionReason {
+        #[doc = "The device was replaced by a device with a different model."]
+        DeprovisionReasonDifferentModelReplacement,
+        #[doc = "The device’s domain was changed."]
+        DeprovisionReasonDomainMove,
+        #[doc = "A reason was not required. For example, the licenses were returned to the customer’s license pool."]
+        DeprovisionReasonNotRequired,
+        #[doc = "The device was deprovisioned for a legacy reason that is no longer supported."]
+        DeprovisionReasonOther,
+        #[doc = "The device was deprovisioned by a repair service center."]
+        DeprovisionReasonRepairCenter,
+        #[doc = "The device was retired."]
+        DeprovisionReasonRetiringDevice,
+        #[doc = "The device was replaced by a device with the same model."]
+        DeprovisionReasonSameModelReplacement,
+        #[doc = "Service expired for the device."]
+        DeprovisionReasonServiceExpiration,
+        #[doc = "The deprovision reason is unknown."]
+        DeprovisionReasonUnspecified,
+        #[doc = "The device was upgraded."]
+        DeprovisionReasonUpgrade,
+        #[doc = "The device’s perpetual upgrade was transferred to a new device."]
+        DeprovisionReasonUpgradeTransfer,
+    }
+    impl ChromeOsDeviceDeprovisionReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonDifferentModelReplacement => {
+                    "deprovisionReasonDifferentModelReplacement"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonDomainMove => {
+                    "deprovisionReasonDomainMove"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonNotRequired => {
+                    "deprovisionReasonNotRequired"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonOther => "deprovisionReasonOther",
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonRepairCenter => {
+                    "deprovisionReasonRepairCenter"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonRetiringDevice => {
+                    "deprovisionReasonRetiringDevice"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonSameModelReplacement => {
+                    "deprovisionReasonSameModelReplacement"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonServiceExpiration => {
+                    "deprovisionReasonServiceExpiration"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonUnspecified => {
+                    "deprovisionReasonUnspecified"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonUpgrade => {
+                    "deprovisionReasonUpgrade"
+                }
+                ChromeOsDeviceDeprovisionReason::DeprovisionReasonUpgradeTransfer => {
+                    "deprovisionReasonUpgradeTransfer"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ChromeOsDeviceDeprovisionReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ChromeOsDeviceDeprovisionReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ChromeOsDeviceDeprovisionReason, ()> {
+            Ok(match s {
+                "deprovisionReasonDifferentModelReplacement" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonDifferentModelReplacement
+                }
+                "deprovisionReasonDomainMove" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonDomainMove
+                }
+                "deprovisionReasonNotRequired" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonNotRequired
+                }
+                "deprovisionReasonOther" => ChromeOsDeviceDeprovisionReason::DeprovisionReasonOther,
+                "deprovisionReasonRepairCenter" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonRepairCenter
+                }
+                "deprovisionReasonRetiringDevice" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonRetiringDevice
+                }
+                "deprovisionReasonSameModelReplacement" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonSameModelReplacement
+                }
+                "deprovisionReasonServiceExpiration" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonServiceExpiration
+                }
+                "deprovisionReasonUnspecified" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonUnspecified
+                }
+                "deprovisionReasonUpgrade" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonUpgrade
+                }
+                "deprovisionReasonUpgradeTransfer" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonUpgradeTransfer
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ChromeOsDeviceDeprovisionReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ChromeOsDeviceDeprovisionReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ChromeOsDeviceDeprovisionReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "deprovisionReasonDifferentModelReplacement" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonDifferentModelReplacement
+                }
+                "deprovisionReasonDomainMove" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonDomainMove
+                }
+                "deprovisionReasonNotRequired" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonNotRequired
+                }
+                "deprovisionReasonOther" => ChromeOsDeviceDeprovisionReason::DeprovisionReasonOther,
+                "deprovisionReasonRepairCenter" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonRepairCenter
+                }
+                "deprovisionReasonRetiringDevice" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonRetiringDevice
+                }
+                "deprovisionReasonSameModelReplacement" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonSameModelReplacement
+                }
+                "deprovisionReasonServiceExpiration" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonServiceExpiration
+                }
+                "deprovisionReasonUnspecified" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonUnspecified
+                }
+                "deprovisionReasonUpgrade" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonUpgrade
+                }
+                "deprovisionReasonUpgradeTransfer" => {
+                    ChromeOsDeviceDeprovisionReason::DeprovisionReasonUpgradeTransfer
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ChromeOsDeviceDeprovisionReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ChromeOsDeviceDeprovisionReason {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2032,7 +2377,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChromeOsDevices {
-        #[doc = "List of Chrome OS Device objects."]
+        #[doc = "A list of Chrome OS Device objects."]
         #[serde(
             rename = "chromeosdevices",
             default,
@@ -2071,7 +2416,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ChromeOsDevices {
+    impl crate::GetNextPageToken<String> for ChromeOsDevices {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2103,6 +2448,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ChromeOsMoveDevicesToOu {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CreatePrintServerRequest {
+        #[doc = "Required. The [unique ID](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers) of the customer’s Google Workspace account. Format: `customers/{id}`"]
+        #[serde(
+            rename = "parent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parent: ::std::option::Option<String>,
+        #[doc = "Required. A print server to create. If you want to place the print server under a specific organizational unit (OU), then populate the `org_unit_id`. Otherwise the print server is created under the root OU. The `org_unit_id` can be retrieved using the [Directory API](https://developers.google.com/admin-sdk/directory/v1/guides/manage-org-units)."]
+        #[serde(
+            rename = "printServer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub print_server: ::std::option::Option<crate::schemas::PrintServer>,
+    }
+    impl ::google_field_selector::FieldSelector for CreatePrintServerRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreatePrintServerRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2398,6 +2781,8 @@ pub mod schemas {
     pub enum DirectoryChromeosdevicesCommandType {
         #[doc = "The command type was unspecified."]
         CommandTypeUnspecified,
+        #[doc = "Starts a Chrome Remote Desktop session."]
+        DeviceStartCrdSession,
         #[doc = "Reboot the device. Can only be issued to Kiosk and managed guest session devices."]
         Reboot,
         #[doc = "Wipes the device by performing a power wash. Executing this command in the device will remove all data including user policies, device policies and enrollment policies. Warning: This will revert the device back to a factory state with no enrollment unless the device is subject to forced or auto enrollment. Use with caution, as this is an irreversible action!"]
@@ -2414,6 +2799,9 @@ pub mod schemas {
             match self {
                 DirectoryChromeosdevicesCommandType::CommandTypeUnspecified => {
                     "COMMAND_TYPE_UNSPECIFIED"
+                }
+                DirectoryChromeosdevicesCommandType::DeviceStartCrdSession => {
+                    "DEVICE_START_CRD_SESSION"
                 }
                 DirectoryChromeosdevicesCommandType::Reboot => "REBOOT",
                 DirectoryChromeosdevicesCommandType::RemotePowerwash => "REMOTE_POWERWASH",
@@ -2434,6 +2822,9 @@ pub mod schemas {
             Ok(match s {
                 "COMMAND_TYPE_UNSPECIFIED" => {
                     DirectoryChromeosdevicesCommandType::CommandTypeUnspecified
+                }
+                "DEVICE_START_CRD_SESSION" => {
+                    DirectoryChromeosdevicesCommandType::DeviceStartCrdSession
                 }
                 "REBOOT" => DirectoryChromeosdevicesCommandType::Reboot,
                 "REMOTE_POWERWASH" => DirectoryChromeosdevicesCommandType::RemotePowerwash,
@@ -2466,6 +2857,9 @@ pub mod schemas {
             Ok(match value {
                 "COMMAND_TYPE_UNSPECIFIED" => {
                     DirectoryChromeosdevicesCommandType::CommandTypeUnspecified
+                }
+                "DEVICE_START_CRD_SESSION" => {
+                    DirectoryChromeosdevicesCommandType::DeviceStartCrdSession
                 }
                 "REBOOT" => DirectoryChromeosdevicesCommandType::Reboot,
                 "REMOTE_POWERWASH" => DirectoryChromeosdevicesCommandType::RemotePowerwash,
@@ -2600,6 +2994,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DirectoryChromeosdevicesCommandResult {
+        #[doc = "The payload for the command result. The following commands respond with a payload: * `DEVICE_START_CRD_SESSION`: Payload is a stringified JSON object in the form: { “url”: url }. The URL provides a link to the Chrome Remote Desktop session."]
+        #[serde(
+            rename = "commandResultPayload",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub command_result_payload: ::std::option::Option<String>,
         #[doc = "The error message with a short explanation as to why the command failed. Only present if the command failed."]
         #[serde(
             rename = "errorMessage",
@@ -2744,7 +3145,7 @@ pub mod schemas {
         pub command_type: ::std::option::Option<
             crate::schemas::DirectoryChromeosdevicesIssueCommandRequestCommandType,
         >,
-        #[doc = "The payload for the command, provide it only if command supports it. The following commands support adding payload: - SET_VOLUME: Payload is a stringified JSON object in the form: { “volume”: 50 }. The volume has to be an integer in the range \\[0,100\\]."]
+        #[doc = "The payload for the command, provide it only if command supports it. The following commands support adding payload: * `SET_VOLUME`: Payload is a stringified JSON object in the form: { “volume”: 50 }. The volume has to be an integer in the range \\[0,100\\]. * `DEVICE_START_CRD_SESSION`: Payload is optionally a stringified JSON object in the form: { “ackedUserPresence”: true }. `ackedUserPresence` is a boolean. By default, `ackedUserPresence` is set to `false`. To start a Chrome Remote Desktop session for an active device, set `ackedUserPresence` to `true`."]
         #[serde(
             rename = "payload",
             default,
@@ -2766,6 +3167,8 @@ pub mod schemas {
     pub enum DirectoryChromeosdevicesIssueCommandRequestCommandType {
         #[doc = "The command type was unspecified."]
         CommandTypeUnspecified,
+        #[doc = "Starts a Chrome Remote Desktop session."]
+        DeviceStartCrdSession,
         #[doc = "Reboot the device. Can only be issued to Kiosk and managed guest session devices."]
         Reboot,
         #[doc = "Wipes the device by performing a power wash. Executing this command in the device will remove all data including user policies, device policies and enrollment policies. Warning: This will revert the device back to a factory state with no enrollment unless the device is subject to forced or auto enrollment. Use with caution, as this is an irreversible action!"]
@@ -2782,6 +3185,9 @@ pub mod schemas {
             match self {
                 DirectoryChromeosdevicesIssueCommandRequestCommandType::CommandTypeUnspecified => {
                     "COMMAND_TYPE_UNSPECIFIED"
+                }
+                DirectoryChromeosdevicesIssueCommandRequestCommandType::DeviceStartCrdSession => {
+                    "DEVICE_START_CRD_SESSION"
                 }
                 DirectoryChromeosdevicesIssueCommandRequestCommandType::Reboot => "REBOOT",
                 DirectoryChromeosdevicesIssueCommandRequestCommandType::RemotePowerwash => {
@@ -2809,6 +3215,9 @@ pub mod schemas {
             Ok(match s {
                 "COMMAND_TYPE_UNSPECIFIED" => {
                     DirectoryChromeosdevicesIssueCommandRequestCommandType::CommandTypeUnspecified
+                }
+                "DEVICE_START_CRD_SESSION" => {
+                    DirectoryChromeosdevicesIssueCommandRequestCommandType::DeviceStartCrdSession
                 }
                 "REBOOT" => DirectoryChromeosdevicesIssueCommandRequestCommandType::Reboot,
                 "REMOTE_POWERWASH" => {
@@ -2845,6 +3254,9 @@ pub mod schemas {
             Ok(match value {
                 "COMMAND_TYPE_UNSPECIFIED" => {
                     DirectoryChromeosdevicesIssueCommandRequestCommandType::CommandTypeUnspecified
+                }
+                "DEVICE_START_CRD_SESSION" => {
+                    DirectoryChromeosdevicesIssueCommandRequestCommandType::DeviceStartCrdSession
                 }
                 "REBOOT" => DirectoryChromeosdevicesIssueCommandRequestCommandType::Reboot,
                 "REMOTE_POWERWASH" => {
@@ -2990,7 +3402,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DomainAliases {
-        #[doc = "List of domain alias objects."]
+        #[doc = "A list of domain alias objects."]
         #[serde(
             rename = "domainAliases",
             default,
@@ -3043,7 +3455,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
-        #[doc = "List of domain alias objects. (Read-only)"]
+        #[doc = "A list of domain alias objects. (Read-only)"]
         #[serde(
             rename = "domainAliases",
             default,
@@ -3109,7 +3521,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Domains2 {
-        #[doc = "List of domain objects."]
+        #[doc = "A list of domain objects."]
         #[serde(
             rename = "domains",
             default,
@@ -3237,7 +3649,7 @@ pub mod schemas {
         InvalidArgument,
         #[doc = "Some requested entity (e.g., file or directory) was not found. Note to server developers: if a request is denied for an entire class of users, such as gradual feature rollout or undocumented allowlist, `NOT_FOUND` may be used. If a request is denied for some users within a class of users, such as user-based access control, `PERMISSION_DENIED` must be used. HTTP Mapping: 404 Not Found"]
         NotFound,
-        #[doc = "Not an error; returned on success HTTP Mapping: 200 OK"]
+        #[doc = "Not an error; returned on success. HTTP Mapping: 200 OK"]
         Ok,
         #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range \\[0,2^32-1\\], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
         OutOfRange,
@@ -3522,7 +3934,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Features {
+    impl crate::GetNextPageToken<String> for Features {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3540,14 +3952,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Group {
-        #[doc = "Value is `true` if this group was created by an administrator rather than a user."]
+        #[doc = "Read-only. Value is `true` if this group was created by an administrator rather than a user."]
         #[serde(
             rename = "adminCreated",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub admin_created: ::std::option::Option<bool>,
-        #[doc = "List of a group’s alias email addresses."]
+        #[doc = "Read-only. The list of a group’s alias email addresses. To add, update, or remove a group’s aliases, use the `groups.aliases` methods. If edited in a group’s POST or PUT request, the edit is ignored."]
         #[serde(
             rename = "aliases",
             default,
@@ -3583,7 +3995,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The unique ID of a group. A group `id` can be used as a group request URI’s `groupKey`."]
+        #[doc = "Read-only. The unique ID of a group. A group `id` can be used as a group request URI’s `groupKey`."]
         #[serde(
             rename = "id",
             default,
@@ -3604,7 +4016,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "List of the group’s non-editable alias email addresses that are outside of the account’s primary domain or subdomains. These are functioning email addresses used by the group. This is a read-only property returned in the API’s response for a group. If edited in a group’s POST or PUT request, the edit is ignored by the API service."]
+        #[doc = "Read-only. The list of the group’s non-editable alias email addresses that are outside of the account’s primary domain or subdomains. These are functioning email addresses used by the group. This is a read-only property returned in the API’s response for a group. If edited in a group’s POST or PUT request, the edit is ignored."]
         #[serde(
             rename = "nonEditableAliases",
             default,
@@ -3634,6 +4046,65 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GroupAlias {
+        #[doc = "The alias email address."]
+        #[serde(
+            rename = "alias",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alias: ::std::option::Option<String>,
+        #[doc = "ETag of the resource."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "The unique ID of the group."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "The type of the API resource. For Alias resources, the value is `admin#directory#alias`."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The primary email address of the group."]
+        #[serde(
+            rename = "primaryEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub primary_email: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GroupAlias {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GroupAlias {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Groups {
         #[doc = "ETag of the resource."]
         #[serde(
@@ -3642,7 +4113,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "List of group objects."]
+        #[doc = "A list of group objects."]
         #[serde(
             rename = "groups",
             default,
@@ -3674,7 +4145,50 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Groups {
+    impl crate::GetNextPageToken<String> for Groups {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListPrintServersResponse {
+        #[doc = "A token that can be sent as `page_token` in a request to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "List of print servers."]
+        #[serde(
+            rename = "printServers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub print_servers: ::std::option::Option<Vec<crate::schemas::PrintServer>>,
+    }
+    impl ::google_field_selector::FieldSelector for ListPrintServersResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListPrintServersResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListPrintServersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3717,7 +4231,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPrinterModelsResponse {
+    impl crate::GetNextPageToken<String> for ListPrinterModelsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3760,7 +4274,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPrintersResponse {
+    impl crate::GetNextPageToken<String> for ListPrintersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3872,7 +4386,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "List of member objects."]
+        #[doc = "A list of member objects."]
         #[serde(
             rename = "members",
             default,
@@ -3897,7 +4411,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Members {
+    impl crate::GetNextPageToken<String> for Members {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4023,7 +4537,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub device_password_status: ::std::option::Option<String>,
-        #[doc = "List of owner’s email addresses. If your application needs the current list of user emails, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For additional information, see the [retrieve a user](/admin-sdk/directory/v1/guides/manage-users#get_user) method."]
+        #[doc = "The list of the owner’s email addresses. If your application needs the current list of user emails, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For additional information, see the [retrieve a user](/admin-sdk/directory/v1/guides/manage-users#get_user) method."]
         #[serde(
             rename = "email",
             default,
@@ -4121,7 +4635,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model: ::std::option::Option<String>,
-        #[doc = "List of the owner’s user names. If your application needs the current list of device owner names, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For more information about retrieving mobile device user information, see the [Developer’s Guide](/admin-sdk/directory/v1/guides/manage-users#get_user)."]
+        #[doc = "The list of the owner’s user names. If your application needs the current list of device owner names, use the [get](/admin-sdk/directory/v1/reference/mobiledevices/get.html) method. For more information about retrieving mobile device user information, see the [Developer’s Guide](/admin-sdk/directory/v1/guides/manage-users#get_user)."]
         #[serde(
             rename = "name",
             default,
@@ -4142,7 +4656,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub os: ::std::option::Option<String>,
-        #[doc = "List of accounts added on device (Read-only)"]
+        #[doc = "The list of accounts added on device (Read-only)"]
         #[serde(
             rename = "otherAccountsInfo",
             default,
@@ -4355,7 +4869,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "List of Mobile Device objects."]
+        #[doc = "A list of Mobile Device objects."]
         #[serde(
             rename = "mobiledevices",
             default,
@@ -4380,7 +4894,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for MobileDevices {
+    impl crate::GetNextPageToken<String> for MobileDevices {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4499,7 +5013,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "List of organizational unit objects."]
+        #[doc = "A list of organizational unit objects."]
         #[serde(
             rename = "organizationUnits",
             default,
@@ -4513,6 +5027,430 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for OrgUnits {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OsUpdateStatus {
+        #[doc = "Date and time of the last reboot."]
+        #[serde(
+            rename = "rebootTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reboot_time: ::std::option::Option<String>,
+        #[doc = "The update state of an OS update."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::OsUpdateStatusState>,
+        #[doc = "New required platform version from the pending updated kiosk app."]
+        #[serde(
+            rename = "targetKioskAppVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_kiosk_app_version: ::std::option::Option<String>,
+        #[doc = "New platform version of the OS image being downloaded and applied. It is only set when update status is UPDATE_STATUS_DOWNLOAD_IN_PROGRESS or UPDATE_STATUS_NEED_REBOOT. Note this could be a dummy “0.0.0.0” for UPDATE_STATUS_NEED_REBOOT for some edge cases, e.g. update engine is restarted without a reboot."]
+        #[serde(
+            rename = "targetOsVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_os_version: ::std::option::Option<String>,
+        #[doc = "Date and time of the last update check."]
+        #[serde(
+            rename = "updateCheckTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_check_time: ::std::option::Option<String>,
+        #[doc = "Date and time of the last successful OS update."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for OsUpdateStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OsUpdateStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum OsUpdateStatusState {
+        #[doc = "The pending update is being downloaded."]
+        UpdateStateDownloadInProgress,
+        #[doc = "The device is ready to install the update, but must reboot."]
+        UpdateStateNeedReboot,
+        #[doc = "There is an update pending but it hasn’t started."]
+        UpdateStateNotStarted,
+        #[doc = "The update state is unspecified."]
+        UpdateStateUnspecified,
+    }
+    impl OsUpdateStatusState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                OsUpdateStatusState::UpdateStateDownloadInProgress => {
+                    "updateStateDownloadInProgress"
+                }
+                OsUpdateStatusState::UpdateStateNeedReboot => "updateStateNeedReboot",
+                OsUpdateStatusState::UpdateStateNotStarted => "updateStateNotStarted",
+                OsUpdateStatusState::UpdateStateUnspecified => "updateStateUnspecified",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for OsUpdateStatusState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for OsUpdateStatusState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<OsUpdateStatusState, ()> {
+            Ok(match s {
+                "updateStateDownloadInProgress" => {
+                    OsUpdateStatusState::UpdateStateDownloadInProgress
+                }
+                "updateStateNeedReboot" => OsUpdateStatusState::UpdateStateNeedReboot,
+                "updateStateNotStarted" => OsUpdateStatusState::UpdateStateNotStarted,
+                "updateStateUnspecified" => OsUpdateStatusState::UpdateStateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for OsUpdateStatusState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for OsUpdateStatusState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for OsUpdateStatusState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "updateStateDownloadInProgress" => {
+                    OsUpdateStatusState::UpdateStateDownloadInProgress
+                }
+                "updateStateNeedReboot" => OsUpdateStatusState::UpdateStateNeedReboot,
+                "updateStateNotStarted" => OsUpdateStatusState::UpdateStateNotStarted,
+                "updateStateUnspecified" => OsUpdateStatusState::UpdateStateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for OsUpdateStatusState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OsUpdateStatusState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PrintServer {
+        #[doc = "Output only. Time when the print server was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Editable. Description of the print server (as shown in the Admin console)."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Editable. Display name of the print server (as shown in the Admin console)."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Immutable. ID of the print server. Leave empty when creating."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Immutable. Resource name of the print server. Leave empty when creating. Format: `customers/{customer.id}/printServers/{print_server.id}`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "ID of the organization unit (OU) that owns this print server. This value can only be set when the print server is initially created. If it’s not populated, the print server is placed under the root OU. The `org_unit_id` can be retrieved using the [Directory API](/admin-sdk/directory/reference/rest/v1/orgunits)."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
+        #[doc = "Editable. Print server URI."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PrintServer {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PrintServer {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PrintServerFailureInfo {
+        #[doc = "Canonical code for why the update failed to apply."]
+        #[serde(
+            rename = "errorCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub error_code: ::std::option::Option<crate::schemas::PrintServerFailureInfoErrorCode>,
+        #[doc = "Failure reason message."]
+        #[serde(
+            rename = "errorMessage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub error_message: ::std::option::Option<String>,
+        #[doc = "Failed print server."]
+        #[serde(
+            rename = "printServer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub print_server: ::std::option::Option<crate::schemas::PrintServer>,
+        #[doc = "ID of a failed print server."]
+        #[serde(
+            rename = "printServerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub print_server_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PrintServerFailureInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PrintServerFailureInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PrintServerFailureInfoErrorCode {
+        #[doc = "The operation was aborted, typically due to a concurrency issue such as a sequencer check failure or transaction abort. See the guidelines above for deciding between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`. HTTP Mapping: 409 Conflict"]
+        Aborted,
+        #[doc = "The entity that a client attempted to create (e.g., file or directory) already exists. HTTP Mapping: 409 Conflict"]
+        AlreadyExists,
+        #[doc = "The operation was cancelled, typically by the caller. HTTP Mapping: 499 Client Closed Request"]
+        Cancelled,
+        #[doc = "Unrecoverable data loss or corruption. HTTP Mapping: 500 Internal Server Error"]
+        DataLoss,
+        #[doc = "The deadline expired before the operation could complete. For operations that change the state of the system, this error may be returned even if the operation has completed successfully. For example, a successful response from a server could have been delayed long enough for the deadline to expire. HTTP Mapping: 504 Gateway Timeout"]
+        DeadlineExceeded,
+        #[doc = "The operation was rejected because the system is not in a state required for the operation’s execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level. For example, when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence. (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. For example, if an “rmdir” fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
+        FailedPrecondition,
+        #[doc = "Internal errors. This means that some invariants expected by the underlying system have been broken. This error code is reserved for serious errors. HTTP Mapping: 500 Internal Server Error"]
+        Internal,
+        #[doc = "The client specified an invalid argument. Note that this differs from `FAILED_PRECONDITION`. `INVALID_ARGUMENT` indicates arguments that are problematic regardless of the state of the system (e.g., a malformed file name). HTTP Mapping: 400 Bad Request"]
+        InvalidArgument,
+        #[doc = "Some requested entity (e.g., file or directory) was not found. Note to server developers: if a request is denied for an entire class of users, such as gradual feature rollout or undocumented allowlist, `NOT_FOUND` may be used. If a request is denied for some users within a class of users, such as user-based access control, `PERMISSION_DENIED` must be used. HTTP Mapping: 404 Not Found"]
+        NotFound,
+        #[doc = "Not an error; returned on success. HTTP Mapping: 200 OK"]
+        Ok,
+        #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range \\[0,2^32-1\\], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
+        OutOfRange,
+        #[doc = "The caller does not have permission to execute the specified operation. `PERMISSION_DENIED` must not be used for rejections caused by exhausting some resource (use `RESOURCE_EXHAUSTED` instead for those errors). `PERMISSION_DENIED` must not be used if the caller can not be identified (use `UNAUTHENTICATED` instead for those errors). This error code does not imply the request is valid or the requested entity exists or satisfies other pre-conditions. HTTP Mapping: 403 Forbidden"]
+        PermissionDenied,
+        #[doc = "Some resource has been exhausted, perhaps a per-user quota, or perhaps the entire file system is out of space. HTTP Mapping: 429 Too Many Requests"]
+        ResourceExhausted,
+        #[doc = "The request does not have valid authentication credentials for the operation. HTTP Mapping: 401 Unauthorized"]
+        Unauthenticated,
+        #[doc = "The service is currently unavailable. This is most likely a transient condition, which can be corrected by retrying with a backoff. Note that it is not always safe to retry non-idempotent operations. See the guidelines above for deciding between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`. HTTP Mapping: 503 Service Unavailable"]
+        Unavailable,
+        #[doc = "The operation is not implemented or is not supported/enabled in this service. HTTP Mapping: 501 Not Implemented"]
+        Unimplemented,
+        #[doc = "Unknown error. For example, this error may be returned when a `Status` value received from another address space belongs to an error space that is not known in this address space. Also errors raised by APIs that do not return enough error information may be converted to this error. HTTP Mapping: 500 Internal Server Error"]
+        Unknown,
+    }
+    impl PrintServerFailureInfoErrorCode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PrintServerFailureInfoErrorCode::Aborted => "ABORTED",
+                PrintServerFailureInfoErrorCode::AlreadyExists => "ALREADY_EXISTS",
+                PrintServerFailureInfoErrorCode::Cancelled => "CANCELLED",
+                PrintServerFailureInfoErrorCode::DataLoss => "DATA_LOSS",
+                PrintServerFailureInfoErrorCode::DeadlineExceeded => "DEADLINE_EXCEEDED",
+                PrintServerFailureInfoErrorCode::FailedPrecondition => "FAILED_PRECONDITION",
+                PrintServerFailureInfoErrorCode::Internal => "INTERNAL",
+                PrintServerFailureInfoErrorCode::InvalidArgument => "INVALID_ARGUMENT",
+                PrintServerFailureInfoErrorCode::NotFound => "NOT_FOUND",
+                PrintServerFailureInfoErrorCode::Ok => "OK",
+                PrintServerFailureInfoErrorCode::OutOfRange => "OUT_OF_RANGE",
+                PrintServerFailureInfoErrorCode::PermissionDenied => "PERMISSION_DENIED",
+                PrintServerFailureInfoErrorCode::ResourceExhausted => "RESOURCE_EXHAUSTED",
+                PrintServerFailureInfoErrorCode::Unauthenticated => "UNAUTHENTICATED",
+                PrintServerFailureInfoErrorCode::Unavailable => "UNAVAILABLE",
+                PrintServerFailureInfoErrorCode::Unimplemented => "UNIMPLEMENTED",
+                PrintServerFailureInfoErrorCode::Unknown => "UNKNOWN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PrintServerFailureInfoErrorCode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PrintServerFailureInfoErrorCode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PrintServerFailureInfoErrorCode, ()> {
+            Ok(match s {
+                "ABORTED" => PrintServerFailureInfoErrorCode::Aborted,
+                "ALREADY_EXISTS" => PrintServerFailureInfoErrorCode::AlreadyExists,
+                "CANCELLED" => PrintServerFailureInfoErrorCode::Cancelled,
+                "DATA_LOSS" => PrintServerFailureInfoErrorCode::DataLoss,
+                "DEADLINE_EXCEEDED" => PrintServerFailureInfoErrorCode::DeadlineExceeded,
+                "FAILED_PRECONDITION" => PrintServerFailureInfoErrorCode::FailedPrecondition,
+                "INTERNAL" => PrintServerFailureInfoErrorCode::Internal,
+                "INVALID_ARGUMENT" => PrintServerFailureInfoErrorCode::InvalidArgument,
+                "NOT_FOUND" => PrintServerFailureInfoErrorCode::NotFound,
+                "OK" => PrintServerFailureInfoErrorCode::Ok,
+                "OUT_OF_RANGE" => PrintServerFailureInfoErrorCode::OutOfRange,
+                "PERMISSION_DENIED" => PrintServerFailureInfoErrorCode::PermissionDenied,
+                "RESOURCE_EXHAUSTED" => PrintServerFailureInfoErrorCode::ResourceExhausted,
+                "UNAUTHENTICATED" => PrintServerFailureInfoErrorCode::Unauthenticated,
+                "UNAVAILABLE" => PrintServerFailureInfoErrorCode::Unavailable,
+                "UNIMPLEMENTED" => PrintServerFailureInfoErrorCode::Unimplemented,
+                "UNKNOWN" => PrintServerFailureInfoErrorCode::Unknown,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PrintServerFailureInfoErrorCode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PrintServerFailureInfoErrorCode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PrintServerFailureInfoErrorCode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ABORTED" => PrintServerFailureInfoErrorCode::Aborted,
+                "ALREADY_EXISTS" => PrintServerFailureInfoErrorCode::AlreadyExists,
+                "CANCELLED" => PrintServerFailureInfoErrorCode::Cancelled,
+                "DATA_LOSS" => PrintServerFailureInfoErrorCode::DataLoss,
+                "DEADLINE_EXCEEDED" => PrintServerFailureInfoErrorCode::DeadlineExceeded,
+                "FAILED_PRECONDITION" => PrintServerFailureInfoErrorCode::FailedPrecondition,
+                "INTERNAL" => PrintServerFailureInfoErrorCode::Internal,
+                "INVALID_ARGUMENT" => PrintServerFailureInfoErrorCode::InvalidArgument,
+                "NOT_FOUND" => PrintServerFailureInfoErrorCode::NotFound,
+                "OK" => PrintServerFailureInfoErrorCode::Ok,
+                "OUT_OF_RANGE" => PrintServerFailureInfoErrorCode::OutOfRange,
+                "PERMISSION_DENIED" => PrintServerFailureInfoErrorCode::PermissionDenied,
+                "RESOURCE_EXHAUSTED" => PrintServerFailureInfoErrorCode::ResourceExhausted,
+                "UNAUTHENTICATED" => PrintServerFailureInfoErrorCode::Unauthenticated,
+                "UNAVAILABLE" => PrintServerFailureInfoErrorCode::Unavailable,
+                "UNIMPLEMENTED" => PrintServerFailureInfoErrorCode::Unimplemented,
+                "UNKNOWN" => PrintServerFailureInfoErrorCode::Unknown,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PrintServerFailureInfoErrorCode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PrintServerFailureInfoErrorCode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4906,7 +5844,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RoleAssignment {
-        #[doc = "The unique ID of the user this role is assigned to."]
+        #[doc = "The unique ID of the entity this role is assigned to—either the `user_id` of a user or the `uniqueId` of a service account, as defined in [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts)."]
         #[serde(
             rename = "assignedTo",
             default,
@@ -5019,7 +5957,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for RoleAssignments {
+    impl crate::GetNextPageToken<String> for RoleAssignments {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5075,7 +6013,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Roles {
+    impl crate::GetNextPageToken<String> for Roles {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5270,7 +6208,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "List of UserSchema objects."]
+        #[doc = "A list of UserSchema objects."]
         #[serde(
             rename = "schemas",
             default,
@@ -5415,7 +6353,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct User {
-        #[doc = "A list of the user’s addresses. The maximum allowed data size for this field is 10Kb."]
+        #[doc = "The list of the user’s addresses. The maximum allowed data size for this field is 10KB."]
         #[serde(
             rename = "addresses",
             default,
@@ -5429,7 +6367,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub agreed_to_terms: ::std::option::Option<bool>,
-        #[doc = "Output only. A list of the user’s alias email addresses."]
+        #[doc = "Output only. The list of the user’s alias email addresses."]
         #[serde(
             rename = "aliases",
             default,
@@ -5479,7 +6417,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deletion_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "A list of the user’s email addresses. The maximum allowed data size for this field is 10Kb."]
+        #[doc = "The list of the user’s email addresses. The maximum allowed data size for this field is 10KB."]
         #[serde(
             rename = "emails",
             default,
@@ -5493,21 +6431,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "A list of external IDs for the user, such as an employee or network ID. The maximum allowed data size for this field is 2Kb."]
+        #[doc = "The list of external IDs for the user, such as an employee or network ID. The maximum allowed data size for this field is 2KB."]
         #[serde(
             rename = "externalIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub external_ids: ::std::option::Option<::serde_json::Value>,
-        #[doc = "The user’s gender. The maximum allowed data size for this field is 1Kb."]
+        #[doc = "The user’s gender. The maximum allowed data size for this field is 1KB."]
         #[serde(
             rename = "gender",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gender: ::std::option::Option<::serde_json::Value>,
-        #[doc = "Stores the hash format of the password property. We recommend sending the `password` property value as a base 16 bit hexadecimal-encoded hash value. The following `hashFunction` values are allowed: * `DES` * `MD5` - hash prefix is `$1$` * `SHA2-256` - hash prefix is `$5$` * `SHA2-512` - hash prefix is `$6$` If rounds are specified as part of the prefix, they must be 10,000 or fewer."]
+        #[doc = "Stores the hash format of the `password` property. The following `hashFunction` values are allowed: * `MD5` - Accepts simple hex-encoded values. * `SHA-1` - Accepts simple hex-encoded values. * `crypt` - Compliant with the [C crypt library](https://en.wikipedia.org/wiki/Crypt_%28C%29). Supports the DES, MD5 (hash prefix `$1$`), SHA-256 (hash prefix `$5$`), and SHA-512 (hash prefix `$6$`) hash algorithms. If rounds are specified as part of the prefix, they must be 10,000 or fewer."]
         #[serde(
             rename = "hashFunction",
             default,
@@ -5521,7 +6459,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "The user’s Instant Messenger (IM) accounts. A user account can have multiple ims properties. But, only one of these ims properties can be the primary IM contact. The maximum allowed data size for this field is 2Kb."]
+        #[doc = "The list of the user’s Instant Messenger (IM) accounts. A user account can have multiple ims properties. But, only one of these ims properties can be the primary IM contact. The maximum allowed data size for this field is 2KB."]
         #[serde(
             rename = "ims",
             default,
@@ -5535,7 +6473,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_in_global_address_list: ::std::option::Option<bool>,
-        #[doc = "If `true`, the user’s IP address is [whitelisted](https://support.google.com/a/answer/60752)."]
+        #[doc = "If `true`, the user’s IP address is subject to a deprecated IP address [`allowlist`](https://support.google.com/a/answer/60752) configuration."]
         #[serde(
             rename = "ipWhitelisted",
             default,
@@ -5577,7 +6515,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_mailbox_setup: ::std::option::Option<bool>,
-        #[doc = "The user’s keywords. The maximum allowed data size for this field is 1Kb."]
+        #[doc = "The list of the user’s keywords. The maximum allowed data size for this field is 1KB."]
         #[serde(
             rename = "keywords",
             default,
@@ -5591,7 +6529,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The user’s languages. The maximum allowed data size for this field is 1Kb."]
+        #[doc = "The user’s languages. The maximum allowed data size for this field is 1KB."]
         #[serde(
             rename = "languages",
             default,
@@ -5605,21 +6543,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_login_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The user’s locations. The maximum allowed data size for this field is 10Kb."]
+        #[doc = "The user’s locations. The maximum allowed data size for this field is 10KB."]
         #[serde(
             rename = "locations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locations: ::std::option::Option<::serde_json::Value>,
-        #[doc = "Holds the given and family names of the user, and the read-only `fullName` value. The maximum number of characters in the `givenName` and in the `familyName` values is 60. In addition, name values support unicode/UTF-8 characters, and can contain spaces, letters (a-z), numbers (0-9), dashes (-), forward slashes (/), and periods (.). For more information about character usage rules, see the [administration help center](https://support.google.com/a/answer/9193374). Maximum allowed data size for this field is 1Kb."]
+        #[doc = "Holds the given and family names of the user, and the read-only `fullName` value. The maximum number of characters in the `givenName` and in the `familyName` values is 60. In addition, name values support unicode/UTF-8 characters, and can contain spaces, letters (a-z), numbers (0-9), dashes (-), forward slashes (/), and periods (.). For more information about character usage rules, see the [administration help center](https://support.google.com/a/answer/9193374). Maximum allowed data size for this field is 1KB."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<crate::schemas::UserName>,
-        #[doc = "Output only. List of the user’s non-editable alias email addresses. These are typically outside the account’s primary domain or sub-domain."]
+        #[doc = "Output only. The list of the user’s non-editable alias email addresses. These are typically outside the account’s primary domain or sub-domain."]
         #[serde(
             rename = "nonEditableAliases",
             default,
@@ -5640,7 +6578,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub org_unit_path: ::std::option::Option<String>,
-        #[doc = "A list of organizations the user belongs to. The maximum allowed data size for this field is 10Kb."]
+        #[doc = "The list of organizations the user belongs to. The maximum allowed data size for this field is 10KB."]
         #[serde(
             rename = "organizations",
             default,
@@ -5654,14 +6592,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub password: ::std::option::Option<String>,
-        #[doc = "A list of the user’s phone numbers. The maximum allowed data size for this field is 1Kb."]
+        #[doc = "The list of the user’s phone numbers. The maximum allowed data size for this field is 1KB."]
         #[serde(
             rename = "phones",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub phones: ::std::option::Option<::serde_json::Value>,
-        #[doc = "A list of [POSIX](https://www.opengroup.org/austin/papers/posix_faq.html) account information for the user."]
+        #[doc = "The list of [POSIX](https://www.opengroup.org/austin/papers/posix_faq.html) account information for the user."]
         #[serde(
             rename = "posixAccounts",
             default,
@@ -5689,7 +6627,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recovery_phone: ::std::option::Option<String>,
-        #[doc = "A list of the user’s relationships to other users. The maximum allowed data size for this field is 2Kb."]
+        #[doc = "The list of the user’s relationships to other users. The maximum allowed data size for this field is 2KB."]
         #[serde(
             rename = "relations",
             default,
@@ -5731,7 +6669,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thumbnail_photo_url: ::std::option::Option<String>,
-        #[doc = "The user’s websites. The maximum allowed data size for this field is 2Kb."]
+        #[doc = "The user’s websites. The maximum allowed data size for this field is 2KB."]
         #[serde(
             rename = "websites",
             default,
@@ -5898,6 +6836,65 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UserAddress {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UserAlias {
+        #[doc = "The alias email address."]
+        #[serde(
+            rename = "alias",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alias: ::std::option::Option<String>,
+        #[doc = "ETag of the resource."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "The unique ID for the user."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "The type of the API resource. For Alias resources, the value is `admin#directory#alias`."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The user’s primary email address."]
+        #[serde(
+            rename = "primaryEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub primary_email: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UserAlias {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserAlias {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6318,6 +7315,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserName {
+        #[doc = "The user’s display name. Limit: 256 characters."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
         #[doc = "The user’s last name. Required when creating a user account."]
         #[serde(
             rename = "familyName",
@@ -6890,7 +7894,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub trigger_event: ::std::option::Option<String>,
-        #[doc = "List of user objects."]
+        #[doc = "A list of user objects."]
         #[serde(
             rename = "users",
             default,
@@ -6908,7 +7912,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Users {
+    impl crate::GetNextPageToken<String> for Users {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -8069,8 +9073,6 @@ pub mod resources {
                 SerialNumber,
                 #[doc = "Chrome device status. For more information, see the \\<a [chromeosdevices](/admin-sdk/directory/v1/reference/chromeosdevices.html)."]
                 Status,
-                #[doc = "Chrome device support end date. This is applicable only for devices purchased directly from Google."]
-                SupportEndDate,
             }
             impl ListOrderBy {
                 pub fn as_str(self) -> &'static str {
@@ -8081,7 +9083,6 @@ pub mod resources {
                         ListOrderBy::Notes => "notes",
                         ListOrderBy::SerialNumber => "serialNumber",
                         ListOrderBy::Status => "status",
-                        ListOrderBy::SupportEndDate => "supportEndDate",
                     }
                 }
             }
@@ -8100,7 +9101,6 @@ pub mod resources {
                         "notes" => ListOrderBy::Notes,
                         "serialNumber" => ListOrderBy::SerialNumber,
                         "status" => ListOrderBy::Status,
-                        "supportEndDate" => ListOrderBy::SupportEndDate,
                         _ => return Err(()),
                     })
                 }
@@ -8131,7 +9131,6 @@ pub mod resources {
                         "notes" => ListOrderBy::Notes,
                         "serialNumber" => ListOrderBy::SerialNumber,
                         "status" => ListOrderBy::Status,
-                        "supportEndDate" => ListOrderBy::SupportEndDate,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -8930,7 +9929,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Return devices from all child orgunits, as well as the specified org unit. If this is set to true ‘orgUnitPath’ must be provided."]
+            #[doc = "Return devices from all child orgunits, as well as the specified org unit. If this is set to true, ‘orgUnitPath’ must be provided."]
             pub fn include_child_orgunits(mut self, value: bool) -> Self {
                 self.include_child_orgunits = Some(value);
                 self
@@ -9069,7 +10068,7 @@ pub mod resources {
                     #[serde(rename = "chromeosdevices")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -9102,7 +10101,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -9150,7 +10149,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -9271,12 +10270,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -10824,6 +11824,16 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Actions that can be performed on the print_servers resource"]
+                pub fn print_servers(
+                    &self,
+                ) -> crate::resources::customers::chrome::print_servers::PrintServersActions
+                {
+                    crate::resources::customers::chrome::print_servers::PrintServersActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
                 #[doc = "Actions that can be performed on the printers resource"]
                 pub fn printers(
                     &self,
@@ -10832,6 +11842,1519 @@ pub mod resources {
                     crate::resources::customers::chrome::printers::PrintersActions {
                         reqwest: &self.reqwest,
                         auth: self.auth_ref(),
+                    }
+                }
+            }
+            pub mod print_servers {
+                pub mod params {}
+                pub struct PrintServersActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> PrintServersActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates multiple print servers."]
+                    pub fn batch_create_print_servers(
+                        &self,
+                        request: crate::schemas::BatchCreatePrintServersRequest,
+                        parent: impl Into<String>,
+                    ) -> BatchCreatePrintServersRequestBuilder {
+                        BatchCreatePrintServersRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
+                    #[doc = "Deletes multiple print servers."]
+                    pub fn batch_delete_print_servers(
+                        &self,
+                        request: crate::schemas::BatchDeletePrintServersRequest,
+                        parent: impl Into<String>,
+                    ) -> BatchDeletePrintServersRequestBuilder {
+                        BatchDeletePrintServersRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
+                    #[doc = "Creates a print server."]
+                    pub fn create(
+                        &self,
+                        request: crate::schemas::PrintServer,
+                        parent: impl Into<String>,
+                    ) -> CreateRequestBuilder {
+                        CreateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
+                    #[doc = "Deletes a print server."]
+                    pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                        DeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Returns a print server’s configuration."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Lists print server configurations."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            filter: None,
+                            order_by: None,
+                            org_unit_id: None,
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                    #[doc = "Updates a print server’s configuration."]
+                    pub fn patch(
+                        &self,
+                        request: crate::schemas::PrintServer,
+                        name: impl Into<String>,
+                    ) -> PatchRequestBuilder {
+                        PatchRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            update_mask: None,
+                        }
+                    }
+                }
+                #[doc = "Created via [PrintServersActions::batch_create_print_servers()](struct.PrintServersActions.html#method.batch_create_print_servers)"]
+                #[derive(Debug, Clone)]
+                pub struct BatchCreatePrintServersRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::BatchCreatePrintServersRequest,
+                    parent: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> BatchCreatePrintServersRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::BatchCreatePrintServersResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::BatchCreatePrintServersResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://admin.googleapis.com/".to_owned();
+                        output.push_str("admin/directory/v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/chrome/printServers:batchCreatePrintServers");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [PrintServersActions::batch_delete_print_servers()](struct.PrintServersActions.html#method.batch_delete_print_servers)"]
+                #[derive(Debug, Clone)]
+                pub struct BatchDeletePrintServersRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::BatchDeletePrintServersRequest,
+                    parent: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> BatchDeletePrintServersRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::BatchDeletePrintServersResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::BatchDeletePrintServersResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://admin.googleapis.com/".to_owned();
+                        output.push_str("admin/directory/v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/chrome/printServers:batchDeletePrintServers");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [PrintServersActions::create()](struct.PrintServersActions.html#method.create)"]
+                #[derive(Debug, Clone)]
+                pub struct CreateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::PrintServer,
+                    parent: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::PrintServer, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::PrintServer, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://admin.googleapis.com/".to_owned();
+                        output.push_str("admin/directory/v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/chrome/printServers");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [PrintServersActions::delete()](struct.PrintServersActions.html#method.delete)"]
+                #[derive(Debug, Clone)]
+                pub struct DeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Empty, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Empty, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://admin.googleapis.com/".to_owned();
+                        output.push_str("admin/directory/v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [PrintServersActions::get()](struct.PrintServersActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::PrintServer, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::PrintServer, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://admin.googleapis.com/".to_owned();
+                        output.push_str("admin/directory/v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [PrintServersActions::list()](struct.PrintServersActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    filter: ::std::option::Option<String>,
+                    order_by: ::std::option::Option<String>,
+                    org_unit_id: ::std::option::Option<String>,
+                    page_size: ::std::option::Option<i32>,
+                    page_token: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Search query in [Common Expression Language syntax](https://github.com/google/cel-spec). Supported filters are `display_name`, `description`, and `uri`. Example: `printServer.displayName=='marketing-queue'`."]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "Sort order for results. Supported values are `display_name`, `description`, or `create_time`. Default order is ascending, but descending order can be returned by appending “desc” to the `order_by` field. For instance, `orderBy=='description desc'` returns the print servers sorted by description in descending order."]
+                    pub fn order_by(mut self, value: impl Into<String>) -> Self {
+                        self.order_by = Some(value.into());
+                        self
+                    }
+                    #[doc = "If `org_unit_id` is present in the request, only print servers owned or inherited by the organizational unit (OU) are returned. If the `PrintServer` resource’s `org_unit_id` matches the one in the request, the OU owns the server. If `org_unit_id` is not specified in the request, all print servers are returned or filtered against."]
+                    pub fn org_unit_id(mut self, value: impl Into<String>) -> Self {
+                        self.org_unit_id = Some(value.into());
+                        self
+                    }
+                    #[doc = "The maximum number of objects to return (default `100`, max `100`). The service might return fewer than this value."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "A generated token to paginate results (the `next_page_token` from a previous call)."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `printServers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                    pub fn stream_print_servers<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_print_servers_with_fields(fields)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `printServers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                    pub fn stream_print_servers_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::PrintServer, crate::Error>,
+                    > + 'a {
+                        self.stream_print_servers_with_fields(None::<String>)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `printServers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                    pub fn stream_print_servers_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::PrintServer, crate::Error>,
+                    > + 'a {
+                        self.stream_print_servers_with_fields(Some("*"))
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `printServers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                    pub fn stream_print_servers_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                        struct Page<T> {
+                            #[serde(rename = "nextPageToken")]
+                            pub next_page_token: ::std::option::Option<String>,
+                            #[serde(rename = "printServers")]
+                            pub items: Vec<T>,
+                        }
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
+                            fn next_page_token(&self) -> ::std::option::Option<String> {
+                                self.next_page_token.to_owned()
+                            }
+                        }
+                        impl<T> crate::stream::IntoPageItems for Page<T> {
+                            type Items = Vec<T>;
+                            fn into_page_items(self) -> Self::Items {
+                                self.items
+                            }
+                        }
+                        self.fields = Some({
+                            let mut selector = concat!("nextPageToken,", "printServers").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::stream::page_item_stream::<_, Page<T>>(self)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                    pub fn stream<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String>
+                            + ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_with_fields(fields)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the default set of fields from the server."]
+                    pub fn stream_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::ListPrintServersResponse, crate::Error>,
+                    > + 'a {
+                        self.stream_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests all fields from the server."]
+                    pub fn stream_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::ListPrintServersResponse, crate::Error>,
+                    > + 'a {
+                        self.stream_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                    #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    pub fn stream_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::stream::page_stream(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListPrintServersResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListPrintServersResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://admin.googleapis.com/".to_owned();
+                        output.push_str("admin/directory/v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/chrome/printServers");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("orderBy", &self.order_by)]);
+                        req = req.query(&[("orgUnitId", &self.org_unit_id)]);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[async_trait::async_trait]
+                impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                    {
+                        self._execute().await
+                    }
+                }
+                #[doc = "Created via [PrintServersActions::patch()](struct.PrintServersActions.html#method.patch)"]
+                #[derive(Debug, Clone)]
+                pub struct PatchRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::PrintServer,
+                    name: String,
+                    update_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> PatchRequestBuilder<'a> {
+                    #[doc = "The list of fields to update. Some fields are read-only and cannot be updated. Values for unspecified fields are patched."]
+                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                        self.update_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::PrintServer, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::PrintServer, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://admin.googleapis.com/".to_owned();
+                        output.push_str("admin/directory/v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
                     }
                 }
             }
@@ -11985,7 +14508,7 @@ pub mod resources {
                             #[serde(rename = "printers")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -12020,7 +14543,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -12070,7 +14593,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -12191,12 +14714,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -12332,7 +14856,7 @@ pub mod resources {
                             #[serde(rename = "printerModels")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -12368,7 +14892,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -12418,7 +14942,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -12537,12 +15061,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListPrinterModelsRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -14889,7 +17414,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "The unique ID for the customer’s Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. As an account administrator, you can also use the `my_customer` alias to represent your account’s `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users)"]
+            #[doc = "The unique ID for the customer’s Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account’s `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter."]
             pub fn customer(mut self, value: impl Into<String>) -> Self {
                 self.customer = Some(value.into());
                 self
@@ -15025,7 +17550,7 @@ pub mod resources {
                     #[serde(rename = "groups")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -15058,7 +17583,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -15106,7 +17631,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -15219,12 +17744,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -16130,7 +18656,7 @@ pub mod resources {
                     member_key: member_key.into(),
                 }
             }
-            #[doc = "Checks whether the given user is a member of the group. Membership can be direct or nested."]
+            #[doc = "Checks whether the given user is a member of the group. Membership can be direct or nested, but if nested, the `memberKey` and `groupKey` must be entities in the same domain or an `Invalid input` error is returned. To check for nested memberships that include entities outside of the group’s domain, use the [`checkTransitiveMembership()`](https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/checkTransitiveMembership) method in the Cloud Identity Groups API."]
             pub fn has_member(
                 &self,
                 group_key: impl Into<String>,
@@ -16178,7 +18704,7 @@ pub mod resources {
                     group_key: group_key.into(),
                 }
             }
-            #[doc = "Retrieves a paginated list of all members in a group."]
+            #[doc = "Retrieves a paginated list of all members in a group. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes)."]
             pub fn list(&self, group_key: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -17003,7 +19529,7 @@ pub mod resources {
                     #[serde(rename = "members")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -17036,7 +19562,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -17084,7 +19610,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -17201,12 +19727,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -17954,7 +20481,7 @@ pub mod resources {
                     projection: None,
                 }
             }
-            #[doc = "Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead."]
+            #[doc = "Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes)."]
             pub fn list(&self, customer_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -18549,7 +21076,7 @@ pub mod resources {
                     #[serde(rename = "mobiledevices")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -18582,7 +21109,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -18630,7 +21157,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -18749,12 +21276,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -21145,7 +23673,7 @@ pub mod resources {
                         #[serde(rename = "buildings")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -21180,7 +23708,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -21228,7 +23756,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -21343,12 +23871,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -22460,7 +24989,7 @@ pub mod resources {
                         #[serde(rename = "items")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -22495,7 +25024,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -22545,7 +25074,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -22662,12 +25191,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -23765,7 +26295,7 @@ pub mod resources {
                         #[serde(rename = "features")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -23800,7 +26330,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -23848,7 +26378,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -23963,12 +26493,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -25121,7 +27652,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -25154,7 +27685,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -25202,7 +27733,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -25319,12 +27850,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -26054,7 +28586,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -26087,7 +28619,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -26135,7 +28667,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -26250,12 +28782,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -29402,7 +31935,7 @@ pub mod resources {
                     user_key: user_key.into(),
                 }
             }
-            #[doc = "Updates a user using patch semantics. The update method should be used instead, since it also supports patch semantics and has better performance. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead."]
+            #[doc = "Updates a user using patch semantics. The update method should be used instead, because it also supports patch semantics and has better performance. If you’re mapping an external identity to a Google identity, use the [`update`](https://developers.google.com/admin-sdk/directory/v1/reference/users/update) method instead of the `patch` method. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead."]
             pub fn patch(
                 &self,
                 request: crate::schemas::User,
@@ -29469,7 +32002,7 @@ pub mod resources {
                     user_key: user_key.into(),
                 }
             }
-            #[doc = "Updates a user. This method supports patch semantics, meaning you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared."]
+            #[doc = "Updates a user. This method supports patch semantics, meaning that you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared. For repeating fields that contain arrays, individual items in the array can’t be patched piecemeal; they must be supplied in the request body with the desired values for all items. See the [user accounts guide](https://developers.google.com/admin-sdk/directory/v1/guides/manage-users#update_user) for more information."]
             pub fn update(
                 &self,
                 request: crate::schemas::User,
@@ -30021,7 +32554,7 @@ pub mod resources {
                 self.custom_field_mask = Some(value.into());
                 self
             }
-            #[doc = "The unique ID for the customer’s Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account’s `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users). Either the `customer` or the `domain` parameter must be provided."]
+            #[doc = "The unique ID for the customer’s Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account’s `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter."]
             pub fn customer(mut self, value: impl Into<String>) -> Self {
                 self.customer = Some(value.into());
                 self
@@ -30175,7 +32708,7 @@ pub mod resources {
                     #[serde(rename = "users")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -30208,7 +32741,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -30256,7 +32789,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -30373,12 +32906,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -33573,16 +36107,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -33602,13 +36138,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -33616,7 +36155,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -33643,7 +36182,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

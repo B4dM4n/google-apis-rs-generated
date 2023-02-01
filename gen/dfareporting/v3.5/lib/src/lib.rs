@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [account_active_ad_summaries](resources/account_active_ad_summaries/struct.AccountActiveAdSummariesActions.html)\n  * [*get*](resources/account_active_ad_summaries/struct.GetRequestBuilder.html)\n* [account_permission_groups](resources/account_permission_groups/struct.AccountPermissionGroupsActions.html)\n  * [*get*](resources/account_permission_groups/struct.GetRequestBuilder.html), [*list*](resources/account_permission_groups/struct.ListRequestBuilder.html)\n* [account_permissions](resources/account_permissions/struct.AccountPermissionsActions.html)\n  * [*get*](resources/account_permissions/struct.GetRequestBuilder.html), [*list*](resources/account_permissions/struct.ListRequestBuilder.html)\n* [account_user_profiles](resources/account_user_profiles/struct.AccountUserProfilesActions.html)\n  * [*get*](resources/account_user_profiles/struct.GetRequestBuilder.html), [*insert*](resources/account_user_profiles/struct.InsertRequestBuilder.html), [*list*](resources/account_user_profiles/struct.ListRequestBuilder.html), [*patch*](resources/account_user_profiles/struct.PatchRequestBuilder.html), [*update*](resources/account_user_profiles/struct.UpdateRequestBuilder.html)\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [*get*](resources/accounts/struct.GetRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*patch*](resources/accounts/struct.PatchRequestBuilder.html), [*update*](resources/accounts/struct.UpdateRequestBuilder.html)\n* [ads](resources/ads/struct.AdsActions.html)\n  * [*get*](resources/ads/struct.GetRequestBuilder.html), [*insert*](resources/ads/struct.InsertRequestBuilder.html), [*list*](resources/ads/struct.ListRequestBuilder.html), [*patch*](resources/ads/struct.PatchRequestBuilder.html), [*update*](resources/ads/struct.UpdateRequestBuilder.html)\n* [advertiser_groups](resources/advertiser_groups/struct.AdvertiserGroupsActions.html)\n  * [*delete*](resources/advertiser_groups/struct.DeleteRequestBuilder.html), [*get*](resources/advertiser_groups/struct.GetRequestBuilder.html), [*insert*](resources/advertiser_groups/struct.InsertRequestBuilder.html), [*list*](resources/advertiser_groups/struct.ListRequestBuilder.html), [*patch*](resources/advertiser_groups/struct.PatchRequestBuilder.html), [*update*](resources/advertiser_groups/struct.UpdateRequestBuilder.html)\n* [advertiser_landing_pages](resources/advertiser_landing_pages/struct.AdvertiserLandingPagesActions.html)\n  * [*get*](resources/advertiser_landing_pages/struct.GetRequestBuilder.html), [*insert*](resources/advertiser_landing_pages/struct.InsertRequestBuilder.html), [*list*](resources/advertiser_landing_pages/struct.ListRequestBuilder.html), [*patch*](resources/advertiser_landing_pages/struct.PatchRequestBuilder.html), [*update*](resources/advertiser_landing_pages/struct.UpdateRequestBuilder.html)\n* [advertisers](resources/advertisers/struct.AdvertisersActions.html)\n  * [*get*](resources/advertisers/struct.GetRequestBuilder.html), [*insert*](resources/advertisers/struct.InsertRequestBuilder.html), [*list*](resources/advertisers/struct.ListRequestBuilder.html), [*patch*](resources/advertisers/struct.PatchRequestBuilder.html), [*update*](resources/advertisers/struct.UpdateRequestBuilder.html)\n* [browsers](resources/browsers/struct.BrowsersActions.html)\n  * [*list*](resources/browsers/struct.ListRequestBuilder.html)\n* [campaign_creative_associations](resources/campaign_creative_associations/struct.CampaignCreativeAssociationsActions.html)\n  * [*insert*](resources/campaign_creative_associations/struct.InsertRequestBuilder.html), [*list*](resources/campaign_creative_associations/struct.ListRequestBuilder.html)\n* [campaigns](resources/campaigns/struct.CampaignsActions.html)\n  * [*get*](resources/campaigns/struct.GetRequestBuilder.html), [*insert*](resources/campaigns/struct.InsertRequestBuilder.html), [*list*](resources/campaigns/struct.ListRequestBuilder.html), [*patch*](resources/campaigns/struct.PatchRequestBuilder.html), [*update*](resources/campaigns/struct.UpdateRequestBuilder.html)\n* [change_logs](resources/change_logs/struct.ChangeLogsActions.html)\n  * [*get*](resources/change_logs/struct.GetRequestBuilder.html), [*list*](resources/change_logs/struct.ListRequestBuilder.html)\n* [cities](resources/cities/struct.CitiesActions.html)\n  * [*list*](resources/cities/struct.ListRequestBuilder.html)\n* [connection_types](resources/connection_types/struct.ConnectionTypesActions.html)\n  * [*get*](resources/connection_types/struct.GetRequestBuilder.html), [*list*](resources/connection_types/struct.ListRequestBuilder.html)\n* [content_categories](resources/content_categories/struct.ContentCategoriesActions.html)\n  * [*delete*](resources/content_categories/struct.DeleteRequestBuilder.html), [*get*](resources/content_categories/struct.GetRequestBuilder.html), [*insert*](resources/content_categories/struct.InsertRequestBuilder.html), [*list*](resources/content_categories/struct.ListRequestBuilder.html), [*patch*](resources/content_categories/struct.PatchRequestBuilder.html), [*update*](resources/content_categories/struct.UpdateRequestBuilder.html)\n* [conversions](resources/conversions/struct.ConversionsActions.html)\n  * [*batchinsert*](resources/conversions/struct.BatchinsertRequestBuilder.html), [*batchupdate*](resources/conversions/struct.BatchupdateRequestBuilder.html)\n* [countries](resources/countries/struct.CountriesActions.html)\n  * [*get*](resources/countries/struct.GetRequestBuilder.html), [*list*](resources/countries/struct.ListRequestBuilder.html)\n* [creative_assets](resources/creative_assets/struct.CreativeAssetsActions.html)\n  * [*insert*](resources/creative_assets/struct.InsertRequestBuilder.html)\n* [creative_field_values](resources/creative_field_values/struct.CreativeFieldValuesActions.html)\n  * [*delete*](resources/creative_field_values/struct.DeleteRequestBuilder.html), [*get*](resources/creative_field_values/struct.GetRequestBuilder.html), [*insert*](resources/creative_field_values/struct.InsertRequestBuilder.html), [*list*](resources/creative_field_values/struct.ListRequestBuilder.html), [*patch*](resources/creative_field_values/struct.PatchRequestBuilder.html), [*update*](resources/creative_field_values/struct.UpdateRequestBuilder.html)\n* [creative_fields](resources/creative_fields/struct.CreativeFieldsActions.html)\n  * [*delete*](resources/creative_fields/struct.DeleteRequestBuilder.html), [*get*](resources/creative_fields/struct.GetRequestBuilder.html), [*insert*](resources/creative_fields/struct.InsertRequestBuilder.html), [*list*](resources/creative_fields/struct.ListRequestBuilder.html), [*patch*](resources/creative_fields/struct.PatchRequestBuilder.html), [*update*](resources/creative_fields/struct.UpdateRequestBuilder.html)\n* [creative_groups](resources/creative_groups/struct.CreativeGroupsActions.html)\n  * [*get*](resources/creative_groups/struct.GetRequestBuilder.html), [*insert*](resources/creative_groups/struct.InsertRequestBuilder.html), [*list*](resources/creative_groups/struct.ListRequestBuilder.html), [*patch*](resources/creative_groups/struct.PatchRequestBuilder.html), [*update*](resources/creative_groups/struct.UpdateRequestBuilder.html)\n* [creatives](resources/creatives/struct.CreativesActions.html)\n  * [*get*](resources/creatives/struct.GetRequestBuilder.html), [*insert*](resources/creatives/struct.InsertRequestBuilder.html), [*list*](resources/creatives/struct.ListRequestBuilder.html), [*patch*](resources/creatives/struct.PatchRequestBuilder.html), [*update*](resources/creatives/struct.UpdateRequestBuilder.html)\n* [dimension_values](resources/dimension_values/struct.DimensionValuesActions.html)\n  * [*query*](resources/dimension_values/struct.QueryRequestBuilder.html)\n* [directory_sites](resources/directory_sites/struct.DirectorySitesActions.html)\n  * [*get*](resources/directory_sites/struct.GetRequestBuilder.html), [*insert*](resources/directory_sites/struct.InsertRequestBuilder.html), [*list*](resources/directory_sites/struct.ListRequestBuilder.html)\n* [dynamic_targeting_keys](resources/dynamic_targeting_keys/struct.DynamicTargetingKeysActions.html)\n  * [*delete*](resources/dynamic_targeting_keys/struct.DeleteRequestBuilder.html), [*insert*](resources/dynamic_targeting_keys/struct.InsertRequestBuilder.html), [*list*](resources/dynamic_targeting_keys/struct.ListRequestBuilder.html)\n* [event_tags](resources/event_tags/struct.EventTagsActions.html)\n  * [*delete*](resources/event_tags/struct.DeleteRequestBuilder.html), [*get*](resources/event_tags/struct.GetRequestBuilder.html), [*insert*](resources/event_tags/struct.InsertRequestBuilder.html), [*list*](resources/event_tags/struct.ListRequestBuilder.html), [*patch*](resources/event_tags/struct.PatchRequestBuilder.html), [*update*](resources/event_tags/struct.UpdateRequestBuilder.html)\n* [files](resources/files/struct.FilesActions.html)\n  * [*get*](resources/files/struct.GetRequestBuilder.html), [*list*](resources/files/struct.ListRequestBuilder.html)\n* [floodlight_activities](resources/floodlight_activities/struct.FloodlightActivitiesActions.html)\n  * [*delete*](resources/floodlight_activities/struct.DeleteRequestBuilder.html), [*generatetag*](resources/floodlight_activities/struct.GeneratetagRequestBuilder.html), [*get*](resources/floodlight_activities/struct.GetRequestBuilder.html), [*insert*](resources/floodlight_activities/struct.InsertRequestBuilder.html), [*list*](resources/floodlight_activities/struct.ListRequestBuilder.html), [*patch*](resources/floodlight_activities/struct.PatchRequestBuilder.html), [*update*](resources/floodlight_activities/struct.UpdateRequestBuilder.html)\n* [floodlight_activity_groups](resources/floodlight_activity_groups/struct.FloodlightActivityGroupsActions.html)\n  * [*get*](resources/floodlight_activity_groups/struct.GetRequestBuilder.html), [*insert*](resources/floodlight_activity_groups/struct.InsertRequestBuilder.html), [*list*](resources/floodlight_activity_groups/struct.ListRequestBuilder.html), [*patch*](resources/floodlight_activity_groups/struct.PatchRequestBuilder.html), [*update*](resources/floodlight_activity_groups/struct.UpdateRequestBuilder.html)\n* [floodlight_configurations](resources/floodlight_configurations/struct.FloodlightConfigurationsActions.html)\n  * [*get*](resources/floodlight_configurations/struct.GetRequestBuilder.html), [*list*](resources/floodlight_configurations/struct.ListRequestBuilder.html), [*patch*](resources/floodlight_configurations/struct.PatchRequestBuilder.html), [*update*](resources/floodlight_configurations/struct.UpdateRequestBuilder.html)\n* [inventory_items](resources/inventory_items/struct.InventoryItemsActions.html)\n  * [*get*](resources/inventory_items/struct.GetRequestBuilder.html), [*list*](resources/inventory_items/struct.ListRequestBuilder.html)\n* [languages](resources/languages/struct.LanguagesActions.html)\n  * [*list*](resources/languages/struct.ListRequestBuilder.html)\n* [metros](resources/metros/struct.MetrosActions.html)\n  * [*list*](resources/metros/struct.ListRequestBuilder.html)\n* [mobile_apps](resources/mobile_apps/struct.MobileAppsActions.html)\n  * [*get*](resources/mobile_apps/struct.GetRequestBuilder.html), [*list*](resources/mobile_apps/struct.ListRequestBuilder.html)\n* [mobile_carriers](resources/mobile_carriers/struct.MobileCarriersActions.html)\n  * [*get*](resources/mobile_carriers/struct.GetRequestBuilder.html), [*list*](resources/mobile_carriers/struct.ListRequestBuilder.html)\n* [operating_system_versions](resources/operating_system_versions/struct.OperatingSystemVersionsActions.html)\n  * [*get*](resources/operating_system_versions/struct.GetRequestBuilder.html), [*list*](resources/operating_system_versions/struct.ListRequestBuilder.html)\n* [operating_systems](resources/operating_systems/struct.OperatingSystemsActions.html)\n  * [*get*](resources/operating_systems/struct.GetRequestBuilder.html), [*list*](resources/operating_systems/struct.ListRequestBuilder.html)\n* [order_documents](resources/order_documents/struct.OrderDocumentsActions.html)\n  * [*get*](resources/order_documents/struct.GetRequestBuilder.html), [*list*](resources/order_documents/struct.ListRequestBuilder.html)\n* [orders](resources/orders/struct.OrdersActions.html)\n  * [*get*](resources/orders/struct.GetRequestBuilder.html), [*list*](resources/orders/struct.ListRequestBuilder.html)\n* [placement_groups](resources/placement_groups/struct.PlacementGroupsActions.html)\n  * [*get*](resources/placement_groups/struct.GetRequestBuilder.html), [*insert*](resources/placement_groups/struct.InsertRequestBuilder.html), [*list*](resources/placement_groups/struct.ListRequestBuilder.html), [*patch*](resources/placement_groups/struct.PatchRequestBuilder.html), [*update*](resources/placement_groups/struct.UpdateRequestBuilder.html)\n* [placement_strategies](resources/placement_strategies/struct.PlacementStrategiesActions.html)\n  * [*delete*](resources/placement_strategies/struct.DeleteRequestBuilder.html), [*get*](resources/placement_strategies/struct.GetRequestBuilder.html), [*insert*](resources/placement_strategies/struct.InsertRequestBuilder.html), [*list*](resources/placement_strategies/struct.ListRequestBuilder.html), [*patch*](resources/placement_strategies/struct.PatchRequestBuilder.html), [*update*](resources/placement_strategies/struct.UpdateRequestBuilder.html)\n* [placements](resources/placements/struct.PlacementsActions.html)\n  * [*generatetags*](resources/placements/struct.GeneratetagsRequestBuilder.html), [*get*](resources/placements/struct.GetRequestBuilder.html), [*insert*](resources/placements/struct.InsertRequestBuilder.html), [*list*](resources/placements/struct.ListRequestBuilder.html), [*patch*](resources/placements/struct.PatchRequestBuilder.html), [*update*](resources/placements/struct.UpdateRequestBuilder.html)\n* [platform_types](resources/platform_types/struct.PlatformTypesActions.html)\n  * [*get*](resources/platform_types/struct.GetRequestBuilder.html), [*list*](resources/platform_types/struct.ListRequestBuilder.html)\n* [postal_codes](resources/postal_codes/struct.PostalCodesActions.html)\n  * [*get*](resources/postal_codes/struct.GetRequestBuilder.html), [*list*](resources/postal_codes/struct.ListRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*get*](resources/projects/struct.GetRequestBuilder.html), [*list*](resources/projects/struct.ListRequestBuilder.html)\n* [regions](resources/regions/struct.RegionsActions.html)\n  * [*list*](resources/regions/struct.ListRequestBuilder.html)\n* [remarketing_list_shares](resources/remarketing_list_shares/struct.RemarketingListSharesActions.html)\n  * [*get*](resources/remarketing_list_shares/struct.GetRequestBuilder.html), [*patch*](resources/remarketing_list_shares/struct.PatchRequestBuilder.html), [*update*](resources/remarketing_list_shares/struct.UpdateRequestBuilder.html)\n* [remarketing_lists](resources/remarketing_lists/struct.RemarketingListsActions.html)\n  * [*get*](resources/remarketing_lists/struct.GetRequestBuilder.html), [*insert*](resources/remarketing_lists/struct.InsertRequestBuilder.html), [*list*](resources/remarketing_lists/struct.ListRequestBuilder.html), [*patch*](resources/remarketing_lists/struct.PatchRequestBuilder.html), [*update*](resources/remarketing_lists/struct.UpdateRequestBuilder.html)\n* [reports](resources/reports/struct.ReportsActions.html)\n  * [*delete*](resources/reports/struct.DeleteRequestBuilder.html), [*get*](resources/reports/struct.GetRequestBuilder.html), [*insert*](resources/reports/struct.InsertRequestBuilder.html), [*list*](resources/reports/struct.ListRequestBuilder.html), [*patch*](resources/reports/struct.PatchRequestBuilder.html), [*run*](resources/reports/struct.RunRequestBuilder.html), [*update*](resources/reports/struct.UpdateRequestBuilder.html)\n  * [compatible_fields](resources/reports/compatible_fields/struct.CompatibleFieldsActions.html)\n    * [*query*](resources/reports/compatible_fields/struct.QueryRequestBuilder.html)\n  * [files](resources/reports/files/struct.FilesActions.html)\n    * [*get*](resources/reports/files/struct.GetRequestBuilder.html), [*list*](resources/reports/files/struct.ListRequestBuilder.html)\n* [sites](resources/sites/struct.SitesActions.html)\n  * [*get*](resources/sites/struct.GetRequestBuilder.html), [*insert*](resources/sites/struct.InsertRequestBuilder.html), [*list*](resources/sites/struct.ListRequestBuilder.html), [*patch*](resources/sites/struct.PatchRequestBuilder.html), [*update*](resources/sites/struct.UpdateRequestBuilder.html)\n* [sizes](resources/sizes/struct.SizesActions.html)\n  * [*get*](resources/sizes/struct.GetRequestBuilder.html), [*insert*](resources/sizes/struct.InsertRequestBuilder.html), [*list*](resources/sizes/struct.ListRequestBuilder.html)\n* [subaccounts](resources/subaccounts/struct.SubaccountsActions.html)\n  * [*get*](resources/subaccounts/struct.GetRequestBuilder.html), [*insert*](resources/subaccounts/struct.InsertRequestBuilder.html), [*list*](resources/subaccounts/struct.ListRequestBuilder.html), [*patch*](resources/subaccounts/struct.PatchRequestBuilder.html), [*update*](resources/subaccounts/struct.UpdateRequestBuilder.html)\n* [targetable_remarketing_lists](resources/targetable_remarketing_lists/struct.TargetableRemarketingListsActions.html)\n  * [*get*](resources/targetable_remarketing_lists/struct.GetRequestBuilder.html), [*list*](resources/targetable_remarketing_lists/struct.ListRequestBuilder.html)\n* [targeting_templates](resources/targeting_templates/struct.TargetingTemplatesActions.html)\n  * [*get*](resources/targeting_templates/struct.GetRequestBuilder.html), [*insert*](resources/targeting_templates/struct.InsertRequestBuilder.html), [*list*](resources/targeting_templates/struct.ListRequestBuilder.html), [*patch*](resources/targeting_templates/struct.PatchRequestBuilder.html), [*update*](resources/targeting_templates/struct.UpdateRequestBuilder.html)\n* [user_profiles](resources/user_profiles/struct.UserProfilesActions.html)\n  * [*get*](resources/user_profiles/struct.GetRequestBuilder.html), [*list*](resources/user_profiles/struct.ListRequestBuilder.html)\n* [user_role_permission_groups](resources/user_role_permission_groups/struct.UserRolePermissionGroupsActions.html)\n  * [*get*](resources/user_role_permission_groups/struct.GetRequestBuilder.html), [*list*](resources/user_role_permission_groups/struct.ListRequestBuilder.html)\n* [user_role_permissions](resources/user_role_permissions/struct.UserRolePermissionsActions.html)\n  * [*get*](resources/user_role_permissions/struct.GetRequestBuilder.html), [*list*](resources/user_role_permissions/struct.ListRequestBuilder.html)\n* [user_roles](resources/user_roles/struct.UserRolesActions.html)\n  * [*delete*](resources/user_roles/struct.DeleteRequestBuilder.html), [*get*](resources/user_roles/struct.GetRequestBuilder.html), [*insert*](resources/user_roles/struct.InsertRequestBuilder.html), [*list*](resources/user_roles/struct.ListRequestBuilder.html), [*patch*](resources/user_roles/struct.PatchRequestBuilder.html), [*update*](resources/user_roles/struct.UpdateRequestBuilder.html)\n* [video_formats](resources/video_formats/struct.VideoFormatsActions.html)\n  * [*get*](resources/video_formats/struct.GetRequestBuilder.html), [*list*](resources/video_formats/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage DoubleClick Digital Marketing conversions\n\n`https://www.googleapis.com/auth/ddmconversions`"]
@@ -1206,7 +1207,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AccountUserProfilesListResponse {
+    impl crate::GetNextPageToken<String> for AccountUserProfilesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1256,7 +1257,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AccountsListResponse {
+    impl crate::GetNextPageToken<String> for AccountsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2104,7 +2105,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AdsListResponse {
+    impl crate::GetNextPageToken<String> for AdsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2422,7 +2423,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AdvertiserGroupsListResponse {
+    impl crate::GetNextPageToken<String> for AdvertiserGroupsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2472,7 +2473,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AdvertiserLandingPagesListResponse {
+    impl crate::GetNextPageToken<String> for AdvertiserLandingPagesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2522,7 +2523,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AdvertisersListResponse {
+    impl crate::GetNextPageToken<String> for AdvertisersListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2917,7 +2918,7 @@ pub mod schemas {
         )]
         pub measurement_partner_link:
             ::std::option::Option<crate::schemas::MeasurementPartnerCampaignLink>,
-        #[doc = "Name of this campaign. This is a required field and must be less than 256 characters long and unique among campaigns of the same advertiser."]
+        #[doc = "Name of this campaign. This is a required field and must be less than 512 characters long and unique among campaigns of the same advertiser."]
         #[serde(
             rename = "name",
             default,
@@ -3048,7 +3049,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CampaignCreativeAssociationsListResponse {
+    impl crate::GetNextPageToken<String> for CampaignCreativeAssociationsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3098,7 +3099,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CampaignsListResponse {
+    impl crate::GetNextPageToken<String> for CampaignsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3275,7 +3276,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ChangeLogsListResponse {
+    impl crate::GetNextPageToken<String> for ChangeLogsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3949,7 +3950,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ContentCategoriesListResponse {
+    impl crate::GetNextPageToken<String> for ContentCategoriesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5115,6 +5116,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CreativeAuthoringSource {
+        CreativeAuthoringSourceAcs,
         CreativeAuthoringSourceDbm,
         CreativeAuthoringSourceDcm,
         CreativeAuthoringSourceGwd,
@@ -5123,6 +5125,9 @@ pub mod schemas {
     impl CreativeAuthoringSource {
         pub fn as_str(self) -> &'static str {
             match self {
+                CreativeAuthoringSource::CreativeAuthoringSourceAcs => {
+                    "CREATIVE_AUTHORING_SOURCE_ACS"
+                }
                 CreativeAuthoringSource::CreativeAuthoringSourceDbm => {
                     "CREATIVE_AUTHORING_SOURCE_DBM"
                 }
@@ -5147,6 +5152,9 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<CreativeAuthoringSource, ()> {
             Ok(match s {
+                "CREATIVE_AUTHORING_SOURCE_ACS" => {
+                    CreativeAuthoringSource::CreativeAuthoringSourceAcs
+                }
                 "CREATIVE_AUTHORING_SOURCE_DBM" => {
                     CreativeAuthoringSource::CreativeAuthoringSourceDbm
                 }
@@ -5183,6 +5191,9 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "CREATIVE_AUTHORING_SOURCE_ACS" => {
+                    CreativeAuthoringSource::CreativeAuthoringSourceAcs
+                }
                 "CREATIVE_AUTHORING_SOURCE_DBM" => {
                     CreativeAuthoringSource::CreativeAuthoringSourceDbm
                 }
@@ -8141,6 +8152,7 @@ pub mod schemas {
         Html5FeatureUnsupported,
         LinkedFileNotFound,
         MaxFlashVersion11,
+        MissingEnablerReference,
         MraidReferenced,
         NotSslCompliant,
         OrphanedAsset,
@@ -8205,6 +8217,9 @@ pub mod schemas {
                 }
                 CreativeAssetMetadataWarnedValidationRulesItems::MaxFlashVersion11 => {
                     "MAX_FLASH_VERSION_11"
+                }
+                CreativeAssetMetadataWarnedValidationRulesItems::MissingEnablerReference => {
+                    "MISSING_ENABLER_REFERENCE"
                 }
                 CreativeAssetMetadataWarnedValidationRulesItems::MraidReferenced => {
                     "MRAID_REFERENCED"
@@ -8286,6 +8301,9 @@ pub mod schemas {
                 }
                 "MAX_FLASH_VERSION_11" => {
                     CreativeAssetMetadataWarnedValidationRulesItems::MaxFlashVersion11
+                }
+                "MISSING_ENABLER_REFERENCE" => {
+                    CreativeAssetMetadataWarnedValidationRulesItems::MissingEnablerReference
                 }
                 "MRAID_REFERENCED" => {
                     CreativeAssetMetadataWarnedValidationRulesItems::MraidReferenced
@@ -8377,6 +8395,9 @@ pub mod schemas {
                 }
                 "MAX_FLASH_VERSION_11" => {
                     CreativeAssetMetadataWarnedValidationRulesItems::MaxFlashVersion11
+                }
+                "MISSING_ENABLER_REFERENCE" => {
+                    CreativeAssetMetadataWarnedValidationRulesItems::MissingEnablerReference
                 }
                 "MRAID_REFERENCED" => {
                     CreativeAssetMetadataWarnedValidationRulesItems::MraidReferenced
@@ -9167,7 +9188,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CreativeFieldValuesListResponse {
+    impl crate::GetNextPageToken<String> for CreativeFieldValuesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -9217,7 +9238,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CreativeFieldsListResponse {
+    impl crate::GetNextPageToken<String> for CreativeFieldsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -9474,7 +9495,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CreativeGroupsListResponse {
+    impl crate::GetNextPageToken<String> for CreativeGroupsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -9904,7 +9925,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CreativesListResponse {
+    impl crate::GetNextPageToken<String> for CreativesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -11538,7 +11559,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DimensionValueList {
+    impl crate::GetNextPageToken<String> for DimensionValueList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -11962,7 +11983,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DirectorySitesListResponse {
+    impl crate::GetNextPageToken<String> for DirectorySitesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -13216,7 +13237,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for FileList {
+    impl crate::GetNextPageToken<String> for FileList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -13363,7 +13384,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for FloodlightActivitiesListResponse {
+    impl crate::GetNextPageToken<String> for FloodlightActivitiesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -14799,7 +14820,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for FloodlightActivityGroupsListResponse {
+    impl crate::GetNextPageToken<String> for FloodlightActivityGroupsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -15796,7 +15817,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for InventoryItemsListResponse {
+    impl crate::GetNextPageToken<String> for InventoryItemsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -16562,12 +16583,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MeasurementPartnerAdvertiserLinkMeasurementPartner {
+        DoubleVerify,
         IntegralAdScience,
         None,
     }
     impl MeasurementPartnerAdvertiserLinkMeasurementPartner {
         pub fn as_str(self) -> &'static str {
             match self {
+                MeasurementPartnerAdvertiserLinkMeasurementPartner::DoubleVerify => "DOUBLE_VERIFY",
                 MeasurementPartnerAdvertiserLinkMeasurementPartner::IntegralAdScience => {
                     "INTEGRAL_AD_SCIENCE"
                 }
@@ -16586,6 +16609,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<MeasurementPartnerAdvertiserLinkMeasurementPartner, ()> {
             Ok(match s {
+                "DOUBLE_VERIFY" => MeasurementPartnerAdvertiserLinkMeasurementPartner::DoubleVerify,
                 "INTEGRAL_AD_SCIENCE" => {
                     MeasurementPartnerAdvertiserLinkMeasurementPartner::IntegralAdScience
                 }
@@ -16614,6 +16638,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "DOUBLE_VERIFY" => MeasurementPartnerAdvertiserLinkMeasurementPartner::DoubleVerify,
                 "INTEGRAL_AD_SCIENCE" => {
                     MeasurementPartnerAdvertiserLinkMeasurementPartner::IntegralAdScience
                 }
@@ -16829,12 +16854,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MeasurementPartnerCampaignLinkMeasurementPartner {
+        DoubleVerify,
         IntegralAdScience,
         None,
     }
     impl MeasurementPartnerCampaignLinkMeasurementPartner {
         pub fn as_str(self) -> &'static str {
             match self {
+                MeasurementPartnerCampaignLinkMeasurementPartner::DoubleVerify => "DOUBLE_VERIFY",
                 MeasurementPartnerCampaignLinkMeasurementPartner::IntegralAdScience => {
                     "INTEGRAL_AD_SCIENCE"
                 }
@@ -16853,6 +16880,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<MeasurementPartnerCampaignLinkMeasurementPartner, ()> {
             Ok(match s {
+                "DOUBLE_VERIFY" => MeasurementPartnerCampaignLinkMeasurementPartner::DoubleVerify,
                 "INTEGRAL_AD_SCIENCE" => {
                     MeasurementPartnerCampaignLinkMeasurementPartner::IntegralAdScience
                 }
@@ -16881,6 +16909,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "DOUBLE_VERIFY" => MeasurementPartnerCampaignLinkMeasurementPartner::DoubleVerify,
                 "INTEGRAL_AD_SCIENCE" => {
                     MeasurementPartnerCampaignLinkMeasurementPartner::IntegralAdScience
                 }
@@ -17104,12 +17133,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MeasurementPartnerWrappingDataMeasurementPartner {
+        DoubleVerify,
         IntegralAdScience,
         None,
     }
     impl MeasurementPartnerWrappingDataMeasurementPartner {
         pub fn as_str(self) -> &'static str {
             match self {
+                MeasurementPartnerWrappingDataMeasurementPartner::DoubleVerify => "DOUBLE_VERIFY",
                 MeasurementPartnerWrappingDataMeasurementPartner::IntegralAdScience => {
                     "INTEGRAL_AD_SCIENCE"
                 }
@@ -17128,6 +17159,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<MeasurementPartnerWrappingDataMeasurementPartner, ()> {
             Ok(match s {
+                "DOUBLE_VERIFY" => MeasurementPartnerWrappingDataMeasurementPartner::DoubleVerify,
                 "INTEGRAL_AD_SCIENCE" => {
                     MeasurementPartnerWrappingDataMeasurementPartner::IntegralAdScience
                 }
@@ -17156,6 +17188,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "DOUBLE_VERIFY" => MeasurementPartnerWrappingDataMeasurementPartner::DoubleVerify,
                 "INTEGRAL_AD_SCIENCE" => {
                     MeasurementPartnerWrappingDataMeasurementPartner::IntegralAdScience
                 }
@@ -17184,10 +17217,17 @@ pub mod schemas {
         Blocking,
         Monitoring,
         MonitoringOnly,
+        NonVpaidFiltering,
         NonVpaidMonitoring,
         None,
         Tracking,
         VideoPixelMonitoring,
+        VpaidBlocking,
+        VpaidFiltering,
+        VpaidMonitoring,
+        VpaidOnlyBlocking,
+        VpaidOnlyFiltering,
+        VpaidOnlyMonitoring,
     }
     impl MeasurementPartnerWrappingDataTagWrappingMode {
         pub fn as_str(self) -> &'static str {
@@ -17195,6 +17235,9 @@ pub mod schemas {
                 MeasurementPartnerWrappingDataTagWrappingMode::Blocking => "BLOCKING",
                 MeasurementPartnerWrappingDataTagWrappingMode::Monitoring => "MONITORING",
                 MeasurementPartnerWrappingDataTagWrappingMode::MonitoringOnly => "MONITORING_ONLY",
+                MeasurementPartnerWrappingDataTagWrappingMode::NonVpaidFiltering => {
+                    "NON_VPAID_FILTERING"
+                }
                 MeasurementPartnerWrappingDataTagWrappingMode::NonVpaidMonitoring => {
                     "NON_VPAID_MONITORING"
                 }
@@ -17202,6 +17245,20 @@ pub mod schemas {
                 MeasurementPartnerWrappingDataTagWrappingMode::Tracking => "TRACKING",
                 MeasurementPartnerWrappingDataTagWrappingMode::VideoPixelMonitoring => {
                     "VIDEO_PIXEL_MONITORING"
+                }
+                MeasurementPartnerWrappingDataTagWrappingMode::VpaidBlocking => "VPAID_BLOCKING",
+                MeasurementPartnerWrappingDataTagWrappingMode::VpaidFiltering => "VPAID_FILTERING",
+                MeasurementPartnerWrappingDataTagWrappingMode::VpaidMonitoring => {
+                    "VPAID_MONITORING"
+                }
+                MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyBlocking => {
+                    "VPAID_ONLY_BLOCKING"
+                }
+                MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyFiltering => {
+                    "VPAID_ONLY_FILTERING"
+                }
+                MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyMonitoring => {
+                    "VPAID_ONLY_MONITORING"
                 }
             }
         }
@@ -17220,6 +17277,9 @@ pub mod schemas {
                 "BLOCKING" => MeasurementPartnerWrappingDataTagWrappingMode::Blocking,
                 "MONITORING" => MeasurementPartnerWrappingDataTagWrappingMode::Monitoring,
                 "MONITORING_ONLY" => MeasurementPartnerWrappingDataTagWrappingMode::MonitoringOnly,
+                "NON_VPAID_FILTERING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::NonVpaidFiltering
+                }
                 "NON_VPAID_MONITORING" => {
                     MeasurementPartnerWrappingDataTagWrappingMode::NonVpaidMonitoring
                 }
@@ -17227,6 +17287,20 @@ pub mod schemas {
                 "TRACKING" => MeasurementPartnerWrappingDataTagWrappingMode::Tracking,
                 "VIDEO_PIXEL_MONITORING" => {
                     MeasurementPartnerWrappingDataTagWrappingMode::VideoPixelMonitoring
+                }
+                "VPAID_BLOCKING" => MeasurementPartnerWrappingDataTagWrappingMode::VpaidBlocking,
+                "VPAID_FILTERING" => MeasurementPartnerWrappingDataTagWrappingMode::VpaidFiltering,
+                "VPAID_MONITORING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidMonitoring
+                }
+                "VPAID_ONLY_BLOCKING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyBlocking
+                }
+                "VPAID_ONLY_FILTERING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyFiltering
+                }
+                "VPAID_ONLY_MONITORING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyMonitoring
                 }
                 _ => return Err(()),
             })
@@ -17255,6 +17329,9 @@ pub mod schemas {
                 "BLOCKING" => MeasurementPartnerWrappingDataTagWrappingMode::Blocking,
                 "MONITORING" => MeasurementPartnerWrappingDataTagWrappingMode::Monitoring,
                 "MONITORING_ONLY" => MeasurementPartnerWrappingDataTagWrappingMode::MonitoringOnly,
+                "NON_VPAID_FILTERING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::NonVpaidFiltering
+                }
                 "NON_VPAID_MONITORING" => {
                     MeasurementPartnerWrappingDataTagWrappingMode::NonVpaidMonitoring
                 }
@@ -17262,6 +17339,20 @@ pub mod schemas {
                 "TRACKING" => MeasurementPartnerWrappingDataTagWrappingMode::Tracking,
                 "VIDEO_PIXEL_MONITORING" => {
                     MeasurementPartnerWrappingDataTagWrappingMode::VideoPixelMonitoring
+                }
+                "VPAID_BLOCKING" => MeasurementPartnerWrappingDataTagWrappingMode::VpaidBlocking,
+                "VPAID_FILTERING" => MeasurementPartnerWrappingDataTagWrappingMode::VpaidFiltering,
+                "VPAID_MONITORING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidMonitoring
+                }
+                "VPAID_ONLY_BLOCKING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyBlocking
+                }
+                "VPAID_ONLY_FILTERING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyFiltering
+                }
+                "VPAID_ONLY_MONITORING" => {
+                    MeasurementPartnerWrappingDataTagWrappingMode::VpaidOnlyMonitoring
                 }
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -17495,16 +17586,32 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MobileAppDirectory {
+        AmazonFiretvAppStore,
+        AndroidTvAppStore,
         AppleAppStore,
+        AppleTvAppStore,
+        GenericCtvAppStore,
         GooglePlayStore,
+        PlaystationAppStore,
+        RokuAppStore,
+        SamsungTvAppStore,
         Unknown,
+        XboxAppStore,
     }
     impl MobileAppDirectory {
         pub fn as_str(self) -> &'static str {
             match self {
+                MobileAppDirectory::AmazonFiretvAppStore => "AMAZON_FIRETV_APP_STORE",
+                MobileAppDirectory::AndroidTvAppStore => "ANDROID_TV_APP_STORE",
                 MobileAppDirectory::AppleAppStore => "APPLE_APP_STORE",
+                MobileAppDirectory::AppleTvAppStore => "APPLE_TV_APP_STORE",
+                MobileAppDirectory::GenericCtvAppStore => "GENERIC_CTV_APP_STORE",
                 MobileAppDirectory::GooglePlayStore => "GOOGLE_PLAY_STORE",
+                MobileAppDirectory::PlaystationAppStore => "PLAYSTATION_APP_STORE",
+                MobileAppDirectory::RokuAppStore => "ROKU_APP_STORE",
+                MobileAppDirectory::SamsungTvAppStore => "SAMSUNG_TV_APP_STORE",
                 MobileAppDirectory::Unknown => "UNKNOWN",
+                MobileAppDirectory::XboxAppStore => "XBOX_APP_STORE",
             }
         }
     }
@@ -17517,9 +17624,17 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<MobileAppDirectory, ()> {
             Ok(match s {
+                "AMAZON_FIRETV_APP_STORE" => MobileAppDirectory::AmazonFiretvAppStore,
+                "ANDROID_TV_APP_STORE" => MobileAppDirectory::AndroidTvAppStore,
                 "APPLE_APP_STORE" => MobileAppDirectory::AppleAppStore,
+                "APPLE_TV_APP_STORE" => MobileAppDirectory::AppleTvAppStore,
+                "GENERIC_CTV_APP_STORE" => MobileAppDirectory::GenericCtvAppStore,
                 "GOOGLE_PLAY_STORE" => MobileAppDirectory::GooglePlayStore,
+                "PLAYSTATION_APP_STORE" => MobileAppDirectory::PlaystationAppStore,
+                "ROKU_APP_STORE" => MobileAppDirectory::RokuAppStore,
+                "SAMSUNG_TV_APP_STORE" => MobileAppDirectory::SamsungTvAppStore,
                 "UNKNOWN" => MobileAppDirectory::Unknown,
+                "XBOX_APP_STORE" => MobileAppDirectory::XboxAppStore,
                 _ => return Err(()),
             })
         }
@@ -17544,9 +17659,17 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "AMAZON_FIRETV_APP_STORE" => MobileAppDirectory::AmazonFiretvAppStore,
+                "ANDROID_TV_APP_STORE" => MobileAppDirectory::AndroidTvAppStore,
                 "APPLE_APP_STORE" => MobileAppDirectory::AppleAppStore,
+                "APPLE_TV_APP_STORE" => MobileAppDirectory::AppleTvAppStore,
+                "GENERIC_CTV_APP_STORE" => MobileAppDirectory::GenericCtvAppStore,
                 "GOOGLE_PLAY_STORE" => MobileAppDirectory::GooglePlayStore,
+                "PLAYSTATION_APP_STORE" => MobileAppDirectory::PlaystationAppStore,
+                "ROKU_APP_STORE" => MobileAppDirectory::RokuAppStore,
+                "SAMSUNG_TV_APP_STORE" => MobileAppDirectory::SamsungTvAppStore,
                 "UNKNOWN" => MobileAppDirectory::Unknown,
+                "XBOX_APP_STORE" => MobileAppDirectory::XboxAppStore,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -17611,7 +17734,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for MobileAppsListResponse {
+    impl crate::GetNextPageToken<String> for MobileAppsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -18835,7 +18958,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OrderDocumentsListResponse {
+    impl crate::GetNextPageToken<String> for OrderDocumentsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -18885,7 +19008,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OrdersListResponse {
+    impl crate::GetNextPageToken<String> for OrdersListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -19439,7 +19562,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lookback_configuration: ::std::option::Option<crate::schemas::LookbackConfiguration>,
-        #[doc = "Name of this placement.This is a required field and must be less than or equal to 256 characters long."]
+        #[doc = "Name of this placement.This is a required field and must be less than or equal to 512 characters long."]
         #[serde(
             rename = "name",
             default,
@@ -20550,7 +20673,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PlacementGroupsListResponse {
+    impl crate::GetNextPageToken<String> for PlacementGroupsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -20600,7 +20723,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PlacementStrategiesListResponse {
+    impl crate::GetNextPageToken<String> for PlacementStrategiesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -20781,7 +20904,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PlacementsListResponse {
+    impl crate::GetNextPageToken<String> for PlacementsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -22230,7 +22353,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ProjectsListResponse {
+    impl crate::GetNextPageToken<String> for ProjectsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -22905,7 +23028,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for RemarketingListsListResponse {
+    impl crate::GetNextPageToken<String> for RemarketingListsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -24450,7 +24573,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ReportList {
+    impl crate::GetNextPageToken<String> for ReportList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -25341,7 +25464,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SitesListResponse {
+    impl crate::GetNextPageToken<String> for SitesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -25716,7 +25839,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SubaccountsListResponse {
+    impl crate::GetNextPageToken<String> for SubaccountsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -26607,7 +26730,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for TargetableRemarketingListsListResponse {
+    impl crate::GetNextPageToken<String> for TargetableRemarketingListsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -26778,7 +26901,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for TargetingTemplatesListResponse {
+    impl crate::GetNextPageToken<String> for TargetingTemplatesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -28366,7 +28489,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for UserRolesListResponse {
+    impl crate::GetNextPageToken<String> for UserRolesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -29535,8 +29658,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -29757,8 +29881,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -29929,8 +30054,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -30143,8 +30269,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -30313,8 +30440,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -30749,8 +30877,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -30921,8 +31050,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -31134,7 +31264,7 @@ pub mod resources {
                     #[serde(rename = "accountUserProfiles")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -31167,7 +31297,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -31217,7 +31347,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -31291,8 +31421,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -31342,12 +31473,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -31479,8 +31611,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -31644,8 +31777,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -32054,8 +32188,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -32257,7 +32392,7 @@ pub mod resources {
                     #[serde(rename = "accounts")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -32290,7 +32425,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -32340,7 +32475,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -32414,8 +32549,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -32463,12 +32599,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -32600,8 +32737,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -32765,8 +32903,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -33379,8 +33518,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -33549,8 +33689,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -33849,7 +33990,7 @@ pub mod resources {
                     #[serde(rename = "ads")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -33882,7 +34023,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -33930,7 +34071,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -34004,8 +34145,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -34091,12 +34233,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -34226,8 +34369,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -34389,8 +34533,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -34788,8 +34933,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -34959,8 +35105,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -35131,8 +35278,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -35322,7 +35470,7 @@ pub mod resources {
                     #[serde(rename = "advertiserGroups")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -35355,7 +35503,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -35405,7 +35553,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -35479,8 +35627,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -35527,12 +35676,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -35664,8 +35814,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -35829,8 +35980,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -36266,8 +36418,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -36438,8 +36591,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -36655,7 +36809,7 @@ pub mod resources {
                     #[serde(rename = "landingPages")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -36688,7 +36842,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -36738,7 +36892,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -36814,8 +36968,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -36870,12 +37025,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -37007,8 +37163,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -37172,8 +37329,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -37680,8 +37838,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -37852,8 +38011,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -38080,7 +38240,7 @@ pub mod resources {
                     #[serde(rename = "advertisers")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -38113,7 +38273,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -38163,7 +38323,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -38237,8 +38397,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -38298,12 +38459,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -38435,8 +38597,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -38600,8 +38763,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -38793,8 +38957,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -39089,8 +39254,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -39271,7 +39437,7 @@ pub mod resources {
                     #[serde(rename = "campaignCreativeAssociations")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -39305,7 +39471,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -39361,7 +39527,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -39437,8 +39603,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -39489,12 +39656,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -39901,8 +40069,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -40073,8 +40242,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -40304,7 +40474,7 @@ pub mod resources {
                     #[serde(rename = "campaigns")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -40337,7 +40507,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -40387,7 +40557,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -40461,8 +40631,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -40525,12 +40696,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -40662,8 +40834,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -40827,8 +41000,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -41003,6 +41177,7 @@ pub mod resources {
                 ObjectAccountBillingFeature,
                 ObjectAd,
                 ObjectAdvertiser,
+                ObjectAdvertiserCustomerLink,
                 ObjectAdvertiserGroup,
                 ObjectBillingAccountGroup,
                 ObjectBillingFeature,
@@ -41049,6 +41224,9 @@ pub mod resources {
                         }
                         ListObjectType::ObjectAd => "OBJECT_AD",
                         ListObjectType::ObjectAdvertiser => "OBJECT_ADVERTISER",
+                        ListObjectType::ObjectAdvertiserCustomerLink => {
+                            "OBJECT_ADVERTISER_CUSTOMER_LINK"
+                        }
                         ListObjectType::ObjectAdvertiserGroup => "OBJECT_ADVERTISER_GROUP",
                         ListObjectType::ObjectBillingAccountGroup => "OBJECT_BILLING_ACCOUNT_GROUP",
                         ListObjectType::ObjectBillingFeature => "OBJECT_BILLING_FEATURE",
@@ -41107,6 +41285,9 @@ pub mod resources {
                         }
                         "OBJECT_AD" => ListObjectType::ObjectAd,
                         "OBJECT_ADVERTISER" => ListObjectType::ObjectAdvertiser,
+                        "OBJECT_ADVERTISER_CUSTOMER_LINK" => {
+                            ListObjectType::ObjectAdvertiserCustomerLink
+                        }
                         "OBJECT_ADVERTISER_GROUP" => ListObjectType::ObjectAdvertiserGroup,
                         "OBJECT_BILLING_ACCOUNT_GROUP" => ListObjectType::ObjectBillingAccountGroup,
                         "OBJECT_BILLING_FEATURE" => ListObjectType::ObjectBillingFeature,
@@ -41177,6 +41358,9 @@ pub mod resources {
                         }
                         "OBJECT_AD" => ListObjectType::ObjectAd,
                         "OBJECT_ADVERTISER" => ListObjectType::ObjectAdvertiser,
+                        "OBJECT_ADVERTISER_CUSTOMER_LINK" => {
+                            ListObjectType::ObjectAdvertiserCustomerLink
+                        }
                         "OBJECT_ADVERTISER_GROUP" => ListObjectType::ObjectAdvertiserGroup,
                         "OBJECT_BILLING_ACCOUNT_GROUP" => ListObjectType::ObjectBillingAccountGroup,
                         "OBJECT_BILLING_FEATURE" => ListObjectType::ObjectBillingFeature,
@@ -41420,8 +41604,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -41642,7 +41827,7 @@ pub mod resources {
                     #[serde(rename = "changeLogs")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -41675,7 +41860,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -41725,7 +41910,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -41799,8 +41984,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -41855,12 +42041,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -42048,8 +42235,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -42272,8 +42460,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -42442,8 +42631,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -42841,8 +43031,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -43012,8 +43203,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -43184,8 +43376,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -43375,7 +43568,7 @@ pub mod resources {
                     #[serde(rename = "contentCategories")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -43408,7 +43601,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -43458,7 +43651,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -43532,8 +43725,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -43580,12 +43774,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -43717,8 +43912,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -43882,8 +44078,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -44106,8 +44303,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -44270,8 +44468,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -44484,8 +44683,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -44654,8 +44854,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -44917,8 +45118,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -45345,8 +45547,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -45526,8 +45729,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -45708,8 +45912,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -45913,7 +46118,7 @@ pub mod resources {
                     #[serde(rename = "creativeFieldValues")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -45946,7 +46151,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -45996,7 +46201,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -46070,8 +46275,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -46127,12 +46333,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -46265,8 +46472,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -46440,8 +46648,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -46849,8 +47058,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -47020,8 +47230,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -47192,8 +47403,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -47389,7 +47601,7 @@ pub mod resources {
                     #[serde(rename = "creativeFields")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -47422,7 +47634,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -47472,7 +47684,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -47546,8 +47758,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -47597,12 +47810,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -47734,8 +47948,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -47899,8 +48114,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -48334,8 +48550,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -48506,8 +48723,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -48709,7 +48927,7 @@ pub mod resources {
                     #[serde(rename = "creativeGroups")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -48742,7 +48960,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -48792,7 +49010,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -48866,8 +49084,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -48918,12 +49137,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -49055,8 +49275,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -49220,8 +49441,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -49848,8 +50070,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -50020,8 +50243,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -50272,7 +50496,7 @@ pub mod resources {
                     #[serde(rename = "creatives")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -50305,7 +50529,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -50355,7 +50579,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -50429,8 +50653,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -50497,12 +50722,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -50634,8 +50860,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -50799,8 +51026,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -50997,7 +51225,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -51030,7 +51258,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -51080,7 +51308,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -51155,8 +51383,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -51197,12 +51426,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for QueryRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -51557,8 +51787,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -51729,8 +51960,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -51950,7 +52182,7 @@ pub mod resources {
                     #[serde(rename = "directorySites")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -51983,7 +52215,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -52033,7 +52265,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -52107,8 +52339,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -52169,12 +52402,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -52494,8 +52728,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -52668,8 +52903,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -52861,8 +53097,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -53355,8 +53592,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -53526,8 +53764,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -53698,8 +53937,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -53931,8 +54171,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -54110,8 +54351,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -54275,8 +54517,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -54654,8 +54897,9 @@ pub mod resources {
                 self
             }
             fn _download_path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/download/".to_owned();
-                output.push_str("dfareporting/v3.5/reports/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/download/".to_owned();
+                output.push_str("reports/");
                 {
                     let var_as_string = self.report_id.to_string();
                     let var_as_str = &var_as_string;
@@ -54750,8 +54994,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/reports/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("reports/");
                 {
                     let var_as_string = self.report_id.to_string();
                     let var_as_str = &var_as_string;
@@ -54941,7 +55186,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -54974,7 +55219,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -55022,7 +55267,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -55096,8 +55341,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -55141,12 +55387,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -55608,8 +55855,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -55786,8 +56034,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -55950,8 +56199,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -56122,8 +56372,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -56367,7 +56618,7 @@ pub mod resources {
                     #[serde(rename = "floodlightActivities")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -56400,7 +56651,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -56450,7 +56701,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -56526,8 +56777,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -56595,12 +56847,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -56732,8 +56985,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -56897,8 +57151,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -57402,8 +57657,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -57574,8 +57830,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -57792,7 +58049,7 @@ pub mod resources {
                     #[serde(rename = "floodlightActivityGroups")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -57826,7 +58083,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -57876,7 +58133,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -57952,8 +58209,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -58006,12 +58264,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -58143,8 +58402,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -58308,8 +58568,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -58573,8 +58834,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -58751,8 +59013,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -58919,8 +59182,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -59084,8 +59348,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -59518,8 +59783,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -59748,7 +60014,7 @@ pub mod resources {
                     #[serde(rename = "inventoryItems")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -59781,7 +60047,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -59831,7 +60097,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -59905,8 +60171,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -59969,12 +60236,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -60134,8 +60402,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -60327,8 +60596,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -60370,16 +60640,32 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum ListDirectoriesItems {
+                AmazonFiretvAppStore,
+                AndroidTvAppStore,
                 AppleAppStore,
+                AppleTvAppStore,
+                GenericCtvAppStore,
                 GooglePlayStore,
+                PlaystationAppStore,
+                RokuAppStore,
+                SamsungTvAppStore,
                 Unknown,
+                XboxAppStore,
             }
             impl ListDirectoriesItems {
                 pub fn as_str(self) -> &'static str {
                     match self {
+                        ListDirectoriesItems::AmazonFiretvAppStore => "AMAZON_FIRETV_APP_STORE",
+                        ListDirectoriesItems::AndroidTvAppStore => "ANDROID_TV_APP_STORE",
                         ListDirectoriesItems::AppleAppStore => "APPLE_APP_STORE",
+                        ListDirectoriesItems::AppleTvAppStore => "APPLE_TV_APP_STORE",
+                        ListDirectoriesItems::GenericCtvAppStore => "GENERIC_CTV_APP_STORE",
                         ListDirectoriesItems::GooglePlayStore => "GOOGLE_PLAY_STORE",
+                        ListDirectoriesItems::PlaystationAppStore => "PLAYSTATION_APP_STORE",
+                        ListDirectoriesItems::RokuAppStore => "ROKU_APP_STORE",
+                        ListDirectoriesItems::SamsungTvAppStore => "SAMSUNG_TV_APP_STORE",
                         ListDirectoriesItems::Unknown => "UNKNOWN",
+                        ListDirectoriesItems::XboxAppStore => "XBOX_APP_STORE",
                     }
                 }
             }
@@ -60392,9 +60678,17 @@ pub mod resources {
                 type Err = ();
                 fn from_str(s: &str) -> ::std::result::Result<ListDirectoriesItems, ()> {
                     Ok(match s {
+                        "AMAZON_FIRETV_APP_STORE" => ListDirectoriesItems::AmazonFiretvAppStore,
+                        "ANDROID_TV_APP_STORE" => ListDirectoriesItems::AndroidTvAppStore,
                         "APPLE_APP_STORE" => ListDirectoriesItems::AppleAppStore,
+                        "APPLE_TV_APP_STORE" => ListDirectoriesItems::AppleTvAppStore,
+                        "GENERIC_CTV_APP_STORE" => ListDirectoriesItems::GenericCtvAppStore,
                         "GOOGLE_PLAY_STORE" => ListDirectoriesItems::GooglePlayStore,
+                        "PLAYSTATION_APP_STORE" => ListDirectoriesItems::PlaystationAppStore,
+                        "ROKU_APP_STORE" => ListDirectoriesItems::RokuAppStore,
+                        "SAMSUNG_TV_APP_STORE" => ListDirectoriesItems::SamsungTvAppStore,
                         "UNKNOWN" => ListDirectoriesItems::Unknown,
+                        "XBOX_APP_STORE" => ListDirectoriesItems::XboxAppStore,
                         _ => return Err(()),
                     })
                 }
@@ -60419,9 +60713,17 @@ pub mod resources {
                 {
                     let value: &'de str = <&str>::deserialize(deserializer)?;
                     Ok(match value {
+                        "AMAZON_FIRETV_APP_STORE" => ListDirectoriesItems::AmazonFiretvAppStore,
+                        "ANDROID_TV_APP_STORE" => ListDirectoriesItems::AndroidTvAppStore,
                         "APPLE_APP_STORE" => ListDirectoriesItems::AppleAppStore,
+                        "APPLE_TV_APP_STORE" => ListDirectoriesItems::AppleTvAppStore,
+                        "GENERIC_CTV_APP_STORE" => ListDirectoriesItems::GenericCtvAppStore,
                         "GOOGLE_PLAY_STORE" => ListDirectoriesItems::GooglePlayStore,
+                        "PLAYSTATION_APP_STORE" => ListDirectoriesItems::PlaystationAppStore,
+                        "ROKU_APP_STORE" => ListDirectoriesItems::RokuAppStore,
+                        "SAMSUNG_TV_APP_STORE" => ListDirectoriesItems::SamsungTvAppStore,
                         "UNKNOWN" => ListDirectoriesItems::Unknown,
+                        "XBOX_APP_STORE" => ListDirectoriesItems::XboxAppStore,
                         _ => {
                             return Err(::serde::de::Error::custom(format!(
                                 "invalid enum for #name: {}",
@@ -60620,8 +60922,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -60809,7 +61112,7 @@ pub mod resources {
                     #[serde(rename = "mobileApps")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -60842,7 +61145,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -60892,7 +61195,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -60966,8 +61269,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -61015,12 +61319,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -61201,8 +61506,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -61371,8 +61677,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -61585,8 +61892,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -61757,8 +62065,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -61971,8 +62280,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -62141,8 +62451,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -62506,8 +62817,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -62733,7 +63045,7 @@ pub mod resources {
                     #[serde(rename = "orderDocuments")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -62766,7 +63078,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -62816,7 +63128,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -62890,8 +63202,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -62954,12 +63267,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -63289,8 +63603,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -63502,7 +63817,7 @@ pub mod resources {
                     #[serde(rename = "orders")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -63535,7 +63850,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -63585,7 +63900,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -63659,8 +63974,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -63719,12 +64035,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -64309,8 +64626,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -64481,8 +64799,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -64760,7 +65079,7 @@ pub mod resources {
                     #[serde(rename = "placementGroups")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -64793,7 +65112,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -64843,7 +65162,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -64917,8 +65236,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -64992,12 +65312,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -65129,8 +65450,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -65294,8 +65616,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -65693,8 +66016,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -65864,8 +66188,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -66036,8 +66361,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -66229,7 +66555,7 @@ pub mod resources {
                     #[serde(rename = "placementStrategies")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -66262,7 +66588,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -66312,7 +66638,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -66386,8 +66712,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -66434,12 +66761,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -66571,8 +66899,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -66736,8 +67065,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -67557,8 +67887,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -67727,8 +68058,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -67899,8 +68231,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -68198,7 +68531,7 @@ pub mod resources {
                     #[serde(rename = "placements")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -68231,7 +68564,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -68281,7 +68614,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -68355,8 +68688,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -68439,12 +68773,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -68576,8 +68911,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -68741,8 +69077,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -68955,8 +69292,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -69125,8 +69463,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -69339,8 +69678,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -69508,8 +69848,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -69868,8 +70209,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -70071,7 +70413,7 @@ pub mod resources {
                     #[serde(rename = "projects")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -70104,7 +70446,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -70154,7 +70496,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -70228,8 +70570,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -70279,12 +70622,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -70444,8 +70788,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -70689,8 +71034,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -70862,8 +71208,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -71027,8 +71374,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -71462,8 +71810,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -71634,8 +71983,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -71832,7 +72182,7 @@ pub mod resources {
                     #[serde(rename = "remarketingLists")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -71865,7 +72215,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -71915,7 +72265,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -71989,8 +72339,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -72037,12 +72388,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -72174,8 +72526,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -72339,8 +72692,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -72856,8 +73210,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -73027,8 +73382,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -73199,8 +73555,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -73382,7 +73739,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -73415,7 +73772,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -73463,7 +73820,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -73537,8 +73894,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -73582,12 +73940,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -73719,8 +74078,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -73896,8 +74256,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -74071,8 +74432,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -74278,8 +74640,9 @@ pub mod resources {
                     Ok(req.send().await?.error_for_status()?.json().await?)
                 }
                 fn _path(&self) -> String {
-                    let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                    output.push_str("dfareporting/v3.5/userprofiles/");
+                    let mut output =
+                        "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                    output.push_str("userprofiles/");
                     {
                         let var_as_string = self.profile_id.to_string();
                         let var_as_str = &var_as_string;
@@ -74584,8 +74947,10 @@ pub mod resources {
                     self
                 }
                 fn _download_path(&self) -> String {
-                    let mut output = "https://dfareporting.googleapis.com/download/".to_owned();
-                    output.push_str("dfareporting/v3.5/userprofiles/");
+                    let mut output =
+                        "https://dfareporting.googleapis.com/dfareporting/v3.5/download/"
+                            .to_owned();
+                    output.push_str("userprofiles/");
                     {
                         let var_as_string = self.profile_id.to_string();
                         let var_as_str = &var_as_string;
@@ -74689,8 +75054,9 @@ pub mod resources {
                     Ok(req.send().await?.error_for_status()?.json().await?)
                 }
                 fn _path(&self) -> String {
-                    let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                    output.push_str("dfareporting/v3.5/userprofiles/");
+                    let mut output =
+                        "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                    output.push_str("userprofiles/");
                     {
                         let var_as_string = self.profile_id.to_string();
                         let var_as_str = &var_as_string;
@@ -74886,7 +75252,7 @@ pub mod resources {
                         #[serde(rename = "items")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -74921,7 +75287,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -74969,7 +75335,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -75043,8 +75409,9 @@ pub mod resources {
                     Ok(req.send().await?.error_for_status()?.json().await?)
                 }
                 fn _path(&self) -> String {
-                    let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                    output.push_str("dfareporting/v3.5/userprofiles/");
+                    let mut output =
+                        "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                    output.push_str("userprofiles/");
                     {
                         let var_as_string = self.profile_id.to_string();
                         let var_as_str = &var_as_string;
@@ -75096,12 +75463,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -75511,8 +75879,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -75683,8 +76052,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -75926,7 +76296,7 @@ pub mod resources {
                     #[serde(rename = "sites")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -75959,7 +76329,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -76007,7 +76377,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -76081,8 +76451,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -76151,12 +76522,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -76288,8 +76660,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -76453,8 +76826,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -76695,8 +77069,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -76867,8 +77242,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -77053,8 +77429,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -77492,8 +77869,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -77664,8 +78042,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -77853,7 +78232,7 @@ pub mod resources {
                     #[serde(rename = "subaccounts")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -77886,7 +78265,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -77936,7 +78315,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -78010,8 +78389,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -78058,12 +78438,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -78195,8 +78576,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -78360,8 +78742,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -78720,8 +79103,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -78924,7 +79308,7 @@ pub mod resources {
                     #[serde(rename = "targetableRemarketingLists")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -78958,7 +79342,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -79008,7 +79392,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -79084,8 +79468,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -79131,12 +79516,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -79537,8 +79923,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -79709,8 +80096,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -79906,7 +80294,7 @@ pub mod resources {
                     #[serde(rename = "targetingTemplates")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -79939,7 +80327,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -79989,7 +80377,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -80063,8 +80451,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -80112,12 +80501,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -80249,8 +80639,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -80414,8 +80805,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -80625,8 +81017,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -80785,8 +81178,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles");
                 output
             }
             async fn _request(
@@ -80990,8 +81384,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -81162,8 +81557,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -81377,8 +81773,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -81553,8 +81950,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -81957,8 +82355,9 @@ pub mod resources {
                 Ok(())
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -82128,8 +82527,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -82300,8 +82700,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -82501,7 +82902,7 @@ pub mod resources {
                     #[serde(rename = "userRoles")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -82534,7 +82935,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -82584,7 +82985,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -82658,8 +83059,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -82708,12 +83110,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -82845,8 +83248,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -83010,8 +83414,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -83224,8 +83629,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -83394,8 +83800,9 @@ pub mod resources {
                 Ok(req.send().await?.error_for_status()?.json().await?)
             }
             fn _path(&self) -> String {
-                let mut output = "https://dfareporting.googleapis.com/".to_owned();
-                output.push_str("dfareporting/v3.5/userprofiles/");
+                let mut output =
+                    "https://dfareporting.googleapis.com/dfareporting/v3.5/".to_owned();
+                output.push_str("userprofiles/");
                 {
                     let var_as_string = self.profile_id.to_string();
                     let var_as_str = &var_as_string;
@@ -83717,16 +84124,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -83746,13 +84155,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -83760,7 +84172,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -83787,7 +84199,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [properties](resources/properties/struct.PropertiesActions.html)\n  * [*batchRunPivotReports*](resources/properties/struct.BatchRunPivotReportsRequestBuilder.html), [*batchRunReports*](resources/properties/struct.BatchRunReportsRequestBuilder.html), [*checkCompatibility*](resources/properties/struct.CheckCompatibilityRequestBuilder.html), [*getMetadata*](resources/properties/struct.GetMetadataRequestBuilder.html), [*runPivotReport*](resources/properties/struct.RunPivotReportRequestBuilder.html), [*runRealtimeReport*](resources/properties/struct.RunRealtimeReportRequestBuilder.html), [*runReport*](resources/properties/struct.RunReportRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your Google Analytics data\n\n`https://www.googleapis.com/auth/analytics`"]
@@ -1257,7 +1258,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub between_filter: ::std::option::Option<crate::schemas::BetweenFilter>,
-        #[doc = "The dimension name or metric name. Must be a name defined in dimensions or metrics."]
+        #[doc = "The dimension name or metric name. In most methods, dimensions & metrics can be used for the first time in this field. However in a RunPivotReportRequest, this field must be additionally specified by name in the RunPivotReportRequest’s dimensions or metrics."]
         #[serde(
             rename = "fieldName",
             default,
@@ -2720,13 +2721,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tokens_per_day: ::std::option::Option<crate::schemas::QuotaStatus>,
-        #[doc = "Standard Analytics Properties can use up to 5,000 tokens per hour; Analytics 360 Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from both the hourly and daily quotas."]
+        #[doc = "Standard Analytics Properties can use up to 5,000 tokens per hour; Analytics 360 Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas."]
         #[serde(
             rename = "tokensPerHour",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tokens_per_hour: ::std::option::Option<crate::schemas::QuotaStatus>,
+        #[doc = "Analytics Properties can use up to 25% of their tokens per project per hour. This amounts to standard Analytics Properties can use up to 1,250 tokens per project per hour, and Analytics 360 Properties can use 12,500 tokens per project per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas."]
+        #[serde(
+            rename = "tokensPerProjectPerHour",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tokens_per_project_per_hour: ::std::option::Option<crate::schemas::QuotaStatus>,
     }
     impl ::google_field_selector::FieldSelector for PropertyQuota {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3057,7 +3065,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct RunRealtimeReportRequest {
-        #[doc = "The filter clause of dimensions. Dimensions must be requested to be used in this filter. Metrics cannot be used in this filter."]
+        #[doc = "The filter clause of dimensions. Metrics cannot be used in this filter."]
         #[serde(
             rename = "dimensionFilter",
             default,
@@ -3088,7 +3096,7 @@ pub mod schemas {
         pub metric_aggregations: ::std::option::Option<
             Vec<crate::schemas::RunRealtimeReportRequestMetricAggregationsItems>,
         >,
-        #[doc = "The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Metrics must be requested to be used in this filter. Dimensions cannot be used in this filter."]
+        #[doc = "The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Dimensions cannot be used in this filter."]
         #[serde(
             rename = "metricFilter",
             default,
@@ -4097,7 +4105,7 @@ pub mod resources {
                     property: property.into(),
                 }
             }
-            #[doc = "The Google Analytics Realtime API returns a customized report of realtime event data for your property. These reports show events and usage from the last 30 minutes. For a guide to constructing realtime requests & understanding responses, see [Creating a Realtime Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics)."]
+            #[doc = "Returns a customized report of realtime event data for your property. Events appear in realtime reports seconds after they have been sent to the Google Analytics. Realtime reports show events and usage data for the periods of time ranging from the present moment to 30 minutes ago (up to 60 minutes for Google Analytics 360 properties). For a guide to constructing realtime requests & understanding responses, see [Creating a Realtime Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics)."]
             pub fn run_realtime_report(
                 &self,
                 request: crate::schemas::RunRealtimeReportRequest,
@@ -5569,15 +5577,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

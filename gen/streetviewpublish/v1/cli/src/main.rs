@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("streetviewpublish1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230131")
             .about("Publishes 360 photos to Google Maps, along with position, orientation, and connectivity metadata. Apps can offer an interface for positioning, connecting, and uploading user-generated Street View images. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -56,6 +56,32 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update").about("Updates the metadata of a Photo, such as pose, place association, connections, etc. Changing the pixels of a photo is not supported. Only the fields specified in the updateMask field are used. If `updateMask` is not present, the update applies to all fields. This method returns the following error codes: * google.rpc.Code.PERMISSION_DENIED if the requesting user did not create the requested photo. * google.rpc.Code.INVALID_ARGUMENT if the request is malformed. * google.rpc.Code.NOT_FOUND if the requested photo does not exist. * google.rpc.Code.UNAVAILABLE if the requested Photo is still being indexed.");
             photo0 = photo0.subcommand(mcmd);
         }
+        let mut photo_sequence0 = SubCommand::with_name("photo_sequence")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and start_upload");
+        {
+            let mcmd = SubCommand::with_name("create").about("After the client finishes uploading the PhotoSequence with the returned UploadRef, CreatePhotoSequence extracts a sequence of 360 photos from a video or Extensible Device Metadata (XDM, http://www.xdm.org/) to be published to Street View on Google Maps. `CreatePhotoSequence` returns an Operation, with the PhotoSequence Id set in the `Operation.name` field. This method returns the following error codes: * google.rpc.Code.INVALID_ARGUMENT if the request is malformed. * google.rpc.Code.NOT_FOUND if the upload reference does not exist.");
+            photo_sequence0 = photo_sequence0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a PhotoSequence and its metadata. This method returns the following error codes: * google.rpc.Code.PERMISSION_DENIED if the requesting user did not create the requested photo sequence. * google.rpc.Code.NOT_FOUND if the photo sequence ID does not exist. * google.rpc.Code.FAILED_PRECONDITION if the photo sequence ID is not yet finished processing.");
+            photo_sequence0 = photo_sequence0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the metadata of the specified PhotoSequence via the Operation interface. This method returns the following three types of responses: * `Operation.done` = false, if the processing of PhotoSequence is not finished yet. * `Operation.done` = true and `Operation.error` is populated, if there was an error in processing. * `Operation.done` = true and `Operation.response` is poulated, which contains a PhotoSequence message. This method returns the following error codes: * google.rpc.Code.PERMISSION_DENIED if the requesting user did not create the requested PhotoSequence. * google.rpc.Code.NOT_FOUND if the requested PhotoSequence does not exist.");
+            photo_sequence0 = photo_sequence0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("start_upload").about("Creates an upload session to start uploading photo sequence data. The upload URL of the returned UploadRef is used to upload the data for the `photoSequence`. After the upload is complete, the UploadRef is used with CreatePhotoSequence to create the PhotoSequence object entry.");
+            photo_sequence0 = photo_sequence0.subcommand(mcmd);
+        }
+        let mut photo_sequences0 = SubCommand::with_name("photo_sequences")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists all the PhotoSequences that belong to the user, in descending CreatePhotoSequence timestamp order.");
+            photo_sequences0 = photo_sequences0.subcommand(mcmd);
+        }
         let mut photos0 = SubCommand::with_name("photos")
             .setting(AppSettings::ColoredHelp)
             .about("methods: batch_delete, batch_get, batch_update and list");
@@ -76,6 +102,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             photos0 = photos0.subcommand(mcmd);
         }
         app = app.subcommand(photos0);
+        app = app.subcommand(photo_sequences0);
+        app = app.subcommand(photo_sequence0);
         app = app.subcommand(photo0);
 
         Self { app }

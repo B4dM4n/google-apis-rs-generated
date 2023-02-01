@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [queues](resources/projects/locations/queues/struct.QueuesActions.html)\n      * [*create*](resources/projects/locations/queues/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/queues/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/queues/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/queues/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/queues/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/queues/struct.PatchRequestBuilder.html), [*pause*](resources/projects/locations/queues/struct.PauseRequestBuilder.html), [*purge*](resources/projects/locations/queues/struct.PurgeRequestBuilder.html), [*resume*](resources/projects/locations/queues/struct.ResumeRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/queues/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/queues/struct.TestIamPermissionsRequestBuilder.html)\n      * [tasks](resources/projects/locations/queues/tasks/struct.TasksActions.html)\n        * [*create*](resources/projects/locations/queues/tasks/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/queues/tasks/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/queues/tasks/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/queues/tasks/struct.ListRequestBuilder.html), [*run*](resources/projects/locations/queues/tasks/struct.RunRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [queues](resources/projects/locations/queues/struct.QueuesActions.html)\n      * [*create*](resources/projects/locations/queues/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/queues/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/queues/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/queues/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/queues/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/queues/struct.PatchRequestBuilder.html), [*pause*](resources/projects/locations/queues/struct.PauseRequestBuilder.html), [*purge*](resources/projects/locations/queues/struct.PurgeRequestBuilder.html), [*resume*](resources/projects/locations/queues/struct.ResumeRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/queues/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/queues/struct.TestIamPermissionsRequestBuilder.html)\n      * [tasks](resources/projects/locations/queues/tasks/struct.TasksActions.html)\n        * [*buffer*](resources/projects/locations/queues/tasks/struct.BufferRequestBuilder.html), [*create*](resources/projects/locations/queues/tasks/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/queues/tasks/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/queues/tasks/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/queues/tasks/struct.ListRequestBuilder.html), [*run*](resources/projects/locations/queues/tasks/struct.RunRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -308,7 +309,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -329,6 +330,46 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Binding {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct BufferTaskRequest {
+        #[doc = "Optional. Body of the HTTP request. The body can take any generic value. The value is written to the HttpRequest of the \\[Task\\]."]
+        #[serde(
+            rename = "body",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub body: ::std::option::Option<crate::schemas::HttpBody>,
+    }
+    impl ::google_field_selector::FieldSelector for BufferTaskRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BufferTaskRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct BufferTaskResponse {
+        #[doc = "The created task."]
+        #[serde(
+            rename = "task",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub task: ::std::option::Option<crate::schemas::Task>,
+    }
+    impl ::google_field_selector::FieldSelector for BufferTaskResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BufferTaskResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -586,6 +627,110 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Header {
+        #[doc = "The Key of the header."]
+        #[serde(
+            rename = "key",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key: ::std::option::Option<String>,
+        #[doc = "The Value of the header."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Header {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Header {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct HeaderOverride {
+        #[doc = "header embodying a key and a value."]
+        #[serde(
+            rename = "header",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub header: ::std::option::Option<crate::schemas::Header>,
+    }
+    impl ::google_field_selector::FieldSelector for HeaderOverride {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HeaderOverride {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct HttpBody {
+        #[doc = "The HTTP Content-Type header value specifying the content type of the body."]
+        #[serde(
+            rename = "contentType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub content_type: ::std::option::Option<String>,
+        #[doc = "The HTTP request/response body as raw binary."]
+        #[serde(
+            rename = "data",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Application specific response metadata. Must be set in the first response for streaming APIs."]
+        #[serde(
+            rename = "extensions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub extensions:
+            ::std::option::Option<Vec<::std::collections::BTreeMap<String, ::serde_json::Value>>>,
+    }
+    impl ::google_field_selector::FieldSelector for HttpBody {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HttpBody {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct HttpRequest {
         #[doc = "HTTP request body. A request body is allowed only if the HTTP method is POST, PUT, or PATCH. It is an error to set body on a task with an incompatible HttpMethod."]
         #[serde(
@@ -741,6 +886,152 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct HttpTarget {
+        #[doc = "HTTP target headers. This map contains the header field names and values. Headers will be set when running the CreateTask and/or BufferTask. These headers represent a subset of the headers that will be configured for the task’s HTTP request. Some HTTP request headers will be ignored or replaced. A partial list of headers that will be ignored or replaced is: * Several predefined headers, prefixed with “X-Google-Cloud-Tasks-”, can be used to define properties of the task. * Host: This will be computed by Cloud Tasks and derived from HttpRequest.url. * Content-Length: This will be computed by Cloud Tasks. `Content-Type` won’t be set by Cloud Tasks. You can explicitly set `Content-Type` to a media type when the task is created. For example,`Content-Type` can be set to `\"application/octet-stream\"` or `\"application/json\"`. The default value is set to “application/json”`. * User-Agent: This will be set to `“Google-Cloud-Tasks”\\`. Headers which can have multiple values (according to RFC2616) can be specified using comma-separated values. The size of the headers must be less than 80KB. Queue-level headers to override headers of all the tasks in the queue."]
+        #[serde(
+            rename = "headerOverrides",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub header_overrides: ::std::option::Option<Vec<crate::schemas::HeaderOverride>>,
+        #[doc = "The HTTP method to use for the request. When specified, it will override HttpRequest for the task. Note that if the value is set to HttpMethod the HttpRequest of the task will be ignored at execution time."]
+        #[serde(
+            rename = "httpMethod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub http_method: ::std::option::Option<crate::schemas::HttpTargetHttpMethod>,
+        #[doc = "URI override. When specified, modifies the execution URI for all the tasks in the queue."]
+        #[serde(
+            rename = "uriOverride",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri_override: ::std::option::Option<crate::schemas::UriOverride>,
+    }
+    impl ::google_field_selector::FieldSelector for HttpTarget {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HttpTarget {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum HttpTargetHttpMethod {
+        #[doc = "HTTP DELETE"]
+        Delete,
+        #[doc = "HTTP GET"]
+        Get,
+        #[doc = "HTTP HEAD"]
+        Head,
+        #[doc = "HTTP method unspecified"]
+        HttpMethodUnspecified,
+        #[doc = "HTTP OPTIONS"]
+        Options,
+        #[doc = "HTTP PATCH"]
+        Patch,
+        #[doc = "HTTP POST"]
+        Post,
+        #[doc = "HTTP PUT"]
+        Put,
+    }
+    impl HttpTargetHttpMethod {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                HttpTargetHttpMethod::Delete => "DELETE",
+                HttpTargetHttpMethod::Get => "GET",
+                HttpTargetHttpMethod::Head => "HEAD",
+                HttpTargetHttpMethod::HttpMethodUnspecified => "HTTP_METHOD_UNSPECIFIED",
+                HttpTargetHttpMethod::Options => "OPTIONS",
+                HttpTargetHttpMethod::Patch => "PATCH",
+                HttpTargetHttpMethod::Post => "POST",
+                HttpTargetHttpMethod::Put => "PUT",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for HttpTargetHttpMethod {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for HttpTargetHttpMethod {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<HttpTargetHttpMethod, ()> {
+            Ok(match s {
+                "DELETE" => HttpTargetHttpMethod::Delete,
+                "GET" => HttpTargetHttpMethod::Get,
+                "HEAD" => HttpTargetHttpMethod::Head,
+                "HTTP_METHOD_UNSPECIFIED" => HttpTargetHttpMethod::HttpMethodUnspecified,
+                "OPTIONS" => HttpTargetHttpMethod::Options,
+                "PATCH" => HttpTargetHttpMethod::Patch,
+                "POST" => HttpTargetHttpMethod::Post,
+                "PUT" => HttpTargetHttpMethod::Put,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for HttpTargetHttpMethod {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for HttpTargetHttpMethod {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for HttpTargetHttpMethod {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DELETE" => HttpTargetHttpMethod::Delete,
+                "GET" => HttpTargetHttpMethod::Get,
+                "HEAD" => HttpTargetHttpMethod::Head,
+                "HTTP_METHOD_UNSPECIFIED" => HttpTargetHttpMethod::HttpMethodUnspecified,
+                "OPTIONS" => HttpTargetHttpMethod::Options,
+                "PATCH" => HttpTargetHttpMethod::Patch,
+                "POST" => HttpTargetHttpMethod::Post,
+                "PUT" => HttpTargetHttpMethod::Put,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for HttpTargetHttpMethod {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for HttpTargetHttpMethod {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListLocationsResponse {
         #[doc = "A list of locations that matches the specified filter in the request."]
@@ -768,7 +1059,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -802,7 +1093,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListQueuesResponse {
+    impl crate::GetNextPageToken<String> for ListQueuesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -834,7 +1125,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListTasksResponse {
+    impl crate::GetNextPageToken<String> for ListTasksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -972,6 +1263,37 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PathOverride {
+        #[doc = "The URI path (e.g., a/b/c). Default is Empty string."]
+        #[serde(
+            rename = "path",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub path: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PathOverride {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PathOverride {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -1096,6 +1418,37 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct QueryOverride {
+        #[doc = "The query parameters (e.g., qparam1=123&qparam2=456). Default is Empty string."]
+        #[serde(
+            rename = "queryParams",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_params: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for QueryOverride {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for QueryOverride {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Queue {
@@ -1106,6 +1459,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_engine_http_queue: ::std::option::Option<crate::schemas::AppEngineHttpQueue>,
+        #[doc = "Modifies HTTP target for HTTP tasks."]
+        #[serde(
+            rename = "httpTarget",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub http_target: ::std::option::Option<crate::schemas::HttpTarget>,
         #[doc = "Caller-specified and required in CreateQueue, after which it becomes output only. The queue name. The queue name must have the following format: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` * `PROJECT_ID` can contain letters (\\[A-Za-z\\]), numbers (\\[0-9\\]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the queue’s location. The list of available locations can be obtained by calling ListLocations. For more information, see https://cloud.google.com/about/locations/. * `QUEUE_ID` can contain letters (\\[A-Za-z\\]), numbers (\\[0-9\\]), or hyphens (-). The maximum length is 100 characters."]
         #[serde(
             rename = "name",
@@ -1637,7 +1997,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -1898,7 +2258,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as ‘*’ or ‘storage.*’) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -1943,6 +2303,232 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TestIamPermissionsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UriOverride {
+        #[doc = "Host override. When specified, will replace the host part of the task URL. For example, if the task URL is “https://www.google.com”, and host value is set to “example.net”, the overridden URI will be changed to “https://example.net”. Host value cannot be an empty string."]
+        #[serde(
+            rename = "host",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub host: ::std::option::Option<String>,
+        #[doc = "URI path. When specified, will replace the existing path of the task URL. Setting the path value to an empty string clears the URI path segment."]
+        #[serde(
+            rename = "pathOverride",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub path_override: ::std::option::Option<crate::schemas::PathOverride>,
+        #[doc = "Port override. When specified, will replace the port part of the task URI. For instance, for a URI http://www.google.com/foo and port=123, the overridden URI becomes http://www.google.com:123/foo. Note that the port value must be a positive integer. Setting the port to 0 (Zero) clears the URI port."]
+        #[serde(
+            rename = "port",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub port: ::std::option::Option<i64>,
+        #[doc = "URI Query. When specified, will replace the query part of the task URI. Setting the query value to an empty string clears the URI query segment."]
+        #[serde(
+            rename = "queryOverride",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_override: ::std::option::Option<crate::schemas::QueryOverride>,
+        #[doc = "Scheme override. When specified, the task URI scheme is replaced by the provided value (HTTP or HTTPS)."]
+        #[serde(
+            rename = "scheme",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scheme: ::std::option::Option<crate::schemas::UriOverrideScheme>,
+        #[doc = "URI Override Enforce Mode When specified, determines the Target UriOverride mode. If not specified, it defaults to ALWAYS."]
+        #[serde(
+            rename = "uriOverrideEnforceMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri_override_enforce_mode:
+            ::std::option::Option<crate::schemas::UriOverrideUriOverrideEnforceMode>,
+    }
+    impl ::google_field_selector::FieldSelector for UriOverride {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UriOverride {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UriOverrideScheme {
+        #[doc = "Convert the scheme to HTTP, e.g., https://www.google.ca will change to http://www.google.ca."]
+        Http,
+        #[doc = "Convert the scheme to HTTPS, e.g., http://www.google.ca will change to https://www.google.ca."]
+        Https,
+        #[doc = "Scheme unspecified. Defaults to HTTPS."]
+        SchemeUnspecified,
+    }
+    impl UriOverrideScheme {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UriOverrideScheme::Http => "HTTP",
+                UriOverrideScheme::Https => "HTTPS",
+                UriOverrideScheme::SchemeUnspecified => "SCHEME_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UriOverrideScheme {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UriOverrideScheme {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UriOverrideScheme, ()> {
+            Ok(match s {
+                "HTTP" => UriOverrideScheme::Http,
+                "HTTPS" => UriOverrideScheme::Https,
+                "SCHEME_UNSPECIFIED" => UriOverrideScheme::SchemeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UriOverrideScheme {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UriOverrideScheme {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UriOverrideScheme {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "HTTP" => UriOverrideScheme::Http,
+                "HTTPS" => UriOverrideScheme::Https,
+                "SCHEME_UNSPECIFIED" => UriOverrideScheme::SchemeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UriOverrideScheme {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UriOverrideScheme {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UriOverrideUriOverrideEnforceMode {
+        #[doc = "In the ALWAYS mode, queue-level configuration overrides all task-level configuration"]
+        Always,
+        #[doc = "In the IF_NOT_EXISTS mode, queue-level configuration is only applied where task-level configuration does not exist."]
+        IfNotExists,
+        #[doc = "OverrideMode Unspecified. Defaults to ALWAYS."]
+        UriOverrideEnforceModeUnspecified,
+    }
+    impl UriOverrideUriOverrideEnforceMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UriOverrideUriOverrideEnforceMode::Always => "ALWAYS",
+                UriOverrideUriOverrideEnforceMode::IfNotExists => "IF_NOT_EXISTS",
+                UriOverrideUriOverrideEnforceMode::UriOverrideEnforceModeUnspecified => {
+                    "URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UriOverrideUriOverrideEnforceMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UriOverrideUriOverrideEnforceMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UriOverrideUriOverrideEnforceMode, ()> {
+            Ok(match s {
+                "ALWAYS" => UriOverrideUriOverrideEnforceMode::Always,
+                "IF_NOT_EXISTS" => UriOverrideUriOverrideEnforceMode::IfNotExists,
+                "URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED" => {
+                    UriOverrideUriOverrideEnforceMode::UriOverrideEnforceModeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UriOverrideUriOverrideEnforceMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UriOverrideUriOverrideEnforceMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UriOverrideUriOverrideEnforceMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALWAYS" => UriOverrideUriOverrideEnforceMode::Always,
+                "IF_NOT_EXISTS" => UriOverrideUriOverrideEnforceMode::IfNotExists,
+                "URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED" => {
+                    UriOverrideUriOverrideEnforceMode::UriOverrideEnforceModeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UriOverrideUriOverrideEnforceMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UriOverrideUriOverrideEnforceMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2495,7 +3081,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -2530,7 +3116,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -2580,7 +3166,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2696,12 +3282,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -3770,7 +4357,7 @@ pub mod resources {
                             #[serde(rename = "queues")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -3805,7 +4392,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -3855,7 +4442,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -3975,12 +4562,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5144,6 +5732,32 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
+                        #[doc = "Creates and buffers a new task without the need to explicitly define a Task message. The queue must have HTTP target. To create the task with a custom ID, use the following format and set TASK_ID to your desired ID: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the task with an automatically generated ID, use the following format: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8)."]
+                        pub fn buffer(
+                            &self,
+                            request: crate::schemas::BufferTaskRequest,
+                            queue: impl Into<String>,
+                            task_id: impl Into<String>,
+                        ) -> BufferRequestBuilder {
+                            BufferRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                queue: queue.into(),
+                                task_id: task_id.into(),
+                            }
+                        }
                         #[doc = "Creates a task and adds it to a queue. Tasks cannot be updated after creation; there is no UpdateTask command. * The maximum task size is 100KB."]
                         pub fn create(
                             &self,
@@ -5252,6 +5866,182 @@ pub mod resources {
                                 xgafv: None,
                                 name: name.into(),
                             }
+                        }
+                    }
+                    #[doc = "Created via [TasksActions::buffer()](struct.TasksActions.html#method.buffer)"]
+                    #[derive(Debug, Clone)]
+                    pub struct BufferRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::BufferTaskRequest,
+                        queue: String,
+                        task_id: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> BufferRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::BufferTaskResponse, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::BufferTaskResponse, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://cloudtasks.googleapis.com/".to_owned();
+                            output.push_str("v2beta3/");
+                            {
+                                let var_as_str = &self.queue;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/tasks/");
+                            {
+                                let var_as_str = &self.task_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str(":buffer");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
                         }
                     }
                     #[doc = "Created via [TasksActions::create()](struct.TasksActions.html#method.create)"]
@@ -5851,7 +6641,7 @@ pub mod resources {
                                 #[serde(rename = "tasks")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -5887,7 +6677,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -5937,7 +6727,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -6058,12 +6848,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -6521,16 +7312,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6550,13 +7343,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6564,7 +7360,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6591,7 +7387,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -7,7 +7,7 @@
   "canonicalName": "Keep",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220419",
+  "revision": "20230124",
   "title": "Google Keep API",
   "description": "The Google Keep API is used in an enterprise environment to manage Google Keep content and resolve issues identified by cloud security software.",
   "ownerDomain": "google.com",

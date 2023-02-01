@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Natural Language",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220423",
+  "revision": "20230130",
   "title": "Cloud Natural Language API",
   "description": "Provides natural language understanding technologies, such as sentiment analysis, entity recognition, entity sentiment analysis, and other text annotations, to developers.",
   "ownerDomain": "google.com",
@@ -652,6 +652,26 @@
       "additionalProperties": null,
       "items": null
     },
+    "ClassificationModelOptions": {
+      "id": "ClassificationModelOptions",
+      "description": "Model options available for classification requests.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "v1Model": {
+          "description": "Setting this field will use the V1 model and V1 content categories version. The V1 model is a legacy model; support for this will be discontinued in the future.",
+          "$ref": "V1Model"
+        },
+        "v2Model": {
+          "description": "Setting this field will use the V2 model with the appropriate content categories version. The V2 model is a better performing model.",
+          "$ref": "V2Model"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ClassifyTextRequest": {
       "id": "ClassifyTextRequest",
       "description": "The document classification request message.",
@@ -660,6 +680,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "classificationModelOptions": {
+          "description": "Model options to use for classification. Defaults to v1 options if not specified.",
+          "$ref": "ClassificationModelOptions"
+        },
         "document": {
           "description": "Required. Input document.",
           "$ref": "Document"
@@ -894,7 +918,7 @@
     },
     "Document": {
       "id": "Document",
-      "description": "################################################################ # Represents the input to API methods.",
+      "description": "Represents the input to API methods.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1103,6 +1127,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "classificationModelOptions": {
+          "description": "The model options to use for classification. Defaults to v1 options if not specified. Only used if `classify_text` is set to true.",
+          "$ref": "ClassificationModelOptions"
+        },
         "classifyText": {
           "description": "Classify the full document into categories.",
           "type": "boolean",
@@ -1649,6 +1677,47 @@
         "text": {
           "description": "The token text.",
           "$ref": "TextSpan"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "V1Model": {
+      "id": "V1Model",
+      "description": "Options for the V1 model.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "V2Model": {
+      "id": "V2Model",
+      "description": "Options for the V2 model.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "contentCategoriesVersion": {
+          "description": "The content categories used for classification.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CONTENT_CATEGORIES_VERSION_UNSPECIFIED",
+            "V1",
+            "V2"
+          ],
+          "enumDescriptions": [
+            "If `ContentCategoriesVersion` is not specified, this option will default to `V1`.",
+            "Legacy content categories of our initial launch in 2017.",
+            "Updated content categories in 2022."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("bigtableadmin2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220412")
+            .version("0.1.0-20230110")
             .about("Administer your Cloud Bigtable tables and instances.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -172,7 +172,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut tables2 = SubCommand::with_name("tables")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: check_consistency, create, delete, drop_row_range, generate_consistency_token, get, get_iam_policy, list, modify_column_families, restore, set_iam_policy and test_iam_permissions");
+                        .about("methods: check_consistency, create, delete, drop_row_range, generate_consistency_token, get, get_iam_policy, list, modify_column_families, patch, restore, set_iam_policy, test_iam_permissions and undelete");
         {
             let mcmd = SubCommand::with_name("check_consistency").about("Checks replication consistency based on a consistency token, that is, if replication has caught up based on the conditions specified in the token and the check request.");
             tables2 = tables2.subcommand(mcmd);
@@ -213,7 +213,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             tables2 = tables2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("restore").about("Create a new table by restoring from a completed backup. The new table must be in the same project as the instance containing the backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.");
+            let mcmd = SubCommand::with_name("patch").about("Updates a specified table.");
+            tables2 = tables2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("restore").about("Create a new table by restoring from a completed backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.");
             tables2 = tables2.subcommand(mcmd);
         }
         {
@@ -227,9 +231,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Returns permissions that the caller has on the specified table resource.");
             tables2 = tables2.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("undelete")
+                .about("Restores a specified table which was accidentally deleted.");
+            tables2 = tables2.subcommand(mcmd);
+        }
         let mut backups3 = SubCommand::with_name("backups")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+                        .about("methods: copy, create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("copy").about("Copy a Cloud Bigtable backup to a new backup in the destination cluster located in the destination instance and project.");
+            backups3 = backups3.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create").about("Starts creating a new Cloud Bigtable Backup. The returned backup long-running operation can be used to track creation of the backup. The metadata field type is CreateBackupMetadata. The response field type is Backup, if successful. Cancelling the returned operation will stop the creation and delete the backup.");
             backups3 = backups3.subcommand(mcmd);

@@ -7,7 +7,7 @@
   "canonicalName": "Doubleclicksearch",
   "fullyEncodeReservedExpansion": null,
   "version": "v2",
-  "revision": "20220420",
+  "revision": "20230124",
   "title": "Search Ads 360 API",
   "description": "The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.",
   "ownerDomain": "google.com",
@@ -245,6 +245,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "customerId": {
+          "description": "Customer ID of a client account in the new Search Ads 360 experience.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "segmentationId": {
           "description": "The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).",
           "type": "string",
@@ -450,6 +460,16 @@
           "items": {
             "$ref": "CustomMetric"
           }
+        },
+        "customerId": {
+          "description": "Customer ID of a client account in the new Search Ads 360 experience.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "deviceType": {
           "description": "The type of device on which the conversion occurred.",
@@ -1542,6 +1562,20 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "customerId": {
+              "description": "Customer ID of a client account in the new Search Ads 360 experience.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "endDate": {
               "description": "Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.",
               "default": null,
@@ -1617,6 +1651,201 @@
             "agencyId",
             "advertiserId",
             "engineAccountId",
+            "endDate",
+            "rowCount",
+            "startDate",
+            "startRow"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "ConversionList"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/doubleclicksearch"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "getByCustomerId": {
+          "id": "doubleclicksearch.conversion.getByCustomerId",
+          "path": "doubleclicksearch/v2/customer/{customerId}/conversion",
+          "httpMethod": "GET",
+          "description": "Retrieves a list of conversions from a DoubleClick Search engine account.",
+          "parameters": {
+            "adGroupId": {
+              "description": "Numeric ID of the ad group.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "adId": {
+              "description": "Numeric ID of the ad.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "advertiserId": {
+              "description": "Numeric ID of the advertiser.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "agencyId": {
+              "description": "Numeric ID of the agency.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "campaignId": {
+              "description": "Numeric ID of the campaign.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "criterionId": {
+              "description": "Numeric ID of the criterion.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "customerId": {
+              "description": "Customer ID of a client account in the new Search Ads 360 experience.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "endDate": {
+              "description": "Last date (inclusive) on which to retrieve conversions. Format is yyyymmdd.",
+              "default": null,
+              "location": "query",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "minimum": "20091101",
+              "maximum": "99991231",
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "engineAccountId": {
+              "description": "Numeric ID of the engine account.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "rowCount": {
+              "description": "The number of conversions to return per call.",
+              "default": null,
+              "location": "query",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "minimum": "1",
+              "maximum": "1000",
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "startDate": {
+              "description": "First date (inclusive) on which to retrieve conversions. Format is yyyymmdd.",
+              "default": null,
+              "location": "query",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "minimum": "20091101",
+              "maximum": "99991231",
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "startRow": {
+              "description": "The 0-based starting index for retrieving conversions results.",
+              "default": null,
+              "location": "query",
+              "required": true,
+              "type": "integer",
+              "format": "uint32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "customerId",
             "endDate",
             "rowCount",
             "startDate",

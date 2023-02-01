@@ -1,6 +1,6 @@
 [package]
 name = "google-datafusion1"
-version = "0.1.0-20220316"
+version = "0.1.0-20221213"
 authors = ["Glenn Griffin <ggriffiniii@gmail.com"]
 edition = "2018"
 # for now, let's not even accidentally publish these

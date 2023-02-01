@@ -1,9 +1,97 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [datasets](resources/projects/locations/datasets/struct.DatasetsActions.html)\n      * [*create*](resources/projects/locations/datasets/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/struct.TestIamPermissionsRequestBuilder.html)\n      * [annotation_stores](resources/projects/locations/datasets/annotation_stores/struct.AnnotationStoresActions.html)\n        * [*create*](resources/projects/locations/datasets/annotation_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/annotation_stores/struct.DeleteRequestBuilder.html), [*evaluate*](resources/projects/locations/datasets/annotation_stores/struct.EvaluateRequestBuilder.html), [*export*](resources/projects/locations/datasets/annotation_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/annotation_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/annotation_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/annotation_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/annotation_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/annotation_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/annotation_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/annotation_stores/struct.TestIamPermissionsRequestBuilder.html)\n        * [annotations](resources/projects/locations/datasets/annotation_stores/annotations/struct.AnnotationsActions.html)\n          * [*create*](resources/projects/locations/datasets/annotation_stores/annotations/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/annotation_stores/annotations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/annotation_stores/annotations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/annotation_stores/annotations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/annotation_stores/annotations/struct.PatchRequestBuilder.html)\n      * [consent_stores](resources/projects/locations/datasets/consent_stores/struct.ConsentStoresActions.html)\n        * [*checkDataAccess*](resources/projects/locations/datasets/consent_stores/struct.CheckDataAccessRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/struct.DeleteRequestBuilder.html), [*evaluateUserConsents*](resources/projects/locations/datasets/consent_stores/struct.EvaluateUserConsentsRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/struct.PatchRequestBuilder.html), [*queryAccessibleData*](resources/projects/locations/datasets/consent_stores/struct.QueryAccessibleDataRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/consent_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/consent_stores/struct.TestIamPermissionsRequestBuilder.html)\n        * [attribute_definitions](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.AttributeDefinitionsActions.html)\n          * [*create*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/attribute_definitions/struct.PatchRequestBuilder.html)\n        * [consent_artifacts](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ConsentArtifactsActions.html)\n          * [*create*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consent_artifacts/struct.ListRequestBuilder.html)\n        * [consents](resources/projects/locations/datasets/consent_stores/consents/struct.ConsentsActions.html)\n          * [*activate*](resources/projects/locations/datasets/consent_stores/consents/struct.ActivateRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/consents/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRequestBuilder.html), [*deleteRevision*](resources/projects/locations/datasets/consent_stores/consents/struct.DeleteRevisionRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/consents/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRequestBuilder.html), [*listRevisions*](resources/projects/locations/datasets/consent_stores/consents/struct.ListRevisionsRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/consents/struct.PatchRequestBuilder.html), [*reject*](resources/projects/locations/datasets/consent_stores/consents/struct.RejectRequestBuilder.html), [*revoke*](resources/projects/locations/datasets/consent_stores/consents/struct.RevokeRequestBuilder.html)\n        * [user_data_mappings](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.UserDataMappingsActions.html)\n          * [*archive*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ArchiveRequestBuilder.html), [*create*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/consent_stores/user_data_mappings/struct.PatchRequestBuilder.html)\n      * [dicom_stores](resources/projects/locations/datasets/dicom_stores/struct.DicomStoresActions.html)\n        * [*create*](resources/projects/locations/datasets/dicom_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/dicom_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/dicom_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/dicom_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/dicom_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/dicom_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/dicom_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/dicom_stores/struct.PatchRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/struct.SearchForSeriesRequestBuilder.html), [*searchForStudies*](resources/projects/locations/datasets/dicom_stores/struct.SearchForStudiesRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/dicom_stores/struct.SetIamPolicyRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/struct.StoreInstancesRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/dicom_stores/struct.TestIamPermissionsRequestBuilder.html)\n        * [studies](resources/projects/locations/datasets/dicom_stores/studies/struct.StudiesActions.html)\n          * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveMetadataRequestBuilder.html), [*retrieveStudy*](resources/projects/locations/datasets/dicom_stores/studies/struct.RetrieveStudyRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForInstancesRequestBuilder.html), [*searchForSeries*](resources/projects/locations/datasets/dicom_stores/studies/struct.SearchForSeriesRequestBuilder.html), [*storeInstances*](resources/projects/locations/datasets/dicom_stores/studies/struct.StoreInstancesRequestBuilder.html)\n          * [series](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SeriesActions.html)\n            * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.DeleteRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveMetadataRequestBuilder.html), [*retrieveSeries*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.RetrieveSeriesRequestBuilder.html), [*searchForInstances*](resources/projects/locations/datasets/dicom_stores/studies/series/struct.SearchForInstancesRequestBuilder.html)\n            * [instances](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.InstancesActions.html)\n              * [*delete*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.DeleteRequestBuilder.html), [*retrieveInstance*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveInstanceRequestBuilder.html), [*retrieveMetadata*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveMetadataRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/struct.RetrieveRenderedRequestBuilder.html)\n              * [frames](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.FramesActions.html)\n                * [*retrieveFrames*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveFramesRequestBuilder.html), [*retrieveRendered*](resources/projects/locations/datasets/dicom_stores/studies/series/instances/frames/struct.RetrieveRenderedRequestBuilder.html)\n      * [fhir_stores](resources/projects/locations/datasets/fhir_stores/struct.FhirStoresActions.html)\n        * [*configureSearch*](resources/projects/locations/datasets/fhir_stores/struct.ConfigureSearchRequestBuilder.html), [*create*](resources/projects/locations/datasets/fhir_stores/struct.CreateRequestBuilder.html), [*deidentify*](resources/projects/locations/datasets/fhir_stores/struct.DeidentifyRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/fhir_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/fhir_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/fhir_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/fhir_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/fhir_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/fhir_stores/struct.TestIamPermissionsRequestBuilder.html)\n        * [fhir](resources/projects/locations/datasets/fhir_stores/fhir/struct.FhirActions.html)\n          * [*ConceptMap-search-translate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConceptMapSearchTranslateRequestBuilder.html), [*ConceptMap-translate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConceptMapTranslateRequestBuilder.html), [*Observation-lastn*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ObservationLastnRequestBuilder.html), [*Patient-everything*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatientEverythingRequestBuilder.html), [*Resource-purge*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourcePurgeRequestBuilder.html), [*Resource-validate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ResourceValidateRequestBuilder.html), [*capabilities*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CapabilitiesRequestBuilder.html), [*conditionalDelete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalDeleteRequestBuilder.html), [*conditionalPatch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalPatchRequestBuilder.html), [*conditionalUpdate*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ConditionalUpdateRequestBuilder.html), [*create*](resources/projects/locations/datasets/fhir_stores/fhir/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/fhir_stores/fhir/struct.DeleteRequestBuilder.html), [*executeBundle*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ExecuteBundleRequestBuilder.html), [*history*](resources/projects/locations/datasets/fhir_stores/fhir/struct.HistoryRequestBuilder.html), [*patch*](resources/projects/locations/datasets/fhir_stores/fhir/struct.PatchRequestBuilder.html), [*read*](resources/projects/locations/datasets/fhir_stores/fhir/struct.ReadRequestBuilder.html), [*search*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchRequestBuilder.html), [*search-type*](resources/projects/locations/datasets/fhir_stores/fhir/struct.SearchTypeRequestBuilder.html), [*update*](resources/projects/locations/datasets/fhir_stores/fhir/struct.UpdateRequestBuilder.html), [*vread*](resources/projects/locations/datasets/fhir_stores/fhir/struct.VreadRequestBuilder.html)\n      * [hl_7v2_stores](resources/projects/locations/datasets/hl_7v2_stores/struct.Hl7V2StoresActions.html)\n        * [*create*](resources/projects/locations/datasets/hl_7v2_stores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/datasets/hl_7v2_stores/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/datasets/hl_7v2_stores/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/datasets/hl_7v2_stores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/datasets/hl_7v2_stores/struct.TestIamPermissionsRequestBuilder.html)\n        * [messages](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.MessagesActions.html)\n          * [*batchGet*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.BatchGetRequestBuilder.html), [*create*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.GetRequestBuilder.html), [*ingest*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.IngestRequestBuilder.html), [*list*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/datasets/hl_7v2_stores/messages/struct.PatchRequestBuilder.html)\n      * [operations](resources/projects/locations/datasets/operations/struct.OperationsActions.html)\n        * [*cancel*](resources/projects/locations/datasets/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/datasets/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/datasets/operations/struct.ListRequestBuilder.html)\n    * [services](resources/projects/locations/services/struct.ServicesActions.html)\n      * [nlp](resources/projects/locations/services/nlp/struct.NlpActions.html)\n        * [*analyzeEntities*](resources/projects/locations/services/nlp/struct.AnalyzeEntitiesRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Action {
+        #[doc = "Inspect image and transform sensitive burnt-in text. Doesn’t apply to elements nested in a sequence, which revert to `Keep`. Supported [tags](http://dicom.nema.org/medical/dicom/2018e/output/chtml/part06/chapter_6.html): PixelData"]
+        #[serde(
+            rename = "cleanImageTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clean_image_tag: ::std::option::Option<crate::schemas::ImageConfig>,
+        #[doc = "Inspect text and transform sensitive text. Configurable via TextConfig. Supported Value Representations: AE, LO, LT, PN, SH, ST, UC, UT, DA, DT, AS"]
+        #[serde(
+            rename = "cleanTextTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clean_text_tag: ::std::option::Option<crate::schemas::CleanTextTag>,
+        #[doc = "Delete tag."]
+        #[serde(
+            rename = "deleteTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub delete_tag: ::std::option::Option<crate::schemas::DeleteTag>,
+        #[doc = "Keep tag unchanged."]
+        #[serde(
+            rename = "keepTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keep_tag: ::std::option::Option<crate::schemas::KeepTag>,
+        #[doc = "Select all tags with the listed tag IDs, names, or Value Representations (VRs). Examples: ID: “00100010” Keyword: “PatientName” VR: “PN”"]
+        #[serde(
+            rename = "queries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub queries: ::std::option::Option<Vec<String>>,
+        #[doc = "Recursively apply DICOM de-id to tags nested in a sequence. Supported \\[Value Representation\\] (http://dicom.nema.org/medical/dicom/2018e/output/chtml/part05/sect_6.2.html#table_6.2-1): SQ"]
+        #[serde(
+            rename = "recurseTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub recurse_tag: ::std::option::Option<crate::schemas::RecurseTag>,
+        #[doc = "Replace UID with a new generated UID. Supported \\[Value Representation\\] (http://dicom.nema.org/medical/dicom/2018e/output/chtml/part05/sect_6.2.html#table_6.2-1): UI"]
+        #[serde(
+            rename = "regenUidTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub regen_uid_tag: ::std::option::Option<crate::schemas::RegenUidTag>,
+        #[doc = "Replace with empty tag."]
+        #[serde(
+            rename = "removeTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remove_tag: ::std::option::Option<crate::schemas::RemoveTag>,
+        #[doc = "Reset tag to a placeholder value."]
+        #[serde(
+            rename = "resetTag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reset_tag: ::std::option::Option<crate::schemas::ResetTag>,
+    }
+    impl ::google_field_selector::FieldSelector for Action {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Action {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -809,7 +897,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -914,6 +1002,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CharacterMaskConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CharacterMaskField {}
+    impl ::google_field_selector::FieldSelector for CharacterMaskField {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CharacterMaskField {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1089,6 +1201,78 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CheckDataAccessResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CleanDescriptorsOption {}
+    impl ::google_field_selector::FieldSelector for CleanDescriptorsOption {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CleanDescriptorsOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CleanTextField {}
+    impl ::google_field_selector::FieldSelector for CleanTextField {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CleanTextField {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CleanTextTag {}
+    impl ::google_field_selector::FieldSelector for CleanTextTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CleanTextTag {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1643,6 +1827,30 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ContextualDeidConfig {}
+    impl ::google_field_selector::FieldSelector for ContextualDeidConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ContextualDeidConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -1712,6 +1920,30 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CryptoHashField {}
+    impl ::google_field_selector::FieldSelector for CryptoHashField {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CryptoHashField {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -1755,14 +1987,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DateShiftConfig {
-        #[doc = "An AES 128/192/256 bit key. Causes the shift to be computed based on this key and the patient ID. A default key is generated for each de-identification operation and is used when neither `crypto_key` nor `kms_wrapped` is specified. Must not be set if `kms_wrapped` is set."]
+        #[doc = "An AES 128/192/256 bit key. The date shift is computed based on this key and the patient ID. If the patient ID is empty for a DICOM resource, the date shift is computed based on this key and the study instance UID. If `crypto_key` is not set, then `kms_wrapped` is used to calculate the date shift. If neither is set, a default key is generated for each de-identify operation. Must not be set if `kms_wrapped` is set."]
         #[serde(
             rename = "cryptoKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub crypto_key: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "KMS wrapped key. Must not be set if `crypto_key` is set."]
+        #[doc = "KMS wrapped key. If `kms_wrapped` is not set, then `crypto_key` is used to calculate the date shift. If neither is set, a default key is generated for each de-identify operation. Must not be set if `crypto_key` is set."]
         #[serde(
             rename = "kmsWrapped",
             default,
@@ -1788,6 +2020,68 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DateShiftField {}
+    impl ::google_field_selector::FieldSelector for DateShiftField {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DateShiftField {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeidentifiedStoreDestination {
+        #[doc = "The configuration to use when de-identifying resources that are added to this store."]
+        #[serde(
+            rename = "config",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub config: ::std::option::Option<crate::schemas::DeidentifyConfig>,
+        #[doc = "The full resource name of a Cloud Healthcare FHIR store, for example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`."]
+        #[serde(
+            rename = "store",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub store: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DeidentifiedStoreDestination {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeidentifiedStoreDestination {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -1800,21 +2094,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotation: ::std::option::Option<crate::schemas::AnnotationConfig>,
-        #[doc = "Configures de-id of application/DICOM content."]
+        #[doc = "Configures de-id of application/DICOM content. Deprecated. Use `dicom_tag_config` instead."]
         #[serde(
             rename = "dicom",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dicom: ::std::option::Option<crate::schemas::DicomConfig>,
-        #[doc = "Configures de-id of application/FHIR content."]
+        #[doc = "Configures de-id of application/DICOM content."]
+        #[serde(
+            rename = "dicomTagConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dicom_tag_config: ::std::option::Option<crate::schemas::DicomTagConfig>,
+        #[doc = "Configures de-id of application/FHIR content. Deprecated. Use `fhir_field_config` instead."]
         #[serde(
             rename = "fhir",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fhir: ::std::option::Option<crate::schemas::FhirConfig>,
-        #[doc = "Configures de-identification of image pixels wherever they are found in the source_dataset."]
+        #[doc = "Configures de-id of application/FHIR content."]
+        #[serde(
+            rename = "fhirFieldConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fhir_field_config: ::std::option::Option<crate::schemas::FhirFieldConfig>,
+        #[doc = "Configures the de-identification of image pixels in the source_dataset. Deprecated. Use `dicom_tag_config.options.clean_image` instead."]
         #[serde(
             rename = "image",
             default,
@@ -1984,6 +2292,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_filter: ::std::option::Option<crate::schemas::FhirFilter>,
+        #[doc = "If true, skips resources that are created or modified after the de-identify operation is created."]
+        #[serde(
+            rename = "skipModifiedResources",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub skip_modified_resources: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for DeidentifyFhirStoreRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2046,6 +2361,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DeidentifySummary {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeleteTag {}
+    impl ::google_field_selector::FieldSelector for DeleteTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeleteTag {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2136,11 +2475,11 @@ pub mod schemas {
     pub enum DicomConfigFilterProfile {
         #[doc = "Remove tags based on DICOM Standard’s Attribute Confidentiality Basic Profile (DICOM Standard Edition 2018e) http://dicom.nema.org/medical/dicom/2018e/output/chtml/part15/chapter_E.html."]
         AttributeConfidentialityBasicProfile,
-        #[doc = "Inspects within tag contents and replaces sensitive text. The process can be configured using the TextConfig. Applies to all tags with the following Value Representation names: AE, LO, LT, PN, SH, ST, UC, UT, DA, DT, AS"]
+        #[doc = "Inspect within tag contents and replace sensitive text. The process can be configured using the TextConfig. Applies to all tags with the following Value Representation names: AE, LO, LT, PN, SH, ST, UC, UT, DA, DT, AS"]
         DeidentifyTagContents,
         #[doc = "Keep all tags."]
         KeepAllProfile,
-        #[doc = "Keep only tags required to produce valid DICOM."]
+        #[doc = "Keep only the tags required to produce valid DICOM objects."]
         MinimalKeepListProfile,
         #[doc = "No tag filtration profile provided. Same as KEEP_ALL_PROFILE."]
         TagFilterProfileUnspecified,
@@ -2323,6 +2662,143 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DicomTagConfig {
+        #[doc = "Specifies custom tag selections and `Actions` to apply to them. Overrides `options` and `profile`. Conflicting `Actions` are applied in the order given."]
+        #[serde(
+            rename = "actions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub actions: ::std::option::Option<Vec<crate::schemas::Action>>,
+        #[doc = "Specifies additional options to apply, overriding the base `profile`."]
+        #[serde(
+            rename = "options",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub options: ::std::option::Option<crate::schemas::Options>,
+        #[doc = "Base profile type for handling DICOM tags."]
+        #[serde(
+            rename = "profileType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_type: ::std::option::Option<crate::schemas::DicomTagConfigProfileType>,
+    }
+    impl ::google_field_selector::FieldSelector for DicomTagConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DicomTagConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum DicomTagConfigProfileType {
+        #[doc = "Remove tags based on DICOM Standard’s [Attribute Confidentiality Basic Profile (DICOM Standard Edition 2018e)](http://dicom.nema.org/medical/dicom/2018e/output/chtml/part15/chapter_E.html)."]
+        AttributeConfidentialityBasicProfile,
+        #[doc = "Inspect tag contents and replace sensitive text. The process can be configured using the TextConfig. Applies to all tags with the following \\[Value Representations\\] (http://dicom.nema.org/medical/dicom/2018e/output/chtml/part05/sect_6.2.html#table_6.2-1): AE, LO, LT, PN, SH, ST, UC, UT, DA, DT, AS"]
+        DeidentifyTagContents,
+        #[doc = "Keep all tags."]
+        KeepAllProfile,
+        #[doc = "Keep only the tags required to produce valid DICOM objects."]
+        MinimalKeepListProfile,
+        #[doc = "No profile provided. Same as `ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE`."]
+        ProfileTypeUnspecified,
+    }
+    impl DicomTagConfigProfileType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                DicomTagConfigProfileType::AttributeConfidentialityBasicProfile => {
+                    "ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE"
+                }
+                DicomTagConfigProfileType::DeidentifyTagContents => "DEIDENTIFY_TAG_CONTENTS",
+                DicomTagConfigProfileType::KeepAllProfile => "KEEP_ALL_PROFILE",
+                DicomTagConfigProfileType::MinimalKeepListProfile => "MINIMAL_KEEP_LIST_PROFILE",
+                DicomTagConfigProfileType::ProfileTypeUnspecified => "PROFILE_TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for DicomTagConfigProfileType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for DicomTagConfigProfileType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<DicomTagConfigProfileType, ()> {
+            Ok(match s {
+                "ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE" => {
+                    DicomTagConfigProfileType::AttributeConfidentialityBasicProfile
+                }
+                "DEIDENTIFY_TAG_CONTENTS" => DicomTagConfigProfileType::DeidentifyTagContents,
+                "KEEP_ALL_PROFILE" => DicomTagConfigProfileType::KeepAllProfile,
+                "MINIMAL_KEEP_LIST_PROFILE" => DicomTagConfigProfileType::MinimalKeepListProfile,
+                "PROFILE_TYPE_UNSPECIFIED" => DicomTagConfigProfileType::ProfileTypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for DicomTagConfigProfileType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for DicomTagConfigProfileType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for DicomTagConfigProfileType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE" => {
+                    DicomTagConfigProfileType::AttributeConfidentialityBasicProfile
+                }
+                "DEIDENTIFY_TAG_CONTENTS" => DicomTagConfigProfileType::DeidentifyTagContents,
+                "KEEP_ALL_PROFILE" => DicomTagConfigProfileType::KeepAllProfile,
+                "MINIMAL_KEEP_LIST_PROFILE" => DicomTagConfigProfileType::MinimalKeepListProfile,
+                "PROFILE_TYPE_UNSPECIFIED" => DicomTagConfigProfileType::ProfileTypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for DicomTagConfigProfileType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DicomTagConfigProfileType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -2402,7 +2878,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f64>,
-        #[doc = "linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence.it"]
+        #[doc = "linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence."]
         #[serde(
             rename = "linkedEntities",
             default,
@@ -2772,7 +3248,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for EvaluateUserConsentsResponse {
+    impl crate::GetNextPageToken<String> for EvaluateUserConsentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3170,6 +3646,135 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct FhirFieldConfig {
+        #[doc = "Specifies FHIR paths to match and how to transform them. Any field that is not matched by a `FieldMetadata` is passed through to the output dataset unmodified. All extensions will be processed according to `keep_extensions`. If a field can be matched by more than one `FieldMetadata`, the first `FieldMetadata.Action` is applied. Overrides `options` and `profile`."]
+        #[serde(
+            rename = "fieldMetadataList",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_metadata_list: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudHealthcareV1Beta1DeidentifyFieldMetadata>,
+        >,
+        #[doc = "Specifies additional options, overriding the base `profile`."]
+        #[serde(
+            rename = "options",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub options:
+            ::std::option::Option<crate::schemas::GoogleCloudHealthcareV1Beta1DeidentifyOptions>,
+        #[doc = "Base profile type for handling FHIR fields."]
+        #[serde(
+            rename = "profileType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_type: ::std::option::Option<crate::schemas::FhirFieldConfigProfileType>,
+    }
+    impl ::google_field_selector::FieldSelector for FhirFieldConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FhirFieldConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FhirFieldConfigProfileType {
+        #[doc = "Transforms known HIPAA 18 fields and cleans known unstructured text fields."]
+        Basic,
+        #[doc = "Cleans all supported tags. Applies to types: Code, Date, DateTime, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml"]
+        CleanAll,
+        #[doc = "`Keep` all fields."]
+        KeepAll,
+        #[doc = "No profile provided. Same as `BASIC`."]
+        ProfileTypeUnspecified,
+    }
+    impl FhirFieldConfigProfileType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FhirFieldConfigProfileType::Basic => "BASIC",
+                FhirFieldConfigProfileType::CleanAll => "CLEAN_ALL",
+                FhirFieldConfigProfileType::KeepAll => "KEEP_ALL",
+                FhirFieldConfigProfileType::ProfileTypeUnspecified => "PROFILE_TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FhirFieldConfigProfileType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FhirFieldConfigProfileType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FhirFieldConfigProfileType, ()> {
+            Ok(match s {
+                "BASIC" => FhirFieldConfigProfileType::Basic,
+                "CLEAN_ALL" => FhirFieldConfigProfileType::CleanAll,
+                "KEEP_ALL" => FhirFieldConfigProfileType::KeepAll,
+                "PROFILE_TYPE_UNSPECIFIED" => FhirFieldConfigProfileType::ProfileTypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FhirFieldConfigProfileType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FhirFieldConfigProfileType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FhirFieldConfigProfileType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BASIC" => FhirFieldConfigProfileType::Basic,
+                "CLEAN_ALL" => FhirFieldConfigProfileType::CleanAll,
+                "KEEP_ALL" => FhirFieldConfigProfileType::KeepAll,
+                "PROFILE_TYPE_UNSPECIFIED" => FhirFieldConfigProfileType::ProfileTypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FhirFieldConfigProfileType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FhirFieldConfigProfileType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct FhirFilter {
         #[doc = "List of resources to include in the output. If this list is empty or not specified, all resources are included in the output."]
         #[serde(
@@ -3185,6 +3790,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FhirFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FhirNotificationConfig {
+        #[doc = "The [Pub/Sub](https://cloud.google.com/pubsub/docs/) topic that notifications of changes are published on. Supplied by the client. The notification is a `PubsubMessage` with the following fields: * `PubsubMessage.Data` contains the resource name. * `PubsubMessage.MessageId` is the ID of this notification. It is guaranteed to be unique within the topic. * `PubsubMessage.PublishTime` is the time when the message was published. Note that notifications are only sent if the topic is non-empty. [Topic names](https://cloud.google.com/pubsub/docs/overview#names) must be scoped to a project. The Cloud Healthcare API service account, service-@gcp-sa-healthcare.iam.gserviceaccount.com, must have publisher permissions on the given Pub/Sub topic. Not having adequate permissions causes the calls that send notifications to fail. If a notification can’t be published to Pub/Sub, errors are logged to Cloud Logging. For more information, see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare-api/docs/how-tos/logging)."]
+        #[serde(
+            rename = "pubsubTopic",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pubsub_topic: ::std::option::Option<String>,
+        #[doc = "Whether to send full FHIR resource to this Pub/Sub topic for Create and Update operation. Note that setting this to true does not guarantee that all resources will be sent in the format of full FHIR resource. When a resource change is too large or during heavy traffic, only the resource name will be sent. Clients should always check the “payloadType” label from a Pub/Sub message to determine whether it needs to fetch the full resource as a separate operation."]
+        #[serde(
+            rename = "sendFullResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub send_full_resource: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for FhirNotificationConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FhirNotificationConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3233,6 +3876,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FhirStore {
+        #[doc = "Enable parsing of references within complex FHIR data types such as Extensions. If this value is set to ENABLED, then features like referential integrity and Bundle reference rewriting apply to all references. If this flag has not been specified the behavior of the FHIR store will not change, references in complex data types will not be parsed. New stores will have this value set to ENABLED after a notification period. Warning: turning on this flag causes processing existing resources to fail if they contain references to non-existent resources."]
+        #[serde(
+            rename = "complexDataTypeReferenceParsing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complex_data_type_reference_parsing:
+            ::std::option::Option<crate::schemas::FhirStoreComplexDataTypeReferenceParsing>,
         #[doc = "If true, overrides the default search behavior for this FHIR store to `handling=strict` which returns an error for unrecognized search parameters. If false, uses the FHIR specification default `handling=lenient` which ignores unrecognized search parameters. The handling can always be changed from the default on an individual API call by setting the HTTP header `Prefer: handling=strict` or `Prefer: handling=lenient`."]
         #[serde(
             rename = "defaultSearchHandlingStrict",
@@ -3275,13 +3926,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "If non-empty, publish all resource modifications of this FHIR store to this destination. The Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, “action”:“CreateResource”."]
+        #[doc = "If non-empty, publish all resource modifications of this FHIR store to this destination. The Pub/Sub message attributes contain a map with a string describing the action that has triggered the notification. For example, “action”:“CreateResource”. Deprecated. Use `notification_configs` instead."]
         #[serde(
             rename = "notificationConfig",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification_config: ::std::option::Option<crate::schemas::NotificationConfig>,
+        #[doc = "Specifies where and whether to send notifications upon changes to a Fhir store."]
+        #[serde(
+            rename = "notificationConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub notification_configs:
+            ::std::option::Option<Vec<crate::schemas::FhirNotificationConfig>>,
         #[doc = "Configuration for how FHIR resources can be searched."]
         #[serde(
             rename = "searchConfig",
@@ -3317,6 +3976,65 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FhirStore {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FhirStoreComplexDataTypeReferenceParsing {
+        #[doc = "No parsing behavior specified. This is the same as DISABLED for backwards compatibility."]
+        ComplexDataTypeReferenceParsingUnspecified,
+        #[doc = "References in complex data types are ignored."]
+        Disabled,
+        #[doc = "References in complex data types are parsed."]
+        Enabled,
+    }
+    impl FhirStoreComplexDataTypeReferenceParsing {
+        pub fn as_str(self) -> &'static str {
+            match self { FhirStoreComplexDataTypeReferenceParsing :: ComplexDataTypeReferenceParsingUnspecified => "COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED" , FhirStoreComplexDataTypeReferenceParsing :: Disabled => "DISABLED" , FhirStoreComplexDataTypeReferenceParsing :: Enabled => "ENABLED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FhirStoreComplexDataTypeReferenceParsing {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FhirStoreComplexDataTypeReferenceParsing {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<FhirStoreComplexDataTypeReferenceParsing, ()> {
+            Ok (match s { "COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED" => FhirStoreComplexDataTypeReferenceParsing :: ComplexDataTypeReferenceParsingUnspecified , "DISABLED" => FhirStoreComplexDataTypeReferenceParsing :: Disabled , "ENABLED" => FhirStoreComplexDataTypeReferenceParsing :: Enabled , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for FhirStoreComplexDataTypeReferenceParsing {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FhirStoreComplexDataTypeReferenceParsing {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FhirStoreComplexDataTypeReferenceParsing {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED" => FhirStoreComplexDataTypeReferenceParsing :: ComplexDataTypeReferenceParsingUnspecified , "DISABLED" => FhirStoreComplexDataTypeReferenceParsing :: Disabled , "ENABLED" => FhirStoreComplexDataTypeReferenceParsing :: Enabled , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FhirStoreComplexDataTypeReferenceParsing {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FhirStoreComplexDataTypeReferenceParsing {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4284,6 +5002,140 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudHealthcareV1Beta1DeidentifyFieldMetadata {
+        #[doc = "Replace the field’s value with a masking character. Supported [types](https://www.hl7.org/fhir/datatypes.html): Code, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml"]
+        #[serde(
+            rename = "characterMaskField",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub character_mask_field: ::std::option::Option<crate::schemas::CharacterMaskField>,
+        #[doc = "Inspect the field’s text and transform sensitive text. Configure using `TextConfig`. Supported [types](https://www.hl7.org/fhir/datatypes.html): Code, Date, DateTime, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml"]
+        #[serde(
+            rename = "cleanTextField",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clean_text_field: ::std::option::Option<crate::schemas::CleanTextField>,
+        #[doc = "Replace field value with a hash of that value. Supported [types](https://www.hl7.org/fhir/datatypes.html): Code, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml"]
+        #[serde(
+            rename = "cryptoHashField",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crypto_hash_field: ::std::option::Option<crate::schemas::CryptoHashField>,
+        #[doc = "Shift the date by a randomized number of days. See [date shifting](https://cloud.google.com/dlp/docs/concepts-date-shifting) for more information. Supported [types](https://www.hl7.org/fhir/datatypes.html): Date, DateTime"]
+        #[serde(
+            rename = "dateShiftField",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_shift_field: ::std::option::Option<crate::schemas::DateShiftField>,
+        #[doc = "Keep the field unchanged."]
+        #[serde(
+            rename = "keepField",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keep_field: ::std::option::Option<crate::schemas::KeepField>,
+        #[doc = "List of paths to FHIR fields to redact. Each path is a period-separated list where each component is either a field name or FHIR type name. All types begin with an upper case letter. For example, the resource field “Patient.Address.city”, which uses a string type, can be matched by “Patient.Address.String”. Path also supports partialkk matching. For example, “Patient.Address.city” can be matched by “Address.city” (Patient omitted). Partial matching and type matching can be combined, for example “Patient.Address.city” can be matched by “Address.String”. For “choice” types (those defined in the FHIR spec with the form: field\\[x\\]), use two separate components. For example, “deceasedAge.unit” is matched by “Deceased.Age.unit”. Supported [types](https://www.hl7.org/fhir/datatypes.html) are: AdministrativeGenderCode, Base64Binary, Boolean, Code, Date, DateTime, Decimal, HumanName, Id, Instant, Integer, LanguageCode, Markdown, Oid, PositiveInt, String, UnsignedInt, Uri, Uuid, Xhtml. The sub-type for HumanName (for example HumanName.given, HumanName.family) can be omitted."]
+        #[serde(
+            rename = "paths",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub paths: ::std::option::Option<Vec<String>>,
+        #[doc = "Remove the field."]
+        #[serde(
+            rename = "removeField",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remove_field: ::std::option::Option<crate::schemas::RemoveField>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudHealthcareV1Beta1DeidentifyFieldMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudHealthcareV1Beta1DeidentifyFieldMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudHealthcareV1Beta1DeidentifyOptions {
+        #[doc = "Character mask config for `CharacterMaskField` `FieldMetadatas`."]
+        #[serde(
+            rename = "characterMaskConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub character_mask_config: ::std::option::Option<crate::schemas::CharacterMaskConfig>,
+        #[doc = "Configure contextual de-id."]
+        #[serde(
+            rename = "contextualDeid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub contextual_deid: ::std::option::Option<crate::schemas::ContextualDeidConfig>,
+        #[doc = "Crypo hash config for `CharacterMaskField` `FieldMetadatas`."]
+        #[serde(
+            rename = "cryptoHashConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crypto_hash_config: ::std::option::Option<crate::schemas::CryptoHashConfig>,
+        #[doc = "Date shifting config for `CharacterMaskField` `FieldMetadatas`."]
+        #[serde(
+            rename = "dateShiftConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_shift_config: ::std::option::Option<crate::schemas::DateShiftConfig>,
+        #[doc = "Configure keeping extensions by default."]
+        #[serde(
+            rename = "keepExtensions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keep_extensions: ::std::option::Option<crate::schemas::KeepExtensionsConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudHealthcareV1Beta1DeidentifyOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudHealthcareV1Beta1DeidentifyOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudHealthcareV1Beta1DicomBigQueryDestination {
         #[doc = "Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE."]
         #[serde(
@@ -4323,13 +5175,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition {
-        #[doc = "Append data to the existing table."]
+        #[doc = "Append data to the destination table."]
         WriteAppend,
         #[doc = "Default behavior is the same as WRITE_EMPTY."]
         WriteDispositionUnspecified,
         #[doc = "Only export data if the destination table is empty."]
         WriteEmpty,
-        #[doc = "Erase all existing data in a table before writing the instances."]
+        #[doc = "Erase all existing data in the destination table before writing the instances."]
         WriteTruncate,
     }
     impl GoogleCloudHealthcareV1Beta1DicomBigQueryDestinationWriteDisposition {
@@ -4553,13 +5405,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition {
-        #[doc = "Append data to the existing tables."]
+        #[doc = "Append data to the destination tables."]
         WriteAppend,
         #[doc = "Default behavior is the same as WRITE_EMPTY."]
         WriteDispositionUnspecified,
         #[doc = "Only export data if the destination tables are empty."]
         WriteEmpty,
-        #[doc = "Erase all existing data in the tables before writing the instances."]
+        #[doc = "Erase all existing data in the destination tables before writing the FHIR resources."]
         WriteTruncate,
     }
     impl GoogleCloudHealthcareV1Beta1FhirBigQueryDestinationWriteDisposition {
@@ -4913,7 +5765,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Resource name of the HL7v2 store, of the form `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`."]
+        #[doc = "Resource name of the HL7v2 store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`."]
         #[serde(
             rename = "name",
             default,
@@ -5075,6 +5927,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ImageConfig {
+        #[doc = "Additional InfoTypes to redact in the images in addition to those used by `text_redaction_mode`. Can only be used when `text_redaction_mode` is set to `REDACT_SENSITIVE_TEXT`, `REDACT_SENSITIVE_TEXT_CLEAN_DESCRIPTORS` or `TEXT_REDACTION_MODE_UNSPECIFIED`."]
+        #[serde(
+            rename = "additionalInfoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_info_types: ::std::option::Option<Vec<String>>,
+        #[doc = "InfoTypes to skip redacting, overriding those used by `text_redaction_mode`. Can only be used when `text_redaction_mode` is set to `REDACT_SENSITIVE_TEXT` or `REDACT_SENSITIVE_TEXT_CLEAN_DESCRIPTORS`."]
+        #[serde(
+            rename = "excludeInfoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exclude_info_types: ::std::option::Option<Vec<String>>,
         #[doc = "Determines how to redact text from image."]
         #[serde(
             rename = "textRedactionMode",
@@ -5100,8 +5966,10 @@ pub mod schemas {
         RedactAllText,
         #[doc = "Do not redact text."]
         RedactNoText,
-        #[doc = "Redact sensitive text."]
+        #[doc = "Redact sensitive text. Uses the set of [Default DICOM InfoTypes](https://cloud.google.com/healthcare-api/docs/how-tos/dicom-deidentify#default_dicom_infotypes)."]
         RedactSensitiveText,
+        #[doc = "This mode is like `REDACT_SENSITIVE_TEXT` with the addition of the \\[Clean Descriptors Option\\] (https://dicom.nema.org/medical/dicom/2018e/output/chtml/part15/sect_E.3.5.html) enabled: When cleaning text, the process attempts to transform phrases matching any of the tags marked for removal (action codes D, Z, X, and U) in the \\[Basic Profile\\] (https://dicom.nema.org/medical/dicom/2018e/output/chtml/part15/chapter_E.html). These contextual phrases are replaced with the token “\\[CTX\\]”. This mode uses an additional InfoType during inspection."]
+        RedactSensitiveTextCleanDescriptors,
         #[doc = "No text redaction specified. Same as REDACT_NO_TEXT."]
         TextRedactionModeUnspecified,
     }
@@ -5111,6 +5979,9 @@ pub mod schemas {
                 ImageConfigTextRedactionMode::RedactAllText => "REDACT_ALL_TEXT",
                 ImageConfigTextRedactionMode::RedactNoText => "REDACT_NO_TEXT",
                 ImageConfigTextRedactionMode::RedactSensitiveText => "REDACT_SENSITIVE_TEXT",
+                ImageConfigTextRedactionMode::RedactSensitiveTextCleanDescriptors => {
+                    "REDACT_SENSITIVE_TEXT_CLEAN_DESCRIPTORS"
+                }
                 ImageConfigTextRedactionMode::TextRedactionModeUnspecified => {
                     "TEXT_REDACTION_MODE_UNSPECIFIED"
                 }
@@ -5129,6 +6000,9 @@ pub mod schemas {
                 "REDACT_ALL_TEXT" => ImageConfigTextRedactionMode::RedactAllText,
                 "REDACT_NO_TEXT" => ImageConfigTextRedactionMode::RedactNoText,
                 "REDACT_SENSITIVE_TEXT" => ImageConfigTextRedactionMode::RedactSensitiveText,
+                "REDACT_SENSITIVE_TEXT_CLEAN_DESCRIPTORS" => {
+                    ImageConfigTextRedactionMode::RedactSensitiveTextCleanDescriptors
+                }
                 "TEXT_REDACTION_MODE_UNSPECIFIED" => {
                     ImageConfigTextRedactionMode::TextRedactionModeUnspecified
                 }
@@ -5159,6 +6033,9 @@ pub mod schemas {
                 "REDACT_ALL_TEXT" => ImageConfigTextRedactionMode::RedactAllText,
                 "REDACT_NO_TEXT" => ImageConfigTextRedactionMode::RedactNoText,
                 "REDACT_SENSITIVE_TEXT" => ImageConfigTextRedactionMode::RedactSensitiveText,
+                "REDACT_SENSITIVE_TEXT_CLEAN_DESCRIPTORS" => {
+                    ImageConfigTextRedactionMode::RedactSensitiveTextCleanDescriptors
+                }
                 "TEXT_REDACTION_MODE_UNSPECIFIED" => {
                     ImageConfigTextRedactionMode::TextRedactionModeUnspecified
                 }
@@ -5556,7 +6433,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date_shift_config: ::std::option::Option<crate::schemas::DateShiftConfig>,
-        #[doc = "InfoTypes to apply this transformation to. If this is not specified, this transformation becomes the default transformation, and is used for any info_type that is not specified in another transformation."]
+        #[doc = "`InfoTypes` to apply this transformation to. If this is not specified, this transformation becomes the default transformation, and is used for any `info_type` that is not specified in another transformation."]
         #[serde(
             rename = "infoTypes",
             default,
@@ -5666,12 +6543,84 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeepExtensionsConfig {}
+    impl ::google_field_selector::FieldSelector for KeepExtensionsConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeepExtensionsConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeepField {}
+    impl ::google_field_selector::FieldSelector for KeepField {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeepField {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeepTag {}
+    impl ::google_field_selector::FieldSelector for KeepTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeepTag {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct KmsWrappedCryptoKey {
-        #[doc = "Required. The resource name of the KMS CryptoKey to use for unwrapping."]
+        #[doc = "Required. The resource name of the KMS CryptoKey to use for unwrapping. For example, `projects/{project_id}/locations/{location_id}/keyRings/{keyring}/cryptoKeys/{key}`."]
         #[serde(
             rename = "cryptoKey",
             default,
@@ -5765,7 +6714,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAnnotationStoresResponse {
+    impl crate::GetNextPageToken<String> for ListAnnotationStoresResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5799,7 +6748,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAnnotationsResponse {
+    impl crate::GetNextPageToken<String> for ListAnnotationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5842,7 +6791,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAttributeDefinitionsResponse {
+    impl crate::GetNextPageToken<String> for ListAttributeDefinitionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5885,7 +6834,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListConsentArtifactsResponse {
+    impl crate::GetNextPageToken<String> for ListConsentArtifactsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5928,7 +6877,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListConsentRevisionsResponse {
+    impl crate::GetNextPageToken<String> for ListConsentRevisionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5971,7 +6920,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListConsentStoresResponse {
+    impl crate::GetNextPageToken<String> for ListConsentStoresResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6014,7 +6963,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListConsentsResponse {
+    impl crate::GetNextPageToken<String> for ListConsentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6057,7 +7006,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListDatasetsResponse {
+    impl crate::GetNextPageToken<String> for ListDatasetsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6100,7 +7049,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListDicomStoresResponse {
+    impl crate::GetNextPageToken<String> for ListDicomStoresResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6143,7 +7092,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListFhirStoresResponse {
+    impl crate::GetNextPageToken<String> for ListFhirStoresResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6186,7 +7135,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListHl7V2StoresResponse {
+    impl crate::GetNextPageToken<String> for ListHl7V2StoresResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6218,7 +7167,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6261,7 +7210,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListMessagesResponse {
+    impl crate::GetNextPageToken<String> for ListMessagesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6293,7 +7242,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6336,7 +7285,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListUserDataMappingsResponse {
+    impl crate::GetNextPageToken<String> for ListUserDataMappingsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6431,7 +7380,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message_type: ::std::option::Option<String>,
-        #[doc = "Resource name of the Message, of the form `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server."]
+        #[doc = "Resource name of the Message, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server."]
         #[serde(
             rename = "name",
             default,
@@ -6633,6 +7582,127 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for OperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Options {
+        #[doc = "Set Clean Descriptors Option."]
+        #[serde(
+            rename = "cleanDescriptors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clean_descriptors: ::std::option::Option<crate::schemas::CleanDescriptorsOption>,
+        #[doc = "Apply `Action.clean_image` to [`PixelData`](http://dicom.nema.org/medical/dicom/2018e/output/chtml/part06/chapter_6.html) as configured."]
+        #[serde(
+            rename = "cleanImage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clean_image: ::std::option::Option<crate::schemas::ImageConfig>,
+        #[doc = "Set `Action` for [`StudyInstanceUID`, `SeriesInstanceUID`, `SOPInstanceUID`, and `MediaStorageSOPInstanceUID`](http://dicom.nema.org/medical/dicom/2018e/output/chtml/part06/chapter_6.html)."]
+        #[serde(
+            rename = "primaryIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub primary_ids: ::std::option::Option<crate::schemas::OptionsPrimaryIds>,
+    }
+    impl ::google_field_selector::FieldSelector for Options {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Options {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum OptionsPrimaryIds {
+        #[doc = "Keep primary IDs."]
+        Keep,
+        #[doc = "No value provided. Default to the behavior specified by the base profile."]
+        PrimaryIdsOptionUnspecified,
+        #[doc = "Regenerate primary IDs."]
+        Regen,
+    }
+    impl OptionsPrimaryIds {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                OptionsPrimaryIds::Keep => "KEEP",
+                OptionsPrimaryIds::PrimaryIdsOptionUnspecified => "PRIMARY_IDS_OPTION_UNSPECIFIED",
+                OptionsPrimaryIds::Regen => "REGEN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for OptionsPrimaryIds {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for OptionsPrimaryIds {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<OptionsPrimaryIds, ()> {
+            Ok(match s {
+                "KEEP" => OptionsPrimaryIds::Keep,
+                "PRIMARY_IDS_OPTION_UNSPECIFIED" => OptionsPrimaryIds::PrimaryIdsOptionUnspecified,
+                "REGEN" => OptionsPrimaryIds::Regen,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for OptionsPrimaryIds {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for OptionsPrimaryIds {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for OptionsPrimaryIds {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "KEEP" => OptionsPrimaryIds::Keep,
+                "PRIMARY_IDS_OPTION_UNSPECIFIED" => OptionsPrimaryIds::PrimaryIdsOptionUnspecified,
+                "REGEN" => OptionsPrimaryIds::Regen,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for OptionsPrimaryIds {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OptionsPrimaryIds {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7030,6 +8100,30 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RecurseTag {}
+    impl ::google_field_selector::FieldSelector for RecurseTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RecurseTag {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct RedactConfig {}
     impl ::google_field_selector::FieldSelector for RedactConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -7037,6 +8131,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for RedactConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RegenUidTag {}
+    impl ::google_field_selector::FieldSelector for RegenUidTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegenUidTag {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7085,6 +8203,54 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RemoveField {}
+    impl ::google_field_selector::FieldSelector for RemoveField {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoveField {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RemoveTag {}
+    impl ::google_field_selector::FieldSelector for RemoveTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoveTag {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ReplaceWithInfoTypeConfig {}
     impl ::google_field_selector::FieldSelector for ReplaceWithInfoTypeConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -7092,6 +8258,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ReplaceWithInfoTypeConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ResetTag {}
+    impl ::google_field_selector::FieldSelector for ResetTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ResetTag {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7249,6 +8439,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SchemaConfig {
+        #[doc = "The configuration for exported BigQuery tables to be partitioned by FHIR resource’s last updated time column."]
+        #[serde(
+            rename = "lastUpdatedPartitionConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_updated_partition_config: ::std::option::Option<crate::schemas::TimePartitioning>,
         #[doc = "The depth for all recursive structures in the output analytics schema. For example, `concept` in the CodeSystem resource is a recursive structure; when the depth is 2, the CodeSystem table will have a column called `concept.concept` but not `concept.concept.concept`. If not specified or set to 0, the server will use the default value 2. The maximum depth allowed is 5."]
         #[serde(
             rename = "recursiveStructureDepth",
@@ -7279,7 +8476,7 @@ pub mod schemas {
     pub enum SchemaConfigSchemaType {
         #[doc = "Analytics schema defined by the FHIR community. See https://github.com/FHIR/sql-on-fhir/blob/master/sql-on-fhir.md. BigQuery only allows a maximum of 10,000 columns per table. Due to this limitation, the server will not generate schemas for fields of type `Resource`, which can hold any resource type. The affected fields are `Parameters.parameter.resource`, `Bundle.entry.resource`, and `Bundle.entry.response.outcome`."]
         Analytics,
-        #[doc = "Analytics V2, similar to schema defined by the FHIR community, with added support for extensions with one or more occurrences and contained resources in stringified JSON."]
+        #[doc = "Analytics V2, similar to schema defined by the FHIR community, with added support for extensions with one or more occurrences and contained resources in stringified JSON. Analytics V2 uses more space in the destination table than Analytics V1."]
         AnalyticsV2,
         #[doc = "A data-driven schema generated from the fields present in the FHIR data being exported, with no additional simplification."]
         Lossless,
@@ -8045,6 +9242,14 @@ pub mod schemas {
         pub bigquery_destination: ::std::option::Option<
             crate::schemas::GoogleCloudHealthcareV1Beta1FhirBigQueryDestination,
         >,
+        #[doc = "The destination FHIR store for de-identified resources. After this field is added, all subsequent creates/updates/patches to the source store will be de-identified using the provided configuration and applied to the destination store. Importing resources to the source store will not trigger the streaming. If the source store already contains resources when this option is enabled, those resources will not be copied to the destination store unless they are subsequently updated. This may result in invalid references in the destination store. Before adding this config, you must grant the healthcare.fhirResources.update permission on the destination store to your project’s **Cloud Healthcare Service Agent** [service account](https://cloud.google.com/healthcare/docs/how-tos/permissions-healthcare-api-gcp-products#the_cloud_healthcare_service_agent). The destination store must set enable_update_create to true. The destination store must have disable_referential_integrity set to true. If a resource cannot be de-identified, errors will be logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging))."]
+        #[serde(
+            rename = "deidentifiedStoreDestination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deidentified_store_destination:
+            ::std::option::Option<crate::schemas::DeidentifiedStoreDestination>,
         #[doc = "Supply a FHIR resource type (such as “Patient” or “Observation”). See https://www.hl7.org/fhir/valueset-resource-types.html for a list of all FHIR resource types. The server treats an empty list as an intent to stream all the supported resource types in this FHIR store."]
         #[serde(
             rename = "resourceTypes",
@@ -8169,7 +9374,29 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TextConfig {
-        #[doc = "The transformations to apply to the detected data."]
+        #[doc = "Additional transformations to apply to the detected data, overriding `profile`."]
+        #[serde(
+            rename = "additionalTransformations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_transformations:
+            ::std::option::Option<Vec<crate::schemas::InfoTypeTransformation>>,
+        #[doc = "InfoTypes to skip transforming, overriding `profile`."]
+        #[serde(
+            rename = "excludeInfoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exclude_info_types: ::std::option::Option<Vec<String>>,
+        #[doc = "Base profile type for text transformation."]
+        #[serde(
+            rename = "profileType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_type: ::std::option::Option<crate::schemas::TextConfigProfileType>,
+        #[doc = "The transformations to apply to the detected data. Deprecated. Use `additional_transformations` instead."]
         #[serde(
             rename = "transformations",
             default,
@@ -8183,6 +9410,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TextConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TextConfigProfileType {
+        #[doc = "Basic profile applies: DATE -> DateShift Default -> ReplaceWithInfoType"]
+        Basic,
+        #[doc = "Empty profile which does not perform any transformations."]
+        Empty,
+        #[doc = "Same as BASIC."]
+        ProfileTypeUnspecified,
+    }
+    impl TextConfigProfileType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TextConfigProfileType::Basic => "BASIC",
+                TextConfigProfileType::Empty => "EMPTY",
+                TextConfigProfileType::ProfileTypeUnspecified => "PROFILE_TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TextConfigProfileType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TextConfigProfileType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TextConfigProfileType, ()> {
+            Ok(match s {
+                "BASIC" => TextConfigProfileType::Basic,
+                "EMPTY" => TextConfigProfileType::Empty,
+                "PROFILE_TYPE_UNSPECIFIED" => TextConfigProfileType::ProfileTypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TextConfigProfileType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TextConfigProfileType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TextConfigProfileType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BASIC" => TextConfigProfileType::Basic,
+                "EMPTY" => TextConfigProfileType::Empty,
+                "PROFILE_TYPE_UNSPECIFIED" => TextConfigProfileType::ProfileTypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TextConfigProfileType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TextConfigProfileType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -8221,6 +9524,131 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TextSpan {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TimePartitioning {
+        #[doc = "Number of milliseconds for which to keep the storage for a partition."]
+        #[serde(
+            rename = "expirationMs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub expiration_ms: ::std::option::Option<i64>,
+        #[doc = "Type of partitioning."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::TimePartitioningType>,
+    }
+    impl ::google_field_selector::FieldSelector for TimePartitioning {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TimePartitioning {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TimePartitioningType {
+        #[doc = "Data partitioned by day."]
+        Day,
+        #[doc = "Data partitioned by hour."]
+        Hour,
+        #[doc = "Data partitioned by month."]
+        Month,
+        #[doc = "Default unknown time."]
+        PartitionTypeUnspecified,
+        #[doc = "Data partitioned by year."]
+        Year,
+    }
+    impl TimePartitioningType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TimePartitioningType::Day => "DAY",
+                TimePartitioningType::Hour => "HOUR",
+                TimePartitioningType::Month => "MONTH",
+                TimePartitioningType::PartitionTypeUnspecified => "PARTITION_TYPE_UNSPECIFIED",
+                TimePartitioningType::Year => "YEAR",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TimePartitioningType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TimePartitioningType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TimePartitioningType, ()> {
+            Ok(match s {
+                "DAY" => TimePartitioningType::Day,
+                "HOUR" => TimePartitioningType::Hour,
+                "MONTH" => TimePartitioningType::Month,
+                "PARTITION_TYPE_UNSPECIFIED" => TimePartitioningType::PartitionTypeUnspecified,
+                "YEAR" => TimePartitioningType::Year,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TimePartitioningType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TimePartitioningType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TimePartitioningType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DAY" => TimePartitioningType::Day,
+                "HOUR" => TimePartitioningType::Hour,
+                "MONTH" => TimePartitioningType::Month,
+                "PARTITION_TYPE_UNSPECIFIED" => TimePartitioningType::PartitionTypeUnspecified,
+                "YEAR" => TimePartitioningType::Year,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TimePartitioningType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TimePartitioningType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -9102,7 +10530,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -9137,7 +10565,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -9187,7 +10615,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -9303,12 +10731,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -10493,7 +11922,7 @@ pub mod resources {
                             #[serde(rename = "datasets")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10528,7 +11957,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10578,7 +12007,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10696,12 +12125,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -12775,7 +14205,7 @@ pub mod resources {
                                 #[serde(rename = "annotationStores")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -12812,7 +14242,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -12868,7 +14298,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -12989,12 +14419,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -14332,7 +15763,7 @@ pub mod resources {
                                     #[serde(rename = "annotations")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -14369,7 +15800,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -14425,7 +15856,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -14547,12 +15980,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -16146,7 +17580,7 @@ pub mod resources {
                                 #[serde(rename = "consentStores")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -16183,7 +17617,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -16233,7 +17667,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -16354,12 +17788,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -17796,7 +19231,7 @@ pub mod resources {
                                     #[serde(rename = "attributeDefinitions")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -17834,7 +19269,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -17890,7 +19325,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -18015,12 +19452,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -18920,7 +20358,7 @@ pub mod resources {
                                     #[serde(rename = "consentArtifacts")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -18957,7 +20395,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -19013,7 +20451,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -19134,12 +20574,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -20342,7 +21783,7 @@ pub mod resources {
                                     #[serde(rename = "consents")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -20379,7 +21820,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -20429,7 +21870,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -20550,12 +21993,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -20691,7 +22135,7 @@ pub mod resources {
                                     #[serde(rename = "consents")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -20728,7 +22172,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -20784,7 +22228,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -20905,12 +22351,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRevisionsRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -22360,7 +23807,7 @@ pub mod resources {
                                     #[serde(rename = "userDataMappings")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -22397,7 +23844,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -22453,7 +23900,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -22574,12 +24023,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -24429,7 +25879,7 @@ pub mod resources {
                                 #[serde(rename = "dicomStores")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -24466,7 +25916,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -24516,7 +25966,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -24637,12 +26087,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -30949,7 +32400,7 @@ pub mod resources {
                                 #[serde(rename = "fhirStores")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -30986,7 +32437,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -31036,7 +32487,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -31157,12 +32608,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -31758,7 +33210,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Retrieves a Patient resource and resources related to that patient. Implements the FHIR extended operation Patient-everything ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/patient-operations.html#everything), [STU3](https://hl7.org/implement/standards/fhir/STU3/patient-operations.html#everything), [R4](https://hl7.org/implement/standards/fhir/R4/patient-operations.html#everything)). On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the operation. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The resources in scope for the response are: * The patient resource itself. * All the resources directly referenced by the patient resource. * Resources directly referencing the patient resource that meet the inclusion criteria. The inclusion criteria are based on the membership rules in the patient compartment definition ([DSTU2](https://hl7.org/fhir/DSTU2/compartment-patient.html), [STU3](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html), [R4](https://hl7.org/fhir/R4/compartmentdefinition-patient.html)), which details the eligible resource types and referencing search parameters. For samples that show how to call `Patient-everything`, see [Getting all patient compartment resources](/healthcare/docs/how-tos/fhir-resources#getting_all_patient_compartment_resources)."]
+                            #[doc = "Retrieves a Patient resource and resources related to that patient. Implements the FHIR extended operation Patient-everything ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/patient-operations.html#everything), [STU3](https://hl7.org/implement/standards/fhir/STU3/patient-operations.html#everything), [R4](https://hl7.org/implement/standards/fhir/R4/patient-operations.html#everything)). On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the operation. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The resources in scope for the response are: * The patient resource itself. * All the resources directly referenced by the patient resource. * Resources directly referencing the patient resource that meet the inclusion criteria. The inclusion criteria are based on the membership rules in the patient compartment definition ([DSTU2](https://hl7.org/fhir/DSTU2/compartment-patient.html), [STU3](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html), [R4](https://hl7.org/fhir/R4/compartmentdefinition-patient.html)), which details the eligible resource types and referencing search parameters. For samples that show how to call `Patient-everything`, see [Getting all patient compartment resources](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#getting_all_patient_compartment_resources)."]
                             pub fn patient_everything(
                                 &self,
                                 name: impl Into<String>,
@@ -31786,7 +33238,7 @@ pub mod resources {
                                     start: None,
                                 }
                             }
-                            #[doc = "Deletes all the historical versions of a resource (excluding the current version) from the FHIR store. To remove all versions of a resource, first delete the current version and then call this method. This is not a FHIR standard operation. For samples that show how to call `Resource-purge`, see [Deleting historical versions of a FHIR resource](/healthcare/docs/how-tos/fhir-resources#deleting_historical_versions_of_a_fhir_resource)."]
+                            #[doc = "Deletes all the historical versions of a resource (excluding the current version) from the FHIR store. To remove all versions of a resource, first delete the current version and then call this method. This is not a FHIR standard operation. For samples that show how to call `Resource-purge`, see [Deleting historical versions of a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#deleting_historical_versions_of_a_fhir_resource)."]
                             pub fn resource_purge(
                                 &self,
                                 name: impl Into<String>,
@@ -31857,7 +33309,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Deletes FHIR resources that match a search query. Implements the FHIR standard conditional delete interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.12.1), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#3.1.0.7.1)). If multiple resources match, all matching resources are deleted. Search terms are provided as query parameters following the same pattern as the search method. Not all FHIR resources that match the search query might be deleted because, by default, a maximum of 100 FHIR resources can be deleted. The number of FHIR resources that can be deleted depends on the page size of the returned resources, which you can control using the `_count` query parameter. Even when using `_count`, you can delete a maximum 1,000 FHIR resources per each call of `conditionalDelete`. Note: Unless resource versioning is disabled by setting the disable_resource_versioning flag on the FHIR store, the deleted resources are moved to a history repository that can still be retrieved through vread and related methods, unless they are removed by the purge method. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.delete` permissions on the parent FHIR store. For samples that show how to call `conditionalDelete`, see [Conditionally deleting a FHIR resource](/healthcare/docs/how-tos/fhir-resources#conditionally_deleting_a_fhir_resource)."]
+                            #[doc = "Deletes FHIR resources that match a search query. Implements the FHIR standard conditional delete interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.12.1), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.13.1), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#3.1.0.7.1)). If multiple resources match, all matching resources are deleted. Search terms are provided as query parameters following the same pattern as the search method. Not all FHIR resources that match the search query might be deleted because, by default, a maximum of 100 FHIR resources can be deleted. The number of FHIR resources that can be deleted depends on the page size of the returned resources, which you can control using the `_count` query parameter. Even when using `_count`, you can delete a maximum 1,000 FHIR resources per each call of `conditionalDelete`. Note: Unless resource versioning is disabled by setting the disable_resource_versioning flag on the FHIR store, the deleted resources are moved to a history repository that can still be retrieved through vread and related methods, unless they are removed by the purge method. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.delete` permissions on the parent FHIR store. For samples that show how to call `conditionalDelete`, see [Conditionally deleting a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#conditionally_deleting_a_fhir_resource)."]
                             pub fn conditional_delete(
                                 &self,
                                 parent: impl Into<String>,
@@ -31881,7 +33333,7 @@ pub mod resources {
                                     r#type: r#type.into(),
                                 }
                             }
-                            #[doc = "If a resource is found based on the search criteria specified in the query parameters, updates part of that resource by applying the operations specified in a [JSON Patch](http://jsonpatch.com/) document. Implements the FHIR standard conditional patch interaction ([STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#patch), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#patch)). DSTU2 doesn’t define a conditional patch method, but the server supports it in the same way it supports STU3. Search terms are provided as query parameters following the same pattern as the search method. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. The request body must contain a JSON Patch document, and the request headers must contain `Content-Type: application/json-patch+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method requires the`healthcare.fhirStores.searchResources` permission on the parent FHIR store and the `healthcare.fhirResources.patch` permission on the requested FHIR store resource. For samples that show how to call `conditionalPatch`, see [Conditionally patching a FHIR resource](/healthcare/docs/how-tos/fhir-resources#conditionally_patching_a_fhir_resource)."]
+                            #[doc = "If a resource is found based on the search criteria specified in the query parameters, updates part of that resource by applying the operations specified in a [JSON Patch](http://jsonpatch.com/) document. Implements the FHIR standard conditional patch interaction ([STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#patch), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#patch)). DSTU2 doesn’t define a conditional patch method, but the server supports it in the same way it supports STU3. Search terms are provided as query parameters following the same pattern as the search method. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. The request body must contain a JSON Patch document, and the request headers must contain `Content-Type: application/json-patch+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method requires the`healthcare.fhirStores.searchResources` permission on the parent FHIR store and the `healthcare.fhirResources.patch` permission on the requested FHIR store resource. For samples that show how to call `conditionalPatch`, see [Conditionally patching a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#conditionally_patching_a_fhir_resource)."]
                             pub fn conditional_patch(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -31907,7 +33359,7 @@ pub mod resources {
                                     r#type: r#type.into(),
                                 }
                             }
-                            #[doc = "If a resource is found based on the search criteria specified in the query parameters, updates the entire contents of that resource. Implements the FHIR standard conditional update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.10.2), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cond-update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cond-update)). Search terms are provided as query parameters following the same pattern as the search method. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. If the search criteria identify zero matches, and the supplied resource body contains an `id`, and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. If the search criteria identify zero matches, and the supplied resource body does not contain an `id`, the resource is created with a server-assigned ID as per the create method. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.update` permissions on the parent FHIR store. For samples that show how to call `conditionalUpdate`, see [Conditionally updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#conditionally_updating_a_fhir_resource)."]
+                            #[doc = "If a resource is found based on the search criteria specified in the query parameters, updates the entire contents of that resource. Implements the FHIR standard conditional update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.10.2), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cond-update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cond-update)). Search terms are provided as query parameters following the same pattern as the search method. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. If the search criteria identify zero matches, and the supplied resource body contains an `id`, and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. If the search criteria identify zero matches, and the supplied resource body does not contain an `id`, the resource is created with a server-assigned ID as per the create method. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method requires the`healthcare.fhirStores.searchResources` and `healthcare.fhirResources.update` permissions on the parent FHIR store. For samples that show how to call `conditionalUpdate`, see [Conditionally updating a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#conditionally_updating_a_fhir_resource)."]
                             pub fn conditional_update(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -31933,7 +33385,7 @@ pub mod resources {
                                     r#type: r#type.into(),
                                 }
                             }
-                            #[doc = "Creates a FHIR resource. Implements the FHIR standard create interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#create), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#create), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#create)), which creates a new resource with a server-assigned resource ID. Also supports the FHIR standard conditional create interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#ccreate), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#ccreate), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#ccreate)), specified by supplying an `If-None-Exist` header containing a FHIR search query. If no resources match this search query, the server processes the create operation as normal. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the resource as it was created on the server, including the server-assigned resource ID and version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `create`, see [Creating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#creating_a_fhir_resource)."]
+                            #[doc = "Creates a FHIR resource. Implements the FHIR standard create interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#create), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#create), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#create)), which creates a new resource with a server-assigned resource ID. Also supports the FHIR standard conditional create interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#ccreate), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#ccreate), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#ccreate)), specified by supplying an `If-None-Exist` header containing a FHIR search query. If no resources match this search query, the server processes the create operation as normal. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the resource as it was created on the server, including the server-assigned resource ID and version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `create`, see [Creating a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#creating_a_fhir_resource)."]
                             pub fn create(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -31959,7 +33411,7 @@ pub mod resources {
                                     r#type: r#type.into(),
                                 }
                             }
-                            #[doc = "Deletes a FHIR resource. Implements the FHIR standard delete interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#delete), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#delete), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#delete)). Note: Unless resource versioning is disabled by setting the disable_resource_versioning flag on the FHIR store, the deleted resources are moved to a history repository that can still be retrieved through vread and related methods, unless they are removed by the purge method. For samples that show how to call `delete`, see [Deleting a FHIR resource](/healthcare/docs/how-tos/fhir-resources#deleting_a_fhir_resource)."]
+                            #[doc = "Deletes a FHIR resource. Implements the FHIR standard delete interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#delete), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#delete), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#delete)). Note: Unless resource versioning is disabled by setting the disable_resource_versioning flag on the FHIR store, the deleted resources are moved to a history repository that can still be retrieved through vread and related methods, unless they are removed by the purge method. For samples that show how to call `delete`, see [Deleting a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#deleting_a_fhir_resource)."]
                             pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                                 DeleteRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -31978,7 +33430,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Executes all the requests in the given Bundle. Implements the FHIR standard batch/transaction interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#transaction), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#transaction), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#transaction)). Supports all interactions within a bundle, except search. This method accepts Bundles of type `batch` and `transaction`, processing them according to the batch processing rules ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.1), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.1), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#brules)) and transaction processing rules ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.2), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.2), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#trules)). The request body must contain a JSON-encoded FHIR `Bundle` resource, and the request headers must contain `Content-Type: application/fhir+json`. For a batch bundle or a successful transaction the response body contains a JSON-encoded representation of a `Bundle` resource of type `batch-response` or `transaction-response` containing one entry for each entry in the request, with the outcome of processing the entry. In the case of an error for a transaction bundle, the response body contains a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method requires permission for executing the requests in the bundle. The `executeBundle` permission grants permission to execute the request in the bundle but you must grant sufficient permissions to execute the individual requests in the bundle. For example, if the bundle contains a `create` request, you must have permission to execute the `create` request. Logging is available for the `executeBundle` permission. For samples that show how to call `executeBundle`, see [Managing FHIR resources using FHIR bundles](/healthcare/docs/how-tos/fhir-bundles)."]
+                            #[doc = "Executes all the requests in the given Bundle. Implements the FHIR standard batch/transaction interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#transaction), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#transaction), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#transaction)). Supports all interactions within a bundle, except search. This method accepts Bundles of type `batch` and `transaction`, processing them according to the batch processing rules ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.1), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.1), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#brules)) and transaction processing rules ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#2.1.0.16.2), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#2.21.0.17.2), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#trules)). The request body must contain a JSON-encoded FHIR `Bundle` resource, and the request headers must contain `Content-Type: application/fhir+json`. For a batch bundle or a successful transaction, the response body contains a JSON-encoded representation of a `Bundle` resource of type `batch-response` or `transaction-response` containing one entry for each entry in the request, with the outcome of processing the entry. In the case of an error for a transaction bundle, the response body contains a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. This method checks permissions for each request in the bundle. The `executeBundle` permission is required to call this method, but you must also grant sufficient permissions to execute the individual requests in the bundle. For example, if the bundle contains a request to create a FHIR resource, the caller must also have been granted the `healthcare.fhirResources.create` permission. You can use audit logs to view the permissions for `executeBundle` and each request in the bundle. For more information, see [Viewing Cloud Audit logs](https://cloud.google.com/healthcare-api/docs/how-tos/audit-logging). For samples that show how to call `executeBundle`, see [Managing FHIR resources using FHIR bundles](https://cloud.google.com/healthcare/docs/how-tos/fhir-bundles)."]
                             pub fn execute_bundle(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -32002,7 +33454,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Lists all the versions of a resource (including the current version and deleted versions) from the FHIR store. Implements the per-resource form of the FHIR standard history interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#history), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#history), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#history)). On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `history`, containing the version history sorted from most recent to oldest versions. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `history`, see [Listing FHIR resource versions](/healthcare/docs/how-tos/fhir-resources#listing_fhir_resource_versions)."]
+                            #[doc = "Lists all the versions of a resource (including the current version and deleted versions) from the FHIR store. Implements the per-resource form of the FHIR standard history interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#history), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#history), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#history)). On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `history`, containing the version history sorted from most recent to oldest versions. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `history`, see [Listing FHIR resource versions](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#listing_fhir_resource_versions)."]
                             pub fn history(
                                 &self,
                                 name: impl Into<String>,
@@ -32028,7 +33480,7 @@ pub mod resources {
                                     since: None,
                                 }
                             }
-                            #[doc = "Updates part of an existing resource by applying the operations specified in a [JSON Patch](http://jsonpatch.com/) document. Implements the FHIR standard patch interaction ([STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#patch), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#patch)). DSTU2 doesn’t define a patch method, but the server supports it in the same way it supports STU3. The request body must contain a JSON Patch document, and the request headers must contain `Content-Type: application/json-patch+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `patch`, see [Patching a FHIR resource](/healthcare/docs/how-tos/fhir-resources#patching_a_fhir_resource)."]
+                            #[doc = "Updates part of an existing resource by applying the operations specified in a [JSON Patch](http://jsonpatch.com/) document. Implements the FHIR standard patch interaction ([STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#patch), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#patch)). DSTU2 doesn’t define a patch method, but the server supports it in the same way it supports STU3. The request body must contain a JSON Patch document, and the request headers must contain `Content-Type: application/json-patch+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `patch`, see [Patching a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#patching_a_fhir_resource)."]
                             pub fn patch(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -32052,7 +33504,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Gets the contents of a FHIR resource. Implements the FHIR standard read interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#read), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#read), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#read)). Also supports the FHIR standard conditional read interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#cread), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cread), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cread)) specified by supplying an `If-Modified-Since` header with a date/time value or an `If-None-Match` header with an ETag value. On success, the response body contains a JSON-encoded representation of the resource. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `read`, see [Getting a FHIR resource](/healthcare/docs/how-tos/fhir-resources#getting_a_fhir_resource)."]
+                            #[doc = "Gets the contents of a FHIR resource. Implements the FHIR standard read interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#read), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#read), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#read)). Also supports the FHIR standard conditional read interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#cread), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#cread), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#cread)) specified by supplying an `If-Modified-Since` header with a date/time value or an `If-None-Match` header with an ETag value. On success, the response body contains a JSON-encoded representation of the resource. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `read`, see [Getting a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#getting_a_fhir_resource)."]
                             pub fn read(&self, name: impl Into<String>) -> ReadRequestBuilder {
                                 ReadRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -32071,7 +33523,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server’s capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource’s definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` “next”, which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
+                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server’s capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource’s definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `recurse` (DSTU2 and STU3) or `:iterate` (R4). Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` “next”, which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](https://cloud.google.com/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](https://cloud.google.com/healthcare/docs/how-tos/fhir-advanced-search)."]
                             pub fn search(
                                 &self,
                                 request: crate::schemas::SearchResourcesRequest,
@@ -32095,7 +33547,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server’s capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource’s definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` “next”, which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](/healthcare/docs/how-tos/fhir-advanced-search)."]
+                            #[doc = "Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/search.html), [R4](https://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server’s capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](https://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](https://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource’s definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `recurse` (DSTU2 and STU3) or `:iterate` (R4). Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` “next”, which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](https://cloud.google.com/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](https://cloud.google.com/healthcare/docs/how-tos/fhir-advanced-search)."]
                             pub fn search_type(
                                 &self,
                                 request: crate::schemas::SearchResourcesRequest,
@@ -32121,7 +33573,7 @@ pub mod resources {
                                     resource_type: resource_type.into(),
                                 }
                             }
-                            #[doc = "Updates the entire contents of a resource. Implements the FHIR standard update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#update), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#update)). If the specified resource does not exist and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. The resource must contain an `id` element having an identical value to the ID in the REST path of the request. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `update`, see [Updating a FHIR resource](/healthcare/docs/how-tos/fhir-resources#updating_a_fhir_resource)."]
+                            #[doc = "Updates the entire contents of a resource. Implements the FHIR standard update interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#update), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#update), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#update)). If the specified resource does not exist and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. The resource must contain an `id` element having an identical value to the ID in the REST path of the request. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `update`, see [Updating a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#updating_a_fhir_resource)."]
                             pub fn update(
                                 &self,
                                 request: crate::schemas::HttpBody,
@@ -32145,7 +33597,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Gets the contents of a version (current or historical) of a FHIR resource by version ID. Implements the FHIR standard vread interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#vread), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#vread), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#vread)). On success, the response body contains a JSON-encoded representation of the resource. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `vread`, see [Retrieving a FHIR resource version](/healthcare/docs/how-tos/fhir-resources#retrieving_a_fhir_resource_version)."]
+                            #[doc = "Gets the contents of a version (current or historical) of a FHIR resource by version ID. Implements the FHIR standard vread interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#vread), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#vread), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#vread)). On success, the response body contains a JSON-encoded representation of the resource. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `vread`, see [Retrieving a FHIR resource version](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#retrieving_a_fhir_resource_version)."]
                             pub fn vread(&self, name: impl Into<String>) -> VreadRequestBuilder {
                                 VreadRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -32755,7 +34207,7 @@ pub mod resources {
                                 self.count = Some(value);
                                 self
                             }
-                            #[doc = "The response includes records prior to the end date. If no end date is provided, all records subsequent to the start date are in scope."]
+                            #[doc = "The response includes records prior to the end date. The date uses the format YYYY-MM-DD. If no end date is provided, all records subsequent to the start date are in scope."]
                             pub fn end(mut self, value: impl Into<String>) -> Self {
                                 self.end = Some(value.into());
                                 self
@@ -32775,7 +34227,7 @@ pub mod resources {
                                 self.since = Some(value.into());
                                 self
                             }
-                            #[doc = "The response includes records subsequent to the start date. If no start date is provided, all records prior to the end date are in scope."]
+                            #[doc = "The response includes records subsequent to the start date. The date uses the format YYYY-MM-DD. If no start date is provided, all records prior to the end date are in scope."]
                             pub fn start(mut self, value: impl Into<String>) -> Self {
                                 self.start = Some(value.into());
                                 self
@@ -33119,7 +34571,7 @@ pub mod resources {
                             xgafv: ::std::option::Option<crate::params::Xgafv>,
                         }
                         impl<'a> ResourceValidateRequestBuilder<'a> {
-                            #[doc = "A profile that this resource should be validated against."]
+                            #[doc = "The canonical URL of a profile that this resource should be validated against. For example, to validate a Patient resource against the US Core Patient profile this parameter would be `http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient`. A StructureDefinition with this canonical URL must exist in the FHIR store."]
                             pub fn profile(mut self, value: impl Into<String>) -> Self {
                                 self.profile = Some(value.into());
                                 self
@@ -37053,7 +38505,7 @@ pub mod resources {
                                 #[serde(rename = "hl7V2Stores")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -37090,7 +38542,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -37140,7 +38592,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -37261,12 +38713,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -39212,7 +40665,7 @@ pub mod resources {
                                     #[serde(rename = "hl7V2Messages")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -39249,7 +40702,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -39299,7 +40752,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -39422,12 +40877,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -40143,7 +41599,7 @@ pub mod resources {
                                 #[serde(rename = "operations")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -40180,7 +41636,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -40230,7 +41686,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -40351,12 +41807,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -40874,16 +42331,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -40903,13 +42362,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -40917,7 +42379,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -40944,7 +42406,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

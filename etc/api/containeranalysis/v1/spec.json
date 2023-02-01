@@ -7,7 +7,7 @@
   "canonicalName": "Container Analysis",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20230120",
   "title": "Container Analysis API",
   "description": "An implementation of the Grafeas API, which stores, and enables querying and retrieval of critical metadata about all of your software artifacts.",
   "ownerDomain": "google.com",
@@ -249,6 +249,36 @@
       "additionalProperties": null,
       "items": null
     },
+    "AnalysisCompleted": {
+      "id": "AnalysisCompleted",
+      "description": "Indicates which analysis completed successfully. Multiple types of analysis can be performed on a single resource.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "analysisType": {
+          "description": null,
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Artifact": {
       "id": "Artifact",
       "description": "Artifact describes a build product.",
@@ -471,7 +501,7 @@
           "$ref": "Expr"
         },
         "members": {
-          "description": "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
+          "description": "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
           "type": "array",
           "format": null,
           "enum": [],
@@ -707,6 +737,242 @@
       "additionalProperties": null,
       "items": null
     },
+    "BuildStep": {
+      "id": "BuildStep",
+      "description": "A step in the build pipeline. Next ID: 20",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "allowExitCodes": {
+          "description": "Allow this build step to fail without failing the entire build if and only if the exit code is one of the specified codes. If allow_failure is also specified, this field will take precedence.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "integer",
+            "format": "int32",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "allowFailure": {
+          "description": "Allow this build step to fail without failing the entire build. If false, the entire build will fail if this step fails. Otherwise, the build will succeed, but this step will still have a failure status. Error information will be reported in the failure_detail field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "args": {
+          "description": "A list of arguments that will be presented to the step when it is started. If the image used to run the step's container has an entrypoint, the `args` are used as arguments to that entrypoint. If the image does not define an entrypoint, the first element in args is used as the entrypoint, and the remainder will be used as arguments.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "dir": {
+          "description": "Working directory to use when running this step's container. If this value is a relative path, it is relative to the build's working directory. If this value is absolute, it may be outside the build's working directory, in which case the contents of the path may not be persisted across build step executions, unless a `volume` for that path is specified. If the build specifies a `RepoSource` with `dir` and a step with a `dir`, which specifies an absolute path, the `RepoSource` `dir` is ignored for the step's execution.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "entrypoint": {
+          "description": "Entrypoint to be used instead of the build step image's default entrypoint. If unset, the image's default entrypoint is used.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "env": {
+          "description": "A list of environment variable definitions to be used when running a step. The elements are of the form \"KEY=VALUE\" for the environment variable \"KEY\" being given the value \"VALUE\".",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "exitCode": {
+          "description": "Output only. Return code from running the step.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Required. The name of the container image that will run this particular build step. If the image is available in the host's Docker daemon's cache, it will be run directly. If not, the host will attempt to pull the image first, using the builder service account's credentials if necessary. The Docker daemon's cache will already have the latest versions of all of the officially supported build steps ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)). The Docker daemon will also have cached many of the layers for some popular images, like \"ubuntu\", \"debian\", but they will be refreshed at the time you attempt to use them. If you built an image in a previous build step, it will be stored in the host's Docker daemon's cache and is available to use as the name for a later build step.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pullTiming": {
+          "description": "Output only. Stores timing information for pulling this build step's builder image only.",
+          "$ref": "TimeSpan"
+        },
+        "script": {
+          "description": "A shell script to be executed in the step. When script is provided, the user cannot specify the entrypoint or args.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "secretEnv": {
+          "description": "A list of environment variables which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "status": {
+          "description": "Output only. Status of the build step. At this time, build step status is only updated on build completion; step status is not updated in real-time as the build progresses.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATUS_UNKNOWN",
+            "PENDING",
+            "QUEUING",
+            "QUEUED",
+            "WORKING",
+            "SUCCESS",
+            "FAILURE",
+            "INTERNAL_ERROR",
+            "TIMEOUT",
+            "CANCELLED",
+            "EXPIRED"
+          ],
+          "enumDescriptions": [
+            "Status of the build is unknown.",
+            "Build has been created and is pending execution and queuing. It has not been queued.",
+            "Build has been received and is being queued.",
+            "Build or step is queued; work has not yet begun.",
+            "Build or step is being executed.",
+            "Build or step finished successfully.",
+            "Build or step failed to complete successfully.",
+            "Build or step failed due to an internal cause.",
+            "Build or step took longer than was allowed.",
+            "Build or step was canceled by a user.",
+            "Build was enqueued for longer than the value of `queue_ttl`."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "timeout": {
+          "description": "Time limit for executing this build step. If not defined, the step has no time limit and will be allowed to continue to run until either it completes or the build itself times out.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "timing": {
+          "description": "Output only. Stores timing information for executing this build step.",
+          "$ref": "TimeSpan"
+        },
+        "volumes": {
+          "description": "List of volumes to mount into the build step. Each volume is created as an empty volume prior to execution of the build step. Upon completion of the build, volumes and their contents are discarded. Using a named volume in only one step is not valid as it is indicative of a build request with an incorrect configuration.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Volume"
+          }
+        },
+        "waitFor": {
+          "description": "The ID(s) of the step(s) that this build step depends on. This build step will not start until all the build steps in `wait_for` have completed successfully. If `wait_for` is empty, this build step will start when all previous build steps in the `Build.Steps` list have completed successfully.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "BuilderConfig": {
       "id": "BuilderConfig",
       "description": null,
@@ -731,7 +997,7 @@
     },
     "CVSS": {
       "id": "CVSS",
-      "description": "Common Vulnerability Scoring System. For details, see https://www.first.org/cvss/specification-document This is a message we will try to use for storing multiple versions of CVSS. The intention is that as new versions of CVSS scores get added, we will be able to modify this message rather than adding new protos for each new version of the score.",
+      "description": "Common Vulnerability Scoring System. For details, see https://www.first.org/cvss/specification-document This is a message we will try to use for storing various versions of CVSS rather than making a separate proto for storing a specific version.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1663,9 +1929,33 @@
             "items": null
           }
         },
+        "mavenArtifacts": {
+          "description": "A list of Maven artifacts to be uploaded to Artifact Registry upon successful completion of all build steps. Artifacts in the workspace matching specified paths globs will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any artifacts fail to be pushed, the build is marked FAILURE.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact"
+          }
+        },
         "objects": {
           "description": "A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps. Files in the workspace matching specified paths globs will be uploaded to the specified Cloud Storage location using the builder service account's credentials. The location and generation of the uploaded objects will be stored in the Build resource's results field. If any objects fail to be pushed, the build is marked FAILURE.",
           "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects"
+        },
+        "pythonPackages": {
+          "description": "A list of Python packages to be uploaded to Artifact Registry upon successful completion of all build steps. The build service account credentials will be used to perform the upload. If any objects fail to be pushed, the build is marked FAILURE.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage"
+          }
         }
       },
       "additionalProperties": null,
@@ -1710,6 +2000,108 @@
         "timing": {
           "description": "Output only. Stores timing information for pushing all artifact objects.",
           "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact": {
+      "id": "ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact",
+      "description": "A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "artifactId": {
+          "description": "Maven `artifactId` value used when uploading the artifact to Artifact Registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "groupId": {
+          "description": "Maven `groupId` value used when uploading the artifact to Artifact Registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "path": {
+          "description": "Path to an artifact in the build's workspace to be uploaded to Artifact Registry. This can be either an absolute path, e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar or a relative path from /workspace, e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "repository": {
+          "description": "Artifact Registry repository, in the form \"https://$REGION-maven.pkg.dev/$PROJECT/$REPOSITORY\" Artifact in the workspace specified by path will be uploaded to Artifact Registry with this location as a prefix.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "Maven `version` value used when uploading the artifact to Artifact Registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage": {
+      "id": "ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage",
+      "description": "Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "paths": {
+          "description": "Path globs used to match files in the build's workspace. For Python/ Twine, this is usually `dist/*`, and sometimes additionally an `.asc` file.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "repository": {
+          "description": "Artifact Registry repository, in the form \"https://$REGION-python.pkg.dev/$PROJECT/$REPOSITORY\" Files in the workspace matching any path pattern will be uploaded to Artifact Registry with this location as a prefix.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1987,7 +2379,7 @@
           }
         },
         "timeout": {
-          "description": "Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is ten minutes.",
+          "description": "Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is 60 minutes.",
           "type": "string",
           "format": "google-duration",
           "enum": [],
@@ -1997,7 +2389,7 @@
           "items": null
         },
         "timing": {
-          "description": "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps. * PUSH: time to push all specified images. * FETCHSOURCE: time to fetch source. * SETUPBUILD: time to set up build. If the build does not specify source or images, these keys will not be included.",
+          "description": "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps. * PUSH: time to push all artifacts including docker images and non docker artifacts. * FETCHSOURCE: time to fetch source. * SETUPBUILD: time to set up build. If the build does not specify source or images, these keys will not be included.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -2124,7 +2516,7 @@
       "enumDescriptions": [],
       "properties": {
         "diskSizeGb": {
-          "description": "Requested disk size for the VM that runs the build. Note that this is *NOT* \"disk free\"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 1000GB; builds that request more than the maximum are rejected with an error.",
+          "description": "Requested disk size for the VM that runs the build. Note that this is *NOT* \"disk free\"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 2000GB; builds that request more than the maximum are rejected with an error.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2238,8 +2630,8 @@
             "VERIFIED"
           ],
           "enumDescriptions": [
-            "Not a verifiable build. (default)",
-            "Verified build."
+            "Not a verifiable build (the default).",
+            "Build must be verified."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2361,6 +2753,34 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "allowExitCodes": {
+          "description": "Allow this build step to fail without failing the entire build if and only if the exit code is one of the specified codes. If allow_failure is also specified, this field will take precedence.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "integer",
+            "format": "int32",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "allowFailure": {
+          "description": "Allow this build step to fail without failing the entire build. If false, the entire build will fail if this step fails. Otherwise, the build will succeed, but this step will still have a failure status. Error information will be reported in the failure_detail field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "args": {
           "description": "A list of arguments that will be presented to the step when it is started. If the image used to run the step's container has an entrypoint, the `args` are used as arguments to that entrypoint. If the image does not define an entrypoint, the first element in args is used as the entrypoint, and the remainder will be used as arguments.",
           "type": "array",
@@ -2416,6 +2836,16 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "exitCode": {
+          "description": "Output only. Return code from running the step.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "id": {
           "description": "Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency.",
@@ -2842,7 +3272,7 @@
       "enumDescriptions": [],
       "properties": {
         "artifactManifest": {
-          "description": "Path to the artifact manifest. Only populated when artifacts are uploaded.",
+          "description": "Path to the artifact manifest for non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2852,7 +3282,7 @@
           "items": null
         },
         "artifactTiming": {
-          "description": "Time to push all non-container artifacts.",
+          "description": "Time to push all non-container artifacts to Cloud Storage.",
           "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan"
         },
         "buildStepImages": {
@@ -2903,8 +3333,20 @@
             "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1BuiltImage"
           }
         },
+        "mavenArtifacts": {
+          "description": "Maven artifacts uploaded to Artifact Registry at the end of the build.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedMavenArtifact"
+          }
+        },
         "numArtifacts": {
-          "description": "Number of artifacts uploaded. Only populated when artifacts are uploaded.",
+          "description": "Number of non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2912,6 +3354,18 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "pythonPackages": {
+          "description": "Python artifacts uploaded to Artifact Registry at the end of the build.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedPythonPackage"
+          }
         }
       },
       "additionalProperties": null,
@@ -3193,6 +3647,66 @@
           "description": "Start of time span.",
           "type": "string",
           "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedMavenArtifact": {
+      "id": "ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedMavenArtifact",
+      "description": "A Maven artifact uploaded using the MavenArtifact directive.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fileHashes": {
+          "description": "Hash types and values of the Maven Artifact.",
+          "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1FileHashes"
+        },
+        "pushTiming": {
+          "description": "Output only. Stores timing information for pushing the specified artifact.",
+          "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan"
+        },
+        "uri": {
+          "description": "URI of the uploaded artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedPythonPackage": {
+      "id": "ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedPythonPackage",
+      "description": "Artifact uploaded using the PythonPackage directive.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fileHashes": {
+          "description": "Hash types and values of the Python Artifact.",
+          "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1FileHashes"
+        },
+        "pushTiming": {
+          "description": "Output only. Stores timing information for pushing the specified artifact.",
+          "$ref": "ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan"
+        },
+        "uri": {
+          "description": "URI of the uploaded artifact.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -3557,6 +4071,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "Digest": {
+      "id": "Digest",
+      "description": "Digest information.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "algo": {
+          "description": "`SHA1`, `SHA512` etc.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "digestBytes": {
+          "description": "Value of the digest.",
+          "type": "string",
+          "format": "byte",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "DiscoveryNote": {
       "id": "DiscoveryNote",
       "description": "A note that indicates a type of analysis a provider would perform. This note exists in a provider's project. A `Discovery` occurrence is created in a consumer's project at the start of analysis.",
@@ -3611,6 +4157,22 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "analysisCompleted": {
+          "description": null,
+          "$ref": "AnalysisCompleted"
+        },
+        "analysisError": {
+          "description": "Indicates any errors encountered during analysis of a resource. There could be 0 or more of these errors.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Status"
+          }
+        },
         "analysisStatus": {
           "description": "The status of discovery for the resource.",
           "type": "string",
@@ -3620,6 +4182,7 @@
             "PENDING",
             "SCANNING",
             "FINISHED_SUCCESS",
+            "COMPLETE",
             "FINISHED_FAILED",
             "FINISHED_UNSUPPORTED"
           ],
@@ -3628,8 +4191,9 @@
             "Resource is known but no action has been taken yet.",
             "Resource is being analyzed.",
             "Analysis has finished successfully.",
+            "Analysis has completed.",
             "Analysis has finished unsuccessfully, the analysis itself is in a bad state.",
-            "The resource is known not to be supported"
+            "The resource is known not to be supported."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -4192,6 +4756,294 @@
       "additionalProperties": null,
       "items": null
     },
+    "GrafeasV1FileLocation": {
+      "id": "GrafeasV1FileLocation",
+      "description": "Indicates the location at which a package was found.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "filePath": {
+          "description": "For jars that are contained inside .war files, this filepath can indicate the path to war file combined with the path to jar file.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder": {
+      "id": "GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder",
+      "description": "Identifies the entity that executed the recipe, which is trusted to have correctly performed the operation and populated this provenance.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "id": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GrafeasV1SlsaProvenanceZeroTwoSlsaCompleteness": {
+      "id": "GrafeasV1SlsaProvenanceZeroTwoSlsaCompleteness",
+      "description": "Indicates that the builder claims certain fields in this message to be complete.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "environment": {
+          "description": null,
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "materials": {
+          "description": null,
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parameters": {
+          "description": null,
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource": {
+      "id": "GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource",
+      "description": "Describes where the config file that kicked off the build came from. This is effectively a pointer to the source where buildConfig came from.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "digest": {
+          "description": null,
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "entryPoint": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "uri": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation": {
+      "id": "GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation",
+      "description": "Identifies the event that kicked off the build.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "configSource": {
+          "description": null,
+          "$ref": "GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource"
+        },
+        "environment": {
+          "description": null,
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "parameters": {
+          "description": null,
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial": {
+      "id": "GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial",
+      "description": "The collection of artifacts that influenced the build including sources, dependencies, build tools, base images, and so on.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "digest": {
+          "description": null,
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "uri": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata": {
+      "id": "GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata",
+      "description": "Other properties of the build.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "buildFinishedOn": {
+          "description": null,
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "buildInvocationId": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "buildStartedOn": {
+          "description": null,
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "completeness": {
+          "description": null,
+          "$ref": "GrafeasV1SlsaProvenanceZeroTwoSlsaCompleteness"
+        },
+        "reproducible": {
+          "description": null,
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Hash": {
       "id": "Hash",
       "description": "Container message for hash values.",
@@ -4430,6 +5282,10 @@
           "description": null,
           "$ref": "SlsaProvenance"
         },
+        "slsaProvenanceZeroTwo": {
+          "description": null,
+          "$ref": "SlsaProvenanceZeroTwo"
+        },
         "subject": {
           "description": null,
           "type": "array",
@@ -4520,6 +5376,38 @@
         },
         "directive": {
           "description": "Required. The recovered Dockerfile directive used to construct this layer. See https://docs.docker.com/engine/reference/builder/ for more information.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "License": {
+      "id": "License",
+      "description": "License information.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "comments": {
+          "description": "Comments",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "expression": {
+          "description": "Often a single license can be used to represent the licensing terms. Sometimes it is necessary to include a choice of one or more licenses or some combination of license identifiers. Examples: \"LGPL-2.1-only OR MIT\", \"LGPL-2.1-only AND MIT\", \"GPL-2.0-or-later WITH Bison-exception-2.2\".",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4643,7 +5531,7 @@
       "enumDescriptions": [],
       "properties": {
         "cpeUri": {
-          "description": "Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package.",
+          "description": "Deprecated. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4663,7 +5551,7 @@
           "items": null
         },
         "version": {
-          "description": "The version installed at this location.",
+          "description": "Deprecated. The version installed at this location.",
           "$ref": "Version"
         }
       },
@@ -5191,6 +6079,18 @@
           "additionalProperties": null,
           "items": null
         },
+        "fileLocation": {
+          "description": "The location at which this package was found.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GrafeasV1FileLocation"
+          }
+        },
         "fixAvailable": {
           "description": "Output only. Whether a fix is available for this package.",
           "type": "boolean",
@@ -5241,14 +6141,64 @@
     },
     "PackageNote": {
       "id": "PackageNote",
-      "description": "This represents a particular package that is distributed over various channels. E.g., glibc (aka libc6) is distributed by many, at various versions.",
+      "description": "PackageNote represents a particular package version.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "architecture": {
+          "description": "The CPU architecture for which packages in this distribution channel were built. Architecture will be blank for language packages.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ARCHITECTURE_UNSPECIFIED",
+            "X86",
+            "X64"
+          ],
+          "enumDescriptions": [
+            "Unknown architecture.",
+            "X86 architecture.",
+            "X64 architecture."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cpeUri": {
+          "description": "The cpe_uri in [CPE format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package. The cpe_uri will be blank for language packages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "The description of this package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "digest": {
+          "description": "Hash value, typically a file digest, that allows unique identification a specific package.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Digest"
+          }
+        },
         "distribution": {
-          "description": "The various channels by which a package is distributed.",
+          "description": "Deprecated. The various channels by which a package is distributed.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5259,6 +6209,20 @@
             "$ref": "Distribution"
           }
         },
+        "license": {
+          "description": "Licenses that have been declared by the authors of the package.",
+          "$ref": "License"
+        },
+        "maintainer": {
+          "description": "A freeform text denoting the maintainer of this package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "name": {
           "description": "Required. Immutable. The name of the package.",
           "type": "string",
@@ -5268,6 +6232,30 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "packageType": {
+          "description": "The type of package; whether native or non native (e.g., ruby gems, node.js packages, etc.).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "url": {
+          "description": "The homepage for this package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "The version of the package.",
+          "$ref": "Version"
         }
       },
       "additionalProperties": null,
@@ -5281,8 +6269,40 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "architecture": {
+          "description": "Output only. The CPU architecture for which packages in this distribution channel were built. Architecture will be blank for language packages.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ARCHITECTURE_UNSPECIFIED",
+            "X86",
+            "X64"
+          ],
+          "enumDescriptions": [
+            "Unknown architecture.",
+            "X86 architecture.",
+            "X64 architecture."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cpeUri": {
+          "description": "Output only. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package. The cpe_uri will be blank for language packages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "license": {
+          "description": "Licenses that have been declared by the authors of the package.",
+          "$ref": "License"
+        },
         "location": {
-          "description": "Required. All of the places within the filesystem versions of this package have been found.",
+          "description": "All of the places within the filesystem versions of this package have been found.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5294,7 +6314,7 @@
           }
         },
         "name": {
-          "description": "Output only. The name of the installed package.",
+          "description": "Required. Output only. The name of the installed package.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5302,6 +6322,20 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "packageType": {
+          "description": "Output only. The type of package; whether native or non native (e.g., ruby gems, node.js packages, etc.).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "Output only. The version of the package.",
+          "$ref": "Version"
         }
       },
       "additionalProperties": null,
@@ -5741,6 +6775,71 @@
       "additionalProperties": null,
       "items": null
     },
+    "SlsaProvenanceZeroTwo": {
+      "id": "SlsaProvenanceZeroTwo",
+      "description": "See full explanation of fields at slsa.dev/provenance/v0.2.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "buildConfig": {
+          "description": null,
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "buildType": {
+          "description": null,
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "builder": {
+          "description": null,
+          "$ref": "GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder"
+        },
+        "invocation": {
+          "description": null,
+          "$ref": "GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation"
+        },
+        "materials": {
+          "description": null,
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial"
+          }
+        },
+        "metadata": {
+          "description": null,
+          "$ref": "GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SlsaRecipe": {
       "id": "SlsaRecipe",
       "description": "Steps taken to build the artifact. For a TaskRun, typically each container corresponds to one step in the recipe.",
@@ -6075,6 +7174,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "TimeSpan": {
+      "id": "TimeSpan",
+      "description": "Start and end times for a build execution phase. Next ID: 3",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "endTime": {
+          "description": "End of time span.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "startTime": {
+          "description": "Start of time span.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "UpgradeDistribution": {
       "id": "UpgradeDistribution",
       "description": "The Upgrade Distribution represents metadata about the Upgrade for each operating system (CPE). Some distributions have additional metadata around updates, classifying them into various categories and severities.",
@@ -6293,6 +7424,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "Volume": {
+      "id": "Volume",
+      "description": "Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution. Next ID: 3",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Name of the volume to mount. Volume names must be unique per build step and must be valid names for Docker volumes. Each named volume must be used by at least two build steps.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "path": {
+          "description": "Path at which to mount the volume. Paths must be absolute and cannot conflict with other volume paths on the same build step or with certain reserved volume paths.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "VulnerabilityNote": {
       "id": "VulnerabilityNote",
       "description": "A security vulnerability that can be found in resources.",
@@ -6314,6 +7477,24 @@
         "cvssV3": {
           "description": "The full description of the CVSSv3 for this vulnerability.",
           "$ref": "CVSSv3"
+        },
+        "cvssVersion": {
+          "description": "CVSS version used to populate cvss_score and severity.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CVSS_VERSION_UNSPECIFIED",
+            "CVSS_VERSION_2",
+            "CVSS_VERSION_3"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            ""
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "details": {
           "description": "Details of all known distros and packages affected by this vulnerability.",
@@ -6391,6 +7572,24 @@
           "format": "float",
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cvssVersion": {
+          "description": "Output only. CVSS version used to populate cvss_score and severity.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CVSS_VERSION_UNSPECIFIED",
+            "CVSS_VERSION_2",
+            "CVSS_VERSION_3"
+          ],
+          "enumDescriptions": [
+            "",
+            "",
+            ""
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -6944,7 +8143,7 @@
               "description": "Gets the access control policy for a note or an occurrence resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively. The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -7115,7 +8314,7 @@
               "description": "Sets the access control policy on the specified note or occurrence. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or an occurrence, respectively. The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -7154,7 +8353,7 @@
               "description": "Returns the permissions that a caller has on the specified note or occurrence. Requires list permission on the project (for example, `containeranalysis.notes.list`). The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -7350,7 +8549,7 @@
               "description": "Gets the access control policy for a note or an occurrence resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively. The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -7609,7 +8808,7 @@
               "description": "Sets the access control policy on the specified note or occurrence. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or an occurrence, respectively. The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -7648,7 +8847,7 @@
               "description": "Returns the permissions that a caller has on the specified note or occurrence. Requires list permission on the project (for example, `containeranalysis.notes.list`). The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,

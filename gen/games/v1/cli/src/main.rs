@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("games1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220420")
+            .version("0.1.0-20230120")
             .about("The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -137,9 +137,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut players0 = SubCommand::with_name("players")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about("methods: get, get_scoped_player_ids and list");
         {
             let mcmd = SubCommand::with_name("get").about("Retrieves the Player resource with the given ID. To retrieve the player for the currently authenticated user, set `playerId` to `me`.");
+            players0 = players0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_scoped_player_ids")
+                .about("Retrieves scoped player identifiers for currently authenticated user.");
             players0 = players0.subcommand(mcmd);
         }
         {

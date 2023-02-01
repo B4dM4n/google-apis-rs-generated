@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230131",
   "title": "Google Play Custom App Publishing API",
   "description": "API to create and publish custom Android apps",
   "ownerDomain": "google.com",

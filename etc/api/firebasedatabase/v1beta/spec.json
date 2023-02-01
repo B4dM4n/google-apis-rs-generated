@@ -7,9 +7,9 @@
   "canonicalName": "Firebase Realtime Database",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220425",
-  "title": "Firebase Realtime Database Management API",
-  "description": "The Firebase Realtime Database Management API enables programmatic provisioning and management of Realtime Database instances.",
+  "revision": "20230130",
+  "title": "Firebase Realtime Database API",
+  "description": "The Firebase Realtime Database API enables programmatic provisioning and management of Realtime Database instances.",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -225,7 +225,7 @@
       "enumDescriptions": [],
       "properties": {
         "databaseUrl": {
-          "description": "Immutable. The globally unique hostname of the database.",
+          "description": "Output only. Output Only. The globally unique hostname of the database.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -245,7 +245,7 @@
           "items": null
         },
         "project": {
-          "description": "The resource name of the project this instance belongs to. For example: `projects/{project-number}`.",
+          "description": "Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -255,7 +255,7 @@
           "items": null
         },
         "state": {
-          "description": "The database's lifecycle state. Read-only.",
+          "description": "Output only. The database's lifecycle state. Read-only.",
           "type": "string",
           "format": null,
           "enum": [
@@ -275,7 +275,7 @@
           "items": null
         },
         "type": {
-          "description": "The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted.",
+          "description": "Immutable. The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted.",
           "type": "string",
           "format": null,
           "enum": [
@@ -393,7 +393,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "The parent project for which to create a database instance, in the form: `projects/{project-number}/locations/{location-id}`.",
+                      "description": "Required. The parent project for which to create a database instance, in the form: `projects/{project-number}/locations/{location-id}`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -444,10 +444,10 @@
                   "id": "firebasedatabase.projects.locations.instances.delete",
                   "path": "v1beta/{+name}",
                   "httpMethod": "DELETE",
-                  "description": "Marks a DatabaseInstance to be deleted. The DatabaseInstance will be purged within 30 days. The default database cannot be deleted. IDs for deleted database instances may never be recovered or re-used. The Database may only be deleted if it is already in a DISABLED state.",
+                  "description": "Marks a DatabaseInstance to be deleted. The DatabaseInstance will be set to the DELETED state for 20 days, and will be purged within 30 days. The default database cannot be deleted. IDs for deleted database instances may never be recovered or re-used. The Database may only be deleted if it is already in a DISABLED state.",
                   "parameters": {
                     "name": {
-                      "description": "The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
+                      "description": "Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -485,7 +485,7 @@
                   "description": "Disables a DatabaseInstance. The database can be re-enabled later using ReenableDatabaseInstance. When a database is disabled, all reads and writes are denied, including view access in the Firebase console.",
                   "parameters": {
                     "name": {
-                      "description": "The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
+                      "description": "Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -525,7 +525,7 @@
                   "description": "Gets the DatabaseInstance identified by the specified resource name.",
                   "parameters": {
                     "name": {
-                      "description": "The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. `database-id` is a globally unique identifier across all parent collections. For convenience, this method allows you to supply `-` as a wildcard character in place of specific collections under `projects` and `locations`. The resulting wildcarding form of the method is: `projects/-/locations/-/instances/{database-id}`.",
+                      "description": "Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. `database-id` is a globally unique identifier across all parent collections. For convenience, this method allows you to supply `-` as a wildcard character in place of specific collections under `projects` and `locations`. The resulting wildcarding form of the method is: `projects/-/locations/-/instances/{database-id}`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -593,7 +593,7 @@
                       "repeated": false
                     },
                     "parent": {
-                      "description": "The parent project for which to list database instances, in the form: `projects/{project-number}/locations/{location-id}` To list across all locations, use a parent in the form: `projects/{project-number}/locations/-`",
+                      "description": "Required. The parent project for which to list database instances, in the form: `projects/{project-number}/locations/{location-id}` To list across all locations, use a parent in the form: `projects/{project-number}/locations/-`",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -647,7 +647,7 @@
                   "description": "Enables a DatabaseInstance. The database must have been disabled previously using DisableDatabaseInstance. The state of a successfully reenabled DatabaseInstance is ACTIVE.",
                   "parameters": {
                     "name": {
-                      "description": "The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
+                      "description": "Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -684,10 +684,10 @@
                   "id": "firebasedatabase.projects.locations.instances.undelete",
                   "path": "v1beta/{+name}:undelete",
                   "httpMethod": "POST",
-                  "description": "Restores a DatabaseInstance that was previously marked to be deleted. This may only be used on a DatabaseInstance in the DELETED state. Purged DatabaseInstance's may not be recovered.",
+                  "description": "Restores a DatabaseInstance that was previously marked to be deleted. After the delete method is used, DatabaseInstances are set to the DELETED state for 20 days, and will be purged within 30 days. Databases in the DELETED state can be undeleted without losing any data. This method may only be used on a DatabaseInstance in the DELETED state. Purged DatabaseInstances may not be recovered.",
                   "parameters": {
                     "name": {
-                      "description": "The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
+                      "description": "Required. The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`",
                       "default": null,
                       "location": "path",
                       "required": true,

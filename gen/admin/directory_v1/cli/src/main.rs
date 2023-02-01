@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("admin1_directory")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220325")
+            .version("0.1.0-20230124")
             .about("Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -187,7 +187,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             members0 = members0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("has_member").about("Checks whether the given user is a member of the group. Membership can be direct or nested.");
+            let mcmd = SubCommand::with_name("has_member").about("Checks whether the given user is a member of the group. Membership can be direct or nested, but if nested, the `memberKey` and `groupKey` must be entities in the same domain or an `Invalid input` error is returned. To check for nested memberships that include entities outside of the group's domain, use the [`checkTransitiveMembership()`](https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/checkTransitiveMembership) method in the Cloud Identity Groups API.");
             members0 = members0.subcommand(mcmd);
         }
         {
@@ -195,8 +195,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             members0 = members0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Retrieves a paginated list of all members in a group.");
+            let mcmd = SubCommand::with_name("list").about("Retrieves a paginated list of all members in a group. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes).");
             members0 = members0.subcommand(mcmd);
         }
         {
@@ -225,7 +224,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             mobiledevices0 = mobiledevices0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead.");
+            let mcmd = SubCommand::with_name("list").about("Retrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/admin-sdk/directory/v1/guides/troubleshoot-error-codes).");
             mobiledevices0 = mobiledevices0.subcommand(mcmd);
         }
         let mut orgunits0 = SubCommand::with_name("orgunits")
@@ -396,7 +395,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             users0 = users0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates a user using patch semantics. The update method should be used instead, since it also supports patch semantics and has better performance. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.");
+            let mcmd = SubCommand::with_name("patch").about("Updates a user using patch semantics. The update method should be used instead, because it also supports patch semantics and has better performance. If you're mapping an external identity to a Google identity, use the [`update`](https://developers.google.com/admin-sdk/directory/v1/reference/users/update) method instead of the `patch` method. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.");
             users0 = users0.subcommand(mcmd);
         }
         {
@@ -408,7 +407,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             users0 = users0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update").about("Updates a user. This method supports patch semantics, meaning you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared.");
+            let mcmd = SubCommand::with_name("update").about("Updates a user. This method supports patch semantics, meaning that you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared. For repeating fields that contain arrays, individual items in the array can't be patched piecemeal; they must be supplied in the request body with the desired values for all items. See the [user accounts guide](https://developers.google.com/admin-sdk/directory/v1/guides/manage-users#update_user) for more information.");
             users0 = users0.subcommand(mcmd);
         }
         {
@@ -437,7 +436,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: chromeos");
         let mut chrome1 = SubCommand::with_name("chrome")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: printers");
+            .about("sub-resources: print_servers and printers");
         let mut aliases1 = SubCommand::with_name("aliases")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, insert and list");
@@ -587,6 +586,41 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Issues a command for the device to execute.");
             chromeos2 = chromeos2.subcommand(mcmd);
         }
+        let mut print_servers2 = SubCommand::with_name("print_servers")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: batch_create_print_servers, batch_delete_print_servers, create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("batch_create_print_servers")
+                .about("Creates multiple print servers.");
+            print_servers2 = print_servers2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("batch_delete_print_servers")
+                .about("Deletes multiple print servers.");
+            print_servers2 = print_servers2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a print server.");
+            print_servers2 = print_servers2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a print server.");
+            print_servers2 = print_servers2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Returns a print server's configuration.");
+            print_servers2 = print_servers2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists print server configurations.");
+            print_servers2 = print_servers2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates a print server's configuration.");
+            print_servers2 = print_servers2.subcommand(mcmd);
+        }
         let mut printers2 = SubCommand::with_name("printers")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: batch_create_printers, batch_delete_printers, create, delete, get, list, list_printer_models and patch");
@@ -637,6 +671,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         chromeos2 = chromeos2.subcommand(commands3);
         chrome1 = chrome1.subcommand(printers2);
+        chrome1 = chrome1.subcommand(print_servers2);
         devices1 = devices1.subcommand(chromeos2);
         users0 = users0.subcommand(photos1);
         users0 = users0.subcommand(aliases1);

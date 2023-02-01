@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("containeranalysis1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220421")
+            .version("0.1.0-20230127")
             .about("An implementation of the Grafeas API, which stores, and enables querying and retrieval of critical metadata about all of your software artifacts.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,7 +35,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: notes, occurrences and scan_configs");
+            .about("sub-resources: notes and occurrences");
         let mut notes1 = SubCommand::with_name("notes")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: batch_create, create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
@@ -126,23 +126,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the permissions that a caller has on the specified note or occurrence. Requires list permission on the project (for example, `containeranalysis.notes.list`). The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.");
             occurrences1 = occurrences1.subcommand(mcmd);
         }
-        let mut scan_configs1 = SubCommand::with_name("scan_configs")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get, list and update");
-        {
-            let mcmd = SubCommand::with_name("get").about("Gets the specified scan configuration.");
-            scan_configs1 = scan_configs1.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("list")
-                .about("Lists scan configurations for the specified project.");
-            scan_configs1 = scan_configs1.subcommand(mcmd);
-        }
-        {
-            let mcmd =
-                SubCommand::with_name("update").about("Updates the specified scan configuration.");
-            scan_configs1 = scan_configs1.subcommand(mcmd);
-        }
         let mut occurrences2 = SubCommand::with_name("occurrences")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -151,7 +134,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             occurrences2 = occurrences2.subcommand(mcmd);
         }
         notes1 = notes1.subcommand(occurrences2);
-        projects0 = projects0.subcommand(scan_configs1);
         projects0 = projects0.subcommand(occurrences1);
         projects0 = projects0.subcommand(notes1);
         app = app.subcommand(projects0);

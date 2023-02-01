@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("firebaseappcheck1_beta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230123")
             .about("Firebase App Check works alongside other Firebase services to help protect your backend resources from abuse, such as billing fraud or phishing.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -45,7 +45,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: apps and services");
         let mut apps1 = SubCommand::with_name("apps")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: exchange_app_attest_assertion, exchange_app_attest_attestation, exchange_custom_token, exchange_debug_token, exchange_device_check_token, exchange_recaptcha_enterprise_token, exchange_recaptcha_token, exchange_recaptcha_v3_token, exchange_safety_net_token and generate_app_attest_challenge");
+                        .about("methods: exchange_app_attest_assertion, exchange_app_attest_attestation, exchange_custom_token, exchange_debug_token, exchange_device_check_token, exchange_play_integrity_token, exchange_recaptcha_enterprise_token, exchange_recaptcha_token, exchange_recaptcha_v3_token, exchange_safety_net_token, generate_app_attest_challenge and generate_play_integrity_challenge");
         {
             let mcmd = SubCommand::with_name("exchange_app_attest_assertion").about("Accepts an App Attest assertion and an artifact previously obtained from ExchangeAppAttestAttestation and verifies those with Apple. If valid, returns an AppCheckToken.");
             apps1 = apps1.subcommand(mcmd);
@@ -67,6 +67,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             apps1 = apps1.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("exchange_play_integrity_token").about("Validates an [integrity verdict response token from Play Integrity](https://developer.android.com/google/play/integrity/verdict#decrypt-verify). If valid, returns an AppCheckToken.");
+            apps1 = apps1.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("exchange_recaptcha_enterprise_token").about("Validates a [reCAPTCHA Enterprise response token](https://cloud.google.com/recaptcha-enterprise/docs/create-assessment#retrieve_token). If valid, returns an App Check token AppCheckToken.");
             apps1 = apps1.subcommand(mcmd);
         }
@@ -84,6 +88,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("generate_app_attest_challenge").about("Generates a challenge that protects the integrity of an immediately following call to ExchangeAppAttestAttestation or ExchangeAppAttestAssertion. A challenge should not be reused for multiple calls.");
+            apps1 = apps1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("generate_play_integrity_challenge").about("Generates a challenge that protects the integrity of an immediately following integrity verdict request to the Play Integrity API. The next call to ExchangePlayIntegrityToken using the resulting integrity token will verify the presence and validity of the challenge. A challenge should not be reused for multiple calls.");
             apps1 = apps1.subcommand(mcmd);
         }
         let mut services1 = SubCommand::with_name("services")
@@ -163,6 +171,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("patch").about("Updates the DeviceCheckConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange DeviceCheck tokens for App Check tokens. For security reasons, the `private_key` field is never populated in the response.");
             device_check_config2 = device_check_config2.subcommand(mcmd);
         }
+        let mut play_integrity_config2 = SubCommand::with_name("play_integrity_config")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: batch_get, get and patch");
+        {
+            let mcmd = SubCommand::with_name("batch_get")
+                .about("Atomically gets the PlayIntegrityConfigs for the specified list of apps.");
+            play_integrity_config2 = play_integrity_config2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets the PlayIntegrityConfig for the specified app.");
+            play_integrity_config2 = play_integrity_config2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates the PlayIntegrityConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange Play Integrity tokens for App Check tokens.");
+            play_integrity_config2 = play_integrity_config2.subcommand(mcmd);
+        }
         let mut recaptcha_config2 = SubCommand::with_name("recaptcha_config")
             .setting(AppSettings::ColoredHelp)
             .about("methods: batch_get, get and patch");
@@ -232,6 +257,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         apps1 = apps1.subcommand(recaptcha_v3_config2);
         apps1 = apps1.subcommand(recaptcha_enterprise_config2);
         apps1 = apps1.subcommand(recaptcha_config2);
+        apps1 = apps1.subcommand(play_integrity_config2);
         apps1 = apps1.subcommand(device_check_config2);
         apps1 = apps1.subcommand(debug_tokens2);
         apps1 = apps1.subcommand(app_attest_config2);

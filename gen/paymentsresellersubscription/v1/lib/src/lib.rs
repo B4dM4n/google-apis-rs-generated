@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [partners](resources/partners/struct.PartnersActions.html)\n  * [products](resources/partners/products/struct.ProductsActions.html)\n    * [*list*](resources/partners/products/struct.ListRequestBuilder.html)\n  * [promotions](resources/partners/promotions/struct.PromotionsActions.html)\n    * [*list*](resources/partners/promotions/struct.ListRequestBuilder.html)\n  * [subscriptions](resources/partners/subscriptions/struct.SubscriptionsActions.html)\n    * [*cancel*](resources/partners/subscriptions/struct.CancelRequestBuilder.html), [*create*](resources/partners/subscriptions/struct.CreateRequestBuilder.html), [*entitle*](resources/partners/subscriptions/struct.EntitleRequestBuilder.html), [*extend*](resources/partners/subscriptions/struct.ExtendRequestBuilder.html), [*get*](resources/partners/subscriptions/struct.GetRequestBuilder.html), [*provision*](resources/partners/subscriptions/struct.ProvisionRequestBuilder.html), [*undoCancel*](resources/partners/subscriptions/struct.UndoCancelRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [partners](resources/partners/struct.PartnersActions.html)\n  * [products](resources/partners/products/struct.ProductsActions.html)\n    * [*list*](resources/partners/products/struct.ListRequestBuilder.html)\n  * [promotions](resources/partners/promotions/struct.PromotionsActions.html)\n    * [*findEligible*](resources/partners/promotions/struct.FindEligibleRequestBuilder.html), [*list*](resources/partners/promotions/struct.ListRequestBuilder.html)\n  * [subscriptions](resources/partners/subscriptions/struct.SubscriptionsActions.html)\n    * [*cancel*](resources/partners/subscriptions/struct.CancelRequestBuilder.html), [*create*](resources/partners/subscriptions/struct.CreateRequestBuilder.html), [*entitle*](resources/partners/subscriptions/struct.EntitleRequestBuilder.html), [*extend*](resources/partners/subscriptions/struct.ExtendRequestBuilder.html), [*get*](resources/partners/subscriptions/struct.GetRequestBuilder.html), [*provision*](resources/partners/subscriptions/struct.ProvisionRequestBuilder.html), [*undoCancel*](resources/partners/subscriptions/struct.UndoCancelRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
     #[derive(
@@ -13,7 +14,46 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequest { # [doc = "Optional. If true, the subscription will be cancelled immediately. Otherwise, the subscription will be cancelled at renewal_time, and therefore no prorated refund will be issued for the rest of the cycle."] # [serde (rename = "cancelImmediately" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancel_immediately : :: std :: option :: Option < bool > , # [doc = "Specifies the reason for the cancellation."] # [serde (rename = "cancellationReason" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancellation_reason : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequestCancellationReason > , }
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1Amount {
+        #[doc = "Required. Amount in micros (1_000_000 micros = 1 currency unit)"]
+        #[serde(
+            rename = "amountMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub amount_micros: ::std::option::Option<i64>,
+        #[doc = "Required. Currency codes in accordance with \\[ISO-4217 Currency Codes\\] (https://en.wikipedia.org/wiki/ISO_4217). For example, USD."]
+        #[serde(
+            rename = "currencyCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub currency_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudPaymentsResellerSubscriptionV1Amount {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudPaymentsResellerSubscriptionV1Amount {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequest { # [doc = "Optional. If true, Google will cancel the subscription immediately, and may or may not (based on the contract) issue a prorated refund for the remainder of the billing cycle. Otherwise, Google defers the cancelation at renewal_time, and will not issue a refund."] # [serde (rename = "cancelImmediately" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancel_immediately : :: std :: option :: Option < bool > , # [doc = "Specifies the reason for the cancellation."] # [serde (rename = "cancellationReason" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancellation_reason : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequestCancellationReason > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequest
     {
@@ -492,6 +532,314 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsRequest {
+        #[doc = "Optional. Specifies the filters for the promotion results. The syntax is defined in https://google.aip.dev/160 with the following caveats: - Only the following features are supported: - Logical operator `AND` - Comparison operator `=` (no wildcards `*`) - Traversal operator `.` - Has operator `:` (no wildcards `*`) - Only the following fields are supported: - `applicableProducts` - `regionCodes` - `youtubePayload.partnerEligibilityId` - `youtubePayload.postalCode` - Unless explicitly mentioned above, other features are not supported. Example: `applicableProducts:partners/partner1/products/product1 AND regionCodes:US AND youtubePayload.postalCode=94043 AND youtubePayload.partnerEligibilityId=eligibility-id`"]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter: ::std::option::Option<String>,
+        #[doc = "Optional. The maximum number of promotions to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
+        #[serde(
+            rename = "pageSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_size: ::std::option::Option<i32>,
+        #[doc = "Optional. A page token, received from a previous `ListPromotions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPromotions` must match the call that provided the page token."]
+        #[serde(
+            rename = "pageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsResponse {
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is empty, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The promotions for the current user."]
+        #[serde(
+            rename = "promotions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub promotions: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1Promotion>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsResponse
+    {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayload {
+        #[doc = "Campaign attributed to sales of this subscription."]
+        #[serde(
+            rename = "campaigns",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub campaigns: ::std::option::Option<Vec<String>>,
+        #[doc = "The type of offering the subscription was sold by the partner. e.g. VAS."]
+        #[serde(
+            rename = "offering",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offering: ::std::option::Option<
+            crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering,
+        >,
+        #[doc = "The type of sales channel through which the subscription was sold."]
+        #[serde(
+            rename = "salesChannel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sales_channel: ::std::option::Option<
+            crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel,
+        >,
+        #[doc = "The identifier for the partner store where the subscription was sold."]
+        #[serde(
+            rename = "storeId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub store_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayload
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayload
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering {
+        #[doc = "Product purchased as part of a hard bundle where Google One was included with the bundle. Google One pricing is included in the bundle."]
+        OfferingHardBundle,
+        #[doc = "Purchased as part of a bundle where Google One was provided as an option. Google One pricing is included in the bundle."]
+        OfferingSoftBundle,
+        #[doc = "The type of partner offering is unspecified."]
+        OfferingUnspecified,
+        #[doc = "Google One product purchased as a Value added service in addition to existing partner’s products. Customer pays additional amount for Google One product."]
+        OfferingVasBundle,
+        #[doc = "Google One product purchased by itself by customer as a value add service. Customer pays additional amount for Google One product."]
+        OfferingVasStandalone,
+    }
+    impl GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingHardBundle => "OFFERING_HARD_BUNDLE" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingSoftBundle => "OFFERING_SOFT_BUNDLE" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingUnspecified => "OFFERING_UNSPECIFIED" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingVasBundle => "OFFERING_VAS_BUNDLE" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingVasStandalone => "OFFERING_VAS_STANDALONE" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering,
+            (),
+        > {
+            Ok (match s { "OFFERING_HARD_BUNDLE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingHardBundle , "OFFERING_SOFT_BUNDLE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingSoftBundle , "OFFERING_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingUnspecified , "OFFERING_VAS_BUNDLE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingVasBundle , "OFFERING_VAS_STANDALONE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingVasStandalone , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "OFFERING_HARD_BUNDLE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingHardBundle , "OFFERING_SOFT_BUNDLE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingSoftBundle , "OFFERING_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingUnspecified , "OFFERING_VAS_BUNDLE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingVasBundle , "OFFERING_VAS_STANDALONE" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering :: OfferingVasStandalone , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadOffering
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel {
+        #[doc = "Sold through partner android app."]
+        ChannelOnlineAndroidApp,
+        #[doc = "Sold through partner iOS app."]
+        ChannelOnlineIosApp,
+        #[doc = "Sold through partner website."]
+        ChannelOnlineWeb,
+        #[doc = "Sold at store."]
+        ChannelRetail,
+        #[doc = "The channel type is unspecified."]
+        ChannelUnspecified,
+    }
+    impl GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineAndroidApp => "CHANNEL_ONLINE_ANDROID_APP" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineIosApp => "CHANNEL_ONLINE_IOS_APP" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineWeb => "CHANNEL_ONLINE_WEB" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelRetail => "CHANNEL_RETAIL" , GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelUnspecified => "CHANNEL_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel,
+            (),
+        > {
+            Ok (match s { "CHANNEL_ONLINE_ANDROID_APP" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineAndroidApp , "CHANNEL_ONLINE_IOS_APP" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineIosApp , "CHANNEL_ONLINE_WEB" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineWeb , "CHANNEL_RETAIL" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelRetail , "CHANNEL_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CHANNEL_ONLINE_ANDROID_APP" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineAndroidApp , "CHANNEL_ONLINE_IOS_APP" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineIosApp , "CHANNEL_ONLINE_WEB" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelOnlineWeb , "CHANNEL_RETAIL" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelRetail , "CHANNEL_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel :: ChannelUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayloadSalesChannel
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse {
         #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is empty, there are no subsequent pages."]
         #[serde(
@@ -524,7 +872,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -573,7 +923,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudPaymentsResellerSubscriptionV1ListPromotionsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudPaymentsResellerSubscriptionV1ListPromotionsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -629,13 +981,22 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudPaymentsResellerSubscriptionV1Product {
-        #[doc = "Output only. Response only. Resource name of the subscription. It will have the format of “partners/{partner_id}/products/{product_id}”"]
+        #[doc = "Output only. Response only. Resource name of the product. It will have the format of “partners/{partner_id}/products/{product_id}”"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Output only. Price configs for the product in the available regions."]
+        #[serde(
+            rename = "priceConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price_configs: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig>,
+        >,
         #[doc = "Output only. 2-letter ISO region code where the product is available in. Ex. “US” Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1"]
         #[serde(
             rename = "regionCodes",
@@ -666,6 +1027,95 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudPaymentsResellerSubscriptionV1Product {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1ProductPayload {
+        #[doc = "Payload specific to Google One products."]
+        #[serde(
+            rename = "googleOnePayload",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_one_payload: ::std::option::Option<
+            crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayload,
+        >,
+        #[doc = "Payload specific to Youtube products."]
+        #[serde(
+            rename = "youtubePayload",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub youtube_payload: ::std::option::Option<
+            crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1YoutubePayload,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1ProductPayload
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1ProductPayload
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig {
+        #[doc = "Output only. The price in the region."]
+        #[serde(
+            rename = "amount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub amount:
+            ::std::option::Option<crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1Amount>,
+        #[doc = "Output only. 2-letter ISO region code where the product is available in. Ex. “US”."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -804,6 +1254,22 @@ pub mod schemas {
     )]
     pub struct GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetailsIntroductoryPricingSpec
     {
+        #[doc = "Output only. The discount amount. The value is positive."]
+        #[serde(
+            rename = "discountAmount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub discount_amount:
+            ::std::option::Option<crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1Amount>,
+        #[doc = "Output only. The discount percentage in micros. For example, 50,000 represents 5%."]
+        #[serde(
+            rename = "discountRatioMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub discount_ratio_micros: ::std::option::Option<i64>,
         #[doc = "Output only. Output Only. The duration of an introductory offer in billing cycles."]
         #[serde(
             rename = "recurrenceCount",
@@ -811,6 +1277,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recurrence_count: ::std::option::Option<i32>,
+        #[doc = "Output only. 2-letter ISO region code where the product is available in. Ex. “US”."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
     }
     impl :: google_field_selector :: FieldSelector for GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetailsIntroductoryPricingSpec { fn fields () -> Vec < :: google_field_selector :: Field > { Vec :: new () } }
     impl :: google_field_selector :: ToFieldType for GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetailsIntroductoryPricingSpec { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
@@ -826,7 +1299,49 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPaymentsResellerSubscriptionV1Subscription { # [doc = "Output only. Describes the details of a cancelled subscription. Only applicable to subscription of state `STATE_CANCELLED`."] # [serde (rename = "cancellationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancellation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionCancellationDetails > , # [doc = "Output only. System generated timestamp when the subscription is created. UTC timezone."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be extended, in ISO 8061 format. UTC timezone. For example: “2019-08-31T17:28:54.564Z”"] # [serde (rename = "cycleEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub cycle_end_time : :: std :: option :: Option < String > , # [doc = "Output only. Indicates if the subscription is entitled to the end user."] # [serde (rename = "endUserEntitled" , default , skip_serializing_if = "std::option::Option::is_none")] pub end_user_entitled : :: std :: option :: Option < bool > , # [doc = "Output only. End of the free trial period, in ISO 8061 format. For example, “2019-08-31T17:28:54.564Z”. It will be set the same as createTime if no free trial promotion is specified."] # [serde (rename = "freeTrialEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub free_trial_end_time : :: std :: option :: Option < String > , # [doc = "Output only. Response only. Resource name of the subscription. It will have the format of “partners/{partner_id}/subscriptions/{subscription_id}”"] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Required. Identifier of the end-user in partner’s system. The value is restricted to 63 ASCII characters at the maximum."] # [serde (rename = "partnerUserToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub partner_user_token : :: std :: option :: Option < String > , # [doc = "Output only. Describes the processing state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "processingState" , default , skip_serializing_if = "std::option::Option::is_none")] pub processing_state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionProcessingState > , # [doc = "Required. Required. Resource name that identifies the purchased products. The format will be ‘partners/{partner_id}/products/{product_id}’."] # [serde (rename = "products" , default , skip_serializing_if = "std::option::Option::is_none")] pub products : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Optional. Resource name that identifies one or more promotions that can be applied on the product. A typical promotion for a subscription is Free trial. The format will be ‘partners/{partner_id}/promotions/{promotion_id}’."] # [serde (rename = "promotions" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotions : :: std :: option :: Option < Vec < String > > , # [doc = "Output only. The place where partners should redirect the end-user to after creation. This field might also be populated when creation failed. However, Partners should always prepare a default URL to redirect the user in case this field is empty."] # [serde (rename = "redirectUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub redirect_uri : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: “2019-08-31T17:28:54.564Z”"] # [serde (rename = "renewalTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub renewal_time : :: std :: option :: Option < String > , # [doc = "Required. The location that the service is provided as indicated by the partner."] # [serde (rename = "serviceLocation" , default , skip_serializing_if = "std::option::Option::is_none")] pub service_location : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1Location > , # [doc = "Output only. Describes the state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState > , # [doc = "Output only. System generated timestamp when the subscription is most recently updated. UTC timezone."] # [serde (rename = "updateTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub update_time : :: std :: option :: Option < String > , # [doc = "Optional. Details about the previous subscription that this new subscription upgrades/downgrades from. Only populated if this subscription is an upgrade/downgrade from another subscription."] # [serde (rename = "upgradeDowngradeDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub upgrade_downgrade_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetails > , }
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1ServicePeriod {
+        #[doc = "Optional. The end time of the service period. Time is exclusive."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "Required. The start time of the service period. Time is inclusive."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1ServicePeriod
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1ServicePeriod
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1Subscription { # [doc = "Output only. Describes the details of a cancelled subscription. Only applicable to subscription of state `STATE_CANCELLED`."] # [serde (rename = "cancellationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancellation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionCancellationDetails > , # [doc = "Output only. System generated timestamp when the subscription is created. UTC timezone."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be extended, in ISO 8061 format. UTC timezone. For example: “2019-08-31T17:28:54.564Z”"] # [serde (rename = "cycleEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub cycle_end_time : :: std :: option :: Option < String > , # [doc = "Output only. Indicates if the subscription is entitled to the end user."] # [serde (rename = "endUserEntitled" , default , skip_serializing_if = "std::option::Option::is_none")] pub end_user_entitled : :: std :: option :: Option < bool > , # [doc = "Output only. End of the free trial period, in ISO 8061 format. For example, “2019-08-31T17:28:54.564Z”. It will be set the same as createTime if no free trial promotion is specified."] # [serde (rename = "freeTrialEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub free_trial_end_time : :: std :: option :: Option < String > , # [doc = "Required. The line items of the subscription."] # [serde (rename = "lineItems" , default , skip_serializing_if = "std::option::Option::is_none")] pub line_items : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem > > , # [doc = "Optional. Resource name of the subscription. It will have the format of “partners/{partner_id}/subscriptions/{subscription_id}”. This is available for authorizeAddon, but otherwise is response only."] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Required. Identifier of the end-user in partner’s system. The value is restricted to 63 ASCII characters at the maximum."] # [serde (rename = "partnerUserToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub partner_user_token : :: std :: option :: Option < String > , # [doc = "Output only. Describes the processing state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "processingState" , default , skip_serializing_if = "std::option::Option::is_none")] pub processing_state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionProcessingState > , # [doc = "Required. Deprecated: consider using `line_items` as the input. Required. Resource name that identifies the purchased products. The format will be ‘partners/{partner_id}/products/{product_id}’."] # [serde (rename = "products" , default , skip_serializing_if = "std::option::Option::is_none")] pub products : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Subscription-level promotions. Only free trial is supported on this level. It determines the first renewal time of the subscription to be the end of the free trial period. Specify the promotion resource name only when used as input."] # [serde (rename = "promotionSpecs" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotion_specs : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec > > , # [doc = "Optional. Deprecated: consider using the top-level `promotion_specs` as the input. Optional. Resource name that identifies one or more promotions that can be applied on the product. A typical promotion for a subscription is Free trial. The format will be ‘partners/{partner_id}/promotions/{promotion_id}’."] # [serde (rename = "promotions" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotions : :: std :: option :: Option < Vec < String > > , # [doc = "Output only. The place where partners should redirect the end-user to after creation. This field might also be populated when creation failed. However, Partners should always prepare a default URL to redirect the user in case this field is empty."] # [serde (rename = "redirectUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub redirect_uri : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: “2019-08-31T17:28:54.564Z”"] # [serde (rename = "renewalTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub renewal_time : :: std :: option :: Option < String > , # [doc = "Required. The location that the service is provided as indicated by the partner."] # [serde (rename = "serviceLocation" , default , skip_serializing_if = "std::option::Option::is_none")] pub service_location : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1Location > , # [doc = "Output only. Describes the state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState > , # [doc = "Output only. System generated timestamp when the subscription is most recently updated. UTC timezone."] # [serde (rename = "updateTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub update_time : :: std :: option :: Option < String > , # [doc = "Optional. Details about the previous subscription that this new subscription upgrades/downgrades from. Only populated if this subscription is an upgrade/downgrade from another subscription."] # [serde (rename = "upgradeDowngradeDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub upgrade_downgrade_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetails > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPaymentsResellerSubscriptionV1Subscription
     {
@@ -923,12 +1438,14 @@ pub mod schemas {
         StateCreated,
         #[doc = "The subscription has not been extended by the partner after the end of current cycle."]
         StateInGracePeriod,
+        #[doc = "The subscription is suspended."]
+        StateSuspended,
         #[doc = "The state is unspecified."]
         StateUnspecified,
     }
     impl GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateActive => "STATE_ACTIVE" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelAtEndOfCycle => "STATE_CANCEL_AT_END_OF_CYCLE" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelled => "STATE_CANCELLED" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCreated => "STATE_CREATED" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateInGracePeriod => "STATE_IN_GRACE_PERIOD" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateUnspecified => "STATE_UNSPECIFIED" , }
+            match self { GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateActive => "STATE_ACTIVE" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelAtEndOfCycle => "STATE_CANCEL_AT_END_OF_CYCLE" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelled => "STATE_CANCELLED" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCreated => "STATE_CREATED" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateInGracePeriod => "STATE_IN_GRACE_PERIOD" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateSuspended => "STATE_SUSPENDED" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateUnspecified => "STATE_UNSPECIFIED" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState {
@@ -942,7 +1459,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState, ()>
         {
-            Ok (match s { "STATE_ACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateActive , "STATE_CANCEL_AT_END_OF_CYCLE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelAtEndOfCycle , "STATE_CANCELLED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelled , "STATE_CREATED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCreated , "STATE_IN_GRACE_PERIOD" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateInGracePeriod , "STATE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateUnspecified , _ => return Err (()) , })
+            Ok (match s { "STATE_ACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateActive , "STATE_CANCEL_AT_END_OF_CYCLE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelAtEndOfCycle , "STATE_CANCELLED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelled , "STATE_CREATED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCreated , "STATE_IN_GRACE_PERIOD" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateInGracePeriod , "STATE_SUSPENDED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateSuspended , "STATE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateUnspecified , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState {
@@ -964,7 +1481,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "STATE_ACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateActive , "STATE_CANCEL_AT_END_OF_CYCLE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelAtEndOfCycle , "STATE_CANCELLED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelled , "STATE_CREATED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCreated , "STATE_IN_GRACE_PERIOD" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateInGracePeriod , "STATE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "STATE_ACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateActive , "STATE_CANCEL_AT_END_OF_CYCLE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelAtEndOfCycle , "STATE_CANCELLED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCancelled , "STATE_CREATED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateCreated , "STATE_IN_GRACE_PERIOD" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateInGracePeriod , "STATE_SUSPENDED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateSuspended , "STATE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState :: StateUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1108,6 +1625,325 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem { # [doc = "Output only. Description of this line item."] # [serde (rename = "description" , default , skip_serializing_if = "std::option::Option::is_none")] pub description : :: std :: option :: Option < String > , # [doc = "Output only. It is set only if the line item has its own free trial applied. End time of the line item free trial period, in ISO 8061 format. For example, “2019-08-31T17:28:54.564Z”. It will be set the same as createTime if no free trial promotion is specified."] # [serde (rename = "lineItemFreeTrialEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub line_item_free_trial_end_time : :: std :: option :: Option < String > , # [doc = "Optional. The promotions applied on the line item. It can be: - a free trial promotion, which overrides the subscription-level free trial promotion. - an introductory pricing promotion. When used as input in Create or Provision API, specify its resource name only."] # [serde (rename = "lineItemPromotionSpecs" , default , skip_serializing_if = "std::option::Option::is_none")] pub line_item_promotion_specs : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec > > , # [doc = "Output only. Details only set for a ONE_TIME recurrence line item."] # [serde (rename = "oneTimeRecurrenceDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub one_time_recurrence_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemOneTimeRecurrenceDetails > , # [doc = "Required. Product resource name that identifies one the line item The format is ‘partners/{partner_id}/products/{product_id}’."] # [serde (rename = "product" , default , skip_serializing_if = "std::option::Option::is_none")] pub product : :: std :: option :: Option < String > , # [doc = "Optional. Product specific payload for this line item."] # [serde (rename = "productPayload" , default , skip_serializing_if = "std::option::Option::is_none")] pub product_payload : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1ProductPayload > , # [doc = "Output only. The recurrence type of the line item."] # [serde (rename = "recurrenceType" , default , skip_serializing_if = "std::option::Option::is_none")] pub recurrence_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType > , # [doc = "Output only. The state of the line item."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType {
+        #[doc = "The line item does not recur in the future."]
+        LineItemRecurrenceTypeOneTime,
+        #[doc = "The line item recurs periodically."]
+        LineItemRecurrenceTypePeriodic,
+        #[doc = "The line item recurrence type is unspecified."]
+        LineItemRecurrenceTypeUnspecified,
+    }
+    impl GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypeOneTime => "LINE_ITEM_RECURRENCE_TYPE_ONE_TIME" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypePeriodic => "LINE_ITEM_RECURRENCE_TYPE_PERIODIC" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypeUnspecified => "LINE_ITEM_RECURRENCE_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType,
+            (),
+        > {
+            Ok (match s { "LINE_ITEM_RECURRENCE_TYPE_ONE_TIME" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypeOneTime , "LINE_ITEM_RECURRENCE_TYPE_PERIODIC" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypePeriodic , "LINE_ITEM_RECURRENCE_TYPE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "LINE_ITEM_RECURRENCE_TYPE_ONE_TIME" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypeOneTime , "LINE_ITEM_RECURRENCE_TYPE_PERIODIC" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypePeriodic , "LINE_ITEM_RECURRENCE_TYPE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType :: LineItemRecurrenceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemRecurrenceType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState {
+        #[doc = "The line item is being activated in order to be charged. If a free trial applies to the line item, the line item is pending a prorated charge at the end of the free trial period, as indicated by `line_item_free_trial_end_time`."]
+        LineItemStateActivating,
+        #[doc = "The line item is in ACTIVE state."]
+        LineItemStateActive,
+        #[doc = "The line item is being deactivated, and a prorated refund in being processed."]
+        LineItemStateDeactivating,
+        #[doc = "The line item is in INACTIVE state."]
+        LineItemStateInactive,
+        #[doc = "The line item is new, and is not activated or charged yet."]
+        LineItemStateNew,
+        #[doc = "Unspecified state."]
+        LineItemStateUnspecified,
+        #[doc = "The line item is scheduled to be deactivated at the end of the current cycle."]
+        LineItemStateWaitingToDeactivate,
+    }
+    impl GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateActivating => "LINE_ITEM_STATE_ACTIVATING" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateActive => "LINE_ITEM_STATE_ACTIVE" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateDeactivating => "LINE_ITEM_STATE_DEACTIVATING" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateInactive => "LINE_ITEM_STATE_INACTIVE" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateNew => "LINE_ITEM_STATE_NEW" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateUnspecified => "LINE_ITEM_STATE_UNSPECIFIED" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateWaitingToDeactivate => "LINE_ITEM_STATE_WAITING_TO_DEACTIVATE" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState,
+            (),
+        > {
+            Ok (match s { "LINE_ITEM_STATE_ACTIVATING" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateActivating , "LINE_ITEM_STATE_ACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateActive , "LINE_ITEM_STATE_DEACTIVATING" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateDeactivating , "LINE_ITEM_STATE_INACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateInactive , "LINE_ITEM_STATE_NEW" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateNew , "LINE_ITEM_STATE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateUnspecified , "LINE_ITEM_STATE_WAITING_TO_DEACTIVATE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateWaitingToDeactivate , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "LINE_ITEM_STATE_ACTIVATING" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateActivating , "LINE_ITEM_STATE_ACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateActive , "LINE_ITEM_STATE_DEACTIVATING" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateDeactivating , "LINE_ITEM_STATE_INACTIVE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateInactive , "LINE_ITEM_STATE_NEW" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateNew , "LINE_ITEM_STATE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateUnspecified , "LINE_ITEM_STATE_WAITING_TO_DEACTIVATE" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState :: LineItemStateWaitingToDeactivate , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemState
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemOneTimeRecurrenceDetails {
+        #[doc = "The service period of the ONE_TIME line item."]
+        #[serde(
+            rename = "servicePeriod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_period: ::std::option::Option<
+            crate::schemas::GoogleCloudPaymentsResellerSubscriptionV1ServicePeriod,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemOneTimeRecurrenceDetails
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemOneTimeRecurrenceDetails
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec { # [doc = "Output only. The duration of the free trial if the promotion is of type FREE_TRIAL."] # [serde (rename = "freeTrialDuration" , default , skip_serializing_if = "std::option::Option::is_none")] pub free_trial_duration : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1Duration > , # [doc = "Output only. The details of the introductory pricing spec if the promotion is of type INTRODUCTORY_PRICING."] # [serde (rename = "introductoryPricingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub introductory_pricing_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetails > , # [doc = "Required. Promotion resource name that identifies a promotion. The format is ‘partners/{partner_id}/promotions/{promotion_id}’."] # [serde (rename = "promotion" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotion : :: std :: option :: Option < String > , # [doc = "Output only. The type of the promotion for the spec."] # [serde (rename = "type" , default , skip_serializing_if = "std::option::Option::is_none")] pub r#type : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType {
+        #[doc = "The promotion is a free trial."]
+        PromotionTypeFreeTrial,
+        #[doc = "The promotion is a reduced introductory pricing."]
+        PromotionTypeIntroductoryPricing,
+        #[doc = "The promotion type is unspecified."]
+        PromotionTypeUnspecified,
+    }
+    impl GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeFreeTrial => "PROMOTION_TYPE_FREE_TRIAL" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeIntroductoryPricing => "PROMOTION_TYPE_INTRODUCTORY_PRICING" , GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeUnspecified => "PROMOTION_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType,
+            (),
+        > {
+            Ok (match s { "PROMOTION_TYPE_FREE_TRIAL" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeFreeTrial , "PROMOTION_TYPE_INTRODUCTORY_PRICING" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeIntroductoryPricing , "PROMOTION_TYPE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "PROMOTION_TYPE_FREE_TRIAL" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeFreeTrial , "PROMOTION_TYPE_INTRODUCTORY_PRICING" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeIntroductoryPricing , "PROMOTION_TYPE_UNSPECIFIED" => GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType :: PromotionTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpecType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetails { # [doc = "Required. Specifies the billing cycle spec for the new upgraded/downgraded subscription."] # [serde (rename = "billingCycleSpec" , default , skip_serializing_if = "std::option::Option::is_none")] pub billing_cycle_spec : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetailsBillingCycleSpec > , # [doc = "Required. The previous subscription id to be replaced. This is not the full resource name, use the subscription_id segment only."] # [serde (rename = "previousSubscriptionId" , default , skip_serializing_if = "std::option::Option::is_none")] pub previous_subscription_id : :: std :: option :: Option < String > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetails
@@ -1205,6 +2041,41 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudPaymentsResellerSubscriptionV1UndoCancelSubscriptionResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1YoutubePayload {
+        #[doc = "The list of eligibility_ids which are applicable for the line item."]
+        #[serde(
+            rename = "partnerEligibilityIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub partner_eligibility_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudPaymentsResellerSubscriptionV1YoutubePayload
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudPaymentsResellerSubscriptionV1YoutubePayload
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -1474,7 +2345,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Used by partners to list products that can be resold to their customers. It should be called directly by the partner using service accounts."]
+                #[doc = "To retrieve the products that can be resold by the partner. It should be autenticated with a service account."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -1491,6 +2362,7 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         parent: parent.into(),
+                        filter: None,
                         page_size: None,
                         page_token: None,
                     }
@@ -1502,6 +2374,7 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 parent: String,
+                filter: ::std::option::Option<String>,
                 page_size: ::std::option::Option<i32>,
                 page_token: ::std::option::Option<String>,
                 access_token: ::std::option::Option<String>,
@@ -1517,6 +2390,11 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
+                #[doc = "Optional. Specifies the filters for the product results. The syntax is defined in https://google.aip.dev/160 with the following caveats: - Only the following features are supported: - Logical operator `AND` - Comparison operator `=` (no wildcards `*`) - Traversal operator `.` - Has operator `:` (no wildcards `*`) - Only the following fields are supported: - `regionCodes` - `youtubePayload.partnerEligibilityId` - `youtubePayload.postalCode` - Unless explicitly mentioned above, other features are not supported. Example: `regionCodes:US AND youtubePayload.postalCode=94043 AND youtubePayload.partnerEligibilityId=eligibility-id`"]
+                pub fn filter(mut self, value: impl Into<String>) -> Self {
+                    self.filter = Some(value.into());
+                    self
+                }
                 #[doc = "Optional. The maximum number of products to return. The service may return fewer than this value. If unspecified, at most 50 products will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
@@ -1625,7 +2503,7 @@ pub mod resources {
                         #[serde(rename = "products")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -1660,7 +2538,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -1700,7 +2578,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -1798,6 +2676,7 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("filter", &self.filter)]);
                     req = req.query(&[("pageSize", &self.page_size)]);
                     req = req.query(&[("pageToken", &self.page_token)]);
                     req = req.query(&[("access_token", &self.access_token)]);
@@ -1822,12 +2701,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -1843,7 +2723,31 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Used by partners to list promotions, such as free trial, that can be applied on subscriptions. It should be called directly by the partner using service accounts."]
+                #[doc = "To find eligible promotions for the current user. The API requires user authorization via OAuth. The user is inferred from the authenticated OAuth credential."]
+                pub fn find_eligible(
+                    &self,
+                    request : crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsRequest,
+                    parent: impl Into<String>,
+                ) -> FindEligibleRequestBuilder {
+                    FindEligibleRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                    }
+                }
+                #[doc = "To retrieve the promotions, such as free trial, that can be used by the partner. It should be autenticated with a service account."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -1864,6 +2768,148 @@ pub mod resources {
                         page_size: None,
                         page_token: None,
                     }
+                }
+            }
+            #[doc = "Created via [PromotionsActions::find_eligible()](struct.PromotionsActions.html#method.find_eligible)"]
+            #[derive(Debug, Clone)]
+            pub struct FindEligibleRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsRequest , parent : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+            impl<'a> FindEligibleRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]                pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsResponse , crate :: Error >{
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]                pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1FindEligiblePromotionsResponse , crate :: Error >{
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output =
+                        "https://paymentsresellersubscription.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/promotions:findEligible");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
                 }
             }
             #[doc = "Created via [PromotionsActions::list()](struct.PromotionsActions.html#method.list)"]
@@ -1888,7 +2934,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Specifies the filters for the promotion results. The syntax defined in the EBNF grammar: https://google.aip.dev/assets/misc/ebnf-filtering.txt. Examples: - applicable_products: “sku1” - region_codes: “US” - applicable_products: “sku1” AND region_codes: “US”"]
+                #[doc = "Optional. Specifies the filters for the promotion results. The syntax is defined in https://google.aip.dev/160 with the following caveats: - Only the following features are supported: - Logical operator `AND` - Comparison operator `=` (no wildcards `*`) - Traversal operator `.` - Has operator `:` (no wildcards `*`) - Only the following fields are supported: - `applicableProducts` - `regionCodes` - `youtubePayload.partnerEligibilityId` - `youtubePayload.postalCode` - Unless explicitly mentioned above, other features are not supported. Example: `applicableProducts:partners/partner1/products/product1 AND regionCodes:US AND youtubePayload.postalCode=94043 AND youtubePayload.partnerEligibilityId=eligibility-id`"]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -2001,7 +3047,7 @@ pub mod resources {
                         #[serde(rename = "promotions")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -2036,7 +3082,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -2076,7 +3122,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2199,12 +3245,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -2293,7 +3340,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Used by partners to extend a subscription service for their customers on an ongoing basis for the subscription to remain active and renewable. It should be called directly by the partner using service accounts."]
+                #[doc = "\\[Deprecated\\] New partners should be on auto-extend by default. Used by partners to extend a subscription service for their customers on an ongoing basis for the subscription to remain active and renewable. It should be called directly by the partner using service accounts."]
                 pub fn extend(
                     &self,
                     request : crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1ExtendSubscriptionRequest,
@@ -3761,16 +4808,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -3790,13 +4839,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -3804,7 +4856,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -3831,7 +4883,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

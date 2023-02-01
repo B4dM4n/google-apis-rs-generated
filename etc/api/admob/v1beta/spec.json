@@ -7,7 +7,7 @@
   "canonicalName": "AdMob",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220426",
+  "revision": "20230131",
   "title": "AdMob API",
   "description": "The AdMob API allows publishers to programmatically get information about their AdMob account. ",
   "ownerDomain": "google.com",
@@ -261,7 +261,7 @@
       "enumDescriptions": [],
       "properties": {
         "adFormat": {
-          "description": "AdFormat of the ad unit. Possible values are as follows: \"BANNER\" - Banner ad format. \"BANNER_INTERSTITIAL\" - Legacy format that can be used as either banner or interstitial. This format can no longer be created but can be targeted by mediation groups. \"INTERSTITIAL\" - A full screen ad. Supported ad types are \"RICH_MEDIA\" and \"VIDEO\". \"NATIVE\" - Native ad format. \"REWARDED\" - An ad that, once viewed, gets a callback verifying the view so that a reward can be given to the user. Supported ad types are \"RICH_MEDIA\" (interactive) and video where video can not be excluded.",
+          "description": "AdFormat of the ad unit. Possible values are as follows: \"APP_OPEN\" - App Open ad format. \"BANNER\" - Banner ad format. \"BANNER_INTERSTITIAL\" - Legacy format that can be used as either banner or interstitial. This format can no longer be created but can be targeted by mediation groups. \"INTERSTITIAL\" - A full screen ad. Supported ad types are \"RICH_MEDIA\" and \"VIDEO\". \"NATIVE\" - Native ad format. \"REWARDED\" - An ad that, once viewed, gets a callback verifying the view so that a reward can be given to the user. Supported ad types are \"RICH_MEDIA\" (interactive) and video where video can not be excluded. \"REWARDED_INTERSTITIAL\" - Rewarded Interstitial ad format. Only supports video ad type. See https://support.google.com/admob/answer/9884467.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -340,6 +340,26 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "appApprovalState": {
+          "description": "Output only. The approval state for the app.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "APP_APPROVAL_STATE_UNSPECIFIED",
+            "ACTION_REQUIRED",
+            "IN_REVIEW",
+            "APPROVED"
+          ],
+          "enumDescriptions": [
+            "Default value for an unset field. Do not use.",
+            "The app requires additional user action to be approved. Please refer to https://support.google.com/admob/answer/10564477 for details and next steps.",
+            "The app is pending review.",
+            "The app is approved and can serve ads."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "appId": {
           "description": "The externally visible ID of the app which can be used to integrate with the AdMob SDK. This is a read only property. Example: ca-app-pub-9876543210987654~0123456789",
           "type": "string",
@@ -500,7 +520,7 @@
     },
     "GenerateMediationReportRequest": {
       "id": "GenerateMediationReportRequest",
-      "description": "Request to generate an AdMob Mediation report.",
+      "description": "Request to generate an AdMob mediation report.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -516,7 +536,7 @@
     },
     "GenerateMediationReportResponse": {
       "id": "GenerateMediationReportResponse",
-      "description": "The streaming response for the AdMob Mediation report where the first response contains the report header, then a stream of row responses, and finally a footer as the last response message. For example: [{ \"header\": { \"date_range\": { \"start_date\": {\"year\": 2018, \"month\": 9, \"day\": 1}, \"end_date\": {\"year\": 2018, \"month\": 9, \"day\": 1} }, \"localization_settings\": { \"currency_code\": \"USD\", \"language_code\": \"en-US\" } } }, { \"row\": { \"dimension_values\": { \"DATE\": {\"value\": \"20180918\"}, \"APP\": { \"value\": \"ca-app-pub-8123415297019784~1001342552\", \"display_label\": \"My app name!\" } }, \"metric_values\": { \"ESTIMATED_EARNINGS\": {\"decimal_value\": \"1324746\"} } } }, { \"footer\": {\"matching_row_count\": 1} }]",
+      "description": "The streaming response for the AdMob mediation report where the first response contains the report header, then a stream of row responses, and finally a footer as the last response message. For example: [{ \"header\": { \"date_range\": { \"start_date\": {\"year\": 2018, \"month\": 9, \"day\": 1}, \"end_date\": {\"year\": 2018, \"month\": 9, \"day\": 1} }, \"localization_settings\": { \"currency_code\": \"USD\", \"language_code\": \"en-US\" } } }, { \"row\": { \"dimension_values\": { \"DATE\": {\"value\": \"20180918\"}, \"APP\": { \"value\": \"ca-app-pub-8123415297019784~1001342552\", \"display_label\": \"My app name!\" } }, \"metric_values\": { \"ESTIMATED_EARNINGS\": {\"decimal_value\": \"1324746\"} } } }, { \"footer\": {\"matching_row_count\": 1} }]",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1690,7 +1710,7 @@
               "description": "List the ad sources.",
               "parameters": {
                 "pageSize": {
-                  "description": "The maximum number of ad sources to return. If unspecified or 0, at most 1000 ad sources will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000.",
+                  "description": "The maximum number of ad sources to return. If unspecified or 0, at most 10,000 ad sources will be returned. The maximum value is 20,000; values above 10,000 will be coerced to 20,000.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -1758,7 +1778,7 @@
               "description": "List the ad units under the specified AdMob account.",
               "parameters": {
                 "pageSize": {
-                  "description": "The maximum number of ad units to return. If unspecified or 0, at most 1000 ad units will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000.",
+                  "description": "The maximum number of ad units to return. If unspecified or 0, at most 10,000 ad units will be returned. The maximum value is 20,000; values above 20,000 will be coerced to 20,000.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -1828,7 +1848,7 @@
               "description": "List the apps under the specified AdMob account.",
               "parameters": {
                 "pageSize": {
-                  "description": "The maximum number of apps to return. If unspecified or 0, at most 1000 apps will be returned. The maximum value is 10,000; values above 10,000 will be coerced to 10,000.",
+                  "description": "The maximum number of apps to return. If unspecified or 0, at most 10,000 apps will be returned. The maximum value is 20,000; values above 20,000 will be coerced to 20,000.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -1895,7 +1915,7 @@
               "id": "admob.accounts.mediationReport.generate",
               "path": "v1beta/{+parent}/mediationReport:generate",
               "httpMethod": "POST",
-              "description": "Generates an AdMob Mediation report based on the provided report specification. Returns result of a server-side streaming RPC. The result is returned in a sequence of responses.",
+              "description": "Generates an AdMob mediation report based on the provided report specification. Returns result of a server-side streaming RPC. The result is returned in a sequence of responses.",
               "parameters": {
                 "parent": {
                   "description": "Resource name of the account to generate the report for. Example: accounts/pub-9876543210987654",

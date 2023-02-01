@@ -7,7 +7,7 @@
   "canonicalName": "TPU",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220412",
+  "revision": "20230105",
   "title": "Cloud TPU API",
   "description": "TPU API provides customers with access to Google TPU technology.",
   "ownerDomain": "google.com",

@@ -1,0 +1,505 @@
+{
+  "kind": "discovery#restDescription",
+  "etag": null,
+  "discoveryVersion": "v1",
+  "id": "travelimpactmodel:v1",
+  "name": "travelimpactmodel",
+  "canonicalName": "Travel Impact Model",
+  "fullyEncodeReservedExpansion": true,
+  "version": "v1",
+  "revision": "20230131",
+  "title": "Travel Impact Model API",
+  "description": "Travel Impact Model API lets you query travel carbon emission estimates.",
+  "ownerDomain": "google.com",
+  "ownerName": "Google",
+  "icons": {
+    "x16": "http://www.google.com/images/icons/product/search-16.gif",
+    "x32": "http://www.google.com/images/icons/product/search-32.gif"
+  },
+  "documentationLink": "https://developers.google.com/travel/impact-model",
+  "protocol": "rest",
+  "baseUrl": "https://travelimpactmodel.googleapis.com/",
+  "basePath": "",
+  "rootUrl": "https://travelimpactmodel.googleapis.com/",
+  "servicePath": "",
+  "batchPath": "batch",
+  "version_module": true,
+  "packagePath": null,
+  "labels": null,
+  "features": null,
+  "parameters": {
+    "$.xgafv": {
+      "description": "V1 error format.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "1",
+        "2"
+      ],
+      "enumDescriptions": [
+        "v1 error format",
+        "v2 error format"
+      ],
+      "repeated": false
+    },
+    "access_token": {
+      "description": "OAuth access token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "alt": {
+      "description": "Data format for response.",
+      "default": "json",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "json",
+        "media",
+        "proto"
+      ],
+      "enumDescriptions": [
+        "Responses with Content-Type of application/json",
+        "Media download with context-dependent Content-Type",
+        "Responses with Content-Type of application/x-protobuf"
+      ],
+      "repeated": false
+    },
+    "callback": {
+      "description": "JSONP",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "fields": {
+      "description": "Selector specifying which fields to include in a partial response.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "key": {
+      "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "oauth_token": {
+      "description": "OAuth 2.0 token for the current user.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "prettyPrint": {
+      "description": "Returns response with indentations and line breaks.",
+      "default": "true",
+      "location": "query",
+      "required": false,
+      "type": "boolean",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "quotaUser": {
+      "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "uploadType": {
+      "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "upload_protocol": {
+      "description": "Upload protocol for media (e.g. \"raw\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    }
+  },
+  "auth": null,
+  "schemas": {
+    "ComputeFlightEmissionsRequest": {
+      "id": "ComputeFlightEmissionsRequest",
+      "description": "Input definition for the ComputeFlightEmissions request.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "flights": {
+          "description": "Required. Direct flights to return emission estimates for.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Flight"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ComputeFlightEmissionsResponse": {
+      "id": "ComputeFlightEmissionsResponse",
+      "description": "Output definition for the ComputeFlightEmissions response.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "flightEmissions": {
+          "description": "List of flight legs with emission estimates.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "FlightWithEmissions"
+          }
+        },
+        "modelVersion": {
+          "description": "The model version under which emission estimates for all flights in this response were computed.",
+          "$ref": "ModelVersion"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Date": {
+      "id": "Date",
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "day": {
+          "description": "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "month": {
+          "description": "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "year": {
+          "description": "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "EmissionsGramsPerPax": {
+      "id": "EmissionsGramsPerPax",
+      "description": "Grouped emissions per seating class results.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "business": {
+          "description": "Emissions for one passenger in business class in grams. This field is always computed and populated, regardless of whether the aircraft has business class seats or not.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "economy": {
+          "description": "Emissions for one passenger in economy class in grams. This field is always computed and populated, regardless of whether the aircraft has economy class seats or not.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "first": {
+          "description": "Emissions for one passenger in first class in grams. This field is always computed and populated, regardless of whether the aircraft has first class seats or not.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "premiumEconomy": {
+          "description": "Emissions for one passenger in premium economy class in grams. This field is always computed and populated, regardless of whether the aircraft has premium economy class seats or not.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Flight": {
+      "id": "Flight",
+      "description": "All details related to a single request item for a direct flight emission estimates.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "departureDate": {
+          "description": "Required. Date of the flight in the time zone of the origin airport. Must be a date in the present or future.",
+          "$ref": "Date"
+        },
+        "destination": {
+          "description": "Required. IATA airport code for flight destination, e.g. \"JFK\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "flightNumber": {
+          "description": "Required. Flight number, e.g. 324.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "operatingCarrierCode": {
+          "description": "Required. IATA carrier code, e.g. \"AA\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "origin": {
+          "description": "Required. IATA airport code for flight origin, e.g. \"LHR\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "FlightWithEmissions": {
+      "id": "FlightWithEmissions",
+      "description": "Direct flight with emission estimates.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "emissionsGramsPerPax": {
+          "description": "Optional. Per-passenger emission estimate numbers. Will not be present if emissions could not be computed. For the list of reasons why emissions could not be computed, see ComputeFlightEmissions.",
+          "$ref": "EmissionsGramsPerPax"
+        },
+        "flight": {
+          "description": "Required. Matches the flight identifiers in the request. Note: all IATA codes are capitalized.",
+          "$ref": "Flight"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ModelVersion": {
+      "id": "ModelVersion",
+      "description": "Travel Impact Model version. For more information about the model versioning see https://github.com/google/travel-impact-model/#versioning.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dated": {
+          "description": "Dated versions: Model datasets are recreated with refreshed input data but no change to the algorithms regularly.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "major": {
+          "description": "Major versions: Major changes to methodology (e.g. adding new data sources to the model that lead to major output changes). Such changes will be infrequent and announced well in advance. Might involve API version changes, which will respect guidelines in https://cloud.google.com/endpoints/docs/openapi/versioning-an-api#backwards-incompatible",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minor": {
+          "description": "Minor versions: Changes to the model that, while being consistent across schema versions, change the model parameters or implementation.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "patch": {
+          "description": "Patch versions: Implementation changes meant to address bugs or inaccuracies in the model implementation.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    }
+  },
+  "resources": {
+    "flights": {
+      "resources": {},
+      "methods": {
+        "computeFlightEmissions": {
+          "id": "travelimpactmodel.flights.computeFlightEmissions",
+          "path": "v1/flights:computeFlightEmissions",
+          "httpMethod": "POST",
+          "description": "Stateless method to retrieve emission estimates. Details on how emission estimates are computed: https://github.com/google/travel-impact-model The response will contain all entries that match the input flight legs, in the same order. If there are no estimates available for a certain flight leg, the response will return the flight leg object with empty emission fields. The request will still be considered successful. Reasons for missing emission estimates include: - The flight is unknown to the server. - The input flight leg is missing one or more identifiers. - The flight date is in the past. - The aircraft type is not supported by the model. - Missing seat configuration. The request can contain up to 1000 flight legs. If the request has more than 1000 direct flights, if will fail with an INVALID_ARGUMENT error.",
+          "parameters": {},
+          "parameterOrder": [],
+          "request": {
+            "$ref": "ComputeFlightEmissionsRequest"
+          },
+          "response": {
+            "$ref": "ComputeFlightEmissionsResponse"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    }
+  },
+  "methods": {}
+}

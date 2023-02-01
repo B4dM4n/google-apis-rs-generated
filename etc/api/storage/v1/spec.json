@@ -1,13 +1,13 @@
 {
   "kind": "discovery#restDescription",
-  "etag": "\"3131353831313138303735363132323234323031\"",
+  "etag": "\"3132313539303939323239333132323131313433\"",
   "discoveryVersion": "v1",
   "id": "storage:v1",
   "name": "storage",
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20230124",
   "title": "Cloud Storage JSON API",
   "description": "Stores and retrieves potentially large, immutable data objects.",
   "ownerDomain": "google.com",
@@ -324,6 +324,35 @@
             "items": null
           }
         },
+        "customPlacementConfig": {
+          "description": "The bucket's custom placement configuration for Custom Dual Regions.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {
+            "dataLocations": {
+              "description": "The list of regional locations in which data is placed.",
+              "type": "array",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": {
+                "type": "string",
+                "format": null,
+                "enum": [],
+                "enumDescriptions": [],
+                "properties": {},
+                "additionalProperties": null,
+                "items": null
+              }
+            }
+          },
+          "additionalProperties": null,
+          "items": null
+        },
         "defaultEventBasedHold": {
           "description": "The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold's release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed.",
           "type": "boolean",
@@ -538,7 +567,7 @@
                         "items": null
                       },
                       "type": {
-                        "description": "Type of the action. Currently, only Delete and SetStorageClass are supported.",
+                        "description": "Type of the action. Currently, only Delete, SetStorageClass, and AbortIncompleteMultipartUpload are supported.",
                         "type": "string",
                         "format": null,
                         "enum": [],
@@ -628,8 +657,44 @@
                         "additionalProperties": null,
                         "items": null
                       },
+                      "matchesPrefix": {
+                        "description": "List of object name prefixes. This condition will be satisfied when at least one of the prefixes exactly matches the beginning of the object name.",
+                        "type": "array",
+                        "format": null,
+                        "enum": [],
+                        "enumDescriptions": [],
+                        "properties": {},
+                        "additionalProperties": null,
+                        "items": {
+                          "type": "string",
+                          "format": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "properties": {},
+                          "additionalProperties": null,
+                          "items": null
+                        }
+                      },
                       "matchesStorageClass": {
                         "description": "Objects having any of the storage classes specified by this condition will be matched. Values include MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, and DURABLE_REDUCED_AVAILABILITY.",
+                        "type": "array",
+                        "format": null,
+                        "enum": [],
+                        "enumDescriptions": [],
+                        "properties": {},
+                        "additionalProperties": null,
+                        "items": {
+                          "type": "string",
+                          "format": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "properties": {},
+                          "additionalProperties": null,
+                          "items": null
+                        }
+                      },
+                      "matchesSuffix": {
+                        "description": "List of object name suffixes. This condition will be satisfied when at least one of the suffixes exactly matches the end of the object name.",
                         "type": "array",
                         "format": null,
                         "enum": [],
@@ -2145,7 +2210,7 @@
           "items": null
         },
         "updated": {
-          "description": "The modification time of the object metadata in RFC 3339 format.",
+          "description": "The modification time of the object metadata in RFC 3339 format. Set initially to object creation time and then updated whenever any metadata of the object changes. This includes changes made by a requester, such as modifying custom metadata, as well as changes made by Cloud Storage on behalf of a requester, such as changing the storage class based on an Object Lifecycle Configuration.",
           "type": "string",
           "format": "date-time",
           "enum": [],

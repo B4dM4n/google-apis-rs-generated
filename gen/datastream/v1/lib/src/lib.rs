@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*fetchStaticIps*](resources/projects/locations/struct.FetchStaticIpsRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [connection_profiles](resources/projects/locations/connection_profiles/struct.ConnectionProfilesActions.html)\n      * [*create*](resources/projects/locations/connection_profiles/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/connection_profiles/struct.DeleteRequestBuilder.html), [*discover*](resources/projects/locations/connection_profiles/struct.DiscoverRequestBuilder.html), [*get*](resources/projects/locations/connection_profiles/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/connection_profiles/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/connection_profiles/struct.PatchRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [private_connections](resources/projects/locations/private_connections/struct.PrivateConnectionsActions.html)\n      * [*create*](resources/projects/locations/private_connections/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/private_connections/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/private_connections/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/private_connections/struct.ListRequestBuilder.html)\n      * [routes](resources/projects/locations/private_connections/routes/struct.RoutesActions.html)\n        * [*create*](resources/projects/locations/private_connections/routes/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/private_connections/routes/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/private_connections/routes/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/private_connections/routes/struct.ListRequestBuilder.html)\n    * [streams](resources/projects/locations/streams/struct.StreamsActions.html)\n      * [*create*](resources/projects/locations/streams/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/streams/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/streams/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/streams/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/streams/struct.PatchRequestBuilder.html)\n      * [objects](resources/projects/locations/streams/objects/struct.ObjectsActions.html)\n        * [*get*](resources/projects/locations/streams/objects/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/streams/objects/struct.ListRequestBuilder.html), [*lookup*](resources/projects/locations/streams/objects/struct.LookupRequestBuilder.html), [*startBackfillJob*](resources/projects/locations/streams/objects/struct.StartBackfillJobRequestBuilder.html), [*stopBackfillJob*](resources/projects/locations/streams/objects/struct.StopBackfillJobRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -55,6 +56,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oracle_excluded_objects: ::std::option::Option<crate::schemas::OracleRdbms>,
+        #[doc = "PostgreSQL data source objects to avoid backfilling."]
+        #[serde(
+            rename = "postgresqlExcludedObjects",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_excluded_objects: ::std::option::Option<crate::schemas::PostgresqlRdbms>,
     }
     impl ::google_field_selector::FieldSelector for BackfillAllStrategy {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -334,6 +342,76 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BigQueryDestinationConfig {
+        #[doc = "The guaranteed data freshness (in seconds) when querying tables created by the stream. Editing this field will only affect new tables created in the future, but existing tables will not be impacted. Lower values mean that queries will return fresher data, but may result in higher cost."]
+        #[serde(
+            rename = "dataFreshness",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_freshness: ::std::option::Option<String>,
+        #[doc = "Single destination dataset."]
+        #[serde(
+            rename = "singleTargetDataset",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub single_target_dataset: ::std::option::Option<crate::schemas::SingleTargetDataset>,
+        #[doc = "Source hierarchy datasets."]
+        #[serde(
+            rename = "sourceHierarchyDatasets",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub source_hierarchy_datasets:
+            ::std::option::Option<crate::schemas::SourceHierarchyDatasets>,
+    }
+    impl ::google_field_selector::FieldSelector for BigQueryDestinationConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BigQueryDestinationConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BigQueryProfile {}
+    impl ::google_field_selector::FieldSelector for BigQueryProfile {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BigQueryProfile {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -363,6 +441,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConnectionProfile {
+        #[doc = "BigQuery Connection Profile configuration."]
+        #[serde(
+            rename = "bigqueryProfile",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bigquery_profile: ::std::option::Option<crate::schemas::BigQueryProfile>,
         #[doc = "Output only. The create time of the resource."]
         #[serde(
             rename = "createTime",
@@ -420,6 +505,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oracle_profile: ::std::option::Option<crate::schemas::OracleProfile>,
+        #[doc = "PostgreSQL Connection Profile configuration."]
+        #[serde(
+            rename = "postgresqlProfile",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_profile: ::std::option::Option<crate::schemas::PostgresqlProfile>,
         #[doc = "Private connectivity."]
         #[serde(
             rename = "privateConnectivity",
@@ -465,7 +557,60 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct DatasetTemplate {
+        #[doc = "If supplied, every created dataset will have its name prefixed by the provided value. The prefix and name will be separated by an underscore. i.e. \\_."]
+        #[serde(
+            rename = "datasetIdPrefix",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_id_prefix: ::std::option::Option<String>,
+        #[doc = "Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table. The BigQuery Service Account associated with your project requires access to this encryption key. i.e. projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{cryptoKey}. See https://cloud.google.com/bigquery/docs/customer-managed-encryption for more information."]
+        #[serde(
+            rename = "kmsKeyName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key_name: ::std::option::Option<String>,
+        #[doc = "Required. The geographic location where the dataset should reside. See https://cloud.google.com/bigquery/docs/locations for supported locations."]
+        #[serde(
+            rename = "location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for DatasetTemplate {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DatasetTemplate {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct DestinationConfig {
+        #[doc = "BigQuery destination configuration."]
+        #[serde(
+            rename = "bigqueryDestinationConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bigquery_destination_config:
+            ::std::option::Option<crate::schemas::BigQueryDestinationConfig>,
         #[doc = "Required. Destination connection profile resource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`"]
         #[serde(
             rename = "destinationConnectionProfile",
@@ -546,6 +691,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oracle_rdbms: ::std::option::Option<crate::schemas::OracleRdbms>,
+        #[doc = "PostgreSQL RDBMS to enrich with child data objects and metadata."]
+        #[serde(
+            rename = "postgresqlRdbms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_rdbms: ::std::option::Option<crate::schemas::PostgresqlRdbms>,
     }
     impl ::google_field_selector::FieldSelector for DiscoverConnectionProfileRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -584,6 +736,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oracle_rdbms: ::std::option::Option<crate::schemas::OracleRdbms>,
+        #[doc = "Enriched PostgreSQL RDBMS object."]
+        #[serde(
+            rename = "postgresqlRdbms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_rdbms: ::std::option::Option<crate::schemas::PostgresqlRdbms>,
     }
     impl ::google_field_selector::FieldSelector for DiscoverConnectionProfileResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -740,7 +899,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for FetchStaticIpsResponse {
+    impl crate::GetNextPageToken<String> for FetchStaticIpsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1149,7 +1308,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListConnectionProfilesResponse {
+    impl crate::GetNextPageToken<String> for ListConnectionProfilesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1181,7 +1340,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1213,7 +1372,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1263,7 +1422,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPrivateConnectionsResponse {
+    impl crate::GetNextPageToken<String> for ListPrivateConnectionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1313,7 +1472,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRoutesResponse {
+    impl crate::GetNextPageToken<String> for ListRoutesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1356,7 +1515,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListStreamObjectsResponse {
+    impl crate::GetNextPageToken<String> for ListStreamObjectsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1406,7 +1565,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListStreamsResponse {
+    impl crate::GetNextPageToken<String> for ListStreamsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1757,6 +1916,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_objects: ::std::option::Option<crate::schemas::MysqlRdbms>,
+        #[doc = "Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system’s default value will be used."]
+        #[serde(
+            rename = "maxConcurrentCdcTasks",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_concurrent_cdc_tasks: ::std::option::Option<i32>,
     }
     impl ::google_field_selector::FieldSelector for MysqlSourceConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2297,6 +2463,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_objects: ::std::option::Option<crate::schemas::OracleRdbms>,
+        #[doc = "Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system’s default value will be used."]
+        #[serde(
+            rename = "maxConcurrentCdcTasks",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_concurrent_cdc_tasks: ::std::option::Option<i32>,
+        #[doc = "Stream large object values. NOTE: This feature is currently experimental."]
+        #[serde(
+            rename = "streamLargeObjects",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub stream_large_objects: ::std::option::Option<crate::schemas::StreamLargeObjects>,
     }
     impl ::google_field_selector::FieldSelector for OracleSourceConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2342,6 +2522,342 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for OracleTable {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PostgresqlColumn {
+        #[doc = "Column name."]
+        #[serde(
+            rename = "column",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub column: ::std::option::Option<String>,
+        #[doc = "The PostgreSQL data type."]
+        #[serde(
+            rename = "dataType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_type: ::std::option::Option<String>,
+        #[doc = "Column length."]
+        #[serde(
+            rename = "length",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub length: ::std::option::Option<i32>,
+        #[doc = "Whether or not the column can accept a null value."]
+        #[serde(
+            rename = "nullable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nullable: ::std::option::Option<bool>,
+        #[doc = "The ordinal position of the column in the table."]
+        #[serde(
+            rename = "ordinalPosition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ordinal_position: ::std::option::Option<i32>,
+        #[doc = "Column precision."]
+        #[serde(
+            rename = "precision",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub precision: ::std::option::Option<i32>,
+        #[doc = "Whether or not the column represents a primary key."]
+        #[serde(
+            rename = "primaryKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub primary_key: ::std::option::Option<bool>,
+        #[doc = "Column scale."]
+        #[serde(
+            rename = "scale",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scale: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for PostgresqlColumn {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PostgresqlColumn {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PostgresqlObjectIdentifier {
+        #[doc = "Required. The schema name."]
+        #[serde(
+            rename = "schema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub schema: ::std::option::Option<String>,
+        #[doc = "Required. The table name."]
+        #[serde(
+            rename = "table",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PostgresqlObjectIdentifier {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PostgresqlObjectIdentifier {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PostgresqlProfile {
+        #[doc = "Required. Database for the PostgreSQL connection."]
+        #[serde(
+            rename = "database",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub database: ::std::option::Option<String>,
+        #[doc = "Required. Hostname for the PostgreSQL connection."]
+        #[serde(
+            rename = "hostname",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hostname: ::std::option::Option<String>,
+        #[doc = "Required. Password for the PostgreSQL connection."]
+        #[serde(
+            rename = "password",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password: ::std::option::Option<String>,
+        #[doc = "Port for the PostgreSQL connection, default value is 5432."]
+        #[serde(
+            rename = "port",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub port: ::std::option::Option<i32>,
+        #[doc = "Required. Username for the PostgreSQL connection."]
+        #[serde(
+            rename = "username",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub username: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PostgresqlProfile {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PostgresqlProfile {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PostgresqlRdbms {
+        #[doc = "PostgreSQL schemas in the database server."]
+        #[serde(
+            rename = "postgresqlSchemas",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_schemas: ::std::option::Option<Vec<crate::schemas::PostgresqlSchema>>,
+    }
+    impl ::google_field_selector::FieldSelector for PostgresqlRdbms {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PostgresqlRdbms {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PostgresqlSchema {
+        #[doc = "Tables in the schema."]
+        #[serde(
+            rename = "postgresqlTables",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_tables: ::std::option::Option<Vec<crate::schemas::PostgresqlTable>>,
+        #[doc = "Schema name."]
+        #[serde(
+            rename = "schema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub schema: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PostgresqlSchema {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PostgresqlSchema {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PostgresqlSourceConfig {
+        #[doc = "PostgreSQL objects to exclude from the stream."]
+        #[serde(
+            rename = "excludeObjects",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exclude_objects: ::std::option::Option<crate::schemas::PostgresqlRdbms>,
+        #[doc = "PostgreSQL objects to include in the stream."]
+        #[serde(
+            rename = "includeObjects",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub include_objects: ::std::option::Option<crate::schemas::PostgresqlRdbms>,
+        #[doc = "Required. The name of the publication that includes the set of all tables that are defined in the stream’s include_objects."]
+        #[serde(
+            rename = "publication",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub publication: ::std::option::Option<String>,
+        #[doc = "Required. Immutable. The name of the logical replication slot that’s configured with the pgoutput plugin."]
+        #[serde(
+            rename = "replicationSlot",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replication_slot: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PostgresqlSourceConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PostgresqlSourceConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PostgresqlTable {
+        #[doc = "PostgreSQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything."]
+        #[serde(
+            rename = "postgresqlColumns",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_columns: ::std::option::Option<Vec<crate::schemas::PostgresqlColumn>>,
+        #[doc = "Table name."]
+        #[serde(
+            rename = "table",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PostgresqlTable {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PostgresqlTable {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2633,6 +3149,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SingleTargetDataset {
+        #[doc = "The dataset ID of the target dataset."]
+        #[serde(
+            rename = "datasetId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SingleTargetDataset {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SingleTargetDataset {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SourceConfig {
         #[doc = "MySQL data source configuration."]
         #[serde(
@@ -2648,6 +3195,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oracle_source_config: ::std::option::Option<crate::schemas::OracleSourceConfig>,
+        #[doc = "PostgreSQL data source configuration."]
+        #[serde(
+            rename = "postgresqlSourceConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_source_config: ::std::option::Option<crate::schemas::PostgresqlSourceConfig>,
         #[doc = "Required. Source connection profile resoource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`"]
         #[serde(
             rename = "sourceConnectionProfile",
@@ -2662,6 +3216,36 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SourceConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SourceHierarchyDatasets {
+        #[serde(
+            rename = "datasetTemplate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_template: ::std::option::Option<crate::schemas::DatasetTemplate>,
+    }
+    impl ::google_field_selector::FieldSelector for SourceHierarchyDatasets {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SourceHierarchyDatasets {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2693,6 +3277,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oracle_identifier: ::std::option::Option<crate::schemas::OracleObjectIdentifier>,
+        #[doc = "PostgreSQL data source object identifier."]
+        #[serde(
+            rename = "postgresqlIdentifier",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub postgresql_identifier:
+            ::std::option::Option<crate::schemas::PostgresqlObjectIdentifier>,
     }
     impl ::google_field_selector::FieldSelector for SourceObjectIdentifier {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3095,6 +3687,30 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct StreamLargeObjects {}
+    impl ::google_field_selector::FieldSelector for StreamLargeObjects {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StreamLargeObjects {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -3465,7 +4081,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VpcPeeringConfig {
-        #[doc = "Required. A free subnet for peering. (CIDR of /29) TODO(b/172995841) add validators."]
+        #[doc = "Required. A free subnet for peering. (CIDR of /29)"]
         #[serde(
             rename = "subnet",
             default,
@@ -3913,7 +4529,7 @@ pub mod resources {
                         #[serde(rename = "staticIps")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -3948,7 +4564,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -3998,7 +4614,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4113,12 +4729,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for FetchStaticIpsRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4410,7 +5027,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -4445,7 +5062,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -4495,7 +5112,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4611,12 +5228,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -5596,7 +6214,7 @@ pub mod resources {
                             #[serde(rename = "connectionProfiles")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5667,7 +6285,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5702,7 +6320,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -5752,7 +6370,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -5872,12 +6490,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6780,7 +7399,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6815,7 +7434,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6865,7 +7484,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6984,12 +7603,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -7027,6 +7647,7 @@ pub mod resources {
                             upload_type: None,
                             xgafv: None,
                             parent: parent.into(),
+                            force: None,
                             private_connection_id: None,
                             request_id: None,
                         }
@@ -7105,6 +7726,7 @@ pub mod resources {
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                     request: crate::schemas::PrivateConnection,
                     parent: String,
+                    force: ::std::option::Option<bool>,
                     private_connection_id: ::std::option::Option<String>,
                     request_id: ::std::option::Option<String>,
                     access_token: ::std::option::Option<String>,
@@ -7120,6 +7742,11 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "Optional. If set to true, will skip validations."]
+                    pub fn force(mut self, value: bool) -> Self {
+                        self.force = Some(value);
+                        self
+                    }
                     #[doc = "Required. The private connectivity identifier."]
                     pub fn private_connection_id(mut self, value: impl Into<String>) -> Self {
                         self.private_connection_id = Some(value.into());
@@ -7253,6 +7880,7 @@ pub mod resources {
                         path: &str,
                     ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                         let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("force", &self.force)]);
                         req = req.query(&[("privateConnectionId", &self.private_connection_id)]);
                         req = req.query(&[("requestId", &self.request_id)]);
                         req = req.query(&[("access_token", &self.access_token)]);
@@ -7748,7 +8376,7 @@ pub mod resources {
                             #[serde(rename = "privateConnections")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -7819,7 +8447,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -7854,7 +8482,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -7904,7 +8532,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -8024,12 +8652,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -8782,7 +9411,7 @@ pub mod resources {
                                 #[serde(rename = "routes")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -8853,7 +9482,7 @@ pub mod resources {
                                 #[serde(rename = "unreachable")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -8890,7 +9519,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -8940,7 +9569,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -9062,12 +9691,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -9866,7 +10496,7 @@ pub mod resources {
                             #[serde(rename = "streams")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -9936,7 +10566,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -9971,7 +10601,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10021,7 +10651,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10141,12 +10771,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -10753,7 +11384,7 @@ pub mod resources {
                                 #[serde(rename = "streamObjects")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -10790,7 +11421,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -10840,7 +11471,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -10960,12 +11591,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -11759,16 +12391,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -11788,13 +12422,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -11802,7 +12439,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -11829,7 +12466,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

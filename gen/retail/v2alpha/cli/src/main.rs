@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("retail2_alpha")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220414")
+            .version("0.1.0-20230119")
             .about("Cloud Retail service enables customers to build end-to-end personalized recommendation systems without requiring a high level of expertise in machine learning, recommendation system, or Google Cloud.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -54,7 +54,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: complete_query, get_attributes_config, get_completion_config, get_default_branch, list, patch, set_default_branch, update_attributes_config and update_completion_config");
         {
-            let mcmd = SubCommand::with_name("complete_query").about("Completes the specified prefix with keyword suggestions. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("complete_query").about("Completes the specified prefix with keyword suggestions. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature.");
             catalogs2 = catalogs2.subcommand(mcmd);
         }
         {
@@ -106,9 +106,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut attributes_config3 = SubCommand::with_name("attributes_config")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: add_catalog_attribute, remove_catalog_attribute and replace_catalog_attribute");
+                        .about("methods: add_catalog_attribute, batch_remove_catalog_attributes, remove_catalog_attribute and replace_catalog_attribute");
         {
             let mcmd = SubCommand::with_name("add_catalog_attribute").about("Adds the specified CatalogAttribute to the AttributesConfig. If the CatalogAttribute to add already exists, an ALREADY_EXISTS error is returned.");
+            attributes_config3 = attributes_config3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("batch_remove_catalog_attributes")
+                .about("Removes all specified CatalogAttributes from the AttributesConfig.");
             attributes_config3 = attributes_config3.subcommand(mcmd);
         }
         {
@@ -121,12 +126,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut branches3 = SubCommand::with_name("branches")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: operations and products");
+            .about("sub-resources: operations, places and products");
         let mut completion_data3 = SubCommand::with_name("completion_data")
             .setting(AppSettings::ColoredHelp)
             .about("methods: import");
         {
-            let mcmd = SubCommand::with_name("import").about("Bulk import of processed completion dataset. Request processing is asynchronous. Partial updating is not supported. The operation is successfully finished only after the imported suggestions are indexed successfully and ready for serving. The process takes hours. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("import").about("Bulk import of processed completion dataset. Request processing is asynchronous. Partial updating is not supported. The operation is successfully finished only after the imported suggestions are indexed successfully and ready for serving. The process takes hours. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature.");
             completion_data3 = completion_data3.subcommand(mcmd);
         }
         let mut controls3 = SubCommand::with_name("controls")
@@ -146,12 +151,46 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd =
-                SubCommand::with_name("list").about("Lists all Controls linked to this catalog.");
+                SubCommand::with_name("list").about("Lists all Controls by their parent Catalog.");
             controls3 = controls3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates a Control. Control cannot be set to a different oneof field, if so an INVALID_ARGUMENT is returned. If the Control to delete does not exist, a NOT_FOUND error is returned.");
+            let mcmd = SubCommand::with_name("patch").about("Updates a Control. Control cannot be set to a different oneof field, if so an INVALID_ARGUMENT is returned. If the Control to update does not exist, a NOT_FOUND error is returned.");
             controls3 = controls3.subcommand(mcmd);
+        }
+        let mut models3 = SubCommand::with_name("models")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, list, patch, pause, resume and tune");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new model.");
+            models3 = models3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an existing model.");
+            models3 = models3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists all the models linked to this event store.");
+            models3 = models3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Update of model metadata. Only fields that currently can be updated are: `filtering_option` and `periodic_tuning_state`. If other values are provided, this API method ignores them.");
+            models3 = models3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("pause").about("Pauses the training of an existing model.");
+            models3 = models3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("resume").about("Resumes the training of an existing model.");
+            models3 = models3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("tune").about("Tunes an existing model.");
+            models3 = models3.subcommand(mcmd);
         }
         let mut operations3 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
@@ -172,7 +211,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             placements3 = placements3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("search").about("Performs a search. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("search").about("Performs a search. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature.");
             placements3 = placements3.subcommand(mcmd);
         }
         let mut serving_configs3 = SubCommand::with_name("serving_configs")
@@ -212,7 +251,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             serving_configs3 = serving_configs3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("search").about("Performs a search. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("search").about("Performs a search. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature.");
             serving_configs3 = serving_configs3.subcommand(mcmd);
         }
         let mut user_events3 = SubCommand::with_name("user_events")
@@ -223,7 +262,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             user_events3 = user_events3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("import").about("Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events. Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata.");
+            let mcmd = SubCommand::with_name("import").about("Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events. `Operation.response` is of type `ImportResponse`. Note that it is possible for a subset of the items to be successfully inserted. `Operation.metadata` is of type `ImportMetadata`.");
             user_events3 = user_events3.subcommand(mcmd);
         }
         {
@@ -231,7 +270,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             user_events3 = user_events3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("rejoin").about("Starts a user event rejoin operation with latest product catalog. Events will not be annotated with detailed product information if product is missing from the catalog at the time the user event is ingested, and these events are stored as unjoined events with a limited usage on training and serving. This method can be used to start a join operation on specified events with latest version of product catalog. It can also be used to correct events joined with the wrong product catalog. A rejoin operation can take hours or days to complete.");
+            let mcmd = SubCommand::with_name("rejoin").about("Starts a user-event rejoin operation with latest product catalog. Events are not annotated with detailed product information for products that are missing from the catalog when the user event is ingested. These events are stored as unjoined events with limited usage on training and serving. You can use this method to start a join operation on specified events with the latest version of product catalog. You can also use this method to correct events joined with the wrong product catalog. A rejoin operation can take hours or days to complete.");
             user_events3 = user_events3.subcommand(mcmd);
         }
         {
@@ -245,15 +284,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
             operations4 = operations4.subcommand(mcmd);
         }
+        let mut places4 = SubCommand::with_name("places")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: operations");
         let mut products4 = SubCommand::with_name("products")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: add_fulfillment_places, add_local_inventories, create, delete, get, import, list, patch, purge, remove_fulfillment_places, remove_local_inventories and set_inventory");
         {
-            let mcmd = SubCommand::with_name("add_fulfillment_places").about("Incrementally adds place IDs to Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the Product queried by GetProduct or ListProducts. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("add_fulfillment_places").about("Incrementally adds place IDs to Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete.");
             products4 = products4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("add_local_inventories").about("Updates local inventory information for a Product at a list of places, while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating inventory information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by GetProduct or ListProducts. Local inventory information can only be modified using this method. CreateProduct and UpdateProduct has no effect on local inventories. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("add_local_inventories").about("Updates local inventory information for a Product at a list of places, while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating inventory information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. Local inventory information can only be modified using this method. ProductService.CreateProduct and ProductService.UpdateProduct has no effect on local inventories. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete.");
             products4 = products4.subcommand(mcmd);
         }
         {
@@ -269,7 +311,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             products4 = products4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("import").about("Bulk import of multiple Products. Request processing may be synchronous. No partial updating is supported. Non-existing items are created. Note that it is possible for a subset of the Products to be successfully updated.");
+            let mcmd = SubCommand::with_name("import").about("Bulk import of multiple Products. Request processing may be synchronous. Non-existing items are created. Note that it is possible for a subset of the Products to be successfully updated.");
             products4 = products4.subcommand(mcmd);
         }
         {
@@ -281,27 +323,37 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             products4 = products4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("purge").about("Permanently deletes all selected Products under a branch. This process is asynchronous. If the request is valid, the removal will be enqueued and processed offline. Depending on the number of Products, this operation could take hours to complete. Before the operation completes, some Products may still be returned by GetProduct or ListProducts. Depending on the number of Products, this operation could take hours to complete. To get a sample of Products that would be deleted, set PurgeProductsRequest.force to false.");
+            let mcmd = SubCommand::with_name("purge").about("Permanently deletes all selected Products under a branch. This process is asynchronous. If the request is valid, the removal will be enqueued and processed offline. Depending on the number of Products, this operation could take hours to complete. Before the operation completes, some Products may still be returned by ProductService.GetProduct or ProductService.ListProducts. Depending on the number of Products, this operation could take hours to complete. To get a sample of Products that would be deleted, set PurgeProductsRequest.force to false.");
             products4 = products4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("remove_fulfillment_places").about("Incrementally removes place IDs from a Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the Product queried by GetProduct or ListProducts. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("remove_fulfillment_places").about("Incrementally removes place IDs from a Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete.");
             products4 = products4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("remove_local_inventories").about("Remove local inventory information for a Product at a list of places at a removal timestamp. This process is asynchronous. If the request is valid, the removal will be enqueued and processed downstream. As a consequence, when a response is returned, removals are not immediately manifested in the Product queried by GetProduct or ListProducts. Local inventory information can only be removed using this method. CreateProduct and UpdateProduct has no effect on local inventories. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("remove_local_inventories").about("Remove local inventory information for a Product at a list of places at a removal timestamp. This process is asynchronous. If the request is valid, the removal will be enqueued and processed downstream. As a consequence, when a response is returned, removals are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. Local inventory information can only be removed using this method. ProductService.CreateProduct and ProductService.UpdateProduct has no effect on local inventories. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete.");
             products4 = products4.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_inventory").about("Updates inventory information for a Product while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by GetProduct or ListProducts. When inventory is updated with CreateProduct and UpdateProduct, the specified inventory field value(s) will overwrite any existing value(s) while ignoring the last update time for this field. Furthermore, the last update time for the specified inventory fields will be overwritten to the time of the CreateProduct or UpdateProduct request. If no inventory fields are set in CreateProductRequest.product, then any pre-existing inventory information for this product will be used. If no inventory fields are set in SetInventoryRequest.set_mask, then any existing inventory information will be preserved. Pre-existing inventory information can only be updated with SetInventory, AddFulfillmentPlaces, and RemoveFulfillmentPlaces. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature.");
+            let mcmd = SubCommand::with_name("set_inventory").about("Updates inventory information for a Product while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update is enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. When inventory is updated with ProductService.CreateProduct and ProductService.UpdateProduct, the specified inventory field value(s) overwrite any existing value(s) while ignoring the last update time for this field. Furthermore, the last update times for the specified inventory fields are overwritten by the times of the ProductService.CreateProduct or ProductService.UpdateProduct request. If no inventory fields are set in CreateProductRequest.product, then any pre-existing inventory information for this product is used. If no inventory fields are set in SetInventoryRequest.set_mask, then any existing inventory information is preserved. Pre-existing inventory information can only be updated with ProductService.SetInventory, ProductService.AddFulfillmentPlaces, and ProductService.RemoveFulfillmentPlaces. The returned Operations is obsolete after one day, and the GetOperation API returns `NOT_FOUND` afterwards. If conflicting updates are issued, the Operations associated with the stale updates are not marked as done until they are obsolete.");
             products4 = products4.subcommand(mcmd);
         }
+        let mut operations5 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations5 = operations5.subcommand(mcmd);
+        }
+        places4 = places4.subcommand(operations5);
         branches3 = branches3.subcommand(products4);
+        branches3 = branches3.subcommand(places4);
         branches3 = branches3.subcommand(operations4);
         catalogs2 = catalogs2.subcommand(user_events3);
         catalogs2 = catalogs2.subcommand(serving_configs3);
         catalogs2 = catalogs2.subcommand(placements3);
         catalogs2 = catalogs2.subcommand(operations3);
+        catalogs2 = catalogs2.subcommand(models3);
         catalogs2 = catalogs2.subcommand(controls3);
         catalogs2 = catalogs2.subcommand(completion_data3);
         catalogs2 = catalogs2.subcommand(branches3);

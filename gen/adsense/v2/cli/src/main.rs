@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("adsense2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220427")
+            .version("0.1.0-20230131")
             .about("The AdSense Management API allows publishers to access their inventory and run earnings and performance reports.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,10 +35,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut accounts0 = SubCommand::with_name("accounts")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get, list and list_child_accounts");
+            .about("methods: get, get_ad_blocking_recovery_tag, list and list_child_accounts");
         {
             let mcmd = SubCommand::with_name("get")
                 .about("Gets information about the selected AdSense account.");
+            accounts0 = accounts0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_ad_blocking_recovery_tag")
+                .about("Gets the ad blocking recovery tag of an account.");
             accounts0 = accounts0.subcommand(mcmd);
         }
         {
@@ -53,7 +58,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut adclients1 = SubCommand::with_name("adclients")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get_adcode and list");
+            .about("methods: get, get_adcode and list");
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets the ad client from the given resource name.");
+            adclients1 = adclients1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get_adcode").about("Gets the AdSense code for a given ad client. This returns what was previously known as the 'auto ad code'. This is only supported for ad clients with a product_code of AFC. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634).");
             adclients1 = adclients1.subcommand(mcmd);
@@ -81,7 +91,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut reports1 = SubCommand::with_name("reports")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: generate and generate_csv");
+            .about("methods: generate, generate_csv and get_saved");
         {
             let mcmd = SubCommand::with_name("generate").about("Generates an ad hoc report.");
             reports1 = reports1.subcommand(mcmd);
@@ -89,6 +99,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("generate_csv")
                 .about("Generates a csv formatted ad hoc report.");
+            reports1 = reports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_saved")
+                .about("Gets the saved report from the given resource name.");
             reports1 = reports1.subcommand(mcmd);
         }
         let mut sites1 = SubCommand::with_name("sites")
@@ -106,15 +121,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut adunits2 = SubCommand::with_name("adunits")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get, get_adcode, list and list_linked_custom_channels");
+            .about("methods: create, get, get_adcode, list, list_linked_custom_channels and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates an ad unit. This method can only be used by projects enabled for the [AdSense for Platforms](https://developers.google.com/adsense/platforms/) product. Note that ad units can only be created for ad clients with an \"AFC\" product code. For more info see the [AdClient resource](/adsense/management/reference/rest/v2/accounts.adclients). For now, this method can only be used to create `DISPLAY` ad units. See: https://support.google.com/adsense/answer/9183566");
+            adunits2 = adunits2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get")
                 .about("Gets an ad unit from a specified account and ad client.");
             adunits2 = adunits2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_adcode")
-                .about("Gets the AdSense code for a given ad unit.");
+            let mcmd = SubCommand::with_name("get_adcode").about("Gets the ad unit code for a given ad unit. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634) and [Where to place the ad code in your HTML](https://support.google.com/adsense/answer/9190028).");
             adunits2 = adunits2.subcommand(mcmd);
         }
         {
@@ -127,9 +145,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Lists all the custom channels available for an ad unit.");
             adunits2 = adunits2.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an ad unit. This method can only be used by projects enabled for the [AdSense for Platforms](https://developers.google.com/adsense/platforms/) product. For now, this method can only be used to update `DISPLAY` ad units. See: https://support.google.com/adsense/answer/9183566");
+            adunits2 = adunits2.subcommand(mcmd);
+        }
         let mut customchannels2 = SubCommand::with_name("customchannels")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get, list and list_linked_ad_units");
+            .about("methods: create, delete, get, list, list_linked_ad_units and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a custom channel. This method can only be used by projects enabled for the [AdSense for Platforms](https://developers.google.com/adsense/platforms/) product.");
+            customchannels2 = customchannels2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a custom channel. This method can only be used by projects enabled for the [AdSense for Platforms](https://developers.google.com/adsense/platforms/) product.");
+            customchannels2 = customchannels2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get")
                 .about("Gets information about the selected custom channel.");
@@ -145,9 +175,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Lists all the ad units available for a custom channel.");
             customchannels2 = customchannels2.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a custom channel. This method can only be used by projects enabled for the [AdSense for Platforms](https://developers.google.com/adsense/platforms/) product.");
+            customchannels2 = customchannels2.subcommand(mcmd);
+        }
         let mut urlchannels2 = SubCommand::with_name("urlchannels")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list");
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets information about the selected url channel.");
+            urlchannels2 = urlchannels2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("list").about("Lists active url channels.");
             urlchannels2 = urlchannels2.subcommand(mcmd);

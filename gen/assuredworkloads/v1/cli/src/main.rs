@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("assuredworkloads1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230127")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -51,8 +51,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             operations2 = operations2.subcommand(mcmd);
         }
         let mut workloads2 = SubCommand::with_name("workloads")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and patch");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, list, mutate_partner_permissions, patch and restrict_allowed_resources");
         {
             let mcmd = SubCommand::with_name("create").about("Creates Assured Workload.");
             workloads2 = workloads2.subcommand(mcmd);
@@ -72,9 +72,34 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             workloads2 = workloads2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("mutate_partner_permissions").about("Update the permissions settings for an existing partner workload. For force updates don't set etag field in the Workload. Only one update operation per workload can be in progress.");
+            workloads2 = workloads2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("patch").about("Updates an existing workload. Currently allows updating of workload display_name and labels. For force updates don't set etag field in the Workload. Only one update operation per workload can be in progress.");
             workloads2 = workloads2.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("restrict_allowed_resources").about("Restrict the list of resources allowed in the Workload environment. The current list of allowed products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In addition to assuredworkloads.workload.update permission, the user should also have orgpolicy.policy.set permission on the folder resource to use this functionality.");
+            workloads2 = workloads2.subcommand(mcmd);
+        }
+        let mut violations3 = SubCommand::with_name("violations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: acknowledge, get and list");
+        {
+            let mcmd = SubCommand::with_name("acknowledge").about("Acknowledges an existing violation. By acknowledging a violation, users acknowledge the existence of a compliance violation in their workload and decide to ignore it due to a valid business justification. Acknowledgement is a permanent operation and it cannot be reverted.");
+            violations3 = violations3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves Assured Workload Violation based on ID.");
+            violations3 = violations3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists the Violations in the AssuredWorkload Environment. Callers may also choose to read across multiple Workloads as per [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash character) as a wildcard character instead of workload-id in the parent. Format `organizations/{org_id}/locations/{location}/workloads/-`");
+            violations3 = violations3.subcommand(mcmd);
+        }
+        workloads2 = workloads2.subcommand(violations3);
         locations1 = locations1.subcommand(workloads2);
         locations1 = locations1.subcommand(operations2);
         organizations0 = organizations0.subcommand(locations1);

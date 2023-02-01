@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [users](resources/users/struct.UsersActions.html)\n  * [*getLoginProfile*](resources/users/struct.GetLoginProfileRequestBuilder.html), [*importSshPublicKey*](resources/users/struct.ImportSshPublicKeyRequestBuilder.html)\n  * [projects](resources/users/projects/struct.ProjectsActions.html)\n    * [*delete*](resources/users/projects/struct.DeleteRequestBuilder.html)\n  * [ssh_public_keys](resources/users/ssh_public_keys/struct.SshPublicKeysActions.html)\n    * [*create*](resources/users/ssh_public_keys/struct.CreateRequestBuilder.html), [*delete*](resources/users/ssh_public_keys/struct.DeleteRequestBuilder.html), [*get*](resources/users/ssh_public_keys/struct.GetRequestBuilder.html), [*patch*](resources/users/ssh_public_keys/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -2497,15 +2498,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

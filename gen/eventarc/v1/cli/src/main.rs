@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("eventarc1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220408")
-            .about("")
+            .version("0.1.0-20230120")
+            .about("Build event-driven applications on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -38,9 +38,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: locations");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about(
+                "methods: get, get_google_channel_config, list and update_google_channel_config",
+            );
         {
             let mcmd = SubCommand::with_name("get").about("Gets information about a location.");
+            locations1 = locations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_google_channel_config")
+                .about("Get a GoogleChannelConfig");
             locations1 = locations1.subcommand(mcmd);
         }
         {
@@ -48,11 +55,33 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("update_google_channel_config")
+                .about("Update a single GoogleChannelConfig");
+            locations1 = locations1.subcommand(mcmd);
+        }
         let mut channel_connections2 = SubCommand::with_name("channel_connections")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Create a new ChannelConnection in a particular project and location.");
+            channel_connections2 = channel_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Delete a single ChannelConnection.");
+            channel_connections2 = channel_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get a single ChannelConnection.");
+            channel_connections2 = channel_connections2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            channel_connections2 = channel_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("List channel connections.");
             channel_connections2 = channel_connections2.subcommand(mcmd);
         }
         {
@@ -64,10 +93,31 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             channel_connections2 = channel_connections2.subcommand(mcmd);
         }
         let mut channels2 = SubCommand::with_name("channels")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Create a new channel in a particular project and location.");
+            channels2 = channels2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Delete a single channel.");
+            channels2 = channels2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get a single Channel.");
+            channels2 = channels2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            channels2 = channels2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("List channels.");
+            channels2 = channels2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Update a single channel.");
             channels2 = channels2.subcommand(mcmd);
         }
         {

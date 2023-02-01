@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [deployments](resources/deployments/struct.DeploymentsActions.html)\n  * [*cancelPreview*](resources/deployments/struct.CancelPreviewRequestBuilder.html), [*delete*](resources/deployments/struct.DeleteRequestBuilder.html), [*get*](resources/deployments/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/deployments/struct.GetIamPolicyRequestBuilder.html), [*insert*](resources/deployments/struct.InsertRequestBuilder.html), [*list*](resources/deployments/struct.ListRequestBuilder.html), [*patch*](resources/deployments/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/deployments/struct.SetIamPolicyRequestBuilder.html), [*stop*](resources/deployments/struct.StopRequestBuilder.html), [*testIamPermissions*](resources/deployments/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/deployments/struct.UpdateRequestBuilder.html)\n* [manifests](resources/manifests/struct.ManifestsActions.html)\n  * [*get*](resources/manifests/struct.GetRequestBuilder.html), [*list*](resources/manifests/struct.ListRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n* [resources](resources/resources/struct.ResourcesActions.html)\n  * [*get*](resources/resources/struct.GetRequestBuilder.html), [*list*](resources/resources/struct.ListRequestBuilder.html)\n* [types](resources/types/struct.TypesActions.html)\n  * [*list*](resources/types/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -189,7 +190,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -543,7 +544,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DeploymentsListResponse {
+    impl crate::GetNextPageToken<String> for DeploymentsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -848,7 +849,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ManifestsListResponse {
+    impl crate::GetNextPageToken<String> for ManifestsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1259,6 +1260,8 @@ pub mod schemas {
         FieldValueOverriden,
         #[doc = "The operation involved use of an injected kernel, which is deprecated."]
         InjectedKernelsDeprecated,
+        #[doc = "A WEIGHTED_MAGLEV backend service is associated with a health check that is not of type HTTP/HTTPS/HTTP2."]
+        InvalidHealthCheckForDynamicWieghtedLb,
         #[doc = "When deploying a deployment with a exceedingly large number of resources"]
         LargeDeploymentWarning,
         #[doc = "A resource depends on a missing type"]
@@ -1267,6 +1270,8 @@ pub mod schemas {
         NextHopAddressNotAssigned,
         #[doc = "The route’s next hop instance cannot ip forward."]
         NextHopCannotIpForward,
+        #[doc = "The route’s nextHopInstance URL refers to an instance that does not have an ipv6 interface on the same network as the route."]
+        NextHopInstanceHasNoIpv6Interface,
         #[doc = "The route’s nextHopInstance URL refers to an instance that does not exist."]
         NextHopInstanceNotFound,
         #[doc = "The route’s nextHopInstance URL refers to an instance that is not on the same network as the route."]
@@ -1309,12 +1314,18 @@ pub mod schemas {
                 OperationWarningsItemsCode::InjectedKernelsDeprecated => {
                     "INJECTED_KERNELS_DEPRECATED"
                 }
+                OperationWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb => {
+                    "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB"
+                }
                 OperationWarningsItemsCode::LargeDeploymentWarning => "LARGE_DEPLOYMENT_WARNING",
                 OperationWarningsItemsCode::MissingTypeDependency => "MISSING_TYPE_DEPENDENCY",
                 OperationWarningsItemsCode::NextHopAddressNotAssigned => {
                     "NEXT_HOP_ADDRESS_NOT_ASSIGNED"
                 }
                 OperationWarningsItemsCode::NextHopCannotIpForward => "NEXT_HOP_CANNOT_IP_FORWARD",
+                OperationWarningsItemsCode::NextHopInstanceHasNoIpv6Interface => {
+                    "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE"
+                }
                 OperationWarningsItemsCode::NextHopInstanceNotFound => {
                     "NEXT_HOP_INSTANCE_NOT_FOUND"
                 }
@@ -1360,12 +1371,18 @@ pub mod schemas {
                 "INJECTED_KERNELS_DEPRECATED" => {
                     OperationWarningsItemsCode::InjectedKernelsDeprecated
                 }
+                "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB" => {
+                    OperationWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb
+                }
                 "LARGE_DEPLOYMENT_WARNING" => OperationWarningsItemsCode::LargeDeploymentWarning,
                 "MISSING_TYPE_DEPENDENCY" => OperationWarningsItemsCode::MissingTypeDependency,
                 "NEXT_HOP_ADDRESS_NOT_ASSIGNED" => {
                     OperationWarningsItemsCode::NextHopAddressNotAssigned
                 }
                 "NEXT_HOP_CANNOT_IP_FORWARD" => OperationWarningsItemsCode::NextHopCannotIpForward,
+                "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE" => {
+                    OperationWarningsItemsCode::NextHopInstanceHasNoIpv6Interface
+                }
                 "NEXT_HOP_INSTANCE_NOT_FOUND" => {
                     OperationWarningsItemsCode::NextHopInstanceNotFound
                 }
@@ -1423,12 +1440,18 @@ pub mod schemas {
                 "INJECTED_KERNELS_DEPRECATED" => {
                     OperationWarningsItemsCode::InjectedKernelsDeprecated
                 }
+                "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB" => {
+                    OperationWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb
+                }
                 "LARGE_DEPLOYMENT_WARNING" => OperationWarningsItemsCode::LargeDeploymentWarning,
                 "MISSING_TYPE_DEPENDENCY" => OperationWarningsItemsCode::MissingTypeDependency,
                 "NEXT_HOP_ADDRESS_NOT_ASSIGNED" => {
                     OperationWarningsItemsCode::NextHopAddressNotAssigned
                 }
                 "NEXT_HOP_CANNOT_IP_FORWARD" => OperationWarningsItemsCode::NextHopCannotIpForward,
+                "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE" => {
+                    OperationWarningsItemsCode::NextHopInstanceHasNoIpv6Interface
+                }
                 "NEXT_HOP_INSTANCE_NOT_FOUND" => {
                     OperationWarningsItemsCode::NextHopInstanceNotFound
                 }
@@ -1545,7 +1568,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OperationsListResponse {
+    impl crate::GetNextPageToken<String> for OperationsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1773,6 +1796,8 @@ pub mod schemas {
         FieldValueOverriden,
         #[doc = "The operation involved use of an injected kernel, which is deprecated."]
         InjectedKernelsDeprecated,
+        #[doc = "A WEIGHTED_MAGLEV backend service is associated with a health check that is not of type HTTP/HTTPS/HTTP2."]
+        InvalidHealthCheckForDynamicWieghtedLb,
         #[doc = "When deploying a deployment with a exceedingly large number of resources"]
         LargeDeploymentWarning,
         #[doc = "A resource depends on a missing type"]
@@ -1781,6 +1806,8 @@ pub mod schemas {
         NextHopAddressNotAssigned,
         #[doc = "The route’s next hop instance cannot ip forward."]
         NextHopCannotIpForward,
+        #[doc = "The route’s nextHopInstance URL refers to an instance that does not have an ipv6 interface on the same network as the route."]
+        NextHopInstanceHasNoIpv6Interface,
         #[doc = "The route’s nextHopInstance URL refers to an instance that does not exist."]
         NextHopInstanceNotFound,
         #[doc = "The route’s nextHopInstance URL refers to an instance that is not on the same network as the route."]
@@ -1823,12 +1850,18 @@ pub mod schemas {
                 ResourceWarningsItemsCode::InjectedKernelsDeprecated => {
                     "INJECTED_KERNELS_DEPRECATED"
                 }
+                ResourceWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb => {
+                    "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB"
+                }
                 ResourceWarningsItemsCode::LargeDeploymentWarning => "LARGE_DEPLOYMENT_WARNING",
                 ResourceWarningsItemsCode::MissingTypeDependency => "MISSING_TYPE_DEPENDENCY",
                 ResourceWarningsItemsCode::NextHopAddressNotAssigned => {
                     "NEXT_HOP_ADDRESS_NOT_ASSIGNED"
                 }
                 ResourceWarningsItemsCode::NextHopCannotIpForward => "NEXT_HOP_CANNOT_IP_FORWARD",
+                ResourceWarningsItemsCode::NextHopInstanceHasNoIpv6Interface => {
+                    "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE"
+                }
                 ResourceWarningsItemsCode::NextHopInstanceNotFound => "NEXT_HOP_INSTANCE_NOT_FOUND",
                 ResourceWarningsItemsCode::NextHopInstanceNotOnNetwork => {
                     "NEXT_HOP_INSTANCE_NOT_ON_NETWORK"
@@ -1872,12 +1905,18 @@ pub mod schemas {
                 "INJECTED_KERNELS_DEPRECATED" => {
                     ResourceWarningsItemsCode::InjectedKernelsDeprecated
                 }
+                "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB" => {
+                    ResourceWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb
+                }
                 "LARGE_DEPLOYMENT_WARNING" => ResourceWarningsItemsCode::LargeDeploymentWarning,
                 "MISSING_TYPE_DEPENDENCY" => ResourceWarningsItemsCode::MissingTypeDependency,
                 "NEXT_HOP_ADDRESS_NOT_ASSIGNED" => {
                     ResourceWarningsItemsCode::NextHopAddressNotAssigned
                 }
                 "NEXT_HOP_CANNOT_IP_FORWARD" => ResourceWarningsItemsCode::NextHopCannotIpForward,
+                "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE" => {
+                    ResourceWarningsItemsCode::NextHopInstanceHasNoIpv6Interface
+                }
                 "NEXT_HOP_INSTANCE_NOT_FOUND" => ResourceWarningsItemsCode::NextHopInstanceNotFound,
                 "NEXT_HOP_INSTANCE_NOT_ON_NETWORK" => {
                     ResourceWarningsItemsCode::NextHopInstanceNotOnNetwork
@@ -1933,12 +1972,18 @@ pub mod schemas {
                 "INJECTED_KERNELS_DEPRECATED" => {
                     ResourceWarningsItemsCode::InjectedKernelsDeprecated
                 }
+                "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB" => {
+                    ResourceWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb
+                }
                 "LARGE_DEPLOYMENT_WARNING" => ResourceWarningsItemsCode::LargeDeploymentWarning,
                 "MISSING_TYPE_DEPENDENCY" => ResourceWarningsItemsCode::MissingTypeDependency,
                 "NEXT_HOP_ADDRESS_NOT_ASSIGNED" => {
                     ResourceWarningsItemsCode::NextHopAddressNotAssigned
                 }
                 "NEXT_HOP_CANNOT_IP_FORWARD" => ResourceWarningsItemsCode::NextHopCannotIpForward,
+                "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE" => {
+                    ResourceWarningsItemsCode::NextHopInstanceHasNoIpv6Interface
+                }
                 "NEXT_HOP_INSTANCE_NOT_FOUND" => ResourceWarningsItemsCode::NextHopInstanceNotFound,
                 "NEXT_HOP_INSTANCE_NOT_ON_NETWORK" => {
                     ResourceWarningsItemsCode::NextHopInstanceNotOnNetwork
@@ -2442,6 +2487,8 @@ pub mod schemas {
         FieldValueOverriden,
         #[doc = "The operation involved use of an injected kernel, which is deprecated."]
         InjectedKernelsDeprecated,
+        #[doc = "A WEIGHTED_MAGLEV backend service is associated with a health check that is not of type HTTP/HTTPS/HTTP2."]
+        InvalidHealthCheckForDynamicWieghtedLb,
         #[doc = "When deploying a deployment with a exceedingly large number of resources"]
         LargeDeploymentWarning,
         #[doc = "A resource depends on a missing type"]
@@ -2450,6 +2497,8 @@ pub mod schemas {
         NextHopAddressNotAssigned,
         #[doc = "The route’s next hop instance cannot ip forward."]
         NextHopCannotIpForward,
+        #[doc = "The route’s nextHopInstance URL refers to an instance that does not have an ipv6 interface on the same network as the route."]
+        NextHopInstanceHasNoIpv6Interface,
         #[doc = "The route’s nextHopInstance URL refers to an instance that does not exist."]
         NextHopInstanceNotFound,
         #[doc = "The route’s nextHopInstance URL refers to an instance that is not on the same network as the route."]
@@ -2494,6 +2543,9 @@ pub mod schemas {
                 ResourceUpdateWarningsItemsCode::InjectedKernelsDeprecated => {
                     "INJECTED_KERNELS_DEPRECATED"
                 }
+                ResourceUpdateWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb => {
+                    "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB"
+                }
                 ResourceUpdateWarningsItemsCode::LargeDeploymentWarning => {
                     "LARGE_DEPLOYMENT_WARNING"
                 }
@@ -2503,6 +2555,9 @@ pub mod schemas {
                 }
                 ResourceUpdateWarningsItemsCode::NextHopCannotIpForward => {
                     "NEXT_HOP_CANNOT_IP_FORWARD"
+                }
+                ResourceUpdateWarningsItemsCode::NextHopInstanceHasNoIpv6Interface => {
+                    "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE"
                 }
                 ResourceUpdateWarningsItemsCode::NextHopInstanceNotFound => {
                     "NEXT_HOP_INSTANCE_NOT_FOUND"
@@ -2553,6 +2608,9 @@ pub mod schemas {
                 "INJECTED_KERNELS_DEPRECATED" => {
                     ResourceUpdateWarningsItemsCode::InjectedKernelsDeprecated
                 }
+                "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB" => {
+                    ResourceUpdateWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb
+                }
                 "LARGE_DEPLOYMENT_WARNING" => {
                     ResourceUpdateWarningsItemsCode::LargeDeploymentWarning
                 }
@@ -2562,6 +2620,9 @@ pub mod schemas {
                 }
                 "NEXT_HOP_CANNOT_IP_FORWARD" => {
                     ResourceUpdateWarningsItemsCode::NextHopCannotIpForward
+                }
+                "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE" => {
+                    ResourceUpdateWarningsItemsCode::NextHopInstanceHasNoIpv6Interface
                 }
                 "NEXT_HOP_INSTANCE_NOT_FOUND" => {
                     ResourceUpdateWarningsItemsCode::NextHopInstanceNotFound
@@ -2624,6 +2685,9 @@ pub mod schemas {
                 "INJECTED_KERNELS_DEPRECATED" => {
                     ResourceUpdateWarningsItemsCode::InjectedKernelsDeprecated
                 }
+                "INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB" => {
+                    ResourceUpdateWarningsItemsCode::InvalidHealthCheckForDynamicWieghtedLb
+                }
                 "LARGE_DEPLOYMENT_WARNING" => {
                     ResourceUpdateWarningsItemsCode::LargeDeploymentWarning
                 }
@@ -2633,6 +2697,9 @@ pub mod schemas {
                 }
                 "NEXT_HOP_CANNOT_IP_FORWARD" => {
                     ResourceUpdateWarningsItemsCode::NextHopCannotIpForward
+                }
+                "NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE" => {
+                    ResourceUpdateWarningsItemsCode::NextHopInstanceHasNoIpv6Interface
                 }
                 "NEXT_HOP_INSTANCE_NOT_FOUND" => {
                     ResourceUpdateWarningsItemsCode::NextHopInstanceNotFound
@@ -2752,7 +2819,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ResourcesListResponse {
+    impl crate::GetNextPageToken<String> for ResourcesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2954,7 +3021,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for TypesListResponse {
+    impl crate::GetNextPageToken<String> for TypesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4785,7 +4852,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "A filter expression that filters resources listed in the response. The expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)`"]
+            #[doc = "A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq \"double quoted literal\"` `(fieldname1 eq literal) (fieldname2 ne \"literal\")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name “instance”, you would use `name ne .*instance`."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -4895,7 +4962,7 @@ pub mod resources {
                     #[serde(rename = "deployments")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -4928,7 +4995,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -4978,7 +5045,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5095,12 +5162,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -6289,7 +6357,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "A filter expression that filters resources listed in the response. The expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)`"]
+            #[doc = "A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq \"double quoted literal\"` `(fieldname1 eq literal) (fieldname2 ne \"literal\")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name “instance”, you would use `name ne .*instance`."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -6399,7 +6467,7 @@ pub mod resources {
                     #[serde(rename = "manifests")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -6432,7 +6500,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -6482,7 +6550,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6607,12 +6675,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -6868,7 +6937,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "A filter expression that filters resources listed in the response. The expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)`"]
+            #[doc = "A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq \"double quoted literal\"` `(fieldname1 eq literal) (fieldname2 ne \"literal\")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name “instance”, you would use `name ne .*instance`."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -6978,7 +7047,7 @@ pub mod resources {
                     #[serde(rename = "operations")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -7011,7 +7080,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -7061,7 +7130,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -7178,12 +7247,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -7456,7 +7526,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "A filter expression that filters resources listed in the response. The expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)`"]
+            #[doc = "A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq \"double quoted literal\"` `(fieldname1 eq literal) (fieldname2 ne \"literal\")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name “instance”, you would use `name ne .*instance`."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -7566,7 +7636,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -7599,7 +7669,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -7649,7 +7719,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -7774,12 +7844,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -7842,7 +7913,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "A filter expression that filters resources listed in the response. The expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)`"]
+            #[doc = "A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `>`, `<`, `<=`, `>=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:` operator can be used with string fields to match substrings. For non-string fields it is equivalent to the `=` operator. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: `labels.owner:*` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: `(scheduling.automaticRestart = true) (cpuPlatform = \"Intel Skylake\")` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: `(cpuPlatform = \"Intel Skylake\") OR (cpuPlatform = \"Intel Broadwell\") AND (scheduling.automaticRestart = true)` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq \"double quoted literal\"` `(fieldname1 eq literal) (fieldname2 ne \"literal\")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name “instance”, you would use `name ne .*instance`."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -7952,7 +8023,7 @@ pub mod resources {
                     #[serde(rename = "types")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -7985,7 +8056,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -8033,7 +8104,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8150,12 +8221,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -8445,16 +8517,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -8474,13 +8548,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -8488,7 +8565,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -8515,7 +8592,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

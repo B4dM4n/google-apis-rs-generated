@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [activity](resources/activity/struct.ActivityActions.html)\n  * [*query*](resources/activity/struct.QueryRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and add to the activity record of files in your Google Drive\n\n`https://www.googleapis.com/auth/drive.activity`"]
@@ -79,6 +80,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ActionDetail {
+        #[doc = "Label was changed."]
+        #[serde(
+            rename = "appliedLabelChange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub applied_label_change: ::std::option::Option<crate::schemas::AppliedLabelChange>,
         #[doc = "A change about comments was made."]
         #[serde(
             rename = "comment",
@@ -401,6 +409,187 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ApplicationReferenceType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppliedLabelChange {
+        #[doc = "Changes that were made to the Label on the Target."]
+        #[serde(
+            rename = "changes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub changes: ::std::option::Option<Vec<crate::schemas::AppliedLabelChangeDetail>>,
+    }
+    impl ::google_field_selector::FieldSelector for AppliedLabelChange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppliedLabelChange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppliedLabelChangeDetail {
+        #[doc = "Field Changes. Only present if `types` contains `LABEL_FIELD_VALUE_CHANGED`."]
+        #[serde(
+            rename = "fieldChanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_changes: ::std::option::Option<Vec<crate::schemas::FieldValueChange>>,
+        #[doc = "The Label name representing the Label that changed. This name always contains the revision of the Label that was used when this Action occurred. The format is `labels/id@revision`."]
+        #[serde(
+            rename = "label",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub label: ::std::option::Option<String>,
+        #[doc = "The human-readable title of the label that changed."]
+        #[serde(
+            rename = "title",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub title: ::std::option::Option<String>,
+        #[doc = "The types of changes made to the Label on the Target."]
+        #[serde(
+            rename = "types",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub types: ::std::option::Option<Vec<crate::schemas::AppliedLabelChangeDetailTypesItems>>,
+    }
+    impl ::google_field_selector::FieldSelector for AppliedLabelChangeDetail {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppliedLabelChangeDetail {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AppliedLabelChangeDetailTypesItems {
+        #[doc = "The identified Label was added to the Target."]
+        LabelAdded,
+        #[doc = "The Label was applied as a side-effect of Drive item creation."]
+        LabelAppliedByItemCreate,
+        #[doc = "Field values were changed on the Target."]
+        LabelFieldValueChanged,
+        #[doc = "The identified Label was removed from the Target."]
+        LabelRemoved,
+        #[doc = "The type of change to this Label is not available."]
+        TypeUnspecified,
+    }
+    impl AppliedLabelChangeDetailTypesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AppliedLabelChangeDetailTypesItems::LabelAdded => "LABEL_ADDED",
+                AppliedLabelChangeDetailTypesItems::LabelAppliedByItemCreate => {
+                    "LABEL_APPLIED_BY_ITEM_CREATE"
+                }
+                AppliedLabelChangeDetailTypesItems::LabelFieldValueChanged => {
+                    "LABEL_FIELD_VALUE_CHANGED"
+                }
+                AppliedLabelChangeDetailTypesItems::LabelRemoved => "LABEL_REMOVED",
+                AppliedLabelChangeDetailTypesItems::TypeUnspecified => "TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AppliedLabelChangeDetailTypesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AppliedLabelChangeDetailTypesItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AppliedLabelChangeDetailTypesItems, ()> {
+            Ok(match s {
+                "LABEL_ADDED" => AppliedLabelChangeDetailTypesItems::LabelAdded,
+                "LABEL_APPLIED_BY_ITEM_CREATE" => {
+                    AppliedLabelChangeDetailTypesItems::LabelAppliedByItemCreate
+                }
+                "LABEL_FIELD_VALUE_CHANGED" => {
+                    AppliedLabelChangeDetailTypesItems::LabelFieldValueChanged
+                }
+                "LABEL_REMOVED" => AppliedLabelChangeDetailTypesItems::LabelRemoved,
+                "TYPE_UNSPECIFIED" => AppliedLabelChangeDetailTypesItems::TypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AppliedLabelChangeDetailTypesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AppliedLabelChangeDetailTypesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AppliedLabelChangeDetailTypesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "LABEL_ADDED" => AppliedLabelChangeDetailTypesItems::LabelAdded,
+                "LABEL_APPLIED_BY_ITEM_CREATE" => {
+                    AppliedLabelChangeDetailTypesItems::LabelAppliedByItemCreate
+                }
+                "LABEL_FIELD_VALUE_CHANGED" => {
+                    AppliedLabelChangeDetailTypesItems::LabelFieldValueChanged
+                }
+                "LABEL_REMOVED" => AppliedLabelChangeDetailTypesItems::LabelRemoved,
+                "TYPE_UNSPECIFIED" => AppliedLabelChangeDetailTypesItems::TypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AppliedLabelChangeDetailTypesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppliedLabelChangeDetailTypesItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -813,6 +1002,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DataLeakPreventionChangeType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Date {
+        #[doc = "Date value."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Date {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Date {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1449,6 +1669,138 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FieldValue {
+        #[doc = "Date Field value."]
+        #[serde(
+            rename = "date",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date: ::std::option::Option<crate::schemas::Date>,
+        #[doc = "Integer Field value."]
+        #[serde(
+            rename = "integer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub integer: ::std::option::Option<crate::schemas::Integer>,
+        #[doc = "Selection Field value."]
+        #[serde(
+            rename = "selection",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub selection: ::std::option::Option<crate::schemas::Selection>,
+        #[doc = "Selection List Field value."]
+        #[serde(
+            rename = "selectionList",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub selection_list: ::std::option::Option<crate::schemas::SelectionList>,
+        #[doc = "Text Field value."]
+        #[serde(
+            rename = "text",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub text: ::std::option::Option<crate::schemas::Text>,
+        #[doc = "Text List Field value."]
+        #[serde(
+            rename = "textList",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub text_list: ::std::option::Option<crate::schemas::TextList>,
+        #[doc = "User Field value."]
+        #[serde(
+            rename = "user",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user: ::std::option::Option<crate::schemas::SingleUser>,
+        #[doc = "User List Field value."]
+        #[serde(
+            rename = "userList",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_list: ::std::option::Option<crate::schemas::UserList>,
+    }
+    impl ::google_field_selector::FieldSelector for FieldValue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FieldValue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FieldValueChange {
+        #[doc = "The human-readable display name for this field."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "The ID of this field. Field IDs are unique within a Label."]
+        #[serde(
+            rename = "fieldId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_id: ::std::option::Option<String>,
+        #[doc = "The value that is now set on the field. If not present, the field was cleared. At least one of {old_value|new_value} is always set."]
+        #[serde(
+            rename = "newValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_value: ::std::option::Option<crate::schemas::FieldValue>,
+        #[doc = "The value that was previously set on the field. If not present, the field was newly set. At least one of {old_value|new_value} is always set."]
+        #[serde(
+            rename = "oldValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub old_value: ::std::option::Option<crate::schemas::FieldValue>,
+    }
+    impl ::google_field_selector::FieldSelector for FieldValueChange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FieldValueChange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -1694,6 +2046,38 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Impersonation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Integer {
+        #[doc = "Integer value."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub value: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for Integer {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Integer {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2243,21 +2627,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct QueryDriveActivityRequest {
-        #[doc = "Return activities for this Drive folder and all children and descendants. The format is `items/ITEM_ID`."]
+        #[doc = "Return activities for this Drive folder, plus all children and descendants. The format is `items/ITEM_ID`."]
         #[serde(
             rename = "ancestorName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ancestor_name: ::std::option::Option<String>,
-        #[doc = "Details on how to consolidate related actions that make up the activity. If not set, then related actions are not consolidated."]
+        #[doc = "Details on how to consolidate related actions that make up the activity. If not set, then related actions aren’t consolidated."]
         #[serde(
             rename = "consolidationStrategy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub consolidation_strategy: ::std::option::Option<crate::schemas::ConsolidationStrategy>,
-        #[doc = "The filtering for items returned from this query request. The format of the filter string is a sequence of expressions, joined by an optional “AND”, where each expression is of the form “field operator value”. Supported fields: - `time`: Uses numerical operators on date values either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format. Examples: - `time > 1452409200000 AND time <= 1492812924310` - `time >= \"2016-01-10T01:02:03-05:00\"` - `detail.action_detail_case`: Uses the “has” operator (:) and either a singular value or a list of allowed action types enclosed in parentheses. Examples: - `detail.action_detail_case: RENAME` - `detail.action_detail_case:(CREATE EDIT)` - `-detail.action_detail_case:MOVE` "]
+        #[doc = "The filtering for items returned from this query request. The format of the filter string is a sequence of expressions, joined by an optional “AND”, where each expression is of the form “field operator value”. Supported fields: - `time`: Uses numerical operators on date values either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format. Examples: - `time > 1452409200000 AND time <= 1492812924310` - `time >= \"2016-01-10T01:02:03-05:00\"` - `detail.action_detail_case`: Uses the “has” operator (:) and either a singular value or a list of allowed action types enclosed in parentheses, separated by a space. To exclude a result from the response, prepend a hyphen (`-`) to the beginning of the filter string. Examples: - `detail.action_detail_case:RENAME` - `detail.action_detail_case:(CREATE RESTORE)` - `-detail.action_detail_case:MOVE` "]
         #[serde(
             rename = "filter",
             default,
@@ -2271,14 +2655,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_name: ::std::option::Option<String>,
-        #[doc = "The miminum number of activities desired in the response; the server will attempt to return at least this quanitity. The server may also return fewer activities if it has a partial response ready before the request times out. If not set, a default value is used."]
+        #[doc = "The minimum number of activities desired in the response; the server attempts to return at least this quantity. The server may also return fewer activities if it has a partial response ready before the request times out. If not set, a default value is used."]
         #[serde(
             rename = "pageSize",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_size: ::std::option::Option<i32>,
-        #[doc = "The token identifying which page of results to return. Set this to the next_page_token value returned from a previous query to obtain the following page of results. If not set, the first page of results will be returned."]
+        #[doc = "The token identifies which page of results to return. Set this to the next_page_token value returned from a previous query to obtain the following page of results. If not set, the first page of results is returned."]
         #[serde(
             rename = "pageToken",
             default,
@@ -2334,7 +2718,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for QueryDriveActivityResponse {
+    impl crate::GetNextPageToken<String> for QueryDriveActivityResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2697,6 +3081,75 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Selection {
+        #[doc = "Selection value as human-readable display string."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Selection value as Field Choice ID."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Selection {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Selection {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SelectionList {
+        #[doc = "Selection values."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<crate::schemas::Selection>>,
+    }
+    impl ::google_field_selector::FieldSelector for SelectionList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SelectionList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SettingsChange {
         #[doc = "The set of changes made to restrictions."]
         #[serde(
@@ -2712,6 +3165,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SettingsChange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SingleUser {
+        #[doc = "User value as email."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SingleUser {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SingleUser {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3152,6 +3636,68 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Text {
+        #[doc = "Value of Text Field."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Text {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Text {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TextList {
+        #[doc = "Text values."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<crate::schemas::Text>>,
+    }
+    impl ::google_field_selector::FieldSelector for TextList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TextList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct TimeRange {
         #[doc = "The end of the time range."]
         #[serde(
@@ -3267,6 +3813,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for User {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UserList {
+        #[doc = "User values."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<crate::schemas::SingleUser>>,
+    }
+    impl ::google_field_selector::FieldSelector for UserList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserList {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3925,15 +4502,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

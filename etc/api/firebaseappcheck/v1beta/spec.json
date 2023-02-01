@@ -7,7 +7,7 @@
   "canonicalName": "Firebaseappcheck",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220415",
+  "revision": "20230123",
   "title": "Firebase App Check API",
   "description": "Firebase App Check works alongside other Firebase services to help protect your backend resources from abuse, such as billing fraud or phishing.",
   "ownerDomain": "google.com",
@@ -212,7 +212,7 @@
   "schemas": {
     "GoogleFirebaseAppcheckV1betaAppAttestConfig": {
       "id": "GoogleFirebaseAppcheckV1betaAppAttestConfig",
-      "description": "An app's App Attest configuration object. This configuration controls certain properties of the App Check token returned by ExchangeAppAttestAttestation and ExchangeAppAttestAssertion, such as its ttl. Note that the Team ID registered with your app is used as part of the validation process. Please register it via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.iosApps/patch).",
+      "description": "An app's App Attest configuration object. This configuration controls certain properties of the `AppCheckToken` returned by ExchangeAppAttestAttestation and ExchangeAppAttestAssertion, such as its ttl. Note that the Team ID registered with your app is used as part of the validation process. Please register it via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.iosApps/patch).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -358,6 +358,30 @@
           "additionalProperties": null,
           "items": {
             "$ref": "GoogleFirebaseAppcheckV1betaDeviceCheckConfig"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleFirebaseAppcheckV1betaBatchGetPlayIntegrityConfigsResponse": {
+      "id": "GoogleFirebaseAppcheckV1betaBatchGetPlayIntegrityConfigsResponse",
+      "description": "Response message for the BatchGetPlayIntegrityConfigs method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "configs": {
+          "description": "PlayIntegrityConfigs retrieved.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleFirebaseAppcheckV1betaPlayIntegrityConfig"
           }
         }
       },
@@ -562,7 +586,7 @@
     },
     "GoogleFirebaseAppcheckV1betaDeviceCheckConfig": {
       "id": "GoogleFirebaseAppcheckV1betaDeviceCheckConfig",
-      "description": "An app's DeviceCheck configuration object. This configuration is used by ExchangeDeviceCheckToken to validate device tokens issued to apps by DeviceCheck. It also controls certain properties of the returned App Check token, such as its ttl. Note that the Team ID registered with your app is used as part of the validation process. Please register it via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.iosApps/patch).",
+      "description": "An app's DeviceCheck configuration object. This configuration is used by ExchangeDeviceCheckToken to validate device tokens issued to apps by DeviceCheck. It also controls certain properties of the returned `AppCheckToken`, such as its ttl. Note that the Team ID registered with your app is used as part of the validation process. Please register it via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.iosApps/patch).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -802,6 +826,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleFirebaseAppcheckV1betaExchangePlayIntegrityTokenRequest": {
+      "id": "GoogleFirebaseAppcheckV1betaExchangePlayIntegrityTokenRequest",
+      "description": "Request message for the ExchangePlayIntegrityToken method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "playIntegrityToken": {
+          "description": "Required. The [integrity verdict response token from Play Integrity](https://developer.android.com/google/play/integrity/verdict#decrypt-verify) issued to your app.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleFirebaseAppcheckV1betaExchangeRecaptchaEnterpriseTokenRequest": {
       "id": "GoogleFirebaseAppcheckV1betaExchangeRecaptchaEnterpriseTokenRequest",
       "description": "Request message for the ExchangeRecaptchaEnterpriseToken method.",
@@ -933,6 +979,49 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleFirebaseAppcheckV1betaGeneratePlayIntegrityChallengeRequest": {
+      "id": "GoogleFirebaseAppcheckV1betaGeneratePlayIntegrityChallengeRequest",
+      "description": "Request message for the GeneratePlayIntegrityChallenge method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleFirebaseAppcheckV1betaGeneratePlayIntegrityChallengeResponse": {
+      "id": "GoogleFirebaseAppcheckV1betaGeneratePlayIntegrityChallengeResponse",
+      "description": "Response message for the GeneratePlayIntegrityChallenge method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "challenge": {
+          "description": "A one-time use [challenge](https://developer.android.com/google/play/integrity/verdict#protect-against-replay-attacks) for the client to pass to the Play Integrity API.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "ttl": {
+          "description": "The duration from the time this challenge is minted until its expiration. This field is intended to ease client-side token management, since the client may have clock skew, but is still able to accurately measure a duration.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleFirebaseAppcheckV1betaListDebugTokensResponse": {
       "id": "GoogleFirebaseAppcheckV1betaListDebugTokensResponse",
       "description": "Response message for the ListDebugTokens method.",
@@ -996,6 +1085,38 @@
           "items": {
             "$ref": "GoogleFirebaseAppcheckV1betaService"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleFirebaseAppcheckV1betaPlayIntegrityConfig": {
+      "id": "GoogleFirebaseAppcheckV1betaPlayIntegrityConfig",
+      "description": "An app's Play Integrity configuration object. This configuration controls certain properties of the `AppCheckToken` returned by ExchangePlayIntegrityToken, such as its ttl. Note that your registered SHA-256 certificate fingerprints are used to validate tokens issued by the Play Integrity API; please register them via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.androidApps.sha/create).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Required. The relative resource name of the Play Integrity configuration object, in the format: ``` projects/{project_number}/apps/{app_id}/playIntegrityConfig ```",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "tokenTtl": {
+          "description": "Specifies the duration for which App Check tokens exchanged from Play Integrity tokens will be valid. If unset, a default value of 1 hour is assumed. Must be between 30 minutes and 7 days, inclusive.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1099,7 +1220,7 @@
     },
     "GoogleFirebaseAppcheckV1betaRecaptchaConfig": {
       "id": "GoogleFirebaseAppcheckV1betaRecaptchaConfig",
-      "description": "An app's reCAPTCHA v3 configuration object. This configuration is used by ExchangeRecaptchaToken to validate reCAPTCHA tokens issued to apps by reCAPTCHA v3. It also controls certain properties of the returned App Check token, such as its ttl.",
+      "description": "An app's reCAPTCHA v3 configuration object. This configuration is used by ExchangeRecaptchaToken to validate reCAPTCHA tokens issued to apps by reCAPTCHA v3. It also controls certain properties of the returned `AppCheckToken`, such as its ttl.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1151,7 +1272,7 @@
     },
     "GoogleFirebaseAppcheckV1betaRecaptchaEnterpriseConfig": {
       "id": "GoogleFirebaseAppcheckV1betaRecaptchaEnterpriseConfig",
-      "description": "An app's reCAPTCHA Enterprise configuration object. This configuration is used by ExchangeRecaptchaEnterpriseToken to validate reCAPTCHA tokens issued to apps by reCAPTCHA Enterprise. It also controls certain properties of the returned App Check token, such as its ttl.",
+      "description": "An app's reCAPTCHA Enterprise configuration object. This configuration is used by ExchangeRecaptchaEnterpriseToken to validate reCAPTCHA tokens issued to apps by reCAPTCHA Enterprise. It also controls certain properties of the returned `AppCheckToken`, such as its ttl.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1193,7 +1314,7 @@
     },
     "GoogleFirebaseAppcheckV1betaRecaptchaV3Config": {
       "id": "GoogleFirebaseAppcheckV1betaRecaptchaV3Config",
-      "description": "An app's reCAPTCHA v3 configuration object. This configuration is used by ExchangeRecaptchaV3Token to validate reCAPTCHA tokens issued to apps by reCAPTCHA v3. It also controls certain properties of the returned App Check token, such as its ttl.",
+      "description": "An app's reCAPTCHA v3 configuration object. This configuration is used by ExchangeRecaptchaV3Token to validate reCAPTCHA tokens issued to apps by reCAPTCHA v3. It also controls certain properties of the returned `AppCheckToken`, such as its ttl.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1245,7 +1366,7 @@
     },
     "GoogleFirebaseAppcheckV1betaSafetyNetConfig": {
       "id": "GoogleFirebaseAppcheckV1betaSafetyNetConfig",
-      "description": "An app's SafetyNet configuration object. This configuration controls certain properties of the App Check token returned by ExchangeSafetyNetToken, such as its ttl. Note that your registered SHA-256 certificate fingerprints are used to validate tokens issued by SafetyNet; please register them via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.androidApps.sha/create).",
+      "description": "An app's SafetyNet configuration object. This configuration controls certain properties of the `AppCheckToken` returned by ExchangeSafetyNetToken, such as its ttl. Note that your registered SHA-256 certificate fingerprints are used to validate tokens issued by SafetyNet; please register them via the Firebase Console or programmatically via the [Firebase Management Service](https://firebase.google.com/docs/projects/api/reference/rest/v1beta1/projects.androidApps.sha/create).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1927,6 +2048,155 @@
                   },
                   "response": {
                     "$ref": "GoogleFirebaseAppcheckV1betaDeviceCheckConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform",
+                    "https://www.googleapis.com/auth/firebase"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "playIntegrityConfig": {
+              "resources": {},
+              "methods": {
+                "batchGet": {
+                  "id": "firebaseappcheck.projects.apps.playIntegrityConfig.batchGet",
+                  "path": "v1beta/{+parent}/apps/-/playIntegrityConfig:batchGet",
+                  "httpMethod": "GET",
+                  "description": "Atomically gets the PlayIntegrityConfigs for the specified list of apps.",
+                  "parameters": {
+                    "names": {
+                      "description": "Required. The relative resource names of the PlayIntegrityConfigs to retrieve, in the format ``` projects/{project_number}/apps/{app_id}/playIntegrityConfig ``` A maximum of 100 objects can be retrieved in a batch.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": true
+                    },
+                    "parent": {
+                      "description": "Required. The parent project name shared by all PlayIntegrityConfigs being retrieved, in the format ``` projects/{project_number} ``` The parent collection in the `name` field of any resource being retrieved must match this field, or the entire batch fails.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleFirebaseAppcheckV1betaBatchGetPlayIntegrityConfigsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform",
+                    "https://www.googleapis.com/auth/firebase"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "get": {
+                  "id": "firebaseappcheck.projects.apps.playIntegrityConfig.get",
+                  "path": "v1beta/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the PlayIntegrityConfig for the specified app.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The relative resource name of the PlayIntegrityConfig, in the format: ``` projects/{project_number}/apps/{app_id}/playIntegrityConfig ```",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/apps/[^/]+/playIntegrityConfig$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleFirebaseAppcheckV1betaPlayIntegrityConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform",
+                    "https://www.googleapis.com/auth/firebase"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "patch": {
+                  "id": "firebaseappcheck.projects.apps.playIntegrityConfig.patch",
+                  "path": "v1beta/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates the PlayIntegrityConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange Play Integrity tokens for App Check tokens.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The relative resource name of the Play Integrity configuration object, in the format: ``` projects/{project_number}/apps/{app_id}/playIntegrityConfig ```",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/apps/[^/]+/playIntegrityConfig$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "Required. A comma-separated list of names of fields in the PlayIntegrityConfig Gets to update. Example: `token_ttl`.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GoogleFirebaseAppcheckV1betaPlayIntegrityConfig"
+                  },
+                  "response": {
+                    "$ref": "GoogleFirebaseAppcheckV1betaPlayIntegrityConfig"
                   },
                   "scopes": [
                     "https://www.googleapis.com/auth/cloud-platform",
@@ -2738,6 +3008,46 @@
               "supportsMediaUpload": false,
               "mediaUpload": null
             },
+            "exchangePlayIntegrityToken": {
+              "id": "firebaseappcheck.projects.apps.exchangePlayIntegrityToken",
+              "path": "v1beta/{+app}:exchangePlayIntegrityToken",
+              "httpMethod": "POST",
+              "description": "Validates an [integrity verdict response token from Play Integrity](https://developer.android.com/google/play/integrity/verdict#decrypt-verify). If valid, returns an AppCheckToken.",
+              "parameters": {
+                "app": {
+                  "description": "Required. The relative resource name of the Android app, in the format: ``` projects/{project_number}/apps/{app_id} ``` If necessary, the `project_number` element can be replaced with the project ID of the Firebase project. Learn more about using project identifiers in Google's [AIP 2510](https://google.aip.dev/cloud/2510) standard.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/apps/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "app"
+              ],
+              "request": {
+                "$ref": "GoogleFirebaseAppcheckV1betaExchangePlayIntegrityTokenRequest"
+              },
+              "response": {
+                "$ref": "GoogleFirebaseAppcheckV1betaAppCheckToken"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/firebase"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
             "exchangeRecaptchaEnterpriseToken": {
               "id": "firebaseappcheck.projects.apps.exchangeRecaptchaEnterpriseToken",
               "path": "v1beta/{+app}:exchangeRecaptchaEnterpriseToken",
@@ -2927,6 +3237,46 @@
               },
               "response": {
                 "$ref": "GoogleFirebaseAppcheckV1betaGenerateAppAttestChallengeResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/firebase"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "generatePlayIntegrityChallenge": {
+              "id": "firebaseappcheck.projects.apps.generatePlayIntegrityChallenge",
+              "path": "v1beta/{+app}:generatePlayIntegrityChallenge",
+              "httpMethod": "POST",
+              "description": "Generates a challenge that protects the integrity of an immediately following integrity verdict request to the Play Integrity API. The next call to ExchangePlayIntegrityToken using the resulting integrity token will verify the presence and validity of the challenge. A challenge should not be reused for multiple calls.",
+              "parameters": {
+                "app": {
+                  "description": "Required. The relative resource name of the app, in the format: ``` projects/{project_number}/apps/{app_id} ``` If necessary, the `project_number` element can be replaced with the project ID of the Firebase project. Learn more about using project identifiers in Google's [AIP 2510](https://google.aip.dev/cloud/2510) standard.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/apps/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "app"
+              ],
+              "request": {
+                "$ref": "GoogleFirebaseAppcheckV1betaGeneratePlayIntegrityChallengeRequest"
+              },
+              "response": {
+                "$ref": "GoogleFirebaseAppcheckV1betaGeneratePlayIntegrityChallengeResponse"
               },
               "scopes": [
                 "https://www.googleapis.com/auth/cloud-platform",

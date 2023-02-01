@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("sqladmin1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220419")
+            .version("0.1.0-20221209")
             .about("API for Cloud SQL database instance management")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -153,9 +153,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances0 = instances0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about(
-                "Updates settings of a Cloud SQL instance. This method supports patch semantics.",
-            );
+            let mcmd = SubCommand::with_name("patch").about("Partially updates settings of a Cloud SQL instance by merging the request with the current configuration. This method supports patch semantics.");
             instances0 = instances0.subcommand(mcmd);
         }
         {
@@ -245,10 +243,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut users0 = SubCommand::with_name("users")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: delete, insert, list and update");
+            .about("methods: delete, get, insert, list and update");
         {
             let mcmd =
                 SubCommand::with_name("delete").about("Deletes a user from a Cloud SQL instance.");
+            users0 = users0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves a resource containing information about a user.");
             users0 = users0.subcommand(mcmd);
         }
         {

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html), [*wait*](resources/projects/locations/operations/struct.WaitRequestBuilder.html)\n    * [scans](resources/projects/locations/scans/struct.ScansActions.html)\n      * [*analyzePackages*](resources/projects/locations/scans/struct.AnalyzePackagesRequestBuilder.html)\n      * [vulnerabilities](resources/projects/locations/scans/vulnerabilities/struct.VulnerabilitiesActions.html)\n        * [*list*](resources/projects/locations/scans/vulnerabilities/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -119,6 +120,36 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AliasContextKind {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AnalysisCompleted {
+        #[serde(
+            rename = "analysisType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub analysis_type: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for AnalysisCompleted {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AnalysisCompleted {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1748,6 +1779,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct DiscoveryOccurrence {
+        #[serde(
+            rename = "analysisCompleted",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub analysis_completed: ::std::option::Option<crate::schemas::AnalysisCompleted>,
+        #[doc = "Indicates any errors encountered during analysis of a resource. There could be 0 or more of these errors."]
+        #[serde(
+            rename = "analysisError",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub analysis_error: ::std::option::Option<Vec<crate::schemas::Status>>,
         #[doc = "The status of discovery for the resource."]
         #[serde(
             rename = "analysisStatus",
@@ -1807,11 +1851,13 @@ pub mod schemas {
     pub enum DiscoveryOccurrenceAnalysisStatus {
         #[doc = "Unknown."]
         AnalysisStatusUnspecified,
+        #[doc = "Analysis has completed."]
+        Complete,
         #[doc = "Analysis has finished unsuccessfully, the analysis itself is in a bad state."]
         FinishedFailed,
         #[doc = "Analysis has finished successfully."]
         FinishedSuccess,
-        #[doc = "The resource is known not to be supported"]
+        #[doc = "The resource is known not to be supported."]
         FinishedUnsupported,
         #[doc = "Resource is known but no action has been taken yet."]
         Pending,
@@ -1824,6 +1870,7 @@ pub mod schemas {
                 DiscoveryOccurrenceAnalysisStatus::AnalysisStatusUnspecified => {
                     "ANALYSIS_STATUS_UNSPECIFIED"
                 }
+                DiscoveryOccurrenceAnalysisStatus::Complete => "COMPLETE",
                 DiscoveryOccurrenceAnalysisStatus::FinishedFailed => "FINISHED_FAILED",
                 DiscoveryOccurrenceAnalysisStatus::FinishedSuccess => "FINISHED_SUCCESS",
                 DiscoveryOccurrenceAnalysisStatus::FinishedUnsupported => "FINISHED_UNSUPPORTED",
@@ -1844,6 +1891,7 @@ pub mod schemas {
                 "ANALYSIS_STATUS_UNSPECIFIED" => {
                     DiscoveryOccurrenceAnalysisStatus::AnalysisStatusUnspecified
                 }
+                "COMPLETE" => DiscoveryOccurrenceAnalysisStatus::Complete,
                 "FINISHED_FAILED" => DiscoveryOccurrenceAnalysisStatus::FinishedFailed,
                 "FINISHED_SUCCESS" => DiscoveryOccurrenceAnalysisStatus::FinishedSuccess,
                 "FINISHED_UNSUPPORTED" => DiscoveryOccurrenceAnalysisStatus::FinishedUnsupported,
@@ -1876,6 +1924,7 @@ pub mod schemas {
                 "ANALYSIS_STATUS_UNSPECIFIED" => {
                     DiscoveryOccurrenceAnalysisStatus::AnalysisStatusUnspecified
                 }
+                "COMPLETE" => DiscoveryOccurrenceAnalysisStatus::Complete,
                 "FINISHED_FAILED" => DiscoveryOccurrenceAnalysisStatus::FinishedFailed,
                 "FINISHED_SUCCESS" => DiscoveryOccurrenceAnalysisStatus::FinishedSuccess,
                 "FINISHED_UNSUPPORTED" => DiscoveryOccurrenceAnalysisStatus::FinishedUnsupported,
@@ -2153,6 +2202,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct FileLocation {
+        #[doc = "For jars that are contained inside .war files, this filepath can indicate the path to war file combined with the path to jar file."]
+        #[serde(
+            rename = "filePath",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_path: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for FileLocation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FileLocation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Fingerprint {
         #[doc = "Required. The layer ID of the final layer in the Docker image’s v1 representation."]
         #[serde(
@@ -2272,6 +2352,276 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GitSourceContext {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GrafeasV1FileLocation {
+        #[doc = "For jars that are contained inside .war files, this filepath can indicate the path to war file combined with the path to jar file."]
+        #[serde(
+            rename = "filePath",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_path: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GrafeasV1FileLocation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GrafeasV1FileLocation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder {
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GrafeasV1SlsaProvenanceZeroTwoSlsaCompleteness {
+        #[serde(
+            rename = "environment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub environment: ::std::option::Option<bool>,
+        #[serde(
+            rename = "materials",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub materials: ::std::option::Option<bool>,
+        #[serde(
+            rename = "parameters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parameters: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GrafeasV1SlsaProvenanceZeroTwoSlsaCompleteness {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GrafeasV1SlsaProvenanceZeroTwoSlsaCompleteness {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource {
+        #[serde(
+            rename = "digest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub digest: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[serde(
+            rename = "entryPoint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entry_point: ::std::option::Option<String>,
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation {
+        #[serde(
+            rename = "configSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub config_source:
+            ::std::option::Option<crate::schemas::GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource>,
+        #[serde(
+            rename = "environment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub environment:
+            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
+        #[serde(
+            rename = "parameters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parameters:
+            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
+    }
+    impl ::google_field_selector::FieldSelector for GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial {
+        #[serde(
+            rename = "digest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub digest: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata {
+        #[serde(
+            rename = "buildFinishedOn",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub build_finished_on: ::std::option::Option<String>,
+        #[serde(
+            rename = "buildInvocationId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub build_invocation_id: ::std::option::Option<String>,
+        #[serde(
+            rename = "buildStartedOn",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub build_started_on: ::std::option::Option<String>,
+        #[serde(
+            rename = "completeness",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub completeness:
+            ::std::option::Option<crate::schemas::GrafeasV1SlsaProvenanceZeroTwoSlsaCompleteness>,
+        #[serde(
+            rename = "reproducible",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reproducible: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2473,6 +2823,12 @@ pub mod schemas {
         )]
         pub slsa_provenance: ::std::option::Option<crate::schemas::SlsaProvenance>,
         #[serde(
+            rename = "slsaProvenanceZeroTwo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub slsa_provenance_zero_two: ::std::option::Option<crate::schemas::SlsaProvenanceZeroTwo>,
+        #[serde(
             rename = "subject",
             default,
             skip_serializing_if = "std::option::Option::is_none"
@@ -2532,6 +2888,42 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct LanguagePackageDependency {
+        #[serde(
+            rename = "package",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package: ::std::option::Option<String>,
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LanguagePackageDependency {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LanguagePackageDependency {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Layer {
         #[doc = "The recovered arguments to the Dockerfile directive."]
         #[serde(
@@ -2554,6 +2946,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Layer {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct License {
+        #[doc = "Comments"]
+        #[serde(
+            rename = "comments",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub comments: ::std::option::Option<String>,
+        #[doc = "Often a single license can be used to represent the licensing terms. Sometimes it is necessary to include a choice of one or more licenses or some combination of license identifiers. Examples: “LGPL-2.1-only OR MIT”, “LGPL-2.1-only AND MIT”, “GPL-2.0-or-later WITH Bison-exception-2.2”."]
+        #[serde(
+            rename = "expression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expression: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for License {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for License {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2585,7 +3015,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2617,7 +3047,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListVulnerabilitiesResponse {
+    impl crate::GetNextPageToken<String> for ListVulnerabilitiesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2635,7 +3065,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Location {
-        #[doc = "Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package."]
+        #[doc = "Deprecated. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)"]
         #[serde(
             rename = "cpeUri",
             default,
@@ -2649,7 +3079,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "The version installed at this location."]
+        #[doc = "Deprecated. The version installed at this location."]
         #[serde(
             rename = "version",
             default,
@@ -3132,14 +3562,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cpe_uri: ::std::option::Option<String>,
-        #[doc = "The OS affected by a vulnerability This field is deprecated and the information is in cpe_uri"]
+        #[doc = "The dependency chain between this package and the user’s artifact. List in order from the customer’s package under review first, to the current package last. Inclusive of the original package and the current package."]
+        #[serde(
+            rename = "dependencyChain",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dependency_chain: ::std::option::Option<Vec<crate::schemas::LanguagePackageDependency>>,
+        #[doc = "The path to the jar file / go binary file."]
+        #[serde(
+            rename = "fileLocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_location: ::std::option::Option<Vec<crate::schemas::FileLocation>>,
+        #[doc = "HashDigest stores the SHA512 hash digest of the jar file if the package is of type Maven. This field will be unset for non Maven packages."]
+        #[serde(
+            rename = "hashDigest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hash_digest: ::std::option::Option<String>,
+        #[doc = "The OS affected by a vulnerability Used to generate the cpe_uri for OS packages"]
         #[serde(
             rename = "os",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub os: ::std::option::Option<String>,
-        #[doc = "The version of the OS This field is deprecated and the information is in cpe_uri"]
+        #[doc = "The version of the OS Used to generate the cpe_uri for OS packages"]
         #[serde(
             rename = "osVersion",
             default,
@@ -3160,13 +3611,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub package_type: ::std::option::Option<crate::schemas::PackageDataPackageType>,
-        #[doc = "The path to the jar file / go binary file. The same jar file can be in multiple locations - all of them will be listed."]
+        #[doc = "CVEs that this package is no longer vulnerable to go/drydock-dd-custom-binary-scanning"]
         #[serde(
-            rename = "pathToFile",
+            rename = "patchedCve",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub path_to_file: ::std::option::Option<Vec<String>>,
+        pub patched_cve: ::std::option::Option<Vec<String>>,
         #[serde(
             rename = "unused",
             default,
@@ -3199,9 +3650,13 @@ pub mod schemas {
         GoStdlib,
         #[doc = "Java packages from Maven."]
         Maven,
+        #[doc = "NPM packages."]
+        Npm,
         #[doc = "Operating System"]
         Os,
         PackageTypeUnspecified,
+        #[doc = "Python packages."]
+        Pypi,
     }
     impl PackageDataPackageType {
         pub fn as_str(self) -> &'static str {
@@ -3209,8 +3664,10 @@ pub mod schemas {
                 PackageDataPackageType::Go => "GO",
                 PackageDataPackageType::GoStdlib => "GO_STDLIB",
                 PackageDataPackageType::Maven => "MAVEN",
+                PackageDataPackageType::Npm => "NPM",
                 PackageDataPackageType::Os => "OS",
                 PackageDataPackageType::PackageTypeUnspecified => "PACKAGE_TYPE_UNSPECIFIED",
+                PackageDataPackageType::Pypi => "PYPI",
             }
         }
     }
@@ -3226,8 +3683,10 @@ pub mod schemas {
                 "GO" => PackageDataPackageType::Go,
                 "GO_STDLIB" => PackageDataPackageType::GoStdlib,
                 "MAVEN" => PackageDataPackageType::Maven,
+                "NPM" => PackageDataPackageType::Npm,
                 "OS" => PackageDataPackageType::Os,
                 "PACKAGE_TYPE_UNSPECIFIED" => PackageDataPackageType::PackageTypeUnspecified,
+                "PYPI" => PackageDataPackageType::Pypi,
                 _ => return Err(()),
             })
         }
@@ -3255,8 +3714,10 @@ pub mod schemas {
                 "GO" => PackageDataPackageType::Go,
                 "GO_STDLIB" => PackageDataPackageType::GoStdlib,
                 "MAVEN" => PackageDataPackageType::Maven,
+                "NPM" => PackageDataPackageType::Npm,
                 "OS" => PackageDataPackageType::Os,
                 "PACKAGE_TYPE_UNSPECIFIED" => PackageDataPackageType::PackageTypeUnspecified,
+                "PYPI" => PackageDataPackageType::Pypi,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -3318,6 +3779,13 @@ pub mod schemas {
         )]
         pub effective_severity:
             ::std::option::Option<crate::schemas::PackageIssueEffectiveSeverity>,
+        #[doc = "The location at which this package was found."]
+        #[serde(
+            rename = "fileLocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_location: ::std::option::Option<Vec<crate::schemas::GrafeasV1FileLocation>>,
         #[doc = "Output only. Whether a fix is available for this package."]
         #[serde(
             rename = "fixAvailable",
@@ -3468,20 +3936,55 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PackageOccurrence {
-        #[doc = "Required. All of the places within the filesystem versions of this package have been found."]
+        #[doc = "Output only. The CPU architecture for which packages in this distribution channel were built. Architecture will be blank for language packages."]
+        #[serde(
+            rename = "architecture",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub architecture: ::std::option::Option<crate::schemas::PackageOccurrenceArchitecture>,
+        #[doc = "Output only. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/) denoting the package manager version distributing a package. The cpe_uri will be blank for language packages."]
+        #[serde(
+            rename = "cpeUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cpe_uri: ::std::option::Option<String>,
+        #[doc = "Licenses that have been declared by the authors of the package."]
+        #[serde(
+            rename = "license",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub license: ::std::option::Option<crate::schemas::License>,
+        #[doc = "All of the places within the filesystem versions of this package have been found."]
         #[serde(
             rename = "location",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<Vec<crate::schemas::Location>>,
-        #[doc = "Output only. The name of the installed package."]
+        #[doc = "Required. Output only. The name of the installed package."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Output only. The type of package; whether native or non native (e.g., ruby gems, node.js packages, etc.)."]
+        #[serde(
+            rename = "packageType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package_type: ::std::option::Option<String>,
+        #[doc = "Output only. The version of the package."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<crate::schemas::Version>,
     }
     impl ::google_field_selector::FieldSelector for PackageOccurrence {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3489,6 +3992,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PackageOccurrence {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PackageOccurrenceArchitecture {
+        #[doc = "Unknown architecture."]
+        ArchitectureUnspecified,
+        #[doc = "X64 architecture."]
+        X64,
+        #[doc = "X86 architecture."]
+        X86,
+    }
+    impl PackageOccurrenceArchitecture {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PackageOccurrenceArchitecture::ArchitectureUnspecified => {
+                    "ARCHITECTURE_UNSPECIFIED"
+                }
+                PackageOccurrenceArchitecture::X64 => "X64",
+                PackageOccurrenceArchitecture::X86 => "X86",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PackageOccurrenceArchitecture {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PackageOccurrenceArchitecture {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PackageOccurrenceArchitecture, ()> {
+            Ok(match s {
+                "ARCHITECTURE_UNSPECIFIED" => {
+                    PackageOccurrenceArchitecture::ArchitectureUnspecified
+                }
+                "X64" => PackageOccurrenceArchitecture::X64,
+                "X86" => PackageOccurrenceArchitecture::X86,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PackageOccurrenceArchitecture {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PackageOccurrenceArchitecture {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PackageOccurrenceArchitecture {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ARCHITECTURE_UNSPECIFIED" => {
+                    PackageOccurrenceArchitecture::ArchitectureUnspecified
+                }
+                "X64" => PackageOccurrenceArchitecture::X64,
+                "X86" => PackageOccurrenceArchitecture::X86,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PackageOccurrenceArchitecture {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PackageOccurrenceArchitecture {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3866,6 +4451,60 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SlsaProvenance {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct SlsaProvenanceZeroTwo {
+        #[serde(
+            rename = "buildConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub build_config:
+            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
+        #[serde(
+            rename = "buildType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub build_type: ::std::option::Option<String>,
+        #[serde(
+            rename = "builder",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub builder:
+            ::std::option::Option<crate::schemas::GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder>,
+        #[serde(
+            rename = "invocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invocation:
+            ::std::option::Option<crate::schemas::GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation>,
+        #[serde(
+            rename = "materials",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub materials:
+            ::std::option::Option<Vec<crate::schemas::GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial>>,
+        #[serde(
+            rename = "metadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metadata:
+            ::std::option::Option<crate::schemas::GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata>,
+    }
+    impl ::google_field_selector::FieldSelector for SlsaProvenanceZeroTwo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SlsaProvenanceZeroTwo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4360,6 +4999,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cvss_score: ::std::option::Option<f32>,
+        #[doc = "Output only. CVSS version used to populate cvss_score and severity."]
+        #[serde(
+            rename = "cvssVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cvss_version: ::std::option::Option<crate::schemas::VulnerabilityOccurrenceCvssVersion>,
         #[doc = "The cvss v3 score for the vulnerability."]
         #[serde(
             rename = "cvssv3",
@@ -4431,6 +5077,85 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for VulnerabilityOccurrence {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum VulnerabilityOccurrenceCvssVersion {
+        CvssVersion2,
+        CvssVersion3,
+        CvssVersionUnspecified,
+    }
+    impl VulnerabilityOccurrenceCvssVersion {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                VulnerabilityOccurrenceCvssVersion::CvssVersion2 => "CVSS_VERSION_2",
+                VulnerabilityOccurrenceCvssVersion::CvssVersion3 => "CVSS_VERSION_3",
+                VulnerabilityOccurrenceCvssVersion::CvssVersionUnspecified => {
+                    "CVSS_VERSION_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for VulnerabilityOccurrenceCvssVersion {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for VulnerabilityOccurrenceCvssVersion {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<VulnerabilityOccurrenceCvssVersion, ()> {
+            Ok(match s {
+                "CVSS_VERSION_2" => VulnerabilityOccurrenceCvssVersion::CvssVersion2,
+                "CVSS_VERSION_3" => VulnerabilityOccurrenceCvssVersion::CvssVersion3,
+                "CVSS_VERSION_UNSPECIFIED" => {
+                    VulnerabilityOccurrenceCvssVersion::CvssVersionUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for VulnerabilityOccurrenceCvssVersion {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for VulnerabilityOccurrenceCvssVersion {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for VulnerabilityOccurrenceCvssVersion {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CVSS_VERSION_2" => VulnerabilityOccurrenceCvssVersion::CvssVersion2,
+                "CVSS_VERSION_3" => VulnerabilityOccurrenceCvssVersion::CvssVersion3,
+                "CVSS_VERSION_UNSPECIFIED" => {
+                    VulnerabilityOccurrenceCvssVersion::CvssVersionUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for VulnerabilityOccurrenceCvssVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VulnerabilityOccurrenceCvssVersion {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5646,7 +6371,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5681,7 +6406,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -5731,7 +6456,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -5850,12 +6575,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6387,7 +7113,7 @@ pub mod resources {
                                 #[serde(rename = "occurrences")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -6424,7 +7150,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -6480,7 +7206,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -6600,12 +7326,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -6898,16 +7625,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6927,13 +7656,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6941,7 +7673,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6968,7 +7700,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

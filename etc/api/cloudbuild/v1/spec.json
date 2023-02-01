@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Build",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220413",
+  "revision": "20230125",
   "title": "Cloud Build API",
   "description": "Creates and manages builds on Google Cloud Platform.",
   "ownerDomain": "google.com",
@@ -419,9 +419,33 @@
             "items": null
           }
         },
+        "mavenArtifacts": {
+          "description": "A list of Maven artifacts to be uploaded to Artifact Registry upon successful completion of all build steps. Artifacts in the workspace matching specified paths globs will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any artifacts fail to be pushed, the build is marked FAILURE.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "MavenArtifact"
+          }
+        },
         "objects": {
           "description": "A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps. Files in the workspace matching specified paths globs will be uploaded to the specified Cloud Storage location using the builder service account's credentials. The location and generation of the uploaded objects will be stored in the Build resource's results field. If any objects fail to be pushed, the build is marked FAILURE.",
           "$ref": "ArtifactObjects"
+        },
+        "pythonPackages": {
+          "description": "A list of Python packages to be uploaded to Artifact Registry upon successful completion of all build steps. The build service account credentials will be used to perform the upload. If any objects fail to be pushed, the build is marked FAILURE.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PythonPackage"
+          }
         }
       },
       "additionalProperties": null,
@@ -495,6 +519,96 @@
         },
         "config": {
           "description": "The name of the `BitbucketServerConfig` that added connected repositories. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "createTime": {
+          "description": "Time the operation was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BatchCreateGitLabConnectedRepositoriesRequest": {
+      "id": "BatchCreateGitLabConnectedRepositoriesRequest",
+      "description": "RPC request object accepted by BatchCreateGitLabConnectedRepositories RPC method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "requests": {
+          "description": "Required. Requests to connect GitLab repositories.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "CreateGitLabConnectedRepositoryRequest"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BatchCreateGitLabConnectedRepositoriesResponse": {
+      "id": "BatchCreateGitLabConnectedRepositoriesResponse",
+      "description": "Response of BatchCreateGitLabConnectedRepositories RPC method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gitlabConnectedRepositories": {
+          "description": "The GitLab connected repository requests' responses.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GitLabConnectedRepository"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BatchCreateGitLabConnectedRepositoriesResponseMetadata": {
+      "id": "BatchCreateGitLabConnectedRepositoriesResponseMetadata",
+      "description": "Metadata for `BatchCreateGitLabConnectedRepositories` operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "completeTime": {
+          "description": "Time the operation was completed.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "config": {
+          "description": "The name of the `GitLabConfig` that added connected repositories. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -818,7 +932,7 @@
           "items": null
         },
         "projectKey": {
-          "description": "Required. Key of the project that the repo is in. For example: The key for http://mybitbucket.server/projects/TEST/repos/test-repo is \"TEST\".",
+          "description": "Required. Key of the project that the repo is in. For example: The key for https://mybitbucket.server/projects/TEST/repos/test-repo is \"TEST\".",
           "type": "string",
           "format": null,
           "enum": [],
@@ -836,7 +950,7 @@
           "$ref": "PushFilter"
         },
         "repoSlug": {
-          "description": "Required. Slug of the repository. A repository slug is a URL-friendly version of a repository name, automatically generated by Bitbucket for use in the URL. For example, if the repository name is 'test repo', in the URL it would become 'test-repo' as in http://mybitbucket.server/projects/TEST/repos/test-repo.",
+          "description": "Required. Slug of the repository. A repository slug is a URL-friendly version of a repository name, automatically generated by Bitbucket for use in the URL. For example, if the repository name is 'test repo', in the URL it would become 'test-repo' as in https://mybitbucket.server/projects/TEST/repos/test-repo.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1121,7 +1235,7 @@
           }
         },
         "timeout": {
-          "description": "Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is ten minutes.",
+          "description": "Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is 60 minutes.",
           "type": "string",
           "format": "google-duration",
           "enum": [],
@@ -1131,7 +1245,7 @@
           "items": null
         },
         "timing": {
-          "description": "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps. * PUSH: time to push all specified images. * FETCHSOURCE: time to fetch source. * SETUPBUILD: time to set up build. If the build does not specify source or images, these keys will not be included.",
+          "description": "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps. * PUSH: time to push all artifacts including docker images and non docker artifacts. * FETCHSOURCE: time to fetch source. * SETUPBUILD: time to set up build. If the build does not specify source or images, these keys will not be included.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -1226,7 +1340,7 @@
       "enumDescriptions": [],
       "properties": {
         "diskSizeGb": {
-          "description": "Requested disk size for the VM that runs the build. Note that this is *NOT* \"disk free\"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 1000GB; builds that request more than the maximum are rejected with an error.",
+          "description": "Requested disk size for the VM that runs the build. Note that this is *NOT* \"disk free\"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 2000GB; builds that request more than the maximum are rejected with an error.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -1340,8 +1454,8 @@
             "VERIFIED"
           ],
           "enumDescriptions": [
-            "Not a verifiable build. (default)",
-            "Verified build."
+            "Not a verifiable build (the default).",
+            "Build must be verified."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1441,6 +1555,34 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "allowExitCodes": {
+          "description": "Allow this build step to fail without failing the entire build if and only if the exit code is one of the specified codes. If allow_failure is also specified, this field will take precedence.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "integer",
+            "format": "int32",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "allowFailure": {
+          "description": "Allow this build step to fail without failing the entire build. If false, the entire build will fail if this step fails. Otherwise, the build will succeed, but this step will still have a failure status. Error information will be reported in the failure_detail field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "args": {
           "description": "A list of arguments that will be presented to the step when it is started. If the image used to run the step's container has an entrypoint, the `args` are used as arguments to that entrypoint. If the image does not define an entrypoint, the first element in args is used as the entrypoint, and the remainder will be used as arguments.",
           "type": "array",
@@ -1496,6 +1638,16 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "exitCode": {
+          "description": "Output only. Return code from running the step.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "id": {
           "description": "Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency.",
@@ -1739,6 +1891,10 @@
           "description": "GitHubEventsConfig describes the configuration of a trigger that creates a build whenever a GitHub event is received. Mutually exclusive with `trigger_template`.",
           "$ref": "GitHubEventsConfig"
         },
+        "gitlabEnterpriseEventsConfig": {
+          "description": "GitLabEnterpriseEventsConfig describes the configuration of a trigger that creates a build whenever a GitLab Enterprise event is received.",
+          "$ref": "GitLabEventsConfig"
+        },
         "id": {
           "description": "Output only. Unique identifier of the trigger.",
           "type": "string",
@@ -1766,6 +1922,22 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "includeBuildLogs": {
+          "description": "If set to INCLUDE_BUILD_LOGS_WITH_STATUS, log url will be shown on GitHub page when build status is final. Setting this field to INCLUDE_BUILD_LOGS_WITH_STATUS for non GitHub triggers results in INVALID_ARGUMENT error.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INCLUDE_BUILD_LOGS_UNSPECIFIED",
+            "INCLUDE_BUILD_LOGS_WITH_STATUS"
+          ],
+          "enumDescriptions": [
+            "Build logs will not be shown on GitHub.",
+            "Build logs will be shown on GitHub."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "includedFiles": {
           "description": "If any of the files altered in the commit pass the ignored_files filter and included_files is empty, then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the ignored_files filter and included_files is not empty, then we make sure that at least one of those files matches a included_files glob. If not, then we do not trigger a build.",
@@ -1798,6 +1970,10 @@
         "pubsubConfig": {
           "description": "PubsubConfig describes the configuration of a trigger that creates a build whenever a Pub/Sub message is published.",
           "$ref": "PubsubConfig"
+        },
+        "repositoryEventConfig": {
+          "description": "The configuration of a trigger that creates a build whenever an event from Repo API is received.",
+          "$ref": "RepositoryEventConfig"
         },
         "resourceName": {
           "description": "The `Trigger` name with format: `projects/{project}/locations/{location}/triggers/{trigger}`, where {trigger} is a unique identifier generated by the service.",
@@ -2101,6 +2277,32 @@
         },
         "gitlabConfig": {
           "description": "The resource name of the GitLabConfig to be created. Format: `projects/{project}/locations/{location}/gitlabConfigs/{id}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CreateGitLabConnectedRepositoryRequest": {
+      "id": "CreateGitLabConnectedRepositoryRequest",
+      "description": "Request to connect a repository from a connected GitLab host.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gitlabConnectedRepository": {
+          "description": "Required. The GitLab repository to connect.",
+          "$ref": "GitLabConnectedRepository"
+        },
+        "parent": {
+          "description": "Required. The name of the `GitLabConfig` that adds connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2452,13 +2654,15 @@
             "UNKNOWN",
             "CLOUD_SOURCE_REPOSITORIES",
             "GITHUB",
-            "BITBUCKET_SERVER"
+            "BITBUCKET_SERVER",
+            "GITLAB"
           ],
           "enumDescriptions": [
             "The default, unknown repo type.",
             "A Google Cloud Source Repositories-hosted repo.",
             "A GitHub-hosted repo not necessarily on \"github.com\" (i.e. GitHub Enterprise).",
-            "A Bitbucket Server-hosted repo."
+            "A Bitbucket Server-hosted repo.",
+            "A GitLab-hosted repo."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2537,7 +2741,7 @@
           "items": null
         },
         "name": {
-          "description": "Optional. The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+          "description": "Optional. The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2685,7 +2889,7 @@
       "enumDescriptions": [],
       "properties": {
         "enterpriseConfigResourceName": {
-          "description": "Optional. The resource name of the github enterprise config that should be applied to this installation. For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+          "description": "Optional. The resource name of the github enterprise config that should be applied to this installation. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2731,6 +2935,328 @@
         "push": {
           "description": "filter to match changes in refs like branches, tags.",
           "$ref": "PushFilter"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GitLabConfig": {
+      "id": "GitLabConfig",
+      "description": "GitLabConfig represents the configuration for a GitLab integration.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "connectedRepositories": {
+          "description": "Connected GitLab.com or GitLabEnterprise repositories for this config.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GitLabRepositoryId"
+          }
+        },
+        "createTime": {
+          "description": "Output only. Time when the config was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "enterpriseConfig": {
+          "description": "Optional. GitLabEnterprise config.",
+          "$ref": "GitLabEnterpriseConfig"
+        },
+        "name": {
+          "description": "The resource name for the config.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "secrets": {
+          "description": "Required. Secret Manager secrets needed by the config.",
+          "$ref": "GitLabSecrets"
+        },
+        "username": {
+          "description": "Username of the GitLab.com or GitLab Enterprise account Cloud Build will use.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "webhookKey": {
+          "description": "Output only. UUID included in webhook requests. The UUID is used to look up the corresponding config.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GitLabConnectedRepository": {
+      "id": "GitLabConnectedRepository",
+      "description": "GitLabConnectedRepository represents a GitLab connected repository request response.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "parent": {
+          "description": "The name of the `GitLabConfig` that added connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "repo": {
+          "description": "The GitLab repositories to connect.",
+          "$ref": "GitLabRepositoryId"
+        },
+        "status": {
+          "description": "Output only. The status of the repo connection request.",
+          "$ref": "Status"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GitLabEnterpriseConfig": {
+      "id": "GitLabEnterpriseConfig",
+      "description": "GitLabEnterpriseConfig represents the configuration for a GitLabEnterprise integration.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "hostUri": {
+          "description": "Immutable. The URI of the GitlabEnterprise host.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serviceDirectoryConfig": {
+          "description": "The Service Directory configuration to be used when reaching out to the GitLab Enterprise instance.",
+          "$ref": "ServiceDirectoryConfig"
+        },
+        "sslCa": {
+          "description": "The SSL certificate to use in requests to GitLab Enterprise instances.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GitLabEventsConfig": {
+      "id": "GitLabEventsConfig",
+      "description": "GitLabEventsConfig describes the configuration of a trigger that creates a build whenever a GitLab event is received.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gitlabConfig": {
+          "description": "Output only. The GitLabConfig specified in the gitlab_config_resource field.",
+          "$ref": "GitLabConfig"
+        },
+        "gitlabConfigResource": {
+          "description": "The GitLab config resource that this trigger config maps to.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "projectNamespace": {
+          "description": "Namespace of the GitLab project.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pullRequest": {
+          "description": "Filter to match changes in pull requests.",
+          "$ref": "PullRequestFilter"
+        },
+        "push": {
+          "description": "Filter to match changes in refs like branches, tags.",
+          "$ref": "PushFilter"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GitLabRepository": {
+      "id": "GitLabRepository",
+      "description": "Proto Representing a GitLabRepository",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "browseUri": {
+          "description": "Link to the browse repo page on the GitLab instance",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "Description of the repository",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "Display name of the repository",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "The resource name of the repository",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "repositoryId": {
+          "description": "Identifier for a repository",
+          "$ref": "GitLabRepositoryId"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GitLabRepositoryId": {
+      "id": "GitLabRepositoryId",
+      "description": "GitLabRepositoryId identifies a specific repository hosted on GitLab.com or GitLabEnterprise",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "id": {
+          "description": "Required. Identifier for the repository. example: \"namespace/project-slug\", namespace is usually the username or group ID",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "webhookId": {
+          "description": "Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GitLabSecrets": {
+      "id": "GitLabSecrets",
+      "description": "GitLabSecrets represents the secrets in Secret Manager for a GitLab integration.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "apiAccessTokenVersion": {
+          "description": "Required. The resource name for the api access token’s secret version",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "apiKeyVersion": {
+          "description": "Required. Immutable. API Key that will be attached to webhook requests from GitLab to Cloud Build.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readAccessTokenVersion": {
+          "description": "Required. The resource name for the read access token’s secret version",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "webhookSecretVersion": {
+          "description": "Required. Immutable. The resource name for the webhook secret’s secret version. Once this field has been set, it cannot be changed. If you need to change it, please create another GitLabConfig.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2782,13 +3308,15 @@
             "UNKNOWN",
             "CLOUD_SOURCE_REPOSITORIES",
             "GITHUB",
-            "BITBUCKET_SERVER"
+            "BITBUCKET_SERVER",
+            "GITLAB"
           ],
           "enumDescriptions": [
             "The default, unknown repo type.",
             "A Google Cloud Source Repositories-hosted repo.",
             "A GitHub-hosted repo not necessarily on \"github.com\" (i.e. GitHub Enterprise).",
-            "A Bitbucket Server-hosted repo."
+            "A Bitbucket Server-hosted repo.",
+            "A GitLab-hosted repo."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2796,110 +3324,6 @@
         },
         "uri": {
           "description": "The URI of the repo. Either uri or repository can be specified and is required.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "GoogleDevtoolsCloudbuildV2OperationMetadata": {
-      "id": "GoogleDevtoolsCloudbuildV2OperationMetadata",
-      "description": "Represents the metadata of the long-running operation.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "apiVersion": {
-          "description": "Output only. API version used to start the operation.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "createTime": {
-          "description": "Output only. The time the operation was created.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "endTime": {
-          "description": "Output only. The time the operation finished running.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "requestedCancellation": {
-          "description": "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
-          "type": "boolean",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "statusMessage": {
-          "description": "Output only. Human-readable status of the operation, if any.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "target": {
-          "description": "Output only. Server-defined resource path for the target of the operation.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "verb": {
-          "description": "Output only. Name of the verb executed by the operation.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "HTTPDelivery": {
-      "id": "HTTPDelivery",
-      "description": "HTTPDelivery is the delivery configuration for an HTTP notification.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "uri": {
-          "description": "The URI to which JSON-containing HTTP POST requests should be sent.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3188,6 +3612,74 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListGitLabConfigsResponse": {
+      "id": "ListGitLabConfigsResponse",
+      "description": "RPC response object returned by ListGitLabConfigs RPC method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gitlabConfigs": {
+          "description": "A list of GitLabConfigs",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GitLabConfig"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token that can be sent as `page_token` to retrieve the next page If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListGitLabRepositoriesResponse": {
+      "id": "ListGitLabRepositoriesResponse",
+      "description": "RPC response object returned by the ListGitLabRepositories RPC method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gitlabRepositories": {
+          "description": "List of GitLab repositories",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GitLabRepository"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListGithubEnterpriseConfigsResponse": {
       "id": "ListGithubEnterpriseConfigsResponse",
       "description": "RPC response object returned by ListGithubEnterpriseConfigs RPC method.",
@@ -3246,6 +3738,68 @@
       "additionalProperties": null,
       "items": null
     },
+    "MavenArtifact": {
+      "id": "MavenArtifact",
+      "description": "A Maven artifact to upload to Artifact Registry upon successful completion of all build steps.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "artifactId": {
+          "description": "Maven `artifactId` value used when uploading the artifact to Artifact Registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "groupId": {
+          "description": "Maven `groupId` value used when uploading the artifact to Artifact Registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "path": {
+          "description": "Path to an artifact in the build's workspace to be uploaded to Artifact Registry. This can be either an absolute path, e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar or a relative path from /workspace, e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "repository": {
+          "description": "Artifact Registry repository, in the form \"https://$REGION-maven.pkg.dev/$PROJECT/$REPOSITORY\" Artifact in the workspace specified by path will be uploaded to Artifact Registry with this location as a prefix.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "Maven `version` value used when uploading the artifact to Artifact Registry.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "NetworkConfig": {
       "id": "NetworkConfig",
       "description": "Defines the network configuration for the pool.",
@@ -3281,21 +3835,9 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "Notification": {
-      "id": "Notification",
-      "description": "Notification is the container which holds the data that is relevant to this particular notification.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "filter": {
-          "description": "The filter string to use for notification filtering. Currently, this is assumed to be a CEL program. See https://opensource.google/projects/cel for more.",
+        },
+        "peeredNetworkIpRange": {
+          "description": "Immutable. Subnet IP range within the peered network. This is specified in CIDR notation with a slash and the subnet prefix size. You can optionally specify an IP address before the subnet prefix value. e.g. `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a prefix size of 29 bits. `/16` would specify a prefix size of 16 bits, with an automatically determined IP within the peered VPC. If unspecified, a value of `/24` will be used.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3303,191 +3845,6 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
-        },
-        "httpDelivery": {
-          "description": "Configuration for HTTP delivery.",
-          "$ref": "HTTPDelivery"
-        },
-        "slackDelivery": {
-          "description": "Configuration for Slack delivery.",
-          "$ref": "SlackDelivery"
-        },
-        "smtpDelivery": {
-          "description": "Configuration for SMTP (email) delivery.",
-          "$ref": "SMTPDelivery"
-        },
-        "structDelivery": {
-          "description": "Escape hatch for users to supply custom delivery configs.",
-          "type": "object",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": {
-            "description": "Properties of the object.",
-            "type": "any",
-            "format": null,
-            "enum": [],
-            "enumDescriptions": [],
-            "properties": {},
-            "additionalProperties": null,
-            "items": null
-          },
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "NotifierConfig": {
-      "id": "NotifierConfig",
-      "description": "NotifierConfig is the top-level configuration message.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "apiVersion": {
-          "description": "The API version of this configuration format.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "kind": {
-          "description": "The type of notifier to use (e.g. SMTPNotifier).",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "metadata": {
-          "description": "Metadata for referring to/handling/deploying this notifier.",
-          "$ref": "NotifierMetadata"
-        },
-        "spec": {
-          "description": "The actual configuration for this notifier.",
-          "$ref": "NotifierSpec"
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "NotifierMetadata": {
-      "id": "NotifierMetadata",
-      "description": "NotifierMetadata contains the data which can be used to reference or describe this notifier.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "name": {
-          "description": "The human-readable and user-given name for the notifier. For example: \"repo-merge-email-notifier\".",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "notifier": {
-          "description": "The string representing the name and version of notifier to deploy. Expected to be of the form of \"/:\". For example: \"gcr.io/my-project/notifiers/smtp:1.2.34\".",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "NotifierSecret": {
-      "id": "NotifierSecret",
-      "description": "NotifierSecret is the container that maps a secret name (reference) to its Google Cloud Secret Manager resource path.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "name": {
-          "description": "Name is the local name of the secret, such as the verbatim string \"my-smtp-password\".",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "value": {
-          "description": "Value is interpreted to be a resource path for fetching the actual (versioned) secret data for this secret. For example, this would be a Google Cloud Secret Manager secret version resource path like: \"projects/my-project/secrets/my-secret/versions/latest\".",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "NotifierSecretRef": {
-      "id": "NotifierSecretRef",
-      "description": "NotifierSecretRef contains the reference to a secret stored in the corresponding NotifierSpec.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "secretRef": {
-          "description": "The value of `secret_ref` should be a `name` that is registered in a `Secret` in the `secrets` list of the `Spec`.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "NotifierSpec": {
-      "id": "NotifierSpec",
-      "description": "NotifierSpec is the configuration container for notifications.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "notification": {
-          "description": "The configuration of this particular notifier.",
-          "$ref": "Notification"
-        },
-        "secrets": {
-          "description": "Configurations for secret resources used by this particular notifier.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "NotifierSecret"
-          }
         }
       },
       "additionalProperties": null,
@@ -3889,6 +4246,46 @@
       "additionalProperties": null,
       "items": null
     },
+    "PythonPackage": {
+      "id": "PythonPackage",
+      "description": "Python package to upload to Artifact Registry upon successful completion of all build steps. A package can encapsulate multiple objects to be uploaded to a single repository.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "paths": {
+          "description": "Path globs used to match files in the build's workspace. For Python/ Twine, this is usually `dist/*`, and sometimes additionally an `.asc` file.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "repository": {
+          "description": "Artifact Registry repository, in the form \"https://$REGION-python.pkg.dev/$PROJECT/$REPOSITORY\" Files in the workspace matching any path pattern will be uploaded to Artifact Registry with this location as a prefix.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ReceiveTriggerWebhookResponse": {
       "id": "ReceiveTriggerWebhookResponse",
       "description": "ReceiveTriggerWebhookResponse [Experimental] is the response object for the ReceiveTriggerWebhook method.",
@@ -3911,6 +4308,22 @@
         "connectedRepository": {
           "description": "The connected repository to remove.",
           "$ref": "BitbucketServerRepositoryId"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RemoveGitLabConnectedRepositoryRequest": {
+      "id": "RemoveGitLabConnectedRepositoryRequest",
+      "description": "RPC request object accepted by RemoveGitLabConnectedRepository RPC method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "connectedRepository": {
+          "description": "The connected repository to remove.",
+          "$ref": "GitLabRepositoryId"
         }
       },
       "additionalProperties": null,
@@ -4017,6 +4430,56 @@
       "additionalProperties": null,
       "items": null
     },
+    "RepositoryEventConfig": {
+      "id": "RepositoryEventConfig",
+      "description": "The configuration of a trigger that creates a build whenever an event from Repo API is received.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "pullRequest": {
+          "description": "Filter to match changes in pull requests.",
+          "$ref": "PullRequestFilter"
+        },
+        "push": {
+          "description": "Filter to match changes in refs like branches, tags.",
+          "$ref": "PushFilter"
+        },
+        "repository": {
+          "description": "The resource name of the Repo API resource.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "repositoryType": {
+          "description": "Output only. The type of the SCM vendor the repository points to.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "REPOSITORY_TYPE_UNSPECIFIED",
+            "GITHUB",
+            "GITHUB_ENTERPRISE",
+            "GITLAB_ENTERPRISE"
+          ],
+          "enumDescriptions": [
+            "If unspecified, RepositoryType defaults to GITHUB.",
+            "The SCM repo is GITHUB.",
+            "The SCM repo is GITHUB Enterprise.",
+            "The SCM repo is GITLAB Enterprise."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Results": {
       "id": "Results",
       "description": "Artifacts created by the build pipeline.",
@@ -4026,7 +4489,7 @@
       "enumDescriptions": [],
       "properties": {
         "artifactManifest": {
-          "description": "Path to the artifact manifest. Only populated when artifacts are uploaded.",
+          "description": "Path to the artifact manifest for non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4036,7 +4499,7 @@
           "items": null
         },
         "artifactTiming": {
-          "description": "Time to push all non-container artifacts.",
+          "description": "Time to push all non-container artifacts to Cloud Storage.",
           "$ref": "TimeSpan"
         },
         "buildStepImages": {
@@ -4087,8 +4550,20 @@
             "$ref": "BuiltImage"
           }
         },
+        "mavenArtifacts": {
+          "description": "Maven artifacts uploaded to Artifact Registry at the end of the build.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "UploadedMavenArtifact"
+          }
+        },
         "numArtifacts": {
-          "description": "Number of artifacts uploaded. Only populated when artifacts are uploaded.",
+          "description": "Number of non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -4096,6 +4571,18 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "pythonPackages": {
+          "description": "Python artifacts uploaded to Artifact Registry at the end of the build.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "UploadedPythonPackage"
+          }
         }
       },
       "additionalProperties": null,
@@ -4167,162 +4654,6 @@
         },
         "triggerId": {
           "description": "Required. ID of the trigger.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "RunWorkflowCustomOperationMetadata": {
-      "id": "RunWorkflowCustomOperationMetadata",
-      "description": "Represents the custom metadata of the RunWorkflow long-running operation.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "apiVersion": {
-          "description": "Output only. API version used to start the operation.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "createTime": {
-          "description": "Output only. The time the operation was created.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "endTime": {
-          "description": "Output only. The time the operation finished running.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "pipelineRunId": {
-          "description": "Output only. ID of the pipeline run created by RunWorkflow.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "requestedCancellation": {
-          "description": "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
-          "type": "boolean",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "target": {
-          "description": "Output only. Server-defined resource path for the target of the operation.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "verb": {
-          "description": "Output only. Name of the verb executed by the operation.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "SMTPDelivery": {
-      "id": "SMTPDelivery",
-      "description": "SMTPDelivery is the delivery configuration for an SMTP (email) notification.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "fromAddress": {
-          "description": "This is the SMTP account/email that appears in the `From:` of the email. If empty, it is assumed to be sender.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "password": {
-          "description": "The SMTP sender's password.",
-          "$ref": "NotifierSecretRef"
-        },
-        "port": {
-          "description": "The SMTP port of the server.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "recipientAddresses": {
-          "description": "This is the list of addresses to which we send the email (i.e. in the `To:` of the email).",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "type": "string",
-            "format": null,
-            "enum": [],
-            "enumDescriptions": [],
-            "properties": {},
-            "additionalProperties": null,
-            "items": null
-          }
-        },
-        "senderAddress": {
-          "description": "This is the SMTP account/email that is used to send the message.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "server": {
-          "description": "The address of the SMTP server.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4444,17 +4775,23 @@
       "additionalProperties": null,
       "items": null
     },
-    "SlackDelivery": {
-      "id": "SlackDelivery",
-      "description": "SlackDelivery is the delivery configuration for delivering Slack messages via webhooks. See Slack webhook documentation at: https://api.slack.com/messaging/webhooks.",
+    "ServiceDirectoryConfig": {
+      "id": "ServiceDirectoryConfig",
+      "description": "ServiceDirectoryConfig represents Service Directory configuration for a SCM host connection.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "webhookUri": {
-          "description": "The secret reference for the Slack webhook URI for sending messages to a channel.",
-          "$ref": "NotifierSecretRef"
+        "service": {
+          "description": "The Service Directory service name. Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -4864,6 +5201,66 @@
       "additionalProperties": null,
       "items": null
     },
+    "UploadedMavenArtifact": {
+      "id": "UploadedMavenArtifact",
+      "description": "A Maven artifact uploaded using the MavenArtifact directive.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fileHashes": {
+          "description": "Hash types and values of the Maven Artifact.",
+          "$ref": "FileHashes"
+        },
+        "pushTiming": {
+          "description": "Output only. Stores timing information for pushing the specified artifact.",
+          "$ref": "TimeSpan"
+        },
+        "uri": {
+          "description": "URI of the uploaded artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UploadedPythonPackage": {
+      "id": "UploadedPythonPackage",
+      "description": "Artifact uploaded using the PythonPackage directive.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fileHashes": {
+          "description": "Hash types and values of the Python Artifact.",
+          "$ref": "FileHashes"
+        },
+        "pushTiming": {
+          "description": "Output only. Stores timing information for pushing the specified artifact.",
+          "$ref": "TimeSpan"
+        },
+        "uri": {
+          "description": "URI of the uploaded artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Volume": {
       "id": "Volume",
       "description": "Volume describes a Docker container volume which is mounted into build steps in order to persist files across build step execution.",
@@ -4987,7 +5384,7 @@
       "enumDescriptions": [],
       "properties": {
         "diskSizeGb": {
-          "description": "Size of the disk attached to the worker, in GB. See [Worker pool config file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema). Specify a value of up to 1000. If `0` is specified, Cloud Build will use a standard disk size.",
+          "description": "Size of the disk attached to the worker, in GB. See [Worker pool config file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema). Specify a value of up to 2000. If `0` is specified, Cloud Build will use a standard disk size.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -5141,6 +5538,46 @@
     }
   },
   "resources": {
+    "githubDotComWebhook": {
+      "resources": {},
+      "methods": {
+        "receive": {
+          "id": "cloudbuild.githubDotComWebhook.receive",
+          "path": "v1/githubDotComWebhook:receive",
+          "httpMethod": "POST",
+          "description": "ReceiveGitHubDotComWebhook is called when the API receives a github.com webhook.",
+          "parameters": {
+            "webhookKey": {
+              "description": "For GitHub Enterprise webhooks, this key is used to associate the webhook request with the GitHubEnterpriseConfig to use for validation.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": {
+            "$ref": "HttpBody"
+          },
+          "response": {
+            "$ref": "Empty"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
     "locations": {
       "resources": {},
       "methods": {
@@ -5654,7 +6091,7 @@
               "description": "Create an association between a GCP project and a GitHub Enterprise server.",
               "parameters": {
                 "gheConfigId": {
-                  "description": "Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig’s resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character",
+                  "description": "Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig's resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -5735,7 +6172,7 @@
                   "repeated": false
                 },
                 "name": {
-                  "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+                  "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5800,7 +6237,7 @@
                   "repeated": false
                 },
                 "name": {
-                  "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+                  "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5902,7 +6339,7 @@
               "description": "Update an association between a GCP project and a GitHub Enterprise server.",
               "parameters": {
                 "name": {
-                  "description": "Optional. The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+                  "description": "Optional. The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -6008,7 +6445,7 @@
                       "description": "List all repositories for a given `BitbucketServerConfig`. This API is experimental.",
                       "parameters": {
                         "pageSize": {
-                          "description": "The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+                          "description": "The maximum number of configs to return. The service may return fewer than this value. The maximum value is 1000; values above 1000 will be coerced to 1000.",
                           "default": null,
                           "location": "query",
                           "required": false,
@@ -6689,6 +7126,410 @@
                 }
               }
             },
+            "gitLabConfigs": {
+              "resources": {
+                "connectedRepositories": {
+                  "resources": {},
+                  "methods": {
+                    "batchCreate": {
+                      "id": "cloudbuild.projects.locations.gitLabConfigs.connectedRepositories.batchCreate",
+                      "path": "v1/{+parent}/connectedRepositories:batchCreate",
+                      "httpMethod": "POST",
+                      "description": "Batch connecting GitLab repositories to Cloud Build. This API is experimental.",
+                      "parameters": {
+                        "parent": {
+                          "description": "The name of the `GitLabConfig` that adds connected repositories. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": {
+                        "$ref": "BatchCreateGitLabConnectedRepositoriesRequest"
+                      },
+                      "response": {
+                        "$ref": "Operation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                },
+                "repos": {
+                  "resources": {},
+                  "methods": {
+                    "list": {
+                      "id": "cloudbuild.projects.locations.gitLabConfigs.repos.list",
+                      "path": "v1/{+parent}/repos",
+                      "httpMethod": "GET",
+                      "description": "List all repositories for a given `GitLabConfig`. This API is experimental",
+                      "parameters": {
+                        "pageSize": {
+                          "description": "The maximum number of repositories to return. The service may return fewer than this value.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "A page token, received from a previous ListGitLabRepositoriesRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListGitLabRepositoriesRequest` must match the call that provided the page token.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. Name of the parent resource.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListGitLabRepositoriesResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                }
+              },
+              "methods": {
+                "create": {
+                  "id": "cloudbuild.projects.locations.gitLabConfigs.create",
+                  "path": "v1/{+parent}/gitLabConfigs",
+                  "httpMethod": "POST",
+                  "description": "Creates a new `GitLabConfig`. This API is experimental",
+                  "parameters": {
+                    "gitlabConfigId": {
+                      "description": "Optional. The ID to use for the GitLabConfig, which will become the final component of the GitLabConfig’s resource name. gitlab_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. Name of the parent resource.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "GitLabConfig"
+                  },
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "delete": {
+                  "id": "cloudbuild.projects.locations.gitLabConfigs.delete",
+                  "path": "v1/{+name}",
+                  "httpMethod": "DELETE",
+                  "description": "Delete a `GitLabConfig`. This API is experimental",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The config resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "get": {
+                  "id": "cloudbuild.projects.locations.gitLabConfigs.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Retrieves a `GitLabConfig`. This API is experimental",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The config resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GitLabConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "cloudbuild.projects.locations.gitLabConfigs.list",
+                  "path": "v1/{+parent}/gitLabConfigs",
+                  "httpMethod": "GET",
+                  "description": "List all `GitLabConfigs` for a given project. This API is experimental",
+                  "parameters": {
+                    "pageSize": {
+                      "description": "The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000;, values above 1000 will be coerced to 1000.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "A page token, received from a previous ‘ListGitlabConfigsRequest’ call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ‘ListGitlabConfigsRequest’ must match the call that provided the page token.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. Name of the parent resource",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "ListGitLabConfigsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "patch": {
+                  "id": "cloudbuild.projects.locations.gitLabConfigs.patch",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates an existing `GitLabConfig`. This API is experimental",
+                  "parameters": {
+                    "name": {
+                      "description": "The resource name for the config.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GitLabConfig"
+                  },
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "removeGitLabConnectedRepository": {
+                  "id": "cloudbuild.projects.locations.gitLabConfigs.removeGitLabConnectedRepository",
+                  "path": "v1/{+config}:removeGitLabConnectedRepository",
+                  "httpMethod": "POST",
+                  "description": "Remove a GitLab repository from a given GitLabConfig's connected repositories. This API is experimental.",
+                  "parameters": {
+                    "config": {
+                      "description": "Required. The name of the `GitLabConfig` to remove a connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "config"
+                  ],
+                  "request": {
+                    "$ref": "RemoveGitLabConnectedRepositoryRequest"
+                  },
+                  "response": {
+                    "$ref": "Empty"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
             "githubEnterpriseConfigs": {
               "resources": {},
               "methods": {
@@ -6699,7 +7540,7 @@
                   "description": "Create an association between a GCP project and a GitHub Enterprise server.",
                   "parameters": {
                     "gheConfigId": {
-                      "description": "Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig’s resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character",
+                      "description": "Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig's resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -6780,7 +7621,7 @@
                       "repeated": false
                     },
                     "name": {
-                      "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+                      "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6845,7 +7686,7 @@
                       "repeated": false
                     },
                     "name": {
-                      "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+                      "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6947,7 +7788,7 @@
                   "description": "Update an association between a GCP project and a GitHub Enterprise server.",
                   "parameters": {
                     "name": {
-                      "description": "Optional. The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/githubEnterpriseConfigs/{$config_id}\"",
+                      "description": "Optional. The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -7412,7 +8253,7 @@
                   "id": "cloudbuild.projects.locations.triggers.run",
                   "path": "v1/{+name}:run",
                   "httpMethod": "POST",
-                  "description": "Runs a `BuildTrigger` at a particular source revision.",
+                  "description": "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers.",
                   "parameters": {
                     "name": {
                       "description": "The name of the `Trigger` to run. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
@@ -8176,7 +9017,7 @@
               "id": "cloudbuild.projects.triggers.run",
               "path": "v1/projects/{projectId}/triggers/{triggerId}:run",
               "httpMethod": "POST",
-              "description": "Runs a `BuildTrigger` at a particular source revision.",
+              "description": "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers.",
               "parameters": {
                 "name": {
                   "description": "The name of the `Trigger` to run. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",

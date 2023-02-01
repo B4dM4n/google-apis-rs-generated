@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [jobs](resources/projects/locations/jobs/struct.JobsActions.html)\n      * [*create*](resources/projects/locations/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/jobs/struct.PatchRequestBuilder.html), [*run*](resources/projects/locations/jobs/struct.RunRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/jobs/struct.TestIamPermissionsRequestBuilder.html)\n      * [executions](resources/projects/locations/jobs/executions/struct.ExecutionsActions.html)\n        * [*delete*](resources/projects/locations/jobs/executions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/jobs/executions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/jobs/executions/struct.ListRequestBuilder.html)\n        * [tasks](resources/projects/locations/jobs/executions/tasks/struct.TasksActions.html)\n          * [*get*](resources/projects/locations/jobs/executions/tasks/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/jobs/executions/tasks/struct.ListRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [services](resources/projects/locations/services/struct.ServicesActions.html)\n      * [*create*](resources/projects/locations/services/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/services/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/services/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/services/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/services/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/services/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/services/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/services/struct.TestIamPermissionsRequestBuilder.html)\n      * [revisions](resources/projects/locations/services/revisions/struct.RevisionsActions.html)\n        * [*delete*](resources/projects/locations/services/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/services/revisions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/services/revisions/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [jobs](resources/projects/locations/jobs/struct.JobsActions.html)\n      * [*create*](resources/projects/locations/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/jobs/struct.PatchRequestBuilder.html), [*run*](resources/projects/locations/jobs/struct.RunRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/jobs/struct.TestIamPermissionsRequestBuilder.html)\n      * [executions](resources/projects/locations/jobs/executions/struct.ExecutionsActions.html)\n        * [*delete*](resources/projects/locations/jobs/executions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/jobs/executions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/jobs/executions/struct.ListRequestBuilder.html)\n        * [tasks](resources/projects/locations/jobs/executions/tasks/struct.TasksActions.html)\n          * [*get*](resources/projects/locations/jobs/executions/tasks/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/jobs/executions/tasks/struct.ListRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html), [*wait*](resources/projects/locations/operations/struct.WaitRequestBuilder.html)\n    * [services](resources/projects/locations/services/struct.ServicesActions.html)\n      * [*create*](resources/projects/locations/services/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/services/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/services/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/services/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/services/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/services/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/services/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/services/struct.TestIamPermissionsRequestBuilder.html)\n      * [revisions](resources/projects/locations/services/revisions/struct.RevisionsActions.html)\n        * [*delete*](resources/projects/locations/services/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/services/revisions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/services/revisions/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -24,13 +25,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub breakglass_justification: ::std::option::Option<String>,
-        #[doc = "The path to a binary authorization policy. Format: projects/{project}/platforms/cloudRun/{policy-name}"]
-        #[serde(
-            rename = "policy",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub policy: ::std::option::Option<String>,
         #[doc = "If True, indicates to use the default project’s binary authorization policy. If False, binary authorization will be disabled."]
         #[serde(
             rename = "useDefault",
@@ -93,14 +87,6 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRunV2Condition {
-        #[doc = "A reason for the domain mapping condition."]
-        #[serde(
-            rename = "domainMappingReason",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub domain_mapping_reason:
-            ::std::option::Option<crate::schemas::GoogleCloudRunV2ConditionDomainMappingReason>,
         #[doc = "A reason for the execution condition."]
         #[serde(
             rename = "executionReason",
@@ -109,14 +95,6 @@ pub mod schemas {
         )]
         pub execution_reason:
             ::std::option::Option<crate::schemas::GoogleCloudRunV2ConditionExecutionReason>,
-        #[doc = "A reason for the internal condition."]
-        #[serde(
-            rename = "internalReason",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub internal_reason:
-            ::std::option::Option<crate::schemas::GoogleCloudRunV2ConditionInternalReason>,
         #[doc = "Last time the condition transitioned from one status to another."]
         #[serde(
             rename = "lastTransitionTime",
@@ -179,141 +157,9 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudRunV2ConditionDomainMappingReason {
-        #[doc = "Certificate already exists."]
-        CertificateAlreadyExists,
-        #[doc = "Certificate issuance failed."]
-        CertificateFailed,
-        #[doc = "Certificate issuance pending."]
-        CertificatePending,
-        #[doc = "Default value."]
-        DomainMappingReasonUndefined,
-        #[doc = "Mapping already exists."]
-        MappingAlreadyExists,
-        #[doc = "Insufficient permissions."]
-        PermissionDenied,
-        #[doc = "Internal route is not yet ready."]
-        RouteNotReady,
-    }
-    impl GoogleCloudRunV2ConditionDomainMappingReason {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                GoogleCloudRunV2ConditionDomainMappingReason::CertificateAlreadyExists => {
-                    "CERTIFICATE_ALREADY_EXISTS"
-                }
-                GoogleCloudRunV2ConditionDomainMappingReason::CertificateFailed => {
-                    "CERTIFICATE_FAILED"
-                }
-                GoogleCloudRunV2ConditionDomainMappingReason::CertificatePending => {
-                    "CERTIFICATE_PENDING"
-                }
-                GoogleCloudRunV2ConditionDomainMappingReason::DomainMappingReasonUndefined => {
-                    "DOMAIN_MAPPING_REASON_UNDEFINED"
-                }
-                GoogleCloudRunV2ConditionDomainMappingReason::MappingAlreadyExists => {
-                    "MAPPING_ALREADY_EXISTS"
-                }
-                GoogleCloudRunV2ConditionDomainMappingReason::PermissionDenied => {
-                    "PERMISSION_DENIED"
-                }
-                GoogleCloudRunV2ConditionDomainMappingReason::RouteNotReady => "ROUTE_NOT_READY",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleCloudRunV2ConditionDomainMappingReason {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudRunV2ConditionDomainMappingReason {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<GoogleCloudRunV2ConditionDomainMappingReason, ()> {
-            Ok(match s {
-                "CERTIFICATE_ALREADY_EXISTS" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::CertificateAlreadyExists
-                }
-                "CERTIFICATE_FAILED" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::CertificateFailed
-                }
-                "CERTIFICATE_PENDING" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::CertificatePending
-                }
-                "DOMAIN_MAPPING_REASON_UNDEFINED" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::DomainMappingReasonUndefined
-                }
-                "MAPPING_ALREADY_EXISTS" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::MappingAlreadyExists
-                }
-                "PERMISSION_DENIED" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::PermissionDenied
-                }
-                "ROUTE_NOT_READY" => GoogleCloudRunV2ConditionDomainMappingReason::RouteNotReady,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudRunV2ConditionDomainMappingReason {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudRunV2ConditionDomainMappingReason {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRunV2ConditionDomainMappingReason {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "CERTIFICATE_ALREADY_EXISTS" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::CertificateAlreadyExists
-                }
-                "CERTIFICATE_FAILED" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::CertificateFailed
-                }
-                "CERTIFICATE_PENDING" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::CertificatePending
-                }
-                "DOMAIN_MAPPING_REASON_UNDEFINED" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::DomainMappingReasonUndefined
-                }
-                "MAPPING_ALREADY_EXISTS" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::MappingAlreadyExists
-                }
-                "PERMISSION_DENIED" => {
-                    GoogleCloudRunV2ConditionDomainMappingReason::PermissionDenied
-                }
-                "ROUTE_NOT_READY" => GoogleCloudRunV2ConditionDomainMappingReason::RouteNotReady,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2ConditionDomainMappingReason {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2ConditionDomainMappingReason {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRunV2ConditionExecutionReason {
+        #[doc = "The execution was cancelled by users."]
+        Cancelled,
         #[doc = "Default value."]
         ExecutionReasonUndefined,
         #[doc = "Internal system error getting execution status. System will retry."]
@@ -324,6 +170,7 @@ pub mod schemas {
     impl GoogleCloudRunV2ConditionExecutionReason {
         pub fn as_str(self) -> &'static str {
             match self {
+                GoogleCloudRunV2ConditionExecutionReason::Cancelled => "CANCELLED",
                 GoogleCloudRunV2ConditionExecutionReason::ExecutionReasonUndefined => {
                     "EXECUTION_REASON_UNDEFINED"
                 }
@@ -345,6 +192,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudRunV2ConditionExecutionReason, ()> {
             Ok(match s {
+                "CANCELLED" => GoogleCloudRunV2ConditionExecutionReason::Cancelled,
                 "EXECUTION_REASON_UNDEFINED" => {
                     GoogleCloudRunV2ConditionExecutionReason::ExecutionReasonUndefined
                 }
@@ -376,6 +224,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "CANCELLED" => GoogleCloudRunV2ConditionExecutionReason::Cancelled,
                 "EXECUTION_REASON_UNDEFINED" => {
                     GoogleCloudRunV2ConditionExecutionReason::ExecutionReasonUndefined
                 }
@@ -403,146 +252,7 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudRunV2ConditionInternalReason {
-        #[doc = "Assigning traffic; this is a transient reason."]
-        AssigningTraffic,
-        #[doc = "Internal configuration is missing; this is usually a transient reason."]
-        ConfigurationMissing,
-        #[doc = "The revision name provided conflicts with an existing one."]
-        ConflictingRevisionName,
-        #[doc = "Default value."]
-        InternalReasonUndefined,
-        #[doc = "Revision is missing; this is usually a transient reason."]
-        RevisionMissing,
-        #[doc = "The revision can’t be created because it violates an org policy setting."]
-        RevisionOrgPolicyViolation,
-        #[doc = "Updating GCFv2 URI data; this is a transient reason."]
-        UpdatingGcfv2UriData,
-        #[doc = "Updating ingress traffic settings; this is a transient reason."]
-        UpdatingIngressTrafficAllowed,
-    }
-    impl GoogleCloudRunV2ConditionInternalReason {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                GoogleCloudRunV2ConditionInternalReason::AssigningTraffic => "ASSIGNING_TRAFFIC",
-                GoogleCloudRunV2ConditionInternalReason::ConfigurationMissing => {
-                    "CONFIGURATION_MISSING"
-                }
-                GoogleCloudRunV2ConditionInternalReason::ConflictingRevisionName => {
-                    "CONFLICTING_REVISION_NAME"
-                }
-                GoogleCloudRunV2ConditionInternalReason::InternalReasonUndefined => {
-                    "INTERNAL_REASON_UNDEFINED"
-                }
-                GoogleCloudRunV2ConditionInternalReason::RevisionMissing => "REVISION_MISSING",
-                GoogleCloudRunV2ConditionInternalReason::RevisionOrgPolicyViolation => {
-                    "REVISION_ORG_POLICY_VIOLATION"
-                }
-                GoogleCloudRunV2ConditionInternalReason::UpdatingGcfv2UriData => {
-                    "UPDATING_GCFV2_URI_DATA"
-                }
-                GoogleCloudRunV2ConditionInternalReason::UpdatingIngressTrafficAllowed => {
-                    "UPDATING_INGRESS_TRAFFIC_ALLOWED"
-                }
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleCloudRunV2ConditionInternalReason {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudRunV2ConditionInternalReason {
-        type Err = ();
-        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRunV2ConditionInternalReason, ()> {
-            Ok(match s {
-                "ASSIGNING_TRAFFIC" => GoogleCloudRunV2ConditionInternalReason::AssigningTraffic,
-                "CONFIGURATION_MISSING" => {
-                    GoogleCloudRunV2ConditionInternalReason::ConfigurationMissing
-                }
-                "CONFLICTING_REVISION_NAME" => {
-                    GoogleCloudRunV2ConditionInternalReason::ConflictingRevisionName
-                }
-                "INTERNAL_REASON_UNDEFINED" => {
-                    GoogleCloudRunV2ConditionInternalReason::InternalReasonUndefined
-                }
-                "REVISION_MISSING" => GoogleCloudRunV2ConditionInternalReason::RevisionMissing,
-                "REVISION_ORG_POLICY_VIOLATION" => {
-                    GoogleCloudRunV2ConditionInternalReason::RevisionOrgPolicyViolation
-                }
-                "UPDATING_GCFV2_URI_DATA" => {
-                    GoogleCloudRunV2ConditionInternalReason::UpdatingGcfv2UriData
-                }
-                "UPDATING_INGRESS_TRAFFIC_ALLOWED" => {
-                    GoogleCloudRunV2ConditionInternalReason::UpdatingIngressTrafficAllowed
-                }
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudRunV2ConditionInternalReason {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudRunV2ConditionInternalReason {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRunV2ConditionInternalReason {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "ASSIGNING_TRAFFIC" => GoogleCloudRunV2ConditionInternalReason::AssigningTraffic,
-                "CONFIGURATION_MISSING" => {
-                    GoogleCloudRunV2ConditionInternalReason::ConfigurationMissing
-                }
-                "CONFLICTING_REVISION_NAME" => {
-                    GoogleCloudRunV2ConditionInternalReason::ConflictingRevisionName
-                }
-                "INTERNAL_REASON_UNDEFINED" => {
-                    GoogleCloudRunV2ConditionInternalReason::InternalReasonUndefined
-                }
-                "REVISION_MISSING" => GoogleCloudRunV2ConditionInternalReason::RevisionMissing,
-                "REVISION_ORG_POLICY_VIOLATION" => {
-                    GoogleCloudRunV2ConditionInternalReason::RevisionOrgPolicyViolation
-                }
-                "UPDATING_GCFV2_URI_DATA" => {
-                    GoogleCloudRunV2ConditionInternalReason::UpdatingGcfv2UriData
-                }
-                "UPDATING_INGRESS_TRAFFIC_ALLOWED" => {
-                    GoogleCloudRunV2ConditionInternalReason::UpdatingIngressTrafficAllowed
-                }
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2ConditionInternalReason {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2ConditionInternalReason {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRunV2ConditionReason {
-        #[doc = "There was a build error."]
-        BuildStepFailed,
         #[doc = "Default value."]
         CommonReasonUndefined,
         #[doc = "Container image policy authorization check failed."]
@@ -559,14 +269,14 @@ pub mod schemas {
         EncryptionKeyPermissionDenied,
         #[doc = "System will retry immediately."]
         ImmediateRetry,
+        #[doc = "An internal error occurred. Further information may be in the message."]
+        Internal,
         #[doc = "System will retry later; current attempt failed."]
         PostponedRetry,
         #[doc = "Timed out waiting for completion."]
         ProgressDeadlineExceeded,
         #[doc = "Revision creation process failed."]
         RevisionFailed,
-        #[doc = "The internal route is missing."]
-        RouteMissing,
         #[doc = "At least one Access check on secrets failed."]
         SecretsAccessCheckFailed,
         #[doc = "Reason unknown. Further details will be in message."]
@@ -577,7 +287,6 @@ pub mod schemas {
     impl GoogleCloudRunV2ConditionReason {
         pub fn as_str(self) -> &'static str {
             match self {
-                GoogleCloudRunV2ConditionReason::BuildStepFailed => "BUILD_STEP_FAILED",
                 GoogleCloudRunV2ConditionReason::CommonReasonUndefined => "COMMON_REASON_UNDEFINED",
                 GoogleCloudRunV2ConditionReason::ContainerImageAuthorizationCheckFailed => {
                     "CONTAINER_IMAGE_AUTHORIZATION_CHECK_FAILED"
@@ -596,12 +305,12 @@ pub mod schemas {
                     "ENCRYPTION_KEY_PERMISSION_DENIED"
                 }
                 GoogleCloudRunV2ConditionReason::ImmediateRetry => "IMMEDIATE_RETRY",
+                GoogleCloudRunV2ConditionReason::Internal => "INTERNAL",
                 GoogleCloudRunV2ConditionReason::PostponedRetry => "POSTPONED_RETRY",
                 GoogleCloudRunV2ConditionReason::ProgressDeadlineExceeded => {
                     "PROGRESS_DEADLINE_EXCEEDED"
                 }
                 GoogleCloudRunV2ConditionReason::RevisionFailed => "REVISION_FAILED",
-                GoogleCloudRunV2ConditionReason::RouteMissing => "ROUTE_MISSING",
                 GoogleCloudRunV2ConditionReason::SecretsAccessCheckFailed => {
                     "SECRETS_ACCESS_CHECK_FAILED"
                 }
@@ -619,7 +328,6 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRunV2ConditionReason, ()> {
             Ok(match s {
-                "BUILD_STEP_FAILED" => GoogleCloudRunV2ConditionReason::BuildStepFailed,
                 "COMMON_REASON_UNDEFINED" => GoogleCloudRunV2ConditionReason::CommonReasonUndefined,
                 "CONTAINER_IMAGE_AUTHORIZATION_CHECK_FAILED" => {
                     GoogleCloudRunV2ConditionReason::ContainerImageAuthorizationCheckFailed
@@ -638,12 +346,12 @@ pub mod schemas {
                     GoogleCloudRunV2ConditionReason::EncryptionKeyPermissionDenied
                 }
                 "IMMEDIATE_RETRY" => GoogleCloudRunV2ConditionReason::ImmediateRetry,
+                "INTERNAL" => GoogleCloudRunV2ConditionReason::Internal,
                 "POSTPONED_RETRY" => GoogleCloudRunV2ConditionReason::PostponedRetry,
                 "PROGRESS_DEADLINE_EXCEEDED" => {
                     GoogleCloudRunV2ConditionReason::ProgressDeadlineExceeded
                 }
                 "REVISION_FAILED" => GoogleCloudRunV2ConditionReason::RevisionFailed,
-                "ROUTE_MISSING" => GoogleCloudRunV2ConditionReason::RouteMissing,
                 "SECRETS_ACCESS_CHECK_FAILED" => {
                     GoogleCloudRunV2ConditionReason::SecretsAccessCheckFailed
                 }
@@ -673,7 +381,6 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
-                "BUILD_STEP_FAILED" => GoogleCloudRunV2ConditionReason::BuildStepFailed,
                 "COMMON_REASON_UNDEFINED" => GoogleCloudRunV2ConditionReason::CommonReasonUndefined,
                 "CONTAINER_IMAGE_AUTHORIZATION_CHECK_FAILED" => {
                     GoogleCloudRunV2ConditionReason::ContainerImageAuthorizationCheckFailed
@@ -692,12 +399,12 @@ pub mod schemas {
                     GoogleCloudRunV2ConditionReason::EncryptionKeyPermissionDenied
                 }
                 "IMMEDIATE_RETRY" => GoogleCloudRunV2ConditionReason::ImmediateRetry,
+                "INTERNAL" => GoogleCloudRunV2ConditionReason::Internal,
                 "POSTPONED_RETRY" => GoogleCloudRunV2ConditionReason::PostponedRetry,
                 "PROGRESS_DEADLINE_EXCEEDED" => {
                     GoogleCloudRunV2ConditionReason::ProgressDeadlineExceeded
                 }
                 "REVISION_FAILED" => GoogleCloudRunV2ConditionReason::RevisionFailed,
-                "ROUTE_MISSING" => GoogleCloudRunV2ConditionReason::RouteMissing,
                 "SECRETS_ACCESS_CHECK_FAILED" => {
                     GoogleCloudRunV2ConditionReason::SecretsAccessCheckFailed
                 }
@@ -734,6 +441,8 @@ pub mod schemas {
         HealthCheckSkipped,
         #[doc = "A revision with min_instance_count > 0 was created and is reserved, but it was not configured to serve traffic, so it’s not live. This can also happen momentarily during traffic migration."]
         MinInstancesNotProvisioned,
+        #[doc = "A revision with min_instance_count > 0 was created and is waiting for enough instances to begin a traffic migration."]
+        MinInstancesWarming,
         #[doc = "There was no deployment defined. This value is no longer used, but Services created in older versions of the API might contain this value."]
         NoDeployment,
         #[doc = "Revision in Pending state."]
@@ -766,6 +475,9 @@ pub mod schemas {
                 }
                 GoogleCloudRunV2ConditionRevisionReason::MinInstancesNotProvisioned => {
                     "MIN_INSTANCES_NOT_PROVISIONED"
+                }
+                GoogleCloudRunV2ConditionRevisionReason::MinInstancesWarming => {
+                    "MIN_INSTANCES_WARMING"
                 }
                 GoogleCloudRunV2ConditionRevisionReason::NoDeployment => "NO_DEPLOYMENT",
                 GoogleCloudRunV2ConditionRevisionReason::Pending => "PENDING",
@@ -802,6 +514,9 @@ pub mod schemas {
                 }
                 "MIN_INSTANCES_NOT_PROVISIONED" => {
                     GoogleCloudRunV2ConditionRevisionReason::MinInstancesNotProvisioned
+                }
+                "MIN_INSTANCES_WARMING" => {
+                    GoogleCloudRunV2ConditionRevisionReason::MinInstancesWarming
                 }
                 "NO_DEPLOYMENT" => GoogleCloudRunV2ConditionRevisionReason::NoDeployment,
                 "PENDING" => GoogleCloudRunV2ConditionRevisionReason::Pending,
@@ -850,6 +565,9 @@ pub mod schemas {
                 }
                 "MIN_INSTANCES_NOT_PROVISIONED" => {
                     GoogleCloudRunV2ConditionRevisionReason::MinInstancesNotProvisioned
+                }
+                "MIN_INSTANCES_WARMING" => {
+                    GoogleCloudRunV2ConditionRevisionReason::MinInstancesWarming
                 }
                 "NO_DEPLOYMENT" => GoogleCloudRunV2ConditionRevisionReason::NoDeployment,
                 "PENDING" => GoogleCloudRunV2ConditionRevisionReason::Pending,
@@ -1080,14 +798,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub env: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV2EnvVar>>,
-        #[doc = "Required. URL of the Container image in Google Container Registry or Docker More info: https://kubernetes.io/docs/concepts/containers/images"]
+        #[doc = "Required. Name of the container image in Dockerhub, Google Artifact Registry, or Google Container Registry. If the host is not provided, Dockerhub is assumed. More info: https://kubernetes.io/docs/concepts/containers/images"]
         #[serde(
             rename = "image",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image: ::std::option::Option<String>,
-        #[doc = "Name of the container specified as a DNS_LABEL."]
+        #[doc = "Periodic probe of container liveness. Container will be restarted if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[serde(
+            rename = "livenessProbe",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub liveness_probe: ::std::option::Option<crate::schemas::GoogleCloudRunV2Probe>,
+        #[doc = "Name of the container specified as a DNS_LABEL (RFC 1123)."]
         #[serde(
             rename = "name",
             default,
@@ -1108,6 +833,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resources: ::std::option::Option<crate::schemas::GoogleCloudRunV2ResourceRequirements>,
+        #[doc = "Startup probe of application within the container. All other probes are disabled if a startup probe is provided, until it succeeds. Container will not be added to service endpoints if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[serde(
+            rename = "startupProbe",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub startup_probe: ::std::option::Option<crate::schemas::GoogleCloudRunV2Probe>,
         #[doc = "Volume to mount into the container’s filesystem."]
         #[serde(
             rename = "volumeMounts",
@@ -1115,6 +847,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub volume_mounts: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV2VolumeMount>>,
+        #[doc = "Container’s working directory. If not specified, the container runtime’s default will be used, which might be configured in the container image."]
+        #[serde(
+            rename = "workingDir",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub working_dir: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRunV2Container {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1160,44 +899,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRunV2ContainerPort {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudRunV2ContainerStatus {
-        #[doc = "ImageDigest holds the resolved digest for the image specified, regardless of whether a tag or digest was originally specified in the Container object."]
-        #[serde(
-            rename = "imageDigest",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub image_digest: ::std::option::Option<String>,
-        #[doc = "The name of the container, if specified."]
-        #[serde(
-            rename = "name",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub name: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2ContainerStatus {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2ContainerStatus {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1299,6 +1000,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotations: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Output only. The number of tasks which reached phase Cancelled."]
+        #[serde(
+            rename = "cancelledCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cancelled_count: ::std::option::Option<i32>,
         #[doc = "Output only. Represents time when the execution was completed. It is not guaranteed to be set in happens-before order across separate operations."]
         #[serde(
             rename = "completionTime",
@@ -1363,7 +1071,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job: ::std::option::Option<String>,
-        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with ‘run.googleapis.com’ or ‘serving.knative.dev’ namespaces. Those labels are read-only, and user changes will not be preserved."]
+        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels"]
         #[serde(
             rename = "labels",
             default,
@@ -1378,6 +1086,13 @@ pub mod schemas {
         )]
         pub launch_stage:
             ::std::option::Option<crate::schemas::GoogleCloudRunV2ExecutionLaunchStage>,
+        #[doc = "Output only. URI where logs for this execution can be found in Cloud Console."]
+        #[serde(
+            rename = "logUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_uri: ::std::option::Option<String>,
         #[doc = "Output only. The unique name of this Execution."]
         #[serde(
             rename = "name",
@@ -1407,6 +1122,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reconciling: ::std::option::Option<bool>,
+        #[doc = "Output only. The number of tasks which have retried at least once."]
+        #[serde(
+            rename = "retriedCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub retried_count: ::std::option::Option<i32>,
         #[doc = "Output only. The number of actively running tasks."]
         #[serde(
             rename = "runningCount",
@@ -1435,7 +1157,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub task_count: ::std::option::Option<i32>,
-        #[doc = "Output only. Describes the task(s) that will be created when executing an execution."]
+        #[doc = "Output only. The template used to create tasks for this execution."]
         #[serde(
             rename = "template",
             default,
@@ -1589,6 +1311,13 @@ pub mod schemas {
     pub struct GoogleCloudRunV2ExecutionReference {
         #[doc = "Creation timestamp of the execution."]
         #[serde(
+            rename = "completionTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub completion_time: ::std::option::Option<String>,
+        #[doc = "Creation timestamp of the execution."]
+        #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
@@ -1625,14 +1354,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRunV2ExecutionTemplate {
-        #[doc = "KRM-style annotations for the resource."]
+        #[doc = "KRM-style annotations for the resource. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system annotations in v1 now have a corresponding field in v2 ExecutionTemplate."]
         #[serde(
             rename = "annotations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotations: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "KRM-style labels for the resource."]
+        #[doc = "KRM-style labels for the resource. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 ExecutionTemplate."]
         #[serde(
             rename = "labels",
             default,
@@ -1683,8 +1412,122 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRunV2GRPCAction {
+        #[doc = "Port number of the gRPC service. Number must be in the range 1 to 65535. If not specified, defaults to 8080."]
+        #[serde(
+            rename = "port",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub port: ::std::option::Option<i32>,
+        #[doc = "Service is the name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC."]
+        #[serde(
+            rename = "service",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2GRPCAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2GRPCAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRunV2HTTPGetAction {
+        #[doc = "Custom headers to set in the request. HTTP allows repeated headers."]
+        #[serde(
+            rename = "httpHeaders",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub http_headers: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV2HTTPHeader>>,
+        #[doc = "Path to access on the HTTP server. Defaults to ‘/’."]
+        #[serde(
+            rename = "path",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub path: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2HTTPGetAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2HTTPGetAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRunV2HTTPHeader {
+        #[doc = "Required. The header field name"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The header field value"]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2HTTPHeader {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2HTTPHeader {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRunV2Job {
-        #[doc = "KRM-style annotations for the resource. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run will populate some annotations using ‘run.googleapis.com’ or ‘serving.knative.dev’ namespaces. This field follows Kubernetes annotations’ namespacing, limits, and rules. More info: https://kubernetes.io/docs/user-guide/annotations"]
+        #[doc = "KRM-style annotations for the resource. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system annotations in v1 now have a corresponding field in v2 Job. This field follows Kubernetes annotations’ namespacing, limits, and rules. More info: https://kubernetes.io/docs/user-guide/annotations"]
         #[serde(
             rename = "annotations",
             default,
@@ -1720,14 +1563,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV2Condition>>,
-        #[doc = "Output only. Status information for each of the containers specified."]
-        #[serde(
-            rename = "containerStatuses",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub container_statuses:
-            ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV2ContainerStatus>>,
         #[doc = "Output only. The creation time."]
         #[serde(
             rename = "createTime",
@@ -1778,7 +1613,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub generation: ::std::option::Option<i64>,
-        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with ‘run.googleapis.com’ or ‘serving.knative.dev’ namespaces. Those labels are read-only, and user changes will not be preserved."]
+        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 Job."]
         #[serde(
             rename = "labels",
             default,
@@ -2013,7 +1848,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRunV2ListExecutionsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRunV2ListExecutionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2056,7 +1891,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRunV2ListJobsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRunV2ListJobsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2099,7 +1934,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRunV2ListRevisionsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRunV2ListRevisionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2142,7 +1977,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRunV2ListServicesResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRunV2ListServicesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2174,9 +2009,82 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRunV2ListTasksResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRunV2ListTasksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRunV2Probe {
+        #[doc = "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1."]
+        #[serde(
+            rename = "failureThreshold",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_threshold: ::std::option::Option<i32>,
+        #[doc = "GRPC specifies an action involving a gRPC port. Exactly one of httpGet, tcpSocket, or grpc must be specified."]
+        #[serde(
+            rename = "grpc",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub grpc: ::std::option::Option<crate::schemas::GoogleCloudRunV2GRPCAction>,
+        #[doc = "HTTPGet specifies the http request to perform. Exactly one of httpGet, tcpSocket, or grpc must be specified."]
+        #[serde(
+            rename = "httpGet",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub http_get: ::std::option::Option<crate::schemas::GoogleCloudRunV2HTTPGetAction>,
+        #[doc = "Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[serde(
+            rename = "initialDelaySeconds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub initial_delay_seconds: ::std::option::Option<i32>,
+        #[doc = "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds."]
+        #[serde(
+            rename = "periodSeconds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub period_seconds: ::std::option::Option<i32>,
+        #[doc = "TCPSocket specifies an action involving a TCP port. Exactly one of httpGet, tcpSocket, or grpc must be specified."]
+        #[serde(
+            rename = "tcpSocket",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tcp_socket: ::std::option::Option<crate::schemas::GoogleCloudRunV2TCPSocketAction>,
+        #[doc = "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[serde(
+            rename = "timeoutSeconds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub timeout_seconds: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2Probe {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2Probe {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -2199,7 +2107,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cpu_idle: ::std::option::Option<bool>,
-        #[doc = "Only memory and CPU are supported. Note: The only supported values for CPU are ‘1’, ‘2’, and ‘4’. Setting 4 CPU requires at least 2Gi of memory. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
+        #[doc = "Only memory and CPU are supported. Note: The only supported values for CPU are ‘1’, ‘2’, ‘4’, and ‘8’. Setting 4 CPU requires at least 2Gi of memory. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
         #[serde(
             rename = "limits",
             default,
@@ -2244,20 +2152,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV2Condition>>,
-        #[doc = "Indicates whether Confidential Cloud Run is enabled in this Revision."]
-        #[serde(
-            rename = "confidential",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub confidential: ::std::option::Option<bool>,
-        #[doc = "Sets the maximum number of requests that each serving instance can receive."]
-        #[serde(
-            rename = "containerConcurrency",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub container_concurrency: ::std::option::Option<i32>,
         #[doc = "Holds the single container that defines the unit of execution for this Revision."]
         #[serde(
             rename = "containers",
@@ -2286,6 +2180,22 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encryption_key: ::std::option::Option<String>,
+        #[doc = "The action to take if the encryption key is revoked."]
+        #[serde(
+            rename = "encryptionKeyRevocationAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_key_revocation_action: ::std::option::Option<
+            crate::schemas::GoogleCloudRunV2RevisionEncryptionKeyRevocationAction,
+        >,
+        #[doc = "If encryption_key_revocation_action is SHUTDOWN, the duration before shutting down all instances. The minimum increment is 1 hour."]
+        #[serde(
+            rename = "encryptionKeyShutdownDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_key_shutdown_duration: ::std::option::Option<String>,
         #[doc = "Output only. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates."]
         #[serde(
             rename = "etag",
@@ -2316,7 +2226,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub generation: ::std::option::Option<i64>,
-        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with ‘run.googleapis.com’ or ‘serving.knative.dev’ namespaces. Those labels are read-only, and user changes will not be preserved."]
+        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels"]
         #[serde(
             rename = "labels",
             default,
@@ -2338,6 +2248,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub log_uri: ::std::option::Option<String>,
+        #[doc = "Sets the maximum number of requests that each serving instance can receive."]
+        #[serde(
+            rename = "maxInstanceRequestConcurrency",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_instance_request_concurrency: ::std::option::Option<i32>,
         #[doc = "Output only. The unique name of this Revision."]
         #[serde(
             rename = "name",
@@ -2423,6 +2340,70 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRunV2Revision {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRunV2RevisionEncryptionKeyRevocationAction {
+        #[doc = "Unspecified"]
+        EncryptionKeyRevocationActionUnspecified,
+        #[doc = "Prevents the creation of new instances."]
+        PreventNew,
+        #[doc = "Shuts down existing instances, and prevents creation of new ones."]
+        Shutdown,
+    }
+    impl GoogleCloudRunV2RevisionEncryptionKeyRevocationAction {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: EncryptionKeyRevocationActionUnspecified => "ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED" , GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: PreventNew => "PREVENT_NEW" , GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: Shutdown => "SHUTDOWN" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRunV2RevisionEncryptionKeyRevocationAction {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRunV2RevisionEncryptionKeyRevocationAction {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRunV2RevisionEncryptionKeyRevocationAction, ()>
+        {
+            Ok (match s { "ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED" => GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: EncryptionKeyRevocationActionUnspecified , "PREVENT_NEW" => GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: PreventNew , "SHUTDOWN" => GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: Shutdown , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRunV2RevisionEncryptionKeyRevocationAction {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRunV2RevisionEncryptionKeyRevocationAction {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRunV2RevisionEncryptionKeyRevocationAction {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED" => GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: EncryptionKeyRevocationActionUnspecified , "PREVENT_NEW" => GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: PreventNew , "SHUTDOWN" => GoogleCloudRunV2RevisionEncryptionKeyRevocationAction :: Shutdown , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRunV2RevisionEncryptionKeyRevocationAction
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRunV2RevisionEncryptionKeyRevocationAction
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2681,27 +2662,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRunV2RevisionTemplate {
-        #[doc = "KRM-style annotations for the resource."]
+        #[doc = "KRM-style annotations for the resource. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system annotations in v1 now have a corresponding field in v2 RevisionTemplate."]
         #[serde(
             rename = "annotations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotations: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Enables Confidential Cloud Run in Revisions created using this template."]
-        #[serde(
-            rename = "confidential",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub confidential: ::std::option::Option<bool>,
-        #[doc = "Sets the maximum number of requests that each serving instance can receive."]
-        #[serde(
-            rename = "containerConcurrency",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub container_concurrency: ::std::option::Option<i32>,
         #[doc = "Holds the single container that defines the unit of execution for this Revision."]
         #[serde(
             rename = "containers",
@@ -2725,13 +2692,20 @@ pub mod schemas {
         pub execution_environment: ::std::option::Option<
             crate::schemas::GoogleCloudRunV2RevisionTemplateExecutionEnvironment,
         >,
-        #[doc = "KRM-style labels for the resource."]
+        #[doc = "KRM-style labels for the resource. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 RevisionTemplate."]
         #[serde(
             rename = "labels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Sets the maximum number of requests that each serving instance can receive."]
+        #[serde(
+            rename = "maxInstanceRequestConcurrency",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_instance_request_concurrency: ::std::option::Option<i32>,
         #[doc = "The unique name for the revision. If this field is omitted, it will be automatically generated based on the Service name."]
         #[serde(
             rename = "revision",
@@ -2905,7 +2879,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub secret: ::std::option::Option<String>,
-        #[doc = "The Cloud Secret Manager secret version. Can be ‘latest’ for the latest value or an integer for a specific version."]
+        #[doc = "The Cloud Secret Manager secret version. Can be ‘latest’ for the latest version, an integer for a specific version, or a version alias."]
         #[serde(
             rename = "version",
             default,
@@ -2936,7 +2910,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRunV2SecretVolumeSource {
-        #[doc = "Integer representation of mode bits to use on created files by default. Must be a value between 0000 and 0777 (octal), defaulting to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. This might be in conflict with other options that affect the file mode, like fsGroup, and as a result, other mode bits could be set."]
+        #[doc = "Integer representation of mode bits to use on created files by default. Must be a value between 0000 and 0777 (octal), defaulting to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. This might be in conflict with other options that affect the file mode, like fsGroup, and as a result, other mode bits could be set."]
         #[serde(
             rename = "defaultMode",
             default,
@@ -2981,7 +2955,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRunV2Service {
-        #[doc = "Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run will populate some annotations using ‘run.googleapis.com’ or ‘serving.knative.dev’ namespaces. This field follows Kubernetes annotations’ namespacing, limits, and rules. More info: https://kubernetes.io/docs/user-guide/annotations"]
+        #[doc = "Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system annotations in v1 now have a corresponding field in v2 Service. This field follows Kubernetes annotations’ namespacing, limits, and rules. More info: https://kubernetes.io/docs/user-guide/annotations"]
         #[serde(
             rename = "annotations",
             default,
@@ -3059,7 +3033,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expire_time: ::std::option::Option<String>,
-        #[doc = "Output only. A number that monotonically increases every time the user modifies the desired state."]
+        #[doc = "Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`."]
         #[serde(
             rename = "generation",
             default,
@@ -3074,7 +3048,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ingress: ::std::option::Option<crate::schemas::GoogleCloudRunV2ServiceIngress>,
-        #[doc = "Map of string keys and values that can be used to organize and categorize objects. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with ‘run.googleapis.com’ or ‘serving.knative.dev’ namespaces. Those labels are read-only, and user changes will not be preserved."]
+        #[doc = "Map of string keys and values that can be used to organize and categorize objects. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 Service."]
         #[serde(
             rename = "labels",
             default,
@@ -3116,7 +3090,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. The generation of this Service currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run."]
+        #[doc = "Output only. The generation of this Service currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -3398,6 +3372,37 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRunV2TCPSocketAction {
+        #[doc = "Port number to access on the container. Must be in the range 1 to 65535. If not specified, defaults to 8080."]
+        #[serde(
+            rename = "port",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub port: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2TCPSocketAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2TCPSocketAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudRunV2Task {
         #[doc = "KRM-style annotations for the resource."]
@@ -3500,7 +3505,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job: ::std::option::Option<String>,
-        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with ‘run.googleapis.com’ or ‘serving.knative.dev’ namespaces. Those labels are read-only, and user changes will not be preserved."]
+        #[doc = "KRM-style labels for the resource. User-provided labels are shared with Google’s billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels"]
         #[serde(
             rename = "labels",
             default,
@@ -3515,13 +3520,13 @@ pub mod schemas {
         )]
         pub last_attempt_result:
             ::std::option::Option<crate::schemas::GoogleCloudRunV2TaskAttemptResult>,
-        #[doc = "Set the launch stage to a preview stage on write to allow use of preview features in that stage. On read, describes whether the resource uses preview features. Launch Stages are defined at [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages)."]
+        #[doc = "Output only. URI where logs for this execution can be found in Cloud Console."]
         #[serde(
-            rename = "launchStage",
+            rename = "logUri",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub launch_stage: ::std::option::Option<crate::schemas::GoogleCloudRunV2TaskLaunchStage>,
+        pub log_uri: ::std::option::Option<String>,
         #[doc = "Number of retries allowed per Task, before marking this Task failed."]
         #[serde(
             rename = "maxRetries",
@@ -3710,113 +3715,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRunV2TaskExecutionEnvironment {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudRunV2TaskLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests – just like they would in normal production cases."]
-        Alpha,
-        #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
-        Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
-        Deprecated,
-        #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
-        EarlyAccess,
-        #[doc = "GA features are open to all developers and are considered stable and fully qualified for production use."]
-        Ga,
-        #[doc = "Do not use this default value."]
-        LaunchStageUnspecified,
-        #[doc = "Prelaunch features are hidden from users and are only visible internally."]
-        Prelaunch,
-        #[doc = "The feature is not yet implemented. Users can not use it."]
-        Unimplemented,
-    }
-    impl GoogleCloudRunV2TaskLaunchStage {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                GoogleCloudRunV2TaskLaunchStage::Alpha => "ALPHA",
-                GoogleCloudRunV2TaskLaunchStage::Beta => "BETA",
-                GoogleCloudRunV2TaskLaunchStage::Deprecated => "DEPRECATED",
-                GoogleCloudRunV2TaskLaunchStage::EarlyAccess => "EARLY_ACCESS",
-                GoogleCloudRunV2TaskLaunchStage::Ga => "GA",
-                GoogleCloudRunV2TaskLaunchStage::LaunchStageUnspecified => {
-                    "LAUNCH_STAGE_UNSPECIFIED"
-                }
-                GoogleCloudRunV2TaskLaunchStage::Prelaunch => "PRELAUNCH",
-                GoogleCloudRunV2TaskLaunchStage::Unimplemented => "UNIMPLEMENTED",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleCloudRunV2TaskLaunchStage {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudRunV2TaskLaunchStage {
-        type Err = ();
-        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRunV2TaskLaunchStage, ()> {
-            Ok(match s {
-                "ALPHA" => GoogleCloudRunV2TaskLaunchStage::Alpha,
-                "BETA" => GoogleCloudRunV2TaskLaunchStage::Beta,
-                "DEPRECATED" => GoogleCloudRunV2TaskLaunchStage::Deprecated,
-                "EARLY_ACCESS" => GoogleCloudRunV2TaskLaunchStage::EarlyAccess,
-                "GA" => GoogleCloudRunV2TaskLaunchStage::Ga,
-                "LAUNCH_STAGE_UNSPECIFIED" => {
-                    GoogleCloudRunV2TaskLaunchStage::LaunchStageUnspecified
-                }
-                "PRELAUNCH" => GoogleCloudRunV2TaskLaunchStage::Prelaunch,
-                "UNIMPLEMENTED" => GoogleCloudRunV2TaskLaunchStage::Unimplemented,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudRunV2TaskLaunchStage {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudRunV2TaskLaunchStage {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRunV2TaskLaunchStage {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "ALPHA" => GoogleCloudRunV2TaskLaunchStage::Alpha,
-                "BETA" => GoogleCloudRunV2TaskLaunchStage::Beta,
-                "DEPRECATED" => GoogleCloudRunV2TaskLaunchStage::Deprecated,
-                "EARLY_ACCESS" => GoogleCloudRunV2TaskLaunchStage::EarlyAccess,
-                "GA" => GoogleCloudRunV2TaskLaunchStage::Ga,
-                "LAUNCH_STAGE_UNSPECIFIED" => {
-                    GoogleCloudRunV2TaskLaunchStage::LaunchStageUnspecified
-                }
-                "PRELAUNCH" => GoogleCloudRunV2TaskLaunchStage::Prelaunch,
-                "UNIMPLEMENTED" => GoogleCloudRunV2TaskLaunchStage::Unimplemented,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for GoogleCloudRunV2TaskLaunchStage {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudRunV2TaskLaunchStage {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4314,7 +4212,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "The Cloud Secret Manager secret version. Can be ‘latest’ for the latest value or an integer for a specific version."]
+        #[doc = "The Cloud Secret Manager secret version. Can be ‘latest’ for the latest value, or an integer or a secret alias for a specific version."]
         #[serde(
             rename = "version",
             default,
@@ -4429,7 +4327,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRunV2VpcAccess {
-        #[doc = "VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}"]
+        #[doc = "VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number."]
         #[serde(
             rename = "connector",
             default,
@@ -4708,7 +4606,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::GoogleTypeExpr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -4912,7 +4810,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4963,6 +4861,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleLongrunningOperation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleLongrunningWaitOperationRequest {
+        #[doc = "The maximum duration to wait before timing out. If left blank, the wait will be at most the time permitted by the underlying HTTP/RPC protocol. If RPC context deadline is also specified, the shorter one will be used."]
+        #[serde(
+            rename = "timeout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub timeout: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleLongrunningWaitOperationRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleLongrunningWaitOperationRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5326,7 +5255,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Create a Job."]
+                    #[doc = "Creates a Job."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GoogleCloudRunV2Job,
@@ -5370,7 +5299,6 @@ pub mod resources {
                             xgafv: None,
                             name: name.into(),
                             etag: None,
-                            force: None,
                             validate_only: None,
                         }
                     }
@@ -5393,7 +5321,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Get the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies."]
+                    #[doc = "Gets the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies."]
                     pub fn get_iam_policy(
                         &self,
                         resource: impl Into<String>,
@@ -5416,7 +5344,7 @@ pub mod resources {
                             options_requested_policy_version: None,
                         }
                     }
-                    #[doc = "List Jobs."]
+                    #[doc = "Lists Jobs."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -5461,7 +5389,6 @@ pub mod resources {
                             xgafv: None,
                             name: name.into(),
                             allow_missing: None,
-                            update_mask: None,
                             validate_only: None,
                         }
                     }
@@ -5734,7 +5661,6 @@ pub mod resources {
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                     name: String,
                     etag: ::std::option::Option<String>,
-                    force: ::std::option::Option<bool>,
                     validate_only: ::std::option::Option<bool>,
                     access_token: ::std::option::Option<String>,
                     alt: ::std::option::Option<crate::params::Alt>,
@@ -5752,11 +5678,6 @@ pub mod resources {
                     #[doc = "A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates."]
                     pub fn etag(mut self, value: impl Into<String>) -> Self {
                         self.etag = Some(value.into());
-                        self
-                    }
-                    #[doc = "If set to true, the Job and its Executions will be deleted no matter whether any Executions are still running or not. If set to false or unset, the Job and its Executions can only be deleted if there are no running Executions. Any running Execution will fail the deletion."]
-                    pub fn force(mut self, value: bool) -> Self {
-                        self.force = Some(value);
                         self
                     }
                     #[doc = "Indicates that the request should be validated without actually deleting any resources."]
@@ -5888,7 +5809,6 @@ pub mod resources {
                     ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                         let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
                         req = req.query(&[("etag", &self.etag)]);
-                        req = req.query(&[("force", &self.force)]);
                         req = req.query(&[("validateOnly", &self.validate_only)]);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
@@ -6376,7 +6296,7 @@ pub mod resources {
                             #[serde(rename = "jobs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6411,7 +6331,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6467,7 +6387,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6586,12 +6506,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6604,7 +6525,6 @@ pub mod resources {
                     request: crate::schemas::GoogleCloudRunV2Job,
                     name: String,
                     allow_missing: ::std::option::Option<bool>,
-                    update_mask: ::std::option::Option<String>,
                     validate_only: ::std::option::Option<bool>,
                     access_token: ::std::option::Option<String>,
                     alt: ::std::option::Option<crate::params::Alt>,
@@ -6622,11 +6542,6 @@ pub mod resources {
                     #[doc = "If set to true, and if the Job does not exist, it will create a new one. Caller must have both create and update permissions for this call if this is set to true."]
                     pub fn allow_missing(mut self, value: bool) -> Self {
                         self.allow_missing = Some(value);
-                        self
-                    }
-                    #[doc = "The list of fields to be updated."]
-                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
-                        self.update_mask = Some(value.into());
                         self
                     }
                     #[doc = "Indicates that the request should be validated and default values populated, without persisting the request or updating any resources."]
@@ -6759,7 +6674,6 @@ pub mod resources {
                     ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                         let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
                         req = req.query(&[("allowMissing", &self.allow_missing)]);
-                        req = req.query(&[("updateMask", &self.update_mask)]);
                         req = req.query(&[("validateOnly", &self.validate_only)]);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
@@ -7286,7 +7200,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Delete an Execution."]
+                        #[doc = "Deletes an Execution."]
                         pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                             DeleteRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -7307,7 +7221,7 @@ pub mod resources {
                                 validate_only: None,
                             }
                         }
-                        #[doc = "Gets information about a Execution."]
+                        #[doc = "Gets information about an Execution."]
                         pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                             GetRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -7326,7 +7240,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "List Executions from a Job."]
+                        #[doc = "Lists Executions from a Job."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -7825,7 +7739,7 @@ pub mod resources {
                                 #[serde(rename = "executions")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -7862,7 +7776,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -7918,7 +7832,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -8043,12 +7957,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -8082,7 +7997,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "List Tasks from an Execution of a Job."]
+                            #[doc = "Lists Tasks from an Execution of a Job."]
                             pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                                 ListRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -8400,7 +8315,7 @@ pub mod resources {
                                     #[serde(rename = "tasks")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -8437,7 +8352,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -8493,7 +8408,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -8618,12 +8535,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -8699,6 +8617,30 @@ pub mod resources {
                             filter: None,
                             page_size: None,
                             page_token: None,
+                        }
+                    }
+                    #[doc = "Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."]
+                    pub fn wait(
+                        &self,
+                        request: crate::schemas::GoogleLongrunningWaitOperationRequest,
+                        name: impl Into<String>,
+                    ) -> WaitRequestBuilder {
+                        WaitRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
                         }
                     }
                 }
@@ -9157,7 +9099,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -9192,7 +9134,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -9248,7 +9190,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -9367,14 +9309,180 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
+                    }
+                }
+                #[doc = "Created via [OperationsActions::wait()](struct.OperationsActions.html#method.wait)"]
+                #[derive(Debug, Clone)]
+                pub struct WaitRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleLongrunningWaitOperationRequest,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> WaitRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://run.googleapis.com/".to_owned();
+                        output.push_str("v2/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":wait");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
                     }
                 }
             }
@@ -9454,7 +9562,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Get the IAM Access Control policy currently in effect for the given Cloud Run Service. This result does not include any inherited policies."]
+                    #[doc = "Gets the IAM Access Control policy currently in effect for the given Cloud Run Service. This result does not include any inherited policies."]
                     pub fn get_iam_policy(
                         &self,
                         resource: impl Into<String>,
@@ -9477,7 +9585,7 @@ pub mod resources {
                             options_requested_policy_version: None,
                         }
                     }
-                    #[doc = "List Services."]
+                    #[doc = "Lists Services."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -9522,7 +9630,6 @@ pub mod resources {
                             xgafv: None,
                             name: name.into(),
                             allow_missing: None,
-                            update_mask: None,
                             validate_only: None,
                         }
                     }
@@ -9604,7 +9711,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Required. The unique identifier for the Service. The name of the service becomes {parent}/services/{service_id}."]
+                    #[doc = "Required. The unique identifier for the Service. It must begin with letter, and cannot end with hyphen; must contain fewer than 50 characters. The name of the service becomes {parent}/services/{service_id}."]
                     pub fn service_id(mut self, value: impl Into<String>) -> Self {
                         self.service_id = Some(value.into());
                         self
@@ -10403,7 +10510,7 @@ pub mod resources {
                             #[serde(rename = "services")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10438,7 +10545,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10494,7 +10601,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10613,12 +10720,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -10631,7 +10739,6 @@ pub mod resources {
                     request: crate::schemas::GoogleCloudRunV2Service,
                     name: String,
                     allow_missing: ::std::option::Option<bool>,
-                    update_mask: ::std::option::Option<String>,
                     validate_only: ::std::option::Option<bool>,
                     access_token: ::std::option::Option<String>,
                     alt: ::std::option::Option<crate::params::Alt>,
@@ -10649,11 +10756,6 @@ pub mod resources {
                     #[doc = "If set to true, and if the Service does not exist, it will create a new one. Caller must have both create and update permissions for this call if this is set to true."]
                     pub fn allow_missing(mut self, value: bool) -> Self {
                         self.allow_missing = Some(value);
-                        self
-                    }
-                    #[doc = "The list of fields to be updated."]
-                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
-                        self.update_mask = Some(value.into());
                         self
                     }
                     #[doc = "Indicates that the request should be validated and default values populated, without persisting the request or updating any resources."]
@@ -10786,7 +10888,6 @@ pub mod resources {
                     ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                         let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
                         req = req.query(&[("allowMissing", &self.allow_missing)]);
-                        req = req.query(&[("updateMask", &self.update_mask)]);
                         req = req.query(&[("validateOnly", &self.validate_only)]);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
@@ -11148,7 +11249,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Delete a Revision."]
+                        #[doc = "Deletes a Revision."]
                         pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                             DeleteRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -11188,7 +11289,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "List Revisions from a given Service, or from a given location."]
+                        #[doc = "Lists Revisions from a given Service, or from a given location."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -11684,7 +11785,7 @@ pub mod resources {
                                 #[serde(rename = "revisions")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -11721,7 +11822,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -11777,7 +11878,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -11902,12 +12003,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -12200,16 +12302,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -12229,13 +12333,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -12243,7 +12350,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -12270,7 +12377,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

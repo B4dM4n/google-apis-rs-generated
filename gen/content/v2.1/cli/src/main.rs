@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("content2d1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220421")
+            .version("0.1.0-20230123")
             .about("Manage your product listings and accounts for Google Shopping")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -97,13 +97,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("verifyphonenumber").about("Validates verification code to verify phone number for the account. If successful this will overwrite the value of `accounts.businessinformation.phoneNumber`. Only verified phone number will replace an existing verified phone number.");
             accounts0 = accounts0.subcommand(mcmd);
         }
-        let mut accountsbyexternalsellerid0 = SubCommand::with_name("accountsbyexternalsellerid")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get");
-        {
-            let mcmd = SubCommand::with_name("get").about("Gets data of the account with the specified external_seller_id belonging to the MCA with the specified merchant_id.");
-            accountsbyexternalsellerid0 = accountsbyexternalsellerid0.subcommand(mcmd);
-        }
         let mut accountstatuses0 = SubCommand::with_name("accountstatuses")
             .setting(AppSettings::ColoredHelp)
             .about("methods: custombatch, get and list");
@@ -120,15 +113,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists the statuses of the sub-accounts in your Merchant Center account.");
             accountstatuses0 = accountstatuses0.subcommand(mcmd);
-        }
-        let mut accountstatusesbyexternalsellerid0 =
-            SubCommand::with_name("accountstatusesbyexternalsellerid")
-                .setting(AppSettings::ColoredHelp)
-                .about("methods: get");
-        {
-            let mcmd = SubCommand::with_name("get").about("Gets status of the account with the specified external_seller_id belonging to the MCA with the specified merchant_id.");
-            accountstatusesbyexternalsellerid0 =
-                accountstatusesbyexternalsellerid0.subcommand(mcmd);
         }
         let mut accounttax0 = SubCommand::with_name("accounttax")
             .setting(AppSettings::ColoredHelp)
@@ -247,7 +231,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             datafeeds0 = datafeeds0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("fetchnow").about("Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the Products service to update your product data.");
+            let mcmd = SubCommand::with_name("fetchnow").about("Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the [Products service](https://developers.google.com/shopping-content/reference/rest/v2.1/products) to update your product data.");
             datafeeds0 = datafeeds0.subcommand(mcmd);
         }
         {
@@ -291,8 +275,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and requestreview");
         {
-            let mcmd = SubCommand::with_name("get")
-                .about("Retrieves the status and review eligibility for the free listing program.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves the status and review eligibility for the free listing program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account.");
             freelistingsprogram0 = freelistingsprogram0.subcommand(mcmd);
         }
         {
@@ -581,7 +564,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             productdeliverytime0 = productdeliverytime0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets productDeliveryTime by productId");
+            let mcmd =
+                SubCommand::with_name("get").about("Gets `productDeliveryTime` by `productId`.");
             productdeliverytime0 = productdeliverytime0.subcommand(mcmd);
         }
         let mut products0 = SubCommand::with_name("products")
@@ -636,7 +620,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create and get");
         {
-            let mcmd = SubCommand::with_name("create").about("Inserts a promotion for your Merchant Center account. If the promotion already exists, then it will update the promotion instead.");
+            let mcmd = SubCommand::with_name("create").about("Inserts a promotion for your Merchant Center account. If the promotion already exists, then it updates the promotion instead. To [end or delete] (https://developers.google.com/shopping-content/guides/promotions#end_a_promotion) a promotion update the time period of the promotion to a time that has already passed.");
             promotions0 = promotions0.subcommand(mcmd);
         }
         {
@@ -656,6 +640,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update").about("Register a Merchant Center account for pubsub notifications. Note that cloud topic name shouldn't be provided as part of the request.");
             pubsubnotificationsettings0 = pubsubnotificationsettings0.subcommand(mcmd);
         }
+        let mut quotas0 = SubCommand::with_name("quotas")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about(
+                "Lists the daily call quota and usage per method for your Merchant Center account.",
+            );
+            quotas0 = quotas0.subcommand(mcmd);
+        }
         let mut regionalinventory0 = SubCommand::with_name("regionalinventory")
             .setting(AppSettings::ColoredHelp)
             .about("methods: custombatch and insert");
@@ -666,7 +659,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             regionalinventory0 = regionalinventory0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("insert").about("Update the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry.");
+            let mcmd = SubCommand::with_name("insert").about("Updates the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry.");
             regionalinventory0 = regionalinventory0.subcommand(mcmd);
         }
         let mut regions0 = SubCommand::with_name("regions")
@@ -872,8 +865,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and requestreview");
         {
-            let mcmd = SubCommand::with_name("get")
-                .about("Retrieves the status and review eligibility for the Shopping Ads program.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves the status and review eligibility for the Shopping Ads program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account.");
             shoppingadsprogram0 = shoppingadsprogram0.subcommand(mcmd);
         }
         {
@@ -973,6 +965,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(reports0);
         app = app.subcommand(regions0);
         app = app.subcommand(regionalinventory0);
+        app = app.subcommand(quotas0);
         app = app.subcommand(pubsubnotificationsettings0);
         app = app.subcommand(promotions0);
         app = app.subcommand(productstatuses0);
@@ -994,9 +987,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(collections0);
         app = app.subcommand(buyongoogleprograms0);
         app = app.subcommand(accounttax0);
-        app = app.subcommand(accountstatusesbyexternalsellerid0);
         app = app.subcommand(accountstatuses0);
-        app = app.subcommand(accountsbyexternalsellerid0);
         app = app.subcommand(accounts0);
 
         Self { app }

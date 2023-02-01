@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [agent_users](resources/agent_users/struct.AgentUsersActions.html)\n  * [*delete*](resources/agent_users/struct.DeleteRequestBuilder.html)\n* [devices](resources/devices/struct.DevicesActions.html)\n  * [*query*](resources/devices/struct.QueryRequestBuilder.html), [*reportStateAndNotification*](resources/devices/struct.ReportStateAndNotificationRequestBuilder.html), [*requestSync*](resources/devices/struct.RequestSyncRequestBuilder.html), [*sync*](resources/devices/struct.SyncRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Private Service: https://www.googleapis.com/auth/homegraph\n\n`https://www.googleapis.com/auth/homegraph`"]
@@ -83,7 +84,7 @@ pub mod schemas {
         )]
         pub attributes:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "Custom device attributes stored in Home Graph and provided to your smart home Action in each [QUERY](https://developers.google.com/assistant/smarthome/reference/intent/query) and [EXECUTE](https://developers.google.com/assistant/smarthome/reference/intent/execute) intent. Data in this object has a few constraints: No sensitive information, including but not limited to Personally Identifiable Information."]
+        #[doc = "Custom device attributes stored in Home Graph and provided to your smart home Action in each [QUERY](https://developers.home.google.com/cloud-to-cloud/intents/query) and [EXECUTE](https://developers.home.google.com/cloud-to-cloud/intents/execute) intent. Data in this object has a few constraints: No sensitive information, including but not limited to Personally Identifiable Information."]
         #[serde(
             rename = "customData",
             default,
@@ -119,14 +120,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification_supported_by_agent: ::std::option::Option<bool>,
-        #[doc = "Alternate IDs associated with this device. This is used to identify cloud synced devices enabled for [local fulfillment](https://developers.google.com/assistant/smarthome/concepts/local)."]
+        #[doc = "Alternate IDs associated with this device. This is used to identify cloud synced devices enabled for [local fulfillment](https://developers.home.google.com/local-home/overview)."]
         #[serde(
             rename = "otherDeviceIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub other_device_ids: ::std::option::Option<Vec<crate::schemas::AgentOtherDeviceId>>,
-        #[doc = "Hardware type of the device. See [device types](https://developers.google.com/assistant/smarthome/guides)."]
+        #[doc = "Hardware type of the device. See [device types](https://developers.home.google.com/cloud-to-cloud/guides)."]
         #[serde(
             rename = "type",
             default,
@@ -147,7 +148,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub structure_hint: ::std::option::Option<String>,
-        #[doc = "Traits supported by the device. See [device traits](https://developers.google.com/assistant/smarthome/traits)."]
+        #[doc = "Traits supported by the device. See [device traits](https://developers.home.google.com/cloud-to-cloud/traits)."]
         #[serde(
             rename = "traits",
             default,
@@ -454,7 +455,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ReportStateAndNotificationDevice {
-        #[doc = "Notifications metadata for devices. See the **Device NOTIFICATIONS** section of the individual trait [reference guides](https://developers.google.com/assistant/smarthome/traits)."]
+        #[doc = "Notifications metadata for devices. See the **Device NOTIFICATIONS** section of the individual trait [reference guides](https://developers.home.google.com/cloud-to-cloud/traits)."]
         #[serde(
             rename = "notifications",
             default,
@@ -462,7 +463,7 @@ pub mod schemas {
         )]
         pub notifications:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "States of devices to update. See the **Device STATES** section of the individual trait [reference guides](https://developers.google.com/assistant/smarthome/traits)."]
+        #[doc = "States of devices to update. See the **Device STATES** section of the individual trait [reference guides](https://developers.home.google.com/cloud-to-cloud/traits)."]
         #[serde(
             rename = "states",
             default,
@@ -933,7 +934,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Unlinks the given third-party user from your smart home Action. All data related to this user will be deleted. For more details on how users link their accounts, see [fulfillment and authentication](https://developers.google.com/assistant/smarthome/concepts/fulfillment-authentication). The third-party user’s identity is passed in via the `agent_user_id` (see DeleteAgentUserRequest). This request must be authorized using service account credentials from your Actions console project."]
+            #[doc = "Unlinks the given third-party user from your smart home Action. All data related to this user will be deleted. For more details on how users link their accounts, see [fulfillment and authentication](https://developers.home.google.com/cloud-to-cloud/primer/fulfillment). The third-party user’s identity is passed in via the `agent_user_id` (see DeleteAgentUserRequest). This request must be authorized using service account credentials from your Actions console project."]
             pub fn delete(&self, agent_user_id: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -1151,7 +1152,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Reports device state and optionally sends device notifications. Called by your smart home Action when the state of a third-party device changes or you need to send a notification about the device. See [Implement Report State](https://developers.google.com/assistant/smarthome/develop/report-state) for more information. This method updates the device state according to its declared [traits](https://developers.google.com/assistant/smarthome/concepts/devices-traits). Publishing a new state value outside of these traits will result in an `INVALID_ARGUMENT` error response. The third-party user’s identity is passed in via the `agent_user_id` (see ReportStateAndNotificationRequest). This request must be authorized using service account credentials from your Actions console project."]
+            #[doc = "Reports device state and optionally sends device notifications. Called by your smart home Action when the state of a third-party device changes or you need to send a notification about the device. See [Implement Report State](https://developers.home.google.com/cloud-to-cloud/integration/report-state) for more information. This method updates the device state according to its declared [traits](https://developers.home.google.com/cloud-to-cloud/primer/device-types-and-traits). Publishing a new state value outside of these traits will result in an `INVALID_ARGUMENT` error response. The third-party user’s identity is passed in via the `agent_user_id` (see ReportStateAndNotificationRequest). This request must be authorized using service account credentials from your Actions console project."]
             pub fn report_state_and_notification(
                 &self,
                 request: crate::schemas::ReportStateAndNotificationRequest,
@@ -1173,7 +1174,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Requests Google to send an `action.devices.SYNC` [intent](https://developers.google.com/assistant/smarthome/reference/intent/sync) to your smart home Action to update device metadata for the given user. The third-party user’s identity is passed via the `agent_user_id` (see RequestSyncDevicesRequest). This request must be authorized using service account credentials from your Actions console project."]
+            #[doc = "Requests Google to send an `action.devices.SYNC` [intent](https://developers.home.google.com/cloud-to-cloud/intents/sync) to your smart home Action to update device metadata for the given user. The third-party user’s identity is passed via the `agent_user_id` (see RequestSyncDevicesRequest). This request must be authorized using service account credentials from your Actions console project."]
             pub fn request_sync(
                 &self,
                 request: crate::schemas::RequestSyncDevicesRequest,
@@ -2118,15 +2119,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

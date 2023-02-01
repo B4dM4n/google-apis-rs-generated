@@ -7,8 +7,8 @@
   "canonicalName": "Version History",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
-  "title": "Version History API",
+  "revision": "20230130",
+  "title": "versionhistory.googleapis.com API",
   "description": "Version History API - Prod",
   "ownerDomain": "google.com",
   "ownerName": "Google",
@@ -452,9 +452,13 @@
             "MAC_ARM64",
             "LACROS",
             "LACROS_ARM32",
-            "CHROMEOS"
+            "CHROMEOS",
+            "LACROS_ARM64",
+            "FUCHSIA"
           ],
           "enumDescriptions": [
+            "",
+            "",
             "",
             "",
             "",

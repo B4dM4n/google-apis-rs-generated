@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [devices](resources/devices/struct.DevicesActions.html)\n  * [*forceReportUpload*](resources/devices/struct.ForceReportUploadRequestBuilder.html), [*get*](resources/devices/struct.GetRequestBuilder.html), [*getState*](resources/devices/struct.GetStateRequestBuilder.html), [*list*](resources/devices/struct.ListRequestBuilder.html), [*setState*](resources/devices/struct.SetStateRequestBuilder.html), [*update*](resources/devices/struct.UpdateRequestBuilder.html)\n* [enterprises](resources/enterprises/struct.EnterprisesActions.html)\n  * [*acknowledgeNotificationSet*](resources/enterprises/struct.AcknowledgeNotificationSetRequestBuilder.html), [*completeSignup*](resources/enterprises/struct.CompleteSignupRequestBuilder.html), [*createWebToken*](resources/enterprises/struct.CreateWebTokenRequestBuilder.html), [*enroll*](resources/enterprises/struct.EnrollRequestBuilder.html), [*generateSignupUrl*](resources/enterprises/struct.GenerateSignupUrlRequestBuilder.html), [*get*](resources/enterprises/struct.GetRequestBuilder.html), [*getServiceAccount*](resources/enterprises/struct.GetServiceAccountRequestBuilder.html), [*getStoreLayout*](resources/enterprises/struct.GetStoreLayoutRequestBuilder.html), [*list*](resources/enterprises/struct.ListRequestBuilder.html), [*pullNotificationSet*](resources/enterprises/struct.PullNotificationSetRequestBuilder.html), [*sendTestPushNotification*](resources/enterprises/struct.SendTestPushNotificationRequestBuilder.html), [*setAccount*](resources/enterprises/struct.SetAccountRequestBuilder.html), [*setStoreLayout*](resources/enterprises/struct.SetStoreLayoutRequestBuilder.html), [*unenroll*](resources/enterprises/struct.UnenrollRequestBuilder.html)\n* [entitlements](resources/entitlements/struct.EntitlementsActions.html)\n  * [*delete*](resources/entitlements/struct.DeleteRequestBuilder.html), [*get*](resources/entitlements/struct.GetRequestBuilder.html), [*list*](resources/entitlements/struct.ListRequestBuilder.html), [*update*](resources/entitlements/struct.UpdateRequestBuilder.html)\n* [grouplicenses](resources/grouplicenses/struct.GrouplicensesActions.html)\n  * [*get*](resources/grouplicenses/struct.GetRequestBuilder.html), [*list*](resources/grouplicenses/struct.ListRequestBuilder.html)\n* [grouplicenseusers](resources/grouplicenseusers/struct.GrouplicenseusersActions.html)\n  * [*list*](resources/grouplicenseusers/struct.ListRequestBuilder.html)\n* [installs](resources/installs/struct.InstallsActions.html)\n  * [*delete*](resources/installs/struct.DeleteRequestBuilder.html), [*get*](resources/installs/struct.GetRequestBuilder.html), [*list*](resources/installs/struct.ListRequestBuilder.html), [*update*](resources/installs/struct.UpdateRequestBuilder.html)\n* [managedconfigurationsfordevice](resources/managedconfigurationsfordevice/struct.ManagedconfigurationsfordeviceActions.html)\n  * [*delete*](resources/managedconfigurationsfordevice/struct.DeleteRequestBuilder.html), [*get*](resources/managedconfigurationsfordevice/struct.GetRequestBuilder.html), [*list*](resources/managedconfigurationsfordevice/struct.ListRequestBuilder.html), [*update*](resources/managedconfigurationsfordevice/struct.UpdateRequestBuilder.html)\n* [managedconfigurationsforuser](resources/managedconfigurationsforuser/struct.ManagedconfigurationsforuserActions.html)\n  * [*delete*](resources/managedconfigurationsforuser/struct.DeleteRequestBuilder.html), [*get*](resources/managedconfigurationsforuser/struct.GetRequestBuilder.html), [*list*](resources/managedconfigurationsforuser/struct.ListRequestBuilder.html), [*update*](resources/managedconfigurationsforuser/struct.UpdateRequestBuilder.html)\n* [managedconfigurationssettings](resources/managedconfigurationssettings/struct.ManagedconfigurationssettingsActions.html)\n  * [*list*](resources/managedconfigurationssettings/struct.ListRequestBuilder.html)\n* [permissions](resources/permissions/struct.PermissionsActions.html)\n  * [*get*](resources/permissions/struct.GetRequestBuilder.html)\n* [products](resources/products/struct.ProductsActions.html)\n  * [*approve*](resources/products/struct.ApproveRequestBuilder.html), [*generateApprovalUrl*](resources/products/struct.GenerateApprovalUrlRequestBuilder.html), [*get*](resources/products/struct.GetRequestBuilder.html), [*getAppRestrictionsSchema*](resources/products/struct.GetAppRestrictionsSchemaRequestBuilder.html), [*getPermissions*](resources/products/struct.GetPermissionsRequestBuilder.html), [*list*](resources/products/struct.ListRequestBuilder.html), [*unapprove*](resources/products/struct.UnapproveRequestBuilder.html)\n* [serviceaccountkeys](resources/serviceaccountkeys/struct.ServiceaccountkeysActions.html)\n  * [*delete*](resources/serviceaccountkeys/struct.DeleteRequestBuilder.html), [*insert*](resources/serviceaccountkeys/struct.InsertRequestBuilder.html), [*list*](resources/serviceaccountkeys/struct.ListRequestBuilder.html)\n* [storelayoutclusters](resources/storelayoutclusters/struct.StorelayoutclustersActions.html)\n  * [*delete*](resources/storelayoutclusters/struct.DeleteRequestBuilder.html), [*get*](resources/storelayoutclusters/struct.GetRequestBuilder.html), [*insert*](resources/storelayoutclusters/struct.InsertRequestBuilder.html), [*list*](resources/storelayoutclusters/struct.ListRequestBuilder.html), [*update*](resources/storelayoutclusters/struct.UpdateRequestBuilder.html)\n* [storelayoutpages](resources/storelayoutpages/struct.StorelayoutpagesActions.html)\n  * [*delete*](resources/storelayoutpages/struct.DeleteRequestBuilder.html), [*get*](resources/storelayoutpages/struct.GetRequestBuilder.html), [*insert*](resources/storelayoutpages/struct.InsertRequestBuilder.html), [*list*](resources/storelayoutpages/struct.ListRequestBuilder.html), [*update*](resources/storelayoutpages/struct.UpdateRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*generateAuthenticationToken*](resources/users/struct.GenerateAuthenticationTokenRequestBuilder.html), [*get*](resources/users/struct.GetRequestBuilder.html), [*getAvailableProductSet*](resources/users/struct.GetAvailableProductSetRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*revokeDeviceAccess*](resources/users/struct.RevokeDeviceAccessRequestBuilder.html), [*setAvailableProductSet*](resources/users/struct.SetAvailableProductSetRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html)\n* [webapps](resources/webapps/struct.WebappsActions.html)\n  * [*delete*](resources/webapps/struct.DeleteRequestBuilder.html), [*get*](resources/webapps/struct.GetRequestBuilder.html), [*insert*](resources/webapps/struct.InsertRequestBuilder.html), [*list*](resources/webapps/struct.ListRequestBuilder.html), [*update*](resources/webapps/struct.UpdateRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [devices](resources/devices/struct.DevicesActions.html)\n  * [*forceReportUpload*](resources/devices/struct.ForceReportUploadRequestBuilder.html), [*get*](resources/devices/struct.GetRequestBuilder.html), [*getState*](resources/devices/struct.GetStateRequestBuilder.html), [*list*](resources/devices/struct.ListRequestBuilder.html), [*setState*](resources/devices/struct.SetStateRequestBuilder.html), [*update*](resources/devices/struct.UpdateRequestBuilder.html)\n* [enterprises](resources/enterprises/struct.EnterprisesActions.html)\n  * [*acknowledgeNotificationSet*](resources/enterprises/struct.AcknowledgeNotificationSetRequestBuilder.html), [*completeSignup*](resources/enterprises/struct.CompleteSignupRequestBuilder.html), [*createEnrollmentToken*](resources/enterprises/struct.CreateEnrollmentTokenRequestBuilder.html), [*createWebToken*](resources/enterprises/struct.CreateWebTokenRequestBuilder.html), [*enroll*](resources/enterprises/struct.EnrollRequestBuilder.html), [*generateSignupUrl*](resources/enterprises/struct.GenerateSignupUrlRequestBuilder.html), [*get*](resources/enterprises/struct.GetRequestBuilder.html), [*getServiceAccount*](resources/enterprises/struct.GetServiceAccountRequestBuilder.html), [*getStoreLayout*](resources/enterprises/struct.GetStoreLayoutRequestBuilder.html), [*list*](resources/enterprises/struct.ListRequestBuilder.html), [*pullNotificationSet*](resources/enterprises/struct.PullNotificationSetRequestBuilder.html), [*sendTestPushNotification*](resources/enterprises/struct.SendTestPushNotificationRequestBuilder.html), [*setAccount*](resources/enterprises/struct.SetAccountRequestBuilder.html), [*setStoreLayout*](resources/enterprises/struct.SetStoreLayoutRequestBuilder.html), [*unenroll*](resources/enterprises/struct.UnenrollRequestBuilder.html)\n* [entitlements](resources/entitlements/struct.EntitlementsActions.html)\n  * [*delete*](resources/entitlements/struct.DeleteRequestBuilder.html), [*get*](resources/entitlements/struct.GetRequestBuilder.html), [*list*](resources/entitlements/struct.ListRequestBuilder.html), [*update*](resources/entitlements/struct.UpdateRequestBuilder.html)\n* [grouplicenses](resources/grouplicenses/struct.GrouplicensesActions.html)\n  * [*get*](resources/grouplicenses/struct.GetRequestBuilder.html), [*list*](resources/grouplicenses/struct.ListRequestBuilder.html)\n* [grouplicenseusers](resources/grouplicenseusers/struct.GrouplicenseusersActions.html)\n  * [*list*](resources/grouplicenseusers/struct.ListRequestBuilder.html)\n* [installs](resources/installs/struct.InstallsActions.html)\n  * [*delete*](resources/installs/struct.DeleteRequestBuilder.html), [*get*](resources/installs/struct.GetRequestBuilder.html), [*list*](resources/installs/struct.ListRequestBuilder.html), [*update*](resources/installs/struct.UpdateRequestBuilder.html)\n* [managedconfigurationsfordevice](resources/managedconfigurationsfordevice/struct.ManagedconfigurationsfordeviceActions.html)\n  * [*delete*](resources/managedconfigurationsfordevice/struct.DeleteRequestBuilder.html), [*get*](resources/managedconfigurationsfordevice/struct.GetRequestBuilder.html), [*list*](resources/managedconfigurationsfordevice/struct.ListRequestBuilder.html), [*update*](resources/managedconfigurationsfordevice/struct.UpdateRequestBuilder.html)\n* [managedconfigurationsforuser](resources/managedconfigurationsforuser/struct.ManagedconfigurationsforuserActions.html)\n  * [*delete*](resources/managedconfigurationsforuser/struct.DeleteRequestBuilder.html), [*get*](resources/managedconfigurationsforuser/struct.GetRequestBuilder.html), [*list*](resources/managedconfigurationsforuser/struct.ListRequestBuilder.html), [*update*](resources/managedconfigurationsforuser/struct.UpdateRequestBuilder.html)\n* [managedconfigurationssettings](resources/managedconfigurationssettings/struct.ManagedconfigurationssettingsActions.html)\n  * [*list*](resources/managedconfigurationssettings/struct.ListRequestBuilder.html)\n* [permissions](resources/permissions/struct.PermissionsActions.html)\n  * [*get*](resources/permissions/struct.GetRequestBuilder.html)\n* [products](resources/products/struct.ProductsActions.html)\n  * [*approve*](resources/products/struct.ApproveRequestBuilder.html), [*generateApprovalUrl*](resources/products/struct.GenerateApprovalUrlRequestBuilder.html), [*get*](resources/products/struct.GetRequestBuilder.html), [*getAppRestrictionsSchema*](resources/products/struct.GetAppRestrictionsSchemaRequestBuilder.html), [*getPermissions*](resources/products/struct.GetPermissionsRequestBuilder.html), [*list*](resources/products/struct.ListRequestBuilder.html), [*unapprove*](resources/products/struct.UnapproveRequestBuilder.html)\n* [serviceaccountkeys](resources/serviceaccountkeys/struct.ServiceaccountkeysActions.html)\n  * [*delete*](resources/serviceaccountkeys/struct.DeleteRequestBuilder.html), [*insert*](resources/serviceaccountkeys/struct.InsertRequestBuilder.html), [*list*](resources/serviceaccountkeys/struct.ListRequestBuilder.html)\n* [storelayoutclusters](resources/storelayoutclusters/struct.StorelayoutclustersActions.html)\n  * [*delete*](resources/storelayoutclusters/struct.DeleteRequestBuilder.html), [*get*](resources/storelayoutclusters/struct.GetRequestBuilder.html), [*insert*](resources/storelayoutclusters/struct.InsertRequestBuilder.html), [*list*](resources/storelayoutclusters/struct.ListRequestBuilder.html), [*update*](resources/storelayoutclusters/struct.UpdateRequestBuilder.html)\n* [storelayoutpages](resources/storelayoutpages/struct.StorelayoutpagesActions.html)\n  * [*delete*](resources/storelayoutpages/struct.DeleteRequestBuilder.html), [*get*](resources/storelayoutpages/struct.GetRequestBuilder.html), [*insert*](resources/storelayoutpages/struct.InsertRequestBuilder.html), [*list*](resources/storelayoutpages/struct.ListRequestBuilder.html), [*update*](resources/storelayoutpages/struct.UpdateRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*generateAuthenticationToken*](resources/users/struct.GenerateAuthenticationTokenRequestBuilder.html), [*get*](resources/users/struct.GetRequestBuilder.html), [*getAvailableProductSet*](resources/users/struct.GetAvailableProductSetRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*revokeDeviceAccess*](resources/users/struct.RevokeDeviceAccessRequestBuilder.html), [*setAvailableProductSet*](resources/users/struct.SetAvailableProductSetRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html)\n* [webapps](resources/webapps/struct.WebappsActions.html)\n  * [*delete*](resources/webapps/struct.DeleteRequestBuilder.html), [*get*](resources/webapps/struct.GetRequestBuilder.html), [*insert*](resources/webapps/struct.InsertRequestBuilder.html), [*list*](resources/webapps/struct.ListRequestBuilder.html), [*update*](resources/webapps/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage corporate Android devices\n\n`https://www.googleapis.com/auth/androidenterprise`"]
     pub const ANDROIDENTERPRISE: &str = "https://www.googleapis.com/auth/androidenterprise";
@@ -1575,6 +1576,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct CreateEnrollmentTokenResponse {
+        #[doc = "Enrollment token."]
+        #[serde(
+            rename = "enrollmentToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enrollment_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CreateEnrollmentTokenResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateEnrollmentTokenResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Device {
         #[doc = "The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, “123456789abcdef0”."]
         #[serde(
@@ -1927,6 +1959,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub administrator: ::std::option::Option<Vec<crate::schemas::Administrator>>,
+        #[doc = "Output only. Settings for Google-provided user authentication."]
+        #[serde(
+            rename = "googleAuthenticationSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_authentication_settings:
+            ::std::option::Option<crate::schemas::GoogleAuthenticationSettings>,
         #[doc = "The unique ID for the enterprise."]
         #[serde(
             rename = "id",
@@ -2228,6 +2268,174 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for EntitlementsListResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAuthenticationSettings {
+        #[doc = "Whether dedicated devices are allowed."]
+        #[serde(
+            rename = "dedicatedDevicesAllowed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dedicated_devices_allowed: ::std::option::Option<
+            crate::schemas::GoogleAuthenticationSettingsDedicatedDevicesAllowed,
+        >,
+        #[doc = "Whether Google authentication is required."]
+        #[serde(
+            rename = "googleAuthenticationRequired",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_authentication_required: ::std::option::Option<
+            crate::schemas::GoogleAuthenticationSettingsGoogleAuthenticationRequired,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAuthenticationSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAuthenticationSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        #[doc = "Dedicated devices are allowed."]
+        Allowed,
+        #[doc = "This value is unused."]
+        DedicatedDevicesAllowedUnspecified,
+        #[doc = "Dedicated devices are not allowed."]
+        Disallowed,
+    }
+    impl GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAuthenticationSettingsDedicatedDevicesAllowed :: Allowed => "allowed" , GoogleAuthenticationSettingsDedicatedDevicesAllowed :: DedicatedDevicesAllowedUnspecified => "dedicatedDevicesAllowedUnspecified" , GoogleAuthenticationSettingsDedicatedDevicesAllowed :: Disallowed => "disallowed" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAuthenticationSettingsDedicatedDevicesAllowed, ()>
+        {
+            Ok (match s { "allowed" => GoogleAuthenticationSettingsDedicatedDevicesAllowed :: Allowed , "dedicatedDevicesAllowedUnspecified" => GoogleAuthenticationSettingsDedicatedDevicesAllowed :: DedicatedDevicesAllowedUnspecified , "disallowed" => GoogleAuthenticationSettingsDedicatedDevicesAllowed :: Disallowed , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "allowed" => GoogleAuthenticationSettingsDedicatedDevicesAllowed :: Allowed , "dedicatedDevicesAllowedUnspecified" => GoogleAuthenticationSettingsDedicatedDevicesAllowed :: DedicatedDevicesAllowedUnspecified , "disallowed" => GoogleAuthenticationSettingsDedicatedDevicesAllowed :: Disallowed , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAuthenticationSettingsDedicatedDevicesAllowed
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAuthenticationSettingsDedicatedDevicesAllowed {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAuthenticationSettingsGoogleAuthenticationRequired {
+        #[doc = "This value is unused."]
+        GoogleAuthenticationRequiredUnspecified,
+        #[doc = "Google authentication is not required."]
+        NotRequired,
+        #[doc = "User is required to be successfully authenticated by Google."]
+        Required,
+    }
+    impl GoogleAuthenticationSettingsGoogleAuthenticationRequired {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAuthenticationSettingsGoogleAuthenticationRequired :: GoogleAuthenticationRequiredUnspecified => "googleAuthenticationRequiredUnspecified" , GoogleAuthenticationSettingsGoogleAuthenticationRequired :: NotRequired => "notRequired" , GoogleAuthenticationSettingsGoogleAuthenticationRequired :: Required => "required" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAuthenticationSettingsGoogleAuthenticationRequired {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAuthenticationSettingsGoogleAuthenticationRequired {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAuthenticationSettingsGoogleAuthenticationRequired, ()>
+        {
+            Ok (match s { "googleAuthenticationRequiredUnspecified" => GoogleAuthenticationSettingsGoogleAuthenticationRequired :: GoogleAuthenticationRequiredUnspecified , "notRequired" => GoogleAuthenticationSettingsGoogleAuthenticationRequired :: NotRequired , "required" => GoogleAuthenticationSettingsGoogleAuthenticationRequired :: Required , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAuthenticationSettingsGoogleAuthenticationRequired {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAuthenticationSettingsGoogleAuthenticationRequired {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAuthenticationSettingsGoogleAuthenticationRequired {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "googleAuthenticationRequiredUnspecified" => GoogleAuthenticationSettingsGoogleAuthenticationRequired :: GoogleAuthenticationRequiredUnspecified , "notRequired" => GoogleAuthenticationSettingsGoogleAuthenticationRequired :: NotRequired , "required" => GoogleAuthenticationSettingsGoogleAuthenticationRequired :: Required , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAuthenticationSettingsGoogleAuthenticationRequired
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAuthenticationSettingsGoogleAuthenticationRequired
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3895,7 +4103,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Policy {
-        #[doc = "Deprecated. Use autoUpdateMode instead. When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect. “choiceToTheUser” allows the device’s user to configure the app update policy. “always” enables auto updates. “never” disables auto updates. “wifiOnly” enables auto updates only when the device is connected to wifi."]
+        #[doc = "Recommended alternative: autoUpdateMode which is set per app, provides greater flexibility around update frequency. When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect. “choiceToTheUser” allows the device’s user to configure the app update policy. “always” enables auto updates. “never” disables auto updates. “wifiOnly” enables auto updates only when the device is connected to wifi."]
         #[serde(
             rename = "autoUpdatePolicy",
             default,
@@ -4211,6 +4419,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Product {
+        #[doc = "The app restriction schema"]
+        #[serde(
+            rename = "appRestrictionsSchema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_restrictions_schema: ::std::option::Option<crate::schemas::AppRestrictionsSchema>,
         #[doc = "The tracks visible to the enterprise."]
         #[serde(
             rename = "appTracks",
@@ -6420,7 +6635,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for TokenPagination {
+    impl crate::GetNextPageToken<String> for TokenPagination {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -8446,6 +8661,82 @@ pub mod resources {
     pub mod enterprises {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum CreateEnrollmentTokenDeviceType {
+                #[doc = "This device is a dedicated device."]
+                DedicatedDevice,
+                #[doc = "This device is required to have an authenticated user."]
+                KnowledgeWorker,
+                #[doc = "This value is unused"]
+                Unknown,
+            }
+            impl CreateEnrollmentTokenDeviceType {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        CreateEnrollmentTokenDeviceType::DedicatedDevice => "dedicatedDevice",
+                        CreateEnrollmentTokenDeviceType::KnowledgeWorker => "knowledgeWorker",
+                        CreateEnrollmentTokenDeviceType::Unknown => "unknown",
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for CreateEnrollmentTokenDeviceType {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for CreateEnrollmentTokenDeviceType {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<CreateEnrollmentTokenDeviceType, ()> {
+                    Ok(match s {
+                        "dedicatedDevice" => CreateEnrollmentTokenDeviceType::DedicatedDevice,
+                        "knowledgeWorker" => CreateEnrollmentTokenDeviceType::KnowledgeWorker,
+                        "unknown" => CreateEnrollmentTokenDeviceType::Unknown,
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for CreateEnrollmentTokenDeviceType {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for CreateEnrollmentTokenDeviceType {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for CreateEnrollmentTokenDeviceType {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "dedicatedDevice" => CreateEnrollmentTokenDeviceType::DedicatedDevice,
+                        "knowledgeWorker" => CreateEnrollmentTokenDeviceType::KnowledgeWorker,
+                        "unknown" => CreateEnrollmentTokenDeviceType::Unknown,
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for CreateEnrollmentTokenDeviceType {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for CreateEnrollmentTokenDeviceType {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum GetServiceAccountKeyType {
                 #[doc = "Google Credentials File format."]
                 GoogleCredentials,
@@ -8639,6 +8930,29 @@ pub mod resources {
                     xgafv: None,
                     completion_token: None,
                     enterprise_token: None,
+                }
+            }
+            #[doc = "Returns a token for device enrollment. The DPC can encode this token within the QR/NFC/zero-touch enrollment payload or fetch it before calling the on-device API to authenticate the user. The token can be generated for each device or reused across multiple devices."]
+            pub fn create_enrollment_token(
+                &self,
+                enterprise_id: impl Into<String>,
+            ) -> CreateEnrollmentTokenRequestBuilder {
+                CreateEnrollmentTokenRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    enterprise_id: enterprise_id.into(),
+                    device_type: None,
                 }
             }
             #[doc = "Returns a unique token to access an embeddable UI. To generate a web UI, pass the generated token into the managed Google Play javascript API. Each token may only be used to start one UI session. See the javascript API documentation for further information."]
@@ -9151,6 +9465,179 @@ pub mod resources {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                 req = req.query(&[("completionToken", &self.completion_token)]);
                 req = req.query(&[("enterpriseToken", &self.enterprise_token)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [EnterprisesActions::create_enrollment_token()](struct.EnterprisesActions.html#method.create_enrollment_token)"]
+        #[derive(Debug, Clone)]
+        pub struct CreateEnrollmentTokenRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            enterprise_id: String,
+            device_type: ::std::option::Option<
+                crate::resources::enterprises::params::CreateEnrollmentTokenDeviceType,
+            >,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> CreateEnrollmentTokenRequestBuilder<'a> {
+            #[doc = "Whether it’s a dedicated device or a knowledge worker device."]
+            pub fn device_type(
+                mut self,
+                value: crate::resources::enterprises::params::CreateEnrollmentTokenDeviceType,
+            ) -> Self {
+                self.device_type = Some(value);
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::CreateEnrollmentTokenResponse, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::CreateEnrollmentTokenResponse, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://androidenterprise.googleapis.com/".to_owned();
+                output.push_str("androidenterprise/v1/enterprises/");
+                {
+                    let var_as_str = &self.enterprise_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/createEnrollmentToken");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("deviceType", &self.device_type)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -10318,7 +10805,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> PullNotificationSetRequestBuilder<'a> {
-            #[doc = "The request mode for pulling notifications. Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time. Speciying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present. If omitted, defaults to waitForNotifications."]
+            #[doc = "The request mode for pulling notifications. Specifying waitForNotifications will cause the request to block and wait until one or more notifications are present, or return an empty notification list if no notifications are present after some time. Specifying returnImmediately will cause the request to immediately return the pending notifications, or an empty list if no notifications are present. If omitted, defaults to waitForNotifications."]
             pub fn request_mode(
                 mut self,
                 value: crate::resources::enterprises::params::PullNotificationSetRequestMode,
@@ -11068,7 +11555,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Removes an entitlement to an app for a user."]
+            #[doc = "Removes an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn delete(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -11094,7 +11581,7 @@ pub mod resources {
                     entitlement_id: entitlement_id.into(),
                 }
             }
-            #[doc = "Retrieves details of an entitlement."]
+            #[doc = "Retrieves details of an entitlement. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn get(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -11120,7 +11607,7 @@ pub mod resources {
                     entitlement_id: entitlement_id.into(),
                 }
             }
-            #[doc = "Lists all entitlements for the specified user. Only the ID is set."]
+            #[doc = "Lists all entitlements for the specified user. Only the ID is set. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn list(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -11144,7 +11631,7 @@ pub mod resources {
                     user_id: user_id.into(),
                 }
             }
-            #[doc = "Adds or updates an entitlement to an app for a user."]
+            #[doc = "Adds or updates an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn update(
                 &self,
                 request: crate::schemas::Entitlement,
@@ -11844,7 +12331,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Retrieves details of an enterprise’s group license for a product."]
+            #[doc = "Retrieves details of an enterprise’s group license for a product. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn get(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -11868,7 +12355,7 @@ pub mod resources {
                     group_license_id: group_license_id.into(),
                 }
             }
-            #[doc = "Retrieves IDs of all products for which the enterprise has a group license."]
+            #[doc = "Retrieves IDs of all products for which the enterprise has a group license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn list(&self, enterprise_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -12229,7 +12716,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Retrieves the IDs of the users who have been granted entitlements under the license."]
+            #[doc = "Retrieves the IDs of the users who have been granted entitlements under the license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn list(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -15238,7 +15725,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. "]
+            #[doc = "Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. "]
             pub fn approve(
                 &self,
                 request: crate::schemas::ProductsApproveRequest,
@@ -15264,7 +15751,7 @@ pub mod resources {
                     product_id: product_id.into(),
                 }
             }
-            #[doc = "Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day."]
+            #[doc = "Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. "]
             pub fn generate_approval_url(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -15363,7 +15850,7 @@ pub mod resources {
                     product_id: product_id.into(),
                 }
             }
-            #[doc = "Finds approved products that match a query, or all approved products if there is no query."]
+            #[doc = "Finds approved products that match a query, or all approved products if there is no query. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. "]
             pub fn list(&self, enterprise_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -15387,7 +15874,7 @@ pub mod resources {
                     token: None,
                 }
             }
-            #[doc = "Unapproves the specified product (and the relevant app permissions, if any)"]
+            #[doc = "Unapproves the specified product (and the relevant app permissions, if any) **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn unapprove(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -19019,7 +19506,7 @@ pub mod resources {
                     user_id: user_id.into(),
                 }
             }
-            #[doc = "Retrieves the set of products a user is entitled to access."]
+            #[doc = "Retrieves the set of products a user is entitled to access. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn get_available_product_set(
                 &self,
                 enterprise_id: impl Into<String>,
@@ -19115,7 +19602,7 @@ pub mod resources {
                     user_id: user_id.into(),
                 }
             }
-            #[doc = "Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted."]
+            #[doc = "Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations."]
             pub fn set_available_product_set(
                 &self,
                 request: crate::schemas::ProductSet,
@@ -21770,15 +22257,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

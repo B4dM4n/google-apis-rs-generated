@@ -1,6 +1,7 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [userinfo](resources/userinfo/struct.UserinfoActions.html)\n  * [*get*](resources/userinfo/struct.GetRequestBuilder.html)\n  * [v_2](resources/userinfo/v_2/struct.V2Actions.html)\n    * [me](resources/userinfo/v_2/me/struct.MeActions.html)\n      * [*get*](resources/userinfo/v_2/me/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
-    #[doc = "View your email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
+    #[doc = "See your primary Google Account email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
     pub const USERINFO_EMAIL: &str = "https://www.googleapis.com/auth/userinfo.email";
     #[doc = "See your personal info, including any personal info you've made publicly available\n\n`https://www.googleapis.com/auth/userinfo.profile`"]
     pub const USERINFO_PROFILE: &str = "https://www.googleapis.com/auth/userinfo.profile";
@@ -1042,15 +1043,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

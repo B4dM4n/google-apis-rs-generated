@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [backup_runs](resources/backup_runs/struct.BackupRunsActions.html)\n  * [*delete*](resources/backup_runs/struct.DeleteRequestBuilder.html), [*get*](resources/backup_runs/struct.GetRequestBuilder.html), [*insert*](resources/backup_runs/struct.InsertRequestBuilder.html), [*list*](resources/backup_runs/struct.ListRequestBuilder.html)\n* [connect](resources/connect/struct.ConnectActions.html)\n  * [*generateEphemeralCert*](resources/connect/struct.GenerateEphemeralCertRequestBuilder.html), [*get*](resources/connect/struct.GetRequestBuilder.html)\n* [databases](resources/databases/struct.DatabasesActions.html)\n  * [*delete*](resources/databases/struct.DeleteRequestBuilder.html), [*get*](resources/databases/struct.GetRequestBuilder.html), [*insert*](resources/databases/struct.InsertRequestBuilder.html), [*list*](resources/databases/struct.ListRequestBuilder.html), [*patch*](resources/databases/struct.PatchRequestBuilder.html), [*update*](resources/databases/struct.UpdateRequestBuilder.html)\n* [flags](resources/flags/struct.FlagsActions.html)\n  * [*list*](resources/flags/struct.ListRequestBuilder.html)\n* [instances](resources/instances/struct.InstancesActions.html)\n  * [*addServerCa*](resources/instances/struct.AddServerCaRequestBuilder.html), [*clone*](resources/instances/struct.CloneRequestBuilder.html), [*delete*](resources/instances/struct.DeleteRequestBuilder.html), [*demoteMaster*](resources/instances/struct.DemoteMasterRequestBuilder.html), [*export*](resources/instances/struct.ExportRequestBuilder.html), [*failover*](resources/instances/struct.FailoverRequestBuilder.html), [*get*](resources/instances/struct.GetRequestBuilder.html), [*import*](resources/instances/struct.ImportRequestBuilder.html), [*insert*](resources/instances/struct.InsertRequestBuilder.html), [*list*](resources/instances/struct.ListRequestBuilder.html), [*listServerCas*](resources/instances/struct.ListServerCasRequestBuilder.html), [*patch*](resources/instances/struct.PatchRequestBuilder.html), [*promoteReplica*](resources/instances/struct.PromoteReplicaRequestBuilder.html), [*resetSslConfig*](resources/instances/struct.ResetSslConfigRequestBuilder.html), [*restart*](resources/instances/struct.RestartRequestBuilder.html), [*restoreBackup*](resources/instances/struct.RestoreBackupRequestBuilder.html), [*rotateServerCa*](resources/instances/struct.RotateServerCaRequestBuilder.html), [*startReplica*](resources/instances/struct.StartReplicaRequestBuilder.html), [*stopReplica*](resources/instances/struct.StopReplicaRequestBuilder.html), [*truncateLog*](resources/instances/struct.TruncateLogRequestBuilder.html), [*update*](resources/instances/struct.UpdateRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [instances](resources/projects/instances/struct.InstancesActions.html)\n    * [*rescheduleMaintenance*](resources/projects/instances/struct.RescheduleMaintenanceRequestBuilder.html), [*startExternalSync*](resources/projects/instances/struct.StartExternalSyncRequestBuilder.html), [*verifyExternalSyncSettings*](resources/projects/instances/struct.VerifyExternalSyncSettingsRequestBuilder.html)\n* [ssl_certs](resources/ssl_certs/struct.SslCertsActions.html)\n  * [*createEphemeral*](resources/ssl_certs/struct.CreateEphemeralRequestBuilder.html), [*delete*](resources/ssl_certs/struct.DeleteRequestBuilder.html), [*get*](resources/ssl_certs/struct.GetRequestBuilder.html), [*insert*](resources/ssl_certs/struct.InsertRequestBuilder.html), [*list*](resources/ssl_certs/struct.ListRequestBuilder.html)\n* [tiers](resources/tiers/struct.TiersActions.html)\n  * [*list*](resources/tiers/struct.ListRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [backup_runs](resources/backup_runs/struct.BackupRunsActions.html)\n  * [*delete*](resources/backup_runs/struct.DeleteRequestBuilder.html), [*get*](resources/backup_runs/struct.GetRequestBuilder.html), [*insert*](resources/backup_runs/struct.InsertRequestBuilder.html), [*list*](resources/backup_runs/struct.ListRequestBuilder.html)\n* [connect](resources/connect/struct.ConnectActions.html)\n  * [*generateEphemeralCert*](resources/connect/struct.GenerateEphemeralCertRequestBuilder.html), [*get*](resources/connect/struct.GetRequestBuilder.html)\n* [databases](resources/databases/struct.DatabasesActions.html)\n  * [*delete*](resources/databases/struct.DeleteRequestBuilder.html), [*get*](resources/databases/struct.GetRequestBuilder.html), [*insert*](resources/databases/struct.InsertRequestBuilder.html), [*list*](resources/databases/struct.ListRequestBuilder.html), [*patch*](resources/databases/struct.PatchRequestBuilder.html), [*update*](resources/databases/struct.UpdateRequestBuilder.html)\n* [flags](resources/flags/struct.FlagsActions.html)\n  * [*list*](resources/flags/struct.ListRequestBuilder.html)\n* [instances](resources/instances/struct.InstancesActions.html)\n  * [*addServerCa*](resources/instances/struct.AddServerCaRequestBuilder.html), [*clone*](resources/instances/struct.CloneRequestBuilder.html), [*delete*](resources/instances/struct.DeleteRequestBuilder.html), [*demoteMaster*](resources/instances/struct.DemoteMasterRequestBuilder.html), [*export*](resources/instances/struct.ExportRequestBuilder.html), [*failover*](resources/instances/struct.FailoverRequestBuilder.html), [*get*](resources/instances/struct.GetRequestBuilder.html), [*import*](resources/instances/struct.ImportRequestBuilder.html), [*insert*](resources/instances/struct.InsertRequestBuilder.html), [*list*](resources/instances/struct.ListRequestBuilder.html), [*listServerCas*](resources/instances/struct.ListServerCasRequestBuilder.html), [*patch*](resources/instances/struct.PatchRequestBuilder.html), [*promoteReplica*](resources/instances/struct.PromoteReplicaRequestBuilder.html), [*resetSslConfig*](resources/instances/struct.ResetSslConfigRequestBuilder.html), [*restart*](resources/instances/struct.RestartRequestBuilder.html), [*restoreBackup*](resources/instances/struct.RestoreBackupRequestBuilder.html), [*rotateServerCa*](resources/instances/struct.RotateServerCaRequestBuilder.html), [*startReplica*](resources/instances/struct.StartReplicaRequestBuilder.html), [*stopReplica*](resources/instances/struct.StopReplicaRequestBuilder.html), [*truncateLog*](resources/instances/struct.TruncateLogRequestBuilder.html), [*update*](resources/instances/struct.UpdateRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [instances](resources/projects/instances/struct.InstancesActions.html)\n    * [*rescheduleMaintenance*](resources/projects/instances/struct.RescheduleMaintenanceRequestBuilder.html), [*startExternalSync*](resources/projects/instances/struct.StartExternalSyncRequestBuilder.html), [*verifyExternalSyncSettings*](resources/projects/instances/struct.VerifyExternalSyncSettingsRequestBuilder.html)\n* [ssl_certs](resources/ssl_certs/struct.SslCertsActions.html)\n  * [*createEphemeral*](resources/ssl_certs/struct.CreateEphemeralRequestBuilder.html), [*delete*](resources/ssl_certs/struct.DeleteRequestBuilder.html), [*get*](resources/ssl_certs/struct.GetRequestBuilder.html), [*insert*](resources/ssl_certs/struct.InsertRequestBuilder.html), [*list*](resources/ssl_certs/struct.ListRequestBuilder.html)\n* [tiers](resources/tiers/struct.TiersActions.html)\n  * [*list*](resources/tiers/struct.ListRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*get*](resources/users/struct.GetRequestBuilder.html), [*insert*](resources/users/struct.InsertRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*update*](resources/users/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -105,6 +106,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ApiWarningCode {
+        #[doc = "Warning when user provided maxResults parameter exceeds the limit. The returned result set may be incomplete."]
+        MaxResultsExceedsLimit,
         #[doc = "Warning when one or more regions are not reachable. The returned result set may be incomplete."]
         RegionUnreachable,
         #[doc = "An unknown or unset warning type from Cloud SQL API."]
@@ -113,6 +116,7 @@ pub mod schemas {
     impl ApiWarningCode {
         pub fn as_str(self) -> &'static str {
             match self {
+                ApiWarningCode::MaxResultsExceedsLimit => "MAX_RESULTS_EXCEEDS_LIMIT",
                 ApiWarningCode::RegionUnreachable => "REGION_UNREACHABLE",
                 ApiWarningCode::SqlApiWarningCodeUnspecified => "SQL_API_WARNING_CODE_UNSPECIFIED",
             }
@@ -127,6 +131,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<ApiWarningCode, ()> {
             Ok(match s {
+                "MAX_RESULTS_EXCEEDS_LIMIT" => ApiWarningCode::MaxResultsExceedsLimit,
                 "REGION_UNREACHABLE" => ApiWarningCode::RegionUnreachable,
                 "SQL_API_WARNING_CODE_UNSPECIFIED" => ApiWarningCode::SqlApiWarningCodeUnspecified,
                 _ => return Err(()),
@@ -153,6 +158,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "MAX_RESULTS_EXCEEDS_LIMIT" => ApiWarningCode::MaxResultsExceedsLimit,
                 "REGION_UNREACHABLE" => ApiWarningCode::RegionUnreachable,
                 "SQL_API_WARNING_CODE_UNSPECIFIED" => ApiWarningCode::SqlApiWarningCodeUnspecified,
                 _ => {
@@ -509,7 +515,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "The type of this run; can be either “AUTOMATED” or “ON_DEMAND”. This field defaults to “ON_DEMAND” and is ignored, when specified for insert requests."]
+        #[doc = "The type of this run; can be either “AUTOMATED” or “ON_DEMAND” or “FINAL”. This field defaults to “ON_DEMAND” and is ignored, when specified for insert requests."]
         #[serde(
             rename = "type",
             default,
@@ -537,6 +543,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::BackupRunStatus>,
+        #[doc = "Backup time zone to prevent restores to an instance with a different time zone. Now relevant only for SQL Server."]
+        #[serde(
+            rename = "timeZone",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_zone: ::std::option::Option<String>,
         #[doc = "The start time of the backup window during which this the backup was attempted in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`."]
         #[serde(
             rename = "windowStartTime",
@@ -869,7 +882,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for BackupRunsListResponse {
+    impl crate::GetNextPageToken<String> for BackupRunsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -933,7 +946,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CloneContext {
-        #[doc = "The name of the allocated ip range for the private ip CloudSQL instance. For example: “google-managed-services-default”. If set, the cloned instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. Reserved for future use."]
+        #[doc = "The name of the allocated ip range for the private ip Cloud SQL instance. For example: “google-managed-services-default”. If set, the cloned instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. Reserved for future use."]
         #[serde(
             rename = "allocatedIpRange",
             default,
@@ -947,6 +960,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bin_log_coordinates: ::std::option::Option<crate::schemas::BinLogCoordinates>,
+        #[doc = "(SQL Server only) Clone only the specified databases from the source instance. Clone all databases if empty."]
+        #[serde(
+            rename = "databaseNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub database_names: ::std::option::Option<Vec<String>>,
         #[doc = "Name of the Cloud SQL instance to be created as a clone."]
         #[serde(
             rename = "destinationInstanceName",
@@ -1160,6 +1180,12 @@ pub mod schemas {
         Mysql8027,
         #[doc = "The database major version is MySQL 8.0 and the minor version is 28."]
         Mysql8028,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 29."]
+        Mysql8029,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 30."]
+        Mysql8030,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 31."]
+        Mysql8031,
         #[doc = "The database version is PostgreSQL 10."]
         Postgres10,
         #[doc = "The database version is PostgreSQL 11."]
@@ -1203,6 +1229,9 @@ pub mod schemas {
                 ConnectSettingsDatabaseVersion::Mysql8026 => "MYSQL_8_0_26",
                 ConnectSettingsDatabaseVersion::Mysql8027 => "MYSQL_8_0_27",
                 ConnectSettingsDatabaseVersion::Mysql8028 => "MYSQL_8_0_28",
+                ConnectSettingsDatabaseVersion::Mysql8029 => "MYSQL_8_0_29",
+                ConnectSettingsDatabaseVersion::Mysql8030 => "MYSQL_8_0_30",
+                ConnectSettingsDatabaseVersion::Mysql8031 => "MYSQL_8_0_31",
                 ConnectSettingsDatabaseVersion::Postgres10 => "POSTGRES_10",
                 ConnectSettingsDatabaseVersion::Postgres11 => "POSTGRES_11",
                 ConnectSettingsDatabaseVersion::Postgres12 => "POSTGRES_12",
@@ -1245,6 +1274,9 @@ pub mod schemas {
                 "MYSQL_8_0_26" => ConnectSettingsDatabaseVersion::Mysql8026,
                 "MYSQL_8_0_27" => ConnectSettingsDatabaseVersion::Mysql8027,
                 "MYSQL_8_0_28" => ConnectSettingsDatabaseVersion::Mysql8028,
+                "MYSQL_8_0_29" => ConnectSettingsDatabaseVersion::Mysql8029,
+                "MYSQL_8_0_30" => ConnectSettingsDatabaseVersion::Mysql8030,
+                "MYSQL_8_0_31" => ConnectSettingsDatabaseVersion::Mysql8031,
                 "POSTGRES_10" => ConnectSettingsDatabaseVersion::Postgres10,
                 "POSTGRES_11" => ConnectSettingsDatabaseVersion::Postgres11,
                 "POSTGRES_12" => ConnectSettingsDatabaseVersion::Postgres12,
@@ -1299,6 +1331,9 @@ pub mod schemas {
                 "MYSQL_8_0_26" => ConnectSettingsDatabaseVersion::Mysql8026,
                 "MYSQL_8_0_27" => ConnectSettingsDatabaseVersion::Mysql8027,
                 "MYSQL_8_0_28" => ConnectSettingsDatabaseVersion::Mysql8028,
+                "MYSQL_8_0_29" => ConnectSettingsDatabaseVersion::Mysql8029,
+                "MYSQL_8_0_30" => ConnectSettingsDatabaseVersion::Mysql8030,
+                "MYSQL_8_0_31" => ConnectSettingsDatabaseVersion::Mysql8031,
                 "POSTGRES_10" => ConnectSettingsDatabaseVersion::Postgres10,
                 "POSTGRES_11" => ConnectSettingsDatabaseVersion::Postgres11,
                 "POSTGRES_12" => ConnectSettingsDatabaseVersion::Postgres12,
@@ -1665,7 +1700,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub replica_names: ::std::option::Option<Vec<String>>,
-        #[doc = "Initial root password. Use only on creation."]
+        #[doc = "Initial root password. Use only on creation. You must set root passwords before you can connect to PostgreSQL instances."]
         #[serde(
             rename = "rootPassword",
             default,
@@ -1854,6 +1889,12 @@ pub mod schemas {
         Mysql8027,
         #[doc = "The database major version is MySQL 8.0 and the minor version is 28."]
         Mysql8028,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 29."]
+        Mysql8029,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 30."]
+        Mysql8030,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 31."]
+        Mysql8031,
         #[doc = "The database version is PostgreSQL 10."]
         Postgres10,
         #[doc = "The database version is PostgreSQL 11."]
@@ -1897,6 +1938,9 @@ pub mod schemas {
                 DatabaseInstanceDatabaseVersion::Mysql8026 => "MYSQL_8_0_26",
                 DatabaseInstanceDatabaseVersion::Mysql8027 => "MYSQL_8_0_27",
                 DatabaseInstanceDatabaseVersion::Mysql8028 => "MYSQL_8_0_28",
+                DatabaseInstanceDatabaseVersion::Mysql8029 => "MYSQL_8_0_29",
+                DatabaseInstanceDatabaseVersion::Mysql8030 => "MYSQL_8_0_30",
+                DatabaseInstanceDatabaseVersion::Mysql8031 => "MYSQL_8_0_31",
                 DatabaseInstanceDatabaseVersion::Postgres10 => "POSTGRES_10",
                 DatabaseInstanceDatabaseVersion::Postgres11 => "POSTGRES_11",
                 DatabaseInstanceDatabaseVersion::Postgres12 => "POSTGRES_12",
@@ -1939,6 +1983,9 @@ pub mod schemas {
                 "MYSQL_8_0_26" => DatabaseInstanceDatabaseVersion::Mysql8026,
                 "MYSQL_8_0_27" => DatabaseInstanceDatabaseVersion::Mysql8027,
                 "MYSQL_8_0_28" => DatabaseInstanceDatabaseVersion::Mysql8028,
+                "MYSQL_8_0_29" => DatabaseInstanceDatabaseVersion::Mysql8029,
+                "MYSQL_8_0_30" => DatabaseInstanceDatabaseVersion::Mysql8030,
+                "MYSQL_8_0_31" => DatabaseInstanceDatabaseVersion::Mysql8031,
                 "POSTGRES_10" => DatabaseInstanceDatabaseVersion::Postgres10,
                 "POSTGRES_11" => DatabaseInstanceDatabaseVersion::Postgres11,
                 "POSTGRES_12" => DatabaseInstanceDatabaseVersion::Postgres12,
@@ -1993,6 +2040,9 @@ pub mod schemas {
                 "MYSQL_8_0_26" => DatabaseInstanceDatabaseVersion::Mysql8026,
                 "MYSQL_8_0_27" => DatabaseInstanceDatabaseVersion::Mysql8027,
                 "MYSQL_8_0_28" => DatabaseInstanceDatabaseVersion::Mysql8028,
+                "MYSQL_8_0_29" => DatabaseInstanceDatabaseVersion::Mysql8029,
+                "MYSQL_8_0_30" => DatabaseInstanceDatabaseVersion::Mysql8030,
+                "MYSQL_8_0_31" => DatabaseInstanceDatabaseVersion::Mysql8031,
                 "POSTGRES_10" => DatabaseInstanceDatabaseVersion::Postgres10,
                 "POSTGRES_11" => DatabaseInstanceDatabaseVersion::Postgres11,
                 "POSTGRES_12" => DatabaseInstanceDatabaseVersion::Postgres12,
@@ -2693,6 +2743,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExportContext {
+        #[doc = "Options for exporting BAK files (SQL Server-only)"]
+        #[serde(
+            rename = "bakExportOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bak_export_options:
+            ::std::option::Option<crate::schemas::ExportContextBakExportOptions>,
         #[doc = "Options for exporting data as CSV. `MySQL` and `PostgreSQL` instances only."]
         #[serde(
             rename = "csvExportOptions",
@@ -2751,6 +2809,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ExportContext {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ExportContextBakExportOptions {
+        #[doc = "Option for specifying how many stripes to use for the export. If blank, and the value of the striped field is true, the number of stripes is automatically chosen."]
+        #[serde(
+            rename = "stripeCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub stripe_count: ::std::option::Option<i32>,
+        #[doc = "Whether or not the export should be striped."]
+        #[serde(
+            rename = "striped",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub striped: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for ExportContextBakExportOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExportContextBakExportOptions {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3126,6 +3222,12 @@ pub mod schemas {
         Mysql8027,
         #[doc = "The database major version is MySQL 8.0 and the minor version is 28."]
         Mysql8028,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 29."]
+        Mysql8029,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 30."]
+        Mysql8030,
+        #[doc = "The database major version is MySQL 8.0 and the minor version is 31."]
+        Mysql8031,
         #[doc = "The database version is PostgreSQL 10."]
         Postgres10,
         #[doc = "The database version is PostgreSQL 11."]
@@ -3169,6 +3271,9 @@ pub mod schemas {
                 FlagAppliesToItems::Mysql8026 => "MYSQL_8_0_26",
                 FlagAppliesToItems::Mysql8027 => "MYSQL_8_0_27",
                 FlagAppliesToItems::Mysql8028 => "MYSQL_8_0_28",
+                FlagAppliesToItems::Mysql8029 => "MYSQL_8_0_29",
+                FlagAppliesToItems::Mysql8030 => "MYSQL_8_0_30",
+                FlagAppliesToItems::Mysql8031 => "MYSQL_8_0_31",
                 FlagAppliesToItems::Postgres10 => "POSTGRES_10",
                 FlagAppliesToItems::Postgres11 => "POSTGRES_11",
                 FlagAppliesToItems::Postgres12 => "POSTGRES_12",
@@ -3207,6 +3312,9 @@ pub mod schemas {
                 "MYSQL_8_0_26" => FlagAppliesToItems::Mysql8026,
                 "MYSQL_8_0_27" => FlagAppliesToItems::Mysql8027,
                 "MYSQL_8_0_28" => FlagAppliesToItems::Mysql8028,
+                "MYSQL_8_0_29" => FlagAppliesToItems::Mysql8029,
+                "MYSQL_8_0_30" => FlagAppliesToItems::Mysql8030,
+                "MYSQL_8_0_31" => FlagAppliesToItems::Mysql8031,
                 "POSTGRES_10" => FlagAppliesToItems::Postgres10,
                 "POSTGRES_11" => FlagAppliesToItems::Postgres11,
                 "POSTGRES_12" => FlagAppliesToItems::Postgres12,
@@ -3257,6 +3365,9 @@ pub mod schemas {
                 "MYSQL_8_0_26" => FlagAppliesToItems::Mysql8026,
                 "MYSQL_8_0_27" => FlagAppliesToItems::Mysql8027,
                 "MYSQL_8_0_28" => FlagAppliesToItems::Mysql8028,
+                "MYSQL_8_0_29" => FlagAppliesToItems::Mysql8029,
+                "MYSQL_8_0_30" => FlagAppliesToItems::Mysql8030,
+                "MYSQL_8_0_31" => FlagAppliesToItems::Mysql8031,
                 "POSTGRES_10" => FlagAppliesToItems::Postgres10,
                 "POSTGRES_11" => FlagAppliesToItems::Postgres11,
                 "POSTGRES_12" => FlagAppliesToItems::Postgres12,
@@ -3610,6 +3721,13 @@ pub mod schemas {
         )]
         pub encryption_options:
             ::std::option::Option<crate::schemas::ImportContextBakImportOptionsEncryptionOptions>,
+        #[doc = "Whether or not the backup set being restored is striped. Applies only to Cloud SQL for SQL Server."]
+        #[serde(
+            rename = "striped",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub striped: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for ImportContextBakImportOptions {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4123,7 +4241,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for InstancesListResponse {
+    impl crate::GetNextPageToken<String> for InstancesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4278,7 +4396,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct IpConfiguration {
-        #[doc = "The name of the allocated ip range for the private ip CloudSQL instance. For example: “google-managed-services-default”. If set, the instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?.`"]
+        #[doc = "The name of the allocated ip range for the private ip Cloud SQL instance. For example: “google-managed-services-default”. If set, the instance ip will be created in the allocated range. The range name must comply with [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?.`"]
         #[serde(
             rename = "allocatedIpRange",
             default,
@@ -4292,6 +4410,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub authorized_networks: ::std::option::Option<Vec<crate::schemas::AclEntry>>,
+        #[doc = "Controls connectivity to private IP instances from Google services, such as BigQuery."]
+        #[serde(
+            rename = "enablePrivatePathForGoogleCloudServices",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_private_path_for_google_cloud_services: ::std::option::Option<bool>,
         #[doc = "Whether the instance is assigned a public IP address or not."]
         #[serde(
             rename = "ipv4Enabled",
@@ -4998,6 +5123,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum OperationOperationType {
+        #[doc = "Performs auto-restart of an HA-enabled Cloud SQL database for auto recovery."]
+        AutoRestart,
         Backup,
         #[doc = "Performs instance backup."]
         BackupVolume,
@@ -5036,6 +5163,8 @@ pub mod schemas {
         Import,
         #[doc = "Injects a privileged user in mysql for MOB instances."]
         InjectUser,
+        #[doc = "Recovers logs from an instance’s old data disk."]
+        LogCleanup,
         #[doc = "Indicates that the instance is currently in maintenance. Maintenance typically causes the instance to be unavailable for 1-3 minutes."]
         Maintenance,
         #[doc = "Promotes a Cloud SQL replica instance."]
@@ -5068,6 +5197,7 @@ pub mod schemas {
     impl OperationOperationType {
         pub fn as_str(self) -> &'static str {
             match self {
+                OperationOperationType::AutoRestart => "AUTO_RESTART",
                 OperationOperationType::Backup => "BACKUP",
                 OperationOperationType::BackupVolume => "BACKUP_VOLUME",
                 OperationOperationType::Clone => "CLONE",
@@ -5088,6 +5218,7 @@ pub mod schemas {
                 OperationOperationType::Failover => "FAILOVER",
                 OperationOperationType::Import => "IMPORT",
                 OperationOperationType::InjectUser => "INJECT_USER",
+                OperationOperationType::LogCleanup => "LOG_CLEANUP",
                 OperationOperationType::Maintenance => "MAINTENANCE",
                 OperationOperationType::PromoteReplica => "PROMOTE_REPLICA",
                 OperationOperationType::RecreateReplica => "RECREATE_REPLICA",
@@ -5117,6 +5248,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<OperationOperationType, ()> {
             Ok(match s {
+                "AUTO_RESTART" => OperationOperationType::AutoRestart,
                 "BACKUP" => OperationOperationType::Backup,
                 "BACKUP_VOLUME" => OperationOperationType::BackupVolume,
                 "CLONE" => OperationOperationType::Clone,
@@ -5137,6 +5269,7 @@ pub mod schemas {
                 "FAILOVER" => OperationOperationType::Failover,
                 "IMPORT" => OperationOperationType::Import,
                 "INJECT_USER" => OperationOperationType::InjectUser,
+                "LOG_CLEANUP" => OperationOperationType::LogCleanup,
                 "MAINTENANCE" => OperationOperationType::Maintenance,
                 "PROMOTE_REPLICA" => OperationOperationType::PromoteReplica,
                 "RECREATE_REPLICA" => OperationOperationType::RecreateReplica,
@@ -5178,6 +5311,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "AUTO_RESTART" => OperationOperationType::AutoRestart,
                 "BACKUP" => OperationOperationType::Backup,
                 "BACKUP_VOLUME" => OperationOperationType::BackupVolume,
                 "CLONE" => OperationOperationType::Clone,
@@ -5198,6 +5332,7 @@ pub mod schemas {
                 "FAILOVER" => OperationOperationType::Failover,
                 "IMPORT" => OperationOperationType::Import,
                 "INJECT_USER" => OperationOperationType::InjectUser,
+                "LOG_CLEANUP" => OperationOperationType::LogCleanup,
                 "MAINTENANCE" => OperationOperationType::Maintenance,
                 "PROMOTE_REPLICA" => OperationOperationType::PromoteReplica,
                 "RECREATE_REPLICA" => OperationOperationType::RecreateReplica,
@@ -5449,7 +5584,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OperationsListResponse {
+    impl crate::GetNextPageToken<String> for OperationsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5533,7 +5668,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_length: ::std::option::Option<i32>,
-        #[doc = "Minimum interval after which the password can be changed. This flag is only supported for PostgresSQL."]
+        #[doc = "Minimum interval after which the password can be changed. This flag is only supported for PostgreSQL."]
         #[serde(
             rename = "passwordChangeInterval",
             default,
@@ -5952,6 +6087,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub collation: ::std::option::Option<String>,
+        #[doc = "Specifies if connections must use Cloud SQL connectors. Option values include the following: `NOT_REQUIRED` (Cloud SQL instances can be connected without Cloud SQL Connectors) and `REQUIRED` (Only allow connections that use Cloud SQL Connectors) Note that using REQUIRED disables all existing authorized networks. If this field is not specified when creating a new instance, NOT_REQUIRED is used. If this field is not specified when patching or updating an existing instance, it is left unchanged in the instance."]
+        #[serde(
+            rename = "connectorEnforcement",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connector_enforcement:
+            ::std::option::Option<crate::schemas::SettingsConnectorEnforcement>,
         #[doc = "Configuration specific to read replica instances. Indicates whether database flags for crash-safe replication are enabled. This property was only applicable to First Generation instances."]
         #[serde(
             rename = "crashSafeReplicationEnabled",
@@ -5988,6 +6131,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub database_replication_enabled: ::std::option::Option<bool>,
+        #[doc = "Configuration to protect against accidental instance deletion."]
+        #[serde(
+            rename = "deletionProtectionEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deletion_protection_enabled: ::std::option::Option<bool>,
         #[doc = "Deny maintenance periods"]
         #[serde(
             rename = "denyMaintenancePeriods",
@@ -6090,6 +6240,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tier: ::std::option::Option<String>,
+        #[doc = "Server timezone, relevant only for Cloud SQL for SQL Server."]
+        #[serde(
+            rename = "timeZone",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_zone: ::std::option::Option<String>,
         #[doc = "User-provided labels, represented as a dictionary where each label is a single key value pair."]
         #[serde(
             rename = "userLabels",
@@ -6273,6 +6430,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SettingsAvailabilityType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SettingsConnectorEnforcement {
+        #[doc = "The requirement for Cloud SQL connectors is unknown."]
+        ConnectorEnforcementUnspecified,
+        #[doc = "Do not require Cloud SQL connectors."]
+        NotRequired,
+        #[doc = "Require all connections to use Cloud SQL connectors, including the Cloud SQL Auth Proxy and Cloud SQL Java, Python, and Go connectors. Note: This disables all existing authorized networks."]
+        Required,
+    }
+    impl SettingsConnectorEnforcement {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SettingsConnectorEnforcement::ConnectorEnforcementUnspecified => {
+                    "CONNECTOR_ENFORCEMENT_UNSPECIFIED"
+                }
+                SettingsConnectorEnforcement::NotRequired => "NOT_REQUIRED",
+                SettingsConnectorEnforcement::Required => "REQUIRED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SettingsConnectorEnforcement {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SettingsConnectorEnforcement {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SettingsConnectorEnforcement, ()> {
+            Ok(match s {
+                "CONNECTOR_ENFORCEMENT_UNSPECIFIED" => {
+                    SettingsConnectorEnforcement::ConnectorEnforcementUnspecified
+                }
+                "NOT_REQUIRED" => SettingsConnectorEnforcement::NotRequired,
+                "REQUIRED" => SettingsConnectorEnforcement::Required,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SettingsConnectorEnforcement {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SettingsConnectorEnforcement {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SettingsConnectorEnforcement {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CONNECTOR_ENFORCEMENT_UNSPECIFIED" => {
+                    SettingsConnectorEnforcement::ConnectorEnforcementUnspecified
+                }
+                "NOT_REQUIRED" => SettingsConnectorEnforcement::NotRequired,
+                "REQUIRED" => SettingsConnectorEnforcement::Required,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SettingsConnectorEnforcement {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SettingsConnectorEnforcement {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6629,6 +6868,8 @@ pub mod schemas {
         InvalidSharedPreloadLibrary,
         #[doc = "The value of parameter wal_level is not set to logical."]
         InvalidWalLevel,
+        #[doc = "Source has tables with limited support eg: PostgreSQL tables without primary keys"]
+        LimitedSupportTables,
         #[doc = "No pglogical extension installed on databases, applicable for postgres."]
         NoPglogicalInstalled,
         #[doc = "pglogical node already exists on databases, applicable for postgres."]
@@ -6686,6 +6927,7 @@ pub mod schemas {
                     "INVALID_SHARED_PRELOAD_LIBRARY"
                 }
                 SqlExternalSyncSettingErrorType::InvalidWalLevel => "INVALID_WAL_LEVEL",
+                SqlExternalSyncSettingErrorType::LimitedSupportTables => "LIMITED_SUPPORT_TABLES",
                 SqlExternalSyncSettingErrorType::NoPglogicalInstalled => "NO_PGLOGICAL_INSTALLED",
                 SqlExternalSyncSettingErrorType::PglogicalNodeAlreadyExists => {
                     "PGLOGICAL_NODE_ALREADY_EXISTS"
@@ -6755,6 +6997,7 @@ pub mod schemas {
                     SqlExternalSyncSettingErrorType::InvalidSharedPreloadLibrary
                 }
                 "INVALID_WAL_LEVEL" => SqlExternalSyncSettingErrorType::InvalidWalLevel,
+                "LIMITED_SUPPORT_TABLES" => SqlExternalSyncSettingErrorType::LimitedSupportTables,
                 "NO_PGLOGICAL_INSTALLED" => SqlExternalSyncSettingErrorType::NoPglogicalInstalled,
                 "PGLOGICAL_NODE_ALREADY_EXISTS" => {
                     SqlExternalSyncSettingErrorType::PglogicalNodeAlreadyExists
@@ -6836,6 +7079,7 @@ pub mod schemas {
                     SqlExternalSyncSettingErrorType::InvalidSharedPreloadLibrary
                 }
                 "INVALID_WAL_LEVEL" => SqlExternalSyncSettingErrorType::InvalidWalLevel,
+                "LIMITED_SUPPORT_TABLES" => SqlExternalSyncSettingErrorType::LimitedSupportTables,
                 "NO_PGLOGICAL_INSTALLED" => SqlExternalSyncSettingErrorType::NoPglogicalInstalled,
                 "PGLOGICAL_NODE_ALREADY_EXISTS" => {
                     SqlExternalSyncSettingErrorType::PglogicalNodeAlreadyExists
@@ -7981,6 +8225,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct User {
+        #[doc = "Dual password status for the user."]
+        #[serde(
+            rename = "dualPasswordType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dual_password_type: ::std::option::Option<crate::schemas::UserDualPasswordType>,
         #[doc = "This field is deprecated and will be removed from a future version of the API."]
         #[serde(
             rename = "etag",
@@ -8057,6 +8308,93 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for User {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UserDualPasswordType {
+        #[doc = "Dual password usable for connecting using this user."]
+        DualPassword,
+        #[doc = "The default value."]
+        DualPasswordTypeUnspecified,
+        #[doc = "No dual password usable for connecting using this user."]
+        NoDualPassword,
+        #[doc = "Do not update the user’s dual password status."]
+        NoModifyDualPassword,
+    }
+    impl UserDualPasswordType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UserDualPasswordType::DualPassword => "DUAL_PASSWORD",
+                UserDualPasswordType::DualPasswordTypeUnspecified => {
+                    "DUAL_PASSWORD_TYPE_UNSPECIFIED"
+                }
+                UserDualPasswordType::NoDualPassword => "NO_DUAL_PASSWORD",
+                UserDualPasswordType::NoModifyDualPassword => "NO_MODIFY_DUAL_PASSWORD",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UserDualPasswordType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UserDualPasswordType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UserDualPasswordType, ()> {
+            Ok(match s {
+                "DUAL_PASSWORD" => UserDualPasswordType::DualPassword,
+                "DUAL_PASSWORD_TYPE_UNSPECIFIED" => {
+                    UserDualPasswordType::DualPasswordTypeUnspecified
+                }
+                "NO_DUAL_PASSWORD" => UserDualPasswordType::NoDualPassword,
+                "NO_MODIFY_DUAL_PASSWORD" => UserDualPasswordType::NoModifyDualPassword,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UserDualPasswordType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UserDualPasswordType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UserDualPasswordType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DUAL_PASSWORD" => UserDualPasswordType::DualPassword,
+                "DUAL_PASSWORD_TYPE_UNSPECIFIED" => {
+                    UserDualPasswordType::DualPasswordTypeUnspecified
+                }
+                "NO_DUAL_PASSWORD" => UserDualPasswordType::NoDualPassword,
+                "NO_MODIFY_DUAL_PASSWORD" => UserDualPasswordType::NoModifyDualPassword,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UserDualPasswordType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserDualPasswordType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -8164,6 +8502,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_failed_attempts_check: ::std::option::Option<bool>,
+        #[doc = "If true, the user must specify the current password before changing the password. This flag is supported only for MySQL."]
+        #[serde(
+            rename = "enablePasswordVerification",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_password_verification: ::std::option::Option<bool>,
         #[doc = "Expiration duration after password is updated."]
         #[serde(
             rename = "passwordExpirationDuration",
@@ -8234,7 +8579,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for UsersListResponse {
+    impl crate::GetNextPageToken<String> for UsersListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -9251,7 +9596,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -9284,7 +9629,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -9334,7 +9679,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -9457,12 +9802,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -11580,7 +11926,7 @@ pub mod resources {
                     instance: instance.into(),
                 }
             }
-            #[doc = "Updates settings of a Cloud SQL instance. This method supports patch semantics."]
+            #[doc = "Partially updates settings of a Cloud SQL instance by merging the request with the current configuration. This method supports patch semantics."]
             pub fn patch(
                 &self,
                 request: crate::schemas::DatabaseInstance,
@@ -13389,7 +13735,7 @@ pub mod resources {
                 self.filter = Some(value.into());
                 self
             }
-            #[doc = "The maximum number of results to return per response."]
+            #[doc = "The maximum number of instances to return. The service may return fewer than this value. If unspecified, at most 500 instances are returned. The maximum value is 1000; values above 1000 are coerced to 1000."]
             pub fn max_results(mut self, value: u32) -> Self {
                 self.max_results = Some(value);
                 self
@@ -13489,7 +13835,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -13557,7 +13903,7 @@ pub mod resources {
                     #[serde(rename = "warnings")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -13590,7 +13936,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -13640,7 +13986,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13756,12 +14102,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -15998,7 +16345,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -16031,7 +16378,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -16081,7 +16428,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -16197,12 +16544,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -18077,6 +18425,33 @@ pub mod resources {
                     name: None,
                 }
             }
+            #[doc = "Retrieves a resource containing information about a user."]
+            pub fn get(
+                &self,
+                project: impl Into<String>,
+                instance: impl Into<String>,
+                name: impl Into<String>,
+            ) -> GetRequestBuilder {
+                GetRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    project: project.into(),
+                    instance: instance.into(),
+                    name: name.into(),
+                    host: None,
+                }
+            }
             #[doc = "Creates a new user in a Cloud SQL instance."]
             pub fn insert(
                 &self,
@@ -18320,6 +18695,191 @@ pub mod resources {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
                 req = req.query(&[("host", &self.host)]);
                 req = req.query(&[("name", &self.name)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [UsersActions::get()](struct.UsersActions.html#method.get)"]
+        #[derive(Debug, Clone)]
+        pub struct GetRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            project: String,
+            instance: String,
+            name: String,
+            host: ::std::option::Option<String>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetRequestBuilder<'a> {
+            #[doc = "Host of a user of the instance."]
+            pub fn host(mut self, value: impl Into<String>) -> Self {
+                self.host = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::User, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::User, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://sqladmin.googleapis.com/".to_owned();
+                output.push_str("sql/v1beta4/projects/");
+                {
+                    let var_as_str = &self.project;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/instances/");
+                {
+                    let var_as_str = &self.instance;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/users/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("host", &self.host)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -19153,16 +19713,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -19182,13 +19744,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -19196,7 +19761,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -19223,7 +19788,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

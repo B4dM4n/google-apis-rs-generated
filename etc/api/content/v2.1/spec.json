@@ -7,7 +7,7 @@
   "canonicalName": "Shopping Content",
   "fullyEncodeReservedExpansion": true,
   "version": "v2.1",
-  "revision": "20220421",
+  "revision": "20230123",
   "title": "Content API for Shopping",
   "description": "Manage your product listings and accounts for Google Shopping",
   "ownerDomain": "google.com",
@@ -226,7 +226,7 @@
           "items": null
         },
         "adsLinks": {
-          "description": "Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the AdWords API. To delete an active link, or to cancel a link request, remove it from the list.",
+          "description": "Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the Google Ads API. To delete an active link, or to cancel a link request, remove it from the list.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -288,7 +288,7 @@
           "$ref": "AccountGoogleMyBusinessLink"
         },
         "id": {
-          "description": "Required for update. Merchant Center account ID.",
+          "description": "Required. 64-bit Merchant Center account ID.",
           "type": "string",
           "format": "uint64",
           "enum": [],
@@ -432,7 +432,7 @@
           "items": null
         },
         "streetAddress": {
-          "description": "Street-level part of the address.",
+          "description": "Street-level part of the address. Use `\\n` to add a second line.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -510,7 +510,7 @@
       "enumDescriptions": [],
       "properties": {
         "address": {
-          "description": "The address of the business.",
+          "description": "The address of the business. Use `\\n` to add a second address line.",
           "$ref": "AccountAddress"
         },
         "customerService": {
@@ -1548,6 +1548,16 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "reportingManager": {
+          "description": "Whether user is a reporting manager.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1890,7 +1900,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         },
         "kind": {
@@ -2288,7 +2298,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         }
       },
@@ -2476,7 +2486,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         },
         "kind": {
@@ -2597,7 +2607,7 @@
           "items": null
         },
         "streetAddress": {
-          "description": "Street-level part of the address.",
+          "description": "Street-level part of the address. Use `\\n` to add a second line.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2625,6 +2635,170 @@
         "taxAmount": {
           "description": "[required] Tax value.",
           "$ref": "Price"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BestSellers": {
+      "id": "BestSellers",
+      "description": "Fields related to the [Best Sellers reports](https://support.google.com/merchants/answer/9488679).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "categoryId": {
+          "description": "Google product category ID to calculate the ranking for, represented in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436). If a `WHERE` condition on `best_sellers.category_id` is not specified in the query, rankings for all top-level categories are returned.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "countryCode": {
+          "description": "Country where the ranking is calculated. A `WHERE` condition on `best_sellers.country_code` is required in the query.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "previousRank": {
+          "description": "Popularity rank in the previous week or month.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "previousRelativeDemand": {
+          "description": "Estimated demand in relation to the item with the highest popularity rank in the same category and country in the previous week or month.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "RELATIVE_DEMAND_UNSPECIFIED",
+            "VERY_LOW",
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "VERY_HIGH"
+          ],
+          "enumDescriptions": [
+            "Relative demand is unknown.",
+            "Demand is 0-5% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 6-10% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 11-20% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 21-50% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 51-100% of the demand of the highest ranked product clusters or brands."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rank": {
+          "description": "Popularity on Shopping ads and free listings, in the selected category and country, based on the estimated number of units sold.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "relativeDemand": {
+          "description": "Estimated demand in relation to the item with the highest popularity rank in the same category and country.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "RELATIVE_DEMAND_UNSPECIFIED",
+            "VERY_LOW",
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "VERY_HIGH"
+          ],
+          "enumDescriptions": [
+            "Relative demand is unknown.",
+            "Demand is 0-5% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 6-10% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 11-20% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 21-50% of the demand of the highest ranked product clusters or brands.",
+            "Demand is 51-100% of the demand of the highest ranked product clusters or brands."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "relativeDemandChange": {
+          "description": "Change in the estimated demand. Whether it rose, sank or remained flat.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "RELATIVE_DEMAND_CHANGE_TYPE_UNSPECIFIED",
+            "SINKER",
+            "FLAT",
+            "RISER"
+          ],
+          "enumDescriptions": [
+            "Relative demand change is unknown.",
+            "Relative demand is lower than previous time period.",
+            "Relative demand is equal to previous time period.",
+            "Relative demand is higher than the previous time period."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportDate": {
+          "description": "Report date. The value of this field can only be one of the following: * The first day of the week (Monday) for weekly reports. * The first day of the month for monthly reports. If a `WHERE` condition on `best_sellers.report_date` is not specified in the query, the latest available weekly or monthly report is returned.",
+          "$ref": "Date"
+        },
+        "reportGranularity": {
+          "description": "Granularity of the report. The ranking can be done over a week or a month timeframe. A `WHERE` condition on `best_sellers.report_granularity` is required in the query.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "REPORT_GRANULARITY_UNSPECIFIED",
+            "WEEKLY",
+            "MONTHLY"
+          ],
+          "enumDescriptions": [
+            "Report granularity is unknown.",
+            "Ranking is done over a week timeframe.",
+            "Ranking is done over a month timeframe."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Brand": {
+      "id": "Brand",
+      "description": "Brand fields. Values are only set for fields requested explicitly in the request's search query.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Name of the brand.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -3208,7 +3382,7 @@
           }
         },
         "creationDate": {
-          "description": "Date on which the collection has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, e.g. \"2020-01-02T09:00:00+01:00\" or \"2020-01-02T09:00:00Z\"",
+          "description": "Date on which the collection has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example \"2020-01-02T09:00:00+01:00\" or \"2020-01-02T09:00:00Z\"",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3240,7 +3414,7 @@
           "items": null
         },
         "lastUpdateDate": {
-          "description": "Date on which the collection has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, e.g. \"2020-01-02T09:00:00+01:00\" or \"2020-01-02T09:00:00Z\"",
+          "description": "Date on which the collection has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example \"2020-01-02T09:00:00+01:00\" or \"2020-01-02T09:00:00Z\"",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3261,6 +3435,24 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "approvedCountries": {
+          "description": "Country codes (ISO 3166-1 alpha-2) where the collection is approved.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "destination": {
           "description": "The name of the destination",
           "type": "string",
@@ -3271,8 +3463,44 @@
           "additionalProperties": null,
           "items": null
         },
+        "disapprovedCountries": {
+          "description": "Country codes (ISO 3166-1 alpha-2) where the collection is disapproved.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "pendingCountries": {
+          "description": "Country codes (ISO 3166-1 alpha-2) where the collection is pending approval.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "status": {
-          "description": "The status for the specified destination.",
+          "description": "The status for the specified destination in the collections target country.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3293,6 +3521,24 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "applicableCountries": {
+          "description": "Country codes (ISO 3166-1 alpha-2) where issue applies to the offer.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "attributeName": {
           "description": "The attribute's name, if the issue is caused by a single attribute.",
           "type": "string",
@@ -3851,6 +4097,16 @@
             "$ref": "DatafeedStatusError"
           }
         },
+        "feedLabel": {
+          "description": "The feed label status is reported for.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "itemsTotal": {
           "description": "The number of items in the feed that were processed.",
           "type": "string",
@@ -4032,7 +4288,7 @@
       "enumDescriptions": [],
       "properties": {
         "country": {
-          "description": "The country where the items in the feed will be included in the search index, represented as a CLDR territory code.",
+          "description": "Deprecated. Use `feedLabel` instead. The country where the items in the feed will be included in the search index, represented as a CLDR territory code.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4042,7 +4298,7 @@
           "items": null
         },
         "excludedDestinations": {
-          "description": "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center).",
+          "description": "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center). Products that are excluded from all destinations for more than 7 days are automatically deleted.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -4058,6 +4314,16 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "feedLabel": {
+          "description": "Feed label for the DatafeedTarget. Either `country` or `feedLabel` is required. If both `feedLabel` and `country` is specified, the values must match.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "includedDestinations": {
           "description": "The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`.",
@@ -4086,6 +4352,24 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "targetCountries": {
+          "description": "The countries where the items may be displayed. Represented as a CLDR territory code. Will be ignored for \"product inventory\" feeds.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,
@@ -4228,7 +4512,7 @@
           "$ref": "Datafeed"
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         }
       },
@@ -4344,7 +4628,7 @@
           "items": null
         },
         "country": {
-          "description": "The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required.",
+          "description": "Deprecated. Use `feedLabel` instead. The country to get the datafeed status for. If this parameter is provided, then `language` must also be provided. Note that for multi-target datafeeds this parameter is required.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4363,8 +4647,18 @@
           "additionalProperties": null,
           "items": null
         },
+        "feedLabel": {
+          "description": "The feed label to get the datafeed status for. If this parameter is provided, then `language` must also be provided. Note that for multi-target datafeeds this parameter is required.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "language": {
-          "description": "The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that for multi-target datafeeds this parameter is required.",
+          "description": "The language to get the datafeed status for. If this parameter is provided then `country` must also be provided. Note that for multi-target datafeeds this parameter is required.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4454,7 +4748,7 @@
           "$ref": "DatafeedStatus"
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         }
       },
@@ -4549,14 +4843,14 @@
     },
     "DateTime": {
       "id": "DateTime",
-      "description": "Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year is 0, the DateTime is considered not to have a specific year. month and day must have valid, non-zero values. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations.",
+      "description": "Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "day": {
-          "description": "Required. Day of month. Must be from 1 to 31 and valid for the year and month.",
+          "description": "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4566,7 +4860,7 @@
           "items": null
         },
         "hours": {
-          "description": "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time.",
+          "description": "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value \"24:00:00\" for scenarios like business closing time.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4576,7 +4870,7 @@
           "items": null
         },
         "minutes": {
-          "description": "Required. Minutes of hour of day. Must be from 0 to 59.",
+          "description": "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4586,7 +4880,7 @@
           "items": null
         },
         "month": {
-          "description": "Required. Month of year. Must be from 1 to 12.",
+          "description": "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4596,7 +4890,7 @@
           "items": null
         },
         "nanos": {
-          "description": "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
+          "description": "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4606,7 +4900,7 @@
           "items": null
         },
         "seconds": {
-          "description": "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.",
+          "description": "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4645,14 +4939,14 @@
     },
     "DeliveryArea": {
       "id": "DeliveryArea",
-      "description": "A delivery area for the product. Only one of administrativeAreaCode or postalCodeRange must be set.",
+      "description": "A delivery area for the product. Only one of `countryCode` or `postalCodeRange` must be set.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "countryCode": {
-          "description": "Required. The country that the product can be delivered to. Submit an [unicode CLDR region](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) such as US or CH.",
+          "description": "Required. The country that the product can be delivered to. Submit a [unicode CLDR region](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) such as `US` or `CH`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4666,7 +4960,7 @@
           "$ref": "DeliveryAreaPostalCodeRange"
         },
         "regionCode": {
-          "description": "A state, territory, or prefecture. This is supported for the United States, Australia, and Japan. Provide a subdivision code from the ISO 3166-2 code tables ([US](https://en.wikipedia.org/wiki/ISO_3166-2:US), [AU](https://en.wikipedia.org/wiki/ISO_3166-2:AU), or [JP](https://en.wikipedia.org/wiki/ISO_3166-2:JP)) without country prefix (for example, NY, NSW, 03).",
+          "description": "A state, territory, or prefecture. This is supported for the United States, Australia, and Japan. Provide a subdivision code from the ISO 3166-2 code tables ([US](https://en.wikipedia.org/wiki/ISO_3166-2:US), [AU](https://en.wikipedia.org/wiki/ISO_3166-2:AU), or [JP](https://en.wikipedia.org/wiki/ISO_3166-2:JP)) without country prefix (for example, `\"NY\"`, `\"NSW\"`, `\"03\"`).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4681,14 +4975,14 @@
     },
     "DeliveryAreaPostalCodeRange": {
       "id": "DeliveryAreaPostalCodeRange",
-      "description": "A range of postal codes that defines the delivery area. Only set firstPostalCode when specifying a single postal code.",
+      "description": "A range of postal codes that defines the delivery area. Only set `firstPostalCode` when specifying a single postal code.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "firstPostalCode": {
-          "description": "Required. A postal code or a pattern of the form prefix* denoting the inclusive lower bound of the range defining the area. Examples values: \"94108\", \"9410*\", \"9*\".",
+          "description": "Required. A postal code or a pattern of the form prefix* denoting the inclusive lower bound of the range defining the area. Examples values: `\"94108\"`, `\"9410*\"`, `\"9*\"`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4698,7 +4992,7 @@
           "items": null
         },
         "lastPostalCode": {
-          "description": "A postal code or a pattern of the form prefix* denoting the inclusive upper bound of the range defining the area (for example [070* - 078*] results in the range [07000 - 07899]). It must have the same length as firstPostalCode: if firstPostalCode is a postal code then lastPostalCode must be a postal code too; if firstPostalCode is a pattern then lastPostalCode must be a pattern with the same prefix length. Ignored if not set, then the area is defined as being all the postal codes matching firstPostalCode.",
+          "description": "A postal code or a pattern of the form prefix* denoting the inclusive upper bound of the range defining the area (for example [070* - 078*] results in the range [07000 - 07899]). It must have the same length as `firstPostalCode`: if `firstPostalCode` is a postal code then `lastPostalCode` must be a postal code too; if firstPostalCode is a pattern then `lastPostalCode` must be a pattern with the same prefix length. Ignored if not set, then the area is defined as being all the postal codes matching `firstPostalCode`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -6523,6 +6817,40 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListMethodQuotasResponse": {
+      "id": "ListMethodQuotasResponse",
+      "description": "Response message for the ListMethodQuotas method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "methodQuotas": {
+          "description": "The current quota usage and limits per each method.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "MethodQuota"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListRegionsResponse": {
       "id": "ListRegionsResponse",
       "description": "Response message for the `ListRegions` method.",
@@ -6700,6 +7028,18 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "customAttributes": {
+          "description": "A list of custom (merchant-provided) attributes. Can also be used to submit any attribute of the feed specification in its generic form, for example, `{ \"name\": \"size type\", \"value\": \"regular\" }`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "CustomAttribute"
+          }
         },
         "instoreProductLocation": {
           "description": "In-store product location.",
@@ -6916,7 +7256,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         },
         "kind": {
@@ -7217,6 +7557,48 @@
       "additionalProperties": null,
       "items": null
     },
+    "MethodQuota": {
+      "id": "MethodQuota",
+      "description": "The quota information per method in the Content API. Includes only methods with current usage greater than zero for your account.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "method": {
+          "description": "The method name, for example `products.list`. Method name does not contain version because quota can be shared between different API versions of the same method.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "quotaLimit": {
+          "description": "The current quota limit per day, meaning the maximum number of calls for the method.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "quotaUsage": {
+          "description": "The current quota usage, meaning the number of calls already made to the method.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Metrics": {
       "id": "Metrics",
       "description": "Performance metrics. Values are only set for metrics requested explicitly in the request's search query.",
@@ -7226,7 +7608,7 @@
       "enumDescriptions": [],
       "properties": {
         "aos": {
-          "description": "Average order size - the average number of items in an order. **This metric cannot be segmented by product dimensions.**",
+          "description": "Average order size - the average number of items in an order. **This metric cannot be segmented by product dimensions and customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7236,7 +7618,7 @@
           "items": null
         },
         "aovMicros": {
-          "description": "Average order value - the average value (total price of items) of all placed orders. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by product dimensions.**",
+          "description": "Average order value in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) - the average value (total price of items) of all placed orders. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by product dimensions and customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7266,7 +7648,7 @@
           "items": null
         },
         "conversionValueMicros": {
-          "description": "Value of conversions in micros attributed to the product, reported on the conversion date. The metric is currently available only for the FREE_PRODUCT_LISTING program. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response.",
+          "description": "Value of conversions in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) attributed to the product, reported on the conversion date. The metric is currently available only for the FREE_PRODUCT_LISTING program. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7296,7 +7678,7 @@
           "items": null
         },
         "daysToShip": {
-          "description": "Average number of days between an order being placed and the order being fully shipped, reported on the last shipment date. **This metric cannot be segmented by product dimensions.**",
+          "description": "Average number of days between an order being placed and the order being fully shipped, reported on the last shipment date. **This metric cannot be segmented by product dimensions and customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7316,7 +7698,7 @@
           "items": null
         },
         "itemDaysToShip": {
-          "description": "Average number of days between an item being ordered and the item being",
+          "description": "Average number of days between an item being ordered and the item being **This metric cannot be segmented by customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7326,7 +7708,7 @@
           "items": null
         },
         "itemFillRate": {
-          "description": "Percentage of shipped items in relation to all finalized items (shipped or rejected by the merchant; unshipped items are not taken into account), reported on the order date. Item fill rate is lowered by merchant rejections.",
+          "description": "Percentage of shipped items in relation to all finalized items (shipped or rejected by the merchant; unshipped items are not taken into account), reported on the order date. Item fill rate is lowered by merchant rejections. **This metric cannot be segmented by customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7336,7 +7718,7 @@
           "items": null
         },
         "orderedItemSalesMicros": {
-          "description": "Total price of ordered items. Excludes shipping, taxes (US only), and customer cancellations that happened within 30 minutes of placing the order. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response.",
+          "description": "Total price of ordered items in micros (1 millionth of a standard unit, 1 USD = 1000000 micros). Excludes shipping, taxes (US only), and customer cancellations that happened within 30 minutes of placing the order. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7346,7 +7728,7 @@
           "items": null
         },
         "orderedItems": {
-          "description": "Number of ordered items. Excludes customer cancellations that happened within 30 minutes of placing the order.",
+          "description": "Number of ordered items. Excludes customer cancellations that happened within 30 minutes of placing the order. **This metric cannot be segmented by customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7356,7 +7738,7 @@
           "items": null
         },
         "orders": {
-          "description": "Number of placed orders. Excludes customer cancellations that happened within 30 minutes of placing the order. **This metric cannot be segmented by product dimensions.**",
+          "description": "Number of placed orders. Excludes customer cancellations that happened within 30 minutes of placing the order. **This metric cannot be segmented by product dimensions and customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7366,7 +7748,7 @@
           "items": null
         },
         "rejectedItems": {
-          "description": "Number of ordered items canceled by the merchant, reported on the order date.",
+          "description": "Number of ordered items canceled by the merchant, reported on the order date. **This metric cannot be segmented by customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7376,7 +7758,7 @@
           "items": null
         },
         "returnRate": {
-          "description": "Total price of returned items divided by the total price of shipped items, reported on the order date. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response.",
+          "description": "Total price of returned items divided by the total price of shipped items, reported on the order date. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7386,7 +7768,7 @@
           "items": null
         },
         "returnedItems": {
-          "description": "Number of ordered items sent back for return, reported on the date when the merchant accepted the return.",
+          "description": "Number of ordered items sent back for return, reported on the date when the merchant accepted the return. **This metric cannot be segmented by customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7396,7 +7778,7 @@
           "items": null
         },
         "returnsMicros": {
-          "description": "Total price of ordered items sent back for return, reported on the date when the merchant accepted the return. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response.",
+          "description": "Total price of ordered items sent back for return in micros (1 millionth of a standard unit, 1 USD = 1000000 micros), reported on the date when the merchant accepted the return. The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7406,7 +7788,7 @@
           "items": null
         },
         "shippedItemSalesMicros": {
-          "description": "Total price of shipped items, reported on the order date. Excludes shipping and taxes (US only). The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response.",
+          "description": "Total price of shipped items in micros (1 millionth of a standard unit, 1 USD = 1000000 micros), reported on the order date. Excludes shipping and taxes (US only). The currency of the returned value is stored in the currency_code segment. If this metric is selected, 'segments.currency_code' is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7416,7 +7798,7 @@
           "items": null
         },
         "shippedItems": {
-          "description": "Number of shipped items, reported on the shipment date.",
+          "description": "Number of shipped items, reported on the shipment date. **This metric cannot be segmented by customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7426,7 +7808,7 @@
           "items": null
         },
         "shippedOrders": {
-          "description": "Number of fully shipped orders, reported on the last shipment date. **This metric cannot be segmented by product dimensions.**",
+          "description": "Number of fully shipped orders, reported on the last shipment date. **This metric cannot be segmented by product dimensions and customer_country_code.**",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -7436,7 +7818,7 @@
           "items": null
         },
         "unshippedItems": {
-          "description": "Number of ordered items not shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped items over the days in the queried period.",
+          "description": "Number of ordered items not shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped items over the days in the queried period. **This metric cannot be segmented by customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7446,7 +7828,7 @@
           "items": null
         },
         "unshippedOrders": {
-          "description": "Number of orders not shipped or partially shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped orders over the days in the queried period. **This metric cannot be segmented by product dimensions.**",
+          "description": "Number of orders not shipped or partially shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped orders over the days in the queried period. **This metric cannot be segmented by product dimensions and customer_country_code.**",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -7840,7 +8222,7 @@
           "items": null
         },
         "streetAddress": {
-          "description": "Street-level part of the address.",
+          "description": "Street-level part of the address. Use `\\n` to add a second line.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -9224,7 +9606,7 @@
       "enumDescriptions": [],
       "properties": {
         "carrier": {
-          "description": "The carrier handling the shipment. For supported carriers, Google includes the carrier name and tracking URL in emails to customers. For select supported carriers, Google also automatically updates the shipment status based on the provided shipment ID. *Note:* You can also use unsupported carriers, but emails to customers won't include the carrier name or tracking URL, and there will be no automatic order status updates. Supported carriers for \"US\" are: - \"`ups`\" (United Parcel Service) *automatic status updates* - \"`usps`\" (United States Postal Service) *automatic status updates* - \"`fedex`\" (FedEx) *automatic status updates * - \"`dhl`\" (DHL eCommerce) *automatic status updates* (US only) - \"`ontrac`\" (OnTrac) *automatic status updates * - \"`dhl express`\" (DHL Express) - \"`deliv`\" (Deliv) - \"`dynamex`\" (TForce) - \"`lasership`\" (LaserShip) - \"`mpx`\" (Military Parcel Xpress) - \"`uds`\" (United Delivery Service) - \"`efw`\" (Estes Forwarding Worldwide) - \"`jd logistics`\" (JD Logistics) - \"`yunexpress`\" (YunExpress) - \"`china post`\" (China Post) - \"`china ems`\" (China Post Express Mail Service) - \"`singapore post`\" (Singapore Post) - \"`pos malaysia`\" (Pos Malaysia) - \"`postnl`\" (PostNL) - \"`ptt`\" (PTT Turkish Post) - \"`eub`\" (ePacket) - \"`chukou1`\" (Chukou1 Logistics) - \"`bestex`\" (Best Express) - \"`canada post`\" (Canada Post) - \"`purolator`\" (Purolator) - \"`canpar`\" (Canpar) - \"`india post`\" (India Post) - \"`blue dart`\" (Blue Dart) - \"`delhivery`\" (Delhivery) - \"`dtdc`\" (DTDC) - \"`tpc india`\" (TPC India) - \"`lso`\" (Lone Star Overnight) - \"`tww`\" (Team Worldwide) Supported carriers for FR are: - \"`la poste`\" (La Poste) *automatic status updates * - \"`colissimo`\" (Colissimo by La Poste) *automatic status updates* - \"`ups`\" (United Parcel Service) *automatic status updates * - \"`chronopost`\" (Chronopost by La Poste) - \"`gls`\" (General Logistics Systems France) - \"`dpd`\" (DPD Group by GeoPost) - \"`bpost`\" (Belgian Post Group) - \"`colis prive`\" (Colis Privé) - \"`boxtal`\" (Boxtal) - \"`geodis`\" (GEODIS) - \"`tnt`\" (TNT) - \"`db schenker`\" (DB Schenker) - \"`aramex`\" (Aramex) ",
+          "description": "The carrier handling the shipment. For supported carriers, Google includes the carrier name and tracking URL in emails to customers. For select supported carriers, Google also automatically updates the shipment status based on the provided shipment ID. *Note:* You can also use unsupported carriers, but emails to customers won't include the carrier name or tracking URL, and there will be no automatic order status updates. Supported carriers for \"US\" are: - \"`ups`\" (United Parcel Service) *automatic status updates* - \"`usps`\" (United States Postal Service) *automatic status updates* - \"`fedex`\" (FedEx) *automatic status updates * - \"`dhl`\" (DHL eCommerce) *automatic status updates* (US only) - \"`ontrac`\" (OnTrac) *automatic status updates * - \"`dhl express`\" (DHL Express) - \"`deliv`\" (Deliv) - \"`dynamex`\" (TForce) - \"`lasership`\" (LaserShip) - \"`mpx`\" (Military Parcel Xpress) - \"`uds`\" (United Delivery Service) - \"`efw`\" (Estes Forwarding Worldwide) - \"`jd logistics`\" (JD Logistics) - \"`yunexpress`\" (YunExpress) - \"`china post`\" (China Post) - \"`china ems`\" (China Post Express Mail Service) - \"`singapore post`\" (Singapore Post) - \"`pos malaysia`\" (Pos Malaysia) - \"`postnl`\" (PostNL) - \"`ptt`\" (PTT Turkish Post) - \"`eub`\" (ePacket) - \"`chukou1`\" (Chukou1 Logistics) - \"`bestex`\" (Best Express) - \"`canada post`\" (Canada Post) - \"`purolator`\" (Purolator) - \"`canpar`\" (Canpar) - \"`india post`\" (India Post) - \"`blue dart`\" (Blue Dart) - \"`delhivery`\" (Delhivery) - \"`dtdc`\" (DTDC) - \"`tpc india`\" (TPC India) - \"`lso`\" (Lone Star Overnight) - \"`tww`\" (Team Worldwide) - \"`deliver-it`\" (Deliver-IT) - \"`cdl last mile`\" (CDL Last Mile) Supported carriers for FR are: - \"`la poste`\" (La Poste) *automatic status updates * - \"`colissimo`\" (Colissimo by La Poste) *automatic status updates* - \"`ups`\" (United Parcel Service) *automatic status updates * - \"`chronopost`\" (Chronopost by La Poste) - \"`gls`\" (General Logistics Systems France) - \"`dpd`\" (DPD Group by GeoPost) - \"`bpost`\" (Belgian Post Group) - \"`colis prive`\" (Colis Privé) - \"`boxtal`\" (Boxtal) - \"`geodis`\" (GEODIS) - \"`tnt`\" (TNT) - \"`db schenker`\" (DB Schenker) - \"`aramex`\" (Aramex) ",
           "type": "string",
           "format": null,
           "enum": [],
@@ -13442,9 +13824,143 @@
       "additionalProperties": null,
       "items": null
     },
+    "PriceCompetitiveness": {
+      "id": "PriceCompetitiveness",
+      "description": "Price Competitiveness fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceCompetitivenessProductView`. https://support.google.com/merchants/answer/9626903",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "benchmarkPriceCurrencyCode": {
+          "description": "The price benchmark currency (ISO 4217 code).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "benchmarkPriceMicros": {
+          "description": "The latest available price benchmark in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) for the product's catalog in the benchmark country.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "countryCode": {
+          "description": "The country of the price benchmark (ISO 3166 code).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PriceInsights": {
+      "id": "PriceInsights",
+      "description": "Price Insights fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceInsightsProductView`. https://support.google.com/merchants/answer/11916926",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "predictedClicksChangeFraction": {
+          "description": "The predicted change in clicks as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in clicks.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "predictedConversionsChangeFraction": {
+          "description": "The predicted change in conversions as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in conversions).",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "predictedGrossProfitChangeFraction": {
+          "description": "The predicted change in gross profit as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in gross profit.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "predictedImpressionsChangeFraction": {
+          "description": "The predicted change in impressions as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in impressions.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "predictedMonthlyGrossProfitChangeCurrencyCode": {
+          "description": "The predicted monthly gross profit change currency (ISO 4217 code).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "predictedMonthlyGrossProfitChangeMicros": {
+          "description": "The predicted change in gross profit in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) after introducing the suggested price for a month compared to current active price.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "suggestedPriceCurrencyCode": {
+          "description": "The suggested price currency (ISO 4217 code).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "suggestedPriceMicros": {
+          "description": "The latest suggested price in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) for the product.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Product": {
       "id": "Product",
-      "description": " Required product attributes are primarily defined by the products data specification. See the Products Data Specification Help Center article for information. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.",
+      "description": " Required product attributes are primarily defined by the product data specification. See the Product Data Specification Help Center article for information. Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -13761,7 +14277,7 @@
           "items": null
         },
         "excludedDestinations": {
-          "description": "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center).",
+          "description": "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center). Products that are excluded from all destinations for more than 7 days are automatically deleted.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -13790,6 +14306,16 @@
         },
         "externalSellerId": {
           "description": "Required for multi-seller accounts. Use this attribute if you're a marketplace uploading products for various sellers to your multi-seller account.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "feedLabel": {
+          "description": "Feed label for the item. Either `targetCountry` or `feedLabel` is required.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -13909,6 +14435,24 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "lifestyleImageLinks": {
+          "description": "Additional URLs of lifestyle images of the item, used to explicitly identify images that showcase your item in a real-world context. See the Help Center article for more information.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         },
         "link": {
           "description": "URL directly linking to your item's page on your website.",
@@ -14044,6 +14588,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "pause": {
+          "description": "Publication of this item should be temporarily paused. Acceptable values are: - \"`ads`\" ",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "pickupMethod": {
           "description": "The pick up option for the item. Acceptable values are: - \"`buy`\" - \"`reserve`\" - \"`ship to store`\" - \"`not supported`\" ",
           "type": "string",
@@ -14107,7 +14661,7 @@
           "$ref": "ProductDimension"
         },
         "productTypes": {
-          "description": "Categories of the item (formatted as in products data specification).",
+          "description": "Categories of the item (formatted as in product data specification).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -14155,7 +14709,7 @@
           "$ref": "Price"
         },
         "salePriceEffectiveDate": {
-          "description": "Date range during which the item is on sale (see products data specification ).",
+          "description": "Date range during which the item is on sale (see product data specification ).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -14283,7 +14837,7 @@
           "$ref": "ProductSubscriptionCost"
         },
         "targetCountry": {
-          "description": "Required. The CLDR territory code for the item.",
+          "description": "Required. The CLDR territory code for the item's country of sale.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -14370,16 +14924,156 @@
       "additionalProperties": null,
       "items": null
     },
+    "ProductCluster": {
+      "id": "ProductCluster",
+      "description": "Product cluster fields. A product cluster is a grouping for different offers that represent the same product. Values are only set for fields requested explicitly in the request's search query.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "brand": {
+          "description": "Brand of the product cluster.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "brandInventoryStatus": {
+          "description": "Tells if there is at least one product of the brand currently `IN_STOCK` in your product feed across multiple countries, all products are `OUT_OF_STOCK` in your product feed, or `NOT_IN_INVENTORY`. The field doesn't take the Best Sellers report country filter into account.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INVENTORY_STATUS_UNSPECIFIED",
+            "IN_STOCK",
+            "OUT_OF_STOCK",
+            "NOT_IN_INVENTORY"
+          ],
+          "enumDescriptions": [
+            "Inventory status is unknown.",
+            "Merchant has a product for this product cluster or brand in stock.",
+            "Merchant has a product for this product cluster or brand in inventory but it is currently out of stock.",
+            "Merchant does not have a product for this product cluster or brand in inventory."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL1": {
+          "description": "Product category (1st level) of the product cluster, represented in Google's product taxonomy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL2": {
+          "description": "Product category (2nd level) of the product cluster, represented in Google's product taxonomy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL3": {
+          "description": "Product category (3rd level) of the product cluster, represented in Google's product taxonomy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL4": {
+          "description": "Product category (4th level) of the product cluster, represented in Google's product taxonomy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL5": {
+          "description": "Product category (5th level) of the product cluster, represented in Google's product taxonomy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "inventoryStatus": {
+          "description": "Tells whether the product cluster is `IN_STOCK` in your product feed across multiple countries, `OUT_OF_STOCK` in your product feed, or `NOT_IN_INVENTORY` at all. The field doesn't take the Best Sellers report country filter into account.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INVENTORY_STATUS_UNSPECIFIED",
+            "IN_STOCK",
+            "OUT_OF_STOCK",
+            "NOT_IN_INVENTORY"
+          ],
+          "enumDescriptions": [
+            "Inventory status is unknown.",
+            "Merchant has a product for this product cluster or brand in stock.",
+            "Merchant has a product for this product cluster or brand in inventory but it is currently out of stock.",
+            "Merchant does not have a product for this product cluster or brand in inventory."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "title": {
+          "description": "Title of the product cluster.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "variantGtins": {
+          "description": "GTINs of example variants of the product cluster.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ProductDeliveryTime": {
       "id": "ProductDeliveryTime",
-      "description": "The estimated days to deliver for this product. These methods are intended for authorized partners working with a merchant. Merchants should use the [product API](https://developers.google.com/shopping-content/reference/rest/v2.1/products#productshipping) instead. To obtain authorization from a merchant refer to",
+      "description": "The estimated days to deliver a product after an order is placed. Only authorized shipping signals partners working with a merchant can use this resource. Merchants should use the [`products`](https://developers.google.com/shopping-content/reference/rest/v2.1/products#productshipping) resource instead.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "areaDeliveryTimes": {
-          "description": "Required. A set of associations between DeliveryAreas and DeliveryTimes. The total number of areaDeliveryTimes can be at most 100.",
+          "description": "Required. A set of associations between `DeliveryArea` and `DeliveryTime` entries. The total number of `areaDeliveryTimes` can be at most 100.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -14391,7 +15085,7 @@
           }
         },
         "productId": {
-          "description": "Required. The id of the product.",
+          "description": "Required. The `id` of the product.",
           "$ref": "ProductId"
         }
       },
@@ -14400,18 +15094,18 @@
     },
     "ProductDeliveryTimeAreaDeliveryTime": {
       "id": "ProductDeliveryTimeAreaDeliveryTime",
-      "description": "A pairing of DeliveryArea associated with a DeliveryTime for this product.",
+      "description": "A pairing of `DeliveryArea` associated with a `DeliveryTime` for this product.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "deliveryArea": {
-          "description": "Required. The delivery area associated with deliveryTime for this product.",
+          "description": "Required. The delivery area associated with `deliveryTime` for this product.",
           "$ref": "DeliveryArea"
         },
         "deliveryTime": {
-          "description": "Required. The delivery time associated with deliveryArea for this product.",
+          "description": "Required. The delivery time associated with `deliveryArea` for this product.",
           "$ref": "ProductDeliveryTimeAreaDeliveryTimeDeliveryTime"
         }
       },
@@ -14511,7 +15205,7 @@
       "enumDescriptions": [],
       "properties": {
         "productId": {
-          "description": "The Content API ID of the product, in the form channel:contentLanguage:targetCountry:offerId.",
+          "description": "The Content API ID of the product, in the form `channel:contentLanguage:targetCountry:offerId`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -14595,7 +15289,7 @@
           "items": null
         },
         "locationId": {
-          "description": "The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.",
+          "description": "The numeric ID of a location that the shipping rate applies to as defined in the Google Ads API.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -15103,7 +15797,7 @@
           "items": null
         },
         "locationId": {
-          "description": "The numeric ID of a location that the tax rate applies to as defined in the AdWords API.",
+          "description": "The numeric ID of a location that the tax rate applies to as defined in the Google Ads API.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -15210,6 +15904,474 @@
           "description": "The measure of an item.",
           "type": "number",
           "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ProductView": {
+      "id": "ProductView",
+      "description": "Product fields. Values are only set for fields requested explicitly in the request's search query. Available only to selected merchants. Submit the [interest form](https://forms.gle/7Uy8htzAN8oNokz9A) to request access.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "aggregatedDestinationStatus": {
+          "description": "Aggregated destination status.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "AGGREGATED_STATUS_UNSPECIFIED",
+            "NOT_ELIGIBLE_OR_DISAPPROVED",
+            "PENDING",
+            "ELIGIBLE_LIMITED",
+            "ELIGIBLE"
+          ],
+          "enumDescriptions": [
+            "Undefined aggregated status.",
+            "Offer isn't eligible, or is disapproved for all destinations.",
+            "Offer's status is pending in all destinations.",
+            "Offer is eligible for some (but not all) destinations.",
+            "Offer is eligible for all destinations."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "availability": {
+          "description": "Availability of the product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "brand": {
+          "description": "Brand of the product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL1": {
+          "description": "First level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL2": {
+          "description": "Second level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL3": {
+          "description": "Third level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL4": {
+          "description": "Fourth level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "categoryL5": {
+          "description": "Fifth level of the product category in [Google's product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "channel": {
+          "description": "Channel of the product (online versus local).",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CHANNEL_UNSPECIFIED",
+            "LOCAL",
+            "ONLINE"
+          ],
+          "enumDescriptions": [
+            "Indicates that the channel is unspecified.",
+            "Indicates that the channel is local.",
+            "Indicates that the channel is online."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "condition": {
+          "description": "Condition of the product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "creationTime": {
+          "description": "The time the merchant created the product in timestamp seconds.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "currencyCode": {
+          "description": "Product price currency code (for example, ISO 4217). Absent if product price is not available.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "expirationDate": {
+          "description": "Expiration date for the product. Specified on insertion.",
+          "$ref": "Date"
+        },
+        "gtin": {
+          "description": "GTIN of the product.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "id": {
+          "description": "The REST ID of the product, in the form of channel:contentLanguage:targetCountry:offerId. Content API methods that operate on products take this as their productId parameter. Should always be included in the SELECT clause.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "itemGroupId": {
+          "description": "Item group ID provided by the merchant for grouping variants together.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "itemIssues": {
+          "description": "List of item issues for the product.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ProductViewItemIssue"
+          }
+        },
+        "languageCode": {
+          "description": "Language code of the product in BCP 47 format.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "offerId": {
+          "description": "Merchant-provided id of the product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "priceMicros": {
+          "description": "Product price specified as micros (1 millionth of a standard unit, 1 USD = 1000000 micros) in the product currency. Absent in case the information about the price of the product is not available.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "productTypeL1": {
+          "description": "First level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "productTypeL2": {
+          "description": "Second level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "productTypeL3": {
+          "description": "Third level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "productTypeL4": {
+          "description": "Fourth level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "productTypeL5": {
+          "description": "Fifth level of the product type in merchant's own [product taxonomy](https://support.google.com/merchants/answer/6324436).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shippingLabel": {
+          "description": "The normalized shipping label specified in the feed",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "title": {
+          "description": "Title of the product.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ProductViewItemIssue": {
+      "id": "ProductViewItemIssue",
+      "description": "Item issue associated with the product.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issueType": {
+          "description": "Item issue type.",
+          "$ref": "ProductViewItemIssueItemIssueType"
+        },
+        "resolution": {
+          "description": "Item issue resolution.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "UNKNOWN",
+            "MERCHANT_ACTION",
+            "PENDING_PROCESSING"
+          ],
+          "enumDescriptions": [
+            "Unknown resolution type.",
+            "The merchant has to fix the issue.",
+            "The issue will be resolved automatically (for example, image crawl), or Google review. No merchant action is required now. Resolution might lead to another issue (for example, if crawl fails)."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "severity": {
+          "description": "Item issue severity.",
+          "$ref": "ProductViewItemIssueItemIssueSeverity"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ProductViewItemIssueIssueSeverityPerDestination": {
+      "id": "ProductViewItemIssueIssueSeverityPerDestination",
+      "description": "Issue severity for all affected regions in a destination.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "demotedCountries": {
+          "description": "List of demoted countries in the destination.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "destination": {
+          "description": "Issue destination.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "disapprovedCountries": {
+          "description": "List of disapproved countries in the destination.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ProductViewItemIssueItemIssueSeverity": {
+      "id": "ProductViewItemIssueItemIssueSeverity",
+      "description": "Severity of an issue per destination in a region, and aggregated severity.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "aggregatedSeverity": {
+          "description": "Severity of an issue aggregated for destination.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "AGGREGATED_ISSUE_SEVERITY_UNSPECIFIED",
+            "DISAPPROVED",
+            "DEMOTED",
+            "PENDING"
+          ],
+          "enumDescriptions": [
+            "Undefined Issue severity.",
+            "Issue disapproves the product in at least one of the selected destinations.",
+            "Issue demotes the product in all selected destinations it affects.",
+            "Issue resolution is `PENDING_PROCESSING`."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "severityPerDestination": {
+          "description": "Item issue severity for every destination.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ProductViewItemIssueIssueSeverityPerDestination"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ProductViewItemIssueItemIssueType": {
+      "id": "ProductViewItemIssueItemIssueType",
+      "description": "Type of the item issue.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canonicalAttribute": {
+          "description": "Canonical attribute name for attribute-specific issues.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -15339,7 +16501,7 @@
           "items": null
         },
         "updateMask": {
-          "description": "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged. Only defined if the method is `update`.",
+          "description": "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. *You must specify the update mask to delete attributes.* Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged. Only defined if the method is `update`.",
           "type": "string",
           "format": "google-fieldmask",
           "enum": [],
@@ -15405,7 +16567,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         },
         "kind": {
@@ -15627,7 +16789,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors, if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         },
         "kind": {
@@ -15694,7 +16856,7 @@
     },
     "Promotion": {
       "id": "Promotion",
-      "description": " The Promotions feature is publicly available for the US and CA locale (en language only) in Content API for Shopping. Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)",
+      "description": "Represents a promotion. See the following articles for more details. * [Promotions feed specification](https://support.google.com/merchants/answer/2906014) * [Local promotions feed specification](https://support.google.com/merchants/answer/10146130) * [Promotions on Buy on Google product data specification](https://support.google.com/merchants/answer/9173673)",
       "type": "object",
       "format": null,
       "enum": [],
@@ -15737,7 +16899,7 @@
           }
         },
         "contentLanguage": {
-          "description": "Required. The content language used as part of the unique identifier. Currently only en value is supported.",
+          "description": "Required. The content language used as part of the unique identifier. `en` content language is available for all target countries. `fr` content language is available for `CA` and `FR` target countries, and `de` content language is available for `DE` target country.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -15769,13 +16931,13 @@
             "Indicates that the coupon value type is unspecified.",
             "Money off coupon value type.",
             "Percent off coupon value type.",
-            "Buy M quantity, get N money off coupon value type. buy_this_quantity and get_this_quantity must be present. money_off_amount must also be present.",
-            "Buy M quantity, get N percent off coupon value type. buy_this_quantity and get_this_quantity must be present. percent_off_percentage must also be present.",
-            "Buy M quantity, get money off. buy_this_quantity and money_off_amount must be present.",
-            "Buy M quantity, get money off. buy_this_quantity and percent_off_percentage must be present.",
-            "Free gift with description only",
+            "Buy M quantity, get N money off coupon value type. `buy_this_quantity` and `get_this_quantity` must be present. `money_off_amount` must also be present.",
+            "Buy M quantity, get N percent off coupon value type. `buy_this_quantity` and `get_this_quantity` must be present. `percent_off_percentage` must also be present.",
+            "Buy M quantity, get money off. `buy_this_quantity` and `money_off_amount` must be present.",
+            "Buy M quantity, get money off. `buy_this_quantity` and `percent_off_percentage` must be present.",
+            "Free gift with description only.",
             "Free gift with value (description is optional).",
-            "Free gift with item id (description is optional).",
+            "Free gift with item ID (description is optional).",
             "Standard free shipping coupon value type.",
             "Overnight free shipping coupon value type.",
             "Two day free shipping coupon value type."
@@ -15795,7 +16957,7 @@
           "items": null
         },
         "freeGiftItemId": {
-          "description": "Free gift item id for the promotion.",
+          "description": "Free gift item ID for the promotion.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -15809,7 +16971,7 @@
           "$ref": "PriceAmount"
         },
         "genericRedemptionCode": {
-          "description": "Generic redemption code for the promotion. To be used with the above field.",
+          "description": "Generic redemption code for the promotion. To be used with the `offerType` field.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -15829,7 +16991,7 @@
           "items": null
         },
         "id": {
-          "description": "Required. Output only. The REST promotion id to uniquely identify the promotion. Content API methods that operate on promotions take this as their promotionId parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The channel field will have a value of \"online\", \"in_store\", or \"online_in_store\".",
+          "description": "Required. Output only. The REST promotion ID to uniquely identify the promotion. Content API methods that operate on promotions take this as their `promotionId` parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The `channel` field has a value of `\"online\"`, `\"in_store\"`, or `\"online_in_store\"`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -15839,7 +17001,7 @@
           "items": null
         },
         "itemGroupId": {
-          "description": "Product filter by item group id for the promotion.",
+          "description": "Product filter by item group ID for the promotion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -15857,7 +17019,7 @@
           }
         },
         "itemGroupIdExclusion": {
-          "description": "Product filter by item group id exclusion for the promotion.",
+          "description": "Product filter by item group ID exclusion for the promotion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -15875,7 +17037,7 @@
           }
         },
         "itemId": {
-          "description": "Product filter by item id for the promotion.",
+          "description": "Product filter by item ID for the promotion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -15893,7 +17055,7 @@
           }
         },
         "itemIdExclusion": {
-          "description": "Product filter by item id exclusion for the promotion.",
+          "description": "Product filter by item ID exclusion for the promotion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -15949,7 +17111,7 @@
           "items": null
         },
         "moneyBudget": {
-          "description": "Promotion cost cap of the promotion.",
+          "description": "Cost cap for the promotion.",
           "$ref": "PriceAmount"
         },
         "moneyOffAmount": {
@@ -16004,7 +17166,7 @@
             "SPECIFIC_PRODUCTS"
           ],
           "enumDescriptions": [
-            "Unknown product applicability.",
+            "Which products the promotion applies to is unknown.",
             "Applicable to all products.",
             "Applicable to only a single product or list of products."
           ],
@@ -16067,7 +17229,7 @@
           }
         },
         "promotionDisplayDates": {
-          "description": "String representation of the promotion display dates (deprecated: Use promotion_display_time_period instead).",
+          "description": "String representation of the promotion display dates. Deprecated. Use `promotion_display_time_period` instead.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -16077,11 +17239,11 @@
           "items": null
         },
         "promotionDisplayTimePeriod": {
-          "description": "TimePeriod representation of the promotion display dates.",
+          "description": "`TimePeriod` representation of the promotion's display dates.",
           "$ref": "TimePeriod"
         },
         "promotionEffectiveDates": {
-          "description": "String representation of the promotion effective dates (deprecated: Use promotion_effective_time_period instead).",
+          "description": "String representation of the promotion effective dates. Deprecated. Use `promotion_effective_time_period` instead.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -16091,11 +17253,25 @@
           "items": null
         },
         "promotionEffectiveTimePeriod": {
-          "description": "Required. TimePeriod representation of the promotion effective dates.",
+          "description": "Required. `TimePeriod` representation of the promotion's effective dates.",
           "$ref": "TimePeriod"
         },
         "promotionId": {
-          "description": "Required. The user provided promotion id to uniquely identify the promotion.",
+          "description": "Required. The user provided promotion ID to uniquely identify the promotion.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "promotionStatus": {
+          "description": "Output only. The current status of the promotion.",
+          "$ref": "PromotionPromotionStatus"
+        },
+        "promotionUrl": {
+          "description": "URL to the page on the merchant's site where the promotion shows. Local Inventory ads promotions throw an error if no promo url is included. URL is used to confirm that the promotion is valid and can be redeemed.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -16131,7 +17307,61 @@
           }
         },
         "shippingServiceNames": {
-          "description": "Shipping service names for thse promotion.",
+          "description": "Shipping service names for the promotion.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "storeApplicability": {
+          "description": "Whether the promotion applies to all stores, or only specified stores. Local Inventory ads promotions throw an error if no store applicability is included. An INVALID_ARGUMENT error is thrown if store_applicability is set to ALL_STORES and store_code or score_code_exclusion is set to a value.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STORE_APPLICABILITY_UNSPECIFIED",
+            "ALL_STORES",
+            "SPECIFIC_STORES"
+          ],
+          "enumDescriptions": [
+            "Which store codes the promotion applies to is unknown.",
+            "Promotion applies to all stores.",
+            "Promotion applies to only the specified stores."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "storeCode": {
+          "description": "Store codes to include for the promotion.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "storeCodeExclusion": {
+          "description": "Store codes to exclude for the promotion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -16149,7 +17379,143 @@
           }
         },
         "targetCountry": {
-          "description": "Required. The target country used as part of the unique identifier. Currently only US and CA are supported.",
+          "description": "Required. The target country used as part of the unique identifier. Can be `AU`, `CA`, `DE`, `FR`, `GB`, `IN` or `US`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PromotionPromotionStatus": {
+      "id": "PromotionPromotionStatus",
+      "description": "The status of the promotion.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "creationDate": {
+          "description": "Date on which the promotion has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example \"2020-01-02T09:00:00+01:00\" or \"2020-01-02T09:00:00Z\"",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "destinationStatuses": {
+          "description": "The intended destinations for the promotion.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PromotionPromotionStatusDestinationStatus"
+          }
+        },
+        "lastUpdateDate": {
+          "description": "Date on which the promotion status has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example \"2020-01-02T09:00:00+01:00\" or \"2020-01-02T09:00:00Z\"",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "promotionIssue": {
+          "description": "A list of issues associated with the promotion.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PromotionPromotionStatusPromotionIssue"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PromotionPromotionStatusDestinationStatus": {
+      "id": "PromotionPromotionStatusDestinationStatus",
+      "description": "The destination status of the promotion.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "destination": {
+          "description": "The name of the destination.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "status": {
+          "description": "The status for the specified destination.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "IN_REVIEW",
+            "REJECTED",
+            "LIVE",
+            "STOPPED",
+            "EXPIRED",
+            "PENDING"
+          ],
+          "enumDescriptions": [
+            "Unknown promotion state.",
+            "The promotion is under review.",
+            "The promotion is disapproved",
+            "The promotion is approved and active.",
+            "The promotion is stopped by merchant.",
+            "The promotion is no longer active.",
+            "The promotion is not stopped, and all reviews are approved, but the active date is in the future."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PromotionPromotionStatusPromotionIssue": {
+      "id": "PromotionPromotionStatusPromotionIssue",
+      "description": "The issue associated with the promotion.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "code": {
+          "description": "Code of the issue.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "detail": {
+          "description": "Explanation of the issue.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -16687,7 +18053,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors defined if and only if the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         },
         "kind": {
@@ -16716,9 +18082,33 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "bestSellers": {
+          "description": "Best Sellers fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView` or `BestSellersBrandView`.",
+          "$ref": "BestSellers"
+        },
+        "brand": {
+          "description": "Brand fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersBrandView`.",
+          "$ref": "Brand"
+        },
         "metrics": {
           "description": "Metrics requested by the merchant in the query. Metric values are only set for metrics requested explicitly in the query.",
           "$ref": "Metrics"
+        },
+        "priceCompetitiveness": {
+          "description": "Price Competitiveness fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceCompetitivenessProductView`.",
+          "$ref": "PriceCompetitiveness"
+        },
+        "priceInsights": {
+          "description": "Price Insights fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceInsightsProductView`.",
+          "$ref": "PriceInsights"
+        },
+        "productCluster": {
+          "description": "Product cluster fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView`.",
+          "$ref": "ProductCluster"
+        },
+        "productView": {
+          "description": "Product fields requested by the merchant in the query. Field values are only set if the merchant queries `ProductView`. Available only to selected merchants. Submit the [interest form](https://forms.gle/7Uy8htzAN8oNokz9A) to request access.",
+          "$ref": "ProductView"
         },
         "segments": {
           "description": "Segmentation dimensions requested by the merchant in the query. Dimension values are only set for dimensions requested explicitly in the query.",
@@ -16856,7 +18246,7 @@
     },
     "RepricingRule": {
       "id": "RepricingRule",
-      "description": "Represents a repricing rule. A repricing rule is used by shopping serving to adjust transactable offer prices if conditions are met. Next ID: 24",
+      "description": "Represents a repricing rule. A repricing rule is used by shopping serving to adjust transactable offer prices if conditions are met.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -18789,7 +20179,7 @@
     },
     "Segments": {
       "id": "Segments",
-      "description": "Dimensions according to which metrics are segmented in the response. Values of product dimensions, e.g., offer id, reflect the state of a product at the time of the corresponding event, e.g., impression or order. Segment fields cannot be selected in queries without also selecting at least one metric field. Values are only set for dimensions requested explicitly in the request's search query.",
+      "description": "Dimensions according to which metrics are segmented in the response. Values of product dimensions, such as `offer_id`, reflect the state of a product at the time of the corresponding event, for example, impression or order. Segment fields cannot be selected in queries without also selecting at least one metric field. Values are only set for dimensions requested explicitly in the request's search query.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -18856,7 +20246,7 @@
           "items": null
         },
         "currencyCode": {
-          "description": "Currency in which price metrics are represented, e.g., if you select `ordered_item_sales_micros`, the returned value will be represented by this currency.",
+          "description": "Currency in which price metrics are represented, for example, if you select `ordered_item_sales_micros`, the returned value will be represented by this currency.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -18907,6 +20297,16 @@
         },
         "customLabel4": {
           "description": "Custom label 4 for custom grouping of products.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "customerCountryCode": {
+          "description": "Code of the country where the customer is located at the time of the event. Represented in the ISO 3166 format. If the customer country cannot be determined, a special 'ZZ' code is returned.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -18980,7 +20380,7 @@
           "items": null
         },
         "program": {
-          "description": "Program to which metrics apply, e.g., Free Product Listing.",
+          "description": "Program to which metrics apply, for example, Free Product Listing.",
           "type": "string",
           "format": null,
           "enum": [
@@ -19828,7 +21228,7 @@
           "items": null
         },
         "errors": {
-          "description": "A list of errors defined if, and only if, the request failed.",
+          "description": "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request.",
           "$ref": "Errors"
         },
         "kind": {
@@ -20482,7 +21882,7 @@
           "items": null
         },
         "streetAddress": {
-          "description": "Street-level part of the address.",
+          "description": "Street-level part of the address. Use `\\n` to add a second line.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -22599,63 +23999,6 @@
         }
       }
     },
-    "accountsbyexternalsellerid": {
-      "resources": {},
-      "methods": {
-        "get": {
-          "id": "content.accountsbyexternalsellerid.get",
-          "path": "{merchantId}/accountsbyexternalsellerid/{externalSellerId}",
-          "httpMethod": "GET",
-          "description": "Gets data of the account with the specified external_seller_id belonging to the MCA with the specified merchant_id.",
-          "parameters": {
-            "externalSellerId": {
-              "description": "Required. The External Seller ID of the seller account to be retrieved.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            },
-            "merchantId": {
-              "description": "Required. The ID of the MCA containing the seller.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": "int64",
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            }
-          },
-          "parameterOrder": [
-            "merchantId",
-            "externalSellerId"
-          ],
-          "request": null,
-          "response": {
-            "$ref": "Account"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/content"
-          ],
-          "supportsMediaDownload": false,
-          "useMediaDownloadService": false,
-          "supportsSubscription": false,
-          "supportsMediaUpload": false,
-          "mediaUpload": null
-        }
-      }
-    },
     "accountstatuses": {
       "resources": {},
       "methods": {
@@ -22830,77 +24173,6 @@
           "request": null,
           "response": {
             "$ref": "AccountstatusesListResponse"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/content"
-          ],
-          "supportsMediaDownload": false,
-          "useMediaDownloadService": false,
-          "supportsSubscription": false,
-          "supportsMediaUpload": false,
-          "mediaUpload": null
-        }
-      }
-    },
-    "accountstatusesbyexternalsellerid": {
-      "resources": {},
-      "methods": {
-        "get": {
-          "id": "content.accountstatusesbyexternalsellerid.get",
-          "path": "{merchantId}/accountstatusesbyexternalsellerid/{externalSellerId}",
-          "httpMethod": "GET",
-          "description": "Gets status of the account with the specified external_seller_id belonging to the MCA with the specified merchant_id.",
-          "parameters": {
-            "destinations": {
-              "description": "If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.",
-              "default": null,
-              "location": "query",
-              "required": false,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": true
-            },
-            "externalSellerId": {
-              "description": "Required. The External Seller ID of the seller account to be retrieved.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            },
-            "merchantId": {
-              "description": "Required. The ID of the MCA containing the seller.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": "int64",
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            }
-          },
-          "parameterOrder": [
-            "merchantId",
-            "externalSellerId"
-          ],
-          "request": null,
-          "response": {
-            "$ref": "AccountStatus"
           },
           "scopes": [
             "https://www.googleapis.com/auth/content"
@@ -24032,7 +25304,7 @@
           "id": "content.datafeeds.fetchnow",
           "path": "{merchantId}/datafeeds/{datafeedId}/fetchNow",
           "httpMethod": "POST",
-          "description": "Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the Products service to update your product data.",
+          "description": "Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the [Products service](https://developers.google.com/shopping-content/reference/rest/v2.1/products) to update your product data.",
           "parameters": {
             "datafeedId": {
               "description": "The ID of the datafeed to be fetched.",
@@ -24324,7 +25596,7 @@
           "description": "Retrieves the status of a datafeed from your Merchant Center account.",
           "parameters": {
             "country": {
-              "description": "The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.",
+              "description": "Deprecated. Use `feedLabel` instead. The country to get the datafeed status for. If this parameter is provided then `language` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.",
               "default": null,
               "location": "query",
               "required": false,
@@ -24351,8 +25623,22 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "feedLabel": {
+              "description": "The feed label to get the datafeed status for. If this parameter is provided then `language` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "language": {
-              "description": "The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.",
+              "description": "The language to get the datafeed status for. If this parameter is provided then `country` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.",
               "default": null,
               "location": "query",
               "required": false,
@@ -24471,7 +25757,7 @@
           "id": "content.freelistingsprogram.get",
           "path": "{merchantId}/freelistingsprogram",
           "httpMethod": "GET",
-          "description": "Retrieves the status and review eligibility for the free listing program.",
+          "description": "Retrieves the status and review eligibility for the free listing program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account.",
           "parameters": {
             "merchantId": {
               "description": "Required. The ID of the account.",
@@ -27826,7 +29112,7 @@
               "repeated": false
             },
             "productId": {
-              "description": "Required. The Content API ID of the product, in the form channel:contentLanguage:targetCountry:offerId.",
+              "description": "Required. The Content API ID of the product, in the form `channel:contentLanguage:targetCountry:offerId`.",
               "default": null,
               "location": "path",
               "required": true,
@@ -27859,7 +29145,7 @@
           "id": "content.productdeliverytime.get",
           "path": "{merchantId}/productdeliverytime/{productId}",
           "httpMethod": "GET",
-          "description": "Gets productDeliveryTime by productId",
+          "description": "Gets `productDeliveryTime` by `productId`.",
           "parameters": {
             "merchantId": {
               "description": "Required. The Google merchant ID of the account that contains the product. This account cannot be a multi-client account.",
@@ -27876,7 +29162,7 @@
               "repeated": false
             },
             "productId": {
-              "description": "Required. The Content API ID of the product, in the form channel:contentLanguage:targetCountry:offerId.",
+              "description": "Required. The Content API ID of the product, in the form `channel:contentLanguage:targetCountry:offerId`.",
               "default": null,
               "location": "path",
               "required": true,
@@ -28203,7 +29489,7 @@
               "repeated": false
             },
             "updateMask": {
-              "description": "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged.",
+              "description": "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. *You must specify the update mask to delete attributes.* Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged.",
               "default": null,
               "location": "query",
               "required": false,
@@ -28545,7 +29831,7 @@
           "id": "content.promotions.create",
           "path": "{merchantId}/promotions",
           "httpMethod": "POST",
-          "description": "Inserts a promotion for your Merchant Center account. If the promotion already exists, then it will update the promotion instead.",
+          "description": "Inserts a promotion for your Merchant Center account. If the promotion already exists, then it updates the promotion instead. To [end or delete] (https://developers.google.com/shopping-content/guides/promotions#end_a_promotion) a promotion update the time period of the promotion to a time that has already passed.",
           "parameters": {
             "merchantId": {
               "description": "Required. The ID of the account that contains the collection.",
@@ -28715,6 +30001,76 @@
         }
       }
     },
+    "quotas": {
+      "resources": {},
+      "methods": {
+        "list": {
+          "id": "content.quotas.list",
+          "path": "{merchantId}/quotas",
+          "httpMethod": "GET",
+          "description": "Lists the daily call quota and usage per method for your Merchant Center account.",
+          "parameters": {
+            "merchantId": {
+              "description": "Required. The ID of the account that has quota. This account must be an admin.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageSize": {
+              "description": "The maximum number of quotas to return in the response, used for paging. Defaults to 500; values above 1000 will be coerced to 1000.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageToken": {
+              "description": "Token (if provided) to retrieve the subsequent page. All other parameters must match the original call that provided the page token.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "merchantId"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "ListMethodQuotasResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/content"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
     "regionalinventory": {
       "resources": {},
       "methods": {
@@ -28744,7 +30100,7 @@
           "id": "content.regionalinventory.insert",
           "path": "{merchantId}/products/{productId}/regionalinventory",
           "httpMethod": "POST",
-          "description": "Update the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry.",
+          "description": "Updates the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry.",
           "parameters": {
             "merchantId": {
               "description": "The ID of the account that contains the product. This account cannot be a multi-client account.",
@@ -30808,7 +32164,7 @@
           "id": "content.shoppingadsprogram.get",
           "path": "{merchantId}/shoppingadsprogram",
           "httpMethod": "GET",
-          "description": "Retrieves the status and review eligibility for the Shopping Ads program.",
+          "description": "Retrieves the status and review eligibility for the Shopping Ads program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account.",
           "parameters": {
             "merchantId": {
               "description": "Required. The ID of the account.",

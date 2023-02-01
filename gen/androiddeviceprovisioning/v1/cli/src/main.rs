@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("androiddeviceprovisioning1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230115")
             .about("Automates Android zero-touch enrollment for device resellers, customers, and EMMs.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -143,8 +143,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices1 = devices1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("metadata")
-                .about("Updates reseller metadata associated with the device.");
+            let mcmd = SubCommand::with_name("metadata").about(
+                "Updates reseller metadata associated with the device. Android devices only.",
+            );
             devices1 = devices1.subcommand(mcmd);
         }
         {
@@ -158,7 +159,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices1 = devices1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update_metadata_async").about("Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).");
+            let mcmd = SubCommand::with_name("update_metadata_async").about("Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). Android Devices only.");
             devices1 = devices1.subcommand(mcmd);
         }
         let mut vendors1 = SubCommand::with_name("vendors")

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [presentations](resources/presentations/struct.PresentationsActions.html)\n  * [*batchUpdate*](resources/presentations/struct.BatchUpdateRequestBuilder.html), [*create*](resources/presentations/struct.CreateRequestBuilder.html), [*get*](resources/presentations/struct.GetRequestBuilder.html)\n  * [pages](resources/presentations/pages/struct.PagesActions.html)\n    * [*get*](resources/presentations/pages/struct.GetRequestBuilder.html), [*getThumbnail*](resources/presentations/pages/struct.GetThumbnailRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, create, and delete all of your Google Drive files\n\n`https://www.googleapis.com/auth/drive`"]
@@ -560,7 +561,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CreateImageRequest {
-        #[doc = "The element properties for the image. When the aspect ratio of the provided size does not match the image aspect ratio, the image is scaled and centered with respect to the size in order to maintain aspect ratio. The provided transform is applied after this operation. The PageElementProperties.size property is optional. If you don’t specify the size, the default size of the image is used. The PageElementProperties.transform property is optional. If you don’t specify a transform, the image will be placed at the top left corner of the page."]
+        #[doc = "The element properties for the image. When the aspect ratio of the provided size does not match the image aspect ratio, the image is scaled and centered with respect to the size in order to maintain the aspect ratio. The provided transform is applied after this operation. The PageElementProperties.size property is optional. If you don’t specify the size, the default size of the image is used. The PageElementProperties.transform property is optional. If you don’t specify a transform, the image will be placed at the top-left corner of the page."]
         #[serde(
             rename = "elementProperties",
             default,
@@ -574,7 +575,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length. The URL itself is saved with the image, and exposed via the Image.source_url field."]
+        #[doc = "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50 MB in size, can’t exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF formats. The provided URL can be up to 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field."]
         #[serde(
             rename = "url",
             default,
@@ -2192,21 +2193,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreateSlideRequest {
-        #[doc = "The optional zero-based index indicating where to insert the slides. If you don’t specify an index, the new slide is created at the end."]
+        #[doc = "The optional zero-based index indicating where to insert the slides. If you don’t specify an index, the slide is created at the end."]
         #[serde(
             rename = "insertionIndex",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub insertion_index: ::std::option::Option<i32>,
-        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The ID length must be between 5 and 50 characters, inclusive. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "objectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "An optional list of object ID mappings from the placeholder(s) on the layout to the placeholder(s) that will be created on the new slide from that specified layout. Can only be used when `slide_layout_reference` is specified."]
+        #[doc = "An optional list of object ID mappings from the placeholder(s) on the layout to the placeholders that are created on the slide from the specified layout. Can only be used when `slide_layout_reference` is specified."]
         #[serde(
             rename = "placeholderIdMappings",
             default,
@@ -2214,7 +2215,7 @@ pub mod schemas {
         )]
         pub placeholder_id_mappings:
             ::std::option::Option<Vec<crate::schemas::LayoutPlaceholderIdMapping>>,
-        #[doc = "Layout reference of the slide to be inserted, based on the *current master*, which is one of the following: - The master of the previous slide index. - The master of the first slide, if the insertion_index is zero. - The first master in the presentation, if there are no slides. If the LayoutReference is not found in the current master, a 400 bad request error is returned. If you don’t specify a layout reference, then the new slide will use the predefined layout `BLANK`."]
+        #[doc = "Layout reference of the slide to be inserted, based on the *current master*, which is one of the following: - The master of the previous slide index. - The master of the first slide, if the insertion_index is zero. - The first master in the presentation, if there are no slides. If the LayoutReference is not found in the current master, a 400 bad request error is returned. If you don’t specify a layout reference, the slide uses the predefined `BLANK` layout."]
         #[serde(
             rename = "slideLayoutReference",
             default,
@@ -13337,15 +13338,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

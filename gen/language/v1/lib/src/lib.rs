@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [documents](resources/documents/struct.DocumentsActions.html)\n  * [*analyzeEntities*](resources/documents/struct.AnalyzeEntitiesRequestBuilder.html), [*analyzeEntitySentiment*](resources/documents/struct.AnalyzeEntitySentimentRequestBuilder.html), [*analyzeSentiment*](resources/documents/struct.AnalyzeSentimentRequestBuilder.html), [*analyzeSyntax*](resources/documents/struct.AnalyzeSyntaxRequestBuilder.html), [*annotateText*](resources/documents/struct.AnnotateTextRequestBuilder.html), [*classifyText*](resources/documents/struct.ClassifyTextRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Apply machine learning models to reveal the structure and meaning of text\n\n`https://www.googleapis.com/auth/cloud-language`"]
@@ -841,7 +842,53 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ClassificationModelOptions {
+        #[doc = "Setting this field will use the V1 model and V1 content categories version. The V1 model is a legacy model; support for this will be discontinued in the future."]
+        #[serde(
+            rename = "v1Model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub v_1_model: ::std::option::Option<crate::schemas::V1Model>,
+        #[doc = "Setting this field will use the V2 model with the appropriate content categories version. The V2 model is a better performing model."]
+        #[serde(
+            rename = "v2Model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub v_2_model: ::std::option::Option<crate::schemas::V2Model>,
+    }
+    impl ::google_field_selector::FieldSelector for ClassificationModelOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClassificationModelOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ClassifyTextRequest {
+        #[doc = "Model options to use for classification. Defaults to v1 options if not specified."]
+        #[serde(
+            rename = "classificationModelOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub classification_model_options:
+            ::std::option::Option<crate::schemas::ClassificationModelOptions>,
         #[doc = "Required. Input document."]
         #[serde(
             rename = "document",
@@ -1832,6 +1879,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Features {
+        #[doc = "The model options to use for classification. Defaults to v1 options if not specified. Only used if `classify_text` is set to true."]
+        #[serde(
+            rename = "classificationModelOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub classification_model_options:
+            ::std::option::Option<crate::schemas::ClassificationModelOptions>,
         #[doc = "Classify the full document into categories."]
         #[serde(
             rename = "classifyText",
@@ -3307,6 +3362,144 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Token {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct V1Model {}
+    impl ::google_field_selector::FieldSelector for V1Model {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for V1Model {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct V2Model {
+        #[doc = "The content categories used for classification."]
+        #[serde(
+            rename = "contentCategoriesVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub content_categories_version:
+            ::std::option::Option<crate::schemas::V2ModelContentCategoriesVersion>,
+    }
+    impl ::google_field_selector::FieldSelector for V2Model {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for V2Model {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum V2ModelContentCategoriesVersion {
+        #[doc = "If `ContentCategoriesVersion` is not specified, this option will default to `V1`."]
+        ContentCategoriesVersionUnspecified,
+        #[doc = "Legacy content categories of our initial launch in 2017."]
+        V1,
+        #[doc = "Updated content categories in 2022."]
+        V2,
+    }
+    impl V2ModelContentCategoriesVersion {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                V2ModelContentCategoriesVersion::ContentCategoriesVersionUnspecified => {
+                    "CONTENT_CATEGORIES_VERSION_UNSPECIFIED"
+                }
+                V2ModelContentCategoriesVersion::V1 => "V1",
+                V2ModelContentCategoriesVersion::V2 => "V2",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for V2ModelContentCategoriesVersion {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for V2ModelContentCategoriesVersion {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<V2ModelContentCategoriesVersion, ()> {
+            Ok(match s {
+                "CONTENT_CATEGORIES_VERSION_UNSPECIFIED" => {
+                    V2ModelContentCategoriesVersion::ContentCategoriesVersionUnspecified
+                }
+                "V1" => V2ModelContentCategoriesVersion::V1,
+                "V2" => V2ModelContentCategoriesVersion::V2,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for V2ModelContentCategoriesVersion {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for V2ModelContentCategoriesVersion {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for V2ModelContentCategoriesVersion {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CONTENT_CATEGORIES_VERSION_UNSPECIFIED" => {
+                    V2ModelContentCategoriesVersion::ContentCategoriesVersionUnspecified
+                }
+                "V1" => V2ModelContentCategoriesVersion::V1,
+                "V2" => V2ModelContentCategoriesVersion::V2,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for V2ModelContentCategoriesVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for V2ModelContentCategoriesVersion {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4845,15 +5038,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

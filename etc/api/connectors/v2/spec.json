@@ -1,0 +1,1758 @@
+{
+  "kind": "discovery#restDescription",
+  "etag": null,
+  "discoveryVersion": "v1",
+  "id": "connectors:v2",
+  "name": "connectors",
+  "canonicalName": "Connectors",
+  "fullyEncodeReservedExpansion": true,
+  "version": "v2",
+  "revision": "20230125",
+  "title": "Connectors API",
+  "description": "Enables users to create and manage connections to Google Cloud services and third-party business applications using the Connectors interface.",
+  "ownerDomain": "google.com",
+  "ownerName": "Google",
+  "icons": {
+    "x16": "http://www.google.com/images/icons/product/search-16.gif",
+    "x32": "http://www.google.com/images/icons/product/search-32.gif"
+  },
+  "documentationLink": "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectors",
+  "protocol": "rest",
+  "baseUrl": "https://connectors.googleapis.com/",
+  "basePath": "",
+  "rootUrl": "https://connectors.googleapis.com/",
+  "servicePath": "",
+  "batchPath": "batch",
+  "version_module": true,
+  "packagePath": null,
+  "labels": null,
+  "features": null,
+  "parameters": {
+    "$.xgafv": {
+      "description": "V1 error format.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "1",
+        "2"
+      ],
+      "enumDescriptions": [
+        "v1 error format",
+        "v2 error format"
+      ],
+      "repeated": false
+    },
+    "access_token": {
+      "description": "OAuth access token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "alt": {
+      "description": "Data format for response.",
+      "default": "json",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "json",
+        "media",
+        "proto"
+      ],
+      "enumDescriptions": [
+        "Responses with Content-Type of application/json",
+        "Media download with context-dependent Content-Type",
+        "Responses with Content-Type of application/x-protobuf"
+      ],
+      "repeated": false
+    },
+    "callback": {
+      "description": "JSONP",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "fields": {
+      "description": "Selector specifying which fields to include in a partial response.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "key": {
+      "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "oauth_token": {
+      "description": "OAuth 2.0 token for the current user.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "prettyPrint": {
+      "description": "Returns response with indentations and line breaks.",
+      "default": "true",
+      "location": "query",
+      "required": false,
+      "type": "boolean",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "quotaUser": {
+      "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "uploadType": {
+      "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "upload_protocol": {
+      "description": "Upload protocol for media (e.g. \"raw\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    }
+  },
+  "auth": {
+    "oauth2": {
+      "scopes": {
+        "https://www.googleapis.com/auth/cloud-platform": {
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
+        }
+      }
+    }
+  },
+  "schemas": {
+    "Action": {
+      "id": "Action",
+      "description": "Action message contains metadata information about a single action present in the external system.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inputParameters": {
+          "description": "List containing input parameter metadata.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "InputParameter"
+          }
+        },
+        "name": {
+          "description": "Name of the action.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "resultMetadata": {
+          "description": "List containing the metadata of result fields.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ResultMetadata"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Empty": {
+      "id": "Empty",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "Entity": {
+      "id": "Entity",
+      "description": "'Entity row'/ 'Entity' refers to a single row of an entity type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fields": {
+          "description": "Fields of the entity. The key is name of the field and the value contains the applicable `google.protobuf.Value` entry for this field.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "name": {
+          "description": "Output only. Resource name of the Entity. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}/entities/{id}",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "EntityType": {
+      "id": "EntityType",
+      "description": "EntityType message contains metadata information about a single entity type present in the external system.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fields": {
+          "description": "List containing metadata information about each field of the entity type.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Field"
+          }
+        },
+        "name": {
+          "description": "The name of the entity type.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ExecuteActionRequest": {
+      "id": "ExecuteActionRequest",
+      "description": "Request message for ActionService.ExecuteAction",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "parameters": {
+          "description": "Parameters for executing the action. The parameters can be key/value pairs or nested structs.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ExecuteActionResponse": {
+      "id": "ExecuteActionResponse",
+      "description": "Response message for ActionService.ExecuteAction",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "results": {
+          "description": "In the case of successful invocation of the specified action, the results Struct contains values based on the response of the action invoked. 1. If the action execution produces any entities as a result, they are returned as an array of Structs with the 'key' being the field name and the 'value' being the value of that field in each result row. { 'results': [{'key': 'value'}, ...] }",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "object",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": {
+              "description": "Properties of the object.",
+              "type": "any",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ExecuteSqlQueryRequest": {
+      "id": "ExecuteSqlQueryRequest",
+      "description": "An execute sql query request containing the query and the connection to execute it on.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "query": {
+          "description": "Required. SQL statement passed by clients like Integration Platform, the query is passed as-is to the driver used for interfacing with external systems.",
+          "$ref": "Query"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ExecuteSqlQueryResponse": {
+      "id": "ExecuteSqlQueryResponse",
+      "description": "A response returned by the connection after executing the sql query.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "results": {
+          "description": "In the case of successful execution of the query the response contains results returned by the external system. For example, the result rows of the query are contained in the 'results' Struct list - \"results\": [ { \"field1\": \"val1\", \"field2\": \"val2\",.. },.. ] Each Struct row can contain fields any type of like nested Structs or lists.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "object",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": {
+              "description": "Properties of the object.",
+              "type": "any",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Field": {
+      "id": "Field",
+      "description": "Message contains EntityType's Field metadata.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "additionalDetails": {
+          "description": "The following map contains fields that are not explicitly mentioned above,this give connectors the flexibility to add new metadata fields.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "dataType": {
+          "description": "The data type of the Field.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DATA_TYPE_UNSPECIFIED",
+            "INT",
+            "SMALLINT",
+            "DOUBLE",
+            "DATE",
+            "DATETIME",
+            "TIME",
+            "STRING",
+            "LONG",
+            "BOOLEAN",
+            "DECIMAL",
+            "UUID",
+            "BLOB",
+            "BIT",
+            "TINYINT",
+            "INTEGER",
+            "BIGINT",
+            "FLOAT",
+            "REAL",
+            "NUMERIC",
+            "CHAR",
+            "VARCHAR",
+            "LONGVARCHAR",
+            "TIMESTAMP",
+            "NCHAR",
+            "NVARCHAR",
+            "LONGNVARCHAR",
+            "NULL",
+            "OTHER",
+            "JAVA_OBJECT",
+            "DISTINCT",
+            "STRUCT",
+            "ARRAY",
+            "CLOB",
+            "REF",
+            "DATALINK",
+            "ROWID",
+            "BINARY",
+            "VARBINARY",
+            "LONGVARBINARY",
+            "NCLOB",
+            "SQLXML",
+            "REF_CURSOR",
+            "TIME_WITH_TIMEZONE",
+            "TIMESTAMP_WITH_TIMEZONE"
+          ],
+          "enumDescriptions": [
+            "Datatype unspecified.",
+            "Deprecated Int type, use INTEGER type instead.",
+            "Small int type.",
+            "Double type.",
+            "Date type.",
+            "Deprecated Datetime type.",
+            "Time type.",
+            "Deprecated string type, use VARCHAR type instead.",
+            "Deprecated Long type, use BIGINT type instead.",
+            "Boolean type.",
+            "Decimal type.",
+            "Deprecated UUID type, use VARCHAR instead.",
+            "Blob type.",
+            "Bit type.",
+            "Tiny int type.",
+            "Integer type.",
+            "Big int type.",
+            "Float type.",
+            "Real type.",
+            "Numeric type.",
+            "Char type.",
+            "Varchar type.",
+            "Long varchar type.",
+            "Timestamp type.",
+            "Nchar type.",
+            "Nvarchar type.",
+            "Long Nvarchar type.",
+            "Null type.",
+            "Other type.",
+            "Java object type.",
+            "Distinct type keyword.",
+            "Struct type.",
+            "Array type.",
+            "Clob type.",
+            "Ref type.",
+            "Datalink type.",
+            "Row ID type.",
+            "Binary type.",
+            "Varbinary type.",
+            "Long Varbinary type.",
+            "Nclob type.",
+            "SQLXML type.",
+            "Ref_cursor type.",
+            "Time with timezone type.",
+            "Timestamp with timezone type."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "defaultValue": {
+          "description": "The following field specifies the default value of the Field provided by the external system if a value is not provided.",
+          "type": "any",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "A brief description of the Field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "key": {
+          "description": "The following boolean field specifies if the current Field acts as a primary key or id if the parent is of type entity.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Name of the Field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nullable": {
+          "description": "Specifies whether a null value is allowed.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reference": {
+          "description": "Reference captures the association between two different entity types. Value links to the reference of another entity type.",
+          "$ref": "Reference"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InputParameter": {
+      "id": "InputParameter",
+      "description": "Input Parameter message contains metadata about the parameters required for executing an Action.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dataType": {
+          "description": "The data type of the Parameter",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DATA_TYPE_UNSPECIFIED",
+            "INT",
+            "SMALLINT",
+            "DOUBLE",
+            "DATE",
+            "DATETIME",
+            "TIME",
+            "STRING",
+            "LONG",
+            "BOOLEAN",
+            "DECIMAL",
+            "UUID",
+            "BLOB",
+            "BIT",
+            "TINYINT",
+            "INTEGER",
+            "BIGINT",
+            "FLOAT",
+            "REAL",
+            "NUMERIC",
+            "CHAR",
+            "VARCHAR",
+            "LONGVARCHAR",
+            "TIMESTAMP",
+            "NCHAR",
+            "NVARCHAR",
+            "LONGNVARCHAR",
+            "NULL",
+            "OTHER",
+            "JAVA_OBJECT",
+            "DISTINCT",
+            "STRUCT",
+            "ARRAY",
+            "CLOB",
+            "REF",
+            "DATALINK",
+            "ROWID",
+            "BINARY",
+            "VARBINARY",
+            "LONGVARBINARY",
+            "NCLOB",
+            "SQLXML",
+            "REF_CURSOR",
+            "TIME_WITH_TIMEZONE",
+            "TIMESTAMP_WITH_TIMEZONE"
+          ],
+          "enumDescriptions": [
+            "Datatype unspecified.",
+            "Deprecated Int type, use INTEGER type instead.",
+            "Small int type.",
+            "Double type.",
+            "Date type.",
+            "Deprecated Datetime type.",
+            "Time type.",
+            "Deprecated string type, use VARCHAR type instead.",
+            "Deprecated Long type, use BIGINT type instead.",
+            "Boolean type.",
+            "Decimal type.",
+            "Deprecated UUID type, use VARCHAR instead.",
+            "Blob type.",
+            "Bit type.",
+            "Tiny int type.",
+            "Integer type.",
+            "Big int type.",
+            "Float type.",
+            "Real type.",
+            "Numeric type.",
+            "Char type.",
+            "Varchar type.",
+            "Long varchar type.",
+            "Timestamp type.",
+            "Nchar type.",
+            "Nvarchar type.",
+            "Long Nvarchar type.",
+            "Null type.",
+            "Other type.",
+            "Java object type.",
+            "Distinct type keyword.",
+            "Struct type.",
+            "Array type.",
+            "Clob type.",
+            "Ref type.",
+            "Datalink type.",
+            "Row ID type.",
+            "Binary type.",
+            "Varbinary type.",
+            "Long Varbinary type.",
+            "Nclob type.",
+            "SQLXML type.",
+            "Ref_cursor type.",
+            "Time with timezone type.",
+            "Timestamp with timezone type."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "defaultValue": {
+          "description": "The following field specifies the default value of the Parameter provided by the external system if a value is not provided.",
+          "type": "any",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "A brief description of the Parameter.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Name of the Parameter.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nullable": {
+          "description": "Specifies whether a null value is allowed.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListActionsResponse": {
+      "id": "ListActionsResponse",
+      "description": "Response message for ActionService.ListActions",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "actions": {
+          "description": "List of action metadata.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Action"
+          }
+        },
+        "nextPageToken": {
+          "description": "Next page token if more actions available.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "unsupportedActionNames": {
+          "description": "List of actions which contain unsupported Datatypes. Check datatype.proto for more information.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListEntitiesResponse": {
+      "id": "ListEntitiesResponse",
+      "description": "Response message for EntityService.ListEntities",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "entities": {
+          "description": "List containing entity rows.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Entity"
+          }
+        },
+        "nextPageToken": {
+          "description": "Next page token if more records are available.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListEntityTypesResponse": {
+      "id": "ListEntityTypesResponse",
+      "description": "Response message for EntityService.ListEntityTypes",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "Next page token if more entity types available.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "types": {
+          "description": "List of metadata related to all entity types.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "EntityType"
+          }
+        },
+        "unsupportedTypeNames": {
+          "description": "List of entity type names which contain unsupported Datatypes. Check datatype.proto for more information.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Query": {
+      "id": "Query",
+      "description": "A wrapper around the SQL query statement. This is needed so that the JSON representation of ExecuteSqlQueryRequest has the following format: `{\"query\":\"select *\"}`.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "query": {
+          "description": "Required. Sql query to execute.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Reference": {
+      "id": "Reference",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Name of the reference field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Name of reference entity type.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ResultMetadata": {
+      "id": "ResultMetadata",
+      "description": "Result Metadata message contains metadata about the result returned after executing an Action.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dataType": {
+          "description": "The data type of the metadata field",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DATA_TYPE_UNSPECIFIED",
+            "INT",
+            "SMALLINT",
+            "DOUBLE",
+            "DATE",
+            "DATETIME",
+            "TIME",
+            "STRING",
+            "LONG",
+            "BOOLEAN",
+            "DECIMAL",
+            "UUID",
+            "BLOB",
+            "BIT",
+            "TINYINT",
+            "INTEGER",
+            "BIGINT",
+            "FLOAT",
+            "REAL",
+            "NUMERIC",
+            "CHAR",
+            "VARCHAR",
+            "LONGVARCHAR",
+            "TIMESTAMP",
+            "NCHAR",
+            "NVARCHAR",
+            "LONGNVARCHAR",
+            "NULL",
+            "OTHER",
+            "JAVA_OBJECT",
+            "DISTINCT",
+            "STRUCT",
+            "ARRAY",
+            "CLOB",
+            "REF",
+            "DATALINK",
+            "ROWID",
+            "BINARY",
+            "VARBINARY",
+            "LONGVARBINARY",
+            "NCLOB",
+            "SQLXML",
+            "REF_CURSOR",
+            "TIME_WITH_TIMEZONE",
+            "TIMESTAMP_WITH_TIMEZONE"
+          ],
+          "enumDescriptions": [
+            "Datatype unspecified.",
+            "Deprecated Int type, use INTEGER type instead.",
+            "Small int type.",
+            "Double type.",
+            "Date type.",
+            "Deprecated Datetime type.",
+            "Time type.",
+            "Deprecated string type, use VARCHAR type instead.",
+            "Deprecated Long type, use BIGINT type instead.",
+            "Boolean type.",
+            "Decimal type.",
+            "Deprecated UUID type, use VARCHAR instead.",
+            "Blob type.",
+            "Bit type.",
+            "Tiny int type.",
+            "Integer type.",
+            "Big int type.",
+            "Float type.",
+            "Real type.",
+            "Numeric type.",
+            "Char type.",
+            "Varchar type.",
+            "Long varchar type.",
+            "Timestamp type.",
+            "Nchar type.",
+            "Nvarchar type.",
+            "Long Nvarchar type.",
+            "Null type.",
+            "Other type.",
+            "Java object type.",
+            "Distinct type keyword.",
+            "Struct type.",
+            "Array type.",
+            "Clob type.",
+            "Ref type.",
+            "Datalink type.",
+            "Row ID type.",
+            "Binary type.",
+            "Varbinary type.",
+            "Long Varbinary type.",
+            "Nclob type.",
+            "SQLXML type.",
+            "Ref_cursor type.",
+            "Time with timezone type.",
+            "Timestamp with timezone type."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "description": {
+          "description": "A brief description of the metadata field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Name of the metadata field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UpdateEntitiesWithConditionsResponse": {
+      "id": "UpdateEntitiesWithConditionsResponse",
+      "description": "Response message for EntityService.UpdateEntitiesWithConditions",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "response": {
+          "description": "Response returned by the external system.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    }
+  },
+  "resources": {
+    "projects": {
+      "resources": {
+        "locations": {
+          "resources": {
+            "connections": {
+              "resources": {
+                "actions": {
+                  "resources": {},
+                  "methods": {
+                    "execute": {
+                      "id": "connectors.projects.locations.connections.actions.execute",
+                      "path": "v2/{+name}:execute",
+                      "httpMethod": "POST",
+                      "description": "Executes an action with the name specified in the request. The input parameters for executing the action are passed through the body of the ExecuteAction request.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. Resource name of the Action. Format: projects/{project}/locations/{location}/connections/{connection}/actions/{action}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/actions/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": {
+                        "$ref": "ExecuteActionRequest"
+                      },
+                      "response": {
+                        "$ref": "ExecuteActionResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "connectors.projects.locations.connections.actions.list",
+                      "path": "v2/{+parent}/actions",
+                      "httpMethod": "GET",
+                      "description": "Gets the schema of all the actions supported by the connector.",
+                      "parameters": {
+                        "pageSize": {
+                          "description": "Number of Actions to return. Defaults to 25.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "Page token, return from a previous ListActions call, that can be used retrieve the next page of content. If unspecified, the request returns the first page of actions.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. Parent resource name of the Action. Format: projects/{project}/locations/{location}/connections/{connection}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListActionsResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                },
+                "entityTypes": {
+                  "resources": {
+                    "entities": {
+                      "resources": {},
+                      "methods": {
+                        "create": {
+                          "id": "connectors.projects.locations.connections.entityTypes.entities.create",
+                          "path": "v2/{+parent}/entities",
+                          "httpMethod": "POST",
+                          "description": "Creates a new entity row of the specified entity type in the external system. The field values for creating the row are contained in the body of the request. The response message contains a `Entity` message object returned as a response by the external system.",
+                          "parameters": {
+                            "parent": {
+                              "description": "Required. Resource name of the Entity Type. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/entityTypes/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "parent"
+                          ],
+                          "request": {
+                            "$ref": "Entity"
+                          },
+                          "response": {
+                            "$ref": "Entity"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        },
+                        "delete": {
+                          "id": "connectors.projects.locations.connections.entityTypes.entities.delete",
+                          "path": "v2/{+name}",
+                          "httpMethod": "DELETE",
+                          "description": "Deletes an existing entity row matching the entity type and entity id specified in the request.",
+                          "parameters": {
+                            "name": {
+                              "description": "Required. Resource name of the Entity Type. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}/entities/{id}",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/entityTypes/[^/]+/entities/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "name"
+                          ],
+                          "request": null,
+                          "response": {
+                            "$ref": "Empty"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        },
+                        "deleteEntitiesWithConditions": {
+                          "id": "connectors.projects.locations.connections.entityTypes.entities.deleteEntitiesWithConditions",
+                          "path": "v2/{+entityType}/entities:deleteEntitiesWithConditions",
+                          "httpMethod": "POST",
+                          "description": "Deletes entities based on conditions specified in the request and not on entity id.",
+                          "parameters": {
+                            "conditions": {
+                              "description": "Required. Conditions to be used when deleting entities. From a proto standpoint, There are no restrictions on what can be passed using this field. The connector documentation should have information about what format of filters/conditions are supported. Note: If this conditions field is left empty, an exception is thrown. We don't want to consider 'empty conditions' to be a match-all case. Connector developers can determine and document what a match-all case constraint would be.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "entityType": {
+                              "description": "Required. Resource name of the Entity Type. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/entityTypes/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "entityType"
+                          ],
+                          "request": null,
+                          "response": {
+                            "$ref": "Empty"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        },
+                        "get": {
+                          "id": "connectors.projects.locations.connections.entityTypes.entities.get",
+                          "path": "v2/{+name}",
+                          "httpMethod": "GET",
+                          "description": "Gets a single entity row matching the entity type and entity id specified in the request.",
+                          "parameters": {
+                            "name": {
+                              "description": "Required. Resource name of the Entity Type. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}/entities/{id}",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/entityTypes/[^/]+/entities/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "name"
+                          ],
+                          "request": null,
+                          "response": {
+                            "$ref": "Entity"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        },
+                        "list": {
+                          "id": "connectors.projects.locations.connections.entityTypes.entities.list",
+                          "path": "v2/{+parent}/entities",
+                          "httpMethod": "GET",
+                          "description": "Lists entity rows of a particular entity type contained in the request. Note: 1. Currently, only max of one 'sort_by' column is supported. 2. If no 'sort_by' column is provided, the primary key of the table is used. If zero or more than one primary key is available, we default to the unpaginated list entities logic which only returns the first page. 3. The values of the 'sort_by' columns must uniquely identify an entity row, otherwise undefined behaviors may be observed during pagination. 4. Since transactions are not supported, any updates, inserts or deletes during pagination can lead to stale data being returned or other unexpected behaviors.",
+                          "parameters": {
+                            "conditions": {
+                              "description": "Conditions to be used when listing entities. From a proto standpoint, There are no restrictions on what can be passed using this field. The connector documentation should have information about what format of filters/conditions are supported.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "pageSize": {
+                              "description": "Number of entity rows to return. Defaults page size = 25. Max page size = 200.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "integer",
+                              "format": "int32",
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "pageToken": {
+                              "description": "Page token value if available from a previous request.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "parent": {
+                              "description": "Required. Resource name of the Entity Type. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/entityTypes/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "sortBy": {
+                              "description": "List of 'sort_by' columns to use when returning the results.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": true
+                            }
+                          },
+                          "parameterOrder": [
+                            "parent"
+                          ],
+                          "request": null,
+                          "response": {
+                            "$ref": "ListEntitiesResponse"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        },
+                        "patch": {
+                          "id": "connectors.projects.locations.connections.entityTypes.entities.patch",
+                          "path": "v2/{+name}",
+                          "httpMethod": "PATCH",
+                          "description": "Updates an existing entity row matching the entity type and entity id specified in the request. The fields in the entity row that need to be modified are contained in the body of the request. All unspecified fields are left unchanged. The response message contains a `Entity` message object returned as a response by the external system.",
+                          "parameters": {
+                            "name": {
+                              "description": "Output only. Resource name of the Entity. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}/entities/{id}",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/entityTypes/[^/]+/entities/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "name"
+                          ],
+                          "request": {
+                            "$ref": "Entity"
+                          },
+                          "response": {
+                            "$ref": "Entity"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        },
+                        "updateEntitiesWithConditions": {
+                          "id": "connectors.projects.locations.connections.entityTypes.entities.updateEntitiesWithConditions",
+                          "path": "v2/{+entityType}/entities:updateEntitiesWithConditions",
+                          "httpMethod": "POST",
+                          "description": "Updates entities based on conditions specified in the request and not on entity id.",
+                          "parameters": {
+                            "conditions": {
+                              "description": "Required. Conditions to be used when updating entities. From a proto standpoint, There are no restrictions on what can be passed using this field. The connector documentation should have information about what format of filters/conditions are supported. Note: If this conditions field is left empty, an exception is thrown. We don't want to consider 'empty conditions' to be a match-all case. Connector developers can determine and document what a match-all case constraint would be.",
+                              "default": null,
+                              "location": "query",
+                              "required": false,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": null,
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            },
+                            "entityType": {
+                              "description": "Required. Resource name of the Entity Type. Format: projects/{project}/locations/{location}/connections/{connection}/entityTypes/{type}",
+                              "default": null,
+                              "location": "path",
+                              "required": true,
+                              "type": "string",
+                              "format": null,
+                              "minimum": null,
+                              "maximum": null,
+                              "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+/entityTypes/[^/]+$",
+                              "enum": [],
+                              "enumDescriptions": [],
+                              "repeated": false
+                            }
+                          },
+                          "parameterOrder": [
+                            "entityType"
+                          ],
+                          "request": {
+                            "$ref": "Entity"
+                          },
+                          "response": {
+                            "$ref": "UpdateEntitiesWithConditionsResponse"
+                          },
+                          "scopes": [
+                            "https://www.googleapis.com/auth/cloud-platform"
+                          ],
+                          "supportsMediaDownload": false,
+                          "useMediaDownloadService": false,
+                          "supportsSubscription": false,
+                          "supportsMediaUpload": false,
+                          "mediaUpload": null
+                        }
+                      }
+                    }
+                  },
+                  "methods": {
+                    "list": {
+                      "id": "connectors.projects.locations.connections.entityTypes.list",
+                      "path": "v2/{+parent}/entityTypes",
+                      "httpMethod": "GET",
+                      "description": "Lists metadata related to all entity types present in the external system.",
+                      "parameters": {
+                        "pageSize": {
+                          "description": "Number of entity types to return. Defaults to 25.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "Page token, return from a previous ListEntityTypes call, that can be used retrieve the next page of content. If unspecified, the request returns the first page of entity types.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. Resource name of the Entity Type. Format: projects/{project}/locations/{location}/connections/{connection}",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListEntityTypesResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                }
+              },
+              "methods": {
+                "executeSqlQuery": {
+                  "id": "connectors.projects.locations.connections.executeSqlQuery",
+                  "path": "v2/{+connection}:executeSqlQuery",
+                  "httpMethod": "POST",
+                  "description": "Executes a SQL statement specified in the body of the request. An example of this SQL statement in the case of Salesforce connector would be 'select * from Account a, Order o where a.Id = o.AccountId'.",
+                  "parameters": {
+                    "connection": {
+                      "description": "Required. Resource name of the Connection. Format: projects/{project}/locations/{location}/connections/{connection}",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "connection"
+                  ],
+                  "request": {
+                    "$ref": "ExecuteSqlQueryRequest"
+                  },
+                  "response": {
+                    "$ref": "ExecuteSqlQueryResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {}
+        }
+      },
+      "methods": {}
+    }
+  },
+  "methods": {}
+}

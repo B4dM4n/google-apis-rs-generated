@@ -7,7 +7,7 @@
   "canonicalName": "Firebase Rules",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220413",
+  "revision": "20230111",
   "title": "Firebase Rules API",
   "description": "Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request. ",
   "ownerDomain": "google.com",
@@ -671,7 +671,7 @@
           "items": null
         },
         "rulesetName": {
-          "description": "Required. Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist the `Release` to be created.",
+          "description": "Required. Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.",
           "type": "string",
           "format": null,
           "enum": [],

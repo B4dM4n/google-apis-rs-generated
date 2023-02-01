@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [google_service_accounts](resources/google_service_accounts/struct.GoogleServiceAccountsActions.html)\n  * [*get*](resources/google_service_accounts/struct.GetRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [agent_pools](resources/projects/agent_pools/struct.AgentPoolsActions.html)\n    * [*create*](resources/projects/agent_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/agent_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/agent_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/agent_pools/struct.ListRequestBuilder.html), [*patch*](resources/projects/agent_pools/struct.PatchRequestBuilder.html)\n* [transfer_jobs](resources/transfer_jobs/struct.TransferJobsActions.html)\n  * [*create*](resources/transfer_jobs/struct.CreateRequestBuilder.html), [*get*](resources/transfer_jobs/struct.GetRequestBuilder.html), [*list*](resources/transfer_jobs/struct.ListRequestBuilder.html), [*patch*](resources/transfer_jobs/struct.PatchRequestBuilder.html), [*run*](resources/transfer_jobs/struct.RunRequestBuilder.html)\n* [transfer_operations](resources/transfer_operations/struct.TransferOperationsActions.html)\n  * [*cancel*](resources/transfer_operations/struct.CancelRequestBuilder.html), [*get*](resources/transfer_operations/struct.GetRequestBuilder.html), [*list*](resources/transfer_operations/struct.ListRequestBuilder.html), [*pause*](resources/transfer_operations/struct.PauseRequestBuilder.html), [*resume*](resources/transfer_operations/struct.ResumeRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [google_service_accounts](resources/google_service_accounts/struct.GoogleServiceAccountsActions.html)\n  * [*get*](resources/google_service_accounts/struct.GetRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [agent_pools](resources/projects/agent_pools/struct.AgentPoolsActions.html)\n    * [*create*](resources/projects/agent_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/agent_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/agent_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/agent_pools/struct.ListRequestBuilder.html), [*patch*](resources/projects/agent_pools/struct.PatchRequestBuilder.html)\n* [transfer_jobs](resources/transfer_jobs/struct.TransferJobsActions.html)\n  * [*create*](resources/transfer_jobs/struct.CreateRequestBuilder.html), [*delete*](resources/transfer_jobs/struct.DeleteRequestBuilder.html), [*get*](resources/transfer_jobs/struct.GetRequestBuilder.html), [*list*](resources/transfer_jobs/struct.ListRequestBuilder.html), [*patch*](resources/transfer_jobs/struct.PatchRequestBuilder.html), [*run*](resources/transfer_jobs/struct.RunRequestBuilder.html)\n* [transfer_operations](resources/transfer_operations/struct.TransferOperationsActions.html)\n  * [*cancel*](resources/transfer_operations/struct.CancelRequestBuilder.html), [*get*](resources/transfer_operations/struct.GetRequestBuilder.html), [*list*](resources/transfer_operations/struct.ListRequestBuilder.html), [*pause*](resources/transfer_operations/struct.PauseRequestBuilder.html), [*resume*](resources/transfer_operations/struct.ResumeRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -171,6 +172,65 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AwsAccessKey {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AwsS3CompatibleData {
+        #[doc = "Required. Specifies the name of the bucket."]
+        #[serde(
+            rename = "bucketName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bucket_name: ::std::option::Option<String>,
+        #[doc = "Required. Specifies the endpoint of the storage service."]
+        #[serde(
+            rename = "endpoint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub endpoint: ::std::option::Option<String>,
+        #[doc = "Specifies the root path to transfer objects. Must be an empty string or full path name that ends with a ‘/’. This field is treated as an object prefix. As such, it should generally not begin with a ‘/’."]
+        #[serde(
+            rename = "path",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub path: ::std::option::Option<String>,
+        #[doc = "Specifies the region to sign requests with. This can be left blank if requests should be signed with an empty region."]
+        #[serde(
+            rename = "region",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region: ::std::option::Option<String>,
+        #[doc = "A S3 compatible metadata."]
+        #[serde(
+            rename = "s3Metadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub s_3_metadata: ::std::option::Option<crate::schemas::S3CompatibleMetadata>,
+    }
+    impl ::google_field_selector::FieldSelector for AwsS3CompatibleData {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AwsS3CompatibleData {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -539,7 +599,7 @@ pub mod schemas {
         InvalidArgument,
         #[doc = "Some requested entity (e.g., file or directory) was not found. Note to server developers: if a request is denied for an entire class of users, such as gradual feature rollout or undocumented allowlist, `NOT_FOUND` may be used. If a request is denied for some users within a class of users, such as user-based access control, `PERMISSION_DENIED` must be used. HTTP Mapping: 404 Not Found"]
         NotFound,
-        #[doc = "Not an error; returned on success HTTP Mapping: 200 OK"]
+        #[doc = "Not an error; returned on success. HTTP Mapping: 200 OK"]
         Ok,
         #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range \\[0,2^32-1\\], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
         OutOfRange,
@@ -661,6 +721,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ErrorSummaryErrorCode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct EventStream {
+        #[doc = "Specifies the data and time at which Storage Transfer Service stops listening for events from this stream. After this time, any transfers in progress will complete, but no new transfers are initiated."]
+        #[serde(
+            rename = "eventStreamExpirationTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_stream_expiration_time: ::std::option::Option<String>,
+        #[doc = "Specifies the date and time that Storage Transfer Service starts listening for events from this stream. If no start time is specified or start time is in the past, Storage Transfer Service starts listening immediately."]
+        #[serde(
+            rename = "eventStreamStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_stream_start_time: ::std::option::Option<String>,
+        #[doc = "Required. Specifies a unique name of the resource such as AWS SQS ARN in the form ‘arn:aws:sqs:region:account_id:queue_name’, or Pub/Sub subscription resource name in the form ‘projects/{project}/subscriptions/{sub}’."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for EventStream {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EventStream {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -810,7 +915,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAgentPoolsResponse {
+    impl crate::GetNextPageToken<String> for ListAgentPoolsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -842,7 +947,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -885,7 +990,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListTransferJobsResponse {
+    impl crate::GetNextPageToken<String> for ListTransferJobsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2385,6 +2490,398 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct S3CompatibleMetadata {
+        #[doc = "Specifies the authentication and authorization method used by the storage service. When not specified, Transfer Service will attempt to determine right auth method to use."]
+        #[serde(
+            rename = "authMethod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auth_method: ::std::option::Option<crate::schemas::S3CompatibleMetadataAuthMethod>,
+        #[doc = "The Listing API to use for discovering objects. When not specified, Transfer Service will attempt to determine the right API to use."]
+        #[serde(
+            rename = "listApi",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub list_api: ::std::option::Option<crate::schemas::S3CompatibleMetadataListApi>,
+        #[doc = "Specifies the network protocol of the agent. When not specified, the default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used."]
+        #[serde(
+            rename = "protocol",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protocol: ::std::option::Option<crate::schemas::S3CompatibleMetadataProtocol>,
+        #[doc = "Specifies the API request model used to call the storage service. When not specified, the default value of RequestModel REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used."]
+        #[serde(
+            rename = "requestModel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_model: ::std::option::Option<crate::schemas::S3CompatibleMetadataRequestModel>,
+    }
+    impl ::google_field_selector::FieldSelector for S3CompatibleMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for S3CompatibleMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum S3CompatibleMetadataAuthMethod {
+        #[doc = "Auth requests with AWS SigV2."]
+        AuthMethodAwsSignatureV2,
+        #[doc = "Auth requests with AWS SigV4."]
+        AuthMethodAwsSignatureV4,
+        #[doc = "AuthMethod is not specified."]
+        AuthMethodUnspecified,
+    }
+    impl S3CompatibleMetadataAuthMethod {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                S3CompatibleMetadataAuthMethod::AuthMethodAwsSignatureV2 => {
+                    "AUTH_METHOD_AWS_SIGNATURE_V2"
+                }
+                S3CompatibleMetadataAuthMethod::AuthMethodAwsSignatureV4 => {
+                    "AUTH_METHOD_AWS_SIGNATURE_V4"
+                }
+                S3CompatibleMetadataAuthMethod::AuthMethodUnspecified => "AUTH_METHOD_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for S3CompatibleMetadataAuthMethod {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for S3CompatibleMetadataAuthMethod {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<S3CompatibleMetadataAuthMethod, ()> {
+            Ok(match s {
+                "AUTH_METHOD_AWS_SIGNATURE_V2" => {
+                    S3CompatibleMetadataAuthMethod::AuthMethodAwsSignatureV2
+                }
+                "AUTH_METHOD_AWS_SIGNATURE_V4" => {
+                    S3CompatibleMetadataAuthMethod::AuthMethodAwsSignatureV4
+                }
+                "AUTH_METHOD_UNSPECIFIED" => S3CompatibleMetadataAuthMethod::AuthMethodUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for S3CompatibleMetadataAuthMethod {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for S3CompatibleMetadataAuthMethod {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for S3CompatibleMetadataAuthMethod {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AUTH_METHOD_AWS_SIGNATURE_V2" => {
+                    S3CompatibleMetadataAuthMethod::AuthMethodAwsSignatureV2
+                }
+                "AUTH_METHOD_AWS_SIGNATURE_V4" => {
+                    S3CompatibleMetadataAuthMethod::AuthMethodAwsSignatureV4
+                }
+                "AUTH_METHOD_UNSPECIFIED" => S3CompatibleMetadataAuthMethod::AuthMethodUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for S3CompatibleMetadataAuthMethod {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for S3CompatibleMetadataAuthMethod {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum S3CompatibleMetadataListApi {
+        #[doc = "ListApi is not specified."]
+        ListApiUnspecified,
+        #[doc = "Legacy ListObjects API."]
+        ListObjects,
+        #[doc = "Perform listing using ListObjectsV2 API."]
+        ListObjectsV2,
+    }
+    impl S3CompatibleMetadataListApi {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                S3CompatibleMetadataListApi::ListApiUnspecified => "LIST_API_UNSPECIFIED",
+                S3CompatibleMetadataListApi::ListObjects => "LIST_OBJECTS",
+                S3CompatibleMetadataListApi::ListObjectsV2 => "LIST_OBJECTS_V2",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for S3CompatibleMetadataListApi {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for S3CompatibleMetadataListApi {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<S3CompatibleMetadataListApi, ()> {
+            Ok(match s {
+                "LIST_API_UNSPECIFIED" => S3CompatibleMetadataListApi::ListApiUnspecified,
+                "LIST_OBJECTS" => S3CompatibleMetadataListApi::ListObjects,
+                "LIST_OBJECTS_V2" => S3CompatibleMetadataListApi::ListObjectsV2,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for S3CompatibleMetadataListApi {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for S3CompatibleMetadataListApi {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for S3CompatibleMetadataListApi {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "LIST_API_UNSPECIFIED" => S3CompatibleMetadataListApi::ListApiUnspecified,
+                "LIST_OBJECTS" => S3CompatibleMetadataListApi::ListObjects,
+                "LIST_OBJECTS_V2" => S3CompatibleMetadataListApi::ListObjectsV2,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for S3CompatibleMetadataListApi {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for S3CompatibleMetadataListApi {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum S3CompatibleMetadataProtocol {
+        #[doc = "Not recommended: This sends data in clear-text. This is only appropriate within a closed network or for publicly available data. Perform requests using HTTP."]
+        NetworkProtocolHttp,
+        #[doc = "Perform requests using HTTPS."]
+        NetworkProtocolHttps,
+        #[doc = "NetworkProtocol is not specified."]
+        NetworkProtocolUnspecified,
+    }
+    impl S3CompatibleMetadataProtocol {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                S3CompatibleMetadataProtocol::NetworkProtocolHttp => "NETWORK_PROTOCOL_HTTP",
+                S3CompatibleMetadataProtocol::NetworkProtocolHttps => "NETWORK_PROTOCOL_HTTPS",
+                S3CompatibleMetadataProtocol::NetworkProtocolUnspecified => {
+                    "NETWORK_PROTOCOL_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for S3CompatibleMetadataProtocol {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for S3CompatibleMetadataProtocol {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<S3CompatibleMetadataProtocol, ()> {
+            Ok(match s {
+                "NETWORK_PROTOCOL_HTTP" => S3CompatibleMetadataProtocol::NetworkProtocolHttp,
+                "NETWORK_PROTOCOL_HTTPS" => S3CompatibleMetadataProtocol::NetworkProtocolHttps,
+                "NETWORK_PROTOCOL_UNSPECIFIED" => {
+                    S3CompatibleMetadataProtocol::NetworkProtocolUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for S3CompatibleMetadataProtocol {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for S3CompatibleMetadataProtocol {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for S3CompatibleMetadataProtocol {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "NETWORK_PROTOCOL_HTTP" => S3CompatibleMetadataProtocol::NetworkProtocolHttp,
+                "NETWORK_PROTOCOL_HTTPS" => S3CompatibleMetadataProtocol::NetworkProtocolHttps,
+                "NETWORK_PROTOCOL_UNSPECIFIED" => {
+                    S3CompatibleMetadataProtocol::NetworkProtocolUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for S3CompatibleMetadataProtocol {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for S3CompatibleMetadataProtocol {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum S3CompatibleMetadataRequestModel {
+        #[doc = "Perform requests using Path Style. Example: https://s3.region.amazonaws.com/bucket-name/key-name"]
+        RequestModelPathStyle,
+        #[doc = "RequestModel is not specified."]
+        RequestModelUnspecified,
+        #[doc = "Perform requests using Virtual Hosted Style. Example: https://bucket-name.s3.region.amazonaws.com/key-name"]
+        RequestModelVirtualHostedStyle,
+    }
+    impl S3CompatibleMetadataRequestModel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                S3CompatibleMetadataRequestModel::RequestModelPathStyle => {
+                    "REQUEST_MODEL_PATH_STYLE"
+                }
+                S3CompatibleMetadataRequestModel::RequestModelUnspecified => {
+                    "REQUEST_MODEL_UNSPECIFIED"
+                }
+                S3CompatibleMetadataRequestModel::RequestModelVirtualHostedStyle => {
+                    "REQUEST_MODEL_VIRTUAL_HOSTED_STYLE"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for S3CompatibleMetadataRequestModel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for S3CompatibleMetadataRequestModel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<S3CompatibleMetadataRequestModel, ()> {
+            Ok(match s {
+                "REQUEST_MODEL_PATH_STYLE" => {
+                    S3CompatibleMetadataRequestModel::RequestModelPathStyle
+                }
+                "REQUEST_MODEL_UNSPECIFIED" => {
+                    S3CompatibleMetadataRequestModel::RequestModelUnspecified
+                }
+                "REQUEST_MODEL_VIRTUAL_HOSTED_STYLE" => {
+                    S3CompatibleMetadataRequestModel::RequestModelVirtualHostedStyle
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for S3CompatibleMetadataRequestModel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for S3CompatibleMetadataRequestModel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for S3CompatibleMetadataRequestModel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "REQUEST_MODEL_PATH_STYLE" => {
+                    S3CompatibleMetadataRequestModel::RequestModelPathStyle
+                }
+                "REQUEST_MODEL_UNSPECIFIED" => {
+                    S3CompatibleMetadataRequestModel::RequestModelUnspecified
+                }
+                "REQUEST_MODEL_VIRTUAL_HOSTED_STYLE" => {
+                    S3CompatibleMetadataRequestModel::RequestModelVirtualHostedStyle
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for S3CompatibleMetadataRequestModel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for S3CompatibleMetadataRequestModel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Schedule {
         #[doc = "The time in UTC that no further transfer operations are scheduled. Combined with schedule_end_date, `end_time_of_day` specifies the end date and time for starting new transfer operations. This field must be greater than or equal to the timestamp corresponding to the combintation of schedule_start_date and start_time_of_day, and is subject to the following: * If `end_time_of_day` is not set and `schedule_end_date` is set, then a default value of `23:59:59` is used for `end_time_of_day`. * If `end_time_of_day` is set and `schedule_end_date` is not set, then INVALID_ARGUMENT is returned."]
         #[serde(
@@ -2745,6 +3242,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
+        #[doc = "Specifies the event stream for the transfer job for event-driven transfers. When EventStream is specified, the Schedule fields are ignored."]
+        #[serde(
+            rename = "eventStream",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_stream: ::std::option::Option<crate::schemas::EventStream>,
         #[doc = "Output only. The time that the transfer job was last modified."]
         #[serde(
             rename = "lastModificationTime",
@@ -3041,6 +3545,8 @@ pub mod schemas {
         StatusUnspecified,
         #[doc = "Completed successfully."]
         Success,
+        #[doc = "The operation is suspending and draining the ongoing work to completion."]
+        Suspending,
     }
     impl TransferOperationStatus {
         pub fn as_str(self) -> &'static str {
@@ -3052,6 +3558,7 @@ pub mod schemas {
                 TransferOperationStatus::Queued => "QUEUED",
                 TransferOperationStatus::StatusUnspecified => "STATUS_UNSPECIFIED",
                 TransferOperationStatus::Success => "SUCCESS",
+                TransferOperationStatus::Suspending => "SUSPENDING",
             }
         }
     }
@@ -3071,6 +3578,7 @@ pub mod schemas {
                 "QUEUED" => TransferOperationStatus::Queued,
                 "STATUS_UNSPECIFIED" => TransferOperationStatus::StatusUnspecified,
                 "SUCCESS" => TransferOperationStatus::Success,
+                "SUSPENDING" => TransferOperationStatus::Suspending,
                 _ => return Err(()),
             })
         }
@@ -3102,6 +3610,7 @@ pub mod schemas {
                 "QUEUED" => TransferOperationStatus::Queued,
                 "STATUS_UNSPECIFIED" => TransferOperationStatus::StatusUnspecified,
                 "SUCCESS" => TransferOperationStatus::Success,
+                "SUSPENDING" => TransferOperationStatus::Suspending,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -3148,7 +3657,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delete_objects_unique_in_sink: ::std::option::Option<bool>,
-        #[doc = "Represents the selected metadata options for a transfer job. This feature is in Preview."]
+        #[doc = "Represents the selected metadata options for a transfer job."]
         #[serde(
             rename = "metadataOptions",
             default,
@@ -3162,7 +3671,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub overwrite_objects_already_existing_in_sink: ::std::option::Option<bool>,
-        #[doc = "When to overwrite objects that already exist in the sink. If not set overwrite behavior is determined by overwrite_objects_already_existing_in_sink."]
+        #[doc = "When to overwrite objects that already exist in the sink. If not set, overwrite behavior is determined by overwrite_objects_already_existing_in_sink."]
         #[serde(
             rename = "overwriteWhen",
             default,
@@ -3182,13 +3691,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TransferOptionsOverwriteWhen {
-        #[doc = "Always overwrite destination object."]
+        #[doc = "Always overwrite the destination object with the source object, even if the HTTP Etags or checksum values are the same."]
         Always,
-        #[doc = "Overwrite destination object with source if the two objects are different."]
+        #[doc = "Overwrites destination objects with the source objects, only if the objects have the same name but different HTTP ETags or checksum values."]
         Different,
-        #[doc = "Never overwrite destination object."]
+        #[doc = "Never overwrites a destination object if a source object has the same name. In this case, the source object is not transferred."]
         Never,
-        #[doc = "Indicate the option is not set."]
+        #[doc = "Overwrite behavior is unspecified."]
         OverwriteWhenUnspecified,
     }
     impl TransferOptionsOverwriteWhen {
@@ -3280,6 +3789,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TransferSpec {
+        #[doc = "An AWS S3 compatible data source."]
+        #[serde(
+            rename = "awsS3CompatibleDataSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aws_s3_compatible_data_source:
+            ::std::option::Option<crate::schemas::AwsS3CompatibleData>,
         #[doc = "An AWS S3 data source."]
         #[serde(
             rename = "awsS3DataSource",
@@ -3403,7 +3920,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "Required. The job to update. `transferJob` is expected to specify one or more of five fields: description, transfer_spec, notification_config, logging_config, and status. An `UpdateTransferJobRequest` that specifies other fields are rejected with the error INVALID_ARGUMENT. Updating a job status to DELETED requires `storagetransfer.jobs.delete` permissions."]
+        #[doc = "Required. The job to update. `transferJob` is expected to specify one or more of five fields: description, transfer_spec, notification_config, logging_config, and status. An `UpdateTransferJobRequest` that specifies other fields are rejected with the error INVALID_ARGUMENT. Updating a job status to DELETED requires `storagetransfer.jobs.delete` permission."]
         #[serde(
             rename = "transferJob",
             default,
@@ -4584,7 +5101,7 @@ pub mod resources {
                         #[serde(rename = "agentPools")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -4619,7 +5136,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -4669,7 +5186,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4785,12 +5302,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4995,6 +5513,30 @@ pub mod resources {
                     xgafv: None,
                 }
             }
+            #[doc = "Deletes a transfer job. Deleting a transfer job sets its status to DELETED."]
+            pub fn delete(
+                &self,
+                job_name: impl Into<String>,
+                project_id: impl Into<String>,
+            ) -> DeleteRequestBuilder {
+                DeleteRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    job_name: job_name.into(),
+                    project_id: project_id.into(),
+                }
+            }
             #[doc = "Gets a transfer job."]
             pub fn get(
                 &self,
@@ -5064,7 +5606,7 @@ pub mod resources {
                     job_name: job_name.into(),
                 }
             }
-            #[doc = "Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a maximum of one active TransferOperation. If this method is called while a TransferOperation is active, an error will be returned."]
+            #[doc = "Starts a new operation for the specified transfer job. A `TransferJob` has a maximum of one active `TransferOperation`. If this method is called while a `TransferOperation` is active, an error is returned."]
             pub fn run(
                 &self,
                 request: crate::schemas::RunTransferJobRequest,
@@ -5223,6 +5765,168 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [TransferJobsActions::delete()](struct.TransferJobsActions.html#method.delete)"]
+        #[derive(Debug, Clone)]
+        pub struct DeleteRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            job_name: String,
+            project_id: String,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> DeleteRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://storagetransfer.googleapis.com/".to_owned();
+                output.push_str("v1/");
+                {
+                    let var_as_str = &self.job_name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                req = req.query(&[("projectId", &self.project_id)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -5526,7 +6230,7 @@ pub mod resources {
                     #[serde(rename = "transferJobs")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -5559,7 +6263,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -5609,7 +6313,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5717,12 +6421,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -6626,7 +7331,7 @@ pub mod resources {
                     #[serde(rename = "operations")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -6659,7 +7364,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -6709,7 +7414,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6824,12 +7529,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -7445,16 +8151,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -7474,13 +8182,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -7488,7 +8199,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -7515,7 +8226,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

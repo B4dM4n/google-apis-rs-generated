@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudasset1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
-            .about("The cloud asset API manages the history and inventory of cloud resources.")
+            .version("0.1.0-20230128")
+            .about("The Cloud Asset API manages the history and inventory of Google Cloud resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -108,7 +108,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut v_10 = SubCommand::with_name("v_1")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: analyze_iam_policy, analyze_iam_policy_longrunning, analyze_move, batch_get_assets_history, export_assets, search_all_iam_policies and search_all_resources");
+                        .about("methods: analyze_iam_policy, analyze_iam_policy_longrunning, analyze_move, analyze_org_policies, analyze_org_policy_governed_assets, analyze_org_policy_governed_containers, batch_get_assets_history, export_assets, query_assets, search_all_iam_policies and search_all_resources");
         {
             let mcmd = SubCommand::with_name("analyze_iam_policy").about("Analyzes IAM policies to answer which identities have what accesses on which resources.");
             v_10 = v_10.subcommand(mcmd);
@@ -122,6 +122,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             v_10 = v_10.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("analyze_org_policies")
+                .about("Analyzes organization policies under a scope.");
+            v_10 = v_10.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("analyze_org_policy_governed_assets").about("Analyzes organization policies governed assets (Google Cloud resources or policies) under a scope. This RPC supports custom constraints and the following 10 canned constraints: * storage.uniformBucketLevelAccess * iam.disableServiceAccountKeyCreation * iam.allowedPolicyMemberDomains * compute.vmExternalIpAccess * appengine.enforceServiceAccountActAsCheck * gcp.resourceLocations * compute.trustedImageProjects * compute.skipDefaultNetworkCreation * compute.requireOsLogin * compute.disableNestedVirtualization This RPC only returns either resources of types supported by [searchable asset types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types), or IAM policies.");
+            v_10 = v_10.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("analyze_org_policy_governed_containers").about("Analyzes organization policies governed containers (projects, folders or organization) under a scope.");
+            v_10 = v_10.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("batch_get_assets_history").about("Batch gets the update history of assets that overlap a time window. For IAM_POLICY content, this API outputs history when the asset and its attached IAM POLICY both exist. This can create gaps in the output history. Otherwise, this API outputs history with asset in both non-delete or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT error.");
             v_10 = v_10.subcommand(mcmd);
         }
@@ -130,11 +143,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             v_10 = v_10.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("query_assets").about("Issue a job that queries assets using a SQL statement compatible with [BigQuery Standard SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql). If the query execution finishes within timeout and there's no pagination, the full query results will be returned in the `QueryAssetsResponse`. Otherwise, full query results can be obtained by issuing extra requests with the `job_reference` from the a previous `QueryAssets` call. Note, the query result has approximately 10 GB limitation enforced by BigQuery https://cloud.google.com/bigquery/docs/best-practices-performance-output, queries return larger results will result in errors.");
+            v_10 = v_10.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("search_all_iam_policies").about("Searches all IAM policies within the specified scope, such as a project, folder, or organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies` permission on the desired scope, otherwise the request will be rejected.");
             v_10 = v_10.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("search_all_resources").about("Searches all Cloud resources within the specified scope, such as a project, folder, or organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission on the desired scope, otherwise the request will be rejected.");
+            let mcmd = SubCommand::with_name("search_all_resources").about("Searches all Google Cloud resources within the specified scope, such as a project, folder, or organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission on the desired scope, otherwise the request will be rejected.");
             v_10 = v_10.subcommand(mcmd);
         }
         app = app.subcommand(v_10);

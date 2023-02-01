@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [organizations](resources/organizations/struct.OrganizationsActions.html)\n  * [locations](resources/organizations/locations/struct.LocationsActions.html)\n    * [operations](resources/organizations/locations/operations/struct.OperationsActions.html)\n      * [*get*](resources/organizations/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/operations/struct.ListRequestBuilder.html)\n    * [workloads](resources/organizations/locations/workloads/struct.WorkloadsActions.html)\n      * [*create*](resources/organizations/locations/workloads/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/workloads/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/workloads/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/workloads/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/workloads/struct.PatchRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [organizations](resources/organizations/struct.OrganizationsActions.html)\n  * [locations](resources/organizations/locations/struct.LocationsActions.html)\n    * [operations](resources/organizations/locations/operations/struct.OperationsActions.html)\n      * [*get*](resources/organizations/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/operations/struct.ListRequestBuilder.html)\n    * [workloads](resources/organizations/locations/workloads/struct.WorkloadsActions.html)\n      * [*create*](resources/organizations/locations/workloads/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/workloads/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/workloads/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/workloads/struct.ListRequestBuilder.html), [*mutatePartnerPermissions*](resources/organizations/locations/workloads/struct.MutatePartnerPermissionsRequestBuilder.html), [*patch*](resources/organizations/locations/workloads/struct.PatchRequestBuilder.html), [*restrictAllowedResources*](resources/organizations/locations/workloads/struct.RestrictAllowedResourcesRequestBuilder.html)\n      * [violations](resources/organizations/locations/workloads/violations/struct.ViolationsActions.html)\n        * [*acknowledge*](resources/organizations/locations/workloads/violations/struct.AcknowledgeRequestBuilder.html), [*get*](resources/organizations/locations/workloads/violations/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/workloads/violations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -16,106 +17,31 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadata { # [doc = "Optional. Compliance controls that should be applied to the resources managed by the workload."] # [serde (rename = "complianceRegime" , default , skip_serializing_if = "std::option::Option::is_none")] pub compliance_regime : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime > , # [doc = "Optional. Time when the operation was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Optional. The display name of the workload."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "Optional. The parent of the workload."] # [serde (rename = "parent" , default , skip_serializing_if = "std::option::Option::is_none")] pub parent : :: std :: option :: Option < String > , # [doc = "Optional. Resource properties in the input that are used for creating/customizing workload resources."] # [serde (rename = "resourceSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub resource_settings : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettings > > , }
+    pub struct GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest {
+        #[doc = "Required. Business justification explaining the need for violation acknowledgement"]
+        #[serde(
+            rename = "comment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub comment: ::std::option::Option<String>,
+        #[doc = "Optional. This field is deprecated and will be removed in future version of the API. Name of the OrgPolicy which was modified with non-compliant change and resulted in this violation. Format: projects/{project_number}/policies/{constraint_name} folders/{folder_id}/policies/{constraint_name} organizations/{organization_id}/policies/{constraint_name}"]
+        #[serde(
+            rename = "nonCompliantOrgPolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub non_compliant_org_policy: ::std::option::Option<String>,
+    }
     impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadata
+        for GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest
     {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadata
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime {
-        #[doc = "Assured Workloads For Canada Regions and Support controls"]
-        CaRegionsAndSupport,
-        #[doc = "Criminal Justice Information Services (CJIS) Security policies."]
-        Cjis,
-        #[doc = "Unknown compliance regime."]
-        ComplianceRegimeUnspecified,
-        #[doc = "Assured Workloads For EU Regions and Support controls"]
-        EuRegionsAndSupport,
-        #[doc = "FedRAMP High data protection controls"]
-        FedrampHigh,
-        #[doc = "FedRAMP Moderate data protection controls"]
-        FedrampModerate,
-        #[doc = "Health Insurance Portability and Accountability Act controls"]
-        Hipaa,
-        #[doc = "Health Information Trust Alliance controls"]
-        Hitrust,
-        #[doc = "Information protection as per DoD IL4 requirements."]
-        Il4,
-        #[doc = "Assured Workloads For US Regions data protection controls"]
-        UsRegionalAccess,
-    }
-    impl GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime
-    {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime,
-            (),
-        > {
-            Ok (match s { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime
-    {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1CreateWorkloadOperationMetadataComplianceRegime
+        for GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -129,928 +55,21 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1Workload {
-        #[doc = "Input only. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`."]
-        #[serde(
-            rename = "billingAccount",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub billing_account: ::std::option::Option<String>,
-        #[doc = "Input only. Immutable. Settings specific to resources needed for CJIS."]
-        #[serde(
-            rename = "cjisSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub cjis_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadCJISSettings,
-        >,
-        #[doc = "Required. Immutable. Compliance Regime associated with this workload."]
-        #[serde(
-            rename = "complianceRegime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub compliance_regime: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime,
-        >,
-        #[doc = "Output only. Immutable. The Workload creation timestamp."]
-        #[serde(
-            rename = "createTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub create_time: ::std::option::Option<String>,
-        #[doc = "Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload"]
-        #[serde(
-            rename = "displayName",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub display_name: ::std::option::Option<String>,
-        #[doc = "Optional. Indicates the sovereignty status of the given workload. Currently meant to be used by Europe/Canada customers."]
-        #[serde(
-            rename = "enableSovereignControls",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub enable_sovereign_controls: ::std::option::Option<bool>,
-        #[doc = "Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations."]
-        #[serde(
-            rename = "etag",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub etag: ::std::option::Option<String>,
-        #[doc = "Input only. Immutable. Settings specific to resources needed for FedRAMP High."]
-        #[serde(
-            rename = "fedrampHighSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub fedramp_high_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampHighSettings,
-        >,
-        #[doc = "Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate."]
-        #[serde(
-            rename = "fedrampModerateSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub fedramp_moderate_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampModerateSettings,
-        >,
-        #[doc = "Input only. Immutable. Settings specific to resources needed for IL4."]
-        #[serde(
-            rename = "il4Settings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub il_4_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadIL4Settings,
-        >,
-        #[doc = "Output only. Represents the KAJ enrollment state of the given workload."]
-        #[serde(
-            rename = "kajEnrollmentState",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kaj_enrollment_state: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState,
-        >,
-        #[doc = "Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS CMEK key is provisioned. This field is deprecated as of Feb 28, 2022. In order to create a Keyring, callers should specify, ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings,
-        >,
-        #[doc = "Optional. Labels applied to the workload."]
-        #[serde(
-            rename = "labels",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only."]
-        #[serde(
-            rename = "name",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub name: ::std::option::Option<String>,
-        #[doc = "Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}"]
-        #[serde(
-            rename = "provisionedResourcesParent",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub provisioned_resources_parent: ::std::option::Option<String>,
-        #[doc = "Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional."]
-        #[serde(
-            rename = "resourceSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resource_settings: ::std::option::Option<
-            Vec<crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettings>,
-        >,
-        #[doc = "Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only."]
-        #[serde(
-            rename = "resources",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resources: ::std::option::Option<
-            Vec<crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfo>,
-        >,
-        #[doc = "Output only. Represents the SAA enrollment response of the given workload. SAA enrollment response is queried during GetWorkload call. In failure cases, user friendly error message is shown in SAA details page."]
-        #[serde(
-            rename = "saaEnrollmentResponse",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub saa_enrollment_response: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponse,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector for GoogleCloudAssuredworkloadsV1Beta1Workload {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsV1Beta1Workload {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime {
-        #[doc = "Assured Workloads For Canada Regions and Support controls"]
-        CaRegionsAndSupport,
-        #[doc = "Criminal Justice Information Services (CJIS) Security policies."]
-        Cjis,
-        #[doc = "Unknown compliance regime."]
-        ComplianceRegimeUnspecified,
-        #[doc = "Assured Workloads For EU Regions and Support controls"]
-        EuRegionsAndSupport,
-        #[doc = "FedRAMP High data protection controls"]
-        FedrampHigh,
-        #[doc = "FedRAMP Moderate data protection controls"]
-        FedrampModerate,
-        #[doc = "Health Insurance Portability and Accountability Act controls"]
-        Hipaa,
-        #[doc = "Health Information Trust Alliance controls"]
-        Hitrust,
-        #[doc = "Information protection as per DoD IL4 requirements."]
-        Il4,
-        #[doc = "Assured Workloads For US Regions data protection controls"]
-        UsRegionalAccess,
-    }
-    impl GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime, ()>
-        {
-            Ok (match s { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
+    pub struct GoogleCloudAssuredworkloadsV1AcknowledgeViolationResponse {}
     impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime
+        for GoogleCloudAssuredworkloadsV1AcknowledgeViolationResponse
     {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadComplianceRegime
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState {
-        #[doc = "Complete State for KAJ Enrollment."]
-        KajEnrollmentStateComplete,
-        #[doc = "Pending State for KAJ Enrollment."]
-        KajEnrollmentStatePending,
-        #[doc = "Default State for KAJ Enrollment."]
-        KajEnrollmentStateUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStateComplete => "KAJ_ENROLLMENT_STATE_COMPLETE" , GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStatePending => "KAJ_ENROLLMENT_STATE_PENDING" , GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStateUnspecified => "KAJ_ENROLLMENT_STATE_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState, ()>
-        {
-            Ok (match s { "KAJ_ENROLLMENT_STATE_COMPLETE" => GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStateComplete , "KAJ_ENROLLMENT_STATE_PENDING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStatePending , "KAJ_ENROLLMENT_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStateUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "KAJ_ENROLLMENT_STATE_COMPLETE" => GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStateComplete , "KAJ_ENROLLMENT_STATE_PENDING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStatePending , "KAJ_ENROLLMENT_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState :: KajEnrollmentStateUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadKajEnrollmentState
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadCJISSettings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadCJISSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadCJISSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampHighSettings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampHighSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampHighSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampModerateSettings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampModerateSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadFedrampModerateSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadIL4Settings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadIL4Settings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadIL4Settings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings {
-        #[doc = "Required. Input only. Immutable. The time at which the Key Management Service will automatically create a new version of the crypto key and mark it as the primary."]
-        #[serde(
-            rename = "nextRotationTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub next_rotation_time: ::std::option::Option<String>,
-        #[doc = "Required. Input only. Immutable. \\[next_rotation_time\\] will be advanced by this period when the Key Management Service automatically rotates a key. Must be at least 24 hours and at most 876,000 hours."]
-        #[serde(
-            rename = "rotationPeriod",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub rotation_period: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadKMSSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfo {
-        #[doc = "Resource identifier. For a project this represents project_number."]
-        #[serde(
-            rename = "resourceId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        #[serde(with = "crate::parsed_string")]
-        pub resource_id: ::std::option::Option<i64>,
-        #[doc = "Indicates the type of resource."]
-        #[serde(
-            rename = "resourceType",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resource_type: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfo
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfo
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType {
-        #[doc = "Consumer Folder."]
-        ConsumerFolder,
-        #[doc = "Deprecated. Existing workloads will continue to support this, but new CreateWorkloadRequests should not specify this as an input value."]
-        ConsumerProject,
-        #[doc = "Consumer project containing encryption keys."]
-        EncryptionKeysProject,
-        #[doc = "Keyring resource that hosts encryption keys."]
-        Keyring,
-        #[doc = "Unknown resource type."]
-        ResourceTypeUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ConsumerFolder => "CONSUMER_FOLDER" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ConsumerProject => "CONSUMER_PROJECT" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: EncryptionKeysProject => "ENCRYPTION_KEYS_PROJECT" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: Keyring => "KEYRING" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ResourceTypeUnspecified => "RESOURCE_TYPE_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType,
-            (),
-        > {
-            Ok (match s { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ResourceTypeUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType :: ResourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceInfoResourceType
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettings {
-        #[doc = "User-assigned resource display name. If not empty it will be used to create a resource with the specified name."]
-        #[serde(
-            rename = "displayName",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub display_name: ::std::option::Option<String>,
-        #[doc = "Resource identifier. For a project this represents project_id. If the project is already taken, the workload creation will fail. For KeyRing, this represents the keyring_id. For a folder, don’t set this value as folder_id is assigned by Google."]
-        #[serde(
-            rename = "resourceId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resource_id: ::std::option::Option<String>,
-        #[doc = "Indicates the type of resource. This field should be specified to correspond the id to the right project type (CONSUMER_PROJECT or ENCRYPTION_KEYS_PROJECT)"]
-        #[serde(
-            rename = "resourceType",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resource_type: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType {
-        #[doc = "Consumer Folder."]
-        ConsumerFolder,
-        #[doc = "Deprecated. Existing workloads will continue to support this, but new CreateWorkloadRequests should not specify this as an input value."]
-        ConsumerProject,
-        #[doc = "Consumer project containing encryption keys."]
-        EncryptionKeysProject,
-        #[doc = "Keyring resource that hosts encryption keys."]
-        Keyring,
-        #[doc = "Unknown resource type."]
-        ResourceTypeUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ConsumerFolder => "CONSUMER_FOLDER" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ConsumerProject => "CONSUMER_PROJECT" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: EncryptionKeysProject => "ENCRYPTION_KEYS_PROJECT" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: Keyring => "KEYRING" , GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ResourceTypeUnspecified => "RESOURCE_TYPE_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType
-    {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType,
-            (),
-        > {
-            Ok (match s { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ResourceTypeUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType :: ResourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadResourceSettingsResourceType
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponse { # [doc = "Indicates SAA enrollment setup error if any."] # [serde (rename = "setupErrors" , default , skip_serializing_if = "std::option::Option::is_none")] pub setup_errors : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems > > , # [doc = "Indicates SAA enrollment status of a given workload."] # [serde (rename = "setupStatus" , default , skip_serializing_if = "std::option::Option::is_none")] pub setup_status : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus > , }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponse
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponse
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems {
-        #[doc = "Invalid states for all customers, to be redirected to AA UI for additional details."]
-        ErrorInvalidBaseSetup,
-        #[doc = "Returned when there is not an EKM key configured."]
-        ErrorMissingExternalSigningKey,
-        #[doc = "Returned when there are no enrolled services or the customer is enrolled in CAA only for a subset of services."]
-        ErrorNotAllServicesEnrolled,
-        #[doc = "Returned when exception was encountered during evaluation of other criteria."]
-        ErrorSetupCheckFailed,
-        #[doc = "Unspecified."]
-        SetupErrorUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorInvalidBaseSetup => "ERROR_INVALID_BASE_SETUP" , GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorMissingExternalSigningKey => "ERROR_MISSING_EXTERNAL_SIGNING_KEY" , GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorNotAllServicesEnrolled => "ERROR_NOT_ALL_SERVICES_ENROLLED" , GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorSetupCheckFailed => "ERROR_SETUP_CHECK_FAILED" , GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: SetupErrorUnspecified => "SETUP_ERROR_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems,
-            (),
-        > {
-            Ok (match s { "ERROR_INVALID_BASE_SETUP" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorInvalidBaseSetup , "ERROR_MISSING_EXTERNAL_SIGNING_KEY" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorMissingExternalSigningKey , "ERROR_NOT_ALL_SERVICES_ENROLLED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorNotAllServicesEnrolled , "ERROR_SETUP_CHECK_FAILED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorSetupCheckFailed , "SETUP_ERROR_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: SetupErrorUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ERROR_INVALID_BASE_SETUP" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorInvalidBaseSetup , "ERROR_MISSING_EXTERNAL_SIGNING_KEY" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorMissingExternalSigningKey , "ERROR_NOT_ALL_SERVICES_ENROLLED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorNotAllServicesEnrolled , "ERROR_SETUP_CHECK_FAILED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorSetupCheckFailed , "SETUP_ERROR_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems :: SetupErrorUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus {
-        #[doc = "Unspecified."]
-        SetupStateUnspecified,
-        #[doc = "SAA enrollment comopleted."]
-        StatusComplete,
-        #[doc = "SAA enrollment pending."]
-        StatusPending,
-    }
-    impl GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: SetupStateUnspecified => "SETUP_STATE_UNSPECIFIED" , GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: StatusComplete => "STATUS_COMPLETE" , GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: StatusPending => "STATUS_PENDING" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus
-    {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus,
-            (),
-        > {
-            Ok (match s { "SETUP_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: SetupStateUnspecified , "STATUS_COMPLETE" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: StatusComplete , "STATUS_PENDING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: StatusPending , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "SETUP_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: SetupStateUnspecified , "STATUS_COMPLETE" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: StatusComplete , "STATUS_PENDING" => GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus :: StatusPending , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsV1Beta1WorkloadSaaEnrollmentResponseSetupStatus
+        for GoogleCloudAssuredworkloadsV1AcknowledgeViolationResponse
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -1085,6 +104,12 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime {
+        #[doc = "Assured Workloads for Partners"]
+        AssuredWorkloadsForPartners,
+        #[doc = "Assured Workloads for Australia Regions and Support controls Available for public preview consumption. Don’t create production workloads."]
+        AuRegionsAndUsSupport,
+        #[doc = "Assured Workloads for Canada Protected B regime"]
+        CaProtectedB,
         #[doc = "Assured Workloads For Canada Regions and Support controls"]
         CaRegionsAndSupport,
         #[doc = "Criminal Justice Information Services (CJIS) Security policies."]
@@ -1103,12 +128,16 @@ pub mod schemas {
         Hitrust,
         #[doc = "Information protection as per DoD IL4 requirements."]
         Il4,
+        #[doc = "Assured Workloads for Israel Regions"]
+        IsrRegions,
+        #[doc = "International Traffic in Arms Regulations"]
+        Itar,
         #[doc = "Assured Workloads For US Regions data protection controls"]
         UsRegionalAccess,
     }
     impl GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
+            match self { GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: AssuredWorkloadsForPartners => "ASSURED_WORKLOADS_FOR_PARTNERS" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: AuRegionsAndUsSupport => "AU_REGIONS_AND_US_SUPPORT" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaProtectedB => "CA_PROTECTED_B" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: IsrRegions => "ISR_REGIONS" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Itar => "ITAR" , GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
         }
     }
     impl ::std::convert::AsRef<str>
@@ -1128,7 +157,7 @@ pub mod schemas {
             GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime,
             (),
         > {
-            Ok (match s { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (()) , })
+            Ok (match s { "ASSURED_WORKLOADS_FOR_PARTNERS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: AssuredWorkloadsForPartners , "AU_REGIONS_AND_US_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: AuRegionsAndUsSupport , "CA_PROTECTED_B" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaProtectedB , "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Il4 , "ISR_REGIONS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: IsrRegions , "ITAR" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Itar , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -1156,7 +185,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "ASSURED_WORKLOADS_FOR_PARTNERS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: AssuredWorkloadsForPartners , "AU_REGIONS_AND_US_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: AuRegionsAndUsSupport , "CA_PROTECTED_B" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaProtectedB , "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Il4 , "ISR_REGIONS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: IsrRegions , "ITAR" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: Itar , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1CreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1171,6 +200,52 @@ pub mod schemas {
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1ListViolationsResponse {
+        #[doc = "The next page token. Returns empty if reached the last page."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "List of Violations under a Workload."]
+        #[serde(
+            rename = "violations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub violations:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudAssuredworkloadsV1Violation>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1ListViolationsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsV1ListViolationsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudAssuredworkloadsV1ListViolationsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
         }
     }
     #[derive(
@@ -1212,9 +287,674 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudAssuredworkloadsV1ListWorkloadsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudAssuredworkloadsV1ListWorkloadsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest {
+        #[doc = "Optional. The etag of the workload. If this is provided, it must match the server’s etag."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "Required. The partner permissions to be updated."]
+        #[serde(
+            rename = "partnerPermissions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub partner_permissions: ::std::option::Option<
+            crate::schemas::GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions,
+        >,
+        #[doc = "Required. The list of fields to be updated. E.g. update_mask { paths: “partner_permissions.data_logs_viewer”}"]
+        #[serde(
+            rename = "updateMask",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_mask: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequest { # [doc = "Required. The type of restriction for using gcp products in the Workload environment."] # [serde (rename = "restrictionType" , default , skip_serializing_if = "std::option::Option::is_none")] pub restriction_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType {
+        #[doc = "Allow the use all of all gcp products, irrespective of the compliance posture. This effectively removes gcp.restrictServiceUsage OrgPolicy on the AssuredWorkloads Folder."]
+        AllowAllGcpResources,
+        #[doc = "Based on Workload’s compliance regime, allowed list changes. See - https://cloud.google.com/assured-workloads/docs/supported-products for the list of supported resources."]
+        AllowCompliantResources,
+        #[doc = "Similar to ALLOW_COMPLIANT_RESOURCES but adds the list of compliant resources to the existing list of resources. Effective org-policy of the Folder is considered to ensure there is no disruption to the existing customer workflows."]
+        AppendCompliantResources,
+        #[doc = "Unknown restriction type."]
+        RestrictionTypeUnspecified,
+    }
+    impl GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AllowAllGcpResources => "ALLOW_ALL_GCP_RESOURCES" , GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AllowCompliantResources => "ALLOW_COMPLIANT_RESOURCES" , GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AppendCompliantResources => "APPEND_COMPLIANT_RESOURCES" , GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: RestrictionTypeUnspecified => "RESTRICTION_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType,
+            (),
+        > {
+            Ok (match s { "ALLOW_ALL_GCP_RESOURCES" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AllowAllGcpResources , "ALLOW_COMPLIANT_RESOURCES" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AllowCompliantResources , "APPEND_COMPLIANT_RESOURCES" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AppendCompliantResources , "RESTRICTION_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: RestrictionTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ALLOW_ALL_GCP_RESOURCES" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AllowAllGcpResources , "ALLOW_COMPLIANT_RESOURCES" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AllowCompliantResources , "APPEND_COMPLIANT_RESOURCES" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: AppendCompliantResources , "RESTRICTION_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType :: RestrictionTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequestRestrictionType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesResponse {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1Violation {
+        #[doc = "A boolean that indicates if the violation is acknowledged"]
+        #[serde(
+            rename = "acknowledged",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acknowledged: ::std::option::Option<bool>,
+        #[doc = "Optional. Timestamp when this violation was acknowledged last. This will be absent when acknowledged field is marked as false."]
+        #[serde(
+            rename = "acknowledgementTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acknowledgement_time: ::std::option::Option<String>,
+        #[doc = "Output only. Immutable. Audit Log Link for violated resource Format: https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{timeRange}{folder}"]
+        #[serde(
+            rename = "auditLogLink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub audit_log_link: ::std::option::Option<String>,
+        #[doc = "Output only. Time of the event which triggered the Violation."]
+        #[serde(
+            rename = "beginTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub begin_time: ::std::option::Option<String>,
+        #[doc = "Output only. Category under which this violation is mapped. e.g. Location, Service Usage, Access, Encryption, etc."]
+        #[serde(
+            rename = "category",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category: ::std::option::Option<String>,
+        #[doc = "Output only. Description for the Violation. e.g. OrgPolicy gcp.resourceLocations has non compliant value."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Output only. Immutable. Audit Log link to find business justification provided for violation exception. Format: https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}"]
+        #[serde(
+            rename = "exceptionAuditLogLink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exception_audit_log_link: ::std::option::Option<String>,
+        #[doc = "Output only. Immutable. Name of the Violation. Format: organizations/{organization}/locations/{location}/workloads/{workload_id}/violations/{violations_id}"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. Immutable. Name of the OrgPolicy which was modified with non-compliant change and resulted this violation. Format: projects/{project_number}/policies/{constraint_name} folders/{folder_id}/policies/{constraint_name} organizations/{organization_id}/policies/{constraint_name}"]
+        #[serde(
+            rename = "nonCompliantOrgPolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub non_compliant_org_policy: ::std::option::Option<String>,
+        #[doc = "Output only. Immutable. The org-policy-constraint that was incorrectly changed, which resulted in this violation."]
+        #[serde(
+            rename = "orgPolicyConstraint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_policy_constraint: ::std::option::Option<String>,
+        #[doc = "Output only. Compliance violation remediation"]
+        #[serde(
+            rename = "remediation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remediation: ::std::option::Option<
+            crate::schemas::GoogleCloudAssuredworkloadsV1ViolationRemediation,
+        >,
+        #[doc = "Output only. Time of the event which fixed the Violation. If the violation is ACTIVE this will be empty."]
+        #[serde(
+            rename = "resolveTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resolve_time: ::std::option::Option<String>,
+        #[doc = "Output only. State of the violation"]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state:
+            ::std::option::Option<crate::schemas::GoogleCloudAssuredworkloadsV1ViolationState>,
+        #[doc = "Output only. The last time when the Violation record was updated."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudAssuredworkloadsV1Violation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsV1Violation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudAssuredworkloadsV1ViolationState {
+        #[doc = "Violation is Exception"]
+        Exception,
+        #[doc = "Violation is resolved."]
+        Resolved,
+        #[doc = "Unspecified state."]
+        StateUnspecified,
+        #[doc = "Violation is Unresolved"]
+        Unresolved,
+    }
+    impl GoogleCloudAssuredworkloadsV1ViolationState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudAssuredworkloadsV1ViolationState::Exception => "EXCEPTION",
+                GoogleCloudAssuredworkloadsV1ViolationState::Resolved => "RESOLVED",
+                GoogleCloudAssuredworkloadsV1ViolationState::StateUnspecified => {
+                    "STATE_UNSPECIFIED"
+                }
+                GoogleCloudAssuredworkloadsV1ViolationState::Unresolved => "UNRESOLVED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudAssuredworkloadsV1ViolationState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsV1ViolationState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudAssuredworkloadsV1ViolationState, ()> {
+            Ok(match s {
+                "EXCEPTION" => GoogleCloudAssuredworkloadsV1ViolationState::Exception,
+                "RESOLVED" => GoogleCloudAssuredworkloadsV1ViolationState::Resolved,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudAssuredworkloadsV1ViolationState::StateUnspecified
+                }
+                "UNRESOLVED" => GoogleCloudAssuredworkloadsV1ViolationState::Unresolved,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsV1ViolationState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudAssuredworkloadsV1ViolationState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudAssuredworkloadsV1ViolationState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXCEPTION" => GoogleCloudAssuredworkloadsV1ViolationState::Exception,
+                "RESOLVED" => GoogleCloudAssuredworkloadsV1ViolationState::Resolved,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudAssuredworkloadsV1ViolationState::StateUnspecified
+                }
+                "UNRESOLVED" => GoogleCloudAssuredworkloadsV1ViolationState::Unresolved,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudAssuredworkloadsV1ViolationState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsV1ViolationState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1ViolationRemediation {
+        #[doc = "Values that can resolve the violation For example: for list org policy violations, this will either be the list of allowed or denied values"]
+        #[serde(
+            rename = "compliantValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub compliant_values: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. Remediation instructions to resolve violations"]
+        #[serde(
+            rename = "instructions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub instructions: ::std::option::Option<
+            crate::schemas::GoogleCloudAssuredworkloadsV1ViolationRemediationInstructions,
+        >,
+        #[doc = "Output only. Reemediation type based on the type of org policy values violated"]
+        #[serde(
+            rename = "remediationType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remediation_type: ::std::option::Option<
+            crate::schemas::GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudAssuredworkloadsV1ViolationRemediation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsV1ViolationRemediation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType {
+        #[doc = "Remediation type for boolean org policy"]
+        RemediationBooleanOrgPolicyViolation,
+        #[doc = "Remediation type for list org policy which have allowed values in the monitoring rule"]
+        RemediationListAllowedValuesOrgPolicyViolation,
+        #[doc = "Remediation type for list org policy which have denied values in the monitoring rule"]
+        RemediationListDeniedValuesOrgPolicyViolation,
+        #[doc = "Remediation type for gcp.restrictCmekCryptoKeyProjects"]
+        RemediationRestrictCmekCryptoKeyProjectsOrgPolicyViolation,
+        #[doc = "Unspecified remediation type"]
+        RemediationTypeUnspecified,
+    }
+    impl GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationBooleanOrgPolicyViolation => "REMEDIATION_BOOLEAN_ORG_POLICY_VIOLATION" , GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationListAllowedValuesOrgPolicyViolation => "REMEDIATION_LIST_ALLOWED_VALUES_ORG_POLICY_VIOLATION" , GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationListDeniedValuesOrgPolicyViolation => "REMEDIATION_LIST_DENIED_VALUES_ORG_POLICY_VIOLATION" , GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationRestrictCmekCryptoKeyProjectsOrgPolicyViolation => "REMEDIATION_RESTRICT_CMEK_CRYPTO_KEY_PROJECTS_ORG_POLICY_VIOLATION" , GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationTypeUnspecified => "REMEDIATION_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType,
+            (),
+        > {
+            Ok (match s { "REMEDIATION_BOOLEAN_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationBooleanOrgPolicyViolation , "REMEDIATION_LIST_ALLOWED_VALUES_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationListAllowedValuesOrgPolicyViolation , "REMEDIATION_LIST_DENIED_VALUES_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationListDeniedValuesOrgPolicyViolation , "REMEDIATION_RESTRICT_CMEK_CRYPTO_KEY_PROJECTS_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationRestrictCmekCryptoKeyProjectsOrgPolicyViolation , "REMEDIATION_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "REMEDIATION_BOOLEAN_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationBooleanOrgPolicyViolation , "REMEDIATION_LIST_ALLOWED_VALUES_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationListAllowedValuesOrgPolicyViolation , "REMEDIATION_LIST_DENIED_VALUES_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationListDeniedValuesOrgPolicyViolation , "REMEDIATION_RESTRICT_CMEK_CRYPTO_KEY_PROJECTS_ORG_POLICY_VIOLATION" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationRestrictCmekCryptoKeyProjectsOrgPolicyViolation , "REMEDIATION_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType :: RemediationTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationRemediationType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1ViolationRemediationInstructions {
+        #[doc = "Remediation instructions to resolve violation via cloud console"]
+        #[serde(
+            rename = "consoleInstructions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub console_instructions: ::std::option::Option<
+            crate::schemas::GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole,
+        >,
+        #[doc = "Remediation instructions to resolve violation via gcloud cli"]
+        #[serde(
+            rename = "gcloudInstructions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcloud_instructions: ::std::option::Option<
+            crate::schemas::GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationInstructions
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationInstructions
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole {
+        #[doc = "Additional urls for more information about steps"]
+        #[serde(
+            rename = "additionalLinks",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_links: ::std::option::Option<Vec<String>>,
+        #[doc = "Link to console page where violations can be resolved"]
+        #[serde(
+            rename = "consoleUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub console_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Steps to resolve violation via cloud console"]
+        #[serde(
+            rename = "steps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub steps: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud {
+        #[doc = "Additional urls for more information about steps"]
+        #[serde(
+            rename = "additionalLinks",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_links: ::std::option::Option<Vec<String>>,
+        #[doc = "Gcloud command to resolve violation"]
+        #[serde(
+            rename = "gcloudCommands",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcloud_commands: ::std::option::Option<Vec<String>>,
+        #[doc = "Steps to resolve violation via gcloud cli"]
+        #[serde(
+            rename = "steps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub steps: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -1246,6 +986,22 @@ pub mod schemas {
         pub compliance_regime: ::std::option::Option<
             crate::schemas::GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime,
         >,
+        #[doc = "Output only. Count of active Violations in the Workload."]
+        #[serde(
+            rename = "complianceStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub compliance_status: ::std::option::Option<
+            crate::schemas::GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus,
+        >,
+        #[doc = "Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment.“"]
+        #[serde(
+            rename = "compliantButDisallowedServices",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub compliant_but_disallowed_services: ::std::option::Option<Vec<String>>,
         #[doc = "Output only. Immutable. The Workload creation timestamp."]
         #[serde(
             rename = "createTime",
@@ -1305,6 +1061,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Optional. Partner regime associated with this workload."]
+        #[serde(
+            rename = "partner",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub partner:
+            ::std::option::Option<crate::schemas::GoogleCloudAssuredworkloadsV1WorkloadPartner>,
         #[doc = "Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}"]
         #[serde(
             rename = "provisionedResourcesParent",
@@ -1352,6 +1116,12 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime {
+        #[doc = "Assured Workloads for Partners"]
+        AssuredWorkloadsForPartners,
+        #[doc = "Assured Workloads for Australia Regions and Support controls Available for public preview consumption. Don’t create production workloads."]
+        AuRegionsAndUsSupport,
+        #[doc = "Assured Workloads for Canada Protected B regime"]
+        CaProtectedB,
         #[doc = "Assured Workloads For Canada Regions and Support controls"]
         CaRegionsAndSupport,
         #[doc = "Criminal Justice Information Services (CJIS) Security policies."]
@@ -1370,12 +1140,16 @@ pub mod schemas {
         Hitrust,
         #[doc = "Information protection as per DoD IL4 requirements."]
         Il4,
+        #[doc = "Assured Workloads for Israel Regions"]
+        IsrRegions,
+        #[doc = "International Traffic in Arms Regulations"]
+        Itar,
         #[doc = "Assured Workloads For US Regions data protection controls"]
         UsRegionalAccess,
     }
     impl GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
+            match self { GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: AssuredWorkloadsForPartners => "ASSURED_WORKLOADS_FOR_PARTNERS" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: AuRegionsAndUsSupport => "AU_REGIONS_AND_US_SUPPORT" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaProtectedB => "CA_PROTECTED_B" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: IsrRegions => "ISR_REGIONS" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Itar => "ITAR" , GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime {
@@ -1389,7 +1163,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime, ()>
         {
-            Ok (match s { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (()) , })
+            Ok (match s { "ASSURED_WORKLOADS_FOR_PARTNERS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: AssuredWorkloadsForPartners , "AU_REGIONS_AND_US_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: AuRegionsAndUsSupport , "CA_PROTECTED_B" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaProtectedB , "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Il4 , "ISR_REGIONS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: IsrRegions , "ITAR" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Itar , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime {
@@ -1411,7 +1185,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "ASSURED_WORKLOADS_FOR_PARTNERS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: AssuredWorkloadsForPartners , "AU_REGIONS_AND_US_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: AuRegionsAndUsSupport , "CA_PROTECTED_B" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaProtectedB , "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Il4 , "ISR_REGIONS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: IsrRegions , "ITAR" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: Itar , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsV1WorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1492,6 +1266,143 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        #[doc = "Enum representing S3NS partner."]
+        LocalControlsByS3Ns,
+        PartnerUnspecified,
+        #[doc = "Enum representing T_SYSTEM partner."]
+        SovereignControlsByTSystems,
+    }
+    impl GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudAssuredworkloadsV1WorkloadPartner::LocalControlsByS3Ns => {
+                    "LOCAL_CONTROLS_BY_S3NS"
+                }
+                GoogleCloudAssuredworkloadsV1WorkloadPartner::PartnerUnspecified => {
+                    "PARTNER_UNSPECIFIED"
+                }
+                GoogleCloudAssuredworkloadsV1WorkloadPartner::SovereignControlsByTSystems => {
+                    "SOVEREIGN_CONTROLS_BY_T_SYSTEMS"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudAssuredworkloadsV1WorkloadPartner, ()> {
+            Ok(match s {
+                "LOCAL_CONTROLS_BY_S3NS" => {
+                    GoogleCloudAssuredworkloadsV1WorkloadPartner::LocalControlsByS3Ns
+                }
+                "PARTNER_UNSPECIFIED" => {
+                    GoogleCloudAssuredworkloadsV1WorkloadPartner::PartnerUnspecified
+                }
+                "SOVEREIGN_CONTROLS_BY_T_SYSTEMS" => {
+                    GoogleCloudAssuredworkloadsV1WorkloadPartner::SovereignControlsByTSystems
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "LOCAL_CONTROLS_BY_S3NS" => {
+                    GoogleCloudAssuredworkloadsV1WorkloadPartner::LocalControlsByS3Ns
+                }
+                "PARTNER_UNSPECIFIED" => {
+                    GoogleCloudAssuredworkloadsV1WorkloadPartner::PartnerUnspecified
+                }
+                "SOVEREIGN_CONTROLS_BY_T_SYSTEMS" => {
+                    GoogleCloudAssuredworkloadsV1WorkloadPartner::SovereignControlsByTSystems
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsV1WorkloadPartner {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus {
+        #[doc = "Count of active Violations which are acknowledged in the Workload."]
+        #[serde(
+            rename = "acknowledgedViolationCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acknowledged_violation_count: ::std::option::Option<i32>,
+        #[doc = "Count of active Violations which haven’t been acknowledged."]
+        #[serde(
+            rename = "activeViolationCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub active_violation_count: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -1526,6 +1437,55 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsV1WorkloadKMSSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions {
+        #[doc = "Allow partner to view data and logs"]
+        #[serde(
+            rename = "dataLogsViewer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_logs_viewer: ::std::option::Option<bool>,
+        #[doc = "Allow partner to monitor folder and remediate violations"]
+        #[serde(
+            rename = "remediateFolderViolations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remediate_folder_violations: ::std::option::Option<bool>,
+        #[doc = "Allow partner to approve or reject Service Access requests"]
+        #[serde(
+            rename = "serviceAccessApprover",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_access_approver: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1668,7 +1628,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_id: ::std::option::Option<String>,
-        #[doc = "Indicates the type of resource. This field should be specified to correspond the id to the right project type (CONSUMER_PROJECT or ENCRYPTION_KEYS_PROJECT)"]
+        #[doc = "Indicates the type of resource. This field should be specified to correspond the id to the right resource type (CONSUMER_FOLDER or ENCRYPTION_KEYS_PROJECT)"]
         #[serde(
             rename = "resourceType",
             default,
@@ -1943,829 +1903,6 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadata { # [doc = "Optional. Compliance controls that should be applied to the resources managed by the workload."] # [serde (rename = "complianceRegime" , default , skip_serializing_if = "std::option::Option::is_none")] pub compliance_regime : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime > , # [doc = "Optional. Time when the operation was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Optional. The display name of the workload."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "Optional. The parent of the workload."] # [serde (rename = "parent" , default , skip_serializing_if = "std::option::Option::is_none")] pub parent : :: std :: option :: Option < String > , # [doc = "Optional. Resource properties in the input that are used for creating/customizing workload resources."] # [serde (rename = "resourceSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub resource_settings : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettings > > , }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadata
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadata
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime
-    {
-        #[doc = "Assured Workloads For Canada Regions and Support controls"]
-        CaRegionsAndSupport,
-        #[doc = "Criminal Justice Information Services (CJIS) Security policies."]
-        Cjis,
-        #[doc = "Unknown compliance regime."]
-        ComplianceRegimeUnspecified,
-        #[doc = "Assured Workloads For EU Regions and Support controls"]
-        EuRegionsAndSupport,
-        #[doc = "FedRAMP High data protection controls"]
-        FedrampHigh,
-        #[doc = "FedRAMP Moderate data protection controls"]
-        FedrampModerate,
-        #[doc = "Health Insurance Portability and Accountability Act controls"]
-        Hipaa,
-        #[doc = "Health Information Trust Alliance controls"]
-        Hitrust,
-        #[doc = "Information protection as per DoD IL4 requirements."]
-        Il4,
-        #[doc = "Assured Workloads For US Regions data protection controls"]
-        UsRegionalAccess,
-    }
-    impl GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
-        }
-    }
-    impl :: std :: convert :: AsRef < str > for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime { fn as_ref (& self) -> & str { self . as_str () } }
-    impl :: std :: str :: FromStr for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime { type Err = () ; fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime , () > { Ok (match s { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (()) , }) } }
-    impl :: std :: fmt :: Display for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime { fn fmt (& self , f : & mut std :: fmt :: Formatter < '_ >) -> :: std :: fmt :: Result { f . write_str (self . as_str ()) } }
-    impl :: serde :: Serialize for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime { fn serialize < S > (& self , serializer : S) -> :: std :: result :: Result < S :: Ok , S :: Error > where S : :: serde :: ser :: Serializer { serializer . serialize_str (self . as_str ()) } }
-    impl < 'de > :: serde :: Deserialize < 'de > for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime { fn deserialize < D > (deserializer : D) -> :: std :: result :: Result < Self , D :: Error > where D : :: serde :: de :: Deserializer < 'de > , { let value : & 'de str = < & str > :: deserialize (deserializer) ? ; Ok (match value { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , }) } }
-    impl :: google_field_selector :: FieldSelector for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime { fn fields () -> Vec < :: google_field_selector :: Field > { Vec :: new () } }
-    impl :: google_field_selector :: ToFieldType for GoogleCloudAssuredworkloadsVersioningV1MainCreateWorkloadOperationMetadataComplianceRegime { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkload { # [doc = "Input only. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`."] # [serde (rename = "billingAccount" , default , skip_serializing_if = "std::option::Option::is_none")] pub billing_account : :: std :: option :: Option < String > , # [doc = "Required. Input only. Immutable. Settings specific to resources needed for CJIS."] # [serde (rename = "cjisSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub cjis_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadCJISSettings > , # [doc = "Required. Immutable. Compliance Regime associated with this workload."] # [serde (rename = "complianceRegime" , default , skip_serializing_if = "std::option::Option::is_none")] pub compliance_regime : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime > , # [doc = "Output only. Immutable. The Workload creation timestamp."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload"] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "Optional. Indicates the sovereignty status of the given workload. Currently meant to be used by Europe/Canada customers."] # [serde (rename = "enableSovereignControls" , default , skip_serializing_if = "std::option::Option::is_none")] pub enable_sovereign_controls : :: std :: option :: Option < bool > , # [doc = "Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations."] # [serde (rename = "etag" , default , skip_serializing_if = "std::option::Option::is_none")] pub etag : :: std :: option :: Option < String > , # [doc = "Required. Input only. Immutable. Settings specific to resources needed for FedRAMP High."] # [serde (rename = "fedrampHighSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub fedramp_high_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampHighSettings > , # [doc = "Required. Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate."] # [serde (rename = "fedrampModerateSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub fedramp_moderate_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampModerateSettings > , # [doc = "Required. Input only. Immutable. Settings specific to resources needed for IL4."] # [serde (rename = "il4Settings" , default , skip_serializing_if = "std::option::Option::is_none")] pub il_4_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadIL4Settings > , # [doc = "Output only. Represents the KAJ enrollment state of the given workload."] # [serde (rename = "kajEnrollmentState" , default , skip_serializing_if = "std::option::Option::is_none")] pub kaj_enrollment_state : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState > , # [doc = "Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS CMEK key is provisioned. This field is deprecated as of Feb 28, 2022. In order to create a Keyring, callers should specify, ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field."] # [serde (rename = "kmsSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub kms_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings > , # [doc = "Optional. Labels applied to the workload."] # [serde (rename = "labels" , default , skip_serializing_if = "std::option::Option::is_none")] pub labels : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only."] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}"] # [serde (rename = "provisionedResourcesParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub provisioned_resources_parent : :: std :: option :: Option < String > , # [doc = "Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional."] # [serde (rename = "resourceSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub resource_settings : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettings > > , # [doc = "Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only."] # [serde (rename = "resources" , default , skip_serializing_if = "std::option::Option::is_none")] pub resources : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfo > > , # [doc = "Output only. Represents the SAA enrollment response of the given workload. SAA enrollment response is queried during GetWorkload call. In failure cases, user friendly error message is shown in SAA details page."] # [serde (rename = "saaEnrollmentResponse" , default , skip_serializing_if = "std::option::Option::is_none")] pub saa_enrollment_response : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponse > , }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkload
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudAssuredworkloadsVersioningV1MainWorkload {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime {
-        #[doc = "Assured Workloads For Canada Regions and Support controls"]
-        CaRegionsAndSupport,
-        #[doc = "Criminal Justice Information Services (CJIS) Security policies."]
-        Cjis,
-        #[doc = "Unknown compliance regime."]
-        ComplianceRegimeUnspecified,
-        #[doc = "Assured Workloads For EU Regions and Support controls"]
-        EuRegionsAndSupport,
-        #[doc = "FedRAMP High data protection controls"]
-        FedrampHigh,
-        #[doc = "FedRAMP Moderate data protection controls"]
-        FedrampModerate,
-        #[doc = "Health Insurance Portability and Accountability Act controls"]
-        Hipaa,
-        #[doc = "Health Information Trust Alliance controls"]
-        Hitrust,
-        #[doc = "Information protection as per DoD IL4 requirements."]
-        Il4,
-        #[doc = "Assured Workloads For US Regions data protection controls"]
-        UsRegionalAccess,
-    }
-    impl GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: CaRegionsAndSupport => "CA_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Cjis => "CJIS" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: ComplianceRegimeUnspecified => "COMPLIANCE_REGIME_UNSPECIFIED" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: EuRegionsAndSupport => "EU_REGIONS_AND_SUPPORT" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: FedrampHigh => "FEDRAMP_HIGH" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: FedrampModerate => "FEDRAMP_MODERATE" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Hipaa => "HIPAA" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Hitrust => "HITRUST" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Il4 => "IL4" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: UsRegionalAccess => "US_REGIONAL_ACCESS" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime,
-            (),
-        > {
-            Ok (match s { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CA_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: CaRegionsAndSupport , "CJIS" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Cjis , "COMPLIANCE_REGIME_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: ComplianceRegimeUnspecified , "EU_REGIONS_AND_SUPPORT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: EuRegionsAndSupport , "FEDRAMP_HIGH" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: FedrampHigh , "FEDRAMP_MODERATE" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: FedrampModerate , "HIPAA" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Hipaa , "HITRUST" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Hitrust , "IL4" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: Il4 , "US_REGIONAL_ACCESS" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime :: UsRegionalAccess , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadComplianceRegime
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState {
-        #[doc = "Complete State for KAJ Enrollment."]
-        KajEnrollmentStateComplete,
-        #[doc = "Pending State for KAJ Enrollment."]
-        KajEnrollmentStatePending,
-        #[doc = "Default State for KAJ Enrollment."]
-        KajEnrollmentStateUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStateComplete => "KAJ_ENROLLMENT_STATE_COMPLETE" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStatePending => "KAJ_ENROLLMENT_STATE_PENDING" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStateUnspecified => "KAJ_ENROLLMENT_STATE_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState,
-            (),
-        > {
-            Ok (match s { "KAJ_ENROLLMENT_STATE_COMPLETE" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStateComplete , "KAJ_ENROLLMENT_STATE_PENDING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStatePending , "KAJ_ENROLLMENT_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStateUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "KAJ_ENROLLMENT_STATE_COMPLETE" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStateComplete , "KAJ_ENROLLMENT_STATE_PENDING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStatePending , "KAJ_ENROLLMENT_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState :: KajEnrollmentStateUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKajEnrollmentState
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadCJISSettings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadCJISSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadCJISSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampHighSettings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampHighSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampHighSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampModerateSettings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampModerateSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadFedrampModerateSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadIL4Settings {
-        #[doc = "Input only. Immutable. Settings used to create a CMEK crypto key."]
-        #[serde(
-            rename = "kmsSettings",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kms_settings: ::std::option::Option<
-            crate::schemas::GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadIL4Settings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadIL4Settings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings {
-        #[doc = "Required. Input only. Immutable. The time at which the Key Management Service will automatically create a new version of the crypto key and mark it as the primary."]
-        #[serde(
-            rename = "nextRotationTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub next_rotation_time: ::std::option::Option<String>,
-        #[doc = "Required. Input only. Immutable. \\[next_rotation_time\\] will be advanced by this period when the Key Management Service automatically rotates a key. Must be at least 24 hours and at most 876,000 hours."]
-        #[serde(
-            rename = "rotationPeriod",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub rotation_period: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadKMSSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfo { # [doc = "Resource identifier. For a project this represents project_number."] # [serde (rename = "resourceId" , default , skip_serializing_if = "std::option::Option::is_none")] # [serde (with = "crate::parsed_string")] pub resource_id : :: std :: option :: Option < i64 > , # [doc = "Indicates the type of resource."] # [serde (rename = "resourceType" , default , skip_serializing_if = "std::option::Option::is_none")] pub resource_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType > , }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfo
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfo
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType {
-        #[doc = "Consumer Folder."]
-        ConsumerFolder,
-        #[doc = "Deprecated. Existing workloads will continue to support this, but new CreateWorkloadRequests should not specify this as an input value."]
-        ConsumerProject,
-        #[doc = "Consumer project containing encryption keys."]
-        EncryptionKeysProject,
-        #[doc = "Keyring resource that hosts encryption keys."]
-        Keyring,
-        #[doc = "Unknown resource type."]
-        ResourceTypeUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ConsumerFolder => "CONSUMER_FOLDER" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ConsumerProject => "CONSUMER_PROJECT" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: EncryptionKeysProject => "ENCRYPTION_KEYS_PROJECT" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: Keyring => "KEYRING" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ResourceTypeUnspecified => "RESOURCE_TYPE_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType
-    {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType,
-            (),
-        > {
-            Ok (match s { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ResourceTypeUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType
-    {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType :: ResourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceInfoResourceType
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettings { # [doc = "User-assigned resource display name. If not empty it will be used to create a resource with the specified name."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "Resource identifier. For a project this represents project_id. If the project is already taken, the workload creation will fail. For KeyRing, this represents the keyring_id. For a folder, don’t set this value as folder_id is assigned by Google."] # [serde (rename = "resourceId" , default , skip_serializing_if = "std::option::Option::is_none")] pub resource_id : :: std :: option :: Option < String > , # [doc = "Indicates the type of resource. This field should be specified to correspond the id to the right project type (CONSUMER_PROJECT or ENCRYPTION_KEYS_PROJECT)"] # [serde (rename = "resourceType" , default , skip_serializing_if = "std::option::Option::is_none")] pub resource_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType > , }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettings
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettings
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType {
-        #[doc = "Consumer Folder."]
-        ConsumerFolder,
-        #[doc = "Deprecated. Existing workloads will continue to support this, but new CreateWorkloadRequests should not specify this as an input value."]
-        ConsumerProject,
-        #[doc = "Consumer project containing encryption keys."]
-        EncryptionKeysProject,
-        #[doc = "Keyring resource that hosts encryption keys."]
-        Keyring,
-        #[doc = "Unknown resource type."]
-        ResourceTypeUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ConsumerFolder => "CONSUMER_FOLDER" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ConsumerProject => "CONSUMER_PROJECT" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: EncryptionKeysProject => "ENCRYPTION_KEYS_PROJECT" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: Keyring => "KEYRING" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ResourceTypeUnspecified => "RESOURCE_TYPE_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType
-    {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType,
-            (),
-        > {
-            Ok (match s { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ResourceTypeUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType
-    {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CONSUMER_FOLDER" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ConsumerFolder , "CONSUMER_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ConsumerProject , "ENCRYPTION_KEYS_PROJECT" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: EncryptionKeysProject , "KEYRING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: Keyring , "RESOURCE_TYPE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType :: ResourceTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadResourceSettingsResourceType
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponse { # [doc = "Indicates SAA enrollment setup error if any."] # [serde (rename = "setupErrors" , default , skip_serializing_if = "std::option::Option::is_none")] pub setup_errors : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems > > , # [doc = "Indicates SAA enrollment status of a given workload."] # [serde (rename = "setupStatus" , default , skip_serializing_if = "std::option::Option::is_none")] pub setup_status : :: std :: option :: Option < crate :: schemas :: GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus > , }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponse
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponse
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems {
-        #[doc = "Invalid states for all customers, to be redirected to AA UI for additional details."]
-        ErrorInvalidBaseSetup,
-        #[doc = "Returned when there is not an EKM key configured."]
-        ErrorMissingExternalSigningKey,
-        #[doc = "Returned when there are no enrolled services or the customer is enrolled in CAA only for a subset of services."]
-        ErrorNotAllServicesEnrolled,
-        #[doc = "Returned when exception was encountered during evaluation of other criteria."]
-        ErrorSetupCheckFailed,
-        #[doc = "Unspecified."]
-        SetupErrorUnspecified,
-    }
-    impl GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorInvalidBaseSetup => "ERROR_INVALID_BASE_SETUP" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorMissingExternalSigningKey => "ERROR_MISSING_EXTERNAL_SIGNING_KEY" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorNotAllServicesEnrolled => "ERROR_NOT_ALL_SERVICES_ENROLLED" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorSetupCheckFailed => "ERROR_SETUP_CHECK_FAILED" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: SetupErrorUnspecified => "SETUP_ERROR_UNSPECIFIED" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        type Err = ();        fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems , () >{
-            Ok (match s { "ERROR_INVALID_BASE_SETUP" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorInvalidBaseSetup , "ERROR_MISSING_EXTERNAL_SIGNING_KEY" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorMissingExternalSigningKey , "ERROR_NOT_ALL_SERVICES_ENROLLED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorNotAllServicesEnrolled , "ERROR_SETUP_CHECK_FAILED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorSetupCheckFailed , "SETUP_ERROR_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: SetupErrorUnspecified , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ERROR_INVALID_BASE_SETUP" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorInvalidBaseSetup , "ERROR_MISSING_EXTERNAL_SIGNING_KEY" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorMissingExternalSigningKey , "ERROR_NOT_ALL_SERVICES_ENROLLED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorNotAllServicesEnrolled , "ERROR_SETUP_CHECK_FAILED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: ErrorSetupCheckFailed , "SETUP_ERROR_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems :: SetupErrorUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupErrorsItems
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus {
-        #[doc = "Unspecified."]
-        SetupStateUnspecified,
-        #[doc = "SAA enrollment comopleted."]
-        StatusComplete,
-        #[doc = "SAA enrollment pending."]
-        StatusPending,
-    }
-    impl GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus {
-        pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: SetupStateUnspecified => "SETUP_STATE_UNSPECIFIED" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: StatusComplete => "STATUS_COMPLETE" , GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: StatusPending => "STATUS_PENDING" , }
-        }
-    }
-    impl ::std::convert::AsRef<str>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus
-    {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<
-            GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus,
-            (),
-        > {
-            Ok (match s { "SETUP_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: SetupStateUnspecified , "STATUS_COMPLETE" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: StatusComplete , "STATUS_PENDING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: StatusPending , _ => return Err (()) , })
-        }
-    }
-    impl ::std::fmt::Display
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de>
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "SETUP_STATE_UNSPECIFIED" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: SetupStateUnspecified , "STATUS_COMPLETE" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: StatusComplete , "STATUS_PENDING" => GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus :: StatusPending , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudAssuredworkloadsVersioningV1MainWorkloadSaaEnrollmentResponseSetupStatus
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleLongrunningListOperationsResponse {
         #[doc = "The standard List next-page token."]
@@ -2793,7 +1930,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3485,7 +2622,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -3520,7 +2657,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -3576,7 +2713,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -3695,12 +2832,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -3802,6 +2940,30 @@ pub mod resources {
                             page_token: None,
                         }
                     }
+                    #[doc = "Update the permissions settings for an existing partner workload. For force updates don’t set etag field in the Workload. Only one update operation per workload can be in progress."]
+                    pub fn mutate_partner_permissions(
+                        &self,
+                        request : crate :: schemas :: GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest,
+                        name: impl Into<String>,
+                    ) -> MutatePartnerPermissionsRequestBuilder {
+                        MutatePartnerPermissionsRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
                     #[doc = "Updates an existing workload. Currently allows updating of workload display_name and labels. For force updates don’t set etag field in the Workload. Only one update operation per workload can be in progress."]
                     pub fn patch(
                         &self,
@@ -3826,6 +2988,33 @@ pub mod resources {
                             name: name.into(),
                             update_mask: None,
                         }
+                    }
+                    #[doc = "Restrict the list of resources allowed in the Workload environment. The current list of allowed products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In addition to assuredworkloads.workload.update permission, the user should also have orgpolicy.policy.set permission on the folder resource to use this functionality."]
+                    pub fn restrict_allowed_resources(
+                        &self,
+                        request : crate :: schemas :: GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequest,
+                        name: impl Into<String>,
+                    ) -> RestrictAllowedResourcesRequestBuilder {
+                        RestrictAllowedResourcesRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Actions that can be performed on the violations resource"]                    pub fn violations (& self) -> crate :: resources :: organizations :: locations :: workloads :: violations :: ViolationsActions{
+                        crate :: resources :: organizations :: locations :: workloads :: violations :: ViolationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                     }
                 }
                 #[doc = "Created via [WorkloadsActions::create()](struct.WorkloadsActions.html#method.create)"]
@@ -4468,7 +3657,7 @@ pub mod resources {
                             #[serde(rename = "workloads")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4503,7 +3692,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4559,7 +3748,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4682,14 +3871,164 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
+                    }
+                }
+                #[doc = "Created via [WorkloadsActions::mutate_partner_permissions()](struct.WorkloadsActions.html#method.mutate_partner_permissions)"]
+                #[derive(Debug, Clone)]
+                pub struct MutatePartnerPermissionsRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest , name : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                impl<'a> MutatePartnerPermissionsRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudAssuredworkloadsV1Workload, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudAssuredworkloadsV1Workload, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://assuredworkloads.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":mutatePartnerPermissions");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
                     }
                 }
                 #[doc = "Created via [WorkloadsActions::patch()](struct.WorkloadsActions.html#method.patch)"]
@@ -4861,6 +4200,917 @@ pub mod resources {
                             .map_err(|err| crate::Error::OAuth2(err))?;
                         req = req.bearer_auth(access_token);
                         Ok(req)
+                    }
+                }
+                #[doc = "Created via [WorkloadsActions::restrict_allowed_resources()](struct.WorkloadsActions.html#method.restrict_allowed_resources)"]
+                #[derive(Debug, Clone)]
+                pub struct RestrictAllowedResourcesRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesRequest , name : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                impl<'a> RestrictAllowedResourcesRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]                    pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesResponse , crate :: Error >{
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]                    pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleCloudAssuredworkloadsV1RestrictAllowedResourcesResponse , crate :: Error >{
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://assuredworkloads.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":restrictAllowedResources");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                pub mod violations {
+                    pub mod params {}
+                    pub struct ViolationsActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> ViolationsActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Acknowledges an existing violation. By acknowledging a violation, users acknowledge the existence of a compliance violation in their workload and decide to ignore it due to a valid business justification. Acknowledgement is a permanent operation and it cannot be reverted."]
+                        pub fn acknowledge(
+                            &self,
+                            request : crate :: schemas :: GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest,
+                            name: impl Into<String>,
+                        ) -> AcknowledgeRequestBuilder {
+                            AcknowledgeRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Retrieves Assured Workload Violation based on ID."]
+                        pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                            GetRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Lists the Violations in the AssuredWorkload Environment. Callers may also choose to read across multiple Workloads as per [AIP-159](https://google.aip.dev/159) by using ‘-’ (the hyphen or dash character) as a wildcard character instead of workload-id in the parent. Format `organizations/{org_id}/locations/{location}/workloads/-`"]
+                        pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                filter: None,
+                                interval_end_time: None,
+                                interval_start_time: None,
+                                page_size: None,
+                                page_token: None,
+                            }
+                        }
+                    }
+                    #[doc = "Created via [ViolationsActions::acknowledge()](struct.ViolationsActions.html#method.acknowledge)"]
+                    #[derive(Debug, Clone)]
+                    pub struct AcknowledgeRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest , name : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                    impl<'a> AcknowledgeRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]                        pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleCloudAssuredworkloadsV1AcknowledgeViolationResponse , crate :: Error >{
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]                        pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleCloudAssuredworkloadsV1AcknowledgeViolationResponse , crate :: Error >{
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://assuredworkloads.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":acknowledge");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ViolationsActions::get()](struct.ViolationsActions.html#method.get)"]
+                    #[derive(Debug, Clone)]
+                    pub struct GetRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> GetRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudAssuredworkloadsV1Violation,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudAssuredworkloadsV1Violation,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://assuredworkloads.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ViolationsActions::list()](struct.ViolationsActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        parent: String,
+                        filter: ::std::option::Option<String>,
+                        interval_end_time: ::std::option::Option<String>,
+                        interval_start_time: ::std::option::Option<String>,
+                        page_size: ::std::option::Option<i32>,
+                        page_token: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "Optional. A custom filter for filtering by the Violations properties."]
+                        pub fn filter(mut self, value: impl Into<String>) -> Self {
+                            self.filter = Some(value.into());
+                            self
+                        }
+                        #[doc = "The end of the time window."]
+                        pub fn interval_end_time(mut self, value: impl Into<String>) -> Self {
+                            self.interval_end_time = Some(value.into());
+                            self
+                        }
+                        #[doc = "The start of the time window."]
+                        pub fn interval_start_time(mut self, value: impl Into<String>) -> Self {
+                            self.interval_start_time = Some(value.into());
+                            self
+                        }
+                        #[doc = "Optional. Page size."]
+                        pub fn page_size(mut self, value: i32) -> Self {
+                            self.page_size = Some(value);
+                            self
+                        }
+                        #[doc = "Optional. Page token returned from previous request."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `violations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                        pub fn stream_violations<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_violations_with_fields(fields)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `violations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                        pub fn stream_violations_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudAssuredworkloadsV1Violation,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_violations_with_fields(None::<String>)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `violations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                        pub fn stream_violations_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudAssuredworkloadsV1Violation,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_violations_with_fields(Some("*"))
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `violations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                        pub fn stream_violations_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                            struct Page<T> {
+                                #[serde(rename = "nextPageToken")]
+                                pub next_page_token: ::std::option::Option<String>,
+                                #[serde(rename = "violations")]
+                                pub items: Vec<T>,
+                            }
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
+                                fn next_page_token(&self) -> ::std::option::Option<String> {
+                                    self.next_page_token.to_owned()
+                                }
+                            }
+                            impl<T> crate::stream::IntoPageItems for Page<T> {
+                                type Items = Vec<T>;
+                                fn into_page_items(self) -> Self::Items {
+                                    self.items
+                                }
+                            }
+                            self.fields = Some({
+                                let mut selector =
+                                    concat!("nextPageToken,", "violations").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::stream::page_item_stream::<_, Page<T>>(self)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                        pub fn stream<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String>
+                                + ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_with_fields(fields)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the default set of fields from the server."]
+                        pub fn stream_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudAssuredworkloadsV1ListViolationsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests all fields from the server."]
+                        pub fn stream_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudAssuredworkloadsV1ListViolationsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                        #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        pub fn stream_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::stream::page_stream(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudAssuredworkloadsV1ListViolationsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudAssuredworkloadsV1ListViolationsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://assuredworkloads.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/violations");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("filter", &self.filter)]);
+                            req = req.query(&[("interval.endTime", &self.interval_end_time)]);
+                            req = req.query(&[("interval.startTime", &self.interval_start_time)]);
+                            req = req.query(&[("pageSize", &self.page_size)]);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[async_trait::async_trait]
+                    impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                        {
+                            self._execute().await
+                        }
                     }
                 }
             }
@@ -5150,16 +5400,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -5179,13 +5431,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -5193,7 +5448,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -5220,7 +5475,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

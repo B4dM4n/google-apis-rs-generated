@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dataflow1_b3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220405")
+            .version("0.1.0-20230119")
             .about("Manages Google Cloud Dataflow projects on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -199,13 +199,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists snapshots.");
             snapshots2 = snapshots2.subcommand(mcmd);
         }
-        let mut sql2 = SubCommand::with_name("sql")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: validate");
-        {
-            let mcmd = SubCommand::with_name("validate").about("Validates a GoogleSQL query for Cloud Dataflow syntax. Will always confirm the given query parses correctly, and if able to look up schema information from DataCatalog, will validate that the query analyzes properly as well.");
-            sql2 = sql2.subcommand(mcmd);
-        }
         let mut templates2 = SubCommand::with_name("templates")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, get and launch");
@@ -274,7 +267,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         jobs2 = jobs2.subcommand(messages3);
         jobs2 = jobs2.subcommand(debug3);
         locations1 = locations1.subcommand(templates2);
-        locations1 = locations1.subcommand(sql2);
         locations1 = locations1.subcommand(snapshots2);
         locations1 = locations1.subcommand(jobs2);
         locations1 = locations1.subcommand(flex_templates2);

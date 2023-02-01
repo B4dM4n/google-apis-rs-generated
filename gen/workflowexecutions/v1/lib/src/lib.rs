@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [workflows](resources/projects/locations/workflows/struct.WorkflowsActions.html)\n      * [*triggerPubsubExecution*](resources/projects/locations/workflows/struct.TriggerPubsubExecutionRequestBuilder.html)\n      * [executions](resources/projects/locations/workflows/executions/struct.ExecutionsActions.html)\n        * [*cancel*](resources/projects/locations/workflows/executions/struct.CancelRequestBuilder.html), [*create*](resources/projects/locations/workflows/executions/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/workflows/executions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/workflows/executions/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -100,6 +101,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub call_log_level: ::std::option::Option<crate::schemas::ExecutionCallLogLevel>,
+        #[doc = "Output only. Measures the duration of the execution."]
+        #[serde(
+            rename = "duration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub duration: ::std::option::Option<String>,
         #[doc = "Output only. Marks the end of execution, successful or not."]
         #[serde(
             rename = "endTime",
@@ -114,6 +122,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error: ::std::option::Option<crate::schemas::Error>,
+        #[doc = "Labels associated with this execution. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores and dashes. Label keys must start with a letter. International characters are allowed."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
         #[doc = "Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}"]
         #[serde(
             rename = "name",
@@ -142,6 +157,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state: ::std::option::Option<crate::schemas::ExecutionState>,
+        #[doc = "Output only. Status tracks the current steps and progress data of this execution."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::Status>,
         #[doc = "Output only. Revision of the workflow this execution is using."]
         #[serde(
             rename = "workflowRevisionId",
@@ -162,7 +184,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ExecutionCallLogLevel {
-        #[doc = "No call logging specified."]
+        #[doc = "No call logging level specified."]
         CallLogLevelUnspecified,
         #[doc = "Log all call steps within workflows, all call returns, and all exceptions raised."]
         LogAllCalls,
@@ -360,7 +382,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListExecutionsResponse {
+    impl crate::GetNextPageToken<String> for ListExecutionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -544,6 +566,75 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for StackTraceElement {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Status {
+        #[doc = "A list of currently executing or last executed step names for the workflow execution currently running. If the workflow has succeeded or failed, this is the last attempted or executed step. Presently, if the current step is inside a subworkflow, the list only includes that step. In the future, the list will contain items for each step in the call stack, starting with the outermost step in the `main` subworkflow, and ending with the most deeply nested step."]
+        #[serde(
+            rename = "currentSteps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub current_steps: ::std::option::Option<Vec<crate::schemas::Step>>,
+    }
+    impl ::google_field_selector::FieldSelector for Status {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Status {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Step {
+        #[doc = "Name of a routine within the workflow."]
+        #[serde(
+            rename = "routine",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub routine: ::std::option::Option<String>,
+        #[doc = "Name of a step within the routine."]
+        #[serde(
+            rename = "step",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub step: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Step {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Step {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1019,7 +1110,7 @@ pub mod resources {
                     pub mod params {
                         #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                         pub enum GetView {
-                            #[doc = "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, state and workflow_revision_id."]
+                            #[doc = "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, duration, state and workflow_revision_id."]
                             Basic,
                             #[doc = "The default / unset value."]
                             ExecutionViewUnspecified,
@@ -1106,7 +1197,7 @@ pub mod resources {
                         }
                         #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                         pub enum ListView {
-                            #[doc = "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, state and workflow_revision_id."]
+                            #[doc = "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, duration, state and workflow_revision_id."]
                             Basic,
                             #[doc = "The default / unset value."]
                             ExecutionViewUnspecified,
@@ -1285,6 +1376,8 @@ pub mod resources {
                                 upload_type: None,
                                 xgafv: None,
                                 parent: parent.into(),
+                                filter: None,
+                                order_by: None,
                                 page_size: None,
                                 page_token: None,
                                 view: None,
@@ -1788,9 +1881,19 @@ pub mod resources {
                     }
                     #[doc = "Created via [ExecutionsActions::list()](struct.ExecutionsActions.html#method.list)"]
                     #[derive(Debug, Clone)]
-                    pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , page_size : :: std :: option :: Option < i32 > , page_token : :: std :: option :: Option < String > , view : :: std :: option :: Option < crate :: resources :: projects :: locations :: workflows :: executions :: params :: ListView > , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                    pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , parent : String , filter : :: std :: option :: Option < String > , order_by : :: std :: option :: Option < String > , page_size : :: std :: option :: Option < i32 > , page_token : :: std :: option :: Option < String > , view : :: std :: option :: Option < crate :: resources :: projects :: locations :: workflows :: executions :: params :: ListView > , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Maximum number of executions to return per call. Max supported value depends on the selected Execution view: it’s 10000 for BASIC and 100 for FULL. The default value used if the field is not specified is 100, regardless of the selected view. Values greater than the max value will be coerced down to it."]
+                        #[doc = "Optional. Filters applied to the \\[Executions.ListExecutions\\] results. The following fields are supported for filtering: executionID, state, startTime, endTime, duration, workflowRevisionID, stepName, and label."]
+                        pub fn filter(mut self, value: impl Into<String>) -> Self {
+                            self.filter = Some(value.into());
+                            self
+                        }
+                        #[doc = "Optional. The orderding applied to the \\[Executions.ListExecutions\\] results. By default the ordering is based on descending start time. The following fields are supported for order by: executionID, startTime, endTime, duration, state, and workflowRevisionID."]
+                        pub fn order_by(mut self, value: impl Into<String>) -> Self {
+                            self.order_by = Some(value.into());
+                            self
+                        }
+                        #[doc = "Maximum number of executions to return per call. Max supported value depends on the selected Execution view: it’s 1000 for BASIC and 100 for FULL. The default value used if the field is not specified is 100, regardless of the selected view. Values greater than the max value will be coerced down to it."]
                         pub fn page_size(mut self, value: i32) -> Self {
                             self.page_size = Some(value);
                             self
@@ -1902,7 +2005,7 @@ pub mod resources {
                                 #[serde(rename = "executions")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -1939,7 +2042,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -1989,7 +2092,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -2086,6 +2189,8 @@ pub mod resources {
                         ) -> Result<::reqwest::RequestBuilder, crate::Error>
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("filter", &self.filter)]);
+                            req = req.query(&[("orderBy", &self.order_by)]);
                             req = req.query(&[("pageSize", &self.page_size)]);
                             req = req.query(&[("pageToken", &self.page_token)]);
                             req = req.query(&[("view", &self.view)]);
@@ -2111,12 +2216,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -2409,16 +2515,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -2438,13 +2546,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -2452,7 +2563,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -2479,7 +2590,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

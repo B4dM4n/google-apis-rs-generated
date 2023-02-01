@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [divisions](resources/divisions/struct.DivisionsActions.html)\n  * [*search*](resources/divisions/struct.SearchRequestBuilder.html)\n* [elections](resources/elections/struct.ElectionsActions.html)\n  * [*electionQuery*](resources/elections/struct.ElectionQueryRequestBuilder.html), [*voterInfoQuery*](resources/elections/struct.VoterInfoQueryRequestBuilder.html)\n* [representatives](resources/representatives/struct.RepresentativesActions.html)\n  * [*representativeInfoByAddress*](resources/representatives/struct.RepresentativeInfoByAddressRequestBuilder.html), [*representativeInfoByDivision*](resources/representatives/struct.RepresentativeInfoByDivisionRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
@@ -833,6 +834,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ocd_division_id: ::std::option::Option<String>,
+        #[serde(
+            rename = "shapeLookupBehavior",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shape_lookup_behavior:
+            ::std::option::Option<crate::schemas::ElectionShapeLookupBehavior>,
     }
     impl ::google_field_selector::FieldSelector for Election {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -840,6 +848,79 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Election {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ElectionShapeLookupBehavior {
+        ShapeLookupDefault,
+        ShapeLookupDisabled,
+        ShapeLookupEnabled,
+    }
+    impl ElectionShapeLookupBehavior {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ElectionShapeLookupBehavior::ShapeLookupDefault => "shapeLookupDefault",
+                ElectionShapeLookupBehavior::ShapeLookupDisabled => "shapeLookupDisabled",
+                ElectionShapeLookupBehavior::ShapeLookupEnabled => "shapeLookupEnabled",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ElectionShapeLookupBehavior {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ElectionShapeLookupBehavior {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ElectionShapeLookupBehavior, ()> {
+            Ok(match s {
+                "shapeLookupDefault" => ElectionShapeLookupBehavior::ShapeLookupDefault,
+                "shapeLookupDisabled" => ElectionShapeLookupBehavior::ShapeLookupDisabled,
+                "shapeLookupEnabled" => ElectionShapeLookupBehavior::ShapeLookupEnabled,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ElectionShapeLookupBehavior {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ElectionShapeLookupBehavior {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ElectionShapeLookupBehavior {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "shapeLookupDefault" => ElectionShapeLookupBehavior::ShapeLookupDefault,
+                "shapeLookupDisabled" => ElectionShapeLookupBehavior::ShapeLookupDisabled,
+                "shapeLookupEnabled" => ElectionShapeLookupBehavior::ShapeLookupEnabled,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ElectionShapeLookupBehavior {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ElectionShapeLookupBehavior {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1319,7 +1400,7 @@ pub mod schemas {
         #[doc = "A place where two or more rivers join."]
         TypeConfluence,
         TypeConstituency,
-        #[doc = "RESERVED"]
+        #[doc = "DEPRECATED"]
         TypeConstituencyFuture,
         TypeContinent,
         #[doc = "All the points on the polygon are at the same elevation."]
@@ -1382,9 +1463,9 @@ pub mod schemas {
         TypeEstablishmentBuilding,
         #[doc = "DEPRECATED This type has been replaced by TYPE_COMPOUND_BUILDING. For further details, see go/oyster-compounds"]
         TypeEstablishmentGrounds,
-        #[doc = "Establishment POIs can be referenced by TYPE_COMPOUND features using the RELATION_PRIMARILY_OCCUPIED_BY. This is the reciprocal relation of the RELATION_OCCUPIES."]
+        #[doc = "An establishment which has a address (a.k.a. location or storefront). Note that it *may* also have a service area (e.g. a restaurant that offers both dine-in and delivery). This type of business is also known as a “hybrid” Service Area Business. Establishment POIs can be referenced by TYPE_COMPOUND features using the RELATION_PRIMARILY_OCCUPIED_BY. This is the reciprocal relation of the RELATION_OCCUPIES."]
         TypeEstablishmentPoi,
-        #[doc = "Represents service-only establishments (those without a storefront location). NOTE(tcain): Using value 0xD441, since we could find ourselves with a need to differentiate service areas from online-only at this level in the future, but still benefit from being able to group those under a common parent, disjoint from TYPE_ESTABLISHMENT_POI."]
+        #[doc = "A business without a storefront, e.g. a plumber. It would normally not have a place that a customer could visit to receive service, but it would have an area served by the business. Also known as a “pure” Service Area Business. NOTE(tcain): Using value 0xD441, since we could find ourselves with a need to differentiate service areas from online-only at this level in the future, but still benefit from being able to group those under a common parent, disjoint from TYPE_ESTABLISHMENT_POI."]
         TypeEstablishmentService,
         #[doc = "A place at the end of a river where fresh and salt water mix. Includes tidal creeks and limans."]
         TypeEstuary,
@@ -1539,6 +1620,8 @@ pub mod schemas {
         TypeLockerArea,
         #[doc = "DEPRECATED"]
         TypeLodging,
+        #[doc = "A grouping of TYPE_BORDER features (“border segments”), which together represent a border between two features of the same type."]
+        TypeLogicalBorder,
         #[doc = "ABSTRACT"]
         TypeMetaFeature,
         #[doc = "DEPRECATED"]
@@ -1642,7 +1725,7 @@ pub mod schemas {
         TypeReefGrowth,
         #[doc = "A submerged rock in the water."]
         TypeReefRockSubmerged,
-        #[doc = "An area controlled in some way by an authoritative source, such as a government-designated COVID containment zone. Features of this type should have one or more gcids corresponding to their specific regulation."]
+        #[doc = "An area controlled in some way by an authoritative source, such as a government-designated COVID containment zone or an area under government sanctions. Features of this type should have one or more gcids corresponding to their specific regulation, and client handling of these features may vary based on the type of regulation."]
         TypeRegulatedArea,
         #[doc = "A reservation is a region collectively held or governed by indigenous people and officially recognized by the country’s government at the federal or state level. A reservation may be fully contained within an administrative feature or partially contained within two or more. These regions are referred to by different categorical names depending on country and even by state, including but not limited to: “Indian Reservations”, “Indian Reserves”, “Land Claim Settlement Lands”, “Indian Lands”, “Treaty Lands”, “Indigenous Territories”, etc. A reservation is not a historic indigenous territory boundary or a region which has applied for land rights but has not yet received official recognition."]
         TypeReservation,
@@ -2065,6 +2148,7 @@ pub mod schemas {
                 GeocodingSummaryFeatureType::TypeLocality => "typeLocality",
                 GeocodingSummaryFeatureType::TypeLockerArea => "typeLockerArea",
                 GeocodingSummaryFeatureType::TypeLodging => "typeLodging",
+                GeocodingSummaryFeatureType::TypeLogicalBorder => "typeLogicalBorder",
                 GeocodingSummaryFeatureType::TypeMetaFeature => "typeMetaFeature",
                 GeocodingSummaryFeatureType::TypeMilitary => "typeMilitary",
                 GeocodingSummaryFeatureType::TypeMonorailStation => "typeMonorailStation",
@@ -2470,6 +2554,7 @@ pub mod schemas {
                 "typeLocality" => GeocodingSummaryFeatureType::TypeLocality,
                 "typeLockerArea" => GeocodingSummaryFeatureType::TypeLockerArea,
                 "typeLodging" => GeocodingSummaryFeatureType::TypeLodging,
+                "typeLogicalBorder" => GeocodingSummaryFeatureType::TypeLogicalBorder,
                 "typeMetaFeature" => GeocodingSummaryFeatureType::TypeMetaFeature,
                 "typeMilitary" => GeocodingSummaryFeatureType::TypeMilitary,
                 "typeMonorailStation" => GeocodingSummaryFeatureType::TypeMonorailStation,
@@ -2887,6 +2972,7 @@ pub mod schemas {
                 "typeLocality" => GeocodingSummaryFeatureType::TypeLocality,
                 "typeLockerArea" => GeocodingSummaryFeatureType::TypeLockerArea,
                 "typeLodging" => GeocodingSummaryFeatureType::TypeLodging,
+                "typeLogicalBorder" => GeocodingSummaryFeatureType::TypeLogicalBorder,
                 "typeMetaFeature" => GeocodingSummaryFeatureType::TypeMetaFeature,
                 "typeMilitary" => GeocodingSummaryFeatureType::TypeMilitary,
                 "typeMonorailStation" => GeocodingSummaryFeatureType::TypeMonorailStation,
@@ -6016,15 +6102,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

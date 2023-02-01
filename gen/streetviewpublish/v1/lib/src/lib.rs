@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [photo](resources/photo/struct.PhotoActions.html)\n  * [*create*](resources/photo/struct.CreateRequestBuilder.html), [*delete*](resources/photo/struct.DeleteRequestBuilder.html), [*get*](resources/photo/struct.GetRequestBuilder.html), [*startUpload*](resources/photo/struct.StartUploadRequestBuilder.html), [*update*](resources/photo/struct.UpdateRequestBuilder.html)\n* [photos](resources/photos/struct.PhotosActions.html)\n  * [*batchDelete*](resources/photos/struct.BatchDeleteRequestBuilder.html), [*batchGet*](resources/photos/struct.BatchGetRequestBuilder.html), [*batchUpdate*](resources/photos/struct.BatchUpdateRequestBuilder.html), [*list*](resources/photos/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [photo](resources/photo/struct.PhotoActions.html)\n  * [*create*](resources/photo/struct.CreateRequestBuilder.html), [*delete*](resources/photo/struct.DeleteRequestBuilder.html), [*get*](resources/photo/struct.GetRequestBuilder.html), [*startUpload*](resources/photo/struct.StartUploadRequestBuilder.html), [*update*](resources/photo/struct.UpdateRequestBuilder.html)\n* [photo_sequence](resources/photo_sequence/struct.PhotoSequenceActions.html)\n  * [*create*](resources/photo_sequence/struct.CreateRequestBuilder.html), [*delete*](resources/photo_sequence/struct.DeleteRequestBuilder.html), [*get*](resources/photo_sequence/struct.GetRequestBuilder.html), [*startUpload*](resources/photo_sequence/struct.StartUploadRequestBuilder.html)\n* [photo_sequences](resources/photo_sequences/struct.PhotoSequencesActions.html)\n  * [*list*](resources/photo_sequences/struct.ListRequestBuilder.html)\n* [photos](resources/photos/struct.PhotosActions.html)\n  * [*batchDelete*](resources/photos/struct.BatchDeleteRequestBuilder.html), [*batchGet*](resources/photos/struct.BatchGetRequestBuilder.html), [*batchUpdate*](resources/photos/struct.BatchUpdateRequestBuilder.html), [*list*](resources/photos/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Publish and manage your 360 photos on Google Street View\n\n`https://www.googleapis.com/auth/streetviewpublish`"]
     pub const STREETVIEWPUBLISH: &str = "https://www.googleapis.com/auth/streetviewpublish";
@@ -173,6 +174,149 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GpsDataGapFailureDetails {
+        #[doc = "The duration of the gap in GPS data that was found."]
+        #[serde(
+            rename = "gapDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gap_duration: ::std::option::Option<String>,
+        #[doc = "Relative time (from the start of the video stream) when the gap started."]
+        #[serde(
+            rename = "gapStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gap_start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GpsDataGapFailureDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GpsDataGapFailureDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Imu {
+        #[doc = "The accelerometer measurements in meters/sec^2 with increasing timestamps from devices."]
+        #[serde(
+            rename = "accelMpsps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub accel_mpsps: ::std::option::Option<Vec<crate::schemas::Measurement3D>>,
+        #[doc = "The gyroscope measurements in radians/sec with increasing timestamps from devices."]
+        #[serde(
+            rename = "gyroRps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gyro_rps: ::std::option::Option<Vec<crate::schemas::Measurement3D>>,
+        #[doc = "The magnetometer measurements of the magnetic field in microtesla (uT) with increasing timestamps from devices."]
+        #[serde(
+            rename = "magUt",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mag_ut: ::std::option::Option<Vec<crate::schemas::Measurement3D>>,
+    }
+    impl ::google_field_selector::FieldSelector for Imu {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Imu {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ImuDataGapFailureDetails {
+        #[doc = "The duration of the gap in IMU data that was found."]
+        #[serde(
+            rename = "gapDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gap_duration: ::std::option::Option<String>,
+        #[doc = "Relative time (from the start of the video stream) when the gap started."]
+        #[serde(
+            rename = "gapStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gap_start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ImuDataGapFailureDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ImuDataGapFailureDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct InsufficientGpsFailureDetails {
+        #[doc = "The number of GPS points that were found in the video."]
+        #[serde(
+            rename = "gpsPointsFound",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gps_points_found: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for InsufficientGpsFailureDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InsufficientGpsFailureDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct LatLng {
@@ -197,6 +341,35 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for LatLng {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct LatLngBounds {
+        #[doc = "The northeast corner of these bounds."]
+        #[serde(
+            rename = "northeast",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub northeast: ::std::option::Option<crate::schemas::LatLng>,
+        #[doc = "The southwest corner of these bounds."]
+        #[serde(
+            rename = "southwest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub southwest: ::std::option::Option<crate::schemas::LatLng>,
+    }
+    impl ::google_field_selector::FieldSelector for LatLngBounds {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LatLngBounds {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -230,6 +403,38 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct ListPhotoSequencesResponse {
+        #[doc = "Token to retrieve the next page of results, or empty if there are no more results in the list."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "List of photo sequences via Operation interface. The maximum number of items returned is based on the pageSize field in the request. Each item in the list can have three possible states, * `Operation.done` = false, if the processing of PhotoSequence is not finished yet. * `Operation.done` = true and `Operation.error` is populated, if there was an error in processing. * `Operation.done` = true and `Operation.response` contains a PhotoSequence message, In each sequence, only Id is populated."]
+        #[serde(
+            rename = "photoSequences",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub photo_sequences: ::std::option::Option<Vec<crate::schemas::Operation>>,
+    }
+    impl ::google_field_selector::FieldSelector for ListPhotoSequencesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListPhotoSequencesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListPhotoSequencesResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
@@ -259,9 +464,135 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPhotosResponse {
+    impl crate::GetNextPageToken<String> for ListPhotosResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Measurement3D {
+        #[doc = "The timestamp of the IMU measurement."]
+        #[serde(
+            rename = "captureTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub capture_time: ::std::option::Option<String>,
+        #[doc = "The sensor measurement in the x axis."]
+        #[serde(
+            rename = "x",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub x: ::std::option::Option<f32>,
+        #[doc = "The sensor measurement in the y axis."]
+        #[serde(
+            rename = "y",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub y: ::std::option::Option<f32>,
+        #[doc = "The sensor measurement in the z axis."]
+        #[serde(
+            rename = "z",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub z: ::std::option::Option<f32>,
+    }
+    impl ::google_field_selector::FieldSelector for Measurement3D {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Measurement3D {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NoOverlapGpsFailureDetails {
+        #[doc = "Time of last recorded GPS point."]
+        #[serde(
+            rename = "gpsEndTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gps_end_time: ::std::option::Option<String>,
+        #[doc = "Time of first recorded GPS point."]
+        #[serde(
+            rename = "gpsStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gps_start_time: ::std::option::Option<String>,
+        #[doc = "End time of video."]
+        #[serde(
+            rename = "videoEndTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub video_end_time: ::std::option::Option<String>,
+        #[doc = "Start time of video."]
+        #[serde(
+            rename = "videoStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub video_start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for NoOverlapGpsFailureDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NoOverlapGpsFailureDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NotOutdoorsFailureDetails {
+        #[doc = "Relative time (from the start of the video stream) when an indoor frame was found."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for NotOutdoorsFailureDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NotOutdoorsFailureDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
@@ -663,6 +994,478 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct PhotoSequence {
+        #[doc = "Optional. Absolute time when the photo sequence starts to be captured. If the photo sequence is a video, this is the start time of the video. If this field is populated in input, it overrides the capture time in the video or XDM file."]
+        #[serde(
+            rename = "captureTimeOverride",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub capture_time_override: ::std::option::Option<String>,
+        #[doc = "Output only. The computed distance of the photo sequence in meters."]
+        #[serde(
+            rename = "distanceMeters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub distance_meters: ::std::option::Option<f64>,
+        #[doc = "Output only. If this sequence has `failure_reason` set, this may contain additional details about the failure."]
+        #[serde(
+            rename = "failureDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_details: ::std::option::Option<crate::schemas::ProcessingFailureDetails>,
+        #[doc = "Output only. If this sequence has processing_state = FAILED, this will contain the reason why it failed. If the processing_state is any other value, this field will be unset."]
+        #[serde(
+            rename = "failureReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_reason: ::std::option::Option<crate::schemas::PhotoSequenceFailureReason>,
+        #[doc = "Output only. The filename of the upload. Does not include the directory path. Only available if the sequence was uploaded on a platform that provides the filename."]
+        #[serde(
+            rename = "filename",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filename: ::std::option::Option<String>,
+        #[doc = "Input only. If both raw_gps_timeline and the Camera Motion Metadata Track (CAMM) contain GPS measurements, indicate which takes precedence."]
+        #[serde(
+            rename = "gpsSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gps_source: ::std::option::Option<crate::schemas::PhotoSequenceGpsSource>,
+        #[doc = "Output only. Unique identifier for the photo sequence. This also acts as a long running operation ID if uploading is performed asynchronously."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Input only. Three axis IMU data for the collection. If this data is too large to put in the request, then it should be put in the CAMM track for the video. This data always takes precedence over the equivalent CAMM data, if it exists."]
+        #[serde(
+            rename = "imu",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub imu: ::std::option::Option<crate::schemas::Imu>,
+        #[doc = "Output only. Photos with increasing timestamps."]
+        #[serde(
+            rename = "photos",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub photos: ::std::option::Option<Vec<crate::schemas::Photo>>,
+        #[doc = "Output only. The processing state of this sequence."]
+        #[serde(
+            rename = "processingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub processing_state: ::std::option::Option<crate::schemas::PhotoSequenceProcessingState>,
+        #[doc = "Input only. Raw GPS measurements with increasing timestamps from the device that aren’t time synced with each photo. These raw measurements will be used to infer the pose of each frame. Required in input when InputType is VIDEO and raw GPS measurements are not in Camera Motion Metadata Track (CAMM). User can indicate which takes precedence using gps_source if raw GPS measurements are provided in both raw_gps_timeline and Camera Motion Metadata Track (CAMM)."]
+        #[serde(
+            rename = "rawGpsTimeline",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub raw_gps_timeline: ::std::option::Option<Vec<crate::schemas::Pose>>,
+        #[doc = "Output only. A rectangular box that encapsulates every image in this photo sequence."]
+        #[serde(
+            rename = "sequenceBounds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sequence_bounds: ::std::option::Option<crate::schemas::LatLngBounds>,
+        #[doc = "Input only. Required when creating photo sequence. The resource name where the bytes of the photo sequence (in the form of video) are uploaded."]
+        #[serde(
+            rename = "uploadReference",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub upload_reference: ::std::option::Option<crate::schemas::UploadRef>,
+        #[doc = "Output only. The time this photo sequence was created in uSV Store service."]
+        #[serde(
+            rename = "uploadTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub upload_time: ::std::option::Option<String>,
+        #[doc = "Output only. The total number of views that all the published images in this PhotoSequence have received."]
+        #[serde(
+            rename = "viewCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub view_count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for PhotoSequence {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PhotoSequence {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PhotoSequenceFailureReason {
+        #[doc = "The video file was corrupt or could not be decoded."]
+        CorruptVideo,
+        #[doc = "This video has been uploaded before."]
+        Duplicate,
+        #[doc = "The sequence of photos could not be accurately located in the world."]
+        FailedToRefinePositions,
+        #[doc = "GPS data contains a gap greater than 5 seconds in duration."]
+        GpsDataGap,
+        #[doc = "IMU (Accelerometer, Gyroscope, etc.) data contain gaps greater than 0.1 seconds in duration."]
+        ImuDataGap,
+        #[doc = "Too few GPS points."]
+        InsufficientGps,
+        #[doc = "Too few IMU points."]
+        InsufficientImu,
+        #[doc = "Not enough moving data."]
+        InsufficientMovement,
+        #[doc = "Insufficient overlap in the time frame between GPS, IMU, and other time series data."]
+        InsufficientOverlapTimeSeries,
+        #[doc = "Not enough video frames."]
+        InsufficientVideoFrames,
+        #[doc = "A permanent failure in the underlying system occurred."]
+        Internal,
+        #[doc = "Invalid capture time. Timestamps were from the future."]
+        InvalidCaptureTime,
+        #[doc = "GPS is invalid (e.x. all GPS points are at (0,0))"]
+        InvalidGps,
+        #[doc = "IMU (Accelerometer, Gyroscope, etc.) data are not valid. They may be missing required fields (x, y, z or time), may not be formatted correctly, or any other issue that prevents our systems from parsing it."]
+        InvalidImu,
+        #[doc = "Invalid image aspect ratio found."]
+        InvalidVideoDimensions,
+        #[doc = "The video format is invalid or unsupported."]
+        InvalidVideoFormat,
+        #[doc = "GPS data is too erratic to be processed."]
+        JumpyGps,
+        #[doc = "Video frame’s resolution is too small."]
+        LowResolution,
+        #[doc = "No overlap between the time frame of GPS track and the time frame of video."]
+        NoOverlapGps,
+        #[doc = "Some frames were indoors, which is unsupported."]
+        NotOutdoors,
+        #[doc = "The failure reason is unspecified, this is the default value."]
+        ProcessingFailureReasonUnspecified,
+        #[doc = "The sequence was taken down for policy reasons."]
+        Takedown,
+        #[doc = "The camera is not supported."]
+        UnsupportedCamera,
+    }
+    impl PhotoSequenceFailureReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PhotoSequenceFailureReason::CorruptVideo => "CORRUPT_VIDEO",
+                PhotoSequenceFailureReason::Duplicate => "DUPLICATE",
+                PhotoSequenceFailureReason::FailedToRefinePositions => "FAILED_TO_REFINE_POSITIONS",
+                PhotoSequenceFailureReason::GpsDataGap => "GPS_DATA_GAP",
+                PhotoSequenceFailureReason::ImuDataGap => "IMU_DATA_GAP",
+                PhotoSequenceFailureReason::InsufficientGps => "INSUFFICIENT_GPS",
+                PhotoSequenceFailureReason::InsufficientImu => "INSUFFICIENT_IMU",
+                PhotoSequenceFailureReason::InsufficientMovement => "INSUFFICIENT_MOVEMENT",
+                PhotoSequenceFailureReason::InsufficientOverlapTimeSeries => {
+                    "INSUFFICIENT_OVERLAP_TIME_SERIES"
+                }
+                PhotoSequenceFailureReason::InsufficientVideoFrames => "INSUFFICIENT_VIDEO_FRAMES",
+                PhotoSequenceFailureReason::Internal => "INTERNAL",
+                PhotoSequenceFailureReason::InvalidCaptureTime => "INVALID_CAPTURE_TIME",
+                PhotoSequenceFailureReason::InvalidGps => "INVALID_GPS",
+                PhotoSequenceFailureReason::InvalidImu => "INVALID_IMU",
+                PhotoSequenceFailureReason::InvalidVideoDimensions => "INVALID_VIDEO_DIMENSIONS",
+                PhotoSequenceFailureReason::InvalidVideoFormat => "INVALID_VIDEO_FORMAT",
+                PhotoSequenceFailureReason::JumpyGps => "JUMPY_GPS",
+                PhotoSequenceFailureReason::LowResolution => "LOW_RESOLUTION",
+                PhotoSequenceFailureReason::NoOverlapGps => "NO_OVERLAP_GPS",
+                PhotoSequenceFailureReason::NotOutdoors => "NOT_OUTDOORS",
+                PhotoSequenceFailureReason::ProcessingFailureReasonUnspecified => {
+                    "PROCESSING_FAILURE_REASON_UNSPECIFIED"
+                }
+                PhotoSequenceFailureReason::Takedown => "TAKEDOWN",
+                PhotoSequenceFailureReason::UnsupportedCamera => "UNSUPPORTED_CAMERA",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PhotoSequenceFailureReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PhotoSequenceFailureReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PhotoSequenceFailureReason, ()> {
+            Ok(match s {
+                "CORRUPT_VIDEO" => PhotoSequenceFailureReason::CorruptVideo,
+                "DUPLICATE" => PhotoSequenceFailureReason::Duplicate,
+                "FAILED_TO_REFINE_POSITIONS" => PhotoSequenceFailureReason::FailedToRefinePositions,
+                "GPS_DATA_GAP" => PhotoSequenceFailureReason::GpsDataGap,
+                "IMU_DATA_GAP" => PhotoSequenceFailureReason::ImuDataGap,
+                "INSUFFICIENT_GPS" => PhotoSequenceFailureReason::InsufficientGps,
+                "INSUFFICIENT_IMU" => PhotoSequenceFailureReason::InsufficientImu,
+                "INSUFFICIENT_MOVEMENT" => PhotoSequenceFailureReason::InsufficientMovement,
+                "INSUFFICIENT_OVERLAP_TIME_SERIES" => {
+                    PhotoSequenceFailureReason::InsufficientOverlapTimeSeries
+                }
+                "INSUFFICIENT_VIDEO_FRAMES" => PhotoSequenceFailureReason::InsufficientVideoFrames,
+                "INTERNAL" => PhotoSequenceFailureReason::Internal,
+                "INVALID_CAPTURE_TIME" => PhotoSequenceFailureReason::InvalidCaptureTime,
+                "INVALID_GPS" => PhotoSequenceFailureReason::InvalidGps,
+                "INVALID_IMU" => PhotoSequenceFailureReason::InvalidImu,
+                "INVALID_VIDEO_DIMENSIONS" => PhotoSequenceFailureReason::InvalidVideoDimensions,
+                "INVALID_VIDEO_FORMAT" => PhotoSequenceFailureReason::InvalidVideoFormat,
+                "JUMPY_GPS" => PhotoSequenceFailureReason::JumpyGps,
+                "LOW_RESOLUTION" => PhotoSequenceFailureReason::LowResolution,
+                "NO_OVERLAP_GPS" => PhotoSequenceFailureReason::NoOverlapGps,
+                "NOT_OUTDOORS" => PhotoSequenceFailureReason::NotOutdoors,
+                "PROCESSING_FAILURE_REASON_UNSPECIFIED" => {
+                    PhotoSequenceFailureReason::ProcessingFailureReasonUnspecified
+                }
+                "TAKEDOWN" => PhotoSequenceFailureReason::Takedown,
+                "UNSUPPORTED_CAMERA" => PhotoSequenceFailureReason::UnsupportedCamera,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PhotoSequenceFailureReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PhotoSequenceFailureReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PhotoSequenceFailureReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CORRUPT_VIDEO" => PhotoSequenceFailureReason::CorruptVideo,
+                "DUPLICATE" => PhotoSequenceFailureReason::Duplicate,
+                "FAILED_TO_REFINE_POSITIONS" => PhotoSequenceFailureReason::FailedToRefinePositions,
+                "GPS_DATA_GAP" => PhotoSequenceFailureReason::GpsDataGap,
+                "IMU_DATA_GAP" => PhotoSequenceFailureReason::ImuDataGap,
+                "INSUFFICIENT_GPS" => PhotoSequenceFailureReason::InsufficientGps,
+                "INSUFFICIENT_IMU" => PhotoSequenceFailureReason::InsufficientImu,
+                "INSUFFICIENT_MOVEMENT" => PhotoSequenceFailureReason::InsufficientMovement,
+                "INSUFFICIENT_OVERLAP_TIME_SERIES" => {
+                    PhotoSequenceFailureReason::InsufficientOverlapTimeSeries
+                }
+                "INSUFFICIENT_VIDEO_FRAMES" => PhotoSequenceFailureReason::InsufficientVideoFrames,
+                "INTERNAL" => PhotoSequenceFailureReason::Internal,
+                "INVALID_CAPTURE_TIME" => PhotoSequenceFailureReason::InvalidCaptureTime,
+                "INVALID_GPS" => PhotoSequenceFailureReason::InvalidGps,
+                "INVALID_IMU" => PhotoSequenceFailureReason::InvalidImu,
+                "INVALID_VIDEO_DIMENSIONS" => PhotoSequenceFailureReason::InvalidVideoDimensions,
+                "INVALID_VIDEO_FORMAT" => PhotoSequenceFailureReason::InvalidVideoFormat,
+                "JUMPY_GPS" => PhotoSequenceFailureReason::JumpyGps,
+                "LOW_RESOLUTION" => PhotoSequenceFailureReason::LowResolution,
+                "NO_OVERLAP_GPS" => PhotoSequenceFailureReason::NoOverlapGps,
+                "NOT_OUTDOORS" => PhotoSequenceFailureReason::NotOutdoors,
+                "PROCESSING_FAILURE_REASON_UNSPECIFIED" => {
+                    PhotoSequenceFailureReason::ProcessingFailureReasonUnspecified
+                }
+                "TAKEDOWN" => PhotoSequenceFailureReason::Takedown,
+                "UNSUPPORTED_CAMERA" => PhotoSequenceFailureReason::UnsupportedCamera,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PhotoSequenceFailureReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PhotoSequenceFailureReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PhotoSequenceGpsSource {
+        #[doc = "GPS in Camera Motion Metadata Track (CAMM) takes precedence if it exists."]
+        CameraMotionMetadataTrack,
+        #[doc = "GPS in raw_gps_timeline takes precedence if it exists."]
+        PhotoSequence,
+    }
+    impl PhotoSequenceGpsSource {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PhotoSequenceGpsSource::CameraMotionMetadataTrack => "CAMERA_MOTION_METADATA_TRACK",
+                PhotoSequenceGpsSource::PhotoSequence => "PHOTO_SEQUENCE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PhotoSequenceGpsSource {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PhotoSequenceGpsSource {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PhotoSequenceGpsSource, ()> {
+            Ok(match s {
+                "CAMERA_MOTION_METADATA_TRACK" => PhotoSequenceGpsSource::CameraMotionMetadataTrack,
+                "PHOTO_SEQUENCE" => PhotoSequenceGpsSource::PhotoSequence,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PhotoSequenceGpsSource {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PhotoSequenceGpsSource {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PhotoSequenceGpsSource {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CAMERA_MOTION_METADATA_TRACK" => PhotoSequenceGpsSource::CameraMotionMetadataTrack,
+                "PHOTO_SEQUENCE" => PhotoSequenceGpsSource::PhotoSequence,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PhotoSequenceGpsSource {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PhotoSequenceGpsSource {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PhotoSequenceProcessingState {
+        #[doc = "The sequence failed processing. See FailureReason for more details."]
+        Failed,
+        #[doc = "The sequence has not yet started processing."]
+        Pending,
+        #[doc = "The sequence has finished processing including refining position."]
+        Processed,
+        #[doc = "The sequence is currently in processing."]
+        Processing,
+        #[doc = "The state is unspecified, this is the default value."]
+        ProcessingStateUnspecified,
+    }
+    impl PhotoSequenceProcessingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PhotoSequenceProcessingState::Failed => "FAILED",
+                PhotoSequenceProcessingState::Pending => "PENDING",
+                PhotoSequenceProcessingState::Processed => "PROCESSED",
+                PhotoSequenceProcessingState::Processing => "PROCESSING",
+                PhotoSequenceProcessingState::ProcessingStateUnspecified => {
+                    "PROCESSING_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PhotoSequenceProcessingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PhotoSequenceProcessingState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PhotoSequenceProcessingState, ()> {
+            Ok(match s {
+                "FAILED" => PhotoSequenceProcessingState::Failed,
+                "PENDING" => PhotoSequenceProcessingState::Pending,
+                "PROCESSED" => PhotoSequenceProcessingState::Processed,
+                "PROCESSING" => PhotoSequenceProcessingState::Processing,
+                "PROCESSING_STATE_UNSPECIFIED" => {
+                    PhotoSequenceProcessingState::ProcessingStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PhotoSequenceProcessingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PhotoSequenceProcessingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PhotoSequenceProcessingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FAILED" => PhotoSequenceProcessingState::Failed,
+                "PENDING" => PhotoSequenceProcessingState::Pending,
+                "PROCESSED" => PhotoSequenceProcessingState::Processed,
+                "PROCESSING" => PhotoSequenceProcessingState::Processing,
+                "PROCESSING_STATE_UNSPECIFIED" => {
+                    PhotoSequenceProcessingState::ProcessingStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PhotoSequenceProcessingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PhotoSequenceProcessingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -725,6 +1528,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub altitude: ::std::option::Option<f64>,
+        #[doc = "Time of the GPS record since UTC epoch."]
+        #[serde(
+            rename = "gpsRecordTimestampUnixEpoch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gps_record_timestamp_unix_epoch: ::std::option::Option<String>,
         #[doc = "The following pose parameters pertain to the center of the photo. They match https://developers.google.com/streetview/spherical-metadata. Compass heading, measured at the center of the photo in degrees clockwise from North. Value must be >=0 and \\<360. NaN indicates an unmeasured quantity."]
         #[serde(
             rename = "heading",
@@ -767,6 +1577,67 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Pose {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProcessingFailureDetails {
+        #[doc = "See GpsDataGapFailureDetails."]
+        #[serde(
+            rename = "gpsDataGapDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gps_data_gap_details: ::std::option::Option<crate::schemas::GpsDataGapFailureDetails>,
+        #[doc = "See ImuDataGapFailureDetails."]
+        #[serde(
+            rename = "imuDataGapDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub imu_data_gap_details: ::std::option::Option<crate::schemas::ImuDataGapFailureDetails>,
+        #[doc = "See InsufficientGpsFailureDetails."]
+        #[serde(
+            rename = "insufficientGpsDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub insufficient_gps_details:
+            ::std::option::Option<crate::schemas::InsufficientGpsFailureDetails>,
+        #[doc = "See NoOverlapGpsFailureDetails."]
+        #[serde(
+            rename = "noOverlapGpsDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_overlap_gps_details:
+            ::std::option::Option<crate::schemas::NoOverlapGpsFailureDetails>,
+        #[doc = "See NotOutdoorsFailureDetails."]
+        #[serde(
+            rename = "notOutdoorsDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub not_outdoors_details: ::std::option::Option<crate::schemas::NotOutdoorsFailureDetails>,
+    }
+    impl ::google_field_selector::FieldSelector for ProcessingFailureDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProcessingFailureDetails {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1042,6 +1913,20 @@ impl Client {
     #[doc = "Actions that can be performed on the photo resource"]
     pub fn photo(&self) -> crate::resources::photo::PhotoActions {
         crate::resources::photo::PhotoActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
+    #[doc = "Actions that can be performed on the photo_sequence resource"]
+    pub fn photo_sequence(&self) -> crate::resources::photo_sequence::PhotoSequenceActions {
+        crate::resources::photo_sequence::PhotoSequenceActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
+    #[doc = "Actions that can be performed on the photo_sequences resource"]
+    pub fn photo_sequences(&self) -> crate::resources::photo_sequences::PhotoSequencesActions {
+        crate::resources::photo_sequences::PhotoSequencesActions {
             reqwest: &self.reqwest,
             auth: self.auth_ref(),
         }
@@ -2056,6 +2941,1265 @@ pub mod resources {
             }
         }
     }
+    pub mod photo_sequence {
+        pub mod params {
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum CreateInputType {
+                #[doc = "Not specified. Server will return google.rpc.Code.INVALID_ARGUMENT."]
+                InputTypeUnspecified,
+                #[doc = "360 Video."]
+                Video,
+                #[doc = "Extensible Device Metadata, http://www.xdm.org"]
+                Xdm,
+            }
+            impl CreateInputType {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        CreateInputType::InputTypeUnspecified => "INPUT_TYPE_UNSPECIFIED",
+                        CreateInputType::Video => "VIDEO",
+                        CreateInputType::Xdm => "XDM",
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for CreateInputType {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for CreateInputType {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<CreateInputType, ()> {
+                    Ok(match s {
+                        "INPUT_TYPE_UNSPECIFIED" => CreateInputType::InputTypeUnspecified,
+                        "VIDEO" => CreateInputType::Video,
+                        "XDM" => CreateInputType::Xdm,
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for CreateInputType {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for CreateInputType {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for CreateInputType {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "INPUT_TYPE_UNSPECIFIED" => CreateInputType::InputTypeUnspecified,
+                        "VIDEO" => CreateInputType::Video,
+                        "XDM" => CreateInputType::Xdm,
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for CreateInputType {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for CreateInputType {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum GetView {
+                #[doc = "Server responses do not include the download URL for the photo bytes. The default value."]
+                Basic,
+                #[doc = "Server responses include the download URL for the photo bytes."]
+                IncludeDownloadUrl,
+            }
+            impl GetView {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        GetView::Basic => "BASIC",
+                        GetView::IncludeDownloadUrl => "INCLUDE_DOWNLOAD_URL",
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for GetView {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for GetView {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<GetView, ()> {
+                    Ok(match s {
+                        "BASIC" => GetView::Basic,
+                        "INCLUDE_DOWNLOAD_URL" => GetView::IncludeDownloadUrl,
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for GetView {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for GetView {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for GetView {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "BASIC" => GetView::Basic,
+                        "INCLUDE_DOWNLOAD_URL" => GetView::IncludeDownloadUrl,
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for GetView {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for GetView {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+        }
+        pub struct PhotoSequenceActions<'a> {
+            pub(crate) reqwest: &'a reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> PhotoSequenceActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "After the client finishes uploading the PhotoSequence with the returned UploadRef, CreatePhotoSequence extracts a sequence of 360 photos from a video or Extensible Device Metadata (XDM, http://www.xdm.org/) to be published to Street View on Google Maps. `CreatePhotoSequence` returns an Operation, with the PhotoSequence Id set in the `Operation.name` field. This method returns the following error codes: * google.rpc.Code.INVALID_ARGUMENT if the request is malformed. * google.rpc.Code.NOT_FOUND if the upload reference does not exist."]
+            pub fn create(&self, request: crate::schemas::PhotoSequence) -> CreateRequestBuilder {
+                CreateRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    input_type: None,
+                }
+            }
+            #[doc = "Deletes a PhotoSequence and its metadata. This method returns the following error codes: * google.rpc.Code.PERMISSION_DENIED if the requesting user did not create the requested photo sequence. * google.rpc.Code.NOT_FOUND if the photo sequence ID does not exist. * google.rpc.Code.FAILED_PRECONDITION if the photo sequence ID is not yet finished processing."]
+            pub fn delete(&self, sequence_id: impl Into<String>) -> DeleteRequestBuilder {
+                DeleteRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    sequence_id: sequence_id.into(),
+                }
+            }
+            #[doc = "Gets the metadata of the specified PhotoSequence via the Operation interface. This method returns the following three types of responses: * `Operation.done` = false, if the processing of PhotoSequence is not finished yet. * `Operation.done` = true and `Operation.error` is populated, if there was an error in processing. * `Operation.done` = true and `Operation.response` is poulated, which contains a PhotoSequence message. This method returns the following error codes: * google.rpc.Code.PERMISSION_DENIED if the requesting user did not create the requested PhotoSequence. * google.rpc.Code.NOT_FOUND if the requested PhotoSequence does not exist."]
+            pub fn get(&self, sequence_id: impl Into<String>) -> GetRequestBuilder {
+                GetRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    sequence_id: sequence_id.into(),
+                    filter: None,
+                    view: None,
+                }
+            }
+            #[doc = "Creates an upload session to start uploading photo sequence data. The upload URL of the returned UploadRef is used to upload the data for the `photoSequence`. After the upload is complete, the UploadRef is used with CreatePhotoSequence to create the PhotoSequence object entry."]
+            pub fn start_upload(
+                &self,
+                request: crate::schemas::Empty,
+            ) -> StartUploadRequestBuilder {
+                StartUploadRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                }
+            }
+        }
+        #[doc = "Created via [PhotoSequenceActions::create()](struct.PhotoSequenceActions.html#method.create)"]
+        #[derive(Debug, Clone)]
+        pub struct CreateRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::PhotoSequence,
+            input_type:
+                ::std::option::Option<crate::resources::photo_sequence::params::CreateInputType>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> CreateRequestBuilder<'a> {
+            #[doc = "Required. The input form of PhotoSequence."]
+            pub fn input_type(
+                mut self,
+                value: crate::resources::photo_sequence::params::CreateInputType,
+            ) -> Self {
+                self.input_type = Some(value);
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://streetviewpublish.googleapis.com/".to_owned();
+                output.push_str("v1/photoSequence");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("inputType", &self.input_type)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [PhotoSequenceActions::delete()](struct.PhotoSequenceActions.html#method.delete)"]
+        #[derive(Debug, Clone)]
+        pub struct DeleteRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            sequence_id: String,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> DeleteRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://streetviewpublish.googleapis.com/".to_owned();
+                output.push_str("v1/photoSequence/");
+                {
+                    let var_as_str = &self.sequence_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [PhotoSequenceActions::get()](struct.PhotoSequenceActions.html#method.get)"]
+        #[derive(Debug, Clone)]
+        pub struct GetRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            sequence_id: String,
+            filter: ::std::option::Option<String>,
+            view: ::std::option::Option<crate::resources::photo_sequence::params::GetView>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetRequestBuilder<'a> {
+            #[doc = "Optional. The filter expression. For example: `published_status=PUBLISHED`. The filters supported are: `published_status`. See https://google.aip.dev/160 for more information."]
+            pub fn filter(mut self, value: impl Into<String>) -> Self {
+                self.filter = Some(value.into());
+                self
+            }
+            #[doc = "Specifies if a download URL for the photo sequence should be returned in `download_url` of individual photos in the PhotoSequence response. > Note: Currently not implemented."]
+            pub fn view(
+                mut self,
+                value: crate::resources::photo_sequence::params::GetView,
+            ) -> Self {
+                self.view = Some(value);
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Operation, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://streetviewpublish.googleapis.com/".to_owned();
+                output.push_str("v1/photoSequence/");
+                {
+                    let var_as_str = &self.sequence_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("filter", &self.filter)]);
+                req = req.query(&[("view", &self.view)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [PhotoSequenceActions::start_upload()](struct.PhotoSequenceActions.html#method.start_upload)"]
+        #[derive(Debug, Clone)]
+        pub struct StartUploadRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::Empty,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> StartUploadRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::UploadRef, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::UploadRef, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://streetviewpublish.googleapis.com/".to_owned();
+                output.push_str("v1/photoSequence:startUpload");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+    }
+    pub mod photo_sequences {
+        pub mod params {}
+        pub struct PhotoSequencesActions<'a> {
+            pub(crate) reqwest: &'a reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> PhotoSequencesActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Lists all the PhotoSequences that belong to the user, in descending CreatePhotoSequence timestamp order."]
+            pub fn list(&self) -> ListRequestBuilder {
+                ListRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    filter: None,
+                    page_size: None,
+                    page_token: None,
+                }
+            }
+        }
+        #[doc = "Created via [PhotoSequencesActions::list()](struct.PhotoSequencesActions.html#method.list)"]
+        #[derive(Debug, Clone)]
+        pub struct ListRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            filter: ::std::option::Option<String>,
+            page_size: ::std::option::Option<i32>,
+            page_token: ::std::option::Option<String>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> ListRequestBuilder<'a> {
+            #[doc = "Optional. The filter expression. For example: `imagery_type=SPHERICAL`. The filters supported are: `imagery_type`, `processing_state`, `min_latitude`, `max_latitude`, `min_longitude`, `max_longitude`, and `filename_query`. See https://google.aip.dev/160 for more information. Filename queries should sent as a Phrase in order to support multple words and special characters by adding escaped quotes. Ex: filename_query=“example of a phrase.mp4”"]
+            pub fn filter(mut self, value: impl Into<String>) -> Self {
+                self.filter = Some(value.into());
+                self
+            }
+            #[doc = "Optional. The maximum number of photo sequences to return. `pageSize` must be non-negative. If `pageSize` is zero or is not provided, the default page size of 100 is used. The number of photo sequences returned in the response may be less than `pageSize` if the number of matches is less than `pageSize`. This is currently unimplemented but is in process."]
+            pub fn page_size(mut self, value: i32) -> Self {
+                self.page_size = Some(value);
+                self
+            }
+            #[doc = "Optional. The nextPageToken value returned from a previous ListPhotoSequences request, if any."]
+            pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                self.page_token = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = "\nExecute the request and yield each item in the `photoSequences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+            pub fn stream_photo_sequences<T>(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.stream_photo_sequences_with_fields(fields)
+            }
+            #[doc = "\nExecute the request and yield each item in the `photoSequences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+            pub fn stream_photo_sequences_with_default_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::Operation, crate::Error>> + 'a
+            {
+                self.stream_photo_sequences_with_fields(None::<String>)
+            }
+            #[doc = "\nExecute the request and yield each item in the `photoSequences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+            pub fn stream_photo_sequences_with_all_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::Operation, crate::Error>> + 'a
+            {
+                self.stream_photo_sequences_with_fields(Some("*"))
+            }
+            #[doc = "\nExecute the request and yield each item in the `photoSequences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+            pub fn stream_photo_sequences_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: ::serde::de::DeserializeOwned + 'a,
+                F: AsRef<str>,
+            {
+                #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                struct Page<T> {
+                    #[serde(rename = "nextPageToken")]
+                    pub next_page_token: ::std::option::Option<String>,
+                    #[serde(rename = "photoSequences")]
+                    pub items: Vec<T>,
+                }
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
+                    fn next_page_token(&self) -> ::std::option::Option<String> {
+                        self.next_page_token.to_owned()
+                    }
+                }
+                impl<T> crate::stream::IntoPageItems for Page<T> {
+                    type Items = Vec<T>;
+                    fn into_page_items(self) -> Self::Items {
+                        self.items
+                    }
+                }
+                self.fields = Some({
+                    let mut selector = concat!("nextPageToken,", "photoSequences").to_owned();
+                    let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                    if !items_fields.is_empty() {
+                        selector.push_str("(");
+                        selector.push_str(items_fields);
+                        selector.push_str(")");
+                    }
+                    selector
+                });
+                crate::stream::page_item_stream::<_, Page<T>>(self)
+            }
+            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+            #[doc = r" token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+            #[doc = r""]
+            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+            #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+            pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: crate::GetNextPageToken<String>
+                    + ::serde::de::DeserializeOwned
+                    + ::google_field_selector::FieldSelector
+                    + 'a,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.stream_with_fields(fields)
+            }
+            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+            #[doc = r" repeated until no page token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests the default set of fields from the server."]
+            pub fn stream_with_default_fields(
+                self,
+            ) -> impl ::futures::Stream<
+                Item = Result<crate::schemas::ListPhotoSequencesResponse, crate::Error>,
+            > + 'a {
+                self.stream_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+            #[doc = r" repeated until no page token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests all fields from the server."]
+            pub fn stream_with_all_fields(
+                self,
+            ) -> impl ::futures::Stream<
+                Item = Result<crate::schemas::ListPhotoSequencesResponse, crate::Error>,
+            > + 'a {
+                self.stream_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+            #[doc = r" token is returned."]
+            #[doc = r""]
+            #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+            #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+            #[doc = r""]
+            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+            pub fn stream_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                F: AsRef<str>,
+            {
+                let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                if !fields.is_empty() {
+                    match fields.chars().rev().nth(0) {
+                        Some(',') | None => {}
+                        _ => fields.push_str(","),
+                    }
+                    fields.push_str("nextPageToken");
+                    self.fields = Some(fields);
+                }
+                crate::stream::page_stream(self)
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::ListPhotoSequencesResponse, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::ListPhotoSequencesResponse, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://streetviewpublish.googleapis.com/".to_owned();
+                output.push_str("v1/photoSequences");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("filter", &self.filter)]);
+                req = req.query(&[("pageSize", &self.page_size)]);
+                req = req.query(&[("pageToken", &self.page_token)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[async_trait::async_trait]
+        impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
+            fn set_page_token(&mut self, value: String) {
+                self.page_token = value.into();
+            }
+            async fn execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+            {
+                self._execute().await
+            }
+        }
+    }
     pub mod photos {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
@@ -2919,7 +5063,7 @@ pub mod resources {
                     #[serde(rename = "photos")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -2952,7 +5096,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -3002,7 +5146,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3112,12 +5256,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -3407,16 +5552,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -3436,13 +5583,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -3450,7 +5600,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -3477,7 +5627,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

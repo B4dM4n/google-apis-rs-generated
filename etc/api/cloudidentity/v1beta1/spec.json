@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Identity",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20220418",
+  "revision": "20230124",
   "title": "Cloud Identity API",
   "description": "API for provisioning and managing identity resources.",
   "ownerDomain": "google.com",
@@ -222,6 +222,39 @@
     }
   },
   "schemas": {
+    "AddIdpCredentialOperationMetadata": {
+      "id": "AddIdpCredentialOperationMetadata",
+      "description": "LRO response metadata for InboundSamlSsoProfilesService.AddIdpCredential.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "AddIdpCredentialRequest": {
+      "id": "AddIdpCredentialRequest",
+      "description": "The request for creating an IdpCredential with its associated payload. An InboundSamlSsoProfile can own up to 2 credentials.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "pemData": {
+          "description": "PEM encoded x509 certificate containing the public key for verifying IdP signatures.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "AndroidAttributes": {
       "id": "AndroidAttributes",
       "description": "Resource representing the Android specific attributes of a Device.",
@@ -291,7 +324,18 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "customer": {
+          "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -318,7 +362,18 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "customer": {
+          "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -356,7 +411,18 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "customer": {
+          "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -383,7 +449,18 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "customer": {
+          "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -760,11 +837,43 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "customer": {
+          "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "device": {
           "description": "Required. The device to be created. The name field within this device is ignored in the create method. A new name is created by the method, and returned within the response. Only the fields `device_type`, `serial_number` and `asset_tag` (if present) are used to create the device. All other fields are ignored. The `device_type` and `serial_number` fields are required.",
           "$ref": "Device"
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CreateInboundSamlSsoProfileOperationMetadata": {
+      "id": "CreateInboundSamlSsoProfileOperationMetadata",
+      "description": "LRO response metadata for InboundSamlSsoProfilesService.CreateInboundSamlSsoProfile.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "CreateInboundSsoAssignmentOperationMetadata": {
+      "id": "CreateInboundSsoAssignmentOperationMetadata",
+      "description": "LRO response metadata for InboundSsoAssignmentsService.CreateInboundSsoAssignment.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -807,6 +916,39 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeleteIdpCredentialOperationMetadata": {
+      "id": "DeleteIdpCredentialOperationMetadata",
+      "description": "LRO response metadata for InboundSamlSsoProfilesService.DeleteIdpCredential.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeleteInboundSamlSsoProfileOperationMetadata": {
+      "id": "DeleteInboundSamlSsoProfileOperationMetadata",
+      "description": "LRO response metadata for InboundSamlSsoProfilesService.DeleteInboundSamlSsoProfile.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeleteInboundSsoAssignmentOperationMetadata": {
+      "id": "DeleteInboundSsoAssignmentOperationMetadata",
+      "description": "LRO response metadata for InboundSsoAssignmentsService.DeleteInboundSsoAssignment.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -871,6 +1013,38 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "clientTypes": {
+          "description": "List of the clients the device is reporting to.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "CLIENT_TYPE_UNSPECIFIED",
+              "DRIVE_FS",
+              "FUNDAMENTAL",
+              "ENDPOINT_VERIFICATION",
+              "WINDOWS_ADVANCED",
+              "GOOGLE_CREDENTIALS_PROVIDER_FOR_WINDOWS"
+            ],
+            "enumDescriptions": [
+              "Default value",
+              "Managed by DriveFS",
+              "Management type for every secure device",
+              "Managed by Endpoint Verification",
+              "Managed by Windows",
+              "Managed by Google credential provider for windows"
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         },
         "compromisedState": {
           "description": "Output only. Represents whether the Device is compromised.",
@@ -981,6 +1155,16 @@
         "endpointVerificationSpecificAttributes": {
           "description": "Output only. Attributes specific to Endpoint Verification devices.",
           "$ref": "EndpointVerificationSpecificAttributes"
+        },
+        "hostname": {
+          "description": "Host name of the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "imei": {
           "description": "Output only. IMEI number of device if GSM device; empty otherwise.",
@@ -1330,6 +1514,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "DsaPublicKeyInfo": {
+      "id": "DsaPublicKeyInfo",
+      "description": "Information of a DSA public key.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "keySize": {
+          "description": "Key size in bits (size of parameter P).",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "DynamicGroupMetadata": {
       "id": "DynamicGroupMetadata",
       "description": "Dynamic group metadata like queries and status.",
@@ -1506,38 +1712,6 @@
           "description": "The time at which the `MembershipRole` will expire.",
           "type": "string",
           "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "FirstAdminInvitationInfo": {
-      "id": "FirstAdminInvitationInfo",
-      "description": "Message containing first admin invitation info for customers",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "isFirstAdmin": {
-          "description": "Optional. To enable First Admin Invitation for Domained Customer",
-          "type": "boolean",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "primaryDomain": {
-          "description": "Optional. Domain information of first admin invited",
-          "type": "string",
-          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -2100,6 +2274,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "deviceId": {
+          "description": "Unique identifier for the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "deviceType": {
           "description": "Output only. Type of device.",
           "type": "string",
@@ -2622,18 +2806,6 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "additionalGroupKeys": {
-          "description": "Additional entity key aliases for a Group.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "$ref": "EntityKey"
-          }
-        },
         "createTime": {
           "description": "Output only. The time when the `Group` was created.",
           "type": "string",
@@ -2702,7 +2874,7 @@
           "items": null
         },
         "parent": {
-          "description": "Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with \"C\" (for example, 'C046psxkn').",
+          "description": "Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source}` for external [identity-mapped groups](https://support.google.com/a/answer/9039510) or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with \"C\" (for example, 'C046psxkn'). [Find your customer ID.] (https://support.google.com/cloudidentity/answer/10070793)",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2819,6 +2991,186 @@
           "items": {
             "$ref": "TransitiveMembershipRole"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "IdpCredential": {
+      "id": "IdpCredential",
+      "description": "Credential for verifying signatures produced by the Identity Provider.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dsaKeyInfo": {
+          "description": "Output only. Information of a DSA public key.",
+          "$ref": "DsaPublicKeyInfo"
+        },
+        "name": {
+          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the credential.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rsaKeyInfo": {
+          "description": "Output only. Information of a RSA public key.",
+          "$ref": "RsaPublicKeyInfo"
+        },
+        "updateTime": {
+          "description": "Output only. Time when the `IdpCredential` was last updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InboundSamlSsoProfile": {
+      "id": "InboundSamlSsoProfile",
+      "description": "A [SAML 2.0](https://www.oasis-open.org/standards#samlv2.0) federation between a Google enterprise customer and a SAML identity provider.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "customer": {
+          "description": "Immutable. The customer. For example: `customers/C0123abc`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "Human-readable name of the SAML SSO profile.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "idpConfig": {
+          "description": "SAML identity provider configuration.",
+          "$ref": "SamlIdpConfig"
+        },
+        "name": {
+          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the SAML SSO profile.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "spConfig": {
+          "description": "SAML service provider configuration for this SAML SSO profile. These are the service provider details provided by Google that should be configured on the corresponding identity provider.",
+          "$ref": "SamlSpConfig"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InboundSsoAssignment": {
+      "id": "InboundSsoAssignment",
+      "description": "Targets with \"set\" SSO assignments and their respective assignments.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "customer": {
+          "description": "Immutable. The customer. For example: `customers/C0123abc`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Inbound SSO Assignment.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rank": {
+          "description": "Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "samlSsoInfo": {
+          "description": "SAML SSO details. Must be set if and only if `sso_mode` is set to `SAML_SSO`.",
+          "$ref": "SamlSsoInfo"
+        },
+        "signInBehavior": {
+          "description": "Assertions about users assigned to an IdP will always be accepted from that IdP. This controls whether/when Google should redirect a user to the IdP. Unset (defaults) is the recommended configuration.",
+          "$ref": "SignInBehavior"
+        },
+        "ssoMode": {
+          "description": "Inbound SSO behavior.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SSO_MODE_UNSPECIFIED",
+            "SSO_OFF",
+            "SAML_SSO",
+            "DOMAIN_WIDE_SAML_IF_ENABLED"
+          ],
+          "enumDescriptions": [
+            "Not allowed.",
+            "Disable SSO for the targeted users.",
+            "Use an external SAML Identity Provider for SSO for the targeted users.",
+            "Use the domain-wide SAML Identity Provider for the targeted users if one is configured; otherwise, this is equivalent to `SSO_OFF`. Note that this will also be equivalent to `SSO_OFF` if/when support for domain-wide SAML is removed. Google may disallow this mode at that point and existing assignments with this mode may be automatically changed to `SSO_OFF`."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "targetGroup": {
+          "description": "Immutable. Must be of the form `groups/{group}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "targetOrgUnit": {
+          "description": "Immutable. Must be of the form `orgUnits/{org_unit}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2970,6 +3322,108 @@
         },
         "nextPageToken": {
           "description": "A continuation token to retrieve the next page of results, or empty if there are no more results available.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListIdpCredentialsResponse": {
+      "id": "ListIdpCredentialsResponse",
+      "description": "Response of the InboundSamlSsoProfilesService.ListIdpCredentials method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "idpCredentials": {
+          "description": "The IdpCredentials from the specified InboundSamlSsoProfile.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "IdpCredential"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListInboundSamlSsoProfilesResponse": {
+      "id": "ListInboundSamlSsoProfilesResponse",
+      "description": "Response of the InboundSamlSsoProfilesService.ListInboundSamlSsoProfiles method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inboundSamlSsoProfiles": {
+          "description": "List of InboundSamlSsoProfiles.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "InboundSamlSsoProfile"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListInboundSsoAssignmentsResponse": {
+      "id": "ListInboundSsoAssignmentsResponse",
+      "description": "Response of the InboundSsoAssignmentsService.ListInboundSsoAssignments method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inboundSsoAssignments": {
+          "description": "The assignments.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "InboundSsoAssignment"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3137,7 +3591,7 @@
       "enumDescriptions": [],
       "properties": {
         "customer": {
-          "description": "The obfuscated customer Id that may be passed back to other Devices API methods such as List, Get, etc.",
+          "description": "The customer Id that may be passed back to other Devices API methods such as List, Get, etc.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3780,6 +4234,134 @@
       "additionalProperties": null,
       "items": null
     },
+    "RsaPublicKeyInfo": {
+      "id": "RsaPublicKeyInfo",
+      "description": "Information of a RSA public key.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "keySize": {
+          "description": "Key size in bits (size of the modulus).",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SamlIdpConfig": {
+      "id": "SamlIdpConfig",
+      "description": "SAML IDP (identity provider) configuration.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "changePasswordUri": {
+          "description": "The **Change Password URL** of the identity provider. Users will be sent to this URL when changing their passwords at `myaccount.google.com`. This takes precedence over the change password URL configured at customer-level. Must use `HTTPS`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "entityId": {
+          "description": "Required. The SAML **Entity ID** of the identity provider.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "logoutRedirectUri": {
+          "description": "The **Logout Redirect URL** (sign-out page URL) of the identity provider. When a user clicks the sign-out link on a Google page, they will be redirected to this URL. This is a pure redirect with no attached SAML `LogoutRequest` i.e. SAML single logout is currently not supported. Must use `HTTPS`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "singleSignOnServiceUri": {
+          "description": "Required. The `SingleSignOnService` endpoint location (sign-in page URL) of the identity provider. This is the URL where the `AuthnRequest` will be sent. Must use `HTTPS`. Currently assumed to accept the `HTTP-Redirect` binding.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SamlSpConfig": {
+      "id": "SamlSpConfig",
+      "description": "SAML SP (service provider) configuration.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "assertionConsumerServiceUri": {
+          "description": "Output only. The SAML **Assertion Consumer Service (ACS) URL** to be used for the IDP-initiated login. Currently assumed to accept response messages via the `HTTP-POST` binding.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "entityId": {
+          "description": "Output only. The SAML **Entity ID** for this service provider.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SamlSsoInfo": {
+      "id": "SamlSsoInfo",
+      "description": "Details that are applicable when `sso_mode` == `SAML_SSO`.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inboundSamlSsoProfile": {
+          "description": "Required. Name of the `InboundSamlSsoProfile` to use. Must be of the form `inboundSamlSsoProfiles/{inbound_saml_sso_profile}`. ",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SearchGroupsResponse": {
       "id": "SearchGroupsResponse",
       "description": "The response message for GroupsService.SearchGroups.",
@@ -3915,10 +4497,33 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "SignInBehavior": {
+      "id": "SignInBehavior",
+      "description": "Controls sign-in behavior.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
       "properties": {
-        "firstAdminInvitationInfo": {
-          "description": "Optional. First admin invitation info for customers",
-          "$ref": "FirstAdminInvitationInfo"
+        "redirectCondition": {
+          "description": "When to redirect sign-ins to the IdP.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "REDIRECT_CONDITION_UNSPECIFIED",
+            "NEVER"
+          ],
+          "enumDescriptions": [
+            "Default and means \"always\"",
+            "Sign-in flows where the user is prompted for their identity will not redirect to the IdP (so the user will most likely be prompted by Google for a password), but special flows like IdP-initiated SAML and sign-in following automatic redirection to the IdP by domain-specific service URLs will accept the IdP's assertion of the user's identity."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -4002,6 +4607,28 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UpdateInboundSamlSsoProfileOperationMetadata": {
+      "id": "UpdateInboundSamlSsoProfileOperationMetadata",
+      "description": "LRO response metadata for InboundSamlSsoProfilesService.UpdateInboundSamlSsoProfile.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "UpdateInboundSsoAssignmentOperationMetadata": {
+      "id": "UpdateInboundSsoAssignmentOperationMetadata",
+      "description": "LRO response metadata for InboundSsoAssignmentsService.UpdateInboundSsoAssignment.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -4103,6 +4730,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "customer": {
+          "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "removeResetLock": {
           "description": "Optional. Specifies if a user is able to factory reset a device after a Device Wipe. On iOS, this is called \"Activation Lock\", while on Android, this is known as \"Factory Reset Protection\". If true, this protection will be removed from the device, so that a user can successfully factory reset. If false, the setting is untouched on the device.",
           "type": "boolean",
@@ -4140,7 +4777,18 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "customer": {
+          "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -4660,6 +5308,20 @@
               "httpMethod": "DELETE",
               "description": "Deletes the specified DeviceUser. This also revokes the user's access to device data.",
               "parameters": {
+                "customer": {
+                  "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
                 "name": {
                   "description": "Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}/deviceUsers/{device_user_id}`, where device_id is the unique ID assigned to the Device, and device_user_id is the unique ID assigned to the User.",
                   "default": null,
@@ -4697,6 +5359,20 @@
               "httpMethod": "GET",
               "description": "Retrieves the specified DeviceUser",
               "parameters": {
+                "customer": {
+                  "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
                 "name": {
                   "description": "Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}/deviceUsers/{device_user_id}`, where device_id is the unique ID assigned to the Device, and device_user_id is the unique ID assigned to the User.",
                   "default": null,
@@ -4735,6 +5411,20 @@
               "httpMethod": "GET",
               "description": "Lists/Searches DeviceUsers.",
               "parameters": {
+                "customer": {
+                  "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
                 "filter": {
                   "description": "Optional. Additional restrictions when fetching list of devices. For a list of search fields, refer to [Mobile device search fields](https://developers.google.com/admin-sdk/directory/v1/search-operators). Multiple search fields are separated by the space character.",
                   "default": null,
@@ -5040,6 +5730,20 @@
           "httpMethod": "DELETE",
           "description": "Deletes the specified device.",
           "parameters": {
+            "customer": {
+              "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "name": {
               "description": "Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}`, where device_id is the unique ID assigned to the Device.",
               "default": null,
@@ -5077,6 +5781,20 @@
           "httpMethod": "GET",
           "description": "Retrieves the specified device.",
           "parameters": {
+            "customer": {
+              "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Customer in format: `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "name": {
               "description": "Required. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device_id}`, where device_id is the unique ID assigned to the Device.",
               "default": null,
@@ -5115,6 +5833,20 @@
           "httpMethod": "GET",
           "description": "Lists/Searches devices.",
           "parameters": {
+            "customer": {
+              "description": "Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "filter": {
               "description": "Optional. Additional restrictions when fetching list of devices. For a list of search fields, refer to [Mobile device search fields](https://developers.google.com/admin-sdk/directory/v1/search-operators). Multiple search fields are separated by the space character.",
               "default": null,
@@ -6035,7 +6767,7 @@
               "repeated": false
             },
             "parent": {
-              "description": "Required. The parent resource under which to list all `Group` resources. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with \"C\" (for example, 'C046psxkn').",
+              "description": "Required. The parent resource under which to list all `Group` resources. Must be of the form `identitysources/{identity_source_id}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with \"C\" (for example, 'C046psxkn'). [Find your customer ID.] (https://support.google.com/cloudidentity/answer/10070793)",
               "default": null,
               "location": "query",
               "required": false,
@@ -6198,6 +6930,20 @@
           "httpMethod": "GET",
           "description": "Searches for `Group` resources matching a specified query.",
           "parameters": {
+            "orderBy": {
+              "description": "The ordering of groups for the display name or email in the search groups response. The syntax for this field can be found at https://cloud.google.com/apis/design/design_patterns#sorting_order. Example: Sort by the ascending name: order_by=\"display_name\" Sort by the descending group key email: order_by=\"group_key desc\"",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "pageSize": {
               "description": "The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `GroupView.BASIC` and to 50 for `GroupView.FULL`. Must not be greater than 1000 for `GroupView.BASIC` or 500 for `GroupView.FULL`.",
               "default": null,
@@ -6227,7 +6973,7 @@
               "repeated": false
             },
             "query": {
-              "description": "Required. The search query. Must be specified in [Common Expression Language](https://opensource.google/projects/cel). May only contain equality operators on the parent and inclusion operators on labels (e.g., `parent == 'customers/{customer_id}' && 'cloudidentity.googleapis.com/groups.discussion_forum' in labels`). The `customer_id` must begin with \"C\" (for example, 'C046psxkn').",
+              "description": "Required. The search query. * Must be specified in [Common Expression Language](https://opensource.google/projects/cel). * Must contain equality operators on the parent, e.g. `parent == 'customers/{customer_id}'`. The `customer_id` must begin with \"C\" (for example, 'C046psxkn'). [Find your customer ID.] (https://support.google.com/cloudidentity/answer/10070793) * Can contain optional inclusion operators on `labels` such as `cloudidentity.googleapis.com/groups.discussion_forum' in labels`). * Can contain an optional equality operator on `domain_name` or `startsWith/contains/equality` operator on `group_key`, e.g. `domain_name == 'abc.com'`, `group_key.startsWith('dev')`, `group_key.contains('dev'), group_key == 'dev@abc.com'` * Can contain an optional `startsWith/contains/equality` operator on `display_name`, such as `display_name.startsWith('dev')` , `display_name.contains('dev')`, `display_name == 'dev'`",
               "default": null,
               "location": "query",
               "required": false,
@@ -6323,6 +7069,624 @@
           },
           "scopes": [
             "https://www.googleapis.com/auth/cloud-identity.groups",
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "inboundSamlSsoProfiles": {
+      "resources": {
+        "idpCredentials": {
+          "resources": {},
+          "methods": {
+            "add": {
+              "id": "cloudidentity.inboundSamlSsoProfiles.idpCredentials.add",
+              "path": "v1beta1/{+parent}/idpCredentials:add",
+              "httpMethod": "POST",
+              "description": "Adds an IdpCredential. Up to 2 credentials are allowed.",
+              "parameters": {
+                "parent": {
+                  "description": "Required. The InboundSamlSsoProfile that owns the IdpCredential. Format: `inboundSamlSsoProfiles/{sso_profile_id}`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^inboundSamlSsoProfiles/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": {
+                "$ref": "AddIdpCredentialRequest"
+              },
+              "response": {
+                "$ref": "Operation"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "delete": {
+              "id": "cloudidentity.inboundSamlSsoProfiles.idpCredentials.delete",
+              "path": "v1beta1/{+name}",
+              "httpMethod": "DELETE",
+              "description": "Deletes an IdpCredential.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the IdpCredential to delete. Format: `inboundSamlSsoProfiles/{sso_profile_id}/idpCredentials/{idp_credential_id}`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^inboundSamlSsoProfiles/[^/]+/idpCredentials/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "Operation"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "get": {
+              "id": "cloudidentity.inboundSamlSsoProfiles.idpCredentials.get",
+              "path": "v1beta1/{+name}",
+              "httpMethod": "GET",
+              "description": "Gets an IdpCredential.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the IdpCredential to retrieve. Format: `inboundSamlSsoProfiles/{sso_profile_id}/idpCredentials/{idp_credential_id}`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^inboundSamlSsoProfiles/[^/]+/idpCredentials/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "IdpCredential"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "list": {
+              "id": "cloudidentity.inboundSamlSsoProfiles.idpCredentials.list",
+              "path": "v1beta1/{+parent}/idpCredentials",
+              "httpMethod": "GET",
+              "description": "Returns a list of IdpCredentials in an InboundSamlSsoProfile.",
+              "parameters": {
+                "pageSize": {
+                  "description": "The maximum number of `IdpCredential`s to return. The service may return fewer than this value.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "A page token, received from a previous `ListIdpCredentials` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListIdpCredentials` must match the call that provided the page token.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "parent": {
+                  "description": "Required. The parent, which owns this collection of `IdpCredential`s. Format: `inboundSamlSsoProfiles/{sso_profile_id}`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^inboundSamlSsoProfiles/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "ListIdpCredentialsResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        }
+      },
+      "methods": {
+        "create": {
+          "id": "cloudidentity.inboundSamlSsoProfiles.create",
+          "path": "v1beta1/inboundSamlSsoProfiles",
+          "httpMethod": "POST",
+          "description": "Creates an InboundSamlSsoProfile for a customer.",
+          "parameters": {},
+          "parameterOrder": [],
+          "request": {
+            "$ref": "InboundSamlSsoProfile"
+          },
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delete": {
+          "id": "cloudidentity.inboundSamlSsoProfiles.delete",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "DELETE",
+          "description": "Deletes an InboundSamlSsoProfile.",
+          "parameters": {
+            "name": {
+              "description": "Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the InboundSamlSsoProfile to delete. Format: `inboundSamlSsoProfiles/{sso_profile_id}`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^inboundSamlSsoProfiles/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "get": {
+          "id": "cloudidentity.inboundSamlSsoProfiles.get",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "GET",
+          "description": "Gets an InboundSamlSsoProfile.",
+          "parameters": {
+            "name": {
+              "description": "Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the InboundSamlSsoProfile to get. Format: `inboundSamlSsoProfiles/{sso_profile_id}`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^inboundSamlSsoProfiles/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "InboundSamlSsoProfile"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "list": {
+          "id": "cloudidentity.inboundSamlSsoProfiles.list",
+          "path": "v1beta1/inboundSamlSsoProfiles",
+          "httpMethod": "GET",
+          "description": "Lists InboundSamlSsoProfiles for a customer.",
+          "parameters": {
+            "filter": {
+              "description": "A [Common Expression Language](https://github.com/google/cel-spec) expression to filter the results. The only currently-supported filter is filtering by customer. For example: `customer==\"customers/C0123abc\"`. Omitting the filter or specifying a filter of `customer==\"customers/my_customer\"` will return the profiles for the customer that the caller (authenticated user) belongs to.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageSize": {
+              "description": "The maximum number of InboundSamlSsoProfiles to return. The service may return fewer than this value. If omitted (or defaulted to zero) the server will use a sensible default. This default may change over time. The maximum allowed value is 100. Requests with page_size greater than that will be silently interpreted as having this maximum value.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageToken": {
+              "description": "A page token, received from a previous `ListInboundSamlSsoProfiles` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListInboundSamlSsoProfiles` must match the call that provided the page token.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "ListInboundSamlSsoProfilesResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "patch": {
+          "id": "cloudidentity.inboundSamlSsoProfiles.patch",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "PATCH",
+          "description": "Updates an InboundSamlSsoProfile.",
+          "parameters": {
+            "name": {
+              "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the SAML SSO profile.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^inboundSamlSsoProfiles/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "updateMask": {
+              "description": "Required. The list of fields to be updated.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "InboundSamlSsoProfile"
+          },
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "inboundSsoAssignments": {
+      "resources": {},
+      "methods": {
+        "create": {
+          "id": "cloudidentity.inboundSsoAssignments.create",
+          "path": "v1beta1/inboundSsoAssignments",
+          "httpMethod": "POST",
+          "description": "Creates an InboundSsoAssignment for users and devices in a `Customer` under a given `Group` or `OrgUnit`.",
+          "parameters": {},
+          "parameterOrder": [],
+          "request": {
+            "$ref": "InboundSsoAssignment"
+          },
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delete": {
+          "id": "cloudidentity.inboundSsoAssignments.delete",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "DELETE",
+          "description": "Deletes an InboundSsoAssignment. To disable SSO, Create (or Update) an assignment that has `sso_mode` == `SSO_OFF`.",
+          "parameters": {
+            "name": {
+              "description": "Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the InboundSsoAssignment to delete. Format: `inboundSsoAssignments/{assignment}`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^inboundSsoAssignments/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "get": {
+          "id": "cloudidentity.inboundSsoAssignments.get",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "GET",
+          "description": "Gets an InboundSsoAssignment.",
+          "parameters": {
+            "name": {
+              "description": "Required. The [resource name](https://cloud.google.com/apis/design/resource_names) of the InboundSsoAssignment to fetch. Format: `inboundSsoAssignments/{assignment}`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^inboundSsoAssignments/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "InboundSsoAssignment"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "list": {
+          "id": "cloudidentity.inboundSsoAssignments.list",
+          "path": "v1beta1/inboundSsoAssignments",
+          "httpMethod": "GET",
+          "description": "Lists the InboundSsoAssignments for a `Customer`.",
+          "parameters": {
+            "filter": {
+              "description": "A CEL expression to filter the results. The only currently-supported filter is filtering by customer. For example: `customer==customers/C0123abc`. Omitting the filter or specifying a filter of `customer==customers/my_customer` will return the assignments for the customer that the caller (authenticated user) belongs to.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageSize": {
+              "description": "The maximum number of assignments to return. The service may return fewer than this value. If omitted (or defaulted to zero) the server will use a sensible default. This default may change over time. The maximum allowed value is 100, though requests with page_size greater than that will be silently interpreted as having this maximum value. This may increase in the futue.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageToken": {
+              "description": "A page token, received from a previous `ListInboundSsoAssignments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListInboundSsoAssignments` must match the call that provided the page token.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "ListInboundSsoAssignmentsResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "patch": {
+          "id": "cloudidentity.inboundSsoAssignments.patch",
+          "path": "v1beta1/{+name}",
+          "httpMethod": "PATCH",
+          "description": "Updates an InboundSsoAssignment. The body of this request is the `inbound_sso_assignment` field and the `update_mask` is relative to that. For example: a PATCH to `/v1beta1/inboundSsoAssignments/0abcdefg1234567&update_mask=rank` with a body of `{ \"rank\": 1 }` moves that (presumably group-targeted) SSO assignment to the highest priority and shifts any other group-targeted assignments down in priority.",
+          "parameters": {
+            "name": {
+              "description": "Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Inbound SSO Assignment.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^inboundSsoAssignments/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "updateMask": {
+              "description": "Required. The list of fields to be updated.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "InboundSsoAssignment"
+          },
+          "response": {
+            "$ref": "Operation"
+          },
+          "scopes": [
             "https://www.googleapis.com/auth/cloud-platform"
           ],
           "supportsMediaDownload": false,

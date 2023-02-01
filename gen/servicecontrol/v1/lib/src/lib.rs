@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [services](resources/services/struct.ServicesActions.html)\n  * [*allocateQuota*](resources/services/struct.AllocateQuotaRequestBuilder.html), [*check*](resources/services/struct.CheckRequestBuilder.html), [*report*](resources/services/struct.ReportRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -549,6 +550,8 @@ pub mod schemas {
         DenialOfServiceDetected,
         #[doc = "This is never used in `CheckResponse`."]
         ErrorCodeUnspecified,
+        #[doc = "Part of the project of fault injection: go/chemist-slo-validation. To distinguish between artificially injected errors and organic ones, this value will be exported for the per_service_check_error_count streamz. http://google3/apiserving/servicecontrol/server/controller_service.cc;l=196 Rpcinjectz2 works by injecting errors early in the rpc life cycle, before any of the chemist business logic runs."]
+        InjectedError,
         #[doc = "The credential in the request can not be verified."]
         InvalidCredential,
         #[doc = "The IP address of the consumer is invalid for the specific consumer project."]
@@ -614,6 +617,7 @@ pub mod schemas {
                 CheckErrorCode::ConsumerInvalid => "CONSUMER_INVALID",
                 CheckErrorCode::DenialOfServiceDetected => "DENIAL_OF_SERVICE_DETECTED",
                 CheckErrorCode::ErrorCodeUnspecified => "ERROR_CODE_UNSPECIFIED",
+                CheckErrorCode::InjectedError => "INJECTED_ERROR",
                 CheckErrorCode::InvalidCredential => "INVALID_CREDENTIAL",
                 CheckErrorCode::IpAddressBlocked => "IP_ADDRESS_BLOCKED",
                 CheckErrorCode::LoadShedding => "LOAD_SHEDDING",
@@ -668,6 +672,7 @@ pub mod schemas {
                 "CONSUMER_INVALID" => CheckErrorCode::ConsumerInvalid,
                 "DENIAL_OF_SERVICE_DETECTED" => CheckErrorCode::DenialOfServiceDetected,
                 "ERROR_CODE_UNSPECIFIED" => CheckErrorCode::ErrorCodeUnspecified,
+                "INJECTED_ERROR" => CheckErrorCode::InjectedError,
                 "INVALID_CREDENTIAL" => CheckErrorCode::InvalidCredential,
                 "IP_ADDRESS_BLOCKED" => CheckErrorCode::IpAddressBlocked,
                 "LOAD_SHEDDING" => CheckErrorCode::LoadShedding,
@@ -734,6 +739,7 @@ pub mod schemas {
                 "CONSUMER_INVALID" => CheckErrorCode::ConsumerInvalid,
                 "DENIAL_OF_SERVICE_DETECTED" => CheckErrorCode::DenialOfServiceDetected,
                 "ERROR_CODE_UNSPECIFIED" => CheckErrorCode::ErrorCodeUnspecified,
+                "INJECTED_ERROR" => CheckErrorCode::InjectedError,
                 "INVALID_CREDENTIAL" => CheckErrorCode::InvalidCredential,
                 "IP_ADDRESS_BLOCKED" => CheckErrorCode::IpAddressBlocked,
                 "LOAD_SHEDDING" => CheckErrorCode::LoadShedding,
@@ -1889,14 +1895,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "Unimplemented."]
-        #[serde(
-            rename = "extensions",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub extensions:
-            ::std::option::Option<Vec<::std::collections::BTreeMap<String, ::serde_json::Value>>>,
         #[doc = "DO NOT USE. This is an experimental field."]
         #[serde(
             rename = "importance",
@@ -2138,7 +2136,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub port: ::std::option::Option<i64>,
-        #[doc = "The identity of this peer. Similar to `Request.auth.principal`, but relative to the peer instead of the request. For example, the idenity associated with a load balancer that forwared the request."]
+        #[doc = "The identity of this peer. Similar to `Request.auth.principal`, but relative to the peer instead of the request. For example, the identity associated with a load balancer that forwarded the request."]
         #[serde(
             rename = "principal",
             default,
@@ -2455,8 +2453,6 @@ pub mod schemas {
         CheckOnly,
         #[doc = "For AllocateQuota request, allocates quota for the amount specified in the service configuration or specified using the quota metrics. If the amount is higher than the available quota, allocation error will be returned and no quota will be allocated. If multiple quotas are part of the request, and one fails, none of the quotas are allocated or released."]
         Normal,
-        #[doc = "Deprecated. Please use QueryLimits API to query quota limits."]
-        QueryOnly,
         #[doc = "Guard against implicit default. Must not be used."]
         Unspecified,
     }
@@ -2467,7 +2463,6 @@ pub mod schemas {
                 QuotaOperationQuotaMode::BestEffort => "BEST_EFFORT",
                 QuotaOperationQuotaMode::CheckOnly => "CHECK_ONLY",
                 QuotaOperationQuotaMode::Normal => "NORMAL",
-                QuotaOperationQuotaMode::QueryOnly => "QUERY_ONLY",
                 QuotaOperationQuotaMode::Unspecified => "UNSPECIFIED",
             }
         }
@@ -2485,7 +2480,6 @@ pub mod schemas {
                 "BEST_EFFORT" => QuotaOperationQuotaMode::BestEffort,
                 "CHECK_ONLY" => QuotaOperationQuotaMode::CheckOnly,
                 "NORMAL" => QuotaOperationQuotaMode::Normal,
-                "QUERY_ONLY" => QuotaOperationQuotaMode::QueryOnly,
                 "UNSPECIFIED" => QuotaOperationQuotaMode::Unspecified,
                 _ => return Err(()),
             })
@@ -2515,7 +2509,6 @@ pub mod schemas {
                 "BEST_EFFORT" => QuotaOperationQuotaMode::BestEffort,
                 "CHECK_ONLY" => QuotaOperationQuotaMode::CheckOnly,
                 "NORMAL" => QuotaOperationQuotaMode::Normal,
-                "QUERY_ONLY" => QuotaOperationQuotaMode::QueryOnly,
                 "UNSPECIFIED" => QuotaOperationQuotaMode::Unspecified,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -2575,8 +2568,6 @@ pub mod schemas {
         AcquireBestEffort,
         #[doc = "Does not change any available quota. Only checks if there is enough quota. No lock is placed on the checked tokens neither."]
         Check,
-        #[doc = "DEPRECATED: Increases available quota by the operation cost specified for the operation."]
-        Release,
     }
     impl QuotaPropertiesQuotaMode {
         pub fn as_str(self) -> &'static str {
@@ -2584,7 +2575,6 @@ pub mod schemas {
                 QuotaPropertiesQuotaMode::Acquire => "ACQUIRE",
                 QuotaPropertiesQuotaMode::AcquireBestEffort => "ACQUIRE_BEST_EFFORT",
                 QuotaPropertiesQuotaMode::Check => "CHECK",
-                QuotaPropertiesQuotaMode::Release => "RELEASE",
             }
         }
     }
@@ -2600,7 +2590,6 @@ pub mod schemas {
                 "ACQUIRE" => QuotaPropertiesQuotaMode::Acquire,
                 "ACQUIRE_BEST_EFFORT" => QuotaPropertiesQuotaMode::AcquireBestEffort,
                 "CHECK" => QuotaPropertiesQuotaMode::Check,
-                "RELEASE" => QuotaPropertiesQuotaMode::Release,
                 _ => return Err(()),
             })
         }
@@ -2628,7 +2617,6 @@ pub mod schemas {
                 "ACQUIRE" => QuotaPropertiesQuotaMode::Acquire,
                 "ACQUIRE_BEST_EFFORT" => QuotaPropertiesQuotaMode::AcquireBestEffort,
                 "CHECK" => QuotaPropertiesQuotaMode::Check,
-                "RELEASE" => QuotaPropertiesQuotaMode::Release,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -2836,7 +2824,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct RequestMetadata {
-        #[doc = "The IP address of the caller. For caller from internet, this will be public IPv4 or IPv6 address. For caller from a Compute Engine VM with external IP address, this will be the VM’s external IP address. For caller from a Compute Engine VM without external IP address, if the VM is in the same organization (or project) as the accessed resource, `caller_ip` will be the VM’s internal IPv4 address, otherwise the `caller_ip` will be redacted to “gce-internal-ip”. See https://cloud.google.com/compute/docs/vpc/ for more information."]
+        #[doc = "The IP address of the caller. For a caller from the internet, this will be the public IPv4 or IPv6 address. For calls made from inside Google’s internal production network from one GCP service to another, `caller_ip` will be redacted to “private”. For a caller from a Compute Engine VM with a external IP address, `caller_ip` will be the VM’s external IP address. For a caller from a Compute Engine VM without a external IP address, if the VM is in the same organization (or project) as the accessed resource, `caller_ip` will be the VM’s internal IPv4 address, otherwise `caller_ip` will be redacted to “gce-internal-ip”. See https://cloud.google.com/compute/docs/vpc/ for more information."]
         #[serde(
             rename = "callerIp",
             default,
@@ -2850,7 +2838,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub caller_network: ::std::option::Option<String>,
-        #[doc = "The user agent of the caller. This information is not authenticated and should be treated accordingly. For example: + `google-api-python-client/1.4.0`: The request was made by the Google API client for Python. + `Cloud SDK Command Line Tool apitools-client/1.0 gcloud/0.9.62`: The request was made by the Google Cloud SDK CLI (gcloud). + `AppEngine-Google; (+http://code.google.com/appengine; appid: s~my-project`: The request was made from the `my-project` App Engine app. NOLINT"]
+        #[doc = "The user agent of the caller. This information is not authenticated and should be treated accordingly. For example: + `google-api-python-client/1.4.0`: The request was made by the Google API client for Python. + `Cloud SDK Command Line Tool apitools-client/1.0 gcloud/0.9.62`: The request was made by the Google Cloud SDK CLI (gcloud). + `AppEngine-Google; (+http://code.google.com/appengine; appid: s~my-project`: The request was made from the `my-project` App Engine app."]
         #[serde(
             rename = "callerSuppliedUserAgent",
             default,
@@ -3003,6 +2991,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceInfo {
+        #[doc = "The resource permission required for this request."]
+        #[serde(
+            rename = "permission",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub permission: ::std::option::Option<String>,
         #[doc = "The identifier of the parent of this resource instance. Must be in one of the following formats: - `projects/` - `folders/` - `organizations/`"]
         #[serde(
             rename = "resourceContainer",
@@ -5028,15 +5023,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("chromemanagement1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230131")
             .about("The Chrome Management API is a suite of services that allows Chrome administrators to view, manage and gain insights on their Chrome OS and Chrome Browser devices.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -46,7 +46,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut reports1 = SubCommand::with_name("reports")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: count_chrome_versions, count_installed_apps and find_installed_app_devices");
+                        .about("methods: count_chrome_devices_reaching_auto_expiration_date, count_chrome_devices_that_need_attention, count_chrome_hardware_fleet_devices, count_chrome_versions, count_installed_apps and find_installed_app_devices");
+        {
+            let mcmd = SubCommand::with_name("count_chrome_devices_reaching_auto_expiration_date").about("Generate report of the number of devices expiring in each month of the selected time frame. Devices are grouped by auto update expiration date and model. Further information can be found [here](https://support.google.com/chrome/a/answer/10564947).");
+            reports1 = reports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("count_chrome_devices_that_need_attention").about("Counts of ChromeOS devices that have not synced policies or have lacked user activity in the past 28 days, are out of date, or are not complaint. Further information can be found here https://support.google.com/chrome/a/answer/10564947");
+            reports1 = reports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("count_chrome_hardware_fleet_devices").about("Counts of devices with a specific hardware specification from the requested hardware type (for example model name, processor type). Further information can be found here https://support.google.com/chrome/a/answer/10564947");
+            reports1 = reports1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("count_chrome_versions")
                 .about("Generate report of installed Chrome versions.");
@@ -64,7 +76,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut telemetry1 = SubCommand::with_name("telemetry")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: devices");
+            .about("sub-resources: devices, events and users");
         let mut android2 = SubCommand::with_name("android")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get");
@@ -91,11 +103,35 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut devices2 = SubCommand::with_name("devices")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list");
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Get telemetry device.");
+            devices2 = devices2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("list").about("List all telemetry devices.");
             devices2 = devices2.subcommand(mcmd);
         }
+        let mut events2 = SubCommand::with_name("events")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about("List telemetry events.");
+            events2 = events2.subcommand(mcmd);
+        }
+        let mut users2 = SubCommand::with_name("users")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Get telemetry user.");
+            users2 = users2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("List all telemetry users.");
+            users2 = users2.subcommand(mcmd);
+        }
+        telemetry1 = telemetry1.subcommand(users2);
+        telemetry1 = telemetry1.subcommand(events2);
         telemetry1 = telemetry1.subcommand(devices2);
         apps1 = apps1.subcommand(web2);
         apps1 = apps1.subcommand(chrome2);

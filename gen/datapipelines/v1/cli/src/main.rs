@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("datapipelines1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230121")
             .about("Data Pipelines provides an interface for creating, updating, and managing recurring Data Analytics jobs.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,14 +38,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: locations");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list_pipelines");
-        {
-            let mcmd = SubCommand::with_name("list_pipelines").about("Lists pipelines. Returns a \"FORBIDDEN\" error if the caller doesn't have permission to access it.");
-            locations1 = locations1.subcommand(mcmd);
-        }
+            .about("sub-resources: pipelines");
         let mut pipelines2 = SubCommand::with_name("pipelines")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, patch, run and stop");
+            .about("methods: create, delete, get, list, patch, run and stop");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a pipeline. For a batch pipeline, you can pass scheduler information. Data Pipelines uses the scheduler information to create an internal scheduler that runs jobs periodically. If the internal scheduler is not configured, you can use RunPipeline to run jobs.");
             pipelines2 = pipelines2.subcommand(mcmd);
@@ -56,6 +52,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("get").about("Looks up a single pipeline. Returns a \"NOT_FOUND\" error if no such pipeline exists. Returns a \"FORBIDDEN\" error if the caller doesn't have permission to access it.");
+            pipelines2 = pipelines2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists pipelines. Returns a \"FORBIDDEN\" error if the caller doesn't have permission to access it.");
             pipelines2 = pipelines2.subcommand(mcmd);
         }
         {

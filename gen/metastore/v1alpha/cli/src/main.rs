@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("metastore1_alpha")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220413")
+            .version("0.1.0-20230111")
             .about("The Dataproc Metastore API is used to manage the lifecycle and configuration of metastore services.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -48,6 +48,44 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
         }
+        let mut federations2 = SubCommand::with_name("federations")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a metastore federation in a project and location.");
+            federations2 = federations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single federation.");
+            federations2 = federations2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Gets the details of a single federation.");
+            federations2 = federations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            federations2 = federations2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists federations in a project and location.");
+            federations2 = federations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates the fields of a federation.");
+            federations2 = federations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.");
+            federations2 = federations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            federations2 = federations2.subcommand(mcmd);
+        }
         let mut operations2 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get and list");
@@ -65,7 +103,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut services2 = SubCommand::with_name("services")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, export_metadata, get, get_iam_policy, list, patch, remove_iam_policy, restore, set_iam_policy and test_iam_permissions");
+                        .about("methods: alter_location, create, delete, export_metadata, get, get_iam_policy, list, move_table_to_database, patch, query_metadata, remove_iam_policy, restore, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("alter_location").about("Alter metadata resource location. The metadata resource can be a database, table, or partition. This functionality only updates the parent directory for the respective metadata resource and does not transfer any existing data to the new location.");
+            services2 = services2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a metastore service in a project and location.");
@@ -94,8 +136,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services2 = services2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("move_table_to_database")
+                .about("Move a table to another database.");
+            services2 = services2.subcommand(mcmd);
+        }
+        {
             let mcmd =
                 SubCommand::with_name("patch").about("Updates the parameters of a single service.");
+            services2 = services2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("query_metadata").about("Query DPMS metadata.");
             services2 = services2.subcommand(mcmd);
         }
         {
@@ -203,6 +254,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         services2 = services2.subcommand(backups3);
         locations1 = locations1.subcommand(services2);
         locations1 = locations1.subcommand(operations2);
+        locations1 = locations1.subcommand(federations2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);
 

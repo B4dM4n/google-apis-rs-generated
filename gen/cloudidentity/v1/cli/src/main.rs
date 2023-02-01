@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudidentity1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220418")
+            .version("0.1.0-20230124")
             .about("API for provisioning and managing identity resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -33,6 +33,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .help("Provide more output to aid with debugging")
                 .multiple(false)
                 .takes_value(false));
+        let mut customers0 = SubCommand::with_name("customers")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: userinvitations");
         let mut devices0 = SubCommand::with_name("devices")
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel_wipe, create, delete, get, list and wipe");
@@ -103,6 +106,79 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd =
                 SubCommand::with_name("update_security_settings").about("Update Security Settings");
             groups0 = groups0.subcommand(mcmd);
+        }
+        let mut inbound_saml_sso_profiles0 = SubCommand::with_name("inbound_saml_sso_profiles")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates an InboundSamlSsoProfile for a customer.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an InboundSamlSsoProfile.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets an InboundSamlSsoProfile.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists InboundSamlSsoProfiles for a customer.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an InboundSamlSsoProfile.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        let mut inbound_sso_assignments0 = SubCommand::with_name("inbound_sso_assignments")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates an InboundSsoAssignment for users and devices in a `Customer` under a given `Group` or `OrgUnit`.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an InboundSsoAssignment. To disable SSO, Create (or Update) an assignment that has `sso_mode` == `SSO_OFF`.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets an InboundSsoAssignment.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists the InboundSsoAssignments for a `Customer`.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an InboundSsoAssignment. The body of this request is the `inbound_sso_assignment` field and the `update_mask` is relative to that. For example: a PATCH to `/v1/inboundSsoAssignments/0abcdefg1234567&update_mask=rank` with a body of `{ \"rank\": 1 }` moves that (presumably group-targeted) SSO assignment to the highest priority and shifts any other group-targeted assignments down in priority.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        let mut userinvitations1 = SubCommand::with_name("userinvitations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: cancel, get, is_invitable_user, list and send");
+        {
+            let mcmd = SubCommand::with_name("cancel")
+                .about("Cancels a UserInvitation that was already sent.");
+            userinvitations1 = userinvitations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Retrieves a UserInvitation resource. **Note:** New consumer accounts with the customer's verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.");
+            userinvitations1 = userinvitations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("is_invitable_user").about("Verifies whether a user account is eligible to receive a UserInvitation (is an unmanaged account). Eligibility is based on the following criteria: * the email address is a consumer account and it's the primary email address of the account, and * the domain of the email address matches an existing verified Google Workspace or Cloud Identity domain If both conditions are met, the user is eligible. **Note:** This method is not supported for Workspace Essentials customers.");
+            userinvitations1 = userinvitations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Retrieves a list of UserInvitation resources. **Note:** New consumer accounts with the customer's verified domain created within the previous 48 hours will not appear in the result. This delay also applies to newly-verified domains.");
+            userinvitations1 = userinvitations1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("send").about("Sends a UserInvitation to email. If the `UserInvitation` does not exist for this request and it is a valid request, the request creates a `UserInvitation`. **Note:** The `get` and `list` methods have a 48-hour delay where newly-created consumer accounts will not appear in the results. You can still send a `UserInvitation` to those accounts if you know the unmanaged email address and IsInvitableUser==True.");
+            userinvitations1 = userinvitations1.subcommand(mcmd);
         }
         let mut device_users1 = SubCommand::with_name("device_users")
             .setting(AppSettings::ColoredHelp)
@@ -186,6 +262,27 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("search_transitive_memberships").about("Search transitive memberships of a group. **Note:** This feature is only available to Google Workspace Enterprise Standard, Enterprise Plus, and Enterprise for Education; and Cloud Identity Premium accounts. If the account of the group is not one of these, a 403 (PERMISSION_DENIED) HTTP status code will be returned. A transitive membership is any direct or indirect membership of a group. Actor must have view permissions to all transitive memberships.");
             memberships1 = memberships1.subcommand(mcmd);
         }
+        let mut idp_credentials1 = SubCommand::with_name("idp_credentials")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: add, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("add")
+                .about("Adds an IdpCredential. Up to 2 credentials are allowed.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an IdpCredential.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets an IdpCredential.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Returns a list of IdpCredentials in an InboundSamlSsoProfile.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
         let mut client_states2 = SubCommand::with_name("client_states")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get, list and patch");
@@ -204,10 +301,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             client_states2 = client_states2.subcommand(mcmd);
         }
         device_users1 = device_users1.subcommand(client_states2);
+        inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(idp_credentials1);
         groups0 = groups0.subcommand(memberships1);
         devices0 = devices0.subcommand(device_users1);
+        customers0 = customers0.subcommand(userinvitations1);
+        app = app.subcommand(inbound_sso_assignments0);
+        app = app.subcommand(inbound_saml_sso_profiles0);
         app = app.subcommand(groups0);
         app = app.subcommand(devices0);
+        app = app.subcommand(customers0);
 
         Self { app }
     }

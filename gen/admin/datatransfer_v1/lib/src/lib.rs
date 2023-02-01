@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [applications](resources/applications/struct.ApplicationsActions.html)\n  * [*get*](resources/applications/struct.GetRequestBuilder.html), [*list*](resources/applications/struct.ListRequestBuilder.html)\n* [transfers](resources/transfers/struct.TransfersActions.html)\n  * [*get*](resources/transfers/struct.GetRequestBuilder.html), [*insert*](resources/transfers/struct.InsertRequestBuilder.html), [*list*](resources/transfers/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage data transfers between users in your organization\n\n`https://www.googleapis.com/auth/admin.datatransfer`"]
@@ -27,7 +28,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The application’s ID."]
+        #[doc = "The application’s ID. Retrievable by using the [`applications.list()`](/admin-sdk/data-transfer/reference/rest/v1/applications/list) method."]
         #[serde(
             rename = "id",
             default,
@@ -49,7 +50,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The list of all possible transfer parameters for this application. These parameters can be used to select the data of the user in this application to be transferred."]
+        #[doc = "The list of all possible transfer parameters for this application. These parameters select which categories of the user’s data to transfer."]
         #[serde(
             rename = "transferParams",
             default,
@@ -88,7 +89,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub application_id: ::std::option::Option<i64>,
-        #[doc = "The transfer parameters for the application. These parameters are used to select the data which will get transferred in context of this application."]
+        #[doc = "The transfer parameters for the application. These parameters are used to select the data which will get transferred in context of this application. For more information about the specific values available for each application, see the [Transfer parameters](/admin-sdk/data-transfer/v1/parameters) reference."]
         #[serde(
             rename = "applicationTransferParams",
             default,
@@ -96,7 +97,7 @@ pub mod schemas {
         )]
         pub application_transfer_params:
             ::std::option::Option<Vec<crate::schemas::ApplicationTransferParam>>,
-        #[doc = "Current status of transfer for this application. (Read-only)"]
+        #[doc = "Read-only. Current status of transfer for this application."]
         #[serde(
             rename = "applicationTransferStatus",
             default,
@@ -127,14 +128,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ApplicationTransferParam {
-        #[doc = "The type of the transfer parameter. eg: ‘PRIVACY_LEVEL’"]
+        #[doc = "The type of the transfer parameter, such as `PRIVACY_LEVEL`."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "The value of the corresponding transfer parameter. eg: ‘PRIVATE’ or ‘SHARED’"]
+        #[doc = "The value of the transfer parameter, such as `PRIVATE` or `SHARED`."]
         #[serde(
             rename = "value",
             default,
@@ -165,7 +166,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ApplicationsListResponse {
-        #[doc = "List of applications that support data transfer and are also installed for the customer."]
+        #[doc = "The list of applications that support data transfer and are also installed for the customer."]
         #[serde(
             rename = "applications",
             default,
@@ -186,7 +187,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token which will be used to specify next page in list API."]
+        #[doc = "Token to specify the next page in the list."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -204,7 +205,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ApplicationsListResponse {
+    impl crate::GetNextPageToken<String> for ApplicationsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -222,7 +223,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DataTransfer {
-        #[doc = "List of per application data transfer resources. It contains data transfer details of the applications associated with this transfer resource. Note that this list is also used to specify the applications for which data transfer has to be done at the time of the transfer resource creation."]
+        #[doc = "The list of per-application data transfer resources. It contains details of the applications associated with this transfer resource, and also specifies the applications for which data transfer has to be done at the time of the transfer resource creation."]
         #[serde(
             rename = "applicationDataTransfers",
             default,
@@ -237,7 +238,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The transfer’s ID (Read-only)."]
+        #[doc = "Read-only. The transfer’s ID."]
         #[serde(
             rename = "id",
             default,
@@ -265,14 +266,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub old_owner_user_id: ::std::option::Option<String>,
-        #[doc = "Overall transfer status (Read-only)."]
+        #[doc = "Read-only. Overall transfer status."]
         #[serde(
             rename = "overallTransferStatusCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub overall_transfer_status_code: ::std::option::Option<String>,
-        #[doc = "The time at which the data transfer was requested (Read-only)."]
+        #[doc = "Read-only. The time at which the data transfer was requested."]
         #[serde(
             rename = "requestTime",
             default,
@@ -324,7 +325,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token which will be used to specify next page in list API."]
+        #[doc = "Token to specify the next page in the list."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -342,7 +343,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DataTransfersListResponse {
+    impl crate::GetNextPageToken<String> for DataTransfersListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -874,7 +875,7 @@ pub mod resources {
                     #[serde(rename = "applications")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -907,7 +908,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -957,7 +958,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -1065,12 +1066,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -1105,7 +1107,7 @@ pub mod resources {
                     data_transfer_id: data_transfer_id.into(),
                 }
             }
-            #[doc = "Inserts a data transfer request."]
+            #[doc = "Inserts a data transfer request. See the [Transfer parameters](/admin-sdk/data-transfer/v1/parameters) reference for specific application requirements."]
             pub fn insert(&self, request: crate::schemas::DataTransfer) -> InsertRequestBuilder {
                 InsertRequestBuilder {
                     reqwest: &self.reqwest,
@@ -1607,7 +1609,7 @@ pub mod resources {
                     #[serde(rename = "dataTransfers")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -1640,7 +1642,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -1690,7 +1692,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -1801,12 +1803,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -2096,16 +2099,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -2125,13 +2130,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -2139,7 +2147,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -2166,7 +2174,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

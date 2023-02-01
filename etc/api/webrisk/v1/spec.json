@@ -7,7 +7,7 @@
   "canonicalName": "Web Risk",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20230129",
   "title": "Web Risk API",
   "description": "",
   "ownerDomain": "google.com",
@@ -482,13 +482,15 @@
               "THREAT_TYPE_UNSPECIFIED",
               "MALWARE",
               "SOCIAL_ENGINEERING",
-              "UNWANTED_SOFTWARE"
+              "UNWANTED_SOFTWARE",
+              "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
             ],
             "enumDescriptions": [
               "No entries should match this threat type. This threat type is unused.",
               "Malware targeting any platform.",
               "Social engineering targeting any platform.",
-              "Unwanted software targeting any platform."
+              "Unwanted software targeting any platform.",
+              "A list of extended coverage social engineering URIs targeting any platform."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -508,7 +510,7 @@
       "enumDescriptions": [],
       "properties": {
         "threat": {
-          "description": "The threat list matches. This may be empty if the URI is on no list.",
+          "description": "The threat list matches. This might be empty if the URI is on no list.",
           "$ref": "GoogleCloudWebriskV1SearchUrisResponseThreatUri"
         }
       },
@@ -548,13 +550,15 @@
               "THREAT_TYPE_UNSPECIFIED",
               "MALWARE",
               "SOCIAL_ENGINEERING",
-              "UNWANTED_SOFTWARE"
+              "UNWANTED_SOFTWARE",
+              "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
             ],
             "enumDescriptions": [
               "No entries should match this threat type. This threat type is unused.",
               "Malware targeting any platform.",
               "Social engineering targeting any platform.",
-              "Unwanted software targeting any platform."
+              "Unwanted software targeting any platform.",
+              "A list of extended coverage social engineering URIs targeting any platform."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -574,7 +578,7 @@
       "enumDescriptions": [],
       "properties": {
         "threatTypes": {
-          "description": "ThreatTypes found to be associated with the submitted URI after reviewing it. This may be empty if the URI was not added to any list.",
+          "description": "ThreatTypes found to be associated with the submitted URI after reviewing it. This might be empty if the URI was not added to any list.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -588,13 +592,15 @@
               "THREAT_TYPE_UNSPECIFIED",
               "MALWARE",
               "SOCIAL_ENGINEERING",
-              "UNWANTED_SOFTWARE"
+              "UNWANTED_SOFTWARE",
+              "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
             ],
             "enumDescriptions": [
               "No entries should match this threat type. This threat type is unused.",
               "Malware targeting any platform.",
               "Social engineering targeting any platform.",
-              "Unwanted software targeting any platform."
+              "Unwanted software targeting any platform.",
+              "A list of extended coverage social engineering URIs targeting any platform."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -642,14 +648,16 @@
             "RUNNING",
             "SUCCEEDED",
             "CANCELLED",
-            "FAILED"
+            "FAILED",
+            "CLOSED"
           ],
           "enumDescriptions": [
             "Default unspecified state.",
             "The operation is currently running.",
             "The operation finished with a success status.",
             "The operation was cancelled.",
-            "The operation finished with a failure status."
+            "The operation finished with a failure status.",
+            "The operation was closed with no action taken."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -801,7 +809,7 @@
           "$ref": "GoogleRpcStatus"
         },
         "metadata": {
-          "description": "Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.",
+          "description": "Contains a `SubmitUriMetadata` object.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -820,7 +828,7 @@
           "items": null
         },
         "name": {
-          "description": "The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`.",
+          "description": "Matches the `/v1/{project-name}/operations/{operation-id}` pattern.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -961,13 +969,15 @@
                 "THREAT_TYPE_UNSPECIFIED",
                 "MALWARE",
                 "SOCIAL_ENGINEERING",
-                "UNWANTED_SOFTWARE"
+                "UNWANTED_SOFTWARE",
+                "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
               ],
               "enumDescriptions": [
                 "No entries should match this threat type. This threat type is unused.",
                 "Malware targeting any platform.",
                 "Social engineering targeting any platform.",
-                "Unwanted software targeting any platform."
+                "Unwanted software targeting any platform.",
+                "A list of extended coverage social engineering URIs targeting any platform."
               ],
               "repeated": true
             }
@@ -1345,13 +1355,15 @@
                 "THREAT_TYPE_UNSPECIFIED",
                 "MALWARE",
                 "SOCIAL_ENGINEERING",
-                "UNWANTED_SOFTWARE"
+                "UNWANTED_SOFTWARE",
+                "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
               ],
               "enumDescriptions": [
                 "No entries should match this threat type. This threat type is unused.",
                 "Malware targeting any platform.",
                 "Social engineering targeting any platform.",
-                "Unwanted software targeting any platform."
+                "Unwanted software targeting any platform.",
+                "A list of extended coverage social engineering URIs targeting any platform."
               ],
               "repeated": false
             },
@@ -1409,13 +1421,15 @@
                 "THREAT_TYPE_UNSPECIFIED",
                 "MALWARE",
                 "SOCIAL_ENGINEERING",
-                "UNWANTED_SOFTWARE"
+                "UNWANTED_SOFTWARE",
+                "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
               ],
               "enumDescriptions": [
                 "No entries should match this threat type. This threat type is unused.",
                 "Malware targeting any platform.",
                 "Social engineering targeting any platform.",
-                "Unwanted software targeting any platform."
+                "Unwanted software targeting any platform.",
+                "A list of extended coverage social engineering URIs targeting any platform."
               ],
               "repeated": true
             },

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [v_1](resources/v_1/struct.V1Actions.html)\n  * [*decodeIntegrityToken*](resources/v_1/struct.DecodeIntegrityTokenRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Private Service: https://www.googleapis.com/auth/playintegrity\n\n`https://www.googleapis.com/auth/playintegrity`"]
@@ -16,7 +17,142 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct AccountActivity {
+        #[doc = "Required. Indicates the activity level of the account."]
+        #[serde(
+            rename = "activityLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub activity_level: ::std::option::Option<crate::schemas::AccountActivityActivityLevel>,
+    }
+    impl ::google_field_selector::FieldSelector for AccountActivity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccountActivity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AccountActivityActivityLevel {
+        #[doc = "Activity level has not been set."]
+        ActivityLevelUnspecified,
+        #[doc = "Google Play store activity is typical for the user account or accounts on the device."]
+        TypicalBasic,
+        #[doc = "Google Play store activity is typical for the user account or accounts on the device, with harder to replicate signals."]
+        TypicalStrong,
+        #[doc = "Account activity level is not evaluated because one of the prerequisite conditions is not met (e.g., device is not trusted, the user does not have Play app license)"]
+        Unevaluated,
+        #[doc = "Google Play does not have sufficient activity for the user account on the device. The account may be new, or it may lack activity on Google Play."]
+        Unknown,
+        #[doc = "Google Play store activity is unusual for at least one of the user accounts on the device. Google Play recommends checking that this is a real user."]
+        Unusual,
+    }
+    impl AccountActivityActivityLevel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AccountActivityActivityLevel::ActivityLevelUnspecified => {
+                    "ACTIVITY_LEVEL_UNSPECIFIED"
+                }
+                AccountActivityActivityLevel::TypicalBasic => "TYPICAL_BASIC",
+                AccountActivityActivityLevel::TypicalStrong => "TYPICAL_STRONG",
+                AccountActivityActivityLevel::Unevaluated => "UNEVALUATED",
+                AccountActivityActivityLevel::Unknown => "UNKNOWN",
+                AccountActivityActivityLevel::Unusual => "UNUSUAL",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AccountActivityActivityLevel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AccountActivityActivityLevel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AccountActivityActivityLevel, ()> {
+            Ok(match s {
+                "ACTIVITY_LEVEL_UNSPECIFIED" => {
+                    AccountActivityActivityLevel::ActivityLevelUnspecified
+                }
+                "TYPICAL_BASIC" => AccountActivityActivityLevel::TypicalBasic,
+                "TYPICAL_STRONG" => AccountActivityActivityLevel::TypicalStrong,
+                "UNEVALUATED" => AccountActivityActivityLevel::Unevaluated,
+                "UNKNOWN" => AccountActivityActivityLevel::Unknown,
+                "UNUSUAL" => AccountActivityActivityLevel::Unusual,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AccountActivityActivityLevel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AccountActivityActivityLevel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AccountActivityActivityLevel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVITY_LEVEL_UNSPECIFIED" => {
+                    AccountActivityActivityLevel::ActivityLevelUnspecified
+                }
+                "TYPICAL_BASIC" => AccountActivityActivityLevel::TypicalBasic,
+                "TYPICAL_STRONG" => AccountActivityActivityLevel::TypicalStrong,
+                "UNEVALUATED" => AccountActivityActivityLevel::Unevaluated,
+                "UNKNOWN" => AccountActivityActivityLevel::Unknown,
+                "UNUSUAL" => AccountActivityActivityLevel::Unusual,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AccountActivityActivityLevel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AccountActivityActivityLevel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct AccountDetails {
+        #[doc = "Details about the account activity for the user in the scope."]
+        #[serde(
+            rename = "accountActivity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub account_activity: ::std::option::Option<crate::schemas::AccountActivity>,
         #[doc = "Required. Details about the licensing status of the user for the app in the scope."]
         #[serde(
             rename = "appLicensingVerdict",
@@ -138,7 +274,7 @@ pub mod schemas {
         )]
         pub app_recognition_verdict:
             ::std::option::Option<crate::schemas::AppIntegrityAppRecognitionVerdict>,
-        #[doc = "Hex fingerprint of the application signing certificate. e.g. “ABCE1F….” Set iff app_recognition_verdict != UNEVALUATED."]
+        #[doc = "The SHA256 hash of the requesting app’s signing certificates (base64 web-safe encoded). Set iff app_recognition_verdict != UNEVALUATED."]
         #[serde(
             rename = "certificateSha256Digest",
             default,
@@ -472,13 +608,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RequestDetails {
-        #[doc = "Required. Nonce that was provided in the request (which is base64 web-safe no-wrap)."]
+        #[doc = "Nonce that was provided in the request (which is base64 web-safe no-wrap)."]
         #[serde(
             rename = "nonce",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nonce: ::std::option::Option<String>,
+        #[doc = "Request hash that was provided in the request."]
+        #[serde(
+            rename = "requestHash",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_hash: ::std::option::Option<String>,
         #[doc = "Required. Application package name this attestation was requested for. Note: This field makes no guarantees or promises on the caller integrity. For details on application integrity, check application_integrity."]
         #[serde(
             rename = "requestPackageName",
@@ -1260,15 +1403,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

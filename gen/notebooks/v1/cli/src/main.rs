@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("notebooks1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220419")
+            .version("0.1.0-20221213")
             .about("Notebooks API is used to manage notebook resources in Google Cloud.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -90,7 +90,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut instances2 = SubCommand::with_name("instances")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, get_instance_health, is_upgradeable, list, register, report, reset, rollback, set_accelerator, set_iam_policy, set_labels, set_machine_type, start, stop, test_iam_permissions, update_config, update_metadata_items, update_shielded_instance_config, upgrade and upgrade_internal");
+                        .about("methods: create, delete, diagnose, get, get_iam_policy, get_instance_health, is_upgradeable, list, register, report, reset, rollback, set_accelerator, set_iam_policy, set_labels, set_machine_type, start, stop, test_iam_permissions, update_config, update_metadata_items, update_shielded_instance_config, upgrade and upgrade_internal");
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a new Instance in a given project and location.");
@@ -98,6 +98,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a single Instance.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("diagnose")
+                .about("Creates a Diagnostic File and runs Diagnostic Tool given an Instance.");
             instances2 = instances2.subcommand(mcmd);
         }
         {
@@ -216,7 +221,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut runtimes2 = SubCommand::with_name("runtimes")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, list, refresh_runtime_token_internal, report_event, reset, set_iam_policy, start, stop, switch and test_iam_permissions");
+                        .about("methods: create, delete, diagnose, get, get_iam_policy, list, patch, refresh_runtime_token_internal, report_event, reset, set_iam_policy, start, stop, switch, test_iam_permissions and upgrade");
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a new Runtime in a given project and location.");
@@ -224,6 +229,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a single Runtime.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("diagnose")
+                .about("Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.");
             runtimes2 = runtimes2.subcommand(mcmd);
         }
         {
@@ -237,6 +247,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists Runtimes in a given project and location.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Update Notebook Runtime configuration.");
             runtimes2 = runtimes2.subcommand(mcmd);
         }
         {
@@ -270,6 +285,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            runtimes2 = runtimes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("upgrade")
+                .about("Upgrades a Managed Notebook Runtime to the latest version.");
             runtimes2 = runtimes2.subcommand(mcmd);
         }
         let mut schedules2 = SubCommand::with_name("schedules")

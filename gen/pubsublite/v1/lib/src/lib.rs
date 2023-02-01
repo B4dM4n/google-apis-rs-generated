@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [admin](resources/admin/struct.AdminActions.html)\n  * [projects](resources/admin/projects/struct.ProjectsActions.html)\n    * [locations](resources/admin/projects/locations/struct.LocationsActions.html)\n      * [operations](resources/admin/projects/locations/operations/struct.OperationsActions.html)\n        * [*cancel*](resources/admin/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/admin/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/admin/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/admin/projects/locations/operations/struct.ListRequestBuilder.html)\n      * [reservations](resources/admin/projects/locations/reservations/struct.ReservationsActions.html)\n        * [*create*](resources/admin/projects/locations/reservations/struct.CreateRequestBuilder.html), [*delete*](resources/admin/projects/locations/reservations/struct.DeleteRequestBuilder.html), [*get*](resources/admin/projects/locations/reservations/struct.GetRequestBuilder.html), [*list*](resources/admin/projects/locations/reservations/struct.ListRequestBuilder.html), [*patch*](resources/admin/projects/locations/reservations/struct.PatchRequestBuilder.html)\n        * [topics](resources/admin/projects/locations/reservations/topics/struct.TopicsActions.html)\n          * [*list*](resources/admin/projects/locations/reservations/topics/struct.ListRequestBuilder.html)\n      * [subscriptions](resources/admin/projects/locations/subscriptions/struct.SubscriptionsActions.html)\n        * [*create*](resources/admin/projects/locations/subscriptions/struct.CreateRequestBuilder.html), [*delete*](resources/admin/projects/locations/subscriptions/struct.DeleteRequestBuilder.html), [*get*](resources/admin/projects/locations/subscriptions/struct.GetRequestBuilder.html), [*list*](resources/admin/projects/locations/subscriptions/struct.ListRequestBuilder.html), [*patch*](resources/admin/projects/locations/subscriptions/struct.PatchRequestBuilder.html), [*seek*](resources/admin/projects/locations/subscriptions/struct.SeekRequestBuilder.html)\n      * [topics](resources/admin/projects/locations/topics/struct.TopicsActions.html)\n        * [*create*](resources/admin/projects/locations/topics/struct.CreateRequestBuilder.html), [*delete*](resources/admin/projects/locations/topics/struct.DeleteRequestBuilder.html), [*get*](resources/admin/projects/locations/topics/struct.GetRequestBuilder.html), [*getPartitions*](resources/admin/projects/locations/topics/struct.GetPartitionsRequestBuilder.html), [*list*](resources/admin/projects/locations/topics/struct.ListRequestBuilder.html), [*patch*](resources/admin/projects/locations/topics/struct.PatchRequestBuilder.html)\n        * [subscriptions](resources/admin/projects/locations/topics/subscriptions/struct.SubscriptionsActions.html)\n          * [*list*](resources/admin/projects/locations/topics/subscriptions/struct.ListRequestBuilder.html)\n* [cursor](resources/cursor/struct.CursorActions.html)\n  * [projects](resources/cursor/projects/struct.ProjectsActions.html)\n    * [locations](resources/cursor/projects/locations/struct.LocationsActions.html)\n      * [subscriptions](resources/cursor/projects/locations/subscriptions/struct.SubscriptionsActions.html)\n        * [*commitCursor*](resources/cursor/projects/locations/subscriptions/struct.CommitCursorRequestBuilder.html)\n        * [cursors](resources/cursor/projects/locations/subscriptions/cursors/struct.CursorsActions.html)\n          * [*list*](resources/cursor/projects/locations/subscriptions/cursors/struct.ListRequestBuilder.html)\n* [topic_stats](resources/topic_stats/struct.TopicStatsActions.html)\n  * [projects](resources/topic_stats/projects/struct.ProjectsActions.html)\n    * [locations](resources/topic_stats/projects/locations/struct.LocationsActions.html)\n      * [topics](resources/topic_stats/projects/locations/topics/struct.TopicsActions.html)\n        * [*computeHeadCursor*](resources/topic_stats/projects/locations/topics/struct.ComputeHeadCursorRequestBuilder.html), [*computeMessageStats*](resources/topic_stats/projects/locations/topics/struct.ComputeMessageStatsRequestBuilder.html), [*computeTimeCursor*](resources/topic_stats/projects/locations/topics/struct.ComputeTimeCursorRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -532,6 +533,230 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ExportConfig {
+        #[doc = "Output only. The current state of the export, which may be different to the desired state due to errors. This field is output only."]
+        #[serde(
+            rename = "currentState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub current_state: ::std::option::Option<crate::schemas::ExportConfigCurrentState>,
+        #[doc = "Optional. The name of an optional Pub/Sub Lite topic to publish messages that can not be exported to the destination. For example, the message can not be published to the Pub/Sub service because it does not satisfy the constraints documented at https://cloud.google.com/pubsub/docs/publisher. Structured like: projects/{project_number}/locations/{location}/topics/{topic_id}. Must be within the same project and location as the subscription. The topic may be changed or removed."]
+        #[serde(
+            rename = "deadLetterTopic",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dead_letter_topic: ::std::option::Option<String>,
+        #[doc = "The desired state of this export. Setting this to values other than `ACTIVE` and `PAUSED` will result in an error."]
+        #[serde(
+            rename = "desiredState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_state: ::std::option::Option<crate::schemas::ExportConfigDesiredState>,
+        #[doc = "Messages are automatically written from the Pub/Sub Lite topic associated with this subscription to a Pub/Sub topic."]
+        #[serde(
+            rename = "pubsubConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pubsub_config: ::std::option::Option<crate::schemas::PubSubConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for ExportConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExportConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ExportConfigCurrentState {
+        #[doc = "Messages are being exported."]
+        Active,
+        #[doc = "Messages cannot be exported due to missing resources. Output only."]
+        NotFound,
+        #[doc = "Exporting messages is suspended."]
+        Paused,
+        #[doc = "Messages cannot be exported due to permission denied errors. Output only."]
+        PermissionDenied,
+        #[doc = "Default value. This value is unused."]
+        StateUnspecified,
+    }
+    impl ExportConfigCurrentState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ExportConfigCurrentState::Active => "ACTIVE",
+                ExportConfigCurrentState::NotFound => "NOT_FOUND",
+                ExportConfigCurrentState::Paused => "PAUSED",
+                ExportConfigCurrentState::PermissionDenied => "PERMISSION_DENIED",
+                ExportConfigCurrentState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ExportConfigCurrentState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ExportConfigCurrentState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ExportConfigCurrentState, ()> {
+            Ok(match s {
+                "ACTIVE" => ExportConfigCurrentState::Active,
+                "NOT_FOUND" => ExportConfigCurrentState::NotFound,
+                "PAUSED" => ExportConfigCurrentState::Paused,
+                "PERMISSION_DENIED" => ExportConfigCurrentState::PermissionDenied,
+                "STATE_UNSPECIFIED" => ExportConfigCurrentState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ExportConfigCurrentState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ExportConfigCurrentState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ExportConfigCurrentState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => ExportConfigCurrentState::Active,
+                "NOT_FOUND" => ExportConfigCurrentState::NotFound,
+                "PAUSED" => ExportConfigCurrentState::Paused,
+                "PERMISSION_DENIED" => ExportConfigCurrentState::PermissionDenied,
+                "STATE_UNSPECIFIED" => ExportConfigCurrentState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ExportConfigCurrentState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExportConfigCurrentState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ExportConfigDesiredState {
+        #[doc = "Messages are being exported."]
+        Active,
+        #[doc = "Messages cannot be exported due to missing resources. Output only."]
+        NotFound,
+        #[doc = "Exporting messages is suspended."]
+        Paused,
+        #[doc = "Messages cannot be exported due to permission denied errors. Output only."]
+        PermissionDenied,
+        #[doc = "Default value. This value is unused."]
+        StateUnspecified,
+    }
+    impl ExportConfigDesiredState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ExportConfigDesiredState::Active => "ACTIVE",
+                ExportConfigDesiredState::NotFound => "NOT_FOUND",
+                ExportConfigDesiredState::Paused => "PAUSED",
+                ExportConfigDesiredState::PermissionDenied => "PERMISSION_DENIED",
+                ExportConfigDesiredState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ExportConfigDesiredState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ExportConfigDesiredState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ExportConfigDesiredState, ()> {
+            Ok(match s {
+                "ACTIVE" => ExportConfigDesiredState::Active,
+                "NOT_FOUND" => ExportConfigDesiredState::NotFound,
+                "PAUSED" => ExportConfigDesiredState::Paused,
+                "PERMISSION_DENIED" => ExportConfigDesiredState::PermissionDenied,
+                "STATE_UNSPECIFIED" => ExportConfigDesiredState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ExportConfigDesiredState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ExportConfigDesiredState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ExportConfigDesiredState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => ExportConfigDesiredState::Active,
+                "NOT_FOUND" => ExportConfigDesiredState::NotFound,
+                "PAUSED" => ExportConfigDesiredState::Paused,
+                "PERMISSION_DENIED" => ExportConfigDesiredState::PermissionDenied,
+                "STATE_UNSPECIFIED" => ExportConfigDesiredState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ExportConfigDesiredState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExportConfigDesiredState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListOperationsResponse {
         #[doc = "The standard List next-page token."]
@@ -559,7 +784,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -602,7 +827,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPartitionCursorsResponse {
+    impl crate::GetNextPageToken<String> for ListPartitionCursorsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -645,7 +870,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListReservationTopicsResponse {
+    impl crate::GetNextPageToken<String> for ListReservationTopicsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -688,7 +913,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListReservationsResponse {
+    impl crate::GetNextPageToken<String> for ListReservationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -731,7 +956,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListSubscriptionsResponse {
+    impl crate::GetNextPageToken<String> for ListSubscriptionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -774,7 +999,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListTopicSubscriptionsResponse {
+    impl crate::GetNextPageToken<String> for ListTopicSubscriptionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -817,7 +1042,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListTopicsResponse {
+    impl crate::GetNextPageToken<String> for ListTopicsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1005,6 +1230,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PartitionCursor {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PubSubConfig {
+        #[doc = "The name of the Pub/Sub topic. Structured like: projects/{project_number}/topics/{topic_id}. The topic may be changed."]
+        #[serde(
+            rename = "topic",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub topic: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PubSubConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PubSubConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1317,6 +1573,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delivery_config: ::std::option::Option<crate::schemas::DeliveryConfig>,
+        #[doc = "If present, messages are automatically written from the Pub/Sub Lite topic associated with this subscription to a destination."]
+        #[serde(
+            rename = "exportConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub export_config: ::std::option::Option<crate::schemas::ExportConfig>,
         #[doc = "The name of the subscription. Structured like: projects/{project_number}/locations/{location}/subscriptions/{subscription_id}"]
         #[serde(
             rename = "name",
@@ -2450,7 +2713,7 @@ pub mod resources {
                                 #[serde(rename = "operations")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -2487,7 +2750,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -2537,7 +2800,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -2658,12 +2921,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -3417,7 +3681,7 @@ pub mod resources {
                                 #[serde(rename = "reservations")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -3454,7 +3718,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -3504,7 +3768,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -3624,12 +3888,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -3962,7 +4227,7 @@ pub mod resources {
                                     #[serde(rename = "topics")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -3999,7 +4264,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -4055,7 +4320,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -4175,12 +4442,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -4964,7 +5232,7 @@ pub mod resources {
                                 #[serde(rename = "subscriptions")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -5001,7 +5269,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -5051,7 +5319,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -5171,12 +5439,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -6451,7 +6720,7 @@ pub mod resources {
                                 #[serde(rename = "topics")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -6487,7 +6756,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -6537,7 +6806,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -6657,12 +6926,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -6993,7 +7263,7 @@ pub mod resources {
                                     #[serde(rename = "subscriptions")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -7030,7 +7300,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -7086,7 +7356,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -7206,12 +7478,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -7636,7 +7909,7 @@ pub mod resources {
                                     #[serde(rename = "partitionCursors")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -7673,7 +7946,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -7729,7 +8002,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -7849,12 +8124,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -8796,16 +9072,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -8825,13 +9103,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -8839,7 +9120,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -8866,7 +9147,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -1,6 +1,6 @@
 [package]
 name = "google-tpu1_alpha1"
-version = "0.1.0-20220412"
+version = "0.1.0-20230105"
 authors = ["Glenn Griffin <ggriffiniii@gmail.com"]
 edition = "2018"
 # for now, let's not even accidentally publish these

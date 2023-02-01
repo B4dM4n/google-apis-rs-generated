@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dataplex1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220328")
+            .version("0.1.0-20230120")
             .about("Dataplex API is used to manage the lifecycle of data lakes.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -47,6 +47,121 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
+        }
+        let mut data_attribute_bindings2 = SubCommand::with_name("data_attribute_bindings")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd =
+                SubCommand::with_name("create").about("Create a DataAttributeBinding resource.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a DataAttributeBinding resource. All attributes within the DataAttributeBinding must be deleted before the DataAttributeBinding can be deleted.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Retrieves a DataAttributeBinding resource.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists DataAttributeBinding resources in a project and location.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates a DataAttributeBinding resource.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            data_attribute_bindings2 = data_attribute_bindings2.subcommand(mcmd);
+        }
+        let mut data_scans2 = SubCommand::with_name("data_scans")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, run, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a DataScan resource.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a DataScan resource.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a DataScan resource.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists DataScans.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a DataScan resource.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("run").about("Runs an on-demand execution of a DataScan");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            data_scans2 = data_scans2.subcommand(mcmd);
+        }
+        let mut data_taxonomies2 = SubCommand::with_name("data_taxonomies")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create").about("Create a DataTaxonomy resource.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a DataTaxonomy resource. All attributes within the DataTaxonomy must be deleted before the DataTaxonomy can be deleted.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Retrieves a DataTaxonomy resource.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists DataTaxonomy resources in a project and location.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a DataTaxonomy resource.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            data_taxonomies2 = data_taxonomies2.subcommand(mcmd);
         }
         let mut lakes2 = SubCommand::with_name("lakes")
                         .setting(AppSettings::ColoredHelp)
@@ -103,6 +218,54 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns UNIMPLEMENTED.NOTE: the name binding allows API services to override the binding to use different resource name schemes, such as users/*/operations. To override the binding, API services can add a binding such as \"/v1/{name=users/*}/operations\" to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
+        let mut jobs3 = SubCommand::with_name("jobs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a DataScanJob resource.");
+            jobs3 = jobs3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists DataScanJobs under the given DataScan.");
+            jobs3 = jobs3.subcommand(mcmd);
+        }
+        let mut attributes3 = SubCommand::with_name("attributes")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create").about("Create a DataAttribute resource.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a Data Attribute resource.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Retrieves a Data Attribute resource.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists Data Attribute resources in a DataTaxonomy.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a DataAttribute resource.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            attributes3 = attributes3.subcommand(mcmd);
+        }
         let mut actions3 = SubCommand::with_name("actions")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -111,23 +274,44 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             actions3 = actions3.subcommand(mcmd);
         }
         let mut content3 = SubCommand::with_name("content")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            let mcmd = SubCommand::with_name("create").about("Create a content.");
             content3 = content3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.");
+            let mcmd = SubCommand::with_name("delete").about("Delete a content.");
             content3 = content3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            let mcmd = SubCommand::with_name("get").about("Get a content resource.");
+            content3 = content3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a contentitem resource. A NOT_FOUND error is returned if the resource does not exist. An empty policy is returned if the resource exists but does not have a policy set on it.Caller must have Google IAM dataplex.content.getIamPolicy permission on the resource.");
+            content3 = content3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("List content.");
+            content3 = content3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Update a content. Only supports full resource update.");
+            content3 = content3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified contentitem resource. Replaces any existing policy.Caller must have Google IAM dataplex.content.setIamPolicy permission on the resource.");
+            content3 = content3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (a NOT_FOUND error is not returned).A caller is not required to have Google IAM permission to make this request.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             content3 = content3.subcommand(mcmd);
         }
         let mut contentitems3 = SubCommand::with_name("contentitems")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and patch");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
             let mcmd = SubCommand::with_name("create").about("Create a content.");
             contentitems3 = contentitems3.subcommand(mcmd);
@@ -141,12 +325,24 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             contentitems3 = contentitems3.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a contentitem resource. A NOT_FOUND error is returned if the resource does not exist. An empty policy is returned if the resource exists but does not have a policy set on it.Caller must have Google IAM dataplex.content.getIamPolicy permission on the resource.");
+            contentitems3 = contentitems3.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list").about("List content.");
             contentitems3 = contentitems3.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("patch")
                 .about("Update a content. Only supports full resource update.");
+            contentitems3 = contentitems3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified contentitem resource. Replaces any existing policy.Caller must have Google IAM dataplex.content.setIamPolicy permission on the resource.");
+            contentitems3 = contentitems3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the caller's permissions on a resource. If the resource does not exist, an empty set of permissions is returned (a NOT_FOUND error is not returned).A caller is not required to have Google IAM permission to make this request.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             contentitems3 = contentitems3.subcommand(mcmd);
         }
         let mut environments3 = SubCommand::with_name("environments")
@@ -187,7 +383,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut tasks3 = SubCommand::with_name("tasks")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, run, set_iam_policy and test_iam_permissions");
         {
             let mcmd =
                 SubCommand::with_name("create").about("Creates a task resource within a lake.");
@@ -211,6 +407,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("patch").about("Update the task resource.");
+            tasks3 = tasks3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("run").about("Run an on demand execution of a Task.");
             tasks3 = tasks3.subcommand(mcmd);
         }
         {
@@ -387,8 +587,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         lakes2 = lakes2.subcommand(contentitems3);
         lakes2 = lakes2.subcommand(content3);
         lakes2 = lakes2.subcommand(actions3);
+        data_taxonomies2 = data_taxonomies2.subcommand(attributes3);
+        data_scans2 = data_scans2.subcommand(jobs3);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(lakes2);
+        locations1 = locations1.subcommand(data_taxonomies2);
+        locations1 = locations1.subcommand(data_scans2);
+        locations1 = locations1.subcommand(data_attribute_bindings2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);
 

@@ -7,7 +7,7 @@
   "canonicalName": "Games",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20220420",
+  "revision": "20230120",
   "title": "Google Play Game Services",
   "description": "The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.",
   "ownerDomain": "google.com",
@@ -3487,6 +3487,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "ScopedPlayerIds": {
+      "id": "ScopedPlayerIds",
+      "description": "Scoped player identifiers.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "developerPlayerKey": {
+          "description": "Identifier of the player across all games of the given developer. Every player has the same developer_player_key in all games of one developer. Developer player key changes for the game if the game is transferred to another developer. Note that game_player_id will stay unchanged.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gamePlayerId": {
+          "description": "Game-scoped player identifier. This is the same id that is returned in GetPlayer game_player_id field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ScoreSubmission": {
       "id": "ScoreSubmission",
       "description": "A request to submit a score to leaderboards.",
@@ -4953,6 +4985,26 @@
           "request": null,
           "response": {
             "$ref": "Player"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/games"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "getScopedPlayerIds": {
+          "id": "games.players.getScopedPlayerIds",
+          "path": "games/v1/players/me/scopedIds",
+          "httpMethod": "GET",
+          "description": "Retrieves scoped player identifiers for currently authenticated user.",
+          "parameters": {},
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "ScopedPlayerIds"
           },
           "scopes": [
             "https://www.googleapis.com/auth/games"

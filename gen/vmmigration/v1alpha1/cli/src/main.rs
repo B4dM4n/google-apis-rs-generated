@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("vmmigration1_alpha1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220408")
-            .about("Use the Migrate for Compute Engine API to programmatically migrate workloads. ")
+            .version("0.1.0-20230119")
+            .about("Use the Migrate to Virtual Machines API to programmatically migrate workloads. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -288,6 +288,20 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 SubCommand::with_name("list").about("Lists CutoverJobs of a given migrating VM.");
             cutover_jobs4 = cutover_jobs4.subcommand(mcmd);
         }
+        let mut replication_cycles4 = SubCommand::with_name("replication_cycles")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Gets details of a single ReplicationCycle.");
+            replication_cycles4 = replication_cycles4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists ReplicationCycles in a given MigratingVM.");
+            replication_cycles4 = replication_cycles4.subcommand(mcmd);
+        }
+        migrating_vms3 = migrating_vms3.subcommand(replication_cycles4);
         migrating_vms3 = migrating_vms3.subcommand(cutover_jobs4);
         migrating_vms3 = migrating_vms3.subcommand(clone_jobs4);
         sources2 = sources2.subcommand(utilization_reports3);

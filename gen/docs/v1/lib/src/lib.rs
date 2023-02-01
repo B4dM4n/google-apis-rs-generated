@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [documents](resources/documents/struct.DocumentsActions.html)\n  * [*batchUpdate*](resources/documents/struct.BatchUpdateRequestBuilder.html), [*create*](resources/documents/struct.CreateRequestBuilder.html), [*get*](resources/documents/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, create, and delete all your Google Docs documents\n\n`https://www.googleapis.com/auth/documents`"]
@@ -30,7 +31,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. An AutoText may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. An AutoText may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -307,7 +308,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nesting_level: ::std::option::Option<i32>,
-        #[doc = "The paragraph specific text style applied to this bullet."]
+        #[doc = "The paragraph-specific text style applied to this bullet."]
         #[serde(
             rename = "textStyle",
             default,
@@ -404,7 +405,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A ColumnBreak may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A ColumnBreak may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -420,7 +421,7 @@ pub mod schemas {
         pub suggested_text_style_changes: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::SuggestedTextStyle>,
         >,
-        #[doc = "The text style of this ColumnBreak. Similar to text content, like text runs and footnote references, the text style of a column break can affect content layout as well as the styling of text inserted adjacent to it."]
+        #[doc = "The text style of this ColumnBreak. Similar to text content, like text runs and footnote references, the text style of a column break can affect content layout as well as the styling of text inserted next to it."]
         #[serde(
             rename = "textStyle",
             default,
@@ -1856,42 +1857,42 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub background: ::std::option::Option<crate::schemas::Background>,
-        #[doc = "The ID of the default footer. If not set, there is no default footer. This property is read-only."]
+        #[doc = "The ID of the default footer. If not set, there’s no default footer. This property is read-only."]
         #[serde(
             rename = "defaultFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the default header. If not set, there is no default header. This property is read-only."]
+        #[doc = "The ID of the default header. If not set, there’s no default header. This property is read-only."]
         #[serde(
             rename = "defaultHeaderId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_header_id: ::std::option::Option<String>,
-        #[doc = "The ID of the footer used only for even pages. The value of use_even_page_header_footer determines whether to use the default_footer_id or this value for the footer on even pages. If not set, there is no even page footer. This property is read-only."]
+        #[doc = "The ID of the footer used only for even pages. The value of use_even_page_header_footer determines whether to use the default_footer_id or this value for the footer on even pages. If not set, there’s no even page footer. This property is read-only."]
         #[serde(
             rename = "evenPageFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub even_page_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the header used only for even pages. The value of use_even_page_header_footer determines whether to use the default_header_id or this value for the header on even pages. If not set, there is no even page header. This property is read-only."]
+        #[doc = "The ID of the header used only for even pages. The value of use_even_page_header_footer determines whether to use the default_header_id or this value for the header on even pages. If not set, there’s no even page header. This property is read-only."]
         #[serde(
             rename = "evenPageHeaderId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub even_page_header_id: ::std::option::Option<String>,
-        #[doc = "The ID of the footer used only for the first page. If not set then a unique footer for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_footer_id or this value for the footer on the first page. If not set, there is no first page footer. This property is read-only."]
+        #[doc = "The ID of the footer used only for the first page. If not set then a unique footer for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_footer_id or this value for the footer on the first page. If not set, there’s no first page footer. This property is read-only."]
         #[serde(
             rename = "firstPageFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub first_page_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the header used only for the first page. If not set then a unique header for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_header_id or this value for the header on the first page. If not set, there is no first page header. This property is read-only."]
+        #[doc = "The ID of the header used only for the first page. If not set then a unique header for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_header_id or this value for the header on the first page. If not set, there’s no first page header. This property is read-only."]
         #[serde(
             rename = "firstPageHeaderId",
             default,
@@ -2218,7 +2219,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_properties: ::std::option::Option<crate::schemas::ImageProperties>,
-        #[doc = "A reference to the external linked source content. For example, it contains a reference to the source Sheets chart when the embedded object is a linked chart. If unset, then the embedded object is not linked."]
+        #[doc = "A reference to the external linked source content. For example, it contains a reference to the source Google Sheets chart when the embedded object is a linked chart. If unset, then the embedded object is not linked."]
         #[serde(
             rename = "linkedContentReference",
             default,
@@ -2682,7 +2683,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A Equation may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. An Equation may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -2783,7 +2784,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A FootnoteReference may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A FootnoteReference may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -2873,7 +2874,7 @@ pub mod schemas {
         pub suggested_text_style_changes: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::SuggestedTextStyle>,
         >,
-        #[doc = "The text style of this HorizontalRule. Similar to text content, like text runs and footnote references, the text style of a horizontal rule can affect content layout as well as the styling of text inserted adjacent to it."]
+        #[doc = "The text style of this HorizontalRule. Similar to text content, like text runs and footnote references, the text style of a horizontal rule can affect content layout as well as the styling of text inserted next to it."]
         #[serde(
             rename = "textStyle",
             default,
@@ -2937,7 +2938,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_uri: ::std::option::Option<String>,
-        #[doc = "The transparency effect of the image. The value should be in the interval \\[0.0, 1.0\\], where 0 means no effect and 1 means completely transparent."]
+        #[doc = "The transparency effect of the image. The value should be in the interval \\[0.0, 1.0\\], where 0 means no effect and 1 means transparent."]
         #[serde(
             rename = "transparency",
             default,
@@ -3099,7 +3100,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. An InlineObjectElement may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. An InlineObjectElement may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -3115,7 +3116,7 @@ pub mod schemas {
         pub suggested_text_style_changes: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::SuggestedTextStyle>,
         >,
-        #[doc = "The text style of this InlineObjectElement. Similar to text content, like text runs and footnote references, the text style of an inline object element can affect content layout as well as the styling of text inserted adjacent to it."]
+        #[doc = "The text style of this InlineObjectElement. Similar to text content, like text runs and footnote references, the text style of an inline object element can affect content layout as well as the styling of text inserted next to it."]
         #[serde(
             rename = "textStyle",
             default,
@@ -3788,7 +3789,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ListProperties {
-        #[doc = "Describes the properties of the bullets at the associated level. A list has at most nine levels of nesting with nesting level 0 corresponding to the top-most level and nesting level 8 corresponding to the most nested level. The nesting levels are returned in ascending order with the least nested returned first."]
+        #[doc = "Describes the properties of the bullets at the associated level. A list has at most 9 levels of nesting with nesting level 0 corresponding to the top-most level and nesting level 8 corresponding to the most nested level. The nesting levels are returned in ascending order with the least nested returned first."]
         #[serde(
             rename = "nestingLevels",
             default,
@@ -4312,7 +4313,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct NamedStyles {
-        #[doc = "The named styles. There is an entry for each of the possible named style types."]
+        #[doc = "The named styles. There’s an entry for each of the possible named style types."]
         #[serde(
             rename = "styles",
             default,
@@ -4343,7 +4344,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NamedStylesSuggestionState {
-        #[doc = "A mask that indicates which of the fields on the corresponding NamedStyle in styles have been changed in this suggestion. The order of these named style suggestion states match the order of the corresponding named style within the named styles suggestion."]
+        #[doc = "A mask that indicates which of the fields on the corresponding NamedStyle in styles have been changed in this suggestion. The order of these named style suggestion states matches the order of the corresponding named style within the named styles suggestion."]
         #[serde(
             rename = "stylesSuggestionStates",
             default,
@@ -4373,7 +4374,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bullet_alignment: ::std::option::Option<crate::schemas::NestingLevelBulletAlignment>,
-        #[doc = "The format string used by bullets at this level of nesting. The glyph format contains one or more placeholders, and these placeholder are replaced with the appropriate values depending on the glyph_type or glyph_symbol. The placeholders follow the pattern `%[nesting_level]`. Furthermore, placeholders can have prefixes and suffixes. Thus, the glyph format follows the pattern `%[nesting_level]`. Note that the prefix and suffix are optional and can be arbitrary strings. For example, the glyph format `%0.` indicates that the rendered glyph will replace the placeholder with the corresponding glyph for nesting level 0 followed by a period as the suffix. So a list with a glyph type of UPPER_ALPHA and glyph format `%0.` at nesting level 0 will result in a list with rendered glyphs `A.` `B.` `C.` The glyph format can contain placeholders for the current nesting level as well as placeholders for parent nesting levels. For example, a list can have a glyph format of `%0.` at nesting level 0 and a glyph format of `%0.%1.` at nesting level 1. Assuming both nesting levels have DECIMAL glyph types, this would result in a list with rendered glyphs `1.` `2.` ` 2.1.` ` 2.2.` `3.` For nesting levels that are ordered, the string that replaces a placeholder in the glyph format for a particular paragraph depends on the paragraph’s order within the list."]
+        #[doc = "The format string used by bullets at this level of nesting. The glyph format contains one or more placeholders, and these placeholders are replaced with the appropriate values depending on the glyph_type or glyph_symbol. The placeholders follow the pattern `%[nesting_level]`. Furthermore, placeholders can have prefixes and suffixes. Thus, the glyph format follows the pattern `%[nesting_level]`. Note that the prefix and suffix are optional and can be arbitrary strings. For example, the glyph format `%0.` indicates that the rendered glyph will replace the placeholder with the corresponding glyph for nesting level 0 followed by a period as the suffix. So a list with a glyph type of UPPER_ALPHA and glyph format `%0.` at nesting level 0 will result in a list with rendered glyphs `A.` `B.` `C.` The glyph format can contain placeholders for the current nesting level as well as placeholders for parent nesting levels. For example, a list can have a glyph format of `%0.` at nesting level 0 and a glyph format of `%0.%1.` at nesting level 1. Assuming both nesting levels have DECIMAL glyph types, this would result in a list with rendered glyphs `1.` `2.` ` 2.1.` ` 2.2.` `3.` For nesting levels that are ordered, the string that replaces a placeholder in the glyph format for a particular paragraph depends on the paragraph’s order within the list."]
         #[serde(
             rename = "glyphFormat",
             default,
@@ -4408,7 +4409,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub indent_start: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and roman numeraled lists, i.e. for values of both 0 and 1, lettered and roman numeraled lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs."]
+        #[doc = "The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and Roman numeral lists. For values of both 0 and 1, lettered and Roman numeral lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs."]
         #[serde(
             rename = "startNumber",
             default,
@@ -4766,7 +4767,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A PageBreak may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A PageBreak may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -4782,7 +4783,7 @@ pub mod schemas {
         pub suggested_text_style_changes: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::SuggestedTextStyle>,
         >,
-        #[doc = "The text style of this PageBreak. Similar to text content, like text runs and footnote references, the text style of a page break can affect content layout as well as the styling of text inserted adjacent to it."]
+        #[doc = "The text style of this PageBreak. Similar to text content, like text runs and footnote references, the text style of a page break can affect content layout as well as the styling of text inserted next to it."]
         #[serde(
             rename = "textStyle",
             default,
@@ -4811,7 +4812,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bullet: ::std::option::Option<crate::schemas::Bullet>,
-        #[doc = "The content of the paragraph broken down into its component parts."]
+        #[doc = "The content of the paragraph, broken down into its component parts."]
         #[serde(
             rename = "elements",
             default,
@@ -4850,7 +4851,7 @@ pub mod schemas {
         pub suggested_paragraph_style_changes: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::SuggestedParagraphStyle>,
         >,
-        #[doc = "The IDs of the positioned objects that are suggested to be attached to this paragraph, keyed by suggestion ID."]
+        #[doc = "The IDs of the positioned objects suggested to be attached to this paragraph, keyed by suggestion ID."]
         #[serde(
             rename = "suggestedPositionedObjectIds",
             default,
@@ -5061,7 +5062,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub person: ::std::option::Option<crate::schemas::Person>,
-        #[doc = "A paragraph element that links to a Google resource (such as a file in Drive, a Youtube video, a Calendar event, etc.)"]
+        #[doc = "A paragraph element that links to a Google resource (such as a file in Google Drive, a YouTube video, or a Calendar event.)"]
         #[serde(
             rename = "richLink",
             default,
@@ -5111,35 +5112,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub avoid_widow_and_orphan: ::std::option::Option<bool>,
-        #[doc = "The border between this paragraph and the next and previous paragraphs. If unset, the value is inherited from the parent. The between border is rendered when the adjacent paragraph has the same border and indent properties. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety."]
+        #[doc = "The border between this paragraph and the next and previous paragraphs. If unset, the value is inherited from the parent. The between border is rendered when the adjacent paragraph has the same border and indent properties. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety."]
         #[serde(
             rename = "borderBetween",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub border_between: ::std::option::Option<crate::schemas::ParagraphBorder>,
-        #[doc = "The border at the bottom of this paragraph. If unset, the value is inherited from the parent. The bottom border is rendered when the paragraph below has different border and indent properties. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety."]
+        #[doc = "The border at the bottom of this paragraph. If unset, the value is inherited from the parent. The bottom border is rendered when the paragraph below has different border and indent properties. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety."]
         #[serde(
             rename = "borderBottom",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub border_bottom: ::std::option::Option<crate::schemas::ParagraphBorder>,
-        #[doc = "The border to the left of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety."]
+        #[doc = "The border to the left of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety."]
         #[serde(
             rename = "borderLeft",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub border_left: ::std::option::Option<crate::schemas::ParagraphBorder>,
-        #[doc = "The border to the right of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety."]
+        #[doc = "The border to the right of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety."]
         #[serde(
             rename = "borderRight",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub border_right: ::std::option::Option<crate::schemas::ParagraphBorder>,
-        #[doc = "The border at the top of this paragraph. If unset, the value is inherited from the parent. The top border is rendered when the paragraph above has different border and indent properties. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety."]
+        #[doc = "The border at the top of this paragraph. If unset, the value is inherited from the parent. The top border is rendered when the paragraph above has different border and indent properties. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety."]
         #[serde(
             rename = "borderTop",
             default,
@@ -5209,6 +5210,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub named_style_type: ::std::option::Option<crate::schemas::ParagraphStyleNamedStyleType>,
+        #[doc = "Whether the current paragraph should always start at the beginning of a page. If unset, the value is inherited from the parent. Attempting to update page_break_before for paragraphs in unsupported regions, including Table, Header, Footer and Footnote, can result in an invalid document state that returns a 400 bad request error."]
+        #[serde(
+            rename = "pageBreakBefore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_break_before: ::std::option::Option<bool>,
         #[doc = "The shading of the paragraph. If unset, the value is inherited from the parent."]
         #[serde(
             rename = "shading",
@@ -5741,6 +5749,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub named_style_type_suggested: ::std::option::Option<bool>,
+        #[doc = "Indicates if there was a suggested change to page_break_before."]
+        #[serde(
+            rename = "pageBreakBeforeSuggested",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_break_before_suggested: ::std::option::Option<bool>,
         #[doc = "A mask that indicates which of the fields in shading have been changed in this suggestion."]
         #[serde(
             rename = "shadingSuggestionState",
@@ -5798,14 +5813,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub person_properties: ::std::option::Option<crate::schemas::PersonProperties>,
-        #[doc = "IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn’t suggested for deletion."]
+        #[doc = "IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest deleting it. If empty, then this person link isn’t suggested for deletion."]
         #[serde(
             rename = "suggestedDeletionIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn’t a suggested insertion."]
+        #[doc = "IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it’s a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn’t a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -5859,7 +5874,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "Output only. The name of the person if it is displayed in the link text instead of the person’s email address."]
+        #[doc = "Output only. The name of the person if it’s displayed in the link text instead of the person’s email address."]
         #[serde(
             rename = "name",
             default,
@@ -5873,6 +5888,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PersonProperties {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PinTableHeaderRowsRequest {
+        #[doc = "The number of table rows to pin, where 0 implies that all rows are unpinned."]
+        #[serde(
+            rename = "pinnedHeaderRowsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pinned_header_rows_count: ::std::option::Option<i32>,
+        #[doc = "The location where the table starts in the document."]
+        #[serde(
+            rename = "tableStartLocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table_start_location: ::std::option::Option<crate::schemas::Location>,
+    }
+    impl ::google_field_selector::FieldSelector for PinTableHeaderRowsRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PinTableHeaderRowsRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5944,14 +5997,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub layout: ::std::option::Option<crate::schemas::PositionedObjectPositioningLayout>,
-        #[doc = "The offset of the left edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document’s styling."]
+        #[doc = "The offset of the left edge of the positioned object relative to the beginning of the Paragraph it’s tethered to. The exact positioning of the object can depend on other content in the document and the document’s styling."]
         #[serde(
             rename = "leftOffset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub left_offset: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The offset of the top edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document’s styling."]
+        #[doc = "The offset of the top edge of the positioned object relative to the beginning of the Paragraph it’s tethered to. The exact positioning of the object can depend on other content in the document and the document’s styling."]
         #[serde(
             rename = "topOffset",
             default,
@@ -5975,7 +6028,7 @@ pub mod schemas {
         BehindText,
         #[doc = "Breaks text such that the positioned object is on the left and text is on the right."]
         BreakLeft,
-        #[doc = "Breaks text such that there is no text on the left or right of the positioned object."]
+        #[doc = "Breaks text such that there’s no text on the left or right of the positioned object."]
         BreakLeftRight,
         #[doc = "Breaks text such that the positioned object is on the right and text is on the left."]
         BreakRight,
@@ -6205,7 +6258,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_index: ::std::option::Option<i32>,
-        #[doc = "The ID of the header, footer or footnote that this range is contained in. An empty segment ID signifies the document’s body."]
+        #[doc = "The ID of the header, footer, or footnote that this range is contained in. An empty segment ID signifies the document’s body."]
         #[serde(
             rename = "segmentId",
             default,
@@ -6621,6 +6674,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub merge_table_cells: ::std::option::Option<crate::schemas::MergeTableCellsRequest>,
+        #[doc = "Updates the number of pinned header rows in a table."]
+        #[serde(
+            rename = "pinTableHeaderRows",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pin_table_header_rows: ::std::option::Option<crate::schemas::PinTableHeaderRowsRequest>,
         #[doc = "Replaces all instances of the specified text."]
         #[serde(
             rename = "replaceAllText",
@@ -6843,14 +6903,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rich_link_properties: ::std::option::Option<crate::schemas::RichLinkProperties>,
-        #[doc = "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn’t suggested for deletion."]
+        #[doc = "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest deleting it. If empty, then this person link isn’t suggested for deletion."]
         #[serde(
             rename = "suggestedDeletionIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn’t a suggested insertion."]
+        #[doc = "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it’s a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn’t a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -6897,7 +6957,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RichLinkProperties {
-        #[doc = "Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there is one (i.e., when it is a file in Drive)."]
+        #[doc = "Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there’s one (for example, when it’s a file in Drive)."]
         #[serde(
             rename = "mimeType",
             default,
@@ -6947,7 +7007,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A SectionBreak may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A SectionBreak may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -6998,14 +7058,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct SectionStyle {
-        #[doc = "The section’s columns properties. If empty, the section contains one column with the default properties in the Docs editor. A section can be updated to have no more than three columns. When updating this property, setting a concrete value is required. Unsetting this property will result in a 400 bad request error."]
+        #[doc = "The section’s columns properties. If empty, the section contains one column with the default properties in the Docs editor. A section can be updated to have no more than 3 columns. When updating this property, setting a concrete value is required. Unsetting this property will result in a 400 bad request error."]
         #[serde(
             rename = "columnProperties",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub column_properties: ::std::option::Option<Vec<crate::schemas::SectionColumnProperties>>,
-        #[doc = "The style of column separators. This style can be set even when there is one column in the section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The style of column separators. This style can be set even when there’s one column in the section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "columnSeparatorStyle",
             default,
@@ -7034,70 +7094,70 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_header_id: ::std::option::Option<String>,
-        #[doc = "The ID of the footer used only for even pages. If the value of DocumentStyle’s use_even_page_header_footer is true, this value is used for the footers on even pages in the section. If it is false, the footers on even pages uses the default_footer_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s even_page_footer_id. This property is read-only."]
+        #[doc = "The ID of the footer used only for even pages. If the value of DocumentStyle’s use_even_page_header_footer is true, this value is used for the footers on even pages in the section. If it is false, the footers on even pages use the default_footer_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s even_page_footer_id. This property is read-only."]
         #[serde(
             rename = "evenPageFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub even_page_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the header used only for even pages. If the value of DocumentStyle’s use_even_page_header_footer is true, this value is used for the headers on even pages in the section. If it is false, the headers on even pages uses the default_header_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s even_page_header_id. This property is read-only."]
+        #[doc = "The ID of the header used only for even pages. If the value of DocumentStyle’s use_even_page_header_footer is true, this value is used for the headers on even pages in the section. If it is false, the headers on even pages use the default_header_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s even_page_header_id. This property is read-only."]
         #[serde(
             rename = "evenPageHeaderId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub even_page_header_id: ::std::option::Option<String>,
-        #[doc = "The ID of the footer used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the footer on the first page of the section. If it is false, the footer on the first page of the section uses the default_footer_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s first_page_footer_id. This property is read-only."]
+        #[doc = "The ID of the footer used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the footer on the first page of the section. If it’s false, the footer on the first page of the section uses the default_footer_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s first_page_footer_id. This property is read-only."]
         #[serde(
             rename = "firstPageFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub first_page_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the header used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the header on the first page of the section. If it is false, the header on the first page of the section uses the default_header_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s first_page_header_id. This property is read-only."]
+        #[doc = "The ID of the header used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the header on the first page of the section. If it’s false, the header on the first page of the section uses the default_header_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s first_page_header_id. This property is read-only."]
         #[serde(
             rename = "firstPageHeaderId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub first_page_header_id: ::std::option::Option<String>,
-        #[doc = "The bottom page margin of the section. If unset, uses margin_bottom from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The bottom page margin of the section. If unset, the value defaults to margin_bottom from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "marginBottom",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub margin_bottom: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The footer margin of the section. If unset, uses margin_footer from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a footer margin is being respected for this section When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The footer margin of the section. If unset, the value defaults to margin_footer from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a footer margin is being respected for this section When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "marginFooter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub margin_footer: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The header margin of the section. If unset, uses margin_header from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a header margin is being respected for this section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The header margin of the section. If unset, the value defaults to margin_header from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a header margin is being respected for this section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "marginHeader",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub margin_header: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The left page margin of the section. If unset, uses margin_left from DocumentStyle. Updating left margin causes columns in this section to resize. Since the margin affects column width, it is applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The left page margin of the section. If unset, the value defaults to margin_left from DocumentStyle. Updating the left margin causes columns in this section to resize. Since the margin affects column width, it’s applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "marginLeft",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub margin_left: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The right page margin of the section. If unset, uses margin_right from DocumentStyle. Updating right margin causes columns in this section to resize. Since the margin affects column width, it is applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The right page margin of the section. If unset, the value defaults to margin_right from DocumentStyle. Updating the right margin causes columns in this section to resize. Since the margin affects column width, it’s applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "marginRight",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub margin_right: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The top page margin of the section. If unset, uses margin_top from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The top page margin of the section. If unset, the value defaults to margin_top from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "marginTop",
             default,
@@ -7442,7 +7502,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SheetsChartReference {
-        #[doc = "The ID of the specific chart in the Google Sheets spreadsheet that is embedded."]
+        #[doc = "The ID of the specific chart in the Google Sheets spreadsheet that’s embedded."]
         #[serde(
             rename = "chartId",
             default,
@@ -7820,7 +7880,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct SuggestedParagraphStyle {
-        #[doc = "A ParagraphStyle that only includes the changes made in this suggestion. This can be used along with the paragraph_suggestion_state to see which fields have changed and their new values."]
+        #[doc = "A ParagraphStyle that only includes the changes made in this suggestion. This can be used along with the paragraph_style_suggestion_state to see which fields have changed and their new values."]
         #[serde(
             rename = "paragraphStyle",
             default,
@@ -8081,7 +8141,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Table {
-        #[doc = "Number of columns in the table. It is possible for a table to be non-rectangular, so some rows may have a different number of cells."]
+        #[doc = "Number of columns in the table. It’s possible for a table to be non-rectangular, so some rows may have a different number of cells."]
         #[serde(
             rename = "columns",
             default,
@@ -8102,7 +8162,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A Table may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A Table may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -8166,7 +8226,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A TableCell may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A TableCell may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -8699,7 +8759,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TableColumnPropertiesWidthType {
-        #[doc = "The column width is evenly distributed among the other evenly distrubted columns. The width of the column is automatically determined and will have an equal portion of the width remaining for the table after accounting for all columns with specified widths."]
+        #[doc = "The column width is evenly distributed among the other evenly distributed columns. The width of the column is automatically determined and will have an equal portion of the width remaining for the table after accounting for all columns with specified widths."]
         EvenlyDistributed,
         #[doc = "A fixed column width. The width property contains the column’s width."]
         FixedWidth,
@@ -8879,7 +8939,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A TableRow may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A TableRow may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -8895,7 +8955,7 @@ pub mod schemas {
         pub suggested_table_row_style_changes: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::SuggestedTableRowStyle>,
         >,
-        #[doc = "The contents and style of each cell in this row. It is possible for a table to be non-rectangular, so some rows may have a different number of cells than other rows in the same table."]
+        #[doc = "The contents and style of each cell in this row. It’s possible for a table to be non-rectangular, so some rows may have a different number of cells than other rows in the same table."]
         #[serde(
             rename = "tableCells",
             default,
@@ -8931,6 +8991,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_row_height: ::std::option::Option<crate::schemas::Dimension>,
+        #[doc = "Whether the row cannot overflow across page or column boundaries."]
+        #[serde(
+            rename = "preventOverflow",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub prevent_overflow: ::std::option::Option<bool>,
+        #[doc = "Whether the row is a table header."]
+        #[serde(
+            rename = "tableHeader",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table_header: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for TableRowStyle {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -9014,7 +9088,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested insertion IDs. A TextRun may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion."]
+        #[doc = "The suggested insertion IDs. A TextRun may have multiple insertion IDs if it’s a nested suggested change. If empty, then this is not a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -9059,7 +9133,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub background_color: ::std::option::Option<crate::schemas::OptionalColor>,
-        #[doc = "The text’s vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. The `font_size` itself is not affected by changes in this field."]
+        #[doc = "The text’s vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. Changes in this field don’t affect the `font_size`."]
         #[serde(
             rename = "baselineOffset",
             default,
@@ -9094,7 +9168,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub italic: ::std::option::Option<bool>,
-        #[doc = "The hyperlink destination of the text. If unset, there is no link. Links are not inherited from parent text. Changing the link in an update request causes some other changes to the text style of the range: * When setting a link, the text foreground color will be updated to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults. * Setting a link on a text range that overlaps with an existing link will also update the existing link to point to the new URL. * Links are not settable on newline characters. As a result, setting a link on a text range that crosses a paragraph boundary, such as `\"ABC\\n123\"`, will separate the newline character(s) into their own text runs. The link will be applied separately to the runs before and after the newline. * Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the preceding text is another link) unless different styles are being set in the same request."]
+        #[doc = "The hyperlink destination of the text. If unset, there’s no link. Links are not inherited from parent text. Changing the link in an update request causes some other changes to the text style of the range: * When setting a link, the text foreground color will be updated to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults. * Setting a link on a text range that overlaps with an existing link will also update the existing link to point to the new URL. * Links are not settable on newline characters. As a result, setting a link on a text range that crosses a paragraph boundary, such as `\"ABC\\n123\"`, will separate the newline character(s) into their own text runs. The link will be applied separately to the runs before and after the newline. * Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the preceding text is another link) unless different styles are being set in the same request."]
         #[serde(
             rename = "link",
             default,
@@ -9386,7 +9460,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateParagraphStyleRequest {
-        #[doc = "The fields that should be updated. At least one field must be specified. The root `paragraph_style` is implied and should not be specified. For example, to update the paragraph style’s alignment property, set `fields` to `\"alignment\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset."]
+        #[doc = "The fields that should be updated. At least one field must be specified. The root `paragraph_style` is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example, to update the paragraph style’s alignment property, set `fields` to `\"alignment\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset."]
         #[serde(
             rename = "fields",
             default,
@@ -9639,7 +9713,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub font_family: ::std::option::Option<String>,
-        #[doc = "The weight of the font. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` (“normal”). The font weight makes up just one component of the rendered font weight. The rendered weight is determined by a combination of the `weight` and the text style’s resolved `bold` value, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight."]
+        #[doc = "The weight of the font. This field can have any value that’s a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` (“normal”). The font weight makes up just one component of the rendered font weight. A combination of the `weight` and the text style’s resolved `bold` value determine the rendered weight, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight."]
         #[serde(
             rename = "weight",
             default,
@@ -10824,15 +10898,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

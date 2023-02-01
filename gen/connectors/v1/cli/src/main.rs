@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("connectors1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220310")
+            .version("0.1.0-20230103")
             .about("Enables users to create and manage connections to Google Cloud services and third-party business applications using the Connectors interface.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -94,9 +94,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             connections2 = connections2.subcommand(mcmd);
         }
-        let mut global2 = SubCommand::with_name("global")
-            .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: providers");
         let mut operations2 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get and list");
@@ -118,9 +115,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut providers2 = SubCommand::with_name("providers")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+            .about("methods: get, get_iam_policy, list, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a provider.");
+            providers2 = providers2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            providers2 = providers2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists Providers in a given project and location.");
             providers2 = providers2.subcommand(mcmd);
         }
         {
@@ -130,6 +136,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             providers2 = providers2.subcommand(mcmd);
+        }
+        let mut connection_schema_metadata3 = SubCommand::with_name("connection_schema_metadata")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: refresh");
+        {
+            let mcmd =
+                SubCommand::with_name("refresh").about("Refresh runtime schema of a connection.");
+            connection_schema_metadata3 = connection_schema_metadata3.subcommand(mcmd);
         }
         let mut runtime_action_schemas3 = SubCommand::with_name("runtime_action_schemas")
             .setting(AppSettings::ColoredHelp)
@@ -147,51 +161,38 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("List schema of a runtime entities filtered by entity name.");
             runtime_entity_schemas3 = runtime_entity_schemas3.subcommand(mcmd);
         }
-        let mut providers3 = SubCommand::with_name("providers")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
-        {
-            let mcmd = SubCommand::with_name("get").about("Gets details of a single Provider.");
-            providers3 = providers3.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("list")
-                .about("Lists Providers in a given project and location.");
-            providers3 = providers3.subcommand(mcmd);
-        }
-        let mut connectors4 = SubCommand::with_name("connectors")
+        let mut connectors3 = SubCommand::with_name("connectors")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
         {
             let mcmd = SubCommand::with_name("get").about("Gets details of a single Connector.");
-            connectors4 = connectors4.subcommand(mcmd);
+            connectors3 = connectors3.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists Connectors in a given project and location.");
-            connectors4 = connectors4.subcommand(mcmd);
+            connectors3 = connectors3.subcommand(mcmd);
         }
-        let mut versions5 = SubCommand::with_name("versions")
+        let mut versions4 = SubCommand::with_name("versions")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
         {
             let mcmd =
                 SubCommand::with_name("get").about("Gets details of a single connector version.");
-            versions5 = versions5.subcommand(mcmd);
+            versions4 = versions4.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists Connector Versions in a given project and location.");
-            versions5 = versions5.subcommand(mcmd);
+            versions4 = versions4.subcommand(mcmd);
         }
-        connectors4 = connectors4.subcommand(versions5);
-        providers3 = providers3.subcommand(connectors4);
-        global2 = global2.subcommand(providers3);
+        connectors3 = connectors3.subcommand(versions4);
+        providers2 = providers2.subcommand(connectors3);
         connections2 = connections2.subcommand(runtime_entity_schemas3);
         connections2 = connections2.subcommand(runtime_action_schemas3);
+        connections2 = connections2.subcommand(connection_schema_metadata3);
         locations1 = locations1.subcommand(providers2);
         locations1 = locations1.subcommand(operations2);
-        locations1 = locations1.subcommand(global2);
         locations1 = locations1.subcommand(connections2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);

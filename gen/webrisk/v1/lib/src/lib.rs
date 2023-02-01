@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [hashes](resources/hashes/struct.HashesActions.html)\n  * [*search*](resources/hashes/struct.SearchRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [operations](resources/projects/operations/struct.OperationsActions.html)\n    * [*cancel*](resources/projects/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/operations/struct.ListRequestBuilder.html)\n  * [submissions](resources/projects/submissions/struct.SubmissionsActions.html)\n    * [*create*](resources/projects/submissions/struct.CreateRequestBuilder.html)\n  * [uris](resources/projects/uris/struct.UrisActions.html)\n    * [*submit*](resources/projects/uris/struct.SubmitRequestBuilder.html)\n* [threat_lists](resources/threat_lists/struct.ThreatListsActions.html)\n  * [*computeDiff*](resources/threat_lists/struct.ComputeDiffRequestBuilder.html)\n* [uris](resources/uris/struct.UrisActions.html)\n  * [*search*](resources/uris/struct.SearchRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -392,6 +393,8 @@ pub mod schemas {
         Malware,
         #[doc = "Social engineering targeting any platform."]
         SocialEngineering,
+        #[doc = "A list of extended coverage social engineering URIs targeting any platform."]
+        SocialEngineeringExtendedCoverage,
         #[doc = "No entries should match this threat type. This threat type is unused."]
         ThreatTypeUnspecified,
         #[doc = "Unwanted software targeting any platform."]
@@ -399,7 +402,7 @@ pub mod schemas {
     }
     impl GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware => "MALWARE" , GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self { GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware => "MALWARE" , GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineeringExtendedCoverage => "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" , GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str>
@@ -417,7 +420,7 @@ pub mod schemas {
             GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems,
             (),
         > {
-            Ok (match s { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
+            Ok (match s { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineeringExtendedCoverage , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems {
@@ -441,7 +444,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "MALWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: SocialEngineeringExtendedCoverage , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchHashesResponseThreatHashThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -471,7 +474,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudWebriskV1SearchUrisResponse {
-        #[doc = "The threat list matches. This may be empty if the URI is on no list."]
+        #[doc = "The threat list matches. This might be empty if the URI is on no list."]
         #[serde(
             rename = "threat",
             default,
@@ -536,6 +539,8 @@ pub mod schemas {
         Malware,
         #[doc = "Social engineering targeting any platform."]
         SocialEngineering,
+        #[doc = "A list of extended coverage social engineering URIs targeting any platform."]
+        SocialEngineeringExtendedCoverage,
         #[doc = "No entries should match this threat type. This threat type is unused."]
         ThreatTypeUnspecified,
         #[doc = "Unwanted software targeting any platform."]
@@ -543,7 +548,7 @@ pub mod schemas {
     }
     impl GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware => "MALWARE" , GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self { GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware => "MALWARE" , GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineeringExtendedCoverage => "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" , GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str>
@@ -561,7 +566,7 @@ pub mod schemas {
             GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems,
             (),
         > {
-            Ok (match s { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
+            Ok (match s { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineeringExtendedCoverage , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems {
@@ -585,7 +590,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "MALWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: SocialEngineeringExtendedCoverage , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SearchUrisResponseThreatUriThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -615,7 +620,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudWebriskV1Submission {
-        #[doc = "ThreatTypes found to be associated with the submitted URI after reviewing it. This may be empty if the URI was not added to any list."]
+        #[doc = "ThreatTypes found to be associated with the submitted URI after reviewing it. This might be empty if the URI was not added to any list."]
         #[serde(
             rename = "threatTypes",
             default,
@@ -648,6 +653,8 @@ pub mod schemas {
         Malware,
         #[doc = "Social engineering targeting any platform."]
         SocialEngineering,
+        #[doc = "A list of extended coverage social engineering URIs targeting any platform."]
+        SocialEngineeringExtendedCoverage,
         #[doc = "No entries should match this threat type. This threat type is unused."]
         ThreatTypeUnspecified,
         #[doc = "Unwanted software targeting any platform."]
@@ -655,18 +662,7 @@ pub mod schemas {
     }
     impl GoogleCloudWebriskV1SubmissionThreatTypesItems {
         pub fn as_str(self) -> &'static str {
-            match self {
-                GoogleCloudWebriskV1SubmissionThreatTypesItems::Malware => "MALWARE",
-                GoogleCloudWebriskV1SubmissionThreatTypesItems::SocialEngineering => {
-                    "SOCIAL_ENGINEERING"
-                }
-                GoogleCloudWebriskV1SubmissionThreatTypesItems::ThreatTypeUnspecified => {
-                    "THREAT_TYPE_UNSPECIFIED"
-                }
-                GoogleCloudWebriskV1SubmissionThreatTypesItems::UnwantedSoftware => {
-                    "UNWANTED_SOFTWARE"
-                }
-            }
+            match self { GoogleCloudWebriskV1SubmissionThreatTypesItems :: Malware => "MALWARE" , GoogleCloudWebriskV1SubmissionThreatTypesItems :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleCloudWebriskV1SubmissionThreatTypesItems :: SocialEngineeringExtendedCoverage => "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" , GoogleCloudWebriskV1SubmissionThreatTypesItems :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleCloudWebriskV1SubmissionThreatTypesItems :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleCloudWebriskV1SubmissionThreatTypesItems {
@@ -679,19 +675,7 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<GoogleCloudWebriskV1SubmissionThreatTypesItems, ()> {
-            Ok(match s {
-                "MALWARE" => GoogleCloudWebriskV1SubmissionThreatTypesItems::Malware,
-                "SOCIAL_ENGINEERING" => {
-                    GoogleCloudWebriskV1SubmissionThreatTypesItems::SocialEngineering
-                }
-                "THREAT_TYPE_UNSPECIFIED" => {
-                    GoogleCloudWebriskV1SubmissionThreatTypesItems::ThreatTypeUnspecified
-                }
-                "UNWANTED_SOFTWARE" => {
-                    GoogleCloudWebriskV1SubmissionThreatTypesItems::UnwantedSoftware
-                }
-                _ => return Err(()),
-            })
+            Ok (match s { "MALWARE" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: SocialEngineeringExtendedCoverage , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudWebriskV1SubmissionThreatTypesItems {
@@ -713,24 +697,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "MALWARE" => GoogleCloudWebriskV1SubmissionThreatTypesItems::Malware,
-                "SOCIAL_ENGINEERING" => {
-                    GoogleCloudWebriskV1SubmissionThreatTypesItems::SocialEngineering
-                }
-                "THREAT_TYPE_UNSPECIFIED" => {
-                    GoogleCloudWebriskV1SubmissionThreatTypesItems::ThreatTypeUnspecified
-                }
-                "UNWANTED_SOFTWARE" => {
-                    GoogleCloudWebriskV1SubmissionThreatTypesItems::UnwantedSoftware
-                }
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
+            Ok (match value { "MALWARE" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: Malware , "SOCIAL_ENGINEERING" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: SocialEngineeringExtendedCoverage , "THREAT_TYPE_UNSPECIFIED" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: ThreatTypeUnspecified , "UNWANTED_SOFTWARE" => GoogleCloudWebriskV1SubmissionThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudWebriskV1SubmissionThreatTypesItems {
@@ -793,6 +760,8 @@ pub mod schemas {
     pub enum GoogleCloudWebriskV1SubmitUriMetadataState {
         #[doc = "The operation was cancelled."]
         Cancelled,
+        #[doc = "The operation was closed with no action taken."]
+        Closed,
         #[doc = "The operation finished with a failure status."]
         Failed,
         #[doc = "The operation is currently running."]
@@ -806,6 +775,7 @@ pub mod schemas {
         pub fn as_str(self) -> &'static str {
             match self {
                 GoogleCloudWebriskV1SubmitUriMetadataState::Cancelled => "CANCELLED",
+                GoogleCloudWebriskV1SubmitUriMetadataState::Closed => "CLOSED",
                 GoogleCloudWebriskV1SubmitUriMetadataState::Failed => "FAILED",
                 GoogleCloudWebriskV1SubmitUriMetadataState::Running => "RUNNING",
                 GoogleCloudWebriskV1SubmitUriMetadataState::StateUnspecified => "STATE_UNSPECIFIED",
@@ -825,6 +795,7 @@ pub mod schemas {
         ) -> ::std::result::Result<GoogleCloudWebriskV1SubmitUriMetadataState, ()> {
             Ok(match s {
                 "CANCELLED" => GoogleCloudWebriskV1SubmitUriMetadataState::Cancelled,
+                "CLOSED" => GoogleCloudWebriskV1SubmitUriMetadataState::Closed,
                 "FAILED" => GoogleCloudWebriskV1SubmitUriMetadataState::Failed,
                 "RUNNING" => GoogleCloudWebriskV1SubmitUriMetadataState::Running,
                 "STATE_UNSPECIFIED" => GoogleCloudWebriskV1SubmitUriMetadataState::StateUnspecified,
@@ -854,6 +825,7 @@ pub mod schemas {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
                 "CANCELLED" => GoogleCloudWebriskV1SubmitUriMetadataState::Cancelled,
+                "CLOSED" => GoogleCloudWebriskV1SubmitUriMetadataState::Closed,
                 "FAILED" => GoogleCloudWebriskV1SubmitUriMetadataState::Failed,
                 "RUNNING" => GoogleCloudWebriskV1SubmitUriMetadataState::Running,
                 "STATE_UNSPECIFIED" => GoogleCloudWebriskV1SubmitUriMetadataState::StateUnspecified,
@@ -1037,7 +1009,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1058,7 +1030,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error: ::std::option::Option<crate::schemas::GoogleRpcStatus>,
-        #[doc = "Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any."]
+        #[doc = "Contains a `SubmitUriMetadata` object."]
         #[serde(
             rename = "metadata",
             default,
@@ -1066,7 +1038,7 @@ pub mod schemas {
         )]
         pub metadata:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`."]
+        #[doc = "Matches the `/v1/{project-name}/operations/{operation-id}` pattern."]
         #[serde(
             rename = "name",
             default,
@@ -1362,6 +1334,8 @@ pub mod resources {
                 Malware,
                 #[doc = "Social engineering targeting any platform."]
                 SocialEngineering,
+                #[doc = "A list of extended coverage social engineering URIs targeting any platform."]
+                SocialEngineeringExtendedCoverage,
                 #[doc = "No entries should match this threat type. This threat type is unused."]
                 ThreatTypeUnspecified,
                 #[doc = "Unwanted software targeting any platform."]
@@ -1372,6 +1346,9 @@ pub mod resources {
                     match self {
                         SearchThreatTypesItems::Malware => "MALWARE",
                         SearchThreatTypesItems::SocialEngineering => "SOCIAL_ENGINEERING",
+                        SearchThreatTypesItems::SocialEngineeringExtendedCoverage => {
+                            "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
+                        }
                         SearchThreatTypesItems::ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED",
                         SearchThreatTypesItems::UnwantedSoftware => "UNWANTED_SOFTWARE",
                     }
@@ -1388,6 +1365,9 @@ pub mod resources {
                     Ok(match s {
                         "MALWARE" => SearchThreatTypesItems::Malware,
                         "SOCIAL_ENGINEERING" => SearchThreatTypesItems::SocialEngineering,
+                        "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => {
+                            SearchThreatTypesItems::SocialEngineeringExtendedCoverage
+                        }
                         "THREAT_TYPE_UNSPECIFIED" => SearchThreatTypesItems::ThreatTypeUnspecified,
                         "UNWANTED_SOFTWARE" => SearchThreatTypesItems::UnwantedSoftware,
                         _ => return Err(()),
@@ -1416,6 +1396,9 @@ pub mod resources {
                     Ok(match value {
                         "MALWARE" => SearchThreatTypesItems::Malware,
                         "SOCIAL_ENGINEERING" => SearchThreatTypesItems::SocialEngineering,
+                        "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => {
+                            SearchThreatTypesItems::SocialEngineeringExtendedCoverage
+                        }
                         "THREAT_TYPE_UNSPECIFIED" => SearchThreatTypesItems::ThreatTypeUnspecified,
                         "UNWANTED_SOFTWARE" => SearchThreatTypesItems::UnwantedSoftware,
                         _ => {
@@ -2387,7 +2370,7 @@ pub mod resources {
                         #[serde(rename = "operations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -2422,7 +2405,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -2478,7 +2461,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2596,12 +2579,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -3078,6 +3062,8 @@ pub mod resources {
                 Malware,
                 #[doc = "Social engineering targeting any platform."]
                 SocialEngineering,
+                #[doc = "A list of extended coverage social engineering URIs targeting any platform."]
+                SocialEngineeringExtendedCoverage,
                 #[doc = "No entries should match this threat type. This threat type is unused."]
                 ThreatTypeUnspecified,
                 #[doc = "Unwanted software targeting any platform."]
@@ -3088,6 +3074,9 @@ pub mod resources {
                     match self {
                         ComputeDiffThreatType::Malware => "MALWARE",
                         ComputeDiffThreatType::SocialEngineering => "SOCIAL_ENGINEERING",
+                        ComputeDiffThreatType::SocialEngineeringExtendedCoverage => {
+                            "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
+                        }
                         ComputeDiffThreatType::ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED",
                         ComputeDiffThreatType::UnwantedSoftware => "UNWANTED_SOFTWARE",
                     }
@@ -3104,6 +3093,9 @@ pub mod resources {
                     Ok(match s {
                         "MALWARE" => ComputeDiffThreatType::Malware,
                         "SOCIAL_ENGINEERING" => ComputeDiffThreatType::SocialEngineering,
+                        "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => {
+                            ComputeDiffThreatType::SocialEngineeringExtendedCoverage
+                        }
                         "THREAT_TYPE_UNSPECIFIED" => ComputeDiffThreatType::ThreatTypeUnspecified,
                         "UNWANTED_SOFTWARE" => ComputeDiffThreatType::UnwantedSoftware,
                         _ => return Err(()),
@@ -3132,6 +3124,9 @@ pub mod resources {
                     Ok(match value {
                         "MALWARE" => ComputeDiffThreatType::Malware,
                         "SOCIAL_ENGINEERING" => ComputeDiffThreatType::SocialEngineering,
+                        "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => {
+                            ComputeDiffThreatType::SocialEngineeringExtendedCoverage
+                        }
                         "THREAT_TYPE_UNSPECIFIED" => ComputeDiffThreatType::ThreatTypeUnspecified,
                         "UNWANTED_SOFTWARE" => ComputeDiffThreatType::UnwantedSoftware,
                         _ => {
@@ -3384,6 +3379,8 @@ pub mod resources {
                 Malware,
                 #[doc = "Social engineering targeting any platform."]
                 SocialEngineering,
+                #[doc = "A list of extended coverage social engineering URIs targeting any platform."]
+                SocialEngineeringExtendedCoverage,
                 #[doc = "No entries should match this threat type. This threat type is unused."]
                 ThreatTypeUnspecified,
                 #[doc = "Unwanted software targeting any platform."]
@@ -3394,6 +3391,9 @@ pub mod resources {
                     match self {
                         SearchThreatTypesItems::Malware => "MALWARE",
                         SearchThreatTypesItems::SocialEngineering => "SOCIAL_ENGINEERING",
+                        SearchThreatTypesItems::SocialEngineeringExtendedCoverage => {
+                            "SOCIAL_ENGINEERING_EXTENDED_COVERAGE"
+                        }
                         SearchThreatTypesItems::ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED",
                         SearchThreatTypesItems::UnwantedSoftware => "UNWANTED_SOFTWARE",
                     }
@@ -3410,6 +3410,9 @@ pub mod resources {
                     Ok(match s {
                         "MALWARE" => SearchThreatTypesItems::Malware,
                         "SOCIAL_ENGINEERING" => SearchThreatTypesItems::SocialEngineering,
+                        "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => {
+                            SearchThreatTypesItems::SocialEngineeringExtendedCoverage
+                        }
                         "THREAT_TYPE_UNSPECIFIED" => SearchThreatTypesItems::ThreatTypeUnspecified,
                         "UNWANTED_SOFTWARE" => SearchThreatTypesItems::UnwantedSoftware,
                         _ => return Err(()),
@@ -3438,6 +3441,9 @@ pub mod resources {
                     Ok(match value {
                         "MALWARE" => SearchThreatTypesItems::Malware,
                         "SOCIAL_ENGINEERING" => SearchThreatTypesItems::SocialEngineering,
+                        "SOCIAL_ENGINEERING_EXTENDED_COVERAGE" => {
+                            SearchThreatTypesItems::SocialEngineeringExtendedCoverage
+                        }
                         "THREAT_TYPE_UNSPECIFIED" => SearchThreatTypesItems::ThreatTypeUnspecified,
                         "UNWANTED_SOFTWARE" => SearchThreatTypesItems::UnwantedSoftware,
                         _ => {
@@ -3948,16 +3954,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -3977,13 +3985,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -3991,7 +4002,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -4018,7 +4029,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

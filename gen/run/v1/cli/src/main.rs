@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("run1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230122")
             .about("Deploy and manage user provided container images that scale automatically based on incoming requests. The Cloud Run Admin API v1 follows the Knative Serving API specification, while v2 is aligned with Google Cloud AIP-based API standards, as described in https://google.aip.dev/.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -74,12 +74,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             domainmappings1 = domainmappings1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List domain mappings.");
+            let mcmd = SubCommand::with_name("list").about("List all domain mappings.");
             domainmappings1 = domainmappings1.subcommand(mcmd);
         }
         let mut executions1 = SubCommand::with_name("executions")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: delete, get and list");
+            .about("methods: cancel, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("cancel").about("Cancel an execution.");
+            executions1 = executions1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("delete").about("Delete an execution.");
             executions1 = executions1.subcommand(mcmd);
@@ -150,23 +154,24 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and replace_service");
         {
-            let mcmd = SubCommand::with_name("create").about("Create a service.");
+            let mcmd = SubCommand::with_name("create").about("Creates a new Service. Service creation will trigger a new deployment. Use GetService, and check service.status to determine if the Service is ready.");
             services1 = services1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Delete a service. This will cause the Service to stop serving traffic and will delete the child entities like Routes, Configurations and Revisions.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the provided service. This will cause the Service to stop serving traffic and will delete all associated Revisions.");
             services1 = services1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Get information about a service.");
+            let mcmd = SubCommand::with_name("get").about("Gets information about a service.");
             services1 = services1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List services.");
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists services for the given project and region.");
             services1 = services1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("replace_service").about("Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
+            let mcmd = SubCommand::with_name("replace_service").about("Replaces a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
             services1 = services1.subcommand(mcmd);
         }
         let mut tasks1 = SubCommand::with_name("tasks")
@@ -230,7 +235,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             domainmappings2 = domainmappings2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List domain mappings.");
+            let mcmd = SubCommand::with_name("list").about("List all domain mappings.");
             domainmappings2 = domainmappings2.subcommand(mcmd);
         }
         let mut jobs2 = SubCommand::with_name("jobs")
@@ -278,27 +283,28 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, replace_service, set_iam_policy and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("create").about("Create a service.");
+            let mcmd = SubCommand::with_name("create").about("Creates a new Service. Service creation will trigger a new deployment. Use GetService, and check service.status to determine if the Service is ready.");
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Delete a service. This will cause the Service to stop serving traffic and will delete the child entities like Routes, Configurations and Revisions.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the provided service. This will cause the Service to stop serving traffic and will delete all associated Revisions.");
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Get information about a service.");
+            let mcmd = SubCommand::with_name("get").about("Gets information about a service.");
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_iam_policy").about("Get the IAM Access Control policy currently in effect for the given Cloud Run service. This result does not include any inherited policies.");
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the IAM Access Control policy currently in effect for the given Cloud Run service. This result does not include any inherited policies.");
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List services.");
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists services for the given project and region.");
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("replace_service").about("Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
+            let mcmd = SubCommand::with_name("replace_service").about("Replaces a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.");
             services2 = services2.subcommand(mcmd);
         }
         {

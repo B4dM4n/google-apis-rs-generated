@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("storagetransfer1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220414")
+            .version("0.1.0-20230126")
             .about("Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -45,10 +45,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: agent_pools");
         let mut transfer_jobs0 = SubCommand::with_name("transfer_jobs")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, get, list, patch and run");
+            .about("methods: create, delete, get, list, patch and run");
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a transfer job that runs periodically.");
+            transfer_jobs0 = transfer_jobs0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about(
+                "Deletes a transfer job. Deleting a transfer job sets its status to DELETED.",
+            );
             transfer_jobs0 = transfer_jobs0.subcommand(mcmd);
         }
         {
@@ -64,7 +70,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             transfer_jobs0 = transfer_jobs0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("run").about("Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a maximum of one active TransferOperation. If this method is called while a TransferOperation is active, an error will be returned.");
+            let mcmd = SubCommand::with_name("run").about("Starts a new operation for the specified transfer job. A `TransferJob` has a maximum of one active `TransferOperation`. If this method is called while a `TransferOperation` is active, an error is returned.");
             transfer_jobs0 = transfer_jobs0.subcommand(mcmd);
         }
         let mut transfer_operations0 = SubCommand::with_name("transfer_operations")

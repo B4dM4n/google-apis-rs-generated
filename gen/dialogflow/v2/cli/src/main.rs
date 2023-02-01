@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dialogflow2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220417")
+            .version("0.1.0-20230130")
             .about("Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -460,6 +460,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("patch").about("Updates the specified participant.");
             participants2 = participants2.subcommand(mcmd);
+        }
+        let mut suggestions2 = SubCommand::with_name("suggestions")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: suggest_conversation_summary");
+        {
+            let mcmd = SubCommand::with_name("suggest_conversation_summary").about("Suggests summary for a conversation based on specific historical messages. The range of the messages to be used for summary can be specified in the request.");
+            suggestions2 = suggestions2.subcommand(mcmd);
         }
         let mut documents2 = SubCommand::with_name("documents")
             .setting(AppSettings::ColoredHelp)
@@ -992,6 +999,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("patch").about("Updates the specified participant.");
             participants3 = participants3.subcommand(mcmd);
         }
+        let mut suggestions3 = SubCommand::with_name("suggestions")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: suggest_conversation_summary");
+        {
+            let mcmd = SubCommand::with_name("suggest_conversation_summary").about("Suggests summary for a conversation based on specific historical messages. The range of the messages to be used for summary can be specified in the request.");
+            suggestions3 = suggestions3.subcommand(mcmd);
+        }
         let mut documents3 = SubCommand::with_name("documents")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, export, get, import, list, patch and reload");
@@ -1251,6 +1265,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         entity_types3 = entity_types3.subcommand(entities4);
         users3 = users3.subcommand(sessions4);
         knowledge_bases2 = knowledge_bases2.subcommand(documents3);
+        conversations2 = conversations2.subcommand(suggestions3);
         conversations2 = conversations2.subcommand(participants3);
         conversations2 = conversations2.subcommand(messages3);
         conversation_models2 = conversation_models2.subcommand(evaluations3);
@@ -1275,6 +1290,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         locations1 = locations1.subcommand(answer_records2);
         locations1 = locations1.subcommand(agent2);
         knowledge_bases1 = knowledge_bases1.subcommand(documents2);
+        conversations1 = conversations1.subcommand(suggestions2);
         conversations1 = conversations1.subcommand(participants2);
         conversations1 = conversations1.subcommand(messages2);
         conversation_models1 = conversation_models1.subcommand(evaluations2);

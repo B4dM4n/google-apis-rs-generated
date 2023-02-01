@@ -7,7 +7,7 @@
   "canonicalName": "Texttospeech",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220422",
+  "revision": "20230126",
   "title": "Cloud Text-to-Speech API",
   "description": "Synthesizes natural-sounding speech by applying powerful neural network models.",
   "ownerDomain": "google.com",
@@ -301,6 +301,17 @@
       "additionalProperties": null,
       "items": null
     },
+    "CancelOperationRequest": {
+      "id": "CancelOperationRequest",
+      "description": "The request message for Operations.CancelOperation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "CustomVoiceParams": {
       "id": "CustomVoiceParams",
       "description": "Description of the custom voice to be synthesized.",
@@ -341,6 +352,83 @@
       "additionalProperties": null,
       "items": null
     },
+    "Empty": {
+      "id": "Empty",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata": {
+      "id": "GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata",
+      "description": "Metadata for response returned by the `SynthesizeLongAudio` method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "progressPercentage": {
+          "description": "The progress of the most recent processing update in percentage, ie. 70.0%.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "startTime": {
+          "description": "Time when the request was received.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListOperationsResponse": {
+      "id": "ListOperationsResponse",
+      "description": "The response message for Operations.ListOperations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The standard List next-page token.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "operations": {
+          "description": "A list of operations that matches the specified filter in the request.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Operation"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListVoicesResponse": {
       "id": "ListVoicesResponse",
       "description": "The message returned to the client by the `ListVoices` method.",
@@ -365,9 +453,142 @@
       "additionalProperties": null,
       "items": null
     },
+    "Operation": {
+      "id": "Operation",
+      "description": "This resource represents a long-running operation that is the result of a network API call.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "done": {
+          "description": "If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "error": {
+          "description": "The error result of the operation in case of failure or cancellation.",
+          "$ref": "Status"
+        },
+        "metadata": {
+          "description": "Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "name": {
+          "description": "The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "response": {
+          "description": "The normal response of the operation in case of success. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Status": {
+      "id": "Status",
+      "description": "The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "code": {
+          "description": "The status code, which should be an enum value of google.rpc.Code.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "details": {
+          "description": "A list of messages that carry the error details. There is a common set of message types for APIs to use.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "object",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": {
+              "description": "Properties of the object. Contains field @type with type URL.",
+              "type": "any",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
+            "items": null
+          }
+        },
+        "message": {
+          "description": "A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SynthesisInput": {
       "id": "SynthesisInput",
-      "description": "Contains text input to be synthesized. Either `text` or `ssml` must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000 characters.",
+      "description": "Contains text input to be synthesized. Either `text` or `ssml` must be supplied. Supplying both or neither returns google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000 bytes.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -392,6 +613,72 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SynthesizeLongAudioMetadata": {
+      "id": "SynthesizeLongAudioMetadata",
+      "description": "Metadata for response returned by the `SynthesizeLongAudio` method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "progressPercentage": {
+          "description": "The progress of the most recent processing update in percentage, ie. 70.0%.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "startTime": {
+          "description": "Time when the request was received.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SynthesizeLongAudioRequest": {
+      "id": "SynthesizeLongAudioRequest",
+      "description": "The top-level message sent by the client for the `SynthesizeLongAudio` method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "audioConfig": {
+          "description": "Required. The configuration of the synthesized audio.",
+          "$ref": "AudioConfig"
+        },
+        "input": {
+          "description": "Required. The Synthesizer requires either plain text or SSML as input.",
+          "$ref": "SynthesisInput"
+        },
+        "outputGcsUri": {
+          "description": "Specifies a Cloud Storage URI for the synthesis results. Must be specified in the format: `gs://bucket_name/object_name`, and the bucket must already exist.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "voice": {
+          "description": "The desired voice of the synthesized audio.",
+          "$ref": "VoiceSelectionParams"
         }
       },
       "additionalProperties": null,
@@ -571,6 +858,258 @@
     }
   },
   "resources": {
+    "operations": {
+      "resources": {},
+      "methods": {
+        "cancel": {
+          "id": "texttospeech.operations.cancel",
+          "path": "v1/{+name}:cancel",
+          "httpMethod": "POST",
+          "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
+          "parameters": {
+            "name": {
+              "description": "The name of the operation resource to be cancelled.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^operations/.*$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "CancelOperationRequest"
+          },
+          "response": {
+            "$ref": "Empty"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delete": {
+          "id": "texttospeech.operations.delete",
+          "path": "v1/{+name}",
+          "httpMethod": "DELETE",
+          "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+          "parameters": {
+            "name": {
+              "description": "The name of the operation resource to be deleted.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^operations/.*$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "Empty"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "projects": {
+      "resources": {
+        "locations": {
+          "resources": {
+            "operations": {
+              "resources": {},
+              "methods": {
+                "get": {
+                  "id": "texttospeech.projects.locations.operations.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+                  "parameters": {
+                    "name": {
+                      "description": "The name of the operation resource.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "texttospeech.projects.locations.operations.list",
+                  "path": "v1/{+name}/operations",
+                  "httpMethod": "GET",
+                  "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.",
+                  "parameters": {
+                    "filter": {
+                      "description": "The standard list filter.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "name": {
+                      "description": "The name of the operation's parent resource.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "The standard list page size.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "The standard list page token.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "ListOperationsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {
+            "synthesizeLongAudio": {
+              "id": "texttospeech.projects.locations.synthesizeLongAudio",
+              "path": "v1/{+parent}:synthesizeLongAudio",
+              "httpMethod": "POST",
+              "description": "Synthesizes long form text asynchronously.",
+              "parameters": {
+                "parent": {
+                  "description": "The resource states of the request in the form of `projects/*/locations/*/voices/*`.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/locations/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": {
+                "$ref": "SynthesizeLongAudioRequest"
+              },
+              "response": {
+                "$ref": "Operation"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        }
+      },
+      "methods": {}
+    },
     "text": {
       "resources": {},
       "methods": {

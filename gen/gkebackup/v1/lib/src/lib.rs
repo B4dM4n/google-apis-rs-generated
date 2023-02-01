@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*deleteOperations*](resources/projects/locations/struct.DeleteOperationsRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [backup_plans](resources/projects/locations/backup_plans/struct.BackupPlansActions.html)\n      * [*create*](resources/projects/locations/backup_plans/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/backup_plans/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/backup_plans/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/backup_plans/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/backup_plans/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/backup_plans/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/backup_plans/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/backup_plans/struct.TestIamPermissionsRequestBuilder.html)\n      * [backups](resources/projects/locations/backup_plans/backups/struct.BackupsActions.html)\n        * [*create*](resources/projects/locations/backup_plans/backups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/backup_plans/backups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/backup_plans/backups/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/backup_plans/backups/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/backup_plans/backups/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/backup_plans/backups/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/backup_plans/backups/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/backup_plans/backups/struct.TestIamPermissionsRequestBuilder.html)\n        * [volume_backups](resources/projects/locations/backup_plans/backups/volume_backups/struct.VolumeBackupsActions.html)\n          * [*get*](resources/projects/locations/backup_plans/backups/volume_backups/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/backup_plans/backups/volume_backups/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/backup_plans/backups/volume_backups/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/backup_plans/backups/volume_backups/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/backup_plans/backups/volume_backups/struct.TestIamPermissionsRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [restore_plans](resources/projects/locations/restore_plans/struct.RestorePlansActions.html)\n      * [*create*](resources/projects/locations/restore_plans/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/restore_plans/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/restore_plans/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/restore_plans/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/restore_plans/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/restore_plans/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/restore_plans/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/restore_plans/struct.TestIamPermissionsRequestBuilder.html)\n      * [restores](resources/projects/locations/restore_plans/restores/struct.RestoresActions.html)\n        * [*create*](resources/projects/locations/restore_plans/restores/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/restore_plans/restores/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/restore_plans/restores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/restore_plans/restores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/restore_plans/restores/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/restore_plans/restores/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/restore_plans/restores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/restore_plans/restores/struct.TestIamPermissionsRequestBuilder.html)\n        * [volume_restores](resources/projects/locations/restore_plans/restores/volume_restores/struct.VolumeRestoresActions.html)\n          * [*get*](resources/projects/locations/restore_plans/restores/volume_restores/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/restore_plans/restores/volume_restores/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/restore_plans/restores/volume_restores/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/restore_plans/restores/volume_restores/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/restore_plans/restores/volume_restores/struct.TestIamPermissionsRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -195,7 +196,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub complete_time: ::std::option::Option<String>,
-        #[doc = "Output only. cluster config backup size in bytes."]
+        #[doc = "Output only. The size of the config backup in bytes."]
         #[serde(
             rename = "configBackupSizeBytes",
             default,
@@ -203,28 +204,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub config_backup_size_bytes: ::std::option::Option<i64>,
-        #[doc = "Output only. Whether or not the Backup contains Kubernetes Secrets. Inherited from the parent BackupPlan’s backup_config.include_secrets."]
+        #[doc = "Output only. Whether or not the Backup contains Kubernetes Secrets. Controlled by the parent BackupPlan’s include_secrets value."]
         #[serde(
             rename = "containsSecrets",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub contains_secrets: ::std::option::Option<bool>,
-        #[doc = "Output only. Whether or not the Backup contains volume data. Inherited from the parent BackupPlan’s backup_config.include_volume_data."]
+        #[doc = "Output only. Whether or not the Backup contains volume data. Controlled by the parent BackupPlan’s include_volume_data value."]
         #[serde(
             rename = "containsVolumeData",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub contains_volume_data: ::std::option::Option<bool>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this Backup resource was created - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this Backup resource was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be “locked” against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). This value is inherited from the parent BackupPlan’s retention_policy.backup_delete_lock_days value and may only be increased (either at creation time or in a subsequent update). This field MUST be an integer value between 0-90 (inclusive). Default: inherited from BackupPlan."]
+        #[doc = "Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be “locked” against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan’s backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update)."]
         #[serde(
             rename = "deleteLockDays",
             default,
@@ -245,14 +246,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Output only. The customer managed encryption key that was used to encrypt the Backup’s artifacts. Inherited from the parent BackupPlan’s backup_config.encryption_key."]
+        #[doc = "Output only. The customer managed encryption key that was used to encrypt the Backup’s artifacts. Inherited from the parent BackupPlan’s encryption_key value."]
         #[serde(
             rename = "encryptionKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encryption_key: ::std::option::Option<crate::schemas::EncryptionKey>,
-        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform backup updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackup`, and systems are expected to put that etag in the request to `UpdateBackup` to ensure that their change will be applied to the same version."]
+        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform backup updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackup`, and systems are expected to put that etag in the request to `UpdateBackup` or `DeleteBackup` to ensure that their change will be applied to the same version of the resource."]
         #[serde(
             rename = "etag",
             default,
@@ -273,7 +274,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub manual: ::std::option::Option<bool>,
-        #[doc = "Output only. The fully qualified name of the Backup. projects/*/locations/*/backupPlans/*/backups/*"]
+        #[doc = "Output only. The fully qualified name of the Backup. `projects/*/locations/*/backupPlans/*/backups/*`"]
         #[serde(
             rename = "name",
             default,
@@ -294,7 +295,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_count: ::std::option::Option<i32>,
-        #[doc = "The age (in days) after which this Backup will be automatically deleted. If not specified at Backup creation time, this value is inherited from the parent BackupPlan’s retention_policy.backup_retain_days value. Once a Backup is created, this value may only be increased. This must be an integer value >= 0. If 0, no automatic deletion will occur for this Backup. If not 0, this must be >= delete_lock_days. Default: inherited from BackupPlan."]
+        #[doc = "The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and \\<= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan’s backup_retain_days value."]
         #[serde(
             rename = "retainDays",
             default,
@@ -344,14 +345,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state_reason: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] Server generated global unique identifier of [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)"]
+        #[doc = "Output only. Server generated global unique identifier of [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)"]
         #[serde(
             rename = "uid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uid: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this Backup resource was last updated - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this Backup resource was last updated."]
         #[serde(
             rename = "updateTime",
             default,
@@ -487,7 +488,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub all_namespaces: ::std::option::Option<bool>,
-        #[doc = "This defines a customer managed encryption key that will be used to encrypt the Backup artifacts for Backups created via this BackupPlan."]
+        #[doc = "This defines a customer managed encryption key that will be used to encrypt the “config” portion (the Kubernetes resources) of Backups created via this plan. Default (empty): Config backup artifacts will not be encrypted."]
         #[serde(
             rename = "encryptionKey",
             default,
@@ -515,7 +516,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub selected_applications: ::std::option::Option<crate::schemas::NamespacedNames>,
-        #[doc = "If set, include just the resources in the listed namespaces"]
+        #[doc = "If set, include just the resources in the listed namespaces."]
         #[serde(
             rename = "selectedNamespaces",
             default,
@@ -560,21 +561,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub backup_schedule: ::std::option::Option<crate::schemas::Schedule>,
-        #[doc = "Required. Immutable. The source cluster from which Backups will be created via this BackupPlan. Possible formats: 1. projects/*/locations/*/clusters/\\* 2. projects/*/zones/*/clusters/\\*"]
+        #[doc = "Required. Immutable. The source cluster from which Backups will be created via this BackupPlan. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*`"]
         #[serde(
             rename = "cluster",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this BackupPlan resource was created - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this BackupPlan resource was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "This flag indicates whether this BackupPlan has been deactivated. Setting this field to True locks the BackupPlan such that no further updates will be allowed, including the deactivated field. It also prevents any new Backups from being created via this BackupPlan (including scheduled Backups). Default: False"]
+        #[doc = "This flag indicates whether this BackupPlan has been deactivated. Setting this field to True locks the BackupPlan such that no further updates will be allowed (except deletes), including the deactivated field itself. It also prevents any new Backups from being created via this BackupPlan (including scheduled Backups). Default: False"]
         #[serde(
             rename = "deactivated",
             default,
@@ -588,7 +589,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup plan from overwriting each other. It is strongly suggested that systems make use of the ‘etag’ in the read-modify-write cycle to perform BackupPlan updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackupPlan`, and systems are expected to put that etag in the request to `UpdateBackupPlan` to ensure that their change will be applied to the same version."]
+        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup plan from overwriting each other. It is strongly suggested that systems make use of the ‘etag’ in the read-modify-write cycle to perform BackupPlan updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackupPlan`, and systems are expected to put that etag in the request to `UpdateBackupPlan` or `DeleteBackupPlan` to ensure that their change will be applied to the same version of the resource."]
         #[serde(
             rename = "etag",
             default,
@@ -602,14 +603,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Output only. \\[Output Only\\] The full name of the BackupPlan resource. Format: projects/*/locations/*/backupPlans/\\*"]
+        #[doc = "Output only. The full name of the BackupPlan resource. Format: `projects/*/locations/*/backupPlans/*`"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] Represents the number of Kubernetes Pods backed up in the last successful Backup created underneath this BackupPlan."]
+        #[doc = "Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan."]
         #[serde(
             rename = "protectedPodCount",
             default,
@@ -623,14 +624,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retention_policy: ::std::option::Option<crate::schemas::RetentionPolicy>,
-        #[doc = "Output only. \\[Output Only\\] Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
+        #[doc = "Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
         #[serde(
             rename = "uid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uid: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this BackupPlan resource was last updated - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this BackupPlan resource was last updated."]
         #[serde(
             rename = "updateTime",
             default,
@@ -668,7 +669,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -721,7 +722,7 @@ pub mod schemas {
         )]
         pub backup_crd_versions:
             ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The source cluster from which this Backup was created. Possible formats: 1. projects/*/locations/*/clusters/\\* 2. projects/*/zones/*/clusters/\\* This will be the same value as the parent BackupPlan’s cluster field."]
+        #[doc = "The source cluster from which this Backup was created. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*` This is inherited from the parent BackupPlan’s cluster field."]
         #[serde(
             rename = "cluster",
             default,
@@ -821,7 +822,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EncryptionKey {
-        #[doc = "Google Cloud KMS encryption key. Format: projects//locations//keyRings//cryptoKeys/"]
+        #[doc = "Google Cloud KMS encryption key. Format: `projects/*/locations/*/keyRings/*/cryptoKeys/*`"]
         #[serde(
             rename = "gcpKmsEncryptionKey",
             default,
@@ -942,7 +943,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1083,14 +1084,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListBackupPlansResponse {
-        #[doc = "The list of BackupPlans."]
+        #[doc = "The list of BackupPlans matching the given criteria."]
         #[serde(
             rename = "backupPlans",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub backup_plans: ::std::option::Option<Vec<crate::schemas::BackupPlan>>,
-        #[doc = "A token which may be sent as `page_token` in a subsequent `ListBackupPlans` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
+        #[doc = "A token which may be sent as page_token in a subsequent `ListBackupPlans` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1115,7 +1116,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBackupPlansResponse {
+    impl crate::GetNextPageToken<String> for ListBackupPlansResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1133,14 +1134,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListBackupsResponse {
-        #[doc = "The list of restore resources within the parent."]
+        #[doc = "The list of Backups matching the given criteria."]
         #[serde(
             rename = "backups",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub backups: ::std::option::Option<Vec<crate::schemas::Backup>>,
-        #[doc = "A token which may be sent as `page_token` in a subsequent `ListBackups` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
+        #[doc = "A token which may be sent as page_token in a subsequent `ListBackups` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1158,7 +1159,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBackupsResponse {
+    impl crate::GetNextPageToken<String> for ListBackupsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1190,7 +1191,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1208,14 +1209,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListRestorePlansResponse {
-        #[doc = "A token which may be sent as `page_token` in a subsequent `ListRestorePlans` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
+        #[doc = "A token which may be sent as page_token in a subsequent `ListRestorePlans` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
         #[serde(
             rename = "nextPageToken",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_page_token: ::std::option::Option<String>,
-        #[doc = "The list of RestorePlans."]
+        #[doc = "The list of RestorePlans matching the given criteria."]
         #[serde(
             rename = "restorePlans",
             default,
@@ -1240,7 +1241,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRestorePlansResponse {
+    impl crate::GetNextPageToken<String> for ListRestorePlansResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1258,14 +1259,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListRestoresResponse {
-        #[doc = "A token which may be sent as `page_token` in a subsequent `ListRestores` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
+        #[doc = "A token which may be sent as page_token in a subsequent `ListRestores` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
         #[serde(
             rename = "nextPageToken",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_page_token: ::std::option::Option<String>,
-        #[doc = "The list of restore resources within the parent."]
+        #[doc = "The list of Restores matching the given criteria."]
         #[serde(
             rename = "restores",
             default,
@@ -1290,7 +1291,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRestoresResponse {
+    impl crate::GetNextPageToken<String> for ListRestoresResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1308,14 +1309,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListVolumeBackupsResponse {
-        #[doc = "A token which may be sent as `page_token` in a subsequent `ListVolumeBackups` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
+        #[doc = "A token which may be sent as page_token in a subsequent `ListVolumeBackups` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
         #[serde(
             rename = "nextPageToken",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_page_token: ::std::option::Option<String>,
-        #[doc = "The list of VolumeBackups resources within the parent."]
+        #[doc = "The list of VolumeBackups matching the given criteria."]
         #[serde(
             rename = "volumeBackups",
             default,
@@ -1333,7 +1334,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListVolumeBackupsResponse {
+    impl crate::GetNextPageToken<String> for ListVolumeBackupsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1351,14 +1352,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListVolumeRestoresResponse {
-        #[doc = "A token which may be sent as `page_token` in a subsequent `ListVolumeRestores` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
+        #[doc = "A token which may be sent as page_token in a subsequent `ListVolumeRestores` call to retrieve the next page of results. If this field is omitted or empty, then there are no more results to return."]
         #[serde(
             rename = "nextPageToken",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_page_token: ::std::option::Option<String>,
-        #[doc = "The list of VolumeRestores resources within the parent."]
+        #[doc = "The list of VolumeRestores matching the given criteria."]
         #[serde(
             rename = "volumeRestores",
             default,
@@ -1376,7 +1377,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListVolumeRestoresResponse {
+    impl crate::GetNextPageToken<String> for ListVolumeRestoresResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1668,28 +1669,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Restore {
-        #[doc = "Required. Immutable. The Backup used as the source from which this Restore will restore. Note that this Backup must be a sub-resource of the RestorePlan’s backup_plan. Format: projects/*/locations/*/backupPlans/*/backups/*."]
+        #[doc = "Required. Immutable. A reference to the Backup used as the source from which this Restore will restore. Note that this Backup must be a sub-resource of the RestorePlan’s backup_plan. Format: `projects/*/locations/*/backupPlans/*/backups/*`."]
         #[serde(
             rename = "backup",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub backup: ::std::option::Option<String>,
-        #[doc = "Output only. The target cluster into which this Restore will restore data. Possible formats: 1. projects/*/locations/*/clusters/\\* 2. projects/*/zones/*/clusters/\\* Inherited from parent RestorePlan’s cluster field."]
+        #[doc = "Output only. The target cluster into which this Restore will restore data. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*` Inherited from parent RestorePlan’s cluster value."]
         #[serde(
             rename = "cluster",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster: ::std::option::Option<String>,
-        #[doc = "Output only. When the restore operation either successfully completed or failed."]
+        #[doc = "Output only. Timestamp of when the restore operation completed."]
         #[serde(
             rename = "completeTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub complete_time: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this Restore resource was created - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this Restore resource was created."]
         #[serde(
             rename = "createTime",
             default,
@@ -1703,42 +1704,42 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestore`, and systems are expected to put that etag in the request to `UpdateRestore` to ensure that their change will be applied to the same version."]
+        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestore`, and systems are expected to put that etag in the request to `UpdateRestore` or `DeleteRestore` to ensure that their change will be applied to the same version of the resource."]
         #[serde(
             rename = "etag",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "GCP Labels."]
+        #[doc = "A set of custom labels supplied by user."]
         #[serde(
             rename = "labels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Output only. The full name of the Restore resource. Format: projects/*/locations/*/restorePlans/*/restores/*"]
+        #[doc = "Output only. The full name of the Restore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*`"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Number of resources excluded in this restore action."]
+        #[doc = "Output only. Number of resources excluded during the restore execution."]
         #[serde(
             rename = "resourcesExcludedCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resources_excluded_count: ::std::option::Option<i32>,
-        #[doc = "Output only. Number of resources failed to be restored in this restore action."]
+        #[doc = "Output only. Number of resources that failed to be restored during the restore execution."]
         #[serde(
             rename = "resourcesFailedCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resources_failed_count: ::std::option::Option<i32>,
-        #[doc = "Output only. Number of resources restored in this restore action."]
+        #[doc = "Output only. Number of resources restored during the restore execution."]
         #[serde(
             rename = "resourcesRestoredCount",
             default,
@@ -1766,21 +1767,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state_reason: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
+        #[doc = "Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
         #[serde(
             rename = "uid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uid: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this Restore resource was last updated - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this Restore resource was last updated."]
         #[serde(
             rename = "updateTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub update_time: ::std::option::Option<String>,
-        #[doc = "Output only. Number of volumes restored in this restore action."]
+        #[doc = "Output only. Number of volumes restored during the restore execution."]
         #[serde(
             rename = "volumesRestoredCount",
             default,
@@ -1925,7 +1926,7 @@ pub mod schemas {
         )]
         pub cluster_resource_restore_scope:
             ::std::option::Option<crate::schemas::ClusterResourceRestoreScope>,
-        #[doc = "Defines the behavior for handling the situation where sets of namespaced resources being restored already exist in the target cluster. This MUST be set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED if any namespaced restoration is configured via namespaced_resource_restore_scope ."]
+        #[doc = "Defines the behavior for handling the situation where sets of namespaced resources being restored already exist in the target cluster. This MUST be set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED."]
         #[serde(
             rename = "namespacedResourceRestoreMode",
             default,
@@ -2038,7 +2039,7 @@ pub mod schemas {
         DeleteAndRestore,
         #[doc = "If conflicting top-level resources (either Namespaces or ProtectedApplications, depending upon the scope) are encountered at the beginning of a restore process, the Restore will fail. If a conflict occurs during the restore process itself (e.g., because an out of band process creates conflicting resources), a conflict will be reported."]
         FailOnConflict,
-        #[doc = "Unspecified. Only allowed if no namespaced resources will be restored."]
+        #[doc = "Unspecified (invalid)."]
         NamespacedResourceRestoreModeUnspecified,
     }
     impl RestoreConfigNamespacedResourceRestoreMode {
@@ -2099,7 +2100,7 @@ pub mod schemas {
         RestoreVolumeDataFromBackup,
         #[doc = "For each PVC to be restored, attempt to reuse the original PV contained in the Backup (with its original underlying volume). Note that option is likely only usable when restoring a workload to its original cluster."]
         ReuseVolumeHandleFromBackup,
-        #[doc = "unspecified, default value"]
+        #[doc = "Unspecified (illegal)."]
         VolumeDataRestorePolicyUnspecified,
     }
     impl RestoreConfigVolumeDataRestorePolicy {
@@ -2209,21 +2210,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RestorePlan {
-        #[doc = "Required. Immutable. The BackupPlan from which Backups may be used as the source for Restores created via this RestorePlan. Format: projects/*/locations/*/backupPlans/\\*."]
+        #[doc = "Required. Immutable. A reference to the BackupPlan from which Backups may be used as the source for Restores created via this RestorePlan. Format: `projects/*/locations/*/backupPlans/*`."]
         #[serde(
             rename = "backupPlan",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub backup_plan: ::std::option::Option<String>,
-        #[doc = "Required. Immutable. The target cluster into which Restores created via this RestorePlan will restore data. NOTE: the cluster’s region must be the same as the RestorePlan. Possible formats: 1. projects/*/locations/*/clusters/\\* 2. projects/*/zones/*/clusters/\\*"]
+        #[doc = "Required. Immutable. The target cluster into which Restores created via this RestorePlan will restore data. NOTE: the cluster’s region must be the same as the RestorePlan. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*`"]
         #[serde(
             rename = "cluster",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this RestorePlan resource was created - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this RestorePlan resource was created."]
         #[serde(
             rename = "createTime",
             default,
@@ -2237,7 +2238,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestorePlan`, and systems are expected to put that etag in the request to `UpdateRestorePlan` to ensure that their change will be applied to the same version."]
+        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestorePlan`, and systems are expected to put that etag in the request to `UpdateRestorePlan` or `DeleteRestorePlan` to ensure that their change will be applied to the same version of the resource."]
         #[serde(
             rename = "etag",
             default,
@@ -2251,7 +2252,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Output only. \\[Output Only\\] The full name of the RestorePlan resource. Format: projects/*/locations/*/restorePlans/\\*"]
+        #[doc = "Output only. The full name of the RestorePlan resource. Format: `projects/*/locations/*/restorePlans/*`."]
         #[serde(
             rename = "name",
             default,
@@ -2265,14 +2266,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub restore_config: ::std::option::Option<crate::schemas::RestoreConfig>,
-        #[doc = "Output only. \\[Output Only\\] Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
+        #[doc = "Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
         #[serde(
             rename = "uid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uid: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this RestorePlan resource was last updated - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this RestorePlan resource was last updated."]
         #[serde(
             rename = "updateTime",
             default,
@@ -2303,14 +2304,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RetentionPolicy {
-        #[doc = "Minimum age for Backups created via this BackupPlan (in days). This field MUST be an integer value between 0-90(inclusive). A Backup created under this BackupPlan will NOT be deletable until it reaches Backup’s create_time + backup_delete_lock_days. Updating this field of a BackupPlan does NOT affect existing Backups under it. Backups created AFTER a successful update will inherit the new value. Default: 0 (no delete blocking)"]
+        #[doc = "Minimum age for Backups created via this BackupPlan (in days). This field MUST be an integer value between 0-90 (inclusive). A Backup created under this BackupPlan will NOT be deletable until it reaches Backup’s (create_time + backup_delete_lock_days). Updating this field of a BackupPlan does NOT affect existing Backups under it. Backups created AFTER a successful update will inherit the new value. Default: 0 (no delete blocking)"]
         #[serde(
             rename = "backupDeleteLockDays",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub backup_delete_lock_days: ::std::option::Option<i32>,
-        #[doc = "The default maximum age of a Backup created via this BackupPlan. This field MUST be an integer value >= 0. If specified, a Backup created under this BackupPlan will be automatically deleted after its age reaches create_time + backup_retain_days. If not specified, Backups created under this BackupPlan will NOT be subject to automatic deletion. Updating this field does NOT affect existing Backups under it. Backups created AFTER a successful update will automatically pick up the new value. NOTE: Specifying a backup_retain_days smaller than backup_delete_lock_days at creation/updating time will be considered as invalid, and the request will be rejected immediately. Default: 0 (no automatic deletion)"]
+        #[doc = "The default maximum age of a Backup created via this BackupPlan. This field MUST be an integer value >= 0 and \\<= 365. If specified, a Backup created under this BackupPlan will be automatically deleted after its age reaches (create_time + backup_retain_days). If not specified, Backups created under this BackupPlan will NOT be subject to automatic deletion. Updating this field does NOT affect existing Backups under it. Backups created AFTER a successful update will automatically pick up the new value. NOTE: backup_retain_days must be >= backup_delete_lock_days. If cron_schedule is defined, then this must be \\<= 360 * the creation interval. Default: 0 (no automatic deletion)"]
         #[serde(
             rename = "backupRetainDays",
             default,
@@ -2348,7 +2349,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Schedule {
-        #[doc = "A standard cron-style string that defines a repeating schedule for creating Backups via this BackupPlan."]
+        #[doc = "A standard [cron](https://wikipedia.com/wiki/cron) string that defines a repeating schedule for creating Backups via this BackupPlan. If this is defined, then backup_retain_days must also be defined. Default (empty): no automatic backup creation will occur."]
         #[serde(
             rename = "cronSchedule",
             default,
@@ -2545,14 +2546,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VolumeBackup {
-        #[doc = "Output only. \\[Output Only\\] The timestamp when the associated underlying volume backup operation completes - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when the associated underlying volume backup operation completed."]
         #[serde(
             rename = "completeTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub complete_time: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this VolumeBackup resource was created - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this VolumeBackup resource was created."]
         #[serde(
             rename = "createTime",
             default,
@@ -2567,7 +2568,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub disk_size_bytes: ::std::option::Option<i64>,
-        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a volume backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform volume backup updates in order to avoid race conditions: An `etag` is returned in the response to `GetVolumeBackup', and systems are expected to put that etag in the request to `UpdateVolumeBackup\\` to ensure that their change will be applied to the same version."]
+        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a volume backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform volume backup updates in order to avoid race conditions."]
         #[serde(
             rename = "etag",
             default,
@@ -2581,7 +2582,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub format: ::std::option::Option<crate::schemas::VolumeBackupFormat>,
-        #[doc = "Output only. \\[Output Only\\] The full name of the VolumeBackup resource. Format: projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/\\* Note that the last segment of the name will have the format: ‘pvc-’."]
+        #[doc = "Output only. The full name of the VolumeBackup resource. Format: `projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*`."]
         #[serde(
             rename = "name",
             default,
@@ -2617,21 +2618,21 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub storage_bytes: ::std::option::Option<i64>,
-        #[doc = "Output only. \\[Output Only\\] Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
+        #[doc = "Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
         #[serde(
             rename = "uid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uid: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this VolumeBackup resource was last updated - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this VolumeBackup resource was last updated."]
         #[serde(
             rename = "updateTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub update_time: ::std::option::Option<String>,
-        #[doc = "Output only. A storage system-specific opaque handle to the underlying volume backup. This field is interpreted by the volume backup and restore drivers running in the GKE cluster and not by the service."]
+        #[doc = "Output only. A storage system-specific opaque handle to the underlying volume backup."]
         #[serde(
             rename = "volumeBackupHandle",
             default,
@@ -2835,35 +2836,35 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VolumeRestore {
-        #[doc = "Output only. \\[Output Only\\] The timestamp when the associated underlying volume restoration completed - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when the associated underlying volume restoration completed."]
         #[serde(
             rename = "completeTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub complete_time: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this VolumeRestore resource was created - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this VolumeRestore resource was created."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a volume restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform volume restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetVolumeRestore', and systems are expected to put that etag in the request to `UpdateVolumeRestore\\` to ensure that their change will be applied to the same version."]
+        #[doc = "Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a volume restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform volume restore updates in order to avoid race conditions."]
         #[serde(
             rename = "etag",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Output only. Full name of the VolumeRestore resource. Format: projects/*/locations/*/restorePlans/*/restores/*/volumeRestores/\\* Note that the last segment of the name will have the format: ‘pvc-’."]
+        #[doc = "Output only. Full name of the VolumeRestore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*/volumeRestores/*`"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. The current state of this VolumeRestore"]
+        #[doc = "Output only. The current state of this VolumeRestore."]
         #[serde(
             rename = "state",
             default,
@@ -2884,28 +2885,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target_pvc: ::std::option::Option<crate::schemas::NamespacedName>,
-        #[doc = "Output only. \\[Output Only\\] Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
+        #[doc = "Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format."]
         #[serde(
             rename = "uid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uid: ::std::option::Option<String>,
-        #[doc = "Output only. \\[Output Only\\] The timestamp when this VolumeRestore resource was last updated - can be converted to and from [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)"]
+        #[doc = "Output only. The timestamp when this VolumeRestore resource was last updated."]
         #[serde(
             rename = "updateTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub update_time: ::std::option::Option<String>,
-        #[doc = "Output only. The full name of the VolumeBackup from which the volume will be restored. Format: projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/\\*"]
+        #[doc = "Output only. The full name of the VolumeBackup from which the volume will be restored. Format: `projects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*`."]
         #[serde(
             rename = "volumeBackup",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub volume_backup: ::std::option::Option<String>,
-        #[doc = "Output only. A storage system-specific opaque handler to the underlying volume created for the target PVC from the volume backup. This field is interpreted by the volume backup and restore drivers running in the GKE cluster and not by the service."]
+        #[doc = "Output only. A storage system-specific opaque handler to the underlying volume created for the target PVC from the volume backup."]
         #[serde(
             rename = "volumeHandle",
             default,
@@ -3844,7 +3845,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -3879,7 +3880,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -3929,7 +3930,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4045,12 +4046,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4277,7 +4279,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Required. The client-provided short name for the BackupPlan resource. This name must: a. be between 1 and 63 characters long (inclusive) b. consist of only lower-case ASCII letters, numbers, and dashes c. start with a lower-case letter d. end with a lower-case letter or number e. be unique within the set of BackupPlans in this location"]
+                    #[doc = "Required. The client-provided short name for the BackupPlan resource. This name must: - be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII letters, numbers, and dashes - start with a lower-case letter - end with a lower-case letter or number - be unique within the set of BackupPlans in this location"]
                     pub fn backup_plan_id(mut self, value: impl Into<String>) -> Self {
                         self.backup_plan_id = Some(value.into());
                         self
@@ -4448,7 +4450,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> DeleteRequestBuilder<'a> {
-                    #[doc = "If provided, this value must match the value currently assigned to the target resource."]
+                    #[doc = "If provided, this value must match the current value of the target BackupPlan’s etag field or the request is rejected."]
                     pub fn etag(mut self, value: impl Into<String>) -> Self {
                         self.etag = Some(value.into());
                         self
@@ -4951,12 +4953,12 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "List filter."]
+                    #[doc = "Field match expression used to filter the results."]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "Sort results."]
+                    #[doc = "Field by which to sort the results."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
@@ -5065,7 +5067,7 @@ pub mod resources {
                             #[serde(rename = "backupPlans")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5135,7 +5137,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5170,7 +5172,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -5220,7 +5222,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -5340,12 +5342,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6068,7 +6071,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "The client-provided short name for the Backup resource. This name must: a. be between 1 and 63 characters long (inclusive) b. consist of only lower-case ASCII letters, numbers, and dashes c. start with a lower-case letter d. end with a lower-case letter or number e. be unique within the set of Backups in this BackupPlan"]
+                        #[doc = "The client-provided short name for the Backup resource. This name must: - be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII letters, numbers, and dashes - start with a lower-case letter - end with a lower-case letter or number - be unique within the set of Backups in this BackupPlan"]
                         pub fn backup_id(mut self, value: impl Into<String>) -> Self {
                             self.backup_id = Some(value.into());
                             self
@@ -6242,12 +6245,12 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> DeleteRequestBuilder<'a> {
-                        #[doc = "etag, if provided, it must match the server’s etag for the delete to happen."]
+                        #[doc = "If provided, this value must match the current value of the target Backup’s etag field or the request is rejected."]
                         pub fn etag(mut self, value: impl Into<String>) -> Self {
                             self.etag = Some(value.into());
                             self
                         }
-                        #[doc = "If set to true, any volumeBackups below this backup will also be deleted. Otherwise, the request will only succeed if the backup has no volumeBackups."]
+                        #[doc = "If set to true, any VolumeBackups below this Backup will also be deleted. Otherwise, the request will only succeed if the Backup has no VolumeBackups."]
                         pub fn force(mut self, value: bool) -> Self {
                             self.force = Some(value);
                             self
@@ -6757,12 +6760,12 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "List filter."]
+                        #[doc = "Field match expression used to filter the results."]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
                         }
-                        #[doc = "Sort results."]
+                        #[doc = "Field by which to sort the results."]
                         pub fn order_by(mut self, value: impl Into<String>) -> Self {
                             self.order_by = Some(value.into());
                             self
@@ -6871,7 +6874,7 @@ pub mod resources {
                                 #[serde(rename = "backups")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -6907,7 +6910,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -6957,7 +6960,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -7079,12 +7082,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -8080,12 +8084,12 @@ pub mod resources {
                             xgafv: ::std::option::Option<crate::params::Xgafv>,
                         }
                         impl<'a> ListRequestBuilder<'a> {
-                            #[doc = "List filter."]
+                            #[doc = "Field match expression used to filter the results."]
                             pub fn filter(mut self, value: impl Into<String>) -> Self {
                                 self.filter = Some(value.into());
                                 self
                             }
-                            #[doc = "Sort results."]
+                            #[doc = "Field by which to sort the results."]
                             pub fn order_by(mut self, value: impl Into<String>) -> Self {
                                 self.order_by = Some(value.into());
                                 self
@@ -8194,7 +8198,7 @@ pub mod resources {
                                     #[serde(rename = "volumeBackups")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -8231,7 +8235,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -8287,7 +8291,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -8409,12 +8415,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -9288,7 +9295,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -9323,7 +9330,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -9379,7 +9386,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -9498,12 +9505,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -9728,7 +9736,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Required. The client-provided short name for the RestorePlan resource. This name must: a. be between 1 and 63 characters long (inclusive) b. consist of only lower-case ASCII letters, numbers, and dashes c. start with a lower-case letter d. end with a lower-case letter or number e. be unique within the set of RestorePlans in this location"]
+                    #[doc = "Required. The client-provided short name for the RestorePlan resource. This name must: - be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII letters, numbers, and dashes - start with a lower-case letter - end with a lower-case letter or number - be unique within the set of RestorePlans in this location"]
                     pub fn restore_plan_id(mut self, value: impl Into<String>) -> Self {
                         self.restore_plan_id = Some(value.into());
                         self
@@ -9900,12 +9908,12 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> DeleteRequestBuilder<'a> {
-                    #[doc = "If provided, this value must match the value currently assigned to the target resource."]
+                    #[doc = "If provided, this value must match the current value of the target RestorePlan’s etag field or the request is rejected."]
                     pub fn etag(mut self, value: impl Into<String>) -> Self {
                         self.etag = Some(value.into());
                         self
                     }
-                    #[doc = "If set to true, any restores below this restorePlan will also be deleted. Otherwise, the request will only succeed if the restorePlan has no restores."]
+                    #[doc = "If set to true, any Restores below this RestorePlan will also be deleted. Otherwise, the request will only succeed if the RestorePlan has no Restores."]
                     pub fn force(mut self, value: bool) -> Self {
                         self.force = Some(value);
                         self
@@ -10409,12 +10417,12 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "List filter."]
+                    #[doc = "Field match expression used to filter the results."]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "Sort results."]
+                    #[doc = "Field by which to sort the results."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
@@ -10523,7 +10531,7 @@ pub mod resources {
                             #[serde(rename = "restorePlans")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10593,7 +10601,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10628,7 +10636,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10678,7 +10686,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10798,12 +10806,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -11526,7 +11535,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The client-provided short name for the Restore resource. This name must: a. be between 1 and 63 characters long (inclusive) b. consist of only lower-case ASCII letters, numbers, and dashes c. start with a lower-case letter d. end with a lower-case letter or number e. be unique within the set of Restores in this RestorePlan."]
+                        #[doc = "Required. The client-provided short name for the Restore resource. This name must: - be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII letters, numbers, and dashes - start with a lower-case letter - end with a lower-case letter or number - be unique within the set of Restores in this RestorePlan."]
                         pub fn restore_id(mut self, value: impl Into<String>) -> Self {
                             self.restore_id = Some(value.into());
                             self
@@ -11700,12 +11709,12 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> DeleteRequestBuilder<'a> {
-                        #[doc = "etag, if provided, it must match the server’s etag for delete to happen."]
+                        #[doc = "If provided, this value must match the current value of the target Restore’s etag field or the request is rejected."]
                         pub fn etag(mut self, value: impl Into<String>) -> Self {
                             self.etag = Some(value.into());
                             self
                         }
-                        #[doc = "If set to true, any volumeRestores below this restore will also be deleted. Otherwise, the request will only succeed if the restore has no volumeRestores."]
+                        #[doc = "If set to true, any VolumeRestores below this restore will also be deleted. Otherwise, the request will only succeed if the restore has no VolumeRestores."]
                         pub fn force(mut self, value: bool) -> Self {
                             self.force = Some(value);
                             self
@@ -12215,12 +12224,12 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "List filter."]
+                        #[doc = "Field match expression used to filter the results."]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
                         }
-                        #[doc = "Sort results."]
+                        #[doc = "Field by which to sort the results."]
                         pub fn order_by(mut self, value: impl Into<String>) -> Self {
                             self.order_by = Some(value.into());
                             self
@@ -12329,7 +12338,7 @@ pub mod resources {
                                 #[serde(rename = "restores")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -12400,7 +12409,7 @@ pub mod resources {
                                 #[serde(rename = "unreachable")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -12437,7 +12446,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -12487,7 +12496,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -12609,12 +12618,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -13610,12 +13620,12 @@ pub mod resources {
                             xgafv: ::std::option::Option<crate::params::Xgafv>,
                         }
                         impl<'a> ListRequestBuilder<'a> {
-                            #[doc = "List filter."]
+                            #[doc = "Field match expression used to filter the results."]
                             pub fn filter(mut self, value: impl Into<String>) -> Self {
                                 self.filter = Some(value.into());
                                 self
                             }
-                            #[doc = "Sort results."]
+                            #[doc = "Field by which to sort the results."]
                             pub fn order_by(mut self, value: impl Into<String>) -> Self {
                                 self.order_by = Some(value.into());
                                 self
@@ -13724,7 +13734,7 @@ pub mod resources {
                                     #[serde(rename = "volumeRestores")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -13761,7 +13771,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -13817,7 +13827,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -13939,12 +13951,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -14572,16 +14585,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -14601,13 +14616,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -14615,7 +14633,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -14642,7 +14660,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

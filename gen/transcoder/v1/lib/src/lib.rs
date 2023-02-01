@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [job_templates](resources/projects/locations/job_templates/struct.JobTemplatesActions.html)\n      * [*create*](resources/projects/locations/job_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/job_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/job_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/job_templates/struct.ListRequestBuilder.html)\n    * [jobs](resources/projects/locations/jobs/struct.JobsActions.html)\n      * [*create*](resources/projects/locations/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/jobs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/jobs/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -401,6 +402,51 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BwdifConfig {
+        #[doc = "Deinterlace all frames rather than just the frames identified as interlaced. The default is `false`."]
+        #[serde(
+            rename = "deinterlaceAllFrames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deinterlace_all_frames: ::std::option::Option<bool>,
+        #[doc = "Specifies the deinterlacing mode to adopt. The default is `send_frame`. Supported values: - `send_frame`: Output one frame for each frame - `send_field`: Output one frame for each field"]
+        #[serde(
+            rename = "mode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mode: ::std::option::Option<String>,
+        #[doc = "The picture field parity assumed for the input interlaced video. The default is `auto`. Supported values: - `tff`: Assume the top field is first - `bff`: Assume the bottom field is first - `auto`: Enable automatic detection of field parity"]
+        #[serde(
+            rename = "parity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parity: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for BwdifConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BwdifConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Color {
@@ -513,6 +559,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Deblock {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Deinterlace {
+        #[doc = "Specifies the Bob Weaver Deinterlacing Filter Configuration."]
+        #[serde(
+            rename = "bwdif",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bwdif: ::std::option::Option<crate::schemas::BwdifConfig>,
+        #[doc = "Specifies the Yet Another Deinterlacing Filter Configuration."]
+        #[serde(
+            rename = "yadif",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub yadif: ::std::option::Option<crate::schemas::YadifConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for Deinterlace {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Deinterlace {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -746,7 +830,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gop_frame_count: ::std::option::Option<i32>,
-        #[doc = "The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used."]
+        #[doc = "The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "heightPixels",
             default,
@@ -802,7 +886,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vbv_size_bits: ::std::option::Option<i32>,
-        #[doc = "The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used."]
+        #[doc = "The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "widthPixels",
             default,
@@ -894,7 +978,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gop_frame_count: ::std::option::Option<i32>,
-        #[doc = "The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used."]
+        #[doc = "The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "heightPixels",
             default,
@@ -950,7 +1034,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vbv_size_bits: ::std::option::Option<i32>,
-        #[doc = "The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used."]
+        #[doc = "The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "widthPixels",
             default,
@@ -1077,6 +1161,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_uri: ::std::option::Option<String>,
+        #[doc = "The labels associated with this job. You can use these to organize and group your jobs."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
         #[doc = "The resource name of the job. Format: `projects/{project_number}/locations/{location}/jobs/{job}`"]
         #[serde(
             rename = "name",
@@ -1283,7 +1374,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pubsub_destination: ::std::option::Option<crate::schemas::PubsubDestination>,
-        #[doc = "List of output sprite sheets."]
+        #[doc = "List of output sprite sheets. Spritesheets require at least one VideoStream in the Jobconfig."]
         #[serde(
             rename = "spriteSheets",
             default,
@@ -1312,6 +1403,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::JobConfig>,
+        #[doc = "The labels associated with this job template. You can use these to organize and group your job templates."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
         #[doc = "The resource name of the job template. Format: `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`"]
         #[serde(
             rename = "name",
@@ -1366,7 +1464,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListJobTemplatesResponse {
+    impl crate::GetNextPageToken<String> for ListJobTemplatesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1405,7 +1503,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListJobsResponse {
+    impl crate::GetNextPageToken<String> for ListJobsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1763,6 +1861,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deblock: ::std::option::Option<crate::schemas::Deblock>,
+        #[doc = "Specify the video deinterlace configuration."]
+        #[serde(
+            rename = "deinterlace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deinterlace: ::std::option::Option<crate::schemas::Deinterlace>,
         #[doc = "Denoise preprocessing configuration."]
         #[serde(
             rename = "denoise",
@@ -1919,14 +2024,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub row_count: ::std::option::Option<i32>,
-        #[doc = "Required. The height of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels field or the SpriteSheet.sprite_width_pixels field, but not both (the API will automatically calculate the missing field)."]
+        #[doc = "Required. The height of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels field or the SpriteSheet.sprite_width_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "spriteHeightPixels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sprite_height_pixels: ::std::option::Option<i32>,
-        #[doc = "Required. The width of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels field or the SpriteSheet.sprite_height_pixels field, but not both (the API will automatically calculate the missing field)."]
+        #[doc = "Required. The width of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels field or the SpriteSheet.sprite_height_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "spriteWidthPixels",
             default,
@@ -2151,7 +2256,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gop_frame_count: ::std::option::Option<i32>,
-        #[doc = "The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used."]
+        #[doc = "The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "heightPixels",
             default,
@@ -2179,7 +2284,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rate_control_mode: ::std::option::Option<String>,
-        #[doc = "The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used."]
+        #[doc = "The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output."]
         #[serde(
             rename = "widthPixels",
             default,
@@ -2193,6 +2298,58 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Vp9CodecSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct YadifConfig {
+        #[doc = "Deinterlace all frames rather than just the frames identified as interlaced. The default is `false`."]
+        #[serde(
+            rename = "deinterlaceAllFrames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deinterlace_all_frames: ::std::option::Option<bool>,
+        #[doc = "Disable spacial interlacing. The default is `false`."]
+        #[serde(
+            rename = "disableSpatialInterlacing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable_spatial_interlacing: ::std::option::Option<bool>,
+        #[doc = "Specifies the deinterlacing mode to adopt. The default is `send_frame`. Supported values: - `send_frame`: Output one frame for each frame - `send_field`: Output one frame for each field"]
+        #[serde(
+            rename = "mode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mode: ::std::option::Option<String>,
+        #[doc = "The picture field parity assumed for the input interlaced video. The default is `auto`. Supported values: - `tff`: Assume the top field is first - `bff`: Assume the bottom field is first - `auto`: Enable automatic detection of field parity"]
+        #[serde(
+            rename = "parity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parity: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for YadifConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for YadifConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3157,7 +3314,7 @@ pub mod resources {
                             #[serde(rename = "jobTemplates")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -3227,7 +3384,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -3262,7 +3419,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -3312,7 +3469,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -3432,12 +3589,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -4165,7 +4323,7 @@ pub mod resources {
                             #[serde(rename = "jobs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4235,7 +4393,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4270,7 +4428,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4320,7 +4478,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4440,12 +4598,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -4737,16 +4896,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -4766,13 +4927,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -4780,7 +4944,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -4807,7 +4971,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("datafusion1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220316")
+            .version("0.1.0-20221213")
             .about("Cloud Data Fusion is a fully-managed, cloud native, enterprise data integration service for quickly building and managing data pipelines. It provides a graphical interface to increase time efficiency and reduce complexity, and allows business users, developers, and data scientists to easily and reliably build scalable data integration solutions to cleanse, prepare, blend, transfer and transform data without having to wrestle with infrastructure.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -132,17 +132,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("methods: create, delete and list");
         {
             let mcmd =
-                SubCommand::with_name("create").about("Add DNS peering on the given resource.");
+                SubCommand::with_name("create").about("Creates DNS peering on the given resource.");
             dns_peerings3 = dns_peerings3.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("delete").about("Remove DNS peering on the given resource.");
+                SubCommand::with_name("delete").about("Deletes DNS peering on the given resource.");
             dns_peerings3 = dns_peerings3.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("list").about("List DNS peering for a given resource.");
+                SubCommand::with_name("list").about("Lists DNS peerings for a given resource.");
             dns_peerings3 = dns_peerings3.subcommand(mcmd);
         }
         let mut namespaces3 = SubCommand::with_name("namespaces")

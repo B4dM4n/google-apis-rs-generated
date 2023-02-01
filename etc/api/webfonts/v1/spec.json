@@ -7,7 +7,7 @@
   "canonicalName": "Webfonts",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230124",
   "title": "Web Fonts Developer API",
   "description": "The Google Web Fonts Developer API lets you retrieve information about web fonts served by Google.",
   "ownerDomain": "google.com",

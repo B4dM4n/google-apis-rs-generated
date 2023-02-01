@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dns1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220426")
+            .version("0.1.0-20230126")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -78,8 +78,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             managed_zone_operations0 = managed_zone_operations0.subcommand(mcmd);
         }
         let mut managed_zones0 = SubCommand::with_name("managed_zones")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list, patch and update");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy, test_iam_permissions and update");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a new ManagedZone.");
             managed_zones0 = managed_zones0.subcommand(mcmd);
@@ -95,6 +95,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             managed_zones0 = managed_zones0.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            managed_zones0 = managed_zones0.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list")
                 .about("Enumerates ManagedZones that have been created but not yet deleted.");
             managed_zones0 = managed_zones0.subcommand(mcmd);
@@ -102,6 +106,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("patch")
                 .about("Applies a partial update to an existing ManagedZone.");
+            managed_zones0 = managed_zones0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            managed_zones0 = managed_zones0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this returns an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             managed_zones0 = managed_zones0.subcommand(mcmd);
         }
         {

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("policysimulator1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220422")
+            .version("0.1.0-20230115")
             .about(" Policy Simulator is a collection of endpoints for creating, running, and viewing a Replay. A `Replay` is a type of simulation that lets you see how your members' access to resources might change if you changed your IAM policy. During a `Replay`, Policy Simulator re-evaluates, or replays, past access attempts under both the current policy and your proposed policy, and compares those results to determine how your members' access might change under the proposed policy.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -104,13 +104,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             );
             replays2 = replays2.subcommand(mcmd);
         }
-        let mut results3 = SubCommand::with_name("results")
+        let mut operations3 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list");
+            .about("methods: get and list");
         {
-            let mcmd =
-                SubCommand::with_name("list").about("Lists the results of running a Replay.");
-            results3 = results3.subcommand(mcmd);
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations3 = operations3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations3 = operations3.subcommand(mcmd);
         }
         let mut results3 = SubCommand::with_name("results")
             .setting(AppSettings::ColoredHelp)
@@ -119,6 +122,36 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd =
                 SubCommand::with_name("list").about("Lists the results of running a Replay.");
             results3 = results3.subcommand(mcmd);
+        }
+        let mut operations3 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations3 = operations3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations3 = operations3.subcommand(mcmd);
+        }
+        let mut results3 = SubCommand::with_name("results")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists the results of running a Replay.");
+            results3 = results3.subcommand(mcmd);
+        }
+        let mut operations3 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations3 = operations3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations3 = operations3.subcommand(mcmd);
         }
         let mut results3 = SubCommand::with_name("results")
             .setting(AppSettings::ColoredHelp)
@@ -129,8 +162,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             results3 = results3.subcommand(mcmd);
         }
         replays2 = replays2.subcommand(results3);
+        replays2 = replays2.subcommand(operations3);
         replays2 = replays2.subcommand(results3);
+        replays2 = replays2.subcommand(operations3);
         replays2 = replays2.subcommand(results3);
+        replays2 = replays2.subcommand(operations3);
         locations1 = locations1.subcommand(replays2);
         locations1 = locations1.subcommand(replays2);
         locations1 = locations1.subcommand(replays2);

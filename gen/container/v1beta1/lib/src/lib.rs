@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [aggregated](resources/projects/aggregated/struct.AggregatedActions.html)\n    * [usable_subnetworks](resources/projects/aggregated/usable_subnetworks/struct.UsableSubnetworksActions.html)\n      * [*list*](resources/projects/aggregated/usable_subnetworks/struct.ListRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*getServerConfig*](resources/projects/locations/struct.GetServerConfigRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [clusters](resources/projects/locations/clusters/struct.ClustersActions.html)\n      * [*completeIpRotation*](resources/projects/locations/clusters/struct.CompleteIpRotationRequestBuilder.html), [*create*](resources/projects/locations/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/clusters/struct.GetRequestBuilder.html), [*getJwks*](resources/projects/locations/clusters/struct.GetJwksRequestBuilder.html), [*list*](resources/projects/locations/clusters/struct.ListRequestBuilder.html), [*setAddons*](resources/projects/locations/clusters/struct.SetAddonsRequestBuilder.html), [*setLegacyAbac*](resources/projects/locations/clusters/struct.SetLegacyAbacRequestBuilder.html), [*setLocations*](resources/projects/locations/clusters/struct.SetLocationsRequestBuilder.html), [*setLogging*](resources/projects/locations/clusters/struct.SetLoggingRequestBuilder.html), [*setMaintenancePolicy*](resources/projects/locations/clusters/struct.SetMaintenancePolicyRequestBuilder.html), [*setMasterAuth*](resources/projects/locations/clusters/struct.SetMasterAuthRequestBuilder.html), [*setMonitoring*](resources/projects/locations/clusters/struct.SetMonitoringRequestBuilder.html), [*setNetworkPolicy*](resources/projects/locations/clusters/struct.SetNetworkPolicyRequestBuilder.html), [*setResourceLabels*](resources/projects/locations/clusters/struct.SetResourceLabelsRequestBuilder.html), [*startIpRotation*](resources/projects/locations/clusters/struct.StartIpRotationRequestBuilder.html), [*update*](resources/projects/locations/clusters/struct.UpdateRequestBuilder.html), [*updateMaster*](resources/projects/locations/clusters/struct.UpdateMasterRequestBuilder.html)\n      * [node_pools](resources/projects/locations/clusters/node_pools/struct.NodePoolsActions.html)\n        * [*create*](resources/projects/locations/clusters/node_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/clusters/node_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/clusters/node_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/clusters/node_pools/struct.ListRequestBuilder.html), [*rollback*](resources/projects/locations/clusters/node_pools/struct.RollbackRequestBuilder.html), [*setAutoscaling*](resources/projects/locations/clusters/node_pools/struct.SetAutoscalingRequestBuilder.html), [*setManagement*](resources/projects/locations/clusters/node_pools/struct.SetManagementRequestBuilder.html), [*setSize*](resources/projects/locations/clusters/node_pools/struct.SetSizeRequestBuilder.html), [*update*](resources/projects/locations/clusters/node_pools/struct.UpdateRequestBuilder.html)\n      * [well_known](resources/projects/locations/clusters/well_known/struct.WellKnownActions.html)\n        * [*getOpenid-configuration*](resources/projects/locations/clusters/well_known/struct.GetOpenidConfigurationRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n  * [zones](resources/projects/zones/struct.ZonesActions.html)\n    * [*getServerconfig*](resources/projects/zones/struct.GetServerconfigRequestBuilder.html)\n    * [clusters](resources/projects/zones/clusters/struct.ClustersActions.html)\n      * [*addons*](resources/projects/zones/clusters/struct.AddonsRequestBuilder.html), [*completeIpRotation*](resources/projects/zones/clusters/struct.CompleteIpRotationRequestBuilder.html), [*create*](resources/projects/zones/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/zones/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/zones/clusters/struct.GetRequestBuilder.html), [*legacyAbac*](resources/projects/zones/clusters/struct.LegacyAbacRequestBuilder.html), [*list*](resources/projects/zones/clusters/struct.ListRequestBuilder.html), [*locations*](resources/projects/zones/clusters/struct.LocationsRequestBuilder.html), [*logging*](resources/projects/zones/clusters/struct.LoggingRequestBuilder.html), [*master*](resources/projects/zones/clusters/struct.MasterRequestBuilder.html), [*monitoring*](resources/projects/zones/clusters/struct.MonitoringRequestBuilder.html), [*resourceLabels*](resources/projects/zones/clusters/struct.ResourceLabelsRequestBuilder.html), [*setMaintenancePolicy*](resources/projects/zones/clusters/struct.SetMaintenancePolicyRequestBuilder.html), [*setMasterAuth*](resources/projects/zones/clusters/struct.SetMasterAuthRequestBuilder.html), [*setNetworkPolicy*](resources/projects/zones/clusters/struct.SetNetworkPolicyRequestBuilder.html), [*startIpRotation*](resources/projects/zones/clusters/struct.StartIpRotationRequestBuilder.html), [*update*](resources/projects/zones/clusters/struct.UpdateRequestBuilder.html)\n      * [node_pools](resources/projects/zones/clusters/node_pools/struct.NodePoolsActions.html)\n        * [*autoscaling*](resources/projects/zones/clusters/node_pools/struct.AutoscalingRequestBuilder.html), [*create*](resources/projects/zones/clusters/node_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/zones/clusters/node_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/zones/clusters/node_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/zones/clusters/node_pools/struct.ListRequestBuilder.html), [*rollback*](resources/projects/zones/clusters/node_pools/struct.RollbackRequestBuilder.html), [*setManagement*](resources/projects/zones/clusters/node_pools/struct.SetManagementRequestBuilder.html), [*setSize*](resources/projects/zones/clusters/node_pools/struct.SetSizeRequestBuilder.html), [*update*](resources/projects/zones/clusters/node_pools/struct.UpdateRequestBuilder.html)\n    * [operations](resources/projects/zones/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/zones/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/zones/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/zones/operations/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [aggregated](resources/projects/aggregated/struct.AggregatedActions.html)\n    * [usable_subnetworks](resources/projects/aggregated/usable_subnetworks/struct.UsableSubnetworksActions.html)\n      * [*list*](resources/projects/aggregated/usable_subnetworks/struct.ListRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*getServerConfig*](resources/projects/locations/struct.GetServerConfigRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [clusters](resources/projects/locations/clusters/struct.ClustersActions.html)\n      * [*completeIpRotation*](resources/projects/locations/clusters/struct.CompleteIpRotationRequestBuilder.html), [*create*](resources/projects/locations/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/clusters/struct.GetRequestBuilder.html), [*getJwks*](resources/projects/locations/clusters/struct.GetJwksRequestBuilder.html), [*list*](resources/projects/locations/clusters/struct.ListRequestBuilder.html), [*setAddons*](resources/projects/locations/clusters/struct.SetAddonsRequestBuilder.html), [*setLegacyAbac*](resources/projects/locations/clusters/struct.SetLegacyAbacRequestBuilder.html), [*setLocations*](resources/projects/locations/clusters/struct.SetLocationsRequestBuilder.html), [*setLogging*](resources/projects/locations/clusters/struct.SetLoggingRequestBuilder.html), [*setMaintenancePolicy*](resources/projects/locations/clusters/struct.SetMaintenancePolicyRequestBuilder.html), [*setMasterAuth*](resources/projects/locations/clusters/struct.SetMasterAuthRequestBuilder.html), [*setMonitoring*](resources/projects/locations/clusters/struct.SetMonitoringRequestBuilder.html), [*setNetworkPolicy*](resources/projects/locations/clusters/struct.SetNetworkPolicyRequestBuilder.html), [*setResourceLabels*](resources/projects/locations/clusters/struct.SetResourceLabelsRequestBuilder.html), [*startIpRotation*](resources/projects/locations/clusters/struct.StartIpRotationRequestBuilder.html), [*update*](resources/projects/locations/clusters/struct.UpdateRequestBuilder.html), [*updateMaster*](resources/projects/locations/clusters/struct.UpdateMasterRequestBuilder.html)\n      * [node_pools](resources/projects/locations/clusters/node_pools/struct.NodePoolsActions.html)\n        * [*completeUpgrade*](resources/projects/locations/clusters/node_pools/struct.CompleteUpgradeRequestBuilder.html), [*create*](resources/projects/locations/clusters/node_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/clusters/node_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/clusters/node_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/clusters/node_pools/struct.ListRequestBuilder.html), [*rollback*](resources/projects/locations/clusters/node_pools/struct.RollbackRequestBuilder.html), [*setAutoscaling*](resources/projects/locations/clusters/node_pools/struct.SetAutoscalingRequestBuilder.html), [*setManagement*](resources/projects/locations/clusters/node_pools/struct.SetManagementRequestBuilder.html), [*setSize*](resources/projects/locations/clusters/node_pools/struct.SetSizeRequestBuilder.html), [*update*](resources/projects/locations/clusters/node_pools/struct.UpdateRequestBuilder.html)\n      * [well_known](resources/projects/locations/clusters/well_known/struct.WellKnownActions.html)\n        * [*getOpenid-configuration*](resources/projects/locations/clusters/well_known/struct.GetOpenidConfigurationRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n  * [zones](resources/projects/zones/struct.ZonesActions.html)\n    * [*getServerconfig*](resources/projects/zones/struct.GetServerconfigRequestBuilder.html)\n    * [clusters](resources/projects/zones/clusters/struct.ClustersActions.html)\n      * [*addons*](resources/projects/zones/clusters/struct.AddonsRequestBuilder.html), [*completeIpRotation*](resources/projects/zones/clusters/struct.CompleteIpRotationRequestBuilder.html), [*create*](resources/projects/zones/clusters/struct.CreateRequestBuilder.html), [*delete*](resources/projects/zones/clusters/struct.DeleteRequestBuilder.html), [*get*](resources/projects/zones/clusters/struct.GetRequestBuilder.html), [*legacyAbac*](resources/projects/zones/clusters/struct.LegacyAbacRequestBuilder.html), [*list*](resources/projects/zones/clusters/struct.ListRequestBuilder.html), [*locations*](resources/projects/zones/clusters/struct.LocationsRequestBuilder.html), [*logging*](resources/projects/zones/clusters/struct.LoggingRequestBuilder.html), [*master*](resources/projects/zones/clusters/struct.MasterRequestBuilder.html), [*monitoring*](resources/projects/zones/clusters/struct.MonitoringRequestBuilder.html), [*resourceLabels*](resources/projects/zones/clusters/struct.ResourceLabelsRequestBuilder.html), [*setMaintenancePolicy*](resources/projects/zones/clusters/struct.SetMaintenancePolicyRequestBuilder.html), [*setMasterAuth*](resources/projects/zones/clusters/struct.SetMasterAuthRequestBuilder.html), [*setNetworkPolicy*](resources/projects/zones/clusters/struct.SetNetworkPolicyRequestBuilder.html), [*startIpRotation*](resources/projects/zones/clusters/struct.StartIpRotationRequestBuilder.html), [*update*](resources/projects/zones/clusters/struct.UpdateRequestBuilder.html)\n      * [node_pools](resources/projects/zones/clusters/node_pools/struct.NodePoolsActions.html)\n        * [*autoscaling*](resources/projects/zones/clusters/node_pools/struct.AutoscalingRequestBuilder.html), [*create*](resources/projects/zones/clusters/node_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/zones/clusters/node_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/zones/clusters/node_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/zones/clusters/node_pools/struct.ListRequestBuilder.html), [*rollback*](resources/projects/zones/clusters/node_pools/struct.RollbackRequestBuilder.html), [*setManagement*](resources/projects/zones/clusters/node_pools/struct.SetManagementRequestBuilder.html), [*setSize*](resources/projects/zones/clusters/node_pools/struct.SetSizeRequestBuilder.html), [*update*](resources/projects/zones/clusters/node_pools/struct.UpdateRequestBuilder.html)\n    * [operations](resources/projects/zones/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/zones/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/zones/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/zones/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -39,6 +40,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gpu_partition_size: ::std::option::Option<String>,
+        #[doc = "The configuration for GPU sharing options."]
+        #[serde(
+            rename = "gpuSharingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gpu_sharing_config: ::std::option::Option<crate::schemas::GpusharingConfig>,
+        #[doc = "The number of time-shared GPU resources to expose for each physical GPU."]
+        #[serde(
+            rename = "maxTimeSharedClientsPerGpu",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_time_shared_clients_per_gpu: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for AcceleratorConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -301,16 +317,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct AutoprovisioningNodePoolDefaults {
         #[doc = "The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/\\[KEY_PROJECT_ID\\]/locations/\\[LOCATION\\]/keyRings/\\[RING_NAME\\]/cryptoKeys/\\[KEY_NAME\\]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption"]
@@ -334,7 +341,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disk_type: ::std::option::Option<String>,
-        #[doc = "The image type to use for NAP created node."]
+        #[doc = "The image type to use for NAP created node. Please see https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for available image types."]
         #[serde(
             rename = "imageType",
             default,
@@ -348,7 +355,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub management: ::std::option::Option<crate::schemas::NodeManagement>,
-        #[doc = "Deprecated. Minimum CPU platform to be used for NAP created node pools. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: Intel Haswell or minCpuPlatform: Intel Sandy Bridge. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform) This field is deprecated, min_cpu_platform should be specified using cloud.google.com/requested-min-cpu-platform label selector on the pod. To unset the min cpu platform field pass “automatic” as field value."]
+        #[doc = "Deprecated. Minimum CPU platform to be used for NAP created node pools. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: Intel Haswell or minCpuPlatform: Intel Sandy Bridge. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform). This field is deprecated, min_cpu_platform should be specified using `cloud.google.com/requested-min-cpu-platform` label selector on the pod. To unset the min cpu platform field pass “automatic” as field value."]
         #[serde(
             rename = "minCpuPlatform",
             default,
@@ -476,13 +483,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BinaryAuthorization {
-        #[doc = "Enable Binary Authorization for this cluster. If enabled, all container images will be validated by Binary Authorization."]
+        #[doc = "This field is deprecated. Leave this unset and instead configure BinaryAuthorization using evaluation_mode. If evaluation_mode is set to anything other than EVALUATION_MODE_UNSPECIFIED, this field is ignored."]
         #[serde(
             rename = "enabled",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
+        #[doc = "Mode of operation for binauthz policy evaluation. If unspecified, defaults to DISABLED."]
+        #[serde(
+            rename = "evaluationMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation_mode:
+            ::std::option::Option<crate::schemas::BinaryAuthorizationEvaluationMode>,
     }
     impl ::google_field_selector::FieldSelector for BinaryAuthorization {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -490,6 +505,283 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for BinaryAuthorization {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BinaryAuthorizationEvaluationMode {
+        #[doc = "Disable BinaryAuthorization"]
+        Disabled,
+        #[doc = "Default value"]
+        EvaluationModeUnspecified,
+        #[doc = "Enforce Kubernetes admission requests with BinaryAuthorization using the project’s singleton policy. This is equivalent to setting the enabled boolean to true."]
+        ProjectSingletonPolicyEnforce,
+    }
+    impl BinaryAuthorizationEvaluationMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BinaryAuthorizationEvaluationMode::Disabled => "DISABLED",
+                BinaryAuthorizationEvaluationMode::EvaluationModeUnspecified => {
+                    "EVALUATION_MODE_UNSPECIFIED"
+                }
+                BinaryAuthorizationEvaluationMode::ProjectSingletonPolicyEnforce => {
+                    "PROJECT_SINGLETON_POLICY_ENFORCE"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BinaryAuthorizationEvaluationMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BinaryAuthorizationEvaluationMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BinaryAuthorizationEvaluationMode, ()> {
+            Ok(match s {
+                "DISABLED" => BinaryAuthorizationEvaluationMode::Disabled,
+                "EVALUATION_MODE_UNSPECIFIED" => {
+                    BinaryAuthorizationEvaluationMode::EvaluationModeUnspecified
+                }
+                "PROJECT_SINGLETON_POLICY_ENFORCE" => {
+                    BinaryAuthorizationEvaluationMode::ProjectSingletonPolicyEnforce
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BinaryAuthorizationEvaluationMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BinaryAuthorizationEvaluationMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BinaryAuthorizationEvaluationMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISABLED" => BinaryAuthorizationEvaluationMode::Disabled,
+                "EVALUATION_MODE_UNSPECIFIED" => {
+                    BinaryAuthorizationEvaluationMode::EvaluationModeUnspecified
+                }
+                "PROJECT_SINGLETON_POLICY_ENFORCE" => {
+                    BinaryAuthorizationEvaluationMode::ProjectSingletonPolicyEnforce
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BinaryAuthorizationEvaluationMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BinaryAuthorizationEvaluationMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BlueGreenInfo {
+        #[doc = "The resource URLs of the \\[managed instance groups\\] (/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with blue pool."]
+        #[serde(
+            rename = "blueInstanceGroupUrls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub blue_instance_group_urls: ::std::option::Option<Vec<String>>,
+        #[doc = "Time to start deleting blue pool to complete blue-green upgrade, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."]
+        #[serde(
+            rename = "bluePoolDeletionStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub blue_pool_deletion_start_time: ::std::option::Option<String>,
+        #[doc = "The resource URLs of the \\[managed instance groups\\] (/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with green pool."]
+        #[serde(
+            rename = "greenInstanceGroupUrls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub green_instance_group_urls: ::std::option::Option<Vec<String>>,
+        #[doc = "Version of green pool."]
+        #[serde(
+            rename = "greenPoolVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub green_pool_version: ::std::option::Option<String>,
+        #[doc = "Current blue-green upgrade phase."]
+        #[serde(
+            rename = "phase",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub phase: ::std::option::Option<crate::schemas::BlueGreenInfoPhase>,
+    }
+    impl ::google_field_selector::FieldSelector for BlueGreenInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BlueGreenInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BlueGreenInfoPhase {
+        #[doc = "Start cordoning blue pool nodes."]
+        CordoningBluePool,
+        #[doc = "Start creating green pool nodes."]
+        CreatingGreenPool,
+        #[doc = "Start deleting blue nodes."]
+        DeletingBluePool,
+        #[doc = "Start draining blue pool nodes."]
+        DrainingBluePool,
+        #[doc = "Start soaking time after draining entire blue pool."]
+        NodePoolSoaking,
+        #[doc = "Unspecified phase."]
+        PhaseUnspecified,
+        #[doc = "Rollback has been initiated."]
+        RollbackStarted,
+        #[doc = "blue-green upgrade has been initiated."]
+        UpdateStarted,
+    }
+    impl BlueGreenInfoPhase {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BlueGreenInfoPhase::CordoningBluePool => "CORDONING_BLUE_POOL",
+                BlueGreenInfoPhase::CreatingGreenPool => "CREATING_GREEN_POOL",
+                BlueGreenInfoPhase::DeletingBluePool => "DELETING_BLUE_POOL",
+                BlueGreenInfoPhase::DrainingBluePool => "DRAINING_BLUE_POOL",
+                BlueGreenInfoPhase::NodePoolSoaking => "NODE_POOL_SOAKING",
+                BlueGreenInfoPhase::PhaseUnspecified => "PHASE_UNSPECIFIED",
+                BlueGreenInfoPhase::RollbackStarted => "ROLLBACK_STARTED",
+                BlueGreenInfoPhase::UpdateStarted => "UPDATE_STARTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BlueGreenInfoPhase {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BlueGreenInfoPhase {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BlueGreenInfoPhase, ()> {
+            Ok(match s {
+                "CORDONING_BLUE_POOL" => BlueGreenInfoPhase::CordoningBluePool,
+                "CREATING_GREEN_POOL" => BlueGreenInfoPhase::CreatingGreenPool,
+                "DELETING_BLUE_POOL" => BlueGreenInfoPhase::DeletingBluePool,
+                "DRAINING_BLUE_POOL" => BlueGreenInfoPhase::DrainingBluePool,
+                "NODE_POOL_SOAKING" => BlueGreenInfoPhase::NodePoolSoaking,
+                "PHASE_UNSPECIFIED" => BlueGreenInfoPhase::PhaseUnspecified,
+                "ROLLBACK_STARTED" => BlueGreenInfoPhase::RollbackStarted,
+                "UPDATE_STARTED" => BlueGreenInfoPhase::UpdateStarted,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BlueGreenInfoPhase {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BlueGreenInfoPhase {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BlueGreenInfoPhase {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CORDONING_BLUE_POOL" => BlueGreenInfoPhase::CordoningBluePool,
+                "CREATING_GREEN_POOL" => BlueGreenInfoPhase::CreatingGreenPool,
+                "DELETING_BLUE_POOL" => BlueGreenInfoPhase::DeletingBluePool,
+                "DRAINING_BLUE_POOL" => BlueGreenInfoPhase::DrainingBluePool,
+                "NODE_POOL_SOAKING" => BlueGreenInfoPhase::NodePoolSoaking,
+                "PHASE_UNSPECIFIED" => BlueGreenInfoPhase::PhaseUnspecified,
+                "ROLLBACK_STARTED" => BlueGreenInfoPhase::RollbackStarted,
+                "UPDATE_STARTED" => BlueGreenInfoPhase::UpdateStarted,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BlueGreenInfoPhase {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BlueGreenInfoPhase {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct BlueGreenSettings {
+        #[doc = "Time needed after draining entire blue pool. After this period, blue pool will be cleaned up."]
+        #[serde(
+            rename = "nodePoolSoakDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_pool_soak_duration: ::std::option::Option<String>,
+        #[doc = "Standard policy for the blue-green upgrade."]
+        #[serde(
+            rename = "standardRolloutPolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub standard_rollout_policy: ::std::option::Option<crate::schemas::StandardRolloutPolicy>,
+    }
+    impl ::google_field_selector::FieldSelector for BlueGreenSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BlueGreenSettings {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -521,7 +813,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_id: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -749,16 +1041,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Cluster {
         #[doc = "Configurations for the various addons available to run in the cluster."]
@@ -825,6 +1108,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidential_nodes: ::std::option::Option<crate::schemas::ConfidentialNodes>,
+        #[doc = "Configuration for the fine-grained cost management feature."]
+        #[serde(
+            rename = "costManagementConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cost_management_config: ::std::option::Option<crate::schemas::CostManagementConfig>,
         #[doc = "\\[Output only\\] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."]
         #[serde(
             rename = "createTime",
@@ -895,6 +1185,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub endpoint: ::std::option::Option<String>,
+        #[doc = "This checksum is computed by the server based on the value of cluster fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "\\[Output only\\] The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."]
         #[serde(
             rename = "expireTime",
@@ -1135,6 +1432,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub private_cluster_config: ::std::option::Option<crate::schemas::PrivateClusterConfig>,
+        #[doc = "Enable/Disable Protect API features for the cluster."]
+        #[serde(
+            rename = "protectConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protect_config: ::std::option::Option<crate::schemas::ProtectConfig>,
         #[doc = "Release channel configuration."]
         #[serde(
             rename = "releaseChannel",
@@ -1356,16 +1660,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ClusterAutoscaling {
         #[doc = "The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the NodePool’s nodes can be created by NAP."]
@@ -1605,16 +1900,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ClusterUpdate {
         #[doc = "Configurations for the various addons available to run in the cluster."]
@@ -1654,6 +1940,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_cluster_telemetry: ::std::option::Option<crate::schemas::ClusterTelemetry>,
+        #[doc = "The desired configuration for the fine-grained cost management feature."]
+        #[serde(
+            rename = "desiredCostManagementConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_cost_management_config:
+            ::std::option::Option<crate::schemas::CostManagementConfig>,
         #[doc = "Configuration of etcd encryption."]
         #[serde(
             rename = "desiredDatabaseEncryption",
@@ -1683,6 +1977,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_dns_config: ::std::option::Option<crate::schemas::Dnsconfig>,
+        #[doc = "Enable/Disable private endpoint for the cluster’s master."]
+        #[serde(
+            rename = "desiredEnablePrivateEndpoint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_enable_private_endpoint: ::std::option::Option<bool>,
+        #[doc = "The desired config of Gateway API on this cluster."]
+        #[serde(
+            rename = "desiredGatewayApiConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_gateway_api_config: ::std::option::Option<crate::schemas::GatewayAPIConfig>,
         #[doc = "The desired GCFS config for the cluster."]
         #[serde(
             rename = "desiredGcfsConfig",
@@ -1808,6 +2116,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_node_pool_id: ::std::option::Option<String>,
+        #[doc = "The desired node pool logging configuration defaults for the cluster."]
+        #[serde(
+            rename = "desiredNodePoolLoggingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_node_pool_logging_config:
+            ::std::option::Option<crate::schemas::NodePoolLoggingConfig>,
         #[doc = "The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - “latest”: picks the highest valid Kubernetes version - “1.X”: picks the highest valid patch+gke.N patch in the 1.X version - “1.X.Y”: picks the highest valid gke.N patch in the 1.X.Y version - “1.X.Y-gke.N”: picks an explicit Kubernetes version - “-”: picks the Kubernetes master version"]
         #[serde(
             rename = "desiredNodeVersion",
@@ -1846,6 +2162,13 @@ pub mod schemas {
         )]
         pub desired_private_ipv_6_google_access:
             ::std::option::Option<crate::schemas::ClusterUpdateDesiredPrivateIpv6GoogleAccess>,
+        #[doc = "Enable/Disable Protect API features for the cluster."]
+        #[serde(
+            rename = "desiredProtectConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_protect_config: ::std::option::Option<crate::schemas::ProtectConfig>,
         #[doc = "The desired release channel configuration."]
         #[serde(
             rename = "desiredReleaseChannel",
@@ -1876,6 +2199,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desired_shielded_nodes: ::std::option::Option<crate::schemas::ShieldedNodes>,
+        #[doc = "The desired stack type of the cluster. If a stack type is provided and does not match the current stack type of the cluster, update will attempt to change the stack type to the new type."]
+        #[serde(
+            rename = "desiredStackType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desired_stack_type:
+            ::std::option::Option<crate::schemas::ClusterUpdateDesiredStackType>,
         #[doc = "The desired Cloud TPU configuration."]
         #[serde(
             rename = "desiredTpuConfig",
@@ -1914,6 +2245,13 @@ pub mod schemas {
         )]
         pub desired_workload_identity_config:
             ::std::option::Option<crate::schemas::WorkloadIdentityConfig>,
+        #[doc = "The current etag of the cluster. If an etag is provided and does not match the current etag of the cluster, update will be blocked and an ABORTED error will be returned."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for ClusterUpdate {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2068,6 +2406,82 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ClusterUpdateDesiredStackType {
+        #[doc = "The value used if the cluster is a IPV4 only"]
+        Ipv4,
+        #[doc = "The value used if the cluster is a dual stack cluster"]
+        Ipv4Ipv6,
+        #[doc = "By default, the clusters will be IPV4 only"]
+        StackTypeUnspecified,
+    }
+    impl ClusterUpdateDesiredStackType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ClusterUpdateDesiredStackType::Ipv4 => "IPV4",
+                ClusterUpdateDesiredStackType::Ipv4Ipv6 => "IPV4_IPV6",
+                ClusterUpdateDesiredStackType::StackTypeUnspecified => "STACK_TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ClusterUpdateDesiredStackType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ClusterUpdateDesiredStackType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ClusterUpdateDesiredStackType, ()> {
+            Ok(match s {
+                "IPV4" => ClusterUpdateDesiredStackType::Ipv4,
+                "IPV4_IPV6" => ClusterUpdateDesiredStackType::Ipv4Ipv6,
+                "STACK_TYPE_UNSPECIFIED" => ClusterUpdateDesiredStackType::StackTypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ClusterUpdateDesiredStackType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ClusterUpdateDesiredStackType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ClusterUpdateDesiredStackType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IPV4" => ClusterUpdateDesiredStackType::Ipv4,
+                "IPV4_IPV6" => ClusterUpdateDesiredStackType::Ipv4Ipv6,
+                "STACK_TYPE_UNSPECIFIED" => ClusterUpdateDesiredStackType::StackTypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ClusterUpdateDesiredStackType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClusterUpdateDesiredStackType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -2095,7 +2509,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -2116,6 +2530,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CompleteIPRotationRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CompleteNodePoolUpgradeRequest {}
+    impl ::google_field_selector::FieldSelector for CompleteNodePoolUpgradeRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CompleteNodePoolUpgradeRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2225,6 +2663,28 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct CostManagementConfig {
+        #[doc = "Whether the feature is enabled or not."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for CostManagementConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CostManagementConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct CreateClusterRequest {
         #[doc = "Required. A [cluster resource](https://cloud.google.com/container-engine/reference/rest/v1beta1/projects.locations.clusters)"]
         #[serde(
@@ -2240,7 +2700,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parent: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field."]
         #[serde(
             rename = "projectId",
             default,
@@ -2266,16 +2726,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CreateNodePoolRequest {
         #[doc = "Required. Deprecated. The name of the cluster. This field has been deprecated and replaced by the parent field."]
@@ -2299,7 +2750,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parent: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the parent field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field."]
         #[serde(
             rename = "projectId",
             default,
@@ -2847,6 +3298,68 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct EphemeralStorageLocalSsdConfig {
+        #[doc = "Number of local SSDs to use to back ephemeral storage. Uses NVMe interfaces. Each local SSD is 375 GB in size. If zero, it means to disable using local SSDs as ephemeral storage. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information."]
+        #[serde(
+            rename = "localSsdCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub local_ssd_count: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for EphemeralStorageLocalSsdConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EphemeralStorageLocalSsdConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FastSocket {
+        #[doc = "Whether Fast Socket features are enabled in the node pool."]
+        #[serde(
+            rename = "enabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for FastSocket {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FastSocket {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Filter {
         #[doc = "Event types to allowlist."]
         #[serde(
@@ -2943,6 +3456,118 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FilterEventTypeItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GatewayAPIConfig {
+        #[doc = "The Gateway API release channel to use for Gateway API."]
+        #[serde(
+            rename = "channel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel: ::std::option::Option<crate::schemas::GatewayAPIConfigChannel>,
+    }
+    impl ::google_field_selector::FieldSelector for GatewayAPIConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GatewayAPIConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GatewayAPIConfigChannel {
+        #[doc = "Gateway API support is disabled"]
+        ChannelDisabled,
+        #[doc = "Gateway API support is enabled, experimental CRDs are installed"]
+        ChannelExperimental,
+        #[doc = "Gateway API support is enabled, standard CRDs are installed"]
+        ChannelStandard,
+        #[doc = "Default value."]
+        ChannelUnspecified,
+    }
+    impl GatewayAPIConfigChannel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GatewayAPIConfigChannel::ChannelDisabled => "CHANNEL_DISABLED",
+                GatewayAPIConfigChannel::ChannelExperimental => "CHANNEL_EXPERIMENTAL",
+                GatewayAPIConfigChannel::ChannelStandard => "CHANNEL_STANDARD",
+                GatewayAPIConfigChannel::ChannelUnspecified => "CHANNEL_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GatewayAPIConfigChannel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GatewayAPIConfigChannel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GatewayAPIConfigChannel, ()> {
+            Ok(match s {
+                "CHANNEL_DISABLED" => GatewayAPIConfigChannel::ChannelDisabled,
+                "CHANNEL_EXPERIMENTAL" => GatewayAPIConfigChannel::ChannelExperimental,
+                "CHANNEL_STANDARD" => GatewayAPIConfigChannel::ChannelStandard,
+                "CHANNEL_UNSPECIFIED" => GatewayAPIConfigChannel::ChannelUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GatewayAPIConfigChannel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GatewayAPIConfigChannel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GatewayAPIConfigChannel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CHANNEL_DISABLED" => GatewayAPIConfigChannel::ChannelDisabled,
+                "CHANNEL_EXPERIMENTAL" => GatewayAPIConfigChannel::ChannelExperimental,
+                "CHANNEL_STANDARD" => GatewayAPIConfigChannel::ChannelStandard,
+                "CHANNEL_UNSPECIFIED" => GatewayAPIConfigChannel::ChannelUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GatewayAPIConfigChannel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GatewayAPIConfigChannel {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3201,6 +3826,123 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GpusharingConfig {
+        #[doc = "The type of GPU sharing strategy to enable on the GPU node."]
+        #[serde(
+            rename = "gpuSharingStrategy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gpu_sharing_strategy:
+            ::std::option::Option<crate::schemas::GpusharingConfigGpuSharingStrategy>,
+        #[doc = "The max number of containers that can share a physical GPU."]
+        #[serde(
+            rename = "maxSharedClientsPerGpu",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_shared_clients_per_gpu: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GpusharingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GpusharingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GpusharingConfigGpuSharingStrategy {
+        #[doc = "Default value."]
+        GpuSharingStrategyUnspecified,
+        #[doc = "GPUs are time-shared between containers."]
+        TimeSharing,
+    }
+    impl GpusharingConfigGpuSharingStrategy {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GpusharingConfigGpuSharingStrategy::GpuSharingStrategyUnspecified => {
+                    "GPU_SHARING_STRATEGY_UNSPECIFIED"
+                }
+                GpusharingConfigGpuSharingStrategy::TimeSharing => "TIME_SHARING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GpusharingConfigGpuSharingStrategy {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GpusharingConfigGpuSharingStrategy {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GpusharingConfigGpuSharingStrategy, ()> {
+            Ok(match s {
+                "GPU_SHARING_STRATEGY_UNSPECIFIED" => {
+                    GpusharingConfigGpuSharingStrategy::GpuSharingStrategyUnspecified
+                }
+                "TIME_SHARING" => GpusharingConfigGpuSharingStrategy::TimeSharing,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GpusharingConfigGpuSharingStrategy {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GpusharingConfigGpuSharingStrategy {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GpusharingConfigGpuSharingStrategy {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "GPU_SHARING_STRATEGY_UNSPECIFIED" => {
+                    GpusharingConfigGpuSharingStrategy::GpuSharingStrategyUnspecified
+                }
+                "TIME_SHARING" => GpusharingConfigGpuSharingStrategy::TimeSharing,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GpusharingConfigGpuSharingStrategy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GpusharingConfigGpuSharingStrategy {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct HorizontalPodAutoscaling {
         #[doc = "Whether the Horizontal Pod Autoscaling feature is enabled in the cluster. When enabled, it ensures that metrics are collected into Stackdriver Monitoring."]
         #[serde(
@@ -3438,6 +4180,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_subnetwork: ::std::option::Option<bool>,
+        #[doc = "The ipv6 access type (internal or external) when create_subnetwork is true"]
+        #[serde(
+            rename = "ipv6AccessType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ipv_6_access_type:
+            ::std::option::Option<crate::schemas::IpallocationPolicyIpv6AccessType>,
         #[doc = "This field is deprecated, use node_ipv4_cidr_block."]
         #[serde(
             rename = "nodeIpv4Cidr",
@@ -3466,6 +4216,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub services_ipv_4_cidr_block: ::std::option::Option<String>,
+        #[doc = "Output only. \\[Output only\\] The services IPv6 CIDR block for the cluster."]
+        #[serde(
+            rename = "servicesIpv6CidrBlock",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub services_ipv_6_cidr_block: ::std::option::Option<String>,
         #[doc = "The name of the secondary range to be used as for the services CIDR block. The secondary range will be used for service ClusterIPs. This must be an existing secondary range associated with the cluster subnetwork. This field is only applicable with use_ip_aliases and create_subnetwork is false."]
         #[serde(
             rename = "servicesSecondaryRangeName",
@@ -3473,6 +4230,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub services_secondary_range_name: ::std::option::Option<String>,
+        #[doc = "IP stack type"]
+        #[serde(
+            rename = "stackType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub stack_type: ::std::option::Option<crate::schemas::IpallocationPolicyStackType>,
+        #[doc = "Output only. \\[Output only\\] The subnet’s IPv6 CIDR block used by nodes and pods."]
+        #[serde(
+            rename = "subnetIpv6CidrBlock",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subnet_ipv_6_cidr_block: ::std::option::Option<String>,
         #[doc = "A custom subnetwork name to be used if `create_subnetwork` is true. If this field is empty, then an automatic name will be chosen for the new subnetwork."]
         #[serde(
             rename = "subnetworkName",
@@ -3508,6 +4279,164 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for IpallocationPolicy {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IpallocationPolicyIpv6AccessType {
+        #[doc = "Access type external (all v6 addresses are external IPs)"]
+        External,
+        #[doc = "Access type internal (all v6 addresses are internal IPs)"]
+        Internal,
+        #[doc = "Default value, will be defaulted as type external."]
+        Ipv6AccessTypeUnspecified,
+    }
+    impl IpallocationPolicyIpv6AccessType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IpallocationPolicyIpv6AccessType::External => "EXTERNAL",
+                IpallocationPolicyIpv6AccessType::Internal => "INTERNAL",
+                IpallocationPolicyIpv6AccessType::Ipv6AccessTypeUnspecified => {
+                    "IPV6_ACCESS_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IpallocationPolicyIpv6AccessType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IpallocationPolicyIpv6AccessType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<IpallocationPolicyIpv6AccessType, ()> {
+            Ok(match s {
+                "EXTERNAL" => IpallocationPolicyIpv6AccessType::External,
+                "INTERNAL" => IpallocationPolicyIpv6AccessType::Internal,
+                "IPV6_ACCESS_TYPE_UNSPECIFIED" => {
+                    IpallocationPolicyIpv6AccessType::Ipv6AccessTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IpallocationPolicyIpv6AccessType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IpallocationPolicyIpv6AccessType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IpallocationPolicyIpv6AccessType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTERNAL" => IpallocationPolicyIpv6AccessType::External,
+                "INTERNAL" => IpallocationPolicyIpv6AccessType::Internal,
+                "IPV6_ACCESS_TYPE_UNSPECIFIED" => {
+                    IpallocationPolicyIpv6AccessType::Ipv6AccessTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IpallocationPolicyIpv6AccessType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IpallocationPolicyIpv6AccessType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IpallocationPolicyStackType {
+        #[doc = "The value used if the cluster is a IPV4 only"]
+        Ipv4,
+        #[doc = "The value used if the cluster is a dual stack cluster"]
+        Ipv4Ipv6,
+        #[doc = "By default, the clusters will be IPV4 only"]
+        StackTypeUnspecified,
+    }
+    impl IpallocationPolicyStackType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IpallocationPolicyStackType::Ipv4 => "IPV4",
+                IpallocationPolicyStackType::Ipv4Ipv6 => "IPV4_IPV6",
+                IpallocationPolicyStackType::StackTypeUnspecified => "STACK_TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IpallocationPolicyStackType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IpallocationPolicyStackType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<IpallocationPolicyStackType, ()> {
+            Ok(match s {
+                "IPV4" => IpallocationPolicyStackType::Ipv4,
+                "IPV4_IPV6" => IpallocationPolicyStackType::Ipv4Ipv6,
+                "STACK_TYPE_UNSPECIFIED" => IpallocationPolicyStackType::StackTypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IpallocationPolicyStackType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IpallocationPolicyStackType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IpallocationPolicyStackType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IPV4" => IpallocationPolicyStackType::Ipv4,
+                "IPV4_IPV6" => IpallocationPolicyStackType::Ipv4Ipv6,
+                "STACK_TYPE_UNSPECIFIED" => IpallocationPolicyStackType::StackTypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IpallocationPolicyStackType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IpallocationPolicyStackType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3814,6 +4743,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LinuxNodeConfig {
+        #[doc = "cgroup_mode specifies the cgroup mode to be used on the node."]
+        #[serde(
+            rename = "cgroupMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cgroup_mode: ::std::option::Option<crate::schemas::LinuxNodeConfigCgroupMode>,
         #[doc = "The Linux kernel parameters to be applied to the nodes and all pods running on the nodes. The following parameters are supported. net.core.busy_poll net.core.busy_read net.core.netdev_max_backlog net.core.rmem_max net.core.wmem_default net.core.wmem_max net.core.optmem_max net.core.somaxconn net.ipv4.tcp_rmem net.ipv4.tcp_wmem net.ipv4.tcp_tw_reuse"]
         #[serde(
             rename = "sysctls",
@@ -3832,17 +4768,84 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum LinuxNodeConfigCgroupMode {
+        #[doc = "CGROUP_MODE_UNSPECIFIED is when unspecified cgroup configuration is used. The default for the GKE node OS image will be used."]
+        CgroupModeUnspecified,
+        #[doc = "CGROUP_MODE_V1 specifies to use cgroupv1 for the cgroup configuration on the node image."]
+        CgroupModeV1,
+        #[doc = "CGROUP_MODE_V2 specifies to use cgroupv2 for the cgroup configuration on the node image."]
+        CgroupModeV2,
+    }
+    impl LinuxNodeConfigCgroupMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                LinuxNodeConfigCgroupMode::CgroupModeUnspecified => "CGROUP_MODE_UNSPECIFIED",
+                LinuxNodeConfigCgroupMode::CgroupModeV1 => "CGROUP_MODE_V1",
+                LinuxNodeConfigCgroupMode::CgroupModeV2 => "CGROUP_MODE_V2",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for LinuxNodeConfigCgroupMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for LinuxNodeConfigCgroupMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<LinuxNodeConfigCgroupMode, ()> {
+            Ok(match s {
+                "CGROUP_MODE_UNSPECIFIED" => LinuxNodeConfigCgroupMode::CgroupModeUnspecified,
+                "CGROUP_MODE_V1" => LinuxNodeConfigCgroupMode::CgroupModeV1,
+                "CGROUP_MODE_V2" => LinuxNodeConfigCgroupMode::CgroupModeV2,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for LinuxNodeConfigCgroupMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for LinuxNodeConfigCgroupMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for LinuxNodeConfigCgroupMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CGROUP_MODE_UNSPECIFIED" => LinuxNodeConfigCgroupMode::CgroupModeUnspecified,
+                "CGROUP_MODE_V1" => LinuxNodeConfigCgroupMode::CgroupModeV1,
+                "CGROUP_MODE_V2" => LinuxNodeConfigCgroupMode::CgroupModeV2,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for LinuxNodeConfigCgroupMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LinuxNodeConfigCgroupMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ListClustersResponse {
         #[doc = "A list of clusters in the project in the specified zone, or across all ones."]
@@ -3908,22 +4911,13 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ListNodePoolsResponse {
         #[doc = "A list of node pools for a cluster."]
@@ -4009,9 +5003,40 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListUsableSubnetworksResponse {
+    impl crate::GetNextPageToken<String> for ListUsableSubnetworksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LocalNvmeSsdBlockConfig {
+        #[doc = "The number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size. If zero, it means no raw-block local NVMe SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information."]
+        #[serde(
+            rename = "localSsdCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub local_ssd_count: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for LocalNvmeSsdBlockConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LocalNvmeSsdBlockConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -4041,7 +5066,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::LocationType>,
-        #[doc = "Whether the location is recomended for GKE cluster scheduling."]
+        #[doc = "Whether the location is recommended for GKE cluster scheduling."]
         #[serde(
             rename = "recommended",
             default,
@@ -4169,8 +5194,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum LoggingComponentConfigEnableComponentsItems {
+        #[doc = "kube-apiserver"]
+        Apiserver,
         #[doc = "Default value. This shouldn’t be used."]
         ComponentUnspecified,
+        #[doc = "kube-controller-manager"]
+        ControllerManager,
+        #[doc = "kube-scheduler"]
+        Scheduler,
         #[doc = "system components"]
         SystemComponents,
         #[doc = "workloads"]
@@ -4179,9 +5210,14 @@ pub mod schemas {
     impl LoggingComponentConfigEnableComponentsItems {
         pub fn as_str(self) -> &'static str {
             match self {
+                LoggingComponentConfigEnableComponentsItems::Apiserver => "APISERVER",
                 LoggingComponentConfigEnableComponentsItems::ComponentUnspecified => {
                     "COMPONENT_UNSPECIFIED"
                 }
+                LoggingComponentConfigEnableComponentsItems::ControllerManager => {
+                    "CONTROLLER_MANAGER"
+                }
+                LoggingComponentConfigEnableComponentsItems::Scheduler => "SCHEDULER",
                 LoggingComponentConfigEnableComponentsItems::SystemComponents => {
                     "SYSTEM_COMPONENTS"
                 }
@@ -4200,9 +5236,14 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<LoggingComponentConfigEnableComponentsItems, ()> {
             Ok(match s {
+                "APISERVER" => LoggingComponentConfigEnableComponentsItems::Apiserver,
                 "COMPONENT_UNSPECIFIED" => {
                     LoggingComponentConfigEnableComponentsItems::ComponentUnspecified
                 }
+                "CONTROLLER_MANAGER" => {
+                    LoggingComponentConfigEnableComponentsItems::ControllerManager
+                }
+                "SCHEDULER" => LoggingComponentConfigEnableComponentsItems::Scheduler,
                 "SYSTEM_COMPONENTS" => {
                     LoggingComponentConfigEnableComponentsItems::SystemComponents
                 }
@@ -4231,9 +5272,14 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "APISERVER" => LoggingComponentConfigEnableComponentsItems::Apiserver,
                 "COMPONENT_UNSPECIFIED" => {
                     LoggingComponentConfigEnableComponentsItems::ComponentUnspecified
                 }
+                "CONTROLLER_MANAGER" => {
+                    LoggingComponentConfigEnableComponentsItems::ControllerManager
+                }
+                "SCHEDULER" => LoggingComponentConfigEnableComponentsItems::Scheduler,
                 "SYSTEM_COMPONENTS" => {
                     LoggingComponentConfigEnableComponentsItems::SystemComponents
                 }
@@ -4284,6 +5330,113 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for LoggingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LoggingVariantConfig {
+        #[doc = "Logging variant deployed on nodes."]
+        #[serde(
+            rename = "variant",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub variant: ::std::option::Option<crate::schemas::LoggingVariantConfigVariant>,
+    }
+    impl ::google_field_selector::FieldSelector for LoggingVariantConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingVariantConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum LoggingVariantConfigVariant {
+        #[doc = "default logging variant."]
+        Default,
+        #[doc = "maximum logging throughput variant."]
+        MaxThroughput,
+        #[doc = "Default value. This shouldn’t be used."]
+        VariantUnspecified,
+    }
+    impl LoggingVariantConfigVariant {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                LoggingVariantConfigVariant::Default => "DEFAULT",
+                LoggingVariantConfigVariant::MaxThroughput => "MAX_THROUGHPUT",
+                LoggingVariantConfigVariant::VariantUnspecified => "VARIANT_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for LoggingVariantConfigVariant {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for LoggingVariantConfigVariant {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<LoggingVariantConfigVariant, ()> {
+            Ok(match s {
+                "DEFAULT" => LoggingVariantConfigVariant::Default,
+                "MAX_THROUGHPUT" => LoggingVariantConfigVariant::MaxThroughput,
+                "VARIANT_UNSPECIFIED" => LoggingVariantConfigVariant::VariantUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for LoggingVariantConfigVariant {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for LoggingVariantConfigVariant {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for LoggingVariantConfigVariant {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DEFAULT" => LoggingVariantConfigVariant::Default,
+                "MAX_THROUGHPUT" => LoggingVariantConfigVariant::MaxThroughput,
+                "VARIANT_UNSPECIFIED" => LoggingVariantConfigVariant::VariantUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for LoggingVariantConfigVariant {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingVariantConfigVariant {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4633,6 +5786,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
+        #[doc = "Whether master is accessbile via Google Compute Engine Public IP addresses."]
+        #[serde(
+            rename = "gcpPublicCidrsAccessEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcp_public_cidrs_access_enabled: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for MasterAuthorizedNetworksConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4786,8 +5946,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MonitoringComponentConfigEnableComponentsItems {
+        #[doc = "kube-apiserver"]
+        Apiserver,
         #[doc = "Default value. This shouldn’t be used."]
         ComponentUnspecified,
+        #[doc = "kube-controller-manager"]
+        ControllerManager,
+        #[doc = "kube-scheduler"]
+        Scheduler,
         #[doc = "system components"]
         SystemComponents,
         #[doc = "Deprecated: Use Google Cloud Managed Service for Prometheus."]
@@ -4796,9 +5962,14 @@ pub mod schemas {
     impl MonitoringComponentConfigEnableComponentsItems {
         pub fn as_str(self) -> &'static str {
             match self {
+                MonitoringComponentConfigEnableComponentsItems::Apiserver => "APISERVER",
                 MonitoringComponentConfigEnableComponentsItems::ComponentUnspecified => {
                     "COMPONENT_UNSPECIFIED"
                 }
+                MonitoringComponentConfigEnableComponentsItems::ControllerManager => {
+                    "CONTROLLER_MANAGER"
+                }
+                MonitoringComponentConfigEnableComponentsItems::Scheduler => "SCHEDULER",
                 MonitoringComponentConfigEnableComponentsItems::SystemComponents => {
                     "SYSTEM_COMPONENTS"
                 }
@@ -4817,9 +5988,14 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<MonitoringComponentConfigEnableComponentsItems, ()> {
             Ok(match s {
+                "APISERVER" => MonitoringComponentConfigEnableComponentsItems::Apiserver,
                 "COMPONENT_UNSPECIFIED" => {
                     MonitoringComponentConfigEnableComponentsItems::ComponentUnspecified
                 }
+                "CONTROLLER_MANAGER" => {
+                    MonitoringComponentConfigEnableComponentsItems::ControllerManager
+                }
+                "SCHEDULER" => MonitoringComponentConfigEnableComponentsItems::Scheduler,
                 "SYSTEM_COMPONENTS" => {
                     MonitoringComponentConfigEnableComponentsItems::SystemComponents
                 }
@@ -4848,9 +6024,14 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "APISERVER" => MonitoringComponentConfigEnableComponentsItems::Apiserver,
                 "COMPONENT_UNSPECIFIED" => {
                     MonitoringComponentConfigEnableComponentsItems::ComponentUnspecified
                 }
+                "CONTROLLER_MANAGER" => {
+                    MonitoringComponentConfigEnableComponentsItems::ControllerManager
+                }
+                "SCHEDULER" => MonitoringComponentConfigEnableComponentsItems::Scheduler,
                 "SYSTEM_COMPONENTS" => {
                     MonitoringComponentConfigEnableComponentsItems::SystemComponents
                 }
@@ -4961,6 +6142,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_l_4ilb_subsetting: ::std::option::Option<bool>,
+        #[doc = "GatewayAPIConfig contains the desired config of Gateway API on this cluster."]
+        #[serde(
+            rename = "gatewayApiConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gateway_api_config: ::std::option::Option<crate::schemas::GatewayAPIConfig>,
         #[doc = "Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network"]
         #[serde(
             rename = "network",
@@ -5201,6 +6389,210 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct NetworkPerformanceConfig {
+        #[doc = "Specifies the network bandwidth tier for the NodePool for traffic to external/public IP addresses."]
+        #[serde(
+            rename = "externalIpEgressBandwidthTier",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_ip_egress_bandwidth_tier: ::std::option::Option<
+            crate::schemas::NetworkPerformanceConfigExternalIpEgressBandwidthTier,
+        >,
+        #[doc = "Specifies the total network bandwidth tier for the NodePool."]
+        #[serde(
+            rename = "totalEgressBandwidthTier",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_egress_bandwidth_tier:
+            ::std::option::Option<crate::schemas::NetworkPerformanceConfigTotalEgressBandwidthTier>,
+    }
+    impl ::google_field_selector::FieldSelector for NetworkPerformanceConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkPerformanceConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NetworkPerformanceConfigExternalIpEgressBandwidthTier {
+        #[doc = "Higher bandwidth, actual values based on VM size."]
+        Tier1,
+        #[doc = "Default value"]
+        TierUnspecified,
+    }
+    impl NetworkPerformanceConfigExternalIpEgressBandwidthTier {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NetworkPerformanceConfigExternalIpEgressBandwidthTier::Tier1 => "TIER_1",
+                NetworkPerformanceConfigExternalIpEgressBandwidthTier::TierUnspecified => {
+                    "TIER_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NetworkPerformanceConfigExternalIpEgressBandwidthTier {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NetworkPerformanceConfigExternalIpEgressBandwidthTier {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<NetworkPerformanceConfigExternalIpEgressBandwidthTier, ()>
+        {
+            Ok(match s {
+                "TIER_1" => NetworkPerformanceConfigExternalIpEgressBandwidthTier::Tier1,
+                "TIER_UNSPECIFIED" => {
+                    NetworkPerformanceConfigExternalIpEgressBandwidthTier::TierUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NetworkPerformanceConfigExternalIpEgressBandwidthTier {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NetworkPerformanceConfigExternalIpEgressBandwidthTier {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NetworkPerformanceConfigExternalIpEgressBandwidthTier {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TIER_1" => NetworkPerformanceConfigExternalIpEgressBandwidthTier::Tier1,
+                "TIER_UNSPECIFIED" => {
+                    NetworkPerformanceConfigExternalIpEgressBandwidthTier::TierUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for NetworkPerformanceConfigExternalIpEgressBandwidthTier
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for NetworkPerformanceConfigExternalIpEgressBandwidthTier
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NetworkPerformanceConfigTotalEgressBandwidthTier {
+        #[doc = "Higher bandwidth, actual values based on VM size."]
+        Tier1,
+        #[doc = "Default value"]
+        TierUnspecified,
+    }
+    impl NetworkPerformanceConfigTotalEgressBandwidthTier {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NetworkPerformanceConfigTotalEgressBandwidthTier::Tier1 => "TIER_1",
+                NetworkPerformanceConfigTotalEgressBandwidthTier::TierUnspecified => {
+                    "TIER_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NetworkPerformanceConfigTotalEgressBandwidthTier {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NetworkPerformanceConfigTotalEgressBandwidthTier {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<NetworkPerformanceConfigTotalEgressBandwidthTier, ()> {
+            Ok(match s {
+                "TIER_1" => NetworkPerformanceConfigTotalEgressBandwidthTier::Tier1,
+                "TIER_UNSPECIFIED" => {
+                    NetworkPerformanceConfigTotalEgressBandwidthTier::TierUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NetworkPerformanceConfigTotalEgressBandwidthTier {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NetworkPerformanceConfigTotalEgressBandwidthTier {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NetworkPerformanceConfigTotalEgressBandwidthTier {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TIER_1" => NetworkPerformanceConfigTotalEgressBandwidthTier::Tier1,
+                "TIER_UNSPECIFIED" => {
+                    NetworkPerformanceConfigTotalEgressBandwidthTier::TierUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NetworkPerformanceConfigTotalEgressBandwidthTier {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NetworkPerformanceConfigTotalEgressBandwidthTier {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct NetworkPolicy {
         #[doc = "Whether network policy is enabled on the cluster."]
         #[serde(
@@ -5423,6 +6815,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ephemeral_storage_config: ::std::option::Option<crate::schemas::EphemeralStorageConfig>,
+        #[doc = "Parameters for the node ephemeral storage using Local SSDs. If unspecified, ephemeral storage is backed by the boot disk. This field is functionally equivalent to the ephemeral_storage_config"]
+        #[serde(
+            rename = "ephemeralStorageLocalSsdConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ephemeral_storage_local_ssd_config:
+            ::std::option::Option<crate::schemas::EphemeralStorageLocalSsdConfig>,
+        #[doc = "Enable or disable NCCL fast socket for the node pool."]
+        #[serde(
+            rename = "fastSocket",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fast_socket: ::std::option::Option<crate::schemas::FastSocket>,
         #[doc = "GCFS (Google Container File System) configs."]
         #[serde(
             rename = "gcfsConfig",
@@ -5437,7 +6844,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gvnic: ::std::option::Option<crate::schemas::VirtualNIC>,
-        #[doc = "The image type to use for this node. Note that for a given image type, the latest version of it will be used."]
+        #[doc = "The image type to use for this node. Note that for a given image type, the latest version of it will be used. Please see https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for available image types."]
         #[serde(
             rename = "imageType",
             default,
@@ -5465,6 +6872,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub linux_node_config: ::std::option::Option<crate::schemas::LinuxNodeConfig>,
+        #[doc = "Parameters for using raw-block Local NVMe SSDs."]
+        #[serde(
+            rename = "localNvmeSsdBlockConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub local_nvme_ssd_block_config:
+            ::std::option::Option<crate::schemas::LocalNvmeSsdBlockConfig>,
         #[doc = "The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information."]
         #[serde(
             rename = "localSsdCount",
@@ -5472,6 +6887,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub local_ssd_count: ::std::option::Option<i32>,
+        #[doc = "Logging configuration."]
+        #[serde(
+            rename = "loggingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_config: ::std::option::Option<crate::schemas::NodePoolLoggingConfig>,
         #[doc = "The name of a Google Compute Engine [machine type](https://cloud.google.com/compute/docs/machine-types). If unspecified, the default machine type is `e2-medium`."]
         #[serde(
             rename = "machineType",
@@ -5486,7 +6908,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as `minCpuPlatform: \"Intel Haswell\"` or `minCpuPlatform: \"Intel Sandy Bridge\"`. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)"]
+        #[doc = "Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as `minCpuPlatform: \"Intel Haswell\"` or `minCpuPlatform: \"Intel Sandy Bridge\"`. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)."]
         #[serde(
             rename = "minCpuPlatform",
             default,
@@ -5521,6 +6943,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reservation_affinity: ::std::option::Option<crate::schemas::ReservationAffinity>,
+        #[doc = "The resource labels for the node pool to use to annotate any related Google Compute Engine resources."]
+        #[serde(
+            rename = "resourceLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
         #[doc = "Sandbox configuration for this node."]
         #[serde(
             rename = "sandboxConfig",
@@ -5563,6 +6992,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub taints: ::std::option::Option<Vec<crate::schemas::NodeTaint>>,
+        #[doc = "Parameters that can be configured on Windows nodes."]
+        #[serde(
+            rename = "windowsNodeConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub windows_node_config: ::std::option::Option<crate::schemas::WindowsNodeConfig>,
         #[doc = "The workload metadata configuration for this node."]
         #[serde(
             rename = "workloadMetadataConfig",
@@ -5594,13 +7030,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NodeConfigDefaults {
-        #[doc = "GCFS (Google Container File System, a.k.a Riptide) options."]
+        #[doc = "GCFS (Google Container File System, also known as Riptide) options."]
         #[serde(
             rename = "gcfsConfig",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcfs_config: ::std::option::Option<crate::schemas::GcfsConfig>,
+        #[doc = "Logging configuration for node pools."]
+        #[serde(
+            rename = "loggingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_config: ::std::option::Option<crate::schemas::NodePoolLoggingConfig>,
     }
     impl ::google_field_selector::FieldSelector for NodeConfigDefaults {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5761,6 +7204,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_pod_range: ::std::option::Option<bool>,
+        #[doc = "Whether nodes have internal IP addresses only. If enable_private_nodes is not specified, then the value is derived from cluster.privateClusterConfig.enablePrivateNodes"]
+        #[serde(
+            rename = "enablePrivateNodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_private_nodes: ::std::option::Option<bool>,
+        #[doc = "Network bandwidth tier configuration."]
+        #[serde(
+            rename = "networkPerformanceConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_performance_config:
+            ::std::option::Option<crate::schemas::NetworkPerformanceConfig>,
         #[doc = "The IP address range for pod IPs in this node pool. Only applicable if `create_pod_range` is true. Set to blank to have a range chosen with the default size. Set to /netmask (e.g. `/14`) to have a range chosen with a specific netmask. Set to a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`) to pick a specific range to use. Only applicable if `ip_allocation_policy.use_ip_aliases` is true. This field cannot be changed after the node pool has been created."]
         #[serde(
             rename = "podIpv4CidrBlock",
@@ -5787,16 +7245,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct NodePool {
         #[doc = "Autoscaler configuration for this NodePool. Autoscaler is enabled only if a valid configuration is present."]
@@ -5820,6 +7269,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config: ::std::option::Option<crate::schemas::NodeConfig>,
+        #[doc = "This checksum is computed by the server based on the value of node pool fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "The initial node count for the pool. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota."]
         #[serde(
             rename = "initialNodeCount",
@@ -5827,7 +7283,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub initial_node_count: ::std::option::Option<i32>,
-        #[doc = "\\[Output only\\] The resource URLs of the [managed instance groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool."]
+        #[doc = "\\[Output only\\] The resource URLs of the [managed instance groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool. During the node pool blue-green upgrade operation, the URLs contain both blue and green resources."]
         #[serde(
             rename = "instanceGroupUrls",
             default,
@@ -5904,6 +7360,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status_message: ::std::option::Option<String>,
+        #[doc = "Output only. \\[Output only\\] Update info contains relevant information during a node pool update."]
+        #[serde(
+            rename = "updateInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_info: ::std::option::Option<crate::schemas::UpdateInfo>,
         #[doc = "Upgrade settings control disruption and speed of the upgrade."]
         #[serde(
             rename = "upgradeSettings",
@@ -5911,7 +7374,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub upgrade_settings: ::std::option::Option<crate::schemas::UpgradeSettings>,
-        #[doc = "The version of the Kubernetes of this node."]
+        #[doc = "The version of Kubernetes running on this NodePool’s nodes. If unspecified, it defaults as described [here](https://cloud.google.com/kubernetes-engine/versioning#specifying_node_version)."]
         #[serde(
             rename = "version",
             default,
@@ -6083,6 +7546,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
+        #[doc = "Location policy used when scaling up a nodepool."]
+        #[serde(
+            rename = "locationPolicy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location_policy:
+            ::std::option::Option<crate::schemas::NodePoolAutoscalingLocationPolicy>,
         #[doc = "Maximum number of nodes for one location in the NodePool. Must be >= min_node_count. There has to be enough quota to scale up the cluster."]
         #[serde(
             rename = "maxNodeCount",
@@ -6097,6 +7568,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_node_count: ::std::option::Option<i32>,
+        #[doc = "Maximum number of nodes in the node pool. Must be greater than total_min_node_count. There has to be enough quota to scale up the cluster. The total\\_\\*\\_node_count fields are mutually exclusive with the \\*\\_node_count fields."]
+        #[serde(
+            rename = "totalMaxNodeCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_max_node_count: ::std::option::Option<i32>,
+        #[doc = "Minimum number of nodes in the node pool. Must be greater than 1 less than total_max_node_count. The total\\_\\*\\_node_count fields are mutually exclusive with the \\*\\_node_count fields."]
+        #[serde(
+            rename = "totalMinNodeCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_min_node_count: ::std::option::Option<i32>,
     }
     impl ::google_field_selector::FieldSelector for NodePoolAutoscaling {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -6104,6 +7589,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NodePoolAutoscaling {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NodePoolAutoscalingLocationPolicy {
+        #[doc = "ANY policy picks zones that have the highest capacity available."]
+        Any,
+        #[doc = "BALANCED is a best effort policy that aims to balance the sizes of different zones."]
+        Balanced,
+        #[doc = "Not set."]
+        LocationPolicyUnspecified,
+    }
+    impl NodePoolAutoscalingLocationPolicy {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NodePoolAutoscalingLocationPolicy::Any => "ANY",
+                NodePoolAutoscalingLocationPolicy::Balanced => "BALANCED",
+                NodePoolAutoscalingLocationPolicy::LocationPolicyUnspecified => {
+                    "LOCATION_POLICY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NodePoolAutoscalingLocationPolicy {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NodePoolAutoscalingLocationPolicy {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NodePoolAutoscalingLocationPolicy, ()> {
+            Ok(match s {
+                "ANY" => NodePoolAutoscalingLocationPolicy::Any,
+                "BALANCED" => NodePoolAutoscalingLocationPolicy::Balanced,
+                "LOCATION_POLICY_UNSPECIFIED" => {
+                    NodePoolAutoscalingLocationPolicy::LocationPolicyUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NodePoolAutoscalingLocationPolicy {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NodePoolAutoscalingLocationPolicy {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NodePoolAutoscalingLocationPolicy {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ANY" => NodePoolAutoscalingLocationPolicy::Any,
+                "BALANCED" => NodePoolAutoscalingLocationPolicy::Balanced,
+                "LOCATION_POLICY_UNSPECIFIED" => {
+                    NodePoolAutoscalingLocationPolicy::LocationPolicyUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NodePoolAutoscalingLocationPolicy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodePoolAutoscalingLocationPolicy {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6135,6 +7702,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NodePoolDefaults {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct NodePoolLoggingConfig {
+        #[doc = "Logging variant configuration."]
+        #[serde(
+            rename = "variantConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub variant_config: ::std::option::Option<crate::schemas::LoggingVariantConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for NodePoolLoggingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodePoolLoggingConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6995,6 +8593,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub private_endpoint: ::std::option::Option<String>,
+        #[doc = "Subnet to provision the master’s private endpoint during cluster creation. Specified in projects/*/regions/*/subnetworks/\\* format."]
+        #[serde(
+            rename = "privateEndpointSubnetwork",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub private_endpoint_subnetwork: ::std::option::Option<String>,
         #[doc = "Output only. The external IP address of this cluster’s master endpoint."]
         #[serde(
             rename = "publicEndpoint",
@@ -7040,6 +8645,127 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PrivateClusterMasterGlobalAccessConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProtectConfig {
+        #[doc = "WorkloadConfig defines which actions are enabled for a cluster’s workload configurations."]
+        #[serde(
+            rename = "workloadConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub workload_config: ::std::option::Option<crate::schemas::WorkloadConfig>,
+        #[doc = "Sets which mode to use for Protect workload vulnerability scanning feature."]
+        #[serde(
+            rename = "workloadVulnerabilityMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub workload_vulnerability_mode:
+            ::std::option::Option<crate::schemas::ProtectConfigWorkloadVulnerabilityMode>,
+    }
+    impl ::google_field_selector::FieldSelector for ProtectConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProtectConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ProtectConfigWorkloadVulnerabilityMode {
+        #[doc = "Applies basic vulnerability scanning settings for cluster workloads."]
+        Basic,
+        #[doc = "Disables Workload Vulnerability Scanning feature on the cluster."]
+        Disabled,
+        #[doc = "Default value not specified."]
+        WorkloadVulnerabilityModeUnspecified,
+    }
+    impl ProtectConfigWorkloadVulnerabilityMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ProtectConfigWorkloadVulnerabilityMode::Basic => "BASIC",
+                ProtectConfigWorkloadVulnerabilityMode::Disabled => "DISABLED",
+                ProtectConfigWorkloadVulnerabilityMode::WorkloadVulnerabilityModeUnspecified => {
+                    "WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ProtectConfigWorkloadVulnerabilityMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ProtectConfigWorkloadVulnerabilityMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ProtectConfigWorkloadVulnerabilityMode, ()> {
+            Ok(match s {
+                "BASIC" => ProtectConfigWorkloadVulnerabilityMode::Basic,
+                "DISABLED" => ProtectConfigWorkloadVulnerabilityMode::Disabled,
+                "WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED" => {
+                    ProtectConfigWorkloadVulnerabilityMode::WorkloadVulnerabilityModeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ProtectConfigWorkloadVulnerabilityMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ProtectConfigWorkloadVulnerabilityMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ProtectConfigWorkloadVulnerabilityMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BASIC" => ProtectConfigWorkloadVulnerabilityMode::Basic,
+                "DISABLED" => ProtectConfigWorkloadVulnerabilityMode::Disabled,
+                "WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED" => {
+                    ProtectConfigWorkloadVulnerabilityMode::WorkloadVulnerabilityModeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ProtectConfigWorkloadVulnerabilityMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProtectConfigWorkloadVulnerabilityMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7393,7 +9119,7 @@ pub mod schemas {
         )]
         pub consume_reservation_type:
             ::std::option::Option<crate::schemas::ReservationAffinityConsumeReservationType>,
-        #[doc = "Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify “googleapis.com/reservation-name” as the key and specify the name of your reservation as its value."]
+        #[doc = "Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify “compute.googleapis.com/reservation-name” as the key and specify the name of your reservation as its value."]
         #[serde(
             rename = "key",
             default,
@@ -7503,6 +9229,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ReservationAffinityConsumeReservationType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ResourceLabels {
+        #[doc = "Map of node label keys and node label values."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ResourceLabels {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ResourceLabels {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7634,13 +9391,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub node_pool_id: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
+        #[doc = "Option for rollback to ignore the PodDisruptionBudget. Default value is false."]
+        #[serde(
+            rename = "respectPdb",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub respect_pdb: ::std::option::Option<bool>,
         #[doc = "Required. Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "zone",
@@ -8002,7 +9766,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8061,7 +9825,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8127,7 +9891,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8186,7 +9950,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8245,7 +10009,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8304,7 +10068,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840)."]
+        #[doc = "Required. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects)."]
         #[serde(
             rename = "projectId",
             default,
@@ -8363,7 +10127,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8510,7 +10274,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8569,7 +10333,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network_policy: ::std::option::Option<crate::schemas::NetworkPolicy>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8635,7 +10399,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub node_pool_id: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8701,7 +10465,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub node_pool_id: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8767,7 +10531,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub node_pool_id: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -8862,6 +10626,42 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct StandardRolloutPolicy {
+        #[doc = "Number of blue nodes to drain in a batch."]
+        #[serde(
+            rename = "batchNodeCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batch_node_count: ::std::option::Option<i32>,
+        #[doc = "Percentage of the blue pool nodes to drain in a batch. The range of this field should be (0.0, 1.0\\]."]
+        #[serde(
+            rename = "batchPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batch_percentage: ::std::option::Option<f32>,
+        #[doc = "Soak time after each batch gets drained. Default to zero."]
+        #[serde(
+            rename = "batchSoakDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batch_soak_duration: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for StandardRolloutPolicy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for StandardRolloutPolicy {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -8888,7 +10688,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -9020,7 +10820,7 @@ pub mod schemas {
         InvalidArgument,
         #[doc = "Some requested entity (e.g., file or directory) was not found. Note to server developers: if a request is denied for an entire class of users, such as gradual feature rollout or undocumented allowlist, `NOT_FOUND` may be used. If a request is denied for some users within a class of users, such as user-based access control, `PERMISSION_DENIED` must be used. HTTP Mapping: 404 Not Found"]
         NotFound,
-        #[doc = "Not an error; returned on success HTTP Mapping: 200 OK"]
+        #[doc = "Not an error; returned on success. HTTP Mapping: 200 OK"]
         Ok,
         #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range \\[0,2^32-1\\], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
         OutOfRange,
@@ -9334,16 +11134,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateClusterRequest {
         #[doc = "Required. Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field."]
@@ -9360,7 +11151,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -9404,6 +11195,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct UpdateInfo {
+        #[doc = "Information of a blue-green upgrade."]
+        #[serde(
+            rename = "blueGreenInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub blue_green_info: ::std::option::Option<crate::schemas::BlueGreenInfo>,
+    }
+    impl ::google_field_selector::FieldSelector for UpdateInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpdateInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct UpdateMasterRequest {
         #[doc = "Required. Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field."]
         #[serde(
@@ -9426,7 +11248,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
@@ -9452,16 +11274,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateNodePoolRequest {
         #[doc = "Required. Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field."]
@@ -9478,6 +11291,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidential_nodes: ::std::option::Option<crate::schemas::ConfidentialNodes>,
+        #[doc = "The current etag of the node pool. If an etag is provided and does not match the current etag of the node pool, update will be blocked and an ABORTED error will be returned."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "Enable or disable NCCL fast socket for the node pool."]
+        #[serde(
+            rename = "fastSocket",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fast_socket: ::std::option::Option<crate::schemas::FastSocket>,
         #[doc = "GCFS config."]
         #[serde(
             rename = "gcfsConfig",
@@ -9492,7 +11319,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gvnic: ::std::option::Option<crate::schemas::VirtualNIC>,
-        #[doc = "Required. The desired image type for the node pool."]
+        #[doc = "Required. The desired image type for the node pool. Please see https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for available image types."]
         #[serde(
             rename = "imageType",
             default,
@@ -9527,6 +11354,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locations: ::std::option::Option<Vec<String>>,
+        #[doc = "Logging configuration."]
+        #[serde(
+            rename = "loggingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_config: ::std::option::Option<crate::schemas::NodePoolLoggingConfig>,
         #[doc = "The name (project, location, cluster, node pool) of the node pool to update. Specified in the format `projects/*/locations/*/clusters/*/nodePools/*`."]
         #[serde(
             rename = "name",
@@ -9534,6 +11368,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Node network config."]
+        #[serde(
+            rename = "nodeNetworkConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_network_config: ::std::option::Option<crate::schemas::NodeNetworkConfig>,
         #[doc = "Required. Deprecated. The name of the node pool to upgrade. This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "nodePoolId",
@@ -9548,13 +11389,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub node_version: ::std::option::Option<String>,
-        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
+        #[doc = "The resource labels for the node pool to use to annotate any related Google Compute Engine resources."]
+        #[serde(
+            rename = "resourceLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_labels: ::std::option::Option<crate::schemas::ResourceLabels>,
         #[doc = "The desired network tags to be applied to all nodes in the node pool. If this field is not present, the tags will not be changed. Otherwise, the existing network tags will be *replaced* with the provided tags."]
         #[serde(
             rename = "tags",
@@ -9576,6 +11424,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub upgrade_settings: ::std::option::Option<crate::schemas::UpgradeSettings>,
+        #[doc = "Parameters that can be configured on Windows nodes."]
+        #[serde(
+            rename = "windowsNodeConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub windows_node_config: ::std::option::Option<crate::schemas::WindowsNodeConfig>,
         #[doc = "The desired workload metadata config for the node pool."]
         #[serde(
             rename = "workloadMetadataConfig",
@@ -9891,18 +11746,16 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpgradeSettings {
+        #[doc = "Settings for blue-green upgrade strategy."]
+        #[serde(
+            rename = "blueGreenSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub blue_green_settings: ::std::option::Option<crate::schemas::BlueGreenSettings>,
         #[doc = "The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process."]
         #[serde(
             rename = "maxSurge",
@@ -9917,6 +11770,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_unavailable: ::std::option::Option<i32>,
+        #[doc = "Update strategy of the node pool."]
+        #[serde(
+            rename = "strategy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub strategy: ::std::option::Option<crate::schemas::UpgradeSettingsStrategy>,
     }
     impl ::google_field_selector::FieldSelector for UpgradeSettings {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -9924,6 +11784,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UpgradeSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UpgradeSettingsStrategy {
+        #[doc = "blue-green upgrade."]
+        BlueGreen,
+        #[doc = "Default value if unset. GKE internally defaults the update strategy to SURGE for unspecified strategies."]
+        NodePoolUpdateStrategyUnspecified,
+        #[doc = "SURGE is the traditional way of upgrading a node pool. max_surge and max_unavailable determines the level of upgrade parallelism."]
+        Surge,
+    }
+    impl UpgradeSettingsStrategy {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UpgradeSettingsStrategy::BlueGreen => "BLUE_GREEN",
+                UpgradeSettingsStrategy::NodePoolUpdateStrategyUnspecified => {
+                    "NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED"
+                }
+                UpgradeSettingsStrategy::Surge => "SURGE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UpgradeSettingsStrategy {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UpgradeSettingsStrategy {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UpgradeSettingsStrategy, ()> {
+            Ok(match s {
+                "BLUE_GREEN" => UpgradeSettingsStrategy::BlueGreen,
+                "NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED" => {
+                    UpgradeSettingsStrategy::NodePoolUpdateStrategyUnspecified
+                }
+                "SURGE" => UpgradeSettingsStrategy::Surge,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UpgradeSettingsStrategy {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UpgradeSettingsStrategy {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UpgradeSettingsStrategy {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BLUE_GREEN" => UpgradeSettingsStrategy::BlueGreen,
+                "NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED" => {
+                    UpgradeSettingsStrategy::NodePoolUpdateStrategyUnspecified
+                }
+                "SURGE" => UpgradeSettingsStrategy::Surge,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UpgradeSettingsStrategy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpgradeSettingsStrategy {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -10193,6 +12135,113 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct WindowsNodeConfig {
+        #[doc = "OSVersion specifies the Windows node config to be used on the node"]
+        #[serde(
+            rename = "osVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub os_version: ::std::option::Option<crate::schemas::WindowsNodeConfigOsVersion>,
+    }
+    impl ::google_field_selector::FieldSelector for WindowsNodeConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WindowsNodeConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum WindowsNodeConfigOsVersion {
+        #[doc = "LTSC2019 specifies to use LTSC2019 as the Windows Servercore Base Image"]
+        OsVersionLtsc2019,
+        #[doc = "LTSC2022 specifies to use LTSC2022 as the Windows Servercore Base Image"]
+        OsVersionLtsc2022,
+        #[doc = "When OSVersion is not specified"]
+        OsVersionUnspecified,
+    }
+    impl WindowsNodeConfigOsVersion {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                WindowsNodeConfigOsVersion::OsVersionLtsc2019 => "OS_VERSION_LTSC2019",
+                WindowsNodeConfigOsVersion::OsVersionLtsc2022 => "OS_VERSION_LTSC2022",
+                WindowsNodeConfigOsVersion::OsVersionUnspecified => "OS_VERSION_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for WindowsNodeConfigOsVersion {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for WindowsNodeConfigOsVersion {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<WindowsNodeConfigOsVersion, ()> {
+            Ok(match s {
+                "OS_VERSION_LTSC2019" => WindowsNodeConfigOsVersion::OsVersionLtsc2019,
+                "OS_VERSION_LTSC2022" => WindowsNodeConfigOsVersion::OsVersionLtsc2022,
+                "OS_VERSION_UNSPECIFIED" => WindowsNodeConfigOsVersion::OsVersionUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for WindowsNodeConfigOsVersion {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for WindowsNodeConfigOsVersion {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for WindowsNodeConfigOsVersion {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "OS_VERSION_LTSC2019" => WindowsNodeConfigOsVersion::OsVersionLtsc2019,
+                "OS_VERSION_LTSC2022" => WindowsNodeConfigOsVersion::OsVersionLtsc2022,
+                "OS_VERSION_UNSPECIFIED" => WindowsNodeConfigOsVersion::OsVersionUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for WindowsNodeConfigOsVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WindowsNodeConfigOsVersion {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct WindowsVersion {
         #[doc = "Windows server image type"]
         #[serde(
@@ -10315,6 +12364,123 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for WorkloadCertificates {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct WorkloadConfig {
+        #[doc = "Sets which mode of auditing should be used for the cluster’s workloads."]
+        #[serde(
+            rename = "auditMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub audit_mode: ::std::option::Option<crate::schemas::WorkloadConfigAuditMode>,
+    }
+    impl ::google_field_selector::FieldSelector for WorkloadConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WorkloadConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum WorkloadConfigAuditMode {
+        #[doc = "Surfaces configurations that are not in line with the Pod Security Standard Baseline policy."]
+        Baseline,
+        #[doc = "Applies the default set of policy auditing to a cluster’s workloads."]
+        Basic,
+        #[doc = "This disables Workload Configuration auditing on the cluster, meaning that nothing is surfaced."]
+        Disabled,
+        #[doc = "Default value meaning that no mode has been specified."]
+        ModeUnspecified,
+        #[doc = "Surfaces configurations that are not in line with the Pod Security Standard Restricted policy."]
+        Restricted,
+    }
+    impl WorkloadConfigAuditMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                WorkloadConfigAuditMode::Baseline => "BASELINE",
+                WorkloadConfigAuditMode::Basic => "BASIC",
+                WorkloadConfigAuditMode::Disabled => "DISABLED",
+                WorkloadConfigAuditMode::ModeUnspecified => "MODE_UNSPECIFIED",
+                WorkloadConfigAuditMode::Restricted => "RESTRICTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for WorkloadConfigAuditMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for WorkloadConfigAuditMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<WorkloadConfigAuditMode, ()> {
+            Ok(match s {
+                "BASELINE" => WorkloadConfigAuditMode::Baseline,
+                "BASIC" => WorkloadConfigAuditMode::Basic,
+                "DISABLED" => WorkloadConfigAuditMode::Disabled,
+                "MODE_UNSPECIFIED" => WorkloadConfigAuditMode::ModeUnspecified,
+                "RESTRICTED" => WorkloadConfigAuditMode::Restricted,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for WorkloadConfigAuditMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for WorkloadConfigAuditMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for WorkloadConfigAuditMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BASELINE" => WorkloadConfigAuditMode::Baseline,
+                "BASIC" => WorkloadConfigAuditMode::Basic,
+                "DISABLED" => WorkloadConfigAuditMode::Disabled,
+                "MODE_UNSPECIFIED" => WorkloadConfigAuditMode::ModeUnspecified,
+                "RESTRICTED" => WorkloadConfigAuditMode::Restricted,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for WorkloadConfigAuditMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WorkloadConfigAuditMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -10952,7 +13118,7 @@ pub mod resources {
                             #[serde(rename = "subnetworks")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10987,7 +13153,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -11037,7 +13203,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -11156,12 +13322,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -11263,7 +13430,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetServerConfigRequestBuilder<'a> {
-                #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+                #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
                 pub fn project_id(mut self, value: impl Into<String>) -> Self {
                     self.project_id = Some(value.into());
                     self
@@ -12376,7 +14543,7 @@ pub mod resources {
                         self.cluster_id = Some(value.into());
                         self
                     }
-                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
                     pub fn project_id(mut self, value: impl Into<String>) -> Self {
                         self.project_id = Some(value.into());
                         self
@@ -12557,7 +14724,7 @@ pub mod resources {
                         self.cluster_id = Some(value.into());
                         self
                     }
-                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
                     pub fn project_id(mut self, value: impl Into<String>) -> Self {
                         self.project_id = Some(value.into());
                         self
@@ -12895,7 +15062,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field."]
+                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field."]
                     pub fn project_id(mut self, value: impl Into<String>) -> Self {
                         self.project_id = Some(value.into());
                         self
@@ -15016,6 +17183,30 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
+                        #[doc = "CompleteNodePoolUpgrade will signal an on-going node pool upgrade to complete."]
+                        pub fn complete_upgrade(
+                            &self,
+                            request: crate::schemas::CompleteNodePoolUpgradeRequest,
+                            name: impl Into<String>,
+                        ) -> CompleteUpgradeRequestBuilder {
+                            CompleteUpgradeRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
                         #[doc = "Creates a node pool for a cluster."]
                         pub fn create(
                             &self,
@@ -15229,6 +17420,171 @@ pub mod resources {
                             }
                         }
                     }
+                    #[doc = "Created via [NodePoolsActions::complete_upgrade()](struct.NodePoolsActions.html#method.complete_upgrade)"]
+                    #[derive(Debug, Clone)]
+                    pub struct CompleteUpgradeRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::CompleteNodePoolUpgradeRequest,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> CompleteUpgradeRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Empty, crate::Error> {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Empty, crate::Error> {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://container.googleapis.com/".to_owned();
+                            output.push_str("v1beta1/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":completeUpgrade");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
                     #[doc = "Created via [NodePoolsActions::create()](struct.NodePoolsActions.html#method.create)"]
                     #[derive(Debug, Clone)]
                     pub struct CreateRequestBuilder<'a> {
@@ -15429,7 +17785,7 @@ pub mod resources {
                             self.node_pool_id = Some(value.into());
                             self
                         }
-                        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field."]
+                        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
                         pub fn project_id(mut self, value: impl Into<String>) -> Self {
                             self.project_id = Some(value.into());
                             self
@@ -15621,7 +17977,7 @@ pub mod resources {
                             self.node_pool_id = Some(value.into());
                             self
                         }
-                        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the name field."]
+                        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
                         pub fn project_id(mut self, value: impl Into<String>) -> Self {
                             self.project_id = Some(value.into());
                             self
@@ -15807,7 +18163,7 @@ pub mod resources {
                             self.cluster_id = Some(value.into());
                             self
                         }
-                        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://developers.google.com/console/help/new/#projectnumber). This field has been deprecated and replaced by the parent field."]
+                        #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field."]
                         pub fn project_id(mut self, value: impl Into<String>) -> Self {
                             self.project_id = Some(value.into());
                             self
@@ -17269,7 +19625,7 @@ pub mod resources {
                         self.operation_id = Some(value.into());
                         self
                     }
-                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the name field."]
+                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field."]
                     pub fn project_id(mut self, value: impl Into<String>) -> Self {
                         self.project_id = Some(value.into());
                         self
@@ -17444,7 +19800,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://support.google.com/cloud/answer/6158840). This field has been deprecated and replaced by the parent field."]
+                    #[doc = "Required. Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field."]
                     pub fn project_id(mut self, value: impl Into<String>) -> Self {
                         self.project_id = Some(value.into());
                         self
@@ -24337,16 +26693,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -24366,13 +26724,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -24380,7 +26741,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -24407,7 +26768,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

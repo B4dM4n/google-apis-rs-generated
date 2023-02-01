@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("gmail1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220418")
+            .version("0.1.0-20230123")
             .about("The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -154,7 +154,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             messages1 = messages1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("send").about("Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers.");
+            let mcmd = SubCommand::with_name("send").about("Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For example usage, see [Sending email](https://developers.google.com/gmail/api/guides/sending).");
             messages1 = messages1.subcommand(mcmd);
         }
         {
@@ -248,6 +248,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("get").about("Gets the specified message attachment.");
             attachments2 = attachments2.subcommand(mcmd);
         }
+        let mut cse2 = SubCommand::with_name("cse")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: identities and keypairs");
         let mut delegates2 = SubCommand::with_name("delegates")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and list");
@@ -340,6 +343,60 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("verify").about("Sends a verification email to the specified send-as alias address. The verification status must be `pending`. This method is only available to service account clients that have been delegated domain-wide authority.");
             send_as2 = send_as2.subcommand(mcmd);
         }
+        let mut identities3 = SubCommand::with_name("identities")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates and configures a client-side encryption identity that's authorized to send mail from the user account. Google publishes the S/MIME certificate to a shared domain-wide directory so that people within a Google Workspace organization can encrypt and send mail to the identity.");
+            identities3 = identities3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a client-side encryption identity. The authenticated user can no longer use the identity to send encrypted messages. You cannot restore the identity after you delete it. Instead, use the CreateCseIdentity method to create another identity with the same configuration.");
+            identities3 = identities3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves a client-side encryption identity configuration.");
+            identities3 = identities3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists the client-side encrypted identities for an authenticated user.");
+            identities3 = identities3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Associates a different key pair with an existing client-side encryption identity. The updated key pair must validate against Google's [S/MIME certificate profiles](https://support.google.com/a/answer/7300887).");
+            identities3 = identities3.subcommand(mcmd);
+        }
+        let mut keypairs3 = SubCommand::with_name("keypairs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, disable, enable, get, list and obliterate");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user.");
+            keypairs3 = keypairs3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("disable").about("Turns off a client-side encryption key pair. The authenticated user can no longer use the key pair to decrypt incoming CSE message texts or sign outgoing CSE mail. To regain access, use the EnableCseKeyPair to turn on the key pair. After 30 days, you can permanently delete the key pair by using the ObliterateCseKeyPair method.");
+            keypairs3 = keypairs3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("enable").about("Turns on a client-side encryption key pair that was turned off. The key pair becomes active again for any associated client-side encryption identities.");
+            keypairs3 = keypairs3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves an existing client-side encryption key pair.");
+            keypairs3 = keypairs3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists client-side encryption key pairs for an authenticated user.");
+            keypairs3 = keypairs3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("obliterate").about("Deletes a client-side encryption key pair permanently and immediately. You can only permanently delete key pairs that have been turned off for more than 30 days. To turn off a key pair, use the DisableCseKeyPair method. Gmail can't restore or decrypt any messages that were encrypted by an obliterated key. Authenticated users and Google Workspace administrators lose access to reading the encrypted messages.");
+            keypairs3 = keypairs3.subcommand(mcmd);
+        }
         let mut smime_info3 = SubCommand::with_name("smime_info")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, insert, list and set_default");
@@ -368,10 +425,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             smime_info3 = smime_info3.subcommand(mcmd);
         }
         send_as2 = send_as2.subcommand(smime_info3);
+        cse2 = cse2.subcommand(keypairs3);
+        cse2 = cse2.subcommand(identities3);
         settings1 = settings1.subcommand(send_as2);
         settings1 = settings1.subcommand(forwarding_addresses2);
         settings1 = settings1.subcommand(filters2);
         settings1 = settings1.subcommand(delegates2);
+        settings1 = settings1.subcommand(cse2);
         messages1 = messages1.subcommand(attachments2);
         users0 = users0.subcommand(threads1);
         users0 = users0.subcommand(settings1);

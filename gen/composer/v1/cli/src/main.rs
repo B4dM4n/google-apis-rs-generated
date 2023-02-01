@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("composer1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220420")
+            .version("0.1.0-20230124")
             .about("Manages Apache Airflow environments on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -41,7 +41,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: environments, image_versions and operations");
         let mut environments2 = SubCommand::with_name("environments")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and patch");
+            .about("methods: create, delete, get, list, load_snapshot, patch and save_snapshot");
         {
             let mcmd = SubCommand::with_name("create").about("Create a new environment.");
             environments2 = environments2.subcommand(mcmd);
@@ -59,7 +59,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             environments2 = environments2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("load_snapshot").about("Loads a snapshot of a Cloud Composer environment. As a result of this operation, a snapshot of environment's specified in LoadSnapshotRequest is loaded into the environment.");
+            environments2 = environments2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("patch").about("Update an environment.");
+            environments2 = environments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("save_snapshot").about("Creates a snapshots of a Cloud Composer environment. As a result of this operation, snapshot of environment's state is stored in a location specified in the SaveSnapshotRequest.");
             environments2 = environments2.subcommand(mcmd);
         }
         let mut image_versions2 = SubCommand::with_name("image_versions")

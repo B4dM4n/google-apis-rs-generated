@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("monitoring3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220418")
+            .version("0.1.0-20230123")
             .about("Manages your Cloud Monitoring data and configurations.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -41,7 +41,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: time_series");
         let mut projects0 = SubCommand::with_name("projects")
                         .setting(AppSettings::ColoredHelp)
-                        .about("sub-resources: alert_policies, collectd_time_series, groups, metric_descriptors, monitored_resource_descriptors, notification_channel_descriptors, notification_channels, time_series and uptime_check_configs");
+                        .about("sub-resources: alert_policies, collectd_time_series, groups, metric_descriptors, monitored_resource_descriptors, notification_channel_descriptors, notification_channels, snoozes, time_series and uptime_check_configs");
         let mut services0 = SubCommand::with_name("services")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
@@ -58,7 +58,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services0 = services0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List Services for this workspace.");
+            let mcmd = SubCommand::with_name("list").about("List Services for this Metrics Scope.");
             services0 = services0.subcommand(mcmd);
         }
         {
@@ -93,11 +93,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new alerting policy.");
+            let mcmd = SubCommand::with_name("create").about("Creates a new alerting policy.Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.");
             alert_policies1 = alert_policies1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes an alerting policy.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes an alerting policy.Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.");
             alert_policies1 = alert_policies1.subcommand(mcmd);
         }
         {
@@ -110,14 +110,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             alert_policies1 = alert_policies1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates an alerting policy. You can either replace the entire policy with a new one or replace only certain fields in the current alerting policy by specifying the fields to be updated via updateMask. Returns the updated alerting policy.");
+            let mcmd = SubCommand::with_name("patch").about("Updates an alerting policy. You can either replace the entire policy with a new one or replace only certain fields in the current alerting policy by specifying the fields to be updated via updateMask. Returns the updated alerting policy.Design your application to single-thread API calls that modify the state of alerting policies in a single project. This includes calls to CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.");
             alert_policies1 = alert_policies1.subcommand(mcmd);
         }
         let mut collectd_time_series1 = SubCommand::with_name("collectd_time_series")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create");
         {
-            let mcmd = SubCommand::with_name("create").about("Stackdriver Monitoring Agent only: Creates a new time series.This method is only for use by the Stackdriver Monitoring Agent. Use projects.timeSeries.create instead.");
+            let mcmd = SubCommand::with_name("create").about("Cloud Monitoring Agent only: Creates a new time series.This method is only for use by the Cloud Monitoring Agent. Use projects.timeSeries.create instead.");
             collectd_time_series1 = collectd_time_series1.subcommand(mcmd);
         }
         let mut groups1 = SubCommand::with_name("groups")
@@ -149,7 +149,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new metric descriptor. The creation is executed asynchronously and callers may check the returned operation to track its progress. User-created metric descriptors define custom metrics (https://cloud.google.com/monitoring/custom-metrics).");
+            let mcmd = SubCommand::with_name("create").about("Creates a new metric descriptor. The creation is executed asynchronously. User-created metric descriptors define custom metrics (https://cloud.google.com/monitoring/custom-metrics). The metric descriptor is updated if it already exists, except that metric labels are never removed.");
             metric_descriptors1 = metric_descriptors1.subcommand(mcmd);
         }
         {
@@ -195,11 +195,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_verification_code, list, patch, send_verification_code and verify");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new notification channel, representing a single notification endpoint such as an email address, SMS number, or PagerDuty service.");
+            let mcmd = SubCommand::with_name("create").about("Creates a new notification channel, representing a single notification endpoint such as an email address, SMS number, or PagerDuty service.Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.");
             notification_channels1 = notification_channels1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a notification channel.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a notification channel.Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.");
             notification_channels1 = notification_channels1.subcommand(mcmd);
         }
         {
@@ -216,7 +216,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             notification_channels1 = notification_channels1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates a notification channel. Fields not specified in the field mask remain unchanged.");
+            let mcmd = SubCommand::with_name("patch").about("Updates a notification channel. Fields not specified in the field mask remain unchanged.Design your application to single-thread API calls that modify the state of notification channels in a single project. This includes calls to CreateNotificationChannel, DeleteNotificationChannel and UpdateNotificationChannel.");
             notification_channels1 = notification_channels1.subcommand(mcmd);
         }
         {
@@ -226,6 +226,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("verify").about("Verifies a NotificationChannel by proving receipt of the code delivered to the channel as a result of calling SendNotificationChannelVerificationCode.");
             notification_channels1 = notification_channels1.subcommand(mcmd);
+        }
+        let mut snoozes1 = SubCommand::with_name("snoozes")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a Snooze that will prevent alerts, which match the provided criteria, from being opened. The Snooze applies for a specific time interval.");
+            snoozes1 = snoozes1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Retrieves a Snooze by name.");
+            snoozes1 = snoozes1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists the Snoozes associated with a project. Can optionally pass in filter, which specifies predicates to match Snoozes.");
+            snoozes1 = snoozes1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a Snooze, identified by its name, with the parameters in the given Snooze object.");
+            snoozes1 = snoozes1.subcommand(mcmd);
         }
         let mut time_series1 = SubCommand::with_name("time_series")
             .setting(AppSettings::ColoredHelp)
@@ -312,6 +331,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         services0 = services0.subcommand(service_level_objectives1);
         projects0 = projects0.subcommand(uptime_check_configs1);
         projects0 = projects0.subcommand(time_series1);
+        projects0 = projects0.subcommand(snoozes1);
         projects0 = projects0.subcommand(notification_channels1);
         projects0 = projects0.subcommand(notification_channel_descriptors1);
         projects0 = projects0.subcommand(monitored_resource_descriptors1);

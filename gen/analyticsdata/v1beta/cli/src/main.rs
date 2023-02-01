@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("analyticsdata1_beta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230129")
             .about("Accesses report data in Google Analytics.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -57,7 +57,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             properties0 = properties0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("run_realtime_report").about("The Google Analytics Realtime API returns a customized report of realtime event data for your property. These reports show events and usage from the last 30 minutes. For a guide to constructing realtime requests & understanding responses, see [Creating a Realtime Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).");
+            let mcmd = SubCommand::with_name("run_realtime_report").about("Returns a customized report of realtime event data for your property. Events appear in realtime reports seconds after they have been sent to the Google Analytics. Realtime reports show events and usage data for the periods of time ranging from the present moment to 30 minutes ago (up to 60 minutes for Google Analytics 360 properties). For a guide to constructing realtime requests & understanding responses, see [Creating a Realtime Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).");
             properties0 = properties0.subcommand(mcmd);
         }
         {

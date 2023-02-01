@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [customers](resources/customers/struct.CustomersActions.html)\n  * [policies](resources/customers/policies/struct.PoliciesActions.html)\n    * [*resolve*](resources/customers/policies/struct.ResolveRequestBuilder.html)\n    * [orgunits](resources/customers/policies/orgunits/struct.OrgunitsActions.html)\n      * [*batchInherit*](resources/customers/policies/orgunits/struct.BatchInheritRequestBuilder.html), [*batchModify*](resources/customers/policies/orgunits/struct.BatchModifyRequestBuilder.html)\n  * [policy_schemas](resources/customers/policy_schemas/struct.PolicySchemasActions.html)\n    * [*get*](resources/customers/policy_schemas/struct.GetRequestBuilder.html), [*list*](resources/customers/policy_schemas/struct.ListRequestBuilder.html)\n* [media](resources/media/struct.MediaActions.html)\n  * [*upload*](resources/media/struct.UploadRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [customers](resources/customers/struct.CustomersActions.html)\n  * [policies](resources/customers/policies/struct.PoliciesActions.html)\n    * [*resolve*](resources/customers/policies/struct.ResolveRequestBuilder.html)\n    * [groups](resources/customers/policies/groups/struct.GroupsActions.html)\n      * [*batchDelete*](resources/customers/policies/groups/struct.BatchDeleteRequestBuilder.html), [*batchModify*](resources/customers/policies/groups/struct.BatchModifyRequestBuilder.html), [*listGroupPriorityOrdering*](resources/customers/policies/groups/struct.ListGroupPriorityOrderingRequestBuilder.html), [*updateGroupPriorityOrdering*](resources/customers/policies/groups/struct.UpdateGroupPriorityOrderingRequestBuilder.html)\n    * [networks](resources/customers/policies/networks/struct.NetworksActions.html)\n      * [*defineCertificate*](resources/customers/policies/networks/struct.DefineCertificateRequestBuilder.html), [*defineNetwork*](resources/customers/policies/networks/struct.DefineNetworkRequestBuilder.html), [*removeCertificate*](resources/customers/policies/networks/struct.RemoveCertificateRequestBuilder.html), [*removeNetwork*](resources/customers/policies/networks/struct.RemoveNetworkRequestBuilder.html)\n    * [orgunits](resources/customers/policies/orgunits/struct.OrgunitsActions.html)\n      * [*batchInherit*](resources/customers/policies/orgunits/struct.BatchInheritRequestBuilder.html), [*batchModify*](resources/customers/policies/orgunits/struct.BatchModifyRequestBuilder.html)\n  * [policy_schemas](resources/customers/policy_schemas/struct.PolicySchemasActions.html)\n    * [*get*](resources/customers/policy_schemas/struct.GetRequestBuilder.html), [*list*](resources/customers/policy_schemas/struct.ListRequestBuilder.html)\n* [media](resources/media/struct.MediaActions.html)\n  * [*upload*](resources/media/struct.UploadRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, create or delete policies applied to Chrome OS and Chrome Browsers managed within your organization\n\n`https://www.googleapis.com/auth/chrome.management.policy`"]
     pub const CHROME_MANAGEMENT_POLICY: &str =
@@ -125,7 +126,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1AdditionalTargetKeyName {
+    pub struct GoogleChromePolicyVersionsV1AdditionalTargetKeyName {
         #[doc = "Key name."]
         #[serde(
             rename = "key",
@@ -141,12 +142,14 @@ pub mod schemas {
         )]
         pub key_description: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1AdditionalTargetKeyName {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1AdditionalTargetKeyName
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1AdditionalTargetKeyName {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1AdditionalTargetKeyName {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -163,7 +166,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1BatchInheritOrgUnitPoliciesRequest {
+    pub struct GoogleChromePolicyVersionsV1BatchDeleteGroupPoliciesRequest {
+        #[doc = "List of policies that will be deleted as defined by the `requests`. All requests in the list must follow these restrictions: 1. All schemas in the list must have the same root namespace. 2. All `policyTargetKey.targetResource` values must point to a group resource. 3. All `policyTargetKey` values must have the same `app_id` key name in the `additionalTargetKeys`. 4. No two modification requests can reference the same `policySchema` + ` policyTargetKey` pair. "]
+        #[serde(
+            rename = "requests",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub requests: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1DeleteGroupPolicyRequest>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1BatchDeleteGroupPoliciesRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1BatchDeleteGroupPoliciesRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1BatchInheritOrgUnitPoliciesRequest {
         #[doc = "List of policies that have to inherit their values as defined by the `requests`. All requests in the list must follow these restrictions: 1. All schemas in the list must have the same root namespace. 2. All `policyTargetKey.targetResource` values must point to an org unit resource. 3. All `policyTargetKey` values must have the same key names in the ` additionalTargetKeys`. This also means if one of the targets has an empty `additionalTargetKeys` map, all of the targets must have an empty `additionalTargetKeys` map. 4. No two modification requests can reference the same `policySchema` + ` policyTargetKey` pair. "]
         #[serde(
             rename = "requests",
@@ -171,25 +211,51 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub requests: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1InheritOrgUnitPolicyRequest>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1InheritOrgUnitPolicyRequest>,
         >,
     }
     impl ::google_field_selector::FieldSelector
-        for GoogleChromePolicyV1BatchInheritOrgUnitPoliciesRequest
+        for GoogleChromePolicyVersionsV1BatchInheritOrgUnitPoliciesRequest
     {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType
-        for GoogleChromePolicyV1BatchInheritOrgUnitPoliciesRequest
+        for GoogleChromePolicyVersionsV1BatchInheritOrgUnitPoliciesRequest
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleChromePolicyV1BatchModifyOrgUnitPoliciesRequest {
+    pub struct GoogleChromePolicyVersionsV1BatchModifyGroupPoliciesRequest {
+        #[doc = "List of policies to modify as defined by the `requests`. All requests in the list must follow these restrictions: 1. All schemas in the list must have the same root namespace. 2. All `policyTargetKey.targetResource` values must point to a group resource. 3. All `policyTargetKey` values must have the same `app_id` key name in the `additionalTargetKeys`. 4. No two modification requests can reference the same `policySchema` + ` policyTargetKey` pair. "]
+        #[serde(
+            rename = "requests",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub requests: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1ModifyGroupPolicyRequest>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1BatchModifyGroupPoliciesRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1BatchModifyGroupPoliciesRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1BatchModifyOrgUnitPoliciesRequest {
         #[doc = "List of policies to modify as defined by the `requests`. All requests in the list must follow these restrictions: 1. All schemas in the list must have the same root namespace. 2. All `policyTargetKey.targetResource` values must point to an org unit resource. 3. All `policyTargetKey` values must have the same key names in the ` additionalTargetKeys`. This also means if one of the targets has an empty `additionalTargetKeys` map, all of the targets must have an empty `additionalTargetKeys` map. 4. No two modification requests can reference the same `policySchema` + ` policyTargetKey` pair. "]
         #[serde(
             rename = "requests",
@@ -197,18 +263,18 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub requests: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1ModifyOrgUnitPolicyRequest>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1ModifyOrgUnitPolicyRequest>,
         >,
     }
     impl ::google_field_selector::FieldSelector
-        for GoogleChromePolicyV1BatchModifyOrgUnitPoliciesRequest
+        for GoogleChromePolicyVersionsV1BatchModifyOrgUnitPoliciesRequest
     {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType
-        for GoogleChromePolicyV1BatchModifyOrgUnitPoliciesRequest
+        for GoogleChromePolicyVersionsV1BatchModifyOrgUnitPoliciesRequest
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -226,7 +292,272 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1InheritOrgUnitPolicyRequest {
+    pub struct GoogleChromePolicyVersionsV1CertificateReference {
+        #[doc = "Output only. The name of the referencing network."]
+        #[serde(
+            rename = "network",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network: ::std::option::Option<String>,
+        #[doc = "Output only. The obfuscated id of the org unit the referencing network is in."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1CertificateReference {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1CertificateReference {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1DefineCertificateRequest {
+        #[doc = "Optional. The optional name of the certificate. If not specified, the certificate issuer will be used as the name."]
+        #[serde(
+            rename = "ceritificateName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ceritificate_name: ::std::option::Option<String>,
+        #[doc = "Required. The raw contents of the .PEM, .CRT, or .CER file."]
+        #[serde(
+            rename = "certificate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub certificate: ::std::option::Option<String>,
+        #[doc = "Optional. Certificate settings within the chrome.networks.certificates namespace."]
+        #[serde(
+            rename = "settings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub settings:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyVersionsV1NetworkSetting>>,
+        #[doc = "Required. The target resource on which this certificate is applied. The following resources are supported: * Organizational Unit (“orgunits/{orgunit_id}”)"]
+        #[serde(
+            rename = "targetResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_resource: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1DefineCertificateRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1DefineCertificateRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1DefineCertificateResponse {
+        #[doc = "The guid of the certificate created by the action."]
+        #[serde(
+            rename = "networkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_id: ::std::option::Option<String>,
+        #[doc = "the affiliated settings of the certificate (NOT IMPLEMENTED)"]
+        #[serde(
+            rename = "settings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub settings:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyVersionsV1NetworkSetting>>,
+        #[doc = "the resource at which the certificate is defined."]
+        #[serde(
+            rename = "targetResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_resource: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1DefineCertificateResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1DefineCertificateResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1DefineNetworkRequest {
+        #[doc = "Required. Name of the new created network."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Required. Detailed network settings."]
+        #[serde(
+            rename = "settings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub settings:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyVersionsV1NetworkSetting>>,
+        #[doc = "Required. The target resource on which this new network will be defined. The following resources are supported: * Organizational Unit (“orgunits/{orgunit_id}”)"]
+        #[serde(
+            rename = "targetResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_resource: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1DefineNetworkRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1DefineNetworkRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1DefineNetworkResponse {
+        #[doc = "Network ID of the new created network."]
+        #[serde(
+            rename = "networkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_id: ::std::option::Option<String>,
+        #[doc = "Detailed network settings of the new created network"]
+        #[serde(
+            rename = "settings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub settings:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyVersionsV1NetworkSetting>>,
+        #[doc = "The target resource on which this new network will be defined. The following resources are supported: * Organizational Unit (“orgunits/{orgunit_id}”)"]
+        #[serde(
+            rename = "targetResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_resource: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1DefineNetworkResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1DefineNetworkResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1DeleteGroupPolicyRequest {
+        #[doc = "The fully qualified name of the policy schema that is being inherited."]
+        #[serde(
+            rename = "policySchema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_schema: ::std::option::Option<String>,
+        #[doc = "Required. The key of the target for which we want to modify a policy. The target resource must point to a Group."]
+        #[serde(
+            rename = "policyTargetKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_target_key:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1DeleteGroupPolicyRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1DeleteGroupPolicyRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1FieldConstraints {
+        #[doc = "The allowed range for numeric fields."]
+        #[serde(
+            rename = "numericRangeConstraint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub numeric_range_constraint: ::std::option::Option<
+            crate::schemas::GoogleChromePolicyVersionsV1NumericRangeConstraint,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1FieldConstraints {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1FieldConstraints {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1InheritOrgUnitPolicyRequest {
         #[doc = "The fully qualified name of the policy schema that is being inherited."]
         #[serde(
             rename = "policySchema",
@@ -241,14 +572,18 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_target_key:
-            ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyTargetKey>,
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1InheritOrgUnitPolicyRequest {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1InheritOrgUnitPolicyRequest
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1InheritOrgUnitPolicyRequest {
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1InheritOrgUnitPolicyRequest
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -265,7 +600,89 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1ListPolicySchemasResponse {
+    pub struct GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest {
+        #[doc = "Required. The namespace of the policy type for the request."]
+        #[serde(
+            rename = "policyNamespace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_namespace: ::std::option::Option<String>,
+        #[doc = "Required. The key of the target for which we want to retrieve the group priority ordering. The target resource must point to an app."]
+        #[serde(
+            rename = "policyTargetKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_target_key:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse {
+        #[doc = "Output only. The group IDs, in priority ordering."]
+        #[serde(
+            rename = "groupIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub group_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Output only. The namespace of the policy type of the group IDs."]
+        #[serde(
+            rename = "policyNamespace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_namespace: ::std::option::Option<String>,
+        #[doc = "Output only. The target resource for which the group priority ordering has been retrieved."]
+        #[serde(
+            rename = "policyTargetKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_target_key:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1ListPolicySchemasResponse {
         #[doc = "The page token used to get the next page of policy schemas."]
         #[serde(
             rename = "nextPageToken",
@@ -280,40 +697,45 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_schemas:
-            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyV1PolicySchema>>,
+            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchema>>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1ListPolicySchemasResponse {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1ListPolicySchemasResponse
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1ListPolicySchemasResponse {
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1ListPolicySchemasResponse
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleChromePolicyV1ListPolicySchemasResponse {
+    impl crate::GetNextPageToken<String> for GoogleChromePolicyVersionsV1ListPolicySchemasResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleChromePolicyV1ModifyOrgUnitPolicyRequest {
-        #[doc = "Required. The key of the target for which we want to modify a policy. The target resource must point to an Org Unit."]
+    pub struct GoogleChromePolicyVersionsV1ModifyGroupPolicyRequest {
+        #[doc = "Required. The key of the target for which we want to modify a policy. The target resource must point to a Group."]
         #[serde(
             rename = "policyTargetKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_target_key:
-            ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyTargetKey>,
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
         #[doc = "The new value for the policy."]
         #[serde(
             rename = "policyValue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub policy_value: ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyValue>,
+        pub policy_value:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyValue>,
         #[doc = "Required. Policy fields to update. Only fields in this mask will be updated; other fields in `policy_value` will be ignored (even if they have values). If a field is in this list it must have a value in ‘policy_value’."]
         #[serde(
             rename = "updateMask",
@@ -322,12 +744,81 @@ pub mod schemas {
         )]
         pub update_mask: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1ModifyOrgUnitPolicyRequest {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1ModifyGroupPolicyRequest
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1ModifyOrgUnitPolicyRequest {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1ModifyGroupPolicyRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1ModifyOrgUnitPolicyRequest {
+        #[doc = "Required. The key of the target for which we want to modify a policy. The target resource must point to an Org Unit."]
+        #[serde(
+            rename = "policyTargetKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_target_key:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
+        #[doc = "The new value for the policy."]
+        #[serde(
+            rename = "policyValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_value:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyValue>,
+        #[doc = "Required. Policy fields to update. Only fields in this mask will be updated; other fields in `policy_value` will be ignored (even if they have values). If a field is in this list it must have a value in ‘policy_value’."]
+        #[serde(
+            rename = "updateMask",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_mask: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1ModifyOrgUnitPolicyRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1ModifyOrgUnitPolicyRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1NetworkSetting {
+        #[doc = "The fully qualified name of the network setting."]
+        #[serde(
+            rename = "policySchema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_schema: ::std::option::Option<String>,
+        #[doc = "The value of the network setting."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1NetworkSetting {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1NetworkSetting {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -344,7 +835,78 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1PolicySchema {
+    pub struct GoogleChromePolicyVersionsV1NumericRangeConstraint {
+        #[doc = "Maximum value."]
+        #[serde(
+            rename = "maximum",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub maximum: ::std::option::Option<i64>,
+        #[doc = "Minimum value."]
+        #[serde(
+            rename = "minimum",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub minimum: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1NumericRangeConstraint {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1NumericRangeConstraint {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1PolicyModificationFieldError {
+        #[doc = "Output only. The error message related to the field."]
+        #[serde(
+            rename = "error",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub error: ::std::option::Option<String>,
+        #[doc = "Output only. The name of the field with the error."]
+        #[serde(
+            rename = "field",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1PolicyModificationFieldError
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1PolicyModificationFieldError
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1PolicySchema {
         #[doc = "Output only. Specific access restrictions related to this policy."]
         #[serde(
             rename = "accessRestrictions",
@@ -358,8 +920,16 @@ pub mod schemas {
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub additional_target_key_names:
-            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyV1AdditionalTargetKeyName>>,
+        pub additional_target_key_names: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1AdditionalTargetKeyName>,
+        >,
+        #[doc = "Title of the category in which a setting belongs."]
+        #[serde(
+            rename = "categoryTitle",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_title: ::std::option::Option<String>,
         #[doc = "Schema definition using proto descriptor."]
         #[serde(
             rename = "definition",
@@ -374,7 +944,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_descriptions: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1PolicySchemaFieldDescription>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchemaFieldDescription>,
         >,
         #[doc = "Format: name=customers/{customer}/policySchemas/{schema_namespace}"]
         #[serde(
@@ -390,9 +960,18 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notices: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1PolicySchemaNoticeDescription>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchemaNoticeDescription>,
         >,
-        #[doc = "Output only. Current life cycle information."]
+        #[doc = "Output only. Current lifecycle information."]
+        #[serde(
+            rename = "policyApiLifecycle",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_api_lifecycle: ::std::option::Option<
+            crate::schemas::ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle,
+        >,
+        #[doc = "Deprecated field because of typo."]
         #[serde(
             rename = "policyApiLifeycle",
             default,
@@ -408,7 +987,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_description: ::std::option::Option<String>,
-        #[doc = "Output only. The fully qualified name of the policy schema. This value is used to fill the field `policy_schema` in PolicyValue when calling BatchInheritOrgUnitPolicies or BatchModifyOrgUnitPolicies"]
+        #[doc = "Output only. The fully qualified name of the policy schema. This value is used to fill the field `policy_schema` in PolicyValue when calling BatchInheritOrgUnitPolicies BatchModifyOrgUnitPolicies BatchModifyGroupPolicies or BatchDeleteGroupPolicies."]
         #[serde(
             rename = "schemaName",
             default,
@@ -429,21 +1008,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub valid_target_resources: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems>,
         >,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1PolicySchema {
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1PolicySchema {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1PolicySchema {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1PolicySchema {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems {
+    pub enum GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems {
         #[doc = "Group target resource."]
         Group,
         #[doc = "Organizational Unit target resource."]
@@ -451,31 +1030,35 @@ pub mod schemas {
         #[doc = "Unspecified target resource."]
         TargetResourceUnspecified,
     }
-    impl GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems {
+    impl GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: Group => "GROUP" , GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: OrgUnit => "ORG_UNIT" , GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: TargetResourceUnspecified => "TARGET_RESOURCE_UNSPECIFIED" , }
+            match self { GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: Group => "GROUP" , GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: OrgUnit => "ORG_UNIT" , GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: TargetResourceUnspecified => "TARGET_RESOURCE_UNSPECIFIED" , }
         }
     }
-    impl ::std::convert::AsRef<str> for GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems {
+    impl ::std::convert::AsRef<str>
+        for GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems
+    {
         fn as_ref(&self) -> &str {
             self.as_str()
         }
     }
-    impl ::std::str::FromStr for GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems {
+    impl ::std::str::FromStr for GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems {
         type Err = ();
         fn from_str(
             s: &str,
-        ) -> ::std::result::Result<GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems, ()>
-        {
-            Ok (match s { "GROUP" => GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: Group , "ORG_UNIT" => GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: OrgUnit , "TARGET_RESOURCE_UNSPECIFIED" => GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: TargetResourceUnspecified , _ => return Err (()) , })
+        ) -> ::std::result::Result<
+            GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems,
+            (),
+        > {
+            Ok (match s { "GROUP" => GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: Group , "ORG_UNIT" => GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: OrgUnit , "TARGET_RESOURCE_UNSPECIFIED" => GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: TargetResourceUnspecified , _ => return Err (()) , })
         }
     }
-    impl ::std::fmt::Display for GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems {
+    impl ::std::fmt::Display for GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
             f.write_str(self.as_str())
         }
     }
-    impl ::serde::Serialize for GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems {
+    impl ::serde::Serialize for GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems {
         fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
         where
             S: ::serde::ser::Serializer,
@@ -483,24 +1066,26 @@ pub mod schemas {
             serializer.serialize_str(self.as_str())
         }
     }
-    impl<'de> ::serde::Deserialize<'de> for GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems {
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems
+    {
         fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
         where
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "GROUP" => GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: Group , "ORG_UNIT" => GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: OrgUnit , "TARGET_RESOURCE_UNSPECIFIED" => GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems :: TargetResourceUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "GROUP" => GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: Group , "ORG_UNIT" => GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: OrgUnit , "TARGET_RESOURCE_UNSPECIFIED" => GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems :: TargetResourceUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
-        for GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems
+        for GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems
     {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType
-        for GoogleChromePolicyV1PolicySchemaValidTargetResourcesItems
+        for GoogleChromePolicyVersionsV1PolicySchemaValidTargetResourcesItems
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -518,7 +1103,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1PolicySchemaFieldDependencies {
+    pub struct GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies {
         #[doc = "The source field which this field depends on."]
         #[serde(
             rename = "sourceField",
@@ -534,30 +1119,30 @@ pub mod schemas {
         )]
         pub source_field_value: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1PolicySchemaFieldDependencies {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1PolicySchemaFieldDependencies {
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleChromePolicyV1PolicySchemaFieldDescription {
-        #[doc = "Output only. The description for the field."]
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleChromePolicyVersionsV1PolicySchemaFieldDescription {
+        #[doc = "Output only. Client default if the policy is unset."]
+        #[serde(
+            rename = "defaultValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_value: ::std::option::Option<::serde_json::Value>,
+        #[doc = "Deprecated. Use name and field_description instead. The description for the field."]
         #[serde(
             rename = "description",
             default,
@@ -571,15 +1156,30 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field: ::std::option::Option<String>,
-        #[doc = "Output only. Provides a list of fields and the values they must have for this field to be allowed to be set."]
+        #[doc = "Output only. Information on any input constraints associated on the values for the field."]
+        #[serde(
+            rename = "fieldConstraints",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_constraints:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1FieldConstraints>,
+        #[doc = "Output only. Provides a list of fields and values. At least one of the fields must have the corresponding value in order for this field to be allowed to be set."]
         #[serde(
             rename = "fieldDependencies",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_dependencies: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1PolicySchemaFieldDependencies>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies>,
         >,
+        #[doc = "Output only. The description of the field."]
+        #[serde(
+            rename = "fieldDescription",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_description: ::std::option::Option<String>,
         #[doc = "Output only. Any input constraints associated on the values for the field."]
         #[serde(
             rename = "inputConstraint",
@@ -594,8 +1194,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub known_value_descriptions: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1PolicySchemaFieldKnownValueDescription>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription>,
         >,
+        #[doc = "Output only. The name of the field."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
         #[doc = "Output only. Provides the description of the fields nested in this field, if the field is a message type that defines multiple fields."]
         #[serde(
             rename = "nestedFieldDescriptions",
@@ -603,7 +1210,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nested_field_descriptions: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1PolicySchemaFieldDescription>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchemaFieldDescription>,
         >,
         #[doc = "Output only. Provides a list of fields that are required to be set if this field has a certain value."]
         #[serde(
@@ -612,15 +1219,19 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub required_items: ::std::option::Option<
-            Vec<crate::schemas::GoogleChromePolicyV1PolicySchemaRequiredItems>,
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1PolicySchemaRequiredItems>,
         >,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1PolicySchemaFieldDescription {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1PolicySchemaFieldDescription
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1PolicySchemaFieldDescription {
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1PolicySchemaFieldDescription
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -637,7 +1248,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1PolicySchemaFieldKnownValueDescription {
+    pub struct GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription {
         #[doc = "Output only. Additional description for this value."]
         #[serde(
             rename = "description",
@@ -654,14 +1265,14 @@ pub mod schemas {
         pub value: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector
-        for GoogleChromePolicyV1PolicySchemaFieldKnownValueDescription
+        for GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription
     {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType
-        for GoogleChromePolicyV1PolicySchemaFieldKnownValueDescription
+        for GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -679,7 +1290,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1PolicySchemaNoticeDescription {
+    pub struct GoogleChromePolicyVersionsV1PolicySchemaNoticeDescription {
         #[doc = "Output only. Whether the user needs to acknowledge the notice message before the value can be set."]
         #[serde(
             rename = "acknowledgementRequired",
@@ -709,12 +1320,16 @@ pub mod schemas {
         )]
         pub notice_value: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1PolicySchemaNoticeDescription {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1PolicySchemaNoticeDescription
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1PolicySchemaNoticeDescription {
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1PolicySchemaNoticeDescription
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -731,7 +1346,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1PolicySchemaRequiredItems {
+    pub struct GoogleChromePolicyVersionsV1PolicySchemaRequiredItems {
         #[doc = "The value(s) of the field that provoke required field enforcement. An empty field_conditions implies that any value assigned to this field will provoke required field enforcement."]
         #[serde(
             rename = "fieldConditions",
@@ -747,12 +1362,16 @@ pub mod schemas {
         )]
         pub required_fields: ::std::option::Option<Vec<String>>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1PolicySchemaRequiredItems {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1PolicySchemaRequiredItems
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1PolicySchemaRequiredItems {
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1PolicySchemaRequiredItems
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -769,7 +1388,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1PolicyTargetKey {
+    pub struct GoogleChromePolicyVersionsV1PolicyTargetKey {
         #[doc = "Map containing the additional target key name and value pairs used to further identify the target of the policy."]
         #[serde(
             rename = "additionalTargetKeys",
@@ -778,7 +1397,7 @@ pub mod schemas {
         )]
         pub additional_target_keys:
             ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The target resource on which this policy is applied. The following resources are supported: * Organizational Unit (“orgunits/{orgunit_id}”)"]
+        #[doc = "The target resource on which this policy is applied. The following resources are supported: * Organizational Unit (“orgunits/{orgunit_id}”) * Group (“groups/{group_id}”)"]
         #[serde(
             rename = "targetResource",
             default,
@@ -786,18 +1405,18 @@ pub mod schemas {
         )]
         pub target_resource: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1PolicyTargetKey {
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1PolicyTargetKey {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1PolicyTargetKey {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1PolicyTargetKey {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleChromePolicyV1PolicyValue {
+    pub struct GoogleChromePolicyVersionsV1PolicyValue {
         #[doc = "The fully qualified name of the policy schema associated with this policy."]
         #[serde(
             rename = "policySchema",
@@ -813,12 +1432,12 @@ pub mod schemas {
         )]
         pub value: ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1PolicyValue {
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1PolicyValue {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1PolicyValue {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1PolicyValue {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -835,7 +1454,174 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1ResolveRequest {
+    pub struct GoogleChromePolicyVersionsV1RemoveCertificateErrorDetails {
+        #[doc = "Output only. If the certificate was not removed, a list of references to the certificate that prevented it from being removed. Only unreferenced certificates can be removed."]
+        #[serde(
+            rename = "certificateReferences",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub certificate_references: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromePolicyVersionsV1CertificateReference>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1RemoveCertificateErrorDetails
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1RemoveCertificateErrorDetails
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1RemoveCertificateRequest {
+        #[doc = "Required. The GUID of the certificate to remove."]
+        #[serde(
+            rename = "networkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_id: ::std::option::Option<String>,
+        #[doc = "Required. The target resource on which this certificate will be removed. The following resources are supported: * Organizational Unit (“orgunits/{orgunit_id}”)"]
+        #[serde(
+            rename = "targetResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_resource: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1RemoveCertificateRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1RemoveCertificateRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1RemoveCertificateResponse {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1RemoveCertificateResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1RemoveCertificateResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1RemoveNetworkRequest {
+        #[doc = "Required. The GUID of the network to remove."]
+        #[serde(
+            rename = "networkId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_id: ::std::option::Option<String>,
+        #[doc = "Required. The target resource on which this network will be removed. The following resources are supported: * Organizational Unit (“orgunits/{orgunit_id}”)"]
+        #[serde(
+            rename = "targetResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_resource: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1RemoveNetworkRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1RemoveNetworkRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1RemoveNetworkResponse {}
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1RemoveNetworkResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1RemoveNetworkResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1ResolveRequest {
         #[doc = "The maximum number of policies to return, defaults to 100 and has a maximum of 1000."]
         #[serde(
             rename = "pageSize",
@@ -850,34 +1636,34 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_token: ::std::option::Option<String>,
-        #[doc = "The schema filter to apply to the resolve request. Specify a schema name to view a particular schema, for example: chrome.users.ShowLogoutButton Wildcards are supported, but only in the leaf portion of the schema name. Wildcards cannot be used in namespace directly. Please read https://developers.google.com/chrome/chrome-management/guides/policyapi for details on schema namepsaces. For example: Valid: “chrome.users.*”, “chrome.users.apps.*”, “chrome.printers.*” Invalid: “*”, “*.users”, “chrome.*”, “chrome.*.apps.*”"]
+        #[doc = "The schema filter to apply to the resolve request. Specify a schema name to view a particular schema, for example: chrome.users.ShowLogoutButton Wildcards are supported, but only in the leaf portion of the schema name. Wildcards cannot be used in namespace directly. Please read https://developers.google.com/chrome/policy/guides/policy-schemas for details on schema namespaces. For example: Valid: “chrome.users.*”, “chrome.users.apps.*”, “chrome.printers.*” Invalid: “*”, “*.users”, “chrome.*”, “chrome.*.apps.*”"]
         #[serde(
             rename = "policySchemaFilter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_schema_filter: ::std::option::Option<String>,
-        #[doc = "Required. The key of the target resource on which the policies should be resolved. The target resource must point to an Org Unit."]
+        #[doc = "Required. The key of the target resource on which the policies should be resolved."]
         #[serde(
             rename = "policyTargetKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_target_key:
-            ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyTargetKey>,
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1ResolveRequest {
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1ResolveRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1ResolveRequest {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1ResolveRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleChromePolicyV1ResolveResponse {
+    pub struct GoogleChromePolicyVersionsV1ResolveResponse {
         #[doc = "The page token used to get the next set of resolved policies found by the request."]
         #[serde(
             rename = "nextPageToken",
@@ -892,25 +1678,25 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resolved_policies:
-            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyV1ResolvedPolicy>>,
+            ::std::option::Option<Vec<crate::schemas::GoogleChromePolicyVersionsV1ResolvedPolicy>>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1ResolveResponse {
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1ResolveResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1ResolveResponse {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1ResolveResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleChromePolicyV1ResolveResponse {
+    impl crate::GetNextPageToken<String> for GoogleChromePolicyVersionsV1ResolveResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleChromePolicyV1ResolvedPolicy {
+    pub struct GoogleChromePolicyVersionsV1ResolvedPolicy {
         #[doc = "Output only. The added source key establishes at which level an entity was explicitly added for management. This is useful for certain type of policies that are only applied if they are explicitly added for management. For example: apps and networks. An entity can only be deleted from management in an Organizational Unit that it was explicitly added to. If this is not present it means that the policy is managed without the need to explicitly add an entity, for example: standard user or device policies."]
         #[serde(
             rename = "addedSourceKey",
@@ -918,35 +1704,37 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub added_source_key:
-            ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyTargetKey>,
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
         #[doc = "Output only. The source resource from which this policy value is obtained. May be the same as `targetKey` if the policy is directly modified on the target, otherwise it would be another resource from which the policy gets its value (if applicable). If not present, the source is the default value for the customer."]
         #[serde(
             rename = "sourceKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub source_key: ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyTargetKey>,
+        pub source_key:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
         #[doc = "Output only. The target resource for which the resolved policy value applies."]
         #[serde(
             rename = "targetKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub target_key: ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyTargetKey>,
+        pub target_key:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
         #[doc = "Output only. The resolved value of the policy."]
         #[serde(
             rename = "value",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub value: ::std::option::Option<crate::schemas::GoogleChromePolicyV1PolicyValue>,
+        pub value: ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyValue>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1ResolvedPolicy {
+    impl ::google_field_selector::FieldSelector for GoogleChromePolicyVersionsV1ResolvedPolicy {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1ResolvedPolicy {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1ResolvedPolicy {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -963,7 +1751,57 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1UploadPolicyFileRequest {
+    pub struct GoogleChromePolicyVersionsV1UpdateGroupPriorityOrderingRequest {
+        #[doc = "Required. The group IDs, in desired priority ordering."]
+        #[serde(
+            rename = "groupIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub group_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The namespace of the policy type for the request."]
+        #[serde(
+            rename = "policyNamespace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_namespace: ::std::option::Option<String>,
+        #[doc = "Required. The key of the target for which we want to update the group priority ordering. The target resource must point to an app."]
+        #[serde(
+            rename = "policyTargetKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_target_key:
+            ::std::option::Option<crate::schemas::GoogleChromePolicyVersionsV1PolicyTargetKey>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1UpdateGroupPriorityOrderingRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromePolicyVersionsV1UpdateGroupPriorityOrderingRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromePolicyVersionsV1UploadPolicyFileRequest {
         #[doc = "Required. The fully qualified policy schema and field name this file is uploaded for. This information will be used to validate the content type of the file."]
         #[serde(
             rename = "policyField",
@@ -972,12 +1810,14 @@ pub mod schemas {
         )]
         pub policy_field: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1UploadPolicyFileRequest {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1UploadPolicyFileRequest
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1UploadPolicyFileRequest {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1UploadPolicyFileRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -994,7 +1834,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleChromePolicyV1UploadPolicyFileResponse {
+    pub struct GoogleChromePolicyVersionsV1UploadPolicyFileResponse {
         #[doc = "The uri for end user to download the file."]
         #[serde(
             rename = "downloadUri",
@@ -1003,12 +1843,14 @@ pub mod schemas {
         )]
         pub download_uri: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for GoogleChromePolicyV1UploadPolicyFileResponse {
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromePolicyVersionsV1UploadPolicyFileResponse
+    {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for GoogleChromePolicyV1UploadPolicyFileResponse {
+    impl ::google_field_selector::ToFieldType for GoogleChromePolicyVersionsV1UploadPolicyFileResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1547,7 +2389,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub package: ::std::option::Option<String>,
-        #[doc = "The syntax of the proto file. The supported values are “proto2” and “proto3”."]
+        #[doc = "The syntax of the proto file. The supported values are “proto2”, “proto3”, and “editions”. If `edition` is present, this value must be “editions”."]
         #[serde(
             rename = "syntax",
             default,
@@ -1824,7 +2666,7 @@ pub mod resources {
                 #[doc = "Gets the resolved policy values for a list of policies that match a search query."]
                 pub fn resolve(
                     &self,
-                    request: crate::schemas::GoogleChromePolicyV1ResolveRequest,
+                    request: crate::schemas::GoogleChromePolicyVersionsV1ResolveRequest,
                     customer: impl Into<String>,
                 ) -> ResolveRequestBuilder {
                     ResolveRequestBuilder {
@@ -1845,6 +2687,25 @@ pub mod resources {
                         customer: customer.into(),
                     }
                 }
+                #[doc = "Actions that can be performed on the groups resource"]
+                pub fn groups(
+                    &self,
+                ) -> crate::resources::customers::policies::groups::GroupsActions {
+                    crate::resources::customers::policies::groups::GroupsActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
+                #[doc = "Actions that can be performed on the networks resource"]
+                pub fn networks(
+                    &self,
+                ) -> crate::resources::customers::policies::networks::NetworksActions
+                {
+                    crate::resources::customers::policies::networks::NetworksActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
                 #[doc = "Actions that can be performed on the orgunits resource"]
                 pub fn orgunits(
                     &self,
@@ -1861,7 +2722,7 @@ pub mod resources {
             pub struct ResolveRequestBuilder<'a> {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                request: crate::schemas::GoogleChromePolicyV1ResolveRequest,
+                request: crate::schemas::GoogleChromePolicyVersionsV1ResolveRequest,
                 customer: String,
                 access_token: ::std::option::Option<String>,
                 alt: ::std::option::Option<crate::params::Alt>,
@@ -1947,7 +2808,7 @@ pub mod resources {
                 #[doc = r" the response resource."]
                 pub async fn execute_with_default_fields(
                     self,
-                ) -> Result<crate::schemas::GoogleChromePolicyV1ResolveResponse, crate::Error>
+                ) -> Result<crate::schemas::GoogleChromePolicyVersionsV1ResolveResponse, crate::Error>
                 {
                     self.execute_with_fields(None::<&str>).await
                 }
@@ -1957,7 +2818,7 @@ pub mod resources {
                 #[doc = r" development or debugging."]
                 pub async fn execute_with_all_fields(
                     self,
-                ) -> Result<crate::schemas::GoogleChromePolicyV1ResolveResponse, crate::Error>
+                ) -> Result<crate::schemas::GoogleChromePolicyVersionsV1ResolveResponse, crate::Error>
                 {
                     self.execute_with_fields(Some("*")).await
                 }
@@ -2021,6 +2882,1520 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            pub mod groups {
+                pub mod params {}
+                pub struct GroupsActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> GroupsActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Delete multiple policy values that are applied to a specific group. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status."]
+                    pub fn batch_delete(
+                        &self,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1BatchDeleteGroupPoliciesRequest,
+                        customer: impl Into<String>,
+                    ) -> BatchDeleteRequestBuilder {
+                        BatchDeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                    #[doc = "Modify multiple policy values that are applied to a specific group. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status."]
+                    pub fn batch_modify(
+                        &self,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1BatchModifyGroupPoliciesRequest,
+                        customer: impl Into<String>,
+                    ) -> BatchModifyRequestBuilder {
+                        BatchModifyRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                    #[doc = "Retrieve a group priority ordering for an app. The target app must be supplied in `additionalTargetKeyNames` in the PolicyTargetKey. On failure the request will return the error details as part of the google.rpc.Status."]
+                    pub fn list_group_priority_ordering(
+                        &self,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest,
+                        customer: impl Into<String>,
+                    ) -> ListGroupPriorityOrderingRequestBuilder {
+                        ListGroupPriorityOrderingRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                    #[doc = "Update a group priority ordering for an app. The target app must be supplied in `additionalTargetKeyNames` in the PolicyTargetKey. On failure the request will return the error details as part of the google.rpc.Status."]
+                    pub fn update_group_priority_ordering(
+                        &self,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1UpdateGroupPriorityOrderingRequest,
+                        customer: impl Into<String>,
+                    ) -> UpdateGroupPriorityOrderingRequestBuilder {
+                        UpdateGroupPriorityOrderingRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                }
+                #[doc = "Created via [GroupsActions::batch_delete()](struct.GroupsActions.html#method.batch_delete)"]
+                #[derive(Debug, Clone)]
+                pub struct BatchDeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request:
+                        crate::schemas::GoogleChromePolicyVersionsV1BatchDeleteGroupPoliciesRequest,
+                    customer: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> BatchDeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/groups:batchDelete");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [GroupsActions::batch_modify()](struct.GroupsActions.html#method.batch_modify)"]
+                #[derive(Debug, Clone)]
+                pub struct BatchModifyRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request:
+                        crate::schemas::GoogleChromePolicyVersionsV1BatchModifyGroupPoliciesRequest,
+                    customer: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> BatchModifyRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/groups:batchModify");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [GroupsActions::list_group_priority_ordering()](struct.GroupsActions.html#method.list_group_priority_ordering)"]
+                #[derive(Debug, Clone)]
+                pub struct ListGroupPriorityOrderingRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest , customer : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                impl<'a> ListGroupPriorityOrderingRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]                    pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse , crate :: Error >{
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]                    pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleChromePolicyVersionsV1ListGroupPriorityOrderingResponse , crate :: Error >{
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/groups:listGroupPriorityOrdering");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [GroupsActions::update_group_priority_ordering()](struct.GroupsActions.html#method.update_group_priority_ordering)"]
+                #[derive(Debug, Clone)]
+                pub struct UpdateGroupPriorityOrderingRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleChromePolicyVersionsV1UpdateGroupPriorityOrderingRequest , customer : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                impl<'a> UpdateGroupPriorityOrderingRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/groups:updateGroupPriorityOrdering");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+            }
+            pub mod networks {
+                pub mod params {}
+                pub struct NetworksActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> NetworksActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates a certificate at a specified OU for a customer."]
+                    pub fn define_certificate(
+                        &self,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1DefineCertificateRequest,
+                        customer: impl Into<String>,
+                    ) -> DefineCertificateRequestBuilder {
+                        DefineCertificateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                    #[doc = "Define a new network."]
+                    pub fn define_network(
+                        &self,
+                        request: crate::schemas::GoogleChromePolicyVersionsV1DefineNetworkRequest,
+                        customer: impl Into<String>,
+                    ) -> DefineNetworkRequestBuilder {
+                        DefineNetworkRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                    #[doc = "Remove an existing certificate by guid."]
+                    pub fn remove_certificate(
+                        &self,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1RemoveCertificateRequest,
+                        customer: impl Into<String>,
+                    ) -> RemoveCertificateRequestBuilder {
+                        RemoveCertificateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                    #[doc = "Remove an existing network by guid."]
+                    pub fn remove_network(
+                        &self,
+                        request: crate::schemas::GoogleChromePolicyVersionsV1RemoveNetworkRequest,
+                        customer: impl Into<String>,
+                    ) -> RemoveNetworkRequestBuilder {
+                        RemoveNetworkRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            customer: customer.into(),
+                        }
+                    }
+                }
+                #[doc = "Created via [NetworksActions::define_certificate()](struct.NetworksActions.html#method.define_certificate)"]
+                #[derive(Debug, Clone)]
+                pub struct DefineCertificateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleChromePolicyVersionsV1DefineCertificateRequest,
+                    customer: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> DefineCertificateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1DefineCertificateResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1DefineCertificateResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/networks:defineCertificate");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [NetworksActions::define_network()](struct.NetworksActions.html#method.define_network)"]
+                #[derive(Debug, Clone)]
+                pub struct DefineNetworkRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleChromePolicyVersionsV1DefineNetworkRequest,
+                    customer: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> DefineNetworkRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1DefineNetworkResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1DefineNetworkResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/networks:defineNetwork");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [NetworksActions::remove_certificate()](struct.NetworksActions.html#method.remove_certificate)"]
+                #[derive(Debug, Clone)]
+                pub struct RemoveCertificateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleChromePolicyVersionsV1RemoveCertificateRequest,
+                    customer: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> RemoveCertificateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1RemoveCertificateResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1RemoveCertificateResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/networks:removeCertificate");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [NetworksActions::remove_network()](struct.NetworksActions.html#method.remove_network)"]
+                #[derive(Debug, Clone)]
+                pub struct RemoveNetworkRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleChromePolicyVersionsV1RemoveNetworkRequest,
+                    customer: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> RemoveNetworkRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1RemoveNetworkResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1RemoveNetworkResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromepolicy.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.customer;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/policies/networks:removeNetwork");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+            }
             pub mod orgunits {
                 pub mod params {}
                 pub struct OrgunitsActions<'a> {
@@ -2034,7 +4409,7 @@ pub mod resources {
                     #[doc = "Modify multiple policy values that are applied to a specific org unit so that they now inherit the value from a parent (if applicable). All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status."]
                     pub fn batch_inherit(
                         &self,
-                        request : crate :: schemas :: GoogleChromePolicyV1BatchInheritOrgUnitPoliciesRequest,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1BatchInheritOrgUnitPoliciesRequest,
                         customer: impl Into<String>,
                     ) -> BatchInheritRequestBuilder {
                         BatchInheritRequestBuilder {
@@ -2058,7 +4433,7 @@ pub mod resources {
                     #[doc = "Modify multiple policy values that are applied to a specific org unit. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status."]
                     pub fn batch_modify(
                         &self,
-                        request : crate :: schemas :: GoogleChromePolicyV1BatchModifyOrgUnitPoliciesRequest,
+                        request : crate :: schemas :: GoogleChromePolicyVersionsV1BatchModifyOrgUnitPoliciesRequest,
                         customer: impl Into<String>,
                     ) -> BatchModifyRequestBuilder {
                         BatchModifyRequestBuilder {
@@ -2082,23 +4457,7 @@ pub mod resources {
                 }
                 #[doc = "Created via [OrgunitsActions::batch_inherit()](struct.OrgunitsActions.html#method.batch_inherit)"]
                 #[derive(Debug, Clone)]
-                pub struct BatchInheritRequestBuilder<'a> {
-                    pub(crate) reqwest: &'a ::reqwest::Client,
-                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                    request: crate::schemas::GoogleChromePolicyV1BatchInheritOrgUnitPoliciesRequest,
-                    customer: String,
-                    access_token: ::std::option::Option<String>,
-                    alt: ::std::option::Option<crate::params::Alt>,
-                    callback: ::std::option::Option<String>,
-                    fields: ::std::option::Option<String>,
-                    key: ::std::option::Option<String>,
-                    oauth_token: ::std::option::Option<String>,
-                    pretty_print: ::std::option::Option<bool>,
-                    quota_user: ::std::option::Option<String>,
-                    upload_protocol: ::std::option::Option<String>,
-                    upload_type: ::std::option::Option<String>,
-                    xgafv: ::std::option::Option<crate::params::Xgafv>,
-                }
+                pub struct BatchInheritRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleChromePolicyVersionsV1BatchInheritOrgUnitPoliciesRequest , customer : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
                 impl<'a> BatchInheritRequestBuilder<'a> {
                     #[doc = "OAuth access token."]
                     pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -2247,23 +4606,7 @@ pub mod resources {
                 }
                 #[doc = "Created via [OrgunitsActions::batch_modify()](struct.OrgunitsActions.html#method.batch_modify)"]
                 #[derive(Debug, Clone)]
-                pub struct BatchModifyRequestBuilder<'a> {
-                    pub(crate) reqwest: &'a ::reqwest::Client,
-                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                    request: crate::schemas::GoogleChromePolicyV1BatchModifyOrgUnitPoliciesRequest,
-                    customer: String,
-                    access_token: ::std::option::Option<String>,
-                    alt: ::std::option::Option<crate::params::Alt>,
-                    callback: ::std::option::Option<String>,
-                    fields: ::std::option::Option<String>,
-                    key: ::std::option::Option<String>,
-                    oauth_token: ::std::option::Option<String>,
-                    pretty_print: ::std::option::Option<bool>,
-                    quota_user: ::std::option::Option<String>,
-                    upload_protocol: ::std::option::Option<String>,
-                    upload_type: ::std::option::Option<String>,
-                    xgafv: ::std::option::Option<crate::params::Xgafv>,
-                }
+                pub struct BatchModifyRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleChromePolicyVersionsV1BatchModifyOrgUnitPoliciesRequest , customer : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
                 impl<'a> BatchModifyRequestBuilder<'a> {
                     #[doc = "OAuth access token."]
                     pub fn access_token(mut self, value: impl Into<String>) -> Self {
@@ -2554,7 +4897,7 @@ pub mod resources {
                 #[doc = r" the response resource."]
                 pub async fn execute_with_default_fields(
                     self,
-                ) -> Result<crate::schemas::GoogleChromePolicyV1PolicySchema, crate::Error>
+                ) -> Result<crate::schemas::GoogleChromePolicyVersionsV1PolicySchema, crate::Error>
                 {
                     self.execute_with_fields(None::<&str>).await
                 }
@@ -2564,7 +4907,7 @@ pub mod resources {
                 #[doc = r" development or debugging."]
                 pub async fn execute_with_all_fields(
                     self,
-                ) -> Result<crate::schemas::GoogleChromePolicyV1PolicySchema, crate::Error>
+                ) -> Result<crate::schemas::GoogleChromePolicyVersionsV1PolicySchema, crate::Error>
                 {
                     self.execute_with_fields(Some("*")).await
                 }
@@ -2653,7 +4996,7 @@ pub mod resources {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "The maximum number of policy schemas to return."]
+                #[doc = "The maximum number of policy schemas to return, defaults to 100 and has a maximum of 1000."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -2727,7 +5070,10 @@ pub mod resources {
                 pub fn stream_policy_schemas_with_default_fields(
                     self,
                 ) -> impl ::futures::Stream<
-                    Item = Result<crate::schemas::GoogleChromePolicyV1PolicySchema, crate::Error>,
+                    Item = Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1PolicySchema,
+                        crate::Error,
+                    >,
                 > + 'a {
                     self.stream_policy_schemas_with_fields(None::<String>)
                 }
@@ -2735,7 +5081,10 @@ pub mod resources {
                 pub fn stream_policy_schemas_with_all_fields(
                     self,
                 ) -> impl ::futures::Stream<
-                    Item = Result<crate::schemas::GoogleChromePolicyV1PolicySchema, crate::Error>,
+                    Item = Result<
+                        crate::schemas::GoogleChromePolicyVersionsV1PolicySchema,
+                        crate::Error,
+                    >,
                 > + 'a {
                     self.stream_policy_schemas_with_fields(Some("*"))
                 }
@@ -2755,7 +5104,7 @@ pub mod resources {
                         #[serde(rename = "policySchemas")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -2790,7 +5139,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -2812,7 +5161,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<
                     Item = Result<
-                        crate::schemas::GoogleChromePolicyV1ListPolicySchemasResponse,
+                        crate::schemas::GoogleChromePolicyVersionsV1ListPolicySchemasResponse,
                         crate::Error,
                     >,
                 > + 'a {
@@ -2827,7 +5176,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<
                     Item = Result<
-                        crate::schemas::GoogleChromePolicyV1ListPolicySchemasResponse,
+                        crate::schemas::GoogleChromePolicyVersionsV1ListPolicySchemasResponse,
                         crate::Error,
                     >,
                 > + 'a {
@@ -2846,7 +5195,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2887,7 +5236,7 @@ pub mod resources {
                 pub async fn execute_with_default_fields(
                     self,
                 ) -> Result<
-                    crate::schemas::GoogleChromePolicyV1ListPolicySchemasResponse,
+                    crate::schemas::GoogleChromePolicyVersionsV1ListPolicySchemasResponse,
                     crate::Error,
                 > {
                     self.execute_with_fields(None::<&str>).await
@@ -2899,7 +5248,7 @@ pub mod resources {
                 pub async fn execute_with_all_fields(
                     self,
                 ) -> Result<
-                    crate::schemas::GoogleChromePolicyV1ListPolicySchemasResponse,
+                    crate::schemas::GoogleChromePolicyVersionsV1ListPolicySchemasResponse,
                     crate::Error,
                 > {
                     self.execute_with_fields(Some("*")).await
@@ -2968,12 +5317,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -2993,7 +5343,7 @@ pub mod resources {
             #[doc = "Creates an enterprise file from the content provided by user. Returns a public download url for end user."]
             pub fn upload(
                 &self,
-                request: crate::schemas::GoogleChromePolicyV1UploadPolicyFileRequest,
+                request: crate::schemas::GoogleChromePolicyVersionsV1UploadPolicyFileRequest,
                 customer: impl Into<String>,
             ) -> UploadRequestBuilder {
                 UploadRequestBuilder {
@@ -3020,7 +5370,7 @@ pub mod resources {
         pub struct UploadRequestBuilder<'a> {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::GoogleChromePolicyV1UploadPolicyFileRequest,
+            request: crate::schemas::GoogleChromePolicyVersionsV1UploadPolicyFileRequest,
             customer: String,
             access_token: ::std::option::Option<String>,
             alt: ::std::option::Option<crate::params::Alt>,
@@ -3156,8 +5506,10 @@ pub mod resources {
             #[doc = r" the response resource."]
             pub async fn execute_with_default_fields(
                 self,
-            ) -> Result<crate::schemas::GoogleChromePolicyV1UploadPolicyFileResponse, crate::Error>
-            {
+            ) -> Result<
+                crate::schemas::GoogleChromePolicyVersionsV1UploadPolicyFileResponse,
+                crate::Error,
+            > {
                 self.execute_with_fields(None::<&str>).await
             }
             #[doc = r" Execute the given operation. This will provide a `fields`"]
@@ -3166,8 +5518,10 @@ pub mod resources {
             #[doc = r" development or debugging."]
             pub async fn execute_with_all_fields(
                 self,
-            ) -> Result<crate::schemas::GoogleChromePolicyV1UploadPolicyFileResponse, crate::Error>
-            {
+            ) -> Result<
+                crate::schemas::GoogleChromePolicyVersionsV1UploadPolicyFileResponse,
+                crate::Error,
+            > {
                 self.execute_with_fields(Some("*")).await
             }
             #[doc = r" Execute the given operation. This will use the `fields`"]
@@ -3515,16 +5869,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -3544,13 +5900,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -3558,7 +5917,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -3585,7 +5944,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

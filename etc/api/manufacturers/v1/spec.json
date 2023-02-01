@@ -5,9 +5,9 @@
   "id": "manufacturers:v1",
   "name": "manufacturers",
   "canonicalName": "Manufacturer Center",
-  "fullyEncodeReservedExpansion": null,
+  "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20230130",
   "title": "Manufacturer Center API",
   "description": "Public API for managing Manufacturer Center related data.",
   "ownerDomain": "google.com",
@@ -345,6 +345,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "grocery": {
+          "description": "Grocery Attributes. See more at https://support.google.com/manufacturers/answer/12098458#grocery.",
+          "$ref": "Grocery"
+        },
         "gtin": {
           "description": "The Global Trade Item Number (GTIN) of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#gtin.",
           "type": "array",
@@ -414,6 +418,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "nutrition": {
+          "description": "Nutrition Attributes. See more at https://support.google.com/manufacturers/answer/12098458#food-servings.",
+          "$ref": "Nutrition"
         },
         "pattern": {
           "description": "The pattern of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#pattern.",
@@ -788,6 +796,156 @@
       "additionalProperties": null,
       "items": null
     },
+    "FloatUnit": {
+      "id": "FloatUnit",
+      "description": "Combination of float amount and unit.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "amount": {
+          "description": "amount.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "unit": {
+          "description": "unit.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Grocery": {
+      "id": "Grocery",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "activeIngredients": {
+          "description": "Active ingredients.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "alcoholByVolume": {
+          "description": "Alcohol by volume.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "allergens": {
+          "description": "Allergens.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "derivedNutritionClaim": {
+          "description": "Derived nutrition claim.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "directions": {
+          "description": "Directions.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "indications": {
+          "description": "Indications.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "ingredients": {
+          "description": "Ingredients.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nutritionClaim": {
+          "description": "Nutrition claim.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "storageInstructions": {
+          "description": "Storage instructions.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Image": {
       "id": "Image",
       "description": "An image.",
@@ -1010,6 +1168,318 @@
       "additionalProperties": null,
       "items": null
     },
+    "Nutrition": {
+      "id": "Nutrition",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "addedSugars": {
+          "description": "Added sugars.",
+          "$ref": "FloatUnit"
+        },
+        "addedSugarsDailyPercentage": {
+          "description": "Added sugars daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "calcium": {
+          "description": "Calcium.",
+          "$ref": "FloatUnit"
+        },
+        "calciumDailyPercentage": {
+          "description": "Calcium daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "cholesterol": {
+          "description": "Cholesterol.",
+          "$ref": "FloatUnit"
+        },
+        "cholesterolDailyPercentage": {
+          "description": "Cholesterol daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dietaryFiber": {
+          "description": "Dietary fiber.",
+          "$ref": "FloatUnit"
+        },
+        "dietaryFiberDailyPercentage": {
+          "description": "Dietary fiber daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "energy": {
+          "description": "Mandatory Nutrition Facts. Energy.",
+          "$ref": "FloatUnit"
+        },
+        "energyFromFat": {
+          "description": "Energy from fat.",
+          "$ref": "FloatUnit"
+        },
+        "folateDailyPercentage": {
+          "description": "Folate daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "folateFolicAcid": {
+          "description": "Folate folic acid.",
+          "$ref": "FloatUnit"
+        },
+        "folateMcgDfe": {
+          "description": "Folate mcg DFE.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "iron": {
+          "description": "Iron.",
+          "$ref": "FloatUnit"
+        },
+        "ironDailyPercentage": {
+          "description": "Iron daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "monounsaturatedFat": {
+          "description": "Monounsaturated fat.",
+          "$ref": "FloatUnit"
+        },
+        "nutritionFactMeasure": {
+          "description": "Nutrition fact measure.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "polyols": {
+          "description": "Polyols.",
+          "$ref": "FloatUnit"
+        },
+        "polyunsaturatedFat": {
+          "description": "Polyunsaturated fat.",
+          "$ref": "FloatUnit"
+        },
+        "potassium": {
+          "description": "Potassium.",
+          "$ref": "FloatUnit"
+        },
+        "potassiumDailyPercentage": {
+          "description": "Potassium daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "preparedSizeDescription": {
+          "description": "Prepared size description.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "protein": {
+          "description": "Protein.",
+          "$ref": "FloatUnit"
+        },
+        "proteinDailyPercentage": {
+          "description": "Protein daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "saturatedFat": {
+          "description": "Saturated fat.",
+          "$ref": "FloatUnit"
+        },
+        "saturatedFatDailyPercentage": {
+          "description": "Saturated fat daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "servingSizeDescription": {
+          "description": "Food Serving Size. Serving size description.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "servingSizeMeasure": {
+          "description": "Serving size measure.",
+          "$ref": "FloatUnit"
+        },
+        "servingsPerContainer": {
+          "description": "Servings per container.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sodium": {
+          "description": "Sodium.",
+          "$ref": "FloatUnit"
+        },
+        "sodiumDailyPercentage": {
+          "description": "Sodium daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "starch": {
+          "description": "Starch.",
+          "$ref": "FloatUnit"
+        },
+        "totalCarbohydrate": {
+          "description": "Total carbohydrate.",
+          "$ref": "FloatUnit"
+        },
+        "totalCarbohydrateDailyPercentage": {
+          "description": "Total carbohydrate daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "totalFat": {
+          "description": "Total fat.",
+          "$ref": "FloatUnit"
+        },
+        "totalFatDailyPercentage": {
+          "description": "Total fat daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "totalSugars": {
+          "description": "Total sugars.",
+          "$ref": "FloatUnit"
+        },
+        "totalSugarsDailyPercentage": {
+          "description": "Total sugars daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "transFat": {
+          "description": "Trans fat.",
+          "$ref": "FloatUnit"
+        },
+        "transFatDailyPercentage": {
+          "description": "Trans fat daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "vitaminD": {
+          "description": "Vitamin D.",
+          "$ref": "FloatUnit"
+        },
+        "vitaminDDailyPercentage": {
+          "description": "Vitamin D daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "voluntaryNutritionFact": {
+          "description": "Voluntary nutrition fact.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "VoluntaryNutritionFact"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Price": {
       "id": "Price",
       "description": "A price.",
@@ -1169,6 +1639,42 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "VoluntaryNutritionFact": {
+      "id": "VoluntaryNutritionFact",
+      "description": "Voluntary Nutrition Facts.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dailyPercentage": {
+          "description": "Daily percentage.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "value": {
+          "description": "Value.",
+          "$ref": "FloatUnit"
         }
       },
       "additionalProperties": null,

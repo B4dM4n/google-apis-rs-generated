@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("servicedirectory1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220413")
+            .version("0.1.0-20230105")
             .about("Service Directory is a platform for discovering, publishing, and connecting services. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -65,8 +65,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             namespaces2 = namespaces2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_iam_policy")
-                .about("Gets the IAM Policy for a resource (namespace or service only).");
+            let mcmd =
+                SubCommand::with_name("get_iam_policy").about("Gets the IAM Policy for a resource");
             namespaces2 = namespaces2.subcommand(mcmd);
         }
         {
@@ -78,14 +78,47 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             namespaces2 = namespaces2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_iam_policy")
-                .about("Sets the IAM Policy for a resource (namespace or service only).");
+            let mcmd =
+                SubCommand::with_name("set_iam_policy").about("Sets the IAM Policy for a resource");
             namespaces2 = namespaces2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("test_iam_permissions")
-                .about("Tests IAM permissions for a resource (namespace or service only).");
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Tests IAM permissions for a resource (namespace, service or service workload only).");
             namespaces2 = namespaces2.subcommand(mcmd);
+        }
+        let mut registration_policies2 = SubCommand::with_name("registration_policies")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd =
+                SubCommand::with_name("get_iam_policy").about("Gets the IAM Policy for a resource");
+            registration_policies2 = registration_policies2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("set_iam_policy").about("Sets the IAM Policy for a resource");
+            registration_policies2 = registration_policies2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Tests IAM permissions for a resource (namespace, service or service workload only).");
+            registration_policies2 = registration_policies2.subcommand(mcmd);
+        }
+        let mut service_workloads3 = SubCommand::with_name("service_workloads")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd =
+                SubCommand::with_name("get_iam_policy").about("Gets the IAM Policy for a resource");
+            service_workloads3 = service_workloads3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("set_iam_policy").about("Sets the IAM Policy for a resource");
+            service_workloads3 = service_workloads3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Tests IAM permissions for a resource (namespace, service or service workload only).");
+            service_workloads3 = service_workloads3.subcommand(mcmd);
         }
         let mut services3 = SubCommand::with_name("services")
                         .setting(AppSettings::ColoredHelp)
@@ -106,8 +139,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services3 = services3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_iam_policy")
-                .about("Gets the IAM Policy for a resource (namespace or service only).");
+            let mcmd =
+                SubCommand::with_name("get_iam_policy").about("Gets the IAM Policy for a resource");
             services3 = services3.subcommand(mcmd);
         }
         {
@@ -124,13 +157,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services3 = services3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_iam_policy")
-                .about("Sets the IAM Policy for a resource (namespace or service only).");
+            let mcmd =
+                SubCommand::with_name("set_iam_policy").about("Sets the IAM Policy for a resource");
             services3 = services3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("test_iam_permissions")
-                .about("Tests IAM permissions for a resource (namespace or service only).");
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Tests IAM permissions for a resource (namespace, service or service workload only).");
             services3 = services3.subcommand(mcmd);
         }
         let mut endpoints4 = SubCommand::with_name("endpoints")
@@ -159,6 +191,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         services3 = services3.subcommand(endpoints4);
         namespaces2 = namespaces2.subcommand(services3);
+        namespaces2 = namespaces2.subcommand(service_workloads3);
+        locations1 = locations1.subcommand(registration_policies2);
         locations1 = locations1.subcommand(namespaces2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);

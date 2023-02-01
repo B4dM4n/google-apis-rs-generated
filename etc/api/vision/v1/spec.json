@@ -7,7 +7,7 @@
   "canonicalName": "Vision",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20230118",
   "title": "Cloud Vision API",
   "description": "Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.",
   "ownerDomain": "google.com",
@@ -1579,7 +1579,7 @@
           "items": null
         },
         "model": {
-          "description": "Model to use for the feature. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\".",
+          "description": "Model to use for the feature. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\". `DOCUMENT_TEXT_DETECTION` and `TEXT_DETECTION` also support \"builtin/weekly\" for the bleeding edge release updated weekly.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -13007,6 +13007,24 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "advancedOcrOptions": {
+          "description": "A list of advanced OCR options to fine-tune OCR behavior.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "enableTextDetectionConfidenceScore": {
           "description": "By default, Cloud Vision API only includes confidence score for DOCUMENT_TEXT_DETECTION result. Set the flag to true to include confidence score for TEXT_DETECTION as well.",
           "type": "boolean",

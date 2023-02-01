@@ -7,7 +7,7 @@
   "canonicalName": "Safebrowsing",
   "fullyEncodeReservedExpansion": true,
   "version": "v4",
-  "revision": "20220425",
+  "revision": "20230121",
   "title": "Safe Browsing API",
   "description": "Enables client applications to check web resources (most commonly URLs) against Google-generated lists of unsafe web resources. The Safe Browsing APIs are for non-commercial use only. If you need to use APIs to detect malicious URLs for commercial purposes – meaning “for sale or revenue-generating purposes” – please refer to the Web Risk API.",
   "ownerDomain": "google.com",
@@ -392,8 +392,7 @@
             "SUSPICIOUS",
             "TRICK_TO_BILL",
             "HIGH_CONFIDENCE_ALLOWLIST",
-            "ACCURACY_TIPS",
-            "SOCIAL_ENGINEERING_LOWER_PRECISION"
+            "ACCURACY_TIPS"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -407,14 +406,13 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
+            "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
+            "Patterns to be used for activating the subresource filter.",
             "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions.",
-            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
-            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
+            "Trick-to-bill threat type.",
+            "URL expressions that are very likely to be safe.",
+            "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -688,8 +686,7 @@
             "SUSPICIOUS",
             "TRICK_TO_BILL",
             "HIGH_CONFIDENCE_ALLOWLIST",
-            "ACCURACY_TIPS",
-            "SOCIAL_ENGINEERING_LOWER_PRECISION"
+            "ACCURACY_TIPS"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -703,14 +700,13 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
+            "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
+            "Patterns to be used for activating the subresource filter.",
             "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions.",
-            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
-            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
+            "Trick-to-bill threat type.",
+            "URL expressions that are very likely to be safe.",
+            "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1212,8 +1208,7 @@
             "SUSPICIOUS",
             "TRICK_TO_BILL",
             "HIGH_CONFIDENCE_ALLOWLIST",
-            "ACCURACY_TIPS",
-            "SOCIAL_ENGINEERING_LOWER_PRECISION"
+            "ACCURACY_TIPS"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1227,14 +1222,13 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
+            "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
+            "Patterns to be used for activating the subresource filter.",
             "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions.",
-            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
-            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
+            "Trick-to-bill threat type.",
+            "URL expressions that are very likely to be safe.",
+            "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1465,8 +1459,7 @@
               "SUSPICIOUS",
               "TRICK_TO_BILL",
               "HIGH_CONFIDENCE_ALLOWLIST",
-              "ACCURACY_TIPS",
-              "SOCIAL_ENGINEERING_LOWER_PRECISION"
+              "ACCURACY_TIPS"
             ],
             "enumDescriptions": [
               "Unknown.",
@@ -1480,14 +1473,13 @@
               "Client side detection whitelist threat type.",
               "Client side download detection whitelist threat type.",
               "Client incident threat type.",
-              "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
+              "Whitelist used when detecting client incident threats.",
               "List used for offline APK checks in PAM.",
-              "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
+              "Patterns to be used for activating the subresource filter.",
               "Entities that are suspected to present a threat.",
-              "Trick-to-bill threat list.",
-              "Safe list to ship hashes of known safe URL expressions.",
-              "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
-              "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
+              "Trick-to-bill threat type.",
+              "URL expressions that are very likely to be safe.",
+              "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
             ],
             "properties": {},
             "additionalProperties": null,
@@ -1584,8 +1576,7 @@
             "SUSPICIOUS",
             "TRICK_TO_BILL",
             "HIGH_CONFIDENCE_ALLOWLIST",
-            "ACCURACY_TIPS",
-            "SOCIAL_ENGINEERING_LOWER_PRECISION"
+            "ACCURACY_TIPS"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1599,14 +1590,13 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
+            "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
+            "Patterns to be used for activating the subresource filter.",
             "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions.",
-            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
-            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
+            "Trick-to-bill threat type.",
+            "URL expressions that are very likely to be safe.",
+            "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1720,8 +1710,7 @@
             "SUSPICIOUS",
             "TRICK_TO_BILL",
             "HIGH_CONFIDENCE_ALLOWLIST",
-            "ACCURACY_TIPS",
-            "SOCIAL_ENGINEERING_LOWER_PRECISION"
+            "ACCURACY_TIPS"
           ],
           "enumDescriptions": [
             "Unknown.",
@@ -1735,14 +1724,13 @@
             "Client side detection whitelist threat type.",
             "Client side download detection whitelist threat type.",
             "Client incident threat type.",
-            "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list.",
+            "Whitelist used when detecting client incident threats.",
             "List used for offline APK checks in PAM.",
-            "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list.",
+            "Patterns to be used for activating the subresource filter.",
             "Entities that are suspected to present a threat.",
-            "Trick-to-bill threat list.",
-            "Safe list to ship hashes of known safe URL expressions.",
-            "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips.",
-            "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."
+            "Trick-to-bill threat type.",
+            "URL expressions that are very likely to be safe.",
+            "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."
           ],
           "properties": {},
           "additionalProperties": null,

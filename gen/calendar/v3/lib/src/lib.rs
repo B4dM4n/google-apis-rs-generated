@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [acl](resources/acl/struct.AclActions.html)\n  * [*delete*](resources/acl/struct.DeleteRequestBuilder.html), [*get*](resources/acl/struct.GetRequestBuilder.html), [*insert*](resources/acl/struct.InsertRequestBuilder.html), [*list*](resources/acl/struct.ListRequestBuilder.html), [*patch*](resources/acl/struct.PatchRequestBuilder.html), [*update*](resources/acl/struct.UpdateRequestBuilder.html), [*watch*](resources/acl/struct.WatchRequestBuilder.html)\n* [calendar_list](resources/calendar_list/struct.CalendarListActions.html)\n  * [*delete*](resources/calendar_list/struct.DeleteRequestBuilder.html), [*get*](resources/calendar_list/struct.GetRequestBuilder.html), [*insert*](resources/calendar_list/struct.InsertRequestBuilder.html), [*list*](resources/calendar_list/struct.ListRequestBuilder.html), [*patch*](resources/calendar_list/struct.PatchRequestBuilder.html), [*update*](resources/calendar_list/struct.UpdateRequestBuilder.html), [*watch*](resources/calendar_list/struct.WatchRequestBuilder.html)\n* [calendars](resources/calendars/struct.CalendarsActions.html)\n  * [*clear*](resources/calendars/struct.ClearRequestBuilder.html), [*delete*](resources/calendars/struct.DeleteRequestBuilder.html), [*get*](resources/calendars/struct.GetRequestBuilder.html), [*insert*](resources/calendars/struct.InsertRequestBuilder.html), [*patch*](resources/calendars/struct.PatchRequestBuilder.html), [*update*](resources/calendars/struct.UpdateRequestBuilder.html)\n* [channels](resources/channels/struct.ChannelsActions.html)\n  * [*stop*](resources/channels/struct.StopRequestBuilder.html)\n* [colors](resources/colors/struct.ColorsActions.html)\n  * [*get*](resources/colors/struct.GetRequestBuilder.html)\n* [events](resources/events/struct.EventsActions.html)\n  * [*delete*](resources/events/struct.DeleteRequestBuilder.html), [*get*](resources/events/struct.GetRequestBuilder.html), [*import*](resources/events/struct.ImportRequestBuilder.html), [*insert*](resources/events/struct.InsertRequestBuilder.html), [*instances*](resources/events/struct.InstancesRequestBuilder.html), [*list*](resources/events/struct.ListRequestBuilder.html), [*move*](resources/events/struct.MoveRequestBuilder.html), [*patch*](resources/events/struct.PatchRequestBuilder.html), [*quickAdd*](resources/events/struct.QuickAddRequestBuilder.html), [*update*](resources/events/struct.UpdateRequestBuilder.html), [*watch*](resources/events/struct.WatchRequestBuilder.html)\n* [freebusy](resources/freebusy/struct.FreebusyActions.html)\n  * [*query*](resources/freebusy/struct.QueryRequestBuilder.html)\n* [settings](resources/settings/struct.SettingsActions.html)\n  * [*get*](resources/settings/struct.GetRequestBuilder.html), [*list*](resources/settings/struct.ListRequestBuilder.html), [*watch*](resources/settings/struct.WatchRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, share, and permanently delete all the calendars you can access using Google Calendar\n\n`https://www.googleapis.com/auth/calendar`"]
@@ -73,7 +74,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Acl {
+    impl crate::GetNextPageToken<String> for Acl {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -314,7 +315,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CalendarList {
+    impl crate::GetNextPageToken<String> for CalendarList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1338,7 +1339,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub html_link: ::std::option::Option<String>,
-        #[doc = "Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.\nNote that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs."]
+        #[doc = "Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.\nNote that the iCalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same iCalUIDs. To retrieve an event using its iCalUID, call the events.list method using the iCalUID parameter. To retrieve an event using its id, call the events.get method."]
         #[serde(
             rename = "iCalUID",
             default,
@@ -1915,7 +1916,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource: ::std::option::Option<bool>,
-        #[doc = "The attendee’s response status. Possible values are:\n\n* “needsAction” - The attendee has not responded to the invitation. \n* “declined” - The attendee has declined the invitation. \n* “tentative” - The attendee has tentatively accepted the invitation. \n* “accepted” - The attendee has accepted the invitation."]
+        #[doc = "The attendee’s response status. Possible values are:\n\n* “needsAction” - The attendee has not responded to the invitation (recommended for new events). \n* “declined” - The attendee has declined the invitation. \n* “tentative” - The attendee has tentatively accepted the invitation. \n* “accepted” - The attendee has accepted the invitation.  Warning: If you add an event using the values declined, tentative, or accepted, attendees with the “Add invitations to my calendar” setting set to “When I respond to invitation in email” won’t see an event on their calendar unless they choose to change their invitation response in the event invitation email."]
         #[serde(
             rename = "responseStatus",
             default,
@@ -2117,7 +2118,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Events {
+    impl crate::GetNextPageToken<String> for Events {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2469,7 +2470,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for Settings {
+    impl crate::GetNextPageToken<String> for Settings {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3302,7 +3303,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -3335,7 +3336,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -3383,7 +3384,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3496,12 +3497,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -4743,7 +4745,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -4776,7 +4778,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -4824,7 +4826,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4931,12 +4933,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -7071,7 +7074,7 @@ pub mod resources {
                     send_updates: None,
                 }
             }
-            #[doc = "Returns an event."]
+            #[doc = "Returns an event based on its Google Calendar ID. To retrieve an event using its iCalendar ID, call the events.list method using the iCalUID parameter."]
             pub fn get(
                 &self,
                 calendar_id: impl Into<String>,
@@ -8072,7 +8075,7 @@ pub mod resources {
                     #[serde(rename = "defaultReminders")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8140,7 +8143,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8173,7 +8176,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -8221,7 +8224,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8347,12 +8350,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for InstancesRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -8394,7 +8398,7 @@ pub mod resources {
                 self.always_include_email = Some(value);
                 self
             }
-            #[doc = "Specifies event ID in the iCalendar format to be included in the response. Optional."]
+            #[doc = "Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID."]
             pub fn i_cal_uid(mut self, value: impl Into<String>) -> Self {
                 self.i_cal_uid = Some(value.into());
                 self
@@ -8427,7 +8431,7 @@ pub mod resources {
                 self.private_extended_property = Some(value.into());
                 self
             }
-            #[doc = "Free text search terms to find events that match these terms in any field, except for extended properties. Optional."]
+            #[doc = "Free text search terms to find events that match these terms in the following fields: summary, description, location, attendee’s displayName, attendee’s email. Optional."]
             pub fn q(mut self, value: impl Into<String>) -> Self {
                 self.q = Some(value.into());
                 self
@@ -8547,7 +8551,7 @@ pub mod resources {
                     #[serde(rename = "defaultReminders")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8615,7 +8619,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8648,7 +8652,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -8696,7 +8700,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8826,12 +8830,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -9565,7 +9570,7 @@ pub mod resources {
                 self.always_include_email = Some(value);
                 self
             }
-            #[doc = "Specifies event ID in the iCalendar format to be included in the response. Optional."]
+            #[doc = "Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID."]
             pub fn i_cal_uid(mut self, value: impl Into<String>) -> Self {
                 self.i_cal_uid = Some(value.into());
                 self
@@ -9598,7 +9603,7 @@ pub mod resources {
                 self.private_extended_property = Some(value.into());
                 self
             }
-            #[doc = "Free text search terms to find events that match these terms in any field, except for extended properties. Optional."]
+            #[doc = "Free text search terms to find events that match these terms in the following fields: summary, description, location, attendee’s displayName, attendee’s email. Optional."]
             pub fn q(mut self, value: impl Into<String>) -> Self {
                 self.q = Some(value.into());
                 self
@@ -10237,7 +10242,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -10270,7 +10275,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -10318,7 +10323,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -10422,12 +10427,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -10864,16 +10870,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -10893,13 +10901,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -10907,7 +10918,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -10934,7 +10945,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

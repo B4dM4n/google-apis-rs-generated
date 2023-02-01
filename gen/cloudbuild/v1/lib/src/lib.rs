@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [locations](resources/locations/struct.LocationsActions.html)\n  * [*regionalWebhook*](resources/locations/struct.RegionalWebhookRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [builds](resources/projects/builds/struct.BuildsActions.html)\n    * [*approve*](resources/projects/builds/struct.ApproveRequestBuilder.html), [*cancel*](resources/projects/builds/struct.CancelRequestBuilder.html), [*create*](resources/projects/builds/struct.CreateRequestBuilder.html), [*get*](resources/projects/builds/struct.GetRequestBuilder.html), [*list*](resources/projects/builds/struct.ListRequestBuilder.html), [*retry*](resources/projects/builds/struct.RetryRequestBuilder.html)\n  * [github_enterprise_configs](resources/projects/github_enterprise_configs/struct.GithubEnterpriseConfigsActions.html)\n    * [*create*](resources/projects/github_enterprise_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/github_enterprise_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/github_enterprise_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/github_enterprise_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/github_enterprise_configs/struct.PatchRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [bitbucket_server_configs](resources/projects/locations/bitbucket_server_configs/struct.BitbucketServerConfigsActions.html)\n      * [*create*](resources/projects/locations/bitbucket_server_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/bitbucket_server_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/bitbucket_server_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/bitbucket_server_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/bitbucket_server_configs/struct.PatchRequestBuilder.html), [*removeBitbucketServerConnectedRepository*](resources/projects/locations/bitbucket_server_configs/struct.RemoveBitbucketServerConnectedRepositoryRequestBuilder.html)\n      * [connected_repositories](resources/projects/locations/bitbucket_server_configs/connected_repositories/struct.ConnectedRepositoriesActions.html)\n        * [*batchCreate*](resources/projects/locations/bitbucket_server_configs/connected_repositories/struct.BatchCreateRequestBuilder.html)\n      * [repos](resources/projects/locations/bitbucket_server_configs/repos/struct.ReposActions.html)\n        * [*list*](resources/projects/locations/bitbucket_server_configs/repos/struct.ListRequestBuilder.html)\n    * [builds](resources/projects/locations/builds/struct.BuildsActions.html)\n      * [*approve*](resources/projects/locations/builds/struct.ApproveRequestBuilder.html), [*cancel*](resources/projects/locations/builds/struct.CancelRequestBuilder.html), [*create*](resources/projects/locations/builds/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/builds/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/builds/struct.ListRequestBuilder.html), [*retry*](resources/projects/locations/builds/struct.RetryRequestBuilder.html)\n    * [github_enterprise_configs](resources/projects/locations/github_enterprise_configs/struct.GithubEnterpriseConfigsActions.html)\n      * [*create*](resources/projects/locations/github_enterprise_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/github_enterprise_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/github_enterprise_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/github_enterprise_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/github_enterprise_configs/struct.PatchRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html)\n    * [triggers](resources/projects/locations/triggers/struct.TriggersActions.html)\n      * [*create*](resources/projects/locations/triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/triggers/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/triggers/struct.PatchRequestBuilder.html), [*run*](resources/projects/locations/triggers/struct.RunRequestBuilder.html), [*webhook*](resources/projects/locations/triggers/struct.WebhookRequestBuilder.html)\n    * [worker_pools](resources/projects/locations/worker_pools/struct.WorkerPoolsActions.html)\n      * [*create*](resources/projects/locations/worker_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/worker_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/worker_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/worker_pools/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/worker_pools/struct.PatchRequestBuilder.html)\n  * [triggers](resources/projects/triggers/struct.TriggersActions.html)\n    * [*create*](resources/projects/triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/triggers/struct.GetRequestBuilder.html), [*list*](resources/projects/triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/triggers/struct.PatchRequestBuilder.html), [*run*](resources/projects/triggers/struct.RunRequestBuilder.html), [*webhook*](resources/projects/triggers/struct.WebhookRequestBuilder.html)\n* [v_1](resources/v_1/struct.V1Actions.html)\n  * [*webhook*](resources/v_1/struct.WebhookRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [github_dot_com_webhook](resources/github_dot_com_webhook/struct.GithubDotComWebhookActions.html)\n  * [*receive*](resources/github_dot_com_webhook/struct.ReceiveRequestBuilder.html)\n* [locations](resources/locations/struct.LocationsActions.html)\n  * [*regionalWebhook*](resources/locations/struct.RegionalWebhookRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [builds](resources/projects/builds/struct.BuildsActions.html)\n    * [*approve*](resources/projects/builds/struct.ApproveRequestBuilder.html), [*cancel*](resources/projects/builds/struct.CancelRequestBuilder.html), [*create*](resources/projects/builds/struct.CreateRequestBuilder.html), [*get*](resources/projects/builds/struct.GetRequestBuilder.html), [*list*](resources/projects/builds/struct.ListRequestBuilder.html), [*retry*](resources/projects/builds/struct.RetryRequestBuilder.html)\n  * [github_enterprise_configs](resources/projects/github_enterprise_configs/struct.GithubEnterpriseConfigsActions.html)\n    * [*create*](resources/projects/github_enterprise_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/github_enterprise_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/github_enterprise_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/github_enterprise_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/github_enterprise_configs/struct.PatchRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [bitbucket_server_configs](resources/projects/locations/bitbucket_server_configs/struct.BitbucketServerConfigsActions.html)\n      * [*create*](resources/projects/locations/bitbucket_server_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/bitbucket_server_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/bitbucket_server_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/bitbucket_server_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/bitbucket_server_configs/struct.PatchRequestBuilder.html), [*removeBitbucketServerConnectedRepository*](resources/projects/locations/bitbucket_server_configs/struct.RemoveBitbucketServerConnectedRepositoryRequestBuilder.html)\n      * [connected_repositories](resources/projects/locations/bitbucket_server_configs/connected_repositories/struct.ConnectedRepositoriesActions.html)\n        * [*batchCreate*](resources/projects/locations/bitbucket_server_configs/connected_repositories/struct.BatchCreateRequestBuilder.html)\n      * [repos](resources/projects/locations/bitbucket_server_configs/repos/struct.ReposActions.html)\n        * [*list*](resources/projects/locations/bitbucket_server_configs/repos/struct.ListRequestBuilder.html)\n    * [builds](resources/projects/locations/builds/struct.BuildsActions.html)\n      * [*approve*](resources/projects/locations/builds/struct.ApproveRequestBuilder.html), [*cancel*](resources/projects/locations/builds/struct.CancelRequestBuilder.html), [*create*](resources/projects/locations/builds/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/builds/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/builds/struct.ListRequestBuilder.html), [*retry*](resources/projects/locations/builds/struct.RetryRequestBuilder.html)\n    * [git_lab_configs](resources/projects/locations/git_lab_configs/struct.GitLabConfigsActions.html)\n      * [*create*](resources/projects/locations/git_lab_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/git_lab_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/git_lab_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/git_lab_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/git_lab_configs/struct.PatchRequestBuilder.html), [*removeGitLabConnectedRepository*](resources/projects/locations/git_lab_configs/struct.RemoveGitLabConnectedRepositoryRequestBuilder.html)\n      * [connected_repositories](resources/projects/locations/git_lab_configs/connected_repositories/struct.ConnectedRepositoriesActions.html)\n        * [*batchCreate*](resources/projects/locations/git_lab_configs/connected_repositories/struct.BatchCreateRequestBuilder.html)\n      * [repos](resources/projects/locations/git_lab_configs/repos/struct.ReposActions.html)\n        * [*list*](resources/projects/locations/git_lab_configs/repos/struct.ListRequestBuilder.html)\n    * [github_enterprise_configs](resources/projects/locations/github_enterprise_configs/struct.GithubEnterpriseConfigsActions.html)\n      * [*create*](resources/projects/locations/github_enterprise_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/github_enterprise_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/github_enterprise_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/github_enterprise_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/github_enterprise_configs/struct.PatchRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html)\n    * [triggers](resources/projects/locations/triggers/struct.TriggersActions.html)\n      * [*create*](resources/projects/locations/triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/triggers/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/triggers/struct.PatchRequestBuilder.html), [*run*](resources/projects/locations/triggers/struct.RunRequestBuilder.html), [*webhook*](resources/projects/locations/triggers/struct.WebhookRequestBuilder.html)\n    * [worker_pools](resources/projects/locations/worker_pools/struct.WorkerPoolsActions.html)\n      * [*create*](resources/projects/locations/worker_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/worker_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/worker_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/worker_pools/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/worker_pools/struct.PatchRequestBuilder.html)\n  * [triggers](resources/projects/triggers/struct.TriggersActions.html)\n    * [*create*](resources/projects/triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/triggers/struct.GetRequestBuilder.html), [*list*](resources/projects/triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/triggers/struct.PatchRequestBuilder.html), [*run*](resources/projects/triggers/struct.RunRequestBuilder.html), [*webhook*](resources/projects/triggers/struct.WebhookRequestBuilder.html)\n* [v_1](resources/v_1/struct.V1Actions.html)\n  * [*webhook*](resources/v_1/struct.WebhookRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -304,6 +305,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub images: ::std::option::Option<Vec<String>>,
+        #[doc = "A list of Maven artifacts to be uploaded to Artifact Registry upon successful completion of all build steps. Artifacts in the workspace matching specified paths globs will be uploaded to the specified Artifact Registry repository using the builder service account’s credentials. If any artifacts fail to be pushed, the build is marked FAILURE."]
+        #[serde(
+            rename = "mavenArtifacts",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maven_artifacts: ::std::option::Option<Vec<crate::schemas::MavenArtifact>>,
         #[doc = "A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps. Files in the workspace matching specified paths globs will be uploaded to the specified Cloud Storage location using the builder service account’s credentials. The location and generation of the uploaded objects will be stored in the Build resource’s results field. If any objects fail to be pushed, the build is marked FAILURE."]
         #[serde(
             rename = "objects",
@@ -311,6 +319,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub objects: ::std::option::Option<crate::schemas::ArtifactObjects>,
+        #[doc = "A list of Python packages to be uploaded to Artifact Registry upon successful completion of all build steps. The build service account credentials will be used to perform the upload. If any objects fail to be pushed, the build is marked FAILURE."]
+        #[serde(
+            rename = "pythonPackages",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub python_packages: ::std::option::Option<Vec<crate::schemas::PythonPackage>>,
     }
     impl ::google_field_selector::FieldSelector for Artifacts {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -417,6 +432,97 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for BatchCreateBitbucketServerConnectedRepositoriesResponseMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct BatchCreateGitLabConnectedRepositoriesRequest {
+        #[doc = "Required. Requests to connect GitLab repositories."]
+        #[serde(
+            rename = "requests",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub requests:
+            ::std::option::Option<Vec<crate::schemas::CreateGitLabConnectedRepositoryRequest>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchCreateGitLabConnectedRepositoriesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchCreateGitLabConnectedRepositoriesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct BatchCreateGitLabConnectedRepositoriesResponse {
+        #[doc = "The GitLab connected repository requests’ responses."]
+        #[serde(
+            rename = "gitlabConnectedRepositories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_connected_repositories:
+            ::std::option::Option<Vec<crate::schemas::GitLabConnectedRepository>>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchCreateGitLabConnectedRepositoriesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchCreateGitLabConnectedRepositoriesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BatchCreateGitLabConnectedRepositoriesResponseMetadata {
+        #[doc = "Time the operation was completed."]
+        #[serde(
+            rename = "completeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub complete_time: ::std::option::Option<String>,
+        #[doc = "The name of the `GitLabConfig` that added connected repositories. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`"]
+        #[serde(
+            rename = "config",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub config: ::std::option::Option<String>,
+        #[doc = "Time the operation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for BatchCreateGitLabConnectedRepositoriesResponseMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for BatchCreateGitLabConnectedRepositoriesResponseMetadata
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -727,7 +833,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bitbucket_server_config_resource: ::std::option::Option<String>,
-        #[doc = "Required. Key of the project that the repo is in. For example: The key for http://mybitbucket.server/projects/TEST/repos/test-repo is “TEST”."]
+        #[doc = "Required. Key of the project that the repo is in. For example: The key for https://mybitbucket.server/projects/TEST/repos/test-repo is “TEST”."]
         #[serde(
             rename = "projectKey",
             default,
@@ -748,7 +854,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub push: ::std::option::Option<crate::schemas::PushFilter>,
-        #[doc = "Required. Slug of the repository. A repository slug is a URL-friendly version of a repository name, automatically generated by Bitbucket for use in the URL. For example, if the repository name is ‘test repo’, in the URL it would become ‘test-repo’ as in http://mybitbucket.server/projects/TEST/repos/test-repo."]
+        #[doc = "Required. Slug of the repository. A repository slug is a URL-friendly version of a repository name, automatically generated by Bitbucket for use in the URL. For example, if the repository name is ‘test repo’, in the URL it would become ‘test-repo’ as in https://mybitbucket.server/projects/TEST/repos/test-repo."]
         #[serde(
             rename = "repoSlug",
             default,
@@ -961,14 +1067,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tags: ::std::option::Option<Vec<String>>,
-        #[doc = "Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is ten minutes."]
+        #[doc = "Amount of time that this build should be allowed to run, to second granularity. If this amount of time elapses, work on the build will cease and the build status will be `TIMEOUT`. `timeout` starts ticking from `startTime`. Default time is 60 minutes."]
         #[serde(
             rename = "timeout",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timeout: ::std::option::Option<String>,
-        #[doc = "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps. * PUSH: time to push all specified images. * FETCHSOURCE: time to fetch source. * SETUPBUILD: time to set up build. If the build does not specify source or images, these keys will not be included."]
+        #[doc = "Output only. Stores timing information for phases of the build. Valid keys are: * BUILD: time to execute all build steps. * PUSH: time to push all artifacts including docker images and non docker artifacts. * FETCHSOURCE: time to fetch source. * SETUPBUILD: time to set up build. If the build does not specify source or images, these keys will not be included."]
         #[serde(
             rename = "timing",
             default,
@@ -1280,7 +1386,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BuildOptions {
-        #[doc = "Requested disk size for the VM that runs the build. Note that this is *NOT* “disk free”; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build – the build may run with a larger disk than requested. At present, the maximum disk size is 1000GB; builds that request more than the maximum are rejected with an error."]
+        #[doc = "Requested disk size for the VM that runs the build. Note that this is *NOT* “disk free”; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build – the build may run with a larger disk than requested. At present, the maximum disk size is 2000GB; builds that request more than the maximum are rejected with an error."]
         #[serde(
             rename = "diskSizeGb",
             default,
@@ -1642,9 +1748,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BuildOptionsRequestedVerifyOption {
-        #[doc = "Not a verifiable build. (default)"]
+        #[doc = "Not a verifiable build (the default)."]
         NotVerified,
-        #[doc = "Verified build."]
+        #[doc = "Build must be verified."]
         Verified,
     }
     impl BuildOptionsRequestedVerifyOption {
@@ -1871,6 +1977,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BuildStep {
+        #[doc = "Allow this build step to fail without failing the entire build if and only if the exit code is one of the specified codes. If allow_failure is also specified, this field will take precedence."]
+        #[serde(
+            rename = "allowExitCodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_exit_codes: ::std::option::Option<Vec<i32>>,
+        #[doc = "Allow this build step to fail without failing the entire build. If false, the entire build will fail if this step fails. Otherwise, the build will succeed, but this step will still have a failure status. Error information will be reported in the failure_detail field."]
+        #[serde(
+            rename = "allowFailure",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_failure: ::std::option::Option<bool>,
         #[doc = "A list of arguments that will be presented to the step when it is started. If the image used to run the step’s container has an entrypoint, the `args` are used as arguments to that entrypoint. If the image does not define an entrypoint, the first element in args is used as the entrypoint, and the remainder will be used as arguments."]
         #[serde(
             rename = "args",
@@ -1899,6 +2019,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub env: ::std::option::Option<Vec<String>>,
+        #[doc = "Output only. Return code from running the step."]
+        #[serde(
+            rename = "exitCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exit_code: ::std::option::Option<i32>,
         #[doc = "Unique identifier for this build step, used in `wait_for` to reference this build step as a dependency."]
         #[serde(
             rename = "id",
@@ -2189,6 +2316,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub github: ::std::option::Option<crate::schemas::GitHubEventsConfig>,
+        #[doc = "GitLabEnterpriseEventsConfig describes the configuration of a trigger that creates a build whenever a GitLab Enterprise event is received."]
+        #[serde(
+            rename = "gitlabEnterpriseEventsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_enterprise_events_config:
+            ::std::option::Option<crate::schemas::GitLabEventsConfig>,
         #[doc = "Output only. Unique identifier of the trigger."]
         #[serde(
             rename = "id",
@@ -2203,6 +2338,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ignored_files: ::std::option::Option<Vec<String>>,
+        #[doc = "If set to INCLUDE_BUILD_LOGS_WITH_STATUS, log url will be shown on GitHub page when build status is final. Setting this field to INCLUDE_BUILD_LOGS_WITH_STATUS for non GitHub triggers results in INVALID_ARGUMENT error."]
+        #[serde(
+            rename = "includeBuildLogs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub include_build_logs: ::std::option::Option<crate::schemas::BuildTriggerIncludeBuildLogs>,
         #[doc = "If any of the files altered in the commit pass the ignored_files filter and included_files is empty, then as far as this filter is concerned, we should trigger the build. If any of the files altered in the commit pass the ignored_files filter and included_files is not empty, then we make sure that at least one of those files matches a included_files glob. If not, then we do not trigger a build."]
         #[serde(
             rename = "includedFiles",
@@ -2224,6 +2366,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pubsub_config: ::std::option::Option<crate::schemas::PubsubConfig>,
+        #[doc = "The configuration of a trigger that creates a build whenever an event from Repo API is received."]
+        #[serde(
+            rename = "repositoryEventConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repository_event_config: ::std::option::Option<crate::schemas::RepositoryEventConfig>,
         #[doc = "The `Trigger` name with format: `projects/{project}/locations/{location}/triggers/{trigger}`, where {trigger} is a unique identifier generated by the service."]
         #[serde(
             rename = "resourceName",
@@ -2366,6 +2515,89 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for BuildTriggerEventType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BuildTriggerIncludeBuildLogs {
+        #[doc = "Build logs will not be shown on GitHub."]
+        IncludeBuildLogsUnspecified,
+        #[doc = "Build logs will be shown on GitHub."]
+        IncludeBuildLogsWithStatus,
+    }
+    impl BuildTriggerIncludeBuildLogs {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BuildTriggerIncludeBuildLogs::IncludeBuildLogsUnspecified => {
+                    "INCLUDE_BUILD_LOGS_UNSPECIFIED"
+                }
+                BuildTriggerIncludeBuildLogs::IncludeBuildLogsWithStatus => {
+                    "INCLUDE_BUILD_LOGS_WITH_STATUS"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BuildTriggerIncludeBuildLogs {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BuildTriggerIncludeBuildLogs {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BuildTriggerIncludeBuildLogs, ()> {
+            Ok(match s {
+                "INCLUDE_BUILD_LOGS_UNSPECIFIED" => {
+                    BuildTriggerIncludeBuildLogs::IncludeBuildLogsUnspecified
+                }
+                "INCLUDE_BUILD_LOGS_WITH_STATUS" => {
+                    BuildTriggerIncludeBuildLogs::IncludeBuildLogsWithStatus
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BuildTriggerIncludeBuildLogs {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BuildTriggerIncludeBuildLogs {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BuildTriggerIncludeBuildLogs {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "INCLUDE_BUILD_LOGS_UNSPECIFIED" => {
+                    BuildTriggerIncludeBuildLogs::IncludeBuildLogsUnspecified
+                }
+                "INCLUDE_BUILD_LOGS_WITH_STATUS" => {
+                    BuildTriggerIncludeBuildLogs::IncludeBuildLogsWithStatus
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BuildTriggerIncludeBuildLogs {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BuildTriggerIncludeBuildLogs {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2643,6 +2875,34 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CreateGitLabConfigOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct CreateGitLabConnectedRepositoryRequest {
+        #[doc = "Required. The GitLab repository to connect."]
+        #[serde(
+            rename = "gitlabConnectedRepository",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_connected_repository:
+            ::std::option::Option<crate::schemas::GitLabConnectedRepository>,
+        #[doc = "Required. The name of the `GitLabConfig` that adds connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`"]
+        #[serde(
+            rename = "parent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parent: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CreateGitLabConnectedRepositoryRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CreateGitLabConnectedRepositoryRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3135,6 +3395,8 @@ pub mod schemas {
         CloudSourceRepositories,
         #[doc = "A GitHub-hosted repo not necessarily on “github.com” (i.e. GitHub Enterprise)."]
         Github,
+        #[doc = "A GitLab-hosted repo."]
+        Gitlab,
         #[doc = "The default, unknown repo type."]
         Unknown,
     }
@@ -3144,6 +3406,7 @@ pub mod schemas {
                 GitFileSourceRepoType::BitbucketServer => "BITBUCKET_SERVER",
                 GitFileSourceRepoType::CloudSourceRepositories => "CLOUD_SOURCE_REPOSITORIES",
                 GitFileSourceRepoType::Github => "GITHUB",
+                GitFileSourceRepoType::Gitlab => "GITLAB",
                 GitFileSourceRepoType::Unknown => "UNKNOWN",
             }
         }
@@ -3160,6 +3423,7 @@ pub mod schemas {
                 "BITBUCKET_SERVER" => GitFileSourceRepoType::BitbucketServer,
                 "CLOUD_SOURCE_REPOSITORIES" => GitFileSourceRepoType::CloudSourceRepositories,
                 "GITHUB" => GitFileSourceRepoType::Github,
+                "GITLAB" => GitFileSourceRepoType::Gitlab,
                 "UNKNOWN" => GitFileSourceRepoType::Unknown,
                 _ => return Err(()),
             })
@@ -3188,6 +3452,7 @@ pub mod schemas {
                 "BITBUCKET_SERVER" => GitFileSourceRepoType::BitbucketServer,
                 "CLOUD_SOURCE_REPOSITORIES" => GitFileSourceRepoType::CloudSourceRepositories,
                 "GITHUB" => GitFileSourceRepoType::Github,
+                "GITLAB" => GitFileSourceRepoType::Gitlab,
                 "UNKNOWN" => GitFileSourceRepoType::Unknown,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -3250,7 +3515,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub host_url: ::std::option::Option<String>,
-        #[doc = "Optional. The full resource name for the GitHubEnterpriseConfig For example: “projects/{$project_id}/githubEnterpriseConfigs/{$config_id}”"]
+        #[doc = "Optional. The full resource name for the GitHubEnterpriseConfig For example: “projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}”"]
         #[serde(
             rename = "name",
             default,
@@ -3389,7 +3654,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GitHubEventsConfig {
-        #[doc = "Optional. The resource name of the github enterprise config that should be applied to this installation. For example: “projects/{$project_id}/githubEnterpriseConfigs/{$config_id}”"]
+        #[doc = "Optional. The resource name of the github enterprise config that should be applied to this installation. For example: “projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}”"]
         #[serde(
             rename = "enterpriseConfigResourceName",
             default,
@@ -3439,6 +3704,366 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GitHubEventsConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GitLabConfig {
+        #[doc = "Connected GitLab.com or GitLabEnterprise repositories for this config."]
+        #[serde(
+            rename = "connectedRepositories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connected_repositories: ::std::option::Option<Vec<crate::schemas::GitLabRepositoryId>>,
+        #[doc = "Output only. Time when the config was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Optional. GitLabEnterprise config."]
+        #[serde(
+            rename = "enterpriseConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enterprise_config: ::std::option::Option<crate::schemas::GitLabEnterpriseConfig>,
+        #[doc = "The resource name for the config."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Required. Secret Manager secrets needed by the config."]
+        #[serde(
+            rename = "secrets",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub secrets: ::std::option::Option<crate::schemas::GitLabSecrets>,
+        #[doc = "Username of the GitLab.com or GitLab Enterprise account Cloud Build will use."]
+        #[serde(
+            rename = "username",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub username: ::std::option::Option<String>,
+        #[doc = "Output only. UUID included in webhook requests. The UUID is used to look up the corresponding config."]
+        #[serde(
+            rename = "webhookKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_key: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GitLabConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GitLabConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GitLabConnectedRepository {
+        #[doc = "The name of the `GitLabConfig` that added connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`"]
+        #[serde(
+            rename = "parent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub parent: ::std::option::Option<String>,
+        #[doc = "The GitLab repositories to connect."]
+        #[serde(
+            rename = "repo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repo: ::std::option::Option<crate::schemas::GitLabRepositoryId>,
+        #[doc = "Output only. The status of the repo connection request."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::Status>,
+    }
+    impl ::google_field_selector::FieldSelector for GitLabConnectedRepository {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GitLabConnectedRepository {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GitLabEnterpriseConfig {
+        #[doc = "Immutable. The URI of the GitlabEnterprise host."]
+        #[serde(
+            rename = "hostUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub host_uri: ::std::option::Option<String>,
+        #[doc = "The Service Directory configuration to be used when reaching out to the GitLab Enterprise instance."]
+        #[serde(
+            rename = "serviceDirectoryConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_directory_config: ::std::option::Option<crate::schemas::ServiceDirectoryConfig>,
+        #[doc = "The SSL certificate to use in requests to GitLab Enterprise instances."]
+        #[serde(
+            rename = "sslCa",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ssl_ca: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GitLabEnterpriseConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GitLabEnterpriseConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GitLabEventsConfig {
+        #[doc = "Output only. The GitLabConfig specified in the gitlab_config_resource field."]
+        #[serde(
+            rename = "gitlabConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_config: ::std::option::Option<crate::schemas::GitLabConfig>,
+        #[doc = "The GitLab config resource that this trigger config maps to."]
+        #[serde(
+            rename = "gitlabConfigResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_config_resource: ::std::option::Option<String>,
+        #[doc = "Namespace of the GitLab project."]
+        #[serde(
+            rename = "projectNamespace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_namespace: ::std::option::Option<String>,
+        #[doc = "Filter to match changes in pull requests."]
+        #[serde(
+            rename = "pullRequest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pull_request: ::std::option::Option<crate::schemas::PullRequestFilter>,
+        #[doc = "Filter to match changes in refs like branches, tags."]
+        #[serde(
+            rename = "push",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub push: ::std::option::Option<crate::schemas::PushFilter>,
+    }
+    impl ::google_field_selector::FieldSelector for GitLabEventsConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GitLabEventsConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GitLabRepository {
+        #[doc = "Link to the browse repo page on the GitLab instance"]
+        #[serde(
+            rename = "browseUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub browse_uri: ::std::option::Option<String>,
+        #[doc = "Description of the repository"]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Display name of the repository"]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "The resource name of the repository"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Identifier for a repository"]
+        #[serde(
+            rename = "repositoryId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repository_id: ::std::option::Option<crate::schemas::GitLabRepositoryId>,
+    }
+    impl ::google_field_selector::FieldSelector for GitLabRepository {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GitLabRepository {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GitLabRepositoryId {
+        #[doc = "Required. Identifier for the repository. example: “namespace/project-slug”, namespace is usually the username or group ID"]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Output only. The ID of the webhook that was created for receiving events from this repo. We only create and manage a single webhook for each repo."]
+        #[serde(
+            rename = "webhookId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_id: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GitLabRepositoryId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GitLabRepositoryId {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GitLabSecrets {
+        #[doc = "Required. The resource name for the api access token’s secret version"]
+        #[serde(
+            rename = "apiAccessTokenVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_access_token_version: ::std::option::Option<String>,
+        #[doc = "Required. Immutable. API Key that will be attached to webhook requests from GitLab to Cloud Build."]
+        #[serde(
+            rename = "apiKeyVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_key_version: ::std::option::Option<String>,
+        #[doc = "Required. The resource name for the read access token’s secret version"]
+        #[serde(
+            rename = "readAccessTokenVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_access_token_version: ::std::option::Option<String>,
+        #[doc = "Required. Immutable. The resource name for the webhook secret’s secret version. Once this field has been set, it cannot be changed. If you need to change it, please create another GitLabConfig."]
+        #[serde(
+            rename = "webhookSecretVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_secret_version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GitLabSecrets {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GitLabSecrets {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3510,6 +4135,8 @@ pub mod schemas {
         CloudSourceRepositories,
         #[doc = "A GitHub-hosted repo not necessarily on “github.com” (i.e. GitHub Enterprise)."]
         Github,
+        #[doc = "A GitLab-hosted repo."]
+        Gitlab,
         #[doc = "The default, unknown repo type."]
         Unknown,
     }
@@ -3519,6 +4146,7 @@ pub mod schemas {
                 GitRepoSourceRepoType::BitbucketServer => "BITBUCKET_SERVER",
                 GitRepoSourceRepoType::CloudSourceRepositories => "CLOUD_SOURCE_REPOSITORIES",
                 GitRepoSourceRepoType::Github => "GITHUB",
+                GitRepoSourceRepoType::Gitlab => "GITLAB",
                 GitRepoSourceRepoType::Unknown => "UNKNOWN",
             }
         }
@@ -3535,6 +4163,7 @@ pub mod schemas {
                 "BITBUCKET_SERVER" => GitRepoSourceRepoType::BitbucketServer,
                 "CLOUD_SOURCE_REPOSITORIES" => GitRepoSourceRepoType::CloudSourceRepositories,
                 "GITHUB" => GitRepoSourceRepoType::Github,
+                "GITLAB" => GitRepoSourceRepoType::Gitlab,
                 "UNKNOWN" => GitRepoSourceRepoType::Unknown,
                 _ => return Err(()),
             })
@@ -3563,6 +4192,7 @@ pub mod schemas {
                 "BITBUCKET_SERVER" => GitRepoSourceRepoType::BitbucketServer,
                 "CLOUD_SOURCE_REPOSITORIES" => GitRepoSourceRepoType::CloudSourceRepositories,
                 "GITHUB" => GitRepoSourceRepoType::Github,
+                "GITLAB" => GitRepoSourceRepoType::Gitlab,
                 "UNKNOWN" => GitRepoSourceRepoType::Unknown,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -3579,79 +4209,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GitRepoSourceRepoType {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleDevtoolsCloudbuildV2OperationMetadata {
-        #[doc = "Output only. API version used to start the operation."]
-        #[serde(
-            rename = "apiVersion",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub api_version: ::std::option::Option<String>,
-        #[doc = "Output only. The time the operation was created."]
-        #[serde(
-            rename = "createTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The time the operation finished running."]
-        #[serde(
-            rename = "endTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub end_time: ::std::option::Option<String>,
-        #[doc = "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
-        #[serde(
-            rename = "requestedCancellation",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub requested_cancellation: ::std::option::Option<bool>,
-        #[doc = "Output only. Human-readable status of the operation, if any."]
-        #[serde(
-            rename = "statusMessage",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub status_message: ::std::option::Option<String>,
-        #[doc = "Output only. Server-defined resource path for the target of the operation."]
-        #[serde(
-            rename = "target",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub target: ::std::option::Option<String>,
-        #[doc = "Output only. Name of the verb executed by the operation."]
-        #[serde(
-            rename = "verb",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub verb: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for GoogleDevtoolsCloudbuildV2OperationMetadata {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleDevtoolsCloudbuildV2OperationMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3817,37 +4374,6 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct Httpdelivery {
-        #[doc = "The URI to which JSON-containing HTTP POST requests should be sent."]
-        #[serde(
-            rename = "uri",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub uri: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for Httpdelivery {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for Httpdelivery {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
     pub struct InlineSecret {
         #[doc = "Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build’s secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build’s secrets."]
         #[serde(
@@ -3914,7 +4440,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBitbucketServerConfigsResponse {
+    impl crate::GetNextPageToken<String> for ListBitbucketServerConfigsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3958,7 +4484,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBitbucketServerRepositoriesResponse {
+    impl crate::GetNextPageToken<String> for ListBitbucketServerRepositoriesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4001,7 +4527,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBuildTriggersResponse {
+    impl crate::GetNextPageToken<String> for ListBuildTriggersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4044,7 +4570,93 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBuildsResponse {
+    impl crate::GetNextPageToken<String> for ListBuildsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListGitLabConfigsResponse {
+        #[doc = "A list of GitLabConfigs"]
+        #[serde(
+            rename = "gitlabConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_configs: ::std::option::Option<Vec<crate::schemas::GitLabConfig>>,
+        #[doc = "A token that can be sent as `page_token` to retrieve the next page If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListGitLabConfigsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListGitLabConfigsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListGitLabConfigsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListGitLabRepositoriesResponse {
+        #[doc = "List of GitLab repositories"]
+        #[serde(
+            rename = "gitlabRepositories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gitlab_repositories: ::std::option::Option<Vec<crate::schemas::GitLabRepository>>,
+        #[doc = "A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListGitLabRepositoriesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListGitLabRepositoriesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListGitLabRepositoriesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4118,9 +4730,68 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListWorkerPoolsResponse {
+    impl crate::GetNextPageToken<String> for ListWorkerPoolsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MavenArtifact {
+        #[doc = "Maven `artifactId` value used when uploading the artifact to Artifact Registry."]
+        #[serde(
+            rename = "artifactId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub artifact_id: ::std::option::Option<String>,
+        #[doc = "Maven `groupId` value used when uploading the artifact to Artifact Registry."]
+        #[serde(
+            rename = "groupId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub group_id: ::std::option::Option<String>,
+        #[doc = "Path to an artifact in the build’s workspace to be uploaded to Artifact Registry. This can be either an absolute path, e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar or a relative path from /workspace, e.g. my-app/target/my-app-1.0.SNAPSHOT.jar."]
+        #[serde(
+            rename = "path",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub path: ::std::option::Option<String>,
+        #[doc = "Artifact Registry repository, in the form “https://$REGION-maven.pkg.dev/$PROJECT/$REPOSITORY” Artifact in the workspace specified by path will be uploaded to Artifact Registry with this location as a prefix."]
+        #[serde(
+            rename = "repository",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repository: ::std::option::Option<String>,
+        #[doc = "Maven `version` value used when uploading the artifact to Artifact Registry."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MavenArtifact {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MavenArtifact {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -4150,6 +4821,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub peered_network: ::std::option::Option<String>,
+        #[doc = "Immutable. Subnet IP range within the peered network. This is specified in CIDR notation with a slash and the subnet prefix size. You can optionally specify an IP address before the subnet prefix value. e.g. `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a prefix size of 29 bits. `/16` would specify a prefix size of 16 bits, with an automatically determined IP within the peered VPC. If unspecified, a value of `/24` will be used."]
+        #[serde(
+            rename = "peeredNetworkIpRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub peered_network_ip_range: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for NetworkConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4233,230 +4911,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NetworkConfigEgressOption {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct Notification {
-        #[doc = "The filter string to use for notification filtering. Currently, this is assumed to be a CEL program. See https://opensource.google/projects/cel for more."]
-        #[serde(
-            rename = "filter",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub filter: ::std::option::Option<String>,
-        #[doc = "Configuration for HTTP delivery."]
-        #[serde(
-            rename = "httpDelivery",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub http_delivery: ::std::option::Option<crate::schemas::Httpdelivery>,
-        #[doc = "Configuration for Slack delivery."]
-        #[serde(
-            rename = "slackDelivery",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub slack_delivery: ::std::option::Option<crate::schemas::SlackDelivery>,
-        #[doc = "Configuration for SMTP (email) delivery."]
-        #[serde(
-            rename = "smtpDelivery",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub smtp_delivery: ::std::option::Option<crate::schemas::Smtpdelivery>,
-        #[doc = "Escape hatch for users to supply custom delivery configs."]
-        #[serde(
-            rename = "structDelivery",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub struct_delivery:
-            ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-    }
-    impl ::google_field_selector::FieldSelector for Notification {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for Notification {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct NotifierConfig {
-        #[doc = "The API version of this configuration format."]
-        #[serde(
-            rename = "apiVersion",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub api_version: ::std::option::Option<String>,
-        #[doc = "The type of notifier to use (e.g. SMTPNotifier)."]
-        #[serde(
-            rename = "kind",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub kind: ::std::option::Option<String>,
-        #[doc = "Metadata for referring to/handling/deploying this notifier."]
-        #[serde(
-            rename = "metadata",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub metadata: ::std::option::Option<crate::schemas::NotifierMetadata>,
-        #[doc = "The actual configuration for this notifier."]
-        #[serde(
-            rename = "spec",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub spec: ::std::option::Option<crate::schemas::NotifierSpec>,
-    }
-    impl ::google_field_selector::FieldSelector for NotifierConfig {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for NotifierConfig {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct NotifierMetadata {
-        #[doc = "The human-readable and user-given name for the notifier. For example: “repo-merge-email-notifier”."]
-        #[serde(
-            rename = "name",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub name: ::std::option::Option<String>,
-        #[doc = "The string representing the name and version of notifier to deploy. Expected to be of the form of “/:”. For example: “gcr.io/my-project/notifiers/smtp:1.2.34”."]
-        #[serde(
-            rename = "notifier",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub notifier: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for NotifierMetadata {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for NotifierMetadata {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct NotifierSecret {
-        #[doc = "Name is the local name of the secret, such as the verbatim string “my-smtp-password”."]
-        #[serde(
-            rename = "name",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub name: ::std::option::Option<String>,
-        #[doc = "Value is interpreted to be a resource path for fetching the actual (versioned) secret data for this secret. For example, this would be a Google Cloud Secret Manager secret version resource path like: “projects/my-project/secrets/my-secret/versions/latest”."]
-        #[serde(
-            rename = "value",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub value: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for NotifierSecret {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for NotifierSecret {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct NotifierSecretRef {
-        #[doc = "The value of `secret_ref` should be a `name` that is registered in a `Secret` in the `secrets` list of the `Spec`."]
-        #[serde(
-            rename = "secretRef",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub secret_ref: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for NotifierSecretRef {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for NotifierSecretRef {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct NotifierSpec {
-        #[doc = "The configuration of this particular notifier."]
-        #[serde(
-            rename = "notification",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub notification: ::std::option::Option<crate::schemas::Notification>,
-        #[doc = "Configurations for secret resources used by this particular notifier."]
-        #[serde(
-            rename = "secrets",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub secrets: ::std::option::Option<Vec<crate::schemas::NotifierSecret>>,
-    }
-    impl ::google_field_selector::FieldSelector for NotifierSpec {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for NotifierSpec {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5016,6 +5470,44 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PythonPackage {
+        #[doc = "Path globs used to match files in the build’s workspace. For Python/ Twine, this is usually `dist/*`, and sometimes additionally an `.asc` file."]
+        #[serde(
+            rename = "paths",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub paths: ::std::option::Option<Vec<String>>,
+        #[doc = "Artifact Registry repository, in the form “https://$REGION-python.pkg.dev/$PROJECT/$REPOSITORY” Files in the workspace matching any path pattern will be uploaded to Artifact Registry with this location as a prefix."]
+        #[serde(
+            rename = "repository",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repository: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PythonPackage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PythonPackage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -5060,6 +5552,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for RemoveBitbucketServerConnectedRepositoryRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RemoveGitLabConnectedRepositoryRequest {
+        #[doc = "The connected repository to remove."]
+        #[serde(
+            rename = "connectedRepository",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connected_repository: ::std::option::Option<crate::schemas::GitLabRepositoryId>,
+    }
+    impl ::google_field_selector::FieldSelector for RemoveGitLabConnectedRepositoryRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoveGitLabConnectedRepositoryRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5156,15 +5679,155 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RepositoryEventConfig {
+        #[doc = "Filter to match changes in pull requests."]
+        #[serde(
+            rename = "pullRequest",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pull_request: ::std::option::Option<crate::schemas::PullRequestFilter>,
+        #[doc = "Filter to match changes in refs like branches, tags."]
+        #[serde(
+            rename = "push",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub push: ::std::option::Option<crate::schemas::PushFilter>,
+        #[doc = "The resource name of the Repo API resource."]
+        #[serde(
+            rename = "repository",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repository: ::std::option::Option<String>,
+        #[doc = "Output only. The type of the SCM vendor the repository points to."]
+        #[serde(
+            rename = "repositoryType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repository_type:
+            ::std::option::Option<crate::schemas::RepositoryEventConfigRepositoryType>,
+    }
+    impl ::google_field_selector::FieldSelector for RepositoryEventConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RepositoryEventConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RepositoryEventConfigRepositoryType {
+        #[doc = "The SCM repo is GITHUB."]
+        Github,
+        #[doc = "The SCM repo is GITHUB Enterprise."]
+        GithubEnterprise,
+        #[doc = "The SCM repo is GITLAB Enterprise."]
+        GitlabEnterprise,
+        #[doc = "If unspecified, RepositoryType defaults to GITHUB."]
+        RepositoryTypeUnspecified,
+    }
+    impl RepositoryEventConfigRepositoryType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RepositoryEventConfigRepositoryType::Github => "GITHUB",
+                RepositoryEventConfigRepositoryType::GithubEnterprise => "GITHUB_ENTERPRISE",
+                RepositoryEventConfigRepositoryType::GitlabEnterprise => "GITLAB_ENTERPRISE",
+                RepositoryEventConfigRepositoryType::RepositoryTypeUnspecified => {
+                    "REPOSITORY_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RepositoryEventConfigRepositoryType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RepositoryEventConfigRepositoryType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<RepositoryEventConfigRepositoryType, ()> {
+            Ok(match s {
+                "GITHUB" => RepositoryEventConfigRepositoryType::Github,
+                "GITHUB_ENTERPRISE" => RepositoryEventConfigRepositoryType::GithubEnterprise,
+                "GITLAB_ENTERPRISE" => RepositoryEventConfigRepositoryType::GitlabEnterprise,
+                "REPOSITORY_TYPE_UNSPECIFIED" => {
+                    RepositoryEventConfigRepositoryType::RepositoryTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RepositoryEventConfigRepositoryType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RepositoryEventConfigRepositoryType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RepositoryEventConfigRepositoryType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "GITHUB" => RepositoryEventConfigRepositoryType::Github,
+                "GITHUB_ENTERPRISE" => RepositoryEventConfigRepositoryType::GithubEnterprise,
+                "GITLAB_ENTERPRISE" => RepositoryEventConfigRepositoryType::GitlabEnterprise,
+                "REPOSITORY_TYPE_UNSPECIFIED" => {
+                    RepositoryEventConfigRepositoryType::RepositoryTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RepositoryEventConfigRepositoryType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RepositoryEventConfigRepositoryType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Results {
-        #[doc = "Path to the artifact manifest. Only populated when artifacts are uploaded."]
+        #[doc = "Path to the artifact manifest for non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage."]
         #[serde(
             rename = "artifactManifest",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub artifact_manifest: ::std::option::Option<String>,
-        #[doc = "Time to push all non-container artifacts."]
+        #[doc = "Time to push all non-container artifacts to Cloud Storage."]
         #[serde(
             rename = "artifactTiming",
             default,
@@ -5192,7 +5855,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub images: ::std::option::Option<Vec<crate::schemas::BuiltImage>>,
-        #[doc = "Number of artifacts uploaded. Only populated when artifacts are uploaded."]
+        #[doc = "Maven artifacts uploaded to Artifact Registry at the end of the build."]
+        #[serde(
+            rename = "mavenArtifacts",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maven_artifacts: ::std::option::Option<Vec<crate::schemas::UploadedMavenArtifact>>,
+        #[doc = "Number of non-container artifacts uploaded to Cloud Storage. Only populated when artifacts are uploaded to Cloud Storage."]
         #[serde(
             rename = "numArtifacts",
             default,
@@ -5200,6 +5870,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_artifacts: ::std::option::Option<i64>,
+        #[doc = "Python artifacts uploaded to Artifact Registry at the end of the build."]
+        #[serde(
+            rename = "pythonPackages",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub python_packages: ::std::option::Option<Vec<crate::schemas::UploadedPythonPackage>>,
     }
     impl ::google_field_selector::FieldSelector for Results {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5297,79 +5974,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for RunBuildTriggerRequest {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct RunWorkflowCustomOperationMetadata {
-        #[doc = "Output only. API version used to start the operation."]
-        #[serde(
-            rename = "apiVersion",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub api_version: ::std::option::Option<String>,
-        #[doc = "Output only. The time the operation was created."]
-        #[serde(
-            rename = "createTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The time the operation finished running."]
-        #[serde(
-            rename = "endTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub end_time: ::std::option::Option<String>,
-        #[doc = "Output only. ID of the pipeline run created by RunWorkflow."]
-        #[serde(
-            rename = "pipelineRunId",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub pipeline_run_id: ::std::option::Option<String>,
-        #[doc = "Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
-        #[serde(
-            rename = "requestedCancellation",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub requested_cancellation: ::std::option::Option<bool>,
-        #[doc = "Output only. Server-defined resource path for the target of the operation."]
-        #[serde(
-            rename = "target",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub target: ::std::option::Option<String>,
-        #[doc = "Output only. Name of the verb executed by the operation."]
-        #[serde(
-            rename = "verb",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub verb: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for RunWorkflowCustomOperationMetadata {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for RunWorkflowCustomOperationMetadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5501,87 +6105,21 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct SlackDelivery {
-        #[doc = "The secret reference for the Slack webhook URI for sending messages to a channel."]
+    pub struct ServiceDirectoryConfig {
+        #[doc = "The Service Directory service name. Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}."]
         #[serde(
-            rename = "webhookUri",
+            rename = "service",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub webhook_uri: ::std::option::Option<crate::schemas::NotifierSecretRef>,
+        pub service: ::std::option::Option<String>,
     }
-    impl ::google_field_selector::FieldSelector for SlackDelivery {
+    impl ::google_field_selector::FieldSelector for ServiceDirectoryConfig {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
-    impl ::google_field_selector::ToFieldType for SlackDelivery {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct Smtpdelivery {
-        #[doc = "This is the SMTP account/email that appears in the `From:` of the email. If empty, it is assumed to be sender."]
-        #[serde(
-            rename = "fromAddress",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub from_address: ::std::option::Option<String>,
-        #[doc = "The SMTP sender’s password."]
-        #[serde(
-            rename = "password",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub password: ::std::option::Option<crate::schemas::NotifierSecretRef>,
-        #[doc = "The SMTP port of the server."]
-        #[serde(
-            rename = "port",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub port: ::std::option::Option<String>,
-        #[doc = "This is the list of addresses to which we send the email (i.e. in the `To:` of the email)."]
-        #[serde(
-            rename = "recipientAddresses",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub recipient_addresses: ::std::option::Option<Vec<String>>,
-        #[doc = "This is the SMTP account/email that is used to send the message."]
-        #[serde(
-            rename = "senderAddress",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub sender_address: ::std::option::Option<String>,
-        #[doc = "The address of the SMTP server."]
-        #[serde(
-            rename = "server",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub server: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for Smtpdelivery {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for Smtpdelivery {
+    impl ::google_field_selector::ToFieldType for ServiceDirectoryConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6042,6 +6580,96 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct UploadedMavenArtifact {
+        #[doc = "Hash types and values of the Maven Artifact."]
+        #[serde(
+            rename = "fileHashes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_hashes: ::std::option::Option<crate::schemas::FileHashes>,
+        #[doc = "Output only. Stores timing information for pushing the specified artifact."]
+        #[serde(
+            rename = "pushTiming",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub push_timing: ::std::option::Option<crate::schemas::TimeSpan>,
+        #[doc = "URI of the uploaded artifact."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UploadedMavenArtifact {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UploadedMavenArtifact {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UploadedPythonPackage {
+        #[doc = "Hash types and values of the Python Artifact."]
+        #[serde(
+            rename = "fileHashes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_hashes: ::std::option::Option<crate::schemas::FileHashes>,
+        #[doc = "Output only. Stores timing information for pushing the specified artifact."]
+        #[serde(
+            rename = "pushTiming",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub push_timing: ::std::option::Option<crate::schemas::TimeSpan>,
+        #[doc = "URI of the uploaded artifact."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UploadedPythonPackage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UploadedPythonPackage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Volume {
         #[doc = "Name of the volume to mount. Volume names must be unique per build step and must be valid names for Docker volumes. Each named volume must be used by at least two build steps."]
         #[serde(
@@ -6314,7 +6942,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WorkerConfig {
-        #[doc = "Size of the disk attached to the worker, in GB. See [Worker pool config file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema). Specify a value of up to 1000. If `0` is specified, Cloud Build will use a standard disk size."]
+        #[doc = "Size of the disk attached to the worker, in GB. See [Worker pool config file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema). Specify a value of up to 2000. If `0` is specified, Cloud Build will use a standard disk size."]
         #[serde(
             rename = "diskSizeGb",
             default,
@@ -6698,6 +7326,15 @@ impl Client {
     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
         self.auth.as_ref()
     }
+    #[doc = "Actions that can be performed on the github_dot_com_webhook resource"]
+    pub fn github_dot_com_webhook(
+        &self,
+    ) -> crate::resources::github_dot_com_webhook::GithubDotComWebhookActions {
+        crate::resources::github_dot_com_webhook::GithubDotComWebhookActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
     #[doc = "Actions that can be performed on the locations resource"]
     pub fn locations(&self) -> crate::resources::locations::LocationsActions {
         crate::resources::locations::LocationsActions {
@@ -6728,6 +7365,199 @@ impl Client {
     }
 }
 pub mod resources {
+    pub mod github_dot_com_webhook {
+        pub mod params {}
+        pub struct GithubDotComWebhookActions<'a> {
+            pub(crate) reqwest: &'a reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> GithubDotComWebhookActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "ReceiveGitHubDotComWebhook is called when the API receives a github.com webhook."]
+            pub fn receive(&self, request: crate::schemas::HttpBody) -> ReceiveRequestBuilder {
+                ReceiveRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    webhook_key: None,
+                }
+            }
+        }
+        #[doc = "Created via [GithubDotComWebhookActions::receive()](struct.GithubDotComWebhookActions.html#method.receive)"]
+        #[derive(Debug, Clone)]
+        pub struct ReceiveRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::HttpBody,
+            webhook_key: ::std::option::Option<String>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> ReceiveRequestBuilder<'a> {
+            #[doc = "For GitHub Enterprise webhooks, this key is used to associate the webhook request with the GitHubEnterpriseConfig to use for validation."]
+            pub fn webhook_key(mut self, value: impl Into<String>) -> Self {
+                self.webhook_key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::Empty, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                output.push_str("v1/githubDotComWebhook:receive");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("webhookKey", &self.webhook_key)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+    }
     pub mod locations {
         pub mod params {}
         pub struct LocationsActions<'a> {
@@ -8326,7 +9156,7 @@ pub mod resources {
                         #[serde(rename = "builds")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -8361,7 +9191,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -8411,7 +9241,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8528,12 +9358,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -9722,6 +10553,16 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
+                #[doc = "Actions that can be performed on the git_lab_configs resource"]
+                pub fn git_lab_configs(
+                    &self,
+                ) -> crate::resources::projects::locations::git_lab_configs::GitLabConfigsActions
+                {
+                    crate::resources::projects::locations::git_lab_configs::GitLabConfigsActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
                 #[doc = "Actions that can be performed on the github_enterprise_configs resource"]                pub fn github_enterprise_configs (& self) -> crate :: resources :: projects :: locations :: github_enterprise_configs :: GithubEnterpriseConfigsActions{
                     crate :: resources :: projects :: locations :: github_enterprise_configs :: GithubEnterpriseConfigsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                 }
@@ -10527,7 +11368,7 @@ pub mod resources {
                             #[serde(rename = "bitbucketServerConfigs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10563,7 +11404,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10619,7 +11460,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10737,12 +11578,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -11336,7 +12178,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
+                        #[doc = "The maximum number of configs to return. The service may return fewer than this value. The maximum value is 1000; values above 1000 will be coerced to 1000."]
                         pub fn page_size(mut self, value: i32) -> Self {
                             self.page_size = Some(value);
                             self
@@ -11440,7 +12282,7 @@ pub mod resources {
                                 #[serde(rename = "bitbucketServerRepositories")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -11478,7 +12320,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -11534,7 +12376,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -11658,12 +12500,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -12627,7 +13470,7 @@ pub mod resources {
                             #[serde(rename = "builds")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -12662,7 +13505,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -12712,7 +13555,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -12832,12 +13675,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -13003,6 +13847,1908 @@ pub mod resources {
                             .map_err(|err| crate::Error::OAuth2(err))?;
                         req = req.bearer_auth(access_token);
                         Ok(req)
+                    }
+                }
+            }
+            pub mod git_lab_configs {
+                pub mod params {}
+                pub struct GitLabConfigsActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> GitLabConfigsActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Creates a new `GitLabConfig`. This API is experimental"]
+                    pub fn create(
+                        &self,
+                        request: crate::schemas::GitLabConfig,
+                        parent: impl Into<String>,
+                    ) -> CreateRequestBuilder {
+                        CreateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            gitlab_config_id: None,
+                        }
+                    }
+                    #[doc = "Delete a `GitLabConfig`. This API is experimental"]
+                    pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                        DeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Retrieves a `GitLabConfig`. This API is experimental"]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "List all `GitLabConfigs` for a given project. This API is experimental"]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                    #[doc = "Updates an existing `GitLabConfig`. This API is experimental"]
+                    pub fn patch(
+                        &self,
+                        request: crate::schemas::GitLabConfig,
+                        name: impl Into<String>,
+                    ) -> PatchRequestBuilder {
+                        PatchRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            update_mask: None,
+                        }
+                    }
+                    #[doc = "Remove a GitLab repository from a given GitLabConfig’s connected repositories. This API is experimental."]
+                    pub fn remove_git_lab_connected_repository(
+                        &self,
+                        request: crate::schemas::RemoveGitLabConnectedRepositoryRequest,
+                        config: impl Into<String>,
+                    ) -> RemoveGitLabConnectedRepositoryRequestBuilder {
+                        RemoveGitLabConnectedRepositoryRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            config: config.into(),
+                        }
+                    }
+                    #[doc = "Actions that can be performed on the connected_repositories resource"]                    pub fn connected_repositories (& self) -> crate :: resources :: projects :: locations :: git_lab_configs :: connected_repositories :: ConnectedRepositoriesActions{
+                        crate :: resources :: projects :: locations :: git_lab_configs :: connected_repositories :: ConnectedRepositoriesActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                    }
+                    #[doc = "Actions that can be performed on the repos resource"]
+                    pub fn repos(
+                        &self,
+                    ) -> crate::resources::projects::locations::git_lab_configs::repos::ReposActions
+                    {
+                        crate :: resources :: projects :: locations :: git_lab_configs :: repos :: ReposActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                    }
+                }
+                #[doc = "Created via [GitLabConfigsActions::create()](struct.GitLabConfigsActions.html#method.create)"]
+                #[derive(Debug, Clone)]
+                pub struct CreateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GitLabConfig,
+                    parent: String,
+                    gitlab_config_id: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> CreateRequestBuilder<'a> {
+                    #[doc = "Optional. The ID to use for the GitLabConfig, which will become the final component of the GitLabConfig’s resource name. gitlab_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character"]
+                    pub fn gitlab_config_id(mut self, value: impl Into<String>) -> Self {
+                        self.gitlab_config_id = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/gitLabConfigs");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("gitlabConfigId", &self.gitlab_config_id)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [GitLabConfigsActions::delete()](struct.GitLabConfigsActions.html#method.delete)"]
+                #[derive(Debug, Clone)]
+                pub struct DeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [GitLabConfigsActions::get()](struct.GitLabConfigsActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GitLabConfig, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GitLabConfig, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [GitLabConfigsActions::list()](struct.GitLabConfigsActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    page_size: ::std::option::Option<i32>,
+                    page_token: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000;, values above 1000 will be coerced to 1000."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "A page token, received from a previous ‘ListGitlabConfigsRequest’ call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ‘ListGitlabConfigsRequest’ must match the call that provided the page token."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `gitlabConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                    pub fn stream_gitlab_configs<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_gitlab_configs_with_fields(fields)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `gitlabConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                    pub fn stream_gitlab_configs_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::GitLabConfig, crate::Error>,
+                    > + 'a {
+                        self.stream_gitlab_configs_with_fields(None::<String>)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `gitlabConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                    pub fn stream_gitlab_configs_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::GitLabConfig, crate::Error>,
+                    > + 'a {
+                        self.stream_gitlab_configs_with_fields(Some("*"))
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `gitlabConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                    pub fn stream_gitlab_configs_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                        struct Page<T> {
+                            #[serde(rename = "nextPageToken")]
+                            pub next_page_token: ::std::option::Option<String>,
+                            #[serde(rename = "gitlabConfigs")]
+                            pub items: Vec<T>,
+                        }
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
+                            fn next_page_token(&self) -> ::std::option::Option<String> {
+                                self.next_page_token.to_owned()
+                            }
+                        }
+                        impl<T> crate::stream::IntoPageItems for Page<T> {
+                            type Items = Vec<T>;
+                            fn into_page_items(self) -> Self::Items {
+                                self.items
+                            }
+                        }
+                        self.fields = Some({
+                            let mut selector =
+                                concat!("nextPageToken,", "gitlabConfigs").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::stream::page_item_stream::<_, Page<T>>(self)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                    pub fn stream<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String>
+                            + ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_with_fields(fields)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the default set of fields from the server."]
+                    pub fn stream_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::ListGitLabConfigsResponse, crate::Error>,
+                    > + 'a {
+                        self.stream_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests all fields from the server."]
+                    pub fn stream_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<crate::schemas::ListGitLabConfigsResponse, crate::Error>,
+                    > + 'a {
+                        self.stream_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                    #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    pub fn stream_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::stream::page_stream(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListGitLabConfigsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::ListGitLabConfigsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/gitLabConfigs");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[async_trait::async_trait]
+                impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                    {
+                        self._execute().await
+                    }
+                }
+                #[doc = "Created via [GitLabConfigsActions::patch()](struct.GitLabConfigsActions.html#method.patch)"]
+                #[derive(Debug, Clone)]
+                pub struct PatchRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GitLabConfig,
+                    name: String,
+                    update_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> PatchRequestBuilder<'a> {
+                    #[doc = "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed."]
+                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                        self.update_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [GitLabConfigsActions::remove_git_lab_connected_repository()](struct.GitLabConfigsActions.html#method.remove_git_lab_connected_repository)"]
+                #[derive(Debug, Clone)]
+                pub struct RemoveGitLabConnectedRepositoryRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::RemoveGitLabConnectedRepositoryRequest,
+                    config: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> RemoveGitLabConnectedRepositoryRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Empty, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Empty, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.config;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":removeGitLabConnectedRepository");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                pub mod connected_repositories {
+                    pub mod params {}
+                    pub struct ConnectedRepositoriesActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> ConnectedRepositoriesActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Batch connecting GitLab repositories to Cloud Build. This API is experimental."]
+                        pub fn batch_create(
+                            &self,
+                            request: crate::schemas::BatchCreateGitLabConnectedRepositoriesRequest,
+                            parent: impl Into<String>,
+                        ) -> BatchCreateRequestBuilder {
+                            BatchCreateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                            }
+                        }
+                    }
+                    #[doc = "Created via [ConnectedRepositoriesActions::batch_create()](struct.ConnectedRepositoriesActions.html#method.batch_create)"]
+                    #[derive(Debug, Clone)]
+                    pub struct BatchCreateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::BatchCreateGitLabConnectedRepositoriesRequest,
+                        parent: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> BatchCreateRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::Operation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/connectedRepositories:batchCreate");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                }
+                pub mod repos {
+                    pub mod params {}
+                    pub struct ReposActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> ReposActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "List all repositories for a given `GitLabConfig`. This API is experimental"]
+                        pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                page_size: None,
+                                page_token: None,
+                            }
+                        }
+                    }
+                    #[doc = "Created via [ReposActions::list()](struct.ReposActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        parent: String,
+                        page_size: ::std::option::Option<i32>,
+                        page_token: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "The maximum number of repositories to return. The service may return fewer than this value."]
+                        pub fn page_size(mut self, value: i32) -> Self {
+                            self.page_size = Some(value);
+                            self
+                        }
+                        #[doc = "A page token, received from a previous ListGitLabRepositoriesRequest`call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to`ListGitLabRepositoriesRequest\\` must match the call that provided the page token."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `gitlabRepositories` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                        pub fn stream_gitlab_repositories<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_gitlab_repositories_with_fields(fields)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `gitlabRepositories` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                        pub fn stream_gitlab_repositories_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::GitLabRepository, crate::Error>,
+                        > + 'a {
+                            self.stream_gitlab_repositories_with_fields(None::<String>)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `gitlabRepositories` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                        pub fn stream_gitlab_repositories_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::GitLabRepository, crate::Error>,
+                        > + 'a {
+                            self.stream_gitlab_repositories_with_fields(Some("*"))
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `gitlabRepositories` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                        pub fn stream_gitlab_repositories_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                            struct Page<T> {
+                                #[serde(rename = "nextPageToken")]
+                                pub next_page_token: ::std::option::Option<String>,
+                                #[serde(rename = "gitlabRepositories")]
+                                pub items: Vec<T>,
+                            }
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
+                                fn next_page_token(&self) -> ::std::option::Option<String> {
+                                    self.next_page_token.to_owned()
+                                }
+                            }
+                            impl<T> crate::stream::IntoPageItems for Page<T> {
+                                type Items = Vec<T>;
+                                fn into_page_items(self) -> Self::Items {
+                                    self.items
+                                }
+                            }
+                            self.fields = Some({
+                                let mut selector =
+                                    concat!("nextPageToken,", "gitlabRepositories").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::stream::page_item_stream::<_, Page<T>>(self)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                        pub fn stream<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String>
+                                + ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_with_fields(fields)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the default set of fields from the server."]
+                        pub fn stream_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::ListGitLabRepositoriesResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests all fields from the server."]
+                        pub fn stream_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::ListGitLabRepositoriesResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                        #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        pub fn stream_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::stream::page_stream(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListGitLabRepositoriesResponse, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListGitLabRepositoriesResponse, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://cloudbuild.googleapis.com/".to_owned();
+                            output.push_str("v1/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/repos");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("pageSize", &self.page_size)]);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[async_trait::async_trait]
+                    impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                        {
+                            self._execute().await
+                        }
                     }
                 }
             }
@@ -14500,7 +17246,7 @@ pub mod resources {
                             trigger_id: None,
                         }
                     }
-                    #[doc = "Runs a `BuildTrigger` at a particular source revision."]
+                    #[doc = "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers."]
                     pub fn run(
                         &self,
                         request: crate::schemas::RunBuildTriggerRequest,
@@ -15201,7 +17947,7 @@ pub mod resources {
                             #[serde(rename = "triggers")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -15236,7 +17982,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -15286,7 +18032,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -15405,12 +18151,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -16709,7 +19456,7 @@ pub mod resources {
                             #[serde(rename = "workerPools")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -16744,7 +19491,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -16794,7 +19541,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -16912,12 +19659,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -17233,7 +19981,7 @@ pub mod resources {
                         trigger_id: trigger_id.into(),
                     }
                 }
-                #[doc = "Runs a `BuildTrigger` at a particular source revision."]
+                #[doc = "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers."]
                 pub fn run(
                     &self,
                     request: crate::schemas::RepoSource,
@@ -17938,7 +20686,7 @@ pub mod resources {
                         #[serde(rename = "triggers")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -17973,7 +20721,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -18023,7 +20771,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -18141,12 +20889,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -19168,16 +21917,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -19197,13 +21948,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -19211,7 +21965,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -19238,7 +21992,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

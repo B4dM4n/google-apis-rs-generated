@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudidentity1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220418")
+            .version("0.1.0-20230124")
             .about("API for provisioning and managing identity resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -106,6 +106,55 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd =
                 SubCommand::with_name("update_security_settings").about("Update Security Settings");
             groups0 = groups0.subcommand(mcmd);
+        }
+        let mut inbound_saml_sso_profiles0 = SubCommand::with_name("inbound_saml_sso_profiles")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates an InboundSamlSsoProfile for a customer.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an InboundSamlSsoProfile.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets an InboundSamlSsoProfile.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists InboundSamlSsoProfiles for a customer.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an InboundSamlSsoProfile.");
+            inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(mcmd);
+        }
+        let mut inbound_sso_assignments0 = SubCommand::with_name("inbound_sso_assignments")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates an InboundSsoAssignment for users and devices in a `Customer` under a given `Group` or `OrgUnit`.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an InboundSsoAssignment. To disable SSO, Create (or Update) an assignment that has `sso_mode` == `SSO_OFF`.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets an InboundSsoAssignment.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists the InboundSsoAssignments for a `Customer`.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an InboundSsoAssignment. The body of this request is the `inbound_sso_assignment` field and the `update_mask` is relative to that. For example: a PATCH to `/v1beta1/inboundSsoAssignments/0abcdefg1234567&update_mask=rank` with a body of `{ \"rank\": 1 }` moves that (presumably group-targeted) SSO assignment to the highest priority and shifts any other group-targeted assignments down in priority.");
+            inbound_sso_assignments0 = inbound_sso_assignments0.subcommand(mcmd);
         }
         let mut org_units0 = SubCommand::with_name("org_units")
             .setting(AppSettings::ColoredHelp)
@@ -216,6 +265,27 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("search_transitive_memberships").about("Search transitive memberships of a group. **Note:** This feature is only available to Google Workspace Enterprise Standard, Enterprise Plus, and Enterprise for Education; and Cloud Identity Premium accounts. A transitive membership is any direct or indirect membership of a group. Actor must have view permissions to all transitive memberships.");
             memberships1 = memberships1.subcommand(mcmd);
         }
+        let mut idp_credentials1 = SubCommand::with_name("idp_credentials")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: add, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("add")
+                .about("Adds an IdpCredential. Up to 2 credentials are allowed.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an IdpCredential.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets an IdpCredential.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Returns a list of IdpCredentials in an InboundSamlSsoProfile.");
+            idp_credentials1 = idp_credentials1.subcommand(mcmd);
+        }
         let mut memberships1 = SubCommand::with_name("memberships")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list and r#move");
@@ -241,10 +311,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         device_users1 = device_users1.subcommand(client_states2);
         org_units0 = org_units0.subcommand(memberships1);
+        inbound_saml_sso_profiles0 = inbound_saml_sso_profiles0.subcommand(idp_credentials1);
         groups0 = groups0.subcommand(memberships1);
         devices0 = devices0.subcommand(device_users1);
         customers0 = customers0.subcommand(userinvitations1);
         app = app.subcommand(org_units0);
+        app = app.subcommand(inbound_sso_assignments0);
+        app = app.subcommand(inbound_saml_sso_profiles0);
         app = app.subcommand(groups0);
         app = app.subcommand(devices0);
         app = app.subcommand(customers0);

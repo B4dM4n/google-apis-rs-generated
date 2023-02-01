@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("androidmanagement1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230123")
             .about("The Android Management API provides remote enterprise management of Android devices and apps.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -78,12 +78,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, issue_command, list and patch");
         {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Deletes a device. This operation wipes the device.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a device. This operation wipes the device. Deleted devices do not show up in enterprises.devices.list calls and a 404 is returned from enterprises.devices.get.");
             devices1 = devices1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets a device.");
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets a device. Deleted devices will respond with a 404 error.");
             devices1 = devices1.subcommand(mcmd);
         }
         {
@@ -91,7 +91,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             devices1 = devices1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists devices for a given enterprise.");
+            let mcmd = SubCommand::with_name("list").about("Lists devices for a given enterprise. Deleted devices are not returned in the response.");
             devices1 = devices1.subcommand(mcmd);
         }
         {
@@ -100,14 +100,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut enrollment_tokens1 = SubCommand::with_name("enrollment_tokens")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create and delete");
+            .about("methods: create, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Creates an enrollment token for a given enterprise.");
+            let mcmd = SubCommand::with_name("create").about("Creates an enrollment token for a given enterprise. It's up to the caller's responsibility to manage the lifecycle of newly created tokens and deleting them when they're not intended to be used anymore. Once an enrollment token has been created, it's not possible to retrieve the token's content anymore using AM API. It is recommended for EMMs to securely store the token if it's intended to be reused.");
             enrollment_tokens1 = enrollment_tokens1.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes an enrollment token. This operation invalidates the token, preventing its future use.");
+            enrollment_tokens1 = enrollment_tokens1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets an active, unexpired enrollment token. Only a partial view of EnrollmentToken is returned: all the fields but name and expiration_timestamp are empty. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it's recommended to delete active enrollment tokens as soon as they're not intended to be used anymore.");
+            enrollment_tokens1 = enrollment_tokens1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists active, unexpired enrollment tokens for a given enterprise. The list items contain only a partial view of EnrollmentToken: all the fields but name and expiration_timestamp are empty. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it's recommended to delete active enrollment tokens as soon as they're not intended to be used anymore.");
             enrollment_tokens1 = enrollment_tokens1.subcommand(mcmd);
         }
         let mut policies1 = SubCommand::with_name("policies")

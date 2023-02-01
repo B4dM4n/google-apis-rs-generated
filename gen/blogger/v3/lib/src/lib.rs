@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [blog_user_infos](resources/blog_user_infos/struct.BlogUserInfosActions.html)\n  * [*get*](resources/blog_user_infos/struct.GetRequestBuilder.html)\n* [blogs](resources/blogs/struct.BlogsActions.html)\n  * [*get*](resources/blogs/struct.GetRequestBuilder.html), [*getByUrl*](resources/blogs/struct.GetByUrlRequestBuilder.html), [*listByUser*](resources/blogs/struct.ListByUserRequestBuilder.html)\n* [comments](resources/comments/struct.CommentsActions.html)\n  * [*approve*](resources/comments/struct.ApproveRequestBuilder.html), [*delete*](resources/comments/struct.DeleteRequestBuilder.html), [*get*](resources/comments/struct.GetRequestBuilder.html), [*list*](resources/comments/struct.ListRequestBuilder.html), [*listByBlog*](resources/comments/struct.ListByBlogRequestBuilder.html), [*markAsSpam*](resources/comments/struct.MarkAsSpamRequestBuilder.html), [*removeContent*](resources/comments/struct.RemoveContentRequestBuilder.html)\n* [page_views](resources/page_views/struct.PageViewsActions.html)\n  * [*get*](resources/page_views/struct.GetRequestBuilder.html)\n* [pages](resources/pages/struct.PagesActions.html)\n  * [*delete*](resources/pages/struct.DeleteRequestBuilder.html), [*get*](resources/pages/struct.GetRequestBuilder.html), [*insert*](resources/pages/struct.InsertRequestBuilder.html), [*list*](resources/pages/struct.ListRequestBuilder.html), [*patch*](resources/pages/struct.PatchRequestBuilder.html), [*publish*](resources/pages/struct.PublishRequestBuilder.html), [*revert*](resources/pages/struct.RevertRequestBuilder.html), [*update*](resources/pages/struct.UpdateRequestBuilder.html)\n* [post_user_infos](resources/post_user_infos/struct.PostUserInfosActions.html)\n  * [*get*](resources/post_user_infos/struct.GetRequestBuilder.html), [*list*](resources/post_user_infos/struct.ListRequestBuilder.html)\n* [posts](resources/posts/struct.PostsActions.html)\n  * [*delete*](resources/posts/struct.DeleteRequestBuilder.html), [*get*](resources/posts/struct.GetRequestBuilder.html), [*getByPath*](resources/posts/struct.GetByPathRequestBuilder.html), [*insert*](resources/posts/struct.InsertRequestBuilder.html), [*list*](resources/posts/struct.ListRequestBuilder.html), [*patch*](resources/posts/struct.PatchRequestBuilder.html), [*publish*](resources/posts/struct.PublishRequestBuilder.html), [*revert*](resources/posts/struct.RevertRequestBuilder.html), [*search*](resources/posts/struct.SearchRequestBuilder.html), [*update*](resources/posts/struct.UpdateRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*get*](resources/users/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage your Blogger account\n\n`https://www.googleapis.com/auth/blogger`"]
@@ -928,7 +929,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CommentList {
+    impl crate::GetNextPageToken<String> for CommentList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1016,6 +1017,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
+        #[doc = "RFC 3339 date-time when this Page was trashed."]
+        #[serde(
+            rename = "trashed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub trashed: ::std::option::Option<String>,
         #[doc = "RFC 3339 date-time when this Page was last updated."]
         #[serde(
             rename = "updated",
@@ -1280,7 +1288,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PageList {
+    impl crate::GetNextPageToken<String> for PageList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1565,6 +1573,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title_link: ::std::option::Option<String>,
+        #[doc = "RFC 3339 date-time when this Post was last trashed."]
+        #[serde(
+            rename = "trashed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub trashed: ::std::option::Option<String>,
         #[doc = "RFC 3339 date-time when this Post was last updated."]
         #[serde(
             rename = "updated",
@@ -2023,7 +2038,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PostList {
+    impl crate::GetNextPageToken<String> for PostList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2159,7 +2174,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PostUserInfosList {
+    impl crate::GetNextPageToken<String> for PostUserInfosList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4907,7 +4922,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -4940,7 +4955,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -4988,7 +5003,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5116,12 +5131,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -5276,7 +5292,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -5309,7 +5325,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -5357,7 +5373,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5478,12 +5494,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListByBlogRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -6386,6 +6403,7 @@ pub mod resources {
                     xgafv: None,
                     blog_id: blog_id.into(),
                     page_id: page_id.into(),
+                    use_trash: None,
                 }
             }
             #[doc = "Gets a page by blog id and page id."]
@@ -6574,6 +6592,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             blog_id: String,
             page_id: String,
+            use_trash: ::std::option::Option<bool>,
             access_token: ::std::option::Option<String>,
             alt: ::std::option::Option<crate::params::Alt>,
             callback: ::std::option::Option<String>,
@@ -6587,6 +6606,11 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
+            #[doc = "Move to Trash if possible"]
+            pub fn use_trash(mut self, value: bool) -> Self {
+                self.use_trash = Some(value);
+                self
+            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -6662,6 +6686,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                req = req.query(&[("useTrash", &self.use_trash)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -7170,7 +7195,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -7203,7 +7228,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -7251,7 +7276,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -7371,12 +7396,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -8751,7 +8777,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8784,7 +8810,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -8832,7 +8858,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8964,12 +8990,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -9200,6 +9227,82 @@ pub mod resources {
                 }
             }
             impl ::google_field_selector::ToFieldType for ListOrderBy {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum ListSortOption {
+                #[doc = "The option to sort posts in ascending order in time."]
+                Ascending,
+                #[doc = "The option to sort posts in descending order in time."]
+                Descending,
+                #[doc = "The unspecified sort option."]
+                SortOptionUnspecified,
+            }
+            impl ListSortOption {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        ListSortOption::Ascending => "ASCENDING",
+                        ListSortOption::Descending => "DESCENDING",
+                        ListSortOption::SortOptionUnspecified => "SORT_OPTION_UNSPECIFIED",
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for ListSortOption {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for ListSortOption {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<ListSortOption, ()> {
+                    Ok(match s {
+                        "ASCENDING" => ListSortOption::Ascending,
+                        "DESCENDING" => ListSortOption::Descending,
+                        "SORT_OPTION_UNSPECIFIED" => ListSortOption::SortOptionUnspecified,
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for ListSortOption {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for ListSortOption {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for ListSortOption {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "ASCENDING" => ListSortOption::Ascending,
+                        "DESCENDING" => ListSortOption::Descending,
+                        "SORT_OPTION_UNSPECIFIED" => ListSortOption::SortOptionUnspecified,
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for ListSortOption {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for ListSortOption {
                 fn field_type() -> ::google_field_selector::FieldType {
                     ::google_field_selector::FieldType::Leaf
                 }
@@ -9462,6 +9565,7 @@ pub mod resources {
                     xgafv: None,
                     blog_id: blog_id.into(),
                     post_id: post_id.into(),
+                    use_trash: None,
                 }
             }
             #[doc = "Gets a post by blog id and post id"]
@@ -9569,6 +9673,7 @@ pub mod resources {
                     max_results: None,
                     order_by: None,
                     page_token: None,
+                    sort_option: None,
                     start_date: None,
                     status: None,
                     view: None,
@@ -9719,6 +9824,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             blog_id: String,
             post_id: String,
+            use_trash: ::std::option::Option<bool>,
             access_token: ::std::option::Option<String>,
             alt: ::std::option::Option<crate::params::Alt>,
             callback: ::std::option::Option<String>,
@@ -9732,6 +9838,11 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
+            #[doc = "Move to Trash if possible"]
+            pub fn use_trash(mut self, value: bool) -> Self {
+                self.use_trash = Some(value);
+                self
+            }
             #[doc = "OAuth access token."]
             pub fn access_token(mut self, value: impl Into<String>) -> Self {
                 self.access_token = Some(value.into());
@@ -9807,6 +9918,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                req = req.query(&[("useTrash", &self.use_trash)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -10398,6 +10510,7 @@ pub mod resources {
             max_results: ::std::option::Option<u32>,
             order_by: ::std::option::Option<crate::resources::posts::params::ListOrderBy>,
             page_token: ::std::option::Option<String>,
+            sort_option: ::std::option::Option<crate::resources::posts::params::ListSortOption>,
             start_date: ::std::option::Option<String>,
             status: ::std::option::Option<Vec<crate::resources::posts::params::ListStatusItems>>,
             view: ::std::option::Option<crate::resources::posts::params::ListView>,
@@ -10447,6 +10560,14 @@ pub mod resources {
             #[doc = ""]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
+                self
+            }
+            #[doc = "Sort direction applied to post list."]
+            pub fn sort_option(
+                mut self,
+                value: crate::resources::posts::params::ListSortOption,
+            ) -> Self {
+                self.sort_option = Some(value);
                 self
             }
             #[doc = ""]
@@ -10557,7 +10678,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -10590,7 +10711,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -10638,7 +10759,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -10736,6 +10857,7 @@ pub mod resources {
                 req = req.query(&[("maxResults", &self.max_results)]);
                 req = req.query(&[("orderBy", &self.order_by)]);
                 req = req.query(&[("pageToken", &self.page_token)]);
+                req = req.query(&[("sortOption", &self.sort_option)]);
                 req = req.query(&[("startDate", &self.start_date)]);
                 for value in self.status.iter().flatten() {
                     req = req.query(&[("status", value)]);
@@ -10763,12 +10885,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -12188,16 +12311,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -12217,13 +12342,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -12231,7 +12359,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -12258,7 +12386,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -7,7 +7,7 @@
   "canonicalName": "Forms",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20230126",
   "title": "Google Forms API",
   "description": "Reads and writes Google Forms and responses.",
   "ownerDomain": "google.com",
@@ -1257,7 +1257,7 @@
           "items": null
         },
         "responses": {
-          "description": "The returned responses.",
+          "description": "The returned form responses. Note: The `formId` field is not returned in the `FormResponse` object for list requests.",
           "type": "array",
           "format": null,
           "enum": [],

@@ -7,7 +7,7 @@
   "canonicalName": "TPU",
   "fullyEncodeReservedExpansion": true,
   "version": "v2alpha1",
-  "revision": "20220412",
+  "revision": "20230105",
   "title": "Cloud TPU API",
   "description": "TPU API provides customers with access to Google TPU technology.",
   "ownerDomain": "google.com",
@@ -226,7 +226,7 @@
           "items": null
         },
         "type": {
-          "description": "the accelerator type.",
+          "description": "The accelerator type.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -236,6 +236,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AcceptedData": {
+      "id": "AcceptedData",
+      "description": "Further data for the accepted state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -258,6 +269,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ActiveData": {
+      "id": "ActiveData",
+      "description": "Further data for the active state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -301,6 +323,39 @@
       "additionalProperties": null,
       "items": null
     },
+    "BestEffort": {
+      "id": "BestEffort",
+      "description": "BestEffort tier definition.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "CreatingData": {
+      "id": "CreatingData",
+      "description": "Further data for the creating state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeletingData": {
+      "id": "DeletingData",
+      "description": "Further data for the deleting state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "Empty": {
       "id": "Empty",
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
@@ -309,6 +364,22 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "FailedData": {
+      "id": "FailedData",
+      "description": "Further data for the failed state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "error": {
+          "description": "The error that caused the queued resource to enter the FAILED state.",
+          "$ref": "Status"
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -403,6 +474,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "Guaranteed": {
+      "id": "Guaranteed",
+      "description": "Guaranteed tier definition.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "minDuration": {
+          "description": "Optional. Defines the minimum duration of the guarantee. If specified, the requested resources will only be provisioned if they can be allocated for at least the given duration.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reserved": {
+          "description": "Optional. Specifies the request should be scheduled on reserved capacity.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GuestAttributes": {
       "id": "GuestAttributes",
       "description": "A guest attributes.",
@@ -490,6 +593,38 @@
           "items": {
             "$ref": "GuestAttributesEntry"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Interval": {
+      "id": "Interval",
+      "description": "Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive). The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "endTime": {
+          "description": "Optional. Exclusive end of the interval. If specified, a Timestamp matching this interval will have to be before the end.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "startTime": {
+          "description": "Optional. Inclusive start of the interval. If specified, a Timestamp matching this interval will have to be the same or after the start.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -661,6 +796,58 @@
           "additionalProperties": null,
           "items": {
             "$ref": "Operation"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListQueuedResourcesResponse": {
+      "id": "ListQueuedResourcesResponse",
+      "description": "Response for ListQueuedResources.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The next page token or empty if none.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "queuedResources": {
+          "description": "The listed queued resources.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "QueuedResource"
+          }
+        },
+        "unreachable": {
+          "description": "Locations that could not be reached.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
           }
         }
       },
@@ -1073,6 +1260,16 @@
             "$ref": "NetworkEndpoint"
           }
         },
+        "queuedResource": {
+          "description": "Output only. The qualified name of the QueuedResource that requested this Node.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "runtimeVersion": {
           "description": "Required. The runtime version running in the Node.",
           "type": "string",
@@ -1090,6 +1287,10 @@
         "serviceAccount": {
           "description": "The Google Cloud Platform Service Account to be used by the TPU node VMs. If None is specified, the default compute service account will be used.",
           "$ref": "ServiceAccount"
+        },
+        "shieldedInstanceConfig": {
+          "description": "Shielded Instance options.",
+          "$ref": "ShieldedInstanceConfig"
         },
         "state": {
           "description": "Output only. The current state for the TPU Node.",
@@ -1119,7 +1320,7 @@
             "TPU node is restarting.",
             "TPU node is undergoing reimaging.",
             "TPU node is being deleted.",
-            "TPU node is being repaired and may be unusable. Details can be found in the `help_description` field.",
+            "TPU node is being repaired and may be unusable. Details can be found in the 'help_description' field.",
             "TPU node is stopped.",
             "TPU node is currently stopping.",
             "TPU node is currently starting.",
@@ -1162,6 +1363,42 @@
             "additionalProperties": null,
             "items": null
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "NodeSpec": {
+      "id": "NodeSpec",
+      "description": "Details of the TPU node(s) being requested. Users can request either a single node or multiple nodes. NodeSpec provides the specification for node(s) to be created.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "node": {
+          "description": "Required. The node.",
+          "$ref": "Node"
+        },
+        "nodeId": {
+          "description": "The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format. This is only specified when requesting a single node. In case of multi-node requests, multi_node_params must be populated instead. It's an error to specify both node_id and multi_node_params.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parent": {
+          "description": "Required. The parent resource name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1323,6 +1560,189 @@
       "additionalProperties": null,
       "items": null
     },
+    "ProvisioningData": {
+      "id": "ProvisioningData",
+      "description": "Further data for the provisioning state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "QueuedResource": {
+      "id": "QueuedResource",
+      "description": "A QueuedResource represents a request for resources that will be placed in a queue and fulfilled when the necessary resources are available.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bestEffort": {
+          "description": "The BestEffort tier.",
+          "$ref": "BestEffort"
+        },
+        "guaranteed": {
+          "description": "The Guaranteed tier",
+          "$ref": "Guaranteed"
+        },
+        "name": {
+          "description": "Output only. Immutable. The name of the QueuedResource.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "queueingPolicy": {
+          "description": "The queueing policy of the QueuedRequest.",
+          "$ref": "QueueingPolicy"
+        },
+        "state": {
+          "description": "Output only. State of the QueuedResource request",
+          "$ref": "QueuedResourceState"
+        },
+        "tpu": {
+          "description": "Defines a TPU resource.",
+          "$ref": "Tpu"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "QueuedResourceState": {
+      "id": "QueuedResourceState",
+      "description": "QueuedResourceState defines the details of the QueuedResource request.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "acceptedData": {
+          "description": "Further data for the accepted state.",
+          "$ref": "AcceptedData"
+        },
+        "activeData": {
+          "description": "Further data for the active state.",
+          "$ref": "ActiveData"
+        },
+        "creatingData": {
+          "description": "Further data for the creating state.",
+          "$ref": "CreatingData"
+        },
+        "deletingData": {
+          "description": "Further data for the deleting state.",
+          "$ref": "DeletingData"
+        },
+        "failedData": {
+          "description": "Further data for the failed state.",
+          "$ref": "FailedData"
+        },
+        "provisioningData": {
+          "description": "Further data for the provisioning state.",
+          "$ref": "ProvisioningData"
+        },
+        "state": {
+          "description": "State of the QueuedResource request.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "CREATING",
+            "ACCEPTED",
+            "PROVISIONING",
+            "FAILED",
+            "DELETING",
+            "ACTIVE",
+            "SUSPENDING",
+            "SUSPENDED"
+          ],
+          "enumDescriptions": [
+            "State of the QueuedResource request is not known/set.",
+            "The QueuedResource request has been received. We're still working on determining if we will be able to honor this request.",
+            "The QueuedResource request has passed initial validation/admission control and has been persisted in the queue.",
+            "The QueuedResource request has been selected. The associated resources are currently being provisioned (or very soon will begin provisioning).",
+            "The request could not be completed. This may be due to some late-discovered problem with the request itself, or due to unavailability of resources within the constraints of the request (e.g., the 'valid until' start timing constraint expired).",
+            "The QueuedResource is being deleted.",
+            "The resources specified in the QueuedResource request have been provisioned and are ready for use by the end-user/consumer.",
+            "The resources specified in the QueuedResource request are being deleted. This may have been initiated by the user, or the Cloud TPU service. Inspect the state data for more details.",
+            "The resources specified in the QueuedResource request have been deleted."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "suspendedData": {
+          "description": "Further data for the suspended state.",
+          "$ref": "SuspendedData"
+        },
+        "suspendingData": {
+          "description": "Further data for the suspending state.",
+          "$ref": "SuspendingData"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "QueueingPolicy": {
+      "id": "QueueingPolicy",
+      "description": "Defines the policy of the QueuedRequest.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "validAfterDuration": {
+          "description": "A relative time after which resources may be created.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "validAfterTime": {
+          "description": "An absolute time at which resources may be created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "validInterval": {
+          "description": "An absolute time interval within which resources may be created.",
+          "$ref": "Interval"
+        },
+        "validUntilDuration": {
+          "description": "A relative time after which resources should not be created. If the request cannot be fulfilled by this time the request will be failed.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "validUntilTime": {
+          "description": "An absolute time after which resources should not be created. If the request cannot be fulfilled by this time the request will be failed.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "RuntimeVersion": {
       "id": "RuntimeVersion",
       "description": "A runtime version that a Node can be configured with.",
@@ -1449,6 +1869,58 @@
       "additionalProperties": null,
       "items": null
     },
+    "ShieldedInstanceConfig": {
+      "id": "ShieldedInstanceConfig",
+      "description": "A set of Shielded Instance options.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "enableSecureBoot": {
+          "description": "Defines whether the instance has Secure Boot enabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SimulateMaintenanceEventRequest": {
+      "id": "SimulateMaintenanceEventRequest",
+      "description": "Request for SimulateMaintenanceEvent.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "workerIds": {
+          "description": "The 0-based worker ID. If it is empty, worker ID 0 will be selected for maintenance event simulation. A maintenance event will only be fired on the first specified worker ID. Future implementations may support firing on multiple workers.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "StartNodeRequest": {
       "id": "StartNodeRequest",
       "description": "Request for StartNode.",
@@ -1530,6 +2002,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "SuspendedData": {
+      "id": "SuspendedData",
+      "description": "Further data for the suspended state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "SuspendingData": {
+      "id": "SuspendingData",
+      "description": "Further data for the suspending state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "Symptom": {
       "id": "Symptom",
       "description": "A Symptom instance.",
@@ -1593,6 +2087,30 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Tpu": {
+      "id": "Tpu",
+      "description": "Details of the TPU resource(s) being requested.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nodeSpec": {
+          "description": "The TPU node(s) being requested.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "NodeSpec"
+          }
         }
       },
       "additionalProperties": null,
@@ -2054,6 +2572,45 @@
                   "supportsMediaUpload": false,
                   "mediaUpload": null
                 },
+                "simulateMaintenanceEvent": {
+                  "id": "tpu.projects.locations.nodes.simulateMaintenanceEvent",
+                  "path": "v2alpha1/{+name}:simulateMaintenanceEvent",
+                  "httpMethod": "POST",
+                  "description": "Simulates a maintenance event.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/nodes/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "SimulateMaintenanceEventRequest"
+                  },
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
                 "start": {
                   "id": "tpu.projects.locations.nodes.start",
                   "path": "v2alpha1/{+name}:start",
@@ -2061,7 +2618,7 @@
                   "description": "Starts a node.",
                   "parameters": {
                     "name": {
-                      "description": "The resource name.",
+                      "description": "Required. The resource name.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2100,7 +2657,7 @@
                   "description": "Stops a node. This operation is only available with single TPU nodes.",
                   "parameters": {
                     "name": {
-                      "description": "The resource name.",
+                      "description": "Required. The resource name.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -2317,6 +2874,231 @@
                   "request": null,
                   "response": {
                     "$ref": "ListOperationsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "queuedResources": {
+              "resources": {},
+              "methods": {
+                "create": {
+                  "id": "tpu.projects.locations.queuedResources.create",
+                  "path": "v2alpha1/{+parent}/queuedResources",
+                  "httpMethod": "POST",
+                  "description": "Creates a QueuedResource TPU instance.",
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "queuedResourceId": {
+                      "description": "The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$ regex format.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "requestId": {
+                      "description": "Idempotent request UUID.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "QueuedResource"
+                  },
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "delete": {
+                  "id": "tpu.projects.locations.queuedResources.delete",
+                  "path": "v2alpha1/{+name}",
+                  "httpMethod": "DELETE",
+                  "description": "Deletes a QueuedResource TPU instance.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/queuedResources/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "requestId": {
+                      "description": "Idempotent request UUID.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "get": {
+                  "id": "tpu.projects.locations.queuedResources.get",
+                  "path": "v2alpha1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets details of a queued resource.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. The resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/queuedResources/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "QueuedResource"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "tpu.projects.locations.queuedResources.list",
+                  "path": "v2alpha1/{+parent}/queuedResources",
+                  "httpMethod": "GET",
+                  "description": "Lists queued resources.",
+                  "parameters": {
+                    "pageSize": {
+                      "description": "The maximum number of items to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "The next_page_token value returned from a previous List request, if any.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. The parent resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "ListQueuedResourcesResponse"
                   },
                   "scopes": [
                     "https://www.googleapis.com/auth/cloud-platform"

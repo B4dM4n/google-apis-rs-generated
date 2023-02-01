@@ -7,7 +7,7 @@
   "canonicalName": "Access Context Manager",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220422",
+  "revision": "20230126",
   "title": "Access Context Manager API",
   "description": "An API for setting attribute based access control to requests to GCP services.",
   "ownerDomain": "google.com",
@@ -245,7 +245,7 @@
           "items": null
         },
         "name": {
-          "description": "Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length // of the `short_name` component is 50 characters.",
+          "description": "Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -879,7 +879,7 @@
           "items": null
         },
         "name": {
-          "description": "Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`",
+          "description": "Resource name for the `ServicePerimeter`. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`. The `service_perimeter` component must begin with a letter, followed by alphanumeric characters or `_`. After you create a `ServicePerimeter`, you cannot change its `name`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -897,7 +897,7 @@
             "PERIMETER_TYPE_BRIDGE"
           ],
           "enumDescriptions": [
-            "Regular Perimeter.",
+            "Regular Perimeter. When no value is specified, the perimeter uses this type.",
             "Perimeter Bridge."
           ],
           "properties": {},
@@ -1345,7 +1345,7 @@
               "description": "Update an Access Level. The longrunning operation from this RPC will have a successful status once the changes to the Access Level have propagated to long-lasting storage. Access Levels containing errors will result in an error response for the first error encountered.",
               "parameters": {
                 "name": {
-                  "description": "Required. Resource name for the Access Level. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length // of the `short_name` component is 50 characters.",
+                  "description": "Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -1581,7 +1581,7 @@
               "description": "Update a Service Perimeter. The longrunning operation from this RPC will have a successful status once the changes to the Service Perimeter have propagated to long-lasting storage. Service Perimeter containing errors will result in an error response for the first error encountered.",
               "parameters": {
                 "name": {
-                  "description": "Required. Resource name for the ServicePerimeter. The `short_name` component must begin with a letter and only include alphanumeric and '_'. Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`",
+                  "description": "Resource name for the `ServicePerimeter`. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`. The `service_perimeter` component must begin with a letter, followed by alphanumeric characters or `_`. After you create a `ServicePerimeter`, you cannot change its `name`.",
                   "default": null,
                   "location": "path",
                   "required": true,

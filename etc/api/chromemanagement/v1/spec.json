@@ -7,7 +7,7 @@
   "canonicalName": "Chrome Management",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230131",
   "title": "Chrome Management API",
   "description": "The Chrome Management API is a suite of services that allows Chrome administrators to view, manage and gain insights on their Chrome OS and Chrome Browser devices.",
   "ownerDomain": "google.com",
@@ -455,7 +455,7 @@
     },
     "GoogleChromeManagementV1AudioStatusReport": {
       "id": "GoogleChromeManagementV1AudioStatusReport",
-      "description": "Audio report.",
+      "description": "Status data for storage. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceAudioStatus](https://chromeenterprise.google/policies/#ReportDeviceAudioStatus) * Data Collection Frequency: 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -537,7 +537,7 @@
     },
     "GoogleChromeManagementV1BatteryInfo": {
       "id": "GoogleChromeManagementV1BatteryInfo",
-      "description": "Battery info",
+      "description": "Information about the battery. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -603,7 +603,7 @@
     },
     "GoogleChromeManagementV1BatterySampleReport": {
       "id": "GoogleChromeManagementV1BatterySampleReport",
-      "description": "Sampling data for battery.",
+      "description": "Sampling data for battery. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -695,7 +695,7 @@
     },
     "GoogleChromeManagementV1BatteryStatusReport": {
       "id": "GoogleChromeManagementV1BatteryStatusReport",
-      "description": "Status data for battery.",
+      "description": "Status data for battery. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDevicePowerStatus](https://chromeenterprise.google/policies/#ReportDevicePowerStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -767,6 +767,90 @@
           "description": "Output only. Battery serial number.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1BootPerformanceReport": {
+      "id": "GoogleChromeManagementV1BootPerformanceReport",
+      "description": "Boot performance report of a device. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceBootMode](https://chromeenterprise.google/policies/#ReportDeviceBootMode) * Data Collection Frequency: On every boot up event * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bootUpDuration": {
+          "description": "Total time to boot up.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "bootUpTime": {
+          "description": "The timestamp when power came on.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Timestamp when the report was collected.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shutdownDuration": {
+          "description": "Total time since shutdown start to power off.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shutdownReason": {
+          "description": "The shutdown reason.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SHUTDOWN_REASON_UNSPECIFIED",
+            "USER_REQUEST",
+            "SYSTEM_UPDATE",
+            "LOW_BATTERY",
+            "OTHER"
+          ],
+          "enumDescriptions": [
+            "Shutdown reason is not specified.",
+            "User initiated.",
+            "System update initiated.",
+            "Shutdown due to low battery.",
+            "Shutdown due to other reasons."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shutdownTime": {
+          "description": "The timestamp when shutdown.",
+          "type": "string",
+          "format": "google-datetime",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -897,6 +981,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "isExtensionPolicySupported": {
+          "description": "Output only. Whether an app supports policy for extensions.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "isKioskOnly": {
           "description": "Output only. Whether the app is only for Kiosk mode on ChromeOS devices",
           "type": "boolean",
@@ -967,6 +1061,24 @@
           "format": null,
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Output only. Types of an item in the Chrome Web Store",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ITEM_TYPE_UNSPECIFIED",
+            "EXTENSION",
+            "OTHERS"
+          ],
+          "enumDescriptions": [
+            "Unspecified ItemType.",
+            "Chrome Extensions.",
+            "Any other type than extension."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -1165,6 +1277,152 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse": {
+      "id": "GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse",
+      "description": "Response containing a list of devices expiring in each month of a selected time frame. Counts are grouped by model and Auto Update Expiration date.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceAueCountReports": {
+          "description": "The list of reports sorted by auto update expiration date in ascending order.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1DeviceAueCountReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse": {
+      "id": "GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse",
+      "description": "Response containing counts for devices that need attention.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "noRecentPolicySyncCount": {
+          "description": "Number of ChromeOS devices have not synced policies in the past 28 days.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "noRecentUserActivityCount": {
+          "description": "Number of ChromeOS devices that have not seen any user activity in the past 28 days.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "osVersionNotCompliantCount": {
+          "description": "Number of devices whose OS version is not compliant.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pendingUpdate": {
+          "description": "Number of devices that are pending an OS update.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "unsupportedPolicyCount": {
+          "description": "Number of devices that are unable to apply a policy due to an OS version mismatch.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse": {
+      "id": "GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse",
+      "description": "Response containing a list of devices with a specific type of hardware specification from the requested hardware type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "cpuReports": {
+          "description": "The DeviceHardwareCountReport for device cpu type (for example Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz).",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1DeviceHardwareCountReport"
+          }
+        },
+        "memoryReports": {
+          "description": "The DeviceHardwareCountReport for device memory amount in gigabytes (for example 16).",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1DeviceHardwareCountReport"
+          }
+        },
+        "modelReports": {
+          "description": "The DeviceHardwareCountReport for device model type (for example Acer C7 Chromebook).",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1DeviceHardwareCountReport"
+          }
+        },
+        "storageReports": {
+          "description": "The DeviceHardwareCountReport for device storage amount in gigabytes (for example 128).",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1DeviceHardwareCountReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleChromeManagementV1CountChromeVersionsResponse": {
       "id": "GoogleChromeManagementV1CountChromeVersionsResponse",
       "description": "Response containing requested browser versions details and counts.",
@@ -1255,14 +1513,14 @@
     },
     "GoogleChromeManagementV1CpuInfo": {
       "id": "GoogleChromeManagementV1CpuInfo",
-      "description": "CPU specs for a CPU.",
+      "description": "CPU specifications for the device * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "architecture": {
-          "description": "Output only. The CPU architecture.",
+          "description": "Output only. Architecture type for the CPU. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
           "type": "string",
           "format": null,
           "enum": [
@@ -1273,6 +1531,26 @@
             "Architecture unknown.",
             "x64 architecture"
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "keylockerConfigured": {
+          "description": "Output only. Whether keylocker is configured.`TRUE` = Enabled; `FALSE` = disabled. Only reported if keylockerSupported = `TRUE`.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "keylockerSupported": {
+          "description": "Output only. Whether keylocker is supported.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -1303,7 +1581,7 @@
     },
     "GoogleChromeManagementV1CpuStatusReport": {
       "id": "GoogleChromeManagementV1CpuStatusReport",
-      "description": "Contains samples of the cpu status reports.",
+      "description": "Provides information about the status of the CPU. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Every 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1357,7 +1635,7 @@
     },
     "GoogleChromeManagementV1CpuTemperatureInfo": {
       "id": "GoogleChromeManagementV1CpuTemperatureInfo",
-      "description": "CPU temperature of a device. Sampled per CPU core in Celsius",
+      "description": "CPU temperature of a device. Sampled per CPU core in Celsius. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Every 10 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1409,6 +1687,128 @@
           "description": "Output only. The name of the machine within its local network.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1DeviceAueCountReport": {
+      "id": "GoogleChromeManagementV1DeviceAueCountReport",
+      "description": "Report for CountChromeDevicesPerAueDateResponse, contains the count of devices of a specific model and auto update expiration range.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "aueMonth": {
+          "description": "Enum value of month corresponding to the auto update expiration date in UTC time zone. If the device is already expired, this field is empty.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MONTH_UNSPECIFIED",
+            "JANUARY",
+            "FEBRUARY",
+            "MARCH",
+            "APRIL",
+            "MAY",
+            "JUNE",
+            "JULY",
+            "AUGUST",
+            "SEPTEMBER",
+            "OCTOBER",
+            "NOVEMBER",
+            "DECEMBER"
+          ],
+          "enumDescriptions": [
+            "The unspecified month.",
+            "The month of January.",
+            "The month of February.",
+            "The month of March.",
+            "The month of April.",
+            "The month of May.",
+            "The month of June.",
+            "The month of July.",
+            "The month of August.",
+            "The month of September.",
+            "The month of October.",
+            "The month of November.",
+            "The month of December."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "aueYear": {
+          "description": "Int value of year corresponding to the Auto Update Expiration date in UTC time zone. If the device is already expired, this field is empty.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "count": {
+          "description": "Count of devices of this model.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "expired": {
+          "description": "Boolean value for whether or not the device has already expired.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "model": {
+          "description": "Public model name of the devices.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1DeviceHardwareCountReport": {
+      "id": "GoogleChromeManagementV1DeviceHardwareCountReport",
+      "description": "Report for CountChromeDevicesPerHardwareSpecResponse, contains the count of devices with a unique hardware specification.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bucket": {
+          "description": "Public name of the hardware specification.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "count": {
+          "description": "Count of devices with a unique hardware specification.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -1719,7 +2119,7 @@
     },
     "GoogleChromeManagementV1GraphicsInfo": {
       "id": "GoogleChromeManagementV1GraphicsInfo",
-      "description": "Information of the graphics subsystem.",
+      "description": "Information of the graphics subsystem. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceGraphicsStatus](https://chromeenterprise.google/policies/#ReportDeviceGraphicsStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1735,7 +2135,7 @@
     },
     "GoogleChromeManagementV1GraphicsStatusReport": {
       "id": "GoogleChromeManagementV1GraphicsStatusReport",
-      "description": "Information of the graphics subsystem.",
+      "description": "Information of the graphics subsystem. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceGraphicsInfo](https://chromeenterprise.google/policies/#ReportDeviceGraphicsInfo) * Data Collection Frequency: 3 hours. * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1759,6 +2159,50 @@
           "format": "google-datetime",
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1HttpsLatencyRoutineData": {
+      "id": "GoogleChromeManagementV1HttpsLatencyRoutineData",
+      "description": "Data that describes the result of the HTTPS latency diagnostics routine, with the HTTPS requests issued to Google websites.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "latency": {
+          "description": "Output only. HTTPS latency if routine succeeded or failed because of HIGH_LATENCY or VERY_HIGH_LATENCY.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "problem": {
+          "description": "Output only. HTTPS latency routine problem if a problem occurred.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "HTTPS_LATENCY_PROBLEM_UNSPECIFIED",
+            "FAILED_DNS_RESOLUTIONS",
+            "FAILED_HTTPS_REQUESTS",
+            "HIGH_LATENCY",
+            "VERY_HIGH_LATENCY"
+          ],
+          "enumDescriptions": [
+            "HTTPS latency problem not specified.",
+            "One or more DNS resolutions resulted in a failure.",
+            "One or more HTTPS requests resulted in a failure.",
+            "Average HTTPS request latency time between 500ms and 1000ms is high.",
+            "Average HTTPS request latency time greater than 1000ms is very high."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -1969,9 +2413,77 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleChromeManagementV1ListTelemetryEventsResponse": {
+      "id": "GoogleChromeManagementV1ListTelemetryEventsResponse",
+      "description": "Response message for listing telemetry events for a customer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "Token to specify next page in the list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "telemetryEvents": {
+          "description": "Telemetry events returned in the response.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1TelemetryEvent"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1ListTelemetryUsersResponse": {
+      "id": "GoogleChromeManagementV1ListTelemetryUsersResponse",
+      "description": "Response message for listing telemetry users for a customer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "Token to specify next page in the list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "telemetryUsers": {
+          "description": "Telemetry users returned in the response.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1TelemetryUser"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleChromeManagementV1MemoryInfo": {
       "id": "GoogleChromeManagementV1MemoryInfo",
-      "description": "Memory information of a device.",
+      "description": "Memory information of a device. * This field has both telemetry and device information: - `totalRamBytes` - Device information - `availableRamBytes` - Telemetry information - `totalMemoryEncryption` - Device information * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: - `totalRamBytes` - Only at upload - `availableRamBytes` - Every 10 minutes - `totalMemoryEncryption` - at device startup * Default Data Reporting Frequency: - `totalRamBytes` - 3 hours - `availableRamBytes` - 3 hours - `totalMemoryEncryption` - at device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: only for `totalMemoryEncryption` * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1986,6 +2498,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "totalMemoryEncryption": {
+          "description": "Output only. Total memory encryption info for the device.",
+          "$ref": "GoogleChromeManagementV1TotalMemoryEncryptionInfo"
         },
         "totalRamBytes": {
           "description": "Output only. Total RAM in bytes.",
@@ -2003,7 +2519,7 @@
     },
     "GoogleChromeManagementV1MemoryStatusReport": {
       "id": "GoogleChromeManagementV1MemoryStatusReport",
-      "description": "Contains samples of memory status reports.",
+      "description": "Contains samples of memory status reports. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: Only at upload, SystemRamFreeByes is collected every 10 minutes * Default Data Reporting Frequency: Every 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2053,16 +2569,216 @@
       "additionalProperties": null,
       "items": null
     },
-    "GoogleChromeManagementV1NetworkStatusReport": {
-      "id": "GoogleChromeManagementV1NetworkStatusReport",
-      "description": "State of visible/configured networks.",
+    "GoogleChromeManagementV1NetworkDevice": {
+      "id": "GoogleChromeManagementV1NetworkDevice",
+      "description": "Details about the network device. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportNetworkDeviceConfiguration](https://chromeenterprise.google/policies/#ReportNetworkDeviceConfiguration) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "iccid": {
+          "description": "Output only. The integrated circuit card ID associated with the device's sim card.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "imei": {
+          "description": "Output only. IMEI (if applicable) of the corresponding network device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "macAddress": {
+          "description": "Output only. MAC address (if applicable) of the corresponding network device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "mdn": {
+          "description": "Output only. The mobile directory number associated with the device's sim card.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "meid": {
+          "description": "Output only. MEID (if applicable) of the corresponding network device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Output only. Network device type.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "NETWORK_DEVICE_TYPE_UNSPECIFIED",
+            "CELLULAR_DEVICE",
+            "ETHERNET_DEVICE",
+            "WIFI_DEVICE"
+          ],
+          "enumDescriptions": [
+            "Network device type not specified.",
+            "Cellular device.",
+            "Ethernet device.",
+            "Wifi device."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1NetworkDiagnosticsReport": {
+      "id": "GoogleChromeManagementV1NetworkDiagnosticsReport",
+      "description": "Network testing results to determine the health of the device's network connection, for example whether the HTTPS latency is high or normal.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "httpsLatencyData": {
+          "description": "Output only. HTTPS latency test data.",
+          "$ref": "GoogleChromeManagementV1HttpsLatencyRoutineData"
+        },
+        "reportTime": {
+          "description": "Output only. Timestamp of when the diagnostics were collected.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1NetworkInfo": {
+      "id": "GoogleChromeManagementV1NetworkInfo",
+      "description": "Network device information. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportNetworkDeviceConfiguration](https://chromeenterprise.google/policies/#ReportNetworkDeviceConfiguration) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "networkDevices": {
+          "description": "Output only. List of network devices.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1NetworkDevice"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1NetworkStatusReport": {
+      "id": "GoogleChromeManagementV1NetworkStatusReport",
+      "description": "State of visible/configured networks. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportNetworkStatus](https://chromeenterprise.google/policies/#ReportNetworkStatus) * Data Collection Frequency: 60 minutes * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: Yes",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "connectionState": {
+          "description": "Output only. Current connection state of the network.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "NETWORK_CONNECTION_STATE_UNSPECIFIED",
+            "ONLINE",
+            "CONNECTED",
+            "PORTAL",
+            "CONNECTING",
+            "NOT_CONNECTED"
+          ],
+          "enumDescriptions": [
+            "Network connection state unspecified.",
+            "The network is connected and internet connectivity is available.",
+            "The network is connected and not in a detected portal state, but internet connectivity may not be available.",
+            "The network is connected but a portal state was detected. Internet connectivity may be limited.",
+            "The network is in the process of connecting.",
+            "The network is not connected."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "connectionType": {
+          "description": "Output only. Network connection type.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "NETWORK_TYPE_UNSPECIFIED",
+            "CELLULAR",
+            "ETHERNET",
+            "TETHER",
+            "VPN",
+            "WIFI"
+          ],
+          "enumDescriptions": [
+            "Network connection type unspecified",
+            "Cellular network connection.",
+            "Ethernet network connection.",
+            "Tether network connection.",
+            "VPN network connection.",
+            "Wifi network connection."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "encryptionOn": {
+          "description": "Output only. Whether the wifi encryption key is turned off.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "gatewayIpAddress": {
           "description": "Output only. Gateway IP address.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "guid": {
+          "description": "Output only. Network connection guid.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2075,6 +2791,16 @@
           "description": "Output only. LAN IP address.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "receivingBitRateMbps": {
+          "description": "Output only. Receiving bit rate measured in Megabits per second.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -2110,6 +2836,46 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "transmissionBitRateMbps": {
+          "description": "Output only. Transmission bit rate measured in Megabits per second.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "transmissionPowerDbm": {
+          "description": "Output only. Transmission power measured in decibels.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "wifiLinkQuality": {
+          "description": "Output only. Wifi link quality. Value ranges from [0, 70]. 0 indicates no signal and 70 indicates a strong signal.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "wifiPowerManagementEnabled": {
+          "description": "Output only. Wifi power management enabled",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2117,7 +2883,7 @@
     },
     "GoogleChromeManagementV1OsUpdateStatus": {
       "id": "GoogleChromeManagementV1OsUpdateStatus",
-      "description": "Contains information regarding the current OS update status.",
+      "description": "Contains information regarding the current OS update status. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceOsUpdateStatus](https://chromeenterprise.google/policies/#ReportDeviceOsUpdateStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2197,9 +2963,43 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleChromeManagementV1PeripheralsReport": {
+      "id": "GoogleChromeManagementV1PeripheralsReport",
+      "description": "Peripherals report.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "reportTime": {
+          "description": "Output only. Timestamp of when the report was collected.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "usbPeripheralReport": {
+          "description": "Reports of all usb connected devices.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1UsbPeripheralReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleChromeManagementV1StorageInfo": {
       "id": "GoogleChromeManagementV1StorageInfo",
-      "description": "Status data for storage.",
+      "description": "Status data for storage. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceStorageStatus](https://chromeenterprise.google/policies/#ReportDeviceStorageStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2285,14 +3085,14 @@
     },
     "GoogleChromeManagementV1StorageStatusReport": {
       "id": "GoogleChromeManagementV1StorageStatusReport",
-      "description": "Status data for storage.",
+      "description": "Status data for storage. * This field is telemetry information and this will change over time as the device is utilized. * Data for this field is controlled via policy: [ReportDeviceStorageStatus](https://chromeenterprise.google/policies/#ReportDeviceStorageStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "disk": {
-          "description": "Output only. Reports on disk",
+          "description": "Output only. Reports on disk.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2314,6 +3114,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent": {
+      "id": "GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent",
+      "description": "`TelemetryAudioSevereUnderrunEvent` is triggered when a audio devices run out of buffer data for more than 5 seconds.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -2359,6 +3170,18 @@
           "additionalProperties": null,
           "items": {
             "$ref": "GoogleChromeManagementV1BatteryStatusReport"
+          }
+        },
+        "bootPerformanceReport": {
+          "description": "Output only. Boot performance reports of the device.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1BootPerformanceReport"
           }
         },
         "cpuInfo": {
@@ -2447,6 +3270,22 @@
           "additionalProperties": null,
           "items": null
         },
+        "networkDiagnosticsReport": {
+          "description": "Output only. Network diagnostics collected periodically.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1NetworkDiagnosticsReport"
+          }
+        },
+        "networkInfo": {
+          "description": "Output only. Network devices information.",
+          "$ref": "GoogleChromeManagementV1NetworkInfo"
+        },
         "networkStatusReport": {
           "description": "Output only. Network specs collected periodically.",
           "type": "array",
@@ -2506,6 +3345,546 @@
           "items": {
             "$ref": "GoogleChromeManagementV1StorageStatusReport"
           }
+        },
+        "thunderboltInfo": {
+          "description": "Output only. Information on Thunderbolt bus.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1ThunderboltInfo"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryDeviceInfo": {
+      "id": "GoogleChromeManagementV1TelemetryDeviceInfo",
+      "description": "Information about a device associated with telemetry data.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deviceId": {
+          "description": "Output only. The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the ChromeOS Devices tab.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "orgUnitId": {
+          "description": "Output only. Organization unit ID of the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryEvent": {
+      "id": "GoogleChromeManagementV1TelemetryEvent",
+      "description": "Telemetry data reported by a managed device.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "audioSevereUnderrunEvent": {
+          "description": "Output only. Payload for audio severe underrun event. Present only when the `event_type` field is `AUDIO_SEVERE_UNDERRUN`.",
+          "$ref": "GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent"
+        },
+        "device": {
+          "description": "Output only. Information about the device associated with the event.",
+          "$ref": "GoogleChromeManagementV1TelemetryDeviceInfo"
+        },
+        "eventType": {
+          "description": "The event type of the current event.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "EVENT_TYPE_UNSPECIFIED",
+            "AUDIO_SEVERE_UNDERRUN",
+            "USB_ADDED",
+            "USB_REMOVED",
+            "NETWORK_HTTPS_LATENCY_CHANGE"
+          ],
+          "enumDescriptions": [
+            "Event type unknown.",
+            "Triggered when a audio devices run out of buffer data for more than 5 seconds.",
+            "Triggered when USB devices are added.",
+            "Triggered when USB devices are removed.",
+            "Triggered when a new HTTPS latency problem was detected or the device has recovered form an existing HTTPS latency problem."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "httpsLatencyChangeEvent": {
+          "description": "Output only. Payload for HTTPS latency change event. Present only when `event_type` is `NETWORK_HTTPS_LATENCY_CHANGE`.",
+          "$ref": "GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent"
+        },
+        "name": {
+          "description": "Output only. Resource name of the event.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reportTime": {
+          "description": "Timestamp that represents when the event was reported.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "usbPeripheralsEvent": {
+          "description": "Output only. Payload for usb peripherals event. Present only when the `event_type` field is either `USB_ADDED` or `USB_REMOVED`.",
+          "$ref": "GoogleChromeManagementV1TelemetryUsbPeripheralsEvent"
+        },
+        "user": {
+          "description": "Output only. Information about the user associated with the event.",
+          "$ref": "GoogleChromeManagementV1TelemetryUserInfo"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent": {
+      "id": "GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent",
+      "description": "Https latency routine is run periodically and `TelemetryHttpsLatencyChangeEvent` is triggered if a latency problem was detected or if the device has recovered from a latency problem..",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "httpsLatencyRoutineData": {
+          "description": "HTTPS latency routine data that triggered the event.",
+          "$ref": "GoogleChromeManagementV1HttpsLatencyRoutineData"
+        },
+        "httpsLatencyState": {
+          "description": "Current HTTPS latency state.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "HTTPS_LATENCY_STATE_UNSPECIFIED",
+            "RECOVERY",
+            "PROBLEM"
+          ],
+          "enumDescriptions": [
+            "HTTPS latency state is unspecified.",
+            "HTTPS latency recovered from a problem.",
+            "HTTPS latency problem."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryUsbPeripheralsEvent": {
+      "id": "GoogleChromeManagementV1TelemetryUsbPeripheralsEvent",
+      "description": "`TelemetryUsbPeripheralsEvent` is triggered USB devices are either added or removed.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "usbPeripheralReport": {
+          "description": "List of usb devices that were either added or removed.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1UsbPeripheralReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryUser": {
+      "id": "GoogleChromeManagementV1TelemetryUser",
+      "description": "Telemetry data collected from a managed user.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "customer": {
+          "description": "G Suite Customer whose enterprise enrolled the device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Resource name of the user.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "orgUnitId": {
+          "description": "Organization unit of the user.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userDevice": {
+          "description": "Telemetry data collected from a managed user and device.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1TelemetryUserDevice"
+          }
+        },
+        "userEmail": {
+          "description": "Email address of the user.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userId": {
+          "description": "Directory ID of the user.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryUserDevice": {
+      "id": "GoogleChromeManagementV1TelemetryUserDevice",
+      "description": "Telemetry data collected for a managed user and device.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "audioStatusReport": {
+          "description": "Output only. Audio reports collected periodically sorted in a decreasing order of report_time.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1AudioStatusReport"
+          }
+        },
+        "deviceId": {
+          "description": "The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the ChromeOS Devices tab.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "peripheralsReport": {
+          "description": "Output only. Peripherals reports collected periodically sorted in a decreasing order of report_time.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleChromeManagementV1PeripheralsReport"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TelemetryUserInfo": {
+      "id": "GoogleChromeManagementV1TelemetryUserInfo",
+      "description": "Information about a user associated with telemetry data.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "email": {
+          "description": "Output only. User's email.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "orgUnitId": {
+          "description": "Output only. Organization unit ID of the user.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1ThunderboltInfo": {
+      "id": "GoogleChromeManagementV1ThunderboltInfo",
+      "description": "Thunderbolt bus info. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceSecurityStatus](https://chromeenterprise.google/policies/#ReportDeviceSecurityStatus) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: No * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "securityLevel": {
+          "description": "Security level of the Thunderbolt bus.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED",
+            "THUNDERBOLT_SECURITY_NONE_LEVEL",
+            "THUNDERBOLT_SECURITY_USER_LEVEL",
+            "THUNDERBOLT_SECURITY_SECURE_LEVEL",
+            "THUNDERBOLT_SECURITY_DP_ONLY_LEVEL",
+            "THUNDERBOLT_SECURITY_USB_ONLY_LEVEL",
+            "THUNDERBOLT_SECURITY_NO_PCIE_LEVEL"
+          ],
+          "enumDescriptions": [
+            "Thunderbolt security level is not set.",
+            "All devices are automatically connected by the firmware. No user approval is needed.",
+            "User is asked whether the device is allowed to be connected.",
+            "User is asked whether the device is allowed to be connected. In addition the device is sent a challenge that should match the expected one based on a random key written to the key sysfs attribute",
+            "The firmware automatically creates tunnels for Thunderbolt.",
+            "The firmware automatically creates tunnels for the USB controller and Display Port in a dock. All PCIe links downstream of the dock are removed.",
+            "PCIE tunneling is disabled."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1TotalMemoryEncryptionInfo": {
+      "id": "GoogleChromeManagementV1TotalMemoryEncryptionInfo",
+      "description": "Memory encryption information of a device. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceMemoryInfo](https://chromeenterprise.google/policies/#ReportDeviceMemoryInfo) * Data Collection Frequency: At device startup * Default Data Reporting Frequency: At device startup - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: Yes * Reported for affiliated users only: N/A",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "encryptionAlgorithm": {
+          "description": "Memory encryption algorithm.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED",
+            "MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN",
+            "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128",
+            "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256"
+          ],
+          "enumDescriptions": [
+            "Memory encryption algorithm is not set.",
+            "The memory encryption algorithm being used is unknown.",
+            "The memory encryption algorithm is using the AES_XTS encryption algorithm with a 128 bit block cypher.",
+            "The memory encryption algorithm is using the AES_XTS encryption algorithm with a 256 bit block cypher."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "encryptionState": {
+          "description": "The state of memory encryption on the device.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MEMORY_ENCRYPTION_STATE_UNSPECIFIED",
+            "MEMORY_ENCRYPTION_STATE_UNKNOWN",
+            "MEMORY_ENCRYPTION_STATE_DISABLED",
+            "MEMORY_ENCRYPTION_STATE_TME",
+            "MEMORY_ENCRYPTION_STATE_MKTME"
+          ],
+          "enumDescriptions": [
+            "Memory encryption state is not set.",
+            "The memory encryption state is unknown.",
+            "Memory encrpytion on the device is disabled.",
+            "Memory encryption on the device uses total memory encryption.",
+            "Memory encryption on the device uses multi-key total memory encryption."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "keyLength": {
+          "description": "The length of the encryption keys.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxKeys": {
+          "description": "The maximum number of keys that can be used for encryption.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleChromeManagementV1UsbPeripheralReport": {
+      "id": "GoogleChromeManagementV1UsbPeripheralReport",
+      "description": "USB connected peripheral report.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "categories": {
+          "description": "Output only. Categories the device belongs to https://www.usb.org/defined-class-codes",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "classId": {
+          "description": "Output only. Class ID https://www.usb.org/defined-class-codes",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "firmwareVersion": {
+          "description": "Output only. Firmware version",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Output only. Device name, model name, or product name",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pid": {
+          "description": "Output only. Product ID",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "subclassId": {
+          "description": "Output only. Subclass ID https://www.usb.org/defined-class-codes",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "vendor": {
+          "description": "Output only. Vendor name",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "vid": {
+          "description": "Output only. Vendor ID",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2844,6 +4223,215 @@
         "reports": {
           "resources": {},
           "methods": {
+            "countChromeDevicesReachingAutoExpirationDate": {
+              "id": "chromemanagement.customers.reports.countChromeDevicesReachingAutoExpirationDate",
+              "path": "v1/{+customer}/reports:countChromeDevicesReachingAutoExpirationDate",
+              "httpMethod": "GET",
+              "description": "Generate report of the number of devices expiring in each month of the selected time frame. Devices are grouped by auto update expiration date and model. Further information can be found [here](https://support.google.com/chrome/a/answer/10564947).",
+              "parameters": {
+                "customer": {
+                  "description": "Required. The customer ID or \"my_customer\" prefixed with \"customers/\".",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^customers/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "maxAueDate": {
+                  "description": "Optional. Maximum expiration date in format yyyy-mm-dd in UTC timezone. If included returns all devices that have already expired and devices with auto expiration date equal to or earlier than the maximum date.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "minAueDate": {
+                  "description": "Optional. Maximum expiration date in format yyyy-mm-dd in UTC timezone. If included returns all devices that have already expired and devices with auto expiration date equal to or later than the minimum date.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "orgUnitId": {
+                  "description": "Optional. The organizational unit ID, if omitted, will return data for all organizational units.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "customer"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/chrome.management.reports.readonly"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "countChromeDevicesThatNeedAttention": {
+              "id": "chromemanagement.customers.reports.countChromeDevicesThatNeedAttention",
+              "path": "v1/{+customer}/reports:countChromeDevicesThatNeedAttention",
+              "httpMethod": "GET",
+              "description": "Counts of ChromeOS devices that have not synced policies or have lacked user activity in the past 28 days, are out of date, or are not complaint. Further information can be found here https://support.google.com/chrome/a/answer/10564947",
+              "parameters": {
+                "customer": {
+                  "description": "Required. The customer ID or \"my_customer\" prefixed with \"customers/\".",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^customers/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "orgUnitId": {
+                  "description": "Optional. The ID of the organizational unit. If omitted, all data will be returned.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "readMask": {
+                  "description": "Required. Mask of the fields that should be populated in the returned report.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": "google-fieldmask",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "customer"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/chrome.management.reports.readonly"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "countChromeHardwareFleetDevices": {
+              "id": "chromemanagement.customers.reports.countChromeHardwareFleetDevices",
+              "path": "v1/{+customer}/reports:countChromeHardwareFleetDevices",
+              "httpMethod": "GET",
+              "description": "Counts of devices with a specific hardware specification from the requested hardware type (for example model name, processor type). Further information can be found here https://support.google.com/chrome/a/answer/10564947",
+              "parameters": {
+                "customer": {
+                  "description": "Required. The customer ID or \"my_customer\".",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^customers/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "orgUnitId": {
+                  "description": "Optional. The ID of the organizational unit. If omitted, all data will be returned.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "readMask": {
+                  "description": "Required. Mask of the fields that should be populated in the returned report.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": "google-fieldmask",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "customer"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/chrome.management.reports.readonly"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
             "countChromeVersions": {
               "id": "chromemanagement.customers.reports.countChromeVersions",
               "path": "v1/{+customer}/reports:countChromeVersions",
@@ -2958,7 +4546,7 @@
                   "repeated": false
                 },
                 "filter": {
-                  "description": "Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Supported filter fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * latest_profile_active_date * permission_name",
+                  "description": "Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Supported filter fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * latest_profile_active_date * permission_name * app_id",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -2972,7 +4560,7 @@
                   "repeated": false
                 },
                 "orderBy": {
-                  "description": "Field used to order results. Supported order by fields: * app_name * app_type * install_type * number_of_permissions * total_install_count",
+                  "description": "Field used to order results. Supported order by fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * app_id",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -3200,6 +4788,57 @@
             "devices": {
               "resources": {},
               "methods": {
+                "get": {
+                  "id": "chromemanagement.customers.telemetry.devices.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Get telemetry device.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the `TelemetryDevice` to return.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+/telemetry/devices/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "readMask": {
+                      "description": "Required. Read mask to specify which fields to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1TelemetryDevice"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.telemetry.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
                 "list": {
                   "id": "chromemanagement.customers.telemetry.devices.list",
                   "path": "v1/{+parent}/telemetry/devices",
@@ -3221,7 +4860,7 @@
                       "repeated": false
                     },
                     "pageSize": {
-                      "description": "Maximum number of results to return. Default value is 100. Maximum value is 200.",
+                      "description": "Maximum number of results to return. Default value is 100. Maximum value is 1000.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3283,6 +4922,253 @@
                   "request": null,
                   "response": {
                     "$ref": "GoogleChromeManagementV1ListTelemetryDevicesResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.telemetry.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "events": {
+              "resources": {},
+              "methods": {
+                "list": {
+                  "id": "chromemanagement.customers.telemetry.events.list",
+                  "path": "v1/{+parent}/telemetry/events",
+                  "httpMethod": "GET",
+                  "description": "List telemetry events.",
+                  "parameters": {
+                    "filter": {
+                      "description": "Optional. Only include resources that match the filter. Supported filter fields: - device_id - user_id - device_org_unit_id - user_org_unit_id - timestamp - event_type The \"timestamp\" filter accepts either Epoch milliseconds or RFC 3339 formatted time surrounded by simple double quotes.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "Optional. Maximum number of results to return. Default value is 100. Maximum value is 1000.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "Optional. Token to specify next page in the list.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. Customer id or \"my_customer\" to use the customer associated to the account making the request.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "readMask": {
+                      "description": "Required. Read mask to specify which fields to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1ListTelemetryEventsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.telemetry.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "users": {
+              "resources": {},
+              "methods": {
+                "get": {
+                  "id": "chromemanagement.customers.telemetry.users.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Get telemetry user.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the `TelemetryUser` to return.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+/telemetry/users/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "readMask": {
+                      "description": "Read mask to specify which fields to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1TelemetryUser"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/chrome.management.telemetry.readonly"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "chromemanagement.customers.telemetry.users.list",
+                  "path": "v1/{+parent}/telemetry/users",
+                  "httpMethod": "GET",
+                  "description": "List all telemetry users.",
+                  "parameters": {
+                    "filter": {
+                      "description": "Only include resources that match the filter. Supported filter fields: - user_id - user_org_unit_id ",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "Maximum number of results to return. Default value is 100. Maximum value is 1000.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "Token to specify next page in the list.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. Customer id or \"my_customer\" to use the customer associated to the account making the request.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^customers/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "readMask": {
+                      "description": "Read mask to specify which fields to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleChromeManagementV1ListTelemetryUsersResponse"
                   },
                   "scopes": [
                     "https://www.googleapis.com/auth/chrome.management.telemetry.readonly"

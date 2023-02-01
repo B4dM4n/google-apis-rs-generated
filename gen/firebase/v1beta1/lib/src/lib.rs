@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [available_projects](resources/available_projects/struct.AvailableProjectsActions.html)\n  * [*list*](resources/available_projects/struct.ListRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*get*](resources/operations/struct.GetRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*addFirebase*](resources/projects/struct.AddFirebaseRequestBuilder.html), [*addGoogleAnalytics*](resources/projects/struct.AddGoogleAnalyticsRequestBuilder.html), [*get*](resources/projects/struct.GetRequestBuilder.html), [*getAdminSdkConfig*](resources/projects/struct.GetAdminSdkConfigRequestBuilder.html), [*getAnalyticsDetails*](resources/projects/struct.GetAnalyticsDetailsRequestBuilder.html), [*list*](resources/projects/struct.ListRequestBuilder.html), [*patch*](resources/projects/struct.PatchRequestBuilder.html), [*removeAnalytics*](resources/projects/struct.RemoveAnalyticsRequestBuilder.html), [*searchApps*](resources/projects/struct.SearchAppsRequestBuilder.html)\n  * [android_apps](resources/projects/android_apps/struct.AndroidAppsActions.html)\n    * [*create*](resources/projects/android_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/android_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/android_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/android_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/android_apps/struct.PatchRequestBuilder.html)\n    * [sha](resources/projects/android_apps/sha/struct.ShaActions.html)\n      * [*create*](resources/projects/android_apps/sha/struct.CreateRequestBuilder.html), [*delete*](resources/projects/android_apps/sha/struct.DeleteRequestBuilder.html), [*list*](resources/projects/android_apps/sha/struct.ListRequestBuilder.html)\n  * [available_locations](resources/projects/available_locations/struct.AvailableLocationsActions.html)\n    * [*list*](resources/projects/available_locations/struct.ListRequestBuilder.html)\n  * [default_location](resources/projects/default_location/struct.DefaultLocationActions.html)\n    * [*finalize*](resources/projects/default_location/struct.FinalizeRequestBuilder.html)\n  * [ios_apps](resources/projects/ios_apps/struct.IosAppsActions.html)\n    * [*create*](resources/projects/ios_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/ios_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/ios_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/ios_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/ios_apps/struct.PatchRequestBuilder.html)\n  * [web_apps](resources/projects/web_apps/struct.WebAppsActions.html)\n    * [*create*](resources/projects/web_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/web_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/web_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/web_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/web_apps/struct.PatchRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [available_projects](resources/available_projects/struct.AvailableProjectsActions.html)\n  * [*list*](resources/available_projects/struct.ListRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*get*](resources/operations/struct.GetRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*addFirebase*](resources/projects/struct.AddFirebaseRequestBuilder.html), [*addGoogleAnalytics*](resources/projects/struct.AddGoogleAnalyticsRequestBuilder.html), [*get*](resources/projects/struct.GetRequestBuilder.html), [*getAdminSdkConfig*](resources/projects/struct.GetAdminSdkConfigRequestBuilder.html), [*getAnalyticsDetails*](resources/projects/struct.GetAnalyticsDetailsRequestBuilder.html), [*list*](resources/projects/struct.ListRequestBuilder.html), [*patch*](resources/projects/struct.PatchRequestBuilder.html), [*removeAnalytics*](resources/projects/struct.RemoveAnalyticsRequestBuilder.html), [*searchApps*](resources/projects/struct.SearchAppsRequestBuilder.html)\n  * [android_apps](resources/projects/android_apps/struct.AndroidAppsActions.html)\n    * [*create*](resources/projects/android_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/android_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/android_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/android_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/android_apps/struct.PatchRequestBuilder.html), [*remove*](resources/projects/android_apps/struct.RemoveRequestBuilder.html), [*undelete*](resources/projects/android_apps/struct.UndeleteRequestBuilder.html)\n    * [sha](resources/projects/android_apps/sha/struct.ShaActions.html)\n      * [*create*](resources/projects/android_apps/sha/struct.CreateRequestBuilder.html), [*delete*](resources/projects/android_apps/sha/struct.DeleteRequestBuilder.html), [*list*](resources/projects/android_apps/sha/struct.ListRequestBuilder.html)\n  * [available_locations](resources/projects/available_locations/struct.AvailableLocationsActions.html)\n    * [*list*](resources/projects/available_locations/struct.ListRequestBuilder.html)\n  * [default_location](resources/projects/default_location/struct.DefaultLocationActions.html)\n    * [*finalize*](resources/projects/default_location/struct.FinalizeRequestBuilder.html)\n  * [ios_apps](resources/projects/ios_apps/struct.IosAppsActions.html)\n    * [*create*](resources/projects/ios_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/ios_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/ios_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/ios_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/ios_apps/struct.PatchRequestBuilder.html), [*remove*](resources/projects/ios_apps/struct.RemoveRequestBuilder.html), [*undelete*](resources/projects/ios_apps/struct.UndeleteRequestBuilder.html)\n  * [web_apps](resources/projects/web_apps/struct.WebAppsActions.html)\n    * [*create*](resources/projects/web_apps/struct.CreateRequestBuilder.html), [*get*](resources/projects/web_apps/struct.GetRequestBuilder.html), [*getConfig*](resources/projects/web_apps/struct.GetConfigRequestBuilder.html), [*list*](resources/projects/web_apps/struct.ListRequestBuilder.html), [*patch*](resources/projects/web_apps/struct.PatchRequestBuilder.html), [*remove*](resources/projects/web_apps/struct.RemoveRequestBuilder.html), [*undelete*](resources/projects/web_apps/struct.UndeleteRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -228,14 +229,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AndroidApp {
-        #[doc = "The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests."]
+        #[doc = "The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the `AndroidApp`. Be aware that this value is the UID of the API key, *not* the [`keyString`](https://cloud.google.com/api-keys/docs/reference/rest/v2/projects.locations.keys#Key.FIELDS.key_string) of the API key. The `keyString` is the value that can be found in the App’s [configuration artifact](../../rest/v1beta1/projects.androidApps/getConfig). If `api_key_id` is not set in requests to [`androidApps.Create`](../../rest/v1beta1/projects.androidApps/create), then Firebase automatically associates an `api_key_id` with the `AndroidApp`. This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. In patch requests, `api_key_id` cannot be set to an empty value, and the new UID must have no restrictions or only have restrictions that are valid for the associated `AndroidApp`. We recommend using the [Google Cloud Console](https://console.cloud.google.com/apis/credentials) to manage API keys."]
         #[serde(
             rename = "apiKeyId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_key_id: ::std::option::Option<String>,
-        #[doc = "Immutable. The globally unique, Firebase-assigned identifier for the `AndroidApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
+        #[doc = "Output only. Immutable. The globally unique, Firebase-assigned identifier for the `AndroidApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
         #[serde(
             rename = "appId",
             default,
@@ -249,6 +250,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "This checksum is computed by the server based on the value of other fields, and it may be sent with update requests to ensure the client has an up-to-date value before proceeding. Learn more about `etag` in Google’s [AIP-154 standard](https://google.aip.dev/154#declarative-friendly-resources). This etag is strongly validated."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "The resource name of the AndroidApp, in the format: projects/ PROJECT_IDENTIFIER/androidApps/APP_ID * PROJECT_IDENTIFIER: the parent Project’s [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google’s [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.androidApps#AndroidApp.FIELDS.app_id))."]
         #[serde(
             rename = "name",
@@ -263,13 +271,34 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub package_name: ::std::option::Option<String>,
-        #[doc = "Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `AndroidApp`."]
+        #[doc = "Output only. Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `AndroidApp`."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
+        #[doc = "The SHA1 certificate hashes for the AndroidApp."]
+        #[serde(
+            rename = "sha1Hashes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sha_1_hashes: ::std::option::Option<Vec<String>>,
+        #[doc = "The SHA256 certificate hashes for the AndroidApp."]
+        #[serde(
+            rename = "sha256Hashes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sha_256_hashes: ::std::option::Option<Vec<String>>,
+        #[doc = "Output only. The lifecycle state of the App."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::AndroidAppState>,
     }
     impl ::google_field_selector::FieldSelector for AndroidApp {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -277,6 +306,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AndroidApp {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AndroidAppState {
+        #[doc = "The App is active."]
+        Active,
+        #[doc = "The App has been soft-deleted. After an App has been in the `DELETED` state for more than 30 days, it is considered expired and will be permanently deleted. Up until this time, you can restore the App by calling `Undelete` ([Android](projects.androidApps/undelete) | [iOS](projects.iosApps/undelete) | [web](projects.webApps/undelete))."]
+        Deleted,
+        #[doc = "Unspecified state."]
+        StateUnspecified,
+    }
+    impl AndroidAppState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AndroidAppState::Active => "ACTIVE",
+                AndroidAppState::Deleted => "DELETED",
+                AndroidAppState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AndroidAppState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AndroidAppState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AndroidAppState, ()> {
+            Ok(match s {
+                "ACTIVE" => AndroidAppState::Active,
+                "DELETED" => AndroidAppState::Deleted,
+                "STATE_UNSPECIFIED" => AndroidAppState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AndroidAppState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AndroidAppState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AndroidAppState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => AndroidAppState::Active,
+                "DELETED" => AndroidAppState::Deleted,
+                "STATE_UNSPECIFIED" => AndroidAppState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AndroidAppState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AndroidAppState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -332,28 +437,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DefaultResources {
-        #[doc = "The default Firebase Hosting site name, in the format: PROJECT_ID Though rare, your `projectId` might already be used as the name for an existing Hosting site in another project (learn more about creating non-default, [additional sites](https://firebase.google.com/docs/hosting/multisites)). In these cases, your `projectId` is appended with a hyphen then five alphanumeric characters to create your default Hosting site name. For example, if your `projectId` is `myproject123`, your default Hosting site name might be: `myproject123-a5c16`"]
+        #[doc = "Output only. The default Firebase Hosting site name, in the format: PROJECT_ID Though rare, your `projectId` might already be used as the name for an existing Hosting site in another project (learn more about creating non-default, [additional sites](https://firebase.google.com/docs/hosting/multisites)). In these cases, your `projectId` is appended with a hyphen then five alphanumeric characters to create your default Hosting site name. For example, if your `projectId` is `myproject123`, your default Hosting site name might be: `myproject123-a5c16`"]
         #[serde(
             rename = "hostingSite",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hosting_site: ::std::option::Option<String>,
-        #[doc = "The ID of the Project’s default GCP resource location. The location is one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations). This field is omitted if the default GCP resource location has not been finalized yet. To set a Project’s default GCP resource location, call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you add Firebase resources to the Project."]
+        #[doc = "Output only. The ID of the Project’s default GCP resource location. The location is one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations). This field is omitted if the default GCP resource location has not been finalized yet. To set a Project’s default GCP resource location, call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you add Firebase resources to the Project."]
         #[serde(
             rename = "locationId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location_id: ::std::option::Option<String>,
-        #[doc = "The default Firebase Realtime Database instance name, in the format: PROJECT_ID Though rare, your `projectId` might already be used as the name for an existing Realtime Database instance in another project (learn more about [database sharding](https://firebase.google.com/docs/database/usage/sharding)). In these cases, your `projectId` is appended with a hyphen then five alphanumeric characters to create your default Realtime Database instance name. For example, if your `projectId` is `myproject123`, your default database instance name might be: `myproject123-a5c16`"]
+        #[doc = "Output only. The default Firebase Realtime Database instance name, in the format: PROJECT_ID Though rare, your `projectId` might already be used as the name for an existing Realtime Database instance in another project (learn more about [database sharding](https://firebase.google.com/docs/database/usage/sharding)). In these cases, your `projectId` is appended with a hyphen then five alphanumeric characters to create your default Realtime Database instance name. For example, if your `projectId` is `myproject123`, your default database instance name might be: `myproject123-a5c16`"]
         #[serde(
             rename = "realtimeDatabaseInstance",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub realtime_database_instance: ::std::option::Option<String>,
-        #[doc = "The default Cloud Storage for Firebase storage bucket, in the format: PROJECT_ID.appspot.com"]
+        #[doc = "Output only. The default Cloud Storage for Firebase storage bucket, in the format: PROJECT_ID.appspot.com"]
         #[serde(
             rename = "storageBucket",
             default,
@@ -439,6 +544,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FirebaseAppInfo {
+        #[doc = "The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the App. Be aware that this value is the UID of the API key, *not* the [`keyString`](https://cloud.google.com/api-keys/docs/reference/rest/v2/projects.locations.keys#Key.FIELDS.key_string) of the API key. The `keyString` is the value that can be found in the App’s configuration artifact ([`AndroidApp`](../../rest/v1beta1/projects.androidApps/getConfig) | [`IosApp`](../../rest/v1beta1/projects.iosApps/getConfig) | [`WebApp`](../../rest/v1beta1/projects.webApps/getConfig)). If `api_key_id` is not set in requests to create the App ([`AndroidApp`](../../rest/v1beta1/projects.androidApps/create) | [`IosApp`](../../rest/v1beta1/projects.iosApps/create) | [`WebApp`](../../rest/v1beta1/projects.webApps/create)), then Firebase automatically associates an `api_key_id` with the App. This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned."]
+        #[serde(
+            rename = "apiKeyId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_key_id: ::std::option::Option<String>,
         #[doc = "Output only. Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
         #[serde(
             rename = "appId",
@@ -474,6 +586,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub platform: ::std::option::Option<crate::schemas::FirebaseAppInfoPlatform>,
+        #[doc = "Output only. The lifecycle state of the App."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::FirebaseAppInfoState>,
     }
     impl ::google_field_selector::FieldSelector for FirebaseAppInfo {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -566,6 +685,82 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FirebaseAppInfoState {
+        #[doc = "The App is active."]
+        Active,
+        #[doc = "The App has been soft-deleted. After an App has been in the `DELETED` state for more than 30 days, it is considered expired and will be permanently deleted. Up until this time, you can restore the App by calling `Undelete` ([Android](projects.androidApps/undelete) | [iOS](projects.iosApps/undelete) | [web](projects.webApps/undelete))."]
+        Deleted,
+        #[doc = "Unspecified state."]
+        StateUnspecified,
+    }
+    impl FirebaseAppInfoState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FirebaseAppInfoState::Active => "ACTIVE",
+                FirebaseAppInfoState::Deleted => "DELETED",
+                FirebaseAppInfoState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FirebaseAppInfoState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FirebaseAppInfoState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FirebaseAppInfoState, ()> {
+            Ok(match s {
+                "ACTIVE" => FirebaseAppInfoState::Active,
+                "DELETED" => FirebaseAppInfoState::Deleted,
+                "STATE_UNSPECIFIED" => FirebaseAppInfoState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FirebaseAppInfoState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FirebaseAppInfoState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FirebaseAppInfoState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => FirebaseAppInfoState::Active,
+                "DELETED" => FirebaseAppInfoState::Deleted,
+                "STATE_UNSPECIFIED" => FirebaseAppInfoState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FirebaseAppInfoState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FirebaseAppInfoState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -579,6 +774,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FirebaseProject {
+        #[doc = "A set of user-defined annotations for the FirebaseProject. Learn more about annotations in Google’s [AIP-128 standard](https://google.aip.dev/128#annotations). These annotations are intended solely for developers and client-side tools. Firebase services will not mutate this annotations set."]
+        #[serde(
+            rename = "annotations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub annotations: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
         #[doc = "The user-assigned display name of the Project."]
         #[serde(
             rename = "displayName",
@@ -586,6 +788,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "This checksum is computed by the server based on the value of other fields, and it may be sent with update requests to ensure the client has an up-to-date value before proceeding. Learn more about `etag` in Google’s [AIP-154 standard](https://google.aip.dev/154#declarative-friendly-resources). This etag is strongly validated."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "The resource name of the Project, in the format: projects/PROJECT_IDENTIFIER PROJECT_IDENTIFIER: the Project’s [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google’s [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`."]
         #[serde(
             rename = "name",
@@ -593,14 +802,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. A user-assigned unique identifier for the Project. This identifier may appear in URLs or names for some Firebase resources associated with the Project, but it should generally be treated as a convenience alias to reference the Project."]
+        #[doc = "Output only. Immutable. A user-assigned unique identifier for the Project. This identifier may appear in URLs or names for some Firebase resources associated with the Project, but it should generally be treated as a convenience alias to reference the Project."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "Immutable. The globally unique, Google-assigned canonical identifier for the Project. Use this identifier when configuring integrations and/or making API calls to Firebase or third-party services."]
+        #[doc = "Output only. Immutable. The globally unique, Google-assigned canonical identifier for the Project. Use this identifier when configuring integrations and/or making API calls to Firebase or third-party services."]
         #[serde(
             rename = "projectNumber",
             default,
@@ -608,14 +817,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub project_number: ::std::option::Option<i64>,
-        #[doc = "The default Firebase resources associated with the Project."]
+        #[doc = "Output only. The default Firebase resources associated with the Project."]
         #[serde(
             rename = "resources",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resources: ::std::option::Option<crate::schemas::DefaultResources>,
-        #[doc = "Output only. The lifecycle state of the Project. Updates to the state must be performed via com.google.cloudresourcemanager.v1.Projects.DeleteProject and com.google.cloudresourcemanager.v1.Projects.UndeleteProject"]
+        #[doc = "Output only. The lifecycle state of the Project."]
         #[serde(
             rename = "state",
             default,
@@ -635,9 +844,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum FirebaseProjectState {
-        #[doc = "The normal and active state."]
+        #[doc = "The Project is active."]
         Active,
-        #[doc = "The Project has been marked for deletion by the user."]
+        #[doc = "The Project has been soft-deleted."]
         Deleted,
         #[doc = "Unspecified state."]
         StateUnspecified,
@@ -722,14 +931,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct IosApp {
-        #[doc = "The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests."]
+        #[doc = "The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the `IosApp`. Be aware that this value is the UID of the API key, *not* the [`keyString`](https://cloud.google.com/api-keys/docs/reference/rest/v2/projects.locations.keys#Key.FIELDS.key_string) of the API key. The `keyString` is the value that can be found in the App’s [configuration artifact](../../rest/v1beta1/projects.iosApps/getConfig). If `api_key_id` is not set in requests to [`iosApps.Create`](../../rest/v1beta1/projects.iosApps/create), then Firebase automatically associates an `api_key_id` with the `IosApp`. This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. In patch requests, `api_key_id` cannot be set to an empty value, and the new UID must have no restrictions or only have restrictions that are valid for the associated `IosApp`. We recommend using the [Google Cloud Console](https://console.cloud.google.com/apis/credentials) to manage API keys."]
         #[serde(
             rename = "apiKeyId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_key_id: ::std::option::Option<String>,
-        #[doc = "Immutable. The globally unique, Firebase-assigned identifier for the `IosApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
+        #[doc = "Output only. Immutable. The globally unique, Firebase-assigned identifier for the `IosApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
         #[serde(
             rename = "appId",
             default,
@@ -757,6 +966,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "This checksum is computed by the server based on the value of other fields, and it may be sent with update requests to ensure the client has an up-to-date value before proceeding. Learn more about `etag` in Google’s [AIP-154 standard](https://google.aip.dev/154#declarative-friendly-resources). This etag is strongly validated."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "The resource name of the IosApp, in the format: projects/PROJECT_IDENTIFIER /iosApps/APP_ID * PROJECT_IDENTIFIER: the parent Project’s [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google’s [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.iosApps#IosApp.FIELDS.app_id))."]
         #[serde(
             rename = "name",
@@ -764,13 +980,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `IosApp`."]
+        #[doc = "Output only. Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `IosApp`."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
+        #[doc = "Output only. The lifecycle state of the App."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::IosAppState>,
         #[doc = "The Apple Developer Team ID associated with the App in the App Store."]
         #[serde(
             rename = "teamId",
@@ -785,6 +1008,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for IosApp {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IosAppState {
+        #[doc = "The App is active."]
+        Active,
+        #[doc = "The App has been soft-deleted. After an App has been in the `DELETED` state for more than 30 days, it is considered expired and will be permanently deleted. Up until this time, you can restore the App by calling `Undelete` ([Android](projects.androidApps/undelete) | [iOS](projects.iosApps/undelete) | [web](projects.webApps/undelete))."]
+        Deleted,
+        #[doc = "Unspecified state."]
+        StateUnspecified,
+    }
+    impl IosAppState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IosAppState::Active => "ACTIVE",
+                IosAppState::Deleted => "DELETED",
+                IosAppState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IosAppState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IosAppState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<IosAppState, ()> {
+            Ok(match s {
+                "ACTIVE" => IosAppState::Active,
+                "DELETED" => IosAppState::Deleted,
+                "STATE_UNSPECIFIED" => IosAppState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IosAppState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IosAppState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IosAppState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => IosAppState::Active,
+                "DELETED" => IosAppState::Deleted,
+                "STATE_UNSPECIFIED" => IosAppState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IosAppState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IosAppState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -865,7 +1164,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAndroidAppsResponse {
+    impl crate::GetNextPageToken<String> for ListAndroidAppsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -908,7 +1207,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAvailableLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListAvailableLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -951,7 +1250,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAvailableProjectsResponse {
+    impl crate::GetNextPageToken<String> for ListAvailableProjectsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -994,7 +1293,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListFirebaseProjectsResponse {
+    impl crate::GetNextPageToken<String> for ListFirebaseProjectsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1037,7 +1336,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListIosAppsResponse {
+    impl crate::GetNextPageToken<String> for ListIosAppsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1111,7 +1410,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListWebAppsResponse {
+    impl crate::GetNextPageToken<String> for ListWebAppsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1404,6 +1703,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ProductMetadata {
+        #[doc = "List of warnings related to the associated operation."]
+        #[serde(
+            rename = "warningMessages",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub warning_messages: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ProductMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ProjectInfo {
         #[doc = "The user-assigned display name of the GCP `Project`, for example: `My App`"]
         #[serde(
@@ -1480,6 +1810,162 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RemoveAndroidAppRequest {
+        #[doc = "If set to true, and the App is not found, the request will succeed but no action will be taken on the server."]
+        #[serde(
+            rename = "allowMissing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_missing: ::std::option::Option<bool>,
+        #[doc = "Checksum provided in the AndroidApp resource. If provided, this checksum ensures that the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "Determines whether to *immediately* delete the AndroidApp. If set to true, the App is immediately deleted from the Project and cannot be restored to the Project. If not set, defaults to false, which means the App will be set to expire in 30 days. Within the 30 days, the App may be restored to the Project using UndeleteAndroidApp."]
+        #[serde(
+            rename = "immediate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub immediate: ::std::option::Option<bool>,
+        #[doc = "If set to true, the request is only validated. The App will *not* be removed."]
+        #[serde(
+            rename = "validateOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validate_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for RemoveAndroidAppRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoveAndroidAppRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RemoveIosAppRequest {
+        #[doc = "If set to true, and the App is not found, the request will succeed but no action will be taken on the server."]
+        #[serde(
+            rename = "allowMissing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_missing: ::std::option::Option<bool>,
+        #[doc = "Checksum provided in the IosApp resource. If provided, this checksum ensures that the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "Determines whether to *immediately* delete the IosApp. If set to true, the App is immediately deleted from the Project and cannot be restored to the Project. If not set, defaults to false, which means the App will be set to expire in 30 days. Within the 30 days, the App may be restored to the Project using UndeleteIosApp"]
+        #[serde(
+            rename = "immediate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub immediate: ::std::option::Option<bool>,
+        #[doc = "If set to true, the request is only validated. The App will *not* be removed."]
+        #[serde(
+            rename = "validateOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validate_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for RemoveIosAppRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoveIosAppRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RemoveWebAppRequest {
+        #[doc = "If set to true, and the App is not found, the request will succeed but no action will be taken on the server."]
+        #[serde(
+            rename = "allowMissing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_missing: ::std::option::Option<bool>,
+        #[doc = "Checksum provided in the WebApp resource. If provided, this checksum ensures that the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "Determines whether to *immediately* delete the WebApp. If set to true, the App is immediately deleted from the Project and cannot be restored to the Project. If not set, defaults to false, which means the App will be set to expire in 30 days. Within the 30 days, the App may be restored to the Project using UndeleteWebApp"]
+        #[serde(
+            rename = "immediate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub immediate: ::std::option::Option<bool>,
+        #[doc = "If set to true, the request is only validated. The App will *not* be removed."]
+        #[serde(
+            rename = "validateOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validate_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for RemoveWebAppRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoveWebAppRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SearchFirebaseAppsResponse {
         #[doc = "One page of results from a call to `SearchFirebaseApps`."]
         #[serde(
@@ -1506,7 +1992,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SearchFirebaseAppsResponse {
+    impl crate::GetNextPageToken<String> for SearchFirebaseAppsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1790,15 +2276,129 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct UndeleteAndroidAppRequest {
+        #[doc = "Checksum provided in the AndroidApp resource. If provided, this checksum ensures that the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "If set to true, the request is only validated. The App will *not* be undeleted."]
+        #[serde(
+            rename = "validateOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validate_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for UndeleteAndroidAppRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UndeleteAndroidAppRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UndeleteIosAppRequest {
+        #[doc = "Checksum provided in the IosApp resource. If provided, this checksum ensures that the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "If set to true, the request is only validated. The App will *not* be undeleted."]
+        #[serde(
+            rename = "validateOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validate_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for UndeleteIosAppRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UndeleteIosAppRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UndeleteWebAppRequest {
+        #[doc = "Checksum provided in the WebApp resource. If provided, this checksum ensures that the client has an up-to-date value before proceeding."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
+        #[doc = "If set to true, the request is only validated. The App will *not* be undeleted."]
+        #[serde(
+            rename = "validateOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub validate_only: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for UndeleteWebAppRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UndeleteWebAppRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct WebApp {
-        #[doc = "The key_id of the GCP ApiKey associated with this App. If set must have no restrictions, or only have restrictions that are valid for the associated Firebase App. Cannot be set in create requests, instead an existing valid API Key will be chosen, or if no valid API Keys exist, one will be provisioned for you. Cannot be set to an empty value in update requests."]
+        #[doc = "The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the `WebApp`. Be aware that this value is the UID of the API key, *not* the [`keyString`](https://cloud.google.com/api-keys/docs/reference/rest/v2/projects.locations.keys#Key.FIELDS.key_string) of the API key. The `keyString` is the value that can be found in the App’s [configuration artifact](../../rest/v1beta1/projects.webApps/getConfig). If `api_key_id` is not set in requests to [`webApps.Create`](../../rest/v1beta1/projects.webApps/create), then Firebase automatically associates an `api_key_id` with the `WebApp`. This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. In patch requests, `api_key_id` cannot be set to an empty value, and the new UID must have no restrictions or only have restrictions that are valid for the associated `WebApp`. We recommend using the [Google Cloud Console](https://console.cloud.google.com/apis/credentials) to manage API keys."]
         #[serde(
             rename = "apiKeyId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_key_id: ::std::option::Option<String>,
-        #[doc = "Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
+        #[doc = "Output only. Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified."]
         #[serde(
             rename = "appId",
             default,
@@ -1819,6 +2419,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "This checksum is computed by the server based on the value of other fields, and it may be sent with update requests to ensure the client has an up-to-date value before proceeding. Learn more about `etag` in Google’s [AIP-154 standard](https://google.aip.dev/154#declarative-friendly-resources). This etag is strongly validated."]
+        #[serde(
+            rename = "etag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub etag: ::std::option::Option<String>,
         #[doc = "The resource name of the WebApp, in the format: projects/PROJECT_IDENTIFIER /webApps/APP_ID * PROJECT_IDENTIFIER: the parent Project’s [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google’s [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.webApps#WebApp.FIELDS.app_id))."]
         #[serde(
             rename = "name",
@@ -1826,13 +2433,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `WebApp`."]
+        #[doc = "Output only. Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `WebApp`."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
+        #[doc = "Output only. The lifecycle state of the App."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::WebAppState>,
         #[doc = "Output only. Immutable. A unique, Firebase-assigned identifier for the `WebApp`. This identifier is only used to populate the `namespace` value for the `WebApp`. For most use cases, use `appId` to identify or reference the App. The `webId` value is only unique within a `FirebaseProject` and its associated Apps."]
         #[serde(
             rename = "webId",
@@ -1851,6 +2465,82 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum WebAppState {
+        #[doc = "The App is active."]
+        Active,
+        #[doc = "The App has been soft-deleted. After an App has been in the `DELETED` state for more than 30 days, it is considered expired and will be permanently deleted. Up until this time, you can restore the App by calling `Undelete` ([Android](projects.androidApps/undelete) | [iOS](projects.iosApps/undelete) | [web](projects.webApps/undelete))."]
+        Deleted,
+        #[doc = "Unspecified state."]
+        StateUnspecified,
+    }
+    impl WebAppState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                WebAppState::Active => "ACTIVE",
+                WebAppState::Deleted => "DELETED",
+                WebAppState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for WebAppState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for WebAppState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<WebAppState, ()> {
+            Ok(match s {
+                "ACTIVE" => WebAppState::Active,
+                "DELETED" => WebAppState::Deleted,
+                "STATE_UNSPECIFIED" => WebAppState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for WebAppState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for WebAppState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for WebAppState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => WebAppState::Active,
+                "DELETED" => WebAppState::Deleted,
+                "STATE_UNSPECIFIED" => WebAppState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for WebAppState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WebAppState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -1864,7 +2554,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WebAppConfig {
-        #[doc = "The API key associated with the `WebApp`."]
+        #[doc = "The [`keyString`](https://cloud.google.com/api-keys/docs/reference/rest/v2/projects.locations.keys#Key.FIELDS.key_string) of the API key associated with the `WebApp`. Note that this value is *not* the [`apiKeyId`](../projects.webApps#WebApp.FIELDS.api_key_id) (the UID) of the API key associated with the `WebApp`."]
         #[serde(
             rename = "apiKey",
             default,
@@ -2287,7 +2977,7 @@ pub mod resources {
                     #[serde(rename = "projectInfo")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -2320,7 +3010,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -2370,7 +3060,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2477,12 +3167,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -2818,6 +3509,7 @@ pub mod resources {
                     xgafv: None,
                     page_size: None,
                     page_token: None,
+                    show_deleted: None,
                 }
             }
             #[doc = "Updates the attributes of the specified FirebaseProject. All [query parameters](#query-parameters) are required."]
@@ -2889,6 +3581,7 @@ pub mod resources {
                     filter: None,
                     page_size: None,
                     page_token: None,
+                    show_deleted: None,
                 }
             }
             #[doc = "Actions that can be performed on the android_apps resource"]
@@ -3747,6 +4440,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             page_size: ::std::option::Option<i32>,
             page_token: ::std::option::Option<String>,
+            show_deleted: ::std::option::Option<bool>,
             access_token: ::std::option::Option<String>,
             alt: ::std::option::Option<crate::params::Alt>,
             callback: ::std::option::Option<String>,
@@ -3768,6 +4462,11 @@ pub mod resources {
             #[doc = "Token returned from a previous call to `ListFirebaseProjects` indicating where in the set of Projects to resume listing."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
+                self
+            }
+            #[doc = "Optional. Controls whether Projects in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Projects will be returned."]
+            pub fn show_deleted(mut self, value: bool) -> Self {
+                self.show_deleted = Some(value);
                 self
             }
             #[doc = "OAuth access token."]
@@ -3860,7 +4559,7 @@ pub mod resources {
                     #[serde(rename = "results")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -3893,7 +4592,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -3943,7 +4642,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4028,6 +4727,7 @@ pub mod resources {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("pageSize", &self.page_size)]);
                 req = req.query(&[("pageToken", &self.page_token)]);
+                req = req.query(&[("showDeleted", &self.show_deleted)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -4050,12 +4750,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -4081,7 +4782,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "Specifies which fields to update. If this list is empty, then no state will be updated. Note that the fields `name`, `projectId`, and `projectNumber` are all immutable."]
+            #[doc = "Specifies which fields of the FirebaseProject to update. Note that the following fields are immutable: `name`, `project_id`, and `project_number`. To update `state`, use any of the following Google Cloud endpoints: [`projects.delete`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/delete) or [`projects.undelete`](https://cloud.google.com/resource-manager/reference/rest/v1/projects/undelete)"]
             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                 self.update_mask = Some(value.into());
                 self
@@ -4401,6 +5102,7 @@ pub mod resources {
             filter: ::std::option::Option<String>,
             page_size: ::std::option::Option<i32>,
             page_token: ::std::option::Option<String>,
+            show_deleted: ::std::option::Option<bool>,
             access_token: ::std::option::Option<String>,
             alt: ::std::option::Option<crate::params::Alt>,
             callback: ::std::option::Option<String>,
@@ -4414,7 +5116,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SearchAppsRequestBuilder<'a> {
-            #[doc = "A query string compatible with Google’s [AIP-160](https://google.aip.dev/160) standard. Use any of the following fields in a query: * [`app_id`](../projects.apps#FirebaseAppInfo.FIELDS.app_id) * [`namespace`](../projects.apps#FirebaseAppInfo.FIELDS.namespace) * [`platform`](../projects.apps#FirebaseAppInfo.FIELDS.platform) We also support the following “virtual” fields (fields which are not actually part of the returned resource object, but can be queried as if they are pre-populated with specific values): * `sha1_hash`: This field is considered to be a repeated `string` field, populated with the list of all SHA-1 certificate fingerprints registered with the app. This list is empty if the app is not an Android app. * `sha256_hash`: This field is considered to be a repeated `string` field, populated with the list of all SHA-256 certificate fingerprints registered with the app. This list is empty if the app is not an Android app. * `app_store_id`: This field is considered to be a singular `string` field, populated with the Apple App Store ID registered with the app. This field is empty if the app is not an iOS app. * `team_id`: This field is considered to be a singular `string` field, populated with the Apple team ID registered with the app. This field is empty if the app is not an iOS app."]
+            #[doc = "A query string compatible with Google’s [AIP-160 standard](https://google.aip.dev/160). Use any of the following fields in a query: * [`app_id`](../projects/searchApps#FirebaseAppInfo.FIELDS.app_id) * [`namespace`](../projects/searchApps#FirebaseAppInfo.FIELDS.namespace) * [`platform`](../projects/searchApps#FirebaseAppInfo.FIELDS.platform) This query also supports the following “virtual” fields. These are fields which are not actually part of the returned resource object, but they can be queried as if they are pre-populated with specific values. * `sha1_hash` or `sha1_hashes`: This field is considered to be a *repeated* `string` field, populated with the list of all SHA-1 certificate fingerprints registered with the AndroidApp. This list is empty if the App is not an `AndroidApp`. * `sha256_hash` or `sha256_hashes`: This field is considered to be a *repeated* `string` field, populated with the list of all SHA-256 certificate fingerprints registered with the AndroidApp. This list is empty if the App is not an `AndroidApp`. * `app_store_id`: This field is considered to be a *singular* `string` field, populated with the Apple App Store ID registered with the IosApp. This field is empty if the App is not an `IosApp`. * `team_id`: This field is considered to be a *singular* `string` field, populated with the Apple team ID registered with the IosApp. This field is empty if the App is not an `IosApp`."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -4427,6 +5129,11 @@ pub mod resources {
             #[doc = "Token returned from a previous call to `SearchFirebaseApps` indicating where in the set of Apps to resume listing."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
+                self
+            }
+            #[doc = "Controls whether Apps in the DELETED state should be returned. If not specified, only `ACTIVE` Apps will be returned."]
+            pub fn show_deleted(mut self, value: bool) -> Self {
+                self.show_deleted = Some(value);
                 self
             }
             #[doc = "OAuth access token."]
@@ -4519,7 +5226,7 @@ pub mod resources {
                     #[serde(rename = "apps")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -4552,7 +5259,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -4602,7 +5309,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4696,6 +5403,7 @@ pub mod resources {
                 req = req.query(&[("filter", &self.filter)]);
                 req = req.query(&[("pageSize", &self.page_size)]);
                 req = req.query(&[("pageToken", &self.page_token)]);
+                req = req.query(&[("showDeleted", &self.show_deleted)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -4718,12 +5426,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for SearchAppsRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -4819,6 +5528,7 @@ pub mod resources {
                         parent: parent.into(),
                         page_size: None,
                         page_token: None,
+                        show_deleted: None,
                     }
                 }
                 #[doc = "Updates the attributes of the specified AndroidApp."]
@@ -4844,6 +5554,54 @@ pub mod resources {
                         xgafv: None,
                         name: name.into(),
                         update_mask: None,
+                    }
+                }
+                #[doc = "Removes the specified AndroidApp from the FirebaseProject."]
+                pub fn remove(
+                    &self,
+                    request: crate::schemas::RemoveAndroidAppRequest,
+                    name: impl Into<String>,
+                ) -> RemoveRequestBuilder {
+                    RemoveRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Restores the specified AndroidApp to the FirebaseProject."]
+                pub fn undelete(
+                    &self,
+                    request: crate::schemas::UndeleteAndroidAppRequest,
+                    name: impl Into<String>,
+                ) -> UndeleteRequestBuilder {
+                    UndeleteRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
                     }
                 }
                 #[doc = "Actions that can be performed on the sha resource"]
@@ -5345,6 +6103,7 @@ pub mod resources {
                 parent: String,
                 page_size: ::std::option::Option<i32>,
                 page_token: ::std::option::Option<String>,
+                show_deleted: ::std::option::Option<bool>,
                 access_token: ::std::option::Option<String>,
                 alt: ::std::option::Option<crate::params::Alt>,
                 callback: ::std::option::Option<String>,
@@ -5366,6 +6125,11 @@ pub mod resources {
                 #[doc = "Token returned from a previous call to `ListAndroidApps` indicating where in the set of Apps to resume listing."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "Controls whether Apps in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Apps will be returned."]
+                pub fn show_deleted(mut self, value: bool) -> Self {
+                    self.show_deleted = Some(value);
                     self
                 }
                 #[doc = "OAuth access token."]
@@ -5458,7 +6222,7 @@ pub mod resources {
                         #[serde(rename = "apps")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -5493,7 +6257,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -5543,7 +6307,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5636,6 +6400,7 @@ pub mod resources {
                     let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                     req = req.query(&[("pageSize", &self.page_size)]);
                     req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("showDeleted", &self.show_deleted)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -5658,12 +6423,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -5689,7 +6455,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> PatchRequestBuilder<'a> {
-                #[doc = "Specifies which fields to update. Note that the fields `name`, `app_id`, `project_id`, and `package_name` are all immutable."]
+                #[doc = "Specifies which fields of the AndroidApp to update. Note that the following fields are immutable: `name`, `app_id`, `project_id`, and `package_name`. To update `state`, use any of the following endpoints: RemoveAndroidApp or UndeleteAndroidApp."]
                 pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                     self.update_mask = Some(value.into());
                     self
@@ -5817,6 +6583,332 @@ pub mod resources {
                 ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
                     req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AndroidAppsActions::remove()](struct.AndroidAppsActions.html#method.remove)"]
+            #[derive(Debug, Clone)]
+            pub struct RemoveRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::RemoveAndroidAppRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> RemoveRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firebase.googleapis.com/".to_owned();
+                    output.push_str("v1beta1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":remove");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AndroidAppsActions::undelete()](struct.AndroidAppsActions.html#method.undelete)"]
+            #[derive(Debug, Clone)]
+            pub struct UndeleteRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::UndeleteAndroidAppRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> UndeleteRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firebase.googleapis.com/".to_owned();
+                    output.push_str("v1beta1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":undelete");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -6551,7 +7643,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -6586,7 +7678,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -6636,7 +7728,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6753,12 +7845,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -7054,6 +8147,7 @@ pub mod resources {
                         parent: parent.into(),
                         page_size: None,
                         page_token: None,
+                        show_deleted: None,
                     }
                 }
                 #[doc = "Updates the attributes of the specified IosApp."]
@@ -7079,6 +8173,54 @@ pub mod resources {
                         xgafv: None,
                         name: name.into(),
                         update_mask: None,
+                    }
+                }
+                #[doc = "Removes the specified IosApp from the FirebaseProject."]
+                pub fn remove(
+                    &self,
+                    request: crate::schemas::RemoveIosAppRequest,
+                    name: impl Into<String>,
+                ) -> RemoveRequestBuilder {
+                    RemoveRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Restores the specified IosApp to the FirebaseProject."]
+                pub fn undelete(
+                    &self,
+                    request: crate::schemas::UndeleteIosAppRequest,
+                    name: impl Into<String>,
+                ) -> UndeleteRequestBuilder {
+                    UndeleteRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
                     }
                 }
             }
@@ -7573,6 +8715,7 @@ pub mod resources {
                 parent: String,
                 page_size: ::std::option::Option<i32>,
                 page_token: ::std::option::Option<String>,
+                show_deleted: ::std::option::Option<bool>,
                 access_token: ::std::option::Option<String>,
                 alt: ::std::option::Option<crate::params::Alt>,
                 callback: ::std::option::Option<String>,
@@ -7594,6 +8737,11 @@ pub mod resources {
                 #[doc = "Token returned from a previous call to `ListIosApps` indicating where in the set of Apps to resume listing."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "Controls whether Apps in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Apps will be returned."]
+                pub fn show_deleted(mut self, value: bool) -> Self {
+                    self.show_deleted = Some(value);
                     self
                 }
                 #[doc = "OAuth access token."]
@@ -7686,7 +8834,7 @@ pub mod resources {
                         #[serde(rename = "apps")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -7721,7 +8869,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -7771,7 +8919,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -7864,6 +9012,7 @@ pub mod resources {
                     let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                     req = req.query(&[("pageSize", &self.page_size)]);
                     req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("showDeleted", &self.show_deleted)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -7886,12 +9035,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -7917,7 +9067,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> PatchRequestBuilder<'a> {
-                #[doc = "Specifies which fields to update. Note that the fields `name`, `appId`, `projectId`, and `bundleId` are all immutable."]
+                #[doc = "Specifies which fields of the IosApp to update. Note that the following fields are immutable: `name`, `app_id`, `project_id`, and `bundle_id`. To update `state`, use any of the following endpoints: RemoveIosApp or UndeleteIosApp."]
                 pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                     self.update_mask = Some(value.into());
                     self
@@ -8065,6 +9215,332 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            #[doc = "Created via [IosAppsActions::remove()](struct.IosAppsActions.html#method.remove)"]
+            #[derive(Debug, Clone)]
+            pub struct RemoveRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::RemoveIosAppRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> RemoveRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firebase.googleapis.com/".to_owned();
+                    output.push_str("v1beta1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":remove");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [IosAppsActions::undelete()](struct.IosAppsActions.html#method.undelete)"]
+            #[derive(Debug, Clone)]
+            pub struct UndeleteRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::UndeleteIosAppRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> UndeleteRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firebase.googleapis.com/".to_owned();
+                    output.push_str("v1beta1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":undelete");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
         }
         pub mod web_apps {
             pub mod params {}
@@ -8157,6 +9633,7 @@ pub mod resources {
                         parent: parent.into(),
                         page_size: None,
                         page_token: None,
+                        show_deleted: None,
                     }
                 }
                 #[doc = "Updates the attributes of the specified WebApp."]
@@ -8182,6 +9659,54 @@ pub mod resources {
                         xgafv: None,
                         name: name.into(),
                         update_mask: None,
+                    }
+                }
+                #[doc = "Removes the specified WebApp from the FirebaseProject."]
+                pub fn remove(
+                    &self,
+                    request: crate::schemas::RemoveWebAppRequest,
+                    name: impl Into<String>,
+                ) -> RemoveRequestBuilder {
+                    RemoveRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Restores the specified WebApp to the FirebaseProject."]
+                pub fn undelete(
+                    &self,
+                    request: crate::schemas::UndeleteWebAppRequest,
+                    name: impl Into<String>,
+                ) -> UndeleteRequestBuilder {
+                    UndeleteRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
                     }
                 }
             }
@@ -8676,6 +10201,7 @@ pub mod resources {
                 parent: String,
                 page_size: ::std::option::Option<i32>,
                 page_token: ::std::option::Option<String>,
+                show_deleted: ::std::option::Option<bool>,
                 access_token: ::std::option::Option<String>,
                 alt: ::std::option::Option<crate::params::Alt>,
                 callback: ::std::option::Option<String>,
@@ -8697,6 +10223,11 @@ pub mod resources {
                 #[doc = "Token returned from a previous call to `ListWebApps` indicating where in the set of Apps to resume listing."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "Controls whether Apps in the DELETED state should be returned in the response. If not specified, only `ACTIVE` Apps will be returned."]
+                pub fn show_deleted(mut self, value: bool) -> Self {
+                    self.show_deleted = Some(value);
                     self
                 }
                 #[doc = "OAuth access token."]
@@ -8789,7 +10320,7 @@ pub mod resources {
                         #[serde(rename = "apps")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -8824,7 +10355,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -8874,7 +10405,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8967,6 +10498,7 @@ pub mod resources {
                     let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                     req = req.query(&[("pageSize", &self.page_size)]);
                     req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("showDeleted", &self.show_deleted)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -8989,12 +10521,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -9020,7 +10553,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> PatchRequestBuilder<'a> {
-                #[doc = "Specifies which fields to update. Note that the fields `name`, `appId`, and `projectId` are all immutable."]
+                #[doc = "Specifies which fields of the WebApp to update. Note that the following fields are immutable: `name`, `app_id`, and `project_id`. To update `state`, use any of the following endpoints: RemoveWebApp or UndeleteWebApp."]
                 pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                     self.update_mask = Some(value.into());
                     self
@@ -9148,6 +10681,332 @@ pub mod resources {
                 ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
                     req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [WebAppsActions::remove()](struct.WebAppsActions.html#method.remove)"]
+            #[derive(Debug, Clone)]
+            pub struct RemoveRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::RemoveWebAppRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> RemoveRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firebase.googleapis.com/".to_owned();
+                    output.push_str("v1beta1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":remove");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [WebAppsActions::undelete()](struct.WebAppsActions.html#method.undelete)"]
+            #[derive(Debug, Clone)]
+            pub struct UndeleteRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::UndeleteWebAppRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> UndeleteRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Operation, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firebase.googleapis.com/".to_owned();
+                    output.push_str("v1beta1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":undelete");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -9454,16 +11313,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -9483,13 +11344,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -9497,7 +11361,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -9524,7 +11388,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

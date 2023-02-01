@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v3",
-  "revision": "20220408",
+  "revision": "20230119",
   "title": "Calendar API",
   "description": "Manipulates events and other calendar data.",
   "ownerDomain": "google.com",
@@ -1680,7 +1680,7 @@
           "items": null
         },
         "iCalUID": {
-          "description": "Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.\nNote that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs.",
+          "description": "Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.\nNote that the iCalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same iCalUIDs. To retrieve an event using its iCalUID, call the events.list method using the iCalUID parameter. To retrieve an event using its id, call the events.get method.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2105,7 +2105,7 @@
           "items": null
         },
         "responseStatus": {
-          "description": "The attendee's response status. Possible values are:  \n- \"needsAction\" - The attendee has not responded to the invitation. \n- \"declined\" - The attendee has declined the invitation. \n- \"tentative\" - The attendee has tentatively accepted the invitation. \n- \"accepted\" - The attendee has accepted the invitation.",
+          "description": "The attendee's response status. Possible values are:  \n- \"needsAction\" - The attendee has not responded to the invitation (recommended for new events). \n- \"declined\" - The attendee has declined the invitation. \n- \"tentative\" - The attendee has tentatively accepted the invitation. \n- \"accepted\" - The attendee has accepted the invitation.  Warning: If you add an event using the values declined, tentative, or accepted, attendees with the \"Add invitations to my calendar\" setting set to \"When I respond to invitation in email\" won't see an event on their calendar unless they choose to change their invitation response in the event invitation email.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4022,7 +4022,7 @@
           "id": "calendar.events.get",
           "path": "calendars/{calendarId}/events/{eventId}",
           "httpMethod": "GET",
-          "description": "Returns an event.",
+          "description": "Returns an event based on its Google Calendar ID. To retrieve an event using its iCalendar ID, call the events.list method using the iCalUID parameter.",
           "parameters": {
             "alwaysIncludeEmail": {
               "description": "Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).",
@@ -4517,7 +4517,7 @@
               "repeated": false
             },
             "iCalUID": {
-              "description": "Specifies event ID in the iCalendar format to be included in the response. Optional.",
+              "description": "Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.",
               "default": null,
               "location": "query",
               "required": false,
@@ -4607,7 +4607,7 @@
               "repeated": true
             },
             "q": {
-              "description": "Free text search terms to find events that match these terms in any field, except for extended properties. Optional.",
+              "description": "Free text search terms to find events that match these terms in the following fields: summary, description, location, attendee's displayName, attendee's email. Optional.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5288,7 +5288,7 @@
               "repeated": false
             },
             "iCalUID": {
-              "description": "Specifies event ID in the iCalendar format to be included in the response. Optional.",
+              "description": "Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.",
               "default": null,
               "location": "query",
               "required": false,
@@ -5378,7 +5378,7 @@
               "repeated": true
             },
             "q": {
-              "description": "Free text search terms to find events that match these terms in any field, except for extended properties. Optional.",
+              "description": "Free text search terms to find events that match these terms in the following fields: summary, description, location, attendee's displayName, attendee's email. Optional.",
               "default": null,
               "location": "query",
               "required": false,

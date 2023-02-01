@@ -7,7 +7,7 @@
   "canonicalName": "DoubleClick Bid Manager",
   "fullyEncodeReservedExpansion": true,
   "version": "v1.1",
-  "revision": "20220419",
+  "revision": "20230124",
   "title": "DoubleClick Bid Manager API",
   "description": "DoubleClick Bid Manager API allows users to manage and create campaigns and reports.",
   "ownerDomain": "google.com",
@@ -595,9 +595,13 @@
             "FILTER_VERIFICATION_AUDIBILITY_START",
             "FILTER_VERIFICATION_AUDIBILITY_COMPLETE",
             "FILTER_MEDIA_TYPE",
-            "FILTER_AUDIO_FEED_TYPE_NAME"
+            "FILTER_AUDIO_FEED_TYPE_NAME",
+            "FILTER_TRUEVIEW_TARGETING_EXPANSION",
+            "FILTER_PUBLISHER_TRAFFIC_SOURCE"
           ],
           "enumDescriptions": [
+            "",
+            "",
             "",
             "",
             "",
@@ -1346,9 +1350,13 @@
               "FILTER_VERIFICATION_AUDIBILITY_START",
               "FILTER_VERIFICATION_AUDIBILITY_COMPLETE",
               "FILTER_MEDIA_TYPE",
-              "FILTER_AUDIO_FEED_TYPE_NAME"
+              "FILTER_AUDIO_FEED_TYPE_NAME",
+              "FILTER_TRUEVIEW_TARGETING_EXPANSION",
+              "FILTER_PUBLISHER_TRAFFIC_SOURCE"
             ],
             "enumDescriptions": [
+              "",
+              "",
               "",
               "",
               "",
@@ -2133,9 +2141,31 @@
               "METRIC_WIN_LOSS_DEAL_TARGETED_IMPRESSIONS",
               "METRIC_WIN_LOSS_LINEITEM_TARGETED_IMPRESSIONS",
               "METRIC_VERIFICATION_VIDEO_PLAYER_SIZE_MEASURABLE_IMPRESSIONS",
-              "METRIC_TRUEVIEW_ALL_AD_SEQUENCE_IMPRESSIONS"
+              "METRIC_TRUEVIEW_ALL_AD_SEQUENCE_IMPRESSIONS",
+              "METRIC_IMPRESSIONS_COVIEWED",
+              "METRIC_UNIQUE_REACH_IMPRESSION_REACH_COVIEWED",
+              "METRIC_UNIQUE_REACH_TOTAL_REACH_COVIEWED",
+              "METRIC_UNIQUE_REACH_AVERAGE_IMPRESSION_FREQUENCY_COVIEWED",
+              "METRIC_GRP_CORRECTED_IMPRESSIONS_COVIEWED",
+              "METRIC_VIRTUAL_PEOPLE_IMPRESSION_REACH_BY_DEMO_COVIEWED",
+              "METRIC_VIRTUAL_PEOPLE_AVERAGE_IMPRESSION_FREQUENCY_BY_DEMO_COVIEWED",
+              "METRIC_TARGET_RATING_POINTS_COVIEWED",
+              "METRIC_DEMO_COMPOSITION_IMPRESSION_COVIEWED",
+              "METRIC_VIRTUAL_PEOPLE_IMPRESSION_REACH_SHARE_PERCENT_COVIEWED",
+              "METRIC_VIRTUAL_PEOPLE_IMPRESSION_REACH_PERCENT_COVIEWED"
             ],
             "enumDescriptions": [
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
               "",
               "",
               "",
@@ -3069,9 +3099,13 @@
             "FILTER_VERIFICATION_AUDIBILITY_START",
             "FILTER_VERIFICATION_AUDIBILITY_COMPLETE",
             "FILTER_MEDIA_TYPE",
-            "FILTER_AUDIO_FEED_TYPE_NAME"
+            "FILTER_AUDIO_FEED_TYPE_NAME",
+            "FILTER_TRUEVIEW_TARGETING_EXPANSION",
+            "FILTER_PUBLISHER_TRAFFIC_SOURCE"
           ],
           "enumDescriptions": [
+            "",
+            "",
             "",
             "",
             "",

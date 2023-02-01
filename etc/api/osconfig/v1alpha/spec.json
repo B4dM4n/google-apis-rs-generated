@@ -7,7 +7,7 @@
   "canonicalName": "OS Config",
   "fullyEncodeReservedExpansion": true,
   "version": "v1alpha",
-  "revision": "20220415",
+  "revision": "20230129",
   "title": "OS Config API",
   "description": "OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.",
   "ownerDomain": "google.com",
@@ -2648,7 +2648,7 @@
           "items": null
         },
         "script": {
-          "description": "An inline script. The size of the script is limited to 1024 characters.",
+          "description": "An inline script. The size of the script is limited to 32KiB.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2784,7 +2784,7 @@
       "enumDescriptions": [],
       "properties": {
         "content": {
-          "description": "A a file with this content. The size of the content is limited to 1024 characters.",
+          "description": "A a file with this content. The size of the content is limited to 32KiB.",
           "type": "string",
           "format": null,
           "enum": [],

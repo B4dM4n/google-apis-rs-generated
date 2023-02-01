@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("networkservices1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220413")
+            .version("0.1.0-20230118")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -132,6 +132,134 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             endpoint_policies2 = endpoint_policies2.subcommand(mcmd);
         }
+        let mut gateways2 = SubCommand::with_name("gateways")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new Gateway in a given project and location.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single Gateway.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single Gateway.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists Gateways in a given project and location.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates the parameters of a single Gateway.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            gateways2 = gateways2.subcommand(mcmd);
+        }
+        let mut grpc_routes2 = SubCommand::with_name("grpc_routes")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new GrpcRoute in a given project and location.");
+            grpc_routes2 = grpc_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single GrpcRoute.");
+            grpc_routes2 = grpc_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single GrpcRoute.");
+            grpc_routes2 = grpc_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists GrpcRoutes in a given project and location.");
+            grpc_routes2 = grpc_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a single GrpcRoute.");
+            grpc_routes2 = grpc_routes2.subcommand(mcmd);
+        }
+        let mut http_routes2 = SubCommand::with_name("http_routes")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new HttpRoute in a given project and location.");
+            http_routes2 = http_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single HttpRoute.");
+            http_routes2 = http_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single HttpRoute.");
+            http_routes2 = http_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists HttpRoute in a given project and location.");
+            http_routes2 = http_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a single HttpRoute.");
+            http_routes2 = http_routes2.subcommand(mcmd);
+        }
+        let mut meshes2 = SubCommand::with_name("meshes")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new Mesh in a given project and location.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single Mesh.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single Mesh.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists Meshes in a given project and location.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates the parameters of a single Mesh.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            meshes2 = meshes2.subcommand(mcmd);
+        }
         let mut operations2 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get and list");
@@ -185,8 +313,66 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             service_bindings2 = service_bindings2.subcommand(mcmd);
         }
+        let mut tcp_routes2 = SubCommand::with_name("tcp_routes")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new TcpRoute in a given project and location.");
+            tcp_routes2 = tcp_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single TcpRoute.");
+            tcp_routes2 = tcp_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single TcpRoute.");
+            tcp_routes2 = tcp_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists TcpRoute in a given project and location.");
+            tcp_routes2 = tcp_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a single TcpRoute.");
+            tcp_routes2 = tcp_routes2.subcommand(mcmd);
+        }
+        let mut tls_routes2 = SubCommand::with_name("tls_routes")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new TlsRoute in a given project and location.");
+            tls_routes2 = tls_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single TlsRoute.");
+            tls_routes2 = tls_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single TlsRoute.");
+            tls_routes2 = tls_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists TlsRoute in a given project and location.");
+            tls_routes2 = tls_routes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a single TlsRoute.");
+            tls_routes2 = tls_routes2.subcommand(mcmd);
+        }
+        locations1 = locations1.subcommand(tls_routes2);
+        locations1 = locations1.subcommand(tcp_routes2);
         locations1 = locations1.subcommand(service_bindings2);
         locations1 = locations1.subcommand(operations2);
+        locations1 = locations1.subcommand(meshes2);
+        locations1 = locations1.subcommand(http_routes2);
+        locations1 = locations1.subcommand(grpc_routes2);
+        locations1 = locations1.subcommand(gateways2);
         locations1 = locations1.subcommand(endpoint_policies2);
         locations1 = locations1.subcommand(edge_cache_services2);
         locations1 = locations1.subcommand(edge_cache_origins2);

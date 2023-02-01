@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("run2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230122")
             .about("Deploy and manage user provided container images that scale automatically based on incoming requests. The Cloud Run Admin API v1 follows the Knative Serving API specification, while v2 is aligned with Google Cloud AIP-based API standards, as described in https://google.aip.dev/.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -43,7 +43,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, patch, run, set_iam_policy and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("create").about("Create a Job.");
+            let mcmd = SubCommand::with_name("create").about("Creates a Job.");
             jobs2 = jobs2.subcommand(mcmd);
         }
         {
@@ -55,11 +55,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             jobs2 = jobs2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_iam_policy").about("Get the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies.");
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies.");
             jobs2 = jobs2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List Jobs.");
+            let mcmd = SubCommand::with_name("list").about("Lists Jobs.");
             jobs2 = jobs2.subcommand(mcmd);
         }
         {
@@ -81,7 +81,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut operations2 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: delete, get and list");
+            .about("methods: delete, get, list and wait");
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
             operations2 = operations2.subcommand(mcmd);
@@ -92,6 +92,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("wait").about("Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done.");
             operations2 = operations2.subcommand(mcmd);
         }
         let mut services2 = SubCommand::with_name("services")
@@ -111,11 +115,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_iam_policy").about("Get the IAM Access Control policy currently in effect for the given Cloud Run Service. This result does not include any inherited policies.");
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the IAM Access Control policy currently in effect for the given Cloud Run Service. This result does not include any inherited policies.");
             services2 = services2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List Services.");
+            let mcmd = SubCommand::with_name("list").about("Lists Services.");
             services2 = services2.subcommand(mcmd);
         }
         {
@@ -134,22 +138,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get and list");
         {
-            let mcmd = SubCommand::with_name("delete").about("Delete an Execution.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes an Execution.");
             executions3 = executions3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets information about a Execution.");
+            let mcmd = SubCommand::with_name("get").about("Gets information about an Execution.");
             executions3 = executions3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("List Executions from a Job.");
+            let mcmd = SubCommand::with_name("list").about("Lists Executions from a Job.");
             executions3 = executions3.subcommand(mcmd);
         }
         let mut revisions3 = SubCommand::with_name("revisions")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get and list");
         {
-            let mcmd = SubCommand::with_name("delete").about("Delete a Revision.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a Revision.");
             revisions3 = revisions3.subcommand(mcmd);
         }
         {
@@ -158,7 +162,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("List Revisions from a given Service, or from a given location.");
+                .about("Lists Revisions from a given Service, or from a given location.");
             revisions3 = revisions3.subcommand(mcmd);
         }
         let mut tasks4 = SubCommand::with_name("tasks")
@@ -170,7 +174,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd =
-                SubCommand::with_name("list").about("List Tasks from an Execution of a Job.");
+                SubCommand::with_name("list").about("Lists Tasks from an Execution of a Job.");
             tasks4 = tasks4.subcommand(mcmd);
         }
         executions3 = executions3.subcommand(tasks4);

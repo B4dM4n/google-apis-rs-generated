@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [registrations](resources/projects/locations/registrations/struct.RegistrationsActions.html)\n      * [*configureContactSettings*](resources/projects/locations/registrations/struct.ConfigureContactSettingsRequestBuilder.html), [*configureDnsSettings*](resources/projects/locations/registrations/struct.ConfigureDnsSettingsRequestBuilder.html), [*configureManagementSettings*](resources/projects/locations/registrations/struct.ConfigureManagementSettingsRequestBuilder.html), [*delete*](resources/projects/locations/registrations/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/registrations/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/registrations/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/registrations/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/registrations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/registrations/struct.PatchRequestBuilder.html), [*register*](resources/projects/locations/registrations/struct.RegisterRequestBuilder.html), [*resetAuthorizationCode*](resources/projects/locations/registrations/struct.ResetAuthorizationCodeRequestBuilder.html), [*retrieveAuthorizationCode*](resources/projects/locations/registrations/struct.RetrieveAuthorizationCodeRequestBuilder.html), [*retrieveRegisterParameters*](resources/projects/locations/registrations/struct.RetrieveRegisterParametersRequestBuilder.html), [*retrieveTransferParameters*](resources/projects/locations/registrations/struct.RetrieveTransferParametersRequestBuilder.html), [*searchDomains*](resources/projects/locations/registrations/struct.SearchDomainsRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/registrations/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/registrations/struct.TestIamPermissionsRequestBuilder.html), [*transfer*](resources/projects/locations/registrations/struct.TransferRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [registrations](resources/projects/locations/registrations/struct.RegistrationsActions.html)\n      * [*configureContactSettings*](resources/projects/locations/registrations/struct.ConfigureContactSettingsRequestBuilder.html), [*configureDnsSettings*](resources/projects/locations/registrations/struct.ConfigureDnsSettingsRequestBuilder.html), [*configureManagementSettings*](resources/projects/locations/registrations/struct.ConfigureManagementSettingsRequestBuilder.html), [*delete*](resources/projects/locations/registrations/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/registrations/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/registrations/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/registrations/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/registrations/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/registrations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/registrations/struct.PatchRequestBuilder.html), [*register*](resources/projects/locations/registrations/struct.RegisterRequestBuilder.html), [*resetAuthorizationCode*](resources/projects/locations/registrations/struct.ResetAuthorizationCodeRequestBuilder.html), [*retrieveAuthorizationCode*](resources/projects/locations/registrations/struct.RetrieveAuthorizationCodeRequestBuilder.html), [*retrieveImportableDomains*](resources/projects/locations/registrations/struct.RetrieveImportableDomainsRequestBuilder.html), [*retrieveRegisterParameters*](resources/projects/locations/registrations/struct.RetrieveRegisterParametersRequestBuilder.html), [*retrieveTransferParameters*](resources/projects/locations/registrations/struct.RetrieveTransferParametersRequestBuilder.html), [*searchDomains*](resources/projects/locations/registrations/struct.SearchDomainsRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/registrations/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/registrations/struct.TestIamPermissionsRequestBuilder.html), [*transfer*](resources/projects/locations/registrations/struct.TransferRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -212,7 +213,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding."]
         #[serde(
             rename = "members",
             default,
@@ -695,6 +696,142 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DnsSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Domain {
+        #[doc = "The domain name. Unicode domain names are expressed in Punycode format."]
+        #[serde(
+            rename = "domainName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domain_name: ::std::option::Option<String>,
+        #[doc = "The state of this domain as a `Registration` resource."]
+        #[serde(
+            rename = "resourceState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_state: ::std::option::Option<crate::schemas::DomainResourceState>,
+        #[doc = "Price to renew the domain for one year. Only set when `resource_state` is `IMPORTABLE`."]
+        #[serde(
+            rename = "yearlyPrice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub yearly_price: ::std::option::Option<crate::schemas::Money>,
+    }
+    impl ::google_field_selector::FieldSelector for Domain {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Domain {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum DomainResourceState {
+        #[doc = "A `Registration` resource cannot be created for this domain because it is deleted, but it may be possible to restore it with Google Domains."]
+        Deleted,
+        #[doc = "A `Registration` resource cannot be created for this domain because it is expired and needs to be renewed with Google Domains."]
+        Expired,
+        #[doc = "A `Registration` resource can be created for this domain by calling `ImportDomain`."]
+        Importable,
+        #[doc = "The assessment is undefined."]
+        ResourceStateUnspecified,
+        #[doc = "A `Registration` resource cannot be created for this domain because it is suspended and needs to be resolved with Google Domains."]
+        Suspended,
+        #[doc = "A `Registration` resource cannot be created for this domain because it is not supported by Cloud Domains; for example, the top-level domain is not supported or the registry charges non-standard pricing for yearly renewals."]
+        Unsupported,
+    }
+    impl DomainResourceState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                DomainResourceState::Deleted => "DELETED",
+                DomainResourceState::Expired => "EXPIRED",
+                DomainResourceState::Importable => "IMPORTABLE",
+                DomainResourceState::ResourceStateUnspecified => "RESOURCE_STATE_UNSPECIFIED",
+                DomainResourceState::Suspended => "SUSPENDED",
+                DomainResourceState::Unsupported => "UNSUPPORTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for DomainResourceState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for DomainResourceState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<DomainResourceState, ()> {
+            Ok(match s {
+                "DELETED" => DomainResourceState::Deleted,
+                "EXPIRED" => DomainResourceState::Expired,
+                "IMPORTABLE" => DomainResourceState::Importable,
+                "RESOURCE_STATE_UNSPECIFIED" => DomainResourceState::ResourceStateUnspecified,
+                "SUSPENDED" => DomainResourceState::Suspended,
+                "UNSUPPORTED" => DomainResourceState::Unsupported,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for DomainResourceState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for DomainResourceState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for DomainResourceState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DELETED" => DomainResourceState::Deleted,
+                "EXPIRED" => DomainResourceState::Expired,
+                "IMPORTABLE" => DomainResourceState::Importable,
+                "RESOURCE_STATE_UNSPECIFIED" => DomainResourceState::ResourceStateUnspecified,
+                "SUSPENDED" => DomainResourceState::Suspended,
+                "UNSUPPORTED" => DomainResourceState::Unsupported,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for DomainResourceState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DomainResourceState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1230,6 +1367,44 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ImportDomainRequest {
+        #[doc = "Required. The domain name. Unicode domain names must be expressed in Punycode format."]
+        #[serde(
+            rename = "domainName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domain_name: ::std::option::Option<String>,
+        #[doc = "Set of labels associated with the `Registration`."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ImportDomainRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ImportDomainRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListLocationsResponse {
         #[doc = "A list of locations that matches the specified filter in the request."]
@@ -1257,7 +1432,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1289,7 +1464,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1332,7 +1507,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRegistrationsResponse {
+    impl crate::GetNextPageToken<String> for ListRegistrationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2539,6 +2714,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pending_contact_settings: ::std::option::Option<crate::schemas::ContactSettings>,
+        #[doc = "Output only. The reason the domain registration failed. Only set for domains in REGISTRATION_FAILED state."]
+        #[serde(
+            rename = "registerFailureReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub register_failure_reason:
+            ::std::option::Option<crate::schemas::RegistrationRegisterFailureReason>,
         #[doc = "Output only. The state of the `Registration`"]
         #[serde(
             rename = "state",
@@ -2554,6 +2737,14 @@ pub mod schemas {
         )]
         pub supported_privacy:
             ::std::option::Option<Vec<crate::schemas::RegistrationSupportedPrivacyItems>>,
+        #[doc = "Output only. The reason the domain transfer failed. Only set for domains in TRANSFER_FAILED state."]
+        #[serde(
+            rename = "transferFailureReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transfer_failure_reason:
+            ::std::option::Option<crate::schemas::RegistrationTransferFailureReason>,
     }
     impl ::google_field_selector::FieldSelector for Registration {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2642,11 +2833,106 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RegistrationRegisterFailureReason {
+        #[doc = "The domain is not available for registration."]
+        DomainNotAvailable,
+        #[doc = "The provided contact information was rejected."]
+        InvalidContacts,
+        #[doc = "Registration failed for an unknown reason."]
+        RegisterFailureReasonUnknown,
+        #[doc = "Register failure unspecified."]
+        RegisterFailureReasonUnspecified,
+    }
+    impl RegistrationRegisterFailureReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RegistrationRegisterFailureReason::DomainNotAvailable => "DOMAIN_NOT_AVAILABLE",
+                RegistrationRegisterFailureReason::InvalidContacts => "INVALID_CONTACTS",
+                RegistrationRegisterFailureReason::RegisterFailureReasonUnknown => {
+                    "REGISTER_FAILURE_REASON_UNKNOWN"
+                }
+                RegistrationRegisterFailureReason::RegisterFailureReasonUnspecified => {
+                    "REGISTER_FAILURE_REASON_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RegistrationRegisterFailureReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RegistrationRegisterFailureReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<RegistrationRegisterFailureReason, ()> {
+            Ok(match s {
+                "DOMAIN_NOT_AVAILABLE" => RegistrationRegisterFailureReason::DomainNotAvailable,
+                "INVALID_CONTACTS" => RegistrationRegisterFailureReason::InvalidContacts,
+                "REGISTER_FAILURE_REASON_UNKNOWN" => {
+                    RegistrationRegisterFailureReason::RegisterFailureReasonUnknown
+                }
+                "REGISTER_FAILURE_REASON_UNSPECIFIED" => {
+                    RegistrationRegisterFailureReason::RegisterFailureReasonUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RegistrationRegisterFailureReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RegistrationRegisterFailureReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RegistrationRegisterFailureReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DOMAIN_NOT_AVAILABLE" => RegistrationRegisterFailureReason::DomainNotAvailable,
+                "INVALID_CONTACTS" => RegistrationRegisterFailureReason::InvalidContacts,
+                "REGISTER_FAILURE_REASON_UNKNOWN" => {
+                    RegistrationRegisterFailureReason::RegisterFailureReasonUnknown
+                }
+                "REGISTER_FAILURE_REASON_UNSPECIFIED" => {
+                    RegistrationRegisterFailureReason::RegisterFailureReasonUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RegistrationRegisterFailureReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegistrationRegisterFailureReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum RegistrationState {
         #[doc = "The domain is registered and operational. The domain renews automatically as long as it remains in this state."]
         Active,
         #[doc = "The domain is no longer managed with Cloud Domains. It may have been transferred to another registrar or exported for management in [Google Domains](https://domains.google/). You can no longer update it with this API, and information shown about it may be stale. Domains in this state are not automatically renewed by Cloud Domains."]
         Exported,
+        #[doc = "The domain is being imported from Google Domains to Cloud Domains."]
+        ImportPending,
         #[doc = "The domain registration failed. You can delete resources in this state to allow registration to be retried."]
         RegistrationFailed,
         #[doc = "The domain is being registered."]
@@ -2665,6 +2951,7 @@ pub mod schemas {
             match self {
                 RegistrationState::Active => "ACTIVE",
                 RegistrationState::Exported => "EXPORTED",
+                RegistrationState::ImportPending => "IMPORT_PENDING",
                 RegistrationState::RegistrationFailed => "REGISTRATION_FAILED",
                 RegistrationState::RegistrationPending => "REGISTRATION_PENDING",
                 RegistrationState::StateUnspecified => "STATE_UNSPECIFIED",
@@ -2685,6 +2972,7 @@ pub mod schemas {
             Ok(match s {
                 "ACTIVE" => RegistrationState::Active,
                 "EXPORTED" => RegistrationState::Exported,
+                "IMPORT_PENDING" => RegistrationState::ImportPending,
                 "REGISTRATION_FAILED" => RegistrationState::RegistrationFailed,
                 "REGISTRATION_PENDING" => RegistrationState::RegistrationPending,
                 "STATE_UNSPECIFIED" => RegistrationState::StateUnspecified,
@@ -2717,6 +3005,7 @@ pub mod schemas {
             Ok(match value {
                 "ACTIVE" => RegistrationState::Active,
                 "EXPORTED" => RegistrationState::Exported,
+                "IMPORT_PENDING" => RegistrationState::ImportPending,
                 "REGISTRATION_FAILED" => RegistrationState::RegistrationFailed,
                 "REGISTRATION_PENDING" => RegistrationState::RegistrationPending,
                 "STATE_UNSPECIFIED" => RegistrationState::StateUnspecified,
@@ -2829,6 +3118,170 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RegistrationTransferFailureReason {
+        #[doc = "The domain has a transfer lock with its current registrar which must be removed prior to transfer."]
+        DomainHasTransferLock,
+        #[doc = "The domain is not eligible for transfer due requirements imposed by the current registrar or TLD registry."]
+        DomainNotEligibleForTransfer,
+        #[doc = "The domain is available for registration."]
+        DomainNotRegistered,
+        #[doc = "An email confirmation sent to the user was rejected or expired."]
+        EmailConfirmationFailure,
+        #[doc = "The authorization code entered is not valid."]
+        InvalidAuthorizationCode,
+        #[doc = "The registrant email address cannot be parsed from the domain’s current public contact data."]
+        InvalidRegistrantEmailAddress,
+        #[doc = "Another transfer is already pending for this domain. The existing transfer attempt must expire or be cancelled in order to proceed."]
+        TransferAlreadyPending,
+        #[doc = "The transfer was cancelled by the domain owner, current registrar, or TLD registry."]
+        TransferCancelled,
+        #[doc = "Transfer failed for an unknown reason."]
+        TransferFailureReasonUnknown,
+        #[doc = "Transfer failure unspecified."]
+        TransferFailureReasonUnspecified,
+        #[doc = "The transfer was rejected by the current registrar. Contact the current registrar for more information."]
+        TransferRejected,
+    }
+    impl RegistrationTransferFailureReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RegistrationTransferFailureReason::DomainHasTransferLock => {
+                    "DOMAIN_HAS_TRANSFER_LOCK"
+                }
+                RegistrationTransferFailureReason::DomainNotEligibleForTransfer => {
+                    "DOMAIN_NOT_ELIGIBLE_FOR_TRANSFER"
+                }
+                RegistrationTransferFailureReason::DomainNotRegistered => "DOMAIN_NOT_REGISTERED",
+                RegistrationTransferFailureReason::EmailConfirmationFailure => {
+                    "EMAIL_CONFIRMATION_FAILURE"
+                }
+                RegistrationTransferFailureReason::InvalidAuthorizationCode => {
+                    "INVALID_AUTHORIZATION_CODE"
+                }
+                RegistrationTransferFailureReason::InvalidRegistrantEmailAddress => {
+                    "INVALID_REGISTRANT_EMAIL_ADDRESS"
+                }
+                RegistrationTransferFailureReason::TransferAlreadyPending => {
+                    "TRANSFER_ALREADY_PENDING"
+                }
+                RegistrationTransferFailureReason::TransferCancelled => "TRANSFER_CANCELLED",
+                RegistrationTransferFailureReason::TransferFailureReasonUnknown => {
+                    "TRANSFER_FAILURE_REASON_UNKNOWN"
+                }
+                RegistrationTransferFailureReason::TransferFailureReasonUnspecified => {
+                    "TRANSFER_FAILURE_REASON_UNSPECIFIED"
+                }
+                RegistrationTransferFailureReason::TransferRejected => "TRANSFER_REJECTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RegistrationTransferFailureReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RegistrationTransferFailureReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<RegistrationTransferFailureReason, ()> {
+            Ok(match s {
+                "DOMAIN_HAS_TRANSFER_LOCK" => {
+                    RegistrationTransferFailureReason::DomainHasTransferLock
+                }
+                "DOMAIN_NOT_ELIGIBLE_FOR_TRANSFER" => {
+                    RegistrationTransferFailureReason::DomainNotEligibleForTransfer
+                }
+                "DOMAIN_NOT_REGISTERED" => RegistrationTransferFailureReason::DomainNotRegistered,
+                "EMAIL_CONFIRMATION_FAILURE" => {
+                    RegistrationTransferFailureReason::EmailConfirmationFailure
+                }
+                "INVALID_AUTHORIZATION_CODE" => {
+                    RegistrationTransferFailureReason::InvalidAuthorizationCode
+                }
+                "INVALID_REGISTRANT_EMAIL_ADDRESS" => {
+                    RegistrationTransferFailureReason::InvalidRegistrantEmailAddress
+                }
+                "TRANSFER_ALREADY_PENDING" => {
+                    RegistrationTransferFailureReason::TransferAlreadyPending
+                }
+                "TRANSFER_CANCELLED" => RegistrationTransferFailureReason::TransferCancelled,
+                "TRANSFER_FAILURE_REASON_UNKNOWN" => {
+                    RegistrationTransferFailureReason::TransferFailureReasonUnknown
+                }
+                "TRANSFER_FAILURE_REASON_UNSPECIFIED" => {
+                    RegistrationTransferFailureReason::TransferFailureReasonUnspecified
+                }
+                "TRANSFER_REJECTED" => RegistrationTransferFailureReason::TransferRejected,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RegistrationTransferFailureReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RegistrationTransferFailureReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RegistrationTransferFailureReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DOMAIN_HAS_TRANSFER_LOCK" => {
+                    RegistrationTransferFailureReason::DomainHasTransferLock
+                }
+                "DOMAIN_NOT_ELIGIBLE_FOR_TRANSFER" => {
+                    RegistrationTransferFailureReason::DomainNotEligibleForTransfer
+                }
+                "DOMAIN_NOT_REGISTERED" => RegistrationTransferFailureReason::DomainNotRegistered,
+                "EMAIL_CONFIRMATION_FAILURE" => {
+                    RegistrationTransferFailureReason::EmailConfirmationFailure
+                }
+                "INVALID_AUTHORIZATION_CODE" => {
+                    RegistrationTransferFailureReason::InvalidAuthorizationCode
+                }
+                "INVALID_REGISTRANT_EMAIL_ADDRESS" => {
+                    RegistrationTransferFailureReason::InvalidRegistrantEmailAddress
+                }
+                "TRANSFER_ALREADY_PENDING" => {
+                    RegistrationTransferFailureReason::TransferAlreadyPending
+                }
+                "TRANSFER_CANCELLED" => RegistrationTransferFailureReason::TransferCancelled,
+                "TRANSFER_FAILURE_REASON_UNKNOWN" => {
+                    RegistrationTransferFailureReason::TransferFailureReasonUnknown
+                }
+                "TRANSFER_FAILURE_REASON_UNSPECIFIED" => {
+                    RegistrationTransferFailureReason::TransferFailureReasonUnspecified
+                }
+                "TRANSFER_REJECTED" => RegistrationTransferFailureReason::TransferRejected,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RegistrationTransferFailureReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegistrationTransferFailureReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -2851,6 +3304,49 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType for ResetAuthorizationCodeRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RetrieveImportableDomainsResponse {
+        #[doc = "A list of domains that the calling user manages in Google Domains."]
+        #[serde(
+            rename = "domains",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domains: ::std::option::Option<Vec<crate::schemas::Domain>>,
+        #[doc = "When present, there are more results to retrieve. Set `page_token` to this value on a subsequent call to get the next page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RetrieveImportableDomainsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RetrieveImportableDomainsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for RetrieveImportableDomainsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
         }
     }
     #[derive(
@@ -2959,7 +3455,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -3032,7 +3528,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as ‘*’ or ‘storage.*’) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -3246,6 +3742,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_registrar: ::std::option::Option<String>,
+        #[doc = "The URL of the registrar that currently manages the domain."]
+        #[serde(
+            rename = "currentRegistrarUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub current_registrar_uri: ::std::option::Option<String>,
         #[doc = "The domain name. Unicode domain names are expressed in Punycode format."]
         #[serde(
             rename = "domainName",
@@ -3929,7 +4432,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like “displayName=tokyo”, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
+                #[doc = "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160)."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -4034,7 +4537,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -4069,7 +4572,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -4119,7 +4622,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4235,12 +4738,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4586,7 +5090,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4621,7 +5125,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4671,7 +5175,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4790,12 +5294,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -4968,6 +5473,30 @@ pub mod resources {
                             options_requested_policy_version: None,
                         }
                     }
+                    #[doc = "Imports a domain name from [Google Domains](https://domains.google/) for use in Cloud Domains. To transfer a domain from another registrar, use the `TransferDomain` method instead. Since individual users can own domains in Google Domains, the calling user must have ownership permission on the domain."]
+                    pub fn import(
+                        &self,
+                        request: crate::schemas::ImportDomainRequest,
+                        parent: impl Into<String>,
+                    ) -> ImportRequestBuilder {
+                        ImportRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                        }
+                    }
                     #[doc = "Lists the `Registration` resources in a project."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
@@ -5085,6 +5614,30 @@ pub mod resources {
                             registration: registration.into(),
                         }
                     }
+                    #[doc = "Lists domain names from [Google Domains](https://domains.google/) that can be imported to Cloud Domains using the `ImportDomain` method. Since individual users can own domains in Google Domains, the list of domains returned depends on the individual user making the call. Domains already managed by Cloud Domains are not returned."]
+                    pub fn retrieve_importable_domains(
+                        &self,
+                        location: impl Into<String>,
+                    ) -> RetrieveImportableDomainsRequestBuilder {
+                        RetrieveImportableDomainsRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            location: location.into(),
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
                     #[doc = "Gets parameters needed to register a new domain name, including price and up-to-date availability. Use the returned values to call `RegisterDomain`."]
                     pub fn retrieve_register_parameters(
                         &self,
@@ -5108,7 +5661,7 @@ pub mod resources {
                             domain_name: None,
                         }
                     }
-                    #[doc = "Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For domains managed by Google Domains, transferring to Cloud Domains is not supported. Use the returned values to call `TransferDomain`."]
+                    #[doc = "Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For domains already managed by [Google Domains](https://domains.google/), use `ImportDomain` instead. Use the returned values to call `TransferDomain`."]
                     pub fn retrieve_transfer_parameters(
                         &self,
                         location: impl Into<String>,
@@ -5202,7 +5755,7 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Transfers a domain name from another registrar to Cloud Domains. For domains managed by Google Domains, transferring to Cloud Domains is not supported. Before calling this method, go to the domain’s current registrar to unlock the domain for transfer and retrieve the domain’s transfer authorization code. Then call `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to build a call to this method. A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take several days to complete the transfer process. The registrant can often speed up this process by approving the transfer through the current registrar, either by clicking a link in an email from the registrar or by visiting the registrar’s website. A few minutes after transfer approval, the resource transitions to state `ACTIVE`, indicating that the transfer was successful. If the transfer is rejected or the request expires without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete the resource and retry the transfer."]
+                    #[doc = "Transfers a domain name from another registrar to Cloud Domains. For domains already managed by [Google Domains](https://domains.google/), use `ImportDomain` instead. Before calling this method, go to the domain’s current registrar to unlock the domain for transfer and retrieve the domain’s transfer authorization code. Then call `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to build a call to this method. A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take several days to complete the transfer process. The registrant can often speed up this process by approving the transfer through the current registrar, either by clicking a link in an email from the registrar or by visiting the registrar’s website. A few minutes after transfer approval, the resource transitions to state `ACTIVE`, indicating that the transfer was successful. If the transfer is rejected or the request expires without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete the resource and retry the transfer."]
                     pub fn transfer(
                         &self,
                         request: crate::schemas::TransferDomainRequest,
@@ -6370,6 +6923,169 @@ pub mod resources {
                         Ok(req)
                     }
                 }
+                #[doc = "Created via [RegistrationsActions::import()](struct.RegistrationsActions.html#method.import)"]
+                #[derive(Debug, Clone)]
+                pub struct ImportRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::ImportDomainRequest,
+                    parent: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> ImportRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Operation, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://domains.googleapis.com/".to_owned();
+                        output.push_str("v1alpha2/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/registrations:import");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
                 #[doc = "Created via [RegistrationsActions::list()](struct.RegistrationsActions.html#method.list)"]
                 #[derive(Debug, Clone)]
                 pub struct ListRequestBuilder<'a> {
@@ -6501,7 +7217,7 @@ pub mod resources {
                             #[serde(rename = "registrations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6537,7 +7253,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6587,7 +7303,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6706,12 +7422,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -7374,6 +8091,349 @@ pub mod resources {
                             .map_err(|err| crate::Error::OAuth2(err))?;
                         req = req.bearer_auth(access_token);
                         Ok(req)
+                    }
+                }
+                #[doc = "Created via [RegistrationsActions::retrieve_importable_domains()](struct.RegistrationsActions.html#method.retrieve_importable_domains)"]
+                #[derive(Debug, Clone)]
+                pub struct RetrieveImportableDomainsRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    location: String,
+                    page_size: ::std::option::Option<i32>,
+                    page_token: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> RetrieveImportableDomainsRequestBuilder<'a> {
+                    #[doc = "Maximum number of results to return."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "When set to the `next_page_token` from a prior response, provides the next page of results."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `domains` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                    pub fn stream_domains<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_domains_with_fields(fields)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `domains` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                    pub fn stream_domains_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<crate::schemas::Domain, crate::Error>> + 'a
+                    {
+                        self.stream_domains_with_fields(None::<String>)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `domains` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                    pub fn stream_domains_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<crate::schemas::Domain, crate::Error>> + 'a
+                    {
+                        self.stream_domains_with_fields(Some("*"))
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `domains` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                    pub fn stream_domains_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                        struct Page<T> {
+                            #[serde(rename = "nextPageToken")]
+                            pub next_page_token: ::std::option::Option<String>,
+                            #[serde(rename = "domains")]
+                            pub items: Vec<T>,
+                        }
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
+                            fn next_page_token(&self) -> ::std::option::Option<String> {
+                                self.next_page_token.to_owned()
+                            }
+                        }
+                        impl<T> crate::stream::IntoPageItems for Page<T> {
+                            type Items = Vec<T>;
+                            fn into_page_items(self) -> Self::Items {
+                                self.items
+                            }
+                        }
+                        self.fields = Some({
+                            let mut selector = concat!("nextPageToken,", "domains").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::stream::page_item_stream::<_, Page<T>>(self)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                    pub fn stream<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String>
+                            + ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_with_fields(fields)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the default set of fields from the server."]
+                    pub fn stream_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::RetrieveImportableDomainsResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests all fields from the server."]
+                    pub fn stream_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::RetrieveImportableDomainsResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                    #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    pub fn stream_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::stream::page_stream(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::RetrieveImportableDomainsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::RetrieveImportableDomainsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://domains.googleapis.com/".to_owned();
+                        output.push_str("v1alpha2/");
+                        {
+                            let var_as_str = &self.location;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/registrations:retrieveImportableDomains");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[async_trait::async_trait]
+                impl<'a> crate::stream::StreamableMethod for RetrieveImportableDomainsRequestBuilder<'a> {
+                    type PageToken = String;
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                    {
+                        self._execute().await
                     }
                 }
                 #[doc = "Created via [RegistrationsActions::retrieve_register_parameters()](struct.RegistrationsActions.html#method.retrieve_register_parameters)"]
@@ -8664,16 +9724,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -8693,13 +9755,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -8707,7 +9772,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -8734,7 +9799,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

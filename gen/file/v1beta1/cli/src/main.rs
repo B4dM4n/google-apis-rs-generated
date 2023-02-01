@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("file1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220407")
+            .version("0.1.0-20230118")
             .about("The Cloud Filestore API is used for creating and managing cloud file servers.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -125,6 +125,31 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
+        let mut shares3 = SubCommand::with_name("shares")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a share.");
+            shares3 = shares3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a share.");
+            shares3 = shares3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the details of a specific share.");
+            shares3 = shares3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists all shares for a specified instance.");
+            shares3 = shares3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates the settings of a specific share.");
+            shares3 = shares3.subcommand(mcmd);
+        }
         let mut snapshots3 = SubCommand::with_name("snapshots")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
@@ -151,6 +176,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             snapshots3 = snapshots3.subcommand(mcmd);
         }
         instances2 = instances2.subcommand(snapshots3);
+        instances2 = instances2.subcommand(shares3);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(instances2);
         locations1 = locations1.subcommand(backups2);

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [features](resources/projects/locations/features/struct.FeaturesActions.html)\n      * [*create*](resources/projects/locations/features/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/features/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/features/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/features/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/features/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/features/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/features/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/features/struct.TestIamPermissionsRequestBuilder.html)\n    * [memberships](resources/projects/locations/memberships/struct.MembershipsActions.html)\n      * [*create*](resources/projects/locations/memberships/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/memberships/struct.DeleteRequestBuilder.html), [*generateConnectManifest*](resources/projects/locations/memberships/struct.GenerateConnectManifestRequestBuilder.html), [*get*](resources/projects/locations/memberships/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/memberships/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/memberships/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/memberships/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/memberships/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/memberships/struct.TestIamPermissionsRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -55,6 +56,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AppDevExperienceFeatureState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ApplianceCluster {
+        #[doc = "Immutable. Self-link of the GCP resource for the Appliance Cluster. For example: //transferappliance.googleapis.com/projects/my-project/locations/us-west1-a/appliances/my-appliance"]
+        #[serde(
+            rename = "resourceLink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_link: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ApplianceCluster {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApplianceCluster {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -288,7 +320,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -357,6 +389,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub appdevexperience: ::std::option::Option<crate::schemas::AppDevExperienceFeatureSpec>,
+        #[doc = "FleetObservability feature spec."]
+        #[serde(
+            rename = "fleetobservability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fleetobservability:
+            ::std::option::Option<crate::schemas::FleetObservabilityFeatureSpec>,
         #[doc = "Multicluster Ingress-specific spec."]
         #[serde(
             rename = "multiclusteringress",
@@ -396,6 +436,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub appdevexperience: ::std::option::Option<crate::schemas::AppDevExperienceFeatureState>,
+        #[doc = "FleetObservability feature state."]
+        #[serde(
+            rename = "fleetobservability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fleetobservability:
+            ::std::option::Option<crate::schemas::FleetObservabilityFeatureState>,
         #[doc = "Output only. The “running state” of the Feature in this Hub."]
         #[serde(
             rename = "state",
@@ -422,11 +470,42 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CommonFleetDefaultMemberConfigSpec {}
+    impl ::google_field_selector::FieldSelector for CommonFleetDefaultMemberConfigSpec {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CommonFleetDefaultMemberConfigSpec {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
     pub struct ConfigManagementConfigSync {
+        #[doc = "Set to true to allow the vertical scaling. Defaults to false which disallows vertical scaling. This field is deprecated."]
+        #[serde(
+            rename = "allowVerticalScale",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_vertical_scale: ::std::option::Option<bool>,
         #[doc = "Enables the installation of ConfigSync. If set to true, ConfigSync resources will be created and the other ConfigSync fields will be applied if exist. If set to false, all other ConfigSync fields will be ignored, ConfigSync resources will be deleted. If omitted, ConfigSync resources will be managed depends on the presence of git field."]
         #[serde(
             rename = "enabled",
@@ -441,6 +520,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub git: ::std::option::Option<crate::schemas::ConfigManagementGitConfig>,
+        #[doc = "OCI repo configuration for the cluster"]
+        #[serde(
+            rename = "oci",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub oci: ::std::option::Option<crate::schemas::ConfigManagementOciConfig>,
         #[doc = "Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts."]
         #[serde(
             rename = "preventDrift",
@@ -1287,7 +1373,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct ConfigManagementGatekeeperDeploymentState { # [doc = "Status of gatekeeper-audit deployment."] # [serde (rename = "gatekeeperAudit" , default , skip_serializing_if = "std::option::Option::is_none")] pub gatekeeper_audit : :: std :: option :: Option < crate :: schemas :: ConfigManagementGatekeeperDeploymentStateGatekeeperAudit > , # [doc = "Status of gatekeeper-controller-manager pod."] # [serde (rename = "gatekeeperControllerManagerState" , default , skip_serializing_if = "std::option::Option::is_none")] pub gatekeeper_controller_manager_state : :: std :: option :: Option < crate :: schemas :: ConfigManagementGatekeeperDeploymentStateGatekeeperControllerManagerState > , }
+    pub struct ConfigManagementGatekeeperDeploymentState { # [doc = "Status of gatekeeper-audit deployment."] # [serde (rename = "gatekeeperAudit" , default , skip_serializing_if = "std::option::Option::is_none")] pub gatekeeper_audit : :: std :: option :: Option < crate :: schemas :: ConfigManagementGatekeeperDeploymentStateGatekeeperAudit > , # [doc = "Status of gatekeeper-controller-manager pod."] # [serde (rename = "gatekeeperControllerManagerState" , default , skip_serializing_if = "std::option::Option::is_none")] pub gatekeeper_controller_manager_state : :: std :: option :: Option < crate :: schemas :: ConfigManagementGatekeeperDeploymentStateGatekeeperControllerManagerState > , # [doc = "Status of the pod serving the mutation webhook."] # [serde (rename = "gatekeeperMutation" , default , skip_serializing_if = "std::option::Option::is_none")] pub gatekeeper_mutation : :: std :: option :: Option < crate :: schemas :: ConfigManagementGatekeeperDeploymentStateGatekeeperMutation > , }
     impl ::google_field_selector::FieldSelector for ConfigManagementGatekeeperDeploymentState {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -1437,6 +1523,74 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for ConfigManagementGatekeeperDeploymentStateGatekeeperControllerManagerState
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ConfigManagementGatekeeperDeploymentStateGatekeeperMutation {
+        #[doc = "Deployment’s state cannot be determined"]
+        DeploymentStateUnspecified,
+        #[doc = "Deployment was attempted to be installed, but has errors"]
+        Error,
+        #[doc = "Deployment is installed"]
+        Installed,
+        #[doc = "Deployment is not installed"]
+        NotInstalled,
+    }
+    impl ConfigManagementGatekeeperDeploymentStateGatekeeperMutation {
+        pub fn as_str(self) -> &'static str {
+            match self { ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: DeploymentStateUnspecified => "DEPLOYMENT_STATE_UNSPECIFIED" , ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: Error => "ERROR" , ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: Installed => "INSTALLED" , ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: NotInstalled => "NOT_INSTALLED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ConfigManagementGatekeeperDeploymentStateGatekeeperMutation {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ConfigManagementGatekeeperDeploymentStateGatekeeperMutation {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<ConfigManagementGatekeeperDeploymentStateGatekeeperMutation, ()>
+        {
+            Ok (match s { "DEPLOYMENT_STATE_UNSPECIFIED" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: DeploymentStateUnspecified , "ERROR" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: Error , "INSTALLED" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: Installed , "NOT_INSTALLED" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: NotInstalled , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for ConfigManagementGatekeeperDeploymentStateGatekeeperMutation {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ConfigManagementGatekeeperDeploymentStateGatekeeperMutation {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for ConfigManagementGatekeeperDeploymentStateGatekeeperMutation
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "DEPLOYMENT_STATE_UNSPECIFIED" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: DeploymentStateUnspecified , "ERROR" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: Error , "INSTALLED" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: Installed , "NOT_INSTALLED" => ConfigManagementGatekeeperDeploymentStateGatekeeperMutation :: NotInstalled , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for ConfigManagementGatekeeperDeploymentStateGatekeeperMutation
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for ConfigManagementGatekeeperDeploymentStateGatekeeperMutation
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -2034,6 +2188,66 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ConfigManagementOciConfig {
+        #[doc = "The GCP Service Account Email used for auth when secret_type is gcpServiceAccount."]
+        #[serde(
+            rename = "gcpServiceAccountEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcp_service_account_email: ::std::option::Option<String>,
+        #[doc = "The absolute path of the directory that contains the local resources. Default: the root directory of the image."]
+        #[serde(
+            rename = "policyDir",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub policy_dir: ::std::option::Option<String>,
+        #[doc = "Type of secret configured for access to the Git repo."]
+        #[serde(
+            rename = "secretType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub secret_type: ::std::option::Option<String>,
+        #[doc = "The OCI image repository URL for the package to sync from. e.g. `LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME`."]
+        #[serde(
+            rename = "syncRepo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sync_repo: ::std::option::Option<String>,
+        #[doc = "Period in seconds between consecutive syncs. Default: 15."]
+        #[serde(
+            rename = "syncWaitSecs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub sync_wait_secs: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for ConfigManagementOciConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConfigManagementOciConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ConfigManagementOperatorState {
         #[doc = "The state of the Operator’s deployment"]
         #[serde(
@@ -2199,6 +2413,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub log_denies_enabled: ::std::option::Option<bool>,
+        #[doc = "Monitoring specifies the configuration of monitoring."]
+        #[serde(
+            rename = "monitoring",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub monitoring:
+            ::std::option::Option<crate::schemas::ConfigManagementPolicyControllerMonitoring>,
+        #[doc = "Enable or disable mutation in policy controller. If true, mutation CRDs, webhook and controller deployment will be deployed to the cluster."]
+        #[serde(
+            rename = "mutationEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mutation_enabled: ::std::option::Option<bool>,
         #[doc = "Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated."]
         #[serde(
             rename = "referentialRulesEnabled",
@@ -2220,6 +2449,103 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ConfigManagementPolicyController {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ConfigManagementPolicyControllerMonitoring {
+        #[doc = "Specifies the list of backends Policy Controller will export to. An empty list would effectively disable metrics export."]
+        #[serde(
+            rename = "backends",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub backends: ::std::option::Option<
+            Vec<crate::schemas::ConfigManagementPolicyControllerMonitoringBackendsItems>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for ConfigManagementPolicyControllerMonitoring {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConfigManagementPolicyControllerMonitoring {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ConfigManagementPolicyControllerMonitoringBackendsItems {
+        #[doc = "Stackdriver/Cloud Monitoring backend for monitoring"]
+        CloudMonitoring,
+        #[doc = "Backend cannot be determined"]
+        MonitoringBackendUnspecified,
+        #[doc = "Prometheus backend for monitoring"]
+        Prometheus,
+    }
+    impl ConfigManagementPolicyControllerMonitoringBackendsItems {
+        pub fn as_str(self) -> &'static str {
+            match self { ConfigManagementPolicyControllerMonitoringBackendsItems :: CloudMonitoring => "CLOUD_MONITORING" , ConfigManagementPolicyControllerMonitoringBackendsItems :: MonitoringBackendUnspecified => "MONITORING_BACKEND_UNSPECIFIED" , ConfigManagementPolicyControllerMonitoringBackendsItems :: Prometheus => "PROMETHEUS" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ConfigManagementPolicyControllerMonitoringBackendsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ConfigManagementPolicyControllerMonitoringBackendsItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<ConfigManagementPolicyControllerMonitoringBackendsItems, ()>
+        {
+            Ok (match s { "CLOUD_MONITORING" => ConfigManagementPolicyControllerMonitoringBackendsItems :: CloudMonitoring , "MONITORING_BACKEND_UNSPECIFIED" => ConfigManagementPolicyControllerMonitoringBackendsItems :: MonitoringBackendUnspecified , "PROMETHEUS" => ConfigManagementPolicyControllerMonitoringBackendsItems :: Prometheus , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for ConfigManagementPolicyControllerMonitoringBackendsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ConfigManagementPolicyControllerMonitoringBackendsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ConfigManagementPolicyControllerMonitoringBackendsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CLOUD_MONITORING" => ConfigManagementPolicyControllerMonitoringBackendsItems :: CloudMonitoring , "MONITORING_BACKEND_UNSPECIFIED" => ConfigManagementPolicyControllerMonitoringBackendsItems :: MonitoringBackendUnspecified , "PROMETHEUS" => ConfigManagementPolicyControllerMonitoringBackendsItems :: Prometheus , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for ConfigManagementPolicyControllerMonitoringBackendsItems
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for ConfigManagementPolicyControllerMonitoringBackendsItems
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2686,6 +3012,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delete_time: ::std::option::Option<String>,
+        #[doc = "Optional. Feature configuration applicable to all memberships of the fleet."]
+        #[serde(
+            rename = "fleetDefaultMemberConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fleet_default_member_config:
+            ::std::option::Option<crate::schemas::CommonFleetDefaultMemberConfigSpec>,
         #[doc = "GCP labels for this Feature."]
         #[serde(
             rename = "labels",
@@ -2725,6 +3059,24 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_state: ::std::option::Option<crate::schemas::FeatureResourceState>,
+        #[doc = "Optional. Scope-specific configuration for this Feature. If this Feature does not support any per-Scope configuration, this field may be unused. The keys indicate which Scope the configuration is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature’s project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Scope is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature."]
+        #[serde(
+            rename = "scopeSpecs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope_specs: ::std::option::Option<
+            ::std::collections::BTreeMap<String, crate::schemas::ScopeFeatureSpec>,
+        >,
+        #[doc = "Output only. Scope-specific Feature status. If this Feature does report any per-Scope status, this field may be unused. The keys indicate which Scope the state is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature’s project."]
+        #[serde(
+            rename = "scopeStates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope_states: ::std::option::Option<
+            ::std::collections::BTreeMap<String, crate::schemas::ScopeFeatureState>,
+        >,
         #[doc = "Optional. Hub-wide Feature configuration. If this Feature does not support any Hub-wide configuration, this field may be unused."]
         #[serde(
             rename = "spec",
@@ -3013,6 +3365,102 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FleetObservabilityFeatureSpec {}
+    impl ::google_field_selector::FieldSelector for FleetObservabilityFeatureSpec {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FleetObservabilityFeatureSpec {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FleetObservabilityFeatureState {}
+    impl ::google_field_selector::FieldSelector for FleetObservabilityFeatureState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FleetObservabilityFeatureState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FleetObservabilityMembershipSpec {}
+    impl ::google_field_selector::FieldSelector for FleetObservabilityMembershipSpec {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FleetObservabilityMembershipSpec {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FleetObservabilityMembershipState {}
+    impl ::google_field_selector::FieldSelector for FleetObservabilityMembershipState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FleetObservabilityMembershipState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -3105,6 +3553,442 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleRpcStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityServiceAuthMethod {
+        #[doc = "AzureAD specific Configuration."]
+        #[serde(
+            rename = "azureadConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub azuread_config: ::std::option::Option<crate::schemas::IdentityServiceAzureADConfig>,
+        #[doc = "GoogleConfig specific configuration"]
+        #[serde(
+            rename = "googleConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_config: ::std::option::Option<crate::schemas::IdentityServiceGoogleConfig>,
+        #[doc = "Identifier for auth config."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "OIDC specific configuration."]
+        #[serde(
+            rename = "oidcConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub oidc_config: ::std::option::Option<crate::schemas::IdentityServiceOidcConfig>,
+        #[doc = "Proxy server address to use for auth method."]
+        #[serde(
+            rename = "proxy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub proxy: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceAuthMethod {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceAuthMethod {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityServiceAzureADConfig {
+        #[doc = "ID for the registered client application that makes authentication requests to the Azure AD identity provider."]
+        #[serde(
+            rename = "clientId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client_id: ::std::option::Option<String>,
+        #[doc = "Input only. Unencrypted AzureAD client secret will be passed to the GKE Hub CLH."]
+        #[serde(
+            rename = "clientSecret",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client_secret: ::std::option::Option<String>,
+        #[doc = "Output only. Encrypted AzureAD client secret."]
+        #[serde(
+            rename = "encryptedClientSecret",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encrypted_client_secret: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "The redirect URL that kubectl uses for authorization."]
+        #[serde(
+            rename = "kubectlRedirectUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kubectl_redirect_uri: ::std::option::Option<String>,
+        #[doc = "Kind of Azure AD account to be authenticated. Supported values are or for accounts belonging to a specific tenant."]
+        #[serde(
+            rename = "tenant",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tenant: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceAzureADConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceAzureADConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityServiceGoogleConfig {
+        #[doc = "Disable automatic configuration of Google Plugin on supported platforms."]
+        #[serde(
+            rename = "disable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disable: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceGoogleConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceGoogleConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityServiceMembershipSpec {
+        #[doc = "A member may support multiple auth methods."]
+        #[serde(
+            rename = "authMethods",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auth_methods: ::std::option::Option<Vec<crate::schemas::IdentityServiceAuthMethod>>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceMembershipSpec {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceMembershipSpec {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityServiceMembershipState {
+        #[doc = "The reason of the failure."]
+        #[serde(
+            rename = "failureReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_reason: ::std::option::Option<String>,
+        #[doc = "Installed AIS version. This is the AIS version installed on this member. The values makes sense iff state is OK."]
+        #[serde(
+            rename = "installedVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub installed_version: ::std::option::Option<String>,
+        #[doc = "Last reconciled membership configuration"]
+        #[serde(
+            rename = "memberConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub member_config: ::std::option::Option<crate::schemas::IdentityServiceMembershipSpec>,
+        #[doc = "Deployment state on this member"]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::IdentityServiceMembershipStateState>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceMembershipState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceMembershipState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum IdentityServiceMembershipStateState {
+        #[doc = "Unspecified state"]
+        DeploymentStateUnspecified,
+        #[doc = "Failure with error."]
+        Error,
+        #[doc = "deployment succeeds"]
+        Ok,
+    }
+    impl IdentityServiceMembershipStateState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                IdentityServiceMembershipStateState::DeploymentStateUnspecified => {
+                    "DEPLOYMENT_STATE_UNSPECIFIED"
+                }
+                IdentityServiceMembershipStateState::Error => "ERROR",
+                IdentityServiceMembershipStateState::Ok => "OK",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for IdentityServiceMembershipStateState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for IdentityServiceMembershipStateState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<IdentityServiceMembershipStateState, ()> {
+            Ok(match s {
+                "DEPLOYMENT_STATE_UNSPECIFIED" => {
+                    IdentityServiceMembershipStateState::DeploymentStateUnspecified
+                }
+                "ERROR" => IdentityServiceMembershipStateState::Error,
+                "OK" => IdentityServiceMembershipStateState::Ok,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for IdentityServiceMembershipStateState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for IdentityServiceMembershipStateState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for IdentityServiceMembershipStateState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DEPLOYMENT_STATE_UNSPECIFIED" => {
+                    IdentityServiceMembershipStateState::DeploymentStateUnspecified
+                }
+                "ERROR" => IdentityServiceMembershipStateState::Error,
+                "OK" => IdentityServiceMembershipStateState::Ok,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceMembershipStateState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceMembershipStateState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct IdentityServiceOidcConfig {
+        #[doc = "PEM-encoded CA for OIDC provider."]
+        #[serde(
+            rename = "certificateAuthorityData",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub certificate_authority_data: ::std::option::Option<String>,
+        #[doc = "ID for OIDC client application."]
+        #[serde(
+            rename = "clientId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client_id: ::std::option::Option<String>,
+        #[doc = "Input only. Unencrypted OIDC client secret will be passed to the GKE Hub CLH."]
+        #[serde(
+            rename = "clientSecret",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client_secret: ::std::option::Option<String>,
+        #[doc = "Flag to denote if reverse proxy is used to connect to auth provider. This flag should be set to true when provider is not reachable by Google Cloud Console."]
+        #[serde(
+            rename = "deployCloudConsoleProxy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deploy_cloud_console_proxy: ::std::option::Option<bool>,
+        #[doc = "Enable access token."]
+        #[serde(
+            rename = "enableAccessToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_access_token: ::std::option::Option<bool>,
+        #[doc = "Output only. Encrypted OIDC Client secret"]
+        #[serde(
+            rename = "encryptedClientSecret",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encrypted_client_secret: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Comma-separated list of key-value pairs."]
+        #[serde(
+            rename = "extraParams",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub extra_params: ::std::option::Option<String>,
+        #[doc = "Prefix to prepend to group name."]
+        #[serde(
+            rename = "groupPrefix",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub group_prefix: ::std::option::Option<String>,
+        #[doc = "Claim in OIDC ID token that holds group information."]
+        #[serde(
+            rename = "groupsClaim",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub groups_claim: ::std::option::Option<String>,
+        #[doc = "URI for the OIDC provider. This should point to the level below .well-known/openid-configuration."]
+        #[serde(
+            rename = "issuerUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issuer_uri: ::std::option::Option<String>,
+        #[doc = "Registered redirect uri to redirect users going through OAuth flow using kubectl plugin."]
+        #[serde(
+            rename = "kubectlRedirectUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kubectl_redirect_uri: ::std::option::Option<String>,
+        #[doc = "Comma-separated list of identifiers."]
+        #[serde(
+            rename = "scopes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scopes: ::std::option::Option<String>,
+        #[doc = "Claim in OIDC ID token that holds username."]
+        #[serde(
+            rename = "userClaim",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_claim: ::std::option::Option<String>,
+        #[doc = "Prefix to prepend to user name."]
+        #[serde(
+            rename = "userPrefix",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_prefix: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for IdentityServiceOidcConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IdentityServiceOidcConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3265,7 +4149,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListFeaturesResponse {
+    impl crate::GetNextPageToken<String> for ListFeaturesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3297,7 +4181,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3347,7 +4231,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListMembershipsResponse {
+    impl crate::GetNextPageToken<String> for ListMembershipsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3379,7 +4263,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3554,6 +4438,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MembershipEndpoint {
+        #[doc = "Optional. Specific information for a GDC Edge Appliance cluster."]
+        #[serde(
+            rename = "applianceCluster",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub appliance_cluster: ::std::option::Option<crate::schemas::ApplianceCluster>,
         #[doc = "Optional. Specific information for a Google Edge cluster."]
         #[serde(
             rename = "edgeCluster",
@@ -3627,6 +4518,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub configmanagement: ::std::option::Option<crate::schemas::ConfigManagementMembershipSpec>,
+        #[doc = "True if value of `feature_spec` was inherited from a fleet-level default."]
+        #[serde(
+            rename = "fleetInherited",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fleet_inherited: ::std::option::Option<bool>,
+        #[doc = "Fleet observability membership spec"]
+        #[serde(
+            rename = "fleetobservability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fleetobservability:
+            ::std::option::Option<crate::schemas::FleetObservabilityMembershipSpec>,
+        #[doc = "Identity Service-specific spec."]
+        #[serde(
+            rename = "identityservice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub identityservice: ::std::option::Option<crate::schemas::IdentityServiceMembershipSpec>,
         #[doc = "Anthos Service Mesh-specific spec"]
         #[serde(
             rename = "mesh",
@@ -3673,6 +4586,21 @@ pub mod schemas {
         )]
         pub configmanagement:
             ::std::option::Option<crate::schemas::ConfigManagementMembershipState>,
+        #[doc = "Fleet observability membership state."]
+        #[serde(
+            rename = "fleetobservability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fleetobservability:
+            ::std::option::Option<crate::schemas::FleetObservabilityMembershipState>,
+        #[doc = "Identity Service-specific state."]
+        #[serde(
+            rename = "identityservice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub identityservice: ::std::option::Option<crate::schemas::IdentityServiceMembershipState>,
         #[doc = "Service Mesh-specific state."]
         #[serde(
             rename = "servicemesh",
@@ -3840,7 +4768,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_missing: ::std::option::Option<bool>,
-        #[doc = "Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For example: //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster"]
+        #[doc = "Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For example: //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/attachedClusters/my-cluster"]
         #[serde(
             rename = "resourceLink",
             default,
@@ -3916,6 +4844,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_missing: ::std::option::Option<bool>,
+        #[doc = "Immutable. The on prem cluster’s type."]
+        #[serde(
+            rename = "clusterType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cluster_type: ::std::option::Option<crate::schemas::OnPremClusterClusterType>,
         #[doc = "Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example: //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster"]
         #[serde(
             rename = "resourceLink",
@@ -3930,6 +4865,92 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for OnPremCluster {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum OnPremClusterClusterType {
+        #[doc = "The ClusterType is bootstrap cluster."]
+        Bootstrap,
+        #[doc = "The ClusterType is not set."]
+        ClustertypeUnspecified,
+        #[doc = "The ClusterType is baremetal hybrid cluster."]
+        Hybrid,
+        #[doc = "The ClusterType is baremetal standalone cluster."]
+        Standalone,
+        #[doc = "The ClusterType is user cluster."]
+        User,
+    }
+    impl OnPremClusterClusterType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                OnPremClusterClusterType::Bootstrap => "BOOTSTRAP",
+                OnPremClusterClusterType::ClustertypeUnspecified => "CLUSTERTYPE_UNSPECIFIED",
+                OnPremClusterClusterType::Hybrid => "HYBRID",
+                OnPremClusterClusterType::Standalone => "STANDALONE",
+                OnPremClusterClusterType::User => "USER",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for OnPremClusterClusterType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for OnPremClusterClusterType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<OnPremClusterClusterType, ()> {
+            Ok(match s {
+                "BOOTSTRAP" => OnPremClusterClusterType::Bootstrap,
+                "CLUSTERTYPE_UNSPECIFIED" => OnPremClusterClusterType::ClustertypeUnspecified,
+                "HYBRID" => OnPremClusterClusterType::Hybrid,
+                "STANDALONE" => OnPremClusterClusterType::Standalone,
+                "USER" => OnPremClusterClusterType::User,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for OnPremClusterClusterType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for OnPremClusterClusterType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for OnPremClusterClusterType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BOOTSTRAP" => OnPremClusterClusterType::Bootstrap,
+                "CLUSTERTYPE_UNSPECIFIED" => OnPremClusterClusterType::ClustertypeUnspecified,
+                "HYBRID" => OnPremClusterClusterType::Hybrid,
+                "STANDALONE" => OnPremClusterClusterType::Standalone,
+                "USER" => OnPremClusterClusterType::User,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for OnPremClusterClusterType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OnPremClusterClusterType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4200,6 +5221,61 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ScopeFeatureSpec {}
+    impl ::google_field_selector::FieldSelector for ScopeFeatureSpec {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ScopeFeatureSpec {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ScopeFeatureState {
+        #[doc = "Output only. The “running state” of the Feature in this Scope."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::FeatureState>,
+    }
+    impl ::google_field_selector::FieldSelector for ScopeFeatureState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ScopeFeatureState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -4349,6 +5425,151 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ServiceMeshDataPlaneManagement {
+        #[doc = "Explanation of the status."]
+        #[serde(
+            rename = "details",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub details: ::std::option::Option<Vec<crate::schemas::ServiceMeshStatusDetails>>,
+        #[doc = "Lifecycle status of data plane management."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::ServiceMeshDataPlaneManagementState>,
+    }
+    impl ::google_field_selector::FieldSelector for ServiceMeshDataPlaneManagement {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ServiceMeshDataPlaneManagement {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ServiceMeshDataPlaneManagementState {
+        #[doc = "ACTIVE means that the component is ready for use."]
+        Active,
+        #[doc = "DEGRADED means that the component is ready, but operating in a degraded state."]
+        Degraded,
+        #[doc = "DISABLED means that the component is not enabled."]
+        Disabled,
+        #[doc = "FAILED_PRECONDITION means that provisioning cannot proceed because of some characteristic of the member cluster."]
+        FailedPrecondition,
+        #[doc = "Unspecified"]
+        LifecycleStateUnspecified,
+        #[doc = "NEEDS_ATTENTION means that the component is ready, but some user intervention is required. (For example that the user should migrate workloads to a new control plane revision.)"]
+        NeedsAttention,
+        #[doc = "PROVISIONING means that provisioning is in progress."]
+        Provisioning,
+        #[doc = "STALLED means that provisioning could not be done."]
+        Stalled,
+    }
+    impl ServiceMeshDataPlaneManagementState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ServiceMeshDataPlaneManagementState::Active => "ACTIVE",
+                ServiceMeshDataPlaneManagementState::Degraded => "DEGRADED",
+                ServiceMeshDataPlaneManagementState::Disabled => "DISABLED",
+                ServiceMeshDataPlaneManagementState::FailedPrecondition => "FAILED_PRECONDITION",
+                ServiceMeshDataPlaneManagementState::LifecycleStateUnspecified => {
+                    "LIFECYCLE_STATE_UNSPECIFIED"
+                }
+                ServiceMeshDataPlaneManagementState::NeedsAttention => "NEEDS_ATTENTION",
+                ServiceMeshDataPlaneManagementState::Provisioning => "PROVISIONING",
+                ServiceMeshDataPlaneManagementState::Stalled => "STALLED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ServiceMeshDataPlaneManagementState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ServiceMeshDataPlaneManagementState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ServiceMeshDataPlaneManagementState, ()> {
+            Ok(match s {
+                "ACTIVE" => ServiceMeshDataPlaneManagementState::Active,
+                "DEGRADED" => ServiceMeshDataPlaneManagementState::Degraded,
+                "DISABLED" => ServiceMeshDataPlaneManagementState::Disabled,
+                "FAILED_PRECONDITION" => ServiceMeshDataPlaneManagementState::FailedPrecondition,
+                "LIFECYCLE_STATE_UNSPECIFIED" => {
+                    ServiceMeshDataPlaneManagementState::LifecycleStateUnspecified
+                }
+                "NEEDS_ATTENTION" => ServiceMeshDataPlaneManagementState::NeedsAttention,
+                "PROVISIONING" => ServiceMeshDataPlaneManagementState::Provisioning,
+                "STALLED" => ServiceMeshDataPlaneManagementState::Stalled,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ServiceMeshDataPlaneManagementState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ServiceMeshDataPlaneManagementState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ServiceMeshDataPlaneManagementState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => ServiceMeshDataPlaneManagementState::Active,
+                "DEGRADED" => ServiceMeshDataPlaneManagementState::Degraded,
+                "DISABLED" => ServiceMeshDataPlaneManagementState::Disabled,
+                "FAILED_PRECONDITION" => ServiceMeshDataPlaneManagementState::FailedPrecondition,
+                "LIFECYCLE_STATE_UNSPECIFIED" => {
+                    ServiceMeshDataPlaneManagementState::LifecycleStateUnspecified
+                }
+                "NEEDS_ATTENTION" => ServiceMeshDataPlaneManagementState::NeedsAttention,
+                "PROVISIONING" => ServiceMeshDataPlaneManagementState::Provisioning,
+                "STALLED" => ServiceMeshDataPlaneManagementState::Stalled,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ServiceMeshDataPlaneManagementState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ServiceMeshDataPlaneManagementState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ServiceMeshMembershipSpec {
         #[doc = "Enables automatic control plane management."]
         #[serde(
@@ -4358,6 +5579,13 @@ pub mod schemas {
         )]
         pub control_plane:
             ::std::option::Option<crate::schemas::ServiceMeshMembershipSpecControlPlane>,
+        #[doc = "Enables automatic Service Mesh management."]
+        #[serde(
+            rename = "management",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub management: ::std::option::Option<crate::schemas::ServiceMeshMembershipSpecManagement>,
     }
     impl ::google_field_selector::FieldSelector for ServiceMeshMembershipSpec {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4451,6 +5679,88 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ServiceMeshMembershipSpecManagement {
+        #[doc = "Google should manage my Service Mesh for the cluster."]
+        ManagementAutomatic,
+        #[doc = "User will manually configure their service mesh components."]
+        ManagementManual,
+        #[doc = "Unspecified"]
+        ManagementUnspecified,
+    }
+    impl ServiceMeshMembershipSpecManagement {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ServiceMeshMembershipSpecManagement::ManagementAutomatic => "MANAGEMENT_AUTOMATIC",
+                ServiceMeshMembershipSpecManagement::ManagementManual => "MANAGEMENT_MANUAL",
+                ServiceMeshMembershipSpecManagement::ManagementUnspecified => {
+                    "MANAGEMENT_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ServiceMeshMembershipSpecManagement {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ServiceMeshMembershipSpecManagement {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ServiceMeshMembershipSpecManagement, ()> {
+            Ok(match s {
+                "MANAGEMENT_AUTOMATIC" => ServiceMeshMembershipSpecManagement::ManagementAutomatic,
+                "MANAGEMENT_MANUAL" => ServiceMeshMembershipSpecManagement::ManagementManual,
+                "MANAGEMENT_UNSPECIFIED" => {
+                    ServiceMeshMembershipSpecManagement::ManagementUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ServiceMeshMembershipSpecManagement {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ServiceMeshMembershipSpecManagement {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ServiceMeshMembershipSpecManagement {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MANAGEMENT_AUTOMATIC" => ServiceMeshMembershipSpecManagement::ManagementAutomatic,
+                "MANAGEMENT_MANUAL" => ServiceMeshMembershipSpecManagement::ManagementManual,
+                "MANAGEMENT_UNSPECIFIED" => {
+                    ServiceMeshMembershipSpecManagement::ManagementUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ServiceMeshMembershipSpecManagement {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ServiceMeshMembershipSpecManagement {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -4472,6 +5782,14 @@ pub mod schemas {
         )]
         pub control_plane_management:
             ::std::option::Option<crate::schemas::ServiceMeshControlPlaneManagement>,
+        #[doc = "Output only. Status of data plane management."]
+        #[serde(
+            rename = "dataPlaneManagement",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_plane_management:
+            ::std::option::Option<crate::schemas::ServiceMeshDataPlaneManagement>,
     }
     impl ::google_field_selector::FieldSelector for ServiceMeshMembershipState {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5347,7 +6665,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -5382,7 +6700,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -5432,7 +6750,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5548,12 +6866,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -6572,7 +7891,7 @@ pub mod resources {
                             #[serde(rename = "resources")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6607,7 +7926,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6657,7 +7976,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6777,12 +8096,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -8536,7 +9856,7 @@ pub mod resources {
                             #[serde(rename = "resources")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -8606,7 +9926,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -8641,7 +9961,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -8691,7 +10011,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -8811,12 +10131,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -10033,7 +11354,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10068,7 +11389,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10118,7 +11439,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10237,12 +11558,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -10534,16 +11856,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -10563,13 +11887,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -10577,7 +11904,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -10604,7 +11931,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

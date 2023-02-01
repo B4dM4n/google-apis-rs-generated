@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudbuild1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220413")
+            .version("0.1.0-20230125")
             .about("Creates and manages builds on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -33,6 +33,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .help("Provide more output to aid with debugging")
                 .multiple(false)
                 .takes_value(false));
+        let mut github_dot_com_webhook0 = SubCommand::with_name("github_dot_com_webhook")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: receive");
+        {
+            let mcmd = SubCommand::with_name("receive").about(
+                "ReceiveGitHubDotComWebhook is called when the API receives a github.com webhook.",
+            );
+            github_dot_com_webhook0 = github_dot_com_webhook0.subcommand(mcmd);
+        }
         let mut locations0 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: regional_webhook");
@@ -123,7 +132,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut locations1 = SubCommand::with_name("locations")
                         .setting(AppSettings::ColoredHelp)
-                        .about("sub-resources: bitbucket_server_configs, builds, github_enterprise_configs, operations, triggers and worker_pools");
+                        .about("sub-resources: bitbucket_server_configs, builds, git_lab_configs, github_enterprise_configs, operations, triggers and worker_pools");
         let mut triggers1 = SubCommand::with_name("triggers")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list, patch, run and webhook");
@@ -151,8 +160,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             triggers1 = triggers1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("run")
-                .about("Runs a `BuildTrigger` at a particular source revision.");
+            let mcmd = SubCommand::with_name("run").about("Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers.");
             triggers1 = triggers1.subcommand(mcmd);
         }
         {
@@ -218,6 +226,40 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("retry").about("Creates a new build based on the specified build. This method creates a new build using the original build request, which may or may not result in an identical build. For triggered builds: * Triggered builds resolve to a precise revision; therefore a retry of a triggered build will result in a build that uses the same revision. For non-triggered builds that specify `RepoSource`: * If the original build built from the tip of a branch, the retried build will build from the tip of that branch, which may not be the same revision as the original build. * If the original build specified a commit sha or revision ID, the retried build will use the identical source. For builds that specify `StorageSource`: * If the original build pulled source from Google Cloud Storage without specifying the generation of the object, the new build will use the current object, which may be different from the original build source. * If the original build pulled source from Cloud Storage and specified the generation of the object, the new build will attempt to use the same object, which may or may not be available depending on the bucket's lifecycle management settings.");
             builds2 = builds2.subcommand(mcmd);
+        }
+        let mut git_lab_configs2 = SubCommand::with_name("git_lab_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about(
+                "methods: create, delete, get, list, patch and remove_git_lab_connected_repository",
+            );
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new `GitLabConfig`. This API is experimental");
+            git_lab_configs2 = git_lab_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete")
+                .about("Delete a `GitLabConfig`. This API is experimental");
+            git_lab_configs2 = git_lab_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Retrieves a `GitLabConfig`. This API is experimental");
+            git_lab_configs2 = git_lab_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("List all `GitLabConfigs` for a given project. This API is experimental");
+            git_lab_configs2 = git_lab_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates an existing `GitLabConfig`. This API is experimental");
+            git_lab_configs2 = git_lab_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("remove_git_lab_connected_repository").about("Remove a GitLab repository from a given GitLabConfig's connected repositories. This API is experimental.");
+            git_lab_configs2 = git_lab_configs2.subcommand(mcmd);
         }
         let mut github_enterprise_configs2 = SubCommand::with_name("github_enterprise_configs")
             .setting(AppSettings::ColoredHelp)
@@ -287,8 +329,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             triggers2 = triggers2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("run")
-                .about("Runs a `BuildTrigger` at a particular source revision.");
+            let mcmd = SubCommand::with_name("run").about("Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers.");
             triggers2 = triggers2.subcommand(mcmd);
         }
         {
@@ -333,12 +374,33 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("List all repositories for a given `BitbucketServerConfig`. This API is experimental.");
             repos3 = repos3.subcommand(mcmd);
         }
+        let mut connected_repositories3 = SubCommand::with_name("connected_repositories")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: batch_create");
+        {
+            let mcmd = SubCommand::with_name("batch_create").about(
+                "Batch connecting GitLab repositories to Cloud Build. This API is experimental.",
+            );
+            connected_repositories3 = connected_repositories3.subcommand(mcmd);
+        }
+        let mut repos3 = SubCommand::with_name("repos")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about(
+                "List all repositories for a given `GitLabConfig`. This API is experimental",
+            );
+            repos3 = repos3.subcommand(mcmd);
+        }
+        git_lab_configs2 = git_lab_configs2.subcommand(repos3);
+        git_lab_configs2 = git_lab_configs2.subcommand(connected_repositories3);
         bitbucket_server_configs2 = bitbucket_server_configs2.subcommand(repos3);
         bitbucket_server_configs2 = bitbucket_server_configs2.subcommand(connected_repositories3);
         locations1 = locations1.subcommand(worker_pools2);
         locations1 = locations1.subcommand(triggers2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(github_enterprise_configs2);
+        locations1 = locations1.subcommand(git_lab_configs2);
         locations1 = locations1.subcommand(builds2);
         locations1 = locations1.subcommand(bitbucket_server_configs2);
         projects0 = projects0.subcommand(triggers1);
@@ -349,6 +411,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(projects0);
         app = app.subcommand(operations0);
         app = app.subcommand(locations0);
+        app = app.subcommand(github_dot_com_webhook0);
 
         Self { app }
     }

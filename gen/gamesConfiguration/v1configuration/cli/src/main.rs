@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("gamesConfiguration1_configuration")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220420")
+            .version("0.1.0-20230120")
             .about("The Google Play Game Services Publishing API allows developers to configure their games in Game Services.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -62,14 +62,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Update the metadata of the achievement configuration with the given ID.");
             achievement_configurations0 = achievement_configurations0.subcommand(mcmd);
         }
-        let mut image_configurations0 = SubCommand::with_name("image_configurations")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: upload");
-        {
-            let mcmd = SubCommand::with_name("upload")
-                .about("Uploads an image for a resource with the given ID and image type.");
-            image_configurations0 = image_configurations0.subcommand(mcmd);
-        }
         let mut leaderboard_configurations0 = SubCommand::with_name("leaderboard_configurations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, insert, list and update");
@@ -100,7 +92,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             leaderboard_configurations0 = leaderboard_configurations0.subcommand(mcmd);
         }
         app = app.subcommand(leaderboard_configurations0);
-        app = app.subcommand(image_configurations0);
         app = app.subcommand(achievement_configurations0);
 
         Self { app }

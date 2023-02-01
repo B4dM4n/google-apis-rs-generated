@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [about](resources/about/struct.AboutActions.html)\n  * [*get*](resources/about/struct.GetRequestBuilder.html)\n* [apps](resources/apps/struct.AppsActions.html)\n  * [*get*](resources/apps/struct.GetRequestBuilder.html), [*list*](resources/apps/struct.ListRequestBuilder.html)\n* [changes](resources/changes/struct.ChangesActions.html)\n  * [*get*](resources/changes/struct.GetRequestBuilder.html), [*getStartPageToken*](resources/changes/struct.GetStartPageTokenRequestBuilder.html), [*list*](resources/changes/struct.ListRequestBuilder.html), [*watch*](resources/changes/struct.WatchRequestBuilder.html)\n* [channels](resources/channels/struct.ChannelsActions.html)\n  * [*stop*](resources/channels/struct.StopRequestBuilder.html)\n* [children](resources/children/struct.ChildrenActions.html)\n  * [*delete*](resources/children/struct.DeleteRequestBuilder.html), [*get*](resources/children/struct.GetRequestBuilder.html), [*insert*](resources/children/struct.InsertRequestBuilder.html), [*list*](resources/children/struct.ListRequestBuilder.html)\n* [comments](resources/comments/struct.CommentsActions.html)\n  * [*delete*](resources/comments/struct.DeleteRequestBuilder.html), [*get*](resources/comments/struct.GetRequestBuilder.html), [*insert*](resources/comments/struct.InsertRequestBuilder.html), [*list*](resources/comments/struct.ListRequestBuilder.html), [*patch*](resources/comments/struct.PatchRequestBuilder.html), [*update*](resources/comments/struct.UpdateRequestBuilder.html)\n* [drives](resources/drives/struct.DrivesActions.html)\n  * [*delete*](resources/drives/struct.DeleteRequestBuilder.html), [*get*](resources/drives/struct.GetRequestBuilder.html), [*hide*](resources/drives/struct.HideRequestBuilder.html), [*insert*](resources/drives/struct.InsertRequestBuilder.html), [*list*](resources/drives/struct.ListRequestBuilder.html), [*unhide*](resources/drives/struct.UnhideRequestBuilder.html), [*update*](resources/drives/struct.UpdateRequestBuilder.html)\n* [files](resources/files/struct.FilesActions.html)\n  * [*copy*](resources/files/struct.CopyRequestBuilder.html), [*delete*](resources/files/struct.DeleteRequestBuilder.html), [*emptyTrash*](resources/files/struct.EmptyTrashRequestBuilder.html), [*export*](resources/files/struct.ExportRequestBuilder.html), [*generateIds*](resources/files/struct.GenerateIdsRequestBuilder.html), [*get*](resources/files/struct.GetRequestBuilder.html), [*insert*](resources/files/struct.InsertRequestBuilder.html), [*list*](resources/files/struct.ListRequestBuilder.html), [*patch*](resources/files/struct.PatchRequestBuilder.html), [*touch*](resources/files/struct.TouchRequestBuilder.html), [*trash*](resources/files/struct.TrashRequestBuilder.html), [*untrash*](resources/files/struct.UntrashRequestBuilder.html), [*update*](resources/files/struct.UpdateRequestBuilder.html), [*watch*](resources/files/struct.WatchRequestBuilder.html)\n* [parents](resources/parents/struct.ParentsActions.html)\n  * [*delete*](resources/parents/struct.DeleteRequestBuilder.html), [*get*](resources/parents/struct.GetRequestBuilder.html), [*insert*](resources/parents/struct.InsertRequestBuilder.html), [*list*](resources/parents/struct.ListRequestBuilder.html)\n* [permissions](resources/permissions/struct.PermissionsActions.html)\n  * [*delete*](resources/permissions/struct.DeleteRequestBuilder.html), [*get*](resources/permissions/struct.GetRequestBuilder.html), [*getIdForEmail*](resources/permissions/struct.GetIdForEmailRequestBuilder.html), [*insert*](resources/permissions/struct.InsertRequestBuilder.html), [*list*](resources/permissions/struct.ListRequestBuilder.html), [*patch*](resources/permissions/struct.PatchRequestBuilder.html), [*update*](resources/permissions/struct.UpdateRequestBuilder.html)\n* [properties](resources/properties/struct.PropertiesActions.html)\n  * [*delete*](resources/properties/struct.DeleteRequestBuilder.html), [*get*](resources/properties/struct.GetRequestBuilder.html), [*insert*](resources/properties/struct.InsertRequestBuilder.html), [*list*](resources/properties/struct.ListRequestBuilder.html), [*patch*](resources/properties/struct.PatchRequestBuilder.html), [*update*](resources/properties/struct.UpdateRequestBuilder.html)\n* [replies](resources/replies/struct.RepliesActions.html)\n  * [*delete*](resources/replies/struct.DeleteRequestBuilder.html), [*get*](resources/replies/struct.GetRequestBuilder.html), [*insert*](resources/replies/struct.InsertRequestBuilder.html), [*list*](resources/replies/struct.ListRequestBuilder.html), [*patch*](resources/replies/struct.PatchRequestBuilder.html), [*update*](resources/replies/struct.UpdateRequestBuilder.html)\n* [revisions](resources/revisions/struct.RevisionsActions.html)\n  * [*delete*](resources/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/revisions/struct.GetRequestBuilder.html), [*list*](resources/revisions/struct.ListRequestBuilder.html), [*patch*](resources/revisions/struct.PatchRequestBuilder.html), [*update*](resources/revisions/struct.UpdateRequestBuilder.html)\n* [teamdrives](resources/teamdrives/struct.TeamdrivesActions.html)\n  * [*delete*](resources/teamdrives/struct.DeleteRequestBuilder.html), [*get*](resources/teamdrives/struct.GetRequestBuilder.html), [*insert*](resources/teamdrives/struct.InsertRequestBuilder.html), [*list*](resources/teamdrives/struct.ListRequestBuilder.html), [*update*](resources/teamdrives/struct.UpdateRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [about](resources/about/struct.AboutActions.html)\n  * [*get*](resources/about/struct.GetRequestBuilder.html)\n* [apps](resources/apps/struct.AppsActions.html)\n  * [*get*](resources/apps/struct.GetRequestBuilder.html), [*list*](resources/apps/struct.ListRequestBuilder.html)\n* [changes](resources/changes/struct.ChangesActions.html)\n  * [*get*](resources/changes/struct.GetRequestBuilder.html), [*getStartPageToken*](resources/changes/struct.GetStartPageTokenRequestBuilder.html), [*list*](resources/changes/struct.ListRequestBuilder.html), [*watch*](resources/changes/struct.WatchRequestBuilder.html)\n* [channels](resources/channels/struct.ChannelsActions.html)\n  * [*stop*](resources/channels/struct.StopRequestBuilder.html)\n* [children](resources/children/struct.ChildrenActions.html)\n  * [*delete*](resources/children/struct.DeleteRequestBuilder.html), [*get*](resources/children/struct.GetRequestBuilder.html), [*insert*](resources/children/struct.InsertRequestBuilder.html), [*list*](resources/children/struct.ListRequestBuilder.html)\n* [comments](resources/comments/struct.CommentsActions.html)\n  * [*delete*](resources/comments/struct.DeleteRequestBuilder.html), [*get*](resources/comments/struct.GetRequestBuilder.html), [*insert*](resources/comments/struct.InsertRequestBuilder.html), [*list*](resources/comments/struct.ListRequestBuilder.html), [*patch*](resources/comments/struct.PatchRequestBuilder.html), [*update*](resources/comments/struct.UpdateRequestBuilder.html)\n* [drives](resources/drives/struct.DrivesActions.html)\n  * [*delete*](resources/drives/struct.DeleteRequestBuilder.html), [*get*](resources/drives/struct.GetRequestBuilder.html), [*hide*](resources/drives/struct.HideRequestBuilder.html), [*insert*](resources/drives/struct.InsertRequestBuilder.html), [*list*](resources/drives/struct.ListRequestBuilder.html), [*unhide*](resources/drives/struct.UnhideRequestBuilder.html), [*update*](resources/drives/struct.UpdateRequestBuilder.html)\n* [files](resources/files/struct.FilesActions.html)\n  * [*copy*](resources/files/struct.CopyRequestBuilder.html), [*delete*](resources/files/struct.DeleteRequestBuilder.html), [*emptyTrash*](resources/files/struct.EmptyTrashRequestBuilder.html), [*export*](resources/files/struct.ExportRequestBuilder.html), [*generateIds*](resources/files/struct.GenerateIdsRequestBuilder.html), [*get*](resources/files/struct.GetRequestBuilder.html), [*insert*](resources/files/struct.InsertRequestBuilder.html), [*list*](resources/files/struct.ListRequestBuilder.html), [*listLabels*](resources/files/struct.ListLabelsRequestBuilder.html), [*modifyLabels*](resources/files/struct.ModifyLabelsRequestBuilder.html), [*patch*](resources/files/struct.PatchRequestBuilder.html), [*touch*](resources/files/struct.TouchRequestBuilder.html), [*trash*](resources/files/struct.TrashRequestBuilder.html), [*untrash*](resources/files/struct.UntrashRequestBuilder.html), [*update*](resources/files/struct.UpdateRequestBuilder.html), [*watch*](resources/files/struct.WatchRequestBuilder.html)\n* [parents](resources/parents/struct.ParentsActions.html)\n  * [*delete*](resources/parents/struct.DeleteRequestBuilder.html), [*get*](resources/parents/struct.GetRequestBuilder.html), [*insert*](resources/parents/struct.InsertRequestBuilder.html), [*list*](resources/parents/struct.ListRequestBuilder.html)\n* [permissions](resources/permissions/struct.PermissionsActions.html)\n  * [*delete*](resources/permissions/struct.DeleteRequestBuilder.html), [*get*](resources/permissions/struct.GetRequestBuilder.html), [*getIdForEmail*](resources/permissions/struct.GetIdForEmailRequestBuilder.html), [*insert*](resources/permissions/struct.InsertRequestBuilder.html), [*list*](resources/permissions/struct.ListRequestBuilder.html), [*patch*](resources/permissions/struct.PatchRequestBuilder.html), [*update*](resources/permissions/struct.UpdateRequestBuilder.html)\n* [properties](resources/properties/struct.PropertiesActions.html)\n  * [*delete*](resources/properties/struct.DeleteRequestBuilder.html), [*get*](resources/properties/struct.GetRequestBuilder.html), [*insert*](resources/properties/struct.InsertRequestBuilder.html), [*list*](resources/properties/struct.ListRequestBuilder.html), [*patch*](resources/properties/struct.PatchRequestBuilder.html), [*update*](resources/properties/struct.UpdateRequestBuilder.html)\n* [replies](resources/replies/struct.RepliesActions.html)\n  * [*delete*](resources/replies/struct.DeleteRequestBuilder.html), [*get*](resources/replies/struct.GetRequestBuilder.html), [*insert*](resources/replies/struct.InsertRequestBuilder.html), [*list*](resources/replies/struct.ListRequestBuilder.html), [*patch*](resources/replies/struct.PatchRequestBuilder.html), [*update*](resources/replies/struct.UpdateRequestBuilder.html)\n* [revisions](resources/revisions/struct.RevisionsActions.html)\n  * [*delete*](resources/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/revisions/struct.GetRequestBuilder.html), [*list*](resources/revisions/struct.ListRequestBuilder.html), [*patch*](resources/revisions/struct.PatchRequestBuilder.html), [*update*](resources/revisions/struct.UpdateRequestBuilder.html)\n* [teamdrives](resources/teamdrives/struct.TeamdrivesActions.html)\n  * [*delete*](resources/teamdrives/struct.DeleteRequestBuilder.html), [*get*](resources/teamdrives/struct.GetRequestBuilder.html), [*insert*](resources/teamdrives/struct.InsertRequestBuilder.html), [*list*](resources/teamdrives/struct.ListRequestBuilder.html), [*update*](resources/teamdrives/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, create, and delete all of your Google Drive files\n\n`https://www.googleapis.com/auth/drive`"]
     pub const DRIVE: &str = "https://www.googleapis.com/auth/drive";
@@ -1066,7 +1067,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ChangeList {
+    impl crate::GetNextPageToken<String> for ChangeList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1232,7 +1233,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ChildList {
+    impl crate::GetNextPageToken<String> for ChildList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1515,7 +1516,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CommentList {
+    impl crate::GetNextPageToken<String> for CommentList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1666,7 +1667,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CommentReplyList {
+    impl crate::GetNextPageToken<String> for CommentReplyList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1997,6 +1998,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_rename_drive: ::std::option::Option<bool>,
+        #[doc = "Whether the current user can reset the shared drive restrictions to defaults."]
+        #[serde(
+            rename = "canResetDriveRestrictions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub can_reset_drive_restrictions: ::std::option::Option<bool>,
         #[doc = "Whether the current user can share files or folders in this shared drive."]
         #[serde(
             rename = "canShare",
@@ -2110,7 +2118,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DriveList {
+    impl crate::GetNextPageToken<String> for DriveList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2196,7 +2204,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Short lived download URL for the file. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files."]
+        #[doc = "Short lived download URL for the file. This field is only populated for files with content stored in Google Drive; it isn’t populated for Docs Editors or shortcut files."]
         #[serde(
             rename = "downloadUrl",
             default,
@@ -2245,14 +2253,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub export_links: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The final component of fullFileExtension with trailing text that does not appear to be part of the extension removed. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files."]
+        #[doc = "The final component of fullFileExtension with trailing text that does not appear to be part of the extension removed. This field is only populated for files with content stored in Google Drive; it isn’t populated for Docs Editors or shortcut files."]
         #[serde(
             rename = "fileExtension",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_extension: ::std::option::Option<String>,
-        #[doc = "The size of the file in bytes. This field is populated for files with content stored in Google Drive and for files in Docs Editors; it is not populated for shortcut files."]
+        #[doc = "The size of the file in bytes. This field is populated for files with content stored in Google Drive and for files in Docs Editors; it isn’t populated for shortcut files."]
         #[serde(
             rename = "fileSize",
             default,
@@ -2267,7 +2275,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub folder_color_rgb: ::std::option::Option<String>,
-        #[doc = "The full file extension; extracted from the title. May contain multiple concatenated extensions, such as “tar.gz”. Removing an extension from the title does not clear this field; however, changing the extension on the title does update this field. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files."]
+        #[doc = "The full file extension; extracted from the title. May contain multiple concatenated extensions, such as “tar.gz”. Removing an extension from the title does not clear this field; however, changing the extension on the title does update this field. This field is only populated for files with content stored in Google Drive; it isn’t populated for Docs Editors or shortcut files."]
         #[serde(
             rename = "fullFileExtension",
             default,
@@ -2288,7 +2296,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub has_thumbnail: ::std::option::Option<bool>,
-        #[doc = "The ID of the file’s head revision. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files."]
+        #[doc = "The ID of the file’s head revision. This field is only populated for files with content stored in Google Drive; it isn’t populated for Docs Editors or shortcut files."]
         #[serde(
             rename = "headRevisionId",
             default,
@@ -2316,7 +2324,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_media_metadata: ::std::option::Option<crate::schemas::FileImageMediaMetadata>,
-        #[doc = "Indexable text attributes for the file (can only be written)"]
+        #[doc = "Indexable text attributes for the file (can only be written). For more information, see Manage file metadata."]
         #[serde(
             rename = "indexableText",
             default,
@@ -2337,6 +2345,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
+        #[doc = "An overview of the labels on the file."]
+        #[serde(
+            rename = "labelInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub label_info: ::std::option::Option<crate::schemas::FileLabelInfo>,
         #[doc = "A group of labels for the file."]
         #[serde(
             rename = "labels",
@@ -2380,7 +2395,7 @@ pub mod schemas {
         )]
         pub marked_viewed_by_me_date:
             ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "An MD5 checksum for the content of this file. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files."]
+        #[doc = "An MD5 checksum for the content of this file. This field is only populated for files with content stored in Google Drive; it isn’t populated for Docs Editors or shortcut files."]
         #[serde(
             rename = "md5Checksum",
             default,
@@ -2493,6 +2508,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
+        #[doc = "The SHA1 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it isn’t populated for Docs Editors or shortcut files."]
+        #[serde(
+            rename = "sha1Checksum",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sha_1_checksum: ::std::option::Option<String>,
+        #[doc = "The SHA256 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it isn’t populated for Docs Editors or shortcut files."]
+        #[serde(
+            rename = "sha256Checksum",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sha_256_checksum: ::std::option::Option<String>,
         #[doc = "Deprecated: use capabilities/canShare."]
         #[serde(
             rename = "shareable",
@@ -2764,6 +2793,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_modify_content_restriction: ::std::option::Option<bool>,
+        #[doc = "Whether the current user can modify the labels on this file."]
+        #[serde(
+            rename = "canModifyLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub can_modify_labels: ::std::option::Option<bool>,
         #[doc = "Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives."]
         #[serde(
             rename = "canMoveChildrenOutOfDrive",
@@ -2841,7 +2877,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_read_drive: ::std::option::Option<bool>,
-        #[doc = "Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read."]
+        #[doc = "Whether the current user can read the labels on this file."]
+        #[serde(
+            rename = "canReadLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub can_read_labels: ::std::option::Option<bool>,
+        #[doc = "Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it isn’t a folder, can be read."]
         #[serde(
             rename = "canReadRevisions",
             default,
@@ -3156,6 +3199,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct FileLabelInfo {
+        #[doc = "The set of labels on the file as requested by the label IDs in the includeLabels parameter. By default, no labels are returned."]
+        #[serde(
+            rename = "labels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub labels: ::std::option::Option<Vec<crate::schemas::Label>>,
+    }
+    impl ::google_field_selector::FieldSelector for FileLabelInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FileLabelInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct FileLabels {
         #[doc = "Deprecated."]
         #[serde(
@@ -3441,7 +3515,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for FileList {
+    impl crate::GetNextPageToken<String> for FileList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3487,6 +3561,397 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GeneratedIds {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Label {
+        #[doc = "A map of the label’s fields keyed by the field ID."]
+        #[serde(
+            rename = "fields",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fields:
+            ::std::option::Option<::std::collections::BTreeMap<String, crate::schemas::LabelField>>,
+        #[doc = "The ID of the label."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "This is always drive#label"]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The revision ID of the label."]
+        #[serde(
+            rename = "revisionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub revision_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Label {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Label {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LabelField {
+        #[doc = "Only present if valueType is dateString. RFC 3339 formatted date: YYYY-MM-DD."]
+        #[serde(
+            rename = "dateString",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_string: ::std::option::Option<Vec<::chrono::NaiveDate>>,
+        #[doc = "The identifier of this field."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Only present if valueType is integer."]
+        #[serde(
+            rename = "integer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub integer: ::std::option::Option<Vec<i64>>,
+        #[doc = "This is always drive#labelField."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "Only present if valueType is selection."]
+        #[serde(
+            rename = "selection",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub selection: ::std::option::Option<Vec<String>>,
+        #[doc = "Only present if valueType is text."]
+        #[serde(
+            rename = "text",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub text: ::std::option::Option<Vec<String>>,
+        #[doc = "Only present if valueType is user."]
+        #[serde(
+            rename = "user",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user: ::std::option::Option<Vec<crate::schemas::User>>,
+        #[doc = "The field type. While new values may be supported in the future, the following are currently allowed:\n\n* dateString \n* integer \n* selection \n* text \n* user"]
+        #[serde(
+            rename = "valueType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value_type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LabelField {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LabelField {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LabelFieldModification {
+        #[doc = "The ID of the field to be modified."]
+        #[serde(
+            rename = "fieldId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_id: ::std::option::Option<String>,
+        #[doc = "This is always drive#labelFieldModification."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "Replaces a dateString field with these new values. The values must be strings in the RFC 3339 full-date format: YYYY-MM-DD."]
+        #[serde(
+            rename = "setDateValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub set_date_values: ::std::option::Option<Vec<::chrono::NaiveDate>>,
+        #[doc = "Replaces an integer field with these new values."]
+        #[serde(
+            rename = "setIntegerValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub set_integer_values: ::std::option::Option<Vec<i64>>,
+        #[doc = "Replaces a selection field with these new values."]
+        #[serde(
+            rename = "setSelectionValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub set_selection_values: ::std::option::Option<Vec<String>>,
+        #[doc = "Replaces a text field with these new values."]
+        #[serde(
+            rename = "setTextValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub set_text_values: ::std::option::Option<Vec<String>>,
+        #[doc = "Replaces a user field with these new values. The values must be valid email addresses."]
+        #[serde(
+            rename = "setUserValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub set_user_values: ::std::option::Option<Vec<String>>,
+        #[doc = "Unsets the values for this field."]
+        #[serde(
+            rename = "unsetValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub unset_values: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for LabelFieldModification {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LabelFieldModification {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LabelList {
+        #[doc = "The list of labels."]
+        #[serde(
+            rename = "items",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub items: ::std::option::Option<Vec<crate::schemas::Label>>,
+        #[doc = "This is always drive#labelList"]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The page token for the next page of labels. This field will be absent if the end of the list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LabelList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LabelList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for LabelList {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LabelModification {
+        #[doc = "The list of modifications to this label’s fields."]
+        #[serde(
+            rename = "fieldModifications",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_modifications: ::std::option::Option<Vec<crate::schemas::LabelFieldModification>>,
+        #[doc = "This is always drive#labelModification."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The ID of the label to modify."]
+        #[serde(
+            rename = "labelId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub label_id: ::std::option::Option<String>,
+        #[doc = "If true, the label will be removed from the file."]
+        #[serde(
+            rename = "removeLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remove_label: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for LabelModification {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LabelModification {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ModifyLabelsRequest {
+        #[doc = "This is always drive#modifyLabelsRequest"]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The list of modifications to apply to the labels on the file."]
+        #[serde(
+            rename = "labelModifications",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub label_modifications: ::std::option::Option<Vec<crate::schemas::LabelModification>>,
+    }
+    impl ::google_field_selector::FieldSelector for ModifyLabelsRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ModifyLabelsRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ModifyLabelsResponse {
+        #[doc = "This is always drive#modifyLabelsResponse"]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The list of labels which were added or updated by the request."]
+        #[serde(
+            rename = "modifiedLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub modified_labels: ::std::option::Option<Vec<crate::schemas::Label>>,
+    }
+    impl ::google_field_selector::FieldSelector for ModifyLabelsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ModifyLabelsResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3657,7 +4122,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The time at which this permission will expire (RFC 3339 date-time). Expiration dates have the following restrictions:\n\n* They cannot be set on shared drive items \n* They can only be set on user and group permissions \n* The date must be in the future \n* The date cannot be more than a year in the future \n* The date can only be set on drive.permissions.update or drive.permissions.patch requests"]
+        #[doc = "The time at which this permission will expire (RFC 3339 date-time). Expiration dates have the following restrictions:\n\n* They cannot be set on shared drive items \n* They can only be set on user and group permissions \n* The date must be in the future \n* The date cannot be more than a year in the future"]
         #[serde(
             rename = "expirationDate",
             default,
@@ -3983,7 +4448,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PermissionList {
+    impl crate::GetNextPageToken<String> for PermissionList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4315,7 +4780,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for RevisionList {
+    impl crate::GetNextPageToken<String> for RevisionList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4626,6 +5091,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_rename_team_drive: ::std::option::Option<bool>,
+        #[doc = "Whether the current user can reset the Team Drive restrictions to defaults."]
+        #[serde(
+            rename = "canResetTeamDriveRestrictions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub can_reset_team_drive_restrictions: ::std::option::Option<bool>,
         #[doc = "Whether the current user can share files or folders in this Team Drive."]
         #[serde(
             rename = "canShare",
@@ -4739,7 +5211,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for TeamDriveList {
+    impl crate::GetNextPageToken<String> for TeamDriveList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5596,6 +6068,7 @@ pub mod resources {
                     include_corpus_removals: None,
                     include_deleted: None,
                     include_items_from_all_drives: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     include_subscribed: None,
                     include_team_drive_items: None,
@@ -5625,6 +6098,7 @@ pub mod resources {
                     include_corpus_removals: None,
                     include_deleted: None,
                     include_items_from_all_drives: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     include_subscribed: None,
                     include_team_drive_items: None,
@@ -5959,6 +6433,7 @@ pub mod resources {
             include_corpus_removals: ::std::option::Option<bool>,
             include_deleted: ::std::option::Option<bool>,
             include_items_from_all_drives: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             include_subscribed: ::std::option::Option<bool>,
             include_team_drive_items: ::std::option::Option<bool>,
@@ -5996,6 +6471,11 @@ pub mod resources {
             #[doc = "Whether both My Drive and shared drive items should be included in results."]
             pub fn include_items_from_all_drives(mut self, value: bool) -> Self {
                 self.include_items_from_all_drives = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -6118,7 +6598,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -6151,7 +6631,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -6199,7 +6679,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6289,6 +6769,7 @@ pub mod resources {
                     "includeItemsFromAllDrives",
                     &self.include_items_from_all_drives,
                 )]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -6320,12 +6801,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -6340,6 +6822,7 @@ pub mod resources {
             include_corpus_removals: ::std::option::Option<bool>,
             include_deleted: ::std::option::Option<bool>,
             include_items_from_all_drives: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             include_subscribed: ::std::option::Option<bool>,
             include_team_drive_items: ::std::option::Option<bool>,
@@ -6377,6 +6860,11 @@ pub mod resources {
             #[doc = "Whether both My Drive and shared drive items should be included in results."]
             pub fn include_items_from_all_drives(mut self, value: bool) -> Self {
                 self.include_items_from_all_drives = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -6531,6 +7019,7 @@ pub mod resources {
                     "includeItemsFromAllDrives",
                     &self.include_items_from_all_drives,
                 )]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -7254,7 +7743,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -7287,7 +7776,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -7335,7 +7824,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -7448,12 +7937,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -8073,7 +8563,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8106,7 +8596,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -8154,7 +8644,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8267,12 +8757,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -9297,7 +9788,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -9330,7 +9821,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -9378,7 +9869,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -9483,12 +9974,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -10407,6 +10899,7 @@ pub mod resources {
                     file_id: file_id.into(),
                     convert: None,
                     enforce_single_parent: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     ocr: None,
                     ocr_language: None,
@@ -10502,6 +10995,7 @@ pub mod resources {
                     user_ip: None,
                     file_id: file_id.into(),
                     acknowledge_abuse: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     projection: None,
                     revision_id: None,
@@ -10525,6 +11019,7 @@ pub mod resources {
                     user_ip: None,
                     convert: None,
                     enforce_single_parent: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     ocr: None,
                     ocr_language: None,
@@ -10553,6 +11048,7 @@ pub mod resources {
                     corpus: None,
                     drive_id: None,
                     include_items_from_all_drives: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     include_team_drive_items: None,
                     max_results: None,
@@ -10564,6 +11060,43 @@ pub mod resources {
                     supports_all_drives: None,
                     supports_team_drives: None,
                     team_drive_id: None,
+                }
+            }
+            #[doc = "Lists the labels on a file."]
+            pub fn list_labels(&self, file_id: impl Into<String>) -> ListLabelsRequestBuilder {
+                ListLabelsRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    alt: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    user_ip: None,
+                    file_id: file_id.into(),
+                    max_results: None,
+                    page_token: None,
+                }
+            }
+            #[doc = "Modifies the set of labels on a file."]
+            pub fn modify_labels(
+                &self,
+                request: crate::schemas::ModifyLabelsRequest,
+                file_id: impl Into<String>,
+            ) -> ModifyLabelsRequestBuilder {
+                ModifyLabelsRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    alt: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    user_ip: None,
+                    file_id: file_id.into(),
                 }
             }
             #[doc = "Updates a file’s metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics."]
@@ -10587,6 +11120,7 @@ pub mod resources {
                     add_parents: None,
                     convert: None,
                     enforce_single_parent: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     modified_date_behavior: None,
                     new_revision: None,
@@ -10616,6 +11150,7 @@ pub mod resources {
                     quota_user: None,
                     user_ip: None,
                     file_id: file_id.into(),
+                    include_labels: None,
                     include_permissions_for_view: None,
                     supports_all_drives: None,
                     supports_team_drives: None,
@@ -10634,6 +11169,7 @@ pub mod resources {
                     quota_user: None,
                     user_ip: None,
                     file_id: file_id.into(),
+                    include_labels: None,
                     include_permissions_for_view: None,
                     supports_all_drives: None,
                     supports_team_drives: None,
@@ -10652,6 +11188,7 @@ pub mod resources {
                     quota_user: None,
                     user_ip: None,
                     file_id: file_id.into(),
+                    include_labels: None,
                     include_permissions_for_view: None,
                     supports_all_drives: None,
                     supports_team_drives: None,
@@ -10678,6 +11215,7 @@ pub mod resources {
                     add_parents: None,
                     convert: None,
                     enforce_single_parent: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     modified_date_behavior: None,
                     new_revision: None,
@@ -10713,6 +11251,7 @@ pub mod resources {
                     user_ip: None,
                     file_id: file_id.into(),
                     acknowledge_abuse: None,
+                    include_labels: None,
                     include_permissions_for_view: None,
                     projection: None,
                     revision_id: None,
@@ -10731,6 +11270,7 @@ pub mod resources {
             file_id: String,
             convert: ::std::option::Option<bool>,
             enforce_single_parent: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             ocr: ::std::option::Option<bool>,
             ocr_language: ::std::option::Option<String>,
@@ -10757,6 +11297,11 @@ pub mod resources {
             #[doc = "Deprecated. Copying files into multiple folders is no longer supported. Use shortcuts instead."]
             pub fn enforce_single_parent(mut self, value: bool) -> Self {
                 self.enforce_single_parent = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -10912,6 +11457,7 @@ pub mod resources {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                 req = req.query(&[("convert", &self.convert)]);
                 req = req.query(&[("enforceSingleParent", &self.enforce_single_parent)]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -11377,6 +11923,7 @@ pub mod resources {
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             file_id: String,
             acknowledge_abuse: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             projection: ::std::option::Option<crate::resources::files::params::GetProjection>,
             revision_id: ::std::option::Option<String>,
@@ -11395,6 +11942,11 @@ pub mod resources {
             #[doc = "Whether the user is acknowledging the risk of downloading known malware or other abusive files."]
             pub fn acknowledge_abuse(mut self, value: bool) -> Self {
                 self.acknowledge_abuse = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -11559,6 +12111,7 @@ pub mod resources {
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("acknowledgeAbuse", &self.acknowledge_abuse)]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -11592,6 +12145,7 @@ pub mod resources {
             request: crate::schemas::File,
             convert: ::std::option::Option<bool>,
             enforce_single_parent: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             ocr: ::std::option::Option<bool>,
             ocr_language: ::std::option::Option<String>,
@@ -11619,6 +12173,11 @@ pub mod resources {
             #[doc = "Deprecated. Creating files in multiple folders is no longer supported."]
             pub fn enforce_single_parent(mut self, value: bool) -> Self {
                 self.enforce_single_parent = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -11851,6 +12410,7 @@ pub mod resources {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                 req = req.query(&[("convert", &self.convert)]);
                 req = req.query(&[("enforceSingleParent", &self.enforce_single_parent)]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -11892,6 +12452,7 @@ pub mod resources {
             corpus: ::std::option::Option<crate::resources::files::params::ListCorpus>,
             drive_id: ::std::option::Option<String>,
             include_items_from_all_drives: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             include_team_drive_items: ::std::option::Option<bool>,
             max_results: ::std::option::Option<i32>,
@@ -11930,6 +12491,11 @@ pub mod resources {
             #[doc = "Whether both My Drive and shared drive items should be included in results."]
             pub fn include_items_from_all_drives(mut self, value: bool) -> Self {
                 self.include_items_from_all_drives = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -12060,7 +12626,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -12093,7 +12659,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -12141,7 +12707,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -12231,6 +12797,7 @@ pub mod resources {
                     "includeItemsFromAllDrives",
                     &self.include_items_from_all_drives,
                 )]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -12263,14 +12830,450 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
+            }
+        }
+        #[doc = "Created via [FilesActions::list_labels()](struct.FilesActions.html#method.list_labels)"]
+        #[derive(Debug, Clone)]
+        pub struct ListLabelsRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            file_id: String,
+            max_results: ::std::option::Option<i32>,
+            page_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            user_ip: ::std::option::Option<String>,
+        }
+        impl<'a> ListLabelsRequestBuilder<'a> {
+            #[doc = "The maximum number of labels to return per page. When not set, this defaults to 100."]
+            pub fn max_results(mut self, value: i32) -> Self {
+                self.max_results = Some(value);
+                self
+            }
+            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of ‘nextPageToken’ from the previous response."]
+            pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                self.page_token = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Deprecated. Please use quotaUser instead."]
+            pub fn user_ip(mut self, value: impl Into<String>) -> Self {
+                self.user_ip = Some(value.into());
+                self
+            }
+            #[doc = "\nExecute the request and yield each item in the `items` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+            pub fn stream_items<T>(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.stream_items_with_fields(fields)
+            }
+            #[doc = "\nExecute the request and yield each item in the `items` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+            pub fn stream_items_with_default_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::Label, crate::Error>> + 'a
+            {
+                self.stream_items_with_fields(None::<String>)
+            }
+            #[doc = "\nExecute the request and yield each item in the `items` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+            pub fn stream_items_with_all_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::Label, crate::Error>> + 'a
+            {
+                self.stream_items_with_fields(Some("*"))
+            }
+            #[doc = "\nExecute the request and yield each item in the `items` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+            pub fn stream_items_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: ::serde::de::DeserializeOwned + 'a,
+                F: AsRef<str>,
+            {
+                #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                struct Page<T> {
+                    #[serde(rename = "nextPageToken")]
+                    pub next_page_token: ::std::option::Option<String>,
+                    #[serde(rename = "items")]
+                    pub items: Vec<T>,
+                }
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
+                    fn next_page_token(&self) -> ::std::option::Option<String> {
+                        self.next_page_token.to_owned()
+                    }
+                }
+                impl<T> crate::stream::IntoPageItems for Page<T> {
+                    type Items = Vec<T>;
+                    fn into_page_items(self) -> Self::Items {
+                        self.items
+                    }
+                }
+                self.fields = Some({
+                    let mut selector = concat!("nextPageToken,", "items").to_owned();
+                    let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                    if !items_fields.is_empty() {
+                        selector.push_str("(");
+                        selector.push_str(items_fields);
+                        selector.push_str(")");
+                    }
+                    selector
+                });
+                crate::stream::page_item_stream::<_, Page<T>>(self)
+            }
+            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+            #[doc = r" token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+            #[doc = r""]
+            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+            #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+            pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: crate::GetNextPageToken<String>
+                    + ::serde::de::DeserializeOwned
+                    + ::google_field_selector::FieldSelector
+                    + 'a,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.stream_with_fields(fields)
+            }
+            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+            #[doc = r" repeated until no page token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests the default set of fields from the server."]
+            pub fn stream_with_default_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::LabelList, crate::Error>> + 'a
+            {
+                self.stream_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+            #[doc = r" repeated until no page token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests all fields from the server."]
+            pub fn stream_with_all_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::LabelList, crate::Error>> + 'a
+            {
+                self.stream_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+            #[doc = r" token is returned."]
+            #[doc = r""]
+            #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+            #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+            #[doc = r""]
+            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+            pub fn stream_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                F: AsRef<str>,
+            {
+                let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                if !fields.is_empty() {
+                    match fields.chars().rev().nth(0) {
+                        Some(',') | None => {}
+                        _ => fields.push_str(","),
+                    }
+                    fields.push_str("nextPageToken");
+                    self.fields = Some(fields);
+                }
+                crate::stream::page_stream(self)
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::LabelList, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::LabelList, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://www.googleapis.com/drive/v2/".to_owned();
+                output.push_str("files/");
+                {
+                    let var_as_str = &self.file_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/listLabels");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("maxResults", &self.max_results)]);
+                req = req.query(&[("pageToken", &self.page_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("userIp", &self.user_ip)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[async_trait::async_trait]
+        impl<'a> crate::stream::StreamableMethod for ListLabelsRequestBuilder<'a> {
+            type PageToken = String;
+            fn set_page_token(&mut self, value: String) {
+                self.page_token = value.into();
+            }
+            async fn execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+            {
+                self._execute().await
+            }
+        }
+        #[doc = "Created via [FilesActions::modify_labels()](struct.FilesActions.html#method.modify_labels)"]
+        #[derive(Debug, Clone)]
+        pub struct ModifyLabelsRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::ModifyLabelsRequest,
+            file_id: String,
+            alt: ::std::option::Option<crate::params::Alt>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            user_ip: ::std::option::Option<String>,
+        }
+        impl<'a> ModifyLabelsRequestBuilder<'a> {
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "An opaque string that represents a user for quota purposes. Must not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Deprecated. Please use quotaUser instead."]
+            pub fn user_ip(mut self, value: impl Into<String>) -> Self {
+                self.user_ip = Some(value.into());
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::ModifyLabelsResponse, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::ModifyLabelsResponse, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://www.googleapis.com/drive/v2/".to_owned();
+                output.push_str("files/");
+                {
+                    let var_as_str = &self.file_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/modifyLabels");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("userIp", &self.user_ip)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
             }
         }
         #[doc = "Created via [FilesActions::patch()](struct.FilesActions.html#method.patch)"]
@@ -12283,6 +13286,7 @@ pub mod resources {
             add_parents: ::std::option::Option<String>,
             convert: ::std::option::Option<bool>,
             enforce_single_parent: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             modified_date_behavior:
                 ::std::option::Option<crate::resources::files::params::PatchModifiedDateBehavior>,
@@ -12320,6 +13324,11 @@ pub mod resources {
             #[doc = "Deprecated. Adding files to multiple folders is no longer supported. Use shortcuts instead."]
             pub fn enforce_single_parent(mut self, value: bool) -> Self {
                 self.enforce_single_parent = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -12500,6 +13509,7 @@ pub mod resources {
                 req = req.query(&[("addParents", &self.add_parents)]);
                 req = req.query(&[("convert", &self.convert)]);
                 req = req.query(&[("enforceSingleParent", &self.enforce_single_parent)]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -12542,6 +13552,7 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             file_id: String,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             supports_all_drives: ::std::option::Option<bool>,
             supports_team_drives: ::std::option::Option<bool>,
@@ -12554,6 +13565,11 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> TouchRequestBuilder<'a> {
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
+                self
+            }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
@@ -12671,6 +13687,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -12699,6 +13716,7 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             file_id: String,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             supports_all_drives: ::std::option::Option<bool>,
             supports_team_drives: ::std::option::Option<bool>,
@@ -12711,6 +13729,11 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> TrashRequestBuilder<'a> {
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
+                self
+            }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
@@ -12828,6 +13851,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -12856,6 +13880,7 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             file_id: String,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             supports_all_drives: ::std::option::Option<bool>,
             supports_team_drives: ::std::option::Option<bool>,
@@ -12868,6 +13893,11 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> UntrashRequestBuilder<'a> {
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
+                self
+            }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
@@ -12985,6 +14015,7 @@ pub mod resources {
                 path: &str,
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -13017,6 +14048,7 @@ pub mod resources {
             add_parents: ::std::option::Option<String>,
             convert: ::std::option::Option<bool>,
             enforce_single_parent: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             modified_date_behavior:
                 ::std::option::Option<crate::resources::files::params::UpdateModifiedDateBehavior>,
@@ -13054,6 +14086,11 @@ pub mod resources {
             #[doc = "Deprecated. Adding files to multiple folders is no longer supported. Use shortcuts instead."]
             pub fn enforce_single_parent(mut self, value: bool) -> Self {
                 self.enforce_single_parent = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -13328,6 +14365,7 @@ pub mod resources {
                 req = req.query(&[("addParents", &self.add_parents)]);
                 req = req.query(&[("convert", &self.convert)]);
                 req = req.query(&[("enforceSingleParent", &self.enforce_single_parent)]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -13372,6 +14410,7 @@ pub mod resources {
             request: crate::schemas::Channel,
             file_id: String,
             acknowledge_abuse: ::std::option::Option<bool>,
+            include_labels: ::std::option::Option<String>,
             include_permissions_for_view: ::std::option::Option<String>,
             projection: ::std::option::Option<crate::resources::files::params::WatchProjection>,
             revision_id: ::std::option::Option<String>,
@@ -13390,6 +14429,11 @@ pub mod resources {
             #[doc = "Whether the user is acknowledging the risk of downloading known malware or other abusive files."]
             pub fn acknowledge_abuse(mut self, value: bool) -> Self {
                 self.acknowledge_abuse = Some(value);
+                self
+            }
+            #[doc = "A comma-separated list of IDs of labels to include in the labelInfo part of the response."]
+            pub fn include_labels(mut self, value: impl Into<String>) -> Self {
+                self.include_labels = Some(value.into());
                 self
             }
             #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
@@ -13557,6 +14601,7 @@ pub mod resources {
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::POST, path);
                 req = req.query(&[("acknowledgeAbuse", &self.acknowledge_abuse)]);
+                req = req.query(&[("includeLabels", &self.include_labels)]);
                 req = req.query(&[(
                     "includePermissionsForView",
                     &self.include_permissions_for_view,
@@ -15082,7 +16127,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -15115,7 +16160,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -15163,7 +16208,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -15281,12 +16326,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -17243,7 +18289,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -17276,7 +18322,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -17324,7 +18370,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -17444,12 +18490,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -18196,7 +19243,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -18229,7 +19276,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -18277,7 +19324,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -18388,12 +19435,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -19239,7 +20287,7 @@ pub mod resources {
                     #[serde(rename = "items")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -19272,7 +20320,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -19320,7 +20368,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -19425,12 +20473,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -19861,16 +20910,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 pub struct ResumableUpload {
@@ -19975,13 +21026,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -19989,7 +21043,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -20016,7 +21070,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [iam_policies](resources/iam_policies/struct.IamPoliciesActions.html)\n  * [*lintPolicy*](resources/iam_policies/struct.LintPolicyRequestBuilder.html), [*queryAuditableServices*](resources/iam_policies/struct.QueryAuditableServicesRequestBuilder.html)\n* [locations](resources/locations/struct.LocationsActions.html)\n  * [workforce_pools](resources/locations/workforce_pools/struct.WorkforcePoolsActions.html)\n    * [operations](resources/locations/workforce_pools/operations/struct.OperationsActions.html)\n      * [*get*](resources/locations/workforce_pools/operations/struct.GetRequestBuilder.html)\n    * [providers](resources/locations/workforce_pools/providers/struct.ProvidersActions.html)\n      * [keys](resources/locations/workforce_pools/providers/keys/struct.KeysActions.html)\n        * [operations](resources/locations/workforce_pools/providers/keys/operations/struct.OperationsActions.html)\n          * [*get*](resources/locations/workforce_pools/providers/keys/operations/struct.GetRequestBuilder.html)\n      * [operations](resources/locations/workforce_pools/providers/operations/struct.OperationsActions.html)\n        * [*get*](resources/locations/workforce_pools/providers/operations/struct.GetRequestBuilder.html)\n    * [subjects](resources/locations/workforce_pools/subjects/struct.SubjectsActions.html)\n      * [operations](resources/locations/workforce_pools/subjects/operations/struct.OperationsActions.html)\n        * [*get*](resources/locations/workforce_pools/subjects/operations/struct.GetRequestBuilder.html)\n* [organizations](resources/organizations/struct.OrganizationsActions.html)\n  * [roles](resources/organizations/roles/struct.RolesActions.html)\n    * [*create*](resources/organizations/roles/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/roles/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/roles/struct.GetRequestBuilder.html), [*list*](resources/organizations/roles/struct.ListRequestBuilder.html), [*patch*](resources/organizations/roles/struct.PatchRequestBuilder.html), [*undelete*](resources/organizations/roles/struct.UndeleteRequestBuilder.html)\n* [permissions](resources/permissions/struct.PermissionsActions.html)\n  * [*queryTestablePermissions*](resources/permissions/struct.QueryTestablePermissionsRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [workload_identity_pools](resources/projects/locations/workload_identity_pools/struct.WorkloadIdentityPoolsActions.html)\n      * [*create*](resources/projects/locations/workload_identity_pools/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/workload_identity_pools/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/workload_identity_pools/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/workload_identity_pools/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/workload_identity_pools/struct.PatchRequestBuilder.html), [*undelete*](resources/projects/locations/workload_identity_pools/struct.UndeleteRequestBuilder.html)\n      * [operations](resources/projects/locations/workload_identity_pools/operations/struct.OperationsActions.html)\n        * [*get*](resources/projects/locations/workload_identity_pools/operations/struct.GetRequestBuilder.html)\n      * [providers](resources/projects/locations/workload_identity_pools/providers/struct.ProvidersActions.html)\n        * [*create*](resources/projects/locations/workload_identity_pools/providers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/workload_identity_pools/providers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/workload_identity_pools/providers/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/workload_identity_pools/providers/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/workload_identity_pools/providers/struct.PatchRequestBuilder.html), [*undelete*](resources/projects/locations/workload_identity_pools/providers/struct.UndeleteRequestBuilder.html)\n        * [keys](resources/projects/locations/workload_identity_pools/providers/keys/struct.KeysActions.html)\n          * [operations](resources/projects/locations/workload_identity_pools/providers/keys/operations/struct.OperationsActions.html)\n            * [*get*](resources/projects/locations/workload_identity_pools/providers/keys/operations/struct.GetRequestBuilder.html)\n        * [operations](resources/projects/locations/workload_identity_pools/providers/operations/struct.OperationsActions.html)\n          * [*get*](resources/projects/locations/workload_identity_pools/providers/operations/struct.GetRequestBuilder.html)\n  * [roles](resources/projects/roles/struct.RolesActions.html)\n    * [*create*](resources/projects/roles/struct.CreateRequestBuilder.html), [*delete*](resources/projects/roles/struct.DeleteRequestBuilder.html), [*get*](resources/projects/roles/struct.GetRequestBuilder.html), [*list*](resources/projects/roles/struct.ListRequestBuilder.html), [*patch*](resources/projects/roles/struct.PatchRequestBuilder.html), [*undelete*](resources/projects/roles/struct.UndeleteRequestBuilder.html)\n  * [service_accounts](resources/projects/service_accounts/struct.ServiceAccountsActions.html)\n    * [*create*](resources/projects/service_accounts/struct.CreateRequestBuilder.html), [*delete*](resources/projects/service_accounts/struct.DeleteRequestBuilder.html), [*disable*](resources/projects/service_accounts/struct.DisableRequestBuilder.html), [*enable*](resources/projects/service_accounts/struct.EnableRequestBuilder.html), [*get*](resources/projects/service_accounts/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/service_accounts/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/service_accounts/struct.ListRequestBuilder.html), [*patch*](resources/projects/service_accounts/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/service_accounts/struct.SetIamPolicyRequestBuilder.html), [*signBlob*](resources/projects/service_accounts/struct.SignBlobRequestBuilder.html), [*signJwt*](resources/projects/service_accounts/struct.SignJwtRequestBuilder.html), [*testIamPermissions*](resources/projects/service_accounts/struct.TestIamPermissionsRequestBuilder.html), [*undelete*](resources/projects/service_accounts/struct.UndeleteRequestBuilder.html), [*update*](resources/projects/service_accounts/struct.UpdateRequestBuilder.html)\n    * [keys](resources/projects/service_accounts/keys/struct.KeysActions.html)\n      * [*create*](resources/projects/service_accounts/keys/struct.CreateRequestBuilder.html), [*delete*](resources/projects/service_accounts/keys/struct.DeleteRequestBuilder.html), [*disable*](resources/projects/service_accounts/keys/struct.DisableRequestBuilder.html), [*enable*](resources/projects/service_accounts/keys/struct.EnableRequestBuilder.html), [*get*](resources/projects/service_accounts/keys/struct.GetRequestBuilder.html), [*list*](resources/projects/service_accounts/keys/struct.ListRequestBuilder.html), [*upload*](resources/projects/service_accounts/keys/struct.UploadRequestBuilder.html)\n* [roles](resources/roles/struct.RolesActions.html)\n  * [*get*](resources/roles/struct.GetRequestBuilder.html), [*list*](resources/roles/struct.ListRequestBuilder.html), [*queryGrantableRoles*](resources/roles/struct.QueryGrantableRolesRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -305,7 +306,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -934,7 +935,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "The full resource name of the policy this lint request is about. The name follows the Google Cloud Platform (GCP) resource format. For example, a GCP project with ID `my-project` will be named `//cloudresourcemanager.googleapis.com/projects/my-project`. The resource name is not used to read the policy instance from the Cloud IAM database. The candidate policy for lint has to be provided in the same request object."]
+        #[doc = "The full resource name of the policy this lint request is about. The name follows the Google Cloud format for full resource names. For example, a Cloud project with ID `my-project` will be named `//cloudresourcemanager.googleapis.com/projects/my-project`. The resource name is not used to read a policy from IAM. Only the data in the request object is linted."]
         #[serde(
             rename = "fullResourceName",
             default,
@@ -1249,7 +1250,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRolesResponse {
+    impl crate::GetNextPageToken<String> for ListRolesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1323,7 +1324,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListServiceAccountsResponse {
+    impl crate::GetNextPageToken<String> for ListServiceAccountsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1367,7 +1368,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListWorkloadIdentityPoolProvidersResponse {
+    impl crate::GetNextPageToken<String> for ListWorkloadIdentityPoolProvidersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1411,7 +1412,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListWorkloadIdentityPoolsResponse {
+    impl crate::GetNextPageToken<String> for ListWorkloadIdentityPoolsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2120,7 +2121,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for QueryGrantableRolesResponse {
+    impl crate::GetNextPageToken<String> for QueryGrantableRolesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2208,7 +2209,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for QueryTestablePermissionsResponse {
+    impl crate::GetNextPageToken<String> for QueryTestablePermissionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2389,6 +2390,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Saml {
+        #[doc = "Required. SAML Identity provider configuration metadata xml doc. The xml document should comply with [SAML 2.0 specification](https://www.oasis-open.org/committees/download.php/56785/sstc-saml-metadata-errata-2.0-wd-05.pdf). The max size of the acceptable xml document will be bounded to 128k characters. The metadata xml document should satisfy the following constraints: 1) Must contain an Identity Provider Entity ID. 2) Must contain at least one non-expired signing key certificate. 3) For each signing key: a) Valid from should be no more than 7 days from now. b) Valid to should be no more than 14 years in the future. 4) Upto 3 IdP signing keys are allowed in the metadata xml. When updating the provider’s metadata xml, at lease one non-expired signing key must overlap with the existing metadata. This requirement is skipped if there are no non-expired signing keys present in the existing metadata"]
+        #[serde(
+            rename = "idpMetadataXml",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub idp_metadata_xml: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Saml {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Saml {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ServiceAccount {
         #[doc = "Optional. A user-specified, human-readable description of the service account. The maximum length is 256 UTF-8 bytes."]
         #[serde(
@@ -2425,7 +2457,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "The resource name of the service account. Use one of the following formats: * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}` * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}` As an alternative, you can use the `-` wildcard character instead of the project ID: * `projects/-/serviceAccounts/{EMAIL_ADDRESS}` * `projects/-/serviceAccounts/{UNIQUE_ID}` When possible, avoid using the `-` wildcard character, because it can cause response messages to contain misleading error codes. For example, if you try to get the service account `projects/-/serviceAccounts/fake@example.com`, which does not exist, the response contains an HTTP `403 Forbidden` error instead of a `404 Not Found` error."]
+        #[doc = "The resource name of the service account. Use one of the following formats: * `projects/{PROJECT_ID}/serviceAccounts/{EMAIL_ADDRESS}` * `projects/{PROJECT_ID}/serviceAccounts/{UNIQUE_ID}` As an alternative, you can use the `-` wildcard character instead of the project ID: * `projects/-/serviceAccounts/{EMAIL_ADDRESS}` * `projects/-/serviceAccounts/{UNIQUE_ID}` When possible, avoid using the `-` wildcard character, because it can cause response messages to contain misleading error codes. For example, if you try to access the service account `projects/-/serviceAccounts/fake@example.com`, which does not exist, the response contains an HTTP `403 Forbidden` error instead of a `404 Not Found` error."]
         #[serde(
             rename = "name",
             default,
@@ -3450,6 +3482,30 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct WorkloadIdentityPoolOperationMetadata {}
+    impl ::google_field_selector::FieldSelector for WorkloadIdentityPoolOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WorkloadIdentityPoolOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -3511,6 +3567,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oidc: ::std::option::Option<crate::schemas::Oidc>,
+        #[doc = "An SAML 2.0 identity provider."]
+        #[serde(
+            rename = "saml",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub saml: ::std::option::Option<crate::schemas::Saml>,
         #[doc = "Output only. The state of the provider."]
         #[serde(
             rename = "state",
@@ -5944,7 +6007,7 @@ pub mod resources {
                         #[serde(rename = "roles")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -5979,7 +6042,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -6029,7 +6092,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6146,12 +6209,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -7503,7 +7567,7 @@ pub mod resources {
                             #[serde(rename = "workloadIdentityPools")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -7539,7 +7603,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -7595,7 +7659,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -7714,12 +7778,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -9047,7 +9112,7 @@ pub mod resources {
                                 #[serde(rename = "workloadIdentityPoolProviders")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -9085,7 +9150,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -9141,7 +9206,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -9266,12 +9331,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -10871,7 +10937,7 @@ pub mod resources {
                         #[serde(rename = "roles")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -10906,7 +10972,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -10956,7 +11022,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -11073,12 +11139,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -12862,7 +12929,7 @@ pub mod resources {
                         #[serde(rename = "accounts")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -12897,7 +12964,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -12947,7 +13014,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13064,12 +13131,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -14429,7 +14497,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Disable a ServiceAccountKey. A disabled service account key can be enabled through EnableServiceAccountKey."]
+                    #[doc = "Disable a ServiceAccountKey. A disabled service account key can be re-enabled with EnableServiceAccountKey."]
                     pub fn disable(
                         &self,
                         request: crate::schemas::DisableServiceAccountKeyRequest,
@@ -16121,7 +16189,7 @@ pub mod resources {
                     #[serde(rename = "roles")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -16154,7 +16222,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -16202,7 +16270,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -16312,12 +16380,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -16761,16 +16830,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -16790,13 +16861,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -16804,7 +16878,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -16831,7 +16905,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

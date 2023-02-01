@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [encoded_full_hashes](resources/encoded_full_hashes/struct.EncodedFullHashesActions.html)\n  * [*get*](resources/encoded_full_hashes/struct.GetRequestBuilder.html)\n* [encoded_updates](resources/encoded_updates/struct.EncodedUpdatesActions.html)\n  * [*get*](resources/encoded_updates/struct.GetRequestBuilder.html)\n* [full_hashes](resources/full_hashes/struct.FullHashesActions.html)\n  * [*find*](resources/full_hashes/struct.FindRequestBuilder.html)\n* [threat_hits](resources/threat_hits/struct.ThreatHitsActions.html)\n  * [*create*](resources/threat_hits/struct.CreateRequestBuilder.html)\n* [threat_list_updates](resources/threat_list_updates/struct.ThreatListUpdatesActions.html)\n  * [*fetch*](resources/threat_list_updates/struct.FetchRequestBuilder.html)\n* [threat_lists](resources/threat_lists/struct.ThreatListsActions.html)\n  * [*list*](resources/threat_lists/struct.ListRequestBuilder.html)\n* [threat_matches](resources/threat_matches/struct.ThreatMatchesActions.html)\n  * [*find*](resources/threat_matches/struct.FindRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
@@ -267,7 +268,7 @@ pub mod schemas {
     impl :: google_field_selector :: ToFieldType for GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatEntryType { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType {
-        #[doc = "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips."]
+        #[doc = "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."]
         AccuracyTips,
         #[doc = "API abuse threat type."]
         ApiAbuse,
@@ -275,13 +276,13 @@ pub mod schemas {
         ApkMalwareOffline,
         #[doc = "Client incident threat type."]
         ClientIncident,
-        #[doc = "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list."]
+        #[doc = "Whitelist used when detecting client incident threats."]
         ClientIncidentWhitelist,
         #[doc = "Client side download detection whitelist threat type."]
         CsdDownloadWhitelist,
         #[doc = "Client side detection whitelist threat type."]
         CsdWhitelist,
-        #[doc = "Safe list to ship hashes of known safe URL expressions."]
+        #[doc = "URL expressions that are very likely to be safe."]
         HighConfidenceAllowlist,
         #[doc = "Malicious binary threat type."]
         MaliciousBinary,
@@ -293,22 +294,20 @@ pub mod schemas {
         SocialEngineering,
         #[doc = "Social engineering threat type for internal use."]
         SocialEngineeringInternal,
-        #[doc = "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."]
-        SocialEngineeringLowerPrecision,
-        #[doc = "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list."]
+        #[doc = "Patterns to be used for activating the subresource filter."]
         SubresourceFilter,
         #[doc = "Entities that are suspected to present a threat."]
         Suspicious,
         #[doc = "Unknown."]
         ThreatTypeUnspecified,
-        #[doc = "Trick-to-bill threat list."]
+        #[doc = "Trick-to-bill threat type."]
         TrickToBill,
         #[doc = "Unwanted software threat type."]
         UnwantedSoftware,
     }
     impl GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringLowerPrecision => "SOCIAL_ENGINEERING_LOWER_PRECISION" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self { GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str>
@@ -328,7 +327,7 @@ pub mod schemas {
             GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType,
             (),
         > {
-            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: UnwantedSoftware , _ => return Err (()) , })
+            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -356,7 +355,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestThreatType :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -656,7 +655,7 @@ pub mod schemas {
     impl :: google_field_selector :: ToFieldType for GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatEntryType { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType {
-        #[doc = "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips."]
+        #[doc = "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."]
         AccuracyTips,
         #[doc = "API abuse threat type."]
         ApiAbuse,
@@ -664,13 +663,13 @@ pub mod schemas {
         ApkMalwareOffline,
         #[doc = "Client incident threat type."]
         ClientIncident,
-        #[doc = "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list."]
+        #[doc = "Whitelist used when detecting client incident threats."]
         ClientIncidentWhitelist,
         #[doc = "Client side download detection whitelist threat type."]
         CsdDownloadWhitelist,
         #[doc = "Client side detection whitelist threat type."]
         CsdWhitelist,
-        #[doc = "Safe list to ship hashes of known safe URL expressions."]
+        #[doc = "URL expressions that are very likely to be safe."]
         HighConfidenceAllowlist,
         #[doc = "Malicious binary threat type."]
         MaliciousBinary,
@@ -682,22 +681,20 @@ pub mod schemas {
         SocialEngineering,
         #[doc = "Social engineering threat type for internal use."]
         SocialEngineeringInternal,
-        #[doc = "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."]
-        SocialEngineeringLowerPrecision,
-        #[doc = "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list."]
+        #[doc = "Patterns to be used for activating the subresource filter."]
         SubresourceFilter,
         #[doc = "Entities that are suspected to present a threat."]
         Suspicious,
         #[doc = "Unknown."]
         ThreatTypeUnspecified,
-        #[doc = "Trick-to-bill threat list."]
+        #[doc = "Trick-to-bill threat type."]
         TrickToBill,
         #[doc = "Unwanted software threat type."]
         UnwantedSoftware,
     }
     impl GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringLowerPrecision => "SOCIAL_ENGINEERING_LOWER_PRECISION" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self { GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str>
@@ -717,7 +714,7 @@ pub mod schemas {
             GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType,
             (),
         > {
-            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: UnwantedSoftware , _ => return Err (()) , })
+            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -745,7 +742,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -1534,7 +1531,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleSecuritySafebrowsingV4ThreatHitThreatType {
-        #[doc = "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips."]
+        #[doc = "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."]
         AccuracyTips,
         #[doc = "API abuse threat type."]
         ApiAbuse,
@@ -1542,13 +1539,13 @@ pub mod schemas {
         ApkMalwareOffline,
         #[doc = "Client incident threat type."]
         ClientIncident,
-        #[doc = "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list."]
+        #[doc = "Whitelist used when detecting client incident threats."]
         ClientIncidentWhitelist,
         #[doc = "Client side download detection whitelist threat type."]
         CsdDownloadWhitelist,
         #[doc = "Client side detection whitelist threat type."]
         CsdWhitelist,
-        #[doc = "Safe list to ship hashes of known safe URL expressions."]
+        #[doc = "URL expressions that are very likely to be safe."]
         HighConfidenceAllowlist,
         #[doc = "Malicious binary threat type."]
         MaliciousBinary,
@@ -1560,22 +1557,63 @@ pub mod schemas {
         SocialEngineering,
         #[doc = "Social engineering threat type for internal use."]
         SocialEngineeringInternal,
-        #[doc = "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."]
-        SocialEngineeringLowerPrecision,
-        #[doc = "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list."]
+        #[doc = "Patterns to be used for activating the subresource filter."]
         SubresourceFilter,
         #[doc = "Entities that are suspected to present a threat."]
         Suspicious,
         #[doc = "Unknown."]
         ThreatTypeUnspecified,
-        #[doc = "Trick-to-bill threat list."]
+        #[doc = "Trick-to-bill threat type."]
         TrickToBill,
         #[doc = "Unwanted software threat type."]
         UnwantedSoftware,
     }
     impl GoogleSecuritySafebrowsingV4ThreatHitThreatType {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleSecuritySafebrowsingV4ThreatHitThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: SocialEngineeringLowerPrecision => "SOCIAL_ENGINEERING_LOWER_PRECISION" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4ThreatHitThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self {
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::AccuracyTips => "ACCURACY_TIPS",
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::ApiAbuse => "API_ABUSE",
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::ApkMalwareOffline => {
+                    "APK_MALWARE_OFFLINE"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::ClientIncident => {
+                    "CLIENT_INCIDENT"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::ClientIncidentWhitelist => {
+                    "CLIENT_INCIDENT_WHITELIST"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::CsdDownloadWhitelist => {
+                    "CSD_DOWNLOAD_WHITELIST"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::CsdWhitelist => "CSD_WHITELIST",
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::HighConfidenceAllowlist => {
+                    "HIGH_CONFIDENCE_ALLOWLIST"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::MaliciousBinary => {
+                    "MALICIOUS_BINARY"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::Malware => "MALWARE",
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::PotentiallyHarmfulApplication => {
+                    "POTENTIALLY_HARMFUL_APPLICATION"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::SocialEngineering => {
+                    "SOCIAL_ENGINEERING"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::SocialEngineeringInternal => {
+                    "SOCIAL_ENGINEERING_INTERNAL"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::SubresourceFilter => {
+                    "SUBRESOURCE_FILTER"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::Suspicious => "SUSPICIOUS",
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::ThreatTypeUnspecified => {
+                    "THREAT_TYPE_UNSPECIFIED"
+                }
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::TrickToBill => "TRICK_TO_BILL",
+                GoogleSecuritySafebrowsingV4ThreatHitThreatType::UnwantedSoftware => {
+                    "UNWANTED_SOFTWARE"
+                }
+            }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleSecuritySafebrowsingV4ThreatHitThreatType {
@@ -1619,9 +1657,6 @@ pub mod schemas {
                 }
                 "SOCIAL_ENGINEERING_INTERNAL" => {
                     GoogleSecuritySafebrowsingV4ThreatHitThreatType::SocialEngineeringInternal
-                }
-                "SOCIAL_ENGINEERING_LOWER_PRECISION" => {
-                    GoogleSecuritySafebrowsingV4ThreatHitThreatType::SocialEngineeringLowerPrecision
                 }
                 "SUBRESOURCE_FILTER" => {
                     GoogleSecuritySafebrowsingV4ThreatHitThreatType::SubresourceFilter
@@ -1688,9 +1723,6 @@ pub mod schemas {
                 }
                 "SOCIAL_ENGINEERING_INTERNAL" => {
                     GoogleSecuritySafebrowsingV4ThreatHitThreatType::SocialEngineeringInternal
-                }
-                "SOCIAL_ENGINEERING_LOWER_PRECISION" => {
-                    GoogleSecuritySafebrowsingV4ThreatHitThreatType::SocialEngineeringLowerPrecision
                 }
                 "SUBRESOURCE_FILTER" => {
                     GoogleSecuritySafebrowsingV4ThreatHitThreatType::SubresourceFilter
@@ -2093,7 +2125,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems {
-        #[doc = "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips."]
+        #[doc = "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."]
         AccuracyTips,
         #[doc = "API abuse threat type."]
         ApiAbuse,
@@ -2101,13 +2133,13 @@ pub mod schemas {
         ApkMalwareOffline,
         #[doc = "Client incident threat type."]
         ClientIncident,
-        #[doc = "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list."]
+        #[doc = "Whitelist used when detecting client incident threats."]
         ClientIncidentWhitelist,
         #[doc = "Client side download detection whitelist threat type."]
         CsdDownloadWhitelist,
         #[doc = "Client side detection whitelist threat type."]
         CsdWhitelist,
-        #[doc = "Safe list to ship hashes of known safe URL expressions."]
+        #[doc = "URL expressions that are very likely to be safe."]
         HighConfidenceAllowlist,
         #[doc = "Malicious binary threat type."]
         MaliciousBinary,
@@ -2119,22 +2151,20 @@ pub mod schemas {
         SocialEngineering,
         #[doc = "Social engineering threat type for internal use."]
         SocialEngineeringInternal,
-        #[doc = "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."]
-        SocialEngineeringLowerPrecision,
-        #[doc = "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list."]
+        #[doc = "Patterns to be used for activating the subresource filter."]
         SubresourceFilter,
         #[doc = "Entities that are suspected to present a threat."]
         Suspicious,
         #[doc = "Unknown."]
         ThreatTypeUnspecified,
-        #[doc = "Trick-to-bill threat list."]
+        #[doc = "Trick-to-bill threat type."]
         TrickToBill,
         #[doc = "Unwanted software threat type."]
         UnwantedSoftware,
     }
     impl GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringLowerPrecision => "SOCIAL_ENGINEERING_LOWER_PRECISION" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self { GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems {
@@ -2148,7 +2178,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems, ()>
         {
-            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
+            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems {
@@ -2170,7 +2200,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatInfoThreatTypesItems :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2396,7 +2426,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType {
-        #[doc = "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips."]
+        #[doc = "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."]
         AccuracyTips,
         #[doc = "API abuse threat type."]
         ApiAbuse,
@@ -2404,13 +2434,13 @@ pub mod schemas {
         ApkMalwareOffline,
         #[doc = "Client incident threat type."]
         ClientIncident,
-        #[doc = "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list."]
+        #[doc = "Whitelist used when detecting client incident threats."]
         ClientIncidentWhitelist,
         #[doc = "Client side download detection whitelist threat type."]
         CsdDownloadWhitelist,
         #[doc = "Client side detection whitelist threat type."]
         CsdWhitelist,
-        #[doc = "Safe list to ship hashes of known safe URL expressions."]
+        #[doc = "URL expressions that are very likely to be safe."]
         HighConfidenceAllowlist,
         #[doc = "Malicious binary threat type."]
         MaliciousBinary,
@@ -2422,22 +2452,20 @@ pub mod schemas {
         SocialEngineering,
         #[doc = "Social engineering threat type for internal use."]
         SocialEngineeringInternal,
-        #[doc = "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."]
-        SocialEngineeringLowerPrecision,
-        #[doc = "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list."]
+        #[doc = "Patterns to be used for activating the subresource filter."]
         SubresourceFilter,
         #[doc = "Entities that are suspected to present a threat."]
         Suspicious,
         #[doc = "Unknown."]
         ThreatTypeUnspecified,
-        #[doc = "Trick-to-bill threat list."]
+        #[doc = "Trick-to-bill threat type."]
         TrickToBill,
         #[doc = "Unwanted software threat type."]
         UnwantedSoftware,
     }
     impl GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringLowerPrecision => "SOCIAL_ENGINEERING_LOWER_PRECISION" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self { GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType {
@@ -2451,7 +2479,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType, ()>
         {
-            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: UnwantedSoftware , _ => return Err (()) , })
+            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: UnwantedSoftware , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType {
@@ -2473,7 +2501,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SocialEngineeringInternal , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatType :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -2760,7 +2788,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleSecuritySafebrowsingV4ThreatMatchThreatType {
-        #[doc = "List from the Jigsaw team to show accuracy tips in Chrome. See go/sb-accuracytips."]
+        #[doc = "An experimental threat type related to Jigsaw. See https://jigsaw.google.com/."]
         AccuracyTips,
         #[doc = "API abuse threat type."]
         ApiAbuse,
@@ -2768,13 +2796,13 @@ pub mod schemas {
         ApkMalwareOffline,
         #[doc = "Client incident threat type."]
         ClientIncident,
-        #[doc = "Whitelist used when detecting client incident threats. This enum was never launched and should be re-used for the next list."]
+        #[doc = "Whitelist used when detecting client incident threats."]
         ClientIncidentWhitelist,
         #[doc = "Client side download detection whitelist threat type."]
         CsdDownloadWhitelist,
         #[doc = "Client side detection whitelist threat type."]
         CsdWhitelist,
-        #[doc = "Safe list to ship hashes of known safe URL expressions."]
+        #[doc = "URL expressions that are very likely to be safe."]
         HighConfidenceAllowlist,
         #[doc = "Malicious binary threat type."]
         MaliciousBinary,
@@ -2786,22 +2814,20 @@ pub mod schemas {
         SocialEngineering,
         #[doc = "Social engineering threat type for internal use."]
         SocialEngineeringInternal,
-        #[doc = "Lower precision phishing list for WebRisk. See go/lower-precision-blocklists-enterprise."]
-        SocialEngineeringLowerPrecision,
-        #[doc = "Patterns to be used for activating the subresource filter. Interstitial will not be shown for patterns from this list."]
+        #[doc = "Patterns to be used for activating the subresource filter."]
         SubresourceFilter,
         #[doc = "Entities that are suspected to present a threat."]
         Suspicious,
         #[doc = "Unknown."]
         ThreatTypeUnspecified,
-        #[doc = "Trick-to-bill threat list."]
+        #[doc = "Trick-to-bill threat type."]
         TrickToBill,
         #[doc = "Unwanted software threat type."]
         UnwantedSoftware,
     }
     impl GoogleSecuritySafebrowsingV4ThreatMatchThreatType {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineeringLowerPrecision => "SOCIAL_ENGINEERING_LOWER_PRECISION" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
+            match self { GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: AccuracyTips => "ACCURACY_TIPS" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApiAbuse => "API_ABUSE" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApkMalwareOffline => "APK_MALWARE_OFFLINE" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncident => "CLIENT_INCIDENT" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncidentWhitelist => "CLIENT_INCIDENT_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdDownloadWhitelist => "CSD_DOWNLOAD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdWhitelist => "CSD_WHITELIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: HighConfidenceAllowlist => "HIGH_CONFIDENCE_ALLOWLIST" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: MaliciousBinary => "MALICIOUS_BINARY" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Malware => "MALWARE" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: PotentiallyHarmfulApplication => "POTENTIALLY_HARMFUL_APPLICATION" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineering => "SOCIAL_ENGINEERING" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineeringInternal => "SOCIAL_ENGINEERING_INTERNAL" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SubresourceFilter => "SUBRESOURCE_FILTER" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Suspicious => "SUSPICIOUS" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ThreatTypeUnspecified => "THREAT_TYPE_UNSPECIFIED" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: TrickToBill => "TRICK_TO_BILL" , GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: UnwantedSoftware => "UNWANTED_SOFTWARE" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleSecuritySafebrowsingV4ThreatMatchThreatType {
@@ -2814,7 +2840,51 @@ pub mod schemas {
         fn from_str(
             s: &str,
         ) -> ::std::result::Result<GoogleSecuritySafebrowsingV4ThreatMatchThreatType, ()> {
-            Ok (match s { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: UnwantedSoftware , _ => return Err (()) , })
+            Ok(match s {
+                "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::AccuracyTips,
+                "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ApiAbuse,
+                "APK_MALWARE_OFFLINE" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ApkMalwareOffline
+                }
+                "CLIENT_INCIDENT" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ClientIncident
+                }
+                "CLIENT_INCIDENT_WHITELIST" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ClientIncidentWhitelist
+                }
+                "CSD_DOWNLOAD_WHITELIST" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::CsdDownloadWhitelist
+                }
+                "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::CsdWhitelist,
+                "HIGH_CONFIDENCE_ALLOWLIST" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::HighConfidenceAllowlist
+                }
+                "MALICIOUS_BINARY" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::MaliciousBinary
+                }
+                "MALWARE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::Malware,
+                "POTENTIALLY_HARMFUL_APPLICATION" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::PotentiallyHarmfulApplication
+                }
+                "SOCIAL_ENGINEERING" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::SocialEngineering
+                }
+                "SOCIAL_ENGINEERING_INTERNAL" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::SocialEngineeringInternal
+                }
+                "SUBRESOURCE_FILTER" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::SubresourceFilter
+                }
+                "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::Suspicious,
+                "THREAT_TYPE_UNSPECIFIED" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ThreatTypeUnspecified
+                }
+                "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::TrickToBill,
+                "UNWANTED_SOFTWARE" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::UnwantedSoftware
+                }
+                _ => return Err(()),
+            })
         }
     }
     impl ::std::fmt::Display for GoogleSecuritySafebrowsingV4ThreatMatchThreatType {
@@ -2836,7 +2906,56 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: AccuracyTips , "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApiAbuse , "APK_MALWARE_OFFLINE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ApkMalwareOffline , "CLIENT_INCIDENT" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncident , "CLIENT_INCIDENT_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ClientIncidentWhitelist , "CSD_DOWNLOAD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdDownloadWhitelist , "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: CsdWhitelist , "HIGH_CONFIDENCE_ALLOWLIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: HighConfidenceAllowlist , "MALICIOUS_BINARY" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: MaliciousBinary , "MALWARE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Malware , "POTENTIALLY_HARMFUL_APPLICATION" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: PotentiallyHarmfulApplication , "SOCIAL_ENGINEERING" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineering , "SOCIAL_ENGINEERING_INTERNAL" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineeringInternal , "SOCIAL_ENGINEERING_LOWER_PRECISION" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SocialEngineeringLowerPrecision , "SUBRESOURCE_FILTER" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: SubresourceFilter , "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: Suspicious , "THREAT_TYPE_UNSPECIFIED" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: ThreatTypeUnspecified , "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: TrickToBill , "UNWANTED_SOFTWARE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType :: UnwantedSoftware , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok(match value {
+                "ACCURACY_TIPS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::AccuracyTips,
+                "API_ABUSE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ApiAbuse,
+                "APK_MALWARE_OFFLINE" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ApkMalwareOffline
+                }
+                "CLIENT_INCIDENT" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ClientIncident
+                }
+                "CLIENT_INCIDENT_WHITELIST" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ClientIncidentWhitelist
+                }
+                "CSD_DOWNLOAD_WHITELIST" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::CsdDownloadWhitelist
+                }
+                "CSD_WHITELIST" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::CsdWhitelist,
+                "HIGH_CONFIDENCE_ALLOWLIST" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::HighConfidenceAllowlist
+                }
+                "MALICIOUS_BINARY" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::MaliciousBinary
+                }
+                "MALWARE" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::Malware,
+                "POTENTIALLY_HARMFUL_APPLICATION" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::PotentiallyHarmfulApplication
+                }
+                "SOCIAL_ENGINEERING" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::SocialEngineering
+                }
+                "SOCIAL_ENGINEERING_INTERNAL" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::SocialEngineeringInternal
+                }
+                "SUBRESOURCE_FILTER" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::SubresourceFilter
+                }
+                "SUSPICIOUS" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::Suspicious,
+                "THREAT_TYPE_UNSPECIFIED" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::ThreatTypeUnspecified
+                }
+                "TRICK_TO_BILL" => GoogleSecuritySafebrowsingV4ThreatMatchThreatType::TrickToBill,
+                "UNWANTED_SOFTWARE" => {
+                    GoogleSecuritySafebrowsingV4ThreatMatchThreatType::UnwantedSoftware
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
         }
     }
     impl ::google_field_selector::FieldSelector for GoogleSecuritySafebrowsingV4ThreatMatchThreatType {
@@ -4747,15 +4866,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

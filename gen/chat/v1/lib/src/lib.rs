@@ -1,5 +1,23 @@
-#![doc = "# Resources and Methods\n* [dms](resources/dms/struct.DmsActions.html)\n  * [*messages*](resources/dms/struct.MessagesRequestBuilder.html), [*webhooks*](resources/dms/struct.WebhooksRequestBuilder.html)\n  * [conversations](resources/dms/conversations/struct.ConversationsActions.html)\n    * [*messages*](resources/dms/conversations/struct.MessagesRequestBuilder.html)\n* [media](resources/media/struct.MediaActions.html)\n  * [*download*](resources/media/struct.DownloadRequestBuilder.html)\n* [rooms](resources/rooms/struct.RoomsActions.html)\n  * [*messages*](resources/rooms/struct.MessagesRequestBuilder.html), [*webhooks*](resources/rooms/struct.WebhooksRequestBuilder.html)\n  * [conversations](resources/rooms/conversations/struct.ConversationsActions.html)\n    * [*messages*](resources/rooms/conversations/struct.MessagesRequestBuilder.html)\n* [spaces](resources/spaces/struct.SpacesActions.html)\n  * [*get*](resources/spaces/struct.GetRequestBuilder.html), [*list*](resources/spaces/struct.ListRequestBuilder.html), [*webhooks*](resources/spaces/struct.WebhooksRequestBuilder.html)\n  * [members](resources/spaces/members/struct.MembersActions.html)\n    * [*get*](resources/spaces/members/struct.GetRequestBuilder.html), [*list*](resources/spaces/members/struct.ListRequestBuilder.html)\n  * [messages](resources/spaces/messages/struct.MessagesActions.html)\n    * [*create*](resources/spaces/messages/struct.CreateRequestBuilder.html), [*delete*](resources/spaces/messages/struct.DeleteRequestBuilder.html), [*get*](resources/spaces/messages/struct.GetRequestBuilder.html), [*update*](resources/spaces/messages/struct.UpdateRequestBuilder.html)\n    * [attachments](resources/spaces/messages/attachments/struct.AttachmentsActions.html)\n      * [*get*](resources/spaces/messages/attachments/struct.GetRequestBuilder.html)\n"]
-pub mod scopes {}
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [media](resources/media/struct.MediaActions.html)\n  * [*download*](resources/media/struct.DownloadRequestBuilder.html)\n* [spaces](resources/spaces/struct.SpacesActions.html)\n  * [*get*](resources/spaces/struct.GetRequestBuilder.html), [*list*](resources/spaces/struct.ListRequestBuilder.html)\n  * [members](resources/spaces/members/struct.MembersActions.html)\n    * [*get*](resources/spaces/members/struct.GetRequestBuilder.html), [*list*](resources/spaces/members/struct.ListRequestBuilder.html)\n  * [messages](resources/spaces/messages/struct.MessagesActions.html)\n    * [*create*](resources/spaces/messages/struct.CreateRequestBuilder.html), [*delete*](resources/spaces/messages/struct.DeleteRequestBuilder.html), [*get*](resources/spaces/messages/struct.GetRequestBuilder.html), [*patch*](resources/spaces/messages/struct.PatchRequestBuilder.html), [*update*](resources/spaces/messages/struct.UpdateRequestBuilder.html)\n    * [attachments](resources/spaces/messages/attachments/struct.AttachmentsActions.html)\n      * [*get*](resources/spaces/messages/attachments/struct.GetRequestBuilder.html)\n"]
+pub mod scopes {
+    #[doc = "View, add, and remove members from conversations in Google Chat\n\n`https://www.googleapis.com/auth/chat.memberships`"]
+    pub const CHAT_MEMBERSHIPS: &str = "https://www.googleapis.com/auth/chat.memberships";
+    #[doc = "View members in Google Chat conversations.\n\n`https://www.googleapis.com/auth/chat.memberships.readonly`"]
+    pub const CHAT_MEMBERSHIPS_READONLY: &str =
+        "https://www.googleapis.com/auth/chat.memberships.readonly";
+    #[doc = "View, compose, send, update, and delete messages, and add, view, and delete reactions to messages.\n\n`https://www.googleapis.com/auth/chat.messages`"]
+    pub const CHAT_MESSAGES: &str = "https://www.googleapis.com/auth/chat.messages";
+    #[doc = "Compose and send messages in Google Chat\n\n`https://www.googleapis.com/auth/chat.messages.create`"]
+    pub const CHAT_MESSAGES_CREATE: &str = "https://www.googleapis.com/auth/chat.messages.create";
+    #[doc = "View messages and reactions in Google Chat\n\n`https://www.googleapis.com/auth/chat.messages.readonly`"]
+    pub const CHAT_MESSAGES_READONLY: &str =
+        "https://www.googleapis.com/auth/chat.messages.readonly";
+    #[doc = "Create conversations and spaces and view or update metadata (including history settings) in Google Chat\n\n`https://www.googleapis.com/auth/chat.spaces`"]
+    pub const CHAT_SPACES: &str = "https://www.googleapis.com/auth/chat.spaces";
+    #[doc = "View chat and spaces in Google Chat\n\n`https://www.googleapis.com/auth/chat.spaces.readonly`"]
+    pub const CHAT_SPACES_READONLY: &str = "https://www.googleapis.com/auth/chat.spaces.readonly";
+}
 pub mod schemas {
     #[derive(
         Debug,
@@ -224,7 +242,7 @@ pub mod schemas {
         InvalidArgument,
         #[doc = "Some requested entity (e.g., file or directory) was not found. Note to server developers: if a request is denied for an entire class of users, such as gradual feature rollout or undocumented allowlist, `NOT_FOUND` may be used. If a request is denied for some users within a class of users, such as user-based access control, `PERMISSION_DENIED` must be used. HTTP Mapping: 404 Not Found"]
         NotFound,
-        #[doc = "Not an error; returned on success HTTP Mapping: 200 OK"]
+        #[doc = "Not an error; returned on success. HTTP Mapping: 200 OK"]
         Ok,
         #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range \\[0,2^32-1\\], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
         OutOfRange,
@@ -915,9 +933,38 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct CardWithId {
+        #[doc = "Card proto that allows Chat apps to specify UI elements and editable widgets."]
+        #[serde(
+            rename = "card",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub card: ::std::option::Option<crate::schemas::GoogleAppsCardV1Card>,
+        #[doc = "Required for `cardsV2` messages. Chat app-specified identifier for this widget. Scoped within a message."]
+        #[serde(
+            rename = "cardId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub card_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CardWithId {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CardWithId {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ChatAppLogEntry {
-        #[doc = "The deployment that caused the error. For Chat bots built in Apps Script, this is the deployment ID defined by Apps Script."]
+        #[doc = "The deployment that caused the error. For Chat apps built in Apps Script, this is the deployment ID defined by Apps Script."]
         #[serde(
             rename = "deployment",
             default,
@@ -1082,6 +1129,8 @@ pub mod schemas {
         Drive,
         #[doc = "The add-on launches from Gmail."]
         Gmail,
+        #[doc = "The add-on launches from Google Meet."]
+        Meet,
         #[doc = "The add-on launches from Google Sheets."]
         Sheets,
         #[doc = "The add-on launches from Google Slides."]
@@ -1099,6 +1148,7 @@ pub mod schemas {
                 CommonEventObjectHostApp::Drawings => "DRAWINGS",
                 CommonEventObjectHostApp::Drive => "DRIVE",
                 CommonEventObjectHostApp::Gmail => "GMAIL",
+                CommonEventObjectHostApp::Meet => "MEET",
                 CommonEventObjectHostApp::Sheets => "SHEETS",
                 CommonEventObjectHostApp::Slides => "SLIDES",
                 CommonEventObjectHostApp::UnspecifiedHostApp => "UNSPECIFIED_HOST_APP",
@@ -1121,6 +1171,7 @@ pub mod schemas {
                 "DRAWINGS" => CommonEventObjectHostApp::Drawings,
                 "DRIVE" => CommonEventObjectHostApp::Drive,
                 "GMAIL" => CommonEventObjectHostApp::Gmail,
+                "MEET" => CommonEventObjectHostApp::Meet,
                 "SHEETS" => CommonEventObjectHostApp::Sheets,
                 "SLIDES" => CommonEventObjectHostApp::Slides,
                 "UNSPECIFIED_HOST_APP" => CommonEventObjectHostApp::UnspecifiedHostApp,
@@ -1155,6 +1206,7 @@ pub mod schemas {
                 "DRAWINGS" => CommonEventObjectHostApp::Drawings,
                 "DRIVE" => CommonEventObjectHostApp::Drive,
                 "GMAIL" => CommonEventObjectHostApp::Gmail,
+                "MEET" => CommonEventObjectHostApp::Meet,
                 "SHEETS" => CommonEventObjectHostApp::Sheets,
                 "SLIDES" => CommonEventObjectHostApp::Slides,
                 "UNSPECIFIED_HOST_APP" => CommonEventObjectHostApp::UnspecifiedHostApp,
@@ -1400,7 +1452,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub space: ::std::option::Option<crate::schemas::Space>,
-        #[doc = "The Chat app-defined key for the thread related to the event. See the thread_key field of the `spaces.message.create` request for more information."]
+        #[doc = "The Chat app-defined key for the thread related to the event. See [`spaces.messages.thread.threadKey`](/chat/api/reference/rest/v1/spaces.messages#Thread.FIELDS.thread_key) for more information."]
         #[serde(
             rename = "threadKey",
             default,
@@ -1756,13 +1808,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Action {
-        #[doc = "Apps Script function to invoke when the containing element is clicked/activated."]
+        #[doc = "A custom function to invoke when the containing element is clicked or othrwise activated. For example usage, see [Create interactive cards](https://developers.google.com/chat/how-tos/cards-onclick)."]
         #[serde(
             rename = "function",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub function: ::std::option::Option<String>,
+        #[doc = "Optional. Required when opening a [dialog](https://developers.google.com/chat/how-tos/dialogs). What to do in response to an interaction with a user, such as a user clicking button on a card message. If unspecified, the app responds by executing an `action` - like opening a link or running a function - as normal. By specifying an `interaction`, the app can respond in special interactive ways. For example, by setting `interaction` to `OPEN_DIALOG`, the app can open a [dialog](https://developers.google.com/chat/how-tos/dialogs). When specified, a loading indicator is not shown. Supported by Chat apps, but not Google Workspace Add-ons. If specified for an add-on, the entire card is stripped and nothing is shown in the client."]
+        #[serde(
+            rename = "interaction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub interaction: ::std::option::Option<crate::schemas::GoogleAppsCardV1ActionInteraction>,
         #[doc = "Specifies the loading indicator that the action displays while making the call to the action."]
         #[serde(
             rename = "loadIndicator",
@@ -1778,7 +1837,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameters: ::std::option::Option<Vec<crate::schemas::GoogleAppsCardV1ActionParameter>>,
-        #[doc = "Indicates whether form values persist after the action. The default value is `false`. If `true`, form values remain after the action is triggered. When using [LoadIndicator.NONE](workspace/add-ons/reference/rpc/google.apps.card.v1#loadindicator) for actions, `persist_values` = `true`is recommended, as it ensures that any changes made by the user after form or on change actions are sent to the server are not overwritten by the response. If `false`, the form values are cleared when the action is triggered. When `persist_values` is set to `false`, it is strongly recommended that the card use [LoadIndicator.SPINNER](workspace/add-ons/reference/rpc/google.apps.card.v1#loadindicator) for all actions, as this locks the UI to ensure no changes are made by the user while the action is being processed."]
+        #[doc = "Indicates whether form values persist after the action. The default value is `false`. If `true`, form values remain after the action is triggered. When using [LoadIndicator.NONE](https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1#loadindicator) for actions, `persist_values` = `true`is recommended, as it ensures that any changes made by the user after form or on change actions are sent to the server are not overwritten by the response. If `false`, the form values are cleared when the action is triggered. When `persist_values` is set to `false`, it is strongly recommended that the card use [LoadIndicator.SPINNER](https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1#loadindicator) for all actions, as this locks the UI to ensure no changes are made by the user while the action is being processed. Not supported by Chat apps."]
         #[serde(
             rename = "persistValues",
             default,
@@ -1792,6 +1851,83 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleAppsCardV1Action {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAppsCardV1ActionInteraction {
+        #[doc = "Default value. The `action` executes as normal."]
+        InteractionUnspecified,
+        #[doc = "Opens a [dialog](https://developers.google.com/chat/how-tos/dialogs), a windowed, card-based interface that Chat apps use to interact with users. Only supported by Chat apps in response to button-clicks on card messages. Not supported by Google Workspace Add-ons. If specified for an add-on, the entire card is stripped and nothing is shown in the client."]
+        OpenDialog,
+    }
+    impl GoogleAppsCardV1ActionInteraction {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleAppsCardV1ActionInteraction::InteractionUnspecified => {
+                    "INTERACTION_UNSPECIFIED"
+                }
+                GoogleAppsCardV1ActionInteraction::OpenDialog => "OPEN_DIALOG",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAppsCardV1ActionInteraction {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAppsCardV1ActionInteraction {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleAppsCardV1ActionInteraction, ()> {
+            Ok(match s {
+                "INTERACTION_UNSPECIFIED" => {
+                    GoogleAppsCardV1ActionInteraction::InteractionUnspecified
+                }
+                "OPEN_DIALOG" => GoogleAppsCardV1ActionInteraction::OpenDialog,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAppsCardV1ActionInteraction {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAppsCardV1ActionInteraction {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAppsCardV1ActionInteraction {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "INTERACTION_UNSPECIFIED" => {
+                    GoogleAppsCardV1ActionInteraction::InteractionUnspecified
+                }
+                "OPEN_DIALOG" => GoogleAppsCardV1ActionInteraction::OpenDialog,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAppsCardV1ActionInteraction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAppsCardV1ActionInteraction {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1945,7 +2081,7 @@ pub mod schemas {
     pub enum GoogleAppsCardV1BorderStyleType {
         #[doc = "No value specified."]
         BorderTypeUnspecified,
-        #[doc = "No border."]
+        #[doc = "Default value. No border."]
         NoBorder,
         #[doc = "Outline."]
         Stroke,
@@ -2021,42 +2157,42 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Button {
-        #[doc = "The alternative text used for accessibility. Has no effect when an icon is set; use `icon.alt_text` instead."]
+        #[doc = "The alternative text used for accessibility. Set descriptive text that lets users know what the button does. For example, if a button opens a hyperlink, you might write: “Opens a new browser tab and navigates to the Google Chat developer documentation at https://developers.google.com/chat”."]
         #[serde(
             rename = "altText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alt_text: ::std::option::Option<String>,
-        #[doc = "If set, the button is filled with a solid background."]
+        #[doc = "If set, the button is filled with a solid background color and the font color changes to maintain contrast with the background color. For example, setting a blue background will likely result in white text. If unset, the image background is white and the font color is blue. For red, green and blue, the value of each field is a `float` number that can be expressed in either of two ways: as a number between 0 and 255 divided by 255 (153/255) or as a value between 0 and 1 (0.6). 0 represents the absence of a color and 1 or 255/255 represent the full presence of that color on the RGB scale. Optionally set alpha, which sets a level of transparency using this equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` For alpha, a value of 1 corresponds with a solid color, and a value of 0 corresponds with a completely transparent color. For example, the following color represents a half transparent red: `\"color\": { \"red\": 1, \"green\": 0, \"blue\": 0, \"alpha\": 0.5 }`"]
         #[serde(
             rename = "color",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::Color>,
-        #[doc = "If `true`, the button is displayed in a disabled state and doesn’t respond to user actions."]
+        #[doc = "If `true`, the button is displayed in an inactive state and doesn’t respond to user actions."]
         #[serde(
             rename = "disabled",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disabled: ::std::option::Option<bool>,
-        #[doc = "The icon image."]
+        #[doc = "The icon image. If both `icon` and `text` are set, then the icon appears before the text."]
         #[serde(
             rename = "icon",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub icon: ::std::option::Option<crate::schemas::GoogleAppsCardV1Icon>,
-        #[doc = "The action to perform when the button is clicked."]
+        #[doc = "Required. The action to perform when the button is clicked, such as opening a hyperlink or running a custom function."]
         #[serde(
             rename = "onClick",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub on_click: ::std::option::Option<Box<crate::schemas::GoogleAppsCardV1OnClick>>,
-        #[doc = "The text of the button."]
+        #[doc = "The text displayed inside the button."]
         #[serde(
             rename = "text",
             default,
@@ -2100,21 +2236,21 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Card {
-        #[doc = "The card’s actions. Actions are added to the card’s generated toolbar menu. For example, the following JSON constructs a card action menu with Settings and Send Feedback options: `\"card_actions\": [ { \"actionLabel\": \"Settings\", \"onClick\": { \"action\": { \"functionName\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"SETTING\" } ], \"loadIndicator\": \"LoadIndicator.SPINNER\" } } }, { \"actionLabel\": \"Send Feedback\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/feedback\" } } } ]`"]
+        #[doc = "The card’s actions. Actions are added to the card’s toolbar menu. Because Chat app cards have no toolbar, `cardActions[]` is not supported by Chat apps. For example, the following JSON constructs a card action menu with Settings and Send Feedback options: `\"card_actions\": [ { \"actionLabel\": \"Settings\", \"onClick\": { \"action\": { \"functionName\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"SETTING\" } ], \"loadIndicator\": \"LoadIndicator.SPINNER\" } } }, { \"actionLabel\": \"Send Feedback\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/feedback\" } } } ]`"]
         #[serde(
             rename = "cardActions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub card_actions: ::std::option::Option<Vec<crate::schemas::GoogleAppsCardV1CardAction>>,
-        #[doc = "The display style for `peekCardHeader`."]
+        #[doc = "In Google Workspace add-ons, sets the display properties of the `peekCardHeader`. Not supported by Chat apps."]
         #[serde(
             rename = "displayStyle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_style: ::std::option::Option<crate::schemas::GoogleAppsCardV1CardDisplayStyle>,
-        #[doc = "The fixed footer shown at the bottom of this card."]
+        #[doc = "The fixed footer shown at the bottom of this card. Setting `fixedFooter` without specifying a `primaryButton` or a `secondaryButton` causes an error. Chat apps support `fixedFooter` in [dialogs](https://developers.google.com/chat/how-tos/dialogs), but not in [card messages](https://developers.google.com/chat/api/guides/message-formats/cards)."]
         #[serde(
             rename = "fixedFooter",
             default,
@@ -2122,28 +2258,28 @@ pub mod schemas {
         )]
         pub fixed_footer:
             ::std::option::Option<Box<crate::schemas::GoogleAppsCardV1CardFixedFooter>>,
-        #[doc = "The header of the card. A header usually contains a title and an image."]
+        #[doc = "The header of the card. A header usually contains a leading image and a title. Headers always appear at the top of a card."]
         #[serde(
             rename = "header",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub header: ::std::option::Option<crate::schemas::GoogleAppsCardV1CardHeader>,
-        #[doc = "Name of the card. Used as a card identifier in card navigation."]
+        #[doc = "Name of the card. Used as a card identifier in card navigation. Because Chat apps don’t support card navigation, they ignore this field."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "When displaying contextual content, the peek card header acts as a placeholder so that the user can navigate forward between the homepage cards and the contextual cards."]
+        #[doc = "When displaying contextual content, the peek card header acts as a placeholder so that the user can navigate forward between the homepage cards and the contextual cards. Not supported by Chat apps."]
         #[serde(
             rename = "peekCardHeader",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub peek_card_header: ::std::option::Option<crate::schemas::GoogleAppsCardV1CardHeader>,
-        #[doc = "Sections are separated by a line divider."]
+        #[doc = "Contains a collection of widgets. Each section has its own, optional header. Sections are visually separated by a line divider."]
         #[serde(
             rename = "sections",
             default,
@@ -2163,11 +2299,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAppsCardV1CardDisplayStyle {
-        #[doc = "Default value. Do not use."]
+        #[doc = "Do not use."]
         DisplayStyleUnspecified,
         #[doc = "The header of the card appears at the bottom of the sidebar, partially covering the current top card of the stack. Clicking the header pops the card into the card stack. If the card has no header, a generated header is used instead."]
         Peek,
-        #[doc = "The card is shown by replacing the view of the top card in the card stack."]
+        #[doc = "Default value. The card is shown by replacing the view of the top card in the card stack."]
         Replace,
     }
     impl GoogleAppsCardV1CardDisplayStyle {
@@ -2321,21 +2457,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_alt_text: ::std::option::Option<String>,
-        #[doc = "The image’s type."]
+        #[doc = "The shape used to crop the image."]
         #[serde(
             rename = "imageType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_type: ::std::option::Option<crate::schemas::GoogleAppsCardV1CardHeaderImageType>,
-        #[doc = "The URL of the image in the card header."]
+        #[doc = "The HTTPS URL of the image in the card header."]
         #[serde(
             rename = "imageUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_url: ::std::option::Option<String>,
-        #[doc = "The subtitle of the card header."]
+        #[doc = "The subtitle of the card header. If specified, appears on its own line below the `title`."]
         #[serde(
             rename = "subtitle",
             default,
@@ -2362,9 +2498,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAppsCardV1CardHeaderImageType {
-        #[doc = "Applies a circular mask to the image."]
+        #[doc = "Applies a circular mask to the image. For example, a 4x3 image becomes a circle with a diameter of 3."]
         Circle,
-        #[doc = "Applies no cropping to the image."]
+        #[doc = "Default value. Applies a square mask to the image. For example, a 4x3 image becomes 3x3."]
         Square,
     }
     impl GoogleAppsCardV1CardHeaderImageType {
@@ -2444,28 +2580,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1DateTimePicker {
-        #[doc = "The label for the field that displays to the user."]
+        #[doc = "The text that prompts users to enter a date, time, or datetime. Specify text that helps the user enter the information your app needs. For example, if users are setting an appointment, then a label like “Appointment date” or “Appointment date and time” might work well."]
         #[serde(
             rename = "label",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The name of the text input that’s used in `formInput`, and uniquely identifies this input."]
+        #[doc = "The name by which the datetime picker is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Triggered when the user clicks Save or Clear from the date/time picker dialog. This is only triggered if the value changed as a result of the Save/Clear operation."]
+        #[doc = "Triggered when the user clicks **Save** or **Clear** from the datetime picker interface."]
         #[serde(
             rename = "onChangeAction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub on_change_action: ::std::option::Option<crate::schemas::GoogleAppsCardV1Action>,
-        #[doc = "The type of the date/time picker."]
+        #[doc = "What kind of date and time input the datetime picker supports."]
         #[serde(
             rename = "type",
             default,
@@ -2479,7 +2615,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timezone_offset_date: ::std::option::Option<i32>,
-        #[doc = "The value to display as the default value before user input or previous user input. It is represented in milliseconds (Epoch time). For `DATE_AND_TIME` type, the full epoch value is used. For `DATE_ONLY` type, only date of the epoch time is used. For `TIME_ONLY` type, only time of the epoch time is used. For example, you can set epoch time to `3 * 60 * 60 * 1000` to represent 3am."]
+        #[doc = "The value displayed as the default value before user input or previous user input, represented in milliseconds ([Epoch time](https://en.wikipedia.org/wiki/Unix_time)). For `DATE_AND_TIME` type, the full epoch value is used. For `DATE_ONLY` type, only date of the epoch time is used. For `TIME_ONLY` type, only time of the epoch time is used. For example, to represent 3:00 AM, set epoch time to `3 * 60 * 60 * 1000`."]
         #[serde(
             rename = "valueMsEpoch",
             default,
@@ -2578,7 +2714,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1DecoratedText {
-        #[doc = "The formatted text label that shows below the main text."]
+        #[doc = "The text that appears below `text`. Always truncates. Supports simple formatting. See Text formatting for formatting details."]
         #[serde(
             rename = "bottomLabel",
             default,
@@ -2592,21 +2728,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub button: ::std::option::Option<crate::schemas::GoogleAppsCardV1Button>,
-        #[doc = "An icon displayed after the text."]
+        #[doc = "An icon displayed after the text. Supports [standard](https://developers.google.com/chat/api/guides/message-formats/cards#builtinicons) and [custom](https://developers.google.com/chat/api/guides/message-formats/cards#customicons) icons."]
         #[serde(
             rename = "endIcon",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_icon: ::std::option::Option<crate::schemas::GoogleAppsCardV1Icon>,
-        #[doc = "Deprecated in favor of start_icon."]
+        #[doc = "Deprecated in favor of `startIcon`."]
         #[serde(
             rename = "icon",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub icon: ::std::option::Option<crate::schemas::GoogleAppsCardV1Icon>,
-        #[doc = "Only the top and bottom label and content region are clickable."]
+        #[doc = "When users click on `topLabel` or `bottomLabel`, this action triggers."]
         #[serde(
             rename = "onClick",
             default,
@@ -2620,28 +2756,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_icon: ::std::option::Option<crate::schemas::GoogleAppsCardV1Icon>,
-        #[doc = "A switch widget can be clicked to change its state or trigger an action."]
+        #[doc = "A switch widget can be clicked to change its state and trigger an action. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon."]
         #[serde(
             rename = "switchControl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub switch_control: ::std::option::Option<crate::schemas::GoogleAppsCardV1SwitchControl>,
-        #[doc = "Required. The main widget formatted text. See Text formatting for details."]
+        #[doc = "Required. The primary text. Supports simple formatting. See Text formatting for formatting details."]
         #[serde(
             rename = "text",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "The formatted text label that shows above the main text."]
+        #[doc = "The text that appears above `text`. Always truncates. Supports simple formatting. See Text formatting for formatting details."]
         #[serde(
             rename = "topLabel",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub top_label: ::std::option::Option<String>,
-        #[doc = "The wrap text setting. If `true`, the text is wrapped and displayed in multiline. Otherwise, the text is truncated."]
+        #[doc = "The wrap text setting. If `true`, the text wraps and displays on multiple lines. Otherwise, the text is truncated. Only applies to `text`, not `topLabel` and `bottomLabel`."]
         #[serde(
             rename = "wrapText",
             default,
@@ -2765,14 +2901,6 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub subtitle: ::std::option::Option<String>,
-        #[doc = "The horizontal alignment of the grid item’s text."]
-        #[serde(
-            rename = "textAlignment",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub text_alignment:
-            ::std::option::Option<crate::schemas::GoogleAppsCardV1GridItemTextAlignment>,
         #[doc = "The grid item’s title."]
         #[serde(
             rename = "title",
@@ -2873,93 +3001,6 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleAppsCardV1GridItemTextAlignment {
-        #[doc = "Alignment to the center position."]
-        Center,
-        #[doc = "Alignment to the end position."]
-        End,
-        #[doc = "Unspecified alignment."]
-        HorizontalAlignmentUnspecified,
-        #[doc = "Alignment to the start position."]
-        Start,
-    }
-    impl GoogleAppsCardV1GridItemTextAlignment {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                GoogleAppsCardV1GridItemTextAlignment::Center => "CENTER",
-                GoogleAppsCardV1GridItemTextAlignment::End => "END",
-                GoogleAppsCardV1GridItemTextAlignment::HorizontalAlignmentUnspecified => {
-                    "HORIZONTAL_ALIGNMENT_UNSPECIFIED"
-                }
-                GoogleAppsCardV1GridItemTextAlignment::Start => "START",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleAppsCardV1GridItemTextAlignment {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleAppsCardV1GridItemTextAlignment {
-        type Err = ();
-        fn from_str(s: &str) -> ::std::result::Result<GoogleAppsCardV1GridItemTextAlignment, ()> {
-            Ok(match s {
-                "CENTER" => GoogleAppsCardV1GridItemTextAlignment::Center,
-                "END" => GoogleAppsCardV1GridItemTextAlignment::End,
-                "HORIZONTAL_ALIGNMENT_UNSPECIFIED" => {
-                    GoogleAppsCardV1GridItemTextAlignment::HorizontalAlignmentUnspecified
-                }
-                "START" => GoogleAppsCardV1GridItemTextAlignment::Start,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for GoogleAppsCardV1GridItemTextAlignment {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleAppsCardV1GridItemTextAlignment {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GoogleAppsCardV1GridItemTextAlignment {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "CENTER" => GoogleAppsCardV1GridItemTextAlignment::Center,
-                "END" => GoogleAppsCardV1GridItemTextAlignment::End,
-                "HORIZONTAL_ALIGNMENT_UNSPECIFIED" => {
-                    GoogleAppsCardV1GridItemTextAlignment::HorizontalAlignmentUnspecified
-                }
-                "START" => GoogleAppsCardV1GridItemTextAlignment::Start,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for GoogleAppsCardV1GridItemTextAlignment {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleAppsCardV1GridItemTextAlignment {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
     #[derive(
         Debug,
         Clone,
@@ -2973,14 +3014,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Icon {
-        #[doc = "The description of the icon, used for accessibility. The default value is provided if you don’t specify one."]
+        #[doc = "Optional. A description of the icon used for accessibility. If unspecified, the default value “Button” is provided. As a best practice, you should set a helpful description for what the icon displays, and if applicable, what it does. For example, `A user's account portrait`, or `Opens a new browser tab and navigates to the Google Chat developer documentation at https://developers.google.com/chat`. If the icon is set in a Button, the `altText` appears as helper text when the user hovers over the button. However, if the button also sets `text`, the icon’s `altText` is ignored."]
         #[serde(
             rename = "altText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alt_text: ::std::option::Option<String>,
-        #[doc = "The icon specified by a URL."]
+        #[doc = "Display a custom icon hosted at an HTTPS URL. For example: `\"iconUrl\": \"https://developers.google.com/chat/images/quickstart-app-avatar.png\"` Supported file types include `.png` and `.jpg`."]
         #[serde(
             rename = "iconUrl",
             default,
@@ -2994,7 +3035,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_type: ::std::option::Option<crate::schemas::GoogleAppsCardV1IconImageType>,
-        #[doc = "The icon specified by the string name of a list of known icons."]
+        #[doc = "Display one of the standard icons provided by Google Workspace. For example, to display an airplane icon, specify `AIRPLANE`. For a bus, specify `BUS`. For a full list of supported icons, see [standard icons](https://developers.google.com/chat/api/guides/message-formats/cards)."]
         #[serde(
             rename = "knownIcon",
             default,
@@ -3014,9 +3055,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAppsCardV1IconImageType {
-        #[doc = "Applies a circular mask to the image."]
+        #[doc = "Applies a circular mask to the image. For example, a 4x3 image becomes a circle with a diameter of 3."]
         Circle,
-        #[doc = "Applies no cropping to the image."]
+        #[doc = "Default value. Applies a square mask to the image. For example, a 4x3 image becomes 3x3."]
         Square,
     }
     impl GoogleAppsCardV1IconImageType {
@@ -3094,14 +3135,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alt_text: ::std::option::Option<String>,
-        #[doc = "An image URL."]
+        #[doc = "The `https` URL that hosts the image. For example: `https://developers.google.com/chat/images/quickstart-app-avatar.png`"]
         #[serde(
             rename = "imageUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_url: ::std::option::Option<String>,
-        #[doc = "The action triggered by an `onClick` event."]
+        #[doc = "When a user clicks on the image, the click triggers this action."]
         #[serde(
             rename = "onClick",
             default,
@@ -3166,7 +3207,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1ImageCropStyle {
-        #[doc = "The aspect ratio to use if the crop type is `RECTANGLE_CUSTOM`."]
+        #[doc = "The aspect ratio to use if the crop type is `RECTANGLE_CUSTOM`. For example, here’s how to apply a 16 by 9 aspect ratio: `cropStyle { \"type\": \"RECTANGLE_CUSTOM\", \"aspectRatio\": 16/9 }`"]
         #[serde(
             rename = "aspectRatio",
             default,
@@ -3195,13 +3236,13 @@ pub mod schemas {
     pub enum GoogleAppsCardV1ImageCropStyleType {
         #[doc = "Applies a circular crop."]
         Circle,
-        #[doc = "No value specified."]
+        #[doc = "No value specified. Do not use."]
         ImageCropTypeUnspecified,
         #[doc = "Applies a rectangular crop with a 4:3 aspect ratio."]
         Rectangle43,
-        #[doc = "Applies a rectangular crop with a custom aspect ratio."]
+        #[doc = "Applies a rectangular crop with a custom aspect ratio. Set the custom aspect ratio with `aspectRatio`."]
         RectangleCustom,
-        #[doc = "Applies a square crop."]
+        #[doc = "Default value. Applies a square crop."]
         Square,
     }
     impl GoogleAppsCardV1ImageCropStyleType {
@@ -3294,7 +3335,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<crate::schemas::GoogleAppsCardV1Action>,
-        #[doc = "A new card is pushed to the card stack after clicking if specified."]
+        #[doc = "A new card is pushed to the card stack after clicking if specified. Supported by Google Workspace Add-ons, but not Chat apps."]
         #[serde(
             rename = "card",
             default,
@@ -3373,9 +3414,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAppsCardV1OpenLinkOnClose {
-        #[doc = "Doesn’t reload the card after the child window closes."]
+        #[doc = "Default value. The card does not reload; nothing happens."]
         Nothing,
-        #[doc = "Reloads the card after the child window closes. If used in conjunction with [OpenAs.OVERLAY](/workspace/add-ons/reference/rpc/google.apps.card.v1#openas), the child window acts as a modal dialog and the main card is blocked until the child window closes."]
+        #[doc = "Reloads the card after the child window closes. If used in conjunction with [OpenAs.OVERLAY](https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1#openas), the child window acts as a modal dialog and the parent card is blocked until the child window closes."]
         Reload,
     }
     impl GoogleAppsCardV1OpenLinkOnClose {
@@ -3517,28 +3558,28 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Section {
-        #[doc = "Indicates whether this section is collapsible. If a section is collapsible, the description must be given."]
+        #[doc = "Indicates whether this section is collapsible. Collapsible sections hide some or all widgets, but users can expand the section to reveal the hidden widgets by clicking **Show more**. Users can hide the widgets again by clicking **Show less**. To determine which widgets are hidden, specify `uncollapsibleWidgetsCount`."]
         #[serde(
             rename = "collapsible",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub collapsible: ::std::option::Option<bool>,
-        #[doc = "The header of the section. Formatted text is supported."]
+        #[doc = "Text that appears at the top of a section. Supports [simple HTML formatted text](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting)."]
         #[serde(
             rename = "header",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub header: ::std::option::Option<String>,
-        #[doc = "The number of uncollapsible widgets. For example, when a section contains five widgets and the `uncollapsibleWidgetsCount` is set to `2`, the first two widgets are always shown and the last three are collapsed as default. The `uncollapsibleWidgetsCount` is taken into account only when `collapsible` is `true`."]
+        #[doc = "The number of uncollapsible widgets which remain visible even when a section is collapsed. For example, when a section contains five widgets and the `uncollapsibleWidgetsCount` is set to `2`, the first two widgets are always shown and the last three are collapsed by default. The `uncollapsibleWidgetsCount` is taken into account only when `collapsible` is `true`."]
         #[serde(
             rename = "uncollapsibleWidgetsCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uncollapsible_widgets_count: ::std::option::Option<i32>,
-        #[doc = "A section must contain at least 1 widget."]
+        #[doc = "All the widgets in the section. Must contain at least 1 widget."]
         #[serde(
             rename = "widgets",
             default,
@@ -3569,35 +3610,35 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1SelectionInput {
-        #[doc = "An array of the selected items."]
+        #[doc = "An array of the selected items. For example, all the selected check boxes."]
         #[serde(
             rename = "items",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::GoogleAppsCardV1SelectionItem>>,
-        #[doc = "The label displayed ahead of the switch control."]
+        #[doc = "The text that appears above the selection input field in the user interface. Specify text that helps the user enter the information your app needs. For example, if users are selecting the urgency of a work ticket from a drop-down menu, the label might be “Urgency” or “Select urgency”."]
         #[serde(
             rename = "label",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The name of the text input which is used in `formInput`."]
+        #[doc = "The name by which the selection input is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "If specified, the form is submitted when the selection changes. If not specified, you must specify a separate button."]
+        #[doc = "If specified, the form is submitted when the selection changes. If not specified, you must specify a separate button that submits the form. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "onChangeAction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub on_change_action: ::std::option::Option<crate::schemas::GoogleAppsCardV1Action>,
-        #[doc = "The type of the selection."]
+        #[doc = "The way that an option appears to users. Different options support different types of interactions. For example, users can enable multiple check boxes, but can only select one value from a dropdown menu. Each selection input supports one type of selection. Mixing check boxes and switches, for example, is not supported."]
         #[serde(
             rename = "type",
             default,
@@ -3617,13 +3658,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAppsCardV1SelectionInputType {
-        #[doc = "A checkbox."]
+        #[doc = "A set of checkboxes. Users can select multiple check boxes per selection input. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon."]
         CheckBox,
-        #[doc = "A dropdown menu."]
+        #[doc = "A dropdown menu. Users can select one dropdown menu item per selection input. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon."]
         Dropdown,
-        #[doc = "A radio button."]
+        #[doc = "A set of radio buttons. Users can select one radio button per selection input. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon."]
         RadioButton,
-        #[doc = "A switch."]
+        #[doc = "A set of switches. Users can turn on multiple switches at once per selection input. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon."]
         Switch,
     }
     impl GoogleAppsCardV1SelectionInputType {
@@ -3709,21 +3750,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1SelectionItem {
-        #[doc = "If more than one item is selected for `RADIO_BUTTON` and `DROPDOWN`, the first selected item is treated as selected and the ones after are ignored."]
+        #[doc = "When `true`, more than one item is selected. If more than one item is selected for radio buttons and dropdown menus, the first selected item is received and the ones after are ignored."]
         #[serde(
             rename = "selected",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub selected: ::std::option::Option<bool>,
-        #[doc = "The text to be displayed."]
+        #[doc = "The text displayed to users."]
         #[serde(
             rename = "text",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "The value associated with this item. The client should use this as a form input value."]
+        #[doc = "The value associated with this item. The client should use this as a form input value. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "value",
             default,
@@ -3754,7 +3795,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1SuggestionItem {
-        #[doc = "The suggested autocomplete result."]
+        #[doc = "The value of a suggested input to a text input field. This is equivalent to what users would enter themselves."]
         #[serde(
             rename = "text",
             default,
@@ -3785,7 +3826,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Suggestions {
-        #[doc = "A list of suggestions used for autocomplete recommendations."]
+        #[doc = "A list of suggestions used for autocomplete recommendations in text input fields."]
         #[serde(
             rename = "items",
             default,
@@ -3816,7 +3857,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1SwitchControl {
-        #[doc = "The control type, either switch or checkbox."]
+        #[doc = "How the switch appears in the user interface."]
         #[serde(
             rename = "controlType",
             default,
@@ -3824,28 +3865,28 @@ pub mod schemas {
         )]
         pub control_type:
             ::std::option::Option<crate::schemas::GoogleAppsCardV1SwitchControlControlType>,
-        #[doc = "The name of the switch widget that’s used in `formInput`."]
+        #[doc = "The name by which the switch widget is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The action when the switch state is changed."]
+        #[doc = "The action to perform when the switch state is changed, such as what function to run."]
         #[serde(
             rename = "onChangeAction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub on_change_action: ::std::option::Option<crate::schemas::GoogleAppsCardV1Action>,
-        #[doc = "If the switch is selected."]
+        #[doc = "When `true`, the switch is selected."]
         #[serde(
             rename = "selected",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub selected: ::std::option::Option<bool>,
-        #[doc = "The value is what is passed back in the callback."]
+        #[doc = "The value entered by a user, returned as part of a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "value",
             default,
@@ -3954,56 +3995,56 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1TextInput {
-        #[doc = "The refresh function that returns suggestions based on the user’s input text. If the callback is not specified, autocomplete is done in client side based on the initial suggestion items."]
+        #[doc = "Optional. Specify what action to take when the text input field provides suggestions to users who interact with it. If unspecified, the suggestions are set by `initialSuggestions` and are processed by the client. If specified, the app takes the action specified here, such as running a custom function. Supported by Google Workspace Add-ons, but not Chat apps. Support by Chat apps coming soon."]
         #[serde(
             rename = "autoCompleteAction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auto_complete_action: ::std::option::Option<crate::schemas::GoogleAppsCardV1Action>,
-        #[doc = "The hint text."]
+        #[doc = "Text that appears below the text input field meant to assist users by prompting them to enter a certain value. This text is always visible. Required if `label` is unspecified. Otherwise, optional."]
         #[serde(
             rename = "hintText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hint_text: ::std::option::Option<String>,
-        #[doc = "The initial suggestions made before any user input."]
+        #[doc = "Suggested values that users can enter. These values appear when users click inside the text input field. As users type, the suggested values dynamically filter to match what the users have typed. For example, a text input field for programming language might suggest Java, JavaScript, Python, and C++. When users start typing “Jav”, the list of suggestions filters to show just Java and JavaScript. Suggested values help guide users to enter values that your app can make sense of. When referring to JavaScript, some users might enter “javascript” and others “java script”. Suggesting “JavaScript” can standardize how users interact with your app. When specified, `TextInput.type` is always `SINGLE_LINE`, even if it is set to `MULTIPLE_LINE`."]
         #[serde(
             rename = "initialSuggestions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub initial_suggestions: ::std::option::Option<crate::schemas::GoogleAppsCardV1Suggestions>,
-        #[doc = "At least one of label and hintText must be specified."]
+        #[doc = "The text that appears above the text input field in the user interface. Specify text that helps the user enter the information your app needs. For example, if you are asking someone’s name, but specifically need their surname, write “surname” instead of “name”. Required if `hintText` is unspecified. Otherwise, optional."]
         #[serde(
             rename = "label",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The name of the text input which is used in `formInput`."]
+        #[doc = "The name by which the text input is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The onChange action, for example, invoke a function."]
+        #[doc = "What to do when a change occurs in the text input field. Examples of changes include a user adding to the field, or deleting text. Examples of actions to take include running a custom function or opening a [dialog](https://developers.google.com/chat/how-tos/dialogs) in Google Chat."]
         #[serde(
             rename = "onChangeAction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub on_change_action: ::std::option::Option<crate::schemas::GoogleAppsCardV1Action>,
-        #[doc = "The style of the text, for example, a single line or multiple lines."]
+        #[doc = "How a text input field appears in the user interface. For example, whether the field is single or multi-line."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::GoogleAppsCardV1TextInputType>,
-        #[doc = "The default value when there is no input from the user."]
+        #[doc = "The value entered by a user, returned as part of a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs)."]
         #[serde(
             rename = "value",
             default,
@@ -4023,9 +4064,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAppsCardV1TextInputType {
-        #[doc = "The text is put into multiple lines."]
+        #[doc = "The text input field has a fixed height of multiple lines."]
         MultipleLine,
-        #[doc = "The text is put into a single line."]
+        #[doc = "The text input field has a fixed height of one line."]
         SingleLine,
     }
     impl GoogleAppsCardV1TextInputType {
@@ -4127,71 +4168,63 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Widget {
-        #[doc = "A list of buttons. For example, the following JSON creates two buttons. The first is a filled text button and the second is an image button that opens a link: `\"buttonList\": { \"buttons\": [ \"button\": { \"text\": \"Edit\", \"Color\": { \"Red\": 255 \"Green\": 255 \"Blue\": 255 } \"disabled\": true }, \"button\": { \"icon\": { \"knownIcon\": \"INVITE\" \"altText\": \"check calendar\" }, \"onClick\": { \"openLink\": { \"url\": \"https://example.com/calendar\" } } }, ] }`"]
+        #[doc = "A list of buttons. For example, the following JSON creates two buttons. The first is a blue text button and the second is an image button that opens a link: `\"buttonList\": { \"buttons\": [ \"button\": { \"text\": \"Edit\", \"color\": { \"red\": 0, \"green\": 0, \"blue\": 1, \"alpha\": 1 } \"disabled\": true }, \"button\": { \"icon\": { \"knownIcon\": \"INVITE\" \"altText\": \"check calendar\" }, \"onClick\": { \"openLink\": { \"url\": \"https://example.com/calendar\" } } }, ] }`"]
         #[serde(
             rename = "buttonList",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub button_list: ::std::option::Option<crate::schemas::GoogleAppsCardV1ButtonList>,
-        #[doc = "Displays a selection/input widget for date/time. For example, the following JSON creates a date/time picker for an appointment time: `\"date_time_picker\": { \"name\": \"appointment_time\", \"label\": \"Book your appointment at:\", \"type\": \"DateTimePickerType.DATE_AND_TIME\", \"valueMsEpoch\": \"796435200000\" }`"]
+        #[doc = "Displays a selection/input widget for date, time, or date and time. Not supported by Chat apps. Support by Chat apps is coming soon. For example, the following JSON creates a datetime picker to schedule an appointment: `\"date_time_picker\": { \"name\": \"appointment_time\", \"label\": \"Book your appointment at:\", \"type\": \"DateTimePickerType.DATE_AND_TIME\", \"valueMsEpoch\": \"796435200000\" }`"]
         #[serde(
             rename = "dateTimePicker",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date_time_picker: ::std::option::Option<crate::schemas::GoogleAppsCardV1DateTimePicker>,
-        #[doc = "Displays a decorated text item in this widget. For example, the following JSON creates a decorated text widget showing email address: `\"decoratedText\": { \"icon\": { \"knownIcon\": \"EMAIL\" }, \"topLabel\": \"Email Address\", \"content\": \"sasha@example.com\", \"bottomLabel\": \"This is a new Email address!\", \"switchWidget\": { \"name\": \"has_send_welcome_email_to_sasha\", \"selected\": false, \"controlType\": \"ControlType.CHECKBOX\" } }`"]
+        #[doc = "Displays a decorated text item. For example, the following JSON creates a decorated text widget showing email address: `\"decoratedText\": { \"icon\": { \"knownIcon\": \"EMAIL\" }, \"topLabel\": \"Email Address\", \"text\": \"sasha@example.com\", \"bottomLabel\": \"This is a new Email address!\", \"switchWidget\": { \"name\": \"has_send_welcome_email_to_sasha\", \"selected\": false, \"controlType\": \"ControlType.CHECKBOX\" } }`"]
         #[serde(
             rename = "decoratedText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub decorated_text: ::std::option::Option<crate::schemas::GoogleAppsCardV1DecoratedText>,
-        #[doc = "Displays a divider. For example, the following JSON creates a divider: `\"divider\": { }`"]
+        #[doc = "Displays a horizontal line divider between widgets. For example, the following JSON creates a divider: `\"divider\": { }`"]
         #[serde(
             rename = "divider",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub divider: ::std::option::Option<crate::schemas::GoogleAppsCardV1Divider>,
-        #[doc = "Displays a grid with a collection of items. For example, the following JSON creates a 2 column grid with a single item: `\"grid\": { \"title\": \"A fine collection of items\", \"numColumns\": 2, \"borderStyle\": { \"type\": \"STROKE\", \"cornerRadius\": 4.0 }, \"items\": [ \"image\": { \"imageUri\": \"https://www.example.com/image.png\", \"cropStyle\": { \"type\": \"SQUARE\" }, \"borderStyle\": { \"type\": \"STROKE\" } }, \"title\": \"An item\", \"textAlignment\": \"CENTER\" ], \"onClick\": { \"openLink\": { \"url\":\"https://www.example.com\" } } }`"]
+        #[doc = "Displays a grid with a collection of items. A grid supports any number of columns and items. The number of rows is determined by the upper bounds of the number items divided by the number of columns. A grid with 10 items and 2 columns has 5 rows. A grid with 11 items and 2 columns has 6 rows. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon. For example, the following JSON creates a 2 column grid with a single item: `\"grid\": { \"title\": \"A fine collection of items\", \"numColumns\": 2, \"borderStyle\": { \"type\": \"STROKE\", \"cornerRadius\": 4.0 }, \"items\": [ \"image\": { \"imageUri\": \"https://www.example.com/image.png\", \"cropStyle\": { \"type\": \"SQUARE\" }, \"borderStyle\": { \"type\": \"STROKE\" } }, \"title\": \"An item\", \"textAlignment\": \"CENTER\" ], \"onClick\": { \"openLink\": { \"url\":\"https://www.example.com\" } } }`"]
         #[serde(
             rename = "grid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub grid: ::std::option::Option<crate::schemas::GoogleAppsCardV1Grid>,
-        #[doc = "The horizontal alignment of this widget."]
-        #[serde(
-            rename = "horizontalAlignment",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub horizontal_alignment:
-            ::std::option::Option<crate::schemas::GoogleAppsCardV1WidgetHorizontalAlignment>,
-        #[doc = "Displays an image in this widget. For example, the following JSON creates an image with alternative text: `\"image\": { \"imageUrl\": \"https://example.com/sasha.png\" \"altText\": \"Avatar for Sasha\" }`"]
+        #[doc = "Displays an image. For example, the following JSON creates an image with alternative text: `\"image\": { \"imageUrl\": \"https://developers.google.com/chat/images/quickstart-app-avatar.png\" \"altText\": \"Chat app avatar\" }`"]
         #[serde(
             rename = "image",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image: ::std::option::Option<crate::schemas::GoogleAppsCardV1Image>,
-        #[doc = "Displays a switch control in this widget. For example, the following JSON creates a dropdown selection for size: `\"switchControl\": { \"name\": \"size\", \"label\": \"Size\" \"type\": \"SelectionType.DROPDOWN\", \"items\": [ { \"text\": \"S\", \"value\": \"small\", \"selected\": false }, { \"text\": \"M\", \"value\": \"medium\", \"selected\": true }, { \"text\": \"L\", \"value\": \"large\", \"selected\": false }, { \"text\": \"XL\", \"value\": \"extra_large\", \"selected\": false } ] }`"]
+        #[doc = "Displays a selection control that lets users select items. Selection controls can be check boxes, radio buttons, switches, or dropdown menus. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon. For example, the following JSON creates a dropdown menu that lets users choose a size: `\"selectionInput\": { \"name\": \"size\", \"label\": \"Size\" \"type\": \"SelectionType.DROPDOWN\", \"items\": [ { \"text\": \"S\", \"value\": \"small\", \"selected\": false }, { \"text\": \"M\", \"value\": \"medium\", \"selected\": true }, { \"text\": \"L\", \"value\": \"large\", \"selected\": false }, { \"text\": \"XL\", \"value\": \"extra_large\", \"selected\": false } ] }`"]
         #[serde(
             rename = "selectionInput",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub selection_input: ::std::option::Option<crate::schemas::GoogleAppsCardV1SelectionInput>,
-        #[doc = "Displays a text input in this widget. For example, the following JSON creates a text input for mail address: `\"textInput\": { \"name\": \"mailing_address\", \"label\": \"Mailing Address\" }` As another example, the following JSON creates a text input for programming language with static suggestions: `\"textInput\": { \"name\": \"preferred_programing_language\", \"label\": \"Preferred Language\", \"initialSuggestions\": { \"items\": [ { \"text\": \"C++\" }, { \"text\": \"Java\" }, { \"text\": \"JavaScript\" }, { \"text\": \"Python\" } ] } }`"]
+        #[doc = "Displays a text box that users can type into. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon. For example, the following JSON creates a text input for an email address: `\"textInput\": { \"name\": \"mailing_address\", \"label\": \"Mailing Address\" }` As another example, the following JSON creates a text input for a programming language with static suggestions: `\"textInput\": { \"name\": \"preferred_programing_language\", \"label\": \"Preferred Language\", \"initialSuggestions\": { \"items\": [ { \"text\": \"C++\" }, { \"text\": \"Java\" }, { \"text\": \"JavaScript\" }, { \"text\": \"Python\" } ] } }`"]
         #[serde(
             rename = "textInput",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text_input: ::std::option::Option<crate::schemas::GoogleAppsCardV1TextInput>,
-        #[doc = "Displays a text paragraph in this widget. For example, the following JSON creates a bolded text: `\"textParagraph\": { \"text\": \" *bold text*\" }`"]
+        #[doc = "Displays a text paragraph. Supports [simple HTML formatted text](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting). For example, the following JSON creates a bolded text: `\"textParagraph\": { \"text\": \" *bold text*\" }`"]
         #[serde(
             rename = "textParagraph",
             default,
@@ -4205,95 +4238,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleAppsCardV1Widget {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleAppsCardV1WidgetHorizontalAlignment {
-        #[doc = "Alignment to the center position."]
-        Center,
-        #[doc = "Alignment to the end position."]
-        End,
-        #[doc = "Unspecified alignment."]
-        HorizontalAlignmentUnspecified,
-        #[doc = "Alignment to the start position."]
-        Start,
-    }
-    impl GoogleAppsCardV1WidgetHorizontalAlignment {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                GoogleAppsCardV1WidgetHorizontalAlignment::Center => "CENTER",
-                GoogleAppsCardV1WidgetHorizontalAlignment::End => "END",
-                GoogleAppsCardV1WidgetHorizontalAlignment::HorizontalAlignmentUnspecified => {
-                    "HORIZONTAL_ALIGNMENT_UNSPECIFIED"
-                }
-                GoogleAppsCardV1WidgetHorizontalAlignment::Start => "START",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleAppsCardV1WidgetHorizontalAlignment {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleAppsCardV1WidgetHorizontalAlignment {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<GoogleAppsCardV1WidgetHorizontalAlignment, ()> {
-            Ok(match s {
-                "CENTER" => GoogleAppsCardV1WidgetHorizontalAlignment::Center,
-                "END" => GoogleAppsCardV1WidgetHorizontalAlignment::End,
-                "HORIZONTAL_ALIGNMENT_UNSPECIFIED" => {
-                    GoogleAppsCardV1WidgetHorizontalAlignment::HorizontalAlignmentUnspecified
-                }
-                "START" => GoogleAppsCardV1WidgetHorizontalAlignment::Start,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for GoogleAppsCardV1WidgetHorizontalAlignment {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleAppsCardV1WidgetHorizontalAlignment {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GoogleAppsCardV1WidgetHorizontalAlignment {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "CENTER" => GoogleAppsCardV1WidgetHorizontalAlignment::Center,
-                "END" => GoogleAppsCardV1WidgetHorizontalAlignment::End,
-                "HORIZONTAL_ALIGNMENT_UNSPECIFIED" => {
-                    GoogleAppsCardV1WidgetHorizontalAlignment::HorizontalAlignmentUnspecified
-                }
-                "START" => GoogleAppsCardV1WidgetHorizontalAlignment::Start,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector for GoogleAppsCardV1WidgetHorizontalAlignment {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleAppsCardV1WidgetHorizontalAlignment {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4908,7 +4852,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub memberships: ::std::option::Option<Vec<crate::schemas::Membership>>,
-        #[doc = "Continuation token to retrieve the next page of results. It will be empty for the last page of results."]
+        #[doc = "A token that can be sent as `pageToken` to retrieve the next page of results. If empty, there are no subsequent pages."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -4926,7 +4870,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListMembershipsResponse {
+    impl crate::GetNextPageToken<String> for ListMembershipsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4944,7 +4888,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListSpacesResponse {
-        #[doc = "Continuation token to retrieve the next page of results. It will be empty for the last page of results. Tokens expire in an hour. An error is thrown if an expired token is passed."]
+        #[doc = "A token that can be sent as `pageToken` to retrieve the next page of results. If empty, there are no subsequent pages."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -4969,7 +4913,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListSpacesResponse {
+    impl crate::GetNextPageToken<String> for ListSpacesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5049,26 +4993,34 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Membership {
-        #[doc = "Output only. The creation time of the membership a.k.a. the time at which the member joined the space, if applicable."]
+        #[doc = "Output only. The creation time of the membership, such as when a member joined or was invited to join a space."]
         #[serde(
             rename = "createTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "A Google Chat user or app. Format: `users/{person}` or `users/app` When `users/{person}`, represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. Format: `users/{user}` When `users/app`, represents a Chat app creating membership for itself. Creating membership is available as a [developer preview](https://developers.google.com/workspace/preview)."]
+        #[doc = "A Google Chat user or app. Format: `users/{user}` or `users/app` When `users/{user}`, represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. When `users/app`, represents a Chat app creating membership for itself."]
         #[serde(
             rename = "member",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub member: ::std::option::Option<crate::schemas::User>,
+        #[doc = "Resource name of the membership. Format: spaces/{space}/members/{member}"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Output only. User’s role within a Chat space, which determines their permitted actions in the space."]
+        #[serde(
+            rename = "role",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub role: ::std::option::Option<crate::schemas::MembershipRole>,
         #[doc = "Output only. State of the membership."]
         #[serde(
             rename = "state",
@@ -5083,6 +5035,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Membership {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum MembershipRole {
+        #[doc = "Default value. The user isn’t a member of the space, but might be invited."]
+        MembershipRoleUnspecified,
+        #[doc = "A space manager. The user has all basic permissions plus administrative permissions that allow them to manage the space, like adding or removing members. Only supports SpaceType.SPACE."]
+        RoleManager,
+        #[doc = "A member of the space. The user has basic permissions, like sending messages to the space. In 1:1 and unnamed group conversations, everyone has this role."]
+        RoleMember,
+    }
+    impl MembershipRole {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                MembershipRole::MembershipRoleUnspecified => "MEMBERSHIP_ROLE_UNSPECIFIED",
+                MembershipRole::RoleManager => "ROLE_MANAGER",
+                MembershipRole::RoleMember => "ROLE_MEMBER",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for MembershipRole {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for MembershipRole {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<MembershipRole, ()> {
+            Ok(match s {
+                "MEMBERSHIP_ROLE_UNSPECIFIED" => MembershipRole::MembershipRoleUnspecified,
+                "ROLE_MANAGER" => MembershipRole::RoleManager,
+                "ROLE_MEMBER" => MembershipRole::RoleMember,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for MembershipRole {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for MembershipRole {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for MembershipRole {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MEMBERSHIP_ROLE_UNSPECIFIED" => MembershipRole::MembershipRoleUnspecified,
+                "ROLE_MANAGER" => MembershipRole::RoleManager,
+                "ROLE_MEMBER" => MembershipRole::RoleMember,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for MembershipRole {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MembershipRole {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5200,13 +5228,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub attachment: ::std::option::Option<Vec<crate::schemas::Attachment>>,
-        #[doc = "Rich, formatted and interactive cards that can be used to display UI elements such as: formatted texts, buttons, clickable images. Cards are normally displayed below the plain-text body of the message."]
+        #[doc = "Deprecated: Use `cards_v2` instead. Rich, formatted and interactive cards that can be used to display UI elements such as: formatted texts, buttons, clickable images. Cards are normally displayed below the plain-text body of the message."]
         #[serde(
             rename = "cards",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cards: ::std::option::Option<Vec<crate::schemas::Card>>,
+        #[doc = "Richly formatted and interactive cards that display UI elements and editable widgets, such as: - Formatted text - Buttons - Clickable images - Checkboxes - Radio buttons - Input widgets. Cards are usually displayed below the text-body of a Chat message, but can situationally appear other places, such as [dialogs](https://developers.google.com/chat/how-tos/dialogs). The `cardId` is a unique identifier among cards in the same message and for identifying user input values. Currently supported widgets include: - `TextParagraph` - `DecoratedText` - `Image` - `ButtonList` - `Divider`"]
+        #[serde(
+            rename = "cardsV2",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cards_v2: ::std::option::Option<Vec<crate::schemas::CardWithId>>,
+        #[doc = "A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message)."]
+        #[serde(
+            rename = "clientAssignedMessageId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub client_assigned_message_id: ::std::option::Option<String>,
         #[doc = "Output only. The time at which the message was created in Google Chat server."]
         #[serde(
             rename = "createTime",
@@ -5221,14 +5263,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fallback_text: ::std::option::Option<String>,
-        #[doc = "Output only. The time at which the message was last updated in Google Chat server. If the message was never updated, this field will be same as create_time."]
+        #[doc = "Output only. The time at which the message was last edited by a user. If the message has never been edited, this field is empty."]
         #[serde(
             rename = "lastUpdateTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_update_time: ::std::option::Option<String>,
-        #[doc = "Output only. A URL in `spaces.messages.text` that matches a link unfurling pattern. For more information, refer to [Unfurl links](https://developers.google.com/chat/how-tos/link-unfurling)."]
+        #[doc = "Output only. A URL in `spaces.messages.text` that matches a link preview pattern. For more information, refer to [Preview links](https://developers.google.com/chat/how-tos/preview-links)."]
         #[serde(
             rename = "matchedUrl",
             default,
@@ -5256,7 +5298,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub slash_command: ::std::option::Option<crate::schemas::SlashCommand>,
-        #[doc = "The space the message belongs to."]
+        #[doc = "The space the message belongs to. When accessed with [user authentication](https://developers.google.com/chat/api/guides/auth/users), only the name of the Space is populated."]
         #[serde(
             rename = "space",
             default,
@@ -5270,13 +5312,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "The thread the message belongs to."]
+        #[doc = "The thread the message belongs to. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread)."]
         #[serde(
             rename = "thread",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thread: ::std::option::Option<crate::schemas::Thread>,
+        #[doc = "Output only. When `true`, the message is a response in a reply thread. When `false`, the message is visible in the space’s top-level conversation as either the first message of a thread or a message with no threaded replies. If the space doesn’t support reply in threads, this field is always `false`."]
+        #[serde(
+            rename = "threadReply",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub thread_reply: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for Message {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5567,35 +5616,49 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Space {
-        #[doc = "The space’s display name. For direct messages between humans, this field might be empty."]
+        #[doc = "The space’s display name. Required when [creating a space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create). For direct messages, this field may be empty."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Resource name of the space, in the form “spaces/\\*”. Example: spaces/AAAAAAAAAAAA"]
+        #[doc = "Resource name of the space. Format: spaces/{space}"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Deprecated: Use `single_user_bot_dm` instead. Output only. The type of a space."]
+        #[doc = "Output only. Deprecated: Use `singleUserBotDm` or `spaceType` (developer preview) instead. The type of a space."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::SpaceType>,
-        #[doc = "Output only. Whether the space is a DM between a Chat app and a single human."]
+        #[doc = "Optional. Whether the space is a DM between a Chat app and a single human."]
         #[serde(
             rename = "singleUserBotDm",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub single_user_bot_dm: ::std::option::Option<bool>,
-        #[doc = "Output only. Output only. Whether the messages are threaded in this space."]
+        #[doc = "Details about the space including description and rules."]
+        #[serde(
+            rename = "spaceDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub space_details: ::std::option::Option<crate::schemas::SpaceDetails>,
+        #[doc = "Output only. The threading state in the Chat space."]
+        #[serde(
+            rename = "spaceThreadingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub space_threading_state: ::std::option::Option<crate::schemas::SpaceSpaceThreadingState>,
+        #[doc = "Output only. Deprecated: Use `spaceThreadingState` instead. Whether messages are threaded in this space."]
         #[serde(
             rename = "threaded",
             default,
@@ -5684,6 +5747,131 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SpaceType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SpaceSpaceThreadingState {
+        #[doc = "Named spaces where the conversation is organized by topic. Topics and their replies are grouped together."]
+        GroupedMessages,
+        #[doc = "Reserved."]
+        SpaceThreadingStateUnspecified,
+        #[doc = "Named spaces that support message threads. When users respond to a message, they can reply in-thread, which keeps their response in the context of the original message."]
+        ThreadedMessages,
+        #[doc = "Direct messages (DMs) between two people and group conversations between 3 or more people."]
+        UnthreadedMessages,
+    }
+    impl SpaceSpaceThreadingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SpaceSpaceThreadingState::GroupedMessages => "GROUPED_MESSAGES",
+                SpaceSpaceThreadingState::SpaceThreadingStateUnspecified => {
+                    "SPACE_THREADING_STATE_UNSPECIFIED"
+                }
+                SpaceSpaceThreadingState::ThreadedMessages => "THREADED_MESSAGES",
+                SpaceSpaceThreadingState::UnthreadedMessages => "UNTHREADED_MESSAGES",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SpaceSpaceThreadingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SpaceSpaceThreadingState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SpaceSpaceThreadingState, ()> {
+            Ok(match s {
+                "GROUPED_MESSAGES" => SpaceSpaceThreadingState::GroupedMessages,
+                "SPACE_THREADING_STATE_UNSPECIFIED" => {
+                    SpaceSpaceThreadingState::SpaceThreadingStateUnspecified
+                }
+                "THREADED_MESSAGES" => SpaceSpaceThreadingState::ThreadedMessages,
+                "UNTHREADED_MESSAGES" => SpaceSpaceThreadingState::UnthreadedMessages,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SpaceSpaceThreadingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SpaceSpaceThreadingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SpaceSpaceThreadingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "GROUPED_MESSAGES" => SpaceSpaceThreadingState::GroupedMessages,
+                "SPACE_THREADING_STATE_UNSPECIFIED" => {
+                    SpaceSpaceThreadingState::SpaceThreadingStateUnspecified
+                }
+                "THREADED_MESSAGES" => SpaceSpaceThreadingState::ThreadedMessages,
+                "UNTHREADED_MESSAGES" => SpaceSpaceThreadingState::UnthreadedMessages,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SpaceSpaceThreadingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SpaceSpaceThreadingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SpaceDetails {
+        #[doc = "Optional. A description of the space. It could describe the space’s discussion topic, functional purpose, or participants."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Optional. The space’s rules, expectations, and etiquette."]
+        #[serde(
+            rename = "guidelines",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub guidelines: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SpaceDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SpaceDetails {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5835,13 +6023,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Thread {
-        #[doc = "Resource name, in the form “spaces/*/threads/*”. Example: spaces/AAAAAAAAAAA/threads/TTTTTTTTTTT"]
+        #[doc = "Resource name of the thread. Example: spaces/{space}/threads/{thread}"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread). For other requests, this is an output only field."]
+        #[serde(
+            rename = "threadKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub thread_key: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for Thread {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5963,7 +6158,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_anonymous: ::std::option::Option<bool>,
-        #[doc = "Resource name for a Google Chat user. Represents a [person](https://developers.google.com/people/api/rest/v1/people#Person) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. Formatted as: `users/{user}`"]
+        #[doc = "Resource name for a Google Chat user. For human users, represents a person in the People API or a user in the Admin SDK Directory API. Format: `users/{user}`"]
         #[serde(
             rename = "name",
             default,
@@ -6394,23 +6589,9 @@ impl Client {
     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
         self.auth.as_ref()
     }
-    #[doc = "Actions that can be performed on the dms resource"]
-    pub fn dms(&self) -> crate::resources::dms::DmsActions {
-        crate::resources::dms::DmsActions {
-            reqwest: &self.reqwest,
-            auth: self.auth_ref(),
-        }
-    }
     #[doc = "Actions that can be performed on the media resource"]
     pub fn media(&self) -> crate::resources::media::MediaActions {
         crate::resources::media::MediaActions {
-            reqwest: &self.reqwest,
-            auth: self.auth_ref(),
-        }
-    }
-    #[doc = "Actions that can be performed on the rooms resource"]
-    pub fn rooms(&self) -> crate::resources::rooms::RoomsActions {
-        crate::resources::rooms::RoomsActions {
             reqwest: &self.reqwest,
             auth: self.auth_ref(),
         }
@@ -6424,648 +6605,6 @@ impl Client {
     }
 }
 pub mod resources {
-    pub mod dms {
-        pub mod params {}
-        pub struct DmsActions<'a> {
-            pub(crate) reqwest: &'a reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-        }
-        impl<'a> DmsActions<'a> {
-            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                self.auth
-            }
-            #[doc = "Legacy path for creating message. Calling these will result in a BadRequest response."]
-            pub fn messages(
-                &self,
-                request: crate::schemas::Message,
-                parent: impl Into<String>,
-            ) -> MessagesRequestBuilder {
-                MessagesRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    parent: parent.into(),
-                    request_id: None,
-                    thread_key: None,
-                }
-            }
-            #[doc = "Legacy path for creating message. Calling these will result in a BadRequest response."]
-            pub fn webhooks(
-                &self,
-                request: crate::schemas::Message,
-                parent: impl Into<String>,
-            ) -> WebhooksRequestBuilder {
-                WebhooksRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    parent: parent.into(),
-                    request_id: None,
-                    thread_key: None,
-                }
-            }
-            #[doc = "Actions that can be performed on the conversations resource"]
-            pub fn conversations(
-                &self,
-            ) -> crate::resources::dms::conversations::ConversationsActions {
-                crate::resources::dms::conversations::ConversationsActions {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                }
-            }
-        }
-        #[doc = "Created via [DmsActions::messages()](struct.DmsActions.html#method.messages)"]
-        #[derive(Debug, Clone)]
-        pub struct MessagesRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::Message,
-            parent: String,
-            request_id: ::std::option::Option<String>,
-            thread_key: ::std::option::Option<String>,
-            access_token: ::std::option::Option<String>,
-            alt: ::std::option::Option<crate::params::Alt>,
-            callback: ::std::option::Option<String>,
-            fields: ::std::option::Option<String>,
-            key: ::std::option::Option<String>,
-            oauth_token: ::std::option::Option<String>,
-            pretty_print: ::std::option::Option<bool>,
-            quota_user: ::std::option::Option<String>,
-            upload_protocol: ::std::option::Option<String>,
-            upload_type: ::std::option::Option<String>,
-            xgafv: ::std::option::Option<crate::params::Xgafv>,
-        }
-        impl<'a> MessagesRequestBuilder<'a> {
-            #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
-            pub fn request_id(mut self, value: impl Into<String>) -> Self {
-                self.request_id = Some(value.into());
-                self
-            }
-            #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
-            pub fn thread_key(mut self, value: impl Into<String>) -> Self {
-                self.thread_key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub async fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: ::std::option::Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields).await
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub async fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(None::<&str>).await
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub async fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(Some("*")).await
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub async fn execute_with_fields<T, F>(
-                mut self,
-                fields: ::std::option::Option<F>,
-            ) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute().await
-            }
-            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path()).await?;
-                let req = req.json(&self.request);
-                Ok(req.send().await?.error_for_status()?.json().await?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://chat.googleapis.com/".to_owned();
-                output.push_str("v1/");
-                {
-                    let var_as_str = &self.parent;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::RESERVED,
-                    ));
-                }
-                output.push_str("/messages");
-                output
-            }
-            async fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("requestId", &self.request_id)]);
-                req = req.query(&[("threadKey", &self.thread_key)]);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                let access_token = self
-                    .auth
-                    .access_token()
-                    .await
-                    .map_err(|err| crate::Error::OAuth2(err))?;
-                req = req.bearer_auth(access_token);
-                Ok(req)
-            }
-        }
-        #[doc = "Created via [DmsActions::webhooks()](struct.DmsActions.html#method.webhooks)"]
-        #[derive(Debug, Clone)]
-        pub struct WebhooksRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::Message,
-            parent: String,
-            request_id: ::std::option::Option<String>,
-            thread_key: ::std::option::Option<String>,
-            access_token: ::std::option::Option<String>,
-            alt: ::std::option::Option<crate::params::Alt>,
-            callback: ::std::option::Option<String>,
-            fields: ::std::option::Option<String>,
-            key: ::std::option::Option<String>,
-            oauth_token: ::std::option::Option<String>,
-            pretty_print: ::std::option::Option<bool>,
-            quota_user: ::std::option::Option<String>,
-            upload_protocol: ::std::option::Option<String>,
-            upload_type: ::std::option::Option<String>,
-            xgafv: ::std::option::Option<crate::params::Xgafv>,
-        }
-        impl<'a> WebhooksRequestBuilder<'a> {
-            #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
-            pub fn request_id(mut self, value: impl Into<String>) -> Self {
-                self.request_id = Some(value.into());
-                self
-            }
-            #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
-            pub fn thread_key(mut self, value: impl Into<String>) -> Self {
-                self.thread_key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub async fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: ::std::option::Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields).await
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub async fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(None::<&str>).await
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub async fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(Some("*")).await
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub async fn execute_with_fields<T, F>(
-                mut self,
-                fields: ::std::option::Option<F>,
-            ) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute().await
-            }
-            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path()).await?;
-                let req = req.json(&self.request);
-                Ok(req.send().await?.error_for_status()?.json().await?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://chat.googleapis.com/".to_owned();
-                output.push_str("v1/");
-                {
-                    let var_as_str = &self.parent;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::RESERVED,
-                    ));
-                }
-                output.push_str("/webhooks");
-                output
-            }
-            async fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("requestId", &self.request_id)]);
-                req = req.query(&[("threadKey", &self.thread_key)]);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                let access_token = self
-                    .auth
-                    .access_token()
-                    .await
-                    .map_err(|err| crate::Error::OAuth2(err))?;
-                req = req.bearer_auth(access_token);
-                Ok(req)
-            }
-        }
-        pub mod conversations {
-            pub mod params {}
-            pub struct ConversationsActions<'a> {
-                pub(crate) reqwest: &'a reqwest::Client,
-                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            }
-            impl<'a> ConversationsActions<'a> {
-                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                    self.auth
-                }
-                #[doc = "Legacy path for creating message. Calling these will result in a BadRequest response."]
-                pub fn messages(
-                    &self,
-                    request: crate::schemas::Message,
-                    parent: impl Into<String>,
-                ) -> MessagesRequestBuilder {
-                    MessagesRequestBuilder {
-                        reqwest: &self.reqwest,
-                        auth: self.auth_ref(),
-                        request,
-                        access_token: None,
-                        alt: None,
-                        callback: None,
-                        fields: None,
-                        key: None,
-                        oauth_token: None,
-                        pretty_print: None,
-                        quota_user: None,
-                        upload_protocol: None,
-                        upload_type: None,
-                        xgafv: None,
-                        parent: parent.into(),
-                        request_id: None,
-                        thread_key: None,
-                    }
-                }
-            }
-            #[doc = "Created via [ConversationsActions::messages()](struct.ConversationsActions.html#method.messages)"]
-            #[derive(Debug, Clone)]
-            pub struct MessagesRequestBuilder<'a> {
-                pub(crate) reqwest: &'a ::reqwest::Client,
-                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                request: crate::schemas::Message,
-                parent: String,
-                request_id: ::std::option::Option<String>,
-                thread_key: ::std::option::Option<String>,
-                access_token: ::std::option::Option<String>,
-                alt: ::std::option::Option<crate::params::Alt>,
-                callback: ::std::option::Option<String>,
-                fields: ::std::option::Option<String>,
-                key: ::std::option::Option<String>,
-                oauth_token: ::std::option::Option<String>,
-                pretty_print: ::std::option::Option<bool>,
-                quota_user: ::std::option::Option<String>,
-                upload_protocol: ::std::option::Option<String>,
-                upload_type: ::std::option::Option<String>,
-                xgafv: ::std::option::Option<crate::params::Xgafv>,
-            }
-            impl<'a> MessagesRequestBuilder<'a> {
-                #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
-                pub fn request_id(mut self, value: impl Into<String>) -> Self {
-                    self.request_id = Some(value.into());
-                    self
-                }
-                #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
-                pub fn thread_key(mut self, value: impl Into<String>) -> Self {
-                    self.thread_key = Some(value.into());
-                    self
-                }
-                #[doc = "OAuth access token."]
-                pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                    self.access_token = Some(value.into());
-                    self
-                }
-                #[doc = "JSONP"]
-                pub fn callback(mut self, value: impl Into<String>) -> Self {
-                    self.callback = Some(value.into());
-                    self
-                }
-                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-                pub fn key(mut self, value: impl Into<String>) -> Self {
-                    self.key = Some(value.into());
-                    self
-                }
-                #[doc = "OAuth 2.0 token for the current user."]
-                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                    self.oauth_token = Some(value.into());
-                    self
-                }
-                #[doc = "Returns response with indentations and line breaks."]
-                pub fn pretty_print(mut self, value: bool) -> Self {
-                    self.pretty_print = Some(value);
-                    self
-                }
-                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                    self.quota_user = Some(value.into());
-                    self
-                }
-                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                    self.upload_protocol = Some(value.into());
-                    self
-                }
-                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                    self.upload_type = Some(value.into());
-                    self
-                }
-                #[doc = "V1 error format."]
-                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                    self.xgafv = Some(value);
-                    self
-                }
-                #[doc = r" Execute the given operation. The fields requested are"]
-                #[doc = r" determined by the FieldSelector attribute of the return type."]
-                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-                #[doc = r" are not generic over the return type and deserialize the"]
-                #[doc = r" response into an auto-generated struct will all possible"]
-                #[doc = r" fields."]
-                pub async fn execute<T>(self) -> Result<T, crate::Error>
-                where
-                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-                {
-                    let fields = ::google_field_selector::to_string::<T>();
-                    let fields: ::std::option::Option<String> = if fields.is_empty() {
-                        None
-                    } else {
-                        Some(fields)
-                    };
-                    self.execute_with_fields(fields).await
-                }
-                #[doc = r" Execute the given operation. This will not provide any"]
-                #[doc = r" `fields` selector indicating that the server will determine"]
-                #[doc = r" the fields returned. This typically includes the most common"]
-                #[doc = r" fields, but it will not include every possible attribute of"]
-                #[doc = r" the response resource."]
-                pub async fn execute_with_default_fields(
-                    self,
-                ) -> Result<crate::schemas::Message, crate::Error> {
-                    self.execute_with_fields(None::<&str>).await
-                }
-                #[doc = r" Execute the given operation. This will provide a `fields`"]
-                #[doc = r" selector of `*`. This will include every attribute of the"]
-                #[doc = r" response resource and should be limited to use during"]
-                #[doc = r" development or debugging."]
-                pub async fn execute_with_all_fields(
-                    self,
-                ) -> Result<crate::schemas::Message, crate::Error> {
-                    self.execute_with_fields(Some("*")).await
-                }
-                #[doc = r" Execute the given operation. This will use the `fields`"]
-                #[doc = r" selector provided and will deserialize the response into"]
-                #[doc = r" whatever return value is provided."]
-                pub async fn execute_with_fields<T, F>(
-                    mut self,
-                    fields: ::std::option::Option<F>,
-                ) -> Result<T, crate::Error>
-                where
-                    T: ::serde::de::DeserializeOwned,
-                    F: Into<String>,
-                {
-                    self.fields = fields.map(Into::into);
-                    self._execute().await
-                }
-                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-                where
-                    T: ::serde::de::DeserializeOwned,
-                {
-                    let req = self._request(&self._path()).await?;
-                    let req = req.json(&self.request);
-                    Ok(req.send().await?.error_for_status()?.json().await?)
-                }
-                fn _path(&self) -> String {
-                    let mut output = "https://chat.googleapis.com/".to_owned();
-                    output.push_str("v1/");
-                    {
-                        let var_as_str = &self.parent;
-                        output.extend(::percent_encoding::utf8_percent_encode(
-                            &var_as_str,
-                            crate::RESERVED,
-                        ));
-                    }
-                    output.push_str("/messages");
-                    output
-                }
-                async fn _request(
-                    &self,
-                    path: &str,
-                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                    req = req.query(&[("requestId", &self.request_id)]);
-                    req = req.query(&[("threadKey", &self.thread_key)]);
-                    req = req.query(&[("access_token", &self.access_token)]);
-                    req = req.query(&[("alt", &self.alt)]);
-                    req = req.query(&[("callback", &self.callback)]);
-                    req = req.query(&[("fields", &self.fields)]);
-                    req = req.query(&[("key", &self.key)]);
-                    req = req.query(&[("oauth_token", &self.oauth_token)]);
-                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                    req = req.query(&[("quotaUser", &self.quota_user)]);
-                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                    req = req.query(&[("uploadType", &self.upload_type)]);
-                    req = req.query(&[("$.xgafv", &self.xgafv)]);
-                    let access_token = self
-                        .auth
-                        .access_token()
-                        .await
-                        .map_err(|err| crate::Error::OAuth2(err))?;
-                    req = req.bearer_auth(access_token);
-                    Ok(req)
-                }
-            }
-        }
-    }
     pub mod media {
         pub mod params {}
         pub struct MediaActions<'a> {
@@ -7284,648 +6823,6 @@ pub mod resources {
             }
         }
     }
-    pub mod rooms {
-        pub mod params {}
-        pub struct RoomsActions<'a> {
-            pub(crate) reqwest: &'a reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-        }
-        impl<'a> RoomsActions<'a> {
-            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                self.auth
-            }
-            #[doc = "Legacy path for creating message. Calling these will result in a BadRequest response."]
-            pub fn messages(
-                &self,
-                request: crate::schemas::Message,
-                parent: impl Into<String>,
-            ) -> MessagesRequestBuilder {
-                MessagesRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    parent: parent.into(),
-                    request_id: None,
-                    thread_key: None,
-                }
-            }
-            #[doc = "Legacy path for creating message. Calling these will result in a BadRequest response."]
-            pub fn webhooks(
-                &self,
-                request: crate::schemas::Message,
-                parent: impl Into<String>,
-            ) -> WebhooksRequestBuilder {
-                WebhooksRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    parent: parent.into(),
-                    request_id: None,
-                    thread_key: None,
-                }
-            }
-            #[doc = "Actions that can be performed on the conversations resource"]
-            pub fn conversations(
-                &self,
-            ) -> crate::resources::rooms::conversations::ConversationsActions {
-                crate::resources::rooms::conversations::ConversationsActions {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                }
-            }
-        }
-        #[doc = "Created via [RoomsActions::messages()](struct.RoomsActions.html#method.messages)"]
-        #[derive(Debug, Clone)]
-        pub struct MessagesRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::Message,
-            parent: String,
-            request_id: ::std::option::Option<String>,
-            thread_key: ::std::option::Option<String>,
-            access_token: ::std::option::Option<String>,
-            alt: ::std::option::Option<crate::params::Alt>,
-            callback: ::std::option::Option<String>,
-            fields: ::std::option::Option<String>,
-            key: ::std::option::Option<String>,
-            oauth_token: ::std::option::Option<String>,
-            pretty_print: ::std::option::Option<bool>,
-            quota_user: ::std::option::Option<String>,
-            upload_protocol: ::std::option::Option<String>,
-            upload_type: ::std::option::Option<String>,
-            xgafv: ::std::option::Option<crate::params::Xgafv>,
-        }
-        impl<'a> MessagesRequestBuilder<'a> {
-            #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
-            pub fn request_id(mut self, value: impl Into<String>) -> Self {
-                self.request_id = Some(value.into());
-                self
-            }
-            #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
-            pub fn thread_key(mut self, value: impl Into<String>) -> Self {
-                self.thread_key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub async fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: ::std::option::Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields).await
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub async fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(None::<&str>).await
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub async fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(Some("*")).await
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub async fn execute_with_fields<T, F>(
-                mut self,
-                fields: ::std::option::Option<F>,
-            ) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute().await
-            }
-            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path()).await?;
-                let req = req.json(&self.request);
-                Ok(req.send().await?.error_for_status()?.json().await?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://chat.googleapis.com/".to_owned();
-                output.push_str("v1/");
-                {
-                    let var_as_str = &self.parent;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::RESERVED,
-                    ));
-                }
-                output.push_str("/messages");
-                output
-            }
-            async fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("requestId", &self.request_id)]);
-                req = req.query(&[("threadKey", &self.thread_key)]);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                let access_token = self
-                    .auth
-                    .access_token()
-                    .await
-                    .map_err(|err| crate::Error::OAuth2(err))?;
-                req = req.bearer_auth(access_token);
-                Ok(req)
-            }
-        }
-        #[doc = "Created via [RoomsActions::webhooks()](struct.RoomsActions.html#method.webhooks)"]
-        #[derive(Debug, Clone)]
-        pub struct WebhooksRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::Message,
-            parent: String,
-            request_id: ::std::option::Option<String>,
-            thread_key: ::std::option::Option<String>,
-            access_token: ::std::option::Option<String>,
-            alt: ::std::option::Option<crate::params::Alt>,
-            callback: ::std::option::Option<String>,
-            fields: ::std::option::Option<String>,
-            key: ::std::option::Option<String>,
-            oauth_token: ::std::option::Option<String>,
-            pretty_print: ::std::option::Option<bool>,
-            quota_user: ::std::option::Option<String>,
-            upload_protocol: ::std::option::Option<String>,
-            upload_type: ::std::option::Option<String>,
-            xgafv: ::std::option::Option<crate::params::Xgafv>,
-        }
-        impl<'a> WebhooksRequestBuilder<'a> {
-            #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
-            pub fn request_id(mut self, value: impl Into<String>) -> Self {
-                self.request_id = Some(value.into());
-                self
-            }
-            #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
-            pub fn thread_key(mut self, value: impl Into<String>) -> Self {
-                self.thread_key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub async fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: ::std::option::Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields).await
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub async fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(None::<&str>).await
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub async fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(Some("*")).await
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub async fn execute_with_fields<T, F>(
-                mut self,
-                fields: ::std::option::Option<F>,
-            ) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute().await
-            }
-            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path()).await?;
-                let req = req.json(&self.request);
-                Ok(req.send().await?.error_for_status()?.json().await?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://chat.googleapis.com/".to_owned();
-                output.push_str("v1/");
-                {
-                    let var_as_str = &self.parent;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::RESERVED,
-                    ));
-                }
-                output.push_str("/webhooks");
-                output
-            }
-            async fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("requestId", &self.request_id)]);
-                req = req.query(&[("threadKey", &self.thread_key)]);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                let access_token = self
-                    .auth
-                    .access_token()
-                    .await
-                    .map_err(|err| crate::Error::OAuth2(err))?;
-                req = req.bearer_auth(access_token);
-                Ok(req)
-            }
-        }
-        pub mod conversations {
-            pub mod params {}
-            pub struct ConversationsActions<'a> {
-                pub(crate) reqwest: &'a reqwest::Client,
-                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            }
-            impl<'a> ConversationsActions<'a> {
-                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                    self.auth
-                }
-                #[doc = "Legacy path for creating message. Calling these will result in a BadRequest response."]
-                pub fn messages(
-                    &self,
-                    request: crate::schemas::Message,
-                    parent: impl Into<String>,
-                ) -> MessagesRequestBuilder {
-                    MessagesRequestBuilder {
-                        reqwest: &self.reqwest,
-                        auth: self.auth_ref(),
-                        request,
-                        access_token: None,
-                        alt: None,
-                        callback: None,
-                        fields: None,
-                        key: None,
-                        oauth_token: None,
-                        pretty_print: None,
-                        quota_user: None,
-                        upload_protocol: None,
-                        upload_type: None,
-                        xgafv: None,
-                        parent: parent.into(),
-                        request_id: None,
-                        thread_key: None,
-                    }
-                }
-            }
-            #[doc = "Created via [ConversationsActions::messages()](struct.ConversationsActions.html#method.messages)"]
-            #[derive(Debug, Clone)]
-            pub struct MessagesRequestBuilder<'a> {
-                pub(crate) reqwest: &'a ::reqwest::Client,
-                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                request: crate::schemas::Message,
-                parent: String,
-                request_id: ::std::option::Option<String>,
-                thread_key: ::std::option::Option<String>,
-                access_token: ::std::option::Option<String>,
-                alt: ::std::option::Option<crate::params::Alt>,
-                callback: ::std::option::Option<String>,
-                fields: ::std::option::Option<String>,
-                key: ::std::option::Option<String>,
-                oauth_token: ::std::option::Option<String>,
-                pretty_print: ::std::option::Option<bool>,
-                quota_user: ::std::option::Option<String>,
-                upload_protocol: ::std::option::Option<String>,
-                upload_type: ::std::option::Option<String>,
-                xgafv: ::std::option::Option<crate::params::Xgafv>,
-            }
-            impl<'a> MessagesRequestBuilder<'a> {
-                #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
-                pub fn request_id(mut self, value: impl Into<String>) -> Self {
-                    self.request_id = Some(value.into());
-                    self
-                }
-                #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
-                pub fn thread_key(mut self, value: impl Into<String>) -> Self {
-                    self.thread_key = Some(value.into());
-                    self
-                }
-                #[doc = "OAuth access token."]
-                pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                    self.access_token = Some(value.into());
-                    self
-                }
-                #[doc = "JSONP"]
-                pub fn callback(mut self, value: impl Into<String>) -> Self {
-                    self.callback = Some(value.into());
-                    self
-                }
-                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-                pub fn key(mut self, value: impl Into<String>) -> Self {
-                    self.key = Some(value.into());
-                    self
-                }
-                #[doc = "OAuth 2.0 token for the current user."]
-                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                    self.oauth_token = Some(value.into());
-                    self
-                }
-                #[doc = "Returns response with indentations and line breaks."]
-                pub fn pretty_print(mut self, value: bool) -> Self {
-                    self.pretty_print = Some(value);
-                    self
-                }
-                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                    self.quota_user = Some(value.into());
-                    self
-                }
-                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                    self.upload_protocol = Some(value.into());
-                    self
-                }
-                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                    self.upload_type = Some(value.into());
-                    self
-                }
-                #[doc = "V1 error format."]
-                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                    self.xgafv = Some(value);
-                    self
-                }
-                #[doc = r" Execute the given operation. The fields requested are"]
-                #[doc = r" determined by the FieldSelector attribute of the return type."]
-                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-                #[doc = r" are not generic over the return type and deserialize the"]
-                #[doc = r" response into an auto-generated struct will all possible"]
-                #[doc = r" fields."]
-                pub async fn execute<T>(self) -> Result<T, crate::Error>
-                where
-                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-                {
-                    let fields = ::google_field_selector::to_string::<T>();
-                    let fields: ::std::option::Option<String> = if fields.is_empty() {
-                        None
-                    } else {
-                        Some(fields)
-                    };
-                    self.execute_with_fields(fields).await
-                }
-                #[doc = r" Execute the given operation. This will not provide any"]
-                #[doc = r" `fields` selector indicating that the server will determine"]
-                #[doc = r" the fields returned. This typically includes the most common"]
-                #[doc = r" fields, but it will not include every possible attribute of"]
-                #[doc = r" the response resource."]
-                pub async fn execute_with_default_fields(
-                    self,
-                ) -> Result<crate::schemas::Message, crate::Error> {
-                    self.execute_with_fields(None::<&str>).await
-                }
-                #[doc = r" Execute the given operation. This will provide a `fields`"]
-                #[doc = r" selector of `*`. This will include every attribute of the"]
-                #[doc = r" response resource and should be limited to use during"]
-                #[doc = r" development or debugging."]
-                pub async fn execute_with_all_fields(
-                    self,
-                ) -> Result<crate::schemas::Message, crate::Error> {
-                    self.execute_with_fields(Some("*")).await
-                }
-                #[doc = r" Execute the given operation. This will use the `fields`"]
-                #[doc = r" selector provided and will deserialize the response into"]
-                #[doc = r" whatever return value is provided."]
-                pub async fn execute_with_fields<T, F>(
-                    mut self,
-                    fields: ::std::option::Option<F>,
-                ) -> Result<T, crate::Error>
-                where
-                    T: ::serde::de::DeserializeOwned,
-                    F: Into<String>,
-                {
-                    self.fields = fields.map(Into::into);
-                    self._execute().await
-                }
-                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-                where
-                    T: ::serde::de::DeserializeOwned,
-                {
-                    let req = self._request(&self._path()).await?;
-                    let req = req.json(&self.request);
-                    Ok(req.send().await?.error_for_status()?.json().await?)
-                }
-                fn _path(&self) -> String {
-                    let mut output = "https://chat.googleapis.com/".to_owned();
-                    output.push_str("v1/");
-                    {
-                        let var_as_str = &self.parent;
-                        output.extend(::percent_encoding::utf8_percent_encode(
-                            &var_as_str,
-                            crate::RESERVED,
-                        ));
-                    }
-                    output.push_str("/messages");
-                    output
-                }
-                async fn _request(
-                    &self,
-                    path: &str,
-                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                    req = req.query(&[("requestId", &self.request_id)]);
-                    req = req.query(&[("threadKey", &self.thread_key)]);
-                    req = req.query(&[("access_token", &self.access_token)]);
-                    req = req.query(&[("alt", &self.alt)]);
-                    req = req.query(&[("callback", &self.callback)]);
-                    req = req.query(&[("fields", &self.fields)]);
-                    req = req.query(&[("key", &self.key)]);
-                    req = req.query(&[("oauth_token", &self.oauth_token)]);
-                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                    req = req.query(&[("quotaUser", &self.quota_user)]);
-                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                    req = req.query(&[("uploadType", &self.upload_type)]);
-                    req = req.query(&[("$.xgafv", &self.xgafv)]);
-                    let access_token = self
-                        .auth
-                        .access_token()
-                        .await
-                        .map_err(|err| crate::Error::OAuth2(err))?;
-                    req = req.bearer_auth(access_token);
-                    Ok(req)
-                }
-            }
-        }
-    }
     pub mod spaces {
         pub mod params {}
         pub struct SpacesActions<'a> {
@@ -7936,7 +6833,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Returns a space. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+            #[doc = "Returns a space. Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.spaces` or `chat.spaces.readonly` authorization scope."]
             pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -7955,7 +6852,7 @@ pub mod resources {
                     name: name.into(),
                 }
             }
-            #[doc = "Lists spaces the caller is a member of. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+            #[doc = "Lists spaces the caller is a member of. Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.spaces` or `chat.spaces.readonly` authorization scope. Lists spaces visible to the caller or authenticated user. Group chats and DMs aren’t listed until the first message is sent."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -7973,32 +6870,6 @@ pub mod resources {
                     xgafv: None,
                     page_size: None,
                     page_token: None,
-                }
-            }
-            #[doc = "Legacy path for creating message. Calling these will result in a BadRequest response."]
-            pub fn webhooks(
-                &self,
-                request: crate::schemas::Message,
-                parent: impl Into<String>,
-            ) -> WebhooksRequestBuilder {
-                WebhooksRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    request,
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    parent: parent.into(),
-                    request_id: None,
-                    thread_key: None,
                 }
             }
             #[doc = "Actions that can be performed on the members resource"]
@@ -8196,12 +7067,12 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Requested page size. The value is capped at 1000. Server may return fewer results than requested. If unspecified, server will default to 100."]
+            #[doc = "Optional. The maximum number of spaces to return. The service may return fewer than this value. If unspecified, at most 100 spaces are returned. The maximum value is 1000; values above 1000 are coerced to 1000. Negative values return an INVALID_ARGUMENT error."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "A token identifying a page of results the server should return."]
+            #[doc = "Optional. A page token, received from a previous list spaces call. Provide this to retrieve the subsequent page. When paginating, the filter value should match the call that provided the page token. Passing a different value may lead to unexpected results."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
@@ -8296,7 +7167,7 @@ pub mod resources {
                     #[serde(rename = "spaces")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8329,7 +7200,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -8379,7 +7250,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8486,191 +7357,15 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
-            }
-        }
-        #[doc = "Created via [SpacesActions::webhooks()](struct.SpacesActions.html#method.webhooks)"]
-        #[derive(Debug, Clone)]
-        pub struct WebhooksRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            request: crate::schemas::Message,
-            parent: String,
-            request_id: ::std::option::Option<String>,
-            thread_key: ::std::option::Option<String>,
-            access_token: ::std::option::Option<String>,
-            alt: ::std::option::Option<crate::params::Alt>,
-            callback: ::std::option::Option<String>,
-            fields: ::std::option::Option<String>,
-            key: ::std::option::Option<String>,
-            oauth_token: ::std::option::Option<String>,
-            pretty_print: ::std::option::Option<bool>,
-            quota_user: ::std::option::Option<String>,
-            upload_protocol: ::std::option::Option<String>,
-            upload_type: ::std::option::Option<String>,
-            xgafv: ::std::option::Option<crate::params::Xgafv>,
-        }
-        impl<'a> WebhooksRequestBuilder<'a> {
-            #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
-            pub fn request_id(mut self, value: impl Into<String>) -> Self {
-                self.request_id = Some(value.into());
-                self
-            }
-            #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
-            pub fn thread_key(mut self, value: impl Into<String>) -> Self {
-                self.thread_key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub async fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: ::std::option::Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields).await
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub async fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(None::<&str>).await
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub async fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::Message, crate::Error> {
-                self.execute_with_fields(Some("*")).await
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub async fn execute_with_fields<T, F>(
-                mut self,
-                fields: ::std::option::Option<F>,
-            ) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute().await
-            }
-            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path()).await?;
-                let req = req.json(&self.request);
-                Ok(req.send().await?.error_for_status()?.json().await?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://chat.googleapis.com/".to_owned();
-                output.push_str("v1/");
-                {
-                    let var_as_str = &self.parent;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::RESERVED,
-                    ));
-                }
-                output.push_str("/webhooks");
-                output
-            }
-            async fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
-                req = req.query(&[("requestId", &self.request_id)]);
-                req = req.query(&[("threadKey", &self.thread_key)]);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                let access_token = self
-                    .auth
-                    .access_token()
-                    .await
-                    .map_err(|err| crate::Error::OAuth2(err))?;
-                req = req.bearer_auth(access_token);
-                Ok(req)
             }
         }
         pub mod members {
@@ -8683,7 +7378,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Returns a membership. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+                #[doc = "Returns a membership. Requires [authentication](https://developers.google.com/chat/api/guides/auth/). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.memberships` or `chat.memberships.readonly` authorization scope."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -8702,7 +7397,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists human memberships in a space. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+                #[doc = "Lists memberships in a space. Requires [authentication](https://developers.google.com/chat/api/guides/auth/). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.memberships` or `chat.memberships.readonly` authorization scope."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -8905,12 +7600,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Requested page size. The value is capped at 1000. Server may return fewer results than requested. If unspecified, server will default to 100."]
+                #[doc = "The maximum number of memberships to return. The service may return fewer than this value. If unspecified, at most 100 memberships are returned. The maximum value is 1000; values above 1000 are coerced to 1000. Negative values return an INVALID_ARGUMENT error."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "A token identifying a page of results the server should return."]
+                #[doc = "A page token, received from a previous list memberships call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided should match the call that provided the page token. Passing different values to the other parameters may lead to unexpected results."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -9005,7 +7700,7 @@ pub mod resources {
                         #[serde(rename = "memberships")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -9040,7 +7735,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -9090,7 +7785,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -9205,19 +7900,109 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
             }
         }
         pub mod messages {
-            pub mod params {}
+            pub mod params {
+                #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+                pub enum CreateMessageReplyOption {
+                    #[doc = "Default. Starts a thread."]
+                    MessageReplyOptionUnspecified,
+                    #[doc = "Creates the message as a reply to the thread specified by thread ID or thread_key. If it fails, the message starts a new thread instead."]
+                    ReplyMessageFallbackToNewThread,
+                    #[doc = "Creates the message as a reply to the thread specified by thread ID or thread_key. If it fails, a NOT_FOUND error is returned instead."]
+                    ReplyMessageOrFail,
+                }
+                impl CreateMessageReplyOption {
+                    pub fn as_str(self) -> &'static str {
+                        match self {
+                            CreateMessageReplyOption::MessageReplyOptionUnspecified => {
+                                "MESSAGE_REPLY_OPTION_UNSPECIFIED"
+                            }
+                            CreateMessageReplyOption::ReplyMessageFallbackToNewThread => {
+                                "REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD"
+                            }
+                            CreateMessageReplyOption::ReplyMessageOrFail => "REPLY_MESSAGE_OR_FAIL",
+                        }
+                    }
+                }
+                impl ::std::convert::AsRef<str> for CreateMessageReplyOption {
+                    fn as_ref(&self) -> &str {
+                        self.as_str()
+                    }
+                }
+                impl ::std::str::FromStr for CreateMessageReplyOption {
+                    type Err = ();
+                    fn from_str(s: &str) -> ::std::result::Result<CreateMessageReplyOption, ()> {
+                        Ok(match s {
+                            "MESSAGE_REPLY_OPTION_UNSPECIFIED" => {
+                                CreateMessageReplyOption::MessageReplyOptionUnspecified
+                            }
+                            "REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD" => {
+                                CreateMessageReplyOption::ReplyMessageFallbackToNewThread
+                            }
+                            "REPLY_MESSAGE_OR_FAIL" => CreateMessageReplyOption::ReplyMessageOrFail,
+                            _ => return Err(()),
+                        })
+                    }
+                }
+                impl ::std::fmt::Display for CreateMessageReplyOption {
+                    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                        f.write_str(self.as_str())
+                    }
+                }
+                impl ::serde::Serialize for CreateMessageReplyOption {
+                    fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                    where
+                        S: ::serde::ser::Serializer,
+                    {
+                        serializer.serialize_str(self.as_str())
+                    }
+                }
+                impl<'de> ::serde::Deserialize<'de> for CreateMessageReplyOption {
+                    fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                    where
+                        D: ::serde::de::Deserializer<'de>,
+                    {
+                        let value: &'de str = <&str>::deserialize(deserializer)?;
+                        Ok(match value {
+                            "MESSAGE_REPLY_OPTION_UNSPECIFIED" => {
+                                CreateMessageReplyOption::MessageReplyOptionUnspecified
+                            }
+                            "REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD" => {
+                                CreateMessageReplyOption::ReplyMessageFallbackToNewThread
+                            }
+                            "REPLY_MESSAGE_OR_FAIL" => CreateMessageReplyOption::ReplyMessageOrFail,
+                            _ => {
+                                return Err(::serde::de::Error::custom(format!(
+                                    "invalid enum for #name: {}",
+                                    value
+                                )))
+                            }
+                        })
+                    }
+                }
+                impl ::google_field_selector::FieldSelector for CreateMessageReplyOption {
+                    fn fields() -> Vec<::google_field_selector::Field> {
+                        Vec::new()
+                    }
+                }
+                impl ::google_field_selector::ToFieldType for CreateMessageReplyOption {
+                    fn field_type() -> ::google_field_selector::FieldType {
+                        ::google_field_selector::FieldType::Leaf
+                    }
+                }
+            }
             pub struct MessagesActions<'a> {
                 pub(crate) reqwest: &'a reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -9226,7 +8011,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+                #[doc = "Creates a message. For example usage, see [Create a message](https://developers.google.com/chat/api/guides/crudl/messages#create_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` or `chat.messages.create` authorization scope. Because Chat provides authentication for [webhooks](https://developers.google.com/chat/how-tos/webhooks) as part of the URL that’s generated when a webhook is registered, webhooks can create messages without a service account or user authentication."]
                 pub fn create(
                     &self,
                     request: crate::schemas::Message,
@@ -9248,11 +8033,13 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         parent: parent.into(),
+                        message_id: None,
+                        message_reply_option: None,
                         request_id: None,
                         thread_key: None,
                     }
                 }
-                #[doc = "Deletes a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+                #[doc = "Deletes a message. For example usage, see [Delete a message](https://developers.google.com/chat/api/guides/crudl/messages#delete_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` authorization scope."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9271,7 +8058,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Returns a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+                #[doc = "Returns a message. For example usage, see [Read a message](https://developers.google.com/chat/api/guides/crudl/messages#read_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth). Fully supports [Service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` or `chat.messages.readonly` authorization scope. Note: Might return a message from a blocked member or space."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9290,7 +8077,33 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Updates a message. Requires [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts)."]
+                #[doc = "Updates a message. For example usage, see [Update a message](https://developers.google.com/chat/api/guides/crudl/messages#update_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth/). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` authorization scope."]
+                pub fn patch(
+                    &self,
+                    request: crate::schemas::Message,
+                    name: impl Into<String>,
+                ) -> PatchRequestBuilder {
+                    PatchRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                        allow_missing: None,
+                        update_mask: None,
+                    }
+                }
+                #[doc = "Updates a message. For example usage, see [Update a message](https://developers.google.com/chat/api/guides/crudl/messages#update_a_message). Requires [authentication](https://developers.google.com/chat/api/guides/auth/). Fully supports [service account authentication](https://developers.google.com/chat/api/guides/auth/service-accounts). Supports [user authentication](https://developers.google.com/chat/api/guides/auth/users) as part of the [Google Workspace Developer Preview Program](https://developers.google.com/workspace/preview), which grants early access to certain features. [User authentication](https://developers.google.com/chat/api/guides/auth/users) requires the `chat.messages` authorization scope."]
                 pub fn update(
                     &self,
                     request: crate::schemas::Message,
@@ -9312,6 +8125,7 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         name: name.into(),
+                        allow_missing: None,
                         update_mask: None,
                     }
                 }
@@ -9333,6 +8147,10 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::Message,
                 parent: String,
+                message_id: ::std::option::Option<String>,
+                message_reply_option: ::std::option::Option<
+                    crate::resources::spaces::messages::params::CreateMessageReplyOption,
+                >,
                 request_id: ::std::option::Option<String>,
                 thread_key: ::std::option::Option<String>,
                 access_token: ::std::option::Option<String>,
@@ -9348,12 +8166,25 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> CreateRequestBuilder<'a> {
+                #[doc = "Optional. A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message)."]
+                pub fn message_id(mut self, value: impl Into<String>) -> Self {
+                    self.message_id = Some(value.into());
+                    self
+                }
+                #[doc = "Optional. Specifies whether a message starts a thread or replies to one. Only supported in named spaces."]
+                pub fn message_reply_option(
+                    mut self,
+                    value: crate::resources::spaces::messages::params::CreateMessageReplyOption,
+                ) -> Self {
+                    self.message_reply_option = Some(value);
+                    self
+                }
                 #[doc = "Optional. A unique request ID for this message. Specifying an existing request ID returns the message created with that ID instead of creating a new message."]
                 pub fn request_id(mut self, value: impl Into<String>) -> Self {
                     self.request_id = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` instead of thread.name. (Setting thread.name has no effect.) The first message with a given `threadKey` starts a new thread. Subsequent messages with the same `threadKey` post into the same thread."]
+                #[doc = "Optional. Deprecated: Use thread.thread_key instead. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread)."]
                 pub fn thread_key(mut self, value: impl Into<String>) -> Self {
                     self.thread_key = Some(value.into());
                     self
@@ -9481,6 +8312,8 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("messageId", &self.message_id)]);
+                    req = req.query(&[("messageReplyOption", &self.message_reply_option)]);
                     req = req.query(&[("requestId", &self.request_id)]);
                     req = req.query(&[("threadKey", &self.thread_key)]);
                     req = req.query(&[("access_token", &self.access_token)]);
@@ -9823,6 +8656,182 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            #[doc = "Created via [MessagesActions::patch()](struct.MessagesActions.html#method.patch)"]
+            #[derive(Debug, Clone)]
+            pub struct PatchRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::Message,
+                name: String,
+                allow_missing: ::std::option::Option<bool>,
+                update_mask: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> PatchRequestBuilder<'a> {
+                #[doc = "Optional. If `true` and the message is not found, a new message is created and `updateMask` is ignored. The specified message ID must be [client-assigned](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message) or the request fails."]
+                pub fn allow_missing(mut self, value: bool) -> Self {
+                    self.allow_missing = Some(value);
+                    self
+                }
+                #[doc = "Required. The field paths to update. Separate multiple values with commas. Currently supported field paths: - text - cards (Requires [service account authentication](/chat/api/guides/auth/service-accounts).) - cards_v2 "]
+                pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                    self.update_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Message, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Message, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://chat.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                    req = req.query(&[("allowMissing", &self.allow_missing)]);
+                    req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
             #[doc = "Created via [MessagesActions::update()](struct.MessagesActions.html#method.update)"]
             #[derive(Debug, Clone)]
             pub struct UpdateRequestBuilder<'a> {
@@ -9830,6 +8839,7 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::Message,
                 name: String,
+                allow_missing: ::std::option::Option<bool>,
                 update_mask: ::std::option::Option<String>,
                 access_token: ::std::option::Option<String>,
                 alt: ::std::option::Option<crate::params::Alt>,
@@ -9844,7 +8854,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
-                #[doc = "Required. The field paths to be updated, comma separated if there are multiple. Currently supported field paths: * text * cards * attachment"]
+                #[doc = "Optional. If `true` and the message is not found, a new message is created and `updateMask` is ignored. The specified message ID must be [client-assigned](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message) or the request fails."]
+                pub fn allow_missing(mut self, value: bool) -> Self {
+                    self.allow_missing = Some(value);
+                    self
+                }
+                #[doc = "Required. The field paths to update. Separate multiple values with commas. Currently supported field paths: - text - cards (Requires [service account authentication](/chat/api/guides/auth/service-accounts).) - cards_v2 "]
                 pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                     self.update_mask = Some(value.into());
                     self
@@ -9971,6 +8986,7 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::PUT, path);
+                    req = req.query(&[("allowMissing", &self.allow_missing)]);
                     req = req.query(&[("updateMask", &self.update_mask)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
@@ -10469,16 +9485,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -10498,13 +9516,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -10512,7 +9533,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -10539,7 +9560,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("container1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220328")
+            .version("0.1.0-20230120")
             .about("Builds and manages container-based applications, powered by the open source Kubernetes technology.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -275,7 +275,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut node_pools3 = SubCommand::with_name("node_pools")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, list, rollback, set_autoscaling, set_management, set_size and update");
+                        .about("methods: complete_upgrade, create, delete, get, list, rollback, set_autoscaling, set_management, set_size and update");
+        {
+            let mcmd = SubCommand::with_name("complete_upgrade").about(
+                "CompleteNodePoolUpgrade will signal an on-going node pool upgrade to complete.",
+            );
+            node_pools3 = node_pools3.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create").about("Creates a node pool for a cluster.");
             node_pools3 = node_pools3.subcommand(mcmd);

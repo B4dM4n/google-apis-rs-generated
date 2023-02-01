@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [assessments](resources/projects/assessments/struct.AssessmentsActions.html)\n    * [*annotate*](resources/projects/assessments/struct.AnnotateRequestBuilder.html), [*create*](resources/projects/assessments/struct.CreateRequestBuilder.html)\n  * [keys](resources/projects/keys/struct.KeysActions.html)\n    * [*create*](resources/projects/keys/struct.CreateRequestBuilder.html), [*delete*](resources/projects/keys/struct.DeleteRequestBuilder.html), [*get*](resources/projects/keys/struct.GetRequestBuilder.html), [*getMetrics*](resources/projects/keys/struct.GetMetricsRequestBuilder.html), [*list*](resources/projects/keys/struct.ListRequestBuilder.html), [*migrate*](resources/projects/keys/struct.MigrateRequestBuilder.html), [*patch*](resources/projects/keys/struct.PatchRequestBuilder.html)\n  * [relatedaccountgroupmemberships](resources/projects/relatedaccountgroupmemberships/struct.RelatedaccountgroupmembershipsActions.html)\n    * [*search*](resources/projects/relatedaccountgroupmemberships/struct.SearchRequestBuilder.html)\n  * [relatedaccountgroups](resources/projects/relatedaccountgroups/struct.RelatedaccountgroupsActions.html)\n    * [*list*](resources/projects/relatedaccountgroups/struct.ListRequestBuilder.html)\n    * [memberships](resources/projects/relatedaccountgroups/memberships/struct.MembershipsActions.html)\n      * [*list*](resources/projects/relatedaccountgroups/memberships/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [assessments](resources/projects/assessments/struct.AssessmentsActions.html)\n    * [*annotate*](resources/projects/assessments/struct.AnnotateRequestBuilder.html), [*create*](resources/projects/assessments/struct.CreateRequestBuilder.html)\n  * [keys](resources/projects/keys/struct.KeysActions.html)\n    * [*create*](resources/projects/keys/struct.CreateRequestBuilder.html), [*delete*](resources/projects/keys/struct.DeleteRequestBuilder.html), [*get*](resources/projects/keys/struct.GetRequestBuilder.html), [*getMetrics*](resources/projects/keys/struct.GetMetricsRequestBuilder.html), [*list*](resources/projects/keys/struct.ListRequestBuilder.html), [*migrate*](resources/projects/keys/struct.MigrateRequestBuilder.html), [*patch*](resources/projects/keys/struct.PatchRequestBuilder.html), [*retrieveLegacySecretKey*](resources/projects/keys/struct.RetrieveLegacySecretKeyRequestBuilder.html)\n  * [relatedaccountgroupmemberships](resources/projects/relatedaccountgroupmemberships/struct.RelatedaccountgroupmembershipsActions.html)\n    * [*search*](resources/projects/relatedaccountgroupmemberships/struct.SearchRequestBuilder.html)\n  * [relatedaccountgroups](resources/projects/relatedaccountgroups/struct.RelatedaccountgroupsActions.html)\n    * [*list*](resources/projects/relatedaccountgroups/struct.ListRequestBuilder.html)\n    * [memberships](resources/projects/relatedaccountgroups/memberships/struct.MembershipsActions.html)\n      * [*list*](resources/projects/relatedaccountgroups/memberships/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -37,11 +38,11 @@ pub mod schemas {
         AccountDefenderLabelUnspecified,
         #[doc = "The request matches a known good profile for the user."]
         ProfileMatch,
-        #[doc = "The account in the request has a high number of related accounts. It does not necessarily imply that the account is bad but could require investigating."]
+        #[doc = "The account in the request has a high number of related accounts. It does not necessarily imply that the account is bad but can require further investigation."]
         RelatedAccountsNumberHigh,
-        #[doc = "The request matched a profile that previously had suspicious account creation behavior. This could mean this is a fake account."]
+        #[doc = "The request matched a profile that previously had suspicious account creation behavior. This can mean that this is a fake account."]
         SuspiciousAccountCreation,
-        #[doc = "The request is potentially a suspicious login event and should be further verified either via multi-factor authentication or another system."]
+        #[doc = "The request is potentially a suspicious login event and must be further verified either through multi-factor authentication or another system."]
         SuspiciousLoginActivity,
     }
     impl GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessmentLabelsItems {
@@ -117,6 +118,123 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo { # [doc = "Endpoints that can be used for identity verification."] # [serde (rename = "endpoints" , default , skip_serializing_if = "std::option::Option::is_none")] pub endpoints : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo > > , # [doc = "Language code preference for the verification message, set as a IETF BCP 47 language code."] # [serde (rename = "languageCode" , default , skip_serializing_if = "std::option::Option::is_none")] pub language_code : :: std :: option :: Option < String > , # [doc = "Output only. Result of the latest account verification challenge."] # [serde (rename = "latestVerificationResult" , default , skip_serializing_if = "std::option::Option::is_none")] pub latest_verification_result : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult > , # [doc = "Username of the account that is being verified. Deprecated. Customers should now provide the hashed account ID field in Event."] # [serde (rename = "username" , default , skip_serializing_if = "std::option::Option::is_none")] pub username : :: std :: option :: Option < String > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult {
+        #[doc = "The verification flow could not be completed due to a critical internal error."]
+        ErrorCriticalInternal,
+        #[doc = "The client has exceeded their two factor request quota for this period of time."]
+        ErrorCustomerQuotaExhausted,
+        #[doc = "The recipient has already been sent too many verification codes in a short amount of time."]
+        ErrorRecipientAbuseLimitExhausted,
+        #[doc = "The recipient is not allowed for account verification. This can occur during integration but should not occur in production."]
+        ErrorRecipientNotAllowed,
+        #[doc = "The site is not properly onboarded to use the account verification feature."]
+        ErrorSiteOnboardingIncomplete,
+        #[doc = "The user failed the verification challenge."]
+        ErrorUserNotVerified,
+        #[doc = "The request parameters do not match with the token provided and cannot be processed."]
+        ErrorVerdictMismatch,
+        #[doc = "The request cannot be processed at the time because of an incident. This bypass can be restricted to a problematic destination email domain, a customer, or could affect the entire service."]
+        ErrorVerificationBypassed,
+        #[doc = "No information about the latest account verification."]
+        ResultUnspecified,
+        #[doc = "The user was successfully verified. This means the account verification challenge was successfully completed."]
+        SuccessUserVerified,
+    }
+    impl GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorCriticalInternal => "ERROR_CRITICAL_INTERNAL" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorCustomerQuotaExhausted => "ERROR_CUSTOMER_QUOTA_EXHAUSTED" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorRecipientAbuseLimitExhausted => "ERROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorRecipientNotAllowed => "ERROR_RECIPIENT_NOT_ALLOWED" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorSiteOnboardingIncomplete => "ERROR_SITE_ONBOARDING_INCOMPLETE" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorUserNotVerified => "ERROR_USER_NOT_VERIFIED" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorVerdictMismatch => "ERROR_VERDICT_MISMATCH" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorVerificationBypassed => "ERROR_VERIFICATION_BYPASSED" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ResultUnspecified => "RESULT_UNSPECIFIED" , GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: SuccessUserVerified => "SUCCESS_USER_VERIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult,
+            (),
+        > {
+            Ok (match s { "ERROR_CRITICAL_INTERNAL" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorCriticalInternal , "ERROR_CUSTOMER_QUOTA_EXHAUSTED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorCustomerQuotaExhausted , "ERROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorRecipientAbuseLimitExhausted , "ERROR_RECIPIENT_NOT_ALLOWED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorRecipientNotAllowed , "ERROR_SITE_ONBOARDING_INCOMPLETE" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorSiteOnboardingIncomplete , "ERROR_USER_NOT_VERIFIED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorUserNotVerified , "ERROR_VERDICT_MISMATCH" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorVerdictMismatch , "ERROR_VERIFICATION_BYPASSED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorVerificationBypassed , "RESULT_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ResultUnspecified , "SUCCESS_USER_VERIFIED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: SuccessUserVerified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ERROR_CRITICAL_INTERNAL" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorCriticalInternal , "ERROR_CUSTOMER_QUOTA_EXHAUSTED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorCustomerQuotaExhausted , "ERROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorRecipientAbuseLimitExhausted , "ERROR_RECIPIENT_NOT_ALLOWED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorRecipientNotAllowed , "ERROR_SITE_ONBOARDING_INCOMPLETE" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorSiteOnboardingIncomplete , "ERROR_USER_NOT_VERIFIED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorUserNotVerified , "ERROR_VERDICT_MISMATCH" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorVerdictMismatch , "ERROR_VERIFICATION_BYPASSED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ErrorVerificationBypassed , "RESULT_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: ResultUnspecified , "SUCCESS_USER_VERIFIED" => GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult :: SuccessUserVerified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRecaptchaenterpriseV1AccountVerificationInfoLatestVerificationResult
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRecaptchaenterpriseV1AndroidKeySettings {
         #[doc = "If set to true, allowed_package_names are not enforced."]
         #[serde(
@@ -144,18 +262,9 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
-    pub struct GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest { # [doc = "Optional. The annotation that will be assigned to the Event. This field can be left empty to provide reasons that apply to an event without concluding whether the event is legitimate or fraudulent."] # [serde (rename = "annotation" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotation : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestAnnotation > , # [doc = "Optional. Optional unique stable hashed user identifier to apply to the assessment. This is an alternative to setting the hashed_account_id in CreateAssessment, for example when the account identifier is not yet known in the initial request. It is recommended that the identifier is hashed using hmac-sha256 with stable secret."] # [serde (rename = "hashedAccountId" , default , skip_serializing_if = "std::option::Option::is_none")] pub hashed_account_id : :: std :: option :: Option < :: google_api_bytes :: Bytes > , # [doc = "Optional. Optional reasons for the annotation that will be assigned to the Event."] # [serde (rename = "reasons" , default , skip_serializing_if = "std::option::Option::is_none")] pub reasons : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems > > , }
+    pub struct GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest { # [doc = "Optional. The annotation that will be assigned to the Event. This field can be left empty to provide reasons that apply to an event without concluding whether the event is legitimate or fraudulent."] # [serde (rename = "annotation" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotation : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestAnnotation > , # [doc = "Optional. Unique stable hashed user identifier to apply to the assessment. This is an alternative to setting the hashed_account_id in CreateAssessment, for example when the account identifier is not yet known in the initial request. It is recommended that the identifier is hashed using hmac-sha256 with stable secret."] # [serde (rename = "hashedAccountId" , default , skip_serializing_if = "std::option::Option::is_none")] pub hashed_account_id : :: std :: option :: Option < :: google_api_bytes :: Bytes > , # [doc = "Optional. Optional reasons for the annotation that will be assigned to the Event."] # [serde (rename = "reasons" , default , skip_serializing_if = "std::option::Option::is_none")] pub reasons : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems > > , # [doc = "Optional. If the Assessment is part of a Payment Transaction, provide details on Payment Lifecycle Events that occur in the Transaction."] # [serde (rename = "transactionEvent" , default , skip_serializing_if = "std::option::Option::is_none")] pub transaction_event : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1TransactionEvent > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest
     {
@@ -246,11 +355,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems {
-        #[doc = "Indicates a chargeback issued for the transaction with no other details. When possible, specify the type by using CHARGEBACK_FRAUD or CHARGEBACK_DISPUTE instead."]
+        #[doc = "Indicates that the transaction had a chargeback issued with no other details. When possible, specify the type by using CHARGEBACK_FRAUD or CHARGEBACK_DISPUTE instead."]
         Chargeback,
-        #[doc = "Indicates a chargeback related to the cardholder having provided their card details but allegedly not being satisfied with the purchase (for example, misrepresentation, attempted cancellation)."]
+        #[doc = "Indicates that the transaction had a chargeback issued related to the cardholder having provided their card details but allegedly not being satisfied with the purchase (for example, misrepresentation, attempted cancellation)."]
         ChargebackDispute,
-        #[doc = "Indicates a chargeback related to an alleged unauthorized transaction from the cardholder’s perspective (for example, the card number was stolen)."]
+        #[doc = "Indicates that the transaction had a chargeback issued related to an alleged unauthorized transaction from the cardholder’s perspective (for example, the card number was stolen)."]
         ChargebackFraud,
         #[doc = "Indicates the user provided the correct password."]
         CorrectPassword,
@@ -266,10 +375,20 @@ pub mod schemas {
         PaymentHeuristics,
         #[doc = "Default unspecified reason."]
         ReasonUnspecified,
+        #[doc = "Indicates that the completed payment transaction was refunded by the seller."]
+        Refund,
+        #[doc = "Indicates that the completed payment transaction was determined to be fraudulent by the seller, and was cancelled and refunded as a result."]
+        RefundFraud,
+        #[doc = "Indicates that the user sent unwanted and abusive messages to other users of the platform, such as spam, scams, phishing, or social engineering."]
+        SocialSpam,
+        #[doc = "Indicates that the payment transaction was accepted, and the user was charged."]
+        TransactionAccepted,
+        #[doc = "Indicates that the payment transaction was declined, for example due to invalid card details."]
+        TransactionDeclined,
     }
     impl GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Chargeback => "CHARGEBACK" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackDispute => "CHARGEBACK_DISPUTE" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackFraud => "CHARGEBACK_FRAUD" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: CorrectPassword => "CORRECT_PASSWORD" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: FailedTwoFactor => "FAILED_TWO_FACTOR" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: IncorrectPassword => "INCORRECT_PASSWORD" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: InitiatedTwoFactor => "INITIATED_TWO_FACTOR" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PassedTwoFactor => "PASSED_TWO_FACTOR" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PaymentHeuristics => "PAYMENT_HEURISTICS" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ReasonUnspecified => "REASON_UNSPECIFIED" , }
+            match self { GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Chargeback => "CHARGEBACK" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackDispute => "CHARGEBACK_DISPUTE" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackFraud => "CHARGEBACK_FRAUD" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: CorrectPassword => "CORRECT_PASSWORD" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: FailedTwoFactor => "FAILED_TWO_FACTOR" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: IncorrectPassword => "INCORRECT_PASSWORD" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: InitiatedTwoFactor => "INITIATED_TWO_FACTOR" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PassedTwoFactor => "PASSED_TWO_FACTOR" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PaymentHeuristics => "PAYMENT_HEURISTICS" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ReasonUnspecified => "REASON_UNSPECIFIED" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Refund => "REFUND" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: RefundFraud => "REFUND_FRAUD" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: SocialSpam => "SOCIAL_SPAM" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: TransactionAccepted => "TRANSACTION_ACCEPTED" , GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: TransactionDeclined => "TRANSACTION_DECLINED" , }
         }
     }
     impl ::std::convert::AsRef<str>
@@ -287,7 +406,7 @@ pub mod schemas {
             GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems,
             (),
         > {
-            Ok (match s { "CHARGEBACK" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Chargeback , "CHARGEBACK_DISPUTE" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackDispute , "CHARGEBACK_FRAUD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackFraud , "CORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: CorrectPassword , "FAILED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: FailedTwoFactor , "INCORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: IncorrectPassword , "INITIATED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: InitiatedTwoFactor , "PASSED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PassedTwoFactor , "PAYMENT_HEURISTICS" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PaymentHeuristics , "REASON_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ReasonUnspecified , _ => return Err (()) , })
+            Ok (match s { "CHARGEBACK" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Chargeback , "CHARGEBACK_DISPUTE" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackDispute , "CHARGEBACK_FRAUD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackFraud , "CORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: CorrectPassword , "FAILED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: FailedTwoFactor , "INCORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: IncorrectPassword , "INITIATED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: InitiatedTwoFactor , "PASSED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PassedTwoFactor , "PAYMENT_HEURISTICS" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PaymentHeuristics , "REASON_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ReasonUnspecified , "REFUND" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Refund , "REFUND_FRAUD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: RefundFraud , "SOCIAL_SPAM" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: SocialSpam , "TRANSACTION_ACCEPTED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: TransactionAccepted , "TRANSACTION_DECLINED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: TransactionDeclined , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems {
@@ -311,7 +430,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "CHARGEBACK" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Chargeback , "CHARGEBACK_DISPUTE" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackDispute , "CHARGEBACK_FRAUD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackFraud , "CORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: CorrectPassword , "FAILED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: FailedTwoFactor , "INCORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: IncorrectPassword , "INITIATED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: InitiatedTwoFactor , "PASSED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PassedTwoFactor , "PAYMENT_HEURISTICS" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PaymentHeuristics , "REASON_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ReasonUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "CHARGEBACK" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Chargeback , "CHARGEBACK_DISPUTE" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackDispute , "CHARGEBACK_FRAUD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ChargebackFraud , "CORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: CorrectPassword , "FAILED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: FailedTwoFactor , "INCORRECT_PASSWORD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: IncorrectPassword , "INITIATED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: InitiatedTwoFactor , "PASSED_TWO_FACTOR" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PassedTwoFactor , "PAYMENT_HEURISTICS" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: PaymentHeuristics , "REASON_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: ReasonUnspecified , "REFUND" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: Refund , "REFUND_FRAUD" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: RefundFraud , "SOCIAL_SPAM" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: SocialSpam , "TRANSACTION_ACCEPTED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: TransactionAccepted , "TRANSACTION_DECLINED" => GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequestReasonsItems :: TransactionDeclined , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -360,7 +479,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecaptchaenterpriseV1Assessment {
-        #[doc = "Assessment returned by Account Defender when a hashed_account_id is provided."]
+        #[doc = "Assessment returned by account defender when a hashed_account_id is provided."]
         #[serde(
             rename = "accountDefenderAssessment",
             default,
@@ -368,6 +487,15 @@ pub mod schemas {
         )]
         pub account_defender_assessment: ::std::option::Option<
             crate::schemas::GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment,
+        >,
+        #[doc = "Account verification information for identity verification. The assessment event must include a token and site key to use this feature."]
+        #[serde(
+            rename = "accountVerification",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub account_verification: ::std::option::Option<
+            crate::schemas::GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo,
         >,
         #[doc = "The event being assessed."]
         #[serde(
@@ -383,6 +511,15 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The private password leak verification field contains the parameters that are used to to check for leaks privately without sharing user credentials."]
+        #[serde(
+            rename = "privatePasswordLeakVerification",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub private_password_leak_verification: ::std::option::Option<
+            crate::schemas::GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification,
+        >,
         #[doc = "Output only. The risk analysis result for the event being assessed."]
         #[serde(
             rename = "riskAnalysis",
@@ -478,6 +615,62 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo {
+        #[doc = "Email address for which to trigger a verification request."]
+        #[serde(
+            rename = "emailAddress",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email_address: ::std::option::Option<String>,
+        #[doc = "Output only. Timestamp of the last successful verification for the endpoint, if any."]
+        #[serde(
+            rename = "lastVerificationTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_verification_time: ::std::option::Option<String>,
+        #[doc = "Phone number for which to trigger a verification request. Should be given in E.164 format."]
+        #[serde(
+            rename = "phoneNumber",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub phone_number: ::std::option::Option<String>,
+        #[doc = "Output only. Token to provide to the client to trigger endpoint verification. It must be used within 15 minutes."]
+        #[serde(
+            rename = "requestToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRecaptchaenterpriseV1Event {
         #[doc = "Optional. The expected action for this type of event. This should be the same action provided at token generation time on client-side platforms already integrated with recaptcha enterprise."]
         #[serde(
@@ -486,21 +679,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expected_action: ::std::option::Option<String>,
-        #[doc = "Optional. Optional unique stable hashed user identifier for the request. The identifier should ideally be hashed using sha256 with stable secret."]
+        #[doc = "Optional. Unique stable hashed user identifier for the request. The identifier must be hashed using hmac-sha256 with stable secret."]
         #[serde(
             rename = "hashedAccountId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hashed_account_id: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Optional. The site key that was used to invoke reCAPTCHA on your site and generate the token."]
+        #[doc = "Optional. The site key that was used to invoke reCAPTCHA Enterprise on your site and generate the token."]
         #[serde(
             rename = "siteKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub site_key: ::std::option::Option<String>,
-        #[doc = "Optional. The user response token provided by the reCAPTCHA client-side integration on your site."]
+        #[doc = "Optional. The user response token provided by the reCAPTCHA Enterprise client-side integration on your site."]
         #[serde(
             rename = "token",
             default,
@@ -683,7 +876,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRecaptchaenterpriseV1ListKeysResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRecaptchaenterpriseV1ListKeysResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -732,7 +925,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GoogleCloudRecaptchaenterpriseV1ListRelatedAccountGroupMembershipsResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -783,7 +976,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRecaptchaenterpriseV1ListRelatedAccountGroupsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudRecaptchaenterpriseV1ListRelatedAccountGroupsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -852,18 +1047,81 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
-        Copy,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest {}
+    pub struct GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest {
+        #[doc = "Optional. If true, skips the billing check. A reCAPTCHA Enterprise key or migrated key behaves differently than a reCAPTCHA (non-Enterprise version) key when you reach a quota limit (see https://cloud.google.com/recaptcha-enterprise/quotas#quota_limit). To avoid any disruption of your usage, we check that a billing account is present. If your usage of reCAPTCHA is under the free quota, you can safely skip the billing check and proceed with the migration. See https://cloud.google.com/recaptcha-enterprise/docs/billing-information."]
+        #[serde(
+            rename = "skipBillingCheck",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub skip_billing_check: ::std::option::Option<bool>,
+    }
     impl ::google_field_selector::FieldSelector for GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRecaptchaenterpriseV1MigrateKeyRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification {
+        #[doc = "Output only. List of prefixes of the encrypted potential password leaks that matched the given parameters. They must be compared with the client-side decryption prefix of `reencrypted_user_credentials_hash`"]
+        #[serde(
+            rename = "encryptedLeakMatchPrefixes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encrypted_leak_match_prefixes: ::std::option::Option<Vec<::google_api_bytes::Bytes>>,
+        #[doc = "Optional. Encrypted Scrypt hash of the canonicalized username+password. It is re-encrypted by the server and returned through `reencrypted_user_credentials_hash`."]
+        #[serde(
+            rename = "encryptedUserCredentialsHash",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encrypted_user_credentials_hash: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It is used to look up password leaks associated with that hash prefix."]
+        #[serde(
+            rename = "lookupHashPrefix",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub lookup_hash_prefix: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash` field. It is used to match potential password leaks within `encrypted_leak_match_prefixes`."]
+        #[serde(
+            rename = "reencryptedUserCredentialsHash",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reencrypted_user_credentials_hash: ::std::option::Option<::google_api_bytes::Bytes>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -914,7 +1172,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership {
-        #[doc = "The unique stable hashed user identifier of the member. The identifier corresponds to a `hashed_account_id` provided in a previous CreateAssessment or AnnotateAssessment call."]
+        #[doc = "The unique stable hashed user identifier of the member. The identifier corresponds to a `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call."]
         #[serde(
             rename = "hashedAccountId",
             default,
@@ -938,6 +1196,41 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse {
+        #[doc = "The secret key (also known as shared secret) authorizes communication between your application backend and the reCAPTCHA Enterprise server to create an assessment. The secret key needs to be kept safe for security purposes."]
+        #[serde(
+            rename = "legacySecretKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub legacy_secret_key: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -1088,7 +1381,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecaptchaenterpriseV1ScoreMetrics {
-        #[doc = "Action-based metrics. The map key is the action name which specified by the site owners at time of the “execute” client-side call. Populated only for SCORE keys."]
+        #[doc = "Action-based metrics. The map key is the action name which specified by the site owners at time of the “execute” client-side call."]
         #[serde(
             rename = "actionMetrics",
             default,
@@ -1133,14 +1426,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecaptchaenterpriseV1SearchRelatedAccountGroupMembershipsRequest {
-        #[doc = "Optional. The unique stable hashed user identifier we should search connections to. The identifier should correspond to a `hashed_account_id` provided in a previous CreateAssessment or AnnotateAssessment call."]
+        #[doc = "Optional. The unique stable hashed user identifier we should search connections to. The identifier should correspond to a `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call."]
         #[serde(
             rename = "hashedAccountId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hashed_account_id: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Optional. The maximum number of groups to return. The service may return fewer than this value. If unspecified, at most 50 groups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
+        #[doc = "Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000."]
         #[serde(
             rename = "pageSize",
             default,
@@ -1213,7 +1506,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GoogleCloudRecaptchaenterpriseV1SearchRelatedAccountGroupMembershipsResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -1337,6 +1630,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<String>,
+        #[doc = "The name of the Android package with which the token was generated (Android keys only)."]
+        #[serde(
+            rename = "androidPackageName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub android_package_name: ::std::option::Option<String>,
         #[doc = "The timestamp corresponding to the generation of the token."]
         #[serde(
             rename = "createTime",
@@ -1344,7 +1644,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The hostname of the page on which the token was generated."]
+        #[doc = "The hostname of the page on which the token was generated (Web keys only)."]
         #[serde(
             rename = "hostname",
             default,
@@ -1360,6 +1660,13 @@ pub mod schemas {
         pub invalid_reason: ::std::option::Option<
             crate::schemas::GoogleCloudRecaptchaenterpriseV1TokenPropertiesInvalidReason,
         >,
+        #[doc = "The ID of the iOS bundle with which the token was generated (iOS keys only)."]
+        #[serde(
+            rename = "iosBundleId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ios_bundle_id: ::std::option::Option<String>,
         #[doc = "Whether the provided user response token is valid. When valid = false, the reason could be specified in invalid_reason or it could also be due to a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey used to generate the token was different than the one specified in the assessment)."]
         #[serde(
             rename = "valid",
@@ -1447,6 +1754,147 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudRecaptchaenterpriseV1TokenPropertiesInvalidReason
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRecaptchaenterpriseV1TransactionEvent {
+        #[doc = "Optional. Timestamp when this transaction event occurred; otherwise assumed to be the time of the API call."]
+        #[serde(
+            rename = "eventTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_time: ::std::option::Option<String>,
+        #[doc = "Optional. The type of this transaction event."]
+        #[serde(
+            rename = "eventType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_type: ::std::option::Option<
+            crate::schemas::GoogleCloudRecaptchaenterpriseV1TransactionEventEventType,
+        >,
+        #[doc = "Optional. The reason or standardized code which corresponds with this transaction event, if one exists. E.g. a CHARGEBACK Event with code 4553."]
+        #[serde(
+            rename = "reason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reason: ::std::option::Option<String>,
+        #[doc = "Optional. The value that corresponds with this transaction event, if one exists. E.g. A refund event where $5.00 was refunded. Currency is obtained from the original transaction data."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<f64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRecaptchaenterpriseV1TransactionEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRecaptchaenterpriseV1TransactionEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRecaptchaenterpriseV1TransactionEventEventType {
+        #[doc = "Indicates that the authorization attempt with the card issuer succeeded."]
+        Authorization,
+        #[doc = "Indicates that the authorization attempt with the card issuer failed. The accompanying reasons can include Visa’s ‘54’ indicating that the card is expired or ‘82’ indicating that the CVV is incorrect."]
+        AuthorizationDecline,
+        #[doc = "Indicates that the transaction has been canceled. Specify the reason for the cancellation. For example, ‘INSUFFICIENT_INVENTORY’."]
+        Cancel,
+        #[doc = "Indicates that the merchant is informed by the payment network that the transaction has entered the chargeback process. Reason code examples include Discover’s ‘4553’ and ‘6041’. For partial chargebacks, we recommend that you include an amount in the `value` field."]
+        Chargeback,
+        #[doc = "Indicates that the merchant has received a chargeback alert for the transaction. The process of resolving the dispute without involving the payment network is started."]
+        ChargebackAlert,
+        #[doc = "Indicates that the merchant has received a chargeback inquiry for the transaction, requesting additional information before a chargeback is officially issued and a formal chargeback notification is sent."]
+        ChargebackInquiry,
+        #[doc = "Indicates that the transaction has entered the chargeback process, and that the merchant has chosen to enter representment. Reason examples include Discover’s ‘4553’ and ‘6041’. For partial chargebacks, we recommend that you include an amount in the `value` field."]
+        ChargebackRepresentment,
+        #[doc = "Indicates that the transaction has had a chargeback which was illegitimate and was reversed as a result. For partial chargebacks, we recommend that you include an amount in the `value` field."]
+        ChargebackReverse,
+        #[doc = "Indicates that a fraud notification is issued for the transaction, sent by the payment instrument’s issuing bank because the transaction appears to be fraudulent. We recommend including TC40 or SAFE data in the `reason` field for this event type. For partial chargebacks, we recommend that you include an amount in the `value` field."]
+        FraudNotification,
+        #[doc = "Indicates that the transaction is being evaluated by a human, due to suspicion or risk."]
+        ManualReview,
+        #[doc = "Indicates that the transaction is approved by the merchant’s risk engine. The accompanying reasons can include ‘INHOUSE’, ‘ACCERTIFY’, or ‘RECAPTCHA’."]
+        MerchantApprove,
+        #[doc = "Indicates that the transaction is denied and concluded due to risks detected by the merchant’s risk engine. The accompanying reasons can include ‘INHOUSE’, ‘ACCERTIFY’, ‘MANUAL_REVIEW’, or ‘RECAPTCHA’."]
+        MerchantDeny,
+        #[doc = "Indicates that the transaction is completed because the funds were settled."]
+        PaymentCapture,
+        #[doc = "Indicates that the transaction could not be completed because the funds were not settled."]
+        PaymentCaptureDecline,
+        #[doc = "Indicates that the completed transaction was refunded by the merchant. For partial refunds, we recommend that you include an amount in the `value` field. Reason example: ‘TAX_EXEMPT’ (partial refund of exempt tax)"]
+        Refund,
+        #[doc = "Indicates that the merchant has received a refund request for this transaction, but that they have declined it. For partial refunds, we recommend that you include an amount in the `value` field. Reason example: ‘TAX_EXEMPT’ (partial refund of exempt tax)"]
+        RefundDecline,
+        #[doc = "Indicates that the merchant has received a refund for a completed transaction. For partial refunds, we recommend that you include an amount in the `value` field. Reason example: ‘TAX_EXEMPT’ (partial refund of exempt tax)"]
+        RefundRequest,
+        #[doc = "Indicates that the completed transaction was refunded by the merchant, and that this refund was reversed. For partial refunds, we recommend that you include an amount in the `value` field."]
+        RefundReverse,
+        #[doc = "Default, unspecified event type."]
+        TransactionEventTypeUnspecified,
+    }
+    impl GoogleCloudRecaptchaenterpriseV1TransactionEventEventType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Authorization => "AUTHORIZATION" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: AuthorizationDecline => "AUTHORIZATION_DECLINE" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Cancel => "CANCEL" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Chargeback => "CHARGEBACK" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackAlert => "CHARGEBACK_ALERT" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackInquiry => "CHARGEBACK_INQUIRY" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackRepresentment => "CHARGEBACK_REPRESENTMENT" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackReverse => "CHARGEBACK_REVERSE" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: FraudNotification => "FRAUD_NOTIFICATION" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ManualReview => "MANUAL_REVIEW" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: MerchantApprove => "MERCHANT_APPROVE" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: MerchantDeny => "MERCHANT_DENY" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: PaymentCapture => "PAYMENT_CAPTURE" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: PaymentCaptureDecline => "PAYMENT_CAPTURE_DECLINE" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Refund => "REFUND" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundDecline => "REFUND_DECLINE" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundRequest => "REFUND_REQUEST" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundReverse => "REFUND_REVERSE" , GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: TransactionEventTypeUnspecified => "TRANSACTION_EVENT_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRecaptchaenterpriseV1TransactionEventEventType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRecaptchaenterpriseV1TransactionEventEventType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRecaptchaenterpriseV1TransactionEventEventType, ()>
+        {
+            Ok (match s { "AUTHORIZATION" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Authorization , "AUTHORIZATION_DECLINE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: AuthorizationDecline , "CANCEL" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Cancel , "CHARGEBACK" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Chargeback , "CHARGEBACK_ALERT" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackAlert , "CHARGEBACK_INQUIRY" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackInquiry , "CHARGEBACK_REPRESENTMENT" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackRepresentment , "CHARGEBACK_REVERSE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackReverse , "FRAUD_NOTIFICATION" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: FraudNotification , "MANUAL_REVIEW" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ManualReview , "MERCHANT_APPROVE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: MerchantApprove , "MERCHANT_DENY" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: MerchantDeny , "PAYMENT_CAPTURE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: PaymentCapture , "PAYMENT_CAPTURE_DECLINE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: PaymentCaptureDecline , "REFUND" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Refund , "REFUND_DECLINE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundDecline , "REFUND_REQUEST" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundRequest , "REFUND_REVERSE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundReverse , "TRANSACTION_EVENT_TYPE_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: TransactionEventTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRecaptchaenterpriseV1TransactionEventEventType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRecaptchaenterpriseV1TransactionEventEventType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRecaptchaenterpriseV1TransactionEventEventType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUTHORIZATION" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Authorization , "AUTHORIZATION_DECLINE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: AuthorizationDecline , "CANCEL" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Cancel , "CHARGEBACK" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Chargeback , "CHARGEBACK_ALERT" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackAlert , "CHARGEBACK_INQUIRY" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackInquiry , "CHARGEBACK_REPRESENTMENT" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackRepresentment , "CHARGEBACK_REVERSE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ChargebackReverse , "FRAUD_NOTIFICATION" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: FraudNotification , "MANUAL_REVIEW" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: ManualReview , "MERCHANT_APPROVE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: MerchantApprove , "MERCHANT_DENY" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: MerchantDeny , "PAYMENT_CAPTURE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: PaymentCapture , "PAYMENT_CAPTURE_DECLINE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: PaymentCaptureDecline , "REFUND" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: Refund , "REFUND_DECLINE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundDecline , "REFUND_REQUEST" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundRequest , "REFUND_REVERSE" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: RefundReverse , "TRANSACTION_EVENT_TYPE_UNSPECIFIED" => GoogleCloudRecaptchaenterpriseV1TransactionEventEventType :: TransactionEventTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRecaptchaenterpriseV1TransactionEventEventType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRecaptchaenterpriseV1TransactionEventEventType
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -2660,6 +3108,28 @@ pub mod resources {
                         update_mask: None,
                     }
                 }
+                #[doc = "Returns the secret key related to the specified public key. You must use the legacy secret key only in a 3rd party integration with legacy reCAPTCHA."]
+                pub fn retrieve_legacy_secret_key(
+                    &self,
+                    key: impl Into<String>,
+                ) -> RetrieveLegacySecretKeyRequestBuilder {
+                    RetrieveLegacySecretKeyRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        key: key.into(),
+                    }
+                }
             }
             #[doc = "Created via [KeysActions::create()](struct.KeysActions.html#method.create)"]
             #[derive(Debug, Clone)]
@@ -3439,7 +3909,7 @@ pub mod resources {
                         #[serde(rename = "keys")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -3474,7 +3944,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -3530,7 +4000,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3651,12 +4121,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -3997,6 +4468,173 @@ pub mod resources {
                     Ok(req)
                 }
             }
+            #[doc = "Created via [KeysActions::retrieve_legacy_secret_key()](struct.KeysActions.html#method.retrieve_legacy_secret_key)"]
+            #[derive(Debug, Clone)]
+            pub struct RetrieveLegacySecretKeyRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                key: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> RetrieveLegacySecretKeyRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://recaptchaenterprise.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.key;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":retrieveLegacySecretKey");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
         }
         pub mod relatedaccountgroupmemberships {
             pub mod params {}
@@ -4235,7 +4873,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. The maximum number of groups to return. The service may return fewer than this value. If unspecified, at most 50 groups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
+                #[doc = "Optional. The maximum number of groups to return. The service might return fewer than this value. If unspecified, at most 50 groups are returned. The maximum value is 1000; values above 1000 are coerced to 1000."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -4343,7 +4981,7 @@ pub mod resources {
                         #[serde(rename = "relatedAccountGroups")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -4379,7 +5017,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -4419,7 +5057,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4528,12 +5166,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4548,7 +5187,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Get the memberships in a group of related accounts."]
+                    #[doc = "Get memberships in a group of related accounts."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -4591,7 +5230,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Optional. The maximum number of accounts to return. The service may return fewer than this value. If unspecified, at most 50 accounts will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
+                    #[doc = "Optional. The maximum number of accounts to return. The service might return fewer than this value. If unspecified, at most 50 accounts are returned. The maximum value is 1000; values above 1000 are coerced to 1000."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -4685,7 +5324,7 @@ pub mod resources {
                             #[serde(rename = "relatedAccountGroupMemberships")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4722,7 +5361,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4762,7 +5401,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4872,12 +5511,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5169,16 +5809,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -5198,13 +5840,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -5212,7 +5857,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -5239,7 +5884,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

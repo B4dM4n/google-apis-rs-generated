@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("firebase1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230130")
             .about("The Firebase Management API enables programmatic setup and management of Firebase projects, including a project's Firebase resources and Firebase apps.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -88,7 +88,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut android_apps1 = SubCommand::with_name("android_apps")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, get, get_config, list and patch");
+            .about("methods: create, get, get_config, list, patch, remove and undelete");
         {
             let mcmd = SubCommand::with_name("create").about("Requests the creation of a new AndroidApp in the specified FirebaseProject. The result of this call is an `Operation` which can be used to track the provisioning process. The `Operation` is automatically deleted after completion, so there is no need to call `DeleteOperation`.");
             android_apps1 = android_apps1.subcommand(mcmd);
@@ -111,6 +111,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Updates the attributes of the specified AndroidApp.");
             android_apps1 = android_apps1.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("remove")
+                .about("Removes the specified AndroidApp from the FirebaseProject.");
+            android_apps1 = android_apps1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("undelete")
+                .about("Restores the specified AndroidApp to the FirebaseProject.");
+            android_apps1 = android_apps1.subcommand(mcmd);
+        }
         let mut available_locations1 = SubCommand::with_name("available_locations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -127,7 +137,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut ios_apps1 = SubCommand::with_name("ios_apps")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, get, get_config, list and patch");
+            .about("methods: create, get, get_config, list, patch, remove and undelete");
         {
             let mcmd = SubCommand::with_name("create").about("Requests the creation of a new IosApp in the specified FirebaseProject. The result of this call is an `Operation` which can be used to track the provisioning process. The `Operation` is automatically deleted after completion, so there is no need to call `DeleteOperation`.");
             ios_apps1 = ios_apps1.subcommand(mcmd);
@@ -150,9 +160,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Updates the attributes of the specified IosApp.");
             ios_apps1 = ios_apps1.subcommand(mcmd);
         }
+        {
+            let mcmd = SubCommand::with_name("remove")
+                .about("Removes the specified IosApp from the FirebaseProject.");
+            ios_apps1 = ios_apps1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("undelete")
+                .about("Restores the specified IosApp to the FirebaseProject.");
+            ios_apps1 = ios_apps1.subcommand(mcmd);
+        }
         let mut web_apps1 = SubCommand::with_name("web_apps")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, get, get_config, list and patch");
+            .about("methods: create, get, get_config, list, patch, remove and undelete");
         {
             let mcmd = SubCommand::with_name("create").about("Requests the creation of a new WebApp in the specified FirebaseProject. The result of this call is an `Operation` which can be used to track the provisioning process. The `Operation` is automatically deleted after completion, so there is no need to call `DeleteOperation`.");
             web_apps1 = web_apps1.subcommand(mcmd);
@@ -173,6 +193,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("patch")
                 .about("Updates the attributes of the specified WebApp.");
+            web_apps1 = web_apps1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("remove")
+                .about("Removes the specified WebApp from the FirebaseProject.");
+            web_apps1 = web_apps1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("undelete")
+                .about("Restores the specified WebApp to the FirebaseProject.");
             web_apps1 = web_apps1.subcommand(mcmd);
         }
         let mut sha2 = SubCommand::with_name("sha")

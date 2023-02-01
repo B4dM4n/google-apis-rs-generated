@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("certificatemanager1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220418")
+            .version("0.1.0-20230123")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -47,6 +47,30 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
+        }
+        let mut certificate_issuance_configs2 =
+            SubCommand::with_name("certificate_issuance_configs")
+                .setting(AppSettings::ColoredHelp)
+                .about("methods: create, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new CertificateIssuanceConfig in a given project and location.");
+            certificate_issuance_configs2 = certificate_issuance_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes a single CertificateIssuanceConfig.");
+            certificate_issuance_configs2 = certificate_issuance_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets details of a single CertificateIssuanceConfig.");
+            certificate_issuance_configs2 = certificate_issuance_configs2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists CertificateIssuanceConfigs in a given project and location.");
+            certificate_issuance_configs2 = certificate_issuance_configs2.subcommand(mcmd);
         }
         let mut certificate_maps2 = SubCommand::with_name("certificate_maps")
             .setting(AppSettings::ColoredHelp)
@@ -176,6 +200,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         locations1 = locations1.subcommand(dns_authorizations2);
         locations1 = locations1.subcommand(certificates2);
         locations1 = locations1.subcommand(certificate_maps2);
+        locations1 = locations1.subcommand(certificate_issuance_configs2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);
 

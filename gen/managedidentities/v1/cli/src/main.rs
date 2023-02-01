@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("managedidentities1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220216")
+            .version("0.1.0-20221227")
             .about("The Managed Service for Microsoft Active Directory API is used for managing a highly available, hardened service running Microsoft Active Directory (AD).")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -53,7 +53,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: domains, operations and peerings");
         let mut domains3 = SubCommand::with_name("domains")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: attach_trust, create, delete, detach_trust, get, get_iam_policy, get_ldapssettings, list, patch, reconfigure_trust, reset_admin_password, restore, set_iam_policy, test_iam_permissions, update_ldapssettings and validate_trust");
+                        .about("methods: attach_trust, create, delete, detach_trust, extend_schema, get, get_iam_policy, get_ldapssettings, list, patch, reconfigure_trust, reset_admin_password, restore, set_iam_policy, test_iam_permissions, update_ldapssettings and validate_trust");
         {
             let mcmd = SubCommand::with_name("attach_trust").about("Adds an AD trust to a domain.");
             domains3 = domains3.subcommand(mcmd);
@@ -68,6 +68,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("detach_trust").about("Removes an AD trust.");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("extend_schema").about("Extend Schema for Domain");
             domains3 = domains3.subcommand(mcmd);
         }
         {

@@ -7,9 +7,9 @@
   "canonicalName": "My Business Place Actions",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220426",
+  "revision": "20230131",
   "title": "My Business Place Actions API",
-  "description": "The My Business Place Actions API provides an interface for managing place action links of a location on Google.",
+  "description": "The My Business Place Actions API provides an interface for managing place action links of a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -337,7 +337,8 @@
             "DINING_RESERVATION",
             "FOOD_ORDERING",
             "FOOD_DELIVERY",
-            "FOOD_TAKEOUT"
+            "FOOD_TAKEOUT",
+            "SHOP_ONLINE"
           ],
           "enumDescriptions": [
             "Not specified.",
@@ -346,7 +347,8 @@
             "The action type is making a dining reservation.",
             "The action type is ordering food for delivery and/or takeout.",
             "The action type is ordering food for delivery.",
-            "The action type is ordering food for takeout."
+            "The action type is ordering food for takeout.",
+            "The action type is shopping, that can be delivery and/or pickup."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -423,7 +425,8 @@
             "DINING_RESERVATION",
             "FOOD_ORDERING",
             "FOOD_DELIVERY",
-            "FOOD_TAKEOUT"
+            "FOOD_TAKEOUT",
+            "SHOP_ONLINE"
           ],
           "enumDescriptions": [
             "Not specified.",
@@ -432,7 +435,8 @@
             "The action type is making a dining reservation.",
             "The action type is ordering food for delivery and/or takeout.",
             "The action type is ordering food for delivery.",
-            "The action type is ordering food for takeout."
+            "The action type is ordering food for takeout.",
+            "The action type is shopping, that can be delivery and/or pickup."
           ],
           "properties": {},
           "additionalProperties": null,

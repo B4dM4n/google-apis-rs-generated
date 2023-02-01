@@ -7,7 +7,7 @@
   "canonicalName": "Localservices",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230131",
   "title": "Local Services API",
   "description": "",
   "ownerDomain": "google.com",
@@ -201,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/adwords": {
-          "description": "Manage your AdWords campaigns"
+          "description": "See, edit, create, and delete your Google Ads accounts and data."
         }
       }
     }

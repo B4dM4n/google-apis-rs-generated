@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230130",
   "title": "Fitness API",
   "description": "The Fitness API for managing users' fitness tracking data.",
   "ownerDomain": "google.com",

@@ -7,7 +7,7 @@
   "canonicalName": "Area120 Tables",
   "fullyEncodeReservedExpansion": true,
   "version": "v1alpha1",
-  "revision": "20220425",
+  "revision": "20230130",
   "title": "Area120 Tables API",
   "description": "",
   "ownerDomain": "google.com",

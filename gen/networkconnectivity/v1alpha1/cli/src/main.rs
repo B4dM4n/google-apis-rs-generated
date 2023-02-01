@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("networkconnectivity1_alpha1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
-            .about("The Network Connectivity API provides access to Network Connectivity Center.")
+            .version("0.1.0-20230105")
+            .about("This API enables connectivity with and between Google Cloud resources.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -52,10 +52,34 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: hubs");
         let mut internal_ranges2 = SubCommand::with_name("internal_ranges")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new internal range in a given project and location.");
+            internal_ranges2 = internal_ranges2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a single internal range.");
+            internal_ranges2 = internal_ranges2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Gets details of a single internal range.");
+            internal_ranges2 = internal_ranges2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            internal_ranges2 = internal_ranges2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists internal ranges in a given project and location.");
+            internal_ranges2 = internal_ranges2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a single internal range.");
             internal_ranges2 = internal_ranges2.subcommand(mcmd);
         }
         {
@@ -85,50 +109,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
-        let mut service_connect_policies2 = SubCommand::with_name("service_connect_policies")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
-        {
-            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
-            service_connect_policies2 = service_connect_policies2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
-            service_connect_policies2 = service_connect_policies2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
-            service_connect_policies2 = service_connect_policies2.subcommand(mcmd);
-        }
-        let mut service_instances2 = SubCommand::with_name("service_instances")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
-        {
-            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
-            service_instances2 = service_instances2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
-            service_instances2 = service_instances2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
-            service_instances2 = service_instances2.subcommand(mcmd);
-        }
         let mut spokes2 = SubCommand::with_name("spokes")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
             let mcmd = SubCommand::with_name("create")
-                .about("Creates a new Spoke in a given project and location.");
+                .about("Creates a Network Connectivity Center spoke.");
             spokes2 = spokes2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a single Spoke.");
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes a Network Connectivity Center spoke.");
             spokes2 = spokes2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets details of a single Spoke.");
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets details about a Network Connectivity Center spoke.");
             spokes2 = spokes2.subcommand(mcmd);
         }
         {
@@ -136,13 +132,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             spokes2 = spokes2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Lists Spokes in a given project and location.");
+            let mcmd = SubCommand::with_name("list").about(
+                "Lists the Network Connectivity Center spokes in a specified project and location.",
+            );
             spokes2 = spokes2.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("patch").about("Updates the parameters of a single Spoke.");
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a Network Connectivity Center spoke.");
             spokes2 = spokes2.subcommand(mcmd);
         }
         {
@@ -158,15 +155,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
             let mcmd = SubCommand::with_name("create")
-                .about("Creates a new Hub in a given project and location.");
+                .about("Creates a new Network Connectivity Center hub in the specified project.");
             hubs3 = hubs3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a single Hub.");
+            let mcmd =
+                SubCommand::with_name("delete").about("Deletes a Network Connectivity Center hub.");
             hubs3 = hubs3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets details of a single Hub.");
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets details about a Network Connectivity Center hub.");
             hubs3 = hubs3.subcommand(mcmd);
         }
         {
@@ -174,13 +173,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             hubs3 = hubs3.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("list").about("Lists Hubs in a given project and location.");
+            let mcmd = SubCommand::with_name("list").about(
+                "Lists the Network Connectivity Center hubs associated with a given project.",
+            );
             hubs3 = hubs3.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("patch").about("Updates the parameters of a single Hub.");
+            let mcmd = SubCommand::with_name("patch").about(
+                "Updates the description and/or labels of a Network Connectivity Center hub.",
+            );
             hubs3 = hubs3.subcommand(mcmd);
         }
         {
@@ -193,8 +194,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         global2 = global2.subcommand(hubs3);
         locations1 = locations1.subcommand(spokes2);
-        locations1 = locations1.subcommand(service_instances2);
-        locations1 = locations1.subcommand(service_connect_policies2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(internal_ranges2);
         locations1 = locations1.subcommand(global2);

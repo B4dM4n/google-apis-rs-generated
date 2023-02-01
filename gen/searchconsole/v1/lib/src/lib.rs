@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [searchanalytics](resources/searchanalytics/struct.SearchanalyticsActions.html)\n  * [*query*](resources/searchanalytics/struct.QueryRequestBuilder.html)\n* [sitemaps](resources/sitemaps/struct.SitemapsActions.html)\n  * [*delete*](resources/sitemaps/struct.DeleteRequestBuilder.html), [*get*](resources/sitemaps/struct.GetRequestBuilder.html), [*list*](resources/sitemaps/struct.ListRequestBuilder.html), [*submit*](resources/sitemaps/struct.SubmitRequestBuilder.html)\n* [sites](resources/sites/struct.SitesActions.html)\n  * [*add*](resources/sites/struct.AddRequestBuilder.html), [*delete*](resources/sites/struct.DeleteRequestBuilder.html), [*get*](resources/sites/struct.GetRequestBuilder.html), [*list*](resources/sites/struct.ListRequestBuilder.html)\n* [url_inspection](resources/url_inspection/struct.UrlInspectionActions.html)\n  * [index](resources/url_inspection/index/struct.IndexActions.html)\n    * [*inspect*](resources/url_inspection/index/struct.InspectRequestBuilder.html)\n* [url_testing_tools](resources/url_testing_tools/struct.UrlTestingToolsActions.html)\n  * [mobile_friendly_test](resources/url_testing_tools/mobile_friendly_test/struct.MobileFriendlyTestActions.html)\n    * [*run*](resources/url_testing_tools/mobile_friendly_test/struct.RunRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage Search Console data for your verified sites\n\n`https://www.googleapis.com/auth/webmasters`"]
@@ -95,7 +96,7 @@ pub mod schemas {
         Fail,
         #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
+        #[doc = "Reserved, no longer in use."]
         Partial,
         #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
@@ -491,7 +492,7 @@ pub mod schemas {
         Fail,
         #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
+        #[doc = "Reserved, no longer in use."]
         Partial,
         #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
@@ -1663,7 +1664,7 @@ pub mod schemas {
         Fail,
         #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
+        #[doc = "Reserved, no longer in use."]
         Partial,
         #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
@@ -2034,7 +2035,7 @@ pub mod schemas {
         Fail,
         #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
+        #[doc = "Reserved, no longer in use."]
         Partial,
         #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
@@ -2418,7 +2419,7 @@ pub mod schemas {
         Fail,
         #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
+        #[doc = "Reserved, no longer in use."]
         Partial,
         #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
@@ -6482,15 +6483,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

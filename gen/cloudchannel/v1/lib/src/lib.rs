@@ -1,7 +1,11 @@
-#![doc = "# Resources and Methods\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [*checkCloudIdentityAccountsExist*](resources/accounts/struct.CheckCloudIdentityAccountsExistRequestBuilder.html), [*listSubscribers*](resources/accounts/struct.ListSubscribersRequestBuilder.html), [*listTransferableOffers*](resources/accounts/struct.ListTransferableOffersRequestBuilder.html), [*listTransferableSkus*](resources/accounts/struct.ListTransferableSkusRequestBuilder.html), [*register*](resources/accounts/struct.RegisterRequestBuilder.html), [*unregister*](resources/accounts/struct.UnregisterRequestBuilder.html)\n  * [channel_partner_links](resources/accounts/channel_partner_links/struct.ChannelPartnerLinksActions.html)\n    * [*create*](resources/accounts/channel_partner_links/struct.CreateRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/struct.GetRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/struct.PatchRequestBuilder.html)\n    * [channel_partner_repricing_configs](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.ChannelPartnerRepricingConfigsActions.html)\n      * [*create*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.GetRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.PatchRequestBuilder.html)\n    * [customers](resources/accounts/channel_partner_links/customers/struct.CustomersActions.html)\n      * [*create*](resources/accounts/channel_partner_links/customers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/channel_partner_links/customers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/customers/struct.GetRequestBuilder.html), [*import*](resources/accounts/channel_partner_links/customers/struct.ImportRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/customers/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/customers/struct.PatchRequestBuilder.html)\n  * [customers](resources/accounts/customers/struct.CustomersActions.html)\n    * [*create*](resources/accounts/customers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/customers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/customers/struct.GetRequestBuilder.html), [*import*](resources/accounts/customers/struct.ImportRequestBuilder.html), [*list*](resources/accounts/customers/struct.ListRequestBuilder.html), [*listPurchasableOffers*](resources/accounts/customers/struct.ListPurchasableOffersRequestBuilder.html), [*listPurchasableSkus*](resources/accounts/customers/struct.ListPurchasableSkusRequestBuilder.html), [*patch*](resources/accounts/customers/struct.PatchRequestBuilder.html), [*provisionCloudIdentity*](resources/accounts/customers/struct.ProvisionCloudIdentityRequestBuilder.html), [*transferEntitlements*](resources/accounts/customers/struct.TransferEntitlementsRequestBuilder.html), [*transferEntitlementsToGoogle*](resources/accounts/customers/struct.TransferEntitlementsToGoogleRequestBuilder.html)\n    * [customer_repricing_configs](resources/accounts/customers/customer_repricing_configs/struct.CustomerRepricingConfigsActions.html)\n      * [*create*](resources/accounts/customers/customer_repricing_configs/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/customers/customer_repricing_configs/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/customers/customer_repricing_configs/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/customer_repricing_configs/struct.ListRequestBuilder.html), [*patch*](resources/accounts/customers/customer_repricing_configs/struct.PatchRequestBuilder.html)\n    * [entitlements](resources/accounts/customers/entitlements/struct.EntitlementsActions.html)\n      * [*activate*](resources/accounts/customers/entitlements/struct.ActivateRequestBuilder.html), [*cancel*](resources/accounts/customers/entitlements/struct.CancelRequestBuilder.html), [*changeOffer*](resources/accounts/customers/entitlements/struct.ChangeOfferRequestBuilder.html), [*changeParameters*](resources/accounts/customers/entitlements/struct.ChangeParametersRequestBuilder.html), [*changeRenewalSettings*](resources/accounts/customers/entitlements/struct.ChangeRenewalSettingsRequestBuilder.html), [*create*](resources/accounts/customers/entitlements/struct.CreateRequestBuilder.html), [*get*](resources/accounts/customers/entitlements/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/entitlements/struct.ListRequestBuilder.html), [*lookupOffer*](resources/accounts/customers/entitlements/struct.LookupOfferRequestBuilder.html), [*startPaidService*](resources/accounts/customers/entitlements/struct.StartPaidServiceRequestBuilder.html), [*suspend*](resources/accounts/customers/entitlements/struct.SuspendRequestBuilder.html)\n  * [offers](resources/accounts/offers/struct.OffersActions.html)\n    * [*list*](resources/accounts/offers/struct.ListRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n* [products](resources/products/struct.ProductsActions.html)\n  * [*list*](resources/products/struct.ListRequestBuilder.html)\n  * [skus](resources/products/skus/struct.SkusActions.html)\n    * [*list*](resources/products/skus/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [*checkCloudIdentityAccountsExist*](resources/accounts/struct.CheckCloudIdentityAccountsExistRequestBuilder.html), [*listSubscribers*](resources/accounts/struct.ListSubscribersRequestBuilder.html), [*listTransferableOffers*](resources/accounts/struct.ListTransferableOffersRequestBuilder.html), [*listTransferableSkus*](resources/accounts/struct.ListTransferableSkusRequestBuilder.html), [*register*](resources/accounts/struct.RegisterRequestBuilder.html), [*unregister*](resources/accounts/struct.UnregisterRequestBuilder.html)\n  * [channel_partner_links](resources/accounts/channel_partner_links/struct.ChannelPartnerLinksActions.html)\n    * [*create*](resources/accounts/channel_partner_links/struct.CreateRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/struct.GetRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/struct.PatchRequestBuilder.html)\n    * [channel_partner_repricing_configs](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.ChannelPartnerRepricingConfigsActions.html)\n      * [*create*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.GetRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/channel_partner_repricing_configs/struct.PatchRequestBuilder.html)\n    * [customers](resources/accounts/channel_partner_links/customers/struct.CustomersActions.html)\n      * [*create*](resources/accounts/channel_partner_links/customers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/channel_partner_links/customers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/channel_partner_links/customers/struct.GetRequestBuilder.html), [*import*](resources/accounts/channel_partner_links/customers/struct.ImportRequestBuilder.html), [*list*](resources/accounts/channel_partner_links/customers/struct.ListRequestBuilder.html), [*patch*](resources/accounts/channel_partner_links/customers/struct.PatchRequestBuilder.html)\n  * [customers](resources/accounts/customers/struct.CustomersActions.html)\n    * [*create*](resources/accounts/customers/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/customers/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/customers/struct.GetRequestBuilder.html), [*import*](resources/accounts/customers/struct.ImportRequestBuilder.html), [*list*](resources/accounts/customers/struct.ListRequestBuilder.html), [*listPurchasableOffers*](resources/accounts/customers/struct.ListPurchasableOffersRequestBuilder.html), [*listPurchasableSkus*](resources/accounts/customers/struct.ListPurchasableSkusRequestBuilder.html), [*patch*](resources/accounts/customers/struct.PatchRequestBuilder.html), [*provisionCloudIdentity*](resources/accounts/customers/struct.ProvisionCloudIdentityRequestBuilder.html), [*transferEntitlements*](resources/accounts/customers/struct.TransferEntitlementsRequestBuilder.html), [*transferEntitlementsToGoogle*](resources/accounts/customers/struct.TransferEntitlementsToGoogleRequestBuilder.html)\n    * [customer_repricing_configs](resources/accounts/customers/customer_repricing_configs/struct.CustomerRepricingConfigsActions.html)\n      * [*create*](resources/accounts/customers/customer_repricing_configs/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/customers/customer_repricing_configs/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/customers/customer_repricing_configs/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/customer_repricing_configs/struct.ListRequestBuilder.html), [*patch*](resources/accounts/customers/customer_repricing_configs/struct.PatchRequestBuilder.html)\n    * [entitlements](resources/accounts/customers/entitlements/struct.EntitlementsActions.html)\n      * [*activate*](resources/accounts/customers/entitlements/struct.ActivateRequestBuilder.html), [*cancel*](resources/accounts/customers/entitlements/struct.CancelRequestBuilder.html), [*changeOffer*](resources/accounts/customers/entitlements/struct.ChangeOfferRequestBuilder.html), [*changeParameters*](resources/accounts/customers/entitlements/struct.ChangeParametersRequestBuilder.html), [*changeRenewalSettings*](resources/accounts/customers/entitlements/struct.ChangeRenewalSettingsRequestBuilder.html), [*create*](resources/accounts/customers/entitlements/struct.CreateRequestBuilder.html), [*get*](resources/accounts/customers/entitlements/struct.GetRequestBuilder.html), [*list*](resources/accounts/customers/entitlements/struct.ListRequestBuilder.html), [*lookupOffer*](resources/accounts/customers/entitlements/struct.LookupOfferRequestBuilder.html), [*startPaidService*](resources/accounts/customers/entitlements/struct.StartPaidServiceRequestBuilder.html), [*suspend*](resources/accounts/customers/entitlements/struct.SuspendRequestBuilder.html)\n  * [offers](resources/accounts/offers/struct.OffersActions.html)\n    * [*list*](resources/accounts/offers/struct.ListRequestBuilder.html)\n  * [report_jobs](resources/accounts/report_jobs/struct.ReportJobsActions.html)\n    * [*fetchReportResults*](resources/accounts/report_jobs/struct.FetchReportResultsRequestBuilder.html)\n  * [reports](resources/accounts/reports/struct.ReportsActions.html)\n    * [*list*](resources/accounts/reports/struct.ListRequestBuilder.html), [*run*](resources/accounts/reports/struct.RunRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*cancel*](resources/operations/struct.CancelRequestBuilder.html), [*delete*](resources/operations/struct.DeleteRequestBuilder.html), [*get*](resources/operations/struct.GetRequestBuilder.html), [*list*](resources/operations/struct.ListRequestBuilder.html)\n* [products](resources/products/struct.ProductsActions.html)\n  * [*list*](resources/products/struct.ListRequestBuilder.html)\n  * [skus](resources/products/skus/struct.SkusActions.html)\n    * [*list*](resources/products/skus/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage users on your domain\n\n`https://www.googleapis.com/auth/apps.order`"]
     pub const APPS_ORDER: &str = "https://www.googleapis.com/auth/apps.order";
+    #[doc = "View usage reports for your G Suite domain\n\n`https://www.googleapis.com/auth/apps.reports.usage.readonly`"]
+    pub const APPS_REPORTS_USAGE_READONLY: &str =
+        "https://www.googleapis.com/auth/apps.reports.usage.readonly";
 }
 pub mod schemas {
     #[derive(
@@ -107,6 +111,260 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1AssociationInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1Alpha1ChannelPartnerEvent {
+        #[doc = "Resource name for the Channel Partner Link. Channel_partner uses the format: accounts/{account_id}/channelPartnerLinks/{channel_partner_id}"]
+        #[serde(
+            rename = "channelPartner",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel_partner: ::std::option::Option<String>,
+        #[doc = "Type of event performed on the Channel Partner."]
+        #[serde(
+            rename = "eventType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_type: ::std::option::Option<
+            crate::schemas::GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1ChannelPartnerEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1ChannelPartnerEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType {
+        #[doc = "The Channel Partner link state changed."]
+        LinkStateChanged,
+        #[doc = "The Channel Partner’s Partner Advantage information changed. This can entail the Channel Partner’s authorization to sell a product in a particular region."]
+        PartnerAdvantageInfoChanged,
+        #[doc = "Default value. Does not display if there are no errors."]
+        TypeUnspecified,
+    }
+    impl GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: LinkStateChanged => "LINK_STATE_CHANGED" , GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: PartnerAdvantageInfoChanged => "PARTNER_ADVANTAGE_INFO_CHANGED" , GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: TypeUnspecified => "TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType, ()>
+        {
+            Ok (match s { "LINK_STATE_CHANGED" => GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: LinkStateChanged , "PARTNER_ADVANTAGE_INFO_CHANGED" => GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: PartnerAdvantageInfoChanged , "TYPE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: TypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "LINK_STATE_CHANGED" => GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: LinkStateChanged , "PARTNER_ADVANTAGE_INFO_CHANGED" => GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: PartnerAdvantageInfoChanged , "TYPE_UNSPECIFIED" => GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType :: TypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudChannelV1Alpha1ChannelPartnerEventEventType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1Alpha1Column {
+        #[doc = "The unique name of the column (for example, customer_domain, channel_partner, customer_cost). You can use column IDs in RunReportJobRequest.filter. To see all reports and their columns, call CloudChannelReportsService.ListReports."]
+        #[serde(
+            rename = "columnId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub column_id: ::std::option::Option<String>,
+        #[doc = "The type of the values for this column."]
+        #[serde(
+            rename = "dataType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_type:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1ColumnDataType>,
+        #[doc = "The column’s display name."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1Column {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1Column {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudChannelV1Alpha1ColumnDataType {
+        #[doc = "Not used."]
+        DataTypeUnspecified,
+        #[doc = "ReportValues for this column will use date_value."]
+        Date,
+        #[doc = "ReportValues for this column will use date_time_value."]
+        DateTime,
+        #[doc = "ReportValues for this column will use decimal_value."]
+        Decimal,
+        #[doc = "ReportValues for this column will use int_value."]
+        Int,
+        #[doc = "ReportValues for this column will use money_value."]
+        Money,
+        #[doc = "ReportValues for this column will use string_value."]
+        String,
+    }
+    impl GoogleCloudChannelV1Alpha1ColumnDataType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudChannelV1Alpha1ColumnDataType::DataTypeUnspecified => {
+                    "DATA_TYPE_UNSPECIFIED"
+                }
+                GoogleCloudChannelV1Alpha1ColumnDataType::Date => "DATE",
+                GoogleCloudChannelV1Alpha1ColumnDataType::DateTime => "DATE_TIME",
+                GoogleCloudChannelV1Alpha1ColumnDataType::Decimal => "DECIMAL",
+                GoogleCloudChannelV1Alpha1ColumnDataType::Int => "INT",
+                GoogleCloudChannelV1Alpha1ColumnDataType::Money => "MONEY",
+                GoogleCloudChannelV1Alpha1ColumnDataType::String => "STRING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudChannelV1Alpha1ColumnDataType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudChannelV1Alpha1ColumnDataType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudChannelV1Alpha1ColumnDataType, ()> {
+            Ok(match s {
+                "DATA_TYPE_UNSPECIFIED" => {
+                    GoogleCloudChannelV1Alpha1ColumnDataType::DataTypeUnspecified
+                }
+                "DATE" => GoogleCloudChannelV1Alpha1ColumnDataType::Date,
+                "DATE_TIME" => GoogleCloudChannelV1Alpha1ColumnDataType::DateTime,
+                "DECIMAL" => GoogleCloudChannelV1Alpha1ColumnDataType::Decimal,
+                "INT" => GoogleCloudChannelV1Alpha1ColumnDataType::Int,
+                "MONEY" => GoogleCloudChannelV1Alpha1ColumnDataType::Money,
+                "STRING" => GoogleCloudChannelV1Alpha1ColumnDataType::String,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudChannelV1Alpha1ColumnDataType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudChannelV1Alpha1ColumnDataType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudChannelV1Alpha1ColumnDataType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DATA_TYPE_UNSPECIFIED" => {
+                    GoogleCloudChannelV1Alpha1ColumnDataType::DataTypeUnspecified
+                }
+                "DATE" => GoogleCloudChannelV1Alpha1ColumnDataType::Date,
+                "DATE_TIME" => GoogleCloudChannelV1Alpha1ColumnDataType::DateTime,
+                "DECIMAL" => GoogleCloudChannelV1Alpha1ColumnDataType::Decimal,
+                "INT" => GoogleCloudChannelV1Alpha1ColumnDataType::Int,
+                "MONEY" => GoogleCloudChannelV1Alpha1ColumnDataType::Money,
+                "STRING" => GoogleCloudChannelV1Alpha1ColumnDataType::String,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1ColumnDataType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1ColumnDataType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -292,6 +550,58 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1Alpha1DateRange {
+        #[doc = "The latest invoice date (exclusive). If your product uses monthly invoices, and this value is not the beginning of a month, this will adjust the date to the first day of the following month."]
+        #[serde(
+            rename = "invoiceEndDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invoice_end_date: ::std::option::Option<crate::schemas::GoogleTypeDate>,
+        #[doc = "The earliest invoice date (inclusive). If your product uses monthly invoices, and this value is not the beginning of a month, this will adjust the date to the first day of the given month."]
+        #[serde(
+            rename = "invoiceStartDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invoice_start_date: ::std::option::Option<crate::schemas::GoogleTypeDate>,
+        #[doc = "The latest usage date time (exclusive). If you use time groupings (daily, weekly, etc), each group uses midnight to midnight (Pacific time). The usage end date is rounded down to include all usage from the specified date. We recommend that clients pass `usage_start_date_time` in Pacific time."]
+        #[serde(
+            rename = "usageEndDateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_end_date_time: ::std::option::Option<crate::schemas::GoogleTypeDateTime>,
+        #[doc = "The earliest usage date time (inclusive). If you use time groupings (daily, weekly, etc), each group uses midnight to midnight (Pacific time). The usage start date is rounded down to include all usage from the specified date. We recommend that clients pass `usage_start_date_time` in Pacific time."]
+        #[serde(
+            rename = "usageStartDateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_start_date_time: ::std::option::Option<crate::schemas::GoogleTypeDateTime>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1DateRange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1DateRange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudChannelV1Alpha1Entitlement {
         #[doc = "The current number of users that are assigned a license for the product defined in provisioned_service.skuId. Read-only. Deprecated: Use `parameters` instead."]
@@ -359,7 +669,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offer: ::std::option::Option<String>,
-        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. The response may include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. - max_units: The maximum assignable units for a flexible offer. - num_units: The total commitment for commitment-based offers."]
+        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. For Google Workspace, the following Parameters may be accepted as input: - max_units: The maximum assignable units for a flexible offer OR - num_units: The total commitment for commitment-based offers The response may additionally include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. For GCP billing accounts, the following Parameter may be accepted as input: - display_name: The display name of the billing account."]
         #[serde(
             rename = "parameters",
             default,
@@ -1376,7 +1686,339 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1Alpha1Report {
+        #[doc = "The list of columns included in the report. This defines the schema of the report results."]
+        #[serde(
+            rename = "columns",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub columns: ::std::option::Option<Vec<crate::schemas::GoogleCloudChannelV1Alpha1Column>>,
+        #[doc = "A description of other aspects of the report, such as the products it supports."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "A human-readable name for this report."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Required. The report’s resource name. Specifies the account and report used to generate report data. The report_id identifier is a UID (for example, `613bf59q`). Name uses the format: accounts/{account_id}/reports/{report_id}"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1Report {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1Report {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1Alpha1ReportJob {
+        #[doc = "Required. The resource name of a report job. Name uses the format: `accounts/{account_id}/reportJobs/{report_job_id}`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The current status of report generation."]
+        #[serde(
+            rename = "reportStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_status:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1ReportStatus>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1ReportJob {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1ReportJob {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1Alpha1ReportResultsMetadata {
+        #[doc = "The date range of reported usage."]
+        #[serde(
+            rename = "dateRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_range: ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1DateRange>,
+        #[doc = "The usage dates immediately preceding `date_range` with the same duration. Use this to calculate trending usage and costs. This is only populated if you request trending data. For example, if `date_range` is July 1-15, `preceding_date_range` will be June 16-30."]
+        #[serde(
+            rename = "precedingDateRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preceding_date_range:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1DateRange>,
+        #[doc = "Details of the completed report."]
+        #[serde(
+            rename = "report",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report: ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1Report>,
+        #[doc = "The total number of rows of data in the final report."]
+        #[serde(
+            rename = "rowCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub row_count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1ReportResultsMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1ReportResultsMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1Alpha1ReportStatus {
+        #[doc = "The report generation’s completion time."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "The report generation’s start time."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+        #[doc = "The current state of the report generation process."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1ReportStatusState>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1ReportStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1ReportStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudChannelV1Alpha1ReportStatusState {
+        #[doc = "Report data is available for access."]
+        Available,
+        #[doc = "Report failed."]
+        Failed,
+        #[doc = "Report processing started."]
+        Started,
+        #[doc = "Not used."]
+        StateUnspecified,
+        #[doc = "Data generated from the report is being staged."]
+        Writing,
+    }
+    impl GoogleCloudChannelV1Alpha1ReportStatusState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudChannelV1Alpha1ReportStatusState::Available => "AVAILABLE",
+                GoogleCloudChannelV1Alpha1ReportStatusState::Failed => "FAILED",
+                GoogleCloudChannelV1Alpha1ReportStatusState::Started => "STARTED",
+                GoogleCloudChannelV1Alpha1ReportStatusState::StateUnspecified => {
+                    "STATE_UNSPECIFIED"
+                }
+                GoogleCloudChannelV1Alpha1ReportStatusState::Writing => "WRITING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudChannelV1Alpha1ReportStatusState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudChannelV1Alpha1ReportStatusState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudChannelV1Alpha1ReportStatusState, ()> {
+            Ok(match s {
+                "AVAILABLE" => GoogleCloudChannelV1Alpha1ReportStatusState::Available,
+                "FAILED" => GoogleCloudChannelV1Alpha1ReportStatusState::Failed,
+                "STARTED" => GoogleCloudChannelV1Alpha1ReportStatusState::Started,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudChannelV1Alpha1ReportStatusState::StateUnspecified
+                }
+                "WRITING" => GoogleCloudChannelV1Alpha1ReportStatusState::Writing,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudChannelV1Alpha1ReportStatusState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudChannelV1Alpha1ReportStatusState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudChannelV1Alpha1ReportStatusState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AVAILABLE" => GoogleCloudChannelV1Alpha1ReportStatusState::Available,
+                "FAILED" => GoogleCloudChannelV1Alpha1ReportStatusState::Failed,
+                "STARTED" => GoogleCloudChannelV1Alpha1ReportStatusState::Started,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudChannelV1Alpha1ReportStatusState::StateUnspecified
+                }
+                "WRITING" => GoogleCloudChannelV1Alpha1ReportStatusState::Writing,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1ReportStatusState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1ReportStatusState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1Alpha1RunReportJobResponse {
+        #[doc = "Pass `report_job.name` to FetchReportResultsRequest.report_job to retrieve the report’s results."]
+        #[serde(
+            rename = "reportJob",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_job: ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1ReportJob>,
+        #[doc = "The metadata for the report’s results (display name, columns, row count, and date range). If you view this before the operation finishes, you may see incomplete data."]
+        #[serde(
+            rename = "reportMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_metadata:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1ReportResultsMetadata>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Alpha1RunReportJobResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Alpha1RunReportJobResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1Alpha1SubscriberEvent {
+        #[doc = "Channel Partner event sent as part of Pub/Sub event to partners."]
+        #[serde(
+            rename = "channelPartnerEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel_partner_event:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1Alpha1ChannelPartnerEvent>,
         #[doc = "Customer event sent as part of Pub/Sub event to partners."]
         #[serde(
             rename = "customerEvent",
@@ -2186,6 +2828,147 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1Column {
+        #[doc = "The unique name of the column (for example, customer_domain, channel_partner, customer_cost). You can use column IDs in RunReportJobRequest.filter. To see all reports and their columns, call CloudChannelReportsService.ListReports."]
+        #[serde(
+            rename = "columnId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub column_id: ::std::option::Option<String>,
+        #[doc = "The type of the values for this column."]
+        #[serde(
+            rename = "dataType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_type: ::std::option::Option<crate::schemas::GoogleCloudChannelV1ColumnDataType>,
+        #[doc = "The column’s display name."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Column {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Column {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudChannelV1ColumnDataType {
+        #[doc = "Not used."]
+        DataTypeUnspecified,
+        #[doc = "ReportValues for this column will use date_value."]
+        Date,
+        #[doc = "ReportValues for this column will use date_time_value."]
+        DateTime,
+        #[doc = "ReportValues for this column will use decimal_value."]
+        Decimal,
+        #[doc = "ReportValues for this column will use int_value."]
+        Int,
+        #[doc = "ReportValues for this column will use money_value."]
+        Money,
+        #[doc = "ReportValues for this column will use string_value."]
+        String,
+    }
+    impl GoogleCloudChannelV1ColumnDataType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudChannelV1ColumnDataType::DataTypeUnspecified => "DATA_TYPE_UNSPECIFIED",
+                GoogleCloudChannelV1ColumnDataType::Date => "DATE",
+                GoogleCloudChannelV1ColumnDataType::DateTime => "DATE_TIME",
+                GoogleCloudChannelV1ColumnDataType::Decimal => "DECIMAL",
+                GoogleCloudChannelV1ColumnDataType::Int => "INT",
+                GoogleCloudChannelV1ColumnDataType::Money => "MONEY",
+                GoogleCloudChannelV1ColumnDataType::String => "STRING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudChannelV1ColumnDataType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudChannelV1ColumnDataType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudChannelV1ColumnDataType, ()> {
+            Ok(match s {
+                "DATA_TYPE_UNSPECIFIED" => GoogleCloudChannelV1ColumnDataType::DataTypeUnspecified,
+                "DATE" => GoogleCloudChannelV1ColumnDataType::Date,
+                "DATE_TIME" => GoogleCloudChannelV1ColumnDataType::DateTime,
+                "DECIMAL" => GoogleCloudChannelV1ColumnDataType::Decimal,
+                "INT" => GoogleCloudChannelV1ColumnDataType::Int,
+                "MONEY" => GoogleCloudChannelV1ColumnDataType::Money,
+                "STRING" => GoogleCloudChannelV1ColumnDataType::String,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudChannelV1ColumnDataType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudChannelV1ColumnDataType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudChannelV1ColumnDataType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DATA_TYPE_UNSPECIFIED" => GoogleCloudChannelV1ColumnDataType::DataTypeUnspecified,
+                "DATE" => GoogleCloudChannelV1ColumnDataType::Date,
+                "DATE_TIME" => GoogleCloudChannelV1ColumnDataType::DateTime,
+                "DECIMAL" => GoogleCloudChannelV1ColumnDataType::Decimal,
+                "INT" => GoogleCloudChannelV1ColumnDataType::Int,
+                "MONEY" => GoogleCloudChannelV1ColumnDataType::Money,
+                "STRING" => GoogleCloudChannelV1ColumnDataType::String,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ColumnDataType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ColumnDataType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1CommitmentSettings {
         #[doc = "Output only. Commitment end timestamp."]
         #[serde(
@@ -2216,6 +2999,142 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1CommitmentSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ConditionalOverride {
+        #[doc = "Required. Information about the applied override’s adjustment."]
+        #[serde(
+            rename = "adjustment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub adjustment:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1RepricingAdjustment>,
+        #[doc = "Required. The RebillingBasis to use for the applied override. Shows the relative cost based on your repricing costs."]
+        #[serde(
+            rename = "rebillingBasis",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rebilling_basis: ::std::option::Option<
+            crate::schemas::GoogleCloudChannelV1ConditionalOverrideRebillingBasis,
+        >,
+        #[doc = "Required. Specifies the condition which, if met, will apply the override."]
+        #[serde(
+            rename = "repricingCondition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub repricing_condition:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1RepricingCondition>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ConditionalOverride {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ConditionalOverride {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudChannelV1ConditionalOverrideRebillingBasis {
+        #[doc = "Use the list cost, also known as the MSRP."]
+        CostAtList,
+        #[doc = "Pass through all discounts except the Reseller Program Discount. If this is the default cost base and no adjustments are specified, the output cost will be exactly what the customer would see if they viewed the bill in the Google Cloud Console."]
+        DirectCustomerCost,
+        #[doc = "Not used."]
+        RebillingBasisUnspecified,
+    }
+    impl GoogleCloudChannelV1ConditionalOverrideRebillingBasis {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudChannelV1ConditionalOverrideRebillingBasis :: CostAtList => "COST_AT_LIST" , GoogleCloudChannelV1ConditionalOverrideRebillingBasis :: DirectCustomerCost => "DIRECT_CUSTOMER_COST" , GoogleCloudChannelV1ConditionalOverrideRebillingBasis :: RebillingBasisUnspecified => "REBILLING_BASIS_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudChannelV1ConditionalOverrideRebillingBasis {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudChannelV1ConditionalOverrideRebillingBasis {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudChannelV1ConditionalOverrideRebillingBasis, ()>
+        {
+            Ok(match s {
+                "COST_AT_LIST" => GoogleCloudChannelV1ConditionalOverrideRebillingBasis::CostAtList,
+                "DIRECT_CUSTOMER_COST" => {
+                    GoogleCloudChannelV1ConditionalOverrideRebillingBasis::DirectCustomerCost
+                }
+                "REBILLING_BASIS_UNSPECIFIED" => {
+                    GoogleCloudChannelV1ConditionalOverrideRebillingBasis::RebillingBasisUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudChannelV1ConditionalOverrideRebillingBasis {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudChannelV1ConditionalOverrideRebillingBasis {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudChannelV1ConditionalOverrideRebillingBasis {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COST_AT_LIST" => GoogleCloudChannelV1ConditionalOverrideRebillingBasis::CostAtList,
+                "DIRECT_CUSTOMER_COST" => {
+                    GoogleCloudChannelV1ConditionalOverrideRebillingBasis::DirectCustomerCost
+                }
+                "REBILLING_BASIS_UNSPECIFIED" => {
+                    GoogleCloudChannelV1ConditionalOverrideRebillingBasis::RebillingBasisUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudChannelV1ConditionalOverrideRebillingBasis
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudChannelV1ConditionalOverrideRebillingBasis
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2833,6 +3752,58 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1DateRange {
+        #[doc = "The latest invoice date (exclusive). If your product uses monthly invoices, and this value is not the beginning of a month, this will adjust the date to the first day of the following month."]
+        #[serde(
+            rename = "invoiceEndDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invoice_end_date: ::std::option::Option<crate::schemas::GoogleTypeDate>,
+        #[doc = "The earliest invoice date (inclusive). If your product uses monthly invoices, and this value is not the beginning of a month, this will adjust the date to the first day of the given month."]
+        #[serde(
+            rename = "invoiceStartDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invoice_start_date: ::std::option::Option<crate::schemas::GoogleTypeDate>,
+        #[doc = "The latest usage date time (exclusive). If you use time groupings (daily, weekly, etc), each group uses midnight to midnight (Pacific time). The usage end date is rounded down to include all usage from the specified date. We recommend that clients pass `usage_start_date_time` in Pacific time."]
+        #[serde(
+            rename = "usageEndDateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_end_date_time: ::std::option::Option<crate::schemas::GoogleTypeDateTime>,
+        #[doc = "The earliest usage date time (inclusive). If you use time groupings (daily, weekly, etc), each group uses midnight to midnight (Pacific time). The usage start date is rounded down to include all usage from the specified date. We recommend that clients pass `usage_start_date_time` in Pacific time."]
+        #[serde(
+            rename = "usageStartDateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_start_date_time: ::std::option::Option<crate::schemas::GoogleTypeDateTime>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1DateRange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1DateRange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1EduData {
         #[doc = "Size of the institute."]
         #[serde(
@@ -3100,7 +4071,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offer: ::std::option::Option<String>,
-        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. The response may include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. - max_units: The maximum assignable units for a flexible offer. - num_units: The total commitment for commitment-based offers."]
+        #[doc = "Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. For Google Workspace, the following Parameters may be accepted as input: - max_units: The maximum assignable units for a flexible offer OR - num_units: The total commitment for commitment-based offers The response may additionally include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. For GCP billing accounts, the following Parameter may be accepted as input: - display_name: The display name of the billing account."]
         #[serde(
             rename = "parameters",
             default,
@@ -3540,6 +4511,95 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1FetchReportResultsRequest {
+        #[doc = "Optional. Requested page size of the report. The server may return fewer results than requested. If you don’t specify a page size, the server uses a sensible default (may change over time). The maximum value is 30,000; the server will change larger values to 30,000."]
+        #[serde(
+            rename = "pageSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_size: ::std::option::Option<i32>,
+        #[doc = "Optional. A token that specifies a page of results beyond the first page. Obtained through FetchReportResultsResponse.next_page_token of the previous CloudChannelReportsService.FetchReportResults call."]
+        #[serde(
+            rename = "pageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1FetchReportResultsRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1FetchReportResultsRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1FetchReportResultsResponse {
+        #[doc = "Pass this token to FetchReportResultsRequest.page_token to retrieve the next page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The metadata for the report results (display name, columns, row count, and date ranges)."]
+        #[serde(
+            rename = "reportMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_metadata:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1ReportResultsMetadata>,
+        #[doc = "The report’s lists of values. Each row follows the settings and ordering of the columns from `report_metadata`."]
+        #[serde(
+            rename = "rows",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rows: ::std::option::Option<Vec<crate::schemas::GoogleCloudChannelV1Row>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1FetchReportResultsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1FetchReportResultsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1FetchReportResultsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1ImportCustomerRequest {
         #[doc = "Optional. The super admin of the resold customer generates this token to authorize a reseller to access their Cloud Identity and purchase entitlements on their behalf. You can omit this token after authorization. See https://support.google.com/a/answer/7643790 for more details."]
         #[serde(
@@ -3635,7 +4695,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListChannelPartnerLinksResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListChannelPartnerLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3684,7 +4744,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3732,7 +4794,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListCustomerRepricingConfigsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListCustomerRepricingConfigsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3775,7 +4837,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListCustomersResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListCustomersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3808,7 +4870,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListEntitlementsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListEntitlementsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3840,7 +4902,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListOffersResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListOffersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3883,7 +4945,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListProductsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListProductsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3916,7 +4978,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListPurchasableOffersResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListPurchasableOffersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3960,7 +5022,50 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListPurchasableSkusResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListPurchasableSkusResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ListReportsResponse {
+        #[doc = "Pass this token to FetchReportResultsRequest.page_token to retrieve the next page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The reports available to the partner."]
+        #[serde(
+            rename = "reports",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reports: ::std::option::Option<Vec<crate::schemas::GoogleCloudChannelV1Report>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ListReportsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ListReportsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListReportsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4003,7 +5108,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListSkusResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListSkusResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4053,7 +5158,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListSubscribersResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListSubscribersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4085,7 +5190,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub customer_name: ::std::option::Option<String>,
-        #[doc = "The BCP-47 language code. For example, “en-US”. The response will localize in the corresponding language code, if specified. The default value is “en-US”."]
+        #[doc = "Optional. The BCP-47 language code. For example, “en-US”. The response will localize in the corresponding language code, if specified. The default value is “en-US”."]
         #[serde(
             rename = "languageCode",
             default,
@@ -4152,7 +5257,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListTransferableOffersResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListTransferableOffersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4170,7 +5275,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudChannelV1ListTransferableSkusRequest {
-        #[doc = "The super admin of the resold customer generates this token to authorize a reseller to access their Cloud Identity and purchase entitlements on their behalf. You can omit this token after authorization. See https://support.google.com/a/answer/7643790 for more details."]
+        #[doc = "Optional. The super admin of the resold customer generates this token to authorize a reseller to access their Cloud Identity and purchase entitlements on their behalf. You can omit this token after authorization. See https://support.google.com/a/answer/7643790 for more details."]
         #[serde(
             rename = "authToken",
             default,
@@ -4262,7 +5367,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudChannelV1ListTransferableSkusResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudChannelV1ListTransferableSkusResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4437,6 +5542,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub constraints: ::std::option::Option<crate::schemas::GoogleCloudChannelV1Constraints>,
+        #[doc = "The deal code of the offer to get a special promotion or discount."]
+        #[serde(
+            rename = "dealCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deal_code: ::std::option::Option<String>,
         #[doc = "Output only. End of the Offer validity time."]
         #[serde(
             rename = "endTime",
@@ -6047,6 +7159,348 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1Report {
+        #[doc = "The list of columns included in the report. This defines the schema of the report results."]
+        #[serde(
+            rename = "columns",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub columns: ::std::option::Option<Vec<crate::schemas::GoogleCloudChannelV1Column>>,
+        #[doc = "A description of other aspects of the report, such as the products it supports."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "A human-readable name for this report."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Required. The report’s resource name. Specifies the account and report used to generate report data. The report_id identifier is a UID (for example, `613bf59q`). Name uses the format: accounts/{account_id}/reports/{report_id}"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Report {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Report {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ReportJob {
+        #[doc = "Required. The resource name of a report job. Name uses the format: `accounts/{account_id}/reportJobs/{report_job_id}`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The current status of report generation."]
+        #[serde(
+            rename = "reportStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_status: ::std::option::Option<crate::schemas::GoogleCloudChannelV1ReportStatus>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ReportJob {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ReportJob {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ReportResultsMetadata {
+        #[doc = "The date range of reported usage."]
+        #[serde(
+            rename = "dateRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_range: ::std::option::Option<crate::schemas::GoogleCloudChannelV1DateRange>,
+        #[doc = "The usage dates immediately preceding `date_range` with the same duration. Use this to calculate trending usage and costs. This is only populated if you request trending data. For example, if `date_range` is July 1-15, `preceding_date_range` will be June 16-30."]
+        #[serde(
+            rename = "precedingDateRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preceding_date_range:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1DateRange>,
+        #[doc = "Details of the completed report."]
+        #[serde(
+            rename = "report",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report: ::std::option::Option<crate::schemas::GoogleCloudChannelV1Report>,
+        #[doc = "The total number of rows of data in the final report."]
+        #[serde(
+            rename = "rowCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub row_count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ReportResultsMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ReportResultsMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ReportStatus {
+        #[doc = "The report generation’s completion time."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "The report generation’s start time."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+        #[doc = "The current state of the report generation process."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::GoogleCloudChannelV1ReportStatusState>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ReportStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ReportStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudChannelV1ReportStatusState {
+        #[doc = "Report data is available for access."]
+        Available,
+        #[doc = "Report failed."]
+        Failed,
+        #[doc = "Report processing started."]
+        Started,
+        #[doc = "Not used."]
+        StateUnspecified,
+        #[doc = "Data generated from the report is being staged."]
+        Writing,
+    }
+    impl GoogleCloudChannelV1ReportStatusState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudChannelV1ReportStatusState::Available => "AVAILABLE",
+                GoogleCloudChannelV1ReportStatusState::Failed => "FAILED",
+                GoogleCloudChannelV1ReportStatusState::Started => "STARTED",
+                GoogleCloudChannelV1ReportStatusState::StateUnspecified => "STATE_UNSPECIFIED",
+                GoogleCloudChannelV1ReportStatusState::Writing => "WRITING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudChannelV1ReportStatusState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudChannelV1ReportStatusState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudChannelV1ReportStatusState, ()> {
+            Ok(match s {
+                "AVAILABLE" => GoogleCloudChannelV1ReportStatusState::Available,
+                "FAILED" => GoogleCloudChannelV1ReportStatusState::Failed,
+                "STARTED" => GoogleCloudChannelV1ReportStatusState::Started,
+                "STATE_UNSPECIFIED" => GoogleCloudChannelV1ReportStatusState::StateUnspecified,
+                "WRITING" => GoogleCloudChannelV1ReportStatusState::Writing,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudChannelV1ReportStatusState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudChannelV1ReportStatusState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudChannelV1ReportStatusState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AVAILABLE" => GoogleCloudChannelV1ReportStatusState::Available,
+                "FAILED" => GoogleCloudChannelV1ReportStatusState::Failed,
+                "STARTED" => GoogleCloudChannelV1ReportStatusState::Started,
+                "STATE_UNSPECIFIED" => GoogleCloudChannelV1ReportStatusState::StateUnspecified,
+                "WRITING" => GoogleCloudChannelV1ReportStatusState::Writing,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ReportStatusState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ReportStatusState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1ReportValue {
+        #[doc = "A value of type `google.type.DateTime` (year, month, day, hour, minute, second, and UTC offset or timezone.)"]
+        #[serde(
+            rename = "dateTimeValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_time_value: ::std::option::Option<crate::schemas::GoogleTypeDateTime>,
+        #[doc = "A value of type `google.type.Date` (year, month, day)."]
+        #[serde(
+            rename = "dateValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_value: ::std::option::Option<crate::schemas::GoogleTypeDate>,
+        #[doc = "A value of type `google.type.Decimal`, representing non-integer numeric values."]
+        #[serde(
+            rename = "decimalValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub decimal_value: ::std::option::Option<crate::schemas::GoogleTypeDecimal>,
+        #[doc = "A value of type `int`."]
+        #[serde(
+            rename = "intValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub int_value: ::std::option::Option<i64>,
+        #[doc = "A value of type `google.type.Money` (currency code, whole units, decimal units)."]
+        #[serde(
+            rename = "moneyValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub money_value: ::std::option::Option<crate::schemas::GoogleTypeMoney>,
+        #[doc = "A value of type `string`."]
+        #[serde(
+            rename = "stringValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub string_value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1ReportValue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1ReportValue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1RepricingAdjustment {
         #[doc = "Flat markup or markdown on an entire bill."]
         #[serde(
@@ -6063,6 +7517,38 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1RepricingAdjustment {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1RepricingCondition {
+        #[doc = "SKU Group condition for override."]
+        #[serde(
+            rename = "skuGroupCondition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sku_group_condition:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1SkuGroupCondition>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1RepricingCondition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1RepricingCondition {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6097,6 +7583,14 @@ pub mod schemas {
         pub channel_partner_granularity: ::std::option::Option<
             crate::schemas::GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity,
         >,
+        #[doc = "The conditional overrides to apply for this configuration. If you list multiple overrides, only the first valid override is used. If you don’t list any overrides, the API uses the normal adjustment and rebilling basis."]
+        #[serde(
+            rename = "conditionalOverrides",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub conditional_overrides:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudChannelV1ConditionalOverride>>,
         #[doc = "Required. The YearMonth when these adjustments activate. The Day field needs to be “0” since we only accept YearMonth repricing boundaries."]
         #[serde(
             rename = "effectiveInvoiceMonth",
@@ -6298,6 +7792,121 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudChannelV1Row {
+        #[doc = "The list of values in the row."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<crate::schemas::GoogleCloudChannelV1ReportValue>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1Row {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Row {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1RunReportJobRequest {
+        #[doc = "Optional. The range of usage or invoice dates to include in the result."]
+        #[serde(
+            rename = "dateRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_range: ::std::option::Option<crate::schemas::GoogleCloudChannelV1DateRange>,
+        #[doc = "Optional. A structured string that defines conditions on dimension columns to restrict the report output. Filters support logical operators (AND, OR, NOT) and conditional operators (=, !=, \\<, >, \\<=, and >=) using `column_id` as keys. For example: `(customer:\"accounts/C123abc/customers/S456def\" OR customer:\"accounts/C123abc/customers/S789ghi\") AND invoice_start_date.year >= 2022`"]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter: ::std::option::Option<String>,
+        #[doc = "Optional. The BCP-47 language code, such as “en-US”. If specified, the response is localized to the corresponding language code if the original data sources support it. Default is “en-US”."]
+        #[serde(
+            rename = "languageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub language_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1RunReportJobRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1RunReportJobRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1RunReportJobResponse {
+        #[doc = "Pass `report_job.name` to FetchReportResultsRequest.report_job to retrieve the report’s results."]
+        #[serde(
+            rename = "reportJob",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_job: ::std::option::Option<crate::schemas::GoogleCloudChannelV1ReportJob>,
+        #[doc = "The metadata for the report’s results (display name, columns, row count, and date range). If you view this before the operation finishes, you may see incomplete data."]
+        #[serde(
+            rename = "reportMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_metadata:
+            ::std::option::Option<crate::schemas::GoogleCloudChannelV1ReportResultsMetadata>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1RunReportJobResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1RunReportJobResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudChannelV1Sku {
         #[doc = "Marketing information for the SKU."]
         #[serde(
@@ -6328,6 +7937,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1Sku {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudChannelV1SkuGroupCondition {
+        #[doc = "Specifies a SKU group (https://cloud.google.com/skus/sku-groups). Resource name of SKU group. Format: accounts/{account}/skuGroups/{sku_group}. Example: “accounts/C01234/skuGroups/3d50fd57-3157-4577-a5a9-a219b8490041”."]
+        #[serde(
+            rename = "skuGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sku_group: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudChannelV1SkuGroupCondition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudChannelV1SkuGroupCondition {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6976,7 +8616,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7147,8 +8787,95 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleTypeDateTime {
+        #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
+        #[serde(
+            rename = "day",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub day: ::std::option::Option<i32>,
+        #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+        #[serde(
+            rename = "hours",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hours: ::std::option::Option<i32>,
+        #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
+        #[serde(
+            rename = "minutes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub minutes: ::std::option::Option<i32>,
+        #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
+        #[serde(
+            rename = "month",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub month: ::std::option::Option<i32>,
+        #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
+        #[serde(
+            rename = "nanos",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nanos: ::std::option::Option<i32>,
+        #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
+        #[serde(
+            rename = "seconds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub seconds: ::std::option::Option<i32>,
+        #[doc = "Time zone."]
+        #[serde(
+            rename = "timeZone",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_zone: ::std::option::Option<crate::schemas::GoogleTypeTimeZone>,
+        #[doc = "UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }."]
+        #[serde(
+            rename = "utcOffset",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub utc_offset: ::std::option::Option<String>,
+        #[doc = "Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year."]
+        #[serde(
+            rename = "year",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub year: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleTypeDateTime {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleTypeDateTime {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleTypeDecimal {
-        #[doc = "The decimal value, as a string. The string representation consists of an optional sign, `+` (`U+002B`) or `-` (`U+002D`), followed by a sequence of zero or more decimal digits (“the integer”), optionally followed by a fraction, optionally followed by an exponent. The fraction consists of a decimal point followed by zero or more decimal digits. The string must contain at least one digit in either the integer or the fraction. The number formed by the sign, the integer and the fraction is referred to as the significand. The exponent consists of the character `e` (`U+0065`) or `E` (`U+0045`) followed by one or more decimal digits. Services **should** normalize decimal values before storing them by: - Removing an explicitly-provided `+` sign (`+2.5` -> `2.5`). - Replacing a zero-length integer value with `0` (`.5` -> `0.5`). - Coercing the exponent character to lower-case (`2.5E8` -> `2.5e8`). - Removing an explicitly-provided zero exponent (`2.5e0` -> `2.5`). Services **may** perform additional normalization based on its own needs and the internal decimal implementation selected, such as shifting the decimal point and exponent value together (example: `2.5e-1` \\<-> `0.25`). Additionally, services **may** preserve trailing zeroes in the fraction to indicate increased precision, but are not required to do so. Note that only the `.` character is supported to divide the integer and the fraction; `,` **should not** be supported regardless of locale. Additionally, thousand separators **should not** be supported. If a service does support them, values **must** be normalized. The ENBF grammar is: DecimalString = \\[Sign\\] Significand \\[Exponent\\]; Sign = ‘+’ | ‘-’; Significand = Digits ‘.’ | \\[Digits\\] ‘.’ Digits; Exponent = (‘e’ | ‘E’) \\[Sign\\] Digits; Digits = { ‘0’ | ‘1’ | ‘2’ | ‘3’ | ‘4’ | ‘5’ | ‘6’ | ‘7’ | ‘8’ | ‘9’ }; Services **should** clearly document the range of supported values, the maximum supported precision (total number of digits), and, if applicable, the scale (number of digits after the decimal point), as well as how it behaves when receiving out-of-bounds values. Services **may** choose to accept values passed as input even when the value has a higher precision or scale than the service supports, and **should** round the value to fit the supported scale. Alternatively, the service **may** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if precision would be lost. Services **should** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if the service receives a value outside of the supported range."]
+        #[doc = "The decimal value, as a string. The string representation consists of an optional sign, `+` (`U+002B`) or `-` (`U+002D`), followed by a sequence of zero or more decimal digits (“the integer”), optionally followed by a fraction, optionally followed by an exponent. An empty string **should** be interpreted as `0`. The fraction consists of a decimal point followed by zero or more decimal digits. The string must contain at least one digit in either the integer or the fraction. The number formed by the sign, the integer and the fraction is referred to as the significand. The exponent consists of the character `e` (`U+0065`) or `E` (`U+0045`) followed by one or more decimal digits. Services **should** normalize decimal values before storing them by: - Removing an explicitly-provided `+` sign (`+2.5` -> `2.5`). - Replacing a zero-length integer value with `0` (`.5` -> `0.5`). - Coercing the exponent character to upper-case, with explicit sign (`2.5e8` -> `2.5E+8`). - Removing an explicitly-provided zero exponent (`2.5E0` -> `2.5`). Services **may** perform additional normalization based on its own needs and the internal decimal implementation selected, such as shifting the decimal point and exponent value together (example: `2.5E-1` \\<-> `0.25`). Additionally, services **may** preserve trailing zeroes in the fraction to indicate increased precision, but are not required to do so. Note that only the `.` character is supported to divide the integer and the fraction; `,` **should not** be supported regardless of locale. Additionally, thousand separators **should not** be supported. If a service does support them, values **must** be normalized. The ENBF grammar is: DecimalString = ‘’ | \\[Sign\\] Significand \\[Exponent\\]; Sign = ‘+’ | ‘-’; Significand = Digits ‘.’ | \\[Digits\\] ‘.’ Digits; Exponent = (‘e’ | ‘E’) \\[Sign\\] Digits; Digits = { ‘0’ | ‘1’ | ‘2’ | ‘3’ | ‘4’ | ‘5’ | ‘6’ | ‘7’ | ‘8’ | ‘9’ }; Services **should** clearly document the range of supported values, the maximum supported precision (total number of digits), and, if applicable, the scale (number of digits after the decimal point), as well as how it behaves when receiving out-of-bounds values. Services **may** choose to accept values passed as input even when the value has a higher precision or scale than the service supports, and **should** round the value to fit the supported scale. Alternatively, the service **may** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if precision would be lost. Services **should** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if the service receives a value outside of the supported range."]
         #[serde(
             rename = "value",
             default,
@@ -7309,6 +9036,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleTypePostalAddress {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleTypeTimeZone {
+        #[doc = "IANA Time Zone Database time zone, e.g. “America/New_York”."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Optional. IANA Time Zone Database version number, e.g. “2019a”."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleTypeTimeZone {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleTypeTimeZone {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7567,7 +9332,7 @@ pub mod resources {
                     page_token: None,
                 }
             }
-            #[doc = "List TransferableOffers of a customer based on Cloud Identity ID or Customer Name in the request. Use this method when a reseller gets the entitlement information of an unowned customer. The reseller should provide the customer’s Cloud Identity ID or Customer Name. Possible error codes: * PERMISSION_DENIED: * The customer doesn’t belong to the reseller and has no auth token. * The supplied auth token is invalid. * The reseller account making the request is different from the reseller account in the query. * INVALID_ARGUMENT: Required request parameters are missing or invalid. Return value: List of TransferableOffer for the given customer and SKU."]
+            #[doc = "List TransferableOffers of a customer based on Cloud Identity ID or Customer Name in the request. Use this method when a reseller gets the entitlement information of an unowned customer. The reseller should provide the customer’s Cloud Identity ID or Customer Name. Possible error codes: * PERMISSION_DENIED: * The customer doesn’t belong to the reseller and has no auth token. * The customer provided incorrect reseller information when generating auth token. * The reseller account making the request is different from the reseller account in the query. * INVALID_ARGUMENT: Required request parameters are missing or invalid. Return value: List of TransferableOffer for the given customer and SKU."]
             pub fn list_transferable_offers(
                 &self,
                 request: crate::schemas::GoogleCloudChannelV1ListTransferableOffersRequest,
@@ -7683,6 +9448,22 @@ pub mod resources {
             #[doc = "Actions that can be performed on the offers resource"]
             pub fn offers(&self) -> crate::resources::accounts::offers::OffersActions {
                 crate::resources::accounts::offers::OffersActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+            #[doc = "Actions that can be performed on the report_jobs resource"]
+            pub fn report_jobs(
+                &self,
+            ) -> crate::resources::accounts::report_jobs::ReportJobsActions {
+                crate::resources::accounts::report_jobs::ReportJobsActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+            #[doc = "Actions that can be performed on the reports resource"]
+            pub fn reports(&self) -> crate::resources::accounts::reports::ReportsActions {
+                crate::resources::accounts::reports::ReportsActions {
                     reqwest: &self.reqwest,
                     auth: self.auth_ref(),
                 }
@@ -7976,7 +9757,7 @@ pub mod resources {
                     #[serde(rename = "serviceAccounts")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -8009,7 +9790,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -8065,7 +9846,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8182,12 +9963,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListSubscribersRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -9610,7 +11392,7 @@ pub mod resources {
                         #[serde(rename = "channelPartnerLinks")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -9646,7 +11428,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -9702,7 +11484,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -9824,12 +11606,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -10751,7 +12534,7 @@ pub mod resources {
                             #[serde(rename = "channelPartnerRepricingConfigs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10788,7 +12571,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10828,7 +12611,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10939,12 +12722,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -12047,7 +13831,7 @@ pub mod resources {
                             #[serde(rename = "customers")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -12082,7 +13866,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -12138,7 +13922,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -12261,12 +14045,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -13571,7 +15356,7 @@ pub mod resources {
                         #[serde(rename = "customers")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -13606,7 +15391,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -13662,7 +15447,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13780,12 +15565,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -13946,7 +15732,7 @@ pub mod resources {
                         #[serde(rename = "purchasableOffers")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -13982,7 +15768,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -14038,7 +15824,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -14172,12 +15958,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListPurchasableOffersRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -14317,7 +16104,7 @@ pub mod resources {
                         #[serde(rename = "purchasableSkus")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -14352,7 +16139,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -14408,7 +16195,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -14542,12 +16329,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListPurchasableSkusRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -15971,7 +17759,7 @@ pub mod resources {
                             #[serde(rename = "customerRepricingConfigs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -16007,7 +17795,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -16047,7 +17835,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -16170,12 +17958,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -17897,7 +19686,7 @@ pub mod resources {
                             #[serde(rename = "entitlements")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -17932,7 +19721,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -17988,7 +19777,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -18110,12 +19899,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -18784,7 +20574,7 @@ pub mod resources {
                         #[serde(rename = "offers")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -18819,7 +20609,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -18875,7 +20665,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -18994,14 +20784,792 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
+                }
+            }
+        }
+        pub mod report_jobs {
+            pub mod params {}
+            pub struct ReportJobsActions<'a> {
+                pub(crate) reqwest: &'a reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> ReportJobsActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Retrieves data generated by CloudChannelReportsService.RunReportJob."]
+                pub fn fetch_report_results(
+                    &self,
+                    request: crate::schemas::GoogleCloudChannelV1FetchReportResultsRequest,
+                    report_job: impl Into<String>,
+                ) -> FetchReportResultsRequestBuilder {
+                    FetchReportResultsRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        report_job: report_job.into(),
+                    }
+                }
+            }
+            #[doc = "Created via [ReportJobsActions::fetch_report_results()](struct.ReportJobsActions.html#method.fetch_report_results)"]
+            #[derive(Debug, Clone)]
+            pub struct FetchReportResultsRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleCloudChannelV1FetchReportResultsRequest,
+                report_job: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> FetchReportResultsRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleCloudChannelV1FetchReportResultsResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleCloudChannelV1FetchReportResultsResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.report_job;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":fetchReportResults");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+        }
+        pub mod reports {
+            pub mod params {}
+            pub struct ReportsActions<'a> {
+                pub(crate) reqwest: &'a reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> ReportsActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Lists the reports that RunReportJob can run. These reports include an ID, a description, and the list of columns that will be in the result."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        language_code: None,
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+                #[doc = "Begins generation of data for a given report. The report identifier is a UID (for example, `613bf59q`). Possible error codes: * PERMISSION_DENIED: The user doesn’t have access to this report. * INVALID_ARGUMENT: Required request parameters are missing or invalid. * NOT_FOUND: The report identifier was not found. * INTERNAL: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support. * UNKNOWN: Any non-user error related to a technical issue in the backend. Contact Cloud Channel support. Return value: The ID of a long-running operation. To get the results of the operation, call the GetOperation method of CloudChannelOperationsService. The Operation metadata contains an instance of OperationMetadata. To get the results of report generation, call CloudChannelReportsService.FetchReportResults with the RunReportJobResponse.report_job."]
+                pub fn run(
+                    &self,
+                    request: crate::schemas::GoogleCloudChannelV1RunReportJobRequest,
+                    name: impl Into<String>,
+                ) -> RunRequestBuilder {
+                    RunRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+            }
+            #[doc = "Created via [ReportsActions::list()](struct.ReportsActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                language_code: ::std::option::Option<String>,
+                page_size: ::std::option::Option<i32>,
+                page_token: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "Optional. The BCP-47 language code, such as “en-US”. If specified, the response is localized to the corresponding language code if the original data sources support it. Default is “en-US”."]
+                pub fn language_code(mut self, value: impl Into<String>) -> Self {
+                    self.language_code = Some(value.into());
+                    self
+                }
+                #[doc = "Optional. Requested page size of the report. The server might return fewer results than requested. If unspecified, returns 20 reports. The maximum value is 100."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "Optional. A token that specifies a page of results beyond the first page. Obtained through ListReportsResponse.next_page_token of the previous CloudChannelReportsService.ListReports call."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = "\nExecute the request and yield each item in the `reports` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                pub fn stream_reports<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_reports_with_fields(fields)
+                }
+                #[doc = "\nExecute the request and yield each item in the `reports` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                pub fn stream_reports_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::GoogleCloudChannelV1Report, crate::Error>,
+                > + 'a {
+                    self.stream_reports_with_fields(None::<String>)
+                }
+                #[doc = "\nExecute the request and yield each item in the `reports` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                pub fn stream_reports_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::GoogleCloudChannelV1Report, crate::Error>,
+                > + 'a {
+                    self.stream_reports_with_fields(Some("*"))
+                }
+                #[doc = "\nExecute the request and yield each item in the `reports` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                pub fn stream_reports_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                    struct Page<T> {
+                        #[serde(rename = "nextPageToken")]
+                        pub next_page_token: ::std::option::Option<String>,
+                        #[serde(rename = "reports")]
+                        pub items: Vec<T>,
+                    }
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
+                        fn next_page_token(&self) -> ::std::option::Option<String> {
+                            self.next_page_token.to_owned()
+                        }
+                    }
+                    impl<T> crate::stream::IntoPageItems for Page<T> {
+                        type Items = Vec<T>;
+                        fn into_page_items(self) -> Self::Items {
+                            self.items
+                        }
+                    }
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "reports").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::stream::page_item_stream::<_, Page<T>>(self)
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                pub fn stream<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String>
+                        + ::serde::de::DeserializeOwned
+                        + ::google_field_selector::FieldSelector
+                        + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_with_fields(fields)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the default set of fields from the server."]
+                pub fn stream_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleCloudChannelV1ListReportsResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests all fields from the server."]
+                pub fn stream_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleCloudChannelV1ListReportsResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                pub fn stream_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::stream::page_stream(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleCloudChannelV1ListReportsResponse, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleCloudChannelV1ListReportsResponse, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/reports");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("languageCode", &self.language_code)]);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[async_trait::async_trait]
+            impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                {
+                    self._execute().await
+                }
+            }
+            #[doc = "Created via [ReportsActions::run()](struct.ReportsActions.html#method.run)"]
+            #[derive(Debug, Clone)]
+            pub struct RunRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleCloudChannelV1RunReportJobRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> RunRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://cloudchannel.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":run");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
                 }
             }
         }
@@ -19713,7 +22281,7 @@ pub mod resources {
                     #[serde(rename = "operations")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -19746,7 +22314,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -19802,7 +22370,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -19919,12 +22487,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -20104,7 +22673,7 @@ pub mod resources {
                     #[serde(rename = "products")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -20137,7 +22706,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -20193,7 +22762,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -20304,12 +22873,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -20483,7 +23053,7 @@ pub mod resources {
                         #[serde(rename = "skus")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -20518,7 +23088,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -20574,7 +23144,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -20693,12 +23263,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -20989,16 +23560,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -21018,13 +23591,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -21032,7 +23608,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -21059,7 +23635,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

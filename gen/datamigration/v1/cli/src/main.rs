@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("datamigration1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220406")
+            .version("0.1.0-20230118")
             .about("Manage Cloud Database Migration Service resources on Google Cloud Platform.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -87,6 +87,73 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
             connection_profiles2 = connection_profiles2.subcommand(mcmd);
+        }
+        let mut conversion_workspaces2 = SubCommand::with_name("conversion_workspaces")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: apply, commit, convert, create, delete, describe_conversion_workspace_revisions, describe_database_entities, get, list, patch, rollback, search_background_jobs and seed");
+        {
+            let mcmd = SubCommand::with_name("apply")
+                .about("Apply draft tree onto a specific destination database");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("commit")
+                .about("Marks all the data in the conversion workspace as committed.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("convert")
+                .about("Creates a draft tree schema for the destination database.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new conversion workspace in a given project and location.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("delete").about("Deletes a single conversion workspace.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("describe_conversion_workspace_revisions").about(
+                "Retrieves a list of committed revisions of a specific conversion workspace.",
+            );
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("describe_database_entities").about("Use this method to describe the database entities tree for a specific conversion workspace and a specific tree type. The DB Entities are not a resource like conversion workspace or mapping rule, and they can not be created, updated or deleted like one. Instead they are simple data objects describing the structure of the client database.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets details of a single conversion workspace.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists conversion workspaces in a given project and location.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a single conversion workspace.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("rollback")
+                .about("Rollbacks a conversion workspace to the last committed spanshot.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("search_background_jobs").about("Use this method to search/list the background jobs for a specific conversion workspace. The background jobs are not a resource like conversion workspace or mapping rule, and they can not be created, updated or deleted like one. Instead they are a way to expose the data plane jobs log.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("seed")
+                .about("Imports a snapshot of the source database into the conversion workspace.");
+            conversion_workspaces2 = conversion_workspaces2.subcommand(mcmd);
         }
         let mut migration_jobs2 = SubCommand::with_name("migration_jobs")
                         .setting(AppSettings::ColoredHelp)
@@ -177,8 +244,41 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
+        let mut private_connections2 = SubCommand::with_name("private_connections")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("create")
+                .about("Creates a new private connection in a given project and location.");
+            private_connections2 = private_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes a single Database Migration Service private connection.");
+            private_connections2 = private_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("get").about("Gets details of a single private connection.");
+            private_connections2 = private_connections2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Retrieves a list of private connections in a given project and location.");
+            private_connections2 = private_connections2.subcommand(mcmd);
+        }
+        let mut mapping_rules3 = SubCommand::with_name("mapping_rules")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: import");
+        {
+            let mcmd = SubCommand::with_name("import").about("Imports the mapping rules for a given conversion workspace. Supports various formats of external rules files.");
+            mapping_rules3 = mapping_rules3.subcommand(mcmd);
+        }
+        conversion_workspaces2 = conversion_workspaces2.subcommand(mapping_rules3);
+        locations1 = locations1.subcommand(private_connections2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(migration_jobs2);
+        locations1 = locations1.subcommand(conversion_workspaces2);
         locations1 = locations1.subcommand(connection_profiles2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);

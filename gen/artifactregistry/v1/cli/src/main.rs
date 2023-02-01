@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("artifactregistry1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220401")
+            .version("0.1.0-20230123")
             .about("Store and manage build artifacts in a scalable and integrated service built on Google infrastructure.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -136,6 +136,35 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists files.");
             files3 = files3.subcommand(mcmd);
         }
+        let mut kfp_artifacts3 = SubCommand::with_name("kfp_artifacts")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: upload");
+        {
+            let mcmd = SubCommand::with_name("upload").about("Directly uploads a KFP artifact. The returned Operation will complete once the resource is uploaded. Package, Version, and File resources will be created based on the uploaded artifact. Uploaded artifacts that conflict with existing resources will be overwritten.");
+            kfp_artifacts3 = kfp_artifacts3.subcommand(mcmd);
+        }
+        let mut maven_artifacts3 = SubCommand::with_name("maven_artifacts")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a maven artifact.");
+            maven_artifacts3 = maven_artifacts3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists maven artifacts.");
+            maven_artifacts3 = maven_artifacts3.subcommand(mcmd);
+        }
+        let mut npm_packages3 = SubCommand::with_name("npm_packages")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a npm package.");
+            npm_packages3 = npm_packages3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists npm packages.");
+            npm_packages3 = npm_packages3.subcommand(mcmd);
+        }
         let mut packages3 = SubCommand::with_name("packages")
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get and list");
@@ -150,6 +179,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list").about("Lists packages.");
             packages3 = packages3.subcommand(mcmd);
+        }
+        let mut python_packages3 = SubCommand::with_name("python_packages")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a python package.");
+            python_packages3 = python_packages3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists python packages.");
+            python_packages3 = python_packages3.subcommand(mcmd);
         }
         let mut yum_artifacts3 = SubCommand::with_name("yum_artifacts")
             .setting(AppSettings::ColoredHelp)
@@ -203,7 +243,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         packages3 = packages3.subcommand(versions4);
         packages3 = packages3.subcommand(tags4);
         repositories2 = repositories2.subcommand(yum_artifacts3);
+        repositories2 = repositories2.subcommand(python_packages3);
         repositories2 = repositories2.subcommand(packages3);
+        repositories2 = repositories2.subcommand(npm_packages3);
+        repositories2 = repositories2.subcommand(maven_artifacts3);
+        repositories2 = repositories2.subcommand(kfp_artifacts3);
         repositories2 = repositories2.subcommand(files3);
         repositories2 = repositories2.subcommand(docker_images3);
         repositories2 = repositories2.subcommand(apt_artifacts3);

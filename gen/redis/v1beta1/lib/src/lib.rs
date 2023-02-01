@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [instances](resources/projects/locations/instances/struct.InstancesActions.html)\n      * [*create*](resources/projects/locations/instances/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/instances/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/instances/struct.ExportRequestBuilder.html), [*failover*](resources/projects/locations/instances/struct.FailoverRequestBuilder.html), [*get*](resources/projects/locations/instances/struct.GetRequestBuilder.html), [*getAuthString*](resources/projects/locations/instances/struct.GetAuthStringRequestBuilder.html), [*import*](resources/projects/locations/instances/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/instances/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/instances/struct.PatchRequestBuilder.html), [*rescheduleMaintenance*](resources/projects/locations/instances/struct.RescheduleMaintenanceRequestBuilder.html), [*upgrade*](resources/projects/locations/instances/struct.UpgradeRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -466,6 +467,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub authorized_network: ::std::option::Option<String>,
+        #[doc = "Optional. The available maintenance versions that an instance could update to."]
+        #[serde(
+            rename = "availableMaintenanceVersions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub available_maintenance_versions: ::std::option::Option<Vec<String>>,
         #[doc = "Optional. The network connect mode of the Redis instance. If not provided, the connect mode defaults to DIRECT_PEERING."]
         #[serde(
             rename = "connectMode",
@@ -487,6 +495,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_location_id: ::std::option::Option<String>,
+        #[doc = "Optional. The KMS key reference that the customer provides when trying to create the instance."]
+        #[serde(
+            rename = "customerManagedKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_managed_key: ::std::option::Option<String>,
         #[doc = "An arbitrary and optional user-provided name for the instance."]
         #[serde(
             rename = "displayName",
@@ -529,6 +544,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub maintenance_schedule: ::std::option::Option<crate::schemas::MaintenanceSchedule>,
+        #[doc = "Optional. The self service update maintenance version. The version is date based such as “20210712_00_00”."]
+        #[serde(
+            rename = "maintenanceVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub maintenance_version: ::std::option::Option<String>,
         #[doc = "Required. Redis memory size in GiB."]
         #[serde(
             rename = "memorySizeGb",
@@ -648,6 +670,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status_message: ::std::option::Option<String>,
+        #[doc = "Optional. reasons that causes instance in “SUSPENDED” state."]
+        #[serde(
+            rename = "suspensionReasons",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suspension_reasons:
+            ::std::option::Option<Vec<crate::schemas::InstanceSuspensionReasonsItems>>,
         #[doc = "Required. The service tier of the instance."]
         #[serde(
             rename = "tier",
@@ -939,6 +969,89 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum InstanceSuspensionReasonsItems {
+        #[doc = "Something wrong with the CMEK key provided by customer."]
+        CustomerManagedKeyIssue,
+        #[doc = "Not set."]
+        SuspensionReasonUnspecified,
+    }
+    impl InstanceSuspensionReasonsItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                InstanceSuspensionReasonsItems::CustomerManagedKeyIssue => {
+                    "CUSTOMER_MANAGED_KEY_ISSUE"
+                }
+                InstanceSuspensionReasonsItems::SuspensionReasonUnspecified => {
+                    "SUSPENSION_REASON_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for InstanceSuspensionReasonsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for InstanceSuspensionReasonsItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<InstanceSuspensionReasonsItems, ()> {
+            Ok(match s {
+                "CUSTOMER_MANAGED_KEY_ISSUE" => {
+                    InstanceSuspensionReasonsItems::CustomerManagedKeyIssue
+                }
+                "SUSPENSION_REASON_UNSPECIFIED" => {
+                    InstanceSuspensionReasonsItems::SuspensionReasonUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for InstanceSuspensionReasonsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for InstanceSuspensionReasonsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for InstanceSuspensionReasonsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CUSTOMER_MANAGED_KEY_ISSUE" => {
+                    InstanceSuspensionReasonsItems::CustomerManagedKeyIssue
+                }
+                "SUSPENSION_REASON_UNSPECIFIED" => {
+                    InstanceSuspensionReasonsItems::SuspensionReasonUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for InstanceSuspensionReasonsItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for InstanceSuspensionReasonsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum InstanceTier {
         #[doc = "BASIC tier: standalone instance"]
         Basic,
@@ -1172,7 +1285,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListInstancesResponse {
+    impl crate::GetNextPageToken<String> for ListInstancesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1204,7 +1317,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1236,7 +1349,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1660,7 +1773,7 @@ pub mod schemas {
         SnapshotPeriodUnspecified,
         #[doc = "Snapshot every 12 hours."]
         TwelveHours,
-        #[doc = "Snapshot every 24 horus."]
+        #[doc = "Snapshot every 24 hours."]
         TwentyFourHours,
     }
     impl PersistenceConfigRdbSnapshotPeriod {
@@ -1738,6 +1851,129 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PersistenceConfigRdbSnapshotPeriod {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ReconciliationOperationMetadata {
+        #[doc = "DEPRECATED. Use exclusive_action instead."]
+        #[serde(
+            rename = "deleteResource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub delete_resource: ::std::option::Option<bool>,
+        #[doc = "Excluisive action returned by the CLH."]
+        #[serde(
+            rename = "exclusiveAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exclusive_action:
+            ::std::option::Option<crate::schemas::ReconciliationOperationMetadataExclusiveAction>,
+    }
+    impl ::google_field_selector::FieldSelector for ReconciliationOperationMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ReconciliationOperationMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ReconciliationOperationMetadataExclusiveAction {
+        #[doc = "The resource has to be deleted. When using this bit, the CLH should fail the operation. DEPRECATED. Instead use DELETE_RESOURCE OperationSignal in SideChannel. For more information - go/ccfe-delete-on-upsert, go/ccfe-reconciliation-protocol-ug#apply_delete"]
+        Delete,
+        #[doc = "This resource could not be repaired but the repair should be tried again at a later time. This can happen if there is a dependency that needs to be resolved first- e.g. if a parent resource must be repaired before a child resource."]
+        Retry,
+        #[doc = "Unknown repair action."]
+        UnknownRepairAction,
+    }
+    impl ReconciliationOperationMetadataExclusiveAction {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ReconciliationOperationMetadataExclusiveAction::Delete => "DELETE",
+                ReconciliationOperationMetadataExclusiveAction::Retry => "RETRY",
+                ReconciliationOperationMetadataExclusiveAction::UnknownRepairAction => {
+                    "UNKNOWN_REPAIR_ACTION"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ReconciliationOperationMetadataExclusiveAction {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ReconciliationOperationMetadataExclusiveAction {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<ReconciliationOperationMetadataExclusiveAction, ()> {
+            Ok(match s {
+                "DELETE" => ReconciliationOperationMetadataExclusiveAction::Delete,
+                "RETRY" => ReconciliationOperationMetadataExclusiveAction::Retry,
+                "UNKNOWN_REPAIR_ACTION" => {
+                    ReconciliationOperationMetadataExclusiveAction::UnknownRepairAction
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ReconciliationOperationMetadataExclusiveAction {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ReconciliationOperationMetadataExclusiveAction {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ReconciliationOperationMetadataExclusiveAction {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DELETE" => ReconciliationOperationMetadataExclusiveAction::Delete,
+                "RETRY" => ReconciliationOperationMetadataExclusiveAction::Retry,
+                "UNKNOWN_REPAIR_ACTION" => {
+                    ReconciliationOperationMetadataExclusiveAction::UnknownRepairAction
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ReconciliationOperationMetadataExclusiveAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ReconciliationOperationMetadataExclusiveAction {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2758,7 +2994,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -2793,7 +3029,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -2843,7 +3079,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2959,12 +3195,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4496,7 +4733,7 @@ pub mod resources {
                             #[serde(rename = "instances")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4566,7 +4803,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4601,7 +4838,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4651,7 +4888,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4769,12 +5006,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5975,7 +6213,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6010,7 +6248,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6060,7 +6298,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6179,12 +6417,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6476,16 +6715,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6505,13 +6746,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6519,7 +6763,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6546,7 +6790,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

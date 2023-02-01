@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("ids1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220320")
+            .version("0.1.0-20221113")
             .about("Cloud IDS (Cloud Intrusion Detection System) detects malware, spyware, command-and-control attacks, and other network-based threats. Its security efficacy is industry leading, built with Palo Alto Networks technologies. When you use this product, your organization name and consumption levels will be shared with Palo Alto Networks.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -50,7 +50,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut endpoints2 = SubCommand::with_name("endpoints")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, list, set_iam_policy and test_iam_permissions");
+                        .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a new Endpoint in a given project and location.");
@@ -71,6 +71,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists Endpoints in a given project and location.");
+            endpoints2 = endpoints2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Updates the parameters of a single Endpoint.");
             endpoints2 = endpoints2.subcommand(mcmd);
         }
         {

@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [customers](resources/customers/struct.CustomersActions.html)\n  * [apps](resources/customers/apps/struct.AppsActions.html)\n    * [*countChromeAppRequests*](resources/customers/apps/struct.CountChromeAppRequestsRequestBuilder.html)\n    * [android](resources/customers/apps/android/struct.AndroidActions.html)\n      * [*get*](resources/customers/apps/android/struct.GetRequestBuilder.html)\n    * [chrome](resources/customers/apps/chrome/struct.ChromeActions.html)\n      * [*get*](resources/customers/apps/chrome/struct.GetRequestBuilder.html)\n    * [web](resources/customers/apps/web/struct.WebActions.html)\n      * [*get*](resources/customers/apps/web/struct.GetRequestBuilder.html)\n  * [reports](resources/customers/reports/struct.ReportsActions.html)\n    * [*countChromeVersions*](resources/customers/reports/struct.CountChromeVersionsRequestBuilder.html), [*countInstalledApps*](resources/customers/reports/struct.CountInstalledAppsRequestBuilder.html), [*findInstalledAppDevices*](resources/customers/reports/struct.FindInstalledAppDevicesRequestBuilder.html)\n  * [telemetry](resources/customers/telemetry/struct.TelemetryActions.html)\n    * [devices](resources/customers/telemetry/devices/struct.DevicesActions.html)\n      * [*list*](resources/customers/telemetry/devices/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [customers](resources/customers/struct.CustomersActions.html)\n  * [apps](resources/customers/apps/struct.AppsActions.html)\n    * [*countChromeAppRequests*](resources/customers/apps/struct.CountChromeAppRequestsRequestBuilder.html)\n    * [android](resources/customers/apps/android/struct.AndroidActions.html)\n      * [*get*](resources/customers/apps/android/struct.GetRequestBuilder.html)\n    * [chrome](resources/customers/apps/chrome/struct.ChromeActions.html)\n      * [*get*](resources/customers/apps/chrome/struct.GetRequestBuilder.html)\n    * [web](resources/customers/apps/web/struct.WebActions.html)\n      * [*get*](resources/customers/apps/web/struct.GetRequestBuilder.html)\n  * [reports](resources/customers/reports/struct.ReportsActions.html)\n    * [*countChromeDevicesReachingAutoExpirationDate*](resources/customers/reports/struct.CountChromeDevicesReachingAutoExpirationDateRequestBuilder.html), [*countChromeDevicesThatNeedAttention*](resources/customers/reports/struct.CountChromeDevicesThatNeedAttentionRequestBuilder.html), [*countChromeHardwareFleetDevices*](resources/customers/reports/struct.CountChromeHardwareFleetDevicesRequestBuilder.html), [*countChromeVersions*](resources/customers/reports/struct.CountChromeVersionsRequestBuilder.html), [*countInstalledApps*](resources/customers/reports/struct.CountInstalledAppsRequestBuilder.html), [*findInstalledAppDevices*](resources/customers/reports/struct.FindInstalledAppDevicesRequestBuilder.html)\n  * [telemetry](resources/customers/telemetry/struct.TelemetryActions.html)\n    * [devices](resources/customers/telemetry/devices/struct.DevicesActions.html)\n      * [*get*](resources/customers/telemetry/devices/struct.GetRequestBuilder.html), [*list*](resources/customers/telemetry/devices/struct.ListRequestBuilder.html)\n    * [events](resources/customers/telemetry/events/struct.EventsActions.html)\n      * [*list*](resources/customers/telemetry/events/struct.ListRequestBuilder.html)\n    * [users](resources/customers/telemetry/users/struct.UsersActions.html)\n      * [*get*](resources/customers/telemetry/users/struct.GetRequestBuilder.html), [*list*](resources/customers/telemetry/users/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See detailed information about apps installed on Chrome browsers and devices managed by your organization\n\n`https://www.googleapis.com/auth/chrome.management.appdetails.readonly`"]
     pub const CHROME_MANAGEMENT_APPDETAILS_READONLY: &str =
@@ -682,6 +683,144 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleChromeManagementV1BootPerformanceReport {
+        #[doc = "Total time to boot up."]
+        #[serde(
+            rename = "bootUpDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub boot_up_duration: ::std::option::Option<String>,
+        #[doc = "The timestamp when power came on."]
+        #[serde(
+            rename = "bootUpTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub boot_up_time: ::std::option::Option<String>,
+        #[doc = "Timestamp when the report was collected."]
+        #[serde(
+            rename = "reportTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_time: ::std::option::Option<String>,
+        #[doc = "Total time since shutdown start to power off."]
+        #[serde(
+            rename = "shutdownDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shutdown_duration: ::std::option::Option<String>,
+        #[doc = "The shutdown reason."]
+        #[serde(
+            rename = "shutdownReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shutdown_reason: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1BootPerformanceReportShutdownReason,
+        >,
+        #[doc = "The timestamp when shutdown."]
+        #[serde(
+            rename = "shutdownTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shutdown_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1BootPerformanceReport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1BootPerformanceReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1BootPerformanceReportShutdownReason {
+        #[doc = "Shutdown due to low battery."]
+        LowBattery,
+        #[doc = "Shutdown due to other reasons."]
+        Other,
+        #[doc = "Shutdown reason is not specified."]
+        ShutdownReasonUnspecified,
+        #[doc = "System update initiated."]
+        SystemUpdate,
+        #[doc = "User initiated."]
+        UserRequest,
+    }
+    impl GoogleChromeManagementV1BootPerformanceReportShutdownReason {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1BootPerformanceReportShutdownReason :: LowBattery => "LOW_BATTERY" , GoogleChromeManagementV1BootPerformanceReportShutdownReason :: Other => "OTHER" , GoogleChromeManagementV1BootPerformanceReportShutdownReason :: ShutdownReasonUnspecified => "SHUTDOWN_REASON_UNSPECIFIED" , GoogleChromeManagementV1BootPerformanceReportShutdownReason :: SystemUpdate => "SYSTEM_UPDATE" , GoogleChromeManagementV1BootPerformanceReportShutdownReason :: UserRequest => "USER_REQUEST" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1BootPerformanceReportShutdownReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1BootPerformanceReportShutdownReason {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1BootPerformanceReportShutdownReason, ()>
+        {
+            Ok (match s { "LOW_BATTERY" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: LowBattery , "OTHER" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: Other , "SHUTDOWN_REASON_UNSPECIFIED" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: ShutdownReasonUnspecified , "SYSTEM_UPDATE" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: SystemUpdate , "USER_REQUEST" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: UserRequest , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1BootPerformanceReportShutdownReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1BootPerformanceReportShutdownReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleChromeManagementV1BootPerformanceReportShutdownReason
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "LOW_BATTERY" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: LowBattery , "OTHER" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: Other , "SHUTDOWN_REASON_UNSPECIFIED" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: ShutdownReasonUnspecified , "SYSTEM_UPDATE" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: SystemUpdate , "USER_REQUEST" => GoogleChromeManagementV1BootPerformanceReportShutdownReason :: UserRequest , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1BootPerformanceReportShutdownReason
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1BootPerformanceReportShutdownReason
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleChromeManagementV1BrowserVersion {
         #[doc = "Output only. The release channel of the installed browser."]
         #[serde(
@@ -962,6 +1101,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_cws_hosted: ::std::option::Option<bool>,
+        #[doc = "Output only. Whether an app supports policy for extensions."]
+        #[serde(
+            rename = "isExtensionPolicySupported",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub is_extension_policy_supported: ::std::option::Option<bool>,
         #[doc = "Output only. Whether the app is only for Kiosk mode on ChromeOS devices"]
         #[serde(
             rename = "isKioskOnly",
@@ -998,6 +1144,14 @@ pub mod schemas {
         )]
         pub permissions:
             ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1ChromeAppPermission>>,
+        #[doc = "Output only. Types of an item in the Chrome Web Store"]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type:
+            ::std::option::Option<crate::schemas::GoogleChromeManagementV1ChromeAppInfoType>,
         #[doc = "Output only. Every permission giving access to domains or broad host patterns. ( e.g. www.google.com). This includes the matches from content scripts as well as hosts in the permissions node of the manifest. Version-specific field that will only be set when the requested app version is found."]
         #[serde(
             rename = "siteAccess",
@@ -1020,6 +1174,90 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1ChromeAppInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1ChromeAppInfoType {
+        #[doc = "Chrome Extensions."]
+        Extension,
+        #[doc = "Unspecified ItemType."]
+        ItemTypeUnspecified,
+        #[doc = "Any other type than extension."]
+        Others,
+    }
+    impl GoogleChromeManagementV1ChromeAppInfoType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleChromeManagementV1ChromeAppInfoType::Extension => "EXTENSION",
+                GoogleChromeManagementV1ChromeAppInfoType::ItemTypeUnspecified => {
+                    "ITEM_TYPE_UNSPECIFIED"
+                }
+                GoogleChromeManagementV1ChromeAppInfoType::Others => "OTHERS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1ChromeAppInfoType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1ChromeAppInfoType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1ChromeAppInfoType, ()> {
+            Ok(match s {
+                "EXTENSION" => GoogleChromeManagementV1ChromeAppInfoType::Extension,
+                "ITEM_TYPE_UNSPECIFIED" => {
+                    GoogleChromeManagementV1ChromeAppInfoType::ItemTypeUnspecified
+                }
+                "OTHERS" => GoogleChromeManagementV1ChromeAppInfoType::Others,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1ChromeAppInfoType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1ChromeAppInfoType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1ChromeAppInfoType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXTENSION" => GoogleChromeManagementV1ChromeAppInfoType::Extension,
+                "ITEM_TYPE_UNSPECIFIED" => {
+                    GoogleChromeManagementV1ChromeAppInfoType::ItemTypeUnspecified
+                }
+                "OTHERS" => GoogleChromeManagementV1ChromeAppInfoType::Others,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1ChromeAppInfoType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1ChromeAppInfoType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1224,9 +1462,178 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleChromeManagementV1CountChromeAppRequestsResponse {
+    impl crate::GetNextPageToken<String> for GoogleChromeManagementV1CountChromeAppRequestsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse {
+        #[doc = "The list of reports sorted by auto update expiration date in ascending order."]
+        #[serde(
+            rename = "deviceAueCountReports",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device_aue_count_reports: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromeManagementV1DeviceAueCountReport>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse {
+        #[doc = "Number of ChromeOS devices have not synced policies in the past 28 days."]
+        #[serde(
+            rename = "noRecentPolicySyncCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub no_recent_policy_sync_count: ::std::option::Option<i64>,
+        #[doc = "Number of ChromeOS devices that have not seen any user activity in the past 28 days."]
+        #[serde(
+            rename = "noRecentUserActivityCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub no_recent_user_activity_count: ::std::option::Option<i64>,
+        #[doc = "Number of devices whose OS version is not compliant."]
+        #[serde(
+            rename = "osVersionNotCompliantCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub os_version_not_compliant_count: ::std::option::Option<i64>,
+        #[doc = "Number of devices that are pending an OS update."]
+        #[serde(
+            rename = "pendingUpdate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub pending_update: ::std::option::Option<i64>,
+        #[doc = "Number of devices that are unable to apply a policy due to an OS version mismatch."]
+        #[serde(
+            rename = "unsupportedPolicyCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub unsupported_policy_count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse {
+        #[doc = "The DeviceHardwareCountReport for device cpu type (for example Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz)."]
+        #[serde(
+            rename = "cpuReports",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cpu_reports: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromeManagementV1DeviceHardwareCountReport>,
+        >,
+        #[doc = "The DeviceHardwareCountReport for device memory amount in gigabytes (for example 16)."]
+        #[serde(
+            rename = "memoryReports",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub memory_reports: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromeManagementV1DeviceHardwareCountReport>,
+        >,
+        #[doc = "The DeviceHardwareCountReport for device model type (for example Acer C7 Chromebook)."]
+        #[serde(
+            rename = "modelReports",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model_reports: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromeManagementV1DeviceHardwareCountReport>,
+        >,
+        #[doc = "The DeviceHardwareCountReport for device storage amount in gigabytes (for example 128)."]
+        #[serde(
+            rename = "storageReports",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub storage_reports: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromeManagementV1DeviceHardwareCountReport>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -1277,7 +1684,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleChromeManagementV1CountChromeVersionsResponse {
+    impl crate::GetNextPageToken<String> for GoogleChromeManagementV1CountChromeVersionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1328,7 +1735,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleChromeManagementV1CountInstalledAppsResponse {
+    impl crate::GetNextPageToken<String> for GoogleChromeManagementV1CountInstalledAppsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1346,7 +1753,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleChromeManagementV1CpuInfo {
-        #[doc = "Output only. The CPU architecture."]
+        #[doc = "Output only. Architecture type for the CPU. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterprise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A"]
         #[serde(
             rename = "architecture",
             default,
@@ -1354,6 +1761,20 @@ pub mod schemas {
         )]
         pub architecture:
             ::std::option::Option<crate::schemas::GoogleChromeManagementV1CpuInfoArchitecture>,
+        #[doc = "Output only. Whether keylocker is configured.`TRUE` = Enabled; `FALSE` = disabled. Only reported if keylockerSupported = `TRUE`."]
+        #[serde(
+            rename = "keylockerConfigured",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keylocker_configured: ::std::option::Option<bool>,
+        #[doc = "Output only. Whether keylocker is supported."]
+        #[serde(
+            rename = "keylockerSupported",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keylocker_supported: ::std::option::Option<bool>,
         #[doc = "Output only. The max CPU clock speed in kHz."]
         #[serde(
             rename = "maxClockSpeed",
@@ -1599,6 +2020,245 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleChromeManagementV1DeviceAueCountReport {
+        #[doc = "Enum value of month corresponding to the auto update expiration date in UTC time zone. If the device is already expired, this field is empty."]
+        #[serde(
+            rename = "aueMonth",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aue_month: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1DeviceAueCountReportAueMonth,
+        >,
+        #[doc = "Int value of year corresponding to the Auto Update Expiration date in UTC time zone. If the device is already expired, this field is empty."]
+        #[serde(
+            rename = "aueYear",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub aue_year: ::std::option::Option<i64>,
+        #[doc = "Count of devices of this model."]
+        #[serde(
+            rename = "count",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub count: ::std::option::Option<i64>,
+        #[doc = "Boolean value for whether or not the device has already expired."]
+        #[serde(
+            rename = "expired",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expired: ::std::option::Option<bool>,
+        #[doc = "Public model name of the devices."]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1DeviceAueCountReport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1DeviceAueCountReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        #[doc = "The month of April."]
+        April,
+        #[doc = "The month of August."]
+        August,
+        #[doc = "The month of December."]
+        December,
+        #[doc = "The month of February."]
+        February,
+        #[doc = "The month of January."]
+        January,
+        #[doc = "The month of July."]
+        July,
+        #[doc = "The month of June."]
+        June,
+        #[doc = "The month of March."]
+        March,
+        #[doc = "The month of May."]
+        May,
+        #[doc = "The unspecified month."]
+        MonthUnspecified,
+        #[doc = "The month of November."]
+        November,
+        #[doc = "The month of October."]
+        October,
+        #[doc = "The month of September."]
+        September,
+    }
+    impl GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::April => "APRIL",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::August => "AUGUST",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::December => "DECEMBER",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::February => "FEBRUARY",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::January => "JANUARY",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::July => "JULY",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::June => "JUNE",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::March => "MARCH",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::May => "MAY",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::MonthUnspecified => {
+                    "MONTH_UNSPECIFIED"
+                }
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::November => "NOVEMBER",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::October => "OCTOBER",
+                GoogleChromeManagementV1DeviceAueCountReportAueMonth::September => "SEPTEMBER",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1DeviceAueCountReportAueMonth, ()>
+        {
+            Ok(match s {
+                "APRIL" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::April,
+                "AUGUST" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::August,
+                "DECEMBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::December,
+                "FEBRUARY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::February,
+                "JANUARY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::January,
+                "JULY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::July,
+                "JUNE" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::June,
+                "MARCH" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::March,
+                "MAY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::May,
+                "MONTH_UNSPECIFIED" => {
+                    GoogleChromeManagementV1DeviceAueCountReportAueMonth::MonthUnspecified
+                }
+                "NOVEMBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::November,
+                "OCTOBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::October,
+                "SEPTEMBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::September,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APRIL" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::April,
+                "AUGUST" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::August,
+                "DECEMBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::December,
+                "FEBRUARY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::February,
+                "JANUARY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::January,
+                "JULY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::July,
+                "JUNE" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::June,
+                "MARCH" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::March,
+                "MAY" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::May,
+                "MONTH_UNSPECIFIED" => {
+                    GoogleChromeManagementV1DeviceAueCountReportAueMonth::MonthUnspecified
+                }
+                "NOVEMBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::November,
+                "OCTOBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::October,
+                "SEPTEMBER" => GoogleChromeManagementV1DeviceAueCountReportAueMonth::September,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1DeviceAueCountReportAueMonth
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1DeviceAueCountReportAueMonth {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1DeviceHardwareCountReport {
+        #[doc = "Public name of the hardware specification."]
+        #[serde(
+            rename = "bucket",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bucket: ::std::option::Option<String>,
+        #[doc = "Count of devices with a unique hardware specification."]
+        #[serde(
+            rename = "count",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1DeviceHardwareCountReport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1DeviceHardwareCountReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleChromeManagementV1DiskInfo {
         #[doc = "Output only. Number of bytes read since last boot."]
         #[serde(
@@ -1814,7 +2474,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleChromeManagementV1FindInstalledAppDevicesResponse {
+    impl crate::GetNextPageToken<String> for GoogleChromeManagementV1FindInstalledAppDevicesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1932,6 +2592,114 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1GraphicsStatusReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1HttpsLatencyRoutineData {
+        #[doc = "Output only. HTTPS latency if routine succeeded or failed because of HIGH_LATENCY or VERY_HIGH_LATENCY."]
+        #[serde(
+            rename = "latency",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub latency: ::std::option::Option<String>,
+        #[doc = "Output only. HTTPS latency routine problem if a problem occurred."]
+        #[serde(
+            rename = "problem",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub problem: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1HttpsLatencyRoutineDataProblem,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1HttpsLatencyRoutineData {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1HttpsLatencyRoutineData {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1HttpsLatencyRoutineDataProblem {
+        #[doc = "One or more DNS resolutions resulted in a failure."]
+        FailedDnsResolutions,
+        #[doc = "One or more HTTPS requests resulted in a failure."]
+        FailedHttpsRequests,
+        #[doc = "Average HTTPS request latency time between 500ms and 1000ms is high."]
+        HighLatency,
+        #[doc = "HTTPS latency problem not specified."]
+        HttpsLatencyProblemUnspecified,
+        #[doc = "Average HTTPS request latency time greater than 1000ms is very high."]
+        VeryHighLatency,
+    }
+    impl GoogleChromeManagementV1HttpsLatencyRoutineDataProblem {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: FailedDnsResolutions => "FAILED_DNS_RESOLUTIONS" , GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: FailedHttpsRequests => "FAILED_HTTPS_REQUESTS" , GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: HighLatency => "HIGH_LATENCY" , GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: HttpsLatencyProblemUnspecified => "HTTPS_LATENCY_PROBLEM_UNSPECIFIED" , GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: VeryHighLatency => "VERY_HIGH_LATENCY" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1HttpsLatencyRoutineDataProblem {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1HttpsLatencyRoutineDataProblem {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1HttpsLatencyRoutineDataProblem, ()>
+        {
+            Ok (match s { "FAILED_DNS_RESOLUTIONS" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: FailedDnsResolutions , "FAILED_HTTPS_REQUESTS" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: FailedHttpsRequests , "HIGH_LATENCY" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: HighLatency , "HTTPS_LATENCY_PROBLEM_UNSPECIFIED" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: HttpsLatencyProblemUnspecified , "VERY_HIGH_LATENCY" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: VeryHighLatency , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1HttpsLatencyRoutineDataProblem {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1HttpsLatencyRoutineDataProblem {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1HttpsLatencyRoutineDataProblem {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "FAILED_DNS_RESOLUTIONS" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: FailedDnsResolutions , "FAILED_HTTPS_REQUESTS" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: FailedHttpsRequests , "HIGH_LATENCY" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: HighLatency , "HTTPS_LATENCY_PROBLEM_UNSPECIFIED" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: HttpsLatencyProblemUnspecified , "VERY_HIGH_LATENCY" => GoogleChromeManagementV1HttpsLatencyRoutineDataProblem :: VeryHighLatency , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1HttpsLatencyRoutineDataProblem
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1HttpsLatencyRoutineDataProblem
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2371,7 +3139,97 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleChromeManagementV1ListTelemetryDevicesResponse {
+    impl crate::GetNextPageToken<String> for GoogleChromeManagementV1ListTelemetryDevicesResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1ListTelemetryEventsResponse {
+        #[doc = "Token to specify next page in the list."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "Telemetry events returned in the response."]
+        #[serde(
+            rename = "telemetryEvents",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub telemetry_events:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1TelemetryEvent>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1ListTelemetryEventsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1ListTelemetryEventsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleChromeManagementV1ListTelemetryEventsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1ListTelemetryUsersResponse {
+        #[doc = "Token to specify next page in the list."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "Telemetry users returned in the response."]
+        #[serde(
+            rename = "telemetryUsers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub telemetry_users:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1TelemetryUser>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1ListTelemetryUsersResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1ListTelemetryUsersResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleChromeManagementV1ListTelemetryUsersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2397,6 +3255,15 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub available_ram_bytes: ::std::option::Option<i64>,
+        #[doc = "Output only. Total memory encryption info for the device."]
+        #[serde(
+            rename = "totalMemoryEncryption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_memory_encryption: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1TotalMemoryEncryptionInfo,
+        >,
         #[doc = "Output only. Total RAM in bytes."]
         #[serde(
             rename = "totalRamBytes",
@@ -2481,7 +3348,259 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleChromeManagementV1NetworkDevice {
+        #[doc = "Output only. The integrated circuit card ID associated with the device’s sim card."]
+        #[serde(
+            rename = "iccid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub iccid: ::std::option::Option<String>,
+        #[doc = "Output only. IMEI (if applicable) of the corresponding network device."]
+        #[serde(
+            rename = "imei",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub imei: ::std::option::Option<String>,
+        #[doc = "Output only. MAC address (if applicable) of the corresponding network device."]
+        #[serde(
+            rename = "macAddress",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mac_address: ::std::option::Option<String>,
+        #[doc = "Output only. The mobile directory number associated with the device’s sim card."]
+        #[serde(
+            rename = "mdn",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mdn: ::std::option::Option<String>,
+        #[doc = "Output only. MEID (if applicable) of the corresponding network device."]
+        #[serde(
+            rename = "meid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub meid: ::std::option::Option<String>,
+        #[doc = "Output only. Network device type."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type:
+            ::std::option::Option<crate::schemas::GoogleChromeManagementV1NetworkDeviceType>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1NetworkDevice {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1NetworkDevice {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1NetworkDeviceType {
+        #[doc = "Cellular device."]
+        CellularDevice,
+        #[doc = "Ethernet device."]
+        EthernetDevice,
+        #[doc = "Network device type not specified."]
+        NetworkDeviceTypeUnspecified,
+        #[doc = "Wifi device."]
+        WifiDevice,
+    }
+    impl GoogleChromeManagementV1NetworkDeviceType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleChromeManagementV1NetworkDeviceType::CellularDevice => "CELLULAR_DEVICE",
+                GoogleChromeManagementV1NetworkDeviceType::EthernetDevice => "ETHERNET_DEVICE",
+                GoogleChromeManagementV1NetworkDeviceType::NetworkDeviceTypeUnspecified => {
+                    "NETWORK_DEVICE_TYPE_UNSPECIFIED"
+                }
+                GoogleChromeManagementV1NetworkDeviceType::WifiDevice => "WIFI_DEVICE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1NetworkDeviceType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1NetworkDeviceType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1NetworkDeviceType, ()> {
+            Ok(match s {
+                "CELLULAR_DEVICE" => GoogleChromeManagementV1NetworkDeviceType::CellularDevice,
+                "ETHERNET_DEVICE" => GoogleChromeManagementV1NetworkDeviceType::EthernetDevice,
+                "NETWORK_DEVICE_TYPE_UNSPECIFIED" => {
+                    GoogleChromeManagementV1NetworkDeviceType::NetworkDeviceTypeUnspecified
+                }
+                "WIFI_DEVICE" => GoogleChromeManagementV1NetworkDeviceType::WifiDevice,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1NetworkDeviceType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1NetworkDeviceType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1NetworkDeviceType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CELLULAR_DEVICE" => GoogleChromeManagementV1NetworkDeviceType::CellularDevice,
+                "ETHERNET_DEVICE" => GoogleChromeManagementV1NetworkDeviceType::EthernetDevice,
+                "NETWORK_DEVICE_TYPE_UNSPECIFIED" => {
+                    GoogleChromeManagementV1NetworkDeviceType::NetworkDeviceTypeUnspecified
+                }
+                "WIFI_DEVICE" => GoogleChromeManagementV1NetworkDeviceType::WifiDevice,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1NetworkDeviceType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1NetworkDeviceType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1NetworkDiagnosticsReport {
+        #[doc = "Output only. HTTPS latency test data."]
+        #[serde(
+            rename = "httpsLatencyData",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub https_latency_data:
+            ::std::option::Option<crate::schemas::GoogleChromeManagementV1HttpsLatencyRoutineData>,
+        #[doc = "Output only. Timestamp of when the diagnostics were collected."]
+        #[serde(
+            rename = "reportTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1NetworkDiagnosticsReport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1NetworkDiagnosticsReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1NetworkInfo {
+        #[doc = "Output only. List of network devices."]
+        #[serde(
+            rename = "networkDevices",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_devices:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1NetworkDevice>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1NetworkInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1NetworkInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleChromeManagementV1NetworkStatusReport {
+        #[doc = "Output only. Current connection state of the network."]
+        #[serde(
+            rename = "connectionState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connection_state: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1NetworkStatusReportConnectionState,
+        >,
+        #[doc = "Output only. Network connection type."]
+        #[serde(
+            rename = "connectionType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connection_type: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1NetworkStatusReportConnectionType,
+        >,
+        #[doc = "Output only. Whether the wifi encryption key is turned off."]
+        #[serde(
+            rename = "encryptionOn",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_on: ::std::option::Option<bool>,
         #[doc = "Output only. Gateway IP address."]
         #[serde(
             rename = "gatewayIpAddress",
@@ -2489,6 +3608,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gateway_ip_address: ::std::option::Option<String>,
+        #[doc = "Output only. Network connection guid."]
+        #[serde(
+            rename = "guid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub guid: ::std::option::Option<String>,
         #[doc = "Output only. LAN IP address."]
         #[serde(
             rename = "lanIpAddress",
@@ -2496,6 +3622,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lan_ip_address: ::std::option::Option<String>,
+        #[doc = "Output only. Receiving bit rate measured in Megabits per second."]
+        #[serde(
+            rename = "receivingBitRateMbps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub receiving_bit_rate_mbps: ::std::option::Option<i64>,
         #[doc = "Output only. Time at which the network state was reported."]
         #[serde(
             rename = "reportTime",
@@ -2517,6 +3651,36 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub signal_strength_dbm: ::std::option::Option<i32>,
+        #[doc = "Output only. Transmission bit rate measured in Megabits per second."]
+        #[serde(
+            rename = "transmissionBitRateMbps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub transmission_bit_rate_mbps: ::std::option::Option<i64>,
+        #[doc = "Output only. Transmission power measured in decibels."]
+        #[serde(
+            rename = "transmissionPowerDbm",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transmission_power_dbm: ::std::option::Option<i32>,
+        #[doc = "Output only. Wifi link quality. Value ranges from \\[0, 70\\]. 0 indicates no signal and 70 indicates a strong signal."]
+        #[serde(
+            rename = "wifiLinkQuality",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub wifi_link_quality: ::std::option::Option<i64>,
+        #[doc = "Output only. Wifi power management enabled"]
+        #[serde(
+            rename = "wifiPowerManagementEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub wifi_power_management_enabled: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1NetworkStatusReport {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2524,6 +3688,146 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1NetworkStatusReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1NetworkStatusReportConnectionState {
+        #[doc = "The network is connected and not in a detected portal state, but internet connectivity may not be available."]
+        Connected,
+        #[doc = "The network is in the process of connecting."]
+        Connecting,
+        #[doc = "Network connection state unspecified."]
+        NetworkConnectionStateUnspecified,
+        #[doc = "The network is not connected."]
+        NotConnected,
+        #[doc = "The network is connected and internet connectivity is available."]
+        Online,
+        #[doc = "The network is connected but a portal state was detected. Internet connectivity may be limited."]
+        Portal,
+    }
+    impl GoogleChromeManagementV1NetworkStatusReportConnectionState {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1NetworkStatusReportConnectionState :: Connected => "CONNECTED" , GoogleChromeManagementV1NetworkStatusReportConnectionState :: Connecting => "CONNECTING" , GoogleChromeManagementV1NetworkStatusReportConnectionState :: NetworkConnectionStateUnspecified => "NETWORK_CONNECTION_STATE_UNSPECIFIED" , GoogleChromeManagementV1NetworkStatusReportConnectionState :: NotConnected => "NOT_CONNECTED" , GoogleChromeManagementV1NetworkStatusReportConnectionState :: Online => "ONLINE" , GoogleChromeManagementV1NetworkStatusReportConnectionState :: Portal => "PORTAL" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1NetworkStatusReportConnectionState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1NetworkStatusReportConnectionState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1NetworkStatusReportConnectionState, ()>
+        {
+            Ok (match s { "CONNECTED" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Connected , "CONNECTING" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Connecting , "NETWORK_CONNECTION_STATE_UNSPECIFIED" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: NetworkConnectionStateUnspecified , "NOT_CONNECTED" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: NotConnected , "ONLINE" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Online , "PORTAL" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Portal , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1NetworkStatusReportConnectionState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1NetworkStatusReportConnectionState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1NetworkStatusReportConnectionState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CONNECTED" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Connected , "CONNECTING" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Connecting , "NETWORK_CONNECTION_STATE_UNSPECIFIED" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: NetworkConnectionStateUnspecified , "NOT_CONNECTED" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: NotConnected , "ONLINE" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Online , "PORTAL" => GoogleChromeManagementV1NetworkStatusReportConnectionState :: Portal , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1NetworkStatusReportConnectionState
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1NetworkStatusReportConnectionState
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1NetworkStatusReportConnectionType {
+        #[doc = "Cellular network connection."]
+        Cellular,
+        #[doc = "Ethernet network connection."]
+        Ethernet,
+        #[doc = "Network connection type unspecified"]
+        NetworkTypeUnspecified,
+        #[doc = "Tether network connection."]
+        Tether,
+        #[doc = "VPN network connection."]
+        Vpn,
+        #[doc = "Wifi network connection."]
+        Wifi,
+    }
+    impl GoogleChromeManagementV1NetworkStatusReportConnectionType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1NetworkStatusReportConnectionType :: Cellular => "CELLULAR" , GoogleChromeManagementV1NetworkStatusReportConnectionType :: Ethernet => "ETHERNET" , GoogleChromeManagementV1NetworkStatusReportConnectionType :: NetworkTypeUnspecified => "NETWORK_TYPE_UNSPECIFIED" , GoogleChromeManagementV1NetworkStatusReportConnectionType :: Tether => "TETHER" , GoogleChromeManagementV1NetworkStatusReportConnectionType :: Vpn => "VPN" , GoogleChromeManagementV1NetworkStatusReportConnectionType :: Wifi => "WIFI" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1NetworkStatusReportConnectionType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1NetworkStatusReportConnectionType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1NetworkStatusReportConnectionType, ()>
+        {
+            Ok (match s { "CELLULAR" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Cellular , "ETHERNET" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Ethernet , "NETWORK_TYPE_UNSPECIFIED" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: NetworkTypeUnspecified , "TETHER" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Tether , "VPN" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Vpn , "WIFI" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Wifi , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1NetworkStatusReportConnectionType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1NetworkStatusReportConnectionType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1NetworkStatusReportConnectionType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CELLULAR" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Cellular , "ETHERNET" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Ethernet , "NETWORK_TYPE_UNSPECIFIED" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: NetworkTypeUnspecified , "TETHER" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Tether , "VPN" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Vpn , "WIFI" => GoogleChromeManagementV1NetworkStatusReportConnectionType :: Wifi , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1NetworkStatusReportConnectionType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1NetworkStatusReportConnectionType
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2715,6 +4019,45 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleChromeManagementV1PeripheralsReport {
+        #[doc = "Output only. Timestamp of when the report was collected."]
+        #[serde(
+            rename = "reportTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_time: ::std::option::Option<String>,
+        #[doc = "Reports of all usb connected devices."]
+        #[serde(
+            rename = "usbPeripheralReport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usb_peripheral_report:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1UsbPeripheralReport>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1PeripheralsReport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1PeripheralsReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleChromeManagementV1StorageInfo {
         #[doc = "The available space for user data storage in the device in bytes."]
         #[serde(
@@ -2812,7 +4155,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleChromeManagementV1StorageStatusReport {
-        #[doc = "Output only. Reports on disk"]
+        #[doc = "Output only. Reports on disk."]
         #[serde(
             rename = "disk",
             default,
@@ -2833,6 +4176,34 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1StorageStatusReport {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2874,6 +4245,15 @@ pub mod schemas {
         )]
         pub battery_status_report:
             ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1BatteryStatusReport>>,
+        #[doc = "Output only. Boot performance reports of the device."]
+        #[serde(
+            rename = "bootPerformanceReport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub boot_performance_report: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromeManagementV1BootPerformanceReport>,
+        >,
         #[doc = "Output only. Information regarding CPU specs for the device."]
         #[serde(
             rename = "cpuInfo",
@@ -2942,6 +4322,23 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Output only. Network diagnostics collected periodically."]
+        #[serde(
+            rename = "networkDiagnosticsReport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_diagnostics_report: ::std::option::Option<
+            Vec<crate::schemas::GoogleChromeManagementV1NetworkDiagnosticsReport>,
+        >,
+        #[doc = "Output only. Network devices information."]
+        #[serde(
+            rename = "networkInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub network_info:
+            ::std::option::Option<crate::schemas::GoogleChromeManagementV1NetworkInfo>,
         #[doc = "Output only. Network specs collected periodically."]
         #[serde(
             rename = "networkStatusReport",
@@ -2988,6 +4385,14 @@ pub mod schemas {
         )]
         pub storage_status_report:
             ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1StorageStatusReport>>,
+        #[doc = "Output only. Information on Thunderbolt bus."]
+        #[serde(
+            rename = "thunderboltInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub thunderbolt_info:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1ThunderboltInfo>>,
     }
     impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TelemetryDevice {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2995,6 +4400,914 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryDevice {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryDeviceInfo {
+        #[doc = "Output only. The unique Directory API ID of the device. This value is the same as the Admin Console’s Directory API ID in the ChromeOS Devices tab."]
+        #[serde(
+            rename = "deviceId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device_id: ::std::option::Option<String>,
+        #[doc = "Output only. Organization unit ID of the device."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TelemetryDeviceInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryDeviceInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryEvent {
+        #[doc = "Output only. Payload for audio severe underrun event. Present only when the `event_type` field is `AUDIO_SEVERE_UNDERRUN`."]
+        #[serde(
+            rename = "audioSevereUnderrunEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub audio_severe_underrun_event: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent,
+        >,
+        #[doc = "Output only. Information about the device associated with the event."]
+        #[serde(
+            rename = "device",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device:
+            ::std::option::Option<crate::schemas::GoogleChromeManagementV1TelemetryDeviceInfo>,
+        #[doc = "The event type of the current event."]
+        #[serde(
+            rename = "eventType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_type:
+            ::std::option::Option<crate::schemas::GoogleChromeManagementV1TelemetryEventEventType>,
+        #[doc = "Output only. Payload for HTTPS latency change event. Present only when `event_type` is `NETWORK_HTTPS_LATENCY_CHANGE`."]
+        #[serde(
+            rename = "httpsLatencyChangeEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub https_latency_change_event: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent,
+        >,
+        #[doc = "Output only. Resource name of the event."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Timestamp that represents when the event was reported."]
+        #[serde(
+            rename = "reportTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_time: ::std::option::Option<String>,
+        #[doc = "Output only. Payload for usb peripherals event. Present only when the `event_type` field is either `USB_ADDED` or `USB_REMOVED`."]
+        #[serde(
+            rename = "usbPeripheralsEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usb_peripherals_event: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1TelemetryUsbPeripheralsEvent,
+        >,
+        #[doc = "Output only. Information about the user associated with the event."]
+        #[serde(
+            rename = "user",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user: ::std::option::Option<crate::schemas::GoogleChromeManagementV1TelemetryUserInfo>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TelemetryEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1TelemetryEventEventType {
+        #[doc = "Triggered when a audio devices run out of buffer data for more than 5 seconds."]
+        AudioSevereUnderrun,
+        #[doc = "Event type unknown."]
+        EventTypeUnspecified,
+        #[doc = "Triggered when a new HTTPS latency problem was detected or the device has recovered form an existing HTTPS latency problem."]
+        NetworkHttpsLatencyChange,
+        #[doc = "Triggered when USB devices are added."]
+        UsbAdded,
+        #[doc = "Triggered when USB devices are removed."]
+        UsbRemoved,
+    }
+    impl GoogleChromeManagementV1TelemetryEventEventType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleChromeManagementV1TelemetryEventEventType::AudioSevereUnderrun => {
+                    "AUDIO_SEVERE_UNDERRUN"
+                }
+                GoogleChromeManagementV1TelemetryEventEventType::EventTypeUnspecified => {
+                    "EVENT_TYPE_UNSPECIFIED"
+                }
+                GoogleChromeManagementV1TelemetryEventEventType::NetworkHttpsLatencyChange => {
+                    "NETWORK_HTTPS_LATENCY_CHANGE"
+                }
+                GoogleChromeManagementV1TelemetryEventEventType::UsbAdded => "USB_ADDED",
+                GoogleChromeManagementV1TelemetryEventEventType::UsbRemoved => "USB_REMOVED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1TelemetryEventEventType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1TelemetryEventEventType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1TelemetryEventEventType, ()> {
+            Ok(match s {
+                "AUDIO_SEVERE_UNDERRUN" => {
+                    GoogleChromeManagementV1TelemetryEventEventType::AudioSevereUnderrun
+                }
+                "EVENT_TYPE_UNSPECIFIED" => {
+                    GoogleChromeManagementV1TelemetryEventEventType::EventTypeUnspecified
+                }
+                "NETWORK_HTTPS_LATENCY_CHANGE" => {
+                    GoogleChromeManagementV1TelemetryEventEventType::NetworkHttpsLatencyChange
+                }
+                "USB_ADDED" => GoogleChromeManagementV1TelemetryEventEventType::UsbAdded,
+                "USB_REMOVED" => GoogleChromeManagementV1TelemetryEventEventType::UsbRemoved,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1TelemetryEventEventType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1TelemetryEventEventType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1TelemetryEventEventType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AUDIO_SEVERE_UNDERRUN" => {
+                    GoogleChromeManagementV1TelemetryEventEventType::AudioSevereUnderrun
+                }
+                "EVENT_TYPE_UNSPECIFIED" => {
+                    GoogleChromeManagementV1TelemetryEventEventType::EventTypeUnspecified
+                }
+                "NETWORK_HTTPS_LATENCY_CHANGE" => {
+                    GoogleChromeManagementV1TelemetryEventEventType::NetworkHttpsLatencyChange
+                }
+                "USB_ADDED" => GoogleChromeManagementV1TelemetryEventEventType::UsbAdded,
+                "USB_REMOVED" => GoogleChromeManagementV1TelemetryEventEventType::UsbRemoved,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TelemetryEventEventType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryEventEventType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent { # [doc = "HTTPS latency routine data that triggered the event."] # [serde (rename = "httpsLatencyRoutineData" , default , skip_serializing_if = "std::option::Option::is_none")] pub https_latency_routine_data : :: std :: option :: Option < crate :: schemas :: GoogleChromeManagementV1HttpsLatencyRoutineData > , # [doc = "Current HTTPS latency state."] # [serde (rename = "httpsLatencyState" , default , skip_serializing_if = "std::option::Option::is_none")] pub https_latency_state : :: std :: option :: Option < crate :: schemas :: GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState {
+        #[doc = "HTTPS latency state is unspecified."]
+        HttpsLatencyStateUnspecified,
+        #[doc = "HTTPS latency problem."]
+        Problem,
+        #[doc = "HTTPS latency recovered from a problem."]
+        Recovery,
+    }
+    impl GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: HttpsLatencyStateUnspecified => "HTTPS_LATENCY_STATE_UNSPECIFIED" , GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: Problem => "PROBLEM" , GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: Recovery => "RECOVERY" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState,
+            (),
+        > {
+            Ok (match s { "HTTPS_LATENCY_STATE_UNSPECIFIED" => GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: HttpsLatencyStateUnspecified , "PROBLEM" => GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: Problem , "RECOVERY" => GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: Recovery , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "HTTPS_LATENCY_STATE_UNSPECIFIED" => GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: HttpsLatencyStateUnspecified , "PROBLEM" => GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: Problem , "RECOVERY" => GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState :: Recovery , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1TelemetryHttpsLatencyChangeEventHttpsLatencyState
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryUsbPeripheralsEvent {
+        #[doc = "List of usb devices that were either added or removed."]
+        #[serde(
+            rename = "usbPeripheralReport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usb_peripheral_report:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1UsbPeripheralReport>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1TelemetryUsbPeripheralsEvent
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryUsbPeripheralsEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryUser {
+        #[doc = "G Suite Customer whose enterprise enrolled the device."]
+        #[serde(
+            rename = "customer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer: ::std::option::Option<String>,
+        #[doc = "Resource name of the user."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Organization unit of the user."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
+        #[doc = "Telemetry data collected from a managed user and device."]
+        #[serde(
+            rename = "userDevice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_device:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1TelemetryUserDevice>>,
+        #[doc = "Email address of the user."]
+        #[serde(
+            rename = "userEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_email: ::std::option::Option<String>,
+        #[doc = "Directory ID of the user."]
+        #[serde(
+            rename = "userId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TelemetryUser {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryUser {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryUserDevice {
+        #[doc = "Output only. Audio reports collected periodically sorted in a decreasing order of report_time."]
+        #[serde(
+            rename = "audioStatusReport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub audio_status_report:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1AudioStatusReport>>,
+        #[doc = "The unique Directory API ID of the device. This value is the same as the Admin Console’s Directory API ID in the ChromeOS Devices tab."]
+        #[serde(
+            rename = "deviceId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device_id: ::std::option::Option<String>,
+        #[doc = "Output only. Peripherals reports collected periodically sorted in a decreasing order of report_time."]
+        #[serde(
+            rename = "peripheralsReport",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub peripherals_report:
+            ::std::option::Option<Vec<crate::schemas::GoogleChromeManagementV1PeripheralsReport>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TelemetryUserDevice {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryUserDevice {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TelemetryUserInfo {
+        #[doc = "Output only. User’s email."]
+        #[serde(
+            rename = "email",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email: ::std::option::Option<String>,
+        #[doc = "Output only. Organization unit ID of the user."]
+        #[serde(
+            rename = "orgUnitId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub org_unit_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TelemetryUserInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TelemetryUserInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1ThunderboltInfo {
+        #[doc = "Security level of the Thunderbolt bus."]
+        #[serde(
+            rename = "securityLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub security_level: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1ThunderboltInfoSecurityLevel,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1ThunderboltInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1ThunderboltInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        #[doc = "The firmware automatically creates tunnels for Thunderbolt."]
+        ThunderboltSecurityDpOnlyLevel,
+        #[doc = "Thunderbolt security level is not set."]
+        ThunderboltSecurityLevelUnspecified,
+        #[doc = "PCIE tunneling is disabled."]
+        ThunderboltSecurityNoPcieLevel,
+        #[doc = "All devices are automatically connected by the firmware. No user approval is needed."]
+        ThunderboltSecurityNoneLevel,
+        #[doc = "User is asked whether the device is allowed to be connected. In addition the device is sent a challenge that should match the expected one based on a random key written to the key sysfs attribute"]
+        ThunderboltSecuritySecureLevel,
+        #[doc = "The firmware automatically creates tunnels for the USB controller and Display Port in a dock. All PCIe links downstream of the dock are removed."]
+        ThunderboltSecurityUsbOnlyLevel,
+        #[doc = "User is asked whether the device is allowed to be connected."]
+        ThunderboltSecurityUserLevel,
+    }
+    impl GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityDpOnlyLevel => "THUNDERBOLT_SECURITY_DP_ONLY_LEVEL" , GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityLevelUnspecified => "THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED" , GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityNoPcieLevel => "THUNDERBOLT_SECURITY_NO_PCIE_LEVEL" , GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityNoneLevel => "THUNDERBOLT_SECURITY_NONE_LEVEL" , GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecuritySecureLevel => "THUNDERBOLT_SECURITY_SECURE_LEVEL" , GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityUsbOnlyLevel => "THUNDERBOLT_SECURITY_USB_ONLY_LEVEL" , GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityUserLevel => "THUNDERBOLT_SECURITY_USER_LEVEL" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleChromeManagementV1ThunderboltInfoSecurityLevel, ()>
+        {
+            Ok (match s { "THUNDERBOLT_SECURITY_DP_ONLY_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityDpOnlyLevel , "THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityLevelUnspecified , "THUNDERBOLT_SECURITY_NO_PCIE_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityNoPcieLevel , "THUNDERBOLT_SECURITY_NONE_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityNoneLevel , "THUNDERBOLT_SECURITY_SECURE_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecuritySecureLevel , "THUNDERBOLT_SECURITY_USB_ONLY_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityUsbOnlyLevel , "THUNDERBOLT_SECURITY_USER_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityUserLevel , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "THUNDERBOLT_SECURITY_DP_ONLY_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityDpOnlyLevel , "THUNDERBOLT_SECURITY_LEVEL_UNSPECIFIED" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityLevelUnspecified , "THUNDERBOLT_SECURITY_NO_PCIE_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityNoPcieLevel , "THUNDERBOLT_SECURITY_NONE_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityNoneLevel , "THUNDERBOLT_SECURITY_SECURE_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecuritySecureLevel , "THUNDERBOLT_SECURITY_USB_ONLY_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityUsbOnlyLevel , "THUNDERBOLT_SECURITY_USER_LEVEL" => GoogleChromeManagementV1ThunderboltInfoSecurityLevel :: ThunderboltSecurityUserLevel , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1ThunderboltInfoSecurityLevel
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1ThunderboltInfoSecurityLevel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1TotalMemoryEncryptionInfo {
+        #[doc = "Memory encryption algorithm."]
+        #[serde(
+            rename = "encryptionAlgorithm",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_algorithm: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm,
+        >,
+        #[doc = "The state of memory encryption on the device."]
+        #[serde(
+            rename = "encryptionState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub encryption_state: ::std::option::Option<
+            crate::schemas::GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState,
+        >,
+        #[doc = "The length of the encryption keys."]
+        #[serde(
+            rename = "keyLength",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub key_length: ::std::option::Option<i64>,
+        #[doc = "The maximum number of keys that can be used for encryption."]
+        #[serde(
+            rename = "maxKeys",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_keys: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1TotalMemoryEncryptionInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1TotalMemoryEncryptionInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm {
+        #[doc = "The memory encryption algorithm is using the AES_XTS encryption algorithm with a 128 bit block cypher."]
+        MemoryEncryptionAlgorithmAesXts128,
+        #[doc = "The memory encryption algorithm is using the AES_XTS encryption algorithm with a 256 bit block cypher."]
+        MemoryEncryptionAlgorithmAesXts256,
+        #[doc = "The memory encryption algorithm being used is unknown."]
+        MemoryEncryptionAlgorithmUnknown,
+        #[doc = "Memory encryption algorithm is not set."]
+        MemoryEncryptionAlgorithmUnspecified,
+    }
+    impl GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmAesXts128 => "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128" , GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmAesXts256 => "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256" , GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmUnknown => "MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN" , GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmUnspecified => "MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm,
+            (),
+        > {
+            Ok (match s { "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmAesXts128 , "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmAesXts256 , "MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmUnknown , "MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_128" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmAesXts128 , "MEMORY_ENCRYPTION_ALGORITHM_AES_XTS_256" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmAesXts256 , "MEMORY_ENCRYPTION_ALGORITHM_UNKNOWN" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmUnknown , "MEMORY_ENCRYPTION_ALGORITHM_UNSPECIFIED" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm :: MemoryEncryptionAlgorithmUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionAlgorithm
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState {
+        #[doc = "Memory encrpytion on the device is disabled."]
+        MemoryEncryptionStateDisabled,
+        #[doc = "Memory encryption on the device uses multi-key total memory encryption."]
+        MemoryEncryptionStateMktme,
+        #[doc = "Memory encryption on the device uses total memory encryption."]
+        MemoryEncryptionStateTme,
+        #[doc = "The memory encryption state is unknown."]
+        MemoryEncryptionStateUnknown,
+        #[doc = "Memory encryption state is not set."]
+        MemoryEncryptionStateUnspecified,
+    }
+    impl GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateDisabled => "MEMORY_ENCRYPTION_STATE_DISABLED" , GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateMktme => "MEMORY_ENCRYPTION_STATE_MKTME" , GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateTme => "MEMORY_ENCRYPTION_STATE_TME" , GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateUnknown => "MEMORY_ENCRYPTION_STATE_UNKNOWN" , GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateUnspecified => "MEMORY_ENCRYPTION_STATE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState,
+            (),
+        > {
+            Ok (match s { "MEMORY_ENCRYPTION_STATE_DISABLED" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateDisabled , "MEMORY_ENCRYPTION_STATE_MKTME" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateMktme , "MEMORY_ENCRYPTION_STATE_TME" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateTme , "MEMORY_ENCRYPTION_STATE_UNKNOWN" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateUnknown , "MEMORY_ENCRYPTION_STATE_UNSPECIFIED" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "MEMORY_ENCRYPTION_STATE_DISABLED" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateDisabled , "MEMORY_ENCRYPTION_STATE_MKTME" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateMktme , "MEMORY_ENCRYPTION_STATE_TME" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateTme , "MEMORY_ENCRYPTION_STATE_UNKNOWN" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateUnknown , "MEMORY_ENCRYPTION_STATE_UNSPECIFIED" => GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState :: MemoryEncryptionStateUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleChromeManagementV1TotalMemoryEncryptionInfoEncryptionState
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleChromeManagementV1UsbPeripheralReport {
+        #[doc = "Output only. Categories the device belongs to https://www.usb.org/defined-class-codes"]
+        #[serde(
+            rename = "categories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub categories: ::std::option::Option<Vec<String>>,
+        #[doc = "Output only. Class ID https://www.usb.org/defined-class-codes"]
+        #[serde(
+            rename = "classId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub class_id: ::std::option::Option<i32>,
+        #[doc = "Output only. Firmware version"]
+        #[serde(
+            rename = "firmwareVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub firmware_version: ::std::option::Option<String>,
+        #[doc = "Output only. Device name, model name, or product name"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. Product ID"]
+        #[serde(
+            rename = "pid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pid: ::std::option::Option<i32>,
+        #[doc = "Output only. Subclass ID https://www.usb.org/defined-class-codes"]
+        #[serde(
+            rename = "subclassId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subclass_id: ::std::option::Option<i32>,
+        #[doc = "Output only. Vendor name"]
+        #[serde(
+            rename = "vendor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vendor: ::std::option::Option<String>,
+        #[doc = "Output only. Vendor ID"]
+        #[serde(
+            rename = "vid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vid: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleChromeManagementV1UsbPeripheralReport {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleChromeManagementV1UsbPeripheralReport {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3494,7 +5807,7 @@ pub mod resources {
                         #[serde(rename = "requestedApps")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -3529,7 +5842,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -3585,7 +5898,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3708,12 +6021,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for CountChromeAppRequestsRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4409,6 +6723,79 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Generate report of the number of devices expiring in each month of the selected time frame. Devices are grouped by auto update expiration date and model. Further information can be found [here](https://support.google.com/chrome/a/answer/10564947)."]
+                pub fn count_chrome_devices_reaching_auto_expiration_date(
+                    &self,
+                    customer: impl Into<String>,
+                ) -> CountChromeDevicesReachingAutoExpirationDateRequestBuilder {
+                    CountChromeDevicesReachingAutoExpirationDateRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        customer: customer.into(),
+                        max_aue_date: None,
+                        min_aue_date: None,
+                        org_unit_id: None,
+                    }
+                }
+                #[doc = "Counts of ChromeOS devices that have not synced policies or have lacked user activity in the past 28 days, are out of date, or are not complaint. Further information can be found here https://support.google.com/chrome/a/answer/10564947"]
+                pub fn count_chrome_devices_that_need_attention(
+                    &self,
+                    customer: impl Into<String>,
+                ) -> CountChromeDevicesThatNeedAttentionRequestBuilder {
+                    CountChromeDevicesThatNeedAttentionRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        customer: customer.into(),
+                        org_unit_id: None,
+                        read_mask: None,
+                    }
+                }
+                #[doc = "Counts of devices with a specific hardware specification from the requested hardware type (for example model name, processor type). Further information can be found here https://support.google.com/chrome/a/answer/10564947"]
+                pub fn count_chrome_hardware_fleet_devices(
+                    &self,
+                    customer: impl Into<String>,
+                ) -> CountChromeHardwareFleetDevicesRequestBuilder {
+                    CountChromeHardwareFleetDevicesRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        customer: customer.into(),
+                        org_unit_id: None,
+                        read_mask: None,
+                    }
+                }
                 #[doc = "Generate report of installed Chrome versions."]
                 pub fn count_chrome_versions(
                     &self,
@@ -4490,6 +6877,532 @@ pub mod resources {
                         page_size: None,
                         page_token: None,
                     }
+                }
+            }
+            #[doc = "Created via [ReportsActions::count_chrome_devices_reaching_auto_expiration_date()](struct.ReportsActions.html#method.count_chrome_devices_reaching_auto_expiration_date)"]
+            #[derive(Debug, Clone)]
+            pub struct CountChromeDevicesReachingAutoExpirationDateRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                customer: String,
+                max_aue_date: ::std::option::Option<String>,
+                min_aue_date: ::std::option::Option<String>,
+                org_unit_id: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CountChromeDevicesReachingAutoExpirationDateRequestBuilder<'a> {
+                #[doc = "Optional. Maximum expiration date in format yyyy-mm-dd in UTC timezone. If included returns all devices that have already expired and devices with auto expiration date equal to or earlier than the maximum date."]
+                pub fn max_aue_date(mut self, value: impl Into<String>) -> Self {
+                    self.max_aue_date = Some(value.into());
+                    self
+                }
+                #[doc = "Optional. Maximum expiration date in format yyyy-mm-dd in UTC timezone. If included returns all devices that have already expired and devices with auto expiration date equal to or later than the minimum date."]
+                pub fn min_aue_date(mut self, value: impl Into<String>) -> Self {
+                    self.min_aue_date = Some(value.into());
+                    self
+                }
+                #[doc = "Optional. The organizational unit ID, if omitted, will return data for all organizational units."]
+                pub fn org_unit_id(mut self, value: impl Into<String>) -> Self {
+                    self.org_unit_id = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]                pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse , crate :: Error >{
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]                pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleChromeManagementV1CountChromeDevicesReachingAutoExpirationDateResponse , crate :: Error >{
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://chromemanagement.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.customer;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/reports:countChromeDevicesReachingAutoExpirationDate");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("maxAueDate", &self.max_aue_date)]);
+                    req = req.query(&[("minAueDate", &self.min_aue_date)]);
+                    req = req.query(&[("orgUnitId", &self.org_unit_id)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [ReportsActions::count_chrome_devices_that_need_attention()](struct.ReportsActions.html#method.count_chrome_devices_that_need_attention)"]
+            #[derive(Debug, Clone)]
+            pub struct CountChromeDevicesThatNeedAttentionRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                customer: String,
+                org_unit_id: ::std::option::Option<String>,
+                read_mask: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CountChromeDevicesThatNeedAttentionRequestBuilder<'a> {
+                #[doc = "Optional. The ID of the organizational unit. If omitted, all data will be returned."]
+                pub fn org_unit_id(mut self, value: impl Into<String>) -> Self {
+                    self.org_unit_id = Some(value.into());
+                    self
+                }
+                #[doc = "Required. Mask of the fields that should be populated in the returned report."]
+                pub fn read_mask(mut self, value: impl Into<String>) -> Self {
+                    self.read_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]                pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse , crate :: Error >{
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]                pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleChromeManagementV1CountChromeDevicesThatNeedAttentionResponse , crate :: Error >{
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://chromemanagement.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.customer;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/reports:countChromeDevicesThatNeedAttention");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("orgUnitId", &self.org_unit_id)]);
+                    req = req.query(&[("readMask", &self.read_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [ReportsActions::count_chrome_hardware_fleet_devices()](struct.ReportsActions.html#method.count_chrome_hardware_fleet_devices)"]
+            #[derive(Debug, Clone)]
+            pub struct CountChromeHardwareFleetDevicesRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                customer: String,
+                org_unit_id: ::std::option::Option<String>,
+                read_mask: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CountChromeHardwareFleetDevicesRequestBuilder<'a> {
+                #[doc = "Optional. The ID of the organizational unit. If omitted, all data will be returned."]
+                pub fn org_unit_id(mut self, value: impl Into<String>) -> Self {
+                    self.org_unit_id = Some(value.into());
+                    self
+                }
+                #[doc = "Required. Mask of the fields that should be populated in the returned report."]
+                pub fn read_mask(mut self, value: impl Into<String>) -> Self {
+                    self.read_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleChromeManagementV1CountChromeHardwareFleetDevicesResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://chromemanagement.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.customer;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/reports:countChromeHardwareFleetDevices");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("orgUnitId", &self.org_unit_id)]);
+                    req = req.query(&[("readMask", &self.read_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
                 }
             }
             #[doc = "Created via [ReportsActions::count_chrome_versions()](struct.ReportsActions.html#method.count_chrome_versions)"]
@@ -4633,7 +7546,7 @@ pub mod resources {
                         #[serde(rename = "browserVersions")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -4668,7 +7581,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -4724,7 +7637,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4847,12 +7760,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for CountChromeVersionsRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4881,12 +7795,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> CountInstalledAppsRequestBuilder<'a> {
-                #[doc = "Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Supported filter fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * latest_profile_active_date * permission_name"]
+                #[doc = "Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Supported filter fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * latest_profile_active_date * permission_name * app_id"]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "Field used to order results. Supported order by fields: * app_name * app_type * install_type * number_of_permissions * total_install_count"]
+                #[doc = "Field used to order results. Supported order by fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * app_id"]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
@@ -5004,7 +7918,7 @@ pub mod resources {
                         #[serde(rename = "installedApps")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -5039,7 +7953,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -5095,7 +8009,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5219,12 +8133,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for CountInstalledAppsRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -5387,7 +8302,7 @@ pub mod resources {
                         #[serde(rename = "devices")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -5422,7 +8337,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -5478,7 +8393,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5604,12 +8519,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for FindInstalledAppDevicesRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -5635,6 +8551,22 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
+                #[doc = "Actions that can be performed on the events resource"]
+                pub fn events(
+                    &self,
+                ) -> crate::resources::customers::telemetry::events::EventsActions {
+                    crate::resources::customers::telemetry::events::EventsActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
+                #[doc = "Actions that can be performed on the users resource"]
+                pub fn users(&self) -> crate::resources::customers::telemetry::users::UsersActions {
+                    crate::resources::customers::telemetry::users::UsersActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
             }
             pub mod devices {
                 pub mod params {}
@@ -5645,6 +8577,26 @@ pub mod resources {
                 impl<'a> DevicesActions<'a> {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
+                    }
+                    #[doc = "Get telemetry device."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            read_mask: None,
+                        }
                     }
                     #[doc = "List all telemetry devices."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
@@ -5668,6 +8620,175 @@ pub mod resources {
                             page_token: None,
                             read_mask: None,
                         }
+                    }
+                }
+                #[doc = "Created via [DevicesActions::get()](struct.DevicesActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    read_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "Required. Read mask to specify which fields to return."]
+                    pub fn read_mask(mut self, value: impl Into<String>) -> Self {
+                        self.read_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleChromeManagementV1TelemetryDevice, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleChromeManagementV1TelemetryDevice, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromemanagement.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("readMask", &self.read_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
                     }
                 }
                 #[doc = "Created via [DevicesActions::list()](struct.DevicesActions.html#method.list)"]
@@ -5698,7 +8819,7 @@ pub mod resources {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "Maximum number of results to return. Default value is 100. Maximum value is 200."]
+                    #[doc = "Maximum number of results to return. Default value is 100. Maximum value is 1000."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -5813,7 +8934,7 @@ pub mod resources {
                             #[serde(rename = "devices")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5848,7 +8969,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -5904,7 +9025,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6028,12 +9149,1012 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                    {
+                        self._execute().await
+                    }
+                }
+            }
+            pub mod events {
+                pub mod params {}
+                pub struct EventsActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> EventsActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "List telemetry events."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            filter: None,
+                            page_size: None,
+                            page_token: None,
+                            read_mask: None,
+                        }
+                    }
+                }
+                #[doc = "Created via [EventsActions::list()](struct.EventsActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    filter: ::std::option::Option<String>,
+                    page_size: ::std::option::Option<i32>,
+                    page_token: ::std::option::Option<String>,
+                    read_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Optional. Only include resources that match the filter. Supported filter fields: - device_id - user_id - device_org_unit_id - user_org_unit_id - timestamp - event_type The “timestamp” filter accepts either Epoch milliseconds or RFC 3339 formatted time surrounded by simple double quotes."]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "Optional. Maximum number of results to return. Default value is 100. Maximum value is 1000."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Optional. Token to specify next page in the list."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Required. Read mask to specify which fields to return."]
+                    pub fn read_mask(mut self, value: impl Into<String>) -> Self {
+                        self.read_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryEvents` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                    pub fn stream_telemetry_events<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_telemetry_events_with_fields(fields)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryEvents` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                    pub fn stream_telemetry_events_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1TelemetryEvent,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_telemetry_events_with_fields(None::<String>)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryEvents` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                    pub fn stream_telemetry_events_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1TelemetryEvent,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_telemetry_events_with_fields(Some("*"))
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryEvents` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                    pub fn stream_telemetry_events_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                        struct Page<T> {
+                            #[serde(rename = "nextPageToken")]
+                            pub next_page_token: ::std::option::Option<String>,
+                            #[serde(rename = "telemetryEvents")]
+                            pub items: Vec<T>,
+                        }
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
+                            fn next_page_token(&self) -> ::std::option::Option<String> {
+                                self.next_page_token.to_owned()
+                            }
+                        }
+                        impl<T> crate::stream::IntoPageItems for Page<T> {
+                            type Items = Vec<T>;
+                            fn into_page_items(self) -> Self::Items {
+                                self.items
+                            }
+                        }
+                        self.fields = Some({
+                            let mut selector =
+                                concat!("nextPageToken,", "telemetryEvents").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::stream::page_item_stream::<_, Page<T>>(self)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                    pub fn stream<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String>
+                            + ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_with_fields(fields)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the default set of fields from the server."]
+                    pub fn stream_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1ListTelemetryEventsResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests all fields from the server."]
+                    pub fn stream_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1ListTelemetryEventsResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                    #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    pub fn stream_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::stream::page_stream(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromeManagementV1ListTelemetryEventsResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromeManagementV1ListTelemetryEventsResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromemanagement.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/telemetry/events");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("readMask", &self.read_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[async_trait::async_trait]
+                impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                    {
+                        self._execute().await
+                    }
+                }
+            }
+            pub mod users {
+                pub mod params {}
+                pub struct UsersActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> UsersActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Get telemetry user."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            read_mask: None,
+                        }
+                    }
+                    #[doc = "List all telemetry users."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            filter: None,
+                            page_size: None,
+                            page_token: None,
+                            read_mask: None,
+                        }
+                    }
+                }
+                #[doc = "Created via [UsersActions::get()](struct.UsersActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    read_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "Read mask to specify which fields to return."]
+                    pub fn read_mask(mut self, value: impl Into<String>) -> Self {
+                        self.read_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleChromeManagementV1TelemetryUser, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleChromeManagementV1TelemetryUser, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromemanagement.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("readMask", &self.read_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [UsersActions::list()](struct.UsersActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    filter: ::std::option::Option<String>,
+                    page_size: ::std::option::Option<i32>,
+                    page_token: ::std::option::Option<String>,
+                    read_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Only include resources that match the filter. Supported filter fields: - user_id - user_org_unit_id "]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
+                    #[doc = "Maximum number of results to return. Default value is 100. Maximum value is 1000."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Token to specify next page in the list."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Read mask to specify which fields to return."]
+                    pub fn read_mask(mut self, value: impl Into<String>) -> Self {
+                        self.read_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryUsers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                    pub fn stream_telemetry_users<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_telemetry_users_with_fields(fields)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryUsers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                    pub fn stream_telemetry_users_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1TelemetryUser,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_telemetry_users_with_fields(None::<String>)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryUsers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                    pub fn stream_telemetry_users_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1TelemetryUser,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_telemetry_users_with_fields(Some("*"))
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `telemetryUsers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                    pub fn stream_telemetry_users_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                        struct Page<T> {
+                            #[serde(rename = "nextPageToken")]
+                            pub next_page_token: ::std::option::Option<String>,
+                            #[serde(rename = "telemetryUsers")]
+                            pub items: Vec<T>,
+                        }
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
+                            fn next_page_token(&self) -> ::std::option::Option<String> {
+                                self.next_page_token.to_owned()
+                            }
+                        }
+                        impl<T> crate::stream::IntoPageItems for Page<T> {
+                            type Items = Vec<T>;
+                            fn into_page_items(self) -> Self::Items {
+                                self.items
+                            }
+                        }
+                        self.fields = Some({
+                            let mut selector =
+                                concat!("nextPageToken,", "telemetryUsers").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::stream::page_item_stream::<_, Page<T>>(self)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                    pub fn stream<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String>
+                            + ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_with_fields(fields)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the default set of fields from the server."]
+                    pub fn stream_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1ListTelemetryUsersResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests all fields from the server."]
+                    pub fn stream_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleChromeManagementV1ListTelemetryUsersResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                    #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    pub fn stream_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::stream::page_stream(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromeManagementV1ListTelemetryUsersResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleChromeManagementV1ListTelemetryUsersResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://chromemanagement.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/telemetry/users");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("readMask", &self.read_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[async_trait::async_trait]
+                impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6325,16 +10446,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6354,13 +10477,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6368,7 +10494,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6395,7 +10521,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

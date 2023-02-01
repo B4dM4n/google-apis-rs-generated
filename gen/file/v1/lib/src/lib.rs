@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [backups](resources/projects/locations/backups/struct.BackupsActions.html)\n      * [*create*](resources/projects/locations/backups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/backups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/backups/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/backups/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/backups/struct.PatchRequestBuilder.html)\n    * [instances](resources/projects/locations/instances/struct.InstancesActions.html)\n      * [*create*](resources/projects/locations/instances/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/instances/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/instances/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/instances/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/instances/struct.PatchRequestBuilder.html), [*restore*](resources/projects/locations/instances/struct.RestoreRequestBuilder.html)\n      * [snapshots](resources/projects/locations/instances/snapshots/struct.SnapshotsActions.html)\n        * [*create*](resources/projects/locations/instances/snapshots/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/instances/snapshots/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/instances/snapshots/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/instances/snapshots/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/instances/snapshots/struct.PatchRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -47,6 +48,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub download_bytes: ::std::option::Option<i64>,
+        #[doc = "Immutable. KMS key name used for data encryption."]
+        #[serde(
+            rename = "kmsKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key: ::std::option::Option<String>,
         #[doc = "Resource labels to represent user provided metadata."]
         #[serde(
             rename = "labels",
@@ -68,21 +76,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub satisfies_pzs: ::std::option::Option<bool>,
-        #[doc = "Name of the file share in the source Cloud Filestore instance that the backup is created from."]
+        #[doc = "Name of the file share in the source Filestore instance that the backup is created from."]
         #[serde(
             rename = "sourceFileShare",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_file_share: ::std::option::Option<String>,
-        #[doc = "The resource name of the source Cloud Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup."]
+        #[doc = "The resource name of the source Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup."]
         #[serde(
             rename = "sourceInstance",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_instance: ::std::option::Option<String>,
-        #[doc = "Output only. The service tier of the source Cloud Filestore instance that this backup is created from."]
+        #[doc = "Output only. The service tier of the source Filestore instance that this backup is created from."]
         #[serde(
             rename = "sourceInstanceTier",
             default,
@@ -125,9 +133,9 @@ pub mod schemas {
         Enterprise,
         #[doc = "HIGH_SCALE instances offer expanded capacity and performance scaling capabilities."]
         HighScaleSsd,
-        #[doc = "PREMIUM tier."]
+        #[doc = "PREMIUM tier. BASIC_SSD is the preferred term for this tier."]
         Premium,
-        #[doc = "STANDARD tier."]
+        #[doc = "STANDARD tier. BASIC_HDD is the preferred term for this tier."]
         Standard,
         #[doc = "Not set."]
         TierUnspecified,
@@ -486,7 +494,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FileShareConfig {
-        #[doc = "File share capacity in gigabytes (GB). Cloud Filestore defines 1 GB as 1024^3 bytes."]
+        #[doc = "File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes."]
         #[serde(
             rename = "capacityGb",
             default,
@@ -538,7 +546,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudSaasacceleratorManagementProvidersV1Instance { # [doc = "consumer_defined_name is the name that is set by the consumer. On the other hand Name field represents system-assigned id of an instance so consumers are not necessarily aware of it. consumer_defined_name is used for notification/UI purposes for consumer to recognize their instances."] # [serde (rename = "consumerDefinedName" , default , skip_serializing_if = "std::option::Option::is_none")] pub consumer_defined_name : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when the resource was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Optional. The instance_type of this instance of format: projects/{project_number}/locations/{location_id}/instanceTypes/{instance_type_id}. Instance Type represents a high-level tier or SKU of the service that this instance belong to. When enabled(eg: Maintenance Rollout), Rollout uses ‘instance_type’ along with ‘software_versions’ to determine whether instance needs an update or not."] # [serde (rename = "instanceType" , default , skip_serializing_if = "std::option::Option::is_none")] pub instance_type : :: std :: option :: Option < String > , # [doc = "Optional. Resource labels to represent user provided metadata. Each label is a key-value pair, where both the key and the value are arbitrary strings provided by the user."] # [serde (rename = "labels" , default , skip_serializing_if = "std::option::Option::is_none")] pub labels : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Deprecated. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the referenced policy must define the same policy type. For complete details of MaintenancePolicy, please refer to go/cloud-saas-mw-ug."] # [serde (rename = "maintenancePolicyNames" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_policy_names : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "The MaintenanceSchedule contains the scheduling information of published maintenance schedule with same key as software_versions."] # [serde (rename = "maintenanceSchedules" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_schedules : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule > > , # [doc = "Optional. The MaintenanceSettings associated with instance."] # [serde (rename = "maintenanceSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings > , # [doc = "Unique name of the resource. It uses the form: `projects/{project_number}/locations/{location_id}/instances/{instance_id}` Note: This name is passed, stored and logged across the rollout system. So use of consumer project_id or any other consumer PII in the name is strongly discouraged for wipeout (go/wipeout) compliance. See go/elysium/project_ids#storage-guidance for more details."] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Optional. notification_parameter are information that service producers may like to include that is not relevant to Rollout. This parameter will only be passed to Gamma and Cloud Logging for notification/logging purpose."] # [serde (rename = "notificationParameters" , default , skip_serializing_if = "std::option::Option::is_none")] pub notification_parameters : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter > > , # [doc = "Output only. Custom string attributes used primarily to expose producer-specific information in monitoring dashboards. See go/get-instance-metadata."] # [serde (rename = "producerMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub producer_metadata : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Output only. The list of data plane resources provisioned for this instance, e.g. compute VMs. See go/get-instance-metadata."] # [serde (rename = "provisionedResources" , default , skip_serializing_if = "std::option::Option::is_none")] pub provisioned_resources : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource > > , # [doc = "Link to the SLM instance template. Only populated when updating SLM instances via SSA’s Actuation service adaptor. Service producers with custom control plane (e.g. Cloud SQL) doesn’t need to populate this field. Instead they should use software_versions."] # [serde (rename = "slmInstanceTemplate" , default , skip_serializing_if = "std::option::Option::is_none")] pub slm_instance_template : :: std :: option :: Option < String > , # [doc = "Output only. SLO metadata for instance classification in the Standardized dataplane SLO platform. See go/cloud-ssa-standard-slo for feature description."] # [serde (rename = "sloMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub slo_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata > , # [doc = "Software versions that are used to deploy this instance. This can be mutated by rollout services."] # [serde (rename = "softwareVersions" , default , skip_serializing_if = "std::option::Option::is_none")] pub software_versions : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Output only. Current lifecycle state of the resource (e.g. if it’s being created or ready to use)."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1InstanceState > , # [doc = "Output only. ID of the associated GCP tenant project. See go/get-instance-metadata."] # [serde (rename = "tenantProjectId" , default , skip_serializing_if = "std::option::Option::is_none")] pub tenant_project_id : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when the resource was last modified."] # [serde (rename = "updateTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub update_time : :: std :: option :: Option < String > , }
+    pub struct GoogleCloudSaasacceleratorManagementProvidersV1Instance { # [doc = "consumer_defined_name is the name of the instance set by the service consumers. Generally this is different from the `name` field which reperesents the system-assigned id of the instance which the service consumers do not recognize. This is a required field for tenants onboarding to Maintenance Window notifications (go/slm-rollout-maintenance-policies#prerequisites)."] # [serde (rename = "consumerDefinedName" , default , skip_serializing_if = "std::option::Option::is_none")] pub consumer_defined_name : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when the resource was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Optional. The instance_type of this instance of format: projects/{project_number}/locations/{location_id}/instanceTypes/{instance_type_id}. Instance Type represents a high-level tier or SKU of the service that this instance belong to. When enabled(eg: Maintenance Rollout), Rollout uses ‘instance_type’ along with ‘software_versions’ to determine whether instance needs an update or not."] # [serde (rename = "instanceType" , default , skip_serializing_if = "std::option::Option::is_none")] pub instance_type : :: std :: option :: Option < String > , # [doc = "Optional. Resource labels to represent user provided metadata. Each label is a key-value pair, where both the key and the value are arbitrary strings provided by the user."] # [serde (rename = "labels" , default , skip_serializing_if = "std::option::Option::is_none")] pub labels : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Optional. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the referenced policy must define the same policy type. For details, please refer to go/cloud-saas-mw-ug. Should not be set if maintenance_settings.maintenance_policies is set."] # [serde (rename = "maintenancePolicyNames" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_policy_names : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "The MaintenanceSchedule contains the scheduling information of published maintenance schedule with same key as software_versions."] # [serde (rename = "maintenanceSchedules" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_schedules : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule > > , # [doc = "Optional. The MaintenanceSettings associated with instance."] # [serde (rename = "maintenanceSettings" , default , skip_serializing_if = "std::option::Option::is_none")] pub maintenance_settings : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSettings > , # [doc = "Unique name of the resource. It uses the form: `projects/{project_number}/locations/{location_id}/instances/{instance_id}` Note: This name is passed, stored and logged across the rollout system. So use of consumer project_id or any other consumer PII in the name is strongly discouraged for wipeout (go/wipeout) compliance. See go/elysium/project_ids#storage-guidance for more details."] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Optional. notification_parameter are information that service producers may like to include that is not relevant to Rollout. This parameter will only be passed to Gamma and Cloud Logging for notification/logging purpose."] # [serde (rename = "notificationParameters" , default , skip_serializing_if = "std::option::Option::is_none")] pub notification_parameters : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter > > , # [doc = "Output only. Custom string attributes used primarily to expose producer-specific information in monitoring dashboards. See go/get-instance-metadata."] # [serde (rename = "producerMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub producer_metadata : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Output only. The list of data plane resources provisioned for this instance, e.g. compute VMs. See go/get-instance-metadata."] # [serde (rename = "provisionedResources" , default , skip_serializing_if = "std::option::Option::is_none")] pub provisioned_resources : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource > > , # [doc = "Link to the SLM instance template. Only populated when updating SLM instances via SSA’s Actuation service adaptor. Service producers with custom control plane (e.g. Cloud SQL) doesn’t need to populate this field. Instead they should use software_versions."] # [serde (rename = "slmInstanceTemplate" , default , skip_serializing_if = "std::option::Option::is_none")] pub slm_instance_template : :: std :: option :: Option < String > , # [doc = "Output only. SLO metadata for instance classification in the Standardized dataplane SLO platform. See go/cloud-ssa-standard-slo for feature description."] # [serde (rename = "sloMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub slo_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata > , # [doc = "Software versions that are used to deploy this instance. This can be mutated by rollout services."] # [serde (rename = "softwareVersions" , default , skip_serializing_if = "std::option::Option::is_none")] pub software_versions : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , String > > , # [doc = "Output only. Current lifecycle state of the resource (e.g. if it’s being created or ready to use)."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudSaasacceleratorManagementProvidersV1InstanceState > , # [doc = "Output only. ID of the associated GCP tenant project. See go/get-instance-metadata."] # [serde (rename = "tenantProjectId" , default , skip_serializing_if = "std::option::Option::is_none")] pub tenant_project_id : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when the resource was last modified."] # [serde (rename = "updateTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub update_time : :: std :: option :: Option < String > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudSaasacceleratorManagementProvidersV1Instance
     {
@@ -778,7 +786,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_rollback: ::std::option::Option<bool>,
-        #[doc = "Optional. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the embedded policy must define the same policy type. For complete details of MaintenancePolicy, please refer to go/cloud-saas-mw-ug. If only the name is needed (like in the deprecated Instance.maintenance_policy_names field) then only populate MaintenancePolicy.name."]
+        #[doc = "Optional. The MaintenancePolicies that have been attached to the instance. The key must be of the type name of the oneof policy name defined in MaintenancePolicy, and the embedded policy must define the same policy type. For details, please refer to go/cloud-saas-mw-ug. Should not be set if maintenance_policy_names is set. If only the name is needed, then only populate MaintenancePolicy.name."]
         #[serde(
             rename = "maintenancePolicies",
             default,
@@ -1195,10 +1203,14 @@ pub mod schemas {
         Repairing,
         #[doc = "The instance is restoring a backup to an existing file share and may be unusable during this time."]
         Restoring,
+        #[doc = "The instance is in the process of becoming active."]
+        Resuming,
         #[doc = "State not set."]
         StateUnspecified,
         #[doc = "The instance is suspended. You can get further details from the `suspension_reasons` field of the `Instance` resource."]
         Suspended,
+        #[doc = "The instance is in the process of becoming suspended."]
+        Suspending,
     }
     impl InstanceState {
         pub fn as_str(self) -> &'static str {
@@ -1209,8 +1221,10 @@ pub mod schemas {
                 InstanceState::Ready => "READY",
                 InstanceState::Repairing => "REPAIRING",
                 InstanceState::Restoring => "RESTORING",
+                InstanceState::Resuming => "RESUMING",
                 InstanceState::StateUnspecified => "STATE_UNSPECIFIED",
                 InstanceState::Suspended => "SUSPENDED",
+                InstanceState::Suspending => "SUSPENDING",
             }
         }
     }
@@ -1229,8 +1243,10 @@ pub mod schemas {
                 "READY" => InstanceState::Ready,
                 "REPAIRING" => InstanceState::Repairing,
                 "RESTORING" => InstanceState::Restoring,
+                "RESUMING" => InstanceState::Resuming,
                 "STATE_UNSPECIFIED" => InstanceState::StateUnspecified,
                 "SUSPENDED" => InstanceState::Suspended,
+                "SUSPENDING" => InstanceState::Suspending,
                 _ => return Err(()),
             })
         }
@@ -1261,8 +1277,10 @@ pub mod schemas {
                 "READY" => InstanceState::Ready,
                 "REPAIRING" => InstanceState::Repairing,
                 "RESTORING" => InstanceState::Restoring,
+                "RESUMING" => InstanceState::Resuming,
                 "STATE_UNSPECIFIED" => InstanceState::StateUnspecified,
                 "SUSPENDED" => InstanceState::Suspended,
+                "SUSPENDING" => InstanceState::Suspending,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1369,9 +1387,9 @@ pub mod schemas {
         Enterprise,
         #[doc = "HIGH_SCALE instances offer expanded capacity and performance scaling capabilities."]
         HighScaleSsd,
-        #[doc = "PREMIUM tier."]
+        #[doc = "PREMIUM tier. BASIC_SSD is the preferred term for this tier."]
         Premium,
-        #[doc = "STANDARD tier."]
+        #[doc = "STANDARD tier. BASIC_HDD is the preferred term for this tier."]
         Standard,
         #[doc = "Not set."]
         TierUnspecified,
@@ -1500,7 +1518,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBackupsResponse {
+    impl crate::GetNextPageToken<String> for ListBackupsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1550,7 +1568,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListInstancesResponse {
+    impl crate::GetNextPageToken<String> for ListInstancesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1582,7 +1600,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1614,7 +1632,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1657,7 +1675,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListSnapshotsResponse {
+    impl crate::GetNextPageToken<String> for ListSnapshotsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1939,7 +1957,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network: ::std::option::Option<String>,
-        #[doc = "Optional, reserved_ip_range can have one of the following two types of values. * CIDR range value when using DIRECT_PEERING connect mode. * [Allocated IP address range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address) when using PRIVATE_SERVICE_ACCESS connect mode. When the name of an allocated IP address range is specified, it must be one of the ranges associated with the private service access connection. When specified as a direct CIDR value, it must be a /29 CIDR block for Basic tier or a /24 CIDR block for High Scale or Enterprise tier in one of the [internal IP address ranges](https://www.arin.net/reference/research/statistics/address_filters/) that identifies the range of IP addresses reserved for this instance. For example, 10.0.0.0/29 or 192.168.0.0/24. The range you specify can’t overlap with either existing subnets or assigned IP address ranges for other Cloud Filestore instances in the selected VPC network."]
+        #[doc = "Optional, reserved_ip_range can have one of the following two types of values. * CIDR range value when using DIRECT_PEERING connect mode. * [Allocated IP address range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address) when using PRIVATE_SERVICE_ACCESS connect mode. When the name of an allocated IP address range is specified, it must be one of the ranges associated with the private service access connection. When specified as a direct CIDR value, it must be a /29 CIDR block for Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for Enterprise tier in one of the [internal IP address ranges](https://www.arin.net/reference/research/statistics/address_filters/) that identifies the range of IP addresses reserved for this instance. For example, 10.0.0.0/29, 192.168.0.0/24 or 192.168.0.0/26, respectively. The range you specify can’t overlap with either existing subnets or assigned IP address ranges for other Filestore instances in the selected VPC network."]
         #[serde(
             rename = "reservedIpRange",
             default,
@@ -2453,7 +2471,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RestoreInstanceRequest {
-        #[doc = "Required. Name of the file share in the Cloud Filestore instance that the backup is being restored to."]
+        #[doc = "Required. Name of the file share in the Filestore instance that the backup is being restored to."]
         #[serde(
             rename = "fileShare",
             default,
@@ -2913,6 +2931,12 @@ pub mod schemas {
         Later,
         #[doc = "Unspecified channel."]
         UpdateChannelUnspecified,
+        #[doc = "! ! The follow channels can ONLY be used if you adopt the new MW system! ! ! NOTE: all WEEK channels are assumed to be under a weekly window. ! There is currently no dedicated channel definitions for Daily windows. ! If you use Daily window, the system will assume a 1d (24Hours) advanced ! notification period b/w EARLY and LATER. ! We may consider support more flexible daily channel specifications in ! the future. WEEK1 == EARLIER with minimum 7d advanced notification. {7d, 14d} The system will treat them equally and will use WEEK1 whenever it can. New customers are encouraged to use this channel annotation."]
+        Week1,
+        #[doc = "WEEK2 == LATER with minimum 14d advanced notification {14d, 21d}."]
+        Week2,
+        #[doc = "WEEK5 == 40d support. minimum 35d advanced notification {35d, 42d}."]
+        Week5,
     }
     impl UpdatePolicyChannel {
         pub fn as_str(self) -> &'static str {
@@ -2920,6 +2944,9 @@ pub mod schemas {
                 UpdatePolicyChannel::Earlier => "EARLIER",
                 UpdatePolicyChannel::Later => "LATER",
                 UpdatePolicyChannel::UpdateChannelUnspecified => "UPDATE_CHANNEL_UNSPECIFIED",
+                UpdatePolicyChannel::Week1 => "WEEK1",
+                UpdatePolicyChannel::Week2 => "WEEK2",
+                UpdatePolicyChannel::Week5 => "WEEK5",
             }
         }
     }
@@ -2935,6 +2962,9 @@ pub mod schemas {
                 "EARLIER" => UpdatePolicyChannel::Earlier,
                 "LATER" => UpdatePolicyChannel::Later,
                 "UPDATE_CHANNEL_UNSPECIFIED" => UpdatePolicyChannel::UpdateChannelUnspecified,
+                "WEEK1" => UpdatePolicyChannel::Week1,
+                "WEEK2" => UpdatePolicyChannel::Week2,
+                "WEEK5" => UpdatePolicyChannel::Week5,
                 _ => return Err(()),
             })
         }
@@ -2962,6 +2992,9 @@ pub mod schemas {
                 "EARLIER" => UpdatePolicyChannel::Earlier,
                 "LATER" => UpdatePolicyChannel::Later,
                 "UPDATE_CHANNEL_UNSPECIFIED" => UpdatePolicyChannel::UpdateChannelUnspecified,
+                "WEEK1" => UpdatePolicyChannel::Week1,
+                "WEEK2" => UpdatePolicyChannel::Week2,
+                "WEEK5" => UpdatePolicyChannel::Week5,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -3588,7 +3621,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -3623,7 +3656,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -3673,7 +3706,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3793,12 +3826,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4550,7 +4584,7 @@ pub mod resources {
                             #[serde(rename = "backups")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4620,7 +4654,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4655,7 +4689,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4705,7 +4739,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4825,12 +4859,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5791,7 +5826,7 @@ pub mod resources {
                             #[serde(rename = "instances")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5861,7 +5896,7 @@ pub mod resources {
                             #[serde(rename = "unreachable")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5896,7 +5931,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -5946,7 +5981,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6066,12 +6101,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -7169,7 +7205,7 @@ pub mod resources {
                                 #[serde(rename = "snapshots")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -7206,7 +7242,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -7256,7 +7292,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -7378,12 +7414,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -8270,7 +8307,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -8305,7 +8342,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -8355,7 +8392,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -8474,12 +8511,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -8771,16 +8809,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -8800,13 +8840,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -8814,7 +8857,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -8841,7 +8884,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

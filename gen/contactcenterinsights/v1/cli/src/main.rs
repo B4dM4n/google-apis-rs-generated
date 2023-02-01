@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("contactcenterinsights1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230121")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -49,8 +49,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             locations1 = locations1.subcommand(mcmd);
         }
         let mut conversations2 = SubCommand::with_name("conversations")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: calculate_stats, create, delete, get, list and patch");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: bulk_analyze, calculate_stats, create, delete, get, ingest, list and patch");
+        {
+            let mcmd = SubCommand::with_name("bulk_analyze")
+                .about("Analyzes multiple conversations in a single request.");
+            conversations2 = conversations2.subcommand(mcmd);
+        }
         {
             let mcmd =
                 SubCommand::with_name("calculate_stats").about("Gets conversation statistics.");
@@ -66,6 +71,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("get").about("Gets a conversation.");
+            conversations2 = conversations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("ingest").about(
+                "Imports conversations and processes them according to the user's configuration.",
+            );
             conversations2 = conversations2.subcommand(mcmd);
         }
         {
@@ -202,7 +213,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut issues3 = SubCommand::with_name("issues")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get, list and patch");
+            .about("methods: delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes an issue.");
+            issues3 = issues3.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Gets an issue.");
             issues3 = issues3.subcommand(mcmd);

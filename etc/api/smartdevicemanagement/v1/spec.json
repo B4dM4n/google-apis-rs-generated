@@ -7,7 +7,7 @@
   "canonicalName": "Smart Device Management",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20230122",
   "title": "Smart Device Management API",
   "description": "Allow select enterprise partners to access, control, and manage Google and Nest devices programmatically.",
   "ownerDomain": "google.com",
@@ -202,9 +202,6 @@
       "scopes": {
         "https://www.googleapis.com/auth/sdm.service": {
           "description": "See and/or control the devices that you selected"
-        },
-        "https://www.googleapis.com/auth/sdm.thermostat.service": {
-          "description": "See and control the Nest thermostats that you select"
         }
       }
     }
@@ -599,8 +596,7 @@
                 "$ref": "GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandResponse"
               },
               "scopes": [
-                "https://www.googleapis.com/auth/sdm.service",
-                "https://www.googleapis.com/auth/sdm.thermostat.service"
+                "https://www.googleapis.com/auth/sdm.service"
               ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
@@ -637,8 +633,7 @@
                 "$ref": "GoogleHomeEnterpriseSdmV1Device"
               },
               "scopes": [
-                "https://www.googleapis.com/auth/sdm.service",
-                "https://www.googleapis.com/auth/sdm.thermostat.service"
+                "https://www.googleapis.com/auth/sdm.service"
               ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
@@ -717,8 +712,7 @@
                 "$ref": "GoogleHomeEnterpriseSdmV1ListDevicesResponse"
               },
               "scopes": [
-                "https://www.googleapis.com/auth/sdm.service",
-                "https://www.googleapis.com/auth/sdm.thermostat.service"
+                "https://www.googleapis.com/auth/sdm.service"
               ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
@@ -762,8 +756,7 @@
                     "$ref": "GoogleHomeEnterpriseSdmV1Room"
                   },
                   "scopes": [
-                    "https://www.googleapis.com/auth/sdm.service",
-                    "https://www.googleapis.com/auth/sdm.thermostat.service"
+                    "https://www.googleapis.com/auth/sdm.service"
                   ],
                   "supportsMediaDownload": false,
                   "useMediaDownloadService": false,
@@ -828,8 +821,7 @@
                     "$ref": "GoogleHomeEnterpriseSdmV1ListRoomsResponse"
                   },
                   "scopes": [
-                    "https://www.googleapis.com/auth/sdm.service",
-                    "https://www.googleapis.com/auth/sdm.thermostat.service"
+                    "https://www.googleapis.com/auth/sdm.service"
                   ],
                   "supportsMediaDownload": false,
                   "useMediaDownloadService": false,
@@ -870,8 +862,7 @@
                 "$ref": "GoogleHomeEnterpriseSdmV1Structure"
               },
               "scopes": [
-                "https://www.googleapis.com/auth/sdm.service",
-                "https://www.googleapis.com/auth/sdm.thermostat.service"
+                "https://www.googleapis.com/auth/sdm.service"
               ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,
@@ -950,8 +941,7 @@
                 "$ref": "GoogleHomeEnterpriseSdmV1ListStructuresResponse"
               },
               "scopes": [
-                "https://www.googleapis.com/auth/sdm.service",
-                "https://www.googleapis.com/auth/sdm.thermostat.service"
+                "https://www.googleapis.com/auth/sdm.service"
               ],
               "supportsMediaDownload": false,
               "useMediaDownloadService": false,

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("logging2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220421")
+            .version("0.1.0-20230127")
             .about("Writes log entries and manages your Cloud Logging configuration.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -211,13 +211,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update_settings").about("Updates the Log Router settings for the given resource.Note: Settings for the Log Router can currently only be configured for Google Cloud organizations. Once configured, it applies to all projects and folders in the Google Cloud organization.UpdateSettings will fail if 1) kms_key_name is invalid, or 2) the associated service account does not have the required roles/cloudkms.cryptoKeyEncrypterDecrypter role assigned for the key, or 3) access to the key is disabled. 4) location_id is not supported by Logging. 5) location_id violate OrgPolicy.See Enabling CMEK for Log Router (https://cloud.google.com/logging/docs/routing/managed-encryption) for more information.");
             v_20 = v_20.subcommand(mcmd);
         }
-        let mut buckets1 = SubCommand::with_name("buckets")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get");
-        {
-            let mcmd = SubCommand::with_name("get").about("Gets a log bucket.");
-            buckets1 = buckets1.subcommand(mcmd);
-        }
         let mut exclusions1 = SubCommand::with_name("exclusions")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
@@ -268,13 +261,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list").about("Lists the logs in projects, organizations, folders, or billing accounts. Only logs that have entries are listed.");
             logs1 = logs1.subcommand(mcmd);
-        }
-        let mut operations1 = SubCommand::with_name("operations")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get");
-        {
-            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
-            operations1 = operations1.subcommand(mcmd);
         }
         let mut sinks1 = SubCommand::with_name("sinks")
             .setting(AppSettings::ColoredHelp)
@@ -603,22 +589,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update").about("Updates a sink. This method replaces the following fields in the existing sink with values from the new sink: destination, and filter.The updated sink might also have a new writer_identity; see the unique_writer_identity field.");
             sinks1 = sinks1.subcommand(mcmd);
         }
-        let mut views2 = SubCommand::with_name("views")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get");
-        {
-            let mcmd = SubCommand::with_name("get").about("Gets a view on a log bucket..");
-            views2 = views2.subcommand(mcmd);
-        }
         let mut buckets2 = SubCommand::with_name("buckets")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, list, patch and undelete");
+            .about("methods: create, delete, get, list, patch and undelete");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a log bucket that can be used to store log entries. After a bucket has been created, the bucket's location cannot be changed.");
             buckets2 = buckets2.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a log bucket.Changes the bucket's lifecycle_state to the DELETE_REQUESTED state. After 7 days, the bucket will be purged and all log entries in the bucket will be permanently deleted.");
+            buckets2 = buckets2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a log bucket.");
             buckets2 = buckets2.subcommand(mcmd);
         }
         {
@@ -635,9 +618,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut operations2 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: cancel and list");
+            .about("methods: cancel, get and list");
         {
             let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
             operations2 = operations2.subcommand(mcmd);
         }
         {
@@ -795,13 +782,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut views3 = SubCommand::with_name("views")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, list and patch");
+            .about("methods: create, delete, get, list and patch");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a view over log entries in a log bucket. A bucket may contain a maximum of 30 views.");
             views3 = views3.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a view on a log bucket. If an UNAVAILABLE error is returned, this indicates that system is not in a state where it can delete the view. If this occurs, please try again in a few minutes.");
+            views3 = views3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a view on a log bucket..");
             views3 = views3.subcommand(mcmd);
         }
         {
@@ -926,7 +917,6 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         locations1 = locations1.subcommand(buckets2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(buckets2);
-        buckets1 = buckets1.subcommand(views2);
         projects0 = projects0.subcommand(sinks1);
         projects0 = projects0.subcommand(metrics1);
         projects0 = projects0.subcommand(logs1);
@@ -943,11 +933,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         folders0 = folders0.subcommand(locations1);
         folders0 = folders0.subcommand(exclusions1);
         billing_accounts0 = billing_accounts0.subcommand(sinks1);
-        billing_accounts0 = billing_accounts0.subcommand(operations1);
         billing_accounts0 = billing_accounts0.subcommand(logs1);
         billing_accounts0 = billing_accounts0.subcommand(locations1);
         billing_accounts0 = billing_accounts0.subcommand(exclusions1);
-        billing_accounts0 = billing_accounts0.subcommand(buckets1);
         app = app.subcommand(v_20);
         app = app.subcommand(sinks0);
         app = app.subcommand(projects0);

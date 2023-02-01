@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("datacatalog1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230117")
             .about("A fully managed and highly scalable data discovery and metadata management service. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -52,7 +52,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: locations");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: entry_groups, tag_templates and taxonomies");
+            .about("sub-resources: entry_groups, operations, tag_templates and taxonomies");
         let mut entry_groups2 = SubCommand::with_name("entry_groups")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
@@ -87,6 +87,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method.");
             entry_groups2 = entry_groups2.subcommand(mcmd);
+        }
+        let mut operations2 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: cancel, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations2 = operations2.subcommand(mcmd);
         }
         let mut tag_templates2 = SubCommand::with_name("tag_templates")
                         .setting(AppSettings::ColoredHelp)
@@ -171,7 +190,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut entries3 = SubCommand::with_name("entries")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, list, modify_entry_contacts, modify_entry_overview, patch, star, test_iam_permissions and unstar");
+                        .about("methods: create, delete, get, get_iam_policy, import, list, modify_entry_contacts, modify_entry_overview, patch, star, test_iam_permissions and unstar");
         {
             let mcmd = SubCommand::with_name("create").about("Creates an entry. You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM', or custom types. Data Catalog automatically creates entries with other types during metadata ingestion from integrated systems. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project). An entry group can have a maximum of 100,000 entries.");
             entries3 = entries3.subcommand(mcmd);
@@ -186,6 +205,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view it. * An empty policy if the resource exists but doesn't have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn't get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.");
+            entries3 = entries3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("import").about("Imports entries from some source (e.g. dump in a Cloud Storage bucket) to the Data Catalog. Dump here is a snapshot of the third-party system state, that needs to be ingested in the Data Catalog. Import of entries is a sync operation that reconciles state of the third-party system and Data Catalog. ImportEntries is a long-running operation done in the background, so this method returns long-running operation resource. The resource can be queried with Operations.GetOperation which contains metadata and response.");
             entries3 = entries3.subcommand(mcmd);
         }
         {
@@ -330,6 +353,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         entry_groups2 = entry_groups2.subcommand(entries3);
         locations1 = locations1.subcommand(taxonomies2);
         locations1 = locations1.subcommand(tag_templates2);
+        locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(entry_groups2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("calendar3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220408")
+            .version("0.1.0-20230119")
             .about("Manipulates events and other calendar data.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -155,7 +155,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             events0 = events0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Returns an event.");
+            let mcmd = SubCommand::with_name("get").about("Returns an event based on its Google Calendar ID. To retrieve an event using its iCalendar ID, call the events.list method using the iCalUID parameter.");
             events0 = events0.subcommand(mcmd);
         }
         {

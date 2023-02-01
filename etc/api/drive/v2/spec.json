@@ -1,13 +1,13 @@
 {
   "kind": "discovery#restDescription",
-  "etag": "\"uWj2hSb4GVjzdDlAnRd2gbM1ZQ8/EpcsQ8zN5Q6e-3DdG1WPwSIcAkA\"",
+  "etag": "\"uWj2hSb4GVjzdDlAnRd2gbM1ZQ8/mokAnZviquBFviCtkVSrxKwUNZY\"",
   "discoveryVersion": "v1",
   "id": "drive:v2",
   "name": "drive",
   "canonicalName": null,
   "fullyEncodeReservedExpansion": null,
   "version": "v2",
-  "revision": "20220417",
+  "revision": "20230122",
   "title": "Drive API",
   "description": "Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.",
   "ownerDomain": "google.com",
@@ -2319,6 +2319,16 @@
               "additionalProperties": null,
               "items": null
             },
+            "canResetDriveRestrictions": {
+              "description": "Whether the current user can reset the shared drive restrictions to defaults.",
+              "type": "boolean",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
             "canShare": {
               "description": "Whether the current user can share files or folders in this shared drive.",
               "type": "boolean",
@@ -2737,6 +2747,16 @@
               "additionalProperties": null,
               "items": null
             },
+            "canModifyLabels": {
+              "description": "Whether the current user can modify the labels on this file.",
+              "type": "boolean",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
             "canMoveChildrenOutOfDrive": {
               "description": "Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives.",
               "type": "boolean",
@@ -2847,8 +2867,18 @@
               "additionalProperties": null,
               "items": null
             },
+            "canReadLabels": {
+              "description": "Whether the current user can read the labels on this file.",
+              "type": "boolean",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
             "canReadRevisions": {
-              "description": "Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read.",
+              "description": "Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it isn't a folder, can be read.",
               "type": "boolean",
               "format": null,
               "enum": [],
@@ -3004,7 +3034,7 @@
           "items": null
         },
         "downloadUrl": {
-          "description": "Short lived download URL for the file. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.",
+          "description": "Short lived download URL for the file. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3083,7 +3113,7 @@
           "items": null
         },
         "fileExtension": {
-          "description": "The final component of fullFileExtension with trailing text that does not appear to be part of the extension removed. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.",
+          "description": "The final component of fullFileExtension with trailing text that does not appear to be part of the extension removed. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3093,7 +3123,7 @@
           "items": null
         },
         "fileSize": {
-          "description": "The size of the file in bytes. This field is populated for files with content stored in Google Drive and for files in Docs Editors; it is not populated for shortcut files.",
+          "description": "The size of the file in bytes. This field is populated for files with content stored in Google Drive and for files in Docs Editors; it isn't populated for shortcut files.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -3113,7 +3143,7 @@
           "items": null
         },
         "fullFileExtension": {
-          "description": "The full file extension; extracted from the title. May contain multiple concatenated extensions, such as \"tar.gz\". Removing an extension from the title does not clear this field; however, changing the extension on the title does update this field. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.",
+          "description": "The full file extension; extracted from the title. May contain multiple concatenated extensions, such as \"tar.gz\". Removing an extension from the title does not clear this field; however, changing the extension on the title does update this field. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3143,7 +3173,7 @@
           "items": null
         },
         "headRevisionId": {
-          "description": "The ID of the file's head revision. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.",
+          "description": "The ID of the file's head revision. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3425,7 +3455,7 @@
           "items": null
         },
         "indexableText": {
-          "description": "Indexable text attributes for the file (can only be written)",
+          "description": "Indexable text attributes for the file (can only be written). For more information, see Manage file metadata.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -3462,6 +3492,29 @@
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "labelInfo": {
+          "description": "An overview of the labels on the file.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {
+            "labels": {
+              "description": "The set of labels on the file as requested by the label IDs in the includeLabels parameter. By default, no labels are returned.",
+              "type": "array",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": {
+                "$ref": "Label"
+              }
+            }
+          },
           "additionalProperties": null,
           "items": null
         },
@@ -3602,7 +3655,7 @@
           "items": null
         },
         "md5Checksum": {
-          "description": "An MD5 checksum for the content of this file. This field is only populated for files with content stored in Google Drive; it is not populated for Docs Editors or shortcut files.",
+          "description": "An MD5 checksum for the content of this file. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3786,6 +3839,26 @@
         },
         "selfLink": {
           "description": "A link back to this file.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sha1Checksum": {
+          "description": "The SHA1 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sha256Checksum": {
+          "description": "The SHA256 checksum associated with this file, if available. This field is only populated for files with content stored in Google Drive; it isn't populated for Docs Editors or shortcut files.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4195,6 +4268,485 @@
       "additionalProperties": null,
       "items": null
     },
+    "Label": {
+      "id": "Label",
+      "description": "Representation of a label and its fields.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fields": {
+          "description": "A map of the label's fields keyed by the field ID.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "LabelField"
+          },
+          "items": null
+        },
+        "id": {
+          "description": "The ID of the label.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kind": {
+          "description": "This is always drive#label",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionId": {
+          "description": "The revision ID of the label.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "LabelField": {
+      "id": "LabelField",
+      "description": "Representation of a label field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dateString": {
+          "description": "Only present if valueType is dateString. RFC 3339 formatted date: YYYY-MM-DD.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "date",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "id": {
+          "description": "The identifier of this field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "integer": {
+          "description": "Only present if valueType is integer.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "kind": {
+          "description": "This is always drive#labelField.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "selection": {
+          "description": "Only present if valueType is selection.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "text": {
+          "description": "Only present if valueType is text.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "user": {
+          "description": "Only present if valueType is user.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "User"
+          }
+        },
+        "valueType": {
+          "description": "The field type. While new values may be supported in the future, the following are currently allowed:  \n- dateString \n- integer \n- selection \n- text \n- user",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "LabelFieldModification": {
+      "id": "LabelFieldModification",
+      "description": "A modification to a label's field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldId": {
+          "description": "The ID of the field to be modified.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kind": {
+          "description": "This is always drive#labelFieldModification.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "setDateValues": {
+          "description": "Replaces a dateString field with these new values. The values must be strings in the RFC 3339 full-date format: YYYY-MM-DD.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "date",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "setIntegerValues": {
+          "description": "Replaces an integer field with these new values.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "setSelectionValues": {
+          "description": "Replaces a selection field with these new values.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "setTextValues": {
+          "description": "Replaces a text field with these new values.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "setUserValues": {
+          "description": "Replaces a user field with these new values. The values must be valid email addresses.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "unsetValues": {
+          "description": "Unsets the values for this field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "LabelList": {
+      "id": "LabelList",
+      "description": "A list of labels.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "items": {
+          "description": "The list of labels.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Label"
+          }
+        },
+        "kind": {
+          "description": "This is always drive#labelList",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nextPageToken": {
+          "description": "The page token for the next page of labels. This field will be absent if the end of the list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "LabelModification": {
+      "id": "LabelModification",
+      "description": "A modification to a label on a file. A LabelModification can be used to apply a label to a file, update an existing label on a file, or remove a label from a file.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldModifications": {
+          "description": "The list of modifications to this label's fields.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "LabelFieldModification"
+          }
+        },
+        "kind": {
+          "description": "This is always drive#labelModification.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "labelId": {
+          "description": "The ID of the label to modify.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "removeLabel": {
+          "description": "If true, the label will be removed from the file.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ModifyLabelsRequest": {
+      "id": "ModifyLabelsRequest",
+      "description": "A request to modify the set of labels on a file. This request may contain many modifications that will either all succeed or all fail transactionally.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "kind": {
+          "description": "This is always drive#modifyLabelsRequest",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "labelModifications": {
+          "description": "The list of modifications to apply to the labels on the file.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "LabelModification"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ModifyLabelsResponse": {
+      "id": "ModifyLabelsResponse",
+      "description": "Response to a ModifyLabels request. This contains only those labels which were added or updated by the request.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "kind": {
+          "description": "This is always drive#modifyLabelsResponse",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "modifiedLabels": {
+          "description": "The list of labels which were added or updated by the request.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Label"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ParentList": {
       "id": "ParentList",
       "description": "A list of a file's parents.",
@@ -4388,7 +4940,7 @@
           "items": null
         },
         "expirationDate": {
-          "description": "The time at which this permission will expire (RFC 3339 date-time). Expiration dates have the following restrictions:  \n- They cannot be set on shared drive items \n- They can only be set on user and group permissions \n- The date must be in the future \n- The date cannot be more than a year in the future \n- The date can only be set on drive.permissions.update or drive.permissions.patch requests",
+          "description": "The time at which this permission will expire (RFC 3339 date-time). Expiration dates have the following restrictions:  \n- They cannot be set on shared drive items \n- They can only be set on user and group permissions \n- The date must be in the future \n- The date cannot be more than a year in the future",
           "type": "string",
           "format": "date-time",
           "enum": [],
@@ -5424,6 +5976,16 @@
               "additionalProperties": null,
               "items": null
             },
+            "canResetTeamDriveRestrictions": {
+              "description": "Whether the current user can reset the Team Drive restrictions to defaults.",
+              "type": "boolean",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
             "canShare": {
               "description": "Whether the current user can share files or folders in this Team Drive.",
               "type": "boolean",
@@ -6136,6 +6698,20 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "includePermissionsForView": {
               "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported.",
               "default": null,
@@ -6352,6 +6928,20 @@
               "location": "query",
               "required": false,
               "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
               "format": null,
               "minimum": null,
               "maximum": null,
@@ -7652,6 +8242,20 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "includePermissionsForView": {
               "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported.",
               "default": null,
@@ -8070,6 +8674,20 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "includePermissionsForView": {
               "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported.",
               "default": null,
@@ -8209,6 +8827,20 @@
               "location": "query",
               "required": false,
               "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
               "format": null,
               "minimum": null,
               "maximum": null,
@@ -8466,6 +9098,20 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "includePermissionsForView": {
               "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported.",
               "default": null,
@@ -8648,6 +9294,116 @@
           "supportsMediaUpload": false,
           "mediaUpload": null
         },
+        "listLabels": {
+          "id": "drive.files.listLabels",
+          "path": "files/{fileId}/listLabels",
+          "httpMethod": "GET",
+          "description": "Lists the labels on a file.",
+          "parameters": {
+            "fileId": {
+              "description": "The ID of the file.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "maxResults": {
+              "description": "The maximum number of labels to return per page. When not set, this defaults to 100.",
+              "default": "100",
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": "1",
+              "maximum": "100",
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageToken": {
+              "description": "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "fileId"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "LabelList"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/drive",
+            "https://www.googleapis.com/auth/drive.file",
+            "https://www.googleapis.com/auth/drive.metadata",
+            "https://www.googleapis.com/auth/drive.metadata.readonly",
+            "https://www.googleapis.com/auth/drive.readonly"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "modifyLabels": {
+          "id": "drive.files.modifyLabels",
+          "path": "files/{fileId}/modifyLabels",
+          "httpMethod": "POST",
+          "description": "Modifies the set of labels on a file.",
+          "parameters": {
+            "fileId": {
+              "description": "The ID of the file for which the labels are modified.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "fileId"
+          ],
+          "request": {
+            "$ref": "ModifyLabelsRequest"
+          },
+          "response": {
+            "$ref": "ModifyLabelsResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/drive",
+            "https://www.googleapis.com/auth/drive.file",
+            "https://www.googleapis.com/auth/drive.metadata"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
         "patch": {
           "id": "drive.files.patch",
           "path": "files/{fileId}",
@@ -8701,6 +9457,20 @@
               "default": null,
               "location": "path",
               "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
               "type": "string",
               "format": null,
               "minimum": null,
@@ -8964,6 +9734,20 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "includePermissionsForView": {
               "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported.",
               "default": null,
@@ -9047,6 +9831,20 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "includePermissionsForView": {
               "description": "Specifies which additional view's permissions to include in the response. Only 'published' is supported.",
               "default": null,
@@ -9120,6 +9918,20 @@
               "default": null,
               "location": "path",
               "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
               "type": "string",
               "format": null,
               "minimum": null,
@@ -9244,6 +10056,20 @@
               "default": null,
               "location": "path",
               "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
               "type": "string",
               "format": null,
               "minimum": null,
@@ -9527,6 +10353,20 @@
               "default": null,
               "location": "path",
               "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "includeLabels": {
+              "description": "A comma-separated list of IDs of labels to include in the labelInfo part of the response.",
+              "default": null,
+              "location": "query",
+              "required": false,
               "type": "string",
               "format": null,
               "minimum": null,

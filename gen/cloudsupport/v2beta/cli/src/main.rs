@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudsupport2_beta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230131")
             .about("Manages Google Cloud technical support cases for Customer Care support offerings. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -37,8 +37,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Create a file attachment on a case or Cloud resource.");
+            let mcmd = SubCommand::with_name("create").about("Create a file attachment on a case or Cloud resource. The attachment object must have the following fields set: filename.");
             attachments0 = attachments0.subcommand(mcmd);
         }
         let mut case_classifications0 = SubCommand::with_name("case_classifications")
@@ -56,8 +55,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             cases0 = cases0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Create a new case and associate it with the given Cloud resource.");
+            let mcmd = SubCommand::with_name("create").about("Create a new case and associate it with the given Cloud resource. The case object must have the following fields set: display_name, description, classification, and severity.");
             cases0 = cases0.subcommand(mcmd);
         }
         {
@@ -69,12 +67,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             cases0 = cases0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Retrieve all cases under the specified parent.");
+            let mcmd = SubCommand::with_name("list").about("Retrieve all cases under the specified parent. Note: Listing cases under an Organization returns only the cases directly parented by that organization. To retrieve all cases under an organization, including cases parented by projects under that organization, use `cases.search`.");
             cases0 = cases0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Update the specified case. Only a subset of fields (display_name, description, time_zone, subscriber_email_addresses, related_resources, severity, priority, primary_contact, and labels) can be updated.");
+            let mcmd = SubCommand::with_name("patch")
+                .about("Update the specified case. Only a subset of fields can be updated.");
             cases0 = cases0.subcommand(mcmd);
         }
         {
@@ -90,8 +88,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             media0 = media0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("upload")
-                .about("Create a file attachment on a case or Cloud resource.");
+            let mcmd = SubCommand::with_name("upload").about("Create a file attachment on a case or Cloud resource. The attachment object must have the following fields set: filename.");
             media0 = media0.subcommand(mcmd);
         }
         let mut attachments1 = SubCommand::with_name("attachments")
@@ -106,8 +103,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create and list");
         {
-            let mcmd =
-                SubCommand::with_name("create").about("Add a new comment to the specified Case.");
+            let mcmd = SubCommand::with_name("create").about("Add a new comment to the specified Case. The comment object must have the following fields set: body.");
             comments1 = comments1.subcommand(mcmd);
         }
         {

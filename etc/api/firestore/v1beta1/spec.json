@@ -7,7 +7,7 @@
   "canonicalName": "Firestore",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20220407",
+  "revision": "20230126",
   "title": "Cloud Firestore API",
   "description": "Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. ",
   "ownerDomain": "google.com",
@@ -219,7 +219,7 @@
       "enumDescriptions": [],
       "properties": {
         "alias": {
-          "description": "Required. The name of the field to store the result of the aggregation into. Requires: * Must be present. * Must be unique across all aggregation aliases. * Conform to existing document field name limitations.",
+          "description": "Optional. Optional name of the field to store the result of the aggregation into. If not provided, Firestore will pick a default name following the format `field_`. For example: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) OVER ( ... ); ``` becomes: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS field_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) AS field_2 OVER ( ... ); ``` Requires: * Must be unique across all aggregation aliases. * Conform to document field name limitations.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -655,9 +655,9 @@
       "enumDescriptions": [],
       "properties": {
         "upTo": {
-          "description": "Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. High-Level Example: ``` SELECT COUNT_UP_TO(1000) FROM ( SELECT * FROM k ); ``` Requires: * Must be greater than zero when present.",
-          "type": "integer",
-          "format": "int32",
+          "description": "Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. Unspecified is interpreted as no bound. High-Level Example: ``` AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k ); ``` Requires: * Must be greater than zero when present.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -1102,14 +1102,14 @@
     },
     "FieldReference": {
       "id": "FieldReference",
-      "description": "A reference to a field, such as `max(messages.time) as max_time`.",
+      "description": "A reference to a field in a document, ex: `stats.operations`.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "fieldPath": {
-          "description": null,
+          "description": "The relative path of the document being referenced. Requires: * Conform to document field name limitations.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1973,7 +1973,7 @@
           }
         },
         "nextPageToken": {
-          "description": "The next page token.",
+          "description": "A token to retrieve the next page of documents. If this field is omitted, there are no subsequent pages.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2419,7 +2419,7 @@
           "items": null
         },
         "result": {
-          "description": "A single aggregation result. Not present when reporting partial progress or when the query produced zero results.",
+          "description": "A single aggregation result. Not present when reporting partial progress.",
           "$ref": "AggregationResult"
         },
         "transaction": {
@@ -2487,6 +2487,16 @@
         "document": {
           "description": "A query result, not set when reporting partial progress.",
           "$ref": "Document"
+        },
+        "done": {
+          "description": "If present, Firestore has completely finished the request and no more documents will be returned.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "readTime": {
           "description": "The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their `read_time` and this one. If the query returns no results, a response with `read_time` and no `document` will be sent, and this represents the time at which the query was run.",
@@ -2590,7 +2600,7 @@
       "enumDescriptions": [],
       "properties": {
         "aggregations": {
-          "description": "Optional. Series of aggregations to apply on top of the `structured_query`.",
+          "description": "Optional. Series of aggregations to apply over the results of the `structured_query`. Requires: * A minimum of one and maximum of five aggregations per query.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2618,7 +2628,7 @@
       "enumDescriptions": [],
       "properties": {
         "endAt": {
-          "description": "A end point for the query results.",
+          "description": "A potential prefix of a position in the result set to end the query at. This is similar to `START_AT` but with it controlling the end position rather than the start position. Requires: * The number of values cannot be greater than the number of fields specified in the `ORDER BY` clause.",
           "$ref": "Cursor"
         },
         "from": {
@@ -2634,7 +2644,7 @@
           }
         },
         "limit": {
-          "description": "The maximum number of results to return. Applies after all other constraints. Must be >= 0 if specified.",
+          "description": "The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -2644,7 +2654,7 @@
           "items": null
         },
         "offset": {
-          "description": "The number of results to skip. Applies before limit, but after all other constraints. Must be >= 0 if specified.",
+          "description": "The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -2654,7 +2664,7 @@
           "items": null
         },
         "orderBy": {
-          "description": "The order to apply to the query results. Firestore guarantees a stable ordering through the following rules: * Any field required to appear in `order_by`, that is not already specified in `order_by`, is appended to the order in field name order by default. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or 'ASCENDING' if no order was specified. For example: * `SELECT * FROM Foo ORDER BY A` becomes `SELECT * FROM Foo ORDER BY A, __name__` * `SELECT * FROM Foo ORDER BY A DESC` becomes `SELECT * FROM Foo ORDER BY A DESC, __name__ DESC` * `SELECT * FROM Foo WHERE A > 1` becomes `SELECT * FROM Foo WHERE A > 1 ORDER BY A, __name__`",
+          "description": "The order to apply to the query results. Firestore allows callers to provide a full ordering, a partial ordering, or no ordering at all. In all cases, Firestore guarantees a stable ordering through the following rules: * The `order_by` is required to reference all fields used with an inequality filter. * All fields that are required to be in the `order_by` but are not already present are appended in lexicographical ordering of the field name. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or 'ASCENDING' if no order was specified. For example: * `ORDER BY a` becomes `ORDER BY a ASC, __name__ ASC` * `ORDER BY a DESC` becomes `ORDER BY a DESC, __name__ DESC` * `WHERE a > 1` becomes `WHERE a > 1 ORDER BY a ASC, __name__ ASC` * `WHERE __name__ > ... AND a > 1` becomes `WHERE __name__ > ... AND a > 1 ORDER BY a ASC, __name__ ASC`",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2670,7 +2680,7 @@
           "$ref": "Projection"
         },
         "startAt": {
-          "description": "A starting point for the query results.",
+          "description": "A potential prefix of a position in the result set to start the query at. The ordering of the result set is based on the `ORDER BY` clause of the original query. ``` SELECT * FROM k WHERE a = 1 AND b > 2 ORDER BY b ASC, __name__ ASC; ``` This query's results are ordered by `(b ASC, __name__ ASC)`. Cursors can reference either the full ordering or a prefix of the location, though it cannot reference more fields than what are in the provided `ORDER BY`. Continuing off the example above, attaching the following start cursors will have varying impact: - `START BEFORE (2, /k/123)`: start the query right before `a = 1 AND b > 2 AND __name__ > /k/123`. - `START AFTER (10)`: start the query right after `a = 1 AND b > 10`. Unlike `OFFSET` which requires scanning over the first N results to skip, a start cursor allows the query to begin at a logical position. This position is not required to match an actual result, it will scan forward from this position to find the next document. Requires: * The number of values cannot be greater than the number of fields specified in the `ORDER BY` clause.",
           "$ref": "Cursor"
         },
         "where": {
@@ -3589,7 +3599,7 @@
                   "description": "Lists documents.",
                   "parameters": {
                     "collectionId": {
-                      "description": "Required. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`.",
+                      "description": "Optional. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`. This is optional, and when not provided, Firestore will list documents from all collections under the provided `parent`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -3617,7 +3627,7 @@
                       "repeated": true
                     },
                     "orderBy": {
-                      "description": "The order to sort results by. For example: `priority desc, name`.",
+                      "description": "Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3631,7 +3641,7 @@
                       "repeated": false
                     },
                     "pageSize": {
-                      "description": "The maximum number of documents to return.",
+                      "description": "Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3645,7 +3655,7 @@
                       "repeated": false
                     },
                     "pageToken": {
-                      "description": "The `next_page_token` value returned from a previous List request, if any.",
+                      "description": "Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3673,7 +3683,7 @@
                       "repeated": false
                     },
                     "readTime": {
-                      "description": "Reads documents as they were at the given time. This may not be older than 270 seconds.",
+                      "description": "Perform the read at the provided time. This may not be older than 270 seconds.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3687,7 +3697,7 @@
                       "repeated": false
                     },
                     "showMissing": {
-                      "description": "If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`.",
+                      "description": "If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3701,7 +3711,7 @@
                       "repeated": false
                     },
                     "transaction": {
-                      "description": "Reads documents in a transaction.",
+                      "description": "Perform the read as part of an already active transaction.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3780,7 +3790,7 @@
                   "description": "Lists documents.",
                   "parameters": {
                     "collectionId": {
-                      "description": "Required. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`.",
+                      "description": "Optional. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`. This is optional, and when not provided, Firestore will list documents from all collections under the provided `parent`.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -3808,7 +3818,7 @@
                       "repeated": true
                     },
                     "orderBy": {
-                      "description": "The order to sort results by. For example: `priority desc, name`.",
+                      "description": "Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3822,7 +3832,7 @@
                       "repeated": false
                     },
                     "pageSize": {
-                      "description": "The maximum number of documents to return.",
+                      "description": "Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3836,7 +3846,7 @@
                       "repeated": false
                     },
                     "pageToken": {
-                      "description": "The `next_page_token` value returned from a previous List request, if any.",
+                      "description": "Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3864,7 +3874,7 @@
                       "repeated": false
                     },
                     "readTime": {
-                      "description": "Reads documents as they were at the given time. This may not be older than 270 seconds.",
+                      "description": "Perform the read at the provided time. This may not be older than 270 seconds.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3878,7 +3888,7 @@
                       "repeated": false
                     },
                     "showMissing": {
-                      "description": "If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`.",
+                      "description": "If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -3892,7 +3902,7 @@
                       "repeated": false
                     },
                     "transaction": {
-                      "description": "Reads documents in a transaction.",
+                      "description": "Perform the read as part of an already active transaction.",
                       "default": null,
                       "location": "query",
                       "required": false,

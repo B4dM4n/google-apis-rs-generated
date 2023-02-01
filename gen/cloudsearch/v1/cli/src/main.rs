@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudsearch1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220419")
+            .version("0.1.0-20230117")
             .about("Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -146,7 +146,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut datasources1 = SubCommand::with_name("datasources")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and update");
+            .about("methods: create, delete, get, list, patch and update");
         {
             let mcmd = SubCommand::with_name("create").about(
                 "Creates a datasource. **Note:** This API requires an admin account to execute.",
@@ -172,6 +172,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             datasources1 = datasources1.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("patch").about(
+                "Updates a datasource. **Note:** This API requires an admin account to execute.",
+            );
+            datasources1 = datasources1.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("update").about(
                 "Updates a datasource. **Note:** This API requires an admin account to execute.",
             );
@@ -179,7 +185,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut searchapplications1 = SubCommand::with_name("searchapplications")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list, reset and update");
+            .about("methods: create, delete, get, list, patch, reset and update");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a search application. **Note:** This API requires an admin account to execute.");
             searchapplications1 = searchapplications1.subcommand(mcmd);
@@ -194,6 +200,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists all search applications. **Note:** This API requires an admin account to execute.");
+            searchapplications1 = searchapplications1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a search application. **Note:** This API requires an admin account to execute.");
             searchapplications1 = searchapplications1.subcommand(mcmd);
         }
         {

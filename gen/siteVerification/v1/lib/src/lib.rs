@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [web_resource](resources/web_resource/struct.WebResourceActions.html)\n  * [*delete*](resources/web_resource/struct.DeleteRequestBuilder.html), [*get*](resources/web_resource/struct.GetRequestBuilder.html), [*getToken*](resources/web_resource/struct.GetTokenRequestBuilder.html), [*insert*](resources/web_resource/struct.InsertRequestBuilder.html), [*list*](resources/web_resource/struct.ListRequestBuilder.html), [*patch*](resources/web_resource/struct.PatchRequestBuilder.html), [*update*](resources/web_resource/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage the list of sites and domains you control\n\n`https://www.googleapis.com/auth/siteverification`"]
@@ -1623,15 +1624,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

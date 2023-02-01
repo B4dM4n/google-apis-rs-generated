@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("admob1_beta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220426")
+            .version("0.1.0-20230131")
             .about("The AdMob API allows publishers to programmatically get information about their AdMob account. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -72,7 +72,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: generate");
         {
-            let mcmd = SubCommand::with_name("generate").about("Generates an AdMob Mediation report based on the provided report specification. Returns result of a server-side streaming RPC. The result is returned in a sequence of responses.");
+            let mcmd = SubCommand::with_name("generate").about("Generates an AdMob mediation report based on the provided report specification. Returns result of a server-side streaming RPC. The result is returned in a sequence of responses.");
             mediation_report1 = mediation_report1.subcommand(mcmd);
         }
         let mut network_report1 = SubCommand::with_name("network_report")

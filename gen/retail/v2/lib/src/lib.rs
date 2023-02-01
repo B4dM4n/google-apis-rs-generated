@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [catalogs](resources/projects/locations/catalogs/struct.CatalogsActions.html)\n      * [*completeQuery*](resources/projects/locations/catalogs/struct.CompleteQueryRequestBuilder.html), [*getDefaultBranch*](resources/projects/locations/catalogs/struct.GetDefaultBranchRequestBuilder.html), [*list*](resources/projects/locations/catalogs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/catalogs/struct.PatchRequestBuilder.html), [*setDefaultBranch*](resources/projects/locations/catalogs/struct.SetDefaultBranchRequestBuilder.html)\n      * [branches](resources/projects/locations/catalogs/branches/struct.BranchesActions.html)\n        * [operations](resources/projects/locations/catalogs/branches/operations/struct.OperationsActions.html)\n          * [*get*](resources/projects/locations/catalogs/branches/operations/struct.GetRequestBuilder.html)\n        * [products](resources/projects/locations/catalogs/branches/products/struct.ProductsActions.html)\n          * [*addFulfillmentPlaces*](resources/projects/locations/catalogs/branches/products/struct.AddFulfillmentPlacesRequestBuilder.html), [*addLocalInventories*](resources/projects/locations/catalogs/branches/products/struct.AddLocalInventoriesRequestBuilder.html), [*create*](resources/projects/locations/catalogs/branches/products/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/catalogs/branches/products/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/catalogs/branches/products/struct.GetRequestBuilder.html), [*import*](resources/projects/locations/catalogs/branches/products/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/catalogs/branches/products/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/catalogs/branches/products/struct.PatchRequestBuilder.html), [*removeFulfillmentPlaces*](resources/projects/locations/catalogs/branches/products/struct.RemoveFulfillmentPlacesRequestBuilder.html), [*removeLocalInventories*](resources/projects/locations/catalogs/branches/products/struct.RemoveLocalInventoriesRequestBuilder.html), [*setInventory*](resources/projects/locations/catalogs/branches/products/struct.SetInventoryRequestBuilder.html)\n      * [completion_data](resources/projects/locations/catalogs/completion_data/struct.CompletionDataActions.html)\n        * [*import*](resources/projects/locations/catalogs/completion_data/struct.ImportRequestBuilder.html)\n      * [operations](resources/projects/locations/catalogs/operations/struct.OperationsActions.html)\n        * [*get*](resources/projects/locations/catalogs/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/catalogs/operations/struct.ListRequestBuilder.html)\n      * [placements](resources/projects/locations/catalogs/placements/struct.PlacementsActions.html)\n        * [*predict*](resources/projects/locations/catalogs/placements/struct.PredictRequestBuilder.html), [*search*](resources/projects/locations/catalogs/placements/struct.SearchRequestBuilder.html)\n      * [serving_configs](resources/projects/locations/catalogs/serving_configs/struct.ServingConfigsActions.html)\n        * [*predict*](resources/projects/locations/catalogs/serving_configs/struct.PredictRequestBuilder.html), [*search*](resources/projects/locations/catalogs/serving_configs/struct.SearchRequestBuilder.html)\n      * [user_events](resources/projects/locations/catalogs/user_events/struct.UserEventsActions.html)\n        * [*collect*](resources/projects/locations/catalogs/user_events/struct.CollectRequestBuilder.html), [*import*](resources/projects/locations/catalogs/user_events/struct.ImportRequestBuilder.html), [*purge*](resources/projects/locations/catalogs/user_events/struct.PurgeRequestBuilder.html), [*rejoin*](resources/projects/locations/catalogs/user_events/struct.RejoinRequestBuilder.html), [*write*](resources/projects/locations/catalogs/user_events/struct.WriteRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n  * [operations](resources/projects/operations/struct.OperationsActions.html)\n    * [*get*](resources/projects/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/operations/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [catalogs](resources/projects/locations/catalogs/struct.CatalogsActions.html)\n      * [*completeQuery*](resources/projects/locations/catalogs/struct.CompleteQueryRequestBuilder.html), [*getAttributesConfig*](resources/projects/locations/catalogs/struct.GetAttributesConfigRequestBuilder.html), [*getCompletionConfig*](resources/projects/locations/catalogs/struct.GetCompletionConfigRequestBuilder.html), [*getDefaultBranch*](resources/projects/locations/catalogs/struct.GetDefaultBranchRequestBuilder.html), [*list*](resources/projects/locations/catalogs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/catalogs/struct.PatchRequestBuilder.html), [*setDefaultBranch*](resources/projects/locations/catalogs/struct.SetDefaultBranchRequestBuilder.html), [*updateAttributesConfig*](resources/projects/locations/catalogs/struct.UpdateAttributesConfigRequestBuilder.html), [*updateCompletionConfig*](resources/projects/locations/catalogs/struct.UpdateCompletionConfigRequestBuilder.html)\n      * [attributes_config](resources/projects/locations/catalogs/attributes_config/struct.AttributesConfigActions.html)\n        * [*addCatalogAttribute*](resources/projects/locations/catalogs/attributes_config/struct.AddCatalogAttributeRequestBuilder.html), [*removeCatalogAttribute*](resources/projects/locations/catalogs/attributes_config/struct.RemoveCatalogAttributeRequestBuilder.html), [*replaceCatalogAttribute*](resources/projects/locations/catalogs/attributes_config/struct.ReplaceCatalogAttributeRequestBuilder.html)\n      * [branches](resources/projects/locations/catalogs/branches/struct.BranchesActions.html)\n        * [operations](resources/projects/locations/catalogs/branches/operations/struct.OperationsActions.html)\n          * [*get*](resources/projects/locations/catalogs/branches/operations/struct.GetRequestBuilder.html)\n        * [products](resources/projects/locations/catalogs/branches/products/struct.ProductsActions.html)\n          * [*addFulfillmentPlaces*](resources/projects/locations/catalogs/branches/products/struct.AddFulfillmentPlacesRequestBuilder.html), [*addLocalInventories*](resources/projects/locations/catalogs/branches/products/struct.AddLocalInventoriesRequestBuilder.html), [*create*](resources/projects/locations/catalogs/branches/products/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/catalogs/branches/products/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/catalogs/branches/products/struct.GetRequestBuilder.html), [*import*](resources/projects/locations/catalogs/branches/products/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/catalogs/branches/products/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/catalogs/branches/products/struct.PatchRequestBuilder.html), [*removeFulfillmentPlaces*](resources/projects/locations/catalogs/branches/products/struct.RemoveFulfillmentPlacesRequestBuilder.html), [*removeLocalInventories*](resources/projects/locations/catalogs/branches/products/struct.RemoveLocalInventoriesRequestBuilder.html), [*setInventory*](resources/projects/locations/catalogs/branches/products/struct.SetInventoryRequestBuilder.html)\n      * [completion_data](resources/projects/locations/catalogs/completion_data/struct.CompletionDataActions.html)\n        * [*import*](resources/projects/locations/catalogs/completion_data/struct.ImportRequestBuilder.html)\n      * [controls](resources/projects/locations/catalogs/controls/struct.ControlsActions.html)\n        * [*create*](resources/projects/locations/catalogs/controls/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/catalogs/controls/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/catalogs/controls/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/catalogs/controls/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/catalogs/controls/struct.PatchRequestBuilder.html)\n      * [models](resources/projects/locations/catalogs/models/struct.ModelsActions.html)\n        * [*create*](resources/projects/locations/catalogs/models/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/catalogs/models/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/catalogs/models/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/catalogs/models/struct.PatchRequestBuilder.html), [*pause*](resources/projects/locations/catalogs/models/struct.PauseRequestBuilder.html), [*resume*](resources/projects/locations/catalogs/models/struct.ResumeRequestBuilder.html), [*tune*](resources/projects/locations/catalogs/models/struct.TuneRequestBuilder.html)\n      * [operations](resources/projects/locations/catalogs/operations/struct.OperationsActions.html)\n        * [*get*](resources/projects/locations/catalogs/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/catalogs/operations/struct.ListRequestBuilder.html)\n      * [placements](resources/projects/locations/catalogs/placements/struct.PlacementsActions.html)\n        * [*predict*](resources/projects/locations/catalogs/placements/struct.PredictRequestBuilder.html), [*search*](resources/projects/locations/catalogs/placements/struct.SearchRequestBuilder.html)\n      * [serving_configs](resources/projects/locations/catalogs/serving_configs/struct.ServingConfigsActions.html)\n        * [*addControl*](resources/projects/locations/catalogs/serving_configs/struct.AddControlRequestBuilder.html), [*create*](resources/projects/locations/catalogs/serving_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/catalogs/serving_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/catalogs/serving_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/catalogs/serving_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/catalogs/serving_configs/struct.PatchRequestBuilder.html), [*predict*](resources/projects/locations/catalogs/serving_configs/struct.PredictRequestBuilder.html), [*removeControl*](resources/projects/locations/catalogs/serving_configs/struct.RemoveControlRequestBuilder.html), [*search*](resources/projects/locations/catalogs/serving_configs/struct.SearchRequestBuilder.html)\n      * [user_events](resources/projects/locations/catalogs/user_events/struct.UserEventsActions.html)\n        * [*collect*](resources/projects/locations/catalogs/user_events/struct.CollectRequestBuilder.html), [*import*](resources/projects/locations/catalogs/user_events/struct.ImportRequestBuilder.html), [*purge*](resources/projects/locations/catalogs/user_events/struct.PurgeRequestBuilder.html), [*rejoin*](resources/projects/locations/catalogs/user_events/struct.RejoinRequestBuilder.html), [*write*](resources/projects/locations/catalogs/user_events/struct.WriteRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n  * [operations](resources/projects/operations/struct.OperationsActions.html)\n    * [*get*](resources/projects/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -312,6 +313,69 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AddCatalogAttributeRequest {
+        #[doc = "Required. The CatalogAttribute to add."]
+        #[serde(
+            rename = "catalogAttribute",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub catalog_attribute:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2CatalogAttribute>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AddCatalogAttributeRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AddCatalogAttributeRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AddControlRequest {
+        #[doc = "Required. The id of the control to apply. Assumed to be in the same catalog as the serving config - if id is not found a NOT_FOUND error is returned."]
+        #[serde(
+            rename = "controlId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub control_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AddControlRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AddControlRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -612,6 +676,75 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRetailV2AlphaBigQueryOutputResult {
+        #[doc = "The ID of a BigQuery Dataset."]
+        #[serde(
+            rename = "datasetId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_id: ::std::option::Option<String>,
+        #[doc = "The ID of a BigQuery Table."]
+        #[serde(
+            rename = "tableId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaBigQueryOutputResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaBigQueryOutputResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaCreateModelMetadata {
+        #[doc = "The resource name of the model that this create applies to. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`"]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaCreateModelMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaCreateModelMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRetailV2AlphaExportErrorsConfig {
         #[doc = "Google Cloud Storage path for import errors. This must be an empty, existing Cloud Storage bucket. Export errors will be written to a file in this bucket, one per line, as a JSON-encoded `google.rpc.Status` message."]
         #[serde(
@@ -678,7 +811,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_samples: ::std::option::Option<Vec<crate::schemas::GoogleRpcStatus>>,
-        #[doc = "Echoes the destination for the complete errors in the request if set."]
+        #[doc = "This field is never set."]
         #[serde(
             rename = "errorsConfig",
             default,
@@ -686,6 +819,14 @@ pub mod schemas {
         )]
         pub errors_config:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaExportErrorsConfig>,
+        #[doc = "Output result indicating where the data were exported to."]
+        #[serde(
+            rename = "outputResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_result:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaOutputResult>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaExportProductsResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -706,7 +847,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_samples: ::std::option::Option<Vec<crate::schemas::GoogleRpcStatus>>,
-        #[doc = "Echoes the destination for the complete errors if this field was set in the request."]
+        #[doc = "This field is never set."]
         #[serde(
             rename = "errorsConfig",
             default,
@@ -714,6 +855,14 @@ pub mod schemas {
         )]
         pub errors_config:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaExportErrorsConfig>,
+        #[doc = "Output result indicating where the data were exported to."]
+        #[serde(
+            rename = "outputResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_result:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaOutputResult>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaExportUserEventsResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -721,6 +870,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaExportUserEventsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaGcsOutputResult {
+        #[doc = "The uri of Gcs output"]
+        #[serde(
+            rename = "outputUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaGcsOutputResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaGcsOutputResult {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -760,7 +940,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2AlphaImportErrorsConfig {
-        #[doc = "Google Cloud Storage prefix for import errors. This must be an empty, existing Cloud Storage directory. Import errors will be written to sharded files in this directory, one per line, as a JSON-encoded `google.rpc.Status` message."]
+        #[doc = "Google Cloud Storage prefix for import errors. This must be an empty, existing Cloud Storage directory. Import errors are written to sharded files in this directory, one per line, as a JSON-encoded `google.rpc.Status` message."]
         #[serde(
             rename = "gcsPrefix",
             default,
@@ -806,7 +986,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub failure_count: ::std::option::Option<i64>,
-        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
+        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification is sent to specified Pub/Sub topic. The message data is JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
         #[serde(
             rename = "notificationPubsubTopic",
             default,
@@ -828,6 +1008,15 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub success_count: ::std::option::Option<i64>,
+        #[doc = "Metadata related to transform user events."]
+        #[serde(
+            rename = "transformedUserEventsMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transformed_user_events_metadata: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2AlphaTransformedUserEventsMetadata,
+        >,
         #[doc = "Operation last update time. If the operation is done, this is also the finish time."]
         #[serde(
             rename = "updateTime",
@@ -906,6 +1095,833 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaImportUserEventsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaModel {
+        #[doc = "Output only. Timestamp the Recommendation Model was created at."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. The state of data requirements for this model: `DATA_OK` and `DATA_ERROR`. Recommendation model cannot be trained if the data is in `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even if serving state is `ACTIVE`: models were trained successfully before, but cannot be refreshed because model no longer has sufficient data for training."]
+        #[serde(
+            rename = "dataState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaModelDataState>,
+        #[doc = "Required. The display name of the model. Should be human readable, used to display Recommendation Models in the Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024 characters."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering by attributes is enabled for the model."]
+        #[serde(
+            rename = "filteringOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filtering_option:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaModelFilteringOption>,
+        #[doc = "Output only. The timestamp when the latest successful tune finished."]
+        #[serde(
+            rename = "lastTuneTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_tune_time: ::std::option::Option<String>,
+        #[doc = "Required. The fully qualified resource name of the model. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}` catalog_id has char limit of 50. recommendation_model_id has char limit of 40."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Optional. The optimization objective e.g. `cvr`. Currently supported values: `ctr`, `cvr`, `revenue-per-order`. If not specified, we choose default based on model type. Default depends on type of recommendation: `recommended-for-you` => `ctr` `others-you-may-like` => `ctr` `frequently-bought-together` => `revenue_per_order` This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs."]
+        #[serde(
+            rename = "optimizationObjective",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub optimization_objective: ::std::option::Option<String>,
+        #[doc = "Optional. The page optimization config."]
+        #[serde(
+            rename = "pageOptimizationConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_optimization_config: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2AlphaModelPageOptimizationConfig,
+        >,
+        #[doc = "Optional. The state of periodic tuning. The period we use is 3 months - to do a one-off tune earlier use the `TuneModel` method. Default value is `PERIODIC_TUNING_ENABLED`."]
+        #[serde(
+            rename = "periodicTuningState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub periodic_tuning_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaModelPeriodicTuningState>,
+        #[doc = "Required. The type of model e.g. `home-page`. Currently supported values: `recommended-for-you`, `others-you-may-like`, `frequently-bought-together`, `page-optimization`, `similar-items`, `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value). This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+        #[doc = "Output only. The list of valid serving configs associated with the PageOptimizationConfig."]
+        #[serde(
+            rename = "servingConfigLists",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_lists: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2AlphaModelServingConfigList>,
+        >,
+        #[doc = "Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`."]
+        #[serde(
+            rename = "servingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaModelServingState>,
+        #[doc = "Optional. The training state that the model is in (e.g. `TRAINING` or `PAUSED`). Since part of the cost of running the service is frequency of training - this can be used to determine when to train model in order to control cost. If not specified: the default value for `CreateModel` method is `TRAINING`. The default value for `UpdateModel` method is to keep the state the same as before."]
+        #[serde(
+            rename = "trainingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub training_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2AlphaModelTrainingState>,
+        #[doc = "Output only. The tune operation associated with the model. Can be used to determine if there is an ongoing tune for this recommendation. Empty field implies no tune is goig on."]
+        #[serde(
+            rename = "tuningOperation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tuning_operation: ::std::option::Option<String>,
+        #[doc = "Output only. Timestamp the Recommendation Model was last updated. E.g. if a Recommendation Model was paused - this would be the time the pause was initiated."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaModel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2AlphaModelDataState {
+        #[doc = "The model does not have sufficient training data. Error messages can be queried via Stackdriver."]
+        DataError,
+        #[doc = "The model has sufficient training data."]
+        DataOk,
+        #[doc = "Unspecified default value, should never be explicitly set."]
+        DataStateUnspecified,
+    }
+    impl GoogleCloudRetailV2AlphaModelDataState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2AlphaModelDataState::DataError => "DATA_ERROR",
+                GoogleCloudRetailV2AlphaModelDataState::DataOk => "DATA_OK",
+                GoogleCloudRetailV2AlphaModelDataState::DataStateUnspecified => {
+                    "DATA_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2AlphaModelDataState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2AlphaModelDataState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRetailV2AlphaModelDataState, ()> {
+            Ok(match s {
+                "DATA_ERROR" => GoogleCloudRetailV2AlphaModelDataState::DataError,
+                "DATA_OK" => GoogleCloudRetailV2AlphaModelDataState::DataOk,
+                "DATA_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelDataState::DataStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2AlphaModelDataState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2AlphaModelDataState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2AlphaModelDataState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DATA_ERROR" => GoogleCloudRetailV2AlphaModelDataState::DataError,
+                "DATA_OK" => GoogleCloudRetailV2AlphaModelDataState::DataOk,
+                "DATA_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelDataState::DataStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaModelDataState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModelDataState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2AlphaModelFilteringOption {
+        #[doc = "Recommendation filtering is disabled."]
+        RecommendationsFilteringDisabled,
+        #[doc = "Recommendation filtering is enabled."]
+        RecommendationsFilteringEnabled,
+        #[doc = "Value used when unset. In this case, server behavior defaults to RECOMMENDATIONS_FILTERING_DISABLED."]
+        RecommendationsFilteringOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2AlphaModelFilteringOption {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringDisabled => "RECOMMENDATIONS_FILTERING_DISABLED" , GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringEnabled => "RECOMMENDATIONS_FILTERING_ENABLED" , GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringOptionUnspecified => "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2AlphaModelFilteringOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2AlphaModelFilteringOption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2AlphaModelFilteringOption, ()> {
+            Ok (match s { "RECOMMENDATIONS_FILTERING_DISABLED" => GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringDisabled , "RECOMMENDATIONS_FILTERING_ENABLED" => GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringEnabled , "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" => GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringOptionUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2AlphaModelFilteringOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2AlphaModelFilteringOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2AlphaModelFilteringOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "RECOMMENDATIONS_FILTERING_DISABLED" => GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringDisabled , "RECOMMENDATIONS_FILTERING_ENABLED" => GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringEnabled , "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" => GoogleCloudRetailV2AlphaModelFilteringOption :: RecommendationsFilteringOptionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaModelFilteringOption {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModelFilteringOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        #[doc = "The model cannot be tuned with periodic tuning OR the `TuneModel` method. Hide the options in customer UI and reject any requests through the backend self serve API."]
+        AllTuningDisabled,
+        #[doc = "The model has periodic tuning disabled. Tuning can be reenabled by calling the `EnableModelPeriodicTuning` method or by calling the `TuneModel` method."]
+        PeriodicTuningDisabled,
+        #[doc = "The model has periodic tuning enabled. Tuning can be disabled by calling the `DisableModelPeriodicTuning` method."]
+        PeriodicTuningEnabled,
+        #[doc = "Unspecified default value, should never be explicitly set."]
+        PeriodicTuningStateUnspecified,
+    }
+    impl GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2AlphaModelPeriodicTuningState :: AllTuningDisabled => "ALL_TUNING_DISABLED" , GoogleCloudRetailV2AlphaModelPeriodicTuningState :: PeriodicTuningDisabled => "PERIODIC_TUNING_DISABLED" , GoogleCloudRetailV2AlphaModelPeriodicTuningState :: PeriodicTuningEnabled => "PERIODIC_TUNING_ENABLED" , GoogleCloudRetailV2AlphaModelPeriodicTuningState :: PeriodicTuningStateUnspecified => "PERIODIC_TUNING_STATE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2AlphaModelPeriodicTuningState, ()> {
+            Ok(match s {
+                "ALL_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::AllTuningDisabled
+                }
+                "PERIODIC_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::PeriodicTuningDisabled
+                }
+                "PERIODIC_TUNING_ENABLED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::PeriodicTuningEnabled
+                }
+                "PERIODIC_TUNING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::PeriodicTuningStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALL_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::AllTuningDisabled
+                }
+                "PERIODIC_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::PeriodicTuningDisabled
+                }
+                "PERIODIC_TUNING_ENABLED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::PeriodicTuningEnabled
+                }
+                "PERIODIC_TUNING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelPeriodicTuningState::PeriodicTuningStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModelPeriodicTuningState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2AlphaModelServingState {
+        #[doc = "The model is serving and can be queried."]
+        Active,
+        #[doc = "The model is not serving."]
+        Inactive,
+        #[doc = "Unspecified serving state."]
+        ServingStateUnspecified,
+        #[doc = "The model is trained on tuned hyperparameters and can be queried."]
+        Tuned,
+    }
+    impl GoogleCloudRetailV2AlphaModelServingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2AlphaModelServingState::Active => "ACTIVE",
+                GoogleCloudRetailV2AlphaModelServingState::Inactive => "INACTIVE",
+                GoogleCloudRetailV2AlphaModelServingState::ServingStateUnspecified => {
+                    "SERVING_STATE_UNSPECIFIED"
+                }
+                GoogleCloudRetailV2AlphaModelServingState::Tuned => "TUNED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2AlphaModelServingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2AlphaModelServingState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2AlphaModelServingState, ()> {
+            Ok(match s {
+                "ACTIVE" => GoogleCloudRetailV2AlphaModelServingState::Active,
+                "INACTIVE" => GoogleCloudRetailV2AlphaModelServingState::Inactive,
+                "SERVING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelServingState::ServingStateUnspecified
+                }
+                "TUNED" => GoogleCloudRetailV2AlphaModelServingState::Tuned,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2AlphaModelServingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2AlphaModelServingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2AlphaModelServingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => GoogleCloudRetailV2AlphaModelServingState::Active,
+                "INACTIVE" => GoogleCloudRetailV2AlphaModelServingState::Inactive,
+                "SERVING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelServingState::ServingStateUnspecified
+                }
+                "TUNED" => GoogleCloudRetailV2AlphaModelServingState::Tuned,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaModelServingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModelServingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2AlphaModelTrainingState {
+        #[doc = "The model training is paused."]
+        Paused,
+        #[doc = "The model is training."]
+        Training,
+        #[doc = "Unspecified training state."]
+        TrainingStateUnspecified,
+    }
+    impl GoogleCloudRetailV2AlphaModelTrainingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2AlphaModelTrainingState::Paused => "PAUSED",
+                GoogleCloudRetailV2AlphaModelTrainingState::Training => "TRAINING",
+                GoogleCloudRetailV2AlphaModelTrainingState::TrainingStateUnspecified => {
+                    "TRAINING_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2AlphaModelTrainingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2AlphaModelTrainingState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2AlphaModelTrainingState, ()> {
+            Ok(match s {
+                "PAUSED" => GoogleCloudRetailV2AlphaModelTrainingState::Paused,
+                "TRAINING" => GoogleCloudRetailV2AlphaModelTrainingState::Training,
+                "TRAINING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelTrainingState::TrainingStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2AlphaModelTrainingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2AlphaModelTrainingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2AlphaModelTrainingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PAUSED" => GoogleCloudRetailV2AlphaModelTrainingState::Paused,
+                "TRAINING" => GoogleCloudRetailV2AlphaModelTrainingState::Training,
+                "TRAINING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2AlphaModelTrainingState::TrainingStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaModelTrainingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModelTrainingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaModelPageOptimizationConfig {
+        #[doc = "Required. The type of UserEvent this page optimization is shown for. Each page has an associated event type - this will be the corresponding event type for the page that the page optimization model is used on. Supported types: * `add-to-cart`: Products being added to cart. * `detail-page-view`: Products detail page viewed. * `home-page-view`: Homepage viewed * `category-page-view`: Homepage viewed * `shopping-cart-page-view`: User viewing a shopping cart. `home-page-view` only allows models with type `recommended-for-you`. All other page_optimization_event_type allow all Model.types."]
+        #[serde(
+            rename = "pageOptimizationEventType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub page_optimization_event_type: ::std::option::Option<String>,
+        #[doc = "Required. A list of panel configurations. Limit = 5."]
+        #[serde(
+            rename = "panels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub panels: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2AlphaModelPageOptimizationConfigPanel>,
+        >,
+        #[doc = "Optional. How to restrict results across panels e.g. can the same ServingConfig be shown on multiple panels at once. If unspecified, default to `UNIQUE_MODEL_RESTRICTION`."]
+        #[serde(
+            rename = "restriction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub restriction: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfig
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModelPageOptimizationConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction {
+        #[doc = "Allow any ServingConfig to be show on any number of panels. Example: `Panel1 candidates`: pdp_ctr, pdp_cvr, home_page_ctr_no_diversity `Panel2 candidates`: home_page_ctr_no_diversity, home_page_ctr_diversity, pdp_cvr_no_diversity `Restriction` = NO_RESTRICTION `Valid combinations`: * * (pdp_ctr, home_page_ctr_no_diversity) * (pdp_ctr, home_page_ctr_diversity) * (pdp_ctr, pdp_cvr_no_diversity) * (pdp_cvr, home_page_ctr_no_diversity) * (pdp_cvr, home_page_ctr_diversity) * (pdp_cvr, pdp_cvr_no_diversity) * (home_page_ctr_no_diversity, home_page_ctr_no_diversity) * (home_page_ctr_no_diversity, home_page_ctr_diversity) * (home_page_ctr_no_diversity, pdp_cvr_no_diversity) * `Invalid combinations`: \\[\\]"]
+        NoRestriction,
+        #[doc = "Unspecified value for restriction."]
+        RestrictionUnspecified,
+        #[doc = "Do not allow multiple ServingConfigs with same Model.name to be show on on different panels. Example: `Panel1 candidates`: * pdp_ctr, pdp_cvr, home_page_ctr_no_diversity * `Panel2 candidates`: * home_page_ctr_no_diversity, home_page_ctr_diversity_low, pdp_cvr_no_diversity * `Restriction` = `UNIQUE_MODEL_RESTRICTION` `Valid combinations`: * * (pdp_ctr, home_page_ctr_no_diversity) * (pdp_ctr, home_page_ctr_diversity) * (pdp_ctr, pdp_cvr_no_diversity) * (pdp_ctr, pdp_cvr_no_diversity) * (pdp_cvr, home_page_ctr_no_diversity) * (pdp_cvr, home_page_ctr_diversity_low) * (home_page_ctr_no_diversity, pdp_cvr_no_diversity) * `Invalid combinations`: * * (home_page_ctr_no_diversity, home_page_ctr_no_diversity) * (pdp_cvr, pdp_cvr_no_diversity) *"]
+        UniqueModelRestriction,
+        #[doc = "Do not allow multiple ServingConfigs with same Model.type to be shown on different panels. Example: `Panel1 candidates`: * pdp_ctr, pdp_cvr, home_page_ctr_no_diversity * `Panel2 candidates`: * home_page_ctr_no_diversity, home_page_ctr_diversity_low, pdp_cvr_no_diversity * `Restriction` = `UNIQUE_MODEL_RESTRICTION` `Valid combinations`: * * (pdp_ctr, home_page_ctr_no_diversity) * (pdp_ctr, home_page_ctr_diversity) * (pdp_cvr, home_page_ctr_no_diversity) * (pdp_cvr, home_page_ctr_diversity_low) * (home_page_ctr_no_diversity, pdp_cvr_no_diversity) * `Invalid combinations`: * * (pdp_ctr, pdp_cvr_no_diversity) * (pdp_ctr, pdp_cvr_no_diversity) * (pdp_cvr, pdp_cvr_no_diversity) * (home_page_ctr_no_diversity, home_page_ctr_no_diversity) * (home_page_ctr_no_diversity, home_page_ctr_diversity) *"]
+        UniqueModelTypeRestriction,
+        #[doc = "Do not allow the same ServingConfig.name to be shown on multiple panels. Example: `Panel1 candidates`: * pdp_ctr, pdp_cvr, home_page_ctr_no_diversity * `Panel2 candidates`: * home_page_ctr_no_diversity, home_page_ctr_diversity_low, pdp_cvr_no_diversity * `Restriction` = `UNIQUE_SERVING_CONFIG_RESTRICTION` `Valid combinations`: * * (pdp_ctr, home_page_ctr_no_diversity) * (pdp_ctr, home_page_ctr_diversity_low) * (pdp_ctr, pdp_cvr_no_diversity) * (pdp_ctr, pdp_cvr_no_diversity) * (pdp_cvr, home_page_ctr_no_diversity) * (pdp_cvr, home_page_ctr_diversity_low) * (pdp_cvr, pdp_cvr_no_diversity) * (home_page_ctr_no_diversity, home_page_ctr_diversity_low) * (home_page_ctr_no_diversity, pdp_cvr_no_diversity) * `Invalid combinations`: * * (home_page_ctr_no_diversity, home_page_ctr_no_diversity) *"]
+        UniqueServingConfigRestriction,
+    }
+    impl GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: NoRestriction => "NO_RESTRICTION" , GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: RestrictionUnspecified => "RESTRICTION_UNSPECIFIED" , GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueModelRestriction => "UNIQUE_MODEL_RESTRICTION" , GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueModelTypeRestriction => "UNIQUE_MODEL_TYPE_RESTRICTION" , GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueServingConfigRestriction => "UNIQUE_SERVING_CONFIG_RESTRICTION" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction, ()>
+        {
+            Ok (match s { "NO_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: NoRestriction , "RESTRICTION_UNSPECIFIED" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: RestrictionUnspecified , "UNIQUE_MODEL_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueModelRestriction , "UNIQUE_MODEL_TYPE_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueModelTypeRestriction , "UNIQUE_SERVING_CONFIG_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueServingConfigRestriction , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "NO_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: NoRestriction , "RESTRICTION_UNSPECIFIED" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: RestrictionUnspecified , "UNIQUE_MODEL_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueModelRestriction , "UNIQUE_MODEL_TYPE_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueModelTypeRestriction , "UNIQUE_SERVING_CONFIG_RESTRICTION" => GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction :: UniqueServingConfigRestriction , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfigRestriction
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaModelPageOptimizationConfigCandidate {
+        #[doc = "This has to be a valid ServingConfig identifier. For example, for a ServingConfig with full name: `projects/*/locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`, this would be `my_candidate_config`."]
+        #[serde(
+            rename = "servingConfigId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfigCandidate
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfigCandidate
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaModelPageOptimizationConfigPanel {
+        #[doc = "Required. The candidates to consider on the panel."]
+        #[serde(
+            rename = "candidates",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub candidates: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2AlphaModelPageOptimizationConfigCandidate>,
+        >,
+        #[doc = "Required. The default candidate. If the model fails at serving time, we fall back to the default."]
+        #[serde(
+            rename = "defaultCandidate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_candidate: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2AlphaModelPageOptimizationConfigCandidate,
+        >,
+        #[doc = "Optional. The name to display for the panel."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfigPanel
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2AlphaModelPageOptimizationConfigPanel
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaModelServingConfigList {
+        #[doc = "Optional. A set of valid serving configs that may be used for `PAGE_OPTIMIZATION`."]
+        #[serde(
+            rename = "servingConfigIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaModelServingConfigList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaModelServingConfigList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaOutputResult {
+        #[doc = "The BigQuery location where the result is stored."]
+        #[serde(
+            rename = "bigqueryResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bigquery_result: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2AlphaBigQueryOutputResult>,
+        >,
+        #[doc = "The Google Cloud Storage location where the result is stored."]
+        #[serde(
+            rename = "gcsResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_result:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2AlphaGcsOutputResult>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaOutputResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaOutputResult {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1287,6 +2303,105 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRetailV2AlphaTransformedUserEventsMetadata {
+        #[doc = "Count of entries in the source user events BigQuery table."]
+        #[serde(
+            rename = "sourceEventsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub source_events_count: ::std::option::Option<i64>,
+        #[doc = "Count of entries in the transformed user events BigQuery table, which could be different from the actually imported number of user events."]
+        #[serde(
+            rename = "transformedEventsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub transformed_events_count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2AlphaTransformedUserEventsMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2AlphaTransformedUserEventsMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaTuneModelMetadata {
+        #[doc = "The resource name of the model that this tune applies to. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`"]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaTuneModelMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaTuneModelMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AlphaTuneModelResponse {}
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AlphaTuneModelResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaTuneModelResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRetailV2AlphaUserEventImportSummary {
         #[doc = "Count of user events imported with complete existing catalog information."]
         #[serde(
@@ -1311,6 +2426,122 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AlphaUserEventImportSummary {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2AttributesConfig {
+        #[doc = "Output only. The AttributeConfigLevel used for this catalog."]
+        #[serde(
+            rename = "attributeConfigLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub attribute_config_level: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2AttributesConfigAttributeConfigLevel,
+        >,
+        #[doc = "Enable attribute(s) config at catalog level. For example, indexable, dynamic_facetable, or searchable for each attribute. The key is catalog attribute’s name. For example: `color`, `brands`, `attributes.custom_attribute`, such as `attributes.xyz`. The maximum number of catalog attributes allowed in a request is 1000."]
+        #[serde(
+            rename = "catalogAttributes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub catalog_attributes: ::std::option::Option<
+            ::std::collections::BTreeMap<
+                String,
+                crate::schemas::GoogleCloudRetailV2CatalogAttribute,
+            >,
+        >,
+        #[doc = "Required. Immutable. The fully qualified resource name of the attribute config. Format: `projects/*/locations/*/catalogs/*/attributesConfig`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2AttributesConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2AttributesConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2AttributesConfigAttributeConfigLevel {
+        #[doc = "Value used when unset. In this case, server behavior defaults to CATALOG_LEVEL_ATTRIBUTE_CONFIG."]
+        AttributeConfigLevelUnspecified,
+        #[doc = "At this level, we honor the attribute configurations set in CatalogConfig.attribute_configs."]
+        CatalogLevelAttributeConfig,
+        #[doc = "At this level, we honor the attribute configurations set in Product.attributes."]
+        ProductLevelAttributeConfig,
+    }
+    impl GoogleCloudRetailV2AttributesConfigAttributeConfigLevel {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: AttributeConfigLevelUnspecified => "ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED" , GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: CatalogLevelAttributeConfig => "CATALOG_LEVEL_ATTRIBUTE_CONFIG" , GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: ProductLevelAttributeConfig => "PRODUCT_LEVEL_ATTRIBUTE_CONFIG" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2AttributesConfigAttributeConfigLevel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2AttributesConfigAttributeConfigLevel {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2AttributesConfigAttributeConfigLevel, ()>
+        {
+            Ok (match s { "ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED" => GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: AttributeConfigLevelUnspecified , "CATALOG_LEVEL_ATTRIBUTE_CONFIG" => GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: CatalogLevelAttributeConfig , "PRODUCT_LEVEL_ATTRIBUTE_CONFIG" => GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: ProductLevelAttributeConfig , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2AttributesConfigAttributeConfigLevel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2AttributesConfigAttributeConfigLevel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2AttributesConfigAttributeConfigLevel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED" => GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: AttributeConfigLevelUnspecified , "CATALOG_LEVEL_ATTRIBUTE_CONFIG" => GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: CatalogLevelAttributeConfig , "PRODUCT_LEVEL_ATTRIBUTE_CONFIG" => GoogleCloudRetailV2AttributesConfigAttributeConfigLevel :: ProductLevelAttributeConfig , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2AttributesConfigAttributeConfigLevel
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2AttributesConfigAttributeConfigLevel
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1465,6 +2696,75 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRetailV2BetaBigQueryOutputResult {
+        #[doc = "The ID of a BigQuery Dataset."]
+        #[serde(
+            rename = "datasetId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_id: ::std::option::Option<String>,
+        #[doc = "The ID of a BigQuery Table."]
+        #[serde(
+            rename = "tableId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaBigQueryOutputResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaBigQueryOutputResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2BetaCreateModelMetadata {
+        #[doc = "The resource name of the model that this create applies to. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`"]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaCreateModelMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaCreateModelMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRetailV2BetaExportErrorsConfig {
         #[doc = "Google Cloud Storage path for import errors. This must be an empty, existing Cloud Storage bucket. Export errors will be written to a file in this bucket, one per line, as a JSON-encoded `google.rpc.Status` message."]
         #[serde(
@@ -1531,7 +2831,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_samples: ::std::option::Option<Vec<crate::schemas::GoogleRpcStatus>>,
-        #[doc = "Echoes the destination for the complete errors in the request if set."]
+        #[doc = "This field is never set."]
         #[serde(
             rename = "errorsConfig",
             default,
@@ -1539,6 +2839,14 @@ pub mod schemas {
         )]
         pub errors_config:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaExportErrorsConfig>,
+        #[doc = "Output result indicating where the data were exported to."]
+        #[serde(
+            rename = "outputResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_result:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaOutputResult>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaExportProductsResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1559,7 +2867,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_samples: ::std::option::Option<Vec<crate::schemas::GoogleRpcStatus>>,
-        #[doc = "Echoes the destination for the complete errors if this field was set in the request."]
+        #[doc = "This field is never set."]
         #[serde(
             rename = "errorsConfig",
             default,
@@ -1567,6 +2875,14 @@ pub mod schemas {
         )]
         pub errors_config:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaExportErrorsConfig>,
+        #[doc = "Output result indicating where the data were exported to."]
+        #[serde(
+            rename = "outputResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_result:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaOutputResult>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaExportUserEventsResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1574,6 +2890,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaExportUserEventsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2BetaGcsOutputResult {
+        #[doc = "The uri of Gcs output"]
+        #[serde(
+            rename = "outputUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaGcsOutputResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaGcsOutputResult {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1613,7 +2960,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaImportErrorsConfig {
-        #[doc = "Google Cloud Storage prefix for import errors. This must be an empty, existing Cloud Storage directory. Import errors will be written to sharded files in this directory, one per line, as a JSON-encoded `google.rpc.Status` message."]
+        #[doc = "Google Cloud Storage prefix for import errors. This must be an empty, existing Cloud Storage directory. Import errors are written to sharded files in this directory, one per line, as a JSON-encoded `google.rpc.Status` message."]
         #[serde(
             rename = "gcsPrefix",
             default,
@@ -1659,7 +3006,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub failure_count: ::std::option::Option<i64>,
-        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
+        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification is sent to specified Pub/Sub topic. The message data is JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
         #[serde(
             rename = "notificationPubsubTopic",
             default,
@@ -1759,6 +3106,627 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaImportUserEventsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2BetaModel {
+        #[doc = "Output only. Timestamp the Recommendation Model was created at."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. The state of data requirements for this model: `DATA_OK` and `DATA_ERROR`. Recommendation model cannot be trained if the data is in `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even if serving state is `ACTIVE`: models were trained successfully before, but cannot be refreshed because model no longer has sufficient data for training."]
+        #[serde(
+            rename = "dataState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaModelDataState>,
+        #[doc = "Required. The display name of the model. Should be human readable, used to display Recommendation Models in the Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024 characters."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering by attributes is enabled for the model."]
+        #[serde(
+            rename = "filteringOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filtering_option:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaModelFilteringOption>,
+        #[doc = "Output only. The timestamp when the latest successful tune finished."]
+        #[serde(
+            rename = "lastTuneTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_tune_time: ::std::option::Option<String>,
+        #[doc = "Required. The fully qualified resource name of the model. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}` catalog_id has char limit of 50. recommendation_model_id has char limit of 40."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Optional. The optimization objective e.g. `cvr`. Currently supported values: `ctr`, `cvr`, `revenue-per-order`. If not specified, we choose default based on model type. Default depends on type of recommendation: `recommended-for-you` => `ctr` `others-you-may-like` => `ctr` `frequently-bought-together` => `revenue_per_order` This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs."]
+        #[serde(
+            rename = "optimizationObjective",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub optimization_objective: ::std::option::Option<String>,
+        #[doc = "Optional. The state of periodic tuning. The period we use is 3 months - to do a one-off tune earlier use the `TuneModel` method. Default value is `PERIODIC_TUNING_ENABLED`."]
+        #[serde(
+            rename = "periodicTuningState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub periodic_tuning_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaModelPeriodicTuningState>,
+        #[doc = "Required. The type of model e.g. `home-page`. Currently supported values: `recommended-for-you`, `others-you-may-like`, `frequently-bought-together`, `page-optimization`, `similar-items`, `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value). This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+        #[doc = "Output only. The list of valid serving configs associated with the PageOptimizationConfig."]
+        #[serde(
+            rename = "servingConfigLists",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_lists: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2BetaModelServingConfigList>,
+        >,
+        #[doc = "Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`."]
+        #[serde(
+            rename = "servingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaModelServingState>,
+        #[doc = "Optional. The training state that the model is in (e.g. `TRAINING` or `PAUSED`). Since part of the cost of running the service is frequency of training - this can be used to determine when to train model in order to control cost. If not specified: the default value for `CreateModel` method is `TRAINING`. The default value for `UpdateModel` method is to keep the state the same as before."]
+        #[serde(
+            rename = "trainingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub training_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaModelTrainingState>,
+        #[doc = "Output only. The tune operation associated with the model. Can be used to determine if there is an ongoing tune for this recommendation. Empty field implies no tune is goig on."]
+        #[serde(
+            rename = "tuningOperation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tuning_operation: ::std::option::Option<String>,
+        #[doc = "Output only. Timestamp the Recommendation Model was last updated. E.g. if a Recommendation Model was paused - this would be the time the pause was initiated."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaModel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaModel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2BetaModelDataState {
+        #[doc = "The model does not have sufficient training data. Error messages can be queried via Stackdriver."]
+        DataError,
+        #[doc = "The model has sufficient training data."]
+        DataOk,
+        #[doc = "Unspecified default value, should never be explicitly set."]
+        DataStateUnspecified,
+    }
+    impl GoogleCloudRetailV2BetaModelDataState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2BetaModelDataState::DataError => "DATA_ERROR",
+                GoogleCloudRetailV2BetaModelDataState::DataOk => "DATA_OK",
+                GoogleCloudRetailV2BetaModelDataState::DataStateUnspecified => {
+                    "DATA_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2BetaModelDataState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2BetaModelDataState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRetailV2BetaModelDataState, ()> {
+            Ok(match s {
+                "DATA_ERROR" => GoogleCloudRetailV2BetaModelDataState::DataError,
+                "DATA_OK" => GoogleCloudRetailV2BetaModelDataState::DataOk,
+                "DATA_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelDataState::DataStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2BetaModelDataState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2BetaModelDataState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2BetaModelDataState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DATA_ERROR" => GoogleCloudRetailV2BetaModelDataState::DataError,
+                "DATA_OK" => GoogleCloudRetailV2BetaModelDataState::DataOk,
+                "DATA_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelDataState::DataStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaModelDataState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaModelDataState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2BetaModelFilteringOption {
+        #[doc = "Recommendation filtering is disabled."]
+        RecommendationsFilteringDisabled,
+        #[doc = "Recommendation filtering is enabled."]
+        RecommendationsFilteringEnabled,
+        #[doc = "Value used when unset. In this case, server behavior defaults to RECOMMENDATIONS_FILTERING_DISABLED."]
+        RecommendationsFilteringOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2BetaModelFilteringOption {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringDisabled => "RECOMMENDATIONS_FILTERING_DISABLED" , GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringEnabled => "RECOMMENDATIONS_FILTERING_ENABLED" , GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringOptionUnspecified => "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2BetaModelFilteringOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2BetaModelFilteringOption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2BetaModelFilteringOption, ()> {
+            Ok (match s { "RECOMMENDATIONS_FILTERING_DISABLED" => GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringDisabled , "RECOMMENDATIONS_FILTERING_ENABLED" => GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringEnabled , "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" => GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringOptionUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2BetaModelFilteringOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2BetaModelFilteringOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2BetaModelFilteringOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "RECOMMENDATIONS_FILTERING_DISABLED" => GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringDisabled , "RECOMMENDATIONS_FILTERING_ENABLED" => GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringEnabled , "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" => GoogleCloudRetailV2BetaModelFilteringOption :: RecommendationsFilteringOptionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaModelFilteringOption {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaModelFilteringOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        #[doc = "The model cannot be tuned with periodic tuning OR the `TuneModel` method. Hide the options in customer UI and reject any requests through the backend self serve API."]
+        AllTuningDisabled,
+        #[doc = "The model has periodic tuning disabled. Tuning can be reenabled by calling the `EnableModelPeriodicTuning` method or by calling the `TuneModel` method."]
+        PeriodicTuningDisabled,
+        #[doc = "The model has periodic tuning enabled. Tuning can be disabled by calling the `DisableModelPeriodicTuning` method."]
+        PeriodicTuningEnabled,
+        #[doc = "Unspecified default value, should never be explicitly set."]
+        PeriodicTuningStateUnspecified,
+    }
+    impl GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2BetaModelPeriodicTuningState::AllTuningDisabled => {
+                    "ALL_TUNING_DISABLED"
+                }
+                GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningDisabled => {
+                    "PERIODIC_TUNING_DISABLED"
+                }
+                GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningEnabled => {
+                    "PERIODIC_TUNING_ENABLED"
+                }
+                GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningStateUnspecified => {
+                    "PERIODIC_TUNING_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2BetaModelPeriodicTuningState, ()> {
+            Ok(match s {
+                "ALL_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::AllTuningDisabled
+                }
+                "PERIODIC_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningDisabled
+                }
+                "PERIODIC_TUNING_ENABLED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningEnabled
+                }
+                "PERIODIC_TUNING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALL_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::AllTuningDisabled
+                }
+                "PERIODIC_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningDisabled
+                }
+                "PERIODIC_TUNING_ENABLED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningEnabled
+                }
+                "PERIODIC_TUNING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelPeriodicTuningState::PeriodicTuningStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaModelPeriodicTuningState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2BetaModelServingState {
+        #[doc = "The model is serving and can be queried."]
+        Active,
+        #[doc = "The model is not serving."]
+        Inactive,
+        #[doc = "Unspecified serving state."]
+        ServingStateUnspecified,
+        #[doc = "The model is trained on tuned hyperparameters and can be queried."]
+        Tuned,
+    }
+    impl GoogleCloudRetailV2BetaModelServingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2BetaModelServingState::Active => "ACTIVE",
+                GoogleCloudRetailV2BetaModelServingState::Inactive => "INACTIVE",
+                GoogleCloudRetailV2BetaModelServingState::ServingStateUnspecified => {
+                    "SERVING_STATE_UNSPECIFIED"
+                }
+                GoogleCloudRetailV2BetaModelServingState::Tuned => "TUNED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2BetaModelServingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2BetaModelServingState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2BetaModelServingState, ()> {
+            Ok(match s {
+                "ACTIVE" => GoogleCloudRetailV2BetaModelServingState::Active,
+                "INACTIVE" => GoogleCloudRetailV2BetaModelServingState::Inactive,
+                "SERVING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelServingState::ServingStateUnspecified
+                }
+                "TUNED" => GoogleCloudRetailV2BetaModelServingState::Tuned,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2BetaModelServingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2BetaModelServingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2BetaModelServingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => GoogleCloudRetailV2BetaModelServingState::Active,
+                "INACTIVE" => GoogleCloudRetailV2BetaModelServingState::Inactive,
+                "SERVING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelServingState::ServingStateUnspecified
+                }
+                "TUNED" => GoogleCloudRetailV2BetaModelServingState::Tuned,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaModelServingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaModelServingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2BetaModelTrainingState {
+        #[doc = "The model training is paused."]
+        Paused,
+        #[doc = "The model is training."]
+        Training,
+        #[doc = "Unspecified training state."]
+        TrainingStateUnspecified,
+    }
+    impl GoogleCloudRetailV2BetaModelTrainingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2BetaModelTrainingState::Paused => "PAUSED",
+                GoogleCloudRetailV2BetaModelTrainingState::Training => "TRAINING",
+                GoogleCloudRetailV2BetaModelTrainingState::TrainingStateUnspecified => {
+                    "TRAINING_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2BetaModelTrainingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2BetaModelTrainingState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2BetaModelTrainingState, ()> {
+            Ok(match s {
+                "PAUSED" => GoogleCloudRetailV2BetaModelTrainingState::Paused,
+                "TRAINING" => GoogleCloudRetailV2BetaModelTrainingState::Training,
+                "TRAINING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelTrainingState::TrainingStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2BetaModelTrainingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2BetaModelTrainingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2BetaModelTrainingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PAUSED" => GoogleCloudRetailV2BetaModelTrainingState::Paused,
+                "TRAINING" => GoogleCloudRetailV2BetaModelTrainingState::Training,
+                "TRAINING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2BetaModelTrainingState::TrainingStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaModelTrainingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaModelTrainingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2BetaModelServingConfigList {
+        #[doc = "Optional. A set of valid serving configs that may be used for `PAGE_OPTIMIZATION`."]
+        #[serde(
+            rename = "servingConfigIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaModelServingConfigList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaModelServingConfigList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2BetaOutputResult {
+        #[doc = "The BigQuery location where the result is stored."]
+        #[serde(
+            rename = "bigqueryResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bigquery_result:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2BetaBigQueryOutputResult>>,
+        #[doc = "The Google Cloud Storage location where the result is stored."]
+        #[serde(
+            rename = "gcsResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gcs_result:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2BetaGcsOutputResult>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaOutputResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaOutputResult {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2047,6 +4015,61 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRetailV2BetaTuneModelMetadata {
+        #[doc = "The resource name of the model that this tune applies to. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`"]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaTuneModelMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaTuneModelMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2BetaTuneModelResponse {}
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2BetaTuneModelResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2BetaTuneModelResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRetailV2BetaUserEventImportSummary {
         #[doc = "Count of user events imported with complete existing catalog information."]
         #[serde(
@@ -2088,7 +4111,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BigQuerySource {
-        #[doc = "The schema to use when parsing the data from the source. Supported values for product imports: * `product` (default): One JSON Product per line. Each product must have a valid Product.id. * `product_merchant_center`: See [Importing catalog data from Merchant Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc). Supported values for user events imports: * `user_event` (default): One JSON UserEvent per line. * `user_event_ga360`: The schema is available here: https://support.google.com/analytics/answer/3437719. * `user_event_ga4`: This feature is in private preview. Please contact the support team for importing Google Analytics 4 events. The schema is available here: https://support.google.com/analytics/answer/7029846. Supported values for auto-completion imports: * `suggestions` (default): One JSON completion suggestion per line. * `denylist`: One JSON deny suggestion per line. * `allowlist`: One JSON allow suggestion per line."]
+        #[doc = "The schema to use when parsing the data from the source. Supported values for product imports: * `product` (default): One JSON Product per line. Each product must have a valid Product.id. * `product_merchant_center`: See [Importing catalog data from Merchant Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc). Supported values for user events imports: * `user_event` (default): One JSON UserEvent per line. * `user_event_ga360`: The schema is available here: https://support.google.com/analytics/answer/3437719. * `user_event_ga4`: The schema is available here: https://support.google.com/analytics/answer/7029846. Supported values for auto-completion imports: * `suggestions` (default): One JSON completion suggestion per line. * `denylist`: One JSON deny suggestion per line. * `allowlist`: One JSON allow suggestion per line."]
         #[serde(
             rename = "dataSchema",
             default,
@@ -2109,7 +4132,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_staging_dir: ::std::option::Option<String>,
-        #[doc = "BigQuery time partitioned table’s \\_PARTITIONDATE in YYYY-MM-DD format. Only supported when ImportProductsRequest.reconciliation_mode is set to `FULL`."]
+        #[doc = "BigQuery time partitioned table’s \\_PARTITIONDATE in YYYY-MM-DD format. Only supported in ImportProductsRequest."]
         #[serde(
             rename = "partitionDate",
             default,
@@ -2199,6 +4222,547 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudRetailV2CatalogAttribute {
+        #[doc = "If DYNAMIC_FACETABLE_ENABLED, attribute values are available for dynamic facet. Could only be DYNAMIC_FACETABLE_DISABLED if CatalogAttribute.indexable_option is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned. Must be specified, otherwise throws INVALID_FORMAT error."]
+        #[serde(
+            rename = "dynamicFacetableOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dynamic_facetable_option: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption,
+        >,
+        #[doc = "If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable. This property only applies to textual custom attributes and requires indexable set to enabled to enable exact-searchable. If unset, the server behavior defaults to EXACT_SEARCHABLE_DISABLED."]
+        #[serde(
+            rename = "exactSearchableOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exact_searchable_option: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2CatalogAttributeExactSearchableOption,
+        >,
+        #[doc = "Output only. Indicates whether this attribute has been used by any products. `True` if at least one Product is using this attribute in Product.attributes. Otherwise, this field is `False`. CatalogAttribute can be pre-loaded by using CatalogService.AddCatalogAttribute, CatalogService.ImportCatalogAttributes, or CatalogService.UpdateAttributesConfig APIs. This field is `False` for pre-loaded CatalogAttributes. Only pre-loaded catalog attributes that are neither in use by products nor predefined can be deleted. Catalog attributes that are either in use by products or are predefined attributes cannot be deleted; however, their configuration properties will reset to default values upon removal request. After catalog changes, it takes about 10 minutes for this field to update."]
+        #[serde(
+            rename = "inUse",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub in_use: ::std::option::Option<bool>,
+        #[doc = "When AttributesConfig.attribute_config_level is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values are indexed so that it can be filtered, faceted, or boosted in SearchService.Search. Must be specified, otherwise throws INVALID_FORMAT error."]
+        #[serde(
+            rename = "indexableOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub indexable_option: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2CatalogAttributeIndexableOption,
+        >,
+        #[doc = "Required. Attribute name. For example: `color`, `brands`, `attributes.custom_attribute`, such as `attributes.xyz`. To be indexable, the attribute name can contain only alpha-numeric characters and underscores. For example, an attribute named `attributes.abc_xyz` can be indexed, but an attribute named `attributes.abc-xyz` cannot be indexed. If the attribute key starts with `attributes.`, then the attribute is a custom attribute. Attributes such as `brands`, `patterns`, and `title` are built-in and called system attributes."]
+        #[serde(
+            rename = "key",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key: ::std::option::Option<String>,
+        #[doc = "Output only. The type of this attribute. This is derived from the attribute in Product.attributes."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<crate::schemas::GoogleCloudRetailV2CatalogAttributeType>,
+        #[doc = "If RETRIEVABLE_ENABLED, attribute values are retrievable in the search results. If unset, the server behavior defaults to RETRIEVABLE_DISABLED."]
+        #[serde(
+            rename = "retrievableOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub retrievable_option: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2CatalogAttributeRetrievableOption,
+        >,
+        #[doc = "When AttributesConfig.attribute_config_level is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values are searchable by text queries in SearchService.Search. If SEARCHABLE_ENABLED but attribute type is numerical, attribute values will not be searchable by text queries in SearchService.Search, as there are no text values associated to numerical attributes. Must be specified, otherwise throws INVALID_FORMAT error."]
+        #[serde(
+            rename = "searchableOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub searchable_option: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2CatalogAttributeSearchableOption,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2CatalogAttribute {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CatalogAttribute {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption {
+        #[doc = "Dynamic facetable option disabled for an attribute."]
+        DynamicFacetableDisabled,
+        #[doc = "Dynamic facetable option enabled for an attribute."]
+        DynamicFacetableEnabled,
+        #[doc = "Value used when unset."]
+        DynamicFacetableOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableDisabled => "DYNAMIC_FACETABLE_DISABLED" , GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableEnabled => "DYNAMIC_FACETABLE_ENABLED" , GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableOptionUnspecified => "DYNAMIC_FACETABLE_OPTION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption, ()>
+        {
+            Ok (match s { "DYNAMIC_FACETABLE_DISABLED" => GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableDisabled , "DYNAMIC_FACETABLE_ENABLED" => GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableEnabled , "DYNAMIC_FACETABLE_OPTION_UNSPECIFIED" => GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableOptionUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "DYNAMIC_FACETABLE_DISABLED" => GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableDisabled , "DYNAMIC_FACETABLE_ENABLED" => GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableEnabled , "DYNAMIC_FACETABLE_OPTION_UNSPECIFIED" => GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption :: DynamicFacetableOptionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2CatalogAttributeDynamicFacetableOption
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2CatalogAttributeExactSearchableOption {
+        #[doc = "Exact searchable option disabled for an attribute."]
+        ExactSearchableDisabled,
+        #[doc = "Exact searchable option enabled for an attribute."]
+        ExactSearchableEnabled,
+        #[doc = "Value used when unset."]
+        ExactSearchableOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2CatalogAttributeExactSearchableOption {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableDisabled => "EXACT_SEARCHABLE_DISABLED" , GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableEnabled => "EXACT_SEARCHABLE_ENABLED" , GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableOptionUnspecified => "EXACT_SEARCHABLE_OPTION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2CatalogAttributeExactSearchableOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2CatalogAttributeExactSearchableOption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2CatalogAttributeExactSearchableOption, ()>
+        {
+            Ok (match s { "EXACT_SEARCHABLE_DISABLED" => GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableDisabled , "EXACT_SEARCHABLE_ENABLED" => GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableEnabled , "EXACT_SEARCHABLE_OPTION_UNSPECIFIED" => GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableOptionUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2CatalogAttributeExactSearchableOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2CatalogAttributeExactSearchableOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2CatalogAttributeExactSearchableOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "EXACT_SEARCHABLE_DISABLED" => GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableDisabled , "EXACT_SEARCHABLE_ENABLED" => GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableEnabled , "EXACT_SEARCHABLE_OPTION_UNSPECIFIED" => GoogleCloudRetailV2CatalogAttributeExactSearchableOption :: ExactSearchableOptionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2CatalogAttributeExactSearchableOption
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2CatalogAttributeExactSearchableOption
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        #[doc = "Indexable option disabled for an attribute."]
+        IndexableDisabled,
+        #[doc = "Indexable option enabled for an attribute."]
+        IndexableEnabled,
+        #[doc = "Value used when unset."]
+        IndexableOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableDisabled => {
+                    "INDEXABLE_DISABLED"
+                }
+                GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableEnabled => {
+                    "INDEXABLE_ENABLED"
+                }
+                GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableOptionUnspecified => {
+                    "INDEXABLE_OPTION_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2CatalogAttributeIndexableOption, ()> {
+            Ok(match s {
+                "INDEXABLE_DISABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableDisabled
+                }
+                "INDEXABLE_ENABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableEnabled
+                }
+                "INDEXABLE_OPTION_UNSPECIFIED" => {
+                    GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableOptionUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "INDEXABLE_DISABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableDisabled
+                }
+                "INDEXABLE_ENABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableEnabled
+                }
+                "INDEXABLE_OPTION_UNSPECIFIED" => {
+                    GoogleCloudRetailV2CatalogAttributeIndexableOption::IndexableOptionUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CatalogAttributeIndexableOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2CatalogAttributeType {
+        #[doc = "Numerical attribute."]
+        Numerical,
+        #[doc = "Textual attribute."]
+        Textual,
+        #[doc = "The type of the attribute is unknown. Used when type cannot be derived from attribute that is not in_use."]
+        Unknown,
+    }
+    impl GoogleCloudRetailV2CatalogAttributeType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2CatalogAttributeType::Numerical => "NUMERICAL",
+                GoogleCloudRetailV2CatalogAttributeType::Textual => "TEXTUAL",
+                GoogleCloudRetailV2CatalogAttributeType::Unknown => "UNKNOWN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2CatalogAttributeType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2CatalogAttributeType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRetailV2CatalogAttributeType, ()> {
+            Ok(match s {
+                "NUMERICAL" => GoogleCloudRetailV2CatalogAttributeType::Numerical,
+                "TEXTUAL" => GoogleCloudRetailV2CatalogAttributeType::Textual,
+                "UNKNOWN" => GoogleCloudRetailV2CatalogAttributeType::Unknown,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2CatalogAttributeType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2CatalogAttributeType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2CatalogAttributeType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "NUMERICAL" => GoogleCloudRetailV2CatalogAttributeType::Numerical,
+                "TEXTUAL" => GoogleCloudRetailV2CatalogAttributeType::Textual,
+                "UNKNOWN" => GoogleCloudRetailV2CatalogAttributeType::Unknown,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2CatalogAttributeType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CatalogAttributeType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        #[doc = "Retrievable option disabled for an attribute."]
+        RetrievableDisabled,
+        #[doc = "Retrievable option enabled for an attribute."]
+        RetrievableEnabled,
+        #[doc = "Value used when unset."]
+        RetrievableOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableDisabled => "RETRIEVABLE_DISABLED" , GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableEnabled => "RETRIEVABLE_ENABLED" , GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableOptionUnspecified => "RETRIEVABLE_OPTION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2CatalogAttributeRetrievableOption, ()>
+        {
+            Ok (match s { "RETRIEVABLE_DISABLED" => GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableDisabled , "RETRIEVABLE_ENABLED" => GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableEnabled , "RETRIEVABLE_OPTION_UNSPECIFIED" => GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableOptionUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "RETRIEVABLE_DISABLED" => GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableDisabled , "RETRIEVABLE_ENABLED" => GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableEnabled , "RETRIEVABLE_OPTION_UNSPECIFIED" => GoogleCloudRetailV2CatalogAttributeRetrievableOption :: RetrievableOptionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2CatalogAttributeRetrievableOption
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CatalogAttributeRetrievableOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        #[doc = "Searchable option disabled for an attribute."]
+        SearchableDisabled,
+        #[doc = "Searchable option enabled for an attribute."]
+        SearchableEnabled,
+        #[doc = "Value used when unset."]
+        SearchableOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2CatalogAttributeSearchableOption :: SearchableDisabled => "SEARCHABLE_DISABLED" , GoogleCloudRetailV2CatalogAttributeSearchableOption :: SearchableEnabled => "SEARCHABLE_ENABLED" , GoogleCloudRetailV2CatalogAttributeSearchableOption :: SearchableOptionUnspecified => "SEARCHABLE_OPTION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2CatalogAttributeSearchableOption, ()>
+        {
+            Ok(match s {
+                "SEARCHABLE_DISABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeSearchableOption::SearchableDisabled
+                }
+                "SEARCHABLE_ENABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeSearchableOption::SearchableEnabled
+                }
+                "SEARCHABLE_OPTION_UNSPECIFIED" => {
+                    GoogleCloudRetailV2CatalogAttributeSearchableOption::SearchableOptionUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SEARCHABLE_DISABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeSearchableOption::SearchableDisabled
+                }
+                "SEARCHABLE_ENABLED" => {
+                    GoogleCloudRetailV2CatalogAttributeSearchableOption::SearchableEnabled
+                }
+                "SEARCHABLE_OPTION_UNSPECIFIED" => {
+                    GoogleCloudRetailV2CatalogAttributeSearchableOption::SearchableOptionUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2CatalogAttributeSearchableOption
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CatalogAttributeSearchableOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudRetailV2ColorInfo {
         #[doc = "The standard color families. Strongly recommended to use the following standard color groups: “Red”, “Pink”, “Orange”, “Yellow”, “Purple”, “Green”, “Cyan”, “Blue”, “Brown”, “White”, “Gray”, “Black” and “Mixed”. Normally it is expected to have only 1 color family. May consider using single “Mixed” instead of multiple values. A maximum of 5 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color)."]
         #[serde(
@@ -2207,7 +4771,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color_families: ::std::option::Option<Vec<String>>,
-        #[doc = "The color display names, which may be different from standard color family names, such as the color aliases used in the website frontend. Normally it is expected to have only 1 color. May consider using single “Mixed” instead of multiple values. A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color)."]
+        #[doc = "The color display names, which may be different from standard color family names, such as the color aliases used in the website frontend. Normally it is expected to have only 1 color. May consider using single “Mixed” instead of multiple values. A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color)."]
         #[serde(
             rename = "colors",
             default,
@@ -2245,7 +4809,7 @@ pub mod schemas {
         pub completion_results: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudRetailV2CompleteQueryResponseCompletionResult>,
         >,
-        #[doc = "Matched recent searches of this user. The maximum number of recent searches is 10. This field is a restricted feature. Contact Retail Search support team if you are interested in enabling it. This feature is only available when CompleteQueryRequest.visitor_id field is set and UserEvent is imported. The recent searches satisfy the follow rules: * They are ordered from latest to oldest. * They are matched with CompleteQueryRequest.query case insensitively. * They are transformed to lower cases. * They are UTF-8 safe. Recent searches are deduplicated. More recent searches will be reserved when duplication happens."]
+        #[doc = "Matched recent searches of this user. The maximum number of recent searches is 10. This field is a restricted feature. Contact Retail Search support team if you are interested in enabling it. This feature is only available when CompleteQueryRequest.visitor_id field is set and UserEvent is imported. The recent searches satisfy the follow rules: * They are ordered from latest to oldest. * They are matched with CompleteQueryRequest.query case insensitively. * They are transformed to lower case. * They are UTF-8 safe. Recent searches are deduplicated. More recent searches will be reserved when duplication happens."]
         #[serde(
             rename = "recentSearchResults",
             default,
@@ -2269,7 +4833,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2CompleteQueryResponseCompletionResult {
-        #[doc = "Custom attributes for the suggestion term. * For “user-data”, the attributes are additional custom attributes ingested through BigQuery. * For “cloud-retail”, the attributes are product attributes generated by Cloud Retail."]
+        #[doc = "Custom attributes for the suggestion term. * For “user-data”, the attributes are additional custom attributes ingested through BigQuery. * For “cloud-retail”, the attributes are product attributes generated by Cloud Retail. It requires UserEvent.product_details is imported properly."]
         #[serde(
             rename = "attributes",
             default,
@@ -2334,6 +4898,110 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for GoogleCloudRetailV2CompleteQueryResponseRecentSearchResult
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2CompletionConfig {
+        #[doc = "Output only. The source data for the latest import of the autocomplete allowlist phrases."]
+        #[serde(
+            rename = "allowlistInputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allowlist_input_config:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2CompletionDataInputConfig>,
+        #[doc = "If set to true, the auto learning function is enabled. Auto learning uses user data to generate suggestions using ML techniques. Default value is false. Only after enabling auto learning can users use `cloud-retail` data in CompleteQueryRequest."]
+        #[serde(
+            rename = "autoLearning",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auto_learning: ::std::option::Option<bool>,
+        #[doc = "Output only. The source data for the latest import of the autocomplete denylist phrases."]
+        #[serde(
+            rename = "denylistInputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub denylist_input_config:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2CompletionDataInputConfig>,
+        #[doc = "Output only. Name of the LRO corresponding to the latest allowlist import. Can use GetOperation API to retrieve the latest state of the Long Running Operation."]
+        #[serde(
+            rename = "lastAllowlistImportOperation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_allowlist_import_operation: ::std::option::Option<String>,
+        #[doc = "Output only. Name of the LRO corresponding to the latest denylist import. Can use GetOperation API to retrieve the latest state of the Long Running Operation."]
+        #[serde(
+            rename = "lastDenylistImportOperation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_denylist_import_operation: ::std::option::Option<String>,
+        #[doc = "Output only. Name of the LRO corresponding to the latest suggestion terms list import. Can use GetOperation API to retrieve the latest state of the Long Running Operation."]
+        #[serde(
+            rename = "lastSuggestionsImportOperation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_suggestions_import_operation: ::std::option::Option<String>,
+        #[doc = "Specifies the matching order for autocomplete suggestions, e.g., a query consisting of ‘sh’ with ‘out-of-order’ specified would suggest “women’s shoes”, whereas a query of ‘red s’ with ‘exact-prefix’ specified would suggest “red shoes”. Currently supported values: * ‘out-of-order’ * ‘exact-prefix’ Default value: ‘exact-prefix’."]
+        #[serde(
+            rename = "matchingOrder",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub matching_order: ::std::option::Option<String>,
+        #[doc = "The maximum number of autocomplete suggestions returned per term. Default value is 20. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20."]
+        #[serde(
+            rename = "maxSuggestions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_suggestions: ::std::option::Option<i32>,
+        #[doc = "The minimum number of characters needed to be typed in order to get suggestions. Default value is 2. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20."]
+        #[serde(
+            rename = "minPrefixLength",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_prefix_length: ::std::option::Option<i32>,
+        #[doc = "Required. Immutable. Fully qualified name `projects/*/locations/*/catalogs/*/completionConfig`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Output only. The source data for the latest import of the autocomplete suggestion phrases."]
+        #[serde(
+            rename = "suggestionsInputConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suggestions_input_config:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2CompletionDataInputConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2CompletionConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CompletionConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2416,10 +5084,376 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2Condition {
+        #[doc = "Range of time(s) specifying when Condition is active. Condition true if any time range matches."]
+        #[serde(
+            rename = "activeTimeRange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub active_time_range:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2ConditionTimeRange>>,
+        #[doc = "A list (up to 10 entries) of terms to match the query on. If not specified, match all queries. If many query terms are specified, the condition is matched if any of the terms is a match (i.e. using the OR operator)."]
+        #[serde(
+            rename = "queryTerms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_terms:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2ConditionQueryTerm>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2Condition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2Condition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ConditionQueryTerm {
+        #[doc = "Whether this is supposed to be a full or partial match."]
+        #[serde(
+            rename = "fullMatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub full_match: ::std::option::Option<bool>,
+        #[doc = "The value of the term to match on. Value cannot be empty. Value can have at most 3 terms if specified as a partial match. Each space separated string is considered as one term. For example, “a b c” is 3 terms and allowed, but “ a b c d“ is 4 terms and not allowed for a partial match."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ConditionQueryTerm {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ConditionQueryTerm {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ConditionTimeRange {
+        #[doc = "End of time range. Range is inclusive."]
+        #[serde(
+            rename = "endTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_time: ::std::option::Option<String>,
+        #[doc = "Start of time range. Range is inclusive."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ConditionTimeRange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ConditionTimeRange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2Control {
+        #[doc = "Output only. List of serving config ids that are associated with this control in the same Catalog. Note the association is managed via the ServingConfig, this is an output only denormalized view."]
+        #[serde(
+            rename = "associatedServingConfigIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub associated_serving_config_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The human readable control display name. Used in Retail UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is thrown."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Immutable. Fully qualified name `projects/*/locations/global/catalogs/*/controls/*`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "A rule control - a condition-action pair. Enacts a set action when the condition is triggered. For example: Boost “gShoe” when query full matches “Running Shoes”."]
+        #[serde(
+            rename = "rule",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rule: ::std::option::Option<crate::schemas::GoogleCloudRetailV2Rule>,
+        #[doc = "Specifies the use case for the control. Affects what condition fields can be set. Only settable by search controls. Will default to SEARCH_SOLUTION_USE_CASE_SEARCH if not specified. Currently only allow one search_solution_use_case per control."]
+        #[serde(
+            rename = "searchSolutionUseCase",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search_solution_use_case: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2ControlSearchSolutionUseCaseItems>,
+        >,
+        #[doc = "Required. Immutable. The solution types that the control is used for. Currently we support setting only one type of solution at creation time. Only `SOLUTION_TYPE_SEARCH` value is supported at the moment. If no solution type is provided at creation time, will default to SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "solutionTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub solution_types: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2ControlSolutionTypesItems>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2Control {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2Control {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        #[doc = "Browse use case. Expects the traffic has an empty query."]
+        SearchSolutionUseCaseBrowse,
+        #[doc = "Search use case. Expects the traffic has a non-empty query."]
+        SearchSolutionUseCaseSearch,
+        #[doc = "The value when it’s unspecified. In this case, server behavior defaults to SEARCH_SOLUTION_USE_CASE_SEARCH."]
+        SearchSolutionUseCaseUnspecified,
+    }
+    impl GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseBrowse => "SEARCH_SOLUTION_USE_CASE_BROWSE" , GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseSearch => "SEARCH_SOLUTION_USE_CASE_SEARCH" , GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseUnspecified => "SEARCH_SOLUTION_USE_CASE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2ControlSearchSolutionUseCaseItems, ()>
+        {
+            Ok (match s { "SEARCH_SOLUTION_USE_CASE_BROWSE" => GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseBrowse , "SEARCH_SOLUTION_USE_CASE_SEARCH" => GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseSearch , "SEARCH_SOLUTION_USE_CASE_UNSPECIFIED" => GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "SEARCH_SOLUTION_USE_CASE_BROWSE" => GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseBrowse , "SEARCH_SOLUTION_USE_CASE_SEARCH" => GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseSearch , "SEARCH_SOLUTION_USE_CASE_UNSPECIFIED" => GoogleCloudRetailV2ControlSearchSolutionUseCaseItems :: SearchSolutionUseCaseUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2ControlSearchSolutionUseCaseItems
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ControlSearchSolutionUseCaseItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ControlSolutionTypesItems {
+        #[doc = "Used for Recommendations AI."]
+        SolutionTypeRecommendation,
+        #[doc = "Used for Retail Search."]
+        SolutionTypeSearch,
+        #[doc = "Default value."]
+        SolutionTypeUnspecified,
+    }
+    impl GoogleCloudRetailV2ControlSolutionTypesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeRecommendation => {
+                    "SOLUTION_TYPE_RECOMMENDATION"
+                }
+                GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeSearch => {
+                    "SOLUTION_TYPE_SEARCH"
+                }
+                GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeUnspecified => {
+                    "SOLUTION_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ControlSolutionTypesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ControlSolutionTypesItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2ControlSolutionTypesItems, ()> {
+            Ok(match s {
+                "SOLUTION_TYPE_RECOMMENDATION" => {
+                    GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeRecommendation
+                }
+                "SOLUTION_TYPE_SEARCH" => {
+                    GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeSearch
+                }
+                "SOLUTION_TYPE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ControlSolutionTypesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ControlSolutionTypesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ControlSolutionTypesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SOLUTION_TYPE_RECOMMENDATION" => {
+                    GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeRecommendation
+                }
+                "SOLUTION_TYPE_SEARCH" => {
+                    GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeSearch
+                }
+                "SOLUTION_TYPE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ControlSolutionTypesItems::SolutionTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ControlSolutionTypesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ControlSolutionTypesItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2CreateModelMetadata {
+        #[doc = "The resource name of the model that this create applies to. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`"]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2CreateModelMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CreateModelMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2CustomAttribute {
-        #[doc = "This field will only be used when AttributesConfig.attribute_config_level of the Catalog is ‘PRODUCT_LEVEL_ATTRIBUTE_CONFIG’, if true, custom attribute values are indexed, so that it can be filtered, faceted or boosted in SearchService.Search. This field is ignored in a UserEvent. See SearchRequest.filter, SearchRequest.facet_specs and SearchRequest.boost_spec for more details."]
+        #[doc = "This field is normally ignored unless AttributesConfig.attribute_config_level of the Catalog is set to the deprecated ‘PRODUCT_LEVEL_ATTRIBUTE_CONFIG’ mode. For information about product-level attribute configuration, see [Configuration modes](https://cloud.google.com/retail/docs/attribute-config#config-modes). If true, custom attribute values are indexed, so that they can be filtered, faceted or boosted in SearchService.Search. This field is ignored in a UserEvent. See SearchRequest.filter, SearchRequest.facet_specs and SearchRequest.boost_spec for more details."]
         #[serde(
             rename = "indexable",
             default,
@@ -2433,7 +5467,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub numbers: ::std::option::Option<Vec<f64>>,
-        #[doc = "This field will only be used when AttributesConfig.attribute_config_level of the Catalog is ‘PRODUCT_LEVEL_ATTRIBUTE_CONFIG’, if true, custom attribute values are searchable by text queries in SearchService.Search. This field is ignored in a UserEvent. Only set if type text is set. Otherwise, a INVALID_ARGUMENT error is returned."]
+        #[doc = "This field is normally ignored unless AttributesConfig.attribute_config_level of the Catalog is set to the deprecated ‘PRODUCT_LEVEL_ATTRIBUTE_CONFIG’ mode. For information about product-level attribute configuration, see [Configuration modes](https://cloud.google.com/retail/docs/attribute-config#config-modes). If true, custom attribute values are searchable by text queries in SearchService.Search. This field is ignored in a UserEvent. Only set if type text is set. Otherwise, a INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "searchable",
             default,
@@ -2454,6 +5488,88 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2CustomAttribute {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ExperimentInfo {
+        #[doc = "The fully qualified resource name of the experiment that provides the serving config under test, should an active experiment exist. For example: `projects/*/locations/global/catalogs/default_catalog/experiments/experiment_id`"]
+        #[serde(
+            rename = "experimentName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub experiment_name: ::std::option::Option<String>,
+        #[doc = "A/B test between existing Cloud Retail Search ServingConfigs."]
+        #[serde(
+            rename = "servingConfigExperiment",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_experiment: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2ExperimentInfoServingConfigExperiment,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ExperimentInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ExperimentInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ExperimentInfoServingConfigExperiment {
+        #[doc = "The fully qualified resource name of the serving config VariantArm.serving_config_id responsible for generating the search response. For example: `projects/*/locations/*/catalogs/*/servingConfigs/*`."]
+        #[serde(
+            rename = "experimentServingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub experiment_serving_config: ::std::option::Option<String>,
+        #[doc = "The fully qualified resource name of the original SearchRequest.placement in the search request prior to reassignment by experiment API. For example: `projects/*/locations/*/catalogs/*/servingConfigs/*`."]
+        #[serde(
+            rename = "originalServingConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub original_serving_config: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2ExperimentInfoServingConfigExperiment
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2ExperimentInfoServingConfigExperiment
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2509,7 +5625,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2GcsSource {
-        #[doc = "The schema to use when parsing the data from the source. Supported values for product imports: * `product` (default): One JSON Product per line. Each product must have a valid Product.id. * `product_merchant_center`: See [Importing catalog data from Merchant Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc). Supported values for user events imports: * `user_event` (default): One JSON UserEvent per line. * `user_event_ga360`: Using https://support.google.com/analytics/answer/3437719. Supported values for control imports: * ‘control’ (default): One JSON Control per line. Supported values for catalog attribute imports: * ‘catalog_attribute’ (default): One CSV CatalogAttribute per line."]
+        #[doc = "The schema to use when parsing the data from the source. Supported values for product imports: * `product` (default): One JSON Product per line. Each product must have a valid Product.id. * `product_merchant_center`: See [Importing catalog data from Merchant Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc). Supported values for user events imports: * `user_event` (default): One JSON UserEvent per line. * `user_event_ga360`: Using https://support.google.com/analytics/answer/3437719. Supported values for control imports: * `control` (default): One JSON Control per line. Supported values for catalog attribute imports: * `catalog_attribute` (default): One CSV CatalogAttribute per line."]
         #[serde(
             rename = "dataSchema",
             default,
@@ -2645,7 +5761,7 @@ pub mod schemas {
         )]
         pub input_config:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2CompletionDataInputConfig>,
-        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
+        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification is sent to specified Pub/Sub topic. The message data is JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
         #[serde(
             rename = "notificationPubsubTopic",
             default,
@@ -2696,7 +5812,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2ImportErrorsConfig {
-        #[doc = "Google Cloud Storage prefix for import errors. This must be an empty, existing Cloud Storage directory. Import errors will be written to sharded files in this directory, one per line, as a JSON-encoded `google.rpc.Status` message."]
+        #[doc = "Google Cloud Storage prefix for import errors. This must be an empty, existing Cloud Storage directory. Import errors are written to sharded files in this directory, one per line, as a JSON-encoded `google.rpc.Status` message."]
         #[serde(
             rename = "gcsPrefix",
             default,
@@ -2742,7 +5858,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub failure_count: ::std::option::Option<i64>,
-        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
+        #[doc = "Pub/Sub topic for receiving notification. If this field is set, when the import is finished, a notification is sent to specified Pub/Sub topic. The message data is JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`."]
         #[serde(
             rename = "notificationPubsubTopic",
             default,
@@ -2802,7 +5918,7 @@ pub mod schemas {
         )]
         pub input_config:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2ProductInputConfig>,
-        #[doc = "Full Pub/Sub topic name for receiving notification. If this field is set, when the import is finished, a notification will be sent to specified Pub/Sub topic. The message data will be JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has to be within the same project as ImportProductsRequest.parent. Make sure that both `cloud-retail-customer-data-access@system.gserviceaccount.com` and `service-@gcp-sa-retail.iam.gserviceaccount.com` have the `pubsub.topics.publish` IAM permission on the topic. Only supported when ImportProductsRequest.reconciliation_mode is set to `FULL`."]
+        #[doc = "Full Pub/Sub topic name for receiving notification. If this field is set, when the import is finished, a notification is sent to specified Pub/Sub topic. The message data is JSON string of a Operation. Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has to be within the same project as ImportProductsRequest.parent. Make sure that `service-@gcp-sa-retail.iam.gserviceaccount.com` has the `pubsub.topics.publish` IAM permission on the topic."]
         #[serde(
             rename = "notificationPubsubTopic",
             default,
@@ -2825,7 +5941,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub request_id: ::std::option::Option<String>,
-        #[doc = "Indicates which fields in the provided imported ‘products’ to update. If not set, will by default update all fields."]
+        #[doc = "Indicates which fields in the provided imported `products` to update. If not set, all fields are updated."]
         #[serde(
             rename = "updateMask",
             default,
@@ -2845,7 +5961,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRetailV2ImportProductsRequestReconciliationMode {
-        #[doc = "Calculates diff and replaces the entire product dataset. Existing products may be deleted if they are not present in the source location. Can only be set while using BigQuerySource. And the BigQuery dataset must be created in the data location “us (multiple regions in United States)”, otherwise a PERMISSION_DENIED error is thrown. Add the IAM permission “BigQuery Data Viewer” for cloud-retail-customer-data-access@system.gserviceaccount.com before using this feature otherwise an error is thrown."]
+        #[doc = "Calculates diff and replaces the entire product dataset. Existing products may be deleted if they are not present in the source location."]
         Full,
         #[doc = "Inserts new products or updates existing products."]
         Incremental,
@@ -3083,7 +6199,84 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRetailV2ListCatalogsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRetailV2ListCatalogsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ListControlsResponse {
+        #[doc = "All the Controls for a given catalog."]
+        #[serde(
+            rename = "controls",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub controls: ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2Control>>,
+        #[doc = "Pagination token, if not returned indicates the last page."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ListControlsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ListControlsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudRetailV2ListControlsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ListModelsResponse {
+        #[doc = "List of Models."]
+        #[serde(
+            rename = "models",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub models: ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2Model>>,
+        #[doc = "Pagination token, if not returned indicates the last page."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ListModelsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ListModelsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudRetailV2ListModelsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3117,7 +6310,51 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRetailV2ListProductsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRetailV2ListProductsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ListServingConfigsResponse {
+        #[doc = "Pagination token, if not returned indicates the last page."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "All the ServingConfigs for a given catalog."]
+        #[serde(
+            rename = "servingConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_configs:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2ServingConfig>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ListServingConfigsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ListServingConfigsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudRetailV2ListServingConfigsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3170,37 +6407,628 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2Model {
+        #[doc = "Output only. Timestamp the Recommendation Model was created at."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Output only. The state of data requirements for this model: `DATA_OK` and `DATA_ERROR`. Recommendation model cannot be trained if the data is in `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even if serving state is `ACTIVE`: models were trained successfully before, but cannot be refreshed because model no longer has sufficient data for training."]
+        #[serde(
+            rename = "dataState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_state: ::std::option::Option<crate::schemas::GoogleCloudRetailV2ModelDataState>,
+        #[doc = "Required. The display name of the model. Should be human readable, used to display Recommendation Models in the Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024 characters."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering by attributes is enabled for the model."]
+        #[serde(
+            rename = "filteringOption",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filtering_option:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2ModelFilteringOption>,
+        #[doc = "Output only. The timestamp when the latest successful tune finished."]
+        #[serde(
+            rename = "lastTuneTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_tune_time: ::std::option::Option<String>,
+        #[doc = "Required. The fully qualified resource name of the model. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}` catalog_id has char limit of 50. recommendation_model_id has char limit of 40."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Optional. The optimization objective e.g. `cvr`. Currently supported values: `ctr`, `cvr`, `revenue-per-order`. If not specified, we choose default based on model type. Default depends on type of recommendation: `recommended-for-you` => `ctr` `others-you-may-like` => `ctr` `frequently-bought-together` => `revenue_per_order` This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs."]
+        #[serde(
+            rename = "optimizationObjective",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub optimization_objective: ::std::option::Option<String>,
+        #[doc = "Optional. The state of periodic tuning. The period we use is 3 months - to do a one-off tune earlier use the `TuneModel` method. Default value is `PERIODIC_TUNING_ENABLED`."]
+        #[serde(
+            rename = "periodicTuningState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub periodic_tuning_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2ModelPeriodicTuningState>,
+        #[doc = "Required. The type of model e.g. `home-page`. Currently supported values: `recommended-for-you`, `others-you-may-like`, `frequently-bought-together`, `page-optimization`, `similar-items`, `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value). This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+        #[doc = "Output only. The list of valid serving configs associated with the PageOptimizationConfig."]
+        #[serde(
+            rename = "servingConfigLists",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_lists:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2ModelServingConfigList>>,
+        #[doc = "Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`."]
+        #[serde(
+            rename = "servingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2ModelServingState>,
+        #[doc = "Optional. The training state that the model is in (e.g. `TRAINING` or `PAUSED`). Since part of the cost of running the service is frequency of training - this can be used to determine when to train model in order to control cost. If not specified: the default value for `CreateModel` method is `TRAINING`. The default value for `UpdateModel` method is to keep the state the same as before."]
+        #[serde(
+            rename = "trainingState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub training_state:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2ModelTrainingState>,
+        #[doc = "Output only. The tune operation associated with the model. Can be used to determine if there is an ongoing tune for this recommendation. Empty field implies no tune is goig on."]
+        #[serde(
+            rename = "tuningOperation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tuning_operation: ::std::option::Option<String>,
+        #[doc = "Output only. Timestamp the Recommendation Model was last updated. E.g. if a Recommendation Model was paused - this would be the time the pause was initiated."]
+        #[serde(
+            rename = "updateTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2Model {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2Model {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ModelDataState {
+        #[doc = "The model does not have sufficient training data. Error messages can be queried via Stackdriver."]
+        DataError,
+        #[doc = "The model has sufficient training data."]
+        DataOk,
+        #[doc = "Unspecified default value, should never be explicitly set."]
+        DataStateUnspecified,
+    }
+    impl GoogleCloudRetailV2ModelDataState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2ModelDataState::DataError => "DATA_ERROR",
+                GoogleCloudRetailV2ModelDataState::DataOk => "DATA_OK",
+                GoogleCloudRetailV2ModelDataState::DataStateUnspecified => "DATA_STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ModelDataState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ModelDataState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRetailV2ModelDataState, ()> {
+            Ok(match s {
+                "DATA_ERROR" => GoogleCloudRetailV2ModelDataState::DataError,
+                "DATA_OK" => GoogleCloudRetailV2ModelDataState::DataOk,
+                "DATA_STATE_UNSPECIFIED" => GoogleCloudRetailV2ModelDataState::DataStateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ModelDataState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ModelDataState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ModelDataState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DATA_ERROR" => GoogleCloudRetailV2ModelDataState::DataError,
+                "DATA_OK" => GoogleCloudRetailV2ModelDataState::DataOk,
+                "DATA_STATE_UNSPECIFIED" => GoogleCloudRetailV2ModelDataState::DataStateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ModelDataState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ModelDataState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ModelFilteringOption {
+        #[doc = "Recommendation filtering is disabled."]
+        RecommendationsFilteringDisabled,
+        #[doc = "Recommendation filtering is enabled."]
+        RecommendationsFilteringEnabled,
+        #[doc = "Value used when unset. In this case, server behavior defaults to RECOMMENDATIONS_FILTERING_DISABLED."]
+        RecommendationsFilteringOptionUnspecified,
+    }
+    impl GoogleCloudRetailV2ModelFilteringOption {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringDisabled => "RECOMMENDATIONS_FILTERING_DISABLED" , GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringEnabled => "RECOMMENDATIONS_FILTERING_ENABLED" , GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringOptionUnspecified => "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ModelFilteringOption {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ModelFilteringOption {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRetailV2ModelFilteringOption, ()> {
+            Ok (match s { "RECOMMENDATIONS_FILTERING_DISABLED" => GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringDisabled , "RECOMMENDATIONS_FILTERING_ENABLED" => GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringEnabled , "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" => GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringOptionUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ModelFilteringOption {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ModelFilteringOption {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ModelFilteringOption {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "RECOMMENDATIONS_FILTERING_DISABLED" => GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringDisabled , "RECOMMENDATIONS_FILTERING_ENABLED" => GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringEnabled , "RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED" => GoogleCloudRetailV2ModelFilteringOption :: RecommendationsFilteringOptionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ModelFilteringOption {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ModelFilteringOption {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ModelPeriodicTuningState {
+        #[doc = "The model cannot be tuned with periodic tuning OR the `TuneModel` method. Hide the options in customer UI and reject any requests through the backend self serve API."]
+        AllTuningDisabled,
+        #[doc = "The model has periodic tuning disabled. Tuning can be reenabled by calling the `EnableModelPeriodicTuning` method or by calling the `TuneModel` method."]
+        PeriodicTuningDisabled,
+        #[doc = "The model has periodic tuning enabled. Tuning can be disabled by calling the `DisableModelPeriodicTuning` method."]
+        PeriodicTuningEnabled,
+        #[doc = "Unspecified default value, should never be explicitly set."]
+        PeriodicTuningStateUnspecified,
+    }
+    impl GoogleCloudRetailV2ModelPeriodicTuningState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2ModelPeriodicTuningState::AllTuningDisabled => {
+                    "ALL_TUNING_DISABLED"
+                }
+                GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningDisabled => {
+                    "PERIODIC_TUNING_DISABLED"
+                }
+                GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningEnabled => {
+                    "PERIODIC_TUNING_ENABLED"
+                }
+                GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningStateUnspecified => {
+                    "PERIODIC_TUNING_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ModelPeriodicTuningState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ModelPeriodicTuningState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2ModelPeriodicTuningState, ()> {
+            Ok(match s {
+                "ALL_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::AllTuningDisabled
+                }
+                "PERIODIC_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningDisabled
+                }
+                "PERIODIC_TUNING_ENABLED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningEnabled
+                }
+                "PERIODIC_TUNING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ModelPeriodicTuningState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ModelPeriodicTuningState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ModelPeriodicTuningState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALL_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::AllTuningDisabled
+                }
+                "PERIODIC_TUNING_DISABLED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningDisabled
+                }
+                "PERIODIC_TUNING_ENABLED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningEnabled
+                }
+                "PERIODIC_TUNING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ModelPeriodicTuningState::PeriodicTuningStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ModelPeriodicTuningState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ModelPeriodicTuningState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ModelServingState {
+        #[doc = "The model is serving and can be queried."]
+        Active,
+        #[doc = "The model is not serving."]
+        Inactive,
+        #[doc = "Unspecified serving state."]
+        ServingStateUnspecified,
+        #[doc = "The model is trained on tuned hyperparameters and can be queried."]
+        Tuned,
+    }
+    impl GoogleCloudRetailV2ModelServingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2ModelServingState::Active => "ACTIVE",
+                GoogleCloudRetailV2ModelServingState::Inactive => "INACTIVE",
+                GoogleCloudRetailV2ModelServingState::ServingStateUnspecified => {
+                    "SERVING_STATE_UNSPECIFIED"
+                }
+                GoogleCloudRetailV2ModelServingState::Tuned => "TUNED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ModelServingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ModelServingState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRetailV2ModelServingState, ()> {
+            Ok(match s {
+                "ACTIVE" => GoogleCloudRetailV2ModelServingState::Active,
+                "INACTIVE" => GoogleCloudRetailV2ModelServingState::Inactive,
+                "SERVING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ModelServingState::ServingStateUnspecified
+                }
+                "TUNED" => GoogleCloudRetailV2ModelServingState::Tuned,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ModelServingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ModelServingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ModelServingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => GoogleCloudRetailV2ModelServingState::Active,
+                "INACTIVE" => GoogleCloudRetailV2ModelServingState::Inactive,
+                "SERVING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ModelServingState::ServingStateUnspecified
+                }
+                "TUNED" => GoogleCloudRetailV2ModelServingState::Tuned,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ModelServingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ModelServingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ModelTrainingState {
+        #[doc = "The model training is paused."]
+        Paused,
+        #[doc = "The model is training."]
+        Training,
+        #[doc = "Unspecified training state."]
+        TrainingStateUnspecified,
+    }
+    impl GoogleCloudRetailV2ModelTrainingState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2ModelTrainingState::Paused => "PAUSED",
+                GoogleCloudRetailV2ModelTrainingState::Training => "TRAINING",
+                GoogleCloudRetailV2ModelTrainingState::TrainingStateUnspecified => {
+                    "TRAINING_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ModelTrainingState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ModelTrainingState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleCloudRetailV2ModelTrainingState, ()> {
+            Ok(match s {
+                "PAUSED" => GoogleCloudRetailV2ModelTrainingState::Paused,
+                "TRAINING" => GoogleCloudRetailV2ModelTrainingState::Training,
+                "TRAINING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ModelTrainingState::TrainingStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ModelTrainingState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ModelTrainingState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ModelTrainingState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PAUSED" => GoogleCloudRetailV2ModelTrainingState::Paused,
+                "TRAINING" => GoogleCloudRetailV2ModelTrainingState::Training,
+                "TRAINING_STATE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ModelTrainingState::TrainingStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ModelTrainingState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ModelTrainingState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ModelServingConfigList {
+        #[doc = "Optional. A set of valid serving configs that may be used for `PAGE_OPTIMIZATION`."]
+        #[serde(
+            rename = "servingConfigIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_config_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ModelServingConfigList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ModelServingConfigList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2PauseModelRequest {}
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2PauseModelRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2PauseModelRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudRetailV2PredictRequest {
-        #[doc = "Filter for restricting prediction results with a length limit of 5,000 characters. Accepts values for tags and the `filterOutOfStockItems` flag. * Tag expressions. Restricts predictions to products that match all of the specified tags. Boolean operators `OR` and `NOT` are supported if the expression is enclosed in parentheses, and must be separated from the tag values by a space. `-\"tagA\"` is also supported and is equivalent to `NOT \"tagA\"`. Tag values must be double quoted UTF-8 encoded strings with a size limit of 1,000 characters. Note: “Recently viewed” models don’t support tag filtering at the moment. * filterOutOfStockItems. Restricts predictions to products that do not have a stockState value of OUT_OF_STOCK. Examples: * tag=(“Red” OR “Blue”) tag=“New-Arrival” tag=(NOT “promotional”) * filterOutOfStockItems tag=(-“promotional”) * filterOutOfStockItems If your filter blocks all prediction results, the API will return generic (unfiltered) popular products. If you only want results strictly matching the filters, set `strictFiltering` to True in `PredictRequest.params` to receive empty results instead. Note that the API will never return items with storageStatus of “EXPIRED” or “DELETED” regardless of filter choices."]
+        #[doc = "Filter for restricting prediction results with a length limit of 5,000 characters. Accepts values for tags and the `filterOutOfStockItems` flag. * Tag expressions. Restricts predictions to products that match all of the specified tags. Boolean operators `OR` and `NOT` are supported if the expression is enclosed in parentheses, and must be separated from the tag values by a space. `-\"tagA\"` is also supported and is equivalent to `NOT \"tagA\"`. Tag values must be double quoted UTF-8 encoded strings with a size limit of 1,000 characters. Note: “Recently viewed” models don’t support tag filtering at the moment. * filterOutOfStockItems. Restricts predictions to products that do not have a stockState value of OUT_OF_STOCK. Examples: * tag=(“Red” OR “Blue”) tag=“New-Arrival” tag=(NOT “promotional”) * filterOutOfStockItems tag=(-“promotional”) * filterOutOfStockItems If your filter blocks all prediction results, the API will return *no* results. If instead you want empty result sets to return generic (unfiltered) popular products, set `strictFiltering` to False in `PredictRequest.params`. Note that the API will never return items with storageStatus of “EXPIRED” or “DELETED” regardless of filter choices. If `filterSyntaxV2` is set to true under the `params` field, then attribute-based expressions are expected instead of the above described tag-based syntax. Examples: * (colors: ANY(“Red”, “Blue”)) AND NOT (categories: ANY(“Phones”)) * (availability: ANY(“IN_STOCK”)) AND (colors: ANY(“Red”) OR categories: ANY(“Phones”))"]
         #[serde(
             rename = "filter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters, and cannot be empty. Values can be empty, and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details."]
+        #[doc = "The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details."]
         #[serde(
             rename = "labels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Maximum number of results to return per page. Set this property to the number of prediction results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100."]
+        #[doc = "Maximum number of results to return. Set this property to the number of prediction results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100."]
         #[serde(
             rename = "pageSize",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_size: ::std::option::Option<i32>,
-        #[doc = "The previous PredictResponse.next_page_token."]
+        #[doc = "This field is not used; leave it unset."]
         #[serde(
             rename = "pageToken",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_token: ::std::option::Option<String>,
-        #[doc = "Additional domain specific parameters for the predictions. Allowed values: * `returnProduct`: Boolean. If set to true, the associated product object will be returned in the `results.metadata` field in the prediction response. * `returnScore`: Boolean. If set to true, the prediction ‘score’ corresponding to each returned product will be set in the `results.metadata` field in the prediction response. The given ‘score’ indicates the probability of an product being clicked/purchased given the user’s context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular products instead of empty if your filter blocks all prediction results. * `priceRerankLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-price-reranking’, ‘low-price-reranking’, ‘medium-price-reranking’, ‘high-price-reranking’}. This gives request-level control and adjusts prediction results based on product price. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-diversity’, ‘low-diversity’, ‘medium-diversity’, ‘high-diversity’, ‘auto-diversity’}. This gives request-level control and adjusts prediction results based on product category."]
+        #[doc = "Additional domain specific parameters for the predictions. Allowed values: * `returnProduct`: Boolean. If set to true, the associated product object will be returned in the `results.metadata` field in the prediction response. * `returnScore`: Boolean. If set to true, the prediction ‘score’ corresponding to each returned product will be set in the `results.metadata` field in the prediction response. The given ‘score’ indicates the probability of a product being clicked/purchased given the user’s context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular products instead of empty if your filter blocks all prediction results. * `priceRerankLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-price-reranking’, ‘low-price-reranking’, ‘medium-price-reranking’, ‘high-price-reranking’}. This gives request-level control and adjusts prediction results based on product price. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-diversity’, ‘low-diversity’, ‘medium-diversity’, ‘high-diversity’, ‘auto-diversity’}. This gives request-level control and adjusts prediction results based on product category. * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter` field is interpreteted according to the new, attribute-based syntax."]
         #[serde(
             rename = "params",
             default,
@@ -3285,7 +7113,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Additional product metadata / annotations. Possible values: * `product`: JSON representation of the product. Will be set if `returnProduct` is set to true in `PredictRequest.params`. * `score`: Prediction score in double value. Will be set if `returnScore` is set to true in `PredictRequest.params`."]
+        #[doc = "Additional product metadata / annotations. Possible values: * `product`: JSON representation of the product. Is set if `returnProduct` is set to true in `PredictRequest.params`. * `score`: Prediction score in double value. Is set if `returnScore` is set to true in `PredictRequest.params`."]
         #[serde(
             rename = "metadata",
             default,
@@ -3436,7 +7264,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub available_quantity: ::std::option::Option<i32>,
-        #[doc = "The timestamp when this Product becomes available for SearchService.Search."]
+        #[doc = "The timestamp when this Product becomes available for SearchService.Search. Note that this is only applicable to Type.PRIMARY and Type.COLLECTION, and ignored for Type.VARIANT."]
         #[serde(
             rename = "availableTime",
             default,
@@ -3450,14 +7278,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brands: ::std::option::Option<Vec<String>>,
-        #[doc = "Product categories. This field is repeated for supporting one product belonging to several parallel categories. Strongly recommended using the full path for better search / recommendation quality. To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, please replace it with other character(s). For example, if a shoes product belongs to both \\[“Shoes & Accessories” -> “Shoes”\\] and \\[“Sports & Fitness” -> “Athletic Clothing” -> “Shoes”\\], it could be represented as: “categories”: \\[ “Shoes & Accessories > Shoes”, “Sports & Fitness > Athletic Clothing > Shoes” \\] Must be set for Type.PRIMARY Product otherwise an INVALID_ARGUMENT error is returned. At most 250 values are allowed per Product. Empty values are not allowed. Each value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property google_product_category. Schema.org property \\[Product.category\\] (https://schema.org/category). \\[mc_google_product_category\\]: https://support.google.com/merchants/answer/6324436"]
+        #[doc = "Product categories. This field is repeated for supporting one product belonging to several parallel categories. Strongly recommended using the full path for better search / recommendation quality. To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, replace it with other character(s). For example, if a shoes product belongs to both \\[“Shoes & Accessories” -> “Shoes”\\] and \\[“Sports & Fitness” -> “Athletic Clothing” -> “Shoes”\\], it could be represented as: “categories”: \\[ “Shoes & Accessories > Shoes”, “Sports & Fitness > Athletic Clothing > Shoes” \\] Must be set for Type.PRIMARY Product otherwise an INVALID_ARGUMENT error is returned. At most 250 values are allowed per Product. Empty values are not allowed. Each value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property google_product_category. Schema.org property \\[Product.category\\] (https://schema.org/category). \\[mc_google_product_category\\]: https://support.google.com/merchants/answer/6324436"]
         #[serde(
             rename = "categories",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub categories: ::std::option::Option<Vec<String>>,
-        #[doc = "The id of the collection members when type is Type.COLLECTION. Non-existent product ids are allowed. The type of the members must be either Type.PRIMARY or Type.VARIANT otherwise and INVALID_ARGUMENT error is thrown. Should not set it for other types. A maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is return."]
+        #[doc = "The id of the collection members when type is Type.COLLECTION. Non-existent product ids are allowed. The type of the members must be either Type.PRIMARY or Type.VARIANT otherwise an INVALID_ARGUMENT error is thrown. Should not set it for other types. A maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is return."]
         #[serde(
             rename = "collectionMemberIds",
             default,
@@ -3485,7 +7313,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The timestamp when this product becomes unavailable for SearchService.Search. If it is set, the Product is not available for SearchService.Search after expire_time. However, the product can still be retrieved by ProductService.GetProduct and ProductService.ListProducts. expire_time must be later than available_time and publish_time, otherwise an INVALID_ARGUMENT error is thrown. Corresponding properties: Google Merchant Center property [expiration_date](https://support.google.com/merchants/answer/6324499)."]
+        #[doc = "The timestamp when this product becomes unavailable for SearchService.Search. Note that this is only applicable to Type.PRIMARY and Type.COLLECTION, and ignored for Type.VARIANT. In general, we suggest the users to delete the stale products explicitly, instead of using this field to determine staleness. If it is set, the Product is not available for SearchService.Search after expire_time. However, the product can still be retrieved by ProductService.GetProduct and ProductService.ListProducts. expire_time must be later than available_time and publish_time, otherwise an INVALID_ARGUMENT error is thrown. Corresponding properties: Google Merchant Center property [expiration_date](https://support.google.com/merchants/answer/6324499)."]
         #[serde(
             rename = "expireTime",
             default,
@@ -3528,6 +7356,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
+        #[doc = "Output only. A list of local inventories specific to different places. This is only available for users who have Retail Search enabled, and it can be managed by ProductService.AddLocalInventories and ProductService.RemoveLocalInventories APIs."]
+        #[serde(
+            rename = "localInventories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub local_inventories:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2LocalInventory>>,
         #[doc = "The material of the product. For example, “leather”, “wooden”. A maximum of 20 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 200 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [material](https://support.google.com/merchants/answer/6324410). Schema.org property [Product.material](https://schema.org/material)."]
         #[serde(
             rename = "materials",
@@ -3591,7 +7427,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rating: ::std::option::Option<crate::schemas::GoogleCloudRetailV2Rating>,
-        #[doc = "Indicates which fields in the Products are returned in SearchResponse. Supported fields for all types: * audience * availability * brands * color_info * conditions * gtin * materials * name * patterns * price_info * rating * sizes * title * uri Supported fields only for Type.PRIMARY and Type.COLLECTION: * categories * description * images Supported fields only for Type.VARIANT: * Only the first image in images To mark attributes as retrievable, include paths of the form “attributes.key” where “key” is the key of a custom attribute, as specified in attributes. For Type.PRIMARY and Type.COLLECTION, the following fields are always returned in SearchResponse by default: * name For Type.VARIANT, the following fields are always returned in by default: * name * color_info Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is returned. Note: Returning more fields in SearchResponse may increase response payload size and serving latency."]
+        #[doc = "Indicates which fields in the Products are returned in SearchResponse. Supported fields for all types: * audience * availability * brands * color_info * conditions * gtin * materials * name * patterns * price_info * rating * sizes * title * uri Supported fields only for Type.PRIMARY and Type.COLLECTION: * categories * description * images Supported fields only for Type.VARIANT: * Only the first image in images To mark attributes as retrievable, include paths of the form “attributes.key” where “key” is the key of a custom attribute, as specified in attributes. For Type.PRIMARY and Type.COLLECTION, the following fields are always returned in SearchResponse by default: * name For Type.VARIANT, the following fields are always returned in by default: * name * color_info The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is returned. Note: Returning more fields in SearchResponse can increase response payload size and serving latency. This field is deprecated. Use the retrievable site-wide control instead."]
         #[serde(
             rename = "retrievableFields",
             default,
@@ -3619,7 +7455,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
-        #[doc = "Input only. The TTL (time to live) of the product. If it is set, it must be a non-negative value, and expire_time is set as current timestamp plus ttl. The derived expire_time is returned in the output and ttl is left blank when retrieving the Product. If it is set, the product is not available for SearchService.Search after current timestamp plus ttl. However, the product can still be retrieved by ProductService.GetProduct and ProductService.ListProducts."]
+        #[doc = "Input only. The TTL (time to live) of the product. Note that this is only applicable to Type.PRIMARY and Type.COLLECTION, and ignored for Type.VARIANT. In general, we suggest the users to delete the stale products explicitly, instead of using this field to determine staleness. If it is set, it must be a non-negative value, and expire_time is set as current timestamp plus ttl. The derived expire_time is returned in the output and ttl is left blank when retrieving the Product. If it is set, the product is not available for SearchService.Search after current timestamp plus ttl. However, the product can still be retrieved by ProductService.GetProduct and ProductService.ListProducts."]
         #[serde(
             rename = "ttl",
             default,
@@ -3964,7 +7800,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2Promotion {
-        #[doc = "ID of the promotion. For example, “free gift”. The value must be a UTF-8 encoded string with a length limit of 128 characters, and match the pattern: `a-zA-Z*`. For example, id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [promotion](https://support.google.com/merchants/answer/7050148)."]
+        #[doc = "Promotion identifier, which is the final component of name. For example, this field is “free_gift”, if name is `projects/*/locations/global/catalogs/default_catalog/promotions/free_gift`. The value must be a UTF-8 encoded string with a length limit of 128 characters, and match the pattern: `a-zA-Z*`. For example, id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is returned. Corresponds to Google Merchant Center property [promotion_id](https://support.google.com/merchants/answer/7050148)."]
         #[serde(
             rename = "promotionId",
             default,
@@ -4199,7 +8035,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2RejoinUserEventsRequest {
-        #[doc = "The type of the user event rejoin to define the scope and range of the user events to be rejoined with the latest product catalog. Defaults to USER_EVENT_REJOIN_SCOPE_UNSPECIFIED if this field is not set, or set to an invalid integer value."]
+        #[doc = "The type of the user event rejoin to define the scope and range of the user events to be rejoined with the latest product catalog. Defaults to `USER_EVENT_REJOIN_SCOPE_UNSPECIFIED` if this field is not set, or set to an invalid integer value."]
         #[serde(
             rename = "userEventRejoinScope",
             default,
@@ -4313,6 +8149,68 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RejoinUserEventsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RemoveCatalogAttributeRequest {
+        #[doc = "Required. The attribute name key of the CatalogAttribute to remove."]
+        #[serde(
+            rename = "key",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RemoveCatalogAttributeRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RemoveCatalogAttributeRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RemoveControlRequest {
+        #[doc = "Required. The id of the control to apply. Assumed to be in the same catalog as the serving config."]
+        #[serde(
+            rename = "controlId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub control_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RemoveControlRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RemoveControlRequest {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4511,10 +8409,446 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ReplaceCatalogAttributeRequest {
+        #[doc = "Required. The updated CatalogAttribute."]
+        #[serde(
+            rename = "catalogAttribute",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub catalog_attribute:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2CatalogAttribute>,
+        #[doc = "Indicates which fields in the provided CatalogAttribute to update. The following are NOT supported: * CatalogAttribute.key If not set, all supported fields are updated."]
+        #[serde(
+            rename = "updateMask",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub update_mask: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ReplaceCatalogAttributeRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ReplaceCatalogAttributeRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ResumeModelRequest {}
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ResumeModelRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ResumeModelRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2Rule {
+        #[doc = "A boost action."]
+        #[serde(
+            rename = "boostAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub boost_action: ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleBoostAction>,
+        #[doc = "Required. The condition that triggers the rule. If the condition is empty, the rule will always apply."]
+        #[serde(
+            rename = "condition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub condition: ::std::option::Option<crate::schemas::GoogleCloudRetailV2Condition>,
+        #[doc = "Prevents term from being associated with other terms."]
+        #[serde(
+            rename = "doNotAssociateAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub do_not_associate_action:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleDoNotAssociateAction>,
+        #[doc = "Filters results."]
+        #[serde(
+            rename = "filterAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter_action:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleFilterAction>,
+        #[doc = "Ignores specific terms from query during search."]
+        #[serde(
+            rename = "ignoreAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ignore_action:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleIgnoreAction>,
+        #[doc = "Treats specific term as a synonym with a group of terms. Group of terms will not be treated as synonyms with the specific term."]
+        #[serde(
+            rename = "onewaySynonymsAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub oneway_synonyms_action:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleOnewaySynonymsAction>,
+        #[doc = "Redirects a shopper to a specific page."]
+        #[serde(
+            rename = "redirectAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub redirect_action:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleRedirectAction>,
+        #[doc = "Replaces specific terms in the query."]
+        #[serde(
+            rename = "replacementAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replacement_action:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleReplacementAction>,
+        #[doc = "Treats a set of terms as synonyms of one another."]
+        #[serde(
+            rename = "twowaySynonymsAction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub twoway_synonyms_action:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2RuleTwowaySynonymsAction>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2Rule {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2Rule {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleBoostAction {
+        #[doc = "Strength of the condition boost, which must be in \\[-1, 1\\]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored."]
+        #[serde(
+            rename = "boost",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub boost: ::std::option::Option<f32>,
+        #[doc = "The filter can have a max size of 5000 characters. An expression which specifies which products to apply an action to. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID “product_1” or “product_2”, and color “Red” or “Blue”: \\*(id: ANY(“product_1”, “product_2”)) * \\*AND * \\*(colorFamilies: ANY(“Red”, “Blue”)) *"]
+        #[serde(
+            rename = "productsFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub products_filter: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleBoostAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleBoostAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleDoNotAssociateAction {
+        #[doc = "Cannot contain duplicates or the query term. Can specify up to 100 terms."]
+        #[serde(
+            rename = "doNotAssociateTerms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub do_not_associate_terms: ::std::option::Option<Vec<String>>,
+        #[doc = "Terms from the search query. Will not consider do_not_associate_terms for search if in search query. Can specify up to 100 terms."]
+        #[serde(
+            rename = "queryTerms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_terms: ::std::option::Option<Vec<String>>,
+        #[doc = "Will be \\[deprecated = true\\] post migration;"]
+        #[serde(
+            rename = "terms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub terms: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleDoNotAssociateAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleDoNotAssociateAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleFilterAction {
+        #[doc = "A filter to apply on the matching condition results. Supported features: * filter must be set. * Filter syntax is identical to SearchRequest.filter. See more details at the Retail Search [user guide](/retail/search/docs/filter-and-order#filter). * To filter products with product ID “product_1” or “product_2”, and color “Red” or “Blue”: \\*(id: ANY(“product_1”, “product_2”)) * \\*AND * \\*(colorFamilies: ANY(“Red”, “Blue”)) *"]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleFilterAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleFilterAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleIgnoreAction {
+        #[doc = "Terms to ignore in the search query."]
+        #[serde(
+            rename = "ignoreTerms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ignore_terms: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleIgnoreAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleIgnoreAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleOnewaySynonymsAction {
+        #[doc = "Will be \\[deprecated = true\\] post migration;"]
+        #[serde(
+            rename = "onewayTerms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub oneway_terms: ::std::option::Option<Vec<String>>,
+        #[doc = "Terms from the search query. Will treat synonyms as their synonyms. Not themselves synonyms of the synonyms. Can specify up to 100 terms."]
+        #[serde(
+            rename = "queryTerms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_terms: ::std::option::Option<Vec<String>>,
+        #[doc = "Defines a set of synonyms. Cannot contain duplicates. Can specify up to 100 synonyms."]
+        #[serde(
+            rename = "synonyms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub synonyms: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleOnewaySynonymsAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleOnewaySynonymsAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleRedirectAction {
+        #[doc = "URL must have length equal or less than 2000 characters."]
+        #[serde(
+            rename = "redirectUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub redirect_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleRedirectAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleRedirectAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleReplacementAction {
+        #[doc = "Terms from the search query. Will be replaced by replacement term. Can specify up to 100 terms."]
+        #[serde(
+            rename = "queryTerms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query_terms: ::std::option::Option<Vec<String>>,
+        #[doc = "Term that will be used for replacement."]
+        #[serde(
+            rename = "replacementTerm",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replacement_term: ::std::option::Option<String>,
+        #[doc = "Will be \\[deprecated = true\\] post migration;"]
+        #[serde(
+            rename = "term",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub term: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleReplacementAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleReplacementAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2RuleTwowaySynonymsAction {
+        #[doc = "Defines a set of synonyms. Can specify up to 100 synonyms. Must specify at least 2 synonyms."]
+        #[serde(
+            rename = "synonyms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub synonyms: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2RuleTwowaySynonymsAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2RuleTwowaySynonymsAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2SearchRequest {
-        #[doc = "Boost specification to boost certain products. See more details at this [user guide](https://cloud.google.com/retail/docs/boosting). Notice that if both ServingConfig.boost_control_ids and \\[SearchRequest.boost_spec\\] are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions."]
+        #[doc = "Boost specification to boost certain products. See more details at this [user guide](https://cloud.google.com/retail/docs/boosting). Notice that if both ServingConfig.boost_control_ids and SearchRequest.boost_spec are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions."]
         #[serde(
             rename = "boostSpec",
             default,
@@ -4559,7 +8893,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters, and cannot be empty. Values can be empty, and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details."]
+        #[doc = "The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details."]
         #[serde(
             rename = "labels",
             default,
@@ -4580,7 +8914,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_by: ::std::option::Option<String>,
-        #[doc = "The categories associated with a category page. Required for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: “pageCategories” : \\[“Sales > 2017 Black Friday Deals”\\]."]
+        #[doc = "The categories associated with a category page. Required for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: “pageCategories” : \\[“Sales > 2017 Black Friday Deals”\\]."]
         #[serde(
             rename = "pageCategories",
             default,
@@ -4601,7 +8935,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_token: ::std::option::Option<String>,
-        #[doc = "The specification for personalization."]
+        #[doc = "The specification for personalization. Notice that if both ServingConfig.personalization_spec and SearchRequest.personalization_spec are set. SearchRequest.personalization_spec will override ServingConfig.personalization_spec."]
         #[serde(
             rename = "personalizationSpec",
             default,
@@ -4634,6 +8968,15 @@ pub mod schemas {
         )]
         pub search_mode:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2SearchRequestSearchMode>,
+        #[doc = "The spell correction specification that specifies the mode under which spell correction will take effect."]
+        #[serde(
+            rename = "spellCorrectionSpec",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spell_correction_spec: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2SearchRequestSpellCorrectionSpec,
+        >,
         #[doc = "User information."]
         #[serde(
             rename = "userInfo",
@@ -4641,7 +8984,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_info: ::std::option::Option<crate::schemas::GoogleCloudRetailV2UserInfo>,
-        #[doc = "The keys to fetch and rollup the matching variant Products attributes, FulfillmentInfo or LocalInventorys attributes. The attributes from all the matching variant Products or LocalInventorys are merged and de-duplicated. Notice that rollup attributes will lead to extra query latency. Maximum number of keys is 30. For FulfillmentInfo, a fulfillment type and a fulfillment ID must be provided in the format of “fulfillmentType.fulfillmentId”. E.g., in “pickupInStore.store123”, “pickupInStore” is fulfillment type and “store123” is the store ID. Supported keys are: * colorFamilies * price * originalPrice * discount * variantId * inventory(place_id,price) * inventory(place_id,original_price) * inventory(place_id,attributes.key), where key is any key in the Product.inventories.attributes map. * attributes.key, where key is any key in the Product.attributes map. * pickupInStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “pickup-in-store”. * shipToStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “ship-to-store”. * sameDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “same-day-delivery”. * nextDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “next-day-delivery”. * customFulfillment1.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-1”. * customFulfillment2.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-2”. * customFulfillment3.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-3”. * customFulfillment4.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-4”. * customFulfillment5.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-5”. If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The keys to fetch and rollup the matching variant Products attributes, FulfillmentInfo or LocalInventorys attributes. The attributes from all the matching variant Products or LocalInventorys are merged and de-duplicated. Notice that rollup attributes will lead to extra query latency. Maximum number of keys is 30. For FulfillmentInfo, a fulfillment type and a fulfillment ID must be provided in the format of “fulfillmentType.fulfillmentId”. E.g., in “pickupInStore.store123”, “pickupInStore” is fulfillment type and “store123” is the store ID. Supported keys are: * colorFamilies * price * originalPrice * discount * variantId * inventory(place_id,price) * inventory(place_id,original_price) * inventory(place_id,attributes.key), where key is any key in the Product.local_inventories.attributes map. * attributes.key, where key is any key in the Product.attributes map. * pickupInStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “pickup-in-store”. * shipToStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “ship-to-store”. * sameDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “same-day-delivery”. * nextDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “next-day-delivery”. * customFulfillment1.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-1”. * customFulfillment2.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-2”. * customFulfillment3.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-3”. * customFulfillment4.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-4”. * customFulfillment5.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-5”. If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "variantRollupKeys",
             default,
@@ -4668,11 +9011,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRetailV2SearchRequestSearchMode {
-        #[doc = "Only faceted search will be performed. The product search will be disabled. When in this mode, one or both of SearchRequest.facet_spec and SearchRequest.dynamic_facet_spec should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only \\[SearchResponse.Facet\\] will be returned. \\[SearchResponse.SearchResult\\] will not be returned."]
+        #[doc = "Only faceted search will be performed. The product search will be disabled. When in this mode, one or both of SearchRequest.facet_specs and SearchRequest.dynamic_facet_spec should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only SearchResponse.Facet will be returned. SearchResponse.SearchResult will not be returned."]
         FacetedSearchOnly,
-        #[doc = "Only product search will be performed. The faceted search will be disabled. Only \\[SearchResponse.SearchResult\\] will be returned. \\[SearchResponse.Facet\\] will not be returned, even if SearchRequest.facet_specs or SearchRequest.dynamic_facet_spec is set."]
+        #[doc = "Only product search will be performed. The faceted search will be disabled. Only SearchResponse.SearchResult will be returned. SearchResponse.Facet will not be returned, even if SearchRequest.facet_specs or SearchRequest.dynamic_facet_spec is set."]
         ProductSearchOnly,
-        #[doc = "Default value. In this case both product search and faceted search will be performed. Both \\[SearchResponse.SearchResult\\] and \\[SearchResponse.Facet\\] will be returned."]
+        #[doc = "Default value. In this case both product search and faceted search will be performed. Both SearchResponse.SearchResult and SearchResponse.Facet will be returned."]
         SearchModeUnspecified,
     }
     impl GoogleCloudRetailV2SearchRequestSearchMode {
@@ -4766,7 +9109,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2SearchRequestBoostSpec {
-        #[doc = "Condition boost specifications. If a product matches multiple conditions in the specifictions, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 10."]
+        #[doc = "Condition boost specifications. If a product matches multiple conditions in the specifictions, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 20."]
         #[serde(
             rename = "conditionBoostSpecs",
             default,
@@ -4957,7 +9300,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_dynamic_position: ::std::option::Option<bool>,
-        #[doc = "List of keys to exclude when faceting. By default, FacetKey.key is not excluded from the filter unless it is listed in this field. For example, suppose there are 100 products with color facet “Red” and 200 products with color facet “Blue”. A query containing the filter “colorFamilies:ANY(“Red”)“ and have “colorFamilies” as FacetKey.key will by default return the “Red” with count 100. If this field contains “colorFamilies”, then the query returns both the “Red” with count 100 and “Blue” with count 200, because the “colorFamilies” key is now excluded from the filter. A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "List of keys to exclude when faceting. By default, FacetKey.key is not excluded from the filter unless it is listed in this field. Listing a facet key in this field allows its values to appear as facet results, even when they are filtered out of search results. Using this field does not affect what search results are returned. For example, suppose there are 100 products with the color facet “Red” and 200 products with the color facet “Blue”. A query containing the filter “colorFamilies:ANY(“Red”)“ and having “colorFamilies” as FacetKey.key would by default return only “Red” products in the search results, and also return “Red” with count 100 as the only color facet. Although there are also blue products available, “Blue” would not be shown as an available facet value. If “colorFamilies” is listed in “excludedFilterKeys”, then the query returns the facet values “Red” with count 100 and “Blue” with count 200, because the “colorFamilies” key is now excluded from the filter. Because this field doesn’t affect search results, the search results are still correctly filtered to return only “Red” products. A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "excludedFilterKeys",
             default,
@@ -4973,7 +9316,7 @@ pub mod schemas {
         pub facet_key: ::std::option::Option<
             crate::schemas::GoogleCloudRetailV2SearchRequestFacetSpecFacetKey,
         >,
-        #[doc = "Maximum of facet values that should be returned for this facet. If unspecified, defaults to 20. The maximum allowed value is 300. Values above 300 will be coerced to 300. If this field is negative, an INVALID_ARGUMENT is returned."]
+        #[doc = "Maximum of facet values that should be returned for this facet. If unspecified, defaults to 50. The maximum allowed value is 300. Values above 300 will be coerced to 300. If this field is negative, an INVALID_ARGUMENT is returned."]
         #[serde(
             rename = "limit",
             default,
@@ -4995,6 +9338,13 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2SearchRequestFacetSpecFacetKey {
+        #[doc = "True to make facet keys case insensitive when getting faceting values with prefixes or contains; false otherwise."]
+        #[serde(
+            rename = "caseInsensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_insensitive: ::std::option::Option<bool>,
         #[doc = "Only get facet values that contains the given strings. For example, suppose “categories” has three values “Women > Shoe”, “Women > Dress” and “Men > Shoe”. If set “contains” to “Shoe”, the “categories” facet will give only “Women > Shoe” and “Men > Shoe”. Only supported on textual fields. Maximum is 10."]
         #[serde(
             rename = "contains",
@@ -5016,7 +9366,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "The order in which Facet.values are returned. Allowed values are: * “count desc”, which means order by Facet.FacetValue.count descending. * “value desc”, which means order by Facet.FacetValue.value descending. Only applies to textual facets. If not set, textual values are sorted in [natural order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical intervals are sorted in the order given by FacetSpec.FacetKey.intervals; FulfillmentInfo.place_ids are sorted in the order given by FacetSpec.FacetKey.restricted_values."]
+        #[doc = "The order in which SearchResponse.Facet.values are returned. Allowed values are: * “count desc”, which means order by SearchResponse.Facet.values.count descending. * “value desc”, which means order by SearchResponse.Facet.values.value descending. Only applies to textual facets. If not set, textual values are sorted in [natural order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical intervals are sorted in the order given by FacetSpec.FacetKey.intervals; FulfillmentInfo.place_ids are sorted in the order given by FacetSpec.FacetKey.restricted_values."]
         #[serde(
             rename = "orderBy",
             default,
@@ -5030,20 +9380,27 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub prefixes: ::std::option::Option<Vec<String>>,
-        #[doc = "The query that is used to compute facet for the given facet key. When provided, it will override the default behavior of facet computation. The query syntax is the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Notice that there is no limitation on FacetKey.key when query is specified. In the response, FacetValue.value will be always “1” and FacetValue.count will be the number of results that matches the query. For example, you can set a customized facet for “shipToStore”, where FacetKey.key is “customizedShipToStore”, and FacetKey.query is “availability: ANY(\"IN_STOCK\") AND shipToStore: ANY(\"123\")”. Then the facet will count the products that are both in stock and ship to store “123”."]
+        #[doc = "The query that is used to compute facet for the given facet key. When provided, it will override the default behavior of facet computation. The query syntax is the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Notice that there is no limitation on FacetKey.key when query is specified. In the response, SearchResponse.Facet.values.value will be always “1” and SearchResponse.Facet.values.count will be the number of results that match the query. For example, you can set a customized facet for “shipToStore”, where FacetKey.key is “customizedShipToStore”, and FacetKey.query is “availability: ANY(\"IN_STOCK\") AND shipToStore: ANY(\"123\")”. Then the facet will count the products that are both in stock and ship to store “123”."]
         #[serde(
             rename = "query",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<String>,
-        #[doc = "Only get facet for the given restricted values. For example, when using “pickupInStore” as key and set restricted values to \\[“store123”, “store456”\\], only facets for “store123” and “store456” are returned. Only supported on textual fields and fulfillments. Maximum is 20. Must be set for the fulfillment facet keys: * pickupInStore * shipToStore * sameDayDelivery * nextDayDelivery * customFulfillment1 * customFulfillment2 * customFulfillment3 * customFulfillment4 * customFulfillment5"]
+        #[doc = "Only get facet for the given restricted values. For example, when using “pickupInStore” as key and set restricted values to \\[“store123”, “store456”\\], only facets for “store123” and “store456” are returned. Only supported on predefined textual fields, custom textual attributes and fulfillments. Maximum is 20. Must be set for the fulfillment facet keys: * pickupInStore * shipToStore * sameDayDelivery * nextDayDelivery * customFulfillment1 * customFulfillment2 * customFulfillment3 * customFulfillment4 * customFulfillment5"]
         #[serde(
             rename = "restrictedValues",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub restricted_values: ::std::option::Option<Vec<String>>,
+        #[doc = "Returns the min and max value for each numerical facet intervals. Ignored for textual facets."]
+        #[serde(
+            rename = "returnMinMax",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub return_min_max: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2SearchRequestFacetSpecFacetKey {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5092,11 +9449,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRetailV2SearchRequestPersonalizationSpecMode {
-        #[doc = "Let CRS decide whether to use personalization."]
+        #[doc = "Let CRS decide whether to use personalization based on quality of user event data."]
         Auto,
         #[doc = "Disable personalization."]
         Disabled,
-        #[doc = "Default value. Defaults to Mode.AUTO."]
+        #[doc = "Default value. In this case, server behavior defaults to Mode.AUTO."]
         ModeUnspecified,
     }
     impl GoogleCloudRetailV2SearchRequestPersonalizationSpecMode {
@@ -5223,7 +9580,7 @@ pub mod schemas {
     pub enum GoogleCloudRetailV2SearchRequestQueryExpansionSpecCondition {
         #[doc = "Automatic query expansion built by Google Retail Search."]
         Auto,
-        #[doc = "Unspecified query expansion condition. This defaults to Condition.DISABLED."]
+        #[doc = "Unspecified query expansion condition. In this case, server behavior defaults to Condition.DISABLED."]
         ConditionUnspecified,
         #[doc = "Disabled query expansion. Only the exact search query is used, even if SearchResponse.total_size is zero."]
         Disabled,
@@ -5285,6 +9642,136 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2SearchRequestSpellCorrectionSpec {
+        #[doc = "The mode under which spell correction should take effect to replace the original search query. Default to Mode.AUTO."]
+        #[serde(
+            rename = "mode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mode: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2SearchRequestSpellCorrectionSpec
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2SearchRequestSpellCorrectionSpec {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode {
+        #[doc = "Automatic spell correction built by Google Retail Search. Search will be based on the corrected query if found."]
+        Auto,
+        #[doc = "Unspecified spell correction mode. In this case, server behavior defaults to Mode.AUTO."]
+        ModeUnspecified,
+        #[doc = "Google Retail Search will try to find a spell suggestion if there is any and put in the SearchResponse.corrected_query. The spell suggestion will not be used as the search query."]
+        SuggestionOnly,
+    }
+    impl GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::Auto => "AUTO",
+                GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::ModeUnspecified => {
+                    "MODE_UNSPECIFIED"
+                }
+                GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::SuggestionOnly => {
+                    "SUGGESTION_ONLY"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode, ()>
+        {
+            Ok(match s {
+                "AUTO" => GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::Auto,
+                "MODE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::ModeUnspecified
+                }
+                "SUGGESTION_ONLY" => {
+                    GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::SuggestionOnly
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AUTO" => GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::Auto,
+                "MODE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::ModeUnspecified
+                }
+                "SUGGESTION_ONLY" => {
+                    GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode::SuggestionOnly
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudRetailV2SearchRequestSpellCorrectionSpecMode
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudRetailV2SearchResponse {
         #[doc = "The fully qualified resource name of applied [controls](https://cloud.google.com/retail/docs/serving-control-rules)."]
@@ -5301,13 +9788,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub attribution_token: ::std::option::Option<String>,
-        #[doc = "If spell correction applies, the corrected query. Otherwise, empty."]
+        #[doc = "Contains the spell corrected query, if found. If the spell correction type is AUTOMATIC, then the search results are based on corrected_query. Otherwise the original query is used for search."]
         #[serde(
             rename = "correctedQuery",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub corrected_query: ::std::option::Option<String>,
+        #[doc = "Metadata related to A/B testing Experiment associated with this response. Only exists when an experiment is triggered."]
+        #[serde(
+            rename = "experimentInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub experiment_info:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2ExperimentInfo>>,
         #[doc = "Results of facets requested by user."]
         #[serde(
             rename = "facets",
@@ -5341,7 +9836,7 @@ pub mod schemas {
         pub query_expansion_info: ::std::option::Option<
             crate::schemas::GoogleCloudRetailV2SearchResponseQueryExpansionInfo,
         >,
-        #[doc = "The URI of a customer-defined redirect page. If redirect action is triggered, no search will be performed, and only redirect_uri and attribution_token will be set in the response."]
+        #[doc = "The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response."]
         #[serde(
             rename = "redirectUri",
             default,
@@ -5375,7 +9870,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudRetailV2SearchResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudRetailV2SearchResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5437,6 +9932,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub interval: ::std::option::Option<crate::schemas::GoogleCloudRetailV2Interval>,
+        #[doc = "The maximum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true."]
+        #[serde(
+            rename = "maxValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_value: ::std::option::Option<f64>,
+        #[doc = "The minimum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true."]
+        #[serde(
+            rename = "minValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_value: ::std::option::Option<f64>,
         #[doc = "Text value of a facet, such as “Black” for facet “colorFamilies”."]
         #[serde(
             rename = "value",
@@ -5520,6 +10029,13 @@ pub mod schemas {
         )]
         pub matching_variant_fields:
             ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Specifies previous events related to this product for this user based on UserEvent with same SearchRequest.visitor_id or UserInfo.user_id. This is set only when SearchRequest.PersonalizationSpec.mode is SearchRequest.PersonalizationSpec.Mode.AUTO. Possible values: * `purchased`: Indicates that this product has been purchased before."]
+        #[serde(
+            rename = "personalLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub personal_labels: ::std::option::Option<Vec<String>>,
         #[doc = "The product data snippet in the search response. Only Product.name is guaranteed to be populated. Product.variants contains the product variants that match the search query. If there are multiple product variants matching the query, top 5 most relevant product variants are returned and ordered by relevancy. If relevancy can be deternmined, use matching_variant_fields to look up matched product variants fields. If relevancy cannot be determined, e.g. when searching “shoe” all products in a shoe product can be a match, 5 product variants are returned but order is meaningless."]
         #[serde(
             rename = "product",
@@ -5542,6 +10058,361 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2SearchResponseSearchResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2ServingConfig {
+        #[doc = "Condition boost specifications. If a product matches multiple conditions in the specifications, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 100. Notice that if both ServingConfig.boost_control_ids and SearchRequest.boost_spec are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "boostControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub boost_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The human readable serving config display name. Used in Retail UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "How much diversity to use in recommendation model results e.g. `medium-diversity` or `high-diversity`. Currently supported values: * `no-diversity` * `low-diversity` * `medium-diversity` * `high-diversity` * `auto-diversity` If not specified, we choose default based on recommendation model type. Default value: `no-diversity`. Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
+        #[serde(
+            rename = "diversityLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub diversity_level: ::std::option::Option<String>,
+        #[doc = "What kind of diversity to use - data driven or rule based. If unset, the server behavior defaults to RULE_BASED_DIVERSITY."]
+        #[serde(
+            rename = "diversityType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub diversity_type:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2ServingConfigDiversityType>,
+        #[doc = "Condition do not associate specifications. If multiple do not associate conditions match, all matching do not associate controls in the list will execute. - Order does not matter. - Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "doNotAssociateControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub do_not_associate_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "The specification for dynamically generated facets. Notice that only textual facets can be dynamically generated. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "dynamicFacetSpec",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dynamic_facet_spec:
+            ::std::option::Option<crate::schemas::GoogleCloudRetailV2SearchRequestDynamicFacetSpec>,
+        #[doc = "Whether to add additional category filters on the `similar-items` model. If not specified, we enable it by default. Allowed values are: * `no-category-match`: No additional filtering of original results from the model and the customer’s filters. * `relaxed-category-match`: Only keep results with categories that match at least one item categories in the PredictRequests’s context item. * If customer also sends filters in the PredictRequest, then the results will satisfy both conditions (user given and category match). Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
+        #[serde(
+            rename = "enableCategoryFilterLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_category_filter_level: ::std::option::Option<String>,
+        #[doc = "Facet specifications for faceted search. If empty, no facets are returned. The ids refer to the ids of Control resources with only the Facet control set. These controls are assumed to be in the same Catalog as the ServingConfig. A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "facetControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub facet_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Condition filter specifications. If a product matches multiple conditions in the specifications, filters from these specifications are all applied and combined via the AND operator. Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "filterControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Condition ignore specifications. If multiple ignore conditions match, all matching ignore controls in the list will execute. - Order does not matter. - Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "ignoreControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ignore_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "The id of the model in the same Catalog to use at serving time. Currently only RecommendationModels are supported: https://cloud.google.com/retail/recommendations-ai/docs/create-models Can be changed but only to a compatible model (e.g. others-you-may-like CTR to others-you-may-like CVR). Required when solution_types is SOLUTION_TYPE_RECOMMENDATION."]
+        #[serde(
+            rename = "modelId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model_id: ::std::option::Option<String>,
+        #[doc = "Immutable. Fully qualified name `projects/*/locations/global/catalogs/*/servingConfig/*`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Condition oneway synonyms specifications. If multiple oneway synonyms conditions match, all matching oneway synonyms controls in the list will execute. Order of controls in the list will not matter. Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "onewaySynonymsControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub oneway_synonyms_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "The specification for personalization spec. Can only be set if solution_types is SOLUTION_TYPE_SEARCH. Notice that if both ServingConfig.personalization_spec and SearchRequest.personalization_spec are set. SearchRequest.personalization_spec will override ServingConfig.personalization_spec."]
+        #[serde(
+            rename = "personalizationSpec",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub personalization_spec: ::std::option::Option<
+            crate::schemas::GoogleCloudRetailV2SearchRequestPersonalizationSpec,
+        >,
+        #[doc = "How much price ranking we want in serving results. Price reranking causes product items with a similar recommendation probability to be ordered by price, with the highest-priced items first. This setting could result in a decrease in click-through and conversion rates. Allowed values are: * `no-price-reranking` * `low-price-reranking` * `medium-price-reranking` * `high-price-reranking` If not specified, we choose default based on model type. Default value: `no-price-reranking`. Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
+        #[serde(
+            rename = "priceRerankingLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price_reranking_level: ::std::option::Option<String>,
+        #[doc = "Condition redirect specifications. Only the first triggered redirect action is applied, even if multiple apply. Maximum number of specifications is 1000. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "redirectControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub redirect_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Condition replacement specifications. - Applied according to the order in the list. - A previously replaced term can not be re-replaced. - Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "replacementControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replacement_control_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. Immutable. Specifies the solution types that a serving config can be associated with. Currently we support setting only one type of solution."]
+        #[serde(
+            rename = "solutionTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub solution_types: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudRetailV2ServingConfigSolutionTypesItems>,
+        >,
+        #[doc = "Condition synonyms specifications. If multiple syonyms conditions match, all matching synonyms control in the list will execute. Order of controls in the list will not matter. Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[serde(
+            rename = "twowaySynonymsControlIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub twoway_synonyms_control_ids: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ServingConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ServingConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ServingConfigDiversityType {
+        #[doc = "Data driven diversity."]
+        DataDrivenDiversity,
+        #[doc = "Default value."]
+        DiversityTypeUnspecified,
+        #[doc = "Rule based diversity."]
+        RuleBasedDiversity,
+    }
+    impl GoogleCloudRetailV2ServingConfigDiversityType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2ServingConfigDiversityType::DataDrivenDiversity => {
+                    "DATA_DRIVEN_DIVERSITY"
+                }
+                GoogleCloudRetailV2ServingConfigDiversityType::DiversityTypeUnspecified => {
+                    "DIVERSITY_TYPE_UNSPECIFIED"
+                }
+                GoogleCloudRetailV2ServingConfigDiversityType::RuleBasedDiversity => {
+                    "RULE_BASED_DIVERSITY"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ServingConfigDiversityType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ServingConfigDiversityType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2ServingConfigDiversityType, ()> {
+            Ok(match s {
+                "DATA_DRIVEN_DIVERSITY" => {
+                    GoogleCloudRetailV2ServingConfigDiversityType::DataDrivenDiversity
+                }
+                "DIVERSITY_TYPE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ServingConfigDiversityType::DiversityTypeUnspecified
+                }
+                "RULE_BASED_DIVERSITY" => {
+                    GoogleCloudRetailV2ServingConfigDiversityType::RuleBasedDiversity
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ServingConfigDiversityType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ServingConfigDiversityType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ServingConfigDiversityType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DATA_DRIVEN_DIVERSITY" => {
+                    GoogleCloudRetailV2ServingConfigDiversityType::DataDrivenDiversity
+                }
+                "DIVERSITY_TYPE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ServingConfigDiversityType::DiversityTypeUnspecified
+                }
+                "RULE_BASED_DIVERSITY" => {
+                    GoogleCloudRetailV2ServingConfigDiversityType::RuleBasedDiversity
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ServingConfigDiversityType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ServingConfigDiversityType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        #[doc = "Used for Recommendations AI."]
+        SolutionTypeRecommendation,
+        #[doc = "Used for Retail Search."]
+        SolutionTypeSearch,
+        #[doc = "Default value."]
+        SolutionTypeUnspecified,
+    }
+    impl GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeRecommendation => {
+                    "SOLUTION_TYPE_RECOMMENDATION"
+                }
+                GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeSearch => {
+                    "SOLUTION_TYPE_SEARCH"
+                }
+                GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeUnspecified => {
+                    "SOLUTION_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudRetailV2ServingConfigSolutionTypesItems, ()> {
+            Ok(match s {
+                "SOLUTION_TYPE_RECOMMENDATION" => {
+                    GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeRecommendation
+                }
+                "SOLUTION_TYPE_SEARCH" => {
+                    GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeSearch
+                }
+                "SOLUTION_TYPE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SOLUTION_TYPE_RECOMMENDATION" => {
+                    GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeRecommendation
+                }
+                "SOLUTION_TYPE_SEARCH" => {
+                    GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeSearch
+                }
+                "SOLUTION_TYPE_UNSPECIFIED" => {
+                    GoogleCloudRetailV2ServingConfigSolutionTypesItems::SolutionTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2ServingConfigSolutionTypesItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2ServingConfigSolutionTypesItems {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5626,7 +10497,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_missing: ::std::option::Option<bool>,
-        #[doc = "Required. The inventory information to update. The allowable fields to update are: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info The updated inventory fields must be specified in SetInventoryRequest.set_mask. If SetInventoryRequest.inventory.name is empty or invalid, an INVALID_ARGUMENT error is returned. If the caller does not have permission to update the Product named in Product.name, regardless of whether or not it exists, a PERMISSION_DENIED error is returned. If the Product to update does not have existing inventory information, the provided inventory information will be inserted. If the Product to update has existing inventory information, the provided inventory information will be merged while respecting the last update time for each inventory field, using the provided or default value for SetInventoryRequest.set_time. The caller can replace place IDs for a subset of fulfillment types in the following ways: * Adds “fulfillment_info” in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types and corresponding place IDs to update in SetInventoryRequest.inventory.fulfillment_info The caller can clear all place IDs from a subset of fulfillment types in the following ways: * Adds “fulfillment_info” in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types to clear in SetInventoryRequest.inventory.fulfillment_info * Checks that only the desired fulfillment info types have empty SetInventoryRequest.inventory.fulfillment_info.place_ids The last update time is recorded for the following inventory fields: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info If a full overwrite of inventory information while ignoring timestamps is needed, UpdateProduct should be invoked instead."]
+        #[doc = "Required. The inventory information to update. The allowable fields to update are: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info The updated inventory fields must be specified in SetInventoryRequest.set_mask. If SetInventoryRequest.inventory.name is empty or invalid, an INVALID_ARGUMENT error is returned. If the caller does not have permission to update the Product named in Product.name, regardless of whether or not it exists, a PERMISSION_DENIED error is returned. If the Product to update does not have existing inventory information, the provided inventory information will be inserted. If the Product to update has existing inventory information, the provided inventory information will be merged while respecting the last update time for each inventory field, using the provided or default value for SetInventoryRequest.set_time. The caller can replace place IDs for a subset of fulfillment types in the following ways: * Adds “fulfillment_info” in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types and corresponding place IDs to update in SetInventoryRequest.inventory.fulfillment_info The caller can clear all place IDs from a subset of fulfillment types in the following ways: * Adds “fulfillment_info” in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types to clear in SetInventoryRequest.inventory.fulfillment_info * Checks that only the desired fulfillment info types have empty SetInventoryRequest.inventory.fulfillment_info.place_ids The last update time is recorded for the following inventory fields: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info If a full overwrite of inventory information while ignoring timestamps is needed, ProductService.UpdateProduct should be invoked instead."]
         #[serde(
             rename = "inventory",
             default,
@@ -5678,6 +10549,85 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2SetInventoryResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2TuneModelMetadata {
+        #[doc = "The resource name of the model that this tune applies to. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`"]
+        #[serde(
+            rename = "model",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub model: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2TuneModelMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2TuneModelMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2TuneModelRequest {}
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2TuneModelRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2TuneModelRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudRetailV2TuneModelResponse {}
+    impl ::google_field_selector::FieldSelector for GoogleCloudRetailV2TuneModelResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudRetailV2TuneModelResponse {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5762,7 +10712,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_by: ::std::option::Option<String>,
-        #[doc = "The categories associated with a category page. To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: “pageCategories” : \\[“Sales > 2017 Black Friday Deals”\\]. Required for `category-page-view` events. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The categories associated with a category page. To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: “pageCategories” : \\[“Sales > 2017 Black Friday Deals”\\]. Required for `category-page-view` events. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "pageCategories",
             default,
@@ -5776,7 +10726,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_view_id: ::std::option::Option<String>,
-        #[doc = "The main product details related to the event. This field is required for the following event types: * `add-to-cart` * `detail-page-view` * `purchase-complete` * `search` In a `search` event, this field represents the products returned to the end user on the current page (the end user may have not finished browsing the whole page yet). When a new page is returned to the end user, after pagination/filtering/ordering even for the same query, a new `search` event with different product_details is desired. The end user may have not finished browsing the whole page yet."]
+        #[doc = "The main product details related to the event. This field is optional except for the following event types: * `add-to-cart` * `detail-page-view` * `purchase-complete` In a `search` event, this field represents the products returned to the end user on the current page (the end user may have not finished browsing the whole page yet). When a new page is returned to the end user, after pagination/filtering/ordering even for the same query, a new `search` event with different product_details is desired. The end user may have not finished browsing the whole page yet."]
         #[serde(
             rename = "productDetails",
             default,
@@ -5827,7 +10777,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_info: ::std::option::Option<crate::schemas::GoogleCloudRetailV2UserInfo>,
-        #[doc = "Required. A unique identifier for tracking visitors. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor log in/out of the website. Don’t set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. The field should not contain PII or user-data. We recommend to use Google Analystics [Client ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId) for this field."]
+        #[doc = "Required. A unique identifier for tracking visitors. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor log in/out of the website. Don’t set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. The field should not contain PII or user-data. We recommend to use Google Analytics [Client ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId) for this field."]
         #[serde(
             rename = "visitorId",
             default,
@@ -6024,7 +10974,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6431,7 +11381,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Completes the specified prefix with keyword suggestions. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                    #[doc = "Completes the specified prefix with keyword suggestions. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature."]
                     pub fn complete_query(
                         &self,
                         catalog: impl Into<String>,
@@ -6457,6 +11407,50 @@ pub mod resources {
                             max_suggestions: None,
                             query: None,
                             visitor_id: None,
+                        }
+                    }
+                    #[doc = "Gets an AttributesConfig."]
+                    pub fn get_attributes_config(
+                        &self,
+                        name: impl Into<String>,
+                    ) -> GetAttributesConfigRequestBuilder {
+                        GetAttributesConfigRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Gets a CompletionConfig."]
+                    pub fn get_completion_config(
+                        &self,
+                        name: impl Into<String>,
+                    ) -> GetCompletionConfigRequestBuilder {
+                        GetCompletionConfigRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
                         }
                     }
                     #[doc = "Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog."]
@@ -6551,6 +11545,59 @@ pub mod resources {
                             catalog: catalog.into(),
                         }
                     }
+                    #[doc = "Updates the AttributesConfig. The catalog attributes in the request will be updated in the catalog, or inserted if they do not exist. Existing catalog attributes not included in the request will remain unchanged. Attributes that are assigned to products, but do not exist at the catalog level, are always included in the response. The product attribute is assigned default values for missing catalog attribute fields, e.g., searchable and dynamic facetable options."]
+                    pub fn update_attributes_config(
+                        &self,
+                        request: crate::schemas::GoogleCloudRetailV2AttributesConfig,
+                        name: impl Into<String>,
+                    ) -> UpdateAttributesConfigRequestBuilder {
+                        UpdateAttributesConfigRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            update_mask: None,
+                        }
+                    }
+                    #[doc = "Updates the CompletionConfigs."]
+                    pub fn update_completion_config(
+                        &self,
+                        request: crate::schemas::GoogleCloudRetailV2CompletionConfig,
+                        name: impl Into<String>,
+                    ) -> UpdateCompletionConfigRequestBuilder {
+                        UpdateCompletionConfigRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                            update_mask: None,
+                        }
+                    }
+                    #[doc = "Actions that can be performed on the attributes_config resource"]                    pub fn attributes_config (& self) -> crate :: resources :: projects :: locations :: catalogs :: attributes_config :: AttributesConfigActions{
+                        crate :: resources :: projects :: locations :: catalogs :: attributes_config :: AttributesConfigActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                    }
                     #[doc = "Actions that can be performed on the branches resource"]
                     pub fn branches(
                         &self,
@@ -6563,6 +11610,26 @@ pub mod resources {
                     }
                     #[doc = "Actions that can be performed on the completion_data resource"]                    pub fn completion_data (& self) -> crate :: resources :: projects :: locations :: catalogs :: completion_data :: CompletionDataActions{
                         crate :: resources :: projects :: locations :: catalogs :: completion_data :: CompletionDataActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                    }
+                    #[doc = "Actions that can be performed on the controls resource"]
+                    pub fn controls(
+                        &self,
+                    ) -> crate::resources::projects::locations::catalogs::controls::ControlsActions
+                    {
+                        crate::resources::projects::locations::catalogs::controls::ControlsActions {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                        }
+                    }
+                    #[doc = "Actions that can be performed on the models resource"]
+                    pub fn models(
+                        &self,
+                    ) -> crate::resources::projects::locations::catalogs::models::ModelsActions
+                    {
+                        crate::resources::projects::locations::catalogs::models::ModelsActions {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                        }
                     }
                     #[doc = "Actions that can be performed on the operations resource"]                    pub fn operations (& self) -> crate :: resources :: projects :: locations :: catalogs :: operations :: OperationsActions{
                         crate :: resources :: projects :: locations :: catalogs :: operations :: OperationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
@@ -6602,17 +11669,17 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CompleteQueryRequestBuilder<'a> {
-                    #[doc = "Determines which dataset to use for fetching completion. “user-data” will use the imported dataset through CompletionService.ImportCompletionData. “cloud-retail” will use the dataset generated by cloud retail based on user events. If leave empty, it will use the “user-data”. Current supported values: * user-data * cloud-retail This option requires additional allowlisting. Before using cloud-retail, contact Cloud Retail support team first."]
+                    #[doc = "Determines which dataset to use for fetching completion. “user-data” will use the imported dataset through CompletionService.ImportCompletionData. “cloud-retail” will use the dataset generated by cloud retail based on user events. If leave empty, it will use the “user-data”. Current supported values: * user-data * cloud-retail: This option requires enabling auto-learning function first. See [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset)."]
                     pub fn dataset(mut self, value: impl Into<String>) -> Self {
                         self.dataset = Some(value.into());
                         self
                     }
-                    #[doc = "The device type context for completion suggestions. It is useful to apply different suggestions on different device types, e.g. `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device types. Supported formats: * `UNKNOWN_DEVICE_TYPE` * `DESKTOP` * `MOBILE` * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`."]
+                    #[doc = "The device type context for completion suggestions. We recommend that you leave this field empty. It can apply different suggestions on different device types, e.g. `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device types. Supported formats: * `UNKNOWN_DEVICE_TYPE` * `DESKTOP` * `MOBILE` * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`."]
                     pub fn device_type(mut self, value: impl Into<String>) -> Self {
                         self.device_type = Some(value.into());
                         self
                     }
-                    #[doc = "The language filters applied to the output suggestions. If set, it should contain the language of the query. If not set, suggestions are returned without considering language restrictions. This is the BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). The maximum number of language codes is 3."]
+                    #[doc = "Note that this field applies for `user-data` dataset only. For requests with `cloud-retail` dataset, setting this field has no effect. The language filters applied to the output suggestions. If set, it should contain the language of the query. If not set, suggestions are returned without considering language restrictions. This is the BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). The maximum number of language codes is 3."]
                     pub fn language_codes(mut self, value: impl Into<Vec<String>>) -> Self {
                         self.language_codes = Some(value.into());
                         self
@@ -6768,6 +11835,330 @@ pub mod resources {
                         req = req.query(&[("maxSuggestions", &self.max_suggestions)]);
                         req = req.query(&[("query", &self.query)]);
                         req = req.query(&[("visitorId", &self.visitor_id)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CatalogsActions::get_attributes_config()](struct.CatalogsActions.html#method.get_attributes_config)"]
+                #[derive(Debug, Clone)]
+                pub struct GetAttributesConfigRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetAttributesConfigRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://retail.googleapis.com/".to_owned();
+                        output.push_str("v2/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CatalogsActions::get_completion_config()](struct.CatalogsActions.html#method.get_completion_config)"]
+                #[derive(Debug, Clone)]
+                pub struct GetCompletionConfigRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetCompletionConfigRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2CompletionConfig, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2CompletionConfig, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://retail.googleapis.com/".to_owned();
+                        output.push_str("v2/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                         req = req.query(&[("access_token", &self.access_token)]);
                         req = req.query(&[("alt", &self.alt)]);
                         req = req.query(&[("callback", &self.callback)]);
@@ -7080,7 +12471,7 @@ pub mod resources {
                             #[serde(rename = "catalogs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -7115,7 +12506,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -7171,7 +12562,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -7289,12 +12680,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -7635,6 +13027,933 @@ pub mod resources {
                         Ok(req)
                     }
                 }
+                #[doc = "Created via [CatalogsActions::update_attributes_config()](struct.CatalogsActions.html#method.update_attributes_config)"]
+                #[derive(Debug, Clone)]
+                pub struct UpdateAttributesConfigRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudRetailV2AttributesConfig,
+                    name: String,
+                    update_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> UpdateAttributesConfigRequestBuilder<'a> {
+                    #[doc = "Indicates which fields in the provided AttributesConfig to update. The following is the only supported field: * AttributesConfig.catalog_attributes If not set, all supported fields are updated."]
+                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                        self.update_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://retail.googleapis.com/".to_owned();
+                        output.push_str("v2/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [CatalogsActions::update_completion_config()](struct.CatalogsActions.html#method.update_completion_config)"]
+                #[derive(Debug, Clone)]
+                pub struct UpdateCompletionConfigRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::GoogleCloudRetailV2CompletionConfig,
+                    name: String,
+                    update_mask: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> UpdateCompletionConfigRequestBuilder<'a> {
+                    #[doc = "Indicates which fields in the provided CompletionConfig to update. The following are the only supported fields: * CompletionConfig.matching_order * CompletionConfig.max_suggestions * CompletionConfig.min_prefix_length * CompletionConfig.auto_learning If not set, all supported fields are updated."]
+                    pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                        self.update_mask = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2CompletionConfig, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::GoogleCloudRetailV2CompletionConfig, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://retail.googleapis.com/".to_owned();
+                        output.push_str("v2/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                        req = req.query(&[("updateMask", &self.update_mask)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                pub mod attributes_config {
+                    pub mod params {}
+                    pub struct AttributesConfigActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> AttributesConfigActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Adds the specified CatalogAttribute to the AttributesConfig. If the CatalogAttribute to add already exists, an ALREADY_EXISTS error is returned."]
+                        pub fn add_catalog_attribute(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2AddCatalogAttributeRequest,
+                            attributes_config: impl Into<String>,
+                        ) -> AddCatalogAttributeRequestBuilder {
+                            AddCatalogAttributeRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                attributes_config: attributes_config.into(),
+                            }
+                        }
+                        #[doc = "Removes the specified CatalogAttribute from the AttributesConfig. If the CatalogAttribute to remove does not exist, a NOT_FOUND error is returned."]
+                        pub fn remove_catalog_attribute(
+                            &self,
+                            request : crate :: schemas :: GoogleCloudRetailV2RemoveCatalogAttributeRequest,
+                            attributes_config: impl Into<String>,
+                        ) -> RemoveCatalogAttributeRequestBuilder {
+                            RemoveCatalogAttributeRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                attributes_config: attributes_config.into(),
+                            }
+                        }
+                        #[doc = "Replaces the specified CatalogAttribute in the AttributesConfig by updating the catalog attribute with the same CatalogAttribute.key. If the CatalogAttribute to replace does not exist, a NOT_FOUND error is returned."]
+                        pub fn replace_catalog_attribute(
+                            &self,
+                            request : crate :: schemas :: GoogleCloudRetailV2ReplaceCatalogAttributeRequest,
+                            attributes_config: impl Into<String>,
+                        ) -> ReplaceCatalogAttributeRequestBuilder {
+                            ReplaceCatalogAttributeRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                attributes_config: attributes_config.into(),
+                            }
+                        }
+                    }
+                    #[doc = "Created via [AttributesConfigActions::add_catalog_attribute()](struct.AttributesConfigActions.html#method.add_catalog_attribute)"]
+                    #[derive(Debug, Clone)]
+                    pub struct AddCatalogAttributeRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2AddCatalogAttributeRequest,
+                        attributes_config: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> AddCatalogAttributeRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.attributes_config;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":addCatalogAttribute");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [AttributesConfigActions::remove_catalog_attribute()](struct.AttributesConfigActions.html#method.remove_catalog_attribute)"]
+                    #[derive(Debug, Clone)]
+                    pub struct RemoveCatalogAttributeRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2RemoveCatalogAttributeRequest,
+                        attributes_config: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> RemoveCatalogAttributeRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.attributes_config;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":removeCatalogAttribute");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [AttributesConfigActions::replace_catalog_attribute()](struct.AttributesConfigActions.html#method.replace_catalog_attribute)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ReplaceCatalogAttributeRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2ReplaceCatalogAttributeRequest,
+                        attributes_config: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ReplaceCatalogAttributeRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2AttributesConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.attributes_config;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":replaceCatalogAttribute");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                }
                 pub mod branches {
                     pub mod params {}
                     pub struct BranchesActions<'a> {
@@ -7857,7 +14176,7 @@ pub mod resources {
                             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                 self.auth
                             }
-                            #[doc = "Incrementally adds place IDs to Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the Product queried by GetProduct or ListProducts. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                            #[doc = "Incrementally adds place IDs to Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete."]
                             pub fn add_fulfillment_places(
                                 &self,
                                 request : crate :: schemas :: GoogleCloudRetailV2AddFulfillmentPlacesRequest,
@@ -7881,7 +14200,7 @@ pub mod resources {
                                     product: product.into(),
                                 }
                             }
-                            #[doc = "Updates local inventory information for a Product at a list of places, while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating inventory information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by GetProduct or ListProducts. Local inventory information can only be modified using this method. CreateProduct and UpdateProduct has no effect on local inventories. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                            #[doc = "Updates local inventory information for a Product at a list of places, while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating inventory information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. Local inventory information can only be modified using this method. ProductService.CreateProduct and ProductService.UpdateProduct has no effect on local inventories. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete."]
                             pub fn add_local_inventories(
                                 &self,
                                 request : crate :: schemas :: GoogleCloudRetailV2AddLocalInventoriesRequest,
@@ -7968,7 +14287,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Bulk import of multiple Products. Request processing may be synchronous. No partial updating is supported. Non-existing items are created. Note that it is possible for a subset of the Products to be successfully updated."]
+                            #[doc = "Bulk import of multiple Products. Request processing may be synchronous. Non-existing items are created. Note that it is possible for a subset of the Products to be successfully updated."]
                             pub fn import(
                                 &self,
                                 request: crate::schemas::GoogleCloudRetailV2ImportProductsRequest,
@@ -8041,7 +14360,7 @@ pub mod resources {
                                     update_mask: None,
                                 }
                             }
-                            #[doc = "Incrementally removes place IDs from a Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the Product queried by GetProduct or ListProducts. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                            #[doc = "Incrementally removes place IDs from a Product.fulfillment_info.place_ids. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete."]
                             pub fn remove_fulfillment_places(
                                 &self,
                                 request : crate :: schemas :: GoogleCloudRetailV2RemoveFulfillmentPlacesRequest,
@@ -8065,7 +14384,7 @@ pub mod resources {
                                     product: product.into(),
                                 }
                             }
-                            #[doc = "Remove local inventory information for a Product at a list of places at a removal timestamp. This process is asynchronous. If the request is valid, the removal will be enqueued and processed downstream. As a consequence, when a response is returned, removals are not immediately manifested in the Product queried by GetProduct or ListProducts. Local inventory information can only be removed using this method. CreateProduct and UpdateProduct has no effect on local inventories. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                            #[doc = "Remove local inventory information for a Product at a list of places at a removal timestamp. This process is asynchronous. If the request is valid, the removal will be enqueued and processed downstream. As a consequence, when a response is returned, removals are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. Local inventory information can only be removed using this method. ProductService.CreateProduct and ProductService.UpdateProduct has no effect on local inventories. The returned Operations will be obsolete after 1 day, and GetOperation API will return NOT_FOUND afterwards. If conflicting updates are issued, the Operations associated with the stale updates will not be marked as done until being obsolete."]
                             pub fn remove_local_inventories(
                                 &self,
                                 request : crate :: schemas :: GoogleCloudRetailV2RemoveLocalInventoriesRequest,
@@ -8089,7 +14408,7 @@ pub mod resources {
                                     product: product.into(),
                                 }
                             }
-                            #[doc = "Updates inventory information for a Product while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by GetProduct or ListProducts. When inventory is updated with CreateProduct and UpdateProduct, the specified inventory field value(s) will overwrite any existing value(s) while ignoring the last update time for this field. Furthermore, the last update time for the specified inventory fields will be overwritten to the time of the CreateProduct or UpdateProduct request. If no inventory fields are set in CreateProductRequest.product, then any pre-existing inventory information for this product will be used. If no inventory fields are set in SetInventoryRequest.set_mask, then any existing inventory information will be preserved. Pre-existing inventory information can only be updated with SetInventory, AddFulfillmentPlaces, and RemoveFulfillmentPlaces. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                            #[doc = "Updates inventory information for a Product while respecting the last update timestamps of each inventory field. This process is asynchronous and does not require the Product to exist before updating fulfillment information. If the request is valid, the update is enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the Product queried by ProductService.GetProduct or ProductService.ListProducts. When inventory is updated with ProductService.CreateProduct and ProductService.UpdateProduct, the specified inventory field value(s) overwrite any existing value(s) while ignoring the last update time for this field. Furthermore, the last update times for the specified inventory fields are overwritten by the times of the ProductService.CreateProduct or ProductService.UpdateProduct request. If no inventory fields are set in CreateProductRequest.product, then any pre-existing inventory information for this product is used. If no inventory fields are set in SetInventoryRequest.set_mask, then any existing inventory information is preserved. Pre-existing inventory information can only be updated with ProductService.SetInventory, ProductService.AddFulfillmentPlaces, and ProductService.RemoveFulfillmentPlaces. The returned Operations is obsolete after one day, and the GetOperation API returns `NOT_FOUND` afterwards. If conflicting updates are issued, the Operations associated with the stale updates are not marked as done until they are obsolete."]
                             pub fn set_inventory(
                                 &self,
                                 request: crate::schemas::GoogleCloudRetailV2SetInventoryRequest,
@@ -9260,7 +15579,7 @@ pub mod resources {
                                     #[serde(rename = "products")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -9297,7 +15616,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -9353,7 +15672,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -9479,12 +15800,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -10184,7 +16506,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Bulk import of processed completion dataset. Request processing is asynchronous. Partial updating is not supported. The operation is successfully finished only after the imported suggestions are indexed successfully and ready for serving. The process takes hours. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                        #[doc = "Bulk import of processed completion dataset. Request processing is asynchronous. Partial updating is not supported. The operation is successfully finished only after the imported suggestions are indexed successfully and ready for serving. The process takes hours. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature."]
                         pub fn import(
                             &self,
                             request: crate::schemas::GoogleCloudRetailV2ImportCompletionDataRequest,
@@ -10348,6 +16670,2700 @@ pub mod resources {
                                 ));
                             }
                             output.push_str("/completionData:import");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                }
+                pub mod controls {
+                    pub mod params {}
+                    pub struct ControlsActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> ControlsActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Creates a Control. If the Control to create already exists, an ALREADY_EXISTS error is returned."]
+                        pub fn create(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2Control,
+                            parent: impl Into<String>,
+                        ) -> CreateRequestBuilder {
+                            CreateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                control_id: None,
+                            }
+                        }
+                        #[doc = "Deletes a Control. If the Control to delete does not exist, a NOT_FOUND error is returned."]
+                        pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                            DeleteRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Gets a Control."]
+                        pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                            GetRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Lists all Controls by their parent Catalog."]
+                        pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                filter: None,
+                                page_size: None,
+                                page_token: None,
+                            }
+                        }
+                        #[doc = "Updates a Control. Control cannot be set to a different oneof field, if so an INVALID_ARGUMENT is returned. If the Control to update does not exist, a NOT_FOUND error is returned."]
+                        pub fn patch(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2Control,
+                            name: impl Into<String>,
+                        ) -> PatchRequestBuilder {
+                            PatchRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                                update_mask: None,
+                            }
+                        }
+                    }
+                    #[doc = "Created via [ControlsActions::create()](struct.ControlsActions.html#method.create)"]
+                    #[derive(Debug, Clone)]
+                    pub struct CreateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2Control,
+                        parent: String,
+                        control_id: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> CreateRequestBuilder<'a> {
+                        #[doc = "Required. The ID to use for the Control, which will become the final component of the Control’s resource name. This value should be 4-63 characters, and valid characters are /a-z-\\_/."]
+                        pub fn control_id(mut self, value: impl Into<String>) -> Self {
+                            self.control_id = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/controls");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("controlId", &self.control_id)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ControlsActions::delete()](struct.ControlsActions.html#method.delete)"]
+                    #[derive(Debug, Clone)]
+                    pub struct DeleteRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> DeleteRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ControlsActions::get()](struct.ControlsActions.html#method.get)"]
+                    #[derive(Debug, Clone)]
+                    pub struct GetRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> GetRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ControlsActions::list()](struct.ControlsActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        parent: String,
+                        filter: ::std::option::Option<String>,
+                        page_size: ::std::option::Option<i32>,
+                        page_token: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "Optional. A filter to apply on the list results. Supported features: * List all the products under the parent branch if filter is unset. * List controls that are used in a single ServingConfig: ‘serving_config = “boosted_home_page_cvr”’"]
+                        pub fn filter(mut self, value: impl Into<String>) -> Self {
+                            self.filter = Some(value.into());
+                            self
+                        }
+                        #[doc = "Optional. Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000."]
+                        pub fn page_size(mut self, value: i32) -> Self {
+                            self.page_size = Some(value);
+                            self
+                        }
+                        #[doc = "Optional. A page token, received from a previous `ListControls` call. Provide this to retrieve the subsequent page."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `controls` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                        pub fn stream_controls<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_controls_with_fields(fields)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `controls` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                        pub fn stream_controls_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>,
+                        > + 'a {
+                            self.stream_controls_with_fields(None::<String>)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `controls` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                        pub fn stream_controls_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>,
+                        > + 'a {
+                            self.stream_controls_with_fields(Some("*"))
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `controls` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                        pub fn stream_controls_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                            struct Page<T> {
+                                #[serde(rename = "nextPageToken")]
+                                pub next_page_token: ::std::option::Option<String>,
+                                #[serde(rename = "controls")]
+                                pub items: Vec<T>,
+                            }
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
+                                fn next_page_token(&self) -> ::std::option::Option<String> {
+                                    self.next_page_token.to_owned()
+                                }
+                            }
+                            impl<T> crate::stream::IntoPageItems for Page<T> {
+                                type Items = Vec<T>;
+                                fn into_page_items(self) -> Self::Items {
+                                    self.items
+                                }
+                            }
+                            self.fields = Some({
+                                let mut selector = concat!("nextPageToken,", "controls").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::stream::page_item_stream::<_, Page<T>>(self)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                        pub fn stream<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String>
+                                + ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_with_fields(fields)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the default set of fields from the server."]
+                        pub fn stream_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ListControlsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests all fields from the server."]
+                        pub fn stream_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ListControlsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                        #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        pub fn stream_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::stream::page_stream(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudRetailV2ListControlsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudRetailV2ListControlsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/controls");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("filter", &self.filter)]);
+                            req = req.query(&[("pageSize", &self.page_size)]);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[async_trait::async_trait]
+                    impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                        {
+                            self._execute().await
+                        }
+                    }
+                    #[doc = "Created via [ControlsActions::patch()](struct.ControlsActions.html#method.patch)"]
+                    #[derive(Debug, Clone)]
+                    pub struct PatchRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2Control,
+                        name: String,
+                        update_mask: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> PatchRequestBuilder<'a> {
+                        #[doc = "Indicates which fields in the provided Control to update. The following are NOT supported: * Control.name If not set or empty, all supported fields are updated."]
+                        pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                            self.update_mask = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Control, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                            req = req.query(&[("updateMask", &self.update_mask)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                }
+                pub mod models {
+                    pub mod params {}
+                    pub struct ModelsActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> ModelsActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Creates a new model."]
+                        pub fn create(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2Model,
+                            parent: impl Into<String>,
+                        ) -> CreateRequestBuilder {
+                            CreateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                dry_run: None,
+                            }
+                        }
+                        #[doc = "Deletes an existing model."]
+                        pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                            DeleteRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Lists all the models linked to this event store."]
+                        pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                page_size: None,
+                                page_token: None,
+                            }
+                        }
+                        #[doc = "Update of model metadata. Only fields that currently can be updated are: `filtering_option` and `periodic_tuning_state`. If other values are provided, this API method ignores them."]
+                        pub fn patch(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2Model,
+                            name: impl Into<String>,
+                        ) -> PatchRequestBuilder {
+                            PatchRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                                update_mask: None,
+                            }
+                        }
+                        #[doc = "Pauses the training of an existing model."]
+                        pub fn pause(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2PauseModelRequest,
+                            name: impl Into<String>,
+                        ) -> PauseRequestBuilder {
+                            PauseRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Resumes the training of an existing model."]
+                        pub fn resume(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2ResumeModelRequest,
+                            name: impl Into<String>,
+                        ) -> ResumeRequestBuilder {
+                            ResumeRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Tunes an existing model."]
+                        pub fn tune(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2TuneModelRequest,
+                            name: impl Into<String>,
+                        ) -> TuneRequestBuilder {
+                            TuneRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                    }
+                    #[doc = "Created via [ModelsActions::create()](struct.ModelsActions.html#method.create)"]
+                    #[derive(Debug, Clone)]
+                    pub struct CreateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2Model,
+                        parent: String,
+                        dry_run: ::std::option::Option<bool>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> CreateRequestBuilder<'a> {
+                        #[doc = "Optional. Whether to run a dry run to validate the request (without actually creating the model)."]
+                        pub fn dry_run(mut self, value: bool) -> Self {
+                            self.dry_run = Some(value);
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/models");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("dryRun", &self.dry_run)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ModelsActions::delete()](struct.ModelsActions.html#method.delete)"]
+                    #[derive(Debug, Clone)]
+                    pub struct DeleteRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> DeleteRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ModelsActions::list()](struct.ModelsActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        parent: String,
+                        page_size: ::std::option::Option<i32>,
+                        page_token: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "Optional. Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000."]
+                        pub fn page_size(mut self, value: i32) -> Self {
+                            self.page_size = Some(value);
+                            self
+                        }
+                        #[doc = "Optional. A page token, received from a previous `ListModels` call. Provide this to retrieve the subsequent page."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `models` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                        pub fn stream_models<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_models_with_fields(fields)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `models` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                        pub fn stream_models_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>,
+                        > + 'a {
+                            self.stream_models_with_fields(None::<String>)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `models` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                        pub fn stream_models_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>,
+                        > + 'a {
+                            self.stream_models_with_fields(Some("*"))
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `models` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                        pub fn stream_models_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                            struct Page<T> {
+                                #[serde(rename = "nextPageToken")]
+                                pub next_page_token: ::std::option::Option<String>,
+                                #[serde(rename = "models")]
+                                pub items: Vec<T>,
+                            }
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
+                                fn next_page_token(&self) -> ::std::option::Option<String> {
+                                    self.next_page_token.to_owned()
+                                }
+                            }
+                            impl<T> crate::stream::IntoPageItems for Page<T> {
+                                type Items = Vec<T>;
+                                fn into_page_items(self) -> Self::Items {
+                                    self.items
+                                }
+                            }
+                            self.fields = Some({
+                                let mut selector = concat!("nextPageToken,", "models").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::stream::page_item_stream::<_, Page<T>>(self)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                        pub fn stream<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String>
+                                + ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_with_fields(fields)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the default set of fields from the server."]
+                        pub fn stream_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ListModelsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests all fields from the server."]
+                        pub fn stream_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ListModelsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                        #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        pub fn stream_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::stream::page_stream(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudRetailV2ListModelsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudRetailV2ListModelsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/models");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("pageSize", &self.page_size)]);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[async_trait::async_trait]
+                    impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                        {
+                            self._execute().await
+                        }
+                    }
+                    #[doc = "Created via [ModelsActions::patch()](struct.ModelsActions.html#method.patch)"]
+                    #[derive(Debug, Clone)]
+                    pub struct PatchRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2Model,
+                        name: String,
+                        update_mask: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> PatchRequestBuilder<'a> {
+                        #[doc = "Optional. Indicates which fields in the provided ‘model’ to update. If not set, by default updates all fields."]
+                        pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                            self.update_mask = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                            req = req.query(&[("updateMask", &self.update_mask)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ModelsActions::pause()](struct.ModelsActions.html#method.pause)"]
+                    #[derive(Debug, Clone)]
+                    pub struct PauseRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2PauseModelRequest,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> PauseRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":pause");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ModelsActions::resume()](struct.ModelsActions.html#method.resume)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ResumeRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2ResumeModelRequest,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ResumeRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2Model, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":resume");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ModelsActions::tune()](struct.ModelsActions.html#method.tune)"]
+                    #[derive(Debug, Clone)]
+                    pub struct TuneRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2TuneModelRequest,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> TuneRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":tune");
                             output
                         }
                         async fn _request(
@@ -10724,7 +19740,7 @@ pub mod resources {
                                 #[serde(rename = "operations")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -10761,7 +19777,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -10817,7 +19833,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -10942,12 +19958,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -10987,7 +20004,7 @@ pub mod resources {
                                 placement: placement.into(),
                             }
                         }
-                        #[doc = "Performs a search. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                        #[doc = "Performs a search. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature."]
                         pub fn search(
                             &self,
                             request: crate::schemas::GoogleCloudRetailV2SearchRequest,
@@ -11357,6 +20374,139 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
+                        #[doc = "Enables a Control on the specified ServingConfig. The control is added in the last position of the list of controls it belongs to (e.g. if it’s a facet spec control it will be applied in the last position of servingConfig.facetSpecIds) Returns a ALREADY_EXISTS error if the control has already been applied. Returns a FAILED_PRECONDITION error if the addition could exceed maximum number of control allowed for that type of control."]
+                        pub fn add_control(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2AddControlRequest,
+                            serving_config: impl Into<String>,
+                        ) -> AddControlRequestBuilder {
+                            AddControlRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                serving_config: serving_config.into(),
+                            }
+                        }
+                        #[doc = "Creates a ServingConfig. A maximum of 100 ServingConfigs are allowed in a Catalog, otherwise a FAILED_PRECONDITION error is returned."]
+                        pub fn create(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2ServingConfig,
+                            parent: impl Into<String>,
+                        ) -> CreateRequestBuilder {
+                            CreateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                serving_config_id: None,
+                            }
+                        }
+                        #[doc = "Deletes a ServingConfig. Returns a NotFound error if the ServingConfig does not exist."]
+                        pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                            DeleteRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Gets a ServingConfig. Returns a NotFound error if the ServingConfig does not exist."]
+                        pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                            GetRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                            }
+                        }
+                        #[doc = "Lists all ServingConfigs linked to this catalog."]
+                        pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                                page_size: None,
+                                page_token: None,
+                            }
+                        }
+                        #[doc = "Updates a ServingConfig."]
+                        pub fn patch(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2ServingConfig,
+                            name: impl Into<String>,
+                        ) -> PatchRequestBuilder {
+                            PatchRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                name: name.into(),
+                                update_mask: None,
+                            }
+                        }
                         #[doc = "Makes a recommendation prediction."]
                         pub fn predict(
                             &self,
@@ -11381,7 +20531,31 @@ pub mod resources {
                                 placement: placement.into(),
                             }
                         }
-                        #[doc = "Performs a search. This feature is only available for users who have Retail Search enabled. Please enable Retail Search on Cloud Console before using this feature."]
+                        #[doc = "Disables a Control on the specified ServingConfig. The control is removed from the ServingConfig. Returns a NOT_FOUND error if the Control is not enabled for the ServingConfig."]
+                        pub fn remove_control(
+                            &self,
+                            request: crate::schemas::GoogleCloudRetailV2RemoveControlRequest,
+                            serving_config: impl Into<String>,
+                        ) -> RemoveControlRequestBuilder {
+                            RemoveControlRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                serving_config: serving_config.into(),
+                            }
+                        }
+                        #[doc = "Performs a search. This feature is only available for users who have Retail Search enabled. Enable Retail Search on Cloud Console before using this feature."]
                         pub fn search(
                             &self,
                             request: crate::schemas::GoogleCloudRetailV2SearchRequest,
@@ -11404,6 +20578,1207 @@ pub mod resources {
                                 xgafv: None,
                                 placement: placement.into(),
                             }
+                        }
+                    }
+                    #[doc = "Created via [ServingConfigsActions::add_control()](struct.ServingConfigsActions.html#method.add_control)"]
+                    #[derive(Debug, Clone)]
+                    pub struct AddControlRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2AddControlRequest,
+                        serving_config: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> AddControlRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.serving_config;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":addControl");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ServingConfigsActions::create()](struct.ServingConfigsActions.html#method.create)"]
+                    #[derive(Debug, Clone)]
+                    pub struct CreateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2ServingConfig,
+                        parent: String,
+                        serving_config_id: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> CreateRequestBuilder<'a> {
+                        #[doc = "Required. The ID to use for the ServingConfig, which will become the final component of the ServingConfig’s resource name. This value should be 4-63 characters, and valid characters are /a-z-\\_/."]
+                        pub fn serving_config_id(mut self, value: impl Into<String>) -> Self {
+                            self.serving_config_id = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/servingConfigs");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("servingConfigId", &self.serving_config_id)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ServingConfigsActions::delete()](struct.ServingConfigsActions.html#method.delete)"]
+                    #[derive(Debug, Clone)]
+                    pub struct DeleteRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> DeleteRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ServingConfigsActions::get()](struct.ServingConfigsActions.html#method.get)"]
+                    #[derive(Debug, Clone)]
+                    pub struct GetRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        name: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> GetRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ServingConfigsActions::list()](struct.ServingConfigsActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        parent: String,
+                        page_size: ::std::option::Option<i32>,
+                        page_token: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "Optional. Maximum number of results to return. If unspecified, defaults to 100. If a value greater than 100 is provided, at most 100 results are returned."]
+                        pub fn page_size(mut self, value: i32) -> Self {
+                            self.page_size = Some(value);
+                            self
+                        }
+                        #[doc = "Optional. A page token, received from a previous `ListServingConfigs` call. Provide this to retrieve the subsequent page."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `servingConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                        pub fn stream_serving_configs<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_serving_configs_with_fields(fields)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `servingConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                        pub fn stream_serving_configs_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ServingConfig,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_serving_configs_with_fields(None::<String>)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `servingConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                        pub fn stream_serving_configs_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ServingConfig,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_serving_configs_with_fields(Some("*"))
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `servingConfigs` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                        pub fn stream_serving_configs_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                            struct Page<T> {
+                                #[serde(rename = "nextPageToken")]
+                                pub next_page_token: ::std::option::Option<String>,
+                                #[serde(rename = "servingConfigs")]
+                                pub items: Vec<T>,
+                            }
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
+                                fn next_page_token(&self) -> ::std::option::Option<String> {
+                                    self.next_page_token.to_owned()
+                                }
+                            }
+                            impl<T> crate::stream::IntoPageItems for Page<T> {
+                                type Items = Vec<T>;
+                                fn into_page_items(self) -> Self::Items {
+                                    self.items
+                                }
+                            }
+                            self.fields = Some({
+                                let mut selector =
+                                    concat!("nextPageToken,", "servingConfigs").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::stream::page_item_stream::<_, Page<T>>(self)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                        pub fn stream<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String>
+                                + ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_with_fields(fields)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the default set of fields from the server."]
+                        pub fn stream_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ListServingConfigsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests all fields from the server."]
+                        pub fn stream_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::GoogleCloudRetailV2ListServingConfigsResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                        #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        pub fn stream_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::stream::page_stream(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudRetailV2ListServingConfigsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<
+                            crate::schemas::GoogleCloudRetailV2ListServingConfigsResponse,
+                            crate::Error,
+                        > {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/servingConfigs");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("pageSize", &self.page_size)]);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[async_trait::async_trait]
+                    impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                        {
+                            self._execute().await
+                        }
+                    }
+                    #[doc = "Created via [ServingConfigsActions::patch()](struct.ServingConfigsActions.html#method.patch)"]
+                    #[derive(Debug, Clone)]
+                    pub struct PatchRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2ServingConfig,
+                        name: String,
+                        update_mask: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> PatchRequestBuilder<'a> {
+                        #[doc = "Indicates which fields in the provided ServingConfig to update. The following are NOT supported: * ServingConfig.name If not set, all supported fields are updated."]
+                        pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                            self.update_mask = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                            req = req.query(&[("updateMask", &self.update_mask)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
                         }
                     }
                     #[doc = "Created via [ServingConfigsActions::predict()](struct.ServingConfigsActions.html#method.predict)"]
@@ -11545,6 +21920,173 @@ pub mod resources {
                                 ));
                             }
                             output.push_str(":predict");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ServingConfigsActions::remove_control()](struct.ServingConfigsActions.html#method.remove_control)"]
+                    #[derive(Debug, Clone)]
+                    pub struct RemoveControlRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::GoogleCloudRetailV2RemoveControlRequest,
+                        serving_config: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> RemoveControlRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleCloudRetailV2ServingConfig, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://retail.googleapis.com/".to_owned();
+                            output.push_str("v2/");
+                            {
+                                let var_as_str = &self.serving_config;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":removeControl");
                             output
                         }
                         async fn _request(
@@ -11769,11 +22311,13 @@ pub mod resources {
                                 xgafv: None,
                                 parent: parent.into(),
                                 ets: None,
+                                prebuilt_rule: None,
+                                raw_json: None,
                                 uri: None,
                                 user_event: None,
                             }
                         }
-                        #[doc = "Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events. Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata."]
+                        #[doc = "Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events. `Operation.response` is of type `ImportResponse`. Note that it is possible for a subset of the items to be successfully inserted. `Operation.metadata` is of type `ImportMetadata`."]
                         pub fn import(
                             &self,
                             request: crate::schemas::GoogleCloudRetailV2ImportUserEventsRequest,
@@ -11821,7 +22365,7 @@ pub mod resources {
                                 parent: parent.into(),
                             }
                         }
-                        #[doc = "Starts a user event rejoin operation with latest product catalog. Events will not be annotated with detailed product information if product is missing from the catalog at the time the user event is ingested, and these events are stored as unjoined events with a limited usage on training and serving. This method can be used to start a join operation on specified events with latest version of product catalog. It can also be used to correct events joined with the wrong product catalog. A rejoin operation can take hours or days to complete."]
+                        #[doc = "Starts a user-event rejoin operation with latest product catalog. Events are not annotated with detailed product information for products that are missing from the catalog when the user event is ingested. These events are stored as unjoined events with limited usage on training and serving. You can use this method to start a join operation on specified events with the latest version of product catalog. You can also use this method to correct events joined with the wrong product catalog. A rejoin operation can take hours or days to complete."]
                         pub fn rejoin(
                             &self,
                             request: crate::schemas::GoogleCloudRetailV2RejoinUserEventsRequest,
@@ -11867,6 +22411,7 @@ pub mod resources {
                                 upload_type: None,
                                 xgafv: None,
                                 parent: parent.into(),
+                                write_async: None,
                             }
                         }
                     }
@@ -11877,6 +22422,8 @@ pub mod resources {
                         pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                         parent: String,
                         ets: ::std::option::Option<i64>,
+                        prebuilt_rule: ::std::option::Option<String>,
+                        raw_json: ::std::option::Option<String>,
                         uri: ::std::option::Option<String>,
                         user_event: ::std::option::Option<String>,
                         access_token: ::std::option::Option<String>,
@@ -11895,6 +22442,16 @@ pub mod resources {
                         #[doc = "The event timestamp in milliseconds. This prevents browser caching of otherwise identical get requests. The name is abbreviated to reduce the payload bytes."]
                         pub fn ets(mut self, value: i64) -> Self {
                             self.ets = Some(value);
+                            self
+                        }
+                        #[doc = "The prebuilt rule name that can convert a specific type of raw_json. For example: “ga4_bq” rule for the GA4 user event schema."]
+                        pub fn prebuilt_rule(mut self, value: impl Into<String>) -> Self {
+                            self.prebuilt_rule = Some(value.into());
+                            self
+                        }
+                        #[doc = "An arbitrary serialized JSON string that contains necessary information that can comprise a user event. When this field is specified, the user_event field will be ignored. Note: line-delimited JSON is not supported, a single JSON only."]
+                        pub fn raw_json(mut self, value: impl Into<String>) -> Self {
+                            self.raw_json = Some(value.into());
                             self
                         }
                         #[doc = "The URL including cgi-parameters but excluding the hash fragment with a length limit of 5,000 characters. This is often more useful than the referer URL, because many browsers only send the domain for 3rd party requests."]
@@ -12034,6 +22591,8 @@ pub mod resources {
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                             req = req.query(&[("ets", &self.ets)]);
+                            req = req.query(&[("prebuiltRule", &self.prebuilt_rule)]);
+                            req = req.query(&[("rawJson", &self.raw_json)]);
                             req = req.query(&[("uri", &self.uri)]);
                             req = req.query(&[("userEvent", &self.user_event)]);
                             req = req.query(&[("access_token", &self.access_token)]);
@@ -12564,6 +23123,7 @@ pub mod resources {
                         pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                         request: crate::schemas::GoogleCloudRetailV2UserEvent,
                         parent: String,
+                        write_async: ::std::option::Option<bool>,
                         access_token: ::std::option::Option<String>,
                         alt: ::std::option::Option<crate::params::Alt>,
                         callback: ::std::option::Option<String>,
@@ -12577,6 +23137,11 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> WriteRequestBuilder<'a> {
+                        #[doc = "If set to true, the user event will be written asynchronously after validation, and the API will respond without waiting for the write. Therefore, silent failures can occur even if the API returns success. In case of silent failures, error messages can be found in Stackdriver logs."]
+                        pub fn write_async(mut self, value: bool) -> Self {
+                            self.write_async = Some(value);
+                            self
+                        }
                         #[doc = "OAuth access token."]
                         pub fn access_token(mut self, value: impl Into<String>) -> Self {
                             self.access_token = Some(value.into());
@@ -12704,6 +23269,7 @@ pub mod resources {
                         ) -> Result<::reqwest::RequestBuilder, crate::Error>
                         {
                             let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("writeAsync", &self.write_async)]);
                             req = req.query(&[("access_token", &self.access_token)]);
                             req = req.query(&[("alt", &self.alt)]);
                             req = req.query(&[("callback", &self.callback)]);
@@ -13071,7 +23637,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -13106,7 +23672,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -13162,7 +23728,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -13281,12 +23847,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -13636,7 +24203,7 @@ pub mod resources {
                         #[serde(rename = "operations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -13671,7 +24238,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -13727,7 +24294,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13845,12 +24412,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -14141,16 +24709,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -14170,13 +24740,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -14184,7 +24757,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -14211,7 +24784,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

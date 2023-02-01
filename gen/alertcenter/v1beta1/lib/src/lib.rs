@@ -1,9 +1,76 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [alerts](resources/alerts/struct.AlertsActions.html)\n  * [*batchDelete*](resources/alerts/struct.BatchDeleteRequestBuilder.html), [*batchUndelete*](resources/alerts/struct.BatchUndeleteRequestBuilder.html), [*delete*](resources/alerts/struct.DeleteRequestBuilder.html), [*get*](resources/alerts/struct.GetRequestBuilder.html), [*getMetadata*](resources/alerts/struct.GetMetadataRequestBuilder.html), [*list*](resources/alerts/struct.ListRequestBuilder.html), [*undelete*](resources/alerts/struct.UndeleteRequestBuilder.html)\n  * [feedback](resources/alerts/feedback/struct.FeedbackActions.html)\n    * [*create*](resources/alerts/feedback/struct.CreateRequestBuilder.html), [*list*](resources/alerts/feedback/struct.ListRequestBuilder.html)\n* [v_1beta_1](resources/v_1beta_1/struct.V1Beta1Actions.html)\n  * [*getSettings*](resources/v_1beta_1/struct.GetSettingsRequestBuilder.html), [*updateSettings*](resources/v_1beta_1/struct.UpdateSettingsRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See and delete your domain's G Suite alerts, and send alert feedback\n\n`https://www.googleapis.com/auth/apps.alerts`"]
     pub const APPS_ALERTS: &str = "https://www.googleapis.com/auth/apps.alerts";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AbuseDetected {
+        #[doc = "List of abusive users/entities to be displayed in a table in the alert."]
+        #[serde(
+            rename = "additionalDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub additional_details: ::std::option::Option<crate::schemas::EntityList>,
+        #[doc = "Displayed after Customer abuse detected - {alert_descriptor}. If missing, alert name will be displayed as Customer abuse detected."]
+        #[serde(
+            rename = "alertDescriptor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alert_descriptor: ::std::option::Option<String>,
+        #[doc = "Customizable text to display in the next steps section of the alert. Will be parsed as HTML to allow new paragraphs and hyperlinks."]
+        #[serde(
+            rename = "nextSteps",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_steps: ::std::option::Option<String>,
+        #[doc = "Product that the abuse is originating from."]
+        #[serde(
+            rename = "product",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product: ::std::option::Option<String>,
+        #[doc = "Unique identifier of each alert that is onboarded."]
+        #[serde(
+            rename = "subAlertId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sub_alert_id: ::std::option::Option<String>,
+        #[doc = "Customizable text to display in the summary section of the alert. Will be parsed as HTML to allow new paragraphs and hyperlinks."]
+        #[serde(
+            rename = "summary",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub summary: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AbuseDetected {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AbuseDetected {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -479,7 +546,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The unique identifier of the Google account of the customer."]
+        #[doc = "Output only. The unique identifier of the Google Workspace account of the customer."]
         #[serde(
             rename = "customerId",
             default,
@@ -594,7 +661,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The unique identifier of the Google account of the customer."]
+        #[doc = "Output only. The unique identifier of the Google Workspace account of the customer."]
         #[serde(
             rename = "customerId",
             default,
@@ -747,7 +814,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub assignee: ::std::option::Option<String>,
-        #[doc = "Output only. The unique identifier of the Google account of the customer."]
+        #[doc = "Output only. The unique identifier of the Google Workspace account of the customer."]
         #[serde(
             rename = "customerId",
             default,
@@ -789,6 +856,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for AlertMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ApnsCertificateExpirationInfo {
+        #[doc = "The Apple ID used for the certificate may be blank if admins didn’t enter it."]
+        #[serde(
+            rename = "appleId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub apple_id: ::std::option::Option<String>,
+        #[doc = "The expiration date of the APNS Certificate."]
+        #[serde(
+            rename = "expirationTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expiration_time: ::std::option::Option<String>,
+        #[doc = "The UID for the certificate."]
+        #[serde(
+            rename = "uid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uid: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ApnsCertificateExpirationInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApnsCertificateExpirationInfo {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1132,14 +1244,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchDeleteAlertsRequest {
-        #[doc = "Required. list of alert IDs."]
+        #[doc = "Required. The list of alert IDs to delete."]
         #[serde(
             rename = "alertId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alert_id: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alerts are associated with."]
+        #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alerts are associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
         #[serde(
             rename = "customerId",
             default,
@@ -1159,7 +1271,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct BatchDeleteAlertsResponse {
-        #[doc = "The status details for each failed alert_id."]
+        #[doc = "The status details for each failed `alert_id`."]
         #[serde(
             rename = "failedAlertStatus",
             default,
@@ -1198,14 +1310,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchUndeleteAlertsRequest {
-        #[doc = "Required. list of alert IDs."]
+        #[doc = "Required. The list of alert IDs to undelete."]
         #[serde(
             rename = "alertId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alert_id: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alerts are associated with."]
+        #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alerts are associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
         #[serde(
             rename = "customerId",
             default,
@@ -1225,7 +1337,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct BatchUndeleteAlertsResponse {
-        #[doc = "The status details for each failed alert_id."]
+        #[doc = "The status details for each failed `alert_id`."]
         #[serde(
             rename = "failedAlertStatus",
             default,
@@ -1682,6 +1794,96 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Entity {
+        #[doc = "Link to a Security Investigation Tool search based on this entity, if available."]
+        #[serde(
+            rename = "link",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub link: ::std::option::Option<String>,
+        #[doc = "Human-readable name of this entity, such as an email address, file ID, or device name."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Extra values beyond name. The order of values should align with headers in EntityList."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for Entity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Entity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct EntityList {
+        #[doc = "List of entities affected by the alert."]
+        #[serde(
+            rename = "entities",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entities: ::std::option::Option<Vec<crate::schemas::Entity>>,
+        #[doc = "Headers of the values in entities. If no value is defined in Entity, this field should be empty."]
+        #[serde(
+            rename = "headers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub headers: ::std::option::Option<Vec<String>>,
+        #[doc = "Name of the key detail used to display this entity list."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for EntityList {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for EntityList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GmailMessageInfo {
         #[doc = "The `SHA256` hash of email’s attachment and all MIME parts."]
         #[serde(
@@ -1874,7 +2076,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAlertsResponse {
+    impl crate::GetNextPageToken<String> for ListAlertsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2343,6 +2545,51 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct PrimaryAdminChangedEvent {
+        #[doc = "domain in which actioned occurred"]
+        #[serde(
+            rename = "domain",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domain: ::std::option::Option<String>,
+        #[doc = "Email of person who was the primary admin before the action"]
+        #[serde(
+            rename = "previousAdminEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub previous_admin_email: ::std::option::Option<String>,
+        #[doc = "Email of person who is the primary admin after the action"]
+        #[serde(
+            rename = "updatedAdminEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub updated_admin_email: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PrimaryAdminChangedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PrimaryAdminChangedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ReportingRule {
         #[doc = "Any other associated alert details, for example, AlertConfiguration."]
         #[serde(
@@ -2671,6 +2918,8 @@ pub mod schemas {
         ActionTypeUnspecified,
         #[doc = "Send alert."]
         Alert,
+        #[doc = "Delete web protect evidence file"]
+        DeleteWebprotectEvidence,
         #[doc = "Block sharing a file externally."]
         DriveBlockExternalSharing,
         #[doc = "Show a warning message when sharing a file externally."]
@@ -2687,6 +2936,9 @@ pub mod schemas {
                     "ACTION_TYPE_UNSPECIFIED"
                 }
                 RuleViolationInfoSuppressedActionTypesItems::Alert => "ALERT",
+                RuleViolationInfoSuppressedActionTypesItems::DeleteWebprotectEvidence => {
+                    "DELETE_WEBPROTECT_EVIDENCE"
+                }
                 RuleViolationInfoSuppressedActionTypesItems::DriveBlockExternalSharing => {
                     "DRIVE_BLOCK_EXTERNAL_SHARING"
                 }
@@ -2713,6 +2965,9 @@ pub mod schemas {
                     RuleViolationInfoSuppressedActionTypesItems::ActionTypeUnspecified
                 }
                 "ALERT" => RuleViolationInfoSuppressedActionTypesItems::Alert,
+                "DELETE_WEBPROTECT_EVIDENCE" => {
+                    RuleViolationInfoSuppressedActionTypesItems::DeleteWebprotectEvidence
+                }
                 "DRIVE_BLOCK_EXTERNAL_SHARING" => {
                     RuleViolationInfoSuppressedActionTypesItems::DriveBlockExternalSharing
                 }
@@ -2749,6 +3004,9 @@ pub mod schemas {
                     RuleViolationInfoSuppressedActionTypesItems::ActionTypeUnspecified
                 }
                 "ALERT" => RuleViolationInfoSuppressedActionTypesItems::Alert,
+                "DELETE_WEBPROTECT_EVIDENCE" => {
+                    RuleViolationInfoSuppressedActionTypesItems::DeleteWebprotectEvidence
+                }
                 "DRIVE_BLOCK_EXTERNAL_SHARING" => {
                     RuleViolationInfoSuppressedActionTypesItems::DriveBlockExternalSharing
                 }
@@ -2853,6 +3111,8 @@ pub mod schemas {
         ActionTypeUnspecified,
         #[doc = "Send alert."]
         Alert,
+        #[doc = "Delete web protect evidence file"]
+        DeleteWebprotectEvidence,
         #[doc = "Block sharing a file externally."]
         DriveBlockExternalSharing,
         #[doc = "Show a warning message when sharing a file externally."]
@@ -2869,6 +3129,9 @@ pub mod schemas {
                     "ACTION_TYPE_UNSPECIFIED"
                 }
                 RuleViolationInfoTriggeredActionTypesItems::Alert => "ALERT",
+                RuleViolationInfoTriggeredActionTypesItems::DeleteWebprotectEvidence => {
+                    "DELETE_WEBPROTECT_EVIDENCE"
+                }
                 RuleViolationInfoTriggeredActionTypesItems::DriveBlockExternalSharing => {
                     "DRIVE_BLOCK_EXTERNAL_SHARING"
                 }
@@ -2895,6 +3158,9 @@ pub mod schemas {
                     RuleViolationInfoTriggeredActionTypesItems::ActionTypeUnspecified
                 }
                 "ALERT" => RuleViolationInfoTriggeredActionTypesItems::Alert,
+                "DELETE_WEBPROTECT_EVIDENCE" => {
+                    RuleViolationInfoTriggeredActionTypesItems::DeleteWebprotectEvidence
+                }
                 "DRIVE_BLOCK_EXTERNAL_SHARING" => {
                     RuleViolationInfoTriggeredActionTypesItems::DriveBlockExternalSharing
                 }
@@ -2931,6 +3197,9 @@ pub mod schemas {
                     RuleViolationInfoTriggeredActionTypesItems::ActionTypeUnspecified
                 }
                 "ALERT" => RuleViolationInfoTriggeredActionTypesItems::Alert,
+                "DELETE_WEBPROTECT_EVIDENCE" => {
+                    RuleViolationInfoTriggeredActionTypesItems::DeleteWebprotectEvidence
+                }
                 "DRIVE_BLOCK_EXTERNAL_SHARING" => {
                     RuleViolationInfoTriggeredActionTypesItems::DriveBlockExternalSharing
                 }
@@ -2970,6 +3239,84 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SensitiveAdminAction {
+        #[doc = "Email of person who performed the action"]
+        #[serde(
+            rename = "actorEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub actor_email: ::std::option::Option<String>,
+        #[doc = "The time at which event occurred"]
+        #[serde(
+            rename = "eventTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_time: ::std::option::Option<String>,
+        #[doc = "Event occurred when primary admin changed in customer’s account"]
+        #[serde(
+            rename = "primaryAdminChangedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub primary_admin_changed_event:
+            ::std::option::Option<crate::schemas::PrimaryAdminChangedEvent>,
+        #[doc = "Event occurred when SSO Profile created in customer’s account"]
+        #[serde(
+            rename = "ssoProfileCreatedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sso_profile_created_event:
+            ::std::option::Option<crate::schemas::SsoprofileCreatedEvent>,
+        #[doc = "Event occurred when SSO Profile deleted in customer’s account"]
+        #[serde(
+            rename = "ssoProfileDeletedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sso_profile_deleted_event:
+            ::std::option::Option<crate::schemas::SsoprofileDeletedEvent>,
+        #[doc = "Event occurred when SSO Profile updated in customer’s account"]
+        #[serde(
+            rename = "ssoProfileUpdatedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sso_profile_updated_event:
+            ::std::option::Option<crate::schemas::SsoprofileUpdatedEvent>,
+        #[doc = "Event occurred when password was reset for super admin in customer’s account"]
+        #[serde(
+            rename = "superAdminPasswordResetEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub super_admin_password_reset_event:
+            ::std::option::Option<crate::schemas::SuperAdminPasswordResetEvent>,
+    }
+    impl ::google_field_selector::FieldSelector for SensitiveAdminAction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SensitiveAdminAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Settings {
         #[doc = "The list of notifications."]
         #[serde(
@@ -2985,6 +3332,106 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Settings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SsoprofileCreatedEvent {
+        #[doc = "sso profile name which got created"]
+        #[serde(
+            rename = "inboundSsoProfileName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inbound_sso_profile_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SsoprofileCreatedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SsoprofileCreatedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SsoprofileDeletedEvent {
+        #[doc = "sso profile name which got deleted"]
+        #[serde(
+            rename = "inboundSsoProfileName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inbound_sso_profile_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SsoprofileDeletedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SsoprofileDeletedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SsoprofileUpdatedEvent {
+        #[doc = "changes made to sso profile"]
+        #[serde(
+            rename = "inboundSsoProfileChanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inbound_sso_profile_changes: ::std::option::Option<String>,
+        #[doc = "sso profile name which got updated"]
+        #[serde(
+            rename = "inboundSsoProfileName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inbound_sso_profile_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SsoprofileUpdatedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SsoprofileUpdatedEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3051,6 +3498,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Status {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SuperAdminPasswordResetEvent {
+        #[doc = "email of person whose password was reset"]
+        #[serde(
+            rename = "userEmail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_email: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SuperAdminPasswordResetEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SuperAdminPasswordResetEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3192,8 +3670,277 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct TransferError {
+        #[doc = "User’s email address. This may be unavailable if the entity was deleted."]
+        #[serde(
+            rename = "email",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email: ::std::option::Option<String>,
+        #[doc = "Type of entity being transferred to. For ring group members, this should always be USER."]
+        #[serde(
+            rename = "entityType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_type: ::std::option::Option<crate::schemas::TransferErrorEntityType>,
+        #[doc = "Ring group or auto attendant ID. Not set for users."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Reason for the error."]
+        #[serde(
+            rename = "invalidReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invalid_reason: ::std::option::Option<crate::schemas::TransferErrorInvalidReason>,
+        #[doc = "User’s full name, or the ring group / auto attendant name. This may be unavailable if the entity was deleted."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TransferError {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TransferError {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TransferErrorEntityType {
+        #[doc = "Transfer to auto attendant."]
+        TransferAutoAttendant,
+        #[doc = "Entity type wasn’t set."]
+        TransferEntityTypeUnspecified,
+        #[doc = "Transfer to ring group."]
+        TransferRingGroup,
+        #[doc = "Transfer to user."]
+        TransferUser,
+    }
+    impl TransferErrorEntityType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TransferErrorEntityType::TransferAutoAttendant => "TRANSFER_AUTO_ATTENDANT",
+                TransferErrorEntityType::TransferEntityTypeUnspecified => {
+                    "TRANSFER_ENTITY_TYPE_UNSPECIFIED"
+                }
+                TransferErrorEntityType::TransferRingGroup => "TRANSFER_RING_GROUP",
+                TransferErrorEntityType::TransferUser => "TRANSFER_USER",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TransferErrorEntityType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TransferErrorEntityType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TransferErrorEntityType, ()> {
+            Ok(match s {
+                "TRANSFER_AUTO_ATTENDANT" => TransferErrorEntityType::TransferAutoAttendant,
+                "TRANSFER_ENTITY_TYPE_UNSPECIFIED" => {
+                    TransferErrorEntityType::TransferEntityTypeUnspecified
+                }
+                "TRANSFER_RING_GROUP" => TransferErrorEntityType::TransferRingGroup,
+                "TRANSFER_USER" => TransferErrorEntityType::TransferUser,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TransferErrorEntityType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TransferErrorEntityType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TransferErrorEntityType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TRANSFER_AUTO_ATTENDANT" => TransferErrorEntityType::TransferAutoAttendant,
+                "TRANSFER_ENTITY_TYPE_UNSPECIFIED" => {
+                    TransferErrorEntityType::TransferEntityTypeUnspecified
+                }
+                "TRANSFER_RING_GROUP" => TransferErrorEntityType::TransferRingGroup,
+                "TRANSFER_USER" => TransferErrorEntityType::TransferUser,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TransferErrorEntityType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TransferErrorEntityType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TransferErrorInvalidReason {
+        #[doc = "The transfer target no longer has a phone number. This reason should become deprecated once we support numberless transfer."]
+        NoPhoneNumber,
+        #[doc = "The user’s Google Workspace account was suspended."]
+        Suspended,
+        #[doc = "Reason wasn’t specified."]
+        TransferInvalidReasonUnspecified,
+        #[doc = "The transfer target can’t be found—most likely it was deleted."]
+        TransferTargetDeleted,
+        #[doc = "The user’s Google Voice license was removed."]
+        Unlicensed,
+    }
+    impl TransferErrorInvalidReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TransferErrorInvalidReason::NoPhoneNumber => "NO_PHONE_NUMBER",
+                TransferErrorInvalidReason::Suspended => "SUSPENDED",
+                TransferErrorInvalidReason::TransferInvalidReasonUnspecified => {
+                    "TRANSFER_INVALID_REASON_UNSPECIFIED"
+                }
+                TransferErrorInvalidReason::TransferTargetDeleted => "TRANSFER_TARGET_DELETED",
+                TransferErrorInvalidReason::Unlicensed => "UNLICENSED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TransferErrorInvalidReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TransferErrorInvalidReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TransferErrorInvalidReason, ()> {
+            Ok(match s {
+                "NO_PHONE_NUMBER" => TransferErrorInvalidReason::NoPhoneNumber,
+                "SUSPENDED" => TransferErrorInvalidReason::Suspended,
+                "TRANSFER_INVALID_REASON_UNSPECIFIED" => {
+                    TransferErrorInvalidReason::TransferInvalidReasonUnspecified
+                }
+                "TRANSFER_TARGET_DELETED" => TransferErrorInvalidReason::TransferTargetDeleted,
+                "UNLICENSED" => TransferErrorInvalidReason::Unlicensed,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TransferErrorInvalidReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TransferErrorInvalidReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TransferErrorInvalidReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "NO_PHONE_NUMBER" => TransferErrorInvalidReason::NoPhoneNumber,
+                "SUSPENDED" => TransferErrorInvalidReason::Suspended,
+                "TRANSFER_INVALID_REASON_UNSPECIFIED" => {
+                    TransferErrorInvalidReason::TransferInvalidReasonUnspecified
+                }
+                "TRANSFER_TARGET_DELETED" => TransferErrorInvalidReason::TransferTargetDeleted,
+                "UNLICENSED" => TransferErrorInvalidReason::Unlicensed,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TransferErrorInvalidReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TransferErrorInvalidReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TransferMisconfiguration {
+        #[doc = "Details for each invalid transfer or forward."]
+        #[serde(
+            rename = "errors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub errors: ::std::option::Option<Vec<crate::schemas::TransferError>>,
+    }
+    impl ::google_field_selector::FieldSelector for TransferMisconfiguration {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TransferMisconfiguration {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct UndeleteAlertRequest {
-        #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided."]
+        #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert is associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
         #[serde(
             rename = "customerId",
             default,
@@ -3314,6 +4061,303 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UserDefinedDetectorInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VoiceMisconfiguration {
+        #[doc = "Name of the entity whose configuration is now invalid."]
+        #[serde(
+            rename = "entityName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_name: ::std::option::Option<String>,
+        #[doc = "Type of the entity whose configuration is now invalid."]
+        #[serde(
+            rename = "entityType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_type: ::std::option::Option<crate::schemas::VoiceMisconfigurationEntityType>,
+        #[doc = "Link that the admin can follow to fix the issue."]
+        #[serde(
+            rename = "fixUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub fix_uri: ::std::option::Option<String>,
+        #[doc = "Issue(s) with members of a ring group."]
+        #[serde(
+            rename = "membersMisconfiguration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub members_misconfiguration:
+            ::std::option::Option<crate::schemas::TransferMisconfiguration>,
+        #[doc = "Issue(s) with transferring or forwarding to an external entity."]
+        #[serde(
+            rename = "transferMisconfiguration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transfer_misconfiguration:
+            ::std::option::Option<crate::schemas::TransferMisconfiguration>,
+        #[doc = "Issue(s) with sending to voicemail."]
+        #[serde(
+            rename = "voicemailMisconfiguration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub voicemail_misconfiguration:
+            ::std::option::Option<crate::schemas::VoicemailMisconfiguration>,
+    }
+    impl ::google_field_selector::FieldSelector for VoiceMisconfiguration {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VoiceMisconfiguration {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum VoiceMisconfigurationEntityType {
+        #[doc = "Invalid auto attendant."]
+        AutoAttendant,
+        #[doc = "Entity type wasn’t set."]
+        EntityTypeUnspecified,
+        #[doc = "Invalid ring group."]
+        RingGroup,
+    }
+    impl VoiceMisconfigurationEntityType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                VoiceMisconfigurationEntityType::AutoAttendant => "AUTO_ATTENDANT",
+                VoiceMisconfigurationEntityType::EntityTypeUnspecified => "ENTITY_TYPE_UNSPECIFIED",
+                VoiceMisconfigurationEntityType::RingGroup => "RING_GROUP",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for VoiceMisconfigurationEntityType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for VoiceMisconfigurationEntityType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<VoiceMisconfigurationEntityType, ()> {
+            Ok(match s {
+                "AUTO_ATTENDANT" => VoiceMisconfigurationEntityType::AutoAttendant,
+                "ENTITY_TYPE_UNSPECIFIED" => VoiceMisconfigurationEntityType::EntityTypeUnspecified,
+                "RING_GROUP" => VoiceMisconfigurationEntityType::RingGroup,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for VoiceMisconfigurationEntityType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for VoiceMisconfigurationEntityType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for VoiceMisconfigurationEntityType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AUTO_ATTENDANT" => VoiceMisconfigurationEntityType::AutoAttendant,
+                "ENTITY_TYPE_UNSPECIFIED" => VoiceMisconfigurationEntityType::EntityTypeUnspecified,
+                "RING_GROUP" => VoiceMisconfigurationEntityType::RingGroup,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for VoiceMisconfigurationEntityType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VoiceMisconfigurationEntityType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VoicemailMisconfiguration {
+        #[doc = "Issue(s) with voicemail recipients."]
+        #[serde(
+            rename = "errors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub errors: ::std::option::Option<Vec<crate::schemas::VoicemailRecipientError>>,
+    }
+    impl ::google_field_selector::FieldSelector for VoicemailMisconfiguration {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VoicemailMisconfiguration {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct VoicemailRecipientError {
+        #[doc = "Email address of the invalid recipient. This may be unavailable if the recipient was deleted."]
+        #[serde(
+            rename = "email",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email: ::std::option::Option<String>,
+        #[doc = "Reason for the error."]
+        #[serde(
+            rename = "invalidReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invalid_reason:
+            ::std::option::Option<crate::schemas::VoicemailRecipientErrorInvalidReason>,
+    }
+    impl ::google_field_selector::FieldSelector for VoicemailRecipientError {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VoicemailRecipientError {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum VoicemailRecipientErrorInvalidReason {
+        #[doc = "Reason wasn’t specified."]
+        EmailInvalidReasonUnspecified,
+        #[doc = "User can’t receive emails due to insufficient quota."]
+        OutOfQuota,
+        #[doc = "All recipients were deleted."]
+        RecipientDeleted,
+    }
+    impl VoicemailRecipientErrorInvalidReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                VoicemailRecipientErrorInvalidReason::EmailInvalidReasonUnspecified => {
+                    "EMAIL_INVALID_REASON_UNSPECIFIED"
+                }
+                VoicemailRecipientErrorInvalidReason::OutOfQuota => "OUT_OF_QUOTA",
+                VoicemailRecipientErrorInvalidReason::RecipientDeleted => "RECIPIENT_DELETED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for VoicemailRecipientErrorInvalidReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for VoicemailRecipientErrorInvalidReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<VoicemailRecipientErrorInvalidReason, ()> {
+            Ok(match s {
+                "EMAIL_INVALID_REASON_UNSPECIFIED" => {
+                    VoicemailRecipientErrorInvalidReason::EmailInvalidReasonUnspecified
+                }
+                "OUT_OF_QUOTA" => VoicemailRecipientErrorInvalidReason::OutOfQuota,
+                "RECIPIENT_DELETED" => VoicemailRecipientErrorInvalidReason::RecipientDeleted,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for VoicemailRecipientErrorInvalidReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for VoicemailRecipientErrorInvalidReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for VoicemailRecipientErrorInvalidReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EMAIL_INVALID_REASON_UNSPECIFIED" => {
+                    VoicemailRecipientErrorInvalidReason::EmailInvalidReasonUnspecified
+                }
+                "OUT_OF_QUOTA" => VoicemailRecipientErrorInvalidReason::OutOfQuota,
+                "RECIPIENT_DELETED" => VoicemailRecipientErrorInvalidReason::RecipientDeleted,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for VoicemailRecipientErrorInvalidReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VoicemailRecipientErrorInvalidReason {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4004,7 +5048,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided."]
+            #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert is associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
             pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                 self.customer_id = Some(value.into());
                 self
@@ -4171,7 +5215,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided."]
+            #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert is associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
             pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                 self.customer_id = Some(value.into());
                 self
@@ -4338,7 +5382,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetMetadataRequestBuilder<'a> {
-            #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert metadata is associated with. Inferred from the caller identity if not provided."]
+            #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert metadata is associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
             pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                 self.customer_id = Some(value.into());
                 self
@@ -4509,7 +5553,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alerts are associated with. Inferred from the caller identity if not provided."]
+            #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alerts are associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
             pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                 self.customer_id = Some(value.into());
                 self
@@ -4624,7 +5668,7 @@ pub mod resources {
                     #[serde(rename = "alerts")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -4657,7 +5701,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -4707,7 +5751,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4817,12 +5861,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -5068,7 +6113,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> CreateRequestBuilder<'a> {
-                #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert is associated with. Inferred from the caller identity if not provided."]
+                #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert is associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
                 pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                     self.customer_id = Some(value.into());
                     self
@@ -5238,7 +6283,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert feedback are associated with. Inferred from the caller identity if not provided."]
+                #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert is associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
                 pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                     self.customer_id = Some(value.into());
                     self
@@ -5468,7 +6513,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetSettingsRequestBuilder<'a> {
-            #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert settings are associated with. Inferred from the caller identity if not provided."]
+            #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert settings are associated with. The `customer_id` must/ have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
             pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                 self.customer_id = Some(value.into());
                 self
@@ -5628,7 +6673,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateSettingsRequestBuilder<'a> {
-            #[doc = "Optional. The unique identifier of the Google Workspace organization account of the customer the alert settings are associated with. Inferred from the caller identity if not provided."]
+            #[doc = "Optional. The unique identifier of the Google Workspace account of the customer the alert settings are associated with. The `customer_id` must have the initial “C” stripped (for example, `046psxkn`). Inferred from the caller identity if not provided. [Find your customer ID](https://support.google.com/cloudidentity/answer/10070793)."]
             pub fn customer_id(mut self, value: impl Into<String>) -> Self {
                 self.customer_id = Some(value.into());
                 self
@@ -6054,16 +7099,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6083,13 +7130,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6097,7 +7147,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6124,7 +7174,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

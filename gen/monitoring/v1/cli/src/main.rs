@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("monitoring1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220418")
+            .version("0.1.0-20230123")
             .about("Manages your Cloud Monitoring data and configurations.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -108,7 +108,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: v_1");
         let mut v_14 = SubCommand::with_name("v_1")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: query, query_range and series");
+            .about("methods: labels_method, query, query_range and series");
+        {
+            let mcmd = SubCommand::with_name("labels_method").about("Lists labels for metrics.");
+            v_14 = v_14.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("query")
                 .about("Evaluate a PromQL query at a single point in time.");
@@ -131,6 +135,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Lists possible values for a given label name.");
             label5 = label5.subcommand(mcmd);
         }
+        let mut labels5 = SubCommand::with_name("labels")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists labels for metrics.");
+            labels5 = labels5.subcommand(mcmd);
+        }
         let mut metadata5 = SubCommand::with_name("metadata")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -139,6 +150,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             metadata5 = metadata5.subcommand(mcmd);
         }
         v_14 = v_14.subcommand(metadata5);
+        v_14 = v_14.subcommand(labels5);
         v_14 = v_14.subcommand(label5);
         api3 = api3.subcommand(v_14);
         prometheus2 = prometheus2.subcommand(api3);

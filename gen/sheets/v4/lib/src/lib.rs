@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [spreadsheets](resources/spreadsheets/struct.SpreadsheetsActions.html)\n  * [*batchUpdate*](resources/spreadsheets/struct.BatchUpdateRequestBuilder.html), [*create*](resources/spreadsheets/struct.CreateRequestBuilder.html), [*get*](resources/spreadsheets/struct.GetRequestBuilder.html), [*getByDataFilter*](resources/spreadsheets/struct.GetByDataFilterRequestBuilder.html)\n  * [developer_metadata](resources/spreadsheets/developer_metadata/struct.DeveloperMetadataActions.html)\n    * [*get*](resources/spreadsheets/developer_metadata/struct.GetRequestBuilder.html), [*search*](resources/spreadsheets/developer_metadata/struct.SearchRequestBuilder.html)\n  * [sheets](resources/spreadsheets/sheets/struct.SheetsActions.html)\n    * [*copyTo*](resources/spreadsheets/sheets/struct.CopyToRequestBuilder.html)\n  * [values](resources/spreadsheets/values/struct.ValuesActions.html)\n    * [*append*](resources/spreadsheets/values/struct.AppendRequestBuilder.html), [*batchClear*](resources/spreadsheets/values/struct.BatchClearRequestBuilder.html), [*batchClearByDataFilter*](resources/spreadsheets/values/struct.BatchClearByDataFilterRequestBuilder.html), [*batchGet*](resources/spreadsheets/values/struct.BatchGetRequestBuilder.html), [*batchGetByDataFilter*](resources/spreadsheets/values/struct.BatchGetByDataFilterRequestBuilder.html), [*batchUpdate*](resources/spreadsheets/values/struct.BatchUpdateRequestBuilder.html), [*batchUpdateByDataFilter*](resources/spreadsheets/values/struct.BatchUpdateByDataFilterRequestBuilder.html), [*clear*](resources/spreadsheets/values/struct.ClearRequestBuilder.html), [*get*](resources/spreadsheets/values/struct.GetRequestBuilder.html), [*update*](resources/spreadsheets/values/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, create, and delete all of your Google Drive files\n\n`https://www.googleapis.com/auth/drive`"]
@@ -838,7 +839,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BandingProperties {
-        #[doc = "The first color that is alternating. (Required)"]
+        #[doc = "The first color that is alternating. (Required) Deprecated: Use first_band_color_style."]
         #[serde(
             rename = "firstBandColor",
             default,
@@ -852,7 +853,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub first_band_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The color of the last row or column. If this field is not set, the last row or column is filled with either first_band_color or second_band_color, depending on the color of the previous row or column."]
+        #[doc = "The color of the last row or column. If this field is not set, the last row or column is filled with either first_band_color or second_band_color, depending on the color of the previous row or column. Deprecated: Use footer_color_style."]
         #[serde(
             rename = "footerColor",
             default,
@@ -866,7 +867,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub footer_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The color of the first row or column. If this field is set, the first row or column is filled with this color and the colors alternate between first_band_color and second_band_color starting from the second row or column. Otherwise, the first row or column is filled with first_band_color and the colors proceed to alternate as they normally would."]
+        #[doc = "The color of the first row or column. If this field is set, the first row or column is filled with this color and the colors alternate between first_band_color and second_band_color starting from the second row or column. Otherwise, the first row or column is filled with first_band_color and the colors proceed to alternate as they normally would. Deprecated: Use header_color_style."]
         #[serde(
             rename = "headerColor",
             default,
@@ -880,7 +881,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub header_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The second color that is alternating. (Required)"]
+        #[doc = "The second color that is alternating. (Required) Deprecated: Use second_band_color_style."]
         #[serde(
             rename = "secondBandColor",
             default,
@@ -924,7 +925,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Color to be used, in case baseline value represents a negative change for key value. This field is optional."]
+        #[doc = "Color to be used, in case baseline value represents a negative change for key value. This field is optional. Deprecated: Use negative_color_style."]
         #[serde(
             rename = "negativeColor",
             default,
@@ -945,7 +946,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub position: ::std::option::Option<crate::schemas::TextPosition>,
-        #[doc = "Color to be used, in case baseline value represents a positive change for key value. This field is optional."]
+        #[doc = "Color to be used, in case baseline value represents a positive change for key value. This field is optional. Deprecated: Use positive_color_style."]
         #[serde(
             rename = "positiveColor",
             default,
@@ -1229,7 +1230,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BasicChartSeries {
-        #[doc = "The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used."]
+        #[doc = "The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used. Deprecated: Use color_style."]
         #[serde(
             rename = "color",
             default,
@@ -2013,7 +2014,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BasicSeriesDataPointStyleOverride {
-        #[doc = "Color of the series data point. If empty, the series default is used."]
+        #[doc = "Color of the series data point. If empty, the series default is used. Deprecated: Use color_style."]
         #[serde(
             rename = "color",
             default,
@@ -3763,7 +3764,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Border {
-        #[doc = "The color of the border."]
+        #[doc = "The color of the border. Deprecated: Use color_style."]
         #[serde(
             rename = "color",
             default,
@@ -3950,7 +3951,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BubbleChartSpec {
-        #[doc = "The bubble border color."]
+        #[doc = "The bubble border color. Deprecated: Use bubble_border_color_style."]
         #[serde(
             rename = "bubbleBorderColor",
             default,
@@ -4373,7 +4374,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CellFormat {
-        #[doc = "The background color of the cell."]
+        #[doc = "The background color of the cell. Deprecated: Use background_color_style."]
         #[serde(
             rename = "backgroundColor",
             default,
@@ -4402,7 +4403,7 @@ pub mod schemas {
         )]
         pub horizontal_alignment:
             ::std::option::Option<crate::schemas::CellFormatHorizontalAlignment>,
-        #[doc = "How a hyperlink, if it exists, should be displayed in the cell."]
+        #[doc = "If one exists, how a hyperlink should be displayed in the cell."]
         #[serde(
             rename = "hyperlinkDisplayType",
             default,
@@ -4431,14 +4432,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text_direction: ::std::option::Option<crate::schemas::CellFormatTextDirection>,
-        #[doc = "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here will clear the cell’s existing links. Setting the link field in a TextFormatRun will take precedence over the cell-level link."]
+        #[doc = "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here clears the cell’s existing links. Setting the link field in a TextFormatRun takes precedence over the cell-level link."]
         #[serde(
             rename = "textFormat",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text_format: ::std::option::Option<crate::schemas::TextFormat>,
-        #[doc = "The rotation applied to text in a cell"]
+        #[doc = "The rotation applied to text in the cell."]
         #[serde(
             rename = "textRotation",
             default,
@@ -5488,7 +5489,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alt_text: ::std::option::Option<String>,
-        #[doc = "The background color of the entire chart. Not applicable to Org charts."]
+        #[doc = "The background color of the entire chart. Not applicable to Org charts. Deprecated: Use background_color_style."]
         #[serde(
             rename = "backgroundColor",
             default,
@@ -5900,7 +5901,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ColorStyle {
-        #[doc = "RGB color."]
+        #[doc = "RGB color. The [`alpha`](/sheets/api/reference/rest/v4/spreadsheets/other#Color.FIELDS.alpha) value in the [`Color`](/sheets/api/reference/rest/v4/spreadsheets/other#color) object isn’t generally supported."]
         #[serde(
             rename = "rgbColor",
             default,
@@ -10198,7 +10199,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct EmbeddedObjectBorder {
-        #[doc = "The color of the border."]
+        #[doc = "The color of the border. Deprecated: Use color_style."]
         #[serde(
             rename = "color",
             default,
@@ -10485,7 +10486,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hidden_values: ::std::option::Option<Vec<String>>,
-        #[doc = "The background fill color to filter by; only cells with this fill color are shown. Mutually exclusive with visible_foreground_color."]
+        #[doc = "The background fill color to filter by; only cells with this fill color are shown. Mutually exclusive with visible_foreground_color. Deprecated: Use visible_background_color_style."]
         #[serde(
             rename = "visibleBackgroundColor",
             default,
@@ -10499,7 +10500,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub visible_background_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The foreground color to filter by; only cells with this foreground color are shown. Mutually exclusive with visible_background_color."]
+        #[doc = "The foreground color to filter by; only cells with this foreground color are shown. Mutually exclusive with visible_background_color. Deprecated: Use visible_foreground_color_style."]
         #[serde(
             rename = "visibleForegroundColor",
             default,
@@ -11267,7 +11268,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct HistogramSeries {
-        #[doc = "The color of the column representing this series in each bucket. This field is optional."]
+        #[doc = "The color of the column representing this series in each bucket. This field is optional. Deprecated: Use bar_color_style."]
         #[serde(
             rename = "barColor",
             default,
@@ -11456,7 +11457,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct InterpolationPoint {
-        #[doc = "The color this interpolation point should use."]
+        #[doc = "The color this interpolation point should use. Deprecated: Use color_style."]
         #[serde(
             rename = "color",
             default,
@@ -12331,7 +12332,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<crate::schemas::ChartData>,
-        #[doc = "The color of the org chart nodes."]
+        #[doc = "The color of the org chart nodes. Deprecated: Use node_color_style."]
         #[serde(
             rename = "nodeColor",
             default,
@@ -12359,7 +12360,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parent_labels: ::std::option::Option<crate::schemas::ChartData>,
-        #[doc = "The color of the selected org chart nodes."]
+        #[doc = "The color of the selected org chart nodes. Deprecated: Use selected_node_color_style."]
         #[serde(
             rename = "selectedNodeColor",
             default,
@@ -15367,7 +15368,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sheet_type: ::std::option::Option<crate::schemas::SheetPropertiesSheetType>,
-        #[doc = "The color of the tab in the UI."]
+        #[doc = "The color of the tab in the UI. Deprecated: Use tab_color_style."]
         #[serde(
             rename = "tabColor",
             default,
@@ -15527,7 +15528,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub apply_to_pivot_tables: ::std::option::Option<bool>,
-        #[doc = "The background color of the slicer."]
+        #[doc = "The background color of the slicer. Deprecated: Use background_color_style."]
         #[serde(
             rename = "backgroundColor",
             default,
@@ -15715,7 +15716,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct SortSpec {
-        #[doc = "The background fill color to sort by; cells with this fill color are sorted to the top. Mutually exclusive with foreground_color."]
+        #[doc = "The background fill color to sort by; cells with this fill color are sorted to the top. Mutually exclusive with foreground_color. Deprecated: Use background_color_style."]
         #[serde(
             rename = "backgroundColor",
             default,
@@ -15744,7 +15745,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_index: ::std::option::Option<i32>,
-        #[doc = "The foreground color to sort by; cells with this foreground color are sorted to the top. Mutually exclusive with background_color."]
+        #[doc = "The foreground color to sort by; cells with this foreground color are sorted to the top. Mutually exclusive with background_color. Deprecated: Use foreground_color_style."]
         #[serde(
             rename = "foregroundColor",
             default,
@@ -16251,7 +16252,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub font_size: ::std::option::Option<i32>,
-        #[doc = "The foreground color of the text."]
+        #[doc = "The foreground color of the text. Deprecated: Use foreground_color_style."]
         #[serde(
             rename = "foregroundColor",
             default,
@@ -16840,7 +16841,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TreemapChartColorScale {
-        #[doc = "The background color for cells with a color value greater than or equal to maxValue. Defaults to #109618 if not specified."]
+        #[doc = "The background color for cells with a color value greater than or equal to maxValue. Defaults to #109618 if not specified. Deprecated: Use max_value_color_style."]
         #[serde(
             rename = "maxValueColor",
             default,
@@ -16854,7 +16855,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_value_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The background color for cells with a color value at the midpoint between minValue and maxValue. Defaults to #efe6dc if not specified."]
+        #[doc = "The background color for cells with a color value at the midpoint between minValue and maxValue. Defaults to #efe6dc if not specified. Deprecated: Use mid_value_color_style."]
         #[serde(
             rename = "midValueColor",
             default,
@@ -16868,7 +16869,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mid_value_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The background color for cells with a color value less than or equal to minValue. Defaults to #dc3912 if not specified."]
+        #[doc = "The background color for cells with a color value less than or equal to minValue. Defaults to #dc3912 if not specified. Deprecated: Use min_value_color_style."]
         #[serde(
             rename = "minValueColor",
             default,
@@ -16882,7 +16883,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_value_color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The background color for cells that have no color data associated with them. Defaults to #000000 if not specified."]
+        #[doc = "The background color for cells that have no color data associated with them. Defaults to #000000 if not specified. Deprecated: Use no_data_color_style."]
         #[serde(
             rename = "noDataColor",
             default,
@@ -16925,7 +16926,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color_scale: ::std::option::Option<crate::schemas::TreemapChartColorScale>,
-        #[doc = "The background color for header cells."]
+        #[doc = "The background color for header cells. Deprecated: Use header_color_style."]
         #[serde(
             rename = "headerColor",
             default,
@@ -18135,7 +18136,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct WaterfallChartColumnStyle {
-        #[doc = "The color of the column."]
+        #[doc = "The color of the column. Deprecated: Use color_style."]
         #[serde(
             rename = "color",
             default,
@@ -18690,7 +18691,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges."]
+            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a [field mask](https://developers.google.com/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges."]
             pub fn get(&self, spreadsheet_id: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -18711,7 +18712,7 @@ pub mod resources {
                     ranges: None,
                 }
             }
-            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want."]
+            #[doc = "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data one of 2 ways: * Specify a [field mask](https://developers.google.com/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want."]
             pub fn get_by_data_filter(
                 &self,
                 request: crate::schemas::GetSpreadsheetByDataFilterRequest,
@@ -22752,7 +22753,7 @@ pub mod resources {
                     self.date_time_render_option = Some(value);
                     self
                 }
-                #[doc = "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns `[[1,3],[2,4]]`."]
+                #[doc = "The major dimension that results should use. For example, if the spreadsheet data in Sheet1 is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=Sheet1!A1:B2?majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=Sheet1!A1:B2?majorDimension=COLUMNS` returns `[[1,3],[2,4]]`."]
                 pub fn major_dimension(
                     mut self,
                     value: crate::resources::spreadsheets::values::params::GetMajorDimension,
@@ -23400,15 +23401,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

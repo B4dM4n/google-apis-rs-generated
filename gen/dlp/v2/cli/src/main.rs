@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("dlp2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220422")
+            .version("0.1.0-20230129")
             .about("Provides methods for detection, risk analysis, and de-identification of privacy-sensitive fragments in text, images, and Google Cloud Platform storage repositories.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -37,7 +37,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Returns a list of the sensitive information types that the DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more.");
+            let mcmd = SubCommand::with_name("list").about("Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more.");
             info_types0 = info_types0.subcommand(mcmd);
         }
         let mut locations0 = SubCommand::with_name("locations")
@@ -53,14 +53,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Returns a list of the sensitive information types that the DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more.");
+            let mcmd = SubCommand::with_name("list").about("Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more.");
             info_types1 = info_types1.subcommand(mcmd);
         }
         let mut deidentify_templates1 = SubCommand::with_name("deidentify_templates")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
             deidentify_templates1 = deidentify_templates1.subcommand(mcmd);
         }
         {
@@ -83,7 +83,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
             inspect_templates1 = inspect_templates1.subcommand(mcmd);
         }
         {
@@ -147,7 +147,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
             deidentify_templates1 = deidentify_templates1.subcommand(mcmd);
         }
         {
@@ -178,7 +178,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             dlp_jobs1 = dlp_jobs1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be cancelled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be canceled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.");
             dlp_jobs1 = dlp_jobs1.subcommand(mcmd);
         }
         {
@@ -200,7 +200,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
             inspect_templates1 = inspect_templates1.subcommand(mcmd);
         }
         {
@@ -276,7 +276,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
             deidentify_templates2 = deidentify_templates2.subcommand(mcmd);
         }
         {
@@ -306,7 +306,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
             inspect_templates2 = inspect_templates2.subcommand(mcmd);
         }
         {
@@ -390,7 +390,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.");
             deidentify_templates2 = deidentify_templates2.subcommand(mcmd);
         }
         {
@@ -421,7 +421,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             dlp_jobs2 = dlp_jobs2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be cancelled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be canceled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.");
             dlp_jobs2 = dlp_jobs2.subcommand(mcmd);
         }
         {
@@ -451,7 +451,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
+            let mcmd = SubCommand::with_name("create").about("Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.");
             inspect_templates2 = inspect_templates2.subcommand(mcmd);
         }
         {

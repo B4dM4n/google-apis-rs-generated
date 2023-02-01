@@ -1,9 +1,65 @@
-#![doc = "# Resources and Methods\n* [enterprises](resources/enterprises/struct.EnterprisesActions.html)\n  * [*create*](resources/enterprises/struct.CreateRequestBuilder.html), [*delete*](resources/enterprises/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/struct.GetRequestBuilder.html), [*list*](resources/enterprises/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/struct.PatchRequestBuilder.html)\n  * [applications](resources/enterprises/applications/struct.ApplicationsActions.html)\n    * [*get*](resources/enterprises/applications/struct.GetRequestBuilder.html)\n  * [devices](resources/enterprises/devices/struct.DevicesActions.html)\n    * [*delete*](resources/enterprises/devices/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/devices/struct.GetRequestBuilder.html), [*issueCommand*](resources/enterprises/devices/struct.IssueCommandRequestBuilder.html), [*list*](resources/enterprises/devices/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/devices/struct.PatchRequestBuilder.html)\n    * [operations](resources/enterprises/devices/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/enterprises/devices/operations/struct.CancelRequestBuilder.html), [*delete*](resources/enterprises/devices/operations/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/devices/operations/struct.GetRequestBuilder.html), [*list*](resources/enterprises/devices/operations/struct.ListRequestBuilder.html)\n  * [enrollment_tokens](resources/enterprises/enrollment_tokens/struct.EnrollmentTokensActions.html)\n    * [*create*](resources/enterprises/enrollment_tokens/struct.CreateRequestBuilder.html), [*delete*](resources/enterprises/enrollment_tokens/struct.DeleteRequestBuilder.html)\n  * [policies](resources/enterprises/policies/struct.PoliciesActions.html)\n    * [*delete*](resources/enterprises/policies/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/policies/struct.GetRequestBuilder.html), [*list*](resources/enterprises/policies/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/policies/struct.PatchRequestBuilder.html)\n  * [web_apps](resources/enterprises/web_apps/struct.WebAppsActions.html)\n    * [*create*](resources/enterprises/web_apps/struct.CreateRequestBuilder.html), [*delete*](resources/enterprises/web_apps/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/web_apps/struct.GetRequestBuilder.html), [*list*](resources/enterprises/web_apps/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/web_apps/struct.PatchRequestBuilder.html)\n  * [web_tokens](resources/enterprises/web_tokens/struct.WebTokensActions.html)\n    * [*create*](resources/enterprises/web_tokens/struct.CreateRequestBuilder.html)\n* [signup_urls](resources/signup_urls/struct.SignupUrlsActions.html)\n  * [*create*](resources/signup_urls/struct.CreateRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [enterprises](resources/enterprises/struct.EnterprisesActions.html)\n  * [*create*](resources/enterprises/struct.CreateRequestBuilder.html), [*delete*](resources/enterprises/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/struct.GetRequestBuilder.html), [*list*](resources/enterprises/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/struct.PatchRequestBuilder.html)\n  * [applications](resources/enterprises/applications/struct.ApplicationsActions.html)\n    * [*get*](resources/enterprises/applications/struct.GetRequestBuilder.html)\n  * [devices](resources/enterprises/devices/struct.DevicesActions.html)\n    * [*delete*](resources/enterprises/devices/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/devices/struct.GetRequestBuilder.html), [*issueCommand*](resources/enterprises/devices/struct.IssueCommandRequestBuilder.html), [*list*](resources/enterprises/devices/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/devices/struct.PatchRequestBuilder.html)\n    * [operations](resources/enterprises/devices/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/enterprises/devices/operations/struct.CancelRequestBuilder.html), [*delete*](resources/enterprises/devices/operations/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/devices/operations/struct.GetRequestBuilder.html), [*list*](resources/enterprises/devices/operations/struct.ListRequestBuilder.html)\n  * [enrollment_tokens](resources/enterprises/enrollment_tokens/struct.EnrollmentTokensActions.html)\n    * [*create*](resources/enterprises/enrollment_tokens/struct.CreateRequestBuilder.html), [*delete*](resources/enterprises/enrollment_tokens/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/enrollment_tokens/struct.GetRequestBuilder.html), [*list*](resources/enterprises/enrollment_tokens/struct.ListRequestBuilder.html)\n  * [policies](resources/enterprises/policies/struct.PoliciesActions.html)\n    * [*delete*](resources/enterprises/policies/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/policies/struct.GetRequestBuilder.html), [*list*](resources/enterprises/policies/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/policies/struct.PatchRequestBuilder.html)\n  * [web_apps](resources/enterprises/web_apps/struct.WebAppsActions.html)\n    * [*create*](resources/enterprises/web_apps/struct.CreateRequestBuilder.html), [*delete*](resources/enterprises/web_apps/struct.DeleteRequestBuilder.html), [*get*](resources/enterprises/web_apps/struct.GetRequestBuilder.html), [*list*](resources/enterprises/web_apps/struct.ListRequestBuilder.html), [*patch*](resources/enterprises/web_apps/struct.PatchRequestBuilder.html)\n  * [web_tokens](resources/enterprises/web_tokens/struct.WebTokensActions.html)\n    * [*create*](resources/enterprises/web_tokens/struct.CreateRequestBuilder.html)\n* [signup_urls](resources/signup_urls/struct.SignupUrlsActions.html)\n  * [*create*](resources/signup_urls/struct.CreateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage Android devices and apps for your customers\n\n`https://www.googleapis.com/auth/androidmanagement`"]
     pub const ANDROIDMANAGEMENT: &str = "https://www.googleapis.com/auth/androidmanagement";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AdbShellCommandEvent {
+        #[doc = "Shell command that was issued over ADB via “adb shell command”. Redacted to empty string on organization-owned managed profile devices."]
+        #[serde(
+            rename = "shellCmd",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shell_cmd: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AdbShellCommandEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AdbShellCommandEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AdbShellInteractiveEvent {}
+    impl ::google_field_selector::FieldSelector for AdbShellInteractiveEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AdbShellInteractiveEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -488,6 +544,110 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ApiLevelCondition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppProcessInfo {
+        #[doc = "SHA-256 hash of the base APK, in hexadecimal format."]
+        #[serde(
+            rename = "apkSha256Hash",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub apk_sha_256_hash: ::std::option::Option<String>,
+        #[doc = "Package names of all packages that are associated with the particular user ID. In most cases, this will be a single package name, the package that has been assigned that user ID. If multiple application share a UID then all packages sharing UID will be included."]
+        #[serde(
+            rename = "packageNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package_names: ::std::option::Option<Vec<String>>,
+        #[doc = "Process ID."]
+        #[serde(
+            rename = "pid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pid: ::std::option::Option<i32>,
+        #[doc = "Process name."]
+        #[serde(
+            rename = "processName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub process_name: ::std::option::Option<String>,
+        #[doc = "SELinux policy info."]
+        #[serde(
+            rename = "seinfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub seinfo: ::std::option::Option<String>,
+        #[doc = "Process start time."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+        #[doc = "UID of the package."]
+        #[serde(
+            rename = "uid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uid: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for AppProcessInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppProcessInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AppProcessStartEvent {
+        #[doc = "Information about a process."]
+        #[serde(
+            rename = "processInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub process_info: ::std::option::Option<crate::schemas::AppProcessInfo>,
+    }
+    impl ::google_field_selector::FieldSelector for AppProcessStartEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AppProcessStartEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1345,7 +1505,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub install_type: ::std::option::Option<crate::schemas::ApplicationPolicyInstallType>,
-        #[doc = "Whether the app is allowed to lock itself in full-screen mode. DEPRECATED. Use InstallType KIOSK or kioskCustomLauncherEnabled to to configure a dedicated device."]
+        #[doc = "Whether the app is allowed to lock itself in full-screen mode. DEPRECATED. Use InstallType KIOSK or kioskCustomLauncherEnabled to configure a dedicated device."]
         #[serde(
             rename = "lockTaskAllowed",
             default,
@@ -1389,6 +1549,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub permission_grants: ::std::option::Option<Vec<crate::schemas::PermissionGrant>>,
+        #[doc = "Specifies whether the app installed in the work profile is allowed to add widgets to the home screen."]
+        #[serde(
+            rename = "workProfileWidgets",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub work_profile_widgets:
+            ::std::option::Option<crate::schemas::ApplicationPolicyWorkProfileWidgets>,
     }
     impl ::google_field_selector::FieldSelector for ApplicationPolicy {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1712,10 +1880,14 @@ pub mod schemas {
         EnableSystemApp,
         #[doc = "Grants access to managed configurations management."]
         ManagedConfigurations,
+        #[doc = "Grants access to network activity logs. Allows the delegated application to call setNetworkLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#setNetworkLoggingEnabled%28android.content.ComponentName,%20boolean%29), isNetworkLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#isNetworkLoggingEnabled%28android.content.ComponentName%29) and retrieveNetworkLogs (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#retrieveNetworkLogs%28android.content.ComponentName,%20long%29) methods. This scope can be delegated to at most one application. Supported for fully managed devices on Android 10 and above. Supported for a work profile on Android 12 and above. When delegation is supported and set, NETWORK_ACTIVITY_LOGS is ignored."]
+        NetworkActivityLogs,
         #[doc = "Grants access to package access state."]
         PackageAccess,
         #[doc = "Grants access to permission policy and permission grant state."]
         PermissionGrant,
+        #[doc = "Grants access to security logs. Allows the delegated application to call setSecurityLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#setSecurityLoggingEnabled%28android.content.ComponentName,%20boolean%29), isSecurityLoggingEnabled (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#isSecurityLoggingEnabled%28android.content.ComponentName%29), retrieveSecurityLogs (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#retrieveSecurityLogs%28android.content.ComponentName%29) and retrievePreRebootSecurityLogs (https://developer.android.com/reference/android/app/admin/DevicePolicyManager#retrievePreRebootSecurityLogs%28android.content.ComponentName%29) methods. This scope can be delegated to at most one application. Supported for fully managed devices and company-owned devices with a work profile on Android 12 and above. When delegation is supported and set, SECURITY_LOGS is ignored."]
+        SecurityLogs,
     }
     impl ApplicationPolicyDelegatedScopesItems {
         pub fn as_str(self) -> &'static str {
@@ -1729,8 +1901,12 @@ pub mod schemas {
                 ApplicationPolicyDelegatedScopesItems::ManagedConfigurations => {
                     "MANAGED_CONFIGURATIONS"
                 }
+                ApplicationPolicyDelegatedScopesItems::NetworkActivityLogs => {
+                    "NETWORK_ACTIVITY_LOGS"
+                }
                 ApplicationPolicyDelegatedScopesItems::PackageAccess => "PACKAGE_ACCESS",
                 ApplicationPolicyDelegatedScopesItems::PermissionGrant => "PERMISSION_GRANT",
+                ApplicationPolicyDelegatedScopesItems::SecurityLogs => "SECURITY_LOGS",
             }
         }
     }
@@ -1752,8 +1928,12 @@ pub mod schemas {
                 "MANAGED_CONFIGURATIONS" => {
                     ApplicationPolicyDelegatedScopesItems::ManagedConfigurations
                 }
+                "NETWORK_ACTIVITY_LOGS" => {
+                    ApplicationPolicyDelegatedScopesItems::NetworkActivityLogs
+                }
                 "PACKAGE_ACCESS" => ApplicationPolicyDelegatedScopesItems::PackageAccess,
                 "PERMISSION_GRANT" => ApplicationPolicyDelegatedScopesItems::PermissionGrant,
+                "SECURITY_LOGS" => ApplicationPolicyDelegatedScopesItems::SecurityLogs,
                 _ => return Err(()),
             })
         }
@@ -1787,8 +1967,12 @@ pub mod schemas {
                 "MANAGED_CONFIGURATIONS" => {
                     ApplicationPolicyDelegatedScopesItems::ManagedConfigurations
                 }
+                "NETWORK_ACTIVITY_LOGS" => {
+                    ApplicationPolicyDelegatedScopesItems::NetworkActivityLogs
+                }
                 "PACKAGE_ACCESS" => ApplicationPolicyDelegatedScopesItems::PackageAccess,
                 "PERMISSION_GRANT" => ApplicationPolicyDelegatedScopesItems::PermissionGrant,
+                "SECURITY_LOGS" => ApplicationPolicyDelegatedScopesItems::SecurityLogs,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1904,6 +2088,100 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ApplicationPolicyWorkProfileWidgets {
+        #[doc = "Work profile widgets are allowed. This means the application will be able to add widgets to the home screen."]
+        WorkProfileWidgetsAllowed,
+        #[doc = "Work profile widgets are disallowed. This means the application will not be able to add widgets to the home screen."]
+        WorkProfileWidgetsDisallowed,
+        #[doc = "Unspecified. Defaults to work_profile_widgets_default"]
+        WorkProfileWidgetsUnspecified,
+    }
+    impl ApplicationPolicyWorkProfileWidgets {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsAllowed => {
+                    "WORK_PROFILE_WIDGETS_ALLOWED"
+                }
+                ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsDisallowed => {
+                    "WORK_PROFILE_WIDGETS_DISALLOWED"
+                }
+                ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsUnspecified => {
+                    "WORK_PROFILE_WIDGETS_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ApplicationPolicyWorkProfileWidgets {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ApplicationPolicyWorkProfileWidgets {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ApplicationPolicyWorkProfileWidgets, ()> {
+            Ok(match s {
+                "WORK_PROFILE_WIDGETS_ALLOWED" => {
+                    ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsAllowed
+                }
+                "WORK_PROFILE_WIDGETS_DISALLOWED" => {
+                    ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsDisallowed
+                }
+                "WORK_PROFILE_WIDGETS_UNSPECIFIED" => {
+                    ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ApplicationPolicyWorkProfileWidgets {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ApplicationPolicyWorkProfileWidgets {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ApplicationPolicyWorkProfileWidgets {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "WORK_PROFILE_WIDGETS_ALLOWED" => {
+                    ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsAllowed
+                }
+                "WORK_PROFILE_WIDGETS_DISALLOWED" => {
+                    ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsDisallowed
+                }
+                "WORK_PROFILE_WIDGETS_UNSPECIFIED" => {
+                    ApplicationPolicyWorkProfileWidgets::WorkProfileWidgetsUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ApplicationPolicyWorkProfileWidgets {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ApplicationPolicyWorkProfileWidgets {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -1932,7 +2210,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "List of app events. The most recent 20 events are stored in the list."]
+        #[doc = "The list of app events which have occurred in the last 30 hours."]
         #[serde(
             rename = "events",
             default,
@@ -2236,6 +2514,58 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct BatchUsageLogEvents {
+        #[doc = "The name of the device in the form ‘enterprises/{enterpriseId}/devices/{deviceId}’"]
+        #[serde(
+            rename = "device",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device: ::std::option::Option<String>,
+        #[doc = "The device timestamp when the batch of events were collected from the device."]
+        #[serde(
+            rename = "retrievalTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub retrieval_time: ::std::option::Option<String>,
+        #[doc = "The list of UsageLogEvent that were reported by the device, sorted chronologically by the event time."]
+        #[serde(
+            rename = "usageLogEvents",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usage_log_events: ::std::option::Option<Vec<crate::schemas::UsageLogEvent>>,
+        #[doc = "The resource name of the user that owns this device in the form ‘enterprises/{enterpriseId}/users/{userId}’."]
+        #[serde(
+            rename = "user",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for BatchUsageLogEvents {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BatchUsageLogEvents {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct BlockAction {
         #[doc = "Number of days the policy is non-compliant before the device or work profile is blocked. To block access immediately, set to 0. blockAfterDays must be less than wipeAfterDays."]
         #[serde(
@@ -2350,6 +2680,127 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct CertAuthorityInstalledEvent {
+        #[doc = "Subject of the certificate."]
+        #[serde(
+            rename = "certificate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub certificate: ::std::option::Option<String>,
+        #[doc = "Whether the installation event succeeded."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+        #[doc = "The user in which the certificate install event happened. Only available for devices running Android 11 and above."]
+        #[serde(
+            rename = "userId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_id: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for CertAuthorityInstalledEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CertAuthorityInstalledEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CertAuthorityRemovedEvent {
+        #[doc = "Subject of the certificate."]
+        #[serde(
+            rename = "certificate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub certificate: ::std::option::Option<String>,
+        #[doc = "Whether the removal succeeded."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+        #[doc = "The user in which the certificate removal event occurred. Only available for devices running Android 11 and above."]
+        #[serde(
+            rename = "userId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_id: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for CertAuthorityRemovedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CertAuthorityRemovedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CertValidationFailureEvent {
+        #[doc = "The reason why certification validation failed."]
+        #[serde(
+            rename = "failureReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_reason: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CertValidationFailureEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CertValidationFailureEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ChoosePrivateKeyRule {
         #[doc = "The package names to which this rule applies. The hash of the signing certificate for each app is verified against the hash provided by Play. If no package names are specified, then the alias is provided to all apps that call KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String\\[\\],%20java.security.Principal\\[\\],%20java.lang.String,%20int,%20java.lang.String%29) or any overloads (but not without calling KeyChain.choosePrivateKeyAlias, even on Android 11 and above). Any app with the same Android UID as a package specified here will have access when they call KeyChain.choosePrivateKeyAlias."]
         #[serde(
@@ -2395,7 +2846,85 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ClearAppsDataParams {
+        #[doc = "The package names of the apps whose data will be cleared when the command is executed."]
+        #[serde(
+            rename = "packageNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package_names: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ClearAppsDataParams {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClearAppsDataParams {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ClearAppsDataStatus {
+        #[doc = "The per-app results, a mapping from package names to the respective clearing result."]
+        #[serde(
+            rename = "results",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub results: ::std::option::Option<
+            ::std::collections::BTreeMap<String, crate::schemas::PerAppResult>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for ClearAppsDataStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClearAppsDataStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Command {
+        #[doc = "Parameters for the CLEAR_APP_DATA command to clear the data of specified apps from the device. See ClearAppsDataParams. If this is set, then it is suggested that type should not be set. In this case, the server automatically sets it to CLEAR_APP_DATA. It is also acceptable to explicitly set type to CLEAR_APP_DATA."]
+        #[serde(
+            rename = "clearAppsDataParams",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clear_apps_data_params: ::std::option::Option<crate::schemas::ClearAppsDataParams>,
+        #[doc = "Output only. Status of the CLEAR_APP_DATA command to clear the data of specified apps from the device. See ClearAppsDataStatus."]
+        #[serde(
+            rename = "clearAppsDataStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clear_apps_data_status: ::std::option::Option<crate::schemas::ClearAppsDataStatus>,
         #[doc = "The timestamp at which the command was created. The timestamp is automatically generated by the server."]
         #[serde(
             rename = "createTime",
@@ -2550,6 +3079,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CommandType {
+        #[doc = "Clears the application data of specified apps. This is supported on Android 9 and above. Note that an application can store data outside of its application data, for example in external storage or in a user dictionary. See also clear_apps_data_params."]
+        ClearAppData,
         #[doc = "This value is disallowed."]
         CommandTypeUnspecified,
         #[doc = "Lock the device, as if the lock screen timeout had expired."]
@@ -2564,6 +3095,7 @@ pub mod schemas {
     impl CommandType {
         pub fn as_str(self) -> &'static str {
             match self {
+                CommandType::ClearAppData => "CLEAR_APP_DATA",
                 CommandType::CommandTypeUnspecified => "COMMAND_TYPE_UNSPECIFIED",
                 CommandType::Lock => "LOCK",
                 CommandType::Reboot => "REBOOT",
@@ -2581,6 +3113,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<CommandType, ()> {
             Ok(match s {
+                "CLEAR_APP_DATA" => CommandType::ClearAppData,
                 "COMMAND_TYPE_UNSPECIFIED" => CommandType::CommandTypeUnspecified,
                 "LOCK" => CommandType::Lock,
                 "REBOOT" => CommandType::Reboot,
@@ -2610,6 +3143,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "CLEAR_APP_DATA" => CommandType::ClearAppData,
                 "COMMAND_TYPE_UNSPECIFIED" => CommandType::CommandTypeUnspecified,
                 "LOCK" => CommandType::Lock,
                 "REBOOT" => CommandType::Reboot,
@@ -2920,6 +3454,51 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ConnectEvent {
+        #[doc = "The destination IP address of the connect call."]
+        #[serde(
+            rename = "destinationIpAddress",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destination_ip_address: ::std::option::Option<String>,
+        #[doc = "The destination port of the connect call."]
+        #[serde(
+            rename = "destinationPort",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destination_port: ::std::option::Option<i32>,
+        #[doc = "The package name of the UID that performed the connect call."]
+        #[serde(
+            rename = "packageName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ConnectEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ConnectEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ContactInfo {
         #[doc = "Email address for a point of contact, which will be used to send important announcements related to managed Google Play."]
         #[serde(
@@ -3064,6 +3643,14 @@ pub mod schemas {
         pub show_work_contacts_in_personal_profile: ::std::option::Option<
             crate::schemas::CrossProfilePoliciesShowWorkContactsInPersonalProfile,
         >,
+        #[doc = "Specifies the default behaviour for work profile widgets. If the policy does not specify work_profile_widgets for a specific application, it will behave according to the value specified here."]
+        #[serde(
+            rename = "workProfileWidgetsDefault",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub work_profile_widgets_default:
+            ::std::option::Option<crate::schemas::CrossProfilePoliciesWorkProfileWidgetsDefault>,
     }
     impl ::google_field_selector::FieldSelector for CrossProfilePolicies {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3292,6 +3879,96 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for CrossProfilePoliciesShowWorkContactsInPersonalProfile
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CrossProfilePoliciesWorkProfileWidgetsDefault {
+        #[doc = "Work profile widgets are allowed by default. This means that if the policy does not specify work_profile_widgets as WORK_PROFILE_WIDGETS_DISALLOWED for the application, it will be able to add widgets to the home screen."]
+        WorkProfileWidgetsDefaultAllowed,
+        #[doc = "Work profile widgets are disallowed by default. This means that if the policy does not specify work_profile_widgets as WORK_PROFILE_WIDGETS_ALLOWED for the application, it will be unable to add widgets to the home screen."]
+        WorkProfileWidgetsDefaultDisallowed,
+        #[doc = "Unspecified. Defaults to WORK_PROFILE_WIDGETS_DEFAULT_DISALLOWED."]
+        WorkProfileWidgetsDefaultUnspecified,
+    }
+    impl CrossProfilePoliciesWorkProfileWidgetsDefault {
+        pub fn as_str(self) -> &'static str {
+            match self { CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultAllowed => "WORK_PROFILE_WIDGETS_DEFAULT_ALLOWED" , CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultDisallowed => "WORK_PROFILE_WIDGETS_DEFAULT_DISALLOWED" , CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultUnspecified => "WORK_PROFILE_WIDGETS_DEFAULT_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CrossProfilePoliciesWorkProfileWidgetsDefault {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CrossProfilePoliciesWorkProfileWidgetsDefault {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<CrossProfilePoliciesWorkProfileWidgetsDefault, ()> {
+            Ok (match s { "WORK_PROFILE_WIDGETS_DEFAULT_ALLOWED" => CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultAllowed , "WORK_PROFILE_WIDGETS_DEFAULT_DISALLOWED" => CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultDisallowed , "WORK_PROFILE_WIDGETS_DEFAULT_UNSPECIFIED" => CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for CrossProfilePoliciesWorkProfileWidgetsDefault {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CrossProfilePoliciesWorkProfileWidgetsDefault {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CrossProfilePoliciesWorkProfileWidgetsDefault {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "WORK_PROFILE_WIDGETS_DEFAULT_ALLOWED" => CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultAllowed , "WORK_PROFILE_WIDGETS_DEFAULT_DISALLOWED" => CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultDisallowed , "WORK_PROFILE_WIDGETS_DEFAULT_UNSPECIFIED" => CrossProfilePoliciesWorkProfileWidgetsDefault :: WorkProfileWidgetsDefaultUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CrossProfilePoliciesWorkProfileWidgetsDefault {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CrossProfilePoliciesWorkProfileWidgetsDefault {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CryptoSelfTestCompletedEvent {
+        #[doc = "Whether the test succeeded."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for CryptoSelfTestCompletedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CryptoSelfTestCompletedEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4270,6 +4947,59 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DnsEvent {
+        #[doc = "The hostname that was looked up."]
+        #[serde(
+            rename = "hostname",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hostname: ::std::option::Option<String>,
+        #[doc = "The (possibly truncated) list of the IP addresses returned for DNS lookup (max 10 IPv4 or IPv6 addresses)."]
+        #[serde(
+            rename = "ipAddresses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ip_addresses: ::std::option::Option<Vec<String>>,
+        #[doc = "The package name of the UID that performed the DNS lookup."]
+        #[serde(
+            rename = "packageName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package_name: ::std::option::Option<String>,
+        #[doc = "The number of IP addresses returned from the DNS lookup event. May be higher than the amount of ip_addresses if there were too many addresses to log."]
+        #[serde(
+            rename = "totalIpAddressesReturned",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub total_ip_addresses_returned: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for DnsEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DnsEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -4314,7 +5044,7 @@ pub mod schemas {
         )]
         pub allow_personal_usage:
             ::std::option::Option<crate::schemas::EnrollmentTokenAllowPersonalUsage>,
-        #[doc = "The length of time the enrollment token is valid, ranging from 1 minute to 90 days. If not specified, the default duration is 1 hour."]
+        #[doc = "The length of time the enrollment token is valid, ranging from 1 minute to Durations.MAX_VALUE (https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/util/Durations.html#MAX_VALUE), approximately 10,000 years. If not specified, the default duration is 1 hour. Please note that if requested duration causes the resulting expiration_timestamp to exceed Timestamps.MAX_VALUE (https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/util/Timestamps.html#MAX_VALUE), then expiration_timestamp is coerced to Timestamps.MAX_VALUE."]
         #[serde(
             rename = "duration",
             default,
@@ -4749,6 +5479,68 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct FilePulledEvent {
+        #[doc = "The path of the file being pulled."]
+        #[serde(
+            rename = "filePath",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_path: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for FilePulledEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FilePulledEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct FilePushedEvent {
+        #[doc = "The path of the file being pushed."]
+        #[serde(
+            rename = "filePath",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_path: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for FilePushedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FilePushedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct FreezePeriod {
         #[doc = "The end date (inclusive) of the freeze period. Must be no later than 90 days from the start date. If the end date is earlier than the start date, the freeze period is considered wrapping year-end. Note: year must not be set. For example, {“month”: 1,“date”: 30}."]
         #[serde(
@@ -4995,6 +5787,179 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct KeyDestructionEvent {
+        #[doc = "UID of the application which owns the key."]
+        #[serde(
+            rename = "applicationUid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub application_uid: ::std::option::Option<i32>,
+        #[doc = "Alias of the key."]
+        #[serde(
+            rename = "keyAlias",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_alias: ::std::option::Option<String>,
+        #[doc = "Whether the operation was successful."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for KeyDestructionEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeyDestructionEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeyGeneratedEvent {
+        #[doc = "UID of the application which generated the key."]
+        #[serde(
+            rename = "applicationUid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub application_uid: ::std::option::Option<i32>,
+        #[doc = "Alias of the key."]
+        #[serde(
+            rename = "keyAlias",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_alias: ::std::option::Option<String>,
+        #[doc = "Whether the operation was successful."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for KeyGeneratedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeyGeneratedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeyImportEvent {
+        #[doc = "UID of the application which imported the key"]
+        #[serde(
+            rename = "applicationUid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub application_uid: ::std::option::Option<i32>,
+        #[doc = "Alias of the key."]
+        #[serde(
+            rename = "keyAlias",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_alias: ::std::option::Option<String>,
+        #[doc = "Whether the operation was successful."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for KeyImportEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeyImportEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeyIntegrityViolationEvent {
+        #[doc = "UID of the application which owns the key"]
+        #[serde(
+            rename = "applicationUid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub application_uid: ::std::option::Option<i32>,
+        #[doc = "Alias of the key."]
+        #[serde(
+            rename = "keyAlias",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_alias: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for KeyIntegrityViolationEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeyIntegrityViolationEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct KeyedAppState {
         #[doc = "The creation time of the app state on the device."]
         #[serde(
@@ -5121,6 +6086,92 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for KeyedAppStateSeverity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeyguardDismissAuthAttemptEvent {
+        #[doc = "Whether a strong form of authentication (password, PIN, or pattern) was used to unlock device."]
+        #[serde(
+            rename = "strongAuthMethodUsed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub strong_auth_method_used: ::std::option::Option<bool>,
+        #[doc = "Whether the unlock attempt was successful."]
+        #[serde(
+            rename = "success",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub success: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for KeyguardDismissAuthAttemptEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeyguardDismissAuthAttemptEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeyguardDismissedEvent {}
+    impl ::google_field_selector::FieldSelector for KeyguardDismissedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeyguardDismissedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct KeyguardSecuredEvent {}
+    impl ::google_field_selector::FieldSelector for KeyguardSecuredEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for KeyguardSecuredEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5702,7 +6753,50 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListDevicesResponse {
+    impl crate::GetNextPageToken<String> for ListDevicesResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListEnrollmentTokensResponse {
+        #[doc = "The list of enrollment tokens."]
+        #[serde(
+            rename = "enrollmentTokens",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enrollment_tokens: ::std::option::Option<Vec<crate::schemas::EnrollmentToken>>,
+        #[doc = "If there are more results, a token to retrieve next page of results."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListEnrollmentTokensResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListEnrollmentTokensResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListEnrollmentTokensResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5745,7 +6839,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListEnterprisesResponse {
+    impl crate::GetNextPageToken<String> for ListEnterprisesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5777,7 +6871,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5809,7 +6903,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPoliciesResponse {
+    impl crate::GetNextPageToken<String> for ListPoliciesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5852,9 +6946,81 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListWebAppsResponse {
+    impl crate::GetNextPageToken<String> for ListWebAppsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LogBufferSizeCriticalEvent {}
+    impl ::google_field_selector::FieldSelector for LogBufferSizeCriticalEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LogBufferSizeCriticalEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LoggingStartedEvent {}
+    impl ::google_field_selector::FieldSelector for LoggingStartedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingStartedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct LoggingStoppedEvent {}
+    impl ::google_field_selector::FieldSelector for LoggingStoppedEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LoggingStoppedEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -6104,6 +7270,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ManagedPropertyEntry {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MediaMountEvent {
+        #[doc = "Mount point."]
+        #[serde(
+            rename = "mountPoint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mount_point: ::std::option::Option<String>,
+        #[doc = "Volume label. Redacted to empty string on organization-owned managed profile devices."]
+        #[serde(
+            rename = "volumeLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub volume_label: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MediaMountEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MediaMountEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MediaUnmountEvent {
+        #[doc = "Mount point."]
+        #[serde(
+            rename = "mountPoint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub mount_point: ::std::option::Option<String>,
+        #[doc = "Volume label. Redacted to empty string on organization-owned managed profile devices."]
+        #[serde(
+            rename = "volumeLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub volume_label: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MediaUnmountEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MediaUnmountEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6390,6 +7632,22 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub setting_name: ::std::option::Option<String>,
+        #[doc = "Additional context for specific_non_compliance_reason."]
+        #[serde(
+            rename = "specificNonComplianceContext",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub specific_non_compliance_context:
+            ::std::option::Option<crate::schemas::SpecificNonComplianceContext>,
+        #[doc = "The policy-specific reason the device is not in compliance with the setting."]
+        #[serde(
+            rename = "specificNonComplianceReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub specific_non_compliance_reason:
+            ::std::option::Option<crate::schemas::NonComplianceDetailSpecificNonComplianceReason>,
     }
     impl ::google_field_selector::FieldSelector for NonComplianceDetail {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -6594,6 +7852,71 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NonComplianceDetailNonComplianceReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NonComplianceDetailSpecificNonComplianceReason {
+        #[doc = "The ONC Wi-Fi setting is not supported in the API level of the Android version running on the device. fieldPath specifies which field value is not supported. oncWifiContext is set. nonComplianceReason is set to API_LEVEL."]
+        OncWifiApiLevel,
+        #[doc = "There is an incorrect value in ONC Wi-Fi configuration. fieldPath specifies which field value is incorrect. oncWifiContext is set. nonComplianceReason is set to INVALID_VALUE."]
+        OncWifiInvalidValue,
+        #[doc = "The device or profile password has expired. passwordPoliciesContext is set. nonComplianceReason is set to USER_ACTION."]
+        PasswordPoliciesPasswordExpired,
+        #[doc = "The device password does not satisfy password requirements. passwordPoliciesContext is set. nonComplianceReason is set to USER_ACTION."]
+        PasswordPoliciesPasswordNotSufficient,
+        #[doc = "User needs to confirm credentials by entering the screen lock. Fields in specific_non_compliance_context are not set. nonComplianceReason is set to USER_ACTION."]
+        PasswordPoliciesUserCredentialsConfirmationRequired,
+        #[doc = "Specific non-compliance reason is not specified. Fields in specific_non_compliance_context are not set."]
+        SpecificNonComplianceReasonUnspecified,
+    }
+    impl NonComplianceDetailSpecificNonComplianceReason {
+        pub fn as_str(self) -> &'static str {
+            match self { NonComplianceDetailSpecificNonComplianceReason :: OncWifiApiLevel => "ONC_WIFI_API_LEVEL" , NonComplianceDetailSpecificNonComplianceReason :: OncWifiInvalidValue => "ONC_WIFI_INVALID_VALUE" , NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesPasswordExpired => "PASSWORD_POLICIES_PASSWORD_EXPIRED" , NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesPasswordNotSufficient => "PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT" , NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesUserCredentialsConfirmationRequired => "PASSWORD_POLICIES_USER_CREDENTIALS_CONFIRMATION_REQUIRED" , NonComplianceDetailSpecificNonComplianceReason :: SpecificNonComplianceReasonUnspecified => "SPECIFIC_NON_COMPLIANCE_REASON_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NonComplianceDetailSpecificNonComplianceReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NonComplianceDetailSpecificNonComplianceReason {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<NonComplianceDetailSpecificNonComplianceReason, ()> {
+            Ok (match s { "ONC_WIFI_API_LEVEL" => NonComplianceDetailSpecificNonComplianceReason :: OncWifiApiLevel , "ONC_WIFI_INVALID_VALUE" => NonComplianceDetailSpecificNonComplianceReason :: OncWifiInvalidValue , "PASSWORD_POLICIES_PASSWORD_EXPIRED" => NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesPasswordExpired , "PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT" => NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesPasswordNotSufficient , "PASSWORD_POLICIES_USER_CREDENTIALS_CONFIRMATION_REQUIRED" => NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesUserCredentialsConfirmationRequired , "SPECIFIC_NON_COMPLIANCE_REASON_UNSPECIFIED" => NonComplianceDetailSpecificNonComplianceReason :: SpecificNonComplianceReasonUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for NonComplianceDetailSpecificNonComplianceReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NonComplianceDetailSpecificNonComplianceReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NonComplianceDetailSpecificNonComplianceReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ONC_WIFI_API_LEVEL" => NonComplianceDetailSpecificNonComplianceReason :: OncWifiApiLevel , "ONC_WIFI_INVALID_VALUE" => NonComplianceDetailSpecificNonComplianceReason :: OncWifiInvalidValue , "PASSWORD_POLICIES_PASSWORD_EXPIRED" => NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesPasswordExpired , "PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT" => NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesPasswordNotSufficient , "PASSWORD_POLICIES_USER_CREDENTIALS_CONFIRMATION_REQUIRED" => NonComplianceDetailSpecificNonComplianceReason :: PasswordPoliciesUserCredentialsConfirmationRequired , "SPECIFIC_NON_COMPLIANCE_REASON_UNSPECIFIED" => NonComplianceDetailSpecificNonComplianceReason :: SpecificNonComplianceReasonUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NonComplianceDetailSpecificNonComplianceReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NonComplianceDetailSpecificNonComplianceReason {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6825,6 +8148,37 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OncWifiContext {
+        #[doc = "The GUID of non-compliant Wi-Fi configuration."]
+        #[serde(
+            rename = "wifiGuid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub wifi_guid: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for OncWifiContext {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OncWifiContext {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Operation {
         #[doc = "If the value is false, it means the operation is still in progress. If true, the operation is completed, and either error or response is available."]
@@ -6883,6 +8237,237 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OsShutdownEvent {}
+    impl ::google_field_selector::FieldSelector for OsShutdownEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OsShutdownEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OsStartupEvent {
+        #[doc = "Verified Boot state."]
+        #[serde(
+            rename = "verifiedBootState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verified_boot_state:
+            ::std::option::Option<crate::schemas::OsStartupEventVerifiedBootState>,
+        #[doc = "dm-verity mode."]
+        #[serde(
+            rename = "verityMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub verity_mode: ::std::option::Option<crate::schemas::OsStartupEventVerityMode>,
+    }
+    impl ::google_field_selector::FieldSelector for OsStartupEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OsStartupEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum OsStartupEventVerifiedBootState {
+        #[doc = "Indicates that there is a full chain of trust extending from the bootloader to verified partitions including the bootloader, boot partition, and all verified partitions."]
+        Green,
+        #[doc = "Indicates that the device may be freely modified. Device integrity is left to the user to verify out-of-band."]
+        Orange,
+        #[doc = "Unknown value."]
+        VerifiedBootStateUnspecified,
+        #[doc = "Indicates that the boot partition has been verified using the embedded certificate and the signature is valid."]
+        Yellow,
+    }
+    impl OsStartupEventVerifiedBootState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                OsStartupEventVerifiedBootState::Green => "GREEN",
+                OsStartupEventVerifiedBootState::Orange => "ORANGE",
+                OsStartupEventVerifiedBootState::VerifiedBootStateUnspecified => {
+                    "VERIFIED_BOOT_STATE_UNSPECIFIED"
+                }
+                OsStartupEventVerifiedBootState::Yellow => "YELLOW",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for OsStartupEventVerifiedBootState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for OsStartupEventVerifiedBootState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<OsStartupEventVerifiedBootState, ()> {
+            Ok(match s {
+                "GREEN" => OsStartupEventVerifiedBootState::Green,
+                "ORANGE" => OsStartupEventVerifiedBootState::Orange,
+                "VERIFIED_BOOT_STATE_UNSPECIFIED" => {
+                    OsStartupEventVerifiedBootState::VerifiedBootStateUnspecified
+                }
+                "YELLOW" => OsStartupEventVerifiedBootState::Yellow,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for OsStartupEventVerifiedBootState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for OsStartupEventVerifiedBootState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for OsStartupEventVerifiedBootState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "GREEN" => OsStartupEventVerifiedBootState::Green,
+                "ORANGE" => OsStartupEventVerifiedBootState::Orange,
+                "VERIFIED_BOOT_STATE_UNSPECIFIED" => {
+                    OsStartupEventVerifiedBootState::VerifiedBootStateUnspecified
+                }
+                "YELLOW" => OsStartupEventVerifiedBootState::Yellow,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for OsStartupEventVerifiedBootState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OsStartupEventVerifiedBootState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum OsStartupEventVerityMode {
+        #[doc = "Indicates that dm-verity is disabled on device."]
+        Disabled,
+        #[doc = "Unknown value."]
+        DmVerityModeUnspecified,
+        #[doc = "Indicates that the device will be restarted when corruption is detected."]
+        Enforcing,
+        #[doc = "Indicates that an I/O error will be returned for an attempt to read corrupted data blocks (also known as eio boot state)."]
+        IoError,
+    }
+    impl OsStartupEventVerityMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                OsStartupEventVerityMode::Disabled => "DISABLED",
+                OsStartupEventVerityMode::DmVerityModeUnspecified => "DM_VERITY_MODE_UNSPECIFIED",
+                OsStartupEventVerityMode::Enforcing => "ENFORCING",
+                OsStartupEventVerityMode::IoError => "IO_ERROR",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for OsStartupEventVerityMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for OsStartupEventVerityMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<OsStartupEventVerityMode, ()> {
+            Ok(match s {
+                "DISABLED" => OsStartupEventVerityMode::Disabled,
+                "DM_VERITY_MODE_UNSPECIFIED" => OsStartupEventVerityMode::DmVerityModeUnspecified,
+                "ENFORCING" => OsStartupEventVerityMode::Enforcing,
+                "IO_ERROR" => OsStartupEventVerityMode::IoError,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for OsStartupEventVerityMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for OsStartupEventVerityMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for OsStartupEventVerityMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DISABLED" => OsStartupEventVerityMode::Disabled,
+                "DM_VERITY_MODE_UNSPECIFIED" => OsStartupEventVerityMode::DmVerityModeUnspecified,
+                "ENFORCING" => OsStartupEventVerityMode::Enforcing,
+                "IO_ERROR" => OsStartupEventVerityMode::IoError,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for OsStartupEventVerityMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OsStartupEventVerityMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -6902,6 +8487,116 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PackageNameList {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PasswordPoliciesContext {
+        #[doc = "The scope of non-compliant password."]
+        #[serde(
+            rename = "passwordPolicyScope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password_policy_scope:
+            ::std::option::Option<crate::schemas::PasswordPoliciesContextPasswordPolicyScope>,
+    }
+    impl ::google_field_selector::FieldSelector for PasswordPoliciesContext {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PasswordPoliciesContext {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PasswordPoliciesContextPasswordPolicyScope {
+        #[doc = "The password requirements are only applied to the device."]
+        ScopeDevice,
+        #[doc = "The password requirements are only applied to the work profile."]
+        ScopeProfile,
+        #[doc = "The scope is unspecified. The password requirements are applied to the work profile for work profile devices and the whole device for fully managed or dedicated devices."]
+        ScopeUnspecified,
+    }
+    impl PasswordPoliciesContextPasswordPolicyScope {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PasswordPoliciesContextPasswordPolicyScope::ScopeDevice => "SCOPE_DEVICE",
+                PasswordPoliciesContextPasswordPolicyScope::ScopeProfile => "SCOPE_PROFILE",
+                PasswordPoliciesContextPasswordPolicyScope::ScopeUnspecified => "SCOPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PasswordPoliciesContextPasswordPolicyScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PasswordPoliciesContextPasswordPolicyScope {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<PasswordPoliciesContextPasswordPolicyScope, ()> {
+            Ok(match s {
+                "SCOPE_DEVICE" => PasswordPoliciesContextPasswordPolicyScope::ScopeDevice,
+                "SCOPE_PROFILE" => PasswordPoliciesContextPasswordPolicyScope::ScopeProfile,
+                "SCOPE_UNSPECIFIED" => PasswordPoliciesContextPasswordPolicyScope::ScopeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PasswordPoliciesContextPasswordPolicyScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PasswordPoliciesContextPasswordPolicyScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PasswordPoliciesContextPasswordPolicyScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SCOPE_DEVICE" => PasswordPoliciesContextPasswordPolicyScope::ScopeDevice,
+                "SCOPE_PROFILE" => PasswordPoliciesContextPasswordPolicyScope::ScopeProfile,
+                "SCOPE_UNSPECIFIED" => PasswordPoliciesContextPasswordPolicyScope::ScopeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PasswordPoliciesContextPasswordPolicyScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PasswordPoliciesContextPasswordPolicyScope {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7013,6 +8708,14 @@ pub mod schemas {
         )]
         pub require_password_unlock:
             ::std::option::Option<crate::schemas::PasswordRequirementsRequirePasswordUnlock>,
+        #[doc = "Controls whether a unified lock is allowed for the device and the work profile, on devices running Android 9 and above with a work profile. This can be set only if password_scope is set to SCOPE_PROFILE, the policy will be rejected otherwise. If user has not set a separate work lock and this field is set to REQUIRE_SEPARATE_WORK_LOCK, a NonComplianceDetail is reported with nonComplianceReason set to USER_ACTION."]
+        #[serde(
+            rename = "unifiedLockSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub unified_lock_settings:
+            ::std::option::Option<crate::schemas::PasswordRequirementsUnifiedLockSettings>,
     }
     impl ::google_field_selector::FieldSelector for PasswordRequirements {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -7308,6 +9011,223 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PasswordRequirementsRequirePasswordUnlock {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PasswordRequirementsUnifiedLockSettings {
+        #[doc = "A common lock for the device and the work profile is allowed."]
+        AllowUnifiedWorkAndPersonalLock,
+        #[doc = "A separate lock for the work profile is required."]
+        RequireSeparateWorkLock,
+        #[doc = "Unspecified. Defaults to ALLOW_UNIFIED_WORK_AND_PERSONAL_LOCK."]
+        UnifiedLockSettingsUnspecified,
+    }
+    impl PasswordRequirementsUnifiedLockSettings {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PasswordRequirementsUnifiedLockSettings::AllowUnifiedWorkAndPersonalLock => {
+                    "ALLOW_UNIFIED_WORK_AND_PERSONAL_LOCK"
+                }
+                PasswordRequirementsUnifiedLockSettings::RequireSeparateWorkLock => {
+                    "REQUIRE_SEPARATE_WORK_LOCK"
+                }
+                PasswordRequirementsUnifiedLockSettings::UnifiedLockSettingsUnspecified => {
+                    "UNIFIED_LOCK_SETTINGS_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PasswordRequirementsUnifiedLockSettings {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PasswordRequirementsUnifiedLockSettings {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PasswordRequirementsUnifiedLockSettings, ()> {
+            Ok(match s {
+                "ALLOW_UNIFIED_WORK_AND_PERSONAL_LOCK" => {
+                    PasswordRequirementsUnifiedLockSettings::AllowUnifiedWorkAndPersonalLock
+                }
+                "REQUIRE_SEPARATE_WORK_LOCK" => {
+                    PasswordRequirementsUnifiedLockSettings::RequireSeparateWorkLock
+                }
+                "UNIFIED_LOCK_SETTINGS_UNSPECIFIED" => {
+                    PasswordRequirementsUnifiedLockSettings::UnifiedLockSettingsUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PasswordRequirementsUnifiedLockSettings {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PasswordRequirementsUnifiedLockSettings {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PasswordRequirementsUnifiedLockSettings {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALLOW_UNIFIED_WORK_AND_PERSONAL_LOCK" => {
+                    PasswordRequirementsUnifiedLockSettings::AllowUnifiedWorkAndPersonalLock
+                }
+                "REQUIRE_SEPARATE_WORK_LOCK" => {
+                    PasswordRequirementsUnifiedLockSettings::RequireSeparateWorkLock
+                }
+                "UNIFIED_LOCK_SETTINGS_UNSPECIFIED" => {
+                    PasswordRequirementsUnifiedLockSettings::UnifiedLockSettingsUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PasswordRequirementsUnifiedLockSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PasswordRequirementsUnifiedLockSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PerAppResult {
+        #[doc = "The result of an attempt to clear the data of a single app."]
+        #[serde(
+            rename = "clearingResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clearing_result: ::std::option::Option<crate::schemas::PerAppResultClearingResult>,
+    }
+    impl ::google_field_selector::FieldSelector for PerAppResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PerAppResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PerAppResultClearingResult {
+        #[doc = "This app’s data could not be cleared because the device API level does not support this command."]
+        ApiLevel,
+        #[doc = "This app’s data could not be cleared because the app was not found."]
+        AppNotFound,
+        #[doc = "This app’s data could not be cleared because the app is protected. For example, this may apply to apps critical to the functioning of the device, such as Google Play Store."]
+        AppProtected,
+        #[doc = "Unspecified result."]
+        ClearingResultUnspecified,
+        #[doc = "This app’s data was successfully cleared."]
+        Success,
+    }
+    impl PerAppResultClearingResult {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PerAppResultClearingResult::ApiLevel => "API_LEVEL",
+                PerAppResultClearingResult::AppNotFound => "APP_NOT_FOUND",
+                PerAppResultClearingResult::AppProtected => "APP_PROTECTED",
+                PerAppResultClearingResult::ClearingResultUnspecified => {
+                    "CLEARING_RESULT_UNSPECIFIED"
+                }
+                PerAppResultClearingResult::Success => "SUCCESS",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PerAppResultClearingResult {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PerAppResultClearingResult {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PerAppResultClearingResult, ()> {
+            Ok(match s {
+                "API_LEVEL" => PerAppResultClearingResult::ApiLevel,
+                "APP_NOT_FOUND" => PerAppResultClearingResult::AppNotFound,
+                "APP_PROTECTED" => PerAppResultClearingResult::AppProtected,
+                "CLEARING_RESULT_UNSPECIFIED" => {
+                    PerAppResultClearingResult::ClearingResultUnspecified
+                }
+                "SUCCESS" => PerAppResultClearingResult::Success,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PerAppResultClearingResult {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PerAppResultClearingResult {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PerAppResultClearingResult {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "API_LEVEL" => PerAppResultClearingResult::ApiLevel,
+                "APP_NOT_FOUND" => PerAppResultClearingResult::AppNotFound,
+                "APP_PROTECTED" => PerAppResultClearingResult::AppProtected,
+                "CLEARING_RESULT_UNSPECIFIED" => {
+                    PerAppResultClearingResult::ClearingResultUnspecified
+                }
+                "SUCCESS" => PerAppResultClearingResult::Success,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PerAppResultClearingResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PerAppResultClearingResult {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -7623,7 +9543,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account_types_with_management_disabled: ::std::option::Option<Vec<String>>,
-        #[doc = "Whether camera is disabled."]
+        #[doc = "If true, the camera is disabled on the personal profile."]
         #[serde(
             rename = "cameraDisabled",
             default,
@@ -7653,7 +9573,7 @@ pub mod schemas {
         )]
         pub personal_play_store_mode:
             ::std::option::Option<crate::schemas::PersonalUsagePoliciesPersonalPlayStoreMode>,
-        #[doc = "Whether screen capture is disabled."]
+        #[doc = "If true, screen capture is disabled for all users."]
         #[serde(
             rename = "screenCaptureDisabled",
             default,
@@ -7999,7 +9919,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub install_unknown_sources_allowed: ::std::option::Option<bool>,
-        #[doc = "Whether the keyguard is disabled."]
+        #[doc = "If true, this disables the Lock Screen (https://source.android.com/docs/core/display/multi_display/lock-screen) for primary and/or secondary displays."]
         #[serde(
             rename = "keyguardDisabled",
             default,
@@ -8143,7 +10063,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub password_policies: ::std::option::Option<Vec<crate::schemas::PasswordRequirements>>,
-        #[doc = "Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use passwordPolicies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here."]
+        #[doc = "Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use passwordPolicies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here. unified_lock_settings cannot be used here."]
         #[serde(
             rename = "passwordRequirements",
             default,
@@ -8266,7 +10186,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub setup_actions: ::std::option::Option<Vec<crate::schemas::SetupAction>>,
-        #[doc = "Whether location sharing is disabled."]
+        #[doc = "Whether location sharing is disabled. share_location_disabled is supported for both fully managed devices and personally owned work profiles."]
         #[serde(
             rename = "shareLocationDisabled",
             default,
@@ -8331,7 +10251,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tethering_config_disabled: ::std::option::Option<bool>,
-        #[doc = "Whether user uninstallation of applications is disabled."]
+        #[doc = "Whether user uninstallation of applications is disabled. This prevents apps from being uninstalled, even those removed using applications"]
         #[serde(
             rename = "uninstallAppsDisabled",
             default,
@@ -8352,7 +10272,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub usage_log: ::std::option::Option<crate::schemas::UsageLog>,
-        #[doc = "Whether transferring files over USB is disabled."]
+        #[doc = "Whether transferring files over USB is disabled. This is supported only on company-owned devices."]
         #[serde(
             rename = "usbFileTransferDisabled",
             default,
@@ -8381,7 +10301,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vpn_config_disabled: ::std::option::Option<bool>,
-        #[doc = "Whether configuring Wi-Fi access points is disabled.Note: If a network connection can’t be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled)."]
+        #[doc = "Whether configuring Wi-Fi access points is disabled. Note: If a network connection can’t be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled)."]
         #[serde(
             rename = "wifiConfigDisabled",
             default,
@@ -9516,7 +11436,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PolicyEnforcementRule {
-        #[doc = "An action to block access to apps and data on a fully managed device or in a work profile. This action also triggers a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified."]
+        #[doc = "An action to block access to apps and data on a company owned device or in a work profile. This action also triggers a user-facing notification with information (where possible) on how to correct the compliance issue. Note: wipeAction must also be specified."]
         #[serde(
             rename = "blockAction",
             default,
@@ -9530,7 +11450,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub setting_name: ::std::option::Option<String>,
-        #[doc = "An action to reset a fully managed device or delete a work profile. Note: blockAction must also be specified."]
+        #[doc = "An action to reset a company owned device or delete a work profile. Note: blockAction must also be specified."]
         #[serde(
             rename = "wipeAction",
             default,
@@ -9880,6 +11800,51 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RemoteLockEvent {
+        #[doc = "Package name of the admin app requesting the change."]
+        #[serde(
+            rename = "adminPackageName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub admin_package_name: ::std::option::Option<String>,
+        #[doc = "User ID of the admin app from the which the change was requested."]
+        #[serde(
+            rename = "adminUserId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub admin_user_id: ::std::option::Option<i32>,
+        #[doc = "User ID in which the change was requested in."]
+        #[serde(
+            rename = "targetUserId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_user_id: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for RemoteLockEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoteLockEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SecurityPosture {
         #[doc = "Device’s security posture value."]
         #[serde(
@@ -10007,7 +11972,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<crate::schemas::UserFacingMessage>,
-        #[doc = "An action to launch an app. The app will be launched with an intent containing an extra with key com.google.android.apps.work.clouddpc.EXTRA_LAUNCHED_AS_SETUP_ACTION set to the boolean value true to indicate that this is a setup action flow."]
+        #[doc = "An action to launch an app. The app will be launched with an intent containing an extra with key com.google.android.apps.work.clouddpc.EXTRA_LAUNCHED_AS_SETUP_ACTION set to the boolean value true to indicate that this is a setup action flow. If SetupAction references an app, the corresponding installType in the application policy must be set as REQUIRED_FOR_SETUP or said setup will fail."]
         #[serde(
             rename = "launchApp",
             default,
@@ -10308,6 +12273,45 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SoftwareInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SpecificNonComplianceContext {
+        #[doc = "Additional context for non-compliance related to Wi-Fi configuration. See ONC_WIFI_INVALID_VALUE and ONC_WIFI_API_LEVEL"]
+        #[serde(
+            rename = "oncWifiContext",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub onc_wifi_context: ::std::option::Option<crate::schemas::OncWifiContext>,
+        #[doc = "Additional context for non-compliance related to password policies. See PASSWORD_POLICIES_PASSWORD_EXPIRED and PASSWORD_POLICIES_PASSWORD_NOT_SUFFICIENT."]
+        #[serde(
+            rename = "passwordPoliciesContext",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password_policies_context:
+            ::std::option::Option<crate::schemas::PasswordPoliciesContext>,
+    }
+    impl ::google_field_selector::FieldSelector for SpecificNonComplianceContext {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SpecificNonComplianceContext {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -10832,9 +12836,9 @@ pub mod schemas {
     pub enum UsageLogEnabledLogTypesItems {
         #[doc = "This value is not used."]
         LogTypeUnspecified,
-        #[doc = "Enable logging of on-device network events, like DNS lookups and TCP connections. See event for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged."]
+        #[doc = "Enable logging of on-device network events, like DNS lookups and TCP connections. See UsageLogEvent for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged. Can be overridden by the application delegated scope NETWORK_ACTIVITY_LOGS"]
         NetworkActivityLogs,
-        #[doc = "Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See event for a complete description of the logged security events. Supported for fully managed devices on Android 7.0 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged."]
+        #[doc = "Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See UsageLogEvent for a complete description of the logged security events. Supported for fully managed devices on Android 7 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged. Can be overridden by the application delegated scope SECURITY_LOGS"]
         SecurityLogs,
     }
     impl UsageLogEnabledLogTypesItems {
@@ -10908,9 +12912,9 @@ pub mod schemas {
     pub enum UsageLogUploadOnCellularAllowedItems {
         #[doc = "This value is not used."]
         LogTypeUnspecified,
-        #[doc = "Enable logging of on-device network events, like DNS lookups and TCP connections. See event for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged."]
+        #[doc = "Enable logging of on-device network events, like DNS lookups and TCP connections. See UsageLogEvent for a complete description of the logged network events. Supported for fully managed devices on Android 8 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only network events from the work profile are logged. Can be overridden by the application delegated scope NETWORK_ACTIVITY_LOGS"]
         NetworkActivityLogs,
-        #[doc = "Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See event for a complete description of the logged security events. Supported for fully managed devices on Android 7.0 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged."]
+        #[doc = "Enable logging of on-device security events, like when the device password is incorrectly entered or removable storage is mounted. See UsageLogEvent for a complete description of the logged security events. Supported for fully managed devices on Android 7 and above. Supported for company-owned devices with a work profile on Android 12 and above, on which only security events from the work profile are logged. Can be overridden by the application delegated scope SECURITY_LOGS"]
         SecurityLogs,
     }
     impl UsageLogUploadOnCellularAllowedItems {
@@ -10982,6 +12986,456 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UsageLogUploadOnCellularAllowedItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UsageLogEvent {
+        #[doc = "A shell command was issued over ADB via “adb shell command”. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "adbShellCommandEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub adb_shell_command_event: ::std::option::Option<crate::schemas::AdbShellCommandEvent>,
+        #[doc = "An ADB interactive shell was opened via “adb shell”. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "adbShellInteractiveEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub adb_shell_interactive_event:
+            ::std::option::Option<crate::schemas::AdbShellInteractiveEvent>,
+        #[doc = "An app process was started. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "appProcessStartEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub app_process_start_event: ::std::option::Option<crate::schemas::AppProcessStartEvent>,
+        #[doc = "A new root certificate was installed into the system’s trusted credential storage. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "certAuthorityInstalledEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cert_authority_installed_event:
+            ::std::option::Option<crate::schemas::CertAuthorityInstalledEvent>,
+        #[doc = "A root certificate was removed from the system’s trusted credential storage. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "certAuthorityRemovedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cert_authority_removed_event:
+            ::std::option::Option<crate::schemas::CertAuthorityRemovedEvent>,
+        #[doc = "An X.509v3 certificate failed to validate, currently this validation is performed on the Wi-FI access point and failure may be due to a mismatch upon server certificate validation. However it may in the future include other validation events of an X.509v3 certificate. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "certValidationFailureEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cert_validation_failure_event:
+            ::std::option::Option<crate::schemas::CertValidationFailureEvent>,
+        #[doc = "A TCP connect event was initiated through the standard network stack. Part of NETWORK_ACTIVITY_LOGS."]
+        #[serde(
+            rename = "connectEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connect_event: ::std::option::Option<crate::schemas::ConnectEvent>,
+        #[doc = "Validates whether Android’s built-in cryptographic library (BoringSSL) is valid. Should always succeed on device boot, if it fails, the device should be considered untrusted. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "cryptoSelfTestCompletedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub crypto_self_test_completed_event:
+            ::std::option::Option<crate::schemas::CryptoSelfTestCompletedEvent>,
+        #[doc = "A DNS lookup event was initiated through the standard network stack. Part of NETWORK_ACTIVITY_LOGS."]
+        #[serde(
+            rename = "dnsEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dns_event: ::std::option::Option<crate::schemas::DnsEvent>,
+        #[doc = "Unique id of the event."]
+        #[serde(
+            rename = "eventId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub event_id: ::std::option::Option<i64>,
+        #[doc = "Device timestamp when the event was logged."]
+        #[serde(
+            rename = "eventTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_time: ::std::option::Option<String>,
+        #[doc = "The particular usage log event type that was reported on the device. Use this to determine which event field to access."]
+        #[serde(
+            rename = "eventType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_type: ::std::option::Option<crate::schemas::UsageLogEventEventType>,
+        #[doc = "A file was downloaded from the device. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "filePulledEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_pulled_event: ::std::option::Option<crate::schemas::FilePulledEvent>,
+        #[doc = "A file was uploaded onto the device. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "filePushedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_pushed_event: ::std::option::Option<crate::schemas::FilePushedEvent>,
+        #[doc = "A cryptographic key including user installed, admin installed and system maintained private key is removed from the device either by the user or management. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "keyDestructionEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_destruction_event: ::std::option::Option<crate::schemas::KeyDestructionEvent>,
+        #[doc = "A cryptographic key including user installed, admin installed and system maintained private key is installed on the device either by the user or management. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "keyGeneratedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_generated_event: ::std::option::Option<crate::schemas::KeyGeneratedEvent>,
+        #[doc = "A cryptographic key including user installed, admin installed and system maintained private key is imported on the device either by the user or management. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "keyImportEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_import_event: ::std::option::Option<crate::schemas::KeyImportEvent>,
+        #[doc = "A cryptographic key including user installed, admin installed and system maintained private key is determined to be corrupted due to storage corruption, hardware failure or some OS issue. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "keyIntegrityViolationEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub key_integrity_violation_event:
+            ::std::option::Option<crate::schemas::KeyIntegrityViolationEvent>,
+        #[doc = "An attempt was made to unlock the device. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "keyguardDismissAuthAttemptEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keyguard_dismiss_auth_attempt_event:
+            ::std::option::Option<crate::schemas::KeyguardDismissAuthAttemptEvent>,
+        #[doc = "The keyguard was dismissed. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "keyguardDismissedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keyguard_dismissed_event: ::std::option::Option<crate::schemas::KeyguardDismissedEvent>,
+        #[doc = "The device was locked either by user or timeout. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "keyguardSecuredEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub keyguard_secured_event: ::std::option::Option<crate::schemas::KeyguardSecuredEvent>,
+        #[doc = "The audit log buffer has reached 90% of its capacity, therefore older events may be dropped. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "logBufferSizeCriticalEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_buffer_size_critical_event:
+            ::std::option::Option<crate::schemas::LogBufferSizeCriticalEvent>,
+        #[doc = "usageLog policy has been enabled. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "loggingStartedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_started_event: ::std::option::Option<crate::schemas::LoggingStartedEvent>,
+        #[doc = "usageLog policy has been disabled. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "loggingStoppedEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_stopped_event: ::std::option::Option<crate::schemas::LoggingStoppedEvent>,
+        #[doc = "Removable media was mounted. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "mediaMountEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub media_mount_event: ::std::option::Option<crate::schemas::MediaMountEvent>,
+        #[doc = "Removable media was unmounted. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "mediaUnmountEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub media_unmount_event: ::std::option::Option<crate::schemas::MediaUnmountEvent>,
+        #[doc = "Device was shutdown. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "osShutdownEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub os_shutdown_event: ::std::option::Option<crate::schemas::OsShutdownEvent>,
+        #[doc = "Device was started. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "osStartupEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub os_startup_event: ::std::option::Option<crate::schemas::OsStartupEvent>,
+        #[doc = "The device or profile has been remotely locked via the LOCK command. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "remoteLockEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remote_lock_event: ::std::option::Option<crate::schemas::RemoteLockEvent>,
+        #[doc = "The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Part of SECURITY_LOGS."]
+        #[serde(
+            rename = "wipeFailureEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub wipe_failure_event: ::std::option::Option<crate::schemas::WipeFailureEvent>,
+    }
+    impl ::google_field_selector::FieldSelector for UsageLogEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UsageLogEvent {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum UsageLogEventEventType {
+        #[doc = "Indicates adb_shell_command_event has been set."]
+        AdbShellCommand,
+        #[doc = "Indicates adb_shell_interactive_event has been set."]
+        AdbShellInteractive,
+        #[doc = "Indicates app_process_start_event has been set."]
+        AppProcessStart,
+        #[doc = "Indicates cert_authority_installed_event has been set."]
+        CertAuthorityInstalled,
+        #[doc = "Indicates cert_authority_removed_event has been set."]
+        CertAuthorityRemoved,
+        #[doc = "Indicates cert_validation_failure_event has been set."]
+        CertValidationFailure,
+        #[doc = "Indicates connect_event has been set."]
+        Connect,
+        #[doc = "Indicates crypto_self_test_completed_event has been set."]
+        CryptoSelfTestCompleted,
+        #[doc = "Indicates dns_event has been set."]
+        Dns,
+        #[doc = "This value is not used"]
+        EventTypeUnspecified,
+        #[doc = "Indicates file_pulled_event has been set."]
+        FilePulled,
+        #[doc = "Indicates file_pushed_event has been set."]
+        FilePushed,
+        #[doc = "Indicates key_destruction_event has been set."]
+        KeyDestruction,
+        #[doc = "Indicates key_generated_event has been set."]
+        KeyGenerated,
+        #[doc = "Indicates key_import_event has been set."]
+        KeyImport,
+        #[doc = "Indicates key_integrity_violation_event has been set."]
+        KeyIntegrityViolation,
+        #[doc = "Indicates keyguard_dismiss_auth_attempt_event has been set."]
+        KeyguardDismissAuthAttempt,
+        #[doc = "Indicates keyguard_dismissed_event has been set."]
+        KeyguardDismissed,
+        #[doc = "Indicates keyguard_secured_event has been set."]
+        KeyguardSecured,
+        #[doc = "Indicates log_buffer_size_critical_event has been set."]
+        LogBufferSizeCritical,
+        #[doc = "Indicates logging_started_event has been set."]
+        LoggingStarted,
+        #[doc = "Indicates logging_stopped_event has been set."]
+        LoggingStopped,
+        #[doc = "Indicates media_mount_event has been set."]
+        MediaMount,
+        #[doc = "Indicates media_unmount_event has been set."]
+        MediaUnmount,
+        #[doc = "Indicates os_shutdown_event has been set."]
+        OsShutdown,
+        #[doc = "Indicates os_startup_event has been set."]
+        OsStartup,
+        #[doc = "Indicates remote_lock_event has been set."]
+        RemoteLock,
+        #[doc = "Indicates wipe_failure_event has been set."]
+        WipeFailure,
+    }
+    impl UsageLogEventEventType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                UsageLogEventEventType::AdbShellCommand => "ADB_SHELL_COMMAND",
+                UsageLogEventEventType::AdbShellInteractive => "ADB_SHELL_INTERACTIVE",
+                UsageLogEventEventType::AppProcessStart => "APP_PROCESS_START",
+                UsageLogEventEventType::CertAuthorityInstalled => "CERT_AUTHORITY_INSTALLED",
+                UsageLogEventEventType::CertAuthorityRemoved => "CERT_AUTHORITY_REMOVED",
+                UsageLogEventEventType::CertValidationFailure => "CERT_VALIDATION_FAILURE",
+                UsageLogEventEventType::Connect => "CONNECT",
+                UsageLogEventEventType::CryptoSelfTestCompleted => "CRYPTO_SELF_TEST_COMPLETED",
+                UsageLogEventEventType::Dns => "DNS",
+                UsageLogEventEventType::EventTypeUnspecified => "EVENT_TYPE_UNSPECIFIED",
+                UsageLogEventEventType::FilePulled => "FILE_PULLED",
+                UsageLogEventEventType::FilePushed => "FILE_PUSHED",
+                UsageLogEventEventType::KeyDestruction => "KEY_DESTRUCTION",
+                UsageLogEventEventType::KeyGenerated => "KEY_GENERATED",
+                UsageLogEventEventType::KeyImport => "KEY_IMPORT",
+                UsageLogEventEventType::KeyIntegrityViolation => "KEY_INTEGRITY_VIOLATION",
+                UsageLogEventEventType::KeyguardDismissAuthAttempt => {
+                    "KEYGUARD_DISMISS_AUTH_ATTEMPT"
+                }
+                UsageLogEventEventType::KeyguardDismissed => "KEYGUARD_DISMISSED",
+                UsageLogEventEventType::KeyguardSecured => "KEYGUARD_SECURED",
+                UsageLogEventEventType::LogBufferSizeCritical => "LOG_BUFFER_SIZE_CRITICAL",
+                UsageLogEventEventType::LoggingStarted => "LOGGING_STARTED",
+                UsageLogEventEventType::LoggingStopped => "LOGGING_STOPPED",
+                UsageLogEventEventType::MediaMount => "MEDIA_MOUNT",
+                UsageLogEventEventType::MediaUnmount => "MEDIA_UNMOUNT",
+                UsageLogEventEventType::OsShutdown => "OS_SHUTDOWN",
+                UsageLogEventEventType::OsStartup => "OS_STARTUP",
+                UsageLogEventEventType::RemoteLock => "REMOTE_LOCK",
+                UsageLogEventEventType::WipeFailure => "WIPE_FAILURE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for UsageLogEventEventType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for UsageLogEventEventType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<UsageLogEventEventType, ()> {
+            Ok(match s {
+                "ADB_SHELL_COMMAND" => UsageLogEventEventType::AdbShellCommand,
+                "ADB_SHELL_INTERACTIVE" => UsageLogEventEventType::AdbShellInteractive,
+                "APP_PROCESS_START" => UsageLogEventEventType::AppProcessStart,
+                "CERT_AUTHORITY_INSTALLED" => UsageLogEventEventType::CertAuthorityInstalled,
+                "CERT_AUTHORITY_REMOVED" => UsageLogEventEventType::CertAuthorityRemoved,
+                "CERT_VALIDATION_FAILURE" => UsageLogEventEventType::CertValidationFailure,
+                "CONNECT" => UsageLogEventEventType::Connect,
+                "CRYPTO_SELF_TEST_COMPLETED" => UsageLogEventEventType::CryptoSelfTestCompleted,
+                "DNS" => UsageLogEventEventType::Dns,
+                "EVENT_TYPE_UNSPECIFIED" => UsageLogEventEventType::EventTypeUnspecified,
+                "FILE_PULLED" => UsageLogEventEventType::FilePulled,
+                "FILE_PUSHED" => UsageLogEventEventType::FilePushed,
+                "KEY_DESTRUCTION" => UsageLogEventEventType::KeyDestruction,
+                "KEY_GENERATED" => UsageLogEventEventType::KeyGenerated,
+                "KEY_IMPORT" => UsageLogEventEventType::KeyImport,
+                "KEY_INTEGRITY_VIOLATION" => UsageLogEventEventType::KeyIntegrityViolation,
+                "KEYGUARD_DISMISS_AUTH_ATTEMPT" => {
+                    UsageLogEventEventType::KeyguardDismissAuthAttempt
+                }
+                "KEYGUARD_DISMISSED" => UsageLogEventEventType::KeyguardDismissed,
+                "KEYGUARD_SECURED" => UsageLogEventEventType::KeyguardSecured,
+                "LOG_BUFFER_SIZE_CRITICAL" => UsageLogEventEventType::LogBufferSizeCritical,
+                "LOGGING_STARTED" => UsageLogEventEventType::LoggingStarted,
+                "LOGGING_STOPPED" => UsageLogEventEventType::LoggingStopped,
+                "MEDIA_MOUNT" => UsageLogEventEventType::MediaMount,
+                "MEDIA_UNMOUNT" => UsageLogEventEventType::MediaUnmount,
+                "OS_SHUTDOWN" => UsageLogEventEventType::OsShutdown,
+                "OS_STARTUP" => UsageLogEventEventType::OsStartup,
+                "REMOTE_LOCK" => UsageLogEventEventType::RemoteLock,
+                "WIPE_FAILURE" => UsageLogEventEventType::WipeFailure,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for UsageLogEventEventType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for UsageLogEventEventType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for UsageLogEventEventType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ADB_SHELL_COMMAND" => UsageLogEventEventType::AdbShellCommand,
+                "ADB_SHELL_INTERACTIVE" => UsageLogEventEventType::AdbShellInteractive,
+                "APP_PROCESS_START" => UsageLogEventEventType::AppProcessStart,
+                "CERT_AUTHORITY_INSTALLED" => UsageLogEventEventType::CertAuthorityInstalled,
+                "CERT_AUTHORITY_REMOVED" => UsageLogEventEventType::CertAuthorityRemoved,
+                "CERT_VALIDATION_FAILURE" => UsageLogEventEventType::CertValidationFailure,
+                "CONNECT" => UsageLogEventEventType::Connect,
+                "CRYPTO_SELF_TEST_COMPLETED" => UsageLogEventEventType::CryptoSelfTestCompleted,
+                "DNS" => UsageLogEventEventType::Dns,
+                "EVENT_TYPE_UNSPECIFIED" => UsageLogEventEventType::EventTypeUnspecified,
+                "FILE_PULLED" => UsageLogEventEventType::FilePulled,
+                "FILE_PUSHED" => UsageLogEventEventType::FilePushed,
+                "KEY_DESTRUCTION" => UsageLogEventEventType::KeyDestruction,
+                "KEY_GENERATED" => UsageLogEventEventType::KeyGenerated,
+                "KEY_IMPORT" => UsageLogEventEventType::KeyImport,
+                "KEY_INTEGRITY_VIOLATION" => UsageLogEventEventType::KeyIntegrityViolation,
+                "KEYGUARD_DISMISS_AUTH_ATTEMPT" => {
+                    UsageLogEventEventType::KeyguardDismissAuthAttempt
+                }
+                "KEYGUARD_DISMISSED" => UsageLogEventEventType::KeyguardDismissed,
+                "KEYGUARD_SECURED" => UsageLogEventEventType::KeyguardSecured,
+                "LOG_BUFFER_SIZE_CRITICAL" => UsageLogEventEventType::LogBufferSizeCritical,
+                "LOGGING_STARTED" => UsageLogEventEventType::LoggingStarted,
+                "LOGGING_STOPPED" => UsageLogEventEventType::LoggingStopped,
+                "MEDIA_MOUNT" => UsageLogEventEventType::MediaMount,
+                "MEDIA_UNMOUNT" => UsageLogEventEventType::MediaUnmount,
+                "OS_SHUTDOWN" => UsageLogEventEventType::OsShutdown,
+                "OS_STARTUP" => UsageLogEventEventType::OsStartup,
+                "REMOTE_LOCK" => UsageLogEventEventType::RemoteLock,
+                "WIPE_FAILURE" => UsageLogEventEventType::WipeFailure,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for UsageLogEventEventType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UsageLogEventEventType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -11507,6 +13961,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for WipeAction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct WipeFailureEvent {}
+    impl ::google_field_selector::FieldSelector for WipeFailureEvent {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for WipeFailureEvent {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -12574,7 +15052,7 @@ pub mod resources {
                     #[serde(rename = "enterprises")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -12607,7 +15085,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -12657,7 +15135,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -12766,12 +15244,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -13249,7 +15728,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Deletes a device. This operation wipes the device."]
+                #[doc = "Deletes a device. This operation wipes the device. Deleted devices do not show up in enterprises.devices.list calls and a 404 is returned from enterprises.devices.get."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
                         reqwest: &self.reqwest,
@@ -13270,7 +15749,7 @@ pub mod resources {
                         wipe_reason_message: None,
                     }
                 }
-                #[doc = "Gets a device."]
+                #[doc = "Gets a device. Deleted devices will respond with a 404 error."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -13313,7 +15792,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists devices for a given enterprise."]
+                #[doc = "Lists devices for a given enterprise. Deleted devices are not returned in the response."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -13995,7 +16474,7 @@ pub mod resources {
                         #[serde(rename = "devices")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -14030,7 +16509,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -14080,7 +16559,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -14195,12 +16674,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -15074,7 +17554,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -15109,7 +17589,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -15159,7 +17639,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -15277,12 +17757,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -15299,7 +17780,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates an enrollment token for a given enterprise."]
+                #[doc = "Creates an enrollment token for a given enterprise. It’s up to the caller’s responsibility to manage the lifecycle of newly created tokens and deleting them when they’re not intended to be used anymore. Once an enrollment token has been created, it’s not possible to retrieve the token’s content anymore using AM API. It is recommended for EMMs to securely store the token if it’s intended to be reused."]
                 pub fn create(
                     &self,
                     request: crate::schemas::EnrollmentToken,
@@ -15340,6 +17821,46 @@ pub mod resources {
                         upload_type: None,
                         xgafv: None,
                         name: name.into(),
+                    }
+                }
+                #[doc = "Gets an active, unexpired enrollment token. Only a partial view of EnrollmentToken is returned: all the fields but name and expiration_timestamp are empty. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it’s recommended to delete active enrollment tokens as soon as they’re not intended to be used anymore."]
+                pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                    GetRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Lists active, unexpired enrollment tokens for a given enterprise. The list items contain only a partial view of EnrollmentToken: all the fields but name and expiration_timestamp are empty. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it’s recommended to delete active enrollment tokens as soon as they’re not intended to be used anymore."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        page_size: None,
+                        page_token: None,
                     }
                 }
             }
@@ -15664,6 +18185,502 @@ pub mod resources {
                         .map_err(|err| crate::Error::OAuth2(err))?;
                     req = req.bearer_auth(access_token);
                     Ok(req)
+                }
+            }
+            #[doc = "Created via [EnrollmentTokensActions::get()](struct.EnrollmentTokensActions.html#method.get)"]
+            #[derive(Debug, Clone)]
+            pub struct GetRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> GetRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::EnrollmentToken, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::EnrollmentToken, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidmanagement.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [EnrollmentTokensActions::list()](struct.EnrollmentTokensActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                page_size: ::std::option::Option<i32>,
+                page_token: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The requested page size. The service may return fewer than this value. If unspecified, at most 10 items will be returned. The maximum value is 100; values above 100 will be coerced to 100."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "A token identifying a page of results returned by the server."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = "\nExecute the request and yield each item in the `enrollmentTokens` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                pub fn stream_enrollment_tokens<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_enrollment_tokens_with_fields(fields)
+                }
+                #[doc = "\nExecute the request and yield each item in the `enrollmentTokens` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                pub fn stream_enrollment_tokens_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::EnrollmentToken, crate::Error>,
+                > + 'a {
+                    self.stream_enrollment_tokens_with_fields(None::<String>)
+                }
+                #[doc = "\nExecute the request and yield each item in the `enrollmentTokens` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                pub fn stream_enrollment_tokens_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::EnrollmentToken, crate::Error>,
+                > + 'a {
+                    self.stream_enrollment_tokens_with_fields(Some("*"))
+                }
+                #[doc = "\nExecute the request and yield each item in the `enrollmentTokens` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                pub fn stream_enrollment_tokens_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                    struct Page<T> {
+                        #[serde(rename = "nextPageToken")]
+                        pub next_page_token: ::std::option::Option<String>,
+                        #[serde(rename = "enrollmentTokens")]
+                        pub items: Vec<T>,
+                    }
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
+                        fn next_page_token(&self) -> ::std::option::Option<String> {
+                            self.next_page_token.to_owned()
+                        }
+                    }
+                    impl<T> crate::stream::IntoPageItems for Page<T> {
+                        type Items = Vec<T>;
+                        fn into_page_items(self) -> Self::Items {
+                            self.items
+                        }
+                    }
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "enrollmentTokens").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::stream::page_item_stream::<_, Page<T>>(self)
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                pub fn stream<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String>
+                        + ::serde::de::DeserializeOwned
+                        + ::google_field_selector::FieldSelector
+                        + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_with_fields(fields)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the default set of fields from the server."]
+                pub fn stream_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::ListEnrollmentTokensResponse, crate::Error>,
+                > + 'a {
+                    self.stream_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests all fields from the server."]
+                pub fn stream_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::ListEnrollmentTokensResponse, crate::Error>,
+                > + 'a {
+                    self.stream_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                pub fn stream_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::stream::page_stream(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::ListEnrollmentTokensResponse, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::ListEnrollmentTokensResponse, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidmanagement.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/enrollmentTokens");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[async_trait::async_trait]
+            impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                {
+                    self._execute().await
                 }
             }
         }
@@ -16203,7 +19220,7 @@ pub mod resources {
                         #[serde(rename = "policies")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -16238,7 +19255,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -16288,7 +19305,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -16403,12 +19420,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -17306,7 +20324,7 @@ pub mod resources {
                         #[serde(rename = "webApps")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -17341,7 +20359,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -17391,7 +20409,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -17506,12 +20524,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -18368,16 +21387,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -18397,13 +21418,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -18411,7 +21435,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -18438,7 +21462,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [agents](resources/projects/locations/agents/struct.AgentsActions.html)\n      * [*create*](resources/projects/locations/agents/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/agents/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/agents/struct.GetRequestBuilder.html), [*getValidationResult*](resources/projects/locations/agents/struct.GetValidationResultRequestBuilder.html), [*list*](resources/projects/locations/agents/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/struct.PatchRequestBuilder.html), [*restore*](resources/projects/locations/agents/struct.RestoreRequestBuilder.html), [*validate*](resources/projects/locations/agents/struct.ValidateRequestBuilder.html)\n      * [changelogs](resources/projects/locations/agents/changelogs/struct.ChangelogsActions.html)\n        * [*get*](resources/projects/locations/agents/changelogs/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/changelogs/struct.ListRequestBuilder.html)\n      * [entity_types](resources/projects/locations/agents/entity_types/struct.EntityTypesActions.html)\n        * [*create*](resources/projects/locations/agents/entity_types/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/entity_types/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/entity_types/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/entity_types/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/entity_types/struct.PatchRequestBuilder.html)\n      * [environments](resources/projects/locations/agents/environments/struct.EnvironmentsActions.html)\n        * [*create*](resources/projects/locations/agents/environments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/environments/struct.DeleteRequestBuilder.html), [*deployFlow*](resources/projects/locations/agents/environments/struct.DeployFlowRequestBuilder.html), [*get*](resources/projects/locations/agents/environments/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/environments/struct.ListRequestBuilder.html), [*lookupEnvironmentHistory*](resources/projects/locations/agents/environments/struct.LookupEnvironmentHistoryRequestBuilder.html), [*patch*](resources/projects/locations/agents/environments/struct.PatchRequestBuilder.html), [*runContinuousTest*](resources/projects/locations/agents/environments/struct.RunContinuousTestRequestBuilder.html)\n        * [continuous_test_results](resources/projects/locations/agents/environments/continuous_test_results/struct.ContinuousTestResultsActions.html)\n          * [*list*](resources/projects/locations/agents/environments/continuous_test_results/struct.ListRequestBuilder.html)\n        * [deployments](resources/projects/locations/agents/environments/deployments/struct.DeploymentsActions.html)\n          * [*get*](resources/projects/locations/agents/environments/deployments/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/environments/deployments/struct.ListRequestBuilder.html)\n        * [experiments](resources/projects/locations/agents/environments/experiments/struct.ExperimentsActions.html)\n          * [*create*](resources/projects/locations/agents/environments/experiments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/environments/experiments/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/environments/experiments/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/environments/experiments/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/environments/experiments/struct.PatchRequestBuilder.html), [*start*](resources/projects/locations/agents/environments/experiments/struct.StartRequestBuilder.html), [*stop*](resources/projects/locations/agents/environments/experiments/struct.StopRequestBuilder.html)\n        * [sessions](resources/projects/locations/agents/environments/sessions/struct.SessionsActions.html)\n          * [*detectIntent*](resources/projects/locations/agents/environments/sessions/struct.DetectIntentRequestBuilder.html), [*fulfillIntent*](resources/projects/locations/agents/environments/sessions/struct.FulfillIntentRequestBuilder.html), [*matchIntent*](resources/projects/locations/agents/environments/sessions/struct.MatchIntentRequestBuilder.html)\n          * [entity_types](resources/projects/locations/agents/environments/sessions/entity_types/struct.EntityTypesActions.html)\n            * [*create*](resources/projects/locations/agents/environments/sessions/entity_types/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/environments/sessions/entity_types/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/environments/sessions/entity_types/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/environments/sessions/entity_types/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/environments/sessions/entity_types/struct.PatchRequestBuilder.html)\n      * [flows](resources/projects/locations/agents/flows/struct.FlowsActions.html)\n        * [*create*](resources/projects/locations/agents/flows/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/flows/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/agents/flows/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/agents/flows/struct.GetRequestBuilder.html), [*getValidationResult*](resources/projects/locations/agents/flows/struct.GetValidationResultRequestBuilder.html), [*import*](resources/projects/locations/agents/flows/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/agents/flows/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/flows/struct.PatchRequestBuilder.html), [*train*](resources/projects/locations/agents/flows/struct.TrainRequestBuilder.html), [*validate*](resources/projects/locations/agents/flows/struct.ValidateRequestBuilder.html)\n        * [pages](resources/projects/locations/agents/flows/pages/struct.PagesActions.html)\n          * [*create*](resources/projects/locations/agents/flows/pages/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/flows/pages/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/flows/pages/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/flows/pages/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/flows/pages/struct.PatchRequestBuilder.html)\n        * [transition_route_groups](resources/projects/locations/agents/flows/transition_route_groups/struct.TransitionRouteGroupsActions.html)\n          * [*create*](resources/projects/locations/agents/flows/transition_route_groups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/flows/transition_route_groups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/flows/transition_route_groups/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/flows/transition_route_groups/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/flows/transition_route_groups/struct.PatchRequestBuilder.html)\n        * [versions](resources/projects/locations/agents/flows/versions/struct.VersionsActions.html)\n          * [*compareVersions*](resources/projects/locations/agents/flows/versions/struct.CompareVersionsRequestBuilder.html), [*create*](resources/projects/locations/agents/flows/versions/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/flows/versions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/flows/versions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/flows/versions/struct.ListRequestBuilder.html), [*load*](resources/projects/locations/agents/flows/versions/struct.LoadRequestBuilder.html), [*patch*](resources/projects/locations/agents/flows/versions/struct.PatchRequestBuilder.html)\n      * [intents](resources/projects/locations/agents/intents/struct.IntentsActions.html)\n        * [*create*](resources/projects/locations/agents/intents/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/intents/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/intents/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/intents/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/intents/struct.PatchRequestBuilder.html)\n      * [sessions](resources/projects/locations/agents/sessions/struct.SessionsActions.html)\n        * [*detectIntent*](resources/projects/locations/agents/sessions/struct.DetectIntentRequestBuilder.html), [*fulfillIntent*](resources/projects/locations/agents/sessions/struct.FulfillIntentRequestBuilder.html), [*matchIntent*](resources/projects/locations/agents/sessions/struct.MatchIntentRequestBuilder.html)\n        * [entity_types](resources/projects/locations/agents/sessions/entity_types/struct.EntityTypesActions.html)\n          * [*create*](resources/projects/locations/agents/sessions/entity_types/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/sessions/entity_types/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/sessions/entity_types/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/sessions/entity_types/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/sessions/entity_types/struct.PatchRequestBuilder.html)\n      * [test_cases](resources/projects/locations/agents/test_cases/struct.TestCasesActions.html)\n        * [*batchDelete*](resources/projects/locations/agents/test_cases/struct.BatchDeleteRequestBuilder.html), [*batchRun*](resources/projects/locations/agents/test_cases/struct.BatchRunRequestBuilder.html), [*calculateCoverage*](resources/projects/locations/agents/test_cases/struct.CalculateCoverageRequestBuilder.html), [*create*](resources/projects/locations/agents/test_cases/struct.CreateRequestBuilder.html), [*export*](resources/projects/locations/agents/test_cases/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/agents/test_cases/struct.GetRequestBuilder.html), [*import*](resources/projects/locations/agents/test_cases/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/agents/test_cases/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/test_cases/struct.PatchRequestBuilder.html), [*run*](resources/projects/locations/agents/test_cases/struct.RunRequestBuilder.html)\n        * [results](resources/projects/locations/agents/test_cases/results/struct.ResultsActions.html)\n          * [*get*](resources/projects/locations/agents/test_cases/results/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/test_cases/results/struct.ListRequestBuilder.html)\n      * [webhooks](resources/projects/locations/agents/webhooks/struct.WebhooksActions.html)\n        * [*create*](resources/projects/locations/agents/webhooks/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/agents/webhooks/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/agents/webhooks/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/agents/webhooks/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/agents/webhooks/struct.PatchRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [security_settings](resources/projects/locations/security_settings/struct.SecuritySettingsActions.html)\n      * [*create*](resources/projects/locations/security_settings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/security_settings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/security_settings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/security_settings/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/security_settings/struct.PatchRequestBuilder.html)\n  * [operations](resources/projects/operations/struct.OperationsActions.html)\n    * [*cancel*](resources/projects/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/operations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -224,7 +225,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_stackdriver_logging: ::std::option::Option<bool>,
-        #[doc = "Indiciates whether the agent is locked for changes. If the agent is locked, modifications to the agent will be rejected except for RestoreAgent."]
+        #[doc = "Indicates whether the agent is locked for changes. If the agent is locked, modifications to the agent will be rejected except for RestoreAgent."]
         #[serde(
             rename = "locked",
             default,
@@ -820,6 +821,38 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDialogflowCxV3Beta1ContinuousTestResultResult
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3Beta1ConversationSignals {
+        #[doc = "Required. Turn signals for the current turn."]
+        #[serde(
+            rename = "turnSignals",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub turn_signals:
+            ::std::option::Option<crate::schemas::GoogleCloudDialogflowCxV3Beta1TurnSignals>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3Beta1ConversationSignals {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3Beta1ConversationSignals {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1933,6 +1966,15 @@ pub mod schemas {
         pub version_configs: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDialogflowCxV3Beta1EnvironmentVersionConfig>,
         >,
+        #[doc = "The webhook configuration for this environment."]
+        #[serde(
+            rename = "webhookConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_config: ::std::option::Option<
+            crate::schemas::GoogleCloudDialogflowCxV3Beta1EnvironmentWebhookConfig,
+        >,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3Beta1Environment {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2023,6 +2065,42 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDialogflowCxV3Beta1EnvironmentVersionConfig
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3Beta1EnvironmentWebhookConfig {
+        #[doc = "The list of webhooks to override for the agent environment. The webhook must exist in the agent. You can override fields in `generic_web_service` and `service_directory`."]
+        #[serde(
+            rename = "webhookOverrides",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_overrides:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudDialogflowCxV3Beta1Webhook>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDialogflowCxV3Beta1EnvironmentWebhookConfig
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDialogflowCxV3Beta1EnvironmentWebhookConfig
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -2729,10 +2807,12 @@ pub mod schemas {
         Blob,
         #[doc = "Unspecified format."]
         DataFormatUnspecified,
+        #[doc = "Agent content will be exported in JSON Package format."]
+        JsonPackage,
     }
     impl GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: Blob => "BLOB" , GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: DataFormatUnspecified => "DATA_FORMAT_UNSPECIFIED" , }
+            match self { GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: Blob => "BLOB" , GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: DataFormatUnspecified => "DATA_FORMAT_UNSPECIFIED" , GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: JsonPackage => "JSON_PACKAGE" , }
         }
     }
     impl ::std::convert::AsRef<str> for GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat {
@@ -2746,7 +2826,7 @@ pub mod schemas {
             s: &str,
         ) -> ::std::result::Result<GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat, ()>
         {
-            Ok (match s { "BLOB" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: Blob , "DATA_FORMAT_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: DataFormatUnspecified , _ => return Err (()) , })
+            Ok (match s { "BLOB" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: Blob , "DATA_FORMAT_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: DataFormatUnspecified , "JSON_PACKAGE" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: JsonPackage , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display for GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat {
@@ -2768,7 +2848,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "BLOB" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: Blob , "DATA_FORMAT_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: DataFormatUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "BLOB" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: Blob , "DATA_FORMAT_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: DataFormatUnspecified , "JSON_PACKAGE" => GoogleCloudDialogflowCxV3Beta1ExportAgentRequestDataFormat :: JsonPackage , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -4560,7 +4640,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListAgentsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListAgentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4606,7 +4686,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListChangelogsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListChangelogsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4655,7 +4735,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListContinuousTestResultsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudDialogflowCxV3Beta1ListContinuousTestResultsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4703,7 +4785,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListDeploymentsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListDeploymentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4751,7 +4833,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListEntityTypesResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListEntityTypesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4799,7 +4881,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListEnvironmentsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListEnvironmentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4838,7 +4920,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListExperimentsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListExperimentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4870,7 +4952,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListFlowsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListFlowsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4914,7 +4996,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListIntentsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListIntentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4946,7 +5028,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListPagesResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListPagesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4995,7 +5077,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListSecuritySettingsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudDialogflowCxV3Beta1ListSecuritySettingsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5044,7 +5128,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListSessionEntityTypesResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudDialogflowCxV3Beta1ListSessionEntityTypesResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5082,7 +5168,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListTestCaseResultsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListTestCaseResultsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5117,7 +5203,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListTestCasesResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListTestCasesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5155,7 +5241,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListTransitionRouteGroupsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudDialogflowCxV3Beta1ListTransitionRouteGroupsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5190,7 +5278,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListVersionsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListVersionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5234,7 +5322,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1ListWebhooksResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDialogflowCxV3Beta1ListWebhooksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5313,7 +5401,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDialogflowCxV3Beta1LookupEnvironmentHistoryResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleCloudDialogflowCxV3Beta1LookupEnvironmentHistoryResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6207,6 +6297,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub analyze_query_text_sentiment: ::std::option::Option<bool>,
+        #[doc = "The channel which this query is for. If specified, only the ResponseMessage associated with the channel will be returned. If no ResponseMessage is associated with the channel, it falls back to the ResponseMessage with unspecified channel. If unspecified, the ResponseMessage with unspecified channel will be returned."]
+        #[serde(
+            rename = "channel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel: ::std::option::Option<String>,
         #[doc = "The unique identifier of the page to override the current page in the session. Format: `projects//locations//agents//flows//pages/`. If `current_page` is specified, the previous state of the session will be ignored by Dialogflow, including the previous page and the previous session parameters. In most cases, current_page and parameters should be configured together to direct a session to a specific state."]
         #[serde(
             rename = "currentPage",
@@ -6294,7 +6391,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_page: ::std::option::Option<crate::schemas::GoogleCloudDialogflowCxV3Beta1Page>,
-        #[doc = "The free-form diagnostic info. For example, this field could contain webhook call latency. The string keys of the Struct’s fields map can change without notice."]
+        #[doc = "The free-form diagnostic info. For example, this field could contain webhook call latency. The fields of this data can change without notice, so you should not write code that depends on its structure. One of the fields is called “Alternative Matched Intents”, which may aid with debugging. The following describes these intent results: - The list is empty if no intent was matched to end-user input. - Only intents that are referenced in the currently active flow are included. - The matched intent is included. - Other intents that could have matched end-user input, but did not match because they are referenced by intent routes that are out of [scope](https://cloud.google.com/dialogflow/cx/docs/concept/handler#scope), are included. - Other intents referenced by intent routes in scope that matched end-user input, but had a lower confidence score."]
         #[serde(
             rename = "diagnosticInfo",
             default,
@@ -6494,6 +6591,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDialogflowCxV3Beta1ResponseMessage {
+        #[doc = "The channel which the response is associated with. Clients can specify the channel via QueryParameters.channel, and only associated channel response will be returned."]
+        #[serde(
+            rename = "channel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel: ::std::option::Option<String>,
         #[doc = "Indicates that the conversation succeeded."]
         #[serde(
             rename = "conversationSuccess",
@@ -7346,6 +7450,15 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDialogflowCxV3Beta1SecuritySettings {
+        #[doc = "Controls audio export settings for post-conversation analytics when ingesting audio to conversations via Participants.AnalyzeContent or Participants.StreamingAnalyzeContent. If retention_strategy is set to REMOVE_AFTER_CONVERSATION or audio_export_settings.gcs_bucket is empty, audio export is disabled. If audio export is enabled, audio is recorded and saved to audio_export_settings.gcs_bucket, subject to retention policy of audio_export_settings.gcs_bucket. This setting won’t effect audio input for implicit sessions via Sessions.DetectIntent or Sessions.StreamingDetectIntent."]
+        #[serde(
+            rename = "audioExportSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub audio_export_settings: ::std::option::Option<
+            crate::schemas::GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettings,
+        >,
         #[doc = "[DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this template to define de-identification configuration for the content. The `DLP De-identify Templates Reader` role is needed on the Dialogflow service identity service account (has the form `service-PROJECT_NUMBER@gcp-sa-dialogflow.iam.gserviceaccount.com`) for your agent’s project. If empty, Dialogflow replaces sensitive info with `[redacted]` text. The template name will have one of the following formats: `projects//locations//deidentifyTemplates/` OR `organizations//locations//deidentifyTemplates/` Note: `deidentify_template` must be located in the same region as the `SecuritySettings`."]
         #[serde(
             rename = "deidentifyTemplate",
@@ -7410,7 +7523,7 @@ pub mod schemas {
         pub redaction_strategy: ::std::option::Option<
             crate::schemas::GoogleCloudDialogflowCxV3Beta1SecuritySettingsRedactionStrategy,
         >,
-        #[doc = "Retains data in interaction logging for the specified number of days. This does not apply to Cloud logging, which is owned by the user - not Dialogflow. User must set a value lower than Dialogflow’s default 365d TTL. Setting a value higher than that has no effect. A missing value or setting to 0 also means we use Dialogflow’s default TTL. Note: Interaction logging is a limited access feature. Talk to your Google representative to check availability for you."]
+        #[doc = "Retains data in interaction logging for the specified number of days. This does not apply to Cloud logging, which is owned by the user - not Dialogflow. User must set a value lower than Dialogflow’s default 365d TTL (30 days for Agent Assist traffic), higher value will be ignored and use default. Setting a value higher than that has no effect. A missing value or setting to 0 also means we use default TTL."]
         #[serde(
             rename = "retentionWindowDays",
             default,
@@ -7623,6 +7736,111 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDialogflowCxV3Beta1SecuritySettingsRedactionStrategy
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettings { # [doc = "Filename pattern for exported audio."] # [serde (rename = "audioExportPattern" , default , skip_serializing_if = "std::option::Option::is_none")] pub audio_export_pattern : :: std :: option :: Option < String > , # [doc = "File format for exported audio file. Currently only in telephony recordings."] # [serde (rename = "audioFormat" , default , skip_serializing_if = "std::option::Option::is_none")] pub audio_format : :: std :: option :: Option < crate :: schemas :: GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat > , # [doc = "Enable audio redaction if it is true."] # [serde (rename = "enableAudioRedaction" , default , skip_serializing_if = "std::option::Option::is_none")] pub enable_audio_redaction : :: std :: option :: Option < bool > , # [doc = "Cloud Storage bucket to export audio record to. Setting this field would grant the Storage Object Creator role to the Dialogflow Service Agent. API caller that tries to modify this field should have the permission of storage.buckets.setIamPolicy."] # [serde (rename = "gcsBucket" , default , skip_serializing_if = "std::option::Option::is_none")] pub gcs_bucket : :: std :: option :: Option < String > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettings
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettings
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat {
+        #[doc = "Unspecified. Do not use."]
+        AudioFormatUnspecified,
+        #[doc = "MP3 file format."]
+        Mp3,
+        #[doc = "G.711 mu-law PCM with 8kHz sample rate."]
+        Mulaw,
+        #[doc = "OGG Vorbis."]
+        Ogg,
+    }
+    impl GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: AudioFormatUnspecified => "AUDIO_FORMAT_UNSPECIFIED" , GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Mp3 => "MP3" , GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Mulaw => "MULAW" , GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Ogg => "OGG" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat,
+            (),
+        > {
+            Ok (match s { "AUDIO_FORMAT_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: AudioFormatUnspecified , "MP3" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Mp3 , "MULAW" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Mulaw , "OGG" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Ogg , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUDIO_FORMAT_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: AudioFormatUnspecified , "MP3" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Mp3 , "MULAW" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Mulaw , "OGG" => GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat :: Ogg , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDialogflowCxV3Beta1SecuritySettingsAudioExportSettingsAudioFormat
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -8786,6 +9004,154 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDialogflowCxV3Beta1TransitionRouteGroupCoverageCoverageTransition
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3Beta1TurnSignals {
+        #[doc = "Whether agent responded with LiveAgentHandoff fulfillment."]
+        #[serde(
+            rename = "agentEscalated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub agent_escalated: ::std::option::Option<bool>,
+        #[doc = "Whether user was using DTMF input."]
+        #[serde(
+            rename = "dtmfUsed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dtmf_used: ::std::option::Option<bool>,
+        #[doc = "Failure reasons of the turn."]
+        #[serde(
+            rename = "failureReasons",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_reasons: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems>,
+        >,
+        #[doc = "Whether NLU predicted NO_MATCH."]
+        #[serde(
+            rename = "noMatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_match: ::std::option::Option<bool>,
+        #[doc = "Whether user provided no input."]
+        #[serde(
+            rename = "noUserInput",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_user_input: ::std::option::Option<bool>,
+        #[doc = "Whether turn resulted in End Session page."]
+        #[serde(
+            rename = "reachedEndPage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reached_end_page: ::std::option::Option<bool>,
+        #[doc = "Whether user was specifically asking for a live agent."]
+        #[serde(
+            rename = "userEscalated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_escalated: ::std::option::Option<bool>,
+        #[doc = "Human-readable statuses of the webhooks triggered during this turn."]
+        #[serde(
+            rename = "webhookStatuses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_statuses: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3Beta1TurnSignals {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3Beta1TurnSignals {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems {
+        #[doc = "Whether NLU failed to recognize user intent."]
+        FailedIntent,
+        #[doc = "Whether webhook failed during the turn."]
+        FailedWebhook,
+        #[doc = "Failure reason is not assigned."]
+        FailureReasonUnspecified,
+    }
+    impl GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailedIntent => "FAILED_INTENT" , GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailedWebhook => "FAILED_WEBHOOK" , GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailureReasonUnspecified => "FAILURE_REASON_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems, ()>
+        {
+            Ok (match s { "FAILED_INTENT" => GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailedIntent , "FAILED_WEBHOOK" => GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailedWebhook , "FAILURE_REASON_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailureReasonUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "FAILED_INTENT" => GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailedIntent , "FAILED_WEBHOOK" => GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailedWebhook , "FAILURE_REASON_UNSPECIFIED" => GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems :: FailureReasonUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDialogflowCxV3Beta1TurnSignalsFailureReasonsItems
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -10153,6 +10519,38 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3ConversationSignals {
+        #[doc = "Required. Turn signals for the current turn."]
+        #[serde(
+            rename = "turnSignals",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub turn_signals:
+            ::std::option::Option<crate::schemas::GoogleCloudDialogflowCxV3TurnSignals>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3ConversationSignals {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3ConversationSignals {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDialogflowCxV3ConversationTurn {
         #[doc = "The user input."]
@@ -10564,6 +10962,15 @@ pub mod schemas {
         pub version_configs: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDialogflowCxV3EnvironmentVersionConfig>,
         >,
+        #[doc = "The webhook configuration for this environment."]
+        #[serde(
+            rename = "webhookConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_config: ::std::option::Option<
+            crate::schemas::GoogleCloudDialogflowCxV3EnvironmentWebhookConfig,
+        >,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3Environment {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -10649,6 +11056,38 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3EnvironmentVersionConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3EnvironmentWebhookConfig {
+        #[doc = "The list of webhooks to override for the agent environment. The webhook must exist in the agent. You can override fields in `generic_web_service` and `service_directory`."]
+        #[serde(
+            rename = "webhookOverrides",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_overrides:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudDialogflowCxV3Webhook>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3EnvironmentWebhookConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3EnvironmentWebhookConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -12235,6 +12674,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDialogflowCxV3ResponseMessage {
+        #[doc = "The channel which the response is associated with. Clients can specify the channel via QueryParameters.channel, and only associated channel response will be returned."]
+        #[serde(
+            rename = "channel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel: ::std::option::Option<String>,
         #[doc = "Indicates that the conversation succeeded."]
         #[serde(
             rename = "conversationSuccess",
@@ -13313,6 +13759,152 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDialogflowCxV3TurnSignals {
+        #[doc = "Whether agent responded with LiveAgentHandoff fulfillment."]
+        #[serde(
+            rename = "agentEscalated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub agent_escalated: ::std::option::Option<bool>,
+        #[doc = "Whether user was using DTMF input."]
+        #[serde(
+            rename = "dtmfUsed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dtmf_used: ::std::option::Option<bool>,
+        #[doc = "Failure reasons of the turn."]
+        #[serde(
+            rename = "failureReasons",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_reasons: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems>,
+        >,
+        #[doc = "Whether NLU predicted NO_MATCH."]
+        #[serde(
+            rename = "noMatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_match: ::std::option::Option<bool>,
+        #[doc = "Whether user provided no input."]
+        #[serde(
+            rename = "noUserInput",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_user_input: ::std::option::Option<bool>,
+        #[doc = "Whether turn resulted in End Session page."]
+        #[serde(
+            rename = "reachedEndPage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reached_end_page: ::std::option::Option<bool>,
+        #[doc = "Whether user was specifically asking for a live agent."]
+        #[serde(
+            rename = "userEscalated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_escalated: ::std::option::Option<bool>,
+        #[doc = "Human-readable statuses of the webhooks triggered during this turn."]
+        #[serde(
+            rename = "webhookStatuses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_statuses: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3TurnSignals {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3TurnSignals {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems {
+        #[doc = "Whether NLU failed to recognize user intent."]
+        FailedIntent,
+        #[doc = "Whether webhook failed during the turn."]
+        FailedWebhook,
+        #[doc = "Failure reason is not assigned."]
+        FailureReasonUnspecified,
+    }
+    impl GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailedIntent => "FAILED_INTENT" , GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailedWebhook => "FAILED_WEBHOOK" , GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailureReasonUnspecified => "FAILURE_REASON_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems, ()>
+        {
+            Ok (match s { "FAILED_INTENT" => GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailedIntent , "FAILED_WEBHOOK" => GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailedWebhook , "FAILURE_REASON_UNSPECIFIED" => GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailureReasonUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "FAILED_INTENT" => GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailedIntent , "FAILED_WEBHOOK" => GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailedWebhook , "FAILURE_REASON_UNSPECIFIED" => GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems :: FailureReasonUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDialogflowCxV3TurnSignalsFailureReasonsItems
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDialogflowCxV3UpdateDocumentOperationMetadata {
         #[doc = "The generic information of the operation."]
         #[serde(
@@ -13334,6 +13926,135 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDialogflowCxV3UpdateDocumentOperationMetadata
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3Webhook {
+        #[doc = "Indicates whether the webhook is disabled."]
+        #[serde(
+            rename = "disabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disabled: ::std::option::Option<bool>,
+        #[doc = "Required. The human-readable name of the webhook, unique within the agent."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Configuration for a generic web service."]
+        #[serde(
+            rename = "genericWebService",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub generic_web_service: ::std::option::Option<
+            crate::schemas::GoogleCloudDialogflowCxV3WebhookGenericWebService,
+        >,
+        #[doc = "The unique identifier of the webhook. Required for the Webhooks.UpdateWebhook method. Webhooks.CreateWebhook populates the name automatically. Format: `projects//locations//agents//webhooks/`."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Configuration for a [Service Directory](https://cloud.google.com/service-directory) service."]
+        #[serde(
+            rename = "serviceDirectory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_directory: ::std::option::Option<
+            crate::schemas::GoogleCloudDialogflowCxV3WebhookServiceDirectoryConfig,
+        >,
+        #[doc = "Webhook execution timeout. Execution is considered failed if Dialogflow doesn’t receive a response from webhook at the end of the timeout period. Defaults to 5 seconds, maximum allowed timeout is 30 seconds."]
+        #[serde(
+            rename = "timeout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub timeout: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3Webhook {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3Webhook {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3WebhookGenericWebService {
+        #[doc = "Optional. Specifies a list of allowed custom CA certificates (in DER format) for HTTPS verification. This overrides the default SSL trust store. If this is empty or unspecified, Dialogflow will use Google’s default trust store to verify certificates. N.B. Make sure the HTTPS server certificates are signed with “subject alt name”. For instance a certificate can be self-signed using the following command, `openssl x509 -req -days 200 -in example.com.csr \\ -signkey example.com.key \\ -out example.com.crt \\ -extfile <(printf \"\\nsubjectAltName='DNS:www.example.com'\")`"]
+        #[serde(
+            rename = "allowedCaCerts",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allowed_ca_certs: ::std::option::Option<Vec<::google_api_bytes::Bytes>>,
+        #[doc = "The password for HTTP Basic authentication."]
+        #[serde(
+            rename = "password",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub password: ::std::option::Option<String>,
+        #[doc = "The HTTP request headers to send together with webhook requests."]
+        #[serde(
+            rename = "requestHeaders",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub request_headers: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Required. The webhook URI for receiving POST requests. It must use https protocol."]
+        #[serde(
+            rename = "uri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uri: ::std::option::Option<String>,
+        #[doc = "The user name for HTTP Basic authentication."]
+        #[serde(
+            rename = "username",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub username: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowCxV3WebhookGenericWebService {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowCxV3WebhookGenericWebService {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -13708,6 +14429,50 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponseMergeBehavior
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDialogflowCxV3WebhookServiceDirectoryConfig {
+        #[doc = "Generic Service configuration of this webhook."]
+        #[serde(
+            rename = "genericWebService",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub generic_web_service: ::std::option::Option<
+            crate::schemas::GoogleCloudDialogflowCxV3WebhookGenericWebService,
+        >,
+        #[doc = "Required. The name of [Service Directory](https://cloud.google.com/service-directory) service. Format: `projects//locations//namespaces//services/`. `Location ID` of the service directory must be the same as the location of the agent."]
+        #[serde(
+            rename = "service",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDialogflowCxV3WebhookServiceDirectoryConfig
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDialogflowCxV3WebhookServiceDirectoryConfig
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -14226,21 +14991,23 @@ pub mod schemas {
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType
     {
-        #[doc = "Run article suggestion model."]
+        #[doc = "Run article suggestion model for chat."]
         ArticleSuggestion,
+        #[doc = "Run conversation summarization model for chat."]
+        ConversationSummarization,
         #[doc = "Run FAQ model."]
         Faq,
-        #[doc = "Run smart reply model."]
+        #[doc = "Run smart reply model for chat."]
         SmartReply,
         #[doc = "Unspecified feature type."]
         TypeUnspecified,
     }
-    impl GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { pub fn as_str (self) -> & 'static str { match self { GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion => "ARTICLE_SUGGESTION" , GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq => "FAQ" , GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply => "SMART_REPLY" , GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified => "TYPE_UNSPECIFIED" , } } }
+    impl GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { pub fn as_str (self) -> & 'static str { match self { GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion => "ARTICLE_SUGGESTION" , GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ConversationSummarization => "CONVERSATION_SUMMARIZATION" , GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq => "FAQ" , GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply => "SMART_REPLY" , GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified => "TYPE_UNSPECIFIED" , } } }
     impl :: std :: convert :: AsRef < str > for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn as_ref (& self) -> & str { self . as_str () } }
-    impl :: std :: str :: FromStr for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { type Err = () ; fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType , () > { Ok (match s { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "FAQ" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (()) , }) } }
+    impl :: std :: str :: FromStr for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { type Err = () ; fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType , () > { Ok (match s { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "CONVERSATION_SUMMARIZATION" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ConversationSummarization , "FAQ" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (()) , }) } }
     impl :: std :: fmt :: Display for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn fmt (& self , f : & mut std :: fmt :: Formatter < '_ >) -> :: std :: fmt :: Result { f . write_str (self . as_str ()) } }
     impl :: serde :: Serialize for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn serialize < S > (& self , serializer : S) -> :: std :: result :: Result < S :: Ok , S :: Error > where S : :: serde :: ser :: Serializer { serializer . serialize_str (self . as_str ()) } }
-    impl < 'de > :: serde :: Deserialize < 'de > for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn deserialize < D > (deserializer : D) -> :: std :: result :: Result < Self , D :: Error > where D : :: serde :: de :: Deserializer < 'de > , { let value : & 'de str = < & str > :: deserialize (deserializer) ? ; Ok (match value { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "FAQ" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , }) } }
+    impl < 'de > :: serde :: Deserialize < 'de > for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn deserialize < D > (deserializer : D) -> :: std :: result :: Result < Self , D :: Error > where D : :: serde :: de :: Deserializer < 'de > , { let value : & 'de str = < & str > :: deserialize (deserializer) ? ; Ok (match value { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "CONVERSATION_SUMMARIZATION" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ConversationSummarization , "FAQ" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , }) } }
     impl :: google_field_selector :: FieldSelector for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn fields () -> Vec < :: google_field_selector :: Field > { Vec :: new () } }
     impl :: google_field_selector :: ToFieldType for GoogleCloudDialogflowV2Beta1ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
@@ -18679,7 +19446,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub all_required_params_present: ::std::option::Option<bool>,
-        #[doc = "Indicates whether the conversational query triggers a cancellation for slot filling."]
+        #[doc = "Indicates whether the conversational query triggers a cancellation for slot filling. For more information, see the [cancel slot filling documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel)."]
         #[serde(
             rename = "cancelsSlotFilling",
             default,
@@ -19084,25 +19851,27 @@ pub mod schemas {
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType
     {
-        #[doc = "Run article suggestion model."]
+        #[doc = "Run article suggestion model for chat."]
         ArticleSuggestion,
+        #[doc = "Run conversation summarization model for chat."]
+        ConversationSummarization,
         #[doc = "Run FAQ model."]
         Faq,
-        #[doc = "Run smart reply model."]
+        #[doc = "Run smart reply model for chat."]
         SmartReply,
         #[doc = "Unspecified feature type."]
         TypeUnspecified,
     }
     impl GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion => "ARTICLE_SUGGESTION" , GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq => "FAQ" , GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply => "SMART_REPLY" , GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified => "TYPE_UNSPECIFIED" , }
+            match self { GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion => "ARTICLE_SUGGESTION" , GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ConversationSummarization => "CONVERSATION_SUMMARIZATION" , GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq => "FAQ" , GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply => "SMART_REPLY" , GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified => "TYPE_UNSPECIFIED" , }
         }
     }
     impl :: std :: convert :: AsRef < str > for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn as_ref (& self) -> & str { self . as_str () } }
-    impl :: std :: str :: FromStr for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { type Err = () ; fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType , () > { Ok (match s { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "FAQ" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (()) , }) } }
+    impl :: std :: str :: FromStr for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { type Err = () ; fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType , () > { Ok (match s { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "CONVERSATION_SUMMARIZATION" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ConversationSummarization , "FAQ" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (()) , }) } }
     impl :: std :: fmt :: Display for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn fmt (& self , f : & mut std :: fmt :: Formatter < '_ >) -> :: std :: fmt :: Result { f . write_str (self . as_str ()) } }
     impl :: serde :: Serialize for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn serialize < S > (& self , serializer : S) -> :: std :: result :: Result < S :: Ok , S :: Error > where S : :: serde :: ser :: Serializer { serializer . serialize_str (self . as_str ()) } }
-    impl < 'de > :: serde :: Deserialize < 'de > for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn deserialize < D > (deserializer : D) -> :: std :: result :: Result < Self , D :: Error > where D : :: serde :: de :: Deserializer < 'de > , { let value : & 'de str = < & str > :: deserialize (deserializer) ? ; Ok (match value { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "FAQ" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , }) } }
+    impl < 'de > :: serde :: Deserialize < 'de > for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn deserialize < D > (deserializer : D) -> :: std :: result :: Result < Self , D :: Error > where D : :: serde :: de :: Deserializer < 'de > , { let value : & 'de str = < & str > :: deserialize (deserializer) ? ; Ok (match value { "ARTICLE_SUGGESTION" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ArticleSuggestion , "CONVERSATION_SUMMARIZATION" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: ConversationSummarization , "FAQ" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: Faq , "SMART_REPLY" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: SmartReply , "TYPE_UNSPECIFIED" => GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType :: TypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , }) } }
     impl :: google_field_selector :: FieldSelector for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn fields () -> Vec < :: google_field_selector :: Field > { Vec :: new () } }
     impl :: google_field_selector :: ToFieldType for GoogleCloudDialogflowV2Beta1SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
     #[derive(
@@ -19560,11 +20329,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadataSuggestionFeatureType {
-        #[doc = "Run article suggestion model."]
+        #[doc = "Run article suggestion model for chat."]
         ArticleSuggestion,
-        #[doc = "Run FAQ model."]
+        #[doc = "Run FAQ model for chat."]
         Faq,
-        #[doc = "Run smart reply model."]
+        #[doc = "Run smart reply model for chat."]
         SmartReply,
         #[doc = "Unspecified feature type."]
         TypeUnspecified,
@@ -19983,12 +20752,19 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
-        Copy,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudDialogflowV2CreateConversationDatasetOperationMetadata {}
+    pub struct GoogleCloudDialogflowV2CreateConversationDatasetOperationMetadata {
+        #[doc = "The resource name of the conversation dataset that will be created. Format: `projects//locations//conversationDatasets/`"]
+        #[serde(
+            rename = "conversationDataset",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub conversation_dataset: ::std::option::Option<String>,
+    }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDialogflowV2CreateConversationDatasetOperationMetadata
     {
@@ -23682,7 +24458,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub all_required_params_present: ::std::option::Option<bool>,
-        #[doc = "Indicates whether the conversational query triggers a cancellation for slot filling."]
+        #[doc = "Indicates whether the conversational query triggers a cancellation for slot filling. For more information, see the [cancel slot filling documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel)."]
         #[serde(
             rename = "cancelsSlotFilling",
             default,
@@ -24068,11 +24844,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadataSuggestionFeatureType {
-        #[doc = "Run article suggestion model."]
+        #[doc = "Run article suggestion model for chat."]
         ArticleSuggestion,
-        #[doc = "Run FAQ model."]
+        #[doc = "Run FAQ model for chat."]
         Faq,
-        #[doc = "Run smart reply model."]
+        #[doc = "Run smart reply model for chat."]
         SmartReply,
         #[doc = "Unspecified feature type."]
         TypeUnspecified,
@@ -24603,6 +25379,38 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDialogflowV3Alpha1ConversationSignals {
+        #[doc = "Required. Turn signals for the current turn."]
+        #[serde(
+            rename = "turnSignals",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub turn_signals:
+            ::std::option::Option<crate::schemas::GoogleCloudDialogflowV3Alpha1TurnSignals>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowV3Alpha1ConversationSignals {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowV3Alpha1ConversationSignals {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDialogflowV3Alpha1CreateDocumentOperationMetadata {
         #[doc = "The generic information of the operation."]
         #[serde(
@@ -24882,6 +25690,161 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDialogflowV3Alpha1TurnSignals {
+        #[doc = "Whether agent responded with LiveAgentHandoff fulfillment."]
+        #[serde(
+            rename = "agentEscalated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub agent_escalated: ::std::option::Option<bool>,
+        #[doc = "Whether user was using DTMF input."]
+        #[serde(
+            rename = "dtmfUsed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dtmf_used: ::std::option::Option<bool>,
+        #[doc = "Failure reasons of the turn."]
+        #[serde(
+            rename = "failureReasons",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failure_reasons: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems>,
+        >,
+        #[doc = "Whether NLU predicted NO_MATCH."]
+        #[serde(
+            rename = "noMatch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_match: ::std::option::Option<bool>,
+        #[doc = "Whether user provided no input."]
+        #[serde(
+            rename = "noUserInput",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub no_user_input: ::std::option::Option<bool>,
+        #[doc = "Whether turn resulted in End Session page."]
+        #[serde(
+            rename = "reachedEndPage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reached_end_page: ::std::option::Option<bool>,
+        #[doc = "Whether agent has triggered the event corresponding to user abandoning the conversation."]
+        #[serde(
+            rename = "triggeredAbandonmentEvent",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub triggered_abandonment_event: ::std::option::Option<bool>,
+        #[doc = "Whether user was specifically asking for a live agent."]
+        #[serde(
+            rename = "userEscalated",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_escalated: ::std::option::Option<bool>,
+        #[doc = "Human-readable statuses of the webhooks triggered during this turn."]
+        #[serde(
+            rename = "webhookStatuses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub webhook_statuses: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDialogflowV3Alpha1TurnSignals {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDialogflowV3Alpha1TurnSignals {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems {
+        #[doc = "Whether NLU failed to recognize user intent."]
+        FailedIntent,
+        #[doc = "Whether webhook failed during the turn."]
+        FailedWebhook,
+        #[doc = "Failure reason is not assigned."]
+        FailureReasonUnspecified,
+    }
+    impl GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailedIntent => "FAILED_INTENT" , GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailedWebhook => "FAILED_WEBHOOK" , GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailureReasonUnspecified => "FAILURE_REASON_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems, ()>
+        {
+            Ok (match s { "FAILED_INTENT" => GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailedIntent , "FAILED_WEBHOOK" => GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailedWebhook , "FAILURE_REASON_UNSPECIFIED" => GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailureReasonUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "FAILED_INTENT" => GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailedIntent , "FAILED_WEBHOOK" => GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailedWebhook , "FAILURE_REASON_UNSPECIFIED" => GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems :: FailureReasonUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDialogflowV3Alpha1TurnSignalsFailureReasonsItems
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDialogflowV3Alpha1UpdateDocumentOperationMetadata {
         #[doc = "The generic information of the operation."]
         #[serde(
@@ -24934,7 +25897,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudLocationListLocationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudLocationListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -25015,7 +25978,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -25734,7 +26697,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -25769,7 +26732,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -25825,7 +26788,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -25943,12 +26906,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -27185,7 +28149,7 @@ pub mod resources {
                             #[serde(rename = "agents")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -27220,7 +28184,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -27276,7 +28240,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -27398,12 +28362,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -28270,7 +29235,7 @@ pub mod resources {
                                 #[serde(rename = "changelogs")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -28307,7 +29272,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -28347,7 +29312,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -28472,12 +29437,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -29268,7 +30234,7 @@ pub mod resources {
                                 #[serde(rename = "entityTypes")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -29305,7 +30271,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -29345,7 +30311,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -29470,12 +30436,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -30665,7 +31632,7 @@ pub mod resources {
                                 #[serde(rename = "environments")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -30702,7 +31669,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -30742,7 +31709,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -30866,12 +31833,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -31007,7 +31975,7 @@ pub mod resources {
                                 #[serde(rename = "environments")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -31044,7 +32012,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -31084,7 +32052,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -31196,12 +32164,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for LookupEnvironmentHistoryRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -31694,7 +32663,7 @@ pub mod resources {
                                     #[serde(rename = "continuousTestResults")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -31732,7 +32701,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -31772,7 +32741,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -31884,12 +32855,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -32245,7 +33217,7 @@ pub mod resources {
                                     #[serde(rename = "deployments")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -32282,7 +33254,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -32322,7 +33294,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -32434,12 +33408,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -33246,7 +34221,7 @@ pub mod resources {
                                     #[serde(rename = "experiments")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -33283,7 +34258,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -33323,7 +34298,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -33435,12 +34412,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -35306,7 +36284,7 @@ pub mod resources {
                                         #[serde(rename = "sessionEntityTypes")]
                                         pub items: Vec<T>,
                                     }
-                                    impl<T> crate::GetNextPageToken for Page<T> {
+                                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                                         fn next_page_token(&self) -> ::std::option::Option<String> {
                                             self.next_page_token.to_owned()
                                         }
@@ -35344,7 +36322,7 @@ pub mod resources {
                                     self,
                                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                                 where
-                                    T: crate::GetNextPageToken
+                                    T: crate::GetNextPageToken<String>
                                         + ::serde::de::DeserializeOwned
                                         + ::google_field_selector::FieldSelector
                                         + 'a,
@@ -35385,7 +36363,9 @@ pub mod resources {
                                     fields: ::std::option::Option<F>,
                                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                                 where
-                                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                    T: crate::GetNextPageToken<String>
+                                        + ::serde::de::DeserializeOwned
+                                        + 'a,
                                     F: AsRef<str>,
                                 {
                                     let mut fields = fields
@@ -35503,12 +36483,14 @@ pub mod resources {
                             }
                             #[async_trait::async_trait]
                             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                                type PageToken = String;
                                 fn set_page_token(&mut self, value: String) {
                                     self.page_token = value.into();
                                 }
                                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                                 where
-                                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                    T: crate::GetNextPageToken<String>
+                                        + ::serde::de::DeserializeOwned,
                                 {
                                     self._execute().await
                                 }
@@ -37115,7 +38097,7 @@ pub mod resources {
                                 #[serde(rename = "flows")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -37151,7 +38133,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -37207,7 +38189,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -37332,12 +38314,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -38645,7 +39628,7 @@ pub mod resources {
                                     #[serde(rename = "pages")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -38682,7 +39665,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -38738,7 +39721,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -38863,12 +39848,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -39828,7 +40814,7 @@ pub mod resources {
                                     #[serde(rename = "transitionRouteGroups")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -39866,7 +40852,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -39906,7 +40892,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -40019,12 +41007,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -41155,7 +42144,7 @@ pub mod resources {
                                     #[serde(rename = "versions")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -41192,7 +42181,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -41232,7 +42221,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -41356,12 +42347,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -42569,7 +43561,7 @@ pub mod resources {
                                 #[serde(rename = "intents")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -42605,7 +43597,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -42661,7 +43653,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -42787,12 +43779,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -44335,7 +45328,7 @@ pub mod resources {
                                     #[serde(rename = "sessionEntityTypes")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -44372,7 +45365,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -44412,7 +45405,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -44524,12 +45519,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -46429,7 +47425,7 @@ pub mod resources {
                                 #[serde(rename = "testCases")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -46466,7 +47462,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -46522,7 +47518,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -46647,12 +47643,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -47358,7 +48355,7 @@ pub mod resources {
                                     #[serde(rename = "testCaseResults")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -47395,7 +48392,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -47435,7 +48432,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -47548,12 +48547,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -48321,7 +49321,7 @@ pub mod resources {
                                 #[serde(rename = "webhooks")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -48357,7 +49357,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -48413,7 +49413,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -48537,12 +49537,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -49253,7 +50254,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -49288,7 +50289,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -49344,7 +50345,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -49463,12 +50464,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -50221,7 +51223,7 @@ pub mod resources {
                             #[serde(rename = "securitySettings")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -50257,7 +51259,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -50297,7 +51299,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -50419,12 +51421,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -51129,7 +52132,7 @@ pub mod resources {
                         #[serde(rename = "operations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -51164,7 +52167,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -51220,7 +52223,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -51338,12 +52341,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -51634,16 +52638,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -51663,13 +52669,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -51677,7 +52686,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -51704,7 +52713,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

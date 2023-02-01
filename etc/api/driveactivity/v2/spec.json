@@ -7,7 +7,7 @@
   "canonicalName": "Drive Activity",
   "fullyEncodeReservedExpansion": true,
   "version": "v2",
-  "revision": "20220422",
+  "revision": "20230128",
   "title": "Drive Activity API",
   "description": "Provides a historical view of activity in Google Drive.",
   "ownerDomain": "google.com",
@@ -256,6 +256,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "appliedLabelChange": {
+          "description": "Label was changed.",
+          "$ref": "AppliedLabelChange"
+        },
         "comment": {
           "description": "A change about comments was made.",
           "$ref": "Comment"
@@ -399,6 +403,104 @@
       "additionalProperties": null,
       "items": null
     },
+    "AppliedLabelChange": {
+      "id": "AppliedLabelChange",
+      "description": "Label changes that were made on the Target.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "changes": {
+          "description": "Changes that were made to the Label on the Target.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "AppliedLabelChangeDetail"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AppliedLabelChangeDetail": {
+      "id": "AppliedLabelChangeDetail",
+      "description": "A change made to a Label on the Target.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldChanges": {
+          "description": "Field Changes. Only present if `types` contains `LABEL_FIELD_VALUE_CHANGED`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "FieldValueChange"
+          }
+        },
+        "label": {
+          "description": "The Label name representing the Label that changed. This name always contains the revision of the Label that was used when this Action occurred. The format is `labels/id@revision`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "title": {
+          "description": "The human-readable title of the label that changed.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "types": {
+          "description": "The types of changes made to the Label on the Target.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "TYPE_UNSPECIFIED",
+              "LABEL_ADDED",
+              "LABEL_REMOVED",
+              "LABEL_FIELD_VALUE_CHANGED",
+              "LABEL_APPLIED_BY_ITEM_CREATE"
+            ],
+            "enumDescriptions": [
+              "The type of change to this Label is not available.",
+              "The identified Label was added to the Target.",
+              "The identified Label was removed from the Target.",
+              "Field values were changed on the Target.",
+              "The Label was applied as a side-effect of Drive item creation."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Assignment": {
       "id": "Assignment",
       "description": "A comment with an assignment.",
@@ -481,7 +583,7 @@
     },
     "ConsolidationStrategy": {
       "id": "ConsolidationStrategy",
-      "description": "How the individual activities are consolidated. A set of activities may be consolidated into one combined activity if they are related in some way, such as one actor performing the same action on multiple targets, or multiple actors performing the same action on a single target. The strategy defines the rules for which activities are related.",
+      "description": "How the individual activities are consolidated. If a set of activities is related they can be consolidated into one combined activity, such as one actor performing the same action on multiple targets, or multiple actors performing the same action on a single target. The strategy defines the rules for which activities are related.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -561,6 +663,28 @@
             "Document has been flagged as containing sensitive content.",
             "Document is no longer flagged as containing sensitive content."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Date": {
+      "id": "Date",
+      "description": "Wrapper for Date Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "value": {
+          "description": "Date value.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -940,6 +1064,90 @@
       "additionalProperties": null,
       "items": null
     },
+    "FieldValue": {
+      "id": "FieldValue",
+      "description": "Contains a value of a Field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "date": {
+          "description": "Date Field value.",
+          "$ref": "Date"
+        },
+        "integer": {
+          "description": "Integer Field value.",
+          "$ref": "Integer"
+        },
+        "selection": {
+          "description": "Selection Field value.",
+          "$ref": "Selection"
+        },
+        "selectionList": {
+          "description": "Selection List Field value.",
+          "$ref": "SelectionList"
+        },
+        "text": {
+          "description": "Text Field value.",
+          "$ref": "Text"
+        },
+        "textList": {
+          "description": "Text List Field value.",
+          "$ref": "TextList"
+        },
+        "user": {
+          "description": "User Field value.",
+          "$ref": "SingleUser"
+        },
+        "userList": {
+          "description": "User List Field value.",
+          "$ref": "UserList"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "FieldValueChange": {
+      "id": "FieldValueChange",
+      "description": "Change to a Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "displayName": {
+          "description": "The human-readable display name for this field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "fieldId": {
+          "description": "The ID of this field. Field IDs are unique within a Label.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "newValue": {
+          "description": "The value that is now set on the field. If not present, the field was cleared. At least one of {old_value|new_value} is always set.",
+          "$ref": "FieldValue"
+        },
+        "oldValue": {
+          "description": "The value that was previously set on the field. If not present, the field was newly set. At least one of {old_value|new_value} is always set.",
+          "$ref": "FieldValue"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "File": {
       "id": "File",
       "description": "This item is deprecated; please see `DriveFile` instead.",
@@ -1077,6 +1285,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "Integer": {
+      "id": "Integer",
+      "description": "Wrapper for Integer Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "value": {
+          "description": "Integer value.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "KnownUser": {
       "id": "KnownUser",
       "description": "A known user.",
@@ -1111,7 +1341,7 @@
     },
     "Legacy": {
       "id": "Legacy",
-      "description": "A strategy which consolidates activities using the grouping rules from the legacy V1 Activity API. Similar actions occurring within a window of time can be grouped across multiple targets (such as moving a set of files at once) or multiple actors (such as several users editing the same item). Grouping rules for this strategy are specific to each type of action.",
+      "description": "A strategy that consolidates activities using the grouping rules from the legacy V1 Activity API. Similar actions occurring within a window of time can be grouped across multiple targets (such as moving a set of files at once) or multiple actors (such as several users editing the same item). Grouping rules for this strategy are specific to each type of action.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1169,7 +1399,7 @@
     },
     "NoConsolidation": {
       "id": "NoConsolidation",
-      "description": "A strategy which does no consolidation of individual activities.",
+      "description": "A strategy that does no consolidation of individual activities.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1355,7 +1585,7 @@
       "enumDescriptions": [],
       "properties": {
         "ancestorName": {
-          "description": "Return activities for this Drive folder and all children and descendants. The format is `items/ITEM_ID`.",
+          "description": "Return activities for this Drive folder, plus all children and descendants. The format is `items/ITEM_ID`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1365,11 +1595,11 @@
           "items": null
         },
         "consolidationStrategy": {
-          "description": "Details on how to consolidate related actions that make up the activity. If not set, then related actions are not consolidated.",
+          "description": "Details on how to consolidate related actions that make up the activity. If not set, then related actions aren't consolidated.",
           "$ref": "ConsolidationStrategy"
         },
         "filter": {
-          "description": "The filtering for items returned from this query request. The format of the filter string is a sequence of expressions, joined by an optional \"AND\", where each expression is of the form \"field operator value\". Supported fields: - `time`: Uses numerical operators on date values either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format. Examples: - `time > 1452409200000 AND time <= 1492812924310` - `time >= \"2016-01-10T01:02:03-05:00\"` - `detail.action_detail_case`: Uses the \"has\" operator (:) and either a singular value or a list of allowed action types enclosed in parentheses. Examples: - `detail.action_detail_case: RENAME` - `detail.action_detail_case:(CREATE EDIT)` - `-detail.action_detail_case:MOVE` ",
+          "description": "The filtering for items returned from this query request. The format of the filter string is a sequence of expressions, joined by an optional \"AND\", where each expression is of the form \"field operator value\". Supported fields: - `time`: Uses numerical operators on date values either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format. Examples: - `time > 1452409200000 AND time <= 1492812924310` - `time >= \"2016-01-10T01:02:03-05:00\"` - `detail.action_detail_case`: Uses the \"has\" operator (:) and either a singular value or a list of allowed action types enclosed in parentheses, separated by a space. To exclude a result from the response, prepend a hyphen (`-`) to the beginning of the filter string. Examples: - `detail.action_detail_case:RENAME` - `detail.action_detail_case:(CREATE RESTORE)` - `-detail.action_detail_case:MOVE` ",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1389,7 +1619,7 @@
           "items": null
         },
         "pageSize": {
-          "description": "The miminum number of activities desired in the response; the server will attempt to return at least this quanitity. The server may also return fewer activities if it has a partial response ready before the request times out. If not set, a default value is used.",
+          "description": "The minimum number of activities desired in the response; the server attempts to return at least this quantity. The server may also return fewer activities if it has a partial response ready before the request times out. If not set, a default value is used.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -1399,7 +1629,7 @@
           "items": null
         },
         "pageToken": {
-          "description": "The token identifying which page of results to return. Set this to the next_page_token value returned from a previous query to obtain the following page of results. If not set, the first page of results will be returned.",
+          "description": "The token identifies which page of results to return. Set this to the next_page_token value returned from a previous query to obtain the following page of results. If not set, the first page of results is returned.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1558,6 +1788,62 @@
       "additionalProperties": null,
       "items": null
     },
+    "Selection": {
+      "id": "Selection",
+      "description": "Wrapper for Selection Field value as combined value/display_name pair for selected choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "displayName": {
+          "description": "Selection value as human-readable display string.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "value": {
+          "description": "Selection value as Field Choice ID.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SelectionList": {
+      "id": "SelectionList",
+      "description": "Wrapper for SelectionList Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "values": {
+          "description": "Selection values.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Selection"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SettingsChange": {
       "id": "SettingsChange",
       "description": "Information about settings changes.",
@@ -1577,6 +1863,28 @@
           "items": {
             "$ref": "RestrictionChange"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SingleUser": {
+      "id": "SingleUser",
+      "description": "Wrapper for User Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "value": {
+          "description": "User value as email.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -1656,7 +1964,7 @@
     },
     "Target": {
       "id": "Target",
-      "description": "Information about the target of activity.",
+      "description": "Information about the target of activity. For more information on how activity history is shared with users, see [Activity history visibility](https://developers.google.com/drive/activity/v2#activityhistory).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1774,6 +2082,52 @@
       "additionalProperties": null,
       "items": null
     },
+    "Text": {
+      "id": "Text",
+      "description": "Wrapper for Text Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "value": {
+          "description": "Value of Text Field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "TextList": {
+      "id": "TextList",
+      "description": "Wrapper for Text List Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "values": {
+          "description": "Text values.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Text"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "TimeRange": {
       "id": "TimeRange",
       "description": "Information about time ranges.",
@@ -1847,6 +2201,30 @@
         "unknownUser": {
           "description": "A user about whom nothing is currently known.",
           "$ref": "UnknownUser"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UserList": {
+      "id": "UserList",
+      "description": "Wrapper for UserList Field value.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "values": {
+          "description": "User values.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SingleUser"
+          }
         }
       },
       "additionalProperties": null,

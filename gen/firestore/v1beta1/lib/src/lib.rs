@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [databases](resources/projects/databases/struct.DatabasesActions.html)\n    * [*exportDocuments*](resources/projects/databases/struct.ExportDocumentsRequestBuilder.html), [*importDocuments*](resources/projects/databases/struct.ImportDocumentsRequestBuilder.html)\n    * [documents](resources/projects/databases/documents/struct.DocumentsActions.html)\n      * [*batchGet*](resources/projects/databases/documents/struct.BatchGetRequestBuilder.html), [*batchWrite*](resources/projects/databases/documents/struct.BatchWriteRequestBuilder.html), [*beginTransaction*](resources/projects/databases/documents/struct.BeginTransactionRequestBuilder.html), [*commit*](resources/projects/databases/documents/struct.CommitRequestBuilder.html), [*createDocument*](resources/projects/databases/documents/struct.CreateDocumentRequestBuilder.html), [*delete*](resources/projects/databases/documents/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/documents/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/documents/struct.ListRequestBuilder.html), [*listCollectionIds*](resources/projects/databases/documents/struct.ListCollectionIdsRequestBuilder.html), [*listDocuments*](resources/projects/databases/documents/struct.ListDocumentsRequestBuilder.html), [*listen*](resources/projects/databases/documents/struct.ListenRequestBuilder.html), [*partitionQuery*](resources/projects/databases/documents/struct.PartitionQueryRequestBuilder.html), [*patch*](resources/projects/databases/documents/struct.PatchRequestBuilder.html), [*rollback*](resources/projects/databases/documents/struct.RollbackRequestBuilder.html), [*runAggregationQuery*](resources/projects/databases/documents/struct.RunAggregationQueryRequestBuilder.html), [*runQuery*](resources/projects/databases/documents/struct.RunQueryRequestBuilder.html), [*write*](resources/projects/databases/documents/struct.WriteRequestBuilder.html)\n    * [indexes](resources/projects/databases/indexes/struct.IndexesActions.html)\n      * [*create*](resources/projects/databases/indexes/struct.CreateRequestBuilder.html), [*delete*](resources/projects/databases/indexes/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/indexes/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/indexes/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -19,7 +20,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Aggregation {
-        #[doc = "Required. The name of the field to store the result of the aggregation into. Requires: * Must be present. * Must be unique across all aggregation aliases. * Conform to existing document field name limitations."]
+        #[doc = "Optional. Optional name of the field to store the result of the aggregation into. If not provided, Firestore will pick a default name following the format `field_`. For example: `AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) OVER ( ... );` becomes: `AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS field_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) AS field_2 OVER ( ... );` Requires: * Must be unique across all aggregation aliases. * Conform to document field name limitations."]
         #[serde(
             rename = "alias",
             default,
@@ -518,13 +519,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Count {
-        #[doc = "Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. High-Level Example: `SELECT COUNT_UP_TO(1000) FROM ( SELECT * FROM k );` Requires: * Must be greater than zero when present."]
+        #[doc = "Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. Unspecified is interpreted as no bound. High-Level Example: `AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k );` Requires: * Must be greater than zero when present."]
         #[serde(
             rename = "upTo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub up_to: ::std::option::Option<i32>,
+        #[serde(with = "crate::parsed_string")]
+        pub up_to: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for Count {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1053,6 +1055,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FieldReference {
+        #[doc = "The relative path of the document being referenced. Requires: * Conform to document field name limitations."]
         #[serde(
             rename = "fieldPath",
             default,
@@ -2095,7 +2098,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleFirestoreAdminV1Beta1ListIndexesResponse {
+    impl crate::GetNextPageToken<String> for GoogleFirestoreAdminV1Beta1ListIndexesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2350,7 +2353,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCollectionIdsResponse {
+    impl crate::GetNextPageToken<String> for ListCollectionIdsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2366,7 +2369,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub documents: ::std::option::Option<Vec<crate::schemas::Document>>,
-        #[doc = "The next page token."]
+        #[doc = "A token to retrieve the next page of documents. If this field is omitted, there are no subsequent pages."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -2384,7 +2387,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListDocumentsResponse {
+    impl crate::GetNextPageToken<String> for ListDocumentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2690,7 +2693,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PartitionQueryResponse {
+    impl crate::GetNextPageToken<String> for PartitionQueryResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2941,7 +2944,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub read_time: ::std::option::Option<String>,
-        #[doc = "A single aggregation result. Not present when reporting partial progress or when the query produced zero results."]
+        #[doc = "A single aggregation result. Not present when reporting partial progress."]
         #[serde(
             rename = "result",
             default,
@@ -3020,6 +3023,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub document: ::std::option::Option<crate::schemas::Document>,
+        #[doc = "If present, Firestore has completely finished the request and no more documents will be returned."]
+        #[serde(
+            rename = "done",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub done: ::std::option::Option<bool>,
         #[doc = "The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their `read_time` and this one. If the query returns no results, a response with `read_time` and no `document` will be sent, and this represents the time at which the query was run."]
         #[serde(
             rename = "readTime",
@@ -3091,7 +3101,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct StructuredAggregationQuery {
-        #[doc = "Optional. Series of aggregations to apply on top of the `structured_query`."]
+        #[doc = "Optional. Series of aggregations to apply over the results of the `structured_query`. Requires: * A minimum of one and maximum of five aggregations per query."]
         #[serde(
             rename = "aggregations",
             default,
@@ -3120,7 +3130,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct StructuredQuery {
-        #[doc = "A end point for the query results."]
+        #[doc = "A potential prefix of a position in the result set to end the query at. This is similar to `START_AT` but with it controlling the end position rather than the start position. Requires: * The number of values cannot be greater than the number of fields specified in the `ORDER BY` clause."]
         #[serde(
             rename = "endAt",
             default,
@@ -3134,21 +3144,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub from: ::std::option::Option<Vec<crate::schemas::CollectionSelector>>,
-        #[doc = "The maximum number of results to return. Applies after all other constraints. Must be >= 0 if specified."]
+        #[doc = "The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified."]
         #[serde(
             rename = "limit",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub limit: ::std::option::Option<i32>,
-        #[doc = "The number of results to skip. Applies before limit, but after all other constraints. Must be >= 0 if specified."]
+        #[doc = "The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified."]
         #[serde(
             rename = "offset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offset: ::std::option::Option<i32>,
-        #[doc = "The order to apply to the query results. Firestore guarantees a stable ordering through the following rules: * Any field required to appear in `order_by`, that is not already specified in `order_by`, is appended to the order in field name order by default. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or ‘ASCENDING’ if no order was specified. For example: * `SELECT * FROM Foo ORDER BY A` becomes `SELECT * FROM Foo ORDER BY A, __name__` * `SELECT * FROM Foo ORDER BY A DESC` becomes `SELECT * FROM Foo ORDER BY A DESC, __name__ DESC` * `SELECT * FROM Foo WHERE A > 1` becomes `SELECT * FROM Foo WHERE A > 1 ORDER BY A, __name__`"]
+        #[doc = "The order to apply to the query results. Firestore allows callers to provide a full ordering, a partial ordering, or no ordering at all. In all cases, Firestore guarantees a stable ordering through the following rules: * The `order_by` is required to reference all fields used with an inequality filter. * All fields that are required to be in the `order_by` but are not already present are appended in lexicographical ordering of the field name. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or ‘ASCENDING’ if no order was specified. For example: * `ORDER BY a` becomes `ORDER BY a ASC, __name__ ASC` * `ORDER BY a DESC` becomes `ORDER BY a DESC, __name__ DESC` * `WHERE a > 1` becomes `WHERE a > 1 ORDER BY a ASC, __name__ ASC` * `WHERE __name__ > ... AND a > 1` becomes `WHERE __name__ > ... AND a > 1 ORDER BY a ASC, __name__ ASC`"]
         #[serde(
             rename = "orderBy",
             default,
@@ -3169,7 +3179,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub select: ::std::option::Option<crate::schemas::Projection>,
-        #[doc = "A starting point for the query results."]
+        #[doc = "A potential prefix of a position in the result set to start the query at. The ordering of the result set is based on the `ORDER BY` clause of the original query. `SELECT * FROM k WHERE a = 1 AND b > 2 ORDER BY b ASC, __name__ ASC;` This query’s results are ordered by `(b ASC, __name__ ASC)`. Cursors can reference either the full ordering or a prefix of the location, though it cannot reference more fields than what are in the provided `ORDER BY`. Continuing off the example above, attaching the following start cursors will have varying impact: - `START BEFORE (2, /k/123)`: start the query right before `a = 1 AND b > 2 AND __name__ > /k/123`. - `START AFTER (10)`: start the query right after `a = 1 AND b > 10`. Unlike `OFFSET` which requires scanning over the first N results to skip, a start cursor allows the query to begin at a logical position. This position is not required to match an actual result, it will scan forward from this position to find the next document. Requires: * The number of values cannot be greater than the number of fields specified in the `ORDER BY` clause."]
         #[serde(
             rename = "startAt",
             default,
@@ -6158,32 +6168,32 @@ pub mod resources {
                         self.mask_field_paths = Some(value.into());
                         self
                     }
-                    #[doc = "The order to sort results by. For example: `priority desc, name`."]
+                    #[doc = "Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "The maximum number of documents to return."]
+                    #[doc = "Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "The `next_page_token` value returned from a previous List request, if any."]
+                    #[doc = "Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
                     }
-                    #[doc = "Reads documents as they were at the given time. This may not be older than 270 seconds."]
+                    #[doc = "Perform the read at the provided time. This may not be older than 270 seconds."]
                     pub fn read_time(mut self, value: impl Into<String>) -> Self {
                         self.read_time = Some(value.into());
                         self
                     }
-                    #[doc = "If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`."]
+                    #[doc = "If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`."]
                     pub fn show_missing(mut self, value: bool) -> Self {
                         self.show_missing = Some(value);
                         self
                     }
-                    #[doc = "Reads documents in a transaction."]
+                    #[doc = "Perform the read as part of an already active transaction."]
                     pub fn transaction(mut self, value: impl Into<Vec<u8>>) -> Self {
                         let v: Vec<u8> = value.into();
                         self.transaction = Some(v.into());
@@ -6281,7 +6291,7 @@ pub mod resources {
                             #[serde(rename = "documents")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6316,7 +6326,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6366,7 +6376,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6498,12 +6508,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6705,32 +6716,32 @@ pub mod resources {
                         self.mask_field_paths = Some(value.into());
                         self
                     }
-                    #[doc = "The order to sort results by. For example: `priority desc, name`."]
+                    #[doc = "Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "The maximum number of documents to return."]
+                    #[doc = "Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "The `next_page_token` value returned from a previous List request, if any."]
+                    #[doc = "Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
                     }
-                    #[doc = "Reads documents as they were at the given time. This may not be older than 270 seconds."]
+                    #[doc = "Perform the read at the provided time. This may not be older than 270 seconds."]
                     pub fn read_time(mut self, value: impl Into<String>) -> Self {
                         self.read_time = Some(value.into());
                         self
                     }
-                    #[doc = "If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`."]
+                    #[doc = "If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`."]
                     pub fn show_missing(mut self, value: bool) -> Self {
                         self.show_missing = Some(value);
                         self
                     }
-                    #[doc = "Reads documents in a transaction."]
+                    #[doc = "Perform the read as part of an already active transaction."]
                     pub fn transaction(mut self, value: impl Into<Vec<u8>>) -> Self {
                         let v: Vec<u8> = value.into();
                         self.transaction = Some(v.into());
@@ -6828,7 +6839,7 @@ pub mod resources {
                             #[serde(rename = "documents")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6863,7 +6874,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6913,7 +6924,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -7045,12 +7056,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListDocumentsRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -8963,7 +8975,7 @@ pub mod resources {
                             #[serde(rename = "indexes")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -8998,7 +9010,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -9054,7 +9066,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -9177,12 +9189,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -9474,16 +9487,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -9503,13 +9518,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -9517,7 +9535,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -9544,7 +9562,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

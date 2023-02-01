@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudtasks2_beta2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220401")
+            .version("0.1.0-20230105")
             .about("Manages the execution of large numbers of distributed requests.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -33,9 +33,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .help("Provide more output to aid with debugging")
                 .multiple(false)
                 .takes_value(false));
+        let mut api0 = SubCommand::with_name("api")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: queue");
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: locations");
+        let mut queue1 = SubCommand::with_name("queue")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: update");
+        {
+            let mcmd = SubCommand::with_name("update").about("Update queue list by uploading a queue.yaml file. The queue.yaml file is supplied in the request body as a YAML encoded string. This method was added to support gcloud clients versions before 322.0.0. New clients should use CreateQueue instead of this method.");
+            queue1 = queue1.subcommand(mcmd);
+        }
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
@@ -98,9 +108,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut tasks3 = SubCommand::with_name("tasks")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: acknowledge, cancel_lease, create, delete, get, lease, list, renew_lease and run");
+                        .about("methods: acknowledge, buffer, cancel_lease, create, delete, get, lease, list, renew_lease and run");
         {
             let mcmd = SubCommand::with_name("acknowledge").about("Acknowledges a pull task. The worker, that is, the entity that leased this task must call this method to indicate that the work associated with the task has finished. The worker must acknowledge a task within the lease_duration or the lease will expire and the task will become available to be leased again. After the task is acknowledged, it will not be returned by a later LeaseTasks, GetTask, or ListTasks.");
+            tasks3 = tasks3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("buffer").about("Creates and buffers a new task without the need to explicitly define a Task message. The queue must have HTTP target. To create the task with a custom ID, use the following format and set TASK_ID to your desired ID: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the task with an automatically generated ID, use the following format: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).");
             tasks3 = tasks3.subcommand(mcmd);
         }
         {
@@ -138,7 +152,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         queues2 = queues2.subcommand(tasks3);
         locations1 = locations1.subcommand(queues2);
         projects0 = projects0.subcommand(locations1);
+        api0 = api0.subcommand(queue1);
         app = app.subcommand(projects0);
+        app = app.subcommand(api0);
 
         Self { app }
     }

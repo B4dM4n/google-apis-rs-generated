@@ -7,7 +7,7 @@
   "canonicalName": "Access Approval",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230127",
   "title": "Access Approval API",
   "description": "An API for controlling access to data by Google personnel.",
   "ownerDomain": "google.com",
@@ -541,6 +541,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "invalidateTime": {
+          "description": "If set, denotes the timestamp at which the approval is invalidated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "signatureInfo": {
           "description": "The signature for the ApprovalRequest and details on how it was signed.",
           "$ref": "SignatureInfo"
@@ -612,7 +622,7 @@
       "enumDescriptions": [],
       "properties": {
         "cloudProduct": {
-          "description": "The product for which Access Approval will be enrolled. Allowed values are listed below (case-sensitive): * all * GA * App Engine * BigQuery * Cloud Bigtable * Cloud Key Management Service * Compute Engine * Cloud Dataflow * Cloud DLP * Cloud EKM * Cloud HSM * Cloud Identity and Access Management * Cloud Logging * Cloud Pub/Sub * Cloud Spanner * Cloud SQL * Cloud Storage * Google Kubernetes Engine * Organization Policy Serivice * Persistent Disk * Resource Manager * Speaker ID Note: These values are supported as input for legacy purposes, but will not be returned from the API. * all * ga-only * appengine.googleapis.com * bigquery.googleapis.com * bigtable.googleapis.com * container.googleapis.com * cloudkms.googleapis.com * cloudresourcemanager.googleapis.com * cloudsql.googleapis.com * compute.googleapis.com * dataflow.googleapis.com * dlp.googleapis.com * iam.googleapis.com * logging.googleapis.com * orgpolicy.googleapis.com * pubsub.googleapis.com * spanner.googleapis.com * speakerid.googleapis.com * storage.googleapis.com Calls to UpdateAccessApprovalSettings using 'all' or any of the XXX.googleapis.com will be translated to the associated product name ('all', 'App Engine', etc.). Note: 'all' will enroll the resource in all products supported at both 'GA' and 'Preview' levels. More information about levels of support is available at https://cloud.google.com/access-approval/docs/supported-services",
+          "description": "The product for which Access Approval will be enrolled. Allowed values are listed below (case-sensitive): * all * GA * App Engine . * Artifact Registry * BigQuery * Cloud Bigtable * Cloud Key Management Service * Compute Engine * Cloud Dataflow * Cloud Dataproc * Cloud DLP * Cloud EKM * Cloud HSM * Cloud Identity and Access Management * Cloud Logging * Cloud Pub/Sub * Cloud Spanner * Cloud SQL * Cloud Storage * Google Kubernetes Engine * Organization Policy Serivice * Persistent Disk * Resource Manager * Secret Manager * Speaker ID Note: These values are supported as input for legacy purposes, but will not be returned from the API. * all * ga-only * appengine.googleapis.com * artifactregistry.googleapis.com * bigquery.googleapis.com * bigtable.googleapis.com * container.googleapis.com * cloudkms.googleapis.com * cloudresourcemanager.googleapis.com * cloudsql.googleapis.com * compute.googleapis.com * dataflow.googleapis.com * dataproc.googleapis.com * dlp.googleapis.com * iam.googleapis.com * logging.googleapis.com * orgpolicy.googleapis.com * pubsub.googleapis.com * spanner.googleapis.com * secretmanager.googleapis.com * speakerid.googleapis.com * storage.googleapis.com Calls to UpdateAccessApprovalSettings using 'all' or any of the XXX.googleapis.com will be translated to the associated product name ('all', 'App Engine', etc.). Note: 'all' will enroll the resource in all products supported at both 'GA' and 'Preview' levels. More information about levels of support is available at https://cloud.google.com/access-approval/docs/supported-services",
           "type": "string",
           "format": null,
           "enum": [],
@@ -638,6 +648,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InvalidateApprovalRequestMessage": {
+      "id": "InvalidateApprovalRequestMessage",
+      "description": "Request to invalidate an existing approval.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -849,6 +870,45 @@
                 "name"
               ],
               "request": null,
+              "response": {
+                "$ref": "ApprovalRequest"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "invalidate": {
+              "id": "accessapproval.folders.approvalRequests.invalidate",
+              "path": "v1/{+name}:invalidate",
+              "httpMethod": "POST",
+              "description": "Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval. Returns FAILED_PRECONDITION if the request exists but is not in an approved state.",
+              "parameters": {
+                "name": {
+                  "description": "Name of the ApprovalRequest to invalidate.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^folders/[^/]+/approvalRequests/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "InvalidateApprovalRequestMessage"
+              },
               "response": {
                 "$ref": "ApprovalRequest"
               },
@@ -1230,6 +1290,45 @@
               "supportsMediaUpload": false,
               "mediaUpload": null
             },
+            "invalidate": {
+              "id": "accessapproval.organizations.approvalRequests.invalidate",
+              "path": "v1/{+name}:invalidate",
+              "httpMethod": "POST",
+              "description": "Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval. Returns FAILED_PRECONDITION if the request exists but is not in an approved state.",
+              "parameters": {
+                "name": {
+                  "description": "Name of the ApprovalRequest to invalidate.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^organizations/[^/]+/approvalRequests/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "InvalidateApprovalRequestMessage"
+              },
+              "response": {
+                "$ref": "ApprovalRequest"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
             "list": {
               "id": "accessapproval.organizations.approvalRequests.list",
               "path": "v1/{+parent}/approvalRequests",
@@ -1587,6 +1686,45 @@
                 "name"
               ],
               "request": null,
+              "response": {
+                "$ref": "ApprovalRequest"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "invalidate": {
+              "id": "accessapproval.projects.approvalRequests.invalidate",
+              "path": "v1/{+name}:invalidate",
+              "httpMethod": "POST",
+              "description": "Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval. Returns FAILED_PRECONDITION if the request exists but is not in an approved state.",
+              "parameters": {
+                "name": {
+                  "description": "Name of the ApprovalRequest to invalidate.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/approvalRequests/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "InvalidateApprovalRequestMessage"
+              },
               "response": {
                 "$ref": "ApprovalRequest"
               },

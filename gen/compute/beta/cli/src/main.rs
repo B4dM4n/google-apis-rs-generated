@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("computebeta")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220420")
+            .version("0.1.0-20230119")
             .about("Creates and runs virtual machines on Google Cloud Platform. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -915,7 +915,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instance_group_managers0 = instance_group_managers0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list_managed_instances").about("Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action. The orderBy query parameter is not supported.");
+            let mcmd = SubCommand::with_name("list_managed_instances").about("Lists all of the instances in the managed instance group. Each instance in the list has a currentAction, which indicates the action that the managed instance group is performing on the instance. For example, if the group is still creating an instance, the currentAction is CREATING. If a previous action failed, the list displays the errors for that failed action. The orderBy query parameter is not supported. The `pageToken` query parameter is supported only in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to `PAGINATED`.");
             instance_group_managers0 = instance_group_managers0.subcommand(mcmd);
         }
         {
@@ -996,7 +996,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instance_groups0 = instance_groups0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list_instances").about("Lists the instances in the specified instance group. The orderBy query parameter is not supported.");
+            let mcmd = SubCommand::with_name("list_instances").about("Lists the instances in the specified instance group. The orderBy query parameter is not supported. The filter query parameter is supported, but only for expressions that use `eq` (equal) or `ne` (not equal) operators.");
             instance_groups0 = instance_groups0.subcommand(mcmd);
         }
         {
@@ -1066,9 +1066,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances0 = instances0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("bulk_insert").about(
-                "Creates multiple instances. Count specifies the number of instances to create.",
-            );
+            let mcmd = SubCommand::with_name("bulk_insert").about("Creates multiple instances. Count specifies the number of instances to create. For more information, see About bulk creation of VMs.");
             instances0 = instances0.subcommand(mcmd);
         }
         {
@@ -1197,7 +1195,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances0 = instances0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_scheduling").about("Sets an instance's scheduling options. You can only call this method on a stopped instance, that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states. For more information about setting scheduling options for a VM, see Set VM availability policies.");
+            let mcmd = SubCommand::with_name("set_scheduling").about("Sets an instance's scheduling options. You can only call this method on a stopped instance, that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states. For more information about setting scheduling options for a VM, see Set VM host maintenance policy.");
             instances0 = instances0.subcommand(mcmd);
         }
         {
@@ -1323,29 +1321,29 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: delete, get, get_diagnostics, insert, list, patch, set_labels and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes the specified interconnect.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified Interconnect.");
             interconnects0 = interconnects0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Returns the specified interconnect. Get a list of available interconnects by making a list() request.");
+            let mcmd = SubCommand::with_name("get").about("Returns the specified Interconnect. Get a list of available Interconnects by making a list() request.");
             interconnects0 = interconnects0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get_diagnostics")
-                .about("Returns the interconnectDiagnostics for the specified interconnect.");
+                .about("Returns the interconnectDiagnostics for the specified Interconnect.");
             interconnects0 = interconnects0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("insert").about("Creates a Interconnect in the specified project using the data included in the request.");
+            let mcmd = SubCommand::with_name("insert").about("Creates an Interconnect in the specified project using the data included in the request.");
             interconnects0 = interconnects0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list")
-                .about("Retrieves the list of interconnect available to the specified project.");
+                .about("Retrieves the list of Interconnects available to the specified project.");
             interconnects0 = interconnects0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates the specified interconnect with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.");
+            let mcmd = SubCommand::with_name("patch").about("Updates the specified Interconnect with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.");
             interconnects0 = interconnects0.subcommand(mcmd);
         }
         {
@@ -1447,6 +1445,45 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Retrieves a list of machine types available to the specified project.");
             machine_types0 = machine_types0.subcommand(mcmd);
+        }
+        let mut network_attachments0 = SubCommand::with_name("network_attachments")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: aggregated_list, delete, get, get_iam_policy, insert, list, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("aggregated_list").about("Retrieves the list of all NetworkAttachment resources, regional and global, available to the specified project.");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes the specified NetworkAttachment in the given scope");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Returns the specified NetworkAttachment resource in the given scope.");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. May be empty if no such policy or resource exists.");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("insert").about("Creates a NetworkAttachment in the specified project in the given scope using the parameters that are included in the request.");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists the NetworkAttachments for a project in the given scope.");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy.");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions")
+                .about("Returns permissions that a caller has on the specified resource.");
+            network_attachments0 = network_attachments0.subcommand(mcmd);
         }
         let mut network_edge_security_services0 =
             SubCommand::with_name("network_edge_security_services")
@@ -1660,7 +1697,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut node_groups0 = SubCommand::with_name("node_groups")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: add_nodes, aggregated_list, delete, delete_nodes, get, get_iam_policy, insert, list, list_nodes, patch, set_iam_policy, set_node_template and test_iam_permissions");
+                        .about("methods: add_nodes, aggregated_list, delete, delete_nodes, get, get_iam_policy, insert, list, list_nodes, patch, set_iam_policy, set_node_template, simulate_maintenance_event and test_iam_permissions");
         {
             let mcmd = SubCommand::with_name("add_nodes")
                 .about("Adds specified number of nodes to the node group.");
@@ -1711,6 +1748,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("set_node_template")
                 .about("Updates the node template of the node group.");
+            node_groups0 = node_groups0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("simulate_maintenance_event")
+                .about("Simulates maintenance event on specified nodes from the node group.");
             node_groups0 = node_groups0.subcommand(mcmd);
         }
         {
@@ -2309,7 +2351,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             region_instance_group_managers0 = region_instance_group_managers0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list_managed_instances").about("Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances. The orderBy query parameter is not supported.");
+            let mcmd = SubCommand::with_name("list_managed_instances").about("Lists the instances in the managed instance group and instances that are scheduled to be created. The list includes any current actions that the group has scheduled for its instances. The orderBy query parameter is not supported. The `pageToken` query parameter is supported only in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to `PAGINATED`.");
             region_instance_group_managers0 = region_instance_group_managers0.subcommand(mcmd);
         }
         {
@@ -2572,8 +2614,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             region_security_policies0 = region_security_policies0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch")
-                .about("Patches the specified policy with the data included in the request.");
+            let mcmd = SubCommand::with_name("patch").about("Patches the specified policy with the data included in the request. To clear fields in the rule, leave the fields empty and specify them in the updateMask. This cannot be used to be update the rules in the policy. Please use the per rule methods like addRule, patchRule, and removeRule instead.");
             region_security_policies0 = region_security_policies0.subcommand(mcmd);
         }
         let mut region_ssl_certificates0 = SubCommand::with_name("region_ssl_certificates")
@@ -2601,6 +2642,40 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 "Returns permissions that a caller has on the specified resource and region.",
             );
             region_ssl_certificates0 = region_ssl_certificates0.subcommand(mcmd);
+        }
+        let mut region_ssl_policies0 = SubCommand::with_name("region_ssl_policies")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: delete, get, insert, list, list_available_features, patch and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in use by any TargetHttpsProxy or TargetSslProxy resources.");
+            region_ssl_policies0 = region_ssl_policies0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Lists all of the ordered rules present in a single specified policy.");
+            region_ssl_policies0 = region_ssl_policies0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("insert").about("Creates a new policy in the specified project and region using the data included in the request.");
+            region_ssl_policies0 = region_ssl_policies0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists all the SSL policies that have been configured for the specified project and region.");
+            region_ssl_policies0 = region_ssl_policies0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list_available_features").about("Lists all features that can be specified in the SSL policy when using custom profile.");
+            region_ssl_policies0 = region_ssl_policies0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch")
+                .about("Patches the specified SSL policy with the data included in the request.");
+            region_ssl_policies0 = region_ssl_policies0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions")
+                .about("Returns permissions that a caller has on the specified resource.");
+            region_ssl_policies0 = region_ssl_policies0.subcommand(mcmd);
         }
         let mut region_target_http_proxies0 = SubCommand::with_name("region_target_http_proxies")
             .setting(AppSettings::ColoredHelp)
@@ -2802,7 +2877,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut resource_policies0 = SubCommand::with_name("resource_policies")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: aggregated_list, delete, get, get_iam_policy, insert, list, set_iam_policy and test_iam_permissions");
+                        .about("methods: aggregated_list, delete, get, get_iam_policy, insert, list, patch, set_iam_policy and test_iam_permissions");
         {
             let mcmd = SubCommand::with_name("aggregated_list")
                 .about("Retrieves an aggregated list of resource policies.");
@@ -2828,6 +2903,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("A list all the resource policies that have been configured for the specified project in specified region.");
+            resource_policies0 = resource_policies0.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Modify the specified resource policy.");
             resource_policies0 = resource_policies0.subcommand(mcmd);
         }
         {
@@ -2959,7 +3039,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             security_policies0 = security_policies0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Patches the specified policy with the data included in the request. This cannot be used to be update the rules in the policy. Please use the per rule methods like addRule, patchRule, and removeRule instead.");
+            let mcmd = SubCommand::with_name("patch").about("Patches the specified policy with the data included in the request. To clear fields in the rule, leave the fields empty and specify them in the updateMask. This cannot be used to be update the rules in the policy. Please use the per rule methods like addRule, patchRule, and removeRule instead.");
             security_policies0 = security_policies0.subcommand(mcmd);
         }
         {
@@ -3093,7 +3173,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut ssl_policies0 = SubCommand::with_name("ssl_policies")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: delete, get, insert, list, list_available_features, patch and test_iam_permissions");
+                        .about("methods: aggregated_list, delete, get, insert, list, list_available_features, patch and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("aggregated_list").about("Retrieves the list of all SslPolicy resources, regional and global, available to the specified project.");
+            ssl_policies0 = ssl_policies0.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in use by any TargetHttpsProxy or TargetSslProxy resources.");
             ssl_policies0 = ssl_policies0.subcommand(mcmd);
@@ -3450,7 +3534,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut target_tcp_proxies0 = SubCommand::with_name("target_tcp_proxies")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: delete, get, insert, list, set_backend_service, set_proxy_header and test_iam_permissions");
+                        .about("methods: aggregated_list, delete, get, insert, list, set_backend_service, set_proxy_header and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("aggregated_list").about("Retrieves the list of all TargetTcpProxy resources, regional and global, available to the specified project.");
+            target_tcp_proxies0 = target_tcp_proxies0.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("delete")
                 .about("Deletes the specified TargetTcpProxy resource.");
@@ -3703,6 +3791,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(region_target_tcp_proxies0);
         app = app.subcommand(region_target_https_proxies0);
         app = app.subcommand(region_target_http_proxies0);
+        app = app.subcommand(region_ssl_policies0);
         app = app.subcommand(region_ssl_certificates0);
         app = app.subcommand(region_security_policies0);
         app = app.subcommand(region_operations0);
@@ -3731,6 +3820,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(network_firewall_policies0);
         app = app.subcommand(network_endpoint_groups0);
         app = app.subcommand(network_edge_security_services0);
+        app = app.subcommand(network_attachments0);
         app = app.subcommand(machine_types0);
         app = app.subcommand(machine_images0);
         app = app.subcommand(licenses0);

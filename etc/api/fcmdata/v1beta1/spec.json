@@ -7,7 +7,7 @@
   "canonicalName": "Fcmdata",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20220425",
+  "revision": "20230131",
   "title": "Firebase Cloud Messaging Data API",
   "description": "Provides additional information about Firebase Cloud Messaging (FCM) message sends and deliveries.",
   "ownerDomain": "google.com",

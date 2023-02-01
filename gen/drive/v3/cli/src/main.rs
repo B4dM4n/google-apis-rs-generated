@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("drive3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220417")
+            .version("0.1.0-20230122")
             .about("Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -71,7 +71,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and update");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new comment on a file.");
+            let mcmd = SubCommand::with_name("create").about("Creates a comment on a file.");
             comments0 = comments0.subcommand(mcmd);
         }
         {
@@ -95,7 +95,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, hide, list, unhide and update");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new shared drive.");
+            let mcmd = SubCommand::with_name("create").about("Creates a shared drive.");
             drives0 = drives0.subcommand(mcmd);
         }
         {
@@ -127,13 +127,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut files0 = SubCommand::with_name("files")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: copy, create, delete, empty_trash, export, generate_ids, get, list, update and watch");
+                        .about("methods: copy, create, delete, empty_trash, export, generate_ids, get, list, list_labels, modify_labels, update and watch");
         {
             let mcmd = SubCommand::with_name("copy").about("Creates a copy of a file and applies any requested updates with patch semantics. Folders cannot be copied.");
             files0 = files0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new file.");
+            let mcmd = SubCommand::with_name("create").about("Creates a file.");
             files0 = files0.subcommand(mcmd);
         }
         {
@@ -162,6 +162,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists or searches files.");
+            files0 = files0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list_labels").about("Lists the labels on a file.");
+            files0 = files0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("modify_labels")
+                .about("Modifies the set of labels on a file.");
             files0 = files0.subcommand(mcmd);
         }
         {
@@ -202,7 +211,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and update");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a new reply to a comment.");
+            let mcmd = SubCommand::with_name("create").about("Creates a reply to a comment.");
             replies0 = replies0.subcommand(mcmd);
         }
         {

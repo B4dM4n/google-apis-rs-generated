@@ -7,7 +7,7 @@
   "canonicalName": "Docs",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20230124",
   "title": "Google Docs API",
   "description": "Reads and writes Google Docs documents.",
   "ownerDomain": "google.com",
@@ -221,7 +221,7 @@
   "schemas": {
     "AutoText": {
       "id": "AutoText",
-      "description": "A ParagraphElement representing a spot in the text that is dynamically replaced with content that can change over time, like a page number.",
+      "description": "A ParagraphElement representing a spot in the text that's dynamically replaced with content that can change over time, like a page number.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -246,7 +246,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. An AutoText may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. An AutoText may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -408,7 +408,7 @@
     },
     "Body": {
       "id": "Body",
-      "description": "The document body. The body typically contains the full document contents except for headers, footers and footnotes.",
+      "description": "The document body. The body typically contains the full document contents except for headers, footers, and footnotes.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -459,7 +459,7 @@
           "items": null
         },
         "textStyle": {
-          "description": "The paragraph specific text style applied to this bullet.",
+          "description": "The paragraph-specific text style applied to this bullet.",
           "$ref": "TextStyle"
         }
       },
@@ -468,7 +468,7 @@
     },
     "BulletSuggestionState": {
       "id": "BulletSuggestionState",
-      "description": "A mask that indicates which of the fields on the base Bullet have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base Bullet have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -545,7 +545,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A ColumnBreak may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A ColumnBreak may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -576,7 +576,7 @@
           "items": null
         },
         "textStyle": {
-          "description": "The text style of this ColumnBreak. Similar to text content, like text runs and footnote references, the text style of a column break can affect content layout as well as the styling of text inserted adjacent to it.",
+          "description": "The text style of this ColumnBreak. Similar to text content, like text runs and footnote references, the text style of a column break can affect content layout as well as the styling of text inserted next to it.",
           "$ref": "TextStyle"
         }
       },
@@ -843,7 +843,7 @@
     },
     "CropProperties": {
       "id": "CropProperties",
-      "description": "The crop properties of an image. The crop rectangle is represented using fractional offsets from the original content's four edges. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the image's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the image's original bounding rectangle. - If all offsets and rotation angle are 0, the image is not cropped.",
+      "description": "The crop properties of an image. The crop rectangle is represented using fractional offsets from the original content's 4 edges. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the image's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the image's original bounding rectangle. - If all offsets and rotation angle are 0, the image is not cropped.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -905,7 +905,7 @@
     },
     "CropPropertiesSuggestionState": {
       "id": "CropPropertiesSuggestionState",
-      "description": "A mask that indicates which of the fields on the base CropProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base CropProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1369,7 +1369,7 @@
           "$ref": "Background"
         },
         "defaultFooterId": {
-          "description": "The ID of the default footer. If not set, there is no default footer. This property is read-only.",
+          "description": "The ID of the default footer. If not set, there's no default footer. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1379,7 +1379,7 @@
           "items": null
         },
         "defaultHeaderId": {
-          "description": "The ID of the default header. If not set, there is no default header. This property is read-only.",
+          "description": "The ID of the default header. If not set, there's no default header. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1389,7 +1389,7 @@
           "items": null
         },
         "evenPageFooterId": {
-          "description": "The ID of the footer used only for even pages. The value of use_even_page_header_footer determines whether to use the default_footer_id or this value for the footer on even pages. If not set, there is no even page footer. This property is read-only.",
+          "description": "The ID of the footer used only for even pages. The value of use_even_page_header_footer determines whether to use the default_footer_id or this value for the footer on even pages. If not set, there's no even page footer. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1399,7 +1399,7 @@
           "items": null
         },
         "evenPageHeaderId": {
-          "description": "The ID of the header used only for even pages. The value of use_even_page_header_footer determines whether to use the default_header_id or this value for the header on even pages. If not set, there is no even page header. This property is read-only.",
+          "description": "The ID of the header used only for even pages. The value of use_even_page_header_footer determines whether to use the default_header_id or this value for the header on even pages. If not set, there's no even page header. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1409,7 +1409,7 @@
           "items": null
         },
         "firstPageFooterId": {
-          "description": "The ID of the footer used only for the first page. If not set then a unique footer for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_footer_id or this value for the footer on the first page. If not set, there is no first page footer. This property is read-only.",
+          "description": "The ID of the footer used only for the first page. If not set then a unique footer for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_footer_id or this value for the footer on the first page. If not set, there's no first page footer. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1419,7 +1419,7 @@
           "items": null
         },
         "firstPageHeaderId": {
-          "description": "The ID of the header used only for the first page. If not set then a unique header for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_header_id or this value for the header on the first page. If not set, there is no first page header. This property is read-only.",
+          "description": "The ID of the header used only for the first page. If not set then a unique header for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_header_id or this value for the header on the first page. If not set, there's no first page header. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1502,7 +1502,7 @@
     },
     "DocumentStyleSuggestionState": {
       "id": "DocumentStyleSuggestionState",
-      "description": "A mask that indicates which of the fields on the base DocumentStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base DocumentStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1682,7 +1682,7 @@
     },
     "EmbeddedDrawingProperties": {
       "id": "EmbeddedDrawingProperties",
-      "description": "The properties of an embedded drawing.",
+      "description": "The properties of an embedded drawing and used to differentiate the object type. An embedded drawing is one that's created and edited within a document. Note that extensive details are not supported.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1693,7 +1693,7 @@
     },
     "EmbeddedDrawingPropertiesSuggestionState": {
       "id": "EmbeddedDrawingPropertiesSuggestionState",
-      "description": "A mask that indicates which of the fields on the base EmbeddedDrawingProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base EmbeddedDrawingProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1733,7 +1733,7 @@
           "$ref": "ImageProperties"
         },
         "linkedContentReference": {
-          "description": "A reference to the external linked source content. For example, it contains a reference to the source Sheets chart when the embedded object is a linked chart. If unset, then the embedded object is not linked.",
+          "description": "A reference to the external linked source content. For example, it contains a reference to the source Google Sheets chart when the embedded object is a linked chart. If unset, then the embedded object is not linked.",
           "$ref": "LinkedContentReference"
         },
         "marginBottom": {
@@ -1828,7 +1828,7 @@
     },
     "EmbeddedObjectBorderSuggestionState": {
       "id": "EmbeddedObjectBorderSuggestionState",
-      "description": "A mask that indicates which of the fields on the base EmbeddedObjectBorder have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base EmbeddedObjectBorder have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1880,7 +1880,7 @@
     },
     "EmbeddedObjectSuggestionState": {
       "id": "EmbeddedObjectSuggestionState",
-      "description": "A mask that indicates which of the fields on the base EmbeddedObject have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base EmbeddedObject have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2019,7 +2019,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A Equation may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. An Equation may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2155,7 +2155,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A FootnoteReference may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A FootnoteReference may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2285,7 +2285,7 @@
           "items": null
         },
         "textStyle": {
-          "description": "The text style of this HorizontalRule. Similar to text content, like text runs and footnote references, the text style of a horizontal rule can affect content layout as well as the styling of text inserted adjacent to it.",
+          "description": "The text style of this HorizontalRule. Similar to text content, like text runs and footnote references, the text style of a horizontal rule can affect content layout as well as the styling of text inserted next to it.",
           "$ref": "TextStyle"
         }
       },
@@ -2355,7 +2355,7 @@
           "items": null
         },
         "transparency": {
-          "description": "The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent.",
+          "description": "The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means transparent.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -2370,7 +2370,7 @@
     },
     "ImagePropertiesSuggestionState": {
       "id": "ImagePropertiesSuggestionState",
-      "description": "A mask that indicates which of the fields on the base ImageProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base ImageProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2548,7 +2548,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. An InlineObjectElement may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. An InlineObjectElement may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2579,7 +2579,7 @@
           "items": null
         },
         "textStyle": {
-          "description": "The text style of this InlineObjectElement. Similar to text content, like text runs and footnote references, the text style of an inline object element can affect content layout as well as the styling of text inserted adjacent to it.",
+          "description": "The text style of this InlineObjectElement. Similar to text content, like text runs and footnote references, the text style of an inline object element can affect content layout as well as the styling of text inserted next to it.",
           "$ref": "TextStyle"
         }
       },
@@ -2604,7 +2604,7 @@
     },
     "InlineObjectPropertiesSuggestionState": {
       "id": "InlineObjectPropertiesSuggestionState",
-      "description": "A mask that indicates which of the fields on the base InlineObjectProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base InlineObjectProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2936,7 +2936,7 @@
     },
     "LinkedContentReferenceSuggestionState": {
       "id": "LinkedContentReferenceSuggestionState",
-      "description": "A mask that indicates which of the fields on the base LinkedContentReference have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base LinkedContentReference have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2952,7 +2952,7 @@
     },
     "List": {
       "id": "List",
-      "description": "A List represents the list attributes for a group of paragraphs that all belong to the same list. A paragraph that is part of a list has a reference to the list's ID in its bullet.",
+      "description": "A List represents the list attributes for a group of paragraphs that all belong to the same list. A paragraph that's part of a list has a reference to the list's ID in its bullet.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3009,14 +3009,14 @@
     },
     "ListProperties": {
       "id": "ListProperties",
-      "description": "The properties of a list which describe the look and feel of bullets belonging to paragraphs associated with a list.",
+      "description": "The properties of a list that describe the look and feel of bullets belonging to paragraphs associated with a list.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "nestingLevels": {
-          "description": "Describes the properties of the bullets at the associated level. A list has at most nine levels of nesting with nesting level 0 corresponding to the top-most level and nesting level 8 corresponding to the most nested level. The nesting levels are returned in ascending order with the least nested returned first.",
+          "description": "Describes the properties of the bullets at the associated level. A list has at most 9 levels of nesting with nesting level 0 corresponding to the top-most level and nesting level 8 corresponding to the most nested level. The nesting levels are returned in ascending order with the least nested returned first.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3033,7 +3033,7 @@
     },
     "ListPropertiesSuggestionState": {
       "id": "ListPropertiesSuggestionState",
-      "description": "A mask that indicates which of the fields on the base ListProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base ListProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3105,7 +3105,7 @@
     },
     "NamedRange": {
       "id": "NamedRange",
-      "description": "A collection of Ranges with the same named range ID. Named ranges allow developers to associate parts of a document with an arbitrary user-defined label so their contents can be programmatically read or edited at a later time. A document can contain multiple named ranges with the same name, but every named range has a unique ID. A named range is created with a single Range, and content inserted inside a named range generally expands that range. However, certain document changes can cause the range to be split into multiple ranges. Named ranges are not private. All applications and collaborators that have access to the document can see its named ranges.",
+      "description": "A collection of Ranges with the same named range ID. Named ranges allow developers to associate parts of a document with an arbitrary user-defined label so their contents can be programmatically read or edited later. A document can contain multiple named ranges with the same name, but every named range has a unique ID. A named range is created with a single Range, and content inserted inside a named range generally expands that range. However, certain document changes can cause the range to be split into multiple ranges. Named ranges are not private. All applications and collaborators that have access to the document can see its named ranges.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3294,7 +3294,7 @@
       "enumDescriptions": [],
       "properties": {
         "styles": {
-          "description": "The named styles. There is an entry for each of the possible named style types.",
+          "description": "The named styles. There's an entry for each of the possible named style types.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3318,7 +3318,7 @@
       "enumDescriptions": [],
       "properties": {
         "stylesSuggestionStates": {
-          "description": "A mask that indicates which of the fields on the corresponding NamedStyle in styles have been changed in this suggestion. The order of these named style suggestion states match the order of the corresponding named style within the named styles suggestion.",
+          "description": "A mask that indicates which of the fields on the corresponding NamedStyle in styles have been changed in this suggestion. The order of these named style suggestion states matches the order of the corresponding named style within the named styles suggestion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3362,7 +3362,7 @@
           "items": null
         },
         "glyphFormat": {
-          "description": "The format string used by bullets at this level of nesting. The glyph format contains one or more placeholders, and these placeholder are replaced with the appropriate values depending on the glyph_type or glyph_symbol. The placeholders follow the pattern `%[nesting_level]`. Furthermore, placeholders can have prefixes and suffixes. Thus, the glyph format follows the pattern `%[nesting_level]`. Note that the prefix and suffix are optional and can be arbitrary strings. For example, the glyph format `%0.` indicates that the rendered glyph will replace the placeholder with the corresponding glyph for nesting level 0 followed by a period as the suffix. So a list with a glyph type of UPPER_ALPHA and glyph format `%0.` at nesting level 0 will result in a list with rendered glyphs `A.` `B.` `C.` The glyph format can contain placeholders for the current nesting level as well as placeholders for parent nesting levels. For example, a list can have a glyph format of `%0.` at nesting level 0 and a glyph format of `%0.%1.` at nesting level 1. Assuming both nesting levels have DECIMAL glyph types, this would result in a list with rendered glyphs `1.` `2.` ` 2.1.` ` 2.2.` `3.` For nesting levels that are ordered, the string that replaces a placeholder in the glyph format for a particular paragraph depends on the paragraph's order within the list.",
+          "description": "The format string used by bullets at this level of nesting. The glyph format contains one or more placeholders, and these placeholders are replaced with the appropriate values depending on the glyph_type or glyph_symbol. The placeholders follow the pattern `%[nesting_level]`. Furthermore, placeholders can have prefixes and suffixes. Thus, the glyph format follows the pattern `%[nesting_level]`. Note that the prefix and suffix are optional and can be arbitrary strings. For example, the glyph format `%0.` indicates that the rendered glyph will replace the placeholder with the corresponding glyph for nesting level 0 followed by a period as the suffix. So a list with a glyph type of UPPER_ALPHA and glyph format `%0.` at nesting level 0 will result in a list with rendered glyphs `A.` `B.` `C.` The glyph format can contain placeholders for the current nesting level as well as placeholders for parent nesting levels. For example, a list can have a glyph format of `%0.` at nesting level 0 and a glyph format of `%0.%1.` at nesting level 1. Assuming both nesting levels have DECIMAL glyph types, this would result in a list with rendered glyphs `1.` `2.` ` 2.1.` ` 2.2.` `3.` For nesting levels that are ordered, the string that replaces a placeholder in the glyph format for a particular paragraph depends on the paragraph's order within the list.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3418,7 +3418,7 @@
           "$ref": "Dimension"
         },
         "startNumber": {
-          "description": "The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and roman numeraled lists, i.e. for values of both 0 and 1, lettered and roman numeraled lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs.",
+          "description": "The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and Roman numeral lists. For values of both 0 and 1, lettered and Roman numeral lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -3437,7 +3437,7 @@
     },
     "NestingLevelSuggestionState": {
       "id": "NestingLevelSuggestionState",
-      "description": "A mask that indicates which of the fields on the base NestingLevel have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base NestingLevel have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3594,7 +3594,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A PageBreak may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A PageBreak may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3625,7 +3625,7 @@
           "items": null
         },
         "textStyle": {
-          "description": "The text style of this PageBreak. Similar to text content, like text runs and footnote references, the text style of a page break can affect content layout as well as the styling of text inserted adjacent to it.",
+          "description": "The text style of this PageBreak. Similar to text content, like text runs and footnote references, the text style of a page break can affect content layout as well as the styling of text inserted next to it.",
           "$ref": "TextStyle"
         }
       },
@@ -3634,7 +3634,7 @@
     },
     "Paragraph": {
       "id": "Paragraph",
-      "description": "A StructuralElement representing a paragraph. A paragraph is a range of content that is terminated with a newline character.",
+      "description": "A StructuralElement representing a paragraph. A paragraph is a range of content that's terminated with a newline character.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3645,7 +3645,7 @@
           "$ref": "Bullet"
         },
         "elements": {
-          "description": "The content of the paragraph broken down into its component parts.",
+          "description": "The content of the paragraph, broken down into its component parts.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3705,7 +3705,7 @@
           "items": null
         },
         "suggestedPositionedObjectIds": {
-          "description": "The IDs of the positioned objects that are suggested to be attached to this paragraph, keyed by suggestion ID.",
+          "description": "The IDs of the positioned objects suggested to be attached to this paragraph, keyed by suggestion ID.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -3816,7 +3816,7 @@
           "$ref": "Person"
         },
         "richLink": {
-          "description": "A paragraph element that links to a Google resource (such as a file in Drive, a Youtube video, a Calendar event, etc.)",
+          "description": "A paragraph element that links to a Google resource (such as a file in Google Drive, a YouTube video, or a Calendar event.)",
           "$ref": "RichLink"
         },
         "startIndex": {
@@ -3839,7 +3839,7 @@
     },
     "ParagraphStyle": {
       "id": "ParagraphStyle",
-      "description": "Styles that apply to a whole paragraph. Inherited paragraph styles are represented as unset fields in this message. A paragraph style's parent depends on where the paragraph style is defined: * The ParagraphStyle on a Paragraph inherits from the paragraph's corresponding named style type. * The ParagraphStyle on a named style inherits from the normal text named style. * The ParagraphStyle of the normal text named style inherits from the default paragraph style in the Docs editor. * The ParagraphStyle on a Paragraph element that is contained in a table may inherit its paragraph style from the table style. If the paragraph style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor.",
+      "description": "Styles that apply to a whole paragraph. Inherited paragraph styles are represented as unset fields in this message. A paragraph style's parent depends on where the paragraph style is defined: * The ParagraphStyle on a Paragraph inherits from the paragraph's corresponding named style type. * The ParagraphStyle on a named style inherits from the normal text named style. * The ParagraphStyle of the normal text named style inherits from the default paragraph style in the Docs editor. * The ParagraphStyle on a Paragraph element that's contained in a table may inherit its paragraph style from the table style. If the paragraph style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3878,23 +3878,23 @@
           "items": null
         },
         "borderBetween": {
-          "description": "The border between this paragraph and the next and previous paragraphs. If unset, the value is inherited from the parent. The between border is rendered when the adjacent paragraph has the same border and indent properties. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety.",
+          "description": "The border between this paragraph and the next and previous paragraphs. If unset, the value is inherited from the parent. The between border is rendered when the adjacent paragraph has the same border and indent properties. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety.",
           "$ref": "ParagraphBorder"
         },
         "borderBottom": {
-          "description": "The border at the bottom of this paragraph. If unset, the value is inherited from the parent. The bottom border is rendered when the paragraph below has different border and indent properties. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety.",
+          "description": "The border at the bottom of this paragraph. If unset, the value is inherited from the parent. The bottom border is rendered when the paragraph below has different border and indent properties. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety.",
           "$ref": "ParagraphBorder"
         },
         "borderLeft": {
-          "description": "The border to the left of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety.",
+          "description": "The border to the left of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety.",
           "$ref": "ParagraphBorder"
         },
         "borderRight": {
-          "description": "The border to the right of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety.",
+          "description": "The border to the right of this paragraph. If unset, the value is inherited from the parent. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety.",
           "$ref": "ParagraphBorder"
         },
         "borderTop": {
-          "description": "The border at the top of this paragraph. If unset, the value is inherited from the parent. The top border is rendered when the paragraph above has different border and indent properties. Paragraph borders cannot be partially updated. When making changes to a paragraph border the new border must be specified in its entirety.",
+          "description": "The border at the top of this paragraph. If unset, the value is inherited from the parent. The top border is rendered when the paragraph above has different border and indent properties. Paragraph borders cannot be partially updated. When changing a paragraph border, the new border must be specified in its entirety.",
           "$ref": "ParagraphBorder"
         },
         "direction": {
@@ -3999,6 +3999,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "pageBreakBefore": {
+          "description": "Whether the current paragraph should always start at the beginning of a page. If unset, the value is inherited from the parent. Attempting to update page_break_before for paragraphs in unsupported regions, including Table, Header, Footer and Footnote, can result in an invalid document state that returns a 400 bad request error.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "shading": {
           "description": "The shading of the paragraph. If unset, the value is inherited from the parent.",
           "$ref": "Shading"
@@ -4047,7 +4057,7 @@
     },
     "ParagraphStyleSuggestionState": {
       "id": "ParagraphStyleSuggestionState",
-      "description": "A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base ParagraphStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4213,6 +4223,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "pageBreakBeforeSuggested": {
+          "description": "Indicates if there was a suggested change to page_break_before.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "shadingSuggestionState": {
           "description": "A mask that indicates which of the fields in shading have been changed in this suggestion.",
           "$ref": "ShadingSuggestionState"
@@ -4274,7 +4294,7 @@
           "$ref": "PersonProperties"
         },
         "suggestedDeletionIds": {
-          "description": "IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion.",
+          "description": "IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest deleting it. If empty, then this person link isn't suggested for deletion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -4292,7 +4312,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.",
+          "description": "IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it's a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -4349,7 +4369,7 @@
           "items": null
         },
         "name": {
-          "description": "Output only. The name of the person if it is displayed in the link text instead of the person's email address.",
+          "description": "Output only. The name of the person if it's displayed in the link text instead of the person's email address.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4362,9 +4382,35 @@
       "additionalProperties": null,
       "items": null
     },
+    "PinTableHeaderRowsRequest": {
+      "id": "PinTableHeaderRowsRequest",
+      "description": "Updates the number of pinned table header rows in a table.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "pinnedHeaderRowsCount": {
+          "description": "The number of table rows to pin, where 0 implies that all rows are unpinned.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "tableStartLocation": {
+          "description": "The location where the table starts in the document.",
+          "$ref": "Location"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "PositionedObject": {
       "id": "PositionedObject",
-      "description": "An object that is tethered to a Paragraph and positioned relative to the beginning of the paragraph. A PositionedObject contains an EmbeddedObject such as an image.",
+      "description": "An object that's tethered to a Paragraph and positioned relative to the beginning of the paragraph. A PositionedObject contains an EmbeddedObject such as an image.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4431,7 +4477,7 @@
     },
     "PositionedObjectPositioning": {
       "id": "PositionedObjectPositioning",
-      "description": "The positioning of a PositionedObject. The positioned object is positioned relative to the beginning of the Paragraph it is tethered to.",
+      "description": "The positioning of a PositionedObject. The positioned object is positioned relative to the beginning of the Paragraph it's tethered to.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4455,7 +4501,7 @@
             "The text wraps around the positioned object.",
             "Breaks text such that the positioned object is on the left and text is on the right.",
             "Breaks text such that the positioned object is on the right and text is on the left.",
-            "Breaks text such that there is no text on the left or right of the positioned object.",
+            "Breaks text such that there's no text on the left or right of the positioned object.",
             "The positioned object is in front of the text.",
             "The positioned object is behind the text."
           ],
@@ -4464,11 +4510,11 @@
           "items": null
         },
         "leftOffset": {
-          "description": "The offset of the left edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.",
+          "description": "The offset of the left edge of the positioned object relative to the beginning of the Paragraph it's tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.",
           "$ref": "Dimension"
         },
         "topOffset": {
-          "description": "The offset of the top edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.",
+          "description": "The offset of the top edge of the positioned object relative to the beginning of the Paragraph it's tethered to. The exact positioning of the object can depend on other content in the document and the document's styling.",
           "$ref": "Dimension"
         }
       },
@@ -4477,7 +4523,7 @@
     },
     "PositionedObjectPositioningSuggestionState": {
       "id": "PositionedObjectPositioningSuggestionState",
-      "description": "A mask that indicates which of the fields on the base PositionedObjectPositioning have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base PositionedObjectPositioning have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4539,7 +4585,7 @@
     },
     "PositionedObjectPropertiesSuggestionState": {
       "id": "PositionedObjectPropertiesSuggestionState",
-      "description": "A mask that indicates which of the fields on the base PositionedObjectProperties have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base PositionedObjectProperties have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4576,7 +4622,7 @@
           "items": null
         },
         "segmentId": {
-          "description": "The ID of the header, footer or footnote that this range is contained in. An empty segment ID signifies the document's body.",
+          "description": "The ID of the header, footer, or footnote that this range is contained in. An empty segment ID signifies the document's body.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4829,6 +4875,10 @@
           "description": "Merges cells in a table.",
           "$ref": "MergeTableCellsRequest"
         },
+        "pinTableHeaderRows": {
+          "description": "Updates the number of pinned header rows in a table.",
+          "$ref": "PinTableHeaderRowsRequest"
+        },
         "replaceAllText": {
           "description": "Replaces all instances of the specified text.",
           "$ref": "ReplaceAllTextRequest"
@@ -4961,7 +5011,7 @@
     },
     "RichLink": {
       "id": "RichLink",
-      "description": "A link to a Google resource (e.g., a file in Drive, a YouTube video, a Calendar event, etc.).",
+      "description": "A link to a Google resource (such as a file in Drive, a YouTube video, or a Calendar event).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -4982,7 +5032,7 @@
           "$ref": "RichLinkProperties"
         },
         "suggestedDeletionIds": {
-          "description": "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion.",
+          "description": "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest deleting it. If empty, then this person link isn't suggested for deletion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5000,7 +5050,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.",
+          "description": "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it's a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5047,7 +5097,7 @@
       "enumDescriptions": [],
       "properties": {
         "mimeType": {
-          "description": "Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there is one (i.e., when it is a file in Drive).",
+          "description": "Output only. The [MIME type](https://developers.google.com/drive/api/v3/mime-types) of the RichLink, if there's one (for example, when it's a file in Drive).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5082,7 +5132,7 @@
     },
     "SectionBreak": {
       "id": "SectionBreak",
-      "description": "A StructuralElement representing a section break. A section is a range of content which has the same SectionStyle. A section break represents the start of a new section, and the section style applies to the section after the section break. The document body always begins with a section break.",
+      "description": "A StructuralElement representing a section break. A section is a range of content that has the same SectionStyle. A section break represents the start of a new section, and the section style applies to the section after the section break. The document body always begins with a section break.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -5111,7 +5161,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A SectionBreak may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A SectionBreak may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5161,7 +5211,7 @@
       "enumDescriptions": [],
       "properties": {
         "columnProperties": {
-          "description": "The section's columns properties. If empty, the section contains one column with the default properties in the Docs editor. A section can be updated to have no more than three columns. When updating this property, setting a concrete value is required. Unsetting this property will result in a 400 bad request error.",
+          "description": "The section's columns properties. If empty, the section contains one column with the default properties in the Docs editor. A section can be updated to have no more than 3 columns. When updating this property, setting a concrete value is required. Unsetting this property will result in a 400 bad request error.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5173,7 +5223,7 @@
           }
         },
         "columnSeparatorStyle": {
-          "description": "The style of column separators. This style can be set even when there is one column in the section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
+          "description": "The style of column separators. This style can be set even when there's one column in the section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
           "type": "string",
           "format": null,
           "enum": [
@@ -5229,7 +5279,7 @@
           "items": null
         },
         "evenPageFooterId": {
-          "description": "The ID of the footer used only for even pages. If the value of DocumentStyle's use_even_page_header_footer is true, this value is used for the footers on even pages in the section. If it is false, the footers on even pages uses the default_footer_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's even_page_footer_id. This property is read-only.",
+          "description": "The ID of the footer used only for even pages. If the value of DocumentStyle's use_even_page_header_footer is true, this value is used for the footers on even pages in the section. If it is false, the footers on even pages use the default_footer_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's even_page_footer_id. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5239,7 +5289,7 @@
           "items": null
         },
         "evenPageHeaderId": {
-          "description": "The ID of the header used only for even pages. If the value of DocumentStyle's use_even_page_header_footer is true, this value is used for the headers on even pages in the section. If it is false, the headers on even pages uses the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's even_page_header_id. This property is read-only.",
+          "description": "The ID of the header used only for even pages. If the value of DocumentStyle's use_even_page_header_footer is true, this value is used for the headers on even pages in the section. If it is false, the headers on even pages use the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's even_page_header_id. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5249,7 +5299,7 @@
           "items": null
         },
         "firstPageFooterId": {
-          "description": "The ID of the footer used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the footer on the first page of the section. If it is false, the footer on the first page of the section uses the default_footer_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_footer_id. This property is read-only.",
+          "description": "The ID of the footer used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the footer on the first page of the section. If it's false, the footer on the first page of the section uses the default_footer_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_footer_id. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5259,7 +5309,7 @@
           "items": null
         },
         "firstPageHeaderId": {
-          "description": "The ID of the header used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the header on the first page of the section. If it is false, the header on the first page of the section uses the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_header_id. This property is read-only.",
+          "description": "The ID of the header used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the header on the first page of the section. If it's false, the header on the first page of the section uses the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_header_id. This property is read-only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5269,27 +5319,27 @@
           "items": null
         },
         "marginBottom": {
-          "description": "The bottom page margin of the section. If unset, uses margin_bottom from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
+          "description": "The bottom page margin of the section. If unset, the value defaults to margin_bottom from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
           "$ref": "Dimension"
         },
         "marginFooter": {
-          "description": "The footer margin of the section. If unset, uses margin_footer from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a footer margin is being respected for this section When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
+          "description": "The footer margin of the section. If unset, the value defaults to margin_footer from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a footer margin is being respected for this section When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
           "$ref": "Dimension"
         },
         "marginHeader": {
-          "description": "The header margin of the section. If unset, uses margin_header from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a header margin is being respected for this section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
+          "description": "The header margin of the section. If unset, the value defaults to margin_header from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a header margin is being respected for this section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
           "$ref": "Dimension"
         },
         "marginLeft": {
-          "description": "The left page margin of the section. If unset, uses margin_left from DocumentStyle. Updating left margin causes columns in this section to resize. Since the margin affects column width, it is applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
+          "description": "The left page margin of the section. If unset, the value defaults to margin_left from DocumentStyle. Updating the left margin causes columns in this section to resize. Since the margin affects column width, it's applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
           "$ref": "Dimension"
         },
         "marginRight": {
-          "description": "The right page margin of the section. If unset, uses margin_right from DocumentStyle. Updating right margin causes columns in this section to resize. Since the margin affects column width, it is applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
+          "description": "The right page margin of the section. If unset, the value defaults to margin_right from DocumentStyle. Updating the right margin causes columns in this section to resize. Since the margin affects column width, it's applied before column properties. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
           "$ref": "Dimension"
         },
         "marginTop": {
-          "description": "The top page margin of the section. If unset, uses margin_top from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
+          "description": "The top page margin of the section. If unset, the value defaults to margin_top from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.",
           "$ref": "Dimension"
         },
         "pageNumberStart": {
@@ -5352,7 +5402,7 @@
     },
     "ShadingSuggestionState": {
       "id": "ShadingSuggestionState",
-      "description": "A mask that indicates which of the fields on the base Shading have been changed in this suggested change. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base Shading have been changed in this suggested change. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -5381,7 +5431,7 @@
       "enumDescriptions": [],
       "properties": {
         "chartId": {
-          "description": "The ID of the specific chart in the Google Sheets spreadsheet that is embedded.",
+          "description": "The ID of the specific chart in the Google Sheets spreadsheet that's embedded.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5406,7 +5456,7 @@
     },
     "SheetsChartReferenceSuggestionState": {
       "id": "SheetsChartReferenceSuggestionState",
-      "description": "A mask that indicates which of the fields on the base SheetsChartReference have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base SheetsChartReference have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -5677,7 +5727,7 @@
       "enumDescriptions": [],
       "properties": {
         "paragraphStyle": {
-          "description": "A ParagraphStyle that only includes the changes made in this suggestion. This can be used along with the paragraph_suggestion_state to see which fields have changed and their new values.",
+          "description": "A ParagraphStyle that only includes the changes made in this suggestion. This can be used along with the paragraph_style_suggestion_state to see which fields have changed and their new values.",
           "$ref": "ParagraphStyle"
         },
         "paragraphStyleSuggestionState": {
@@ -5813,7 +5863,7 @@
       "enumDescriptions": [],
       "properties": {
         "columns": {
-          "description": "Number of columns in the table. It is possible for a table to be non-rectangular, so some rows may have a different number of cells.",
+          "description": "Number of columns in the table. It's possible for a table to be non-rectangular, so some rows may have a different number of cells.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5851,7 +5901,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A Table may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A Table may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5947,7 +5997,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A TableCell may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A TableCell may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -6153,7 +6203,7 @@
     },
     "TableCellStyleSuggestionState": {
       "id": "TableCellStyleSuggestionState",
-      "description": "A mask that indicates which of the fields on the base TableCellStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base TableCellStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -6306,7 +6356,7 @@
           ],
           "enumDescriptions": [
             "The column width type is unspecified.",
-            "The column width is evenly distributed among the other evenly distrubted columns. The width of the column is automatically determined and will have an equal portion of the width remaining for the table after accounting for all columns with specified widths.",
+            "The column width is evenly distributed among the other evenly distributed columns. The width of the column is automatically determined and will have an equal portion of the width remaining for the table after accounting for all columns with specified widths.",
             "A fixed column width. The width property contains the column's width."
           ],
           "properties": {},
@@ -6460,7 +6510,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A TableRow may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A TableRow may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -6491,7 +6541,7 @@
           "items": null
         },
         "tableCells": {
-          "description": "The contents and style of each cell in this row. It is possible for a table to be non-rectangular, so some rows may have a different number of cells than other rows in the same table.",
+          "description": "The contents and style of each cell in this row. It's possible for a table to be non-rectangular, so some rows may have a different number of cells than other rows in the same table.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -6521,6 +6571,26 @@
         "minRowHeight": {
           "description": "The minimum height of the row. The row will be rendered in the Docs editor at a height equal to or greater than this value in order to show all the content in the row's cells.",
           "$ref": "Dimension"
+        },
+        "preventOverflow": {
+          "description": "Whether the row cannot overflow across page or column boundaries.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "tableHeader": {
+          "description": "Whether the row is a table header.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -6528,7 +6598,7 @@
     },
     "TableRowStyleSuggestionState": {
       "id": "TableRowStyleSuggestionState",
-      "description": "A mask that indicates which of the fields on the base TableRowStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base TableRowStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -6609,7 +6679,7 @@
           }
         },
         "suggestedInsertionIds": {
-          "description": "The suggested insertion IDs. A TextRun may have multiple insertion IDs if it is a nested suggested change. If empty, then this is not a suggested insertion.",
+          "description": "The suggested insertion IDs. A TextRun may have multiple insertion IDs if it's a nested suggested change. If empty, then this is not a suggested insertion.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -6649,7 +6719,7 @@
     },
     "TextStyle": {
       "id": "TextStyle",
-      "description": "Represents the styling that can be applied to text. Inherited text styles are represented as unset fields in this message. A text style's parent depends on where the text style is defined: * The TextStyle of text in a Paragraph inherits from the paragraph's corresponding named style type. * The TextStyle on a named style inherits from the normal text named style. * The TextStyle of the normal text named style inherits from the default text style in the Docs editor. * The TextStyle on a Paragraph element that is contained in a table may inherit its text style from the table style. If the text style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor.",
+      "description": "Represents the styling that can be applied to text. Inherited text styles are represented as unset fields in this message. A text style's parent depends on where the text style is defined: * The TextStyle of text in a Paragraph inherits from the paragraph's corresponding named style type. * The TextStyle on a named style inherits from the normal text named style. * The TextStyle of the normal text named style inherits from the default text style in the Docs editor. * The TextStyle on a Paragraph element that's contained in a table may inherit its text style from the table style. If the text style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -6660,7 +6730,7 @@
           "$ref": "OptionalColor"
         },
         "baselineOffset": {
-          "description": "The text's vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. The `font_size` itself is not affected by changes in this field.",
+          "description": "The text's vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. Changes in this field don't affect the `font_size`.",
           "type": "string",
           "format": null,
           "enum": [
@@ -6708,7 +6778,7 @@
           "items": null
         },
         "link": {
-          "description": "The hyperlink destination of the text. If unset, there is no link. Links are not inherited from parent text. Changing the link in an update request causes some other changes to the text style of the range: * When setting a link, the text foreground color will be updated to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults. * Setting a link on a text range that overlaps with an existing link will also update the existing link to point to the new URL. * Links are not settable on newline characters. As a result, setting a link on a text range that crosses a paragraph boundary, such as `\"ABC\\n123\"`, will separate the newline character(s) into their own text runs. The link will be applied separately to the runs before and after the newline. * Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the preceding text is another link) unless different styles are being set in the same request.",
+          "description": "The hyperlink destination of the text. If unset, there's no link. Links are not inherited from parent text. Changing the link in an update request causes some other changes to the text style of the range: * When setting a link, the text foreground color will be updated to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults. * Setting a link on a text range that overlaps with an existing link will also update the existing link to point to the new URL. * Links are not settable on newline characters. As a result, setting a link on a text range that crosses a paragraph boundary, such as `\"ABC\\n123\"`, will separate the newline character(s) into their own text runs. The link will be applied separately to the runs before and after the newline. * Removing a link will update the text style of the range to match the style of the preceding text (or the default text styles if the preceding text is another link) unless different styles are being set in the same request.",
           "$ref": "Link"
         },
         "smallCaps": {
@@ -6751,7 +6821,7 @@
     },
     "TextStyleSuggestionState": {
       "id": "TextStyleSuggestionState",
-      "description": "A mask that indicates which of the fields on the base TextStyle have been changed in this suggestion. For any field set to true, there is a new suggested value.",
+      "description": "A mask that indicates which of the fields on the base TextStyle have been changed in this suggestion. For any field set to true, there's a new suggested value.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -6922,7 +6992,7 @@
       "enumDescriptions": [],
       "properties": {
         "fields": {
-          "description": "The fields that should be updated. At least one field must be specified. The root `paragraph_style` is implied and should not be specified. For example, to update the paragraph style's alignment property, set `fields` to `\"alignment\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset.",
+          "description": "The fields that should be updated. At least one field must be specified. The root `paragraph_style` is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example, to update the paragraph style's alignment property, set `fields` to `\"alignment\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset.",
           "type": "string",
           "format": "google-fieldmask",
           "enum": [],
@@ -7152,7 +7222,7 @@
           "items": null
         },
         "weight": {
-          "description": "The weight of the font. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` (\"normal\"). The font weight makes up just one component of the rendered font weight. The rendered weight is determined by a combination of the `weight` and the text style's resolved `bold` value, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight.",
+          "description": "The weight of the font. This field can have any value that's a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` (\"normal\"). The font weight makes up just one component of the rendered font weight. A combination of the `weight` and the text style's resolved `bold` value determine the rendered weight, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight.",
           "type": "integer",
           "format": "int32",
           "enum": [],

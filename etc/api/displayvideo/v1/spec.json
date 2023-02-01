@@ -7,7 +7,7 @@
   "canonicalName": "Display Video",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230126",
   "title": "Display & Video 360 API",
   "description": "Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.",
   "ownerDomain": "google.com",
@@ -726,7 +726,7 @@
       "enumDescriptions": [],
       "properties": {
         "ageRange": {
-          "description": "The age range of an audience. We only support targeting a continuous age range of an audience. Thus, the age range represented in this field can be 1) targeted solely, or, 2) part of a larger continuous age range. The reach of a continuous age range targeting can be expanded by also targeting an audience of an unknown age. Output only in v1.",
+          "description": "The age range of an audience. We only support targeting a continuous age range of an audience. Thus, the age range represented in this field can be 1) targeted solely, or, 2) part of a larger continuous age range. The reach of a continuous age range targeting can be expanded by also targeting an audience of an unknown age. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -1592,7 +1592,7 @@
       "enumDescriptions": [],
       "properties": {
         "audioContentType": {
-          "description": "The audio content type. Output only in v1.",
+          "description": "The audio content type. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -3734,7 +3734,7 @@
       "enumDescriptions": [],
       "properties": {
         "contactInfos": {
-          "description": "A list of ContactInfo objects defining Customer Match audience members.",
+          "description": "A list of ContactInfo objects defining Customer Match audience members. The size of members after splitting the contact_infos mustn't be greater than 500,000.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3932,7 +3932,7 @@
           "items": null
         },
         "contentInstreamPosition": {
-          "description": "The content instream position for video or audio ads. Output only in v1.",
+          "description": "The content instream position for video or audio ads. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -4030,7 +4030,7 @@
           "items": null
         },
         "contentOutstreamPosition": {
-          "description": "The content outstream position. Output only in v1.",
+          "description": "The content outstream position. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -4459,7 +4459,8 @@
             "SDF_VERSION_5_1",
             "SDF_VERSION_5_2",
             "SDF_VERSION_5_3",
-            "SDF_VERSION_5_4"
+            "SDF_VERSION_5_4",
+            "SDF_VERSION_5_5"
           ],
           "enumDescriptions": [
             "SDF version value is not specified or is unknown in this version.",
@@ -4471,7 +4472,8 @@
             "SDF version 5.1",
             "SDF version 5.2",
             "SDF version 5.3",
-            "SDF version 5.4"
+            "SDF version 5.4",
+            "SDF version 5.5"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -5030,7 +5032,7 @@
           "$ref": "UniversalAdId"
         },
         "updateTime": {
-          "description": "Output only. The timestamp when the creative was last updated. Assigned by the system.",
+          "description": "Output only. The timestamp when the creative was last updated, either by the user or system (e.g. creative review). Assigned by the system.",
           "type": "string",
           "format": "google-datetime",
           "enum": [],
@@ -5227,6 +5229,18 @@
           "additionalProperties": null,
           "items": null
         },
+        "modelReadiness": {
+          "description": "Output only. The state of custom bidding model readiness for each advertiser who has access. This field may only include the state of the queried advertiser if the algorithm [`owner`](/display-video/api/reference/rest/v1/customBiddingAlgorithms#CustomBiddingAlgorithm.FIELDS.oneof_owner) is a partner and is being retrieved using an advertiser [`accessor`](/display-video/api/reference/rest/v1/customBiddingAlgorithms/list#body.QUERY_PARAMETERS.oneof_accessor).",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "CustomBiddingModelReadinessState"
+          }
+        },
         "name": {
           "description": "Output only. The resource name of the custom bidding algorithm.",
           "type": "string",
@@ -5264,6 +5278,50 @@
             "additionalProperties": null,
             "items": null
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CustomBiddingModelReadinessState": {
+      "id": "CustomBiddingModelReadinessState",
+      "description": "The custom bidding algorithm model readiness state for a single shared advertiser.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "advertiserId": {
+          "description": "The unique ID of the relevant advertiser.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readinessState": {
+          "description": "The readiness state of custom bidding model.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "READINESS_STATE_UNSPECIFIED",
+            "READINESS_STATE_ACTIVE",
+            "READINESS_STATE_INSUFFICIENT_DATA",
+            "READINESS_STATE_TRAINING",
+            "READINESS_STATE_NO_VALID_SCRIPT"
+          ],
+          "enumDescriptions": [
+            "State is not specified or is unknown in this version.",
+            "The model is trained and ready for serving.",
+            "There is not enough data to train the serving model.",
+            "The model is training and not ready for serving.",
+            "A valid custom bidding script has not been provided with which to train the model. This state will only be applied to algorithms whose `custom_bidding_algorithm_type` is `SCRIPT_BASED`."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -5835,7 +5893,7 @@
       "enumDescriptions": [],
       "properties": {
         "deviceType": {
-          "description": "The display name of the device type. Output only in v1.",
+          "description": "The display name of the device type. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -6524,6 +6582,198 @@
       "additionalProperties": null,
       "items": null
     },
+    "EditGuaranteedOrderReadAccessorsRequest": {
+      "id": "EditGuaranteedOrderReadAccessorsRequest",
+      "description": "Request message for GuaranteedOrderService.EditGuaranteedOrderReadAccessors.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "addedAdvertisers": {
+          "description": "The advertisers to add as read accessors to the guaranteed order.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "partnerId": {
+          "description": "Required. The partner context in which the change is being made.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readAccessInherited": {
+          "description": "Whether to give all advertisers of the read/write accessor partner read access to the guaranteed order. Only applicable if read_write_partner_id is set in the guaranteed order.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "removedAdvertisers": {
+          "description": "The advertisers to remove as read accessors to the guaranteed order.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "EditGuaranteedOrderReadAccessorsResponse": {
+      "id": "EditGuaranteedOrderReadAccessorsResponse",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "readAccessInherited": {
+          "description": "Whether all advertisers of read_write_partner_id have read access to the guaranteed order.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readAdvertiserIds": {
+          "description": "The IDs of advertisers with read access to the guaranteed order.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "EditInventorySourceReadWriteAccessorsRequest": {
+      "id": "EditInventorySourceReadWriteAccessorsRequest",
+      "description": "Request message for InventorySourceService.EditInventorySourceReadWriteAccessors.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "advertisersUpdate": {
+          "description": "The advertisers to add or remove from the list of advertisers that have read/write access to the inventory source. This change will remove an existing partner read/write accessor.",
+          "$ref": "EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate"
+        },
+        "assignPartner": {
+          "description": "Set the partner context as read/write accessor of the inventory source. This will remove all other current read/write advertiser accessors.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "partnerId": {
+          "description": "Required. The partner context by which the accessors change is being made.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate": {
+      "id": "EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate",
+      "description": "Update to the list of advertisers with read/write access to the inventory source.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "addedAdvertisers": {
+          "description": "The advertisers to add.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "removedAdvertisers": {
+          "description": "The advertisers to remove.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Empty": {
       "id": "Empty",
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
@@ -6544,7 +6794,7 @@
       "enumDescriptions": [],
       "properties": {
         "environment": {
-          "description": "The serving environment. Output only in v1.",
+          "description": "The serving environment. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -6731,9 +6981,16 @@
             "EXCHANGE_WAZE",
             "EXCHANGE_SOUNDCAST",
             "EXCHANGE_SHARETHROUGH",
+            "EXCHANGE_FYBER",
             "EXCHANGE_RED_FOR_PUBLISHERS",
             "EXCHANGE_MEDIANET",
-            "EXCHANGE_TAPJOY"
+            "EXCHANGE_TAPJOY",
+            "EXCHANGE_VISTAR",
+            "EXCHANGE_DAX",
+            "EXCHANGE_JCD",
+            "EXCHANGE_PLACE_EXCHANGE",
+            "EXCHANGE_APPLOVIN",
+            "EXCHANGE_CONNATIX"
           ],
           "enumDescriptions": [
             "Exchange is not specified or is unknown in this version.",
@@ -6799,9 +7056,16 @@
             "Waze.",
             "SoundCast.",
             "Sharethrough.",
+            "Fyber.",
             "Red For Publishers.",
             "Media.net.",
-            "Tapjoy."
+            "Tapjoy.",
+            "Vistar.",
+            "DAX.",
+            "JCD.",
+            "Place Exchange.",
+            "AppLovin.",
+            "Connatix."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -6917,9 +7181,16 @@
             "EXCHANGE_WAZE",
             "EXCHANGE_SOUNDCAST",
             "EXCHANGE_SHARETHROUGH",
+            "EXCHANGE_FYBER",
             "EXCHANGE_RED_FOR_PUBLISHERS",
             "EXCHANGE_MEDIANET",
-            "EXCHANGE_TAPJOY"
+            "EXCHANGE_TAPJOY",
+            "EXCHANGE_VISTAR",
+            "EXCHANGE_DAX",
+            "EXCHANGE_JCD",
+            "EXCHANGE_PLACE_EXCHANGE",
+            "EXCHANGE_APPLOVIN",
+            "EXCHANGE_CONNATIX"
           ],
           "enumDescriptions": [
             "Exchange is not specified or is unknown in this version.",
@@ -6985,9 +7256,16 @@
             "Waze.",
             "SoundCast.",
             "Sharethrough.",
+            "Fyber.",
             "Red For Publishers.",
             "Media.net.",
-            "Tapjoy."
+            "Tapjoy.",
+            "Vistar.",
+            "DAX.",
+            "JCD.",
+            "Place Exchange.",
+            "AppLovin.",
+            "Connatix."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -7093,9 +7371,16 @@
             "EXCHANGE_WAZE",
             "EXCHANGE_SOUNDCAST",
             "EXCHANGE_SHARETHROUGH",
+            "EXCHANGE_FYBER",
             "EXCHANGE_RED_FOR_PUBLISHERS",
             "EXCHANGE_MEDIANET",
-            "EXCHANGE_TAPJOY"
+            "EXCHANGE_TAPJOY",
+            "EXCHANGE_VISTAR",
+            "EXCHANGE_DAX",
+            "EXCHANGE_JCD",
+            "EXCHANGE_PLACE_EXCHANGE",
+            "EXCHANGE_APPLOVIN",
+            "EXCHANGE_CONNATIX"
           ],
           "enumDescriptions": [
             "Exchange is not specified or is unknown in this version.",
@@ -7161,9 +7446,16 @@
             "Waze.",
             "SoundCast.",
             "Sharethrough.",
+            "Fyber.",
             "Red For Publishers.",
             "Media.net.",
-            "Tapjoy."
+            "Tapjoy.",
+            "Vistar.",
+            "DAX.",
+            "JCD.",
+            "Place Exchange.",
+            "AppLovin.",
+            "Connatix."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -7695,7 +7987,7 @@
       "enumDescriptions": [],
       "properties": {
         "maxImpressions": {
-          "description": "The maximum number of times a user may be shown the same ad during this period. Must be greater than 0. Required when unlimited is `false`.",
+          "description": "The maximum number of times a user may be shown the same ad during this period. Must be greater than 0. Required when unlimited is `false` and max_views is not set.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -7756,14 +8048,14 @@
     },
     "GenderAssignedTargetingOptionDetails": {
       "id": "GenderAssignedTargetingOptionDetails",
-      "description": "Details for assigned gender targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARTGETING_TYPE_GENDER`.",
+      "description": "Details for assigned gender targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_GENDER`.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "gender": {
-          "description": "The gender of the audience. Output only in v1.",
+          "description": "The gender of the audience. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -7872,13 +8164,13 @@
             "LINE_ITEM_TYPE_VIDEO_OVER_THE_TOP"
           ],
           "enumDescriptions": [
-            "Type value is not specified or is unknown in this version.",
+            "Type value is not specified or is unknown in this version. Line items of this type and their targeting cannot be created or updated using the API.",
             "Image, HTML5, native, or rich media ads.",
             "Display ads that drive installs of an app.",
             "Video ads sold on a CPM basis for a variety of environments.",
             "Video ads that drive installs of an app.",
-            "Display ads served on mobile app inventory.",
-            "Video ads served on mobile app inventory.",
+            "Display ads served on mobile app inventory. Line items of this type and their targeting cannot be created or updated using the API.",
+            "Video ads served on mobile app inventory. Line items of this type and their targeting cannot be created or updated using the API.",
             "RTB Audio ads sold for a variety of environments.",
             "Over-the-top ads present in OTT insertion orders. This type is only applicable to line items with an insertion order of insertion_order_type `OVER_THE_TOP`."
           ],
@@ -8256,6 +8548,372 @@
       "additionalProperties": null,
       "items": null
     },
+    "GuaranteedOrder": {
+      "id": "GuaranteedOrder",
+      "description": "A guaranteed order. Guaranteed orders are parent entity of guaranteed inventory sources. When creating a guaranteed inventory source, a guaranteed order ID must be assigned to the inventory source.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "defaultAdvertiserId": {
+          "description": "Output only. The ID of default advertiser of the guaranteed order. The default advertiser is either the read_write_advertiser_id or, if that is not set, the first advertiser listed in read_advertiser_ids. Otherwise, there is no default advertiser.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "defaultCampaignId": {
+          "description": "The ID of the default campaign that is assigned to the guaranteed order. The default campaign must belong to the default advertiser.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "Required. The display name of the guaranteed order. Must be UTF-8 encoded with a maximum size of 240 bytes.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "exchange": {
+          "description": "Required. Immutable. The exchange where the guaranteed order originated.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "EXCHANGE_UNSPECIFIED",
+            "EXCHANGE_GOOGLE_AD_MANAGER",
+            "EXCHANGE_APPNEXUS",
+            "EXCHANGE_BRIGHTROLL",
+            "EXCHANGE_ADFORM",
+            "EXCHANGE_ADMETA",
+            "EXCHANGE_ADMIXER",
+            "EXCHANGE_ADSMOGO",
+            "EXCHANGE_ADSWIZZ",
+            "EXCHANGE_BIDSWITCH",
+            "EXCHANGE_BRIGHTROLL_DISPLAY",
+            "EXCHANGE_CADREON",
+            "EXCHANGE_DAILYMOTION",
+            "EXCHANGE_FIVE",
+            "EXCHANGE_FLUCT",
+            "EXCHANGE_FREEWHEEL",
+            "EXCHANGE_GENIEE",
+            "EXCHANGE_GUMGUM",
+            "EXCHANGE_IMOBILE",
+            "EXCHANGE_IBILLBOARD",
+            "EXCHANGE_IMPROVE_DIGITAL",
+            "EXCHANGE_INDEX",
+            "EXCHANGE_KARGO",
+            "EXCHANGE_MICROAD",
+            "EXCHANGE_MOPUB",
+            "EXCHANGE_NEND",
+            "EXCHANGE_ONE_BY_AOL_DISPLAY",
+            "EXCHANGE_ONE_BY_AOL_MOBILE",
+            "EXCHANGE_ONE_BY_AOL_VIDEO",
+            "EXCHANGE_OOYALA",
+            "EXCHANGE_OPENX",
+            "EXCHANGE_PERMODO",
+            "EXCHANGE_PLATFORMONE",
+            "EXCHANGE_PLATFORMID",
+            "EXCHANGE_PUBMATIC",
+            "EXCHANGE_PULSEPOINT",
+            "EXCHANGE_REVENUEMAX",
+            "EXCHANGE_RUBICON",
+            "EXCHANGE_SMARTCLIP",
+            "EXCHANGE_SMARTRTB",
+            "EXCHANGE_SMARTSTREAMTV",
+            "EXCHANGE_SOVRN",
+            "EXCHANGE_SPOTXCHANGE",
+            "EXCHANGE_STROER",
+            "EXCHANGE_TEADSTV",
+            "EXCHANGE_TELARIA",
+            "EXCHANGE_TVN",
+            "EXCHANGE_UNITED",
+            "EXCHANGE_YIELDLAB",
+            "EXCHANGE_YIELDMO",
+            "EXCHANGE_UNRULYX",
+            "EXCHANGE_OPEN8",
+            "EXCHANGE_TRITON",
+            "EXCHANGE_TRIPLELIFT",
+            "EXCHANGE_TABOOLA",
+            "EXCHANGE_INMOBI",
+            "EXCHANGE_SMAATO",
+            "EXCHANGE_AJA",
+            "EXCHANGE_SUPERSHIP",
+            "EXCHANGE_NEXSTAR_DIGITAL",
+            "EXCHANGE_WAZE",
+            "EXCHANGE_SOUNDCAST",
+            "EXCHANGE_SHARETHROUGH",
+            "EXCHANGE_FYBER",
+            "EXCHANGE_RED_FOR_PUBLISHERS",
+            "EXCHANGE_MEDIANET",
+            "EXCHANGE_TAPJOY",
+            "EXCHANGE_VISTAR",
+            "EXCHANGE_DAX",
+            "EXCHANGE_JCD",
+            "EXCHANGE_PLACE_EXCHANGE",
+            "EXCHANGE_APPLOVIN",
+            "EXCHANGE_CONNATIX"
+          ],
+          "enumDescriptions": [
+            "Exchange is not specified or is unknown in this version.",
+            "Google Ad Manager.",
+            "AppNexus.",
+            "BrightRoll Exchange for Video from Yahoo!.",
+            "Adform.",
+            "Admeta.",
+            "Admixer.",
+            "AdsMogo.",
+            "AdsWizz.",
+            "BidSwitch.",
+            "BrightRoll Exchange for Display from Yahoo!.",
+            "Cadreon.",
+            "Dailymotion.",
+            "Five.",
+            "Fluct.",
+            "FreeWheel SSP.",
+            "Geniee.",
+            "GumGum.",
+            "i-mobile.",
+            "iBILLBOARD.",
+            "Improve Digital.",
+            "Index Exchange.",
+            "Kargo.",
+            "MicroAd.",
+            "MoPub.",
+            "Nend.",
+            "ONE by AOL: Display Market Place.",
+            "ONE by AOL: Mobile.",
+            "ONE by AOL: Video.",
+            "Ooyala.",
+            "OpenX.",
+            "Permodo.",
+            "Platform One.",
+            "PlatformId.",
+            "PubMatic.",
+            "PulsePoint.",
+            "RevenueMax.",
+            "Rubicon.",
+            "SmartClip.",
+            "SmartRTB+.",
+            "SmartstreamTv.",
+            "Sovrn.",
+            "SpotXchange.",
+            "Ströer SSP.",
+            "TeadsTv.",
+            "Telaria.",
+            "TVN.",
+            "United.",
+            "Yieldlab.",
+            "Yieldmo.",
+            "UnrulyX.",
+            "Open8.",
+            "Triton.",
+            "TripleLift.",
+            "Taboola.",
+            "InMobi.",
+            "Smaato.",
+            "Aja.",
+            "Supership.",
+            "Nexstar Digital.",
+            "Waze.",
+            "SoundCast.",
+            "Sharethrough.",
+            "Fyber.",
+            "Red For Publishers.",
+            "Media.net.",
+            "Tapjoy.",
+            "Vistar.",
+            "DAX.",
+            "JCD.",
+            "Place Exchange.",
+            "AppLovin.",
+            "Connatix."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "guaranteedOrderId": {
+          "description": "Output only. The unique identifier of the guaranteed order. The guaranteed order IDs have the format `{exchange}-{legacy_guaranteed_order_id}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "legacyGuaranteedOrderId": {
+          "description": "Output only. The legacy ID of the guaranteed order. Assigned by the original exchange. The legacy ID is unique within one exchange, but is not guaranteed to be unique across all guaranteed orders. This ID is used in SDF and UI.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Output only. The resource name of the guaranteed order.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "publisherName": {
+          "description": "Required. The publisher name of the guaranteed order. Must be UTF-8 encoded with a maximum size of 240 bytes.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readAccessInherited": {
+          "description": "Whether all advertisers of read_write_partner_id have read access to the guaranteed order. Only applicable if read_write_partner_id is set. If True, overrides read_advertiser_ids.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readAdvertiserIds": {
+          "description": "The IDs of advertisers with read access to the guaranteed order. This field must not include the advertiser assigned to read_write_advertiser_id if it is set. All advertisers in this field must belong to read_write_partner_id or the same partner as read_write_advertiser_id.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "readWriteAdvertiserId": {
+          "description": "The advertiser with read/write access to the guaranteed order. This is also the default advertiser of the guaranteed order.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "readWritePartnerId": {
+          "description": "The partner with read/write access to the guaranteed order.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "status": {
+          "description": "The status settings of the guaranteed order.",
+          "$ref": "GuaranteedOrderStatus"
+        },
+        "updateTime": {
+          "description": "Output only. The timestamp when the guaranteed order was last updated. Assigned by the system.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GuaranteedOrderStatus": {
+      "id": "GuaranteedOrderStatus",
+      "description": "The status settings of the guaranteed order.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "configStatus": {
+          "description": "Output only. The configuration status of the guaranteed order. Acceptable values are `PENDING` and `COMPLETED`. A guaranteed order must be configured (fill in the required fields, choose creatives, and select a default campaign) before it can serve. Currently the configuration action can only be performed via UI.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "GUARANTEED_ORDER_CONFIG_STATUS_UNSPECIFIED",
+            "PENDING",
+            "COMPLETED"
+          ],
+          "enumDescriptions": [
+            "The approval status is not specified or is unknown in this version.",
+            "The beginning state of a guaranteed order. The guaranteed order in this state needs to be configured before it can serve.",
+            "The state after the buyer configures a guaranteed order."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "entityPauseReason": {
+          "description": "The user-provided reason for pausing this guaranteed order. Must be UTF-8 encoded with a maximum length of 100 bytes. Only applicable when entity_status is set to `ENTITY_STATUS_PAUSED`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "entityStatus": {
+          "description": "Whether or not the guaranteed order is servable. Acceptable values are `ENTITY_STATUS_ACTIVE`, `ENTITY_STATUS_ARCHIVED`, and `ENTITY_STATUS_PAUSED`. Default value is `ENTITY_STATUS_ACTIVE`.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ENTITY_STATUS_UNSPECIFIED",
+            "ENTITY_STATUS_ACTIVE",
+            "ENTITY_STATUS_ARCHIVED",
+            "ENTITY_STATUS_DRAFT",
+            "ENTITY_STATUS_PAUSED",
+            "ENTITY_STATUS_SCHEDULED_FOR_DELETION"
+          ],
+          "enumDescriptions": [
+            "Default value when status is not specified or is unknown in this version.",
+            "The entity is enabled to bid and spend budget.",
+            "The entity is archived. Bidding and budget spending are disabled. An entity can be deleted after archived. Deleted entities cannot be retrieved.",
+            "The entity is under draft. Bidding and budget spending are disabled.",
+            "Bidding and budget spending are paused for the entity.",
+            "The entity is scheduled for deletion."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "HouseholdIncomeAssignedTargetingOptionDetails": {
       "id": "HouseholdIncomeAssignedTargetingOptionDetails",
       "description": "Details for assigned household income targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_HOUSEHOLD_INCOME`.",
@@ -8265,7 +8923,7 @@
       "enumDescriptions": [],
       "properties": {
         "householdIncome": {
-          "description": "Output only. The household income of the audience.",
+          "description": "The household income of the audience. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -8751,7 +9409,7 @@
           "$ref": "DateRange"
         },
         "description": {
-          "description": "The budget segment description. It can be used to enter Purchase Order information for each budget segment and have that information printed on the invoices. Must be UTF-8 encoded with a length of no more than 80 characters.",
+          "description": "The budget segment description. It can be used to enter Purchase Order information for each budget segment and have that information printed on the invoices. Must be UTF-8 encoded.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -9214,9 +9872,16 @@
             "EXCHANGE_WAZE",
             "EXCHANGE_SOUNDCAST",
             "EXCHANGE_SHARETHROUGH",
+            "EXCHANGE_FYBER",
             "EXCHANGE_RED_FOR_PUBLISHERS",
             "EXCHANGE_MEDIANET",
-            "EXCHANGE_TAPJOY"
+            "EXCHANGE_TAPJOY",
+            "EXCHANGE_VISTAR",
+            "EXCHANGE_DAX",
+            "EXCHANGE_JCD",
+            "EXCHANGE_PLACE_EXCHANGE",
+            "EXCHANGE_APPLOVIN",
+            "EXCHANGE_CONNATIX"
           ],
           "enumDescriptions": [
             "Exchange is not specified or is unknown in this version.",
@@ -9282,10 +9947,27 @@
             "Waze.",
             "SoundCast.",
             "Sharethrough.",
+            "Fyber.",
             "Red For Publishers.",
             "Media.net.",
-            "Tapjoy."
+            "Tapjoy.",
+            "Vistar.",
+            "DAX.",
+            "JCD.",
+            "Place Exchange.",
+            "AppLovin.",
+            "Connatix."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "guaranteedOrderId": {
+          "description": "Immutable. The ID of the guaranteed order that this inventory source belongs to. Only applicable when commitment is `INVENTORY_SOURCE_COMMITMENT_GUARANTEED`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -9296,6 +9978,38 @@
           "format": "int64",
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "inventorySourceProductType": {
+          "description": "Output only. The product type of the inventory source, denoting the way through which it sells inventory.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INVENTORY_SOURCE_PRODUCT_TYPE_UNSPECIFIED",
+            "PREFERRED_DEAL",
+            "PRIVATE_AUCTION",
+            "PROGRAMMATIC_GUARANTEED",
+            "TAG_GUARANTEED",
+            "YOUTUBE_RESERVE",
+            "INSTANT_RESERVE",
+            "GUARANTEED_PACKAGE",
+            "PROGRAMMATIC_TV",
+            "AUCTION_PACKAGE"
+          ],
+          "enumDescriptions": [
+            "The product type is not specified or is unknown in this version. Modifying inventory sources of this product type are not supported via API.",
+            "The inventory source sells inventory through Preferred Deal.",
+            "The inventory source sells inventory through Private Auction.",
+            "The inventory source sells inventory through Programmatic Guaranteed.",
+            "The inventory source sells inventory through Tag Guaranteed.",
+            "The inventory source sells inventory through YouTube Reserve.",
+            "The inventory source sells inventory through Instant Reserve. Modifying inventory sources of this product type are not supported via API.",
+            "The inventory source sells inventory through Guaranteed Package. Modifying inventory sources of this product type are not supported via API.",
+            "The inventory source sells inventory through Programmtic TV. Modifying inventory sources of this product type are not supported via API.",
+            "The inventory source sells inventory through Auction Package. Modifying inventory sources of this product type are not supported via API."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -9342,9 +10056,59 @@
           "description": "Required. The rate details of the inventory source.",
           "$ref": "RateDetails"
         },
+        "readAdvertiserIds": {
+          "description": "Output only. The IDs of advertisers with read-only access to the inventory source.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "readPartnerIds": {
+          "description": "Output only. The IDs of partners with read-only access to the inventory source. All advertisers of partners in this field inherit read-only access to the inventory source.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "readWriteAccessors": {
+          "description": "The partner or advertisers that have read/write access to the inventory source. Output only when commitment is `INVENTORY_SOURCE_COMMITMENT_GUARANTEED`, in which case the read/write accessors are inherited from the parent guaranteed order. Required when commitment is `INVENTORY_SOURCE_COMMITMENT_NON_GUARANTEED`. If commitment is `INVENTORY_SOURCE_COMMITMENT_NON_GUARANTEED` and a partner is set in this field, all advertisers under this partner will automatically have read-only access to the inventory source. These advertisers will not be included in read_advertiser_ids.",
+          "$ref": "InventorySourceAccessors"
+        },
         "status": {
           "description": "The status settings of the inventory source.",
           "$ref": "InventorySourceStatus"
+        },
+        "subSitePropertyId": {
+          "description": "Immutable. The unique ID of the sub-site property assigned to this inventory source.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "timeRange": {
           "description": "The time range when this inventory source starts and stops serving.",
@@ -9354,6 +10118,78 @@
           "description": "Output only. The timestamp when the inventory source was last updated. Assigned by the system.",
           "type": "string",
           "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InventorySourceAccessors": {
+      "id": "InventorySourceAccessors",
+      "description": "The partner or advertisers with access to the inventory source.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "advertisers": {
+          "description": "The advertisers with access to the inventory source. All advertisers must belong to the same partner.",
+          "$ref": "InventorySourceAccessorsAdvertiserAccessors"
+        },
+        "partner": {
+          "description": "The partner with access to the inventory source.",
+          "$ref": "InventorySourceAccessorsPartnerAccessor"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InventorySourceAccessorsAdvertiserAccessors": {
+      "id": "InventorySourceAccessorsAdvertiserAccessors",
+      "description": "The advertisers with access to the inventory source.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "advertiserIds": {
+          "description": "The IDs of the advertisers.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "InventorySourceAccessorsPartnerAccessor": {
+      "id": "InventorySourceAccessorsPartnerAccessor",
+      "description": "The partner with access to the inventory source.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "partnerId": {
+          "description": "The ID of the partner.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -10092,13 +10928,13 @@
             "LINE_ITEM_TYPE_VIDEO_OVER_THE_TOP"
           ],
           "enumDescriptions": [
-            "Type value is not specified or is unknown in this version.",
+            "Type value is not specified or is unknown in this version. Line items of this type and their targeting cannot be created or updated using the API.",
             "Image, HTML5, native, or rich media ads.",
             "Display ads that drive installs of an app.",
             "Video ads sold on a CPM basis for a variety of environments.",
             "Video ads that drive installs of an app.",
-            "Display ads served on mobile app inventory.",
-            "Video ads served on mobile app inventory.",
+            "Display ads served on mobile app inventory. Line items of this type and their targeting cannot be created or updated using the API.",
+            "Video ads served on mobile app inventory. Line items of this type and their targeting cannot be created or updated using the API.",
             "RTB Audio ads sold for a variety of environments.",
             "Over-the-top ads present in OTT insertion orders. This type is only applicable to line items with an insertion order of insertion_order_type `OVER_THE_TOP`."
           ],
@@ -10161,7 +10997,7 @@
           "items": null
         },
         "targetingExpansion": {
-          "description": "The [targeting expansion](https://support.google.com/displayvideo/answer/10191558) settings of the line item. This config is only applicable when eligible audience list targeting is assigned to the line item.",
+          "description": "The [targeting expansion](//support.google.com/displayvideo/answer/10191558) settings of the line item. This config is only applicable when eligible audience list targeting is assigned to the line item. Beginning November 7, 2022, these settings may represent the [optimized targeting feature](//support.google.com/displayvideo/answer/12060859) in place of targeting expansion. This feature will be rolled out to all partners by November 9, 2022.",
           "$ref": "TargetingExpansionConfig"
         },
         "updateTime": {
@@ -10804,6 +11640,40 @@
         },
         "nextPageToken": {
           "description": "A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListGoogleAudiences` method to retrieve the next page of results.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListGuaranteedOrdersResponse": {
+      "id": "ListGuaranteedOrdersResponse",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "guaranteedOrders": {
+          "description": "The list of guaranteed orders. This list will be absent if empty.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GuaranteedOrder"
+          }
+        },
+        "nextPageToken": {
+          "description": "A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `ListGuaranteedOrders` method to retrieve the next page of results.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -11745,7 +12615,7 @@
       "enumDescriptions": [],
       "properties": {
         "mobileDeviceIds": {
-          "description": "A list of mobile device IDs defining Customer Match audience members.",
+          "description": "A list of mobile device IDs defining Customer Match audience members. The size of mobile_device_ids mustn't be greater than 500,000.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -11817,7 +12687,7 @@
       "enumDescriptions": [],
       "properties": {
         "contentPosition": {
-          "description": "The content position. Output only in v1.",
+          "description": "The content position. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -12113,7 +12983,7 @@
       "enumDescriptions": [],
       "properties": {
         "omid": {
-          "description": "The type of Open Measurement enabled inventory. Output only in v1.",
+          "description": "The type of Open Measurement enabled inventory. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -12564,14 +13434,14 @@
     },
     "ParentalStatusAssignedTargetingOptionDetails": {
       "id": "ParentalStatusAssignedTargetingOptionDetails",
-      "description": "Details for assigned parental status targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARTGETING_TYPE_PARENTAL_STATUS`.",
+      "description": "Details for assigned parental status targeting option. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_PARENTAL_STATUS`.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "parentalStatus": {
-          "description": "Output only. The parental status of the audience.",
+          "description": "The parental status of the audience. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -13842,7 +14712,8 @@
             "SDF_VERSION_5_1",
             "SDF_VERSION_5_2",
             "SDF_VERSION_5_3",
-            "SDF_VERSION_5_4"
+            "SDF_VERSION_5_4",
+            "SDF_VERSION_5_5"
           ],
           "enumDescriptions": [
             "SDF version value is not specified or is unknown in this version.",
@@ -13854,7 +14725,8 @@
             "SDF version 5.1",
             "SDF version 5.2",
             "SDF version 5.3",
-            "SDF version 5.4"
+            "SDF version 5.4",
+            "SDF version 5.5"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -13928,7 +14800,8 @@
             "SDF_VERSION_5_1",
             "SDF_VERSION_5_2",
             "SDF_VERSION_5_3",
-            "SDF_VERSION_5_4"
+            "SDF_VERSION_5_4",
+            "SDF_VERSION_5_5"
           ],
           "enumDescriptions": [
             "SDF version value is not specified or is unknown in this version.",
@@ -13940,7 +14813,8 @@
             "SDF version 5.1",
             "SDF version 5.2",
             "SDF version 5.3",
-            "SDF version 5.4"
+            "SDF version 5.4",
+            "SDF version 5.5"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -13977,7 +14851,7 @@
           "$ref": "GeoRegionSearchTerms"
         },
         "pageSize": {
-          "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+          "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -14057,7 +14931,7 @@
           "items": null
         },
         "sensitiveCategory": {
-          "description": "An enum for the DV360 Sensitive category content classifier. Output only in v1.",
+          "description": "Output only. An enum for the DV360 Sensitive category content classifier.",
           "type": "string",
           "format": null,
           "enum": [
@@ -14305,14 +15179,14 @@
     },
     "TargetingExpansionConfig": {
       "id": "TargetingExpansionConfig",
-      "description": "Settings that control the targeting expansion of the line item. Targeting expansion allows the line item to reach a larger audience based on the original audience list and the targeting expansion level.",
+      "description": "Settings that control the targeting expansion of the line item. Targeting expansion allows the line item to reach a larger audience based on the original audience list and the targeting expansion level. Beginning November 7, 2022, these settings may represent the [optimized targeting feature](//support.google.com/displayvideo/answer/12060859) in place of targeting expansion. This feature will be rolled out to all partners by November 9, 2022.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "excludeFirstPartyAudience": {
-          "description": "Required. Whether to exclude first party audiences from targeting. Similar audiences of the excluded first party lists will not be excluded. Only applicable when a first-party audience is positively targeted (directly or included in a combined audience), otherwise this selection will be ignored.",
+          "description": "Required. Whether to exclude first-party audiences from use in targeting expansion or optimized targeting. Similar audiences of the excluded first-party lists will not be excluded. Only applicable when a first-party audience is positively targeted (directly or included in a combined audience), otherwise this selection will be ignored.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -14322,7 +15196,7 @@
           "items": null
         },
         "targetingExpansionLevel": {
-          "description": "Required. Magnitude of expansion for applicable targeting under this line item.",
+          "description": "Required. Magnitude of expansion for applicable targeting under this line item. Beginning November 7, 2022, the behavior of this field will change in the following ways with the replacement of targeting expansion with [optimized targeting](//support.google.com/displayvideo/answer/12060859): * This field will represent the optimized targeting checkbox, with a `NO_EXPANSION` value representing optimized targeting turned off and a `LEAST_EXPANSION` value representing optimized targeting turned on. * `NO_EXPANSION` will be the default value for the field and will be automatically assigned if you do not set the field. * If you set the field to any value other than `NO_EXPANSION`, it will automatically be set to `LEAST_EXPANSION`.",
           "type": "string",
           "format": null,
           "enum": [
@@ -15164,7 +16038,7 @@
           "items": null
         },
         "videoPlayerSize": {
-          "description": "The video player size. Output only in v1.",
+          "description": "The video player size. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -15242,7 +16116,7 @@
           "items": null
         },
         "viewability": {
-          "description": "The predicted viewability percentage. Output only in v1.",
+          "description": "The predicted viewability percentage. Output only in v1. Required in v2.",
           "type": "string",
           "format": null,
           "enum": [
@@ -16091,7 +16965,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -16763,7 +17637,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -17072,7 +17946,7 @@
                   "repeated": false
                 },
                 "filter": {
-                  "description": "Allows filtering by creative properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restriction for the same field must be combined by `OR`. * Restriction for different fields must be combined by `AND`. * Between `(` and `)` there can only be restrictions combined by `OR` for the same field. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)` for the following fields: - `entityStatus` - `creativeType`. - `dimensions` - `minDuration` - `maxDuration` - `approvalStatus` - `exchangeReviewStatus` - `dynamic` - `creativeId` * The operator must be `HAS (:)` for the following fields: - `lineItemIds` * For `entityStatus`, `minDuration`, `maxDuration`, and `dynamic` there may be at most one restriction. * For `dimensions`, the value is in the form of `\"{width}x{height}\"`. * For `exchangeReviewStatus`, the value is in the form of `{exchange}-{reviewStatus}`. * For `minDuration` and `maxDuration`, the value is in the form of `\"{duration}s\"`. Only seconds are supported with millisecond granularity. * There may be multiple `lineItemIds` restrictions in order to search against multiple possible line item IDs. * There may be multiple `creativeId` restrictions in order to search against multiple possible creative IDs. Examples: * All native creatives: `creativeType=\"CREATIVE_TYPE_NATIVE\"` * All active creatives with 300x400 or 50x100 dimensions: `entityStatus=\"ENTITY_STATUS_ACTIVE\" AND (dimensions=\"300x400\" OR dimensions=\"50x100\")` * All dynamic creatives that are approved by AdX or AppNexus, with a minimum duration of 5 seconds and 200ms. `dynamic=\"true\" AND minDuration=\"5.2s\" AND (exchangeReviewStatus=\"EXCHANGE_GOOGLE_AD_MANAGER-REVIEW_STATUS_APPROVED\" OR exchangeReviewStatus=\"EXCHANGE_APPNEXUS-REVIEW_STATUS_APPROVED\")` * All video creatives that are associated with line item ID 1 or 2: `creativeType=\"CREATIVE_TYPE_VIDEO\" AND (lineItemIds:1 OR lineItemIds:2)` * Find creatives by multiple creative IDs: `creativeId=1 OR creativeId=2` The length of this field should be no more than 500 characters.",
+                  "description": "Allows filtering by creative properties. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restriction for the same field must be combined by `OR`. * Restriction for different fields must be combined by `AND`. * Between `(` and `)` there can only be restrictions combined by `OR` for the same field. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)` for the following fields: - `entityStatus` - `creativeType`. - `dimensions` - `minDuration` - `maxDuration` - `approvalStatus` - `exchangeReviewStatus` - `dynamic` - `creativeId` * The operator must be `HAS (:)` for the following fields: - `lineItemIds` * The operator must be `GREATER THAN OR EQUAL TO (>=)` or `LESS THAN OR EQUAL TO (<=)` for the following fields: - `updateTime` (input in ISO 8601 format, or YYYY-MM-DDTHH:MM:SSZ) * For `entityStatus`, `minDuration`, `maxDuration`, `updateTime`, and `dynamic`, there may be at most one restriction. * For `dimensions`, the value is in the form of `\"{width}x{height}\"`. * For `exchangeReviewStatus`, the value is in the form of `{exchange}-{reviewStatus}`. * For `minDuration` and `maxDuration`, the value is in the form of `\"{duration}s\"`. Only seconds are supported with millisecond granularity. * For `updateTime`, a creative resource's field value reflects the last time that a creative has been updated, which includes updates made by the system (e.g. creative review updates). * There may be multiple `lineItemIds` restrictions in order to search against multiple possible line item IDs. * There may be multiple `creativeId` restrictions in order to search against multiple possible creative IDs. Examples: * All native creatives: `creativeType=\"CREATIVE_TYPE_NATIVE\"` * All active creatives with 300x400 or 50x100 dimensions: `entityStatus=\"ENTITY_STATUS_ACTIVE\" AND (dimensions=\"300x400\" OR dimensions=\"50x100\")` * All dynamic creatives that are approved by AdX or AppNexus, with a minimum duration of 5 seconds and 200ms. `dynamic=\"true\" AND minDuration=\"5.2s\" AND (exchangeReviewStatus=\"EXCHANGE_GOOGLE_AD_MANAGER-REVIEW_STATUS_APPROVED\" OR exchangeReviewStatus=\"EXCHANGE_APPNEXUS-REVIEW_STATUS_APPROVED\")` * All video creatives that are associated with line item ID 1 or 2: `creativeType=\"CREATIVE_TYPE_VIDEO\" AND (lineItemIds:1 OR lineItemIds:2)` * Find creatives by multiple creative IDs: `creativeId=1 OR creativeId=2` * All creatives with an update time greater than or equal to `2020-11-04T18:54:47Z (format of ISO 8601)`: `updateTime>=\"2020-11-04T18:54:47Z\"` The length of this field should be no more than 500 characters.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -17100,7 +17974,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -17789,7 +18663,7 @@
                   "repeated": false
                 },
                 "insertionOrderId": {
-                  "description": "The ID of the insertion order we need to delete.",
+                  "description": "The ID of the insertion order to delete.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -18095,7 +18969,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -18205,7 +19079,7 @@
                       "id": "displayvideo.advertisers.lineItems.targetingTypes.assignedTargetingOptions.create",
                       "path": "v1/advertisers/{+advertiserId}/lineItems/{+lineItemId}/targetingTypes/{+targetingType}/assignedTargetingOptions",
                       "httpMethod": "POST",
-                      "description": "Assigns a targeting option to a line item. Returns the assigned targeting option if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption",
+                      "description": "Assigns a targeting option to a line item. Returns the assigned targeting option if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdate * UpdateLineItem * DeleteLineItemAssignedTargetingOption",
                       "parameters": {
                         "advertiserId": {
                           "description": "Required. The ID of the advertiser the line item belongs to.",
@@ -18368,7 +19242,7 @@
                       "id": "displayvideo.advertisers.lineItems.targetingTypes.assignedTargetingOptions.delete",
                       "path": "v1/advertisers/{+advertiserId}/lineItems/{+lineItemId}/targetingTypes/{+targetingType}/assignedTargetingOptions/{+assignedTargetingOptionId}",
                       "httpMethod": "DELETE",
-                      "description": "Deletes an assigned targeting option from a line item. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption",
+                      "description": "Deletes an assigned targeting option from a line item. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdate * UpdateLineItem * CreateLineItemAssignedTargetingOption",
                       "parameters": {
                         "advertiserId": {
                           "description": "Required. The ID of the advertiser the line item belongs to.",
@@ -18944,7 +19818,7 @@
               "id": "displayvideo.advertisers.lineItems.bulkEditLineItemAssignedTargetingOptions",
               "path": "v1/advertisers/{+advertiserId}/lineItems/{+lineItemId}:bulkEditLineItemAssignedTargetingOptions",
               "httpMethod": "POST",
-              "description": "Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption",
+              "description": "Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption",
               "parameters": {
                 "advertiserId": {
                   "description": "Required. The ID of the advertiser the line item belongs to.",
@@ -19162,7 +20036,7 @@
                   "repeated": false
                 },
                 "lineItemId": {
-                  "description": "The ID of the line item we need to fetch.",
+                  "description": "The ID of the line item to delete.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -19333,7 +20207,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -19381,7 +20255,7 @@
               "id": "displayvideo.advertisers.lineItems.patch",
               "path": "v1/advertisers/{+advertiserId}/lineItems/{+lineItemId}",
               "httpMethod": "PATCH",
-              "description": "Updates an existing line item. Returns the updated line item if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption",
+              "description": "Updates an existing line item. Returns the updated line item if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdateLineItems * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption",
               "parameters": {
                 "advertiserId": {
                   "description": "Output only. The unique ID of the advertiser the line item belongs to.",
@@ -19690,7 +20564,7 @@
                       "repeated": false
                     },
                     "pageSize": {
-                      "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                      "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -19879,7 +20753,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -20244,7 +21118,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -20868,7 +21742,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. Defaults to `100` if not set. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -21980,7 +22854,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -22208,7 +23082,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
               "default": null,
               "location": "query",
               "required": false,
@@ -22467,7 +23341,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -22637,7 +23511,7 @@
               "repeated": false
             },
             "filter": {
-              "description": "Allows filtering by custom bidding algorithm fields. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND`. A sequence of restrictions * implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)` or `EQUALS (=)`. * The operator must be `CONTAINS (:)` for the following field: - `displayName` * The operator must be `EQUALS (=)` for the following field: - `customBiddingAlgorithmType` - `customBiddingAlgorithmState` * For `displayName`, the value is a string. We return all custom bidding algorithms whose display_name contains such string. * For `customBiddingAlgorithmType`, the value is a string. We return all algorithms whose custom_bidding_algorithm_type is equal to the given type. * For `customBiddingAlgorithmState`, the value is a string. We return all algorithms whose custom_bidding_algorithm_state is equal to the given type. Examples: * All custom bidding algorithms for which the display name contains \"politics\": `displayName:politics`. * All custom bidding algorithms for which the type is \"SCRIPT_BASED\": `customBiddingAlgorithmType=SCRIPT_BASED` * All custom bidding algorithms for which the state is \"ENABLED\": `customBiddingAlgorithmState=ENABLED` The length of this field should be no more than 500 characters.",
+              "description": "Allows filtering by custom bidding algorithm fields. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND`. A sequence of restrictions * implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `CONTAINS (:)` or `EQUALS (=)`. * The operator must be `CONTAINS (:)` for the following field: - `displayName` * The operator must be `EQUALS (=)` for the following field: - `customBiddingAlgorithmType` * For `displayName`, the value is a string. We return all custom bidding algorithms whose display_name contains such string. * For `customBiddingAlgorithmType`, the value is a string. We return all algorithms whose custom_bidding_algorithm_type is equal to the given type. Examples: * All custom bidding algorithms for which the display name contains \"politics\": `displayName:politics`. * All custom bidding algorithms for which the type is \"SCRIPT_BASED\": `customBiddingAlgorithmType=SCRIPT_BASED` The length of this field should be no more than 500 characters.",
               "default": null,
               "location": "query",
               "required": false,
@@ -22665,7 +23539,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
               "default": null,
               "location": "query",
               "required": false,
@@ -22944,7 +23818,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
               "default": null,
               "location": "query",
               "required": false,
@@ -23181,7 +24055,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
               "default": null,
               "location": "query",
               "required": false,
@@ -23546,7 +24420,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
               "default": null,
               "location": "query",
               "required": false,
@@ -23592,6 +24466,352 @@
           "request": null,
           "response": {
             "$ref": "ListGoogleAudiencesResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "guaranteedOrders": {
+      "resources": {},
+      "methods": {
+        "create": {
+          "id": "displayvideo.guaranteedOrders.create",
+          "path": "v1/guaranteedOrders",
+          "httpMethod": "POST",
+          "description": "Creates a new guaranteed order. Returns the newly created guaranteed order if successful.",
+          "parameters": {
+            "advertiserId": {
+              "description": "The ID of the advertiser that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "partnerId": {
+              "description": "The ID of the partner that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": {
+            "$ref": "GuaranteedOrder"
+          },
+          "response": {
+            "$ref": "GuaranteedOrder"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "editGuaranteedOrderReadAccessors": {
+          "id": "displayvideo.guaranteedOrders.editGuaranteedOrderReadAccessors",
+          "path": "v1/guaranteedOrders/{+guaranteedOrderId}:editGuaranteedOrderReadAccessors",
+          "httpMethod": "POST",
+          "description": "Edits read advertisers of a guaranteed order.",
+          "parameters": {
+            "guaranteedOrderId": {
+              "description": "Required. The ID of the guaranteed order to edit. The ID is of the format `{exchange}-{legacy_guaranteed_order_id}`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "guaranteedOrderId"
+          ],
+          "request": {
+            "$ref": "EditGuaranteedOrderReadAccessorsRequest"
+          },
+          "response": {
+            "$ref": "EditGuaranteedOrderReadAccessorsResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "get": {
+          "id": "displayvideo.guaranteedOrders.get",
+          "path": "v1/guaranteedOrders/{+guaranteedOrderId}",
+          "httpMethod": "GET",
+          "description": "Gets a guaranteed order.",
+          "parameters": {
+            "advertiserId": {
+              "description": "The ID of the advertiser that has access to the guaranteed order.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "guaranteedOrderId": {
+              "description": "Required. The ID of the guaranteed order to fetch. The ID is of the format `{exchange}-{legacy_guaranteed_order_id}`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "partnerId": {
+              "description": "The ID of the partner that has access to the guaranteed order.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "guaranteedOrderId"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "GuaranteedOrder"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "list": {
+          "id": "displayvideo.guaranteedOrders.list",
+          "path": "v1/guaranteedOrders",
+          "httpMethod": "GET",
+          "description": "Lists guaranteed orders that are accessible to the current user. The order is defined by the order_by parameter. If a filter by entity_status is not specified, guaranteed orders with entity status `ENTITY_STATUS_ARCHIVED` will not be included in the results.",
+          "parameters": {
+            "advertiserId": {
+              "description": "The ID of the advertiser that has access to the guaranteed order.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "filter": {
+              "description": "Allows filtering by guaranteed order properties. * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * The operator must be `EQUALS (=)`. * Supported fields: - `guaranteed_order_id` - `exchange` - `display_name` - `status.entityStatus` Examples: * All active guaranteed orders: `status.entityStatus=\"ENTITY_STATUS_ACTIVE\"` * Guaranteed orders belonging to Google Ad Manager or Rubicon exchanges: `exchange=\"EXCHANGE_GOOGLE_AD_MANAGER\" OR exchange=\"EXCHANGE_RUBICON\"` The length of this field should be no more than 500 characters.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "orderBy": {
+              "description": "Field by which to sort the list. Acceptable values are: * `displayName` (default) The default sorting order is ascending. To specify descending order for a field, a suffix \"desc\" should be added to the field name. For example, `displayName desc`.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageSize": {
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageToken": {
+              "description": "A token identifying a page of results the server should return. Typically, this is the value of next_page_token returned from the previous call to `ListGuaranteedOrders` method. If not specified, the first page of results will be returned.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "partnerId": {
+              "description": "The ID of the partner that has access to the guaranteed order.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "ListGuaranteedOrdersResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "patch": {
+          "id": "displayvideo.guaranteedOrders.patch",
+          "path": "v1/guaranteedOrders/{+guaranteedOrderId}",
+          "httpMethod": "PATCH",
+          "description": "Updates an existing guaranteed order. Returns the updated guaranteed order if successful.",
+          "parameters": {
+            "advertiserId": {
+              "description": "The ID of the advertiser that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "guaranteedOrderId": {
+              "description": "Output only. The unique identifier of the guaranteed order. The guaranteed order IDs have the format `{exchange}-{legacy_guaranteed_order_id}`.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "partnerId": {
+              "description": "The ID of the partner that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "updateMask": {
+              "description": "Required. The mask to control which fields to update.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "guaranteedOrderId"
+          ],
+          "request": {
+            "$ref": "GuaranteedOrder"
+          },
+          "response": {
+            "$ref": "GuaranteedOrder"
           },
           "scopes": [
             "https://www.googleapis.com/auth/display-video"
@@ -24150,7 +25370,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -24292,6 +25512,96 @@
     "inventorySources": {
       "resources": {},
       "methods": {
+        "create": {
+          "id": "displayvideo.inventorySources.create",
+          "path": "v1/inventorySources",
+          "httpMethod": "POST",
+          "description": "Creates a new inventory source. Returns the newly created inventory source if successful.",
+          "parameters": {
+            "advertiserId": {
+              "description": "The ID of the advertiser that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "partnerId": {
+              "description": "The ID of the partner that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": {
+            "$ref": "InventorySource"
+          },
+          "response": {
+            "$ref": "InventorySource"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "editInventorySourceReadWriteAccessors": {
+          "id": "displayvideo.inventorySources.editInventorySourceReadWriteAccessors",
+          "path": "v1/inventorySources/{+inventorySourceId}:editInventorySourceReadWriteAccessors",
+          "httpMethod": "POST",
+          "description": "Edits read/write accessors of an inventory source. Returns the updated read_write_accessors for the inventory source.",
+          "parameters": {
+            "inventorySourceId": {
+              "description": "Required. The ID of inventory source to update.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "inventorySourceId"
+          ],
+          "request": {
+            "$ref": "EditInventorySourceReadWriteAccessorsRequest"
+          },
+          "response": {
+            "$ref": "InventorySourceAccessors"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
         "get": {
           "id": "displayvideo.inventorySources.get",
           "path": "v1/inventorySources/{+inventorySourceId}",
@@ -24392,7 +25702,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -24438,6 +25748,87 @@
           "request": null,
           "response": {
             "$ref": "ListInventorySourcesResponse"
+          },
+          "scopes": [
+            "https://www.googleapis.com/auth/display-video"
+          ],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "patch": {
+          "id": "displayvideo.inventorySources.patch",
+          "path": "v1/inventorySources/{+inventorySourceId}",
+          "httpMethod": "PATCH",
+          "description": "Updates an existing inventory source. Returns the updated inventory source if successful.",
+          "parameters": {
+            "advertiserId": {
+              "description": "The ID of the advertiser that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "inventorySourceId": {
+              "description": "Output only. The unique ID of the inventory source. Assigned by the system.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "partnerId": {
+              "description": "The ID of the partner that the request is being made within.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "int64",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "updateMask": {
+              "description": "Required. The mask to control which fields to update.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": "google-fieldmask",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "inventorySourceId"
+          ],
+          "request": {
+            "$ref": "InventorySource"
+          },
+          "response": {
+            "$ref": "InventorySource"
           },
           "scopes": [
             "https://www.googleapis.com/auth/display-video"
@@ -25103,7 +26494,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -25755,7 +27146,7 @@
                       "repeated": false
                     },
                     "pageSize": {
-                      "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                      "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -26040,7 +27431,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
               "default": null,
               "location": "query",
               "required": false,
@@ -26369,7 +27760,7 @@
                   "repeated": false
                 },
                 "pageSize": {
-                  "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
+                  "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value is specified.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -26832,7 +28223,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Requested page size. Must be between `1` and `100`. If unspecified will default to `100`.",
+              "description": "Requested page size. Must be between `1` and `200`. If unspecified will default to `100`.",
               "default": null,
               "location": "query",
               "required": false,

@@ -7,7 +7,7 @@
   "canonicalName": "Firebasestorage",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220413",
+  "revision": "20230120",
   "title": "Cloud Storage for Firebase API",
   "description": "The Cloud Storage for Firebase API enables programmatic management of Cloud Storage buckets for use in Firebase projects",
   "ownerDomain": "google.com",
@@ -229,29 +229,9 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "location": {
-          "description": "Output only. Location of the storage bucket.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
         "name": {
           "description": "Resource name of the bucket.",
           "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "reconciling": {
-          "description": "Output only. Represents whether a bucket is being moved to a new location, in which case reconciling is set to true.",
-          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],

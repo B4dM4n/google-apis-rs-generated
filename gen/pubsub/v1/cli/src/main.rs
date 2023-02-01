@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("pubsub1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220421")
+            .version("0.1.0-20230124")
             .about("Provides reliable, many-to-many, asynchronous messaging between applications. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,13 +38,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: schemas, snapshots, subscriptions and topics");
         let mut schemas1 = SubCommand::with_name("schemas")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_iam_policy, list, set_iam_policy, test_iam_permissions, validate and validate_message");
+                        .about("methods: commit, create, delete, delete_revision, get, get_iam_policy, list, list_revisions, rollback, set_iam_policy, test_iam_permissions, validate and validate_message");
+        {
+            let mcmd = SubCommand::with_name("commit")
+                .about("Commits a new schema revision to an existing schema.");
+            schemas1 = schemas1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create").about("Creates a schema.");
             schemas1 = schemas1.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("delete").about("Deletes a schema.");
+            schemas1 = schemas1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete_revision")
+                .about("Deletes a specific schema revision.");
             schemas1 = schemas1.subcommand(mcmd);
         }
         {
@@ -57,6 +67,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists schemas in a project.");
+            schemas1 = schemas1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list_revisions")
+                .about("Lists all schema revisions for the named schema.");
+            schemas1 = schemas1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("rollback")
+                .about("Creates a new schema revision that is a copy of the provided revision_id.");
             schemas1 = schemas1.subcommand(mcmd);
         }
         {
@@ -156,7 +176,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("pull").about("Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many concurrent pull requests pending for the given subscription.");
+            let mcmd = SubCommand::with_name("pull").about("Pulls messages from the server.");
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {

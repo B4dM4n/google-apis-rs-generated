@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("securitycenter1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220421")
+            .version("0.1.0-20230126")
             .about("Security Command Center API provides access to temporal views of assets and findings within an organization.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -34,8 +34,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .multiple(false)
                 .takes_value(false));
         let mut folders0 = SubCommand::with_name("folders")
-            .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: assets, big_query_exports, findings, mute_configs and sources");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("sub-resources: assets, big_query_exports, findings, mute_configs, notification_configs and sources");
         let mut organizations0 = SubCommand::with_name("organizations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get_organization_settings and update_organization_settings");
@@ -50,8 +50,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             organizations0 = organizations0.subcommand(mcmd);
         }
         let mut projects0 = SubCommand::with_name("projects")
-            .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: assets, big_query_exports, findings, mute_configs and sources");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("sub-resources: assets, big_query_exports, findings, mute_configs, notification_configs and sources");
         let mut assets1 = SubCommand::with_name("assets")
             .setting(AppSettings::ColoredHelp)
             .about("methods: group, list and update_security_marks");
@@ -74,16 +74,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a big query export.");
+            let mcmd = SubCommand::with_name("create").about("Creates a BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("delete").about("Deletes an existing big query export.");
+                SubCommand::with_name("delete").about("Deletes an existing BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets a big query export.");
+            let mcmd = SubCommand::with_name("get").about("Gets a BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
@@ -124,6 +124,29 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("patch").about("Updates a mute config.");
             mute_configs1 = mute_configs1.subcommand(mcmd);
         }
+        let mut notification_configs1 = SubCommand::with_name("notification_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a notification config.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a notification config.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a notification config.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists notification configs.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about(" Updates a notification config. The following update fields are allowed: description, pubsub_topic, streaming_config.filter");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
         let mut sources1 = SubCommand::with_name("sources")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -158,16 +181,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a big query export.");
+            let mcmd = SubCommand::with_name("create").about("Creates a BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("delete").about("Deletes an existing big query export.");
+                SubCommand::with_name("delete").about("Deletes an existing BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets a big query export.");
+            let mcmd = SubCommand::with_name("get").about("Gets a BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
@@ -307,16 +330,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("create").about("Creates a big query export.");
+            let mcmd = SubCommand::with_name("create").about("Creates a BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
             let mcmd =
-                SubCommand::with_name("delete").about("Deletes an existing big query export.");
+                SubCommand::with_name("delete").about("Deletes an existing BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Gets a big query export.");
+            let mcmd = SubCommand::with_name("get").about("Gets a BigQuery export.");
             big_query_exports1 = big_query_exports1.subcommand(mcmd);
         }
         {
@@ -356,6 +379,29 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("patch").about("Updates a mute config.");
             mute_configs1 = mute_configs1.subcommand(mcmd);
+        }
+        let mut notification_configs1 = SubCommand::with_name("notification_configs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a notification config.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a notification config.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a notification config.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists notification configs.");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about(" Updates a notification config. The following update fields are allowed: description, pubsub_topic, streaming_config.filter");
+            notification_configs1 = notification_configs1.subcommand(mcmd);
         }
         let mut sources1 = SubCommand::with_name("sources")
             .setting(AppSettings::ColoredHelp)
@@ -487,6 +533,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         sources1 = sources1.subcommand(findings2);
         sources1 = sources1.subcommand(findings2);
         projects0 = projects0.subcommand(sources1);
+        projects0 = projects0.subcommand(notification_configs1);
         projects0 = projects0.subcommand(mute_configs1);
         projects0 = projects0.subcommand(findings1);
         projects0 = projects0.subcommand(big_query_exports1);
@@ -499,6 +546,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         organizations0 = organizations0.subcommand(big_query_exports1);
         organizations0 = organizations0.subcommand(assets1);
         folders0 = folders0.subcommand(sources1);
+        folders0 = folders0.subcommand(notification_configs1);
         folders0 = folders0.subcommand(mute_configs1);
         folders0 = folders0.subcommand(findings1);
         folders0 = folders0.subcommand(big_query_exports1);

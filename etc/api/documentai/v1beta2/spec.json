@@ -7,7 +7,7 @@
   "canonicalName": "Document",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta2",
-  "revision": "20220409",
+  "revision": "20230127",
   "title": "Cloud Document AI API",
   "description": "Service to parse structured information from unstructured or semi-structured documents using state-of-the-art Google AI such as natural language, computer vision, translation, and AutoML.",
   "ownerDomain": "google.com",
@@ -218,6 +218,58 @@
         "commonMetadata": {
           "description": "The basic metadata of the long running operation.",
           "$ref": "GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata"
+        },
+        "errorDocumentCount": {
+          "description": "Total number of documents that failed to be deleted in storage.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "individualBatchDeleteStatuses": {
+          "description": "The list of response details of each document.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus"
+          }
+        },
+        "totalDocumentCount": {
+          "description": "Total number of documents deleting from dataset.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus": {
+      "id": "GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus",
+      "description": "The status of each individual document in the batch delete process.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "documentId": {
+          "description": "The document id of the document.",
+          "$ref": "GoogleCloudDocumentaiUiv1beta3DocumentId"
+        },
+        "status": {
+          "description": "The status of deleting the document in storage.",
+          "$ref": "GoogleRpcStatus"
         }
       },
       "additionalProperties": null,
@@ -425,22 +477,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "GoogleCloudDocumentaiUiv1beta3DeleteDataLabelingJobOperationMetadata": {
-      "id": "GoogleCloudDocumentaiUiv1beta3DeleteDataLabelingJobOperationMetadata",
-      "description": "The long running operation metadata for DeleteDataLabelingJob.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "commonMetadata": {
-          "description": "The basic metadata of the long running operation.",
-          "$ref": "GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata"
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "GoogleCloudDocumentaiUiv1beta3DeleteLabelerPoolOperationMetadata": {
       "id": "GoogleCloudDocumentaiUiv1beta3DeleteLabelerPoolOperationMetadata",
       "description": "The long running operation metadata for DeleteLabelerPool.",
@@ -555,6 +591,10 @@
           "description": null,
           "$ref": "GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId"
         },
+        "revisionRef": {
+          "description": "Points to a specific revision of the document if set.",
+          "$ref": "GoogleCloudDocumentaiUiv1beta3RevisionRef"
+        },
         "revisionReference": {
           "description": "Points to a specific revision of the document if set.",
           "$ref": "GoogleCloudDocumentaiUiv1beta3RevisionReference"
@@ -565,14 +605,14 @@
     },
     "GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId": {
       "id": "GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId",
-      "description": "Identifies a document uniquely within the scope of a dataset in the GCS-based option.",
+      "description": "Identifies a document uniquely within the scope of a dataset in the Cloud Storage option.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "cwDocId": {
-          "description": "Optional. Id of the document (indexed) managed by Content Warehouse.",
+          "description": "Id of the document (indexed) managed by Content Warehouse.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -660,6 +700,129 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadata": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadata",
+      "description": "Metadata of the batch export documents operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "commonMetadata": {
+          "description": "The basic metadata of the long running operation.",
+          "$ref": "GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata"
+        },
+        "individualExportStatuses": {
+          "description": "The list of response details of each document.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatus"
+          }
+        },
+        "splitExportStats": {
+          "description": "The list of statistics for each dataset split type.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatus": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatus",
+      "description": "The status of each individual document in the export process.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "documentId": {
+          "description": "The path to source docproto of the document.",
+          "$ref": "GoogleCloudDocumentaiUiv1beta3DocumentId"
+        },
+        "outputGcsDestination": {
+          "description": "The output_gcs_destination of the exported document if it was successful, otherwise empty.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "status": {
+          "description": "The status of the exporting of the document.",
+          "$ref": "GoogleRpcStatus"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat",
+      "description": "The statistic representing a dataset split type for this export.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "splitType": {
+          "description": "The dataset split type.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DATASET_SPLIT_TYPE_UNSPECIFIED",
+            "DATASET_SPLIT_TRAIN",
+            "DATASET_SPLIT_TEST",
+            "DATASET_SPLIT_UNASSIGNED"
+          ],
+          "enumDescriptions": [
+            "Default value if the enum is not set. go/protodosdonts#do-include-an-unspecified-value-in-an-enum",
+            "Identifies the train documents.",
+            "Identifies the test documents.",
+            "Identifies the unassigned documents."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "totalDocumentCount": {
+          "description": "Total number of documents with the given dataset split type to be exported.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3ExportDocumentsResponse": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ExportDocumentsResponse",
+      "description": "The response proto of ExportDocuments method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiUiv1beta3ExportProcessorVersionMetadata": {
       "id": "GoogleCloudDocumentaiUiv1beta3ExportProcessorVersionMetadata",
       "description": "Metadata message associated with the ExportProcessorVersion operation.",
@@ -710,6 +873,18 @@
           "description": "The basic metadata of the long running operation.",
           "$ref": "GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata"
         },
+        "importConfigValidationResults": {
+          "description": "Validation statuses of the batch documents import config.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataImportConfigValidationResult"
+          }
+        },
         "individualImportStatuses": {
           "description": "The list of response details of each document.",
           "type": "array",
@@ -721,6 +896,42 @@
           "items": {
             "$ref": "GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus"
           }
+        },
+        "totalDocumentCount": {
+          "description": "Total number of the documents that are qualified for importing.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataImportConfigValidationResult": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataImportConfigValidationResult",
+      "description": "The validation status of each import config. Status is set to errors if there is no documents to import in the import_config, or OK if the operation will try to proceed at least one document.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "inputGcsSource": {
+          "description": "The source Cloud Storage URI specified in the import config.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "status": {
+          "description": "The validation status of import config.",
+          "$ref": "GoogleRpcStatus"
         }
       },
       "additionalProperties": null,
@@ -773,6 +984,44 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiUiv1beta3ImportProcessorVersionMetadata": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ImportProcessorVersionMetadata",
+      "description": "The long running operation metadata for the ImportProcessorVersion method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "commonMetadata": {
+          "description": "The basic metadata for the long running operation.",
+          "$ref": "GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3ImportProcessorVersionResponse": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ImportProcessorVersionResponse",
+      "description": "The response message for the ImportProcessorVersion method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "processorVersion": {
+          "description": "The destination processor version name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadata": {
       "id": "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadata",
       "description": "The metadata proto of ResyncDataset method.",
@@ -785,8 +1034,8 @@
           "description": "The basic metadata of the long running operation.",
           "$ref": "GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata"
         },
-        "newlyAddedDocuments": {
-          "description": "Returns the newly added document Cloud Storage prefix if the documents are founded in Cloud Storage while not in Document Service storage.",
+        "datasetResyncStatuses": {
+          "description": "The list of dataset resync statuses. Not checked when `dataset_documents` is specified in ResyncRequest.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -794,43 +1043,91 @@
           "properties": {},
           "additionalProperties": null,
           "items": {
-            "$ref": "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataUpdatedDocument"
+            "$ref": "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus"
+          }
+        },
+        "individualDocumentResyncStatuses": {
+          "description": "The list of document resync statuses. The same document could have multiple `individual_document_resync_statuses` if it has multiple inconsistencies.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus"
           }
         }
       },
       "additionalProperties": null,
       "items": null
     },
-    "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataUpdatedDocument": {
-      "id": "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataUpdatedDocument",
-      "description": "The proto for updated document in resync pipeline.",
+    "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus",
+      "description": "Resync status against inconsistency types on the dataset level.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "destinationPrefix": {
-          "description": "The prefix of cloud storage, identifies the destination document which should be updated by resync pipeline.",
+        "datasetInconsistencyType": {
+          "description": "The type of the inconsistency of the dataset.",
           "type": "string",
           "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "sourcePrefix": {
-          "description": "The prefix of cloud storage, identifies the original document which should be updated by resync pipeline.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
+          "enum": [
+            "DATASET_INCONSISTENCY_TYPE_UNSPECIFIED",
+            "DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER"
+          ],
+          "enumDescriptions": [
+            "Default value.",
+            "The marker file under the dataset folder is not found."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "status": {
-          "description": "The final status of the documents which should be updated by resync pipeline.",
+          "description": "The status of resyncing the dataset with regards to the detected inconsistency. Empty if `validate_only` is true in the request.",
+          "$ref": "GoogleRpcStatus"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus": {
+      "id": "GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus",
+      "description": "Resync status for each document per inconsistency type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "documentId": {
+          "description": "The document identifier.",
+          "$ref": "GoogleCloudDocumentaiUiv1beta3DocumentId"
+        },
+        "documentInconsistencyType": {
+          "description": "The type of document inconsistency.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED",
+            "DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO",
+            "DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA",
+            "DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE"
+          ],
+          "enumDescriptions": [
+            "Default value.",
+            "The document proto is invalid.",
+            "Indexed docproto metadata is mismatched.",
+            "The page image or thumbnails are missing."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "status": {
+          "description": "The status of resyncing the document with regards to the detected inconsistency. Empty if `validate_only` is true in the request.",
           "$ref": "GoogleRpcStatus"
         }
       },
@@ -848,8 +1145,8 @@
       "additionalProperties": null,
       "items": null
     },
-    "GoogleCloudDocumentaiUiv1beta3RevisionReference": {
-      "id": "GoogleCloudDocumentaiUiv1beta3RevisionReference",
+    "GoogleCloudDocumentaiUiv1beta3RevisionRef": {
+      "id": "GoogleCloudDocumentaiUiv1beta3RevisionRef",
       "description": "The revision reference specifies which revision on the document to read.",
       "type": "object",
       "format": null,
@@ -857,7 +1154,7 @@
       "enumDescriptions": [],
       "properties": {
         "latestProcessorVersion": {
-          "description": "Read the revision generated by the processor version, returns error if it does not exist.",
+          "description": "Reads the revision generated by the processor version. The format takes the full resource name of processor version. `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -867,7 +1164,59 @@
           "items": null
         },
         "revisionCase": {
-          "description": "Read the revision by the predefined case.",
+          "description": "Reads the revision by the predefined case.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "REVISION_CASE_UNSPECIFIED",
+            "LATEST_HUMAN_REVIEW",
+            "LATEST_TIMESTAMP",
+            "BASE_OCR_REVISION"
+          ],
+          "enumDescriptions": [
+            "Unspecified case, fallback to read the LATEST_HUMAN_REVIEW.",
+            "The latest revision made by a human.",
+            "The latest revision based on timestamp.",
+            "The first (OCR) revision."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionId": {
+          "description": "Reads the revision given by the id.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiUiv1beta3RevisionReference": {
+      "id": "GoogleCloudDocumentaiUiv1beta3RevisionReference",
+      "description": "The revision reference specifies which revision on the document to read.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "latestProcessorVersion": {
+          "description": "Reads the revision generated by the processor version.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionCase": {
+          "description": "Reads the revision by the predefined case.",
           "type": "string",
           "format": null,
           "enum": [
@@ -876,7 +1225,7 @@
             "LATEST_TIMESTAMP"
           ],
           "enumDescriptions": [
-            "Unspecified case, fallback to read the first (OCR) revision.",
+            "Unspecified case, fallback to read the LATEST_HUMAN_REVIEW.",
             "The latest revision made by a human.",
             "The latest revision based on timestamp."
           ],
@@ -885,7 +1234,7 @@
           "items": null
         },
         "revisionId": {
-          "description": "Read the revision given by the id, returns error if it does not exist.",
+          "description": "Reads the revision given by the id.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1215,7 +1564,7 @@
           "items": null
         },
         "status": {
-          "description": "The status of the processing of the document.",
+          "description": "The status processing the document.",
           "$ref": "GoogleRpcStatus"
         }
       },
@@ -1511,11 +1860,39 @@
       "enumDescriptions": [],
       "properties": {
         "gcsDestination": {
-          "description": "The Cloud Storage uri for the human reviewed document.",
+          "description": "The Cloud Storage uri for the human reviewed document if the review is succeeded.",
           "type": "string",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rejectionReason": {
+          "description": "The reason why the review is rejected by reviewer.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "The state of the review operation.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "REJECTED",
+            "SUCCEEDED"
+          ],
+          "enumDescriptions": [
+            "The default value. This value is used if the state is omitted.",
+            "The review operation is rejected by the reviewer.",
+            "The review operation is succeeded."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -1578,42 +1955,16 @@
       "additionalProperties": null,
       "items": null
     },
-    "GoogleCloudDocumentaiV1alpha1AnalyzeHitlDataMetadata": {
-      "id": "GoogleCloudDocumentaiV1alpha1AnalyzeHitlDataMetadata",
-      "description": "The long running operation metadata for AnalyzeHitlData.",
+    "GoogleCloudDocumentaiV1beta1Barcode": {
+      "id": "GoogleCloudDocumentaiV1beta1Barcode",
+      "description": "Encodes the detailed information of a barcode.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
-        "commonMetadata": {
-          "description": "The basic metadata of the long running operation.",
-          "$ref": "GoogleCloudDocumentaiV1alpha1CommonOperationMetadata"
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
-    "GoogleCloudDocumentaiV1alpha1CommonOperationMetadata": {
-      "id": "GoogleCloudDocumentaiV1alpha1CommonOperationMetadata",
-      "description": "The common metadata for long running operations.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "createTime": {
-          "description": "The creation time of the operation.",
-          "type": "string",
-          "format": "google-datetime",
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "resource": {
-          "description": "A related resource to this operation.",
+        "format": {
+          "description": "Format of a barcode. The supported formats are: - `CODE_128`: Code 128 type. - `CODE_39`: Code 39 type. - `CODE_93`: Code 93 type. - `CODABAR`: Codabar type. - `DATA_MATRIX`: 2D Data Matrix type. - `ITF`: ITF type. - `EAN_13`: EAN-13 type. - `EAN_8`: EAN-8 type. - `QR_CODE`: 2D QR code type. - `UPC_A`: UPC-A type. - `UPC_E`: UPC-E type. - `PDF417`: PDF417 type. - `AZTEC`: 2D Aztec code type. - `DATABAR`: GS1 DataBar code type.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1622,32 +1973,8 @@
           "additionalProperties": null,
           "items": null
         },
-        "state": {
-          "description": "The state of the operation.",
-          "type": "string",
-          "format": null,
-          "enum": [
-            "STATE_UNSPECIFIED",
-            "RUNNING",
-            "CANCELLING",
-            "SUCCEEDED",
-            "FAILED",
-            "CANCELLED"
-          ],
-          "enumDescriptions": [
-            "Unspecified state.",
-            "Operation is still running.",
-            "Operation is being cancelled.",
-            "Operation succeeded.",
-            "Operation failed.",
-            "Operation is cancelled."
-          ],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "stateMessage": {
-          "description": "A message providing more details about the current state of processing.",
+        "rawValue": {
+          "description": "Raw value encoded in the barcode. For example: `'MEBKM:TITLE:Google;URL:https://www.google.com;;'`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1656,10 +1983,10 @@
           "additionalProperties": null,
           "items": null
         },
-        "updateTime": {
-          "description": "The last update time of the operation.",
+        "valueFormat": {
+          "description": "Value format describes the format of the value that a barcode encodes. The supported formats are: - `CONTACT_INFO`: Contact information. - `EMAIL`: Email address. - `ISBN`: ISBN identifier. - `PHONE`: Phone number. - `PRODUCT`: Product. - `SMS`: SMS message. - `TEXT`: Text string. - `URL`: URL address. - `WIFI`: Wifi information. - `GEO`: Geo-localization. - `CALENDAR_EVENT`: Calendar event. - `DRIVER_LICENSE`: Driver's license.",
           "type": "string",
-          "format": "google-datetime",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -1825,7 +2152,7 @@
           "items": null
         },
         "textChanges": {
-          "description": "Placeholder. A list of text corrections made to [Document.text]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other.",
+          "description": "Placeholder. A list of text corrections made to Document.text. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1837,7 +2164,7 @@
           }
         },
         "textStyles": {
-          "description": "Placeholder. Styles for the Document.text.",
+          "description": "Styles for the Document.text.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1871,7 +2198,7 @@
       "enumDescriptions": [],
       "properties": {
         "confidence": {
-          "description": "Optional. Confidence of detected Schema entity. Range [0, 1].",
+          "description": "Optional. Confidence of detected Schema entity. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -1901,18 +2228,8 @@
           "items": null
         },
         "mentionText": {
-          "description": "Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity is not present in the document, this field will be empty.",
+          "description": "Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.",
           "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "nonPresent": {
-          "description": "Optional. This attribute indicates that the processing didn't actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor.",
-          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
@@ -2027,7 +2344,7 @@
           "$ref": "GoogleTypeMoney"
         },
         "text": {
-          "description": "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate float or int normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.",
+          "description": "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2102,6 +2419,18 @@
             "$ref": "GoogleCloudDocumentaiV1beta1DocumentPageBlock"
           }
         },
+        "detectedBarcodes": {
+          "description": "A list of detected barcodes.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiV1beta1DocumentPageDetectedBarcode"
+          }
+        },
         "detectedLanguages": {
           "description": "A list of detected languages together with confidence.",
           "type": "array",
@@ -2133,6 +2462,10 @@
         "image": {
           "description": "Rendered image for this page. This image is preprocessed to remove any skew, rotation, and distortions such that the annotation bounding boxes can be upright and axis-aligned.",
           "$ref": "GoogleCloudDocumentaiV1beta1DocumentPageImage"
+        },
+        "imageQualityScores": {
+          "description": "Image Quality Scores.",
+          "$ref": "GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScores"
         },
         "layout": {
           "description": "Layout for the page.",
@@ -2277,7 +2610,7 @@
           "$ref": "GoogleCloudDocumentaiV1beta1BoundingPoly"
         },
         "confidence": {
-          "description": "Optional. Confidence of detected page element, if applicable. Range [0, 1].",
+          "description": "Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -2325,7 +2658,7 @@
           "items": null
         },
         "page": {
-          "description": "Required. Index into the Document.pages element, for example using Document.pages to locate the related page element. This field is skipped when its value is the default 0. See https://developers.google.com/protocol-buffers/docs/proto3#json.",
+          "description": "Required. Index into the Document.pages element, for example using `Document.pages` to locate the related page element. This field is skipped when its value is the default `0`. See https://developers.google.com/protocol-buffers/docs/proto3#json.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2370,6 +2703,26 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiV1beta1DocumentPageDetectedBarcode": {
+      "id": "GoogleCloudDocumentaiV1beta1DocumentPageDetectedBarcode",
+      "description": "A detected barcode.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "barcode": {
+          "description": "Detailed barcode information of the DetectedBarcode.",
+          "$ref": "GoogleCloudDocumentaiV1beta1Barcode"
+        },
+        "layout": {
+          "description": "Layout for DetectedBarcode.",
+          "$ref": "GoogleCloudDocumentaiV1beta1DocumentPageLayout"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage": {
       "id": "GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage",
       "description": "Detected language for a structural component.",
@@ -2379,7 +2732,7 @@
       "enumDescriptions": [],
       "properties": {
         "confidence": {
-          "description": "Confidence of detected language. Range [0, 1].",
+          "description": "Confidence of detected language. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -2389,7 +2742,7 @@
           "items": null
         },
         "languageCode": {
-          "description": "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.",
+          "description": "The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2509,7 +2862,7 @@
           }
         },
         "valueType": {
-          "description": "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - \"unfilled_checkbox\" - \"filled_checkbox\"",
+          "description": "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the `field_value` is normal text) - `unfilled_checkbox` - `filled_checkbox`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2574,6 +2927,72 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScores": {
+      "id": "GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScores",
+      "description": "Image Quality Scores for the page image",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "detectedDefects": {
+          "description": "A list of detected defects.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect"
+          }
+        },
+        "qualityScore": {
+          "description": "The overall quality score. Range `[0, 1]` where 1 is perfect quality.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect": {
+      "id": "GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect",
+      "description": "Image Quality Defects",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "confidence": {
+          "description": "Confidence of detected defect. Range `[0, 1]` where 1 indicates strong confidence of that the defect exists.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiV1beta1DocumentPageLayout": {
       "id": "GoogleCloudDocumentaiV1beta1DocumentPageLayout",
       "description": "Visual element describing a layout unit on a page.",
@@ -2587,7 +3006,7 @@
           "$ref": "GoogleCloudDocumentaiV1beta1BoundingPoly"
         },
         "confidence": {
-          "description": "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range [0, 1].",
+          "description": "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -2817,6 +3236,10 @@
         "layout": {
           "description": "Layout for Table.",
           "$ref": "GoogleCloudDocumentaiV1beta1DocumentPageLayout"
+        },
+        "provenance": {
+          "description": "The history of this table.",
+          "$ref": "GoogleCloudDocumentaiV1beta1DocumentProvenance"
         }
       },
       "additionalProperties": null,
@@ -3294,6 +3717,16 @@
           "description": "Text color.",
           "$ref": "GoogleTypeColor"
         },
+        "fontFamily": {
+          "description": "Font family such as `Arial`, `Times New Roman`. https://www.w3schools.com/cssref/pr_font_font-family.asp",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "fontSize": {
           "description": "Font size.",
           "$ref": "GoogleCloudDocumentaiV1beta1DocumentStyleFontSize"
@@ -3742,6 +4175,48 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiV1beta2Barcode": {
+      "id": "GoogleCloudDocumentaiV1beta2Barcode",
+      "description": "Encodes the detailed information of a barcode.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "format": {
+          "description": "Format of a barcode. The supported formats are: - `CODE_128`: Code 128 type. - `CODE_39`: Code 39 type. - `CODE_93`: Code 93 type. - `CODABAR`: Codabar type. - `DATA_MATRIX`: 2D Data Matrix type. - `ITF`: ITF type. - `EAN_13`: EAN-13 type. - `EAN_8`: EAN-8 type. - `QR_CODE`: 2D QR code type. - `UPC_A`: UPC-A type. - `UPC_E`: UPC-E type. - `PDF417`: PDF417 type. - `AZTEC`: 2D Aztec code type. - `DATABAR`: GS1 DataBar code type.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rawValue": {
+          "description": "Raw value encoded in the barcode. For example: `'MEBKM:TITLE:Google;URL:https://www.google.com;;'`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "valueFormat": {
+          "description": "Value format describes the format of the value that a barcode encodes. The supported formats are: - `CONTACT_INFO`: Contact information. - `EMAIL`: Email address. - `ISBN`: ISBN identifier. - `PHONE`: Phone number. - `PRODUCT`: Product. - `SMS`: SMS message. - `TEXT`: Text string. - `URL`: URL address. - `WIFI`: Wifi information. - `GEO`: Geo-localization. - `CALENDAR_EVENT`: Calendar event. - `DRIVER_LICENSE`: Driver's license.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiV1beta2BatchProcessDocumentsRequest": {
       "id": "GoogleCloudDocumentaiV1beta2BatchProcessDocumentsRequest",
       "description": "Request to batch process documents as an asynchronous operation. The output is written to Cloud Storage as JSON in the [Document] format.",
@@ -3933,7 +4408,7 @@
           "items": null
         },
         "textChanges": {
-          "description": "Placeholder. A list of text corrections made to [Document.text]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other.",
+          "description": "Placeholder. A list of text corrections made to Document.text. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3945,7 +4420,7 @@
           }
         },
         "textStyles": {
-          "description": "Placeholder. Styles for the Document.text.",
+          "description": "Styles for the Document.text.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3979,7 +4454,7 @@
       "enumDescriptions": [],
       "properties": {
         "confidence": {
-          "description": "Optional. Confidence of detected Schema entity. Range [0, 1].",
+          "description": "Optional. Confidence of detected Schema entity. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -4009,18 +4484,8 @@
           "items": null
         },
         "mentionText": {
-          "description": "Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity is not present in the document, this field will be empty.",
+          "description": "Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.",
           "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "nonPresent": {
-          "description": "Optional. This attribute indicates that the processing didn't actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor.",
-          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
@@ -4135,7 +4600,7 @@
           "$ref": "GoogleTypeMoney"
         },
         "text": {
-          "description": "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate float or int normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.",
+          "description": "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4252,6 +4717,18 @@
             "$ref": "GoogleCloudDocumentaiV1beta2DocumentPageBlock"
           }
         },
+        "detectedBarcodes": {
+          "description": "A list of detected barcodes.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiV1beta2DocumentPageDetectedBarcode"
+          }
+        },
         "detectedLanguages": {
           "description": "A list of detected languages together with confidence.",
           "type": "array",
@@ -4283,6 +4760,10 @@
         "image": {
           "description": "Rendered image for this page. This image is preprocessed to remove any skew, rotation, and distortions such that the annotation bounding boxes can be upright and axis-aligned.",
           "$ref": "GoogleCloudDocumentaiV1beta2DocumentPageImage"
+        },
+        "imageQualityScores": {
+          "description": "Image Quality Scores.",
+          "$ref": "GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScores"
         },
         "layout": {
           "description": "Layout for the page.",
@@ -4427,7 +4908,7 @@
           "$ref": "GoogleCloudDocumentaiV1beta2BoundingPoly"
         },
         "confidence": {
-          "description": "Optional. Confidence of detected page element, if applicable. Range [0, 1].",
+          "description": "Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -4475,7 +4956,7 @@
           "items": null
         },
         "page": {
-          "description": "Required. Index into the Document.pages element, for example using Document.pages to locate the related page element. This field is skipped when its value is the default 0. See https://developers.google.com/protocol-buffers/docs/proto3#json.",
+          "description": "Required. Index into the Document.pages element, for example using `Document.pages` to locate the related page element. This field is skipped when its value is the default `0`. See https://developers.google.com/protocol-buffers/docs/proto3#json.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -4520,6 +5001,26 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiV1beta2DocumentPageDetectedBarcode": {
+      "id": "GoogleCloudDocumentaiV1beta2DocumentPageDetectedBarcode",
+      "description": "A detected barcode.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "barcode": {
+          "description": "Detailed barcode information of the DetectedBarcode.",
+          "$ref": "GoogleCloudDocumentaiV1beta2Barcode"
+        },
+        "layout": {
+          "description": "Layout for DetectedBarcode.",
+          "$ref": "GoogleCloudDocumentaiV1beta2DocumentPageLayout"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage": {
       "id": "GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage",
       "description": "Detected language for a structural component.",
@@ -4529,7 +5030,7 @@
       "enumDescriptions": [],
       "properties": {
         "confidence": {
-          "description": "Confidence of detected language. Range [0, 1].",
+          "description": "Confidence of detected language. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -4539,7 +5040,7 @@
           "items": null
         },
         "languageCode": {
-          "description": "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.",
+          "description": "The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4659,7 +5160,7 @@
           }
         },
         "valueType": {
-          "description": "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - \"unfilled_checkbox\" - \"filled_checkbox\"",
+          "description": "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the `field_value` is normal text) - `unfilled_checkbox` - `filled_checkbox`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4724,6 +5225,72 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScores": {
+      "id": "GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScores",
+      "description": "Image Quality Scores for the page image",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "detectedDefects": {
+          "description": "A list of detected defects.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresDetectedDefect"
+          }
+        },
+        "qualityScore": {
+          "description": "The overall quality score. Range `[0, 1]` where 1 is perfect quality.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresDetectedDefect": {
+      "id": "GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresDetectedDefect",
+      "description": "Image Quality Defects",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "confidence": {
+          "description": "Confidence of detected defect. Range `[0, 1]` where 1 indicates strong confidence of that the defect exists.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "type": {
+          "description": "Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiV1beta2DocumentPageLayout": {
       "id": "GoogleCloudDocumentaiV1beta2DocumentPageLayout",
       "description": "Visual element describing a layout unit on a page.",
@@ -4737,7 +5304,7 @@
           "$ref": "GoogleCloudDocumentaiV1beta2BoundingPoly"
         },
         "confidence": {
-          "description": "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range [0, 1].",
+          "description": "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.",
           "type": "number",
           "format": "float",
           "enum": [],
@@ -4967,6 +5534,10 @@
         "layout": {
           "description": "Layout for Table.",
           "$ref": "GoogleCloudDocumentaiV1beta2DocumentPageLayout"
+        },
+        "provenance": {
+          "description": "The history of this table.",
+          "$ref": "GoogleCloudDocumentaiV1beta2DocumentProvenance"
         }
       },
       "additionalProperties": null,
@@ -5443,6 +6014,16 @@
         "color": {
           "description": "Text color.",
           "$ref": "GoogleTypeColor"
+        },
+        "fontFamily": {
+          "description": "Font family such as `Arial`, `Times New Roman`. https://www.w3schools.com/cssref/pr_font_font-family.asp",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "fontSize": {
           "description": "Font size.",
@@ -6297,7 +6878,7 @@
           "items": null
         },
         "status": {
-          "description": "The status of the processing of the document.",
+          "description": "The status processing the document.",
           "$ref": "GoogleRpcStatus"
         }
       },
@@ -6504,6 +7085,44 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDocumentaiV1beta3EvaluateProcessorVersionMetadata": {
+      "id": "GoogleCloudDocumentaiV1beta3EvaluateProcessorVersionMetadata",
+      "description": "Metadata of the EvaluateProcessorVersion method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "commonMetadata": {
+          "description": "The basic metadata of the long running operation.",
+          "$ref": "GoogleCloudDocumentaiV1beta3CommonOperationMetadata"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiV1beta3EvaluateProcessorVersionResponse": {
+      "id": "GoogleCloudDocumentaiV1beta3EvaluateProcessorVersionResponse",
+      "description": "Metadata of the EvaluateProcessorVersion method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "evaluation": {
+          "description": "The resource name of the created evaluation.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDocumentaiV1beta3HumanReviewStatus": {
       "id": "GoogleCloudDocumentaiV1beta3HumanReviewStatus",
       "description": "The status of human review on a processed document.",
@@ -6647,11 +7266,39 @@
       "enumDescriptions": [],
       "properties": {
         "gcsDestination": {
-          "description": "The Cloud Storage uri for the human reviewed document.",
+          "description": "The Cloud Storage uri for the human reviewed document if the review is succeeded.",
           "type": "string",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rejectionReason": {
+          "description": "The reason why the review is rejected by reviewer.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "The state of the review operation.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "REJECTED",
+            "SUCCEEDED"
+          ],
+          "enumDescriptions": [
+            "The default value. This value is used if the state is omitted.",
+            "The review operation is rejected by the reviewer.",
+            "The review operation is succeeded."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -6684,6 +7331,108 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadata": {
+      "id": "GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadata",
+      "description": "The metadata that represents a processor version being created.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "commonMetadata": {
+          "description": "The basic metadata of the long running operation.",
+          "$ref": "GoogleCloudDocumentaiV1beta3CommonOperationMetadata"
+        },
+        "testDatasetValidation": {
+          "description": "The test dataset validation information.",
+          "$ref": "GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation"
+        },
+        "trainingDatasetValidation": {
+          "description": "The training dataset validation information.",
+          "$ref": "GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation": {
+      "id": "GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation",
+      "description": "The dataset validation information. This includes any and all errors with documents and the dataset.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "datasetErrorCount": {
+          "description": "The total number of dataset errors.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "datasetErrors": {
+          "description": "Error information for the dataset as a whole. A maximum of 10 dataset errors will be returned. A single dataset error is terminal for training.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleRpcStatus"
+          }
+        },
+        "documentErrorCount": {
+          "description": "The total number of document errors.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "documentErrors": {
+          "description": "Error information pertaining to specific documents. A maximum of 10 document errors will be returned. Any document with errors will not be used throughout training.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleRpcStatus"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDocumentaiV1beta3TrainProcessorVersionResponse": {
+      "id": "GoogleCloudDocumentaiV1beta3TrainProcessorVersionResponse",
+      "description": "The response for the TrainProcessorVersion method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "processorVersion": {
+          "description": "The resource name of the processor version produced by training.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -6954,14 +7703,14 @@
     },
     "GoogleTypeDateTime": {
       "id": "GoogleTypeDateTime",
-      "description": "Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year is 0, the DateTime is considered not to have a specific year. month and day must have valid, non-zero values. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations.",
+      "description": "Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "day": {
-          "description": "Required. Day of month. Must be from 1 to 31 and valid for the year and month.",
+          "description": "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -6971,7 +7720,7 @@
           "items": null
         },
         "hours": {
-          "description": "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time.",
+          "description": "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value \"24:00:00\" for scenarios like business closing time.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -6981,7 +7730,7 @@
           "items": null
         },
         "minutes": {
-          "description": "Required. Minutes of hour of day. Must be from 0 to 59.",
+          "description": "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -6991,7 +7740,7 @@
           "items": null
         },
         "month": {
-          "description": "Required. Month of year. Must be from 1 to 12.",
+          "description": "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -7001,7 +7750,7 @@
           "items": null
         },
         "nanos": {
-          "description": "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.",
+          "description": "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -7011,7 +7760,7 @@
           "items": null
         },
         "seconds": {
-          "description": "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.",
+          "description": "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -7092,7 +7841,7 @@
     },
     "GoogleTypePostalAddress": {
       "id": "GoogleTypePostalAddress",
-      "description": "Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an i18n-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478",
+      "description": "Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478",
       "type": "object",
       "format": null,
       "enum": [],

@@ -7,7 +7,7 @@
   "canonicalName": "Dataflow",
   "fullyEncodeReservedExpansion": true,
   "version": "v1b3",
-  "revision": "20220405",
+  "revision": "20230119",
   "title": "Dataflow API",
   "description": "Manages Google Cloud Dataflow projects on Google Cloud Platform.",
   "ownerDomain": "google.com",
@@ -2220,7 +2220,17 @@
           "items": null
         },
         "dumpHeapOnOom": {
-          "description": "If true, save a heap dump before killing a thread or process which is GC thrashing or out of memory. The location of the heap file will either be echoed back to the user, or the user will be given the opportunity to download the heap file.",
+          "description": "If true, when processing time is spent almost entirely on garbage collection (GC), saves a heap dump before ending the thread or process. If false, ends the thread or process without saving a heap dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an out of memory error during processing. The location of the heap file is either echoed back to the user, or the user is given the opportunity to download the heap file.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "enableLauncherVmSerialPortLogging": {
+          "description": "If true serial port logging will be enabled for the launcher VM.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -2336,7 +2346,7 @@
           "items": null
         },
         "saveHeapDumpsToGcsPath": {
-          "description": "Cloud Storage bucket (directory) to upload heap dumps to the given location. Enabling this implies that heap dumps should be generated on OOM (dump_heap_on_oom is set to true).",
+          "description": "Cloud Storage bucket (directory) to upload heap dumps to. Enabling this field implies that `dump_heap_on_oom` is set to true.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2631,6 +2641,31 @@
       "additionalProperties": null,
       "items": null
     },
+    "HotKeyDebuggingInfo": {
+      "id": "HotKeyDebuggingInfo",
+      "description": "Information useful for debugging a hot key detection.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "detectedHotKeys": {
+          "description": "Debugging information for each detected hot key. Keyed by a hash of the key.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "HotKeyInfo"
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "HotKeyDetection": {
       "id": "HotKeyDetection",
       "description": "Proto describing a hot key detected on a given WorkItem.",
@@ -2662,6 +2697,48 @@
         "userStepName": {
           "description": "User-provided name of the step that contains this hot key.",
           "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "HotKeyInfo": {
+      "id": "HotKeyInfo",
+      "description": "Information about a hot key.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "hotKeyAge": {
+          "description": "The age of the hot key measured from when it was first detected.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "key": {
+          "description": "A detected hot key that is causing limited parallelism. This field will be populated only if the following flag is set to true: \"--enable_hot_key_logging\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "keyTruncated": {
+          "description": "If true, then the above key is truncated and cannot be deserialized. This occurs if the key above is populated and the key size is >5MB.",
+          "type": "boolean",
           "format": null,
           "enum": [],
           "enumDescriptions": [],
@@ -2994,7 +3071,7 @@
           "items": null
         },
         "name": {
-          "description": "The user-specified Cloud Dataflow job name. Only one Job with a given name may exist in a project at any given time. If a caller attempts to create a Job with the same name as an already-existing Job, the attempt returns the existing Job. The name must match the regular expression `[a-z]([-a-z0-9]{0,38}[a-z0-9])?`",
+          "description": "The user-specified Cloud Dataflow job name. Only one Job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a Job with the same name as an already-existing Job, the attempt returns the existing Job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3433,7 +3510,7 @@
     },
     "JobMetrics": {
       "id": "JobMetrics",
-      "description": "JobMetrics contains a collection of metrics describing the detailed progress of a Dataflow job. Metrics correspond to user-defined and system-defined metrics in the job. This resource captures only the most recent values of each metric; time-series data can be queried for them (under the same metric names) from Cloud Monitoring.",
+      "description": "JobMetrics contains a collection of metrics describing the detailed progress of a Dataflow job. Metrics correspond to user-defined and system-defined metrics in the job. For more information, see [Dataflow job metrics] (https://cloud.google.com/dataflow/docs/guides/using-monitoring-intf). This resource captures only the most recent values of each metric; time-series data can be queried for them (under the same metric names) from Cloud Monitoring.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -3731,7 +3808,7 @@
           "$ref": "RuntimeEnvironment"
         },
         "jobName": {
-          "description": "Required. The job name to use for the created job.",
+          "description": "Required. The job name to use for the created job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4775,7 +4852,9 @@
             "GCS_READ_FOLDER",
             "GCS_WRITE_FOLDER",
             "PUBSUB_TOPIC",
-            "PUBSUB_SUBSCRIPTION"
+            "PUBSUB_SUBSCRIPTION",
+            "BIGQUERY_TABLE",
+            "JAVASCRIPT_UDF_FILE"
           ],
           "enumDescriptions": [
             "Default input type.",
@@ -4787,7 +4866,9 @@
             "The parameter specifies a Cloud Storage folder path to read from.",
             "The parameter specifies a Cloud Storage folder to write to.",
             "The parameter specifies a Pub/Sub Topic.",
-            "The parameter specifies a Pub/Sub Subscription."
+            "The parameter specifies a Pub/Sub Subscription.",
+            "The parameter specifies a BigQuery table.",
+            "The parameter specifies a JavaScript UDF in Cloud Storage."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -4944,6 +5025,16 @@
           "items": {
             "$ref": "TransformSummary"
           }
+        },
+        "stepNamesHash": {
+          "description": "A hash value of the submitted pipeline portable graph step names if exists.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -5237,42 +5328,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "QueryInfo": {
-      "id": "QueryInfo",
-      "description": "Information about a validated query.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "queryProperty": {
-          "description": "Includes an entry for each satisfied QueryProperty.",
-          "type": "array",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": {
-            "type": "string",
-            "format": null,
-            "enum": [
-              "QUERY_PROPERTY_UNSPECIFIED",
-              "HAS_UNBOUNDED_SOURCE"
-            ],
-            "enumDescriptions": [
-              "The query property is unknown or unspecified.",
-              "Indicates this query reads from >= 1 unbounded source."
-            ],
-            "properties": {},
-            "additionalProperties": null,
-            "items": null
-          }
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "ReadInstruction": {
       "id": "ReadInstruction",
       "description": "An instruction that reads records. Takes no inputs, produces one output.",
@@ -5506,7 +5561,7 @@
       "enumDescriptions": [],
       "properties": {
         "additionalExperiments": {
-          "description": "Additional experiment flags for the job, specified with the `--experiments` option.",
+          "description": "Optional. Additional experiment flags for the job, specified with the `--experiments` option.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5524,7 +5579,7 @@
           }
         },
         "additionalUserLabels": {
-          "description": "Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of \"key\": value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }.",
+          "description": "Optional. Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of \"key\": value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -5543,7 +5598,7 @@
           "items": null
         },
         "bypassTempDirValidation": {
-          "description": "Whether to bypass the safety checks for the job's temporary directory. Use with caution.",
+          "description": "Optional. Whether to bypass the safety checks for the job's temporary directory. Use with caution.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -5553,7 +5608,7 @@
           "items": null
         },
         "enableStreamingEngine": {
-          "description": "Whether to enable Streaming Engine for the job.",
+          "description": "Optional. Whether to enable Streaming Engine for the job.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -5563,7 +5618,7 @@
           "items": null
         },
         "ipConfiguration": {
-          "description": "Configuration for VM IPs.",
+          "description": "Optional. Configuration for VM IPs.",
           "type": "string",
           "format": null,
           "enum": [
@@ -5581,7 +5636,7 @@
           "items": null
         },
         "kmsKeyName": {
-          "description": "Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/",
+          "description": "Optional. Name for the Cloud KMS key for the job. Key format is: projects//locations//keyRings//cryptoKeys/",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5591,7 +5646,7 @@
           "items": null
         },
         "machineType": {
-          "description": "The machine type to use for the job. Defaults to the value from the template if not specified.",
+          "description": "Optional. The machine type to use for the job. Defaults to the value from the template if not specified.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5601,7 +5656,7 @@
           "items": null
         },
         "maxWorkers": {
-          "description": "The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000.",
+          "description": "Optional. The maximum number of Google Compute Engine instances to be made available to your pipeline during execution, from 1 to 1000. The default value is 1.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5611,7 +5666,7 @@
           "items": null
         },
         "network": {
-          "description": "Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\".",
+          "description": "Optional. Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\".",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5621,7 +5676,7 @@
           "items": null
         },
         "numWorkers": {
-          "description": "The initial number of Google Compute Engine instances for the job.",
+          "description": "Optional. The initial number of Google Compute Engine instances for the job. The default value is 11.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5631,7 +5686,7 @@
           "items": null
         },
         "serviceAccountEmail": {
-          "description": "The email address of the service account to run the job as.",
+          "description": "Optional. The email address of the service account to run the job as.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5641,7 +5696,7 @@
           "items": null
         },
         "subnetwork": {
-          "description": "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL.",
+          "description": "Optional. Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5651,7 +5706,7 @@
           "items": null
         },
         "tempLocation": {
-          "description": "The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with `gs://`.",
+          "description": "Required. The Cloud Storage path to use for temporary files. Must be a valid Cloud Storage URL, beginning with `gs://`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5661,7 +5716,7 @@
           "items": null
         },
         "workerRegion": {
-          "description": "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region.",
+          "description": "Required. The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5671,7 +5726,7 @@
           "items": null
         },
         "workerZone": {
-          "description": "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence.",
+          "description": "Optional. The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5681,7 +5736,7 @@
           "items": null
         },
         "zone": {
-          "description": "The Compute Engine [availability zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones) for launching worker instances to run your pipeline. In the future, worker_zone will take precedence.",
+          "description": "Optional. The Compute Engine [availability zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones) for launching worker instances to run your pipeline. In the future, worker_zone will take precedence.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5737,12 +5792,14 @@
           "enum": [
             "UNKNOWN",
             "JAVA",
-            "PYTHON"
+            "PYTHON",
+            "GO"
           ],
           "enumDescriptions": [
             "UNKNOWN Language.",
             "Java.",
-            "Python."
+            "Python.",
+            "Go."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -5764,14 +5821,14 @@
     },
     "SdkHarnessContainerImage": {
       "id": "SdkHarnessContainerImage",
-      "description": "Defines a SDK harness container for executing Dataflow pipelines.",
+      "description": "Defines an SDK harness container for executing Dataflow pipelines.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "capabilities": {
-          "description": "The set of capabilities enumerated in the above Environment proto. See also https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto",
+          "description": "The set of capabilities enumerated in the above Environment proto. See also [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)",
           "type": "array",
           "format": null,
           "enum": [],
@@ -7097,6 +7154,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "stragglerSummary": {
+          "description": "Straggler summary for this stage.",
+          "$ref": "StragglerSummary"
         }
       },
       "additionalProperties": null,
@@ -7195,7 +7256,7 @@
     },
     "Step": {
       "id": "Step",
-      "description": "Defines a particular step within a Cloud Dataflow job. A job consists of multiple steps, each of which performs some specific operation as part of the overall job. Data is typically passed from one step to another as part of the job. Here's an example of a sequence of steps which together implement a Map-Reduce job: * Read a collection of data from some source, parsing the collection's elements. * Validate the elements. * Apply a user-defined function to map each element to some value and extract an element-specific key value. * Group elements with the same key into a single element with that key, transforming a multiply-keyed collection into a uniquely-keyed collection. * Write the elements out to some data sink. Note that the Cloud Dataflow service may be used to run many different types of jobs, not just Map-Reduce.",
+      "description": "Defines a particular step within a Cloud Dataflow job. A job consists of multiple steps, each of which performs some specific operation as part of the overall job. Data is typically passed from one step to another as part of the job. **Note:** The properties of this object are not stable and might change. Here's an example of a sequence of steps which together implement a Map-Reduce job: * Read a collection of data from some source, parsing the collection's elements. * Validate the elements. * Apply a user-defined function to map each element to some value and extract an element-specific key value. * Group elements with the same key into a single element with that key, transforming a multiply-keyed collection into a uniquely-keyed collection. * Write the elements out to some data sink. Note that the Cloud Dataflow service may be used to run many different types of jobs, not just Map-Reduce.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -7238,6 +7299,130 @@
             "additionalProperties": null,
             "items": null
           },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Straggler": {
+      "id": "Straggler",
+      "description": "Information for a straggler.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "batchStraggler": {
+          "description": "Batch straggler identification and debugging information.",
+          "$ref": "StragglerInfo"
+        },
+        "streamingStraggler": {
+          "description": "Streaming straggler identification and debugging information.",
+          "$ref": "StreamingStragglerInfo"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "StragglerDebuggingInfo": {
+      "id": "StragglerDebuggingInfo",
+      "description": "Information useful for debugging a straggler. Each type will provide specialized debugging information relevant for a particular cause. The StragglerDebuggingInfo will be 1:1 mapping to the StragglerCause enum.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "hotKey": {
+          "description": "Hot key debugging details.",
+          "$ref": "HotKeyDebuggingInfo"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "StragglerInfo": {
+      "id": "StragglerInfo",
+      "description": "Information useful for straggler identification and debugging.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "causes": {
+          "description": "The straggler causes, keyed by the string representation of the StragglerCause enum and contains specialized debugging information for each straggler cause.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "StragglerDebuggingInfo"
+          },
+          "items": null
+        },
+        "startTime": {
+          "description": "The time when the work item attempt became a straggler.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "StragglerSummary": {
+      "id": "StragglerSummary",
+      "description": "Summarized straggler identification details.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "recentStragglers": {
+          "description": "The most recent stragglers.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Straggler"
+          }
+        },
+        "stragglerCauseCount": {
+          "description": "Aggregated counts of straggler causes, keyed by the string representation of the StragglerCause enum.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "totalStragglerCount": {
+          "description": "The total count of stragglers.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
           "items": null
         }
       },
@@ -7650,6 +7835,68 @@
       "properties": {
         "streamId": {
           "description": "Identifies the particular stream within the streaming Dataflow job.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "StreamingStragglerInfo": {
+      "id": "StreamingStragglerInfo",
+      "description": "Information useful for streaming straggler identification and debugging.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dataWatermarkLag": {
+          "description": "The event-time watermark lag at the time of the straggler detection.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "endTime": {
+          "description": "End time of this straggler.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "startTime": {
+          "description": "Start time of this straggler.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "systemWatermarkLag": {
+          "description": "The system watermark lag at the time of the straggler detection.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "workerName": {
+          "description": "Name of the worker where the straggler was detected.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -8169,32 +8416,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "ValidateResponse": {
-      "id": "ValidateResponse",
-      "description": "Response to the validation request.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "errorMessage": {
-          "description": "Will be empty if validation succeeds.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "queryInfo": {
-          "description": "Information about the validated query. Not defined if validation fails.",
-          "$ref": "QueryInfo"
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "WorkItem": {
       "id": "WorkItem",
       "description": "WorkItem represents basic information about a WorkItem to be executed in the cloud.",
@@ -8394,6 +8615,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "stragglerInfo": {
+          "description": "Information about straggler detections for this work item.",
+          "$ref": "StragglerInfo"
         },
         "taskId": {
           "description": "Name of this work item.",
@@ -8904,6 +9129,10 @@
         "workerShutdownNotice": {
           "description": "Shutdown notice by workers.",
           "$ref": "WorkerShutdownNotice"
+        },
+        "workerThreadScalingReport": {
+          "description": "Thread scaling information reported by workers.",
+          "$ref": "WorkerThreadScalingReport"
         }
       },
       "additionalProperties": null,
@@ -8969,6 +9198,10 @@
         "workerShutdownNoticeResponse": {
           "description": "Service's response to shutdown notice (currently empty).",
           "$ref": "WorkerShutdownNoticeResponse"
+        },
+        "workerThreadScalingReportResponse": {
+          "description": "Service's thread scaling recommendation for workers.",
+          "$ref": "WorkerThreadScalingReportResponse"
         }
       },
       "additionalProperties": null,
@@ -9348,6 +9581,50 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "WorkerThreadScalingReport": {
+      "id": "WorkerThreadScalingReport",
+      "description": "Contains information about the thread scaling information of a worker.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "currentThreadCount": {
+          "description": "Current number of active threads in a worker.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "WorkerThreadScalingReportResponse": {
+      "id": "WorkerThreadScalingReportResponse",
+      "description": "Contains the thread scaling recommendation for a worker from the backend.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "recommendedThreadCount": {
+          "description": "Recommended number of threads for a worker.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -9819,6 +10096,20 @@
                   "enumDescriptions": [],
                   "repeated": false
                 },
+                "name": {
+                  "description": "Optional. The job name. Optional.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
                 "pageSize": {
                   "description": "If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.",
                   "default": null,
@@ -10207,6 +10498,20 @@
                 },
                 "location": {
                   "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "name": {
+                  "description": "Optional. The job name. Optional.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11596,6 +11901,20 @@
                       "enumDescriptions": [],
                       "repeated": false
                     },
+                    "name": {
+                      "description": "Optional. The job name. Optional.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
                     "pageSize": {
                       "description": "If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.",
                       "default": null,
@@ -12033,78 +12352,6 @@
                     "https://www.googleapis.com/auth/cloud-platform",
                     "https://www.googleapis.com/auth/compute",
                     "https://www.googleapis.com/auth/compute.readonly",
-                    "https://www.googleapis.com/auth/userinfo.email"
-                  ],
-                  "supportsMediaDownload": false,
-                  "useMediaDownloadService": false,
-                  "supportsSubscription": false,
-                  "supportsMediaUpload": false,
-                  "mediaUpload": null
-                }
-              }
-            },
-            "sql": {
-              "resources": {},
-              "methods": {
-                "validate": {
-                  "id": "dataflow.projects.locations.sql.validate",
-                  "path": "v1b3/projects/{projectId}/locations/{location}/sql:validate",
-                  "httpMethod": "GET",
-                  "description": "Validates a GoogleSQL query for Cloud Dataflow syntax. Will always confirm the given query parses correctly, and if able to look up schema information from DataCatalog, will validate that the query analyzes properly as well.",
-                  "parameters": {
-                    "location": {
-                      "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "projectId": {
-                      "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
-                      "default": null,
-                      "location": "path",
-                      "required": true,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    },
-                    "query": {
-                      "description": "The sql query to validate.",
-                      "default": null,
-                      "location": "query",
-                      "required": false,
-                      "type": "string",
-                      "format": null,
-                      "minimum": null,
-                      "maximum": null,
-                      "pattern": null,
-                      "enum": [],
-                      "enumDescriptions": [],
-                      "repeated": false
-                    }
-                  },
-                  "parameterOrder": [
-                    "projectId",
-                    "location"
-                  ],
-                  "request": null,
-                  "response": {
-                    "$ref": "ValidateResponse"
-                  },
-                  "scopes": [
-                    "https://www.googleapis.com/auth/cloud-platform",
                     "https://www.googleapis.com/auth/userinfo.email"
                   ],
                   "supportsMediaDownload": false,

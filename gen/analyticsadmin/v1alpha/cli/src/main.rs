@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("analyticsadmin1_alpha")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230131")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -77,7 +77,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut properties0 = SubCommand::with_name("properties")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: acknowledge_user_data_collection, create, delete, get, get_data_retention_settings, get_google_signals_settings, list, patch, update_data_retention_settings and update_google_signals_settings");
+                        .about("methods: acknowledge_user_data_collection, create, delete, fetch_automated_ga_4_configuration_opt_out, get, get_attribution_settings, get_data_retention_settings, get_google_signals_settings, list, patch, run_access_report, set_automated_ga_4_configuration_opt_out, update_attribution_settings, update_data_retention_settings and update_google_signals_settings");
         {
             let mcmd = SubCommand::with_name("acknowledge_user_data_collection").about("Acknowledges the terms of user data collection for the specified property. This acknowledgement must be completed (either in the Google Analytics UI or via this API) before MeasurementProtocolSecret resources may be created.");
             properties0 = properties0.subcommand(mcmd);
@@ -88,11 +88,20 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             properties0 = properties0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Marks target Property as soft-deleted (ie: \"trashed\") and returns it. This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI. If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found, or is not an GA4 Property.");
+            let mcmd = SubCommand::with_name("delete").about("Marks target Property as soft-deleted (ie: \"trashed\") and returns it. This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI. If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found, or is not a GA4 Property.");
+            properties0 = properties0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("fetch_automated_ga_4_configuration_opt_out").about("Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.");
             properties0 = properties0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get").about("Lookup for a single \"GA4\" Property.");
+            properties0 = properties0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_attribution_settings")
+                .about("Lookup for a AttributionSettings singleton.");
             properties0 = properties0.subcommand(mcmd);
         }
         {
@@ -111,6 +120,19 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("patch").about("Updates a property.");
+            properties0 = properties0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("run_access_report").about("Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years. Data Access Reports can be requested for a property. The property must be in Google Analytics 360. This method is only available to Administrators. These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase & Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).");
+            properties0 = properties0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_automated_ga_4_configuration_opt_out").about("Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.");
+            properties0 = properties0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_attribution_settings")
+                .about("Updates attribution settings on a property.");
             properties0 = properties0.subcommand(mcmd);
         }
         {
@@ -174,6 +196,41 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("patch")
                 .about("Updates a user link on an account or property.");
             user_links1 = user_links1.subcommand(mcmd);
+        }
+        let mut audiences1 = SubCommand::with_name("audiences")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: archive, create, get, list and patch");
+        {
+            let mcmd =
+                SubCommand::with_name("archive").about("Archives an Audience on a property.");
+            audiences1 = audiences1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates an Audience.");
+            audiences1 = audiences1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Lookup for a single Audience. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions.");
+            audiences1 = audiences1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists Audiences on a property. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions.");
+            audiences1 = audiences1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an Audience on a property.");
+            audiences1 = audiences1.subcommand(mcmd);
+        }
+        let mut big_query_links1 = SubCommand::with_name("big_query_links")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Lookup for a single BigQuery Link.");
+            big_query_links1 = big_query_links1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists BigQuery Links on a property.");
+            big_query_links1 = big_query_links1.subcommand(mcmd);
         }
         let mut conversion_events1 = SubCommand::with_name("conversion_events")
             .setting(AppSettings::ColoredHelp)
@@ -383,6 +440,32 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 SubCommand::with_name("patch").about("Updates a GoogleAdsLink on a property");
             google_ads_links1 = google_ads_links1.subcommand(mcmd);
         }
+        let mut search_ads_360_links1 = SubCommand::with_name("search_ads_360_links")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a SearchAds360Link.");
+            search_ads_360_links1 = search_ads_360_links1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("delete").about("Deletes a SearchAds360Link on a property.");
+            search_ads_360_links1 = search_ads_360_links1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Look up a single SearchAds360Link");
+            search_ads_360_links1 = search_ads_360_links1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists all SearchAds360Links on a property.");
+            search_ads_360_links1 = search_ads_360_links1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates a SearchAds360Link on a property.");
+            search_ads_360_links1 = search_ads_360_links1.subcommand(mcmd);
+        }
         let mut user_links1 = SubCommand::with_name("user_links")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: audit, batch_create, batch_delete, batch_get, batch_update, create, delete, get, list and patch");
@@ -467,6 +550,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         data_streams1 = data_streams1.subcommand(measurement_protocol_secrets2);
         properties0 = properties0.subcommand(user_links1);
+        properties0 = properties0.subcommand(search_ads_360_links1);
         properties0 = properties0.subcommand(google_ads_links1);
         properties0 = properties0.subcommand(firebase_links1);
         properties0 = properties0.subcommand(display_video_360_advertiser_links1);
@@ -475,6 +559,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         properties0 = properties0.subcommand(custom_metrics1);
         properties0 = properties0.subcommand(custom_dimensions1);
         properties0 = properties0.subcommand(conversion_events1);
+        properties0 = properties0.subcommand(big_query_links1);
+        properties0 = properties0.subcommand(audiences1);
         accounts0 = accounts0.subcommand(user_links1);
         app = app.subcommand(properties0);
         app = app.subcommand(accounts0);

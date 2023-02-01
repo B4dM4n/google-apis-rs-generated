@@ -7,7 +7,7 @@
   "canonicalName": "Resource Settings",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230131",
   "title": "Resource Settings API",
   "description": "The Resource Settings API allows users to control and modify the behavior of their GCP resources (e.g., VM, firewall, Project, etc.) across the Cloud Resource Hierarchy.",
   "ownerDomain": "google.com",

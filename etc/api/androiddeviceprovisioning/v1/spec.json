@@ -7,7 +7,7 @@
   "canonicalName": "Android Provisioning Partner",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230115",
   "title": "Android Device Provisioning Partner API",
   "description": "Automates Android zero-touch enrollment for device resellers, customers, and EMMs.",
   "ownerDomain": "google.com",
@@ -208,7 +208,7 @@
       "enumDescriptions": [],
       "properties": {
         "customerId": {
-          "description": "Required. The ID of the customer for whom the device is being claimed.",
+          "description": "The ID of the customer for whom the device is being claimed.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -225,6 +225,26 @@
           "description": "Optional. The metadata to attach to the device.",
           "$ref": "DeviceMetadata"
         },
+        "googleWorkspaceCustomerId": {
+          "description": "The Google Workspace customer ID.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "preProvisioningToken": {
+          "description": "Optional. Must and can only be set for Chrome OS devices.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "sectionType": {
           "description": "Required. The section type of the device's provisioning record.",
           "type": "string",
@@ -239,6 +259,16 @@
             "SIM-lock section type.",
             "Zero-touch enrollment section type."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "simlockProfileId": {
+          "description": "Optional. Must and can only be set when DeviceProvisioningSectionType is SECTION_TYPE_SIM_LOCK. The unique identifier of the SimLock profile (go/simlock/profiles).",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -348,6 +378,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "googleWorkspaceAccount": {
+          "description": "Output only. The Google Workspace account associated with this customer. Only used for customer Companies.",
+          "$ref": "GoogleWorkspaceAccount"
         },
         "languageCode": {
           "description": "Input only. The preferred locale of the customer represented as a BCP47 language code. This field is validated on input and requests containing unsupported language codes will be rejected. Supported language codes: Arabic (ar) Chinese (Hong Kong) (zh-HK) Chinese (Simplified) (zh-CN) Chinese (Traditional) (zh-TW) Czech (cs) Danish (da) Dutch (nl) English (UK) (en-GB) English (US) (en-US) Filipino (fil) Finnish (fi) French (fr) German (de) Hebrew (iw) Hindi (hi) Hungarian (hu) Indonesian (id) Italian (it) Japanese (ja) Korean (ko) Norwegian (Bokmal) (no) Polish (pl) Portuguese (Brazil) (pt-BR) Portuguese (Portugal) (pt-PT) Russian (ru) Spanish (es) Spanish (Latin America) (es-419) Swedish (sv) Thai (th) Turkish (tr) Ukrainian (uk) Vietnamese (vi)",
@@ -725,7 +759,7 @@
     },
     "Device": {
       "id": "Device",
-      "description": "An Android device registered for zero-touch enrollment.",
+      "description": "An Android or Chrome OS device registered for zero-touch enrollment.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -809,6 +843,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "googleWorkspaceCustomerId": {
+          "description": "The ID of the Google Workspace account that owns the Chrome OS device.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "ownerCompanyId": {
           "description": "The ID of the Customer that purchased the device.",
           "type": "string",
@@ -879,6 +923,34 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "chromeOsAttestedDeviceId": {
+          "description": "An identifier provided by OEMs, carried through the production and sales process. Only applicable to Chrome OS devices.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "deviceType": {
+          "description": "The type of the device",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DEVICE_TYPE_UNSPECIFIED",
+            "DEVICE_TYPE_ANDROID",
+            "DEVICE_TYPE_CHROME_OS"
+          ],
+          "enumDescriptions": [
+            "Device type is not specified.",
+            "Android device",
+            "Chrome OS device"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "imei": {
           "description": "The device’s IMEI number. Validated on input.",
           "type": "string",
@@ -890,7 +962,7 @@
           "items": null
         },
         "manufacturer": {
-          "description": "The device manufacturer’s name. Matches the device's built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).",
+          "description": "The device manufacturer’s name. Matches the device's built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [Android manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -910,7 +982,7 @@
           "items": null
         },
         "model": {
-          "description": "The device model's name. Matches the device's built-in value returned from `android.os.Build.MODEL`. Allowed values are listed in [models](/zero-touch/resources/manufacturer-names#model-names).",
+          "description": "The device model's name. Allowed values are listed in [Android models](/zero-touch/resources/manufacturer-names#model-names) and [Chrome OS models](https://support.google.com/chrome/a/answer/10130175#identify_compatible).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1029,7 +1101,7 @@
           "items": null
         },
         "progress": {
-          "description": "The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesnt always mean the operation completed—check for the inclusion of a `done` field.",
+          "description": "The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesn't always mean the operation completed—check for the inclusion of a `done` field.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -1218,7 +1290,7 @@
       "enumDescriptions": [],
       "properties": {
         "customerId": {
-          "description": "Required. The list of customer IDs to search for.",
+          "description": "The list of customer IDs to search for.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1228,6 +1300,24 @@
           "items": {
             "type": "string",
             "format": "int64",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "googleWorkspaceCustomerId": {
+          "description": "The list of IDs of Google Workspace accounts to search for.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
             "enum": [],
             "enumDescriptions": [],
             "properties": {},
@@ -1316,6 +1406,46 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleWorkspaceAccount": {
+      "id": "GoogleWorkspaceAccount",
+      "description": "A Google Workspace customer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "customerId": {
+          "description": "Required. The customer ID.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "preProvisioningTokens": {
+          "description": "Output only. The pre-provisioning tokens previously used to claim devices.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,
@@ -1564,7 +1694,7 @@
       "enumDescriptions": [],
       "properties": {
         "customerId": {
-          "description": "Required. The ID of the customer for whom the device is being claimed.",
+          "description": "The ID of the customer for whom the device is being claimed.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -1580,6 +1710,26 @@
         "deviceMetadata": {
           "description": "Required. The metadata to attach to the device at claim.",
           "$ref": "DeviceMetadata"
+        },
+        "googleWorkspaceCustomerId": {
+          "description": "The Google Workspace customer ID.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "preProvisioningToken": {
+          "description": "Optional. Must and can only be set for Chrome OS devices.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "sectionType": {
           "description": "Required. The section type of the device's provisioning record.",
@@ -1717,7 +1867,9 @@
             "SINGLE_DEVICE_STATUS_PERMISSION_DENIED",
             "SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER",
             "SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE",
-            "SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS"
+            "SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS",
+            "SINGLE_DEVICE_STATUS_INVALID_TOKEN",
+            "SINGLE_DEVICE_STATUS_REVOKED_TOKEN"
           ],
           "enumDescriptions": [
             "Invalid code. Shouldn't be used.",
@@ -1727,7 +1879,9 @@
             "Permission denied.",
             "Invalid device identifier.",
             "Invalid section type.",
-            "This section is claimed by another company."
+            "This section is claimed by another company.",
+            "Invalid pre-provisioning token.",
+            "Revoked pre-provisioning token."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2798,7 +2952,7 @@
               "id": "androiddeviceprovisioning.partners.devices.metadata",
               "path": "v1/partners/{+metadataOwnerId}/devices/{+deviceId}/metadata",
               "httpMethod": "POST",
-              "description": "Updates reseller metadata associated with the device.",
+              "description": "Updates reseller metadata associated with the device. Android devices only.",
               "parameters": {
                 "deviceId": {
                   "description": "Required. The ID of the device.",
@@ -2924,7 +3078,7 @@
               "id": "androiddeviceprovisioning.partners.devices.updateMetadataAsync",
               "path": "v1/partners/{+partnerId}/devices:updateMetadataAsync",
               "httpMethod": "POST",
-              "description": "Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).",
+              "description": "Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). Android Devices only.",
               "parameters": {
                 "partnerId": {
                   "description": "Required. The reseller partner ID.",

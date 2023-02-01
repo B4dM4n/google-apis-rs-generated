@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [locations](resources/locations/struct.LocationsActions.html)\n  * [*getLodging*](resources/locations/struct.GetLodgingRequestBuilder.html), [*updateLodging*](resources/locations/struct.UpdateLodgingRequestBuilder.html)\n  * [lodging](resources/locations/lodging/struct.LodgingActions.html)\n    * [*getGoogleUpdated*](resources/locations/lodging/struct.GetGoogleUpdatedRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
@@ -4857,6 +4858,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kids_club_exception: ::std::option::Option<crate::schemas::FamiliesKidsClubException>,
+        #[doc = "Kids friendly. The hotel has one or more special features for families with children, such as reduced rates, child-sized beds, kids’ club, babysitting service, or suitable place to play on premises."]
+        #[serde(
+            rename = "kidsFriendly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kids_friendly: ::std::option::Option<bool>,
+        #[doc = "Kids friendly exception."]
+        #[serde(
+            rename = "kidsFriendlyException",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kids_friendly_exception:
+            ::std::option::Option<crate::schemas::FamiliesKidsFriendlyException>,
     }
     impl ::google_field_selector::FieldSelector for Families {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5107,6 +5123,87 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FamiliesKidsClubException {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum FamiliesKidsFriendlyException {
+        #[doc = "Amenity or service availability depends on the day of the week."]
+        DependentOnDayOfWeek,
+        #[doc = "Amenity or service availability is seasonal."]
+        DependentOnSeason,
+        #[doc = "Default unspecified exception. Use this only if a more specific exception does not match."]
+        ExceptionUnspecified,
+        #[doc = "Amenity or service is unavailable due to ongoing work orders."]
+        UnderConstruction,
+    }
+    impl FamiliesKidsFriendlyException {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                FamiliesKidsFriendlyException::DependentOnDayOfWeek => "DEPENDENT_ON_DAY_OF_WEEK",
+                FamiliesKidsFriendlyException::DependentOnSeason => "DEPENDENT_ON_SEASON",
+                FamiliesKidsFriendlyException::ExceptionUnspecified => "EXCEPTION_UNSPECIFIED",
+                FamiliesKidsFriendlyException::UnderConstruction => "UNDER_CONSTRUCTION",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for FamiliesKidsFriendlyException {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for FamiliesKidsFriendlyException {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<FamiliesKidsFriendlyException, ()> {
+            Ok(match s {
+                "DEPENDENT_ON_DAY_OF_WEEK" => FamiliesKidsFriendlyException::DependentOnDayOfWeek,
+                "DEPENDENT_ON_SEASON" => FamiliesKidsFriendlyException::DependentOnSeason,
+                "EXCEPTION_UNSPECIFIED" => FamiliesKidsFriendlyException::ExceptionUnspecified,
+                "UNDER_CONSTRUCTION" => FamiliesKidsFriendlyException::UnderConstruction,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for FamiliesKidsFriendlyException {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for FamiliesKidsFriendlyException {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for FamiliesKidsFriendlyException {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DEPENDENT_ON_DAY_OF_WEEK" => FamiliesKidsFriendlyException::DependentOnDayOfWeek,
+                "DEPENDENT_ON_SEASON" => FamiliesKidsFriendlyException::DependentOnSeason,
+                "EXCEPTION_UNSPECIFIED" => FamiliesKidsFriendlyException::ExceptionUnspecified,
+                "UNDER_CONSTRUCTION" => FamiliesKidsFriendlyException::UnderConstruction,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for FamiliesKidsFriendlyException {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FamiliesKidsFriendlyException {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -23864,7 +23961,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub eco_certifications: ::std::option::Option<Vec<crate::schemas::EcoCertification>>,
-        #[doc = "LEED certification."]
+        #[doc = "LEED certification. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC."]
         #[serde(
             rename = "leedCertification",
             default,
@@ -23872,7 +23969,7 @@ pub mod schemas {
         )]
         pub leed_certification:
             ::std::option::Option<crate::schemas::SustainabilityCertificationsLeedCertification>,
-        #[doc = "LEED certification exception."]
+        #[doc = "LEED certification exception. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC."]
         #[serde(
             rename = "leedCertificationException",
             default,
@@ -31871,15 +31968,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

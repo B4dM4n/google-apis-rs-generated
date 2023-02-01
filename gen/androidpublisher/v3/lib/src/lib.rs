@@ -1,9 +1,89 @@
-#![doc = "# Resources and Methods\n* [applications](resources/applications/struct.ApplicationsActions.html)\n  * [device_tier_configs](resources/applications/device_tier_configs/struct.DeviceTierConfigsActions.html)\n    * [*create*](resources/applications/device_tier_configs/struct.CreateRequestBuilder.html), [*get*](resources/applications/device_tier_configs/struct.GetRequestBuilder.html), [*list*](resources/applications/device_tier_configs/struct.ListRequestBuilder.html)\n* [edits](resources/edits/struct.EditsActions.html)\n  * [*commit*](resources/edits/struct.CommitRequestBuilder.html), [*delete*](resources/edits/struct.DeleteRequestBuilder.html), [*get*](resources/edits/struct.GetRequestBuilder.html), [*insert*](resources/edits/struct.InsertRequestBuilder.html), [*validate*](resources/edits/struct.ValidateRequestBuilder.html)\n  * [apks](resources/edits/apks/struct.ApksActions.html)\n    * [*addexternallyhosted*](resources/edits/apks/struct.AddexternallyhostedRequestBuilder.html), [*list*](resources/edits/apks/struct.ListRequestBuilder.html), [*upload*](resources/edits/apks/struct.UploadRequestBuilder.html)\n  * [bundles](resources/edits/bundles/struct.BundlesActions.html)\n    * [*list*](resources/edits/bundles/struct.ListRequestBuilder.html), [*upload*](resources/edits/bundles/struct.UploadRequestBuilder.html)\n  * [countryavailability](resources/edits/countryavailability/struct.CountryavailabilityActions.html)\n    * [*get*](resources/edits/countryavailability/struct.GetRequestBuilder.html)\n  * [deobfuscationfiles](resources/edits/deobfuscationfiles/struct.DeobfuscationfilesActions.html)\n    * [*upload*](resources/edits/deobfuscationfiles/struct.UploadRequestBuilder.html)\n  * [details](resources/edits/details/struct.DetailsActions.html)\n    * [*get*](resources/edits/details/struct.GetRequestBuilder.html), [*patch*](resources/edits/details/struct.PatchRequestBuilder.html), [*update*](resources/edits/details/struct.UpdateRequestBuilder.html)\n  * [expansionfiles](resources/edits/expansionfiles/struct.ExpansionfilesActions.html)\n    * [*get*](resources/edits/expansionfiles/struct.GetRequestBuilder.html), [*patch*](resources/edits/expansionfiles/struct.PatchRequestBuilder.html), [*update*](resources/edits/expansionfiles/struct.UpdateRequestBuilder.html), [*upload*](resources/edits/expansionfiles/struct.UploadRequestBuilder.html)\n  * [images](resources/edits/images/struct.ImagesActions.html)\n    * [*delete*](resources/edits/images/struct.DeleteRequestBuilder.html), [*deleteall*](resources/edits/images/struct.DeleteallRequestBuilder.html), [*list*](resources/edits/images/struct.ListRequestBuilder.html), [*upload*](resources/edits/images/struct.UploadRequestBuilder.html)\n  * [listings](resources/edits/listings/struct.ListingsActions.html)\n    * [*delete*](resources/edits/listings/struct.DeleteRequestBuilder.html), [*deleteall*](resources/edits/listings/struct.DeleteallRequestBuilder.html), [*get*](resources/edits/listings/struct.GetRequestBuilder.html), [*list*](resources/edits/listings/struct.ListRequestBuilder.html), [*patch*](resources/edits/listings/struct.PatchRequestBuilder.html), [*update*](resources/edits/listings/struct.UpdateRequestBuilder.html)\n  * [testers](resources/edits/testers/struct.TestersActions.html)\n    * [*get*](resources/edits/testers/struct.GetRequestBuilder.html), [*patch*](resources/edits/testers/struct.PatchRequestBuilder.html), [*update*](resources/edits/testers/struct.UpdateRequestBuilder.html)\n  * [tracks](resources/edits/tracks/struct.TracksActions.html)\n    * [*get*](resources/edits/tracks/struct.GetRequestBuilder.html), [*list*](resources/edits/tracks/struct.ListRequestBuilder.html), [*patch*](resources/edits/tracks/struct.PatchRequestBuilder.html), [*update*](resources/edits/tracks/struct.UpdateRequestBuilder.html)\n* [generatedapks](resources/generatedapks/struct.GeneratedapksActions.html)\n  * [*download*](resources/generatedapks/struct.DownloadRequestBuilder.html), [*list*](resources/generatedapks/struct.ListRequestBuilder.html)\n* [grants](resources/grants/struct.GrantsActions.html)\n  * [*create*](resources/grants/struct.CreateRequestBuilder.html), [*delete*](resources/grants/struct.DeleteRequestBuilder.html), [*patch*](resources/grants/struct.PatchRequestBuilder.html)\n* [inappproducts](resources/inappproducts/struct.InappproductsActions.html)\n  * [*delete*](resources/inappproducts/struct.DeleteRequestBuilder.html), [*get*](resources/inappproducts/struct.GetRequestBuilder.html), [*insert*](resources/inappproducts/struct.InsertRequestBuilder.html), [*list*](resources/inappproducts/struct.ListRequestBuilder.html), [*patch*](resources/inappproducts/struct.PatchRequestBuilder.html), [*update*](resources/inappproducts/struct.UpdateRequestBuilder.html)\n* [internalappsharingartifacts](resources/internalappsharingartifacts/struct.InternalappsharingartifactsActions.html)\n  * [*uploadapk*](resources/internalappsharingartifacts/struct.UploadapkRequestBuilder.html), [*uploadbundle*](resources/internalappsharingartifacts/struct.UploadbundleRequestBuilder.html)\n* [monetization](resources/monetization/struct.MonetizationActions.html)\n  * [*convertRegionPrices*](resources/monetization/struct.ConvertRegionPricesRequestBuilder.html)\n* [orders](resources/orders/struct.OrdersActions.html)\n  * [*refund*](resources/orders/struct.RefundRequestBuilder.html)\n* [purchases](resources/purchases/struct.PurchasesActions.html)\n  * [products](resources/purchases/products/struct.ProductsActions.html)\n    * [*acknowledge*](resources/purchases/products/struct.AcknowledgeRequestBuilder.html), [*get*](resources/purchases/products/struct.GetRequestBuilder.html)\n  * [subscriptions](resources/purchases/subscriptions/struct.SubscriptionsActions.html)\n    * [*acknowledge*](resources/purchases/subscriptions/struct.AcknowledgeRequestBuilder.html), [*cancel*](resources/purchases/subscriptions/struct.CancelRequestBuilder.html), [*defer*](resources/purchases/subscriptions/struct.DeferRequestBuilder.html), [*get*](resources/purchases/subscriptions/struct.GetRequestBuilder.html), [*refund*](resources/purchases/subscriptions/struct.RefundRequestBuilder.html), [*revoke*](resources/purchases/subscriptions/struct.RevokeRequestBuilder.html)\n  * [voidedpurchases](resources/purchases/voidedpurchases/struct.VoidedpurchasesActions.html)\n    * [*list*](resources/purchases/voidedpurchases/struct.ListRequestBuilder.html)\n* [reviews](resources/reviews/struct.ReviewsActions.html)\n  * [*get*](resources/reviews/struct.GetRequestBuilder.html), [*list*](resources/reviews/struct.ListRequestBuilder.html), [*reply*](resources/reviews/struct.ReplyRequestBuilder.html)\n* [systemapks](resources/systemapks/struct.SystemapksActions.html)\n  * [variants](resources/systemapks/variants/struct.VariantsActions.html)\n    * [*create*](resources/systemapks/variants/struct.CreateRequestBuilder.html), [*download*](resources/systemapks/variants/struct.DownloadRequestBuilder.html), [*get*](resources/systemapks/variants/struct.GetRequestBuilder.html), [*list*](resources/systemapks/variants/struct.ListRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*create*](resources/users/struct.CreateRequestBuilder.html), [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*patch*](resources/users/struct.PatchRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [applications](resources/applications/struct.ApplicationsActions.html)\n  * [device_tier_configs](resources/applications/device_tier_configs/struct.DeviceTierConfigsActions.html)\n    * [*create*](resources/applications/device_tier_configs/struct.CreateRequestBuilder.html), [*get*](resources/applications/device_tier_configs/struct.GetRequestBuilder.html), [*list*](resources/applications/device_tier_configs/struct.ListRequestBuilder.html)\n* [edits](resources/edits/struct.EditsActions.html)\n  * [*commit*](resources/edits/struct.CommitRequestBuilder.html), [*delete*](resources/edits/struct.DeleteRequestBuilder.html), [*get*](resources/edits/struct.GetRequestBuilder.html), [*insert*](resources/edits/struct.InsertRequestBuilder.html), [*validate*](resources/edits/struct.ValidateRequestBuilder.html)\n  * [apks](resources/edits/apks/struct.ApksActions.html)\n    * [*addexternallyhosted*](resources/edits/apks/struct.AddexternallyhostedRequestBuilder.html), [*list*](resources/edits/apks/struct.ListRequestBuilder.html), [*upload*](resources/edits/apks/struct.UploadRequestBuilder.html)\n  * [bundles](resources/edits/bundles/struct.BundlesActions.html)\n    * [*list*](resources/edits/bundles/struct.ListRequestBuilder.html), [*upload*](resources/edits/bundles/struct.UploadRequestBuilder.html)\n  * [countryavailability](resources/edits/countryavailability/struct.CountryavailabilityActions.html)\n    * [*get*](resources/edits/countryavailability/struct.GetRequestBuilder.html)\n  * [deobfuscationfiles](resources/edits/deobfuscationfiles/struct.DeobfuscationfilesActions.html)\n    * [*upload*](resources/edits/deobfuscationfiles/struct.UploadRequestBuilder.html)\n  * [details](resources/edits/details/struct.DetailsActions.html)\n    * [*get*](resources/edits/details/struct.GetRequestBuilder.html), [*patch*](resources/edits/details/struct.PatchRequestBuilder.html), [*update*](resources/edits/details/struct.UpdateRequestBuilder.html)\n  * [expansionfiles](resources/edits/expansionfiles/struct.ExpansionfilesActions.html)\n    * [*get*](resources/edits/expansionfiles/struct.GetRequestBuilder.html), [*patch*](resources/edits/expansionfiles/struct.PatchRequestBuilder.html), [*update*](resources/edits/expansionfiles/struct.UpdateRequestBuilder.html), [*upload*](resources/edits/expansionfiles/struct.UploadRequestBuilder.html)\n  * [images](resources/edits/images/struct.ImagesActions.html)\n    * [*delete*](resources/edits/images/struct.DeleteRequestBuilder.html), [*deleteall*](resources/edits/images/struct.DeleteallRequestBuilder.html), [*list*](resources/edits/images/struct.ListRequestBuilder.html), [*upload*](resources/edits/images/struct.UploadRequestBuilder.html)\n  * [listings](resources/edits/listings/struct.ListingsActions.html)\n    * [*delete*](resources/edits/listings/struct.DeleteRequestBuilder.html), [*deleteall*](resources/edits/listings/struct.DeleteallRequestBuilder.html), [*get*](resources/edits/listings/struct.GetRequestBuilder.html), [*list*](resources/edits/listings/struct.ListRequestBuilder.html), [*patch*](resources/edits/listings/struct.PatchRequestBuilder.html), [*update*](resources/edits/listings/struct.UpdateRequestBuilder.html)\n  * [testers](resources/edits/testers/struct.TestersActions.html)\n    * [*get*](resources/edits/testers/struct.GetRequestBuilder.html), [*patch*](resources/edits/testers/struct.PatchRequestBuilder.html), [*update*](resources/edits/testers/struct.UpdateRequestBuilder.html)\n  * [tracks](resources/edits/tracks/struct.TracksActions.html)\n    * [*get*](resources/edits/tracks/struct.GetRequestBuilder.html), [*list*](resources/edits/tracks/struct.ListRequestBuilder.html), [*patch*](resources/edits/tracks/struct.PatchRequestBuilder.html), [*update*](resources/edits/tracks/struct.UpdateRequestBuilder.html)\n* [generatedapks](resources/generatedapks/struct.GeneratedapksActions.html)\n  * [*download*](resources/generatedapks/struct.DownloadRequestBuilder.html), [*list*](resources/generatedapks/struct.ListRequestBuilder.html)\n* [grants](resources/grants/struct.GrantsActions.html)\n  * [*create*](resources/grants/struct.CreateRequestBuilder.html), [*delete*](resources/grants/struct.DeleteRequestBuilder.html), [*patch*](resources/grants/struct.PatchRequestBuilder.html)\n* [inappproducts](resources/inappproducts/struct.InappproductsActions.html)\n  * [*delete*](resources/inappproducts/struct.DeleteRequestBuilder.html), [*get*](resources/inappproducts/struct.GetRequestBuilder.html), [*insert*](resources/inappproducts/struct.InsertRequestBuilder.html), [*list*](resources/inappproducts/struct.ListRequestBuilder.html), [*patch*](resources/inappproducts/struct.PatchRequestBuilder.html), [*update*](resources/inappproducts/struct.UpdateRequestBuilder.html)\n* [internalappsharingartifacts](resources/internalappsharingartifacts/struct.InternalappsharingartifactsActions.html)\n  * [*uploadapk*](resources/internalappsharingartifacts/struct.UploadapkRequestBuilder.html), [*uploadbundle*](resources/internalappsharingartifacts/struct.UploadbundleRequestBuilder.html)\n* [monetization](resources/monetization/struct.MonetizationActions.html)\n  * [*convertRegionPrices*](resources/monetization/struct.ConvertRegionPricesRequestBuilder.html)\n  * [subscriptions](resources/monetization/subscriptions/struct.SubscriptionsActions.html)\n    * [*archive*](resources/monetization/subscriptions/struct.ArchiveRequestBuilder.html), [*create*](resources/monetization/subscriptions/struct.CreateRequestBuilder.html), [*delete*](resources/monetization/subscriptions/struct.DeleteRequestBuilder.html), [*get*](resources/monetization/subscriptions/struct.GetRequestBuilder.html), [*list*](resources/monetization/subscriptions/struct.ListRequestBuilder.html), [*patch*](resources/monetization/subscriptions/struct.PatchRequestBuilder.html)\n    * [base_plans](resources/monetization/subscriptions/base_plans/struct.BasePlansActions.html)\n      * [*activate*](resources/monetization/subscriptions/base_plans/struct.ActivateRequestBuilder.html), [*deactivate*](resources/monetization/subscriptions/base_plans/struct.DeactivateRequestBuilder.html), [*delete*](resources/monetization/subscriptions/base_plans/struct.DeleteRequestBuilder.html), [*migratePrices*](resources/monetization/subscriptions/base_plans/struct.MigratePricesRequestBuilder.html)\n      * [offers](resources/monetization/subscriptions/base_plans/offers/struct.OffersActions.html)\n        * [*activate*](resources/monetization/subscriptions/base_plans/offers/struct.ActivateRequestBuilder.html), [*create*](resources/monetization/subscriptions/base_plans/offers/struct.CreateRequestBuilder.html), [*deactivate*](resources/monetization/subscriptions/base_plans/offers/struct.DeactivateRequestBuilder.html), [*delete*](resources/monetization/subscriptions/base_plans/offers/struct.DeleteRequestBuilder.html), [*get*](resources/monetization/subscriptions/base_plans/offers/struct.GetRequestBuilder.html), [*list*](resources/monetization/subscriptions/base_plans/offers/struct.ListRequestBuilder.html), [*patch*](resources/monetization/subscriptions/base_plans/offers/struct.PatchRequestBuilder.html)\n* [orders](resources/orders/struct.OrdersActions.html)\n  * [*refund*](resources/orders/struct.RefundRequestBuilder.html)\n* [purchases](resources/purchases/struct.PurchasesActions.html)\n  * [products](resources/purchases/products/struct.ProductsActions.html)\n    * [*acknowledge*](resources/purchases/products/struct.AcknowledgeRequestBuilder.html), [*get*](resources/purchases/products/struct.GetRequestBuilder.html)\n  * [subscriptions](resources/purchases/subscriptions/struct.SubscriptionsActions.html)\n    * [*acknowledge*](resources/purchases/subscriptions/struct.AcknowledgeRequestBuilder.html), [*cancel*](resources/purchases/subscriptions/struct.CancelRequestBuilder.html), [*defer*](resources/purchases/subscriptions/struct.DeferRequestBuilder.html), [*get*](resources/purchases/subscriptions/struct.GetRequestBuilder.html), [*refund*](resources/purchases/subscriptions/struct.RefundRequestBuilder.html), [*revoke*](resources/purchases/subscriptions/struct.RevokeRequestBuilder.html)\n  * [subscriptionsv_2](resources/purchases/subscriptionsv_2/struct.Subscriptionsv2Actions.html)\n    * [*get*](resources/purchases/subscriptionsv_2/struct.GetRequestBuilder.html)\n  * [voidedpurchases](resources/purchases/voidedpurchases/struct.VoidedpurchasesActions.html)\n    * [*list*](resources/purchases/voidedpurchases/struct.ListRequestBuilder.html)\n* [reviews](resources/reviews/struct.ReviewsActions.html)\n  * [*get*](resources/reviews/struct.GetRequestBuilder.html), [*list*](resources/reviews/struct.ListRequestBuilder.html), [*reply*](resources/reviews/struct.ReplyRequestBuilder.html)\n* [systemapks](resources/systemapks/struct.SystemapksActions.html)\n  * [variants](resources/systemapks/variants/struct.VariantsActions.html)\n    * [*create*](resources/systemapks/variants/struct.CreateRequestBuilder.html), [*download*](resources/systemapks/variants/struct.DownloadRequestBuilder.html), [*get*](resources/systemapks/variants/struct.GetRequestBuilder.html), [*list*](resources/systemapks/variants/struct.ListRequestBuilder.html)\n* [users](resources/users/struct.UsersActions.html)\n  * [*create*](resources/users/struct.CreateRequestBuilder.html), [*delete*](resources/users/struct.DeleteRequestBuilder.html), [*list*](resources/users/struct.ListRequestBuilder.html), [*patch*](resources/users/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your Google Play Developer account\n\n`https://www.googleapis.com/auth/androidpublisher`"]
     pub const ANDROIDPUBLISHER: &str = "https://www.googleapis.com/auth/androidpublisher";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AcquisitionTargetingRule {
+        #[doc = "Required. The scope of subscriptions this rule considers. Only allows “this subscription” and “any subscription in app”."]
+        #[serde(
+            rename = "scope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope: ::std::option::Option<crate::schemas::TargetingRuleScope>,
+    }
+    impl ::google_field_selector::FieldSelector for AcquisitionTargetingRule {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AcquisitionTargetingRule {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ActivateBasePlanRequest {}
+    impl ::google_field_selector::FieldSelector for ActivateBasePlanRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ActivateBasePlanRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ActivateSubscriptionOfferRequest {}
+    impl ::google_field_selector::FieldSelector for ActivateSubscriptionOfferRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ActivateSubscriptionOfferRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -278,6 +358,445 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ArchiveSubscriptionRequest {}
+    impl ::google_field_selector::FieldSelector for ArchiveSubscriptionRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ArchiveSubscriptionRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AutoRenewingBasePlanType {
+        #[doc = "Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center."]
+        #[serde(
+            rename = "billingPeriodDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub billing_period_duration: ::std::option::Option<String>,
+        #[doc = "Grace period of the subscription, specified in ISO 8601 format. Acceptable values are P0D (zero days), P3D (3 days), P7D (7 days), P14D (14 days), and P30D (30 days). If not specified, a default value will be used based on the recurring period duration."]
+        #[serde(
+            rename = "gracePeriodDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub grace_period_duration: ::std::option::Option<String>,
+        #[doc = "Whether the renewing base plan is backward compatible. The backward compatible base plan is returned by the Google Play Billing Library deprecated method querySkuDetailsAsync(). Only one renewing base plan can be marked as legacy compatible for a given subscription."]
+        #[serde(
+            rename = "legacyCompatible",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub legacy_compatible: ::std::option::Option<bool>,
+        #[doc = "Subscription offer id which is legacy compatible. The backward compatible subscription offer is returned by the Google Play Billing Library deprecated method querySkuDetailsAsync(). Only one subscription offer can be marked as legacy compatible for a given renewing base plan. To have no Subscription offer as legacy compatible set this field as empty string."]
+        #[serde(
+            rename = "legacyCompatibleSubscriptionOfferId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub legacy_compatible_subscription_offer_id: ::std::option::Option<String>,
+        #[doc = "The proration mode for the base plan determines what happens when a user switches to this plan from another base plan. If unspecified, defaults to CHARGE_ON_NEXT_BILLING_DATE."]
+        #[serde(
+            rename = "prorationMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub proration_mode:
+            ::std::option::Option<crate::schemas::AutoRenewingBasePlanTypeProrationMode>,
+        #[doc = "Whether users should be able to resubscribe to this base plan in Google Play surfaces. Defaults to RESUBSCRIBE_STATE_ACTIVE if not specified."]
+        #[serde(
+            rename = "resubscribeState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resubscribe_state:
+            ::std::option::Option<crate::schemas::AutoRenewingBasePlanTypeResubscribeState>,
+    }
+    impl ::google_field_selector::FieldSelector for AutoRenewingBasePlanType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AutoRenewingBasePlanType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AutoRenewingBasePlanTypeProrationMode {
+        #[doc = "Users will be charged for their new base plan immediately and in full. Any remaining period of their existing subscription will be used to extend the duration of the new billing plan."]
+        SubscriptionProrationModeChargeFullPriceImmediately,
+        #[doc = "Users will be charged for their new base plan at the end of their current billing period."]
+        SubscriptionProrationModeChargeOnNextBillingDate,
+        #[doc = "Unspecified mode."]
+        SubscriptionProrationModeUnspecified,
+    }
+    impl AutoRenewingBasePlanTypeProrationMode {
+        pub fn as_str(self) -> &'static str {
+            match self { AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeChargeFullPriceImmediately => "SUBSCRIPTION_PRORATION_MODE_CHARGE_FULL_PRICE_IMMEDIATELY" , AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeChargeOnNextBillingDate => "SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE" , AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeUnspecified => "SUBSCRIPTION_PRORATION_MODE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AutoRenewingBasePlanTypeProrationMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AutoRenewingBasePlanTypeProrationMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AutoRenewingBasePlanTypeProrationMode, ()> {
+            Ok (match s { "SUBSCRIPTION_PRORATION_MODE_CHARGE_FULL_PRICE_IMMEDIATELY" => AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeChargeFullPriceImmediately , "SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE" => AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeChargeOnNextBillingDate , "SUBSCRIPTION_PRORATION_MODE_UNSPECIFIED" => AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for AutoRenewingBasePlanTypeProrationMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AutoRenewingBasePlanTypeProrationMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AutoRenewingBasePlanTypeProrationMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "SUBSCRIPTION_PRORATION_MODE_CHARGE_FULL_PRICE_IMMEDIATELY" => AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeChargeFullPriceImmediately , "SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE" => AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeChargeOnNextBillingDate , "SUBSCRIPTION_PRORATION_MODE_UNSPECIFIED" => AutoRenewingBasePlanTypeProrationMode :: SubscriptionProrationModeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AutoRenewingBasePlanTypeProrationMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AutoRenewingBasePlanTypeProrationMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AutoRenewingBasePlanTypeResubscribeState {
+        #[doc = "Resubscribe is active."]
+        ResubscribeStateActive,
+        #[doc = "Resubscribe is inactive."]
+        ResubscribeStateInactive,
+        #[doc = "Unspecified state."]
+        ResubscribeStateUnspecified,
+    }
+    impl AutoRenewingBasePlanTypeResubscribeState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateActive => {
+                    "RESUBSCRIBE_STATE_ACTIVE"
+                }
+                AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateInactive => {
+                    "RESUBSCRIBE_STATE_INACTIVE"
+                }
+                AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateUnspecified => {
+                    "RESUBSCRIBE_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AutoRenewingBasePlanTypeResubscribeState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AutoRenewingBasePlanTypeResubscribeState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<AutoRenewingBasePlanTypeResubscribeState, ()> {
+            Ok(match s {
+                "RESUBSCRIBE_STATE_ACTIVE" => {
+                    AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateActive
+                }
+                "RESUBSCRIBE_STATE_INACTIVE" => {
+                    AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateInactive
+                }
+                "RESUBSCRIBE_STATE_UNSPECIFIED" => {
+                    AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AutoRenewingBasePlanTypeResubscribeState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AutoRenewingBasePlanTypeResubscribeState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AutoRenewingBasePlanTypeResubscribeState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "RESUBSCRIBE_STATE_ACTIVE" => {
+                    AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateActive
+                }
+                "RESUBSCRIBE_STATE_INACTIVE" => {
+                    AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateInactive
+                }
+                "RESUBSCRIBE_STATE_UNSPECIFIED" => {
+                    AutoRenewingBasePlanTypeResubscribeState::ResubscribeStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AutoRenewingBasePlanTypeResubscribeState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AutoRenewingBasePlanTypeResubscribeState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct AutoRenewingPlan {
+        #[doc = "If the subscription is currently set to auto-renew, e.g. the user has not canceled the subscription"]
+        #[serde(
+            rename = "autoRenewEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auto_renew_enabled: ::std::option::Option<bool>,
+        #[doc = "The information of the last price change for the item since subscription signup."]
+        #[serde(
+            rename = "priceChangeDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price_change_details:
+            ::std::option::Option<crate::schemas::SubscriptionItemPriceChangeDetails>,
+    }
+    impl ::google_field_selector::FieldSelector for AutoRenewingPlan {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AutoRenewingPlan {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BasePlan {
+        #[doc = "Set when the base plan automatically renews at a regular interval."]
+        #[serde(
+            rename = "autoRenewingBasePlanType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auto_renewing_base_plan_type:
+            ::std::option::Option<crate::schemas::AutoRenewingBasePlanType>,
+        #[doc = "Required. Immutable. The unique identifier of this base plan. Must be unique within the subscription, and conform with RFC-1034. That is, this ID can only contain lower-case letters (a-z), numbers (0-9), and hyphens (-), and be at most 63 characters."]
+        #[serde(
+            rename = "basePlanId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_plan_id: ::std::option::Option<String>,
+        #[doc = "List of up to 20 custom tags specified for this base plan, and returned to the app through the billing library. Subscription offers for this base plan will also receive these offer tags in the billing library."]
+        #[serde(
+            rename = "offerTags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offer_tags: ::std::option::Option<Vec<crate::schemas::OfferTag>>,
+        #[doc = "Pricing information for any new locations Play may launch in the future. If omitted, the BasePlan will not be automatically available any new locations Play may launch in the future."]
+        #[serde(
+            rename = "otherRegionsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub other_regions_config: ::std::option::Option<crate::schemas::OtherRegionsBasePlanConfig>,
+        #[doc = "Set when the base plan does not automatically renew at the end of the billing period."]
+        #[serde(
+            rename = "prepaidBasePlanType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub prepaid_base_plan_type: ::std::option::Option<crate::schemas::PrepaidBasePlanType>,
+        #[doc = "Region-specific information for this base plan."]
+        #[serde(
+            rename = "regionalConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub regional_configs: ::std::option::Option<Vec<crate::schemas::RegionalBasePlanConfig>>,
+        #[doc = "Output only. The state of the base plan, i.e. whether it’s active. Draft and inactive base plans can be activated or deleted. Active base plans can be made inactive. Inactive base plans can be canceled. This field cannot be changed by updating the resource. Use the dedicated endpoints instead."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::BasePlanState>,
+    }
+    impl ::google_field_selector::FieldSelector for BasePlan {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BasePlan {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BasePlanState {
+        #[doc = "The base plan is active and available for new subscribers."]
+        Active,
+        #[doc = "The base plan is currently in a draft state, and hasn’t been activated. It can be safely deleted at this point."]
+        Draft,
+        #[doc = "The base plan is inactive and only available for existing subscribers."]
+        Inactive,
+        #[doc = "Unspecified state."]
+        StateUnspecified,
+    }
+    impl BasePlanState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BasePlanState::Active => "ACTIVE",
+                BasePlanState::Draft => "DRAFT",
+                BasePlanState::Inactive => "INACTIVE",
+                BasePlanState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BasePlanState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BasePlanState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BasePlanState, ()> {
+            Ok(match s {
+                "ACTIVE" => BasePlanState::Active,
+                "DRAFT" => BasePlanState::Draft,
+                "INACTIVE" => BasePlanState::Inactive,
+                "STATE_UNSPECIFIED" => BasePlanState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BasePlanState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BasePlanState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BasePlanState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => BasePlanState::Active,
+                "DRAFT" => BasePlanState::Draft,
+                "INACTIVE" => BasePlanState::Inactive,
+                "STATE_UNSPECIFIED" => BasePlanState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BasePlanState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BasePlanState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -349,6 +868,221 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for BundlesListResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CancelSurveyResult {
+        #[doc = "The reason the user selected in the cancel survey."]
+        #[serde(
+            rename = "reason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reason: ::std::option::Option<crate::schemas::CancelSurveyResultReason>,
+        #[doc = "Only set for CANCEL_SURVEY_REASON_OTHERS. This is the user’s freeform response to the survey."]
+        #[serde(
+            rename = "reasonUserInput",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reason_user_input: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CancelSurveyResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CancelSurveyResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CancelSurveyResultReason {
+        #[doc = "Cost related issues."]
+        CancelSurveyReasonCostRelated,
+        #[doc = "The user found a better app."]
+        CancelSurveyReasonFoundBetterApp,
+        #[doc = "Not enough usage of the subscription."]
+        CancelSurveyReasonNotEnoughUsage,
+        #[doc = "Other reasons."]
+        CancelSurveyReasonOthers,
+        #[doc = "Technical issues while using the app."]
+        CancelSurveyReasonTechnicalIssues,
+        #[doc = "Unspecified cancel survey reason."]
+        CancelSurveyReasonUnspecified,
+    }
+    impl CancelSurveyResultReason {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                CancelSurveyResultReason::CancelSurveyReasonCostRelated => {
+                    "CANCEL_SURVEY_REASON_COST_RELATED"
+                }
+                CancelSurveyResultReason::CancelSurveyReasonFoundBetterApp => {
+                    "CANCEL_SURVEY_REASON_FOUND_BETTER_APP"
+                }
+                CancelSurveyResultReason::CancelSurveyReasonNotEnoughUsage => {
+                    "CANCEL_SURVEY_REASON_NOT_ENOUGH_USAGE"
+                }
+                CancelSurveyResultReason::CancelSurveyReasonOthers => "CANCEL_SURVEY_REASON_OTHERS",
+                CancelSurveyResultReason::CancelSurveyReasonTechnicalIssues => {
+                    "CANCEL_SURVEY_REASON_TECHNICAL_ISSUES"
+                }
+                CancelSurveyResultReason::CancelSurveyReasonUnspecified => {
+                    "CANCEL_SURVEY_REASON_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CancelSurveyResultReason {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CancelSurveyResultReason {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<CancelSurveyResultReason, ()> {
+            Ok(match s {
+                "CANCEL_SURVEY_REASON_COST_RELATED" => {
+                    CancelSurveyResultReason::CancelSurveyReasonCostRelated
+                }
+                "CANCEL_SURVEY_REASON_FOUND_BETTER_APP" => {
+                    CancelSurveyResultReason::CancelSurveyReasonFoundBetterApp
+                }
+                "CANCEL_SURVEY_REASON_NOT_ENOUGH_USAGE" => {
+                    CancelSurveyResultReason::CancelSurveyReasonNotEnoughUsage
+                }
+                "CANCEL_SURVEY_REASON_OTHERS" => CancelSurveyResultReason::CancelSurveyReasonOthers,
+                "CANCEL_SURVEY_REASON_TECHNICAL_ISSUES" => {
+                    CancelSurveyResultReason::CancelSurveyReasonTechnicalIssues
+                }
+                "CANCEL_SURVEY_REASON_UNSPECIFIED" => {
+                    CancelSurveyResultReason::CancelSurveyReasonUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for CancelSurveyResultReason {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CancelSurveyResultReason {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CancelSurveyResultReason {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CANCEL_SURVEY_REASON_COST_RELATED" => {
+                    CancelSurveyResultReason::CancelSurveyReasonCostRelated
+                }
+                "CANCEL_SURVEY_REASON_FOUND_BETTER_APP" => {
+                    CancelSurveyResultReason::CancelSurveyReasonFoundBetterApp
+                }
+                "CANCEL_SURVEY_REASON_NOT_ENOUGH_USAGE" => {
+                    CancelSurveyResultReason::CancelSurveyReasonNotEnoughUsage
+                }
+                "CANCEL_SURVEY_REASON_OTHERS" => CancelSurveyResultReason::CancelSurveyReasonOthers,
+                "CANCEL_SURVEY_REASON_TECHNICAL_ISSUES" => {
+                    CancelSurveyResultReason::CancelSurveyReasonTechnicalIssues
+                }
+                "CANCEL_SURVEY_REASON_UNSPECIFIED" => {
+                    CancelSurveyResultReason::CancelSurveyReasonUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CancelSurveyResultReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CancelSurveyResultReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CanceledStateContext {
+        #[doc = "Subscription was canceled by the developer."]
+        #[serde(
+            rename = "developerInitiatedCancellation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub developer_initiated_cancellation:
+            ::std::option::Option<crate::schemas::DeveloperInitiatedCancellation>,
+        #[doc = "Subscription was replaced by a new subscription."]
+        #[serde(
+            rename = "replacementCancellation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub replacement_cancellation:
+            ::std::option::Option<crate::schemas::ReplacementCancellation>,
+        #[doc = "Subscription was canceled by the system, for example because of a billing problem."]
+        #[serde(
+            rename = "systemInitiatedCancellation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub system_initiated_cancellation:
+            ::std::option::Option<crate::schemas::SystemInitiatedCancellation>,
+        #[doc = "Subscription was canceled by user."]
+        #[serde(
+            rename = "userInitiatedCancellation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_initiated_cancellation:
+            ::std::option::Option<crate::schemas::UserInitiatedCancellation>,
+    }
+    impl ::google_field_selector::FieldSelector for CanceledStateContext {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CanceledStateContext {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -592,6 +1326,54 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeactivateBasePlanRequest {}
+    impl ::google_field_selector::FieldSelector for DeactivateBasePlanRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeactivateBasePlanRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeactivateSubscriptionOfferRequest {}
+    impl ::google_field_selector::FieldSelector for DeactivateSubscriptionOfferRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeactivateSubscriptionOfferRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -762,6 +1544,30 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DeveloperComment {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DeveloperInitiatedCancellation {}
+    impl ::google_field_selector::FieldSelector for DeveloperInitiatedCancellation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeveloperInitiatedCancellation {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1268,6 +2074,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ExpansionFilesUploadResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ExternalAccountIdentifiers {
+        #[doc = "User account identifier in the third-party service. Only present if account linking happened as part of the subscription purchase flow."]
+        #[serde(
+            rename = "externalAccountId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_account_id: ::std::option::Option<String>,
+        #[doc = "An obfuscated version of the id that is uniquely associated with the user’s account in your app. Present for the following purchases: * If account linking happened as part of the subscription purchase flow. * It was specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedaccountid when the purchase was made."]
+        #[serde(
+            rename = "obfuscatedExternalAccountId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub obfuscated_external_account_id: ::std::option::Option<String>,
+        #[doc = "An obfuscated version of the id that is uniquely associated with the user’s profile in your app. Only present if specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedprofileid when the purchase was made."]
+        #[serde(
+            rename = "obfuscatedExternalProfileId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub obfuscated_external_profile_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ExternalAccountIdentifiers {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ExternalAccountIdentifiers {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2492,7 +3343,84 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListDeviceTierConfigsResponse {
+    impl crate::GetNextPageToken<String> for ListDeviceTierConfigsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct ListSubscriptionOffersResponse {
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The subscription offers from the specified subscription."]
+        #[serde(
+            rename = "subscriptionOffers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subscription_offers: ::std::option::Option<Vec<crate::schemas::SubscriptionOffer>>,
+    }
+    impl ::google_field_selector::FieldSelector for ListSubscriptionOffersResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListSubscriptionOffersResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListSubscriptionOffersResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListSubscriptionsResponse {
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The subscriptions from the specified app."]
+        #[serde(
+            rename = "subscriptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subscriptions: ::std::option::Option<Vec<crate::schemas::Subscription>>,
+    }
+    impl ::google_field_selector::FieldSelector for ListSubscriptionsResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListSubscriptionsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListSubscriptionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2535,7 +3463,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListUsersResponse {
+    impl crate::GetNextPageToken<String> for ListUsersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2792,6 +3720,69 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct MigrateBasePlanPricesRequest {
+        #[doc = "Required. The regional prices to update."]
+        #[serde(
+            rename = "regionalPriceMigrations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub regional_price_migrations:
+            ::std::option::Option<Vec<crate::schemas::RegionalPriceMigrationConfig>>,
+        #[doc = "Required. The version of the available regions being used for the regional_price_migrations."]
+        #[serde(
+            rename = "regionsVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub regions_version: ::std::option::Option<crate::schemas::RegionsVersion>,
+    }
+    impl ::google_field_selector::FieldSelector for MigrateBasePlanPricesRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MigrateBasePlanPricesRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MigrateBasePlanPricesResponse {}
+    impl ::google_field_selector::FieldSelector for MigrateBasePlanPricesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MigrateBasePlanPricesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Money {
         #[doc = "The three-letter currency code defined in ISO 4217."]
         #[serde(
@@ -2838,6 +3829,234 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct OfferDetails {
+        #[doc = "The base plan ID. Present for all base plan and offers."]
+        #[serde(
+            rename = "basePlanId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_plan_id: ::std::option::Option<String>,
+        #[doc = "The offer ID. Only present for discounted offers."]
+        #[serde(
+            rename = "offerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offer_id: ::std::option::Option<String>,
+        #[doc = "The latest offer tags associated with the offer. It includes tags inherited from the base plan."]
+        #[serde(
+            rename = "offerTags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offer_tags: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for OfferDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OfferDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OfferTag {
+        #[doc = "Must conform with RFC-1034. That is, this string can only contain lower-case letters (a-z), numbers (0-9), and hyphens (-), and be at most 20 characters."]
+        #[serde(
+            rename = "tag",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tag: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for OfferTag {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OfferTag {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OtherRegionsBasePlanConfig {
+        #[doc = "Required. Price in EUR to use for any new locations Play may launch in."]
+        #[serde(
+            rename = "eurPrice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub eur_price: ::std::option::Option<crate::schemas::Money>,
+        #[doc = "Whether the base plan is available for new subscribers in any new locations Play may launch in. If not specified, this will default to false."]
+        #[serde(
+            rename = "newSubscriberAvailability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_subscriber_availability: ::std::option::Option<bool>,
+        #[doc = "Required. Price in USD to use for any new locations Play may launch in."]
+        #[serde(
+            rename = "usdPrice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usd_price: ::std::option::Option<crate::schemas::Money>,
+    }
+    impl ::google_field_selector::FieldSelector for OtherRegionsBasePlanConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OtherRegionsBasePlanConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OtherRegionsSubscriptionOfferConfig {
+        #[doc = "Whether the subscription offer in any new locations Play may launch in the future. If not specified, this will default to false."]
+        #[serde(
+            rename = "otherRegionsNewSubscriberAvailability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub other_regions_new_subscriber_availability: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for OtherRegionsSubscriptionOfferConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OtherRegionsSubscriptionOfferConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct OtherRegionsSubscriptionOfferPhaseConfig {
+        #[doc = "The absolute amount of money subtracted from the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a $1 absolute discount for a phase of a duration of 3 months would correspond to a price of $2. The resulting price may not be smaller than the minimum price allowed for any new locations Play may launch in."]
+        #[serde(
+            rename = "absoluteDiscounts",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub absolute_discounts:
+            ::std::option::Option<crate::schemas::OtherRegionsSubscriptionOfferPhasePrices>,
+        #[doc = "The absolute price the user pays for this offer phase. The price must not be smaller than the minimum price allowed for any new locations Play may launch in."]
+        #[serde(
+            rename = "otherRegionsPrices",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub other_regions_prices:
+            ::std::option::Option<crate::schemas::OtherRegionsSubscriptionOfferPhasePrices>,
+        #[doc = "The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in any new locations Play may launch in."]
+        #[serde(
+            rename = "relativeDiscount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub relative_discount: ::std::option::Option<f64>,
+    }
+    impl ::google_field_selector::FieldSelector for OtherRegionsSubscriptionOfferPhaseConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OtherRegionsSubscriptionOfferPhaseConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct OtherRegionsSubscriptionOfferPhasePrices {
+        #[doc = "Required. Price in EUR to use for any new locations Play may launch in."]
+        #[serde(
+            rename = "eurPrice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub eur_price: ::std::option::Option<crate::schemas::Money>,
+        #[doc = "Required. Price in USD to use for any new locations Play may launch in."]
+        #[serde(
+            rename = "usdPrice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub usd_price: ::std::option::Option<crate::schemas::Money>,
+    }
+    impl ::google_field_selector::FieldSelector for OtherRegionsSubscriptionOfferPhasePrices {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for OtherRegionsSubscriptionOfferPhasePrices {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct PageInfo {
         #[doc = "Maximum number of results returned in one page. ! The number of results included in the API response."]
         #[serde(
@@ -2867,6 +4086,194 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PageInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PausedStateContext {
+        #[doc = "Time at which the subscription will be automatically resumed."]
+        #[serde(
+            rename = "autoResumeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auto_resume_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PausedStateContext {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PausedStateContext {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PrepaidBasePlanType {
+        #[doc = "Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center."]
+        #[serde(
+            rename = "billingPeriodDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub billing_period_duration: ::std::option::Option<String>,
+        #[doc = "Whether users should be able to extend this prepaid base plan in Google Play surfaces. Defaults to TIME_EXTENSION_ACTIVE if not specified."]
+        #[serde(
+            rename = "timeExtension",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_extension: ::std::option::Option<crate::schemas::PrepaidBasePlanTypeTimeExtension>,
+    }
+    impl ::google_field_selector::FieldSelector for PrepaidBasePlanType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PrepaidBasePlanType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PrepaidBasePlanTypeTimeExtension {
+        #[doc = "Time extension is active. Users are allowed to top-up or extend their prepaid plan."]
+        TimeExtensionActive,
+        #[doc = "Time extension is inactive. Users cannot top-up or extend their prepaid plan."]
+        TimeExtensionInactive,
+        #[doc = "Unspecified state."]
+        TimeExtensionUnspecified,
+    }
+    impl PrepaidBasePlanTypeTimeExtension {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PrepaidBasePlanTypeTimeExtension::TimeExtensionActive => "TIME_EXTENSION_ACTIVE",
+                PrepaidBasePlanTypeTimeExtension::TimeExtensionInactive => {
+                    "TIME_EXTENSION_INACTIVE"
+                }
+                PrepaidBasePlanTypeTimeExtension::TimeExtensionUnspecified => {
+                    "TIME_EXTENSION_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PrepaidBasePlanTypeTimeExtension {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PrepaidBasePlanTypeTimeExtension {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PrepaidBasePlanTypeTimeExtension, ()> {
+            Ok(match s {
+                "TIME_EXTENSION_ACTIVE" => PrepaidBasePlanTypeTimeExtension::TimeExtensionActive,
+                "TIME_EXTENSION_INACTIVE" => {
+                    PrepaidBasePlanTypeTimeExtension::TimeExtensionInactive
+                }
+                "TIME_EXTENSION_UNSPECIFIED" => {
+                    PrepaidBasePlanTypeTimeExtension::TimeExtensionUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PrepaidBasePlanTypeTimeExtension {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PrepaidBasePlanTypeTimeExtension {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PrepaidBasePlanTypeTimeExtension {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TIME_EXTENSION_ACTIVE" => PrepaidBasePlanTypeTimeExtension::TimeExtensionActive,
+                "TIME_EXTENSION_INACTIVE" => {
+                    PrepaidBasePlanTypeTimeExtension::TimeExtensionInactive
+                }
+                "TIME_EXTENSION_UNSPECIFIED" => {
+                    PrepaidBasePlanTypeTimeExtension::TimeExtensionUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PrepaidBasePlanTypeTimeExtension {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PrepaidBasePlanTypeTimeExtension {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PrepaidPlan {
+        #[doc = "If present, this is the time after which top up purchases are allowed for the prepaid plan. Will not be present for expired prepaid plans."]
+        #[serde(
+            rename = "allowExtendAfterTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_extend_after_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PrepaidPlan {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PrepaidPlan {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2971,7 +4378,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_id: ::std::option::Option<String>,
-        #[doc = "The inapp product SKU."]
+        #[doc = "The inapp product SKU. May not be present."]
         #[serde(
             rename = "productId",
             default,
@@ -2993,7 +4400,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub purchase_time_millis: ::std::option::Option<i64>,
-        #[doc = "The purchase token generated to identify this purchase."]
+        #[doc = "The purchase token generated to identify this purchase. May not be present."]
         #[serde(
             rename = "purchaseToken",
             default,
@@ -3007,7 +4414,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub purchase_type: ::std::option::Option<i32>,
-        #[doc = "The quantity associated with the purchase of the inapp product."]
+        #[doc = "The quantity associated with the purchase of the inapp product. If not present, the quantity is 1."]
         #[serde(
             rename = "quantity",
             default,
@@ -3075,6 +4482,170 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RegionalBasePlanConfig {
+        #[doc = "Whether the base plan in the specified region is available for new subscribers. Existing subscribers will not have their subscription canceled if this value is set to false. If not specified, this will default to false."]
+        #[serde(
+            rename = "newSubscriberAvailability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_subscriber_availability: ::std::option::Option<bool>,
+        #[doc = "The price of the base plan in the specified region. Must be set if the base plan is available to new subscribers. Must be set in the currency that is linked to the specified region."]
+        #[serde(
+            rename = "price",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price: ::std::option::Option<crate::schemas::Money>,
+        #[doc = "Required. Region code this configuration applies to, as defined by ISO 3166-2, e.g. “US”."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RegionalBasePlanConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegionalBasePlanConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RegionalPriceMigrationConfig {
+        #[doc = "Required. The cutoff time for historical prices that subscribers can remain paying. Subscribers who are on a price that was created before this cutoff time will be migrated to the currently-offered price. These subscribers will receive a notification that they will be paying a different price. Subscribers who do not agree to the new price will have their subscription ended at the next renewal."]
+        #[serde(
+            rename = "oldestAllowedPriceVersionTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub oldest_allowed_price_version_time: ::std::option::Option<String>,
+        #[doc = "Required. Region code this configuration applies to, as defined by ISO 3166-2, e.g. “US”."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RegionalPriceMigrationConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegionalPriceMigrationConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RegionalSubscriptionOfferConfig {
+        #[doc = "Whether the subscription offer in the specified region is available for new subscribers. Existing subscribers will not have their subscription cancelled if this value is set to false. If not specified, this will default to false."]
+        #[serde(
+            rename = "newSubscriberAvailability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_subscriber_availability: ::std::option::Option<bool>,
+        #[doc = "Required. Immutable. Region code this configuration applies to, as defined by ISO 3166-2, e.g. “US”."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RegionalSubscriptionOfferConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegionalSubscriptionOfferConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct RegionalSubscriptionOfferPhaseConfig {
+        #[doc = "The absolute amount of money subtracted from the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a $1 absolute discount for a phase of a duration of 3 months would correspond to a price of $2. The resulting price may not be smaller than the minimum price allowed for this region."]
+        #[serde(
+            rename = "absoluteDiscount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub absolute_discount: ::std::option::Option<crate::schemas::Money>,
+        #[doc = "The absolute price the user pays for this offer phase. The price must not be smaller than the minimum price allowed for this region."]
+        #[serde(
+            rename = "price",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price: ::std::option::Option<crate::schemas::Money>,
+        #[doc = "Required. Immutable. The region to which this config applies."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
+        #[doc = "The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in this region."]
+        #[serde(
+            rename = "relativeDiscount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub relative_discount: ::std::option::Option<f64>,
+    }
+    impl ::google_field_selector::FieldSelector for RegionalSubscriptionOfferPhaseConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegionalSubscriptionOfferPhaseConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct RegionalTaxRateInfo {
         #[doc = "You must tell us if your app contains streaming products to correctly charge US state and local sales tax. Field only supported in United States."]
         #[serde(
@@ -3083,6 +4654,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub eligible_for_streaming_service_tax_rate: ::std::option::Option<bool>,
+        #[doc = "To collect communications or amusement taxes in the United States, choose the appropriate tax category. [Learn more](https://support.google.com/googleplay/android-developer/answer/10463498#streaming_tax)."]
+        #[serde(
+            rename = "streamingTaxType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub streaming_tax_type:
+            ::std::option::Option<crate::schemas::RegionalTaxRateInfoStreamingTaxType>,
         #[doc = "Tax tier to specify reduced tax rate. Developers who sell digital news, magazines, newspapers, books, or audiobooks in various regions may be eligible for reduced tax rates. [Learn more](https://support.google.com/googleplay/android-developer/answer/10463498)."]
         #[serde(
             rename = "taxTier",
@@ -3097,6 +4676,144 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for RegionalTaxRateInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum RegionalTaxRateInfoStreamingTaxType {
+        #[doc = "US-specific telecommunications tax tier for multi channel audio streaming like radio."]
+        StreamingTaxTypeTelcoAudioMultiChannel,
+        #[doc = "US-specific telecommunications tax tier for audio streaming, rental / subscription."]
+        StreamingTaxTypeTelcoAudioRental,
+        #[doc = "US-specific telecommunications tax tier for audio streaming, sale / permanent download."]
+        StreamingTaxTypeTelcoAudioSales,
+        #[doc = "US-specific telecommunications tax tier for video streaming of multi-channel programming."]
+        StreamingTaxTypeTelcoVideoMultiChannel,
+        #[doc = "US-specific telecommunications tax tier for video streaming, on demand, rentals / subscriptions / pay-per-view."]
+        StreamingTaxTypeTelcoVideoRental,
+        #[doc = "US-specific telecommunications tax tier for video streaming of pre-recorded content like movies, tv shows."]
+        StreamingTaxTypeTelcoVideoSales,
+        #[doc = "No telecommunications tax collected."]
+        StreamingTaxTypeUnspecified,
+    }
+    impl RegionalTaxRateInfoStreamingTaxType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioMultiChannel => {
+                    "STREAMING_TAX_TYPE_TELCO_AUDIO_MULTI_CHANNEL"
+                }
+                RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioRental => {
+                    "STREAMING_TAX_TYPE_TELCO_AUDIO_RENTAL"
+                }
+                RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioSales => {
+                    "STREAMING_TAX_TYPE_TELCO_AUDIO_SALES"
+                }
+                RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoMultiChannel => {
+                    "STREAMING_TAX_TYPE_TELCO_VIDEO_MULTI_CHANNEL"
+                }
+                RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoRental => {
+                    "STREAMING_TAX_TYPE_TELCO_VIDEO_RENTAL"
+                }
+                RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoSales => {
+                    "STREAMING_TAX_TYPE_TELCO_VIDEO_SALES"
+                }
+                RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeUnspecified => {
+                    "STREAMING_TAX_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for RegionalTaxRateInfoStreamingTaxType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for RegionalTaxRateInfoStreamingTaxType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<RegionalTaxRateInfoStreamingTaxType, ()> {
+            Ok(match s {
+                "STREAMING_TAX_TYPE_TELCO_AUDIO_MULTI_CHANNEL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioMultiChannel
+                }
+                "STREAMING_TAX_TYPE_TELCO_AUDIO_RENTAL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioRental
+                }
+                "STREAMING_TAX_TYPE_TELCO_AUDIO_SALES" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioSales
+                }
+                "STREAMING_TAX_TYPE_TELCO_VIDEO_MULTI_CHANNEL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoMultiChannel
+                }
+                "STREAMING_TAX_TYPE_TELCO_VIDEO_RENTAL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoRental
+                }
+                "STREAMING_TAX_TYPE_TELCO_VIDEO_SALES" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoSales
+                }
+                "STREAMING_TAX_TYPE_UNSPECIFIED" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for RegionalTaxRateInfoStreamingTaxType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for RegionalTaxRateInfoStreamingTaxType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for RegionalTaxRateInfoStreamingTaxType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "STREAMING_TAX_TYPE_TELCO_AUDIO_MULTI_CHANNEL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioMultiChannel
+                }
+                "STREAMING_TAX_TYPE_TELCO_AUDIO_RENTAL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioRental
+                }
+                "STREAMING_TAX_TYPE_TELCO_AUDIO_SALES" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoAudioSales
+                }
+                "STREAMING_TAX_TYPE_TELCO_VIDEO_MULTI_CHANNEL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoMultiChannel
+                }
+                "STREAMING_TAX_TYPE_TELCO_VIDEO_RENTAL" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoRental
+                }
+                "STREAMING_TAX_TYPE_TELCO_VIDEO_SALES" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeTelcoVideoSales
+                }
+                "STREAMING_TAX_TYPE_UNSPECIFIED" => {
+                    RegionalTaxRateInfoStreamingTaxType::StreamingTaxTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for RegionalTaxRateInfoStreamingTaxType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegionalTaxRateInfoStreamingTaxType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3188,6 +4905,61 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for RegionalTaxRateInfoTaxTier {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct RegionsVersion {
+        #[doc = "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for RegionsVersion {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RegionsVersion {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ReplacementCancellation {}
+    impl ::google_field_selector::FieldSelector for ReplacementCancellation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ReplacementCancellation {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3394,6 +5166,132 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SubscribeWithGoogleInfo {
+        #[doc = "The email address of the user when the subscription was purchased."]
+        #[serde(
+            rename = "emailAddress",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub email_address: ::std::option::Option<String>,
+        #[doc = "The family name of the user when the subscription was purchased."]
+        #[serde(
+            rename = "familyName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub family_name: ::std::option::Option<String>,
+        #[doc = "The given name of the user when the subscription was purchased."]
+        #[serde(
+            rename = "givenName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub given_name: ::std::option::Option<String>,
+        #[doc = "The Google profile id of the user when the subscription was purchased."]
+        #[serde(
+            rename = "profileId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_id: ::std::option::Option<String>,
+        #[doc = "The profile name of the user when the subscription was purchased."]
+        #[serde(
+            rename = "profileName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub profile_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SubscribeWithGoogleInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscribeWithGoogleInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Subscription {
+        #[doc = "Output only. Whether this subscription is archived. Archived subscriptions are not available to any subscriber any longer, cannot be updated, and are not returned in list requests unless the show archived flag is passed in."]
+        #[serde(
+            rename = "archived",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub archived: ::std::option::Option<bool>,
+        #[doc = "The set of base plans for this subscription. Represents the prices and duration of the subscription if no other offers apply."]
+        #[serde(
+            rename = "basePlans",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_plans: ::std::option::Option<Vec<crate::schemas::BasePlan>>,
+        #[doc = "Required. List of localized listings for this subscription. Must contain at least an entry for the default language of the parent app."]
+        #[serde(
+            rename = "listings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub listings: ::std::option::Option<Vec<crate::schemas::SubscriptionListing>>,
+        #[doc = "Immutable. Package name of the parent app."]
+        #[serde(
+            rename = "packageName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package_name: ::std::option::Option<String>,
+        #[doc = "Immutable. Unique product ID of the product. Unique within the parent app. Product IDs must be composed of lower-case letters (a-z), numbers (0-9), underscores (\\_) and dots (.). It must start with a lower-case letter or number, and be between 1 and 40 (inclusive) characters in length."]
+        #[serde(
+            rename = "productId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_id: ::std::option::Option<String>,
+        #[doc = "Details about taxes and legal compliance."]
+        #[serde(
+            rename = "taxAndComplianceSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tax_and_compliance_settings:
+            ::std::option::Option<crate::schemas::SubscriptionTaxAndComplianceSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for Subscription {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Subscription {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SubscriptionCancelSurveyResult {
         #[doc = "The cancellation reason the user chose in the survey. Possible values are: 0. Other 1. I don’t use this service enough 2. Technical issues 3. Cost-related reasons 4. I found a better app"]
         #[serde(
@@ -3456,6 +5354,550 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SubscriptionDeferralInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SubscriptionItemPriceChangeDetails {
+        #[doc = "The renewal time at which the price change will become effective for the user. This is subject to change(to a future time) due to cases where the renewal time shifts like pause."]
+        #[serde(
+            rename = "expectedNewPriceChargeTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expected_new_price_charge_time: ::std::option::Option<String>,
+        #[doc = "New recurring price for the subscription item."]
+        #[serde(
+            rename = "newPrice",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_price: ::std::option::Option<crate::schemas::Money>,
+        #[doc = "Price change mode specifies how the subscription item price is changing."]
+        #[serde(
+            rename = "priceChangeMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price_change_mode: ::std::option::Option<
+            crate::schemas::SubscriptionItemPriceChangeDetailsPriceChangeMode,
+        >,
+        #[doc = "State the price change is currently in."]
+        #[serde(
+            rename = "priceChangeState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price_change_state: ::std::option::Option<
+            crate::schemas::SubscriptionItemPriceChangeDetailsPriceChangeState,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionItemPriceChangeDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionItemPriceChangeDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        #[doc = "Price change mode unspecified. This value should never be set."]
+        PriceChangeModeUnspecified,
+        #[doc = "If the subscription price is decreasing."]
+        PriceDecrease,
+        #[doc = "If the subscription price is increasing and the user needs to accept it."]
+        PriceIncrease,
+    }
+    impl SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceChangeModeUnspecified => {
+                    "PRICE_CHANGE_MODE_UNSPECIFIED"
+                }
+                SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceDecrease => {
+                    "PRICE_DECREASE"
+                }
+                SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceIncrease => {
+                    "PRICE_INCREASE"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<SubscriptionItemPriceChangeDetailsPriceChangeMode, ()> {
+            Ok(match s {
+                "PRICE_CHANGE_MODE_UNSPECIFIED" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceChangeModeUnspecified
+                }
+                "PRICE_DECREASE" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceDecrease
+                }
+                "PRICE_INCREASE" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceIncrease
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "PRICE_CHANGE_MODE_UNSPECIFIED" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceChangeModeUnspecified
+                }
+                "PRICE_DECREASE" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceDecrease
+                }
+                "PRICE_INCREASE" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeMode::PriceIncrease
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionItemPriceChangeDetailsPriceChangeMode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SubscriptionItemPriceChangeDetailsPriceChangeState {
+        #[doc = "The price change is applied, i.e. the user has started being charged the new price."]
+        Applied,
+        #[doc = "The price change is confirmed to happen for the user."]
+        Confirmed,
+        #[doc = "Waiting for the user to agree for the price change."]
+        Outstanding,
+        #[doc = "Price change state unspecified. This value should not be used."]
+        PriceChangeStateUnspecified,
+    }
+    impl SubscriptionItemPriceChangeDetailsPriceChangeState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SubscriptionItemPriceChangeDetailsPriceChangeState::Applied => "APPLIED",
+                SubscriptionItemPriceChangeDetailsPriceChangeState::Confirmed => "CONFIRMED",
+                SubscriptionItemPriceChangeDetailsPriceChangeState::Outstanding => "OUTSTANDING",
+                SubscriptionItemPriceChangeDetailsPriceChangeState::PriceChangeStateUnspecified => {
+                    "PRICE_CHANGE_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SubscriptionItemPriceChangeDetailsPriceChangeState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SubscriptionItemPriceChangeDetailsPriceChangeState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<SubscriptionItemPriceChangeDetailsPriceChangeState, ()> {
+            Ok(match s {
+                "APPLIED" => SubscriptionItemPriceChangeDetailsPriceChangeState::Applied,
+                "CONFIRMED" => SubscriptionItemPriceChangeDetailsPriceChangeState::Confirmed,
+                "OUTSTANDING" => SubscriptionItemPriceChangeDetailsPriceChangeState::Outstanding,
+                "PRICE_CHANGE_STATE_UNSPECIFIED" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeState::PriceChangeStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SubscriptionItemPriceChangeDetailsPriceChangeState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SubscriptionItemPriceChangeDetailsPriceChangeState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SubscriptionItemPriceChangeDetailsPriceChangeState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "APPLIED" => SubscriptionItemPriceChangeDetailsPriceChangeState::Applied,
+                "CONFIRMED" => SubscriptionItemPriceChangeDetailsPriceChangeState::Confirmed,
+                "OUTSTANDING" => SubscriptionItemPriceChangeDetailsPriceChangeState::Outstanding,
+                "PRICE_CHANGE_STATE_UNSPECIFIED" => {
+                    SubscriptionItemPriceChangeDetailsPriceChangeState::PriceChangeStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionItemPriceChangeDetailsPriceChangeState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionItemPriceChangeDetailsPriceChangeState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SubscriptionListing {
+        #[doc = "A list of benefits shown to the user on platforms such as the Play Store and in restoration flows in the language of this listing. Plain text. Ordered list of at most four benefits."]
+        #[serde(
+            rename = "benefits",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub benefits: ::std::option::Option<Vec<String>>,
+        #[doc = "The description of this subscription in the language of this listing. Maximum length - 80 characters. Plain text."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Required. The language of this listing, as defined by BCP-47, e.g. “en-US”."]
+        #[serde(
+            rename = "languageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub language_code: ::std::option::Option<String>,
+        #[doc = "Required. The title of this subscription in the language of this listing. Plain text."]
+        #[serde(
+            rename = "title",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub title: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionListing {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionListing {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct SubscriptionOffer {
+        #[doc = "Required. Immutable. The ID of the base plan to which this offer is an extension."]
+        #[serde(
+            rename = "basePlanId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_plan_id: ::std::option::Option<String>,
+        #[doc = "Required. Immutable. Unique ID of this subscription offer. Must be unique within the base plan."]
+        #[serde(
+            rename = "offerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offer_id: ::std::option::Option<String>,
+        #[doc = "List of up to 20 custom tags specified for this offer, and returned to the app through the billing library."]
+        #[serde(
+            rename = "offerTags",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offer_tags: ::std::option::Option<Vec<crate::schemas::OfferTag>>,
+        #[doc = "The configuration for any new locations Play may launch in the future."]
+        #[serde(
+            rename = "otherRegionsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub other_regions_config:
+            ::std::option::Option<crate::schemas::OtherRegionsSubscriptionOfferConfig>,
+        #[doc = "Required. Immutable. The package name of the app the parent subscription belongs to."]
+        #[serde(
+            rename = "packageName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub package_name: ::std::option::Option<String>,
+        #[doc = "Required. The phases of this subscription offer. Must contain at least one entry, and may contain at most five. Users will always receive all these phases in the specified order. Phases may not be added, removed, or reordered after initial creation."]
+        #[serde(
+            rename = "phases",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub phases: ::std::option::Option<Vec<crate::schemas::SubscriptionOfferPhase>>,
+        #[doc = "Required. Immutable. The ID of the parent subscription this offer belongs to."]
+        #[serde(
+            rename = "productId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_id: ::std::option::Option<String>,
+        #[doc = "Required. The region-specific configuration of this offer. Must contain at least one entry."]
+        #[serde(
+            rename = "regionalConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub regional_configs:
+            ::std::option::Option<Vec<crate::schemas::RegionalSubscriptionOfferConfig>>,
+        #[doc = "Output only. The current state of this offer. Can be changed using Activate and Deactivate actions. NB: the base plan state supersedes this state, so an active offer may not be available if the base plan is not active."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::SubscriptionOfferState>,
+        #[doc = "The requirements that users need to fulfil to be eligible for this offer. Represents the requirements that Play will evaluate to decide whether an offer should be returned. Developers may further filter these offers themselves."]
+        #[serde(
+            rename = "targeting",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub targeting: ::std::option::Option<crate::schemas::SubscriptionOfferTargeting>,
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionOffer {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionOffer {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SubscriptionOfferState {
+        #[doc = "The subscription offer is available to new and existing users."]
+        Active,
+        #[doc = "The subscription offer is not and has never been available to users."]
+        Draft,
+        #[doc = "The subscription offer is not available to new users. Existing users retain access."]
+        Inactive,
+        #[doc = "Default value, should never be used."]
+        StateUnspecified,
+    }
+    impl SubscriptionOfferState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SubscriptionOfferState::Active => "ACTIVE",
+                SubscriptionOfferState::Draft => "DRAFT",
+                SubscriptionOfferState::Inactive => "INACTIVE",
+                SubscriptionOfferState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SubscriptionOfferState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SubscriptionOfferState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SubscriptionOfferState, ()> {
+            Ok(match s {
+                "ACTIVE" => SubscriptionOfferState::Active,
+                "DRAFT" => SubscriptionOfferState::Draft,
+                "INACTIVE" => SubscriptionOfferState::Inactive,
+                "STATE_UNSPECIFIED" => SubscriptionOfferState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SubscriptionOfferState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SubscriptionOfferState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SubscriptionOfferState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => SubscriptionOfferState::Active,
+                "DRAFT" => SubscriptionOfferState::Draft,
+                "INACTIVE" => SubscriptionOfferState::Inactive,
+                "STATE_UNSPECIFIED" => SubscriptionOfferState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionOfferState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionOfferState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct SubscriptionOfferPhase {
+        #[doc = "Required. The duration of a single recurrence of this phase. Specified in ISO 8601 format."]
+        #[serde(
+            rename = "duration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub duration: ::std::option::Option<String>,
+        #[doc = "Pricing information for any new locations Play may launch in."]
+        #[serde(
+            rename = "otherRegionsConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub other_regions_config:
+            ::std::option::Option<crate::schemas::OtherRegionsSubscriptionOfferPhaseConfig>,
+        #[doc = "Required. The number of times this phase repeats. If this offer phase is not free, each recurrence charges the user the price of this offer phase."]
+        #[serde(
+            rename = "recurrenceCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub recurrence_count: ::std::option::Option<i32>,
+        #[doc = "Required. The region-specific configuration of this offer phase. This list must contain exactly one entry for each region for which the subscription offer has a regional config."]
+        #[serde(
+            rename = "regionalConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub regional_configs:
+            ::std::option::Option<Vec<crate::schemas::RegionalSubscriptionOfferPhaseConfig>>,
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionOfferPhase {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionOfferPhase {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SubscriptionOfferTargeting {
+        #[doc = "Offer targeting rule for new user acquisition."]
+        #[serde(
+            rename = "acquisitionRule",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acquisition_rule: ::std::option::Option<crate::schemas::AcquisitionTargetingRule>,
+        #[doc = "Offer targeting rule for upgrading users’ existing plans."]
+        #[serde(
+            rename = "upgradeRule",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub upgrade_rule: ::std::option::Option<crate::schemas::UpgradeTargetingRule>,
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionOfferTargeting {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionOfferTargeting {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3743,6 +6185,429 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SubscriptionPurchaseLineItem {
+        #[doc = "The item is auto renewing."]
+        #[serde(
+            rename = "autoRenewingPlan",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auto_renewing_plan: ::std::option::Option<crate::schemas::AutoRenewingPlan>,
+        #[doc = "Time at which the subscription expired or will expire unless the access is extended (ex. renews)."]
+        #[serde(
+            rename = "expiryTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expiry_time: ::std::option::Option<String>,
+        #[doc = "The offer details for this item."]
+        #[serde(
+            rename = "offerDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offer_details: ::std::option::Option<crate::schemas::OfferDetails>,
+        #[doc = "The item is prepaid."]
+        #[serde(
+            rename = "prepaidPlan",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub prepaid_plan: ::std::option::Option<crate::schemas::PrepaidPlan>,
+        #[doc = "The purchased product ID (for example, ‘monthly001’)."]
+        #[serde(
+            rename = "productId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionPurchaseLineItem {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionPurchaseLineItem {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SubscriptionPurchaseV2 {
+        #[doc = "The acknowledgement state of the subscription."]
+        #[serde(
+            rename = "acknowledgementState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acknowledgement_state:
+            ::std::option::Option<crate::schemas::SubscriptionPurchaseV2AcknowledgementState>,
+        #[doc = "Additional context around canceled subscriptions. Only present if the subscription currently has subscription_state SUBSCRIPTION_STATE_CANCELED."]
+        #[serde(
+            rename = "canceledStateContext",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canceled_state_context: ::std::option::Option<crate::schemas::CanceledStateContext>,
+        #[doc = "User account identifier in the third-party service."]
+        #[serde(
+            rename = "externalAccountIdentifiers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub external_account_identifiers:
+            ::std::option::Option<crate::schemas::ExternalAccountIdentifiers>,
+        #[doc = "This kind represents a SubscriptionPurchaseV2 object in the androidpublisher service."]
+        #[serde(
+            rename = "kind",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kind: ::std::option::Option<String>,
+        #[doc = "The order id of the latest order associated with the purchase of the subscription. For autoRenewing subscription, this is the order id of signup order if it is not renewed yet, or the last recurring order id (success, pending, or declined order). For prepaid subscription, this is the order id associated with the queried purchase token."]
+        #[serde(
+            rename = "latestOrderId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub latest_order_id: ::std::option::Option<String>,
+        #[doc = "Item-level info for a subscription purchase. The items in the same purchase should be either all with AutoRenewingPlan or all with PrepaidPlan."]
+        #[serde(
+            rename = "lineItems",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub line_items: ::std::option::Option<Vec<crate::schemas::SubscriptionPurchaseLineItem>>,
+        #[doc = "The purchase token of the old subscription if this subscription is one of the following: * Re-signup of a canceled but non-lapsed subscription * Upgrade/downgrade from a previous subscription. * Convert from prepaid to auto renewing subscription. * Convert from an auto renewing subscription to prepaid. * Topup a prepaid subscription."]
+        #[serde(
+            rename = "linkedPurchaseToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub linked_purchase_token: ::std::option::Option<String>,
+        #[doc = "Additional context around paused subscriptions. Only present if the subscription currently has subscription_state SUBSCRIPTION_STATE_PAUSED."]
+        #[serde(
+            rename = "pausedStateContext",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub paused_state_context: ::std::option::Option<crate::schemas::PausedStateContext>,
+        #[doc = "ISO 3166-1 alpha-2 billing country/region code of the user at the time the subscription was granted."]
+        #[serde(
+            rename = "regionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub region_code: ::std::option::Option<String>,
+        #[doc = "Time at which the subscription was granted. Not set for pending subscriptions (subscription was created but awaiting payment during signup)."]
+        #[serde(
+            rename = "startTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_time: ::std::option::Option<String>,
+        #[doc = "User profile associated with purchases made with ‘Subscribe with Google’."]
+        #[serde(
+            rename = "subscribeWithGoogleInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subscribe_with_google_info:
+            ::std::option::Option<crate::schemas::SubscribeWithGoogleInfo>,
+        #[doc = "The current state of the subscription."]
+        #[serde(
+            rename = "subscriptionState",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub subscription_state:
+            ::std::option::Option<crate::schemas::SubscriptionPurchaseV2SubscriptionState>,
+        #[doc = "Only present if this subscription purchase is a test purchase."]
+        #[serde(
+            rename = "testPurchase",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub test_purchase: ::std::option::Option<crate::schemas::TestPurchase>,
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionPurchaseV2 {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionPurchaseV2 {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SubscriptionPurchaseV2AcknowledgementState {
+        #[doc = "The subscription is acknowledged."]
+        AcknowledgementStateAcknowledged,
+        #[doc = "The subscription is not acknowledged yet."]
+        AcknowledgementStatePending,
+        #[doc = "Unspecified acknowledgement state."]
+        AcknowledgementStateUnspecified,
+    }
+    impl SubscriptionPurchaseV2AcknowledgementState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStateAcknowledged => {
+                    "ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED"
+                }
+                SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStatePending => {
+                    "ACKNOWLEDGEMENT_STATE_PENDING"
+                }
+                SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStateUnspecified => {
+                    "ACKNOWLEDGEMENT_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SubscriptionPurchaseV2AcknowledgementState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SubscriptionPurchaseV2AcknowledgementState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<SubscriptionPurchaseV2AcknowledgementState, ()> {
+            Ok(match s {
+                "ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED" => {
+                    SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStateAcknowledged
+                }
+                "ACKNOWLEDGEMENT_STATE_PENDING" => {
+                    SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStatePending
+                }
+                "ACKNOWLEDGEMENT_STATE_UNSPECIFIED" => {
+                    SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SubscriptionPurchaseV2AcknowledgementState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SubscriptionPurchaseV2AcknowledgementState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SubscriptionPurchaseV2AcknowledgementState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED" => {
+                    SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStateAcknowledged
+                }
+                "ACKNOWLEDGEMENT_STATE_PENDING" => {
+                    SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStatePending
+                }
+                "ACKNOWLEDGEMENT_STATE_UNSPECIFIED" => {
+                    SubscriptionPurchaseV2AcknowledgementState::AcknowledgementStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionPurchaseV2AcknowledgementState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionPurchaseV2AcknowledgementState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum SubscriptionPurchaseV2SubscriptionState {
+        #[doc = "Subscription is active. - (1) If the subscription is an auto renewing plan, at least one item is auto_renew_enabled and not expired. - (2) If the subscription is a prepaid plan, at least one item is not expired."]
+        SubscriptionStateActive,
+        #[doc = "Subscription is canceled but not expired yet. The state is only available when the subscription is an auto renewing plan. All items have auto_renew_enabled set to false."]
+        SubscriptionStateCanceled,
+        #[doc = "Subscription is expired. All items have expiry_time in the past."]
+        SubscriptionStateExpired,
+        #[doc = "Subscription is in grace period. The state is only available when the subscription is an auto renewing plan. In this state, all items are in grace period."]
+        SubscriptionStateInGracePeriod,
+        #[doc = "Subscription is on hold (suspended). The state is only available when the subscription is an auto renewing plan. In this state, all items are on hold."]
+        SubscriptionStateOnHold,
+        #[doc = "Subscription is paused. The state is only available when the subscription is an auto renewing plan. In this state, all items are in paused state."]
+        SubscriptionStatePaused,
+        #[doc = "Subscription was created but awaiting payment during signup. In this state, all items are awaiting payment."]
+        SubscriptionStatePending,
+        #[doc = "Unspecified subscription state."]
+        SubscriptionStateUnspecified,
+    }
+    impl SubscriptionPurchaseV2SubscriptionState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStateActive => {
+                    "SUBSCRIPTION_STATE_ACTIVE"
+                }
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStateCanceled => {
+                    "SUBSCRIPTION_STATE_CANCELED"
+                }
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStateExpired => {
+                    "SUBSCRIPTION_STATE_EXPIRED"
+                }
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStateInGracePeriod => {
+                    "SUBSCRIPTION_STATE_IN_GRACE_PERIOD"
+                }
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStateOnHold => {
+                    "SUBSCRIPTION_STATE_ON_HOLD"
+                }
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStatePaused => {
+                    "SUBSCRIPTION_STATE_PAUSED"
+                }
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStatePending => {
+                    "SUBSCRIPTION_STATE_PENDING"
+                }
+                SubscriptionPurchaseV2SubscriptionState::SubscriptionStateUnspecified => {
+                    "SUBSCRIPTION_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for SubscriptionPurchaseV2SubscriptionState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for SubscriptionPurchaseV2SubscriptionState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<SubscriptionPurchaseV2SubscriptionState, ()> {
+            Ok(match s {
+                "SUBSCRIPTION_STATE_ACTIVE" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateActive
+                }
+                "SUBSCRIPTION_STATE_CANCELED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateCanceled
+                }
+                "SUBSCRIPTION_STATE_EXPIRED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateExpired
+                }
+                "SUBSCRIPTION_STATE_IN_GRACE_PERIOD" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateInGracePeriod
+                }
+                "SUBSCRIPTION_STATE_ON_HOLD" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateOnHold
+                }
+                "SUBSCRIPTION_STATE_PAUSED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStatePaused
+                }
+                "SUBSCRIPTION_STATE_PENDING" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStatePending
+                }
+                "SUBSCRIPTION_STATE_UNSPECIFIED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for SubscriptionPurchaseV2SubscriptionState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for SubscriptionPurchaseV2SubscriptionState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for SubscriptionPurchaseV2SubscriptionState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "SUBSCRIPTION_STATE_ACTIVE" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateActive
+                }
+                "SUBSCRIPTION_STATE_CANCELED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateCanceled
+                }
+                "SUBSCRIPTION_STATE_EXPIRED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateExpired
+                }
+                "SUBSCRIPTION_STATE_IN_GRACE_PERIOD" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateInGracePeriod
+                }
+                "SUBSCRIPTION_STATE_ON_HOLD" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateOnHold
+                }
+                "SUBSCRIPTION_STATE_PAUSED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStatePaused
+                }
+                "SUBSCRIPTION_STATE_PENDING" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStatePending
+                }
+                "SUBSCRIPTION_STATE_UNSPECIFIED" => {
+                    SubscriptionPurchaseV2SubscriptionState::SubscriptionStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for SubscriptionPurchaseV2SubscriptionState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SubscriptionPurchaseV2SubscriptionState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SubscriptionPurchasesAcknowledgeRequest {
         #[doc = "Payload to attach to the purchase."]
         #[serde(
@@ -3998,6 +6863,85 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SystemInitiatedCancellation {}
+    impl ::google_field_selector::FieldSelector for SystemInitiatedCancellation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SystemInitiatedCancellation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TargetingRuleScope {
+        #[doc = "The scope of the current targeting rule is the subscription with the specified subscription ID. Must be a subscription within the same parent app."]
+        #[serde(
+            rename = "specificSubscriptionInApp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub specific_subscription_in_app: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for TargetingRuleScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TargetingRuleScope {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct TestPurchase {}
+    impl ::google_field_selector::FieldSelector for TestPurchase {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TestPurchase {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -4097,7 +7041,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for TokenPagination {
+    impl crate::GetNextPageToken<String> for TokenPagination {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4382,6 +7326,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TracksListResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UpgradeTargetingRule {
+        #[doc = "The specific billing period duration, specified in ISO 8601 format, that a user must be currently subscribed to to be eligible for this rule. If not specified, users subscribed to any billing period are matched."]
+        #[serde(
+            rename = "billingPeriodDuration",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub billing_period_duration: ::std::option::Option<String>,
+        #[doc = "Limit this offer to only once per user. If set to true, a user can never be eligible for this offer again if they ever subscribed to this offer."]
+        #[serde(
+            rename = "oncePerUser",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub once_per_user: ::std::option::Option<bool>,
+        #[doc = "Required. The scope of subscriptions this rule considers. Only allows “this subscription” and “specific subscription in app”."]
+        #[serde(
+            rename = "scope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope: ::std::option::Option<crate::schemas::TargetingRuleScope>,
+    }
+    impl ::google_field_selector::FieldSelector for UpgradeTargetingRule {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UpgradeTargetingRule {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4864,6 +7853,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UserComment {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UserInitiatedCancellation {
+        #[doc = "Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey)."]
+        #[serde(
+            rename = "cancelSurveyResult",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cancel_survey_result: ::std::option::Option<crate::schemas::CancelSurveyResult>,
+        #[doc = "The time at which the subscription was canceled by the user. The user might still have access to the subscription after this time. Use line_items.expiry_time to determine if a user still has access."]
+        #[serde(
+            rename = "cancelTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cancel_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UserInitiatedCancellation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UserInitiatedCancellation {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -5889,7 +8916,7 @@ pub mod resources {
                         #[serde(rename = "deviceTierConfigs")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -5925,7 +8952,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -5975,7 +9002,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6092,12 +9119,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -7871,6 +10899,7 @@ pub mod resources {
                         package_name: package_name.into(),
                         edit_id: edit_id.into(),
                         ack_bundle_installation_warning: None,
+                        device_tier_config_id: None,
                     }
                 }
             }
@@ -8052,6 +11081,7 @@ pub mod resources {
                 package_name: String,
                 edit_id: String,
                 ack_bundle_installation_warning: ::std::option::Option<bool>,
+                device_tier_config_id: ::std::option::Option<String>,
                 access_token: ::std::option::Option<String>,
                 alt: ::std::option::Option<crate::params::Alt>,
                 callback: ::std::option::Option<String>,
@@ -8068,6 +11098,11 @@ pub mod resources {
                 #[doc = "Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB)."]
                 pub fn ack_bundle_installation_warning(mut self, value: bool) -> Self {
                     self.ack_bundle_installation_warning = Some(value);
+                    self
+                }
+                #[doc = "Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or “LATEST” for last uploaded DTC."]
+                pub fn device_tier_config_id(mut self, value: impl Into<String>) -> Self {
+                    self.device_tier_config_id = Some(value.into());
                     self
                 }
                 #[doc = "OAuth access token."]
@@ -8310,6 +11345,7 @@ pub mod resources {
                         "ackBundleInstallationWarning",
                         &self.ack_bundle_installation_warning,
                     )]);
+                    req = req.query(&[("deviceTierConfigId", &self.device_tier_config_id)]);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -17611,6 +20647,15 @@ pub mod resources {
                     package_name: package_name.into(),
                 }
             }
+            #[doc = "Actions that can be performed on the subscriptions resource"]
+            pub fn subscriptions(
+                &self,
+            ) -> crate::resources::monetization::subscriptions::SubscriptionsActions {
+                crate::resources::monetization::subscriptions::SubscriptionsActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
         }
         #[doc = "Created via [MonetizationActions::convert_region_prices()](struct.MonetizationActions.html#method.convert_region_prices)"]
         #[derive(Debug, Clone)]
@@ -17773,6 +20818,3841 @@ pub mod resources {
                     .map_err(|err| crate::Error::OAuth2(err))?;
                 req = req.bearer_auth(access_token);
                 Ok(req)
+            }
+        }
+        pub mod subscriptions {
+            pub mod params {}
+            pub struct SubscriptionsActions<'a> {
+                pub(crate) reqwest: &'a reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> SubscriptionsActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Archives a subscription. Can only be done if at least one base plan was active in the past, and no base plan is available for new or existing subscribers currently. This action is irreversible, and the subscription ID will remain reserved."]
+                pub fn archive(
+                    &self,
+                    request: crate::schemas::ArchiveSubscriptionRequest,
+                    package_name: impl Into<String>,
+                    product_id: impl Into<String>,
+                ) -> ArchiveRequestBuilder {
+                    ArchiveRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        package_name: package_name.into(),
+                        product_id: product_id.into(),
+                    }
+                }
+                #[doc = "Creates a new subscription. Newly added base plans will remain in draft state until activated."]
+                pub fn create(
+                    &self,
+                    request: crate::schemas::Subscription,
+                    package_name: impl Into<String>,
+                ) -> CreateRequestBuilder {
+                    CreateRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        package_name: package_name.into(),
+                        product_id: None,
+                        regions_version_version: None,
+                    }
+                }
+                #[doc = "Deletes a subscription. A subscription can only be deleted if it has never had a base plan published."]
+                pub fn delete(
+                    &self,
+                    package_name: impl Into<String>,
+                    product_id: impl Into<String>,
+                ) -> DeleteRequestBuilder {
+                    DeleteRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        package_name: package_name.into(),
+                        product_id: product_id.into(),
+                    }
+                }
+                #[doc = "Reads a single subscription."]
+                pub fn get(
+                    &self,
+                    package_name: impl Into<String>,
+                    product_id: impl Into<String>,
+                ) -> GetRequestBuilder {
+                    GetRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        package_name: package_name.into(),
+                        product_id: product_id.into(),
+                    }
+                }
+                #[doc = "Lists all subscriptions under a given app."]
+                pub fn list(&self, package_name: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        package_name: package_name.into(),
+                        page_size: None,
+                        page_token: None,
+                        show_archived: None,
+                    }
+                }
+                #[doc = "Updates an existing subscription."]
+                pub fn patch(
+                    &self,
+                    request: crate::schemas::Subscription,
+                    package_name: impl Into<String>,
+                    product_id: impl Into<String>,
+                ) -> PatchRequestBuilder {
+                    PatchRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        package_name: package_name.into(),
+                        product_id: product_id.into(),
+                        regions_version_version: None,
+                        update_mask: None,
+                    }
+                }
+                #[doc = "Actions that can be performed on the base_plans resource"]
+                pub fn base_plans(
+                    &self,
+                ) -> crate::resources::monetization::subscriptions::base_plans::BasePlansActions
+                {
+                    crate::resources::monetization::subscriptions::base_plans::BasePlansActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
+            }
+            #[doc = "Created via [SubscriptionsActions::archive()](struct.SubscriptionsActions.html#method.archive)"]
+            #[derive(Debug, Clone)]
+            pub struct ArchiveRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::ArchiveSubscriptionRequest,
+                package_name: String,
+                product_id: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ArchiveRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                    output.push_str("androidpublisher/v3/applications/");
+                    {
+                        let var_as_str = &self.package_name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/subscriptions/");
+                    {
+                        let var_as_str = &self.product_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str(":archive");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [SubscriptionsActions::create()](struct.SubscriptionsActions.html#method.create)"]
+            #[derive(Debug, Clone)]
+            pub struct CreateRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::Subscription,
+                package_name: String,
+                product_id: ::std::option::Option<String>,
+                regions_version_version: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CreateRequestBuilder<'a> {
+                #[doc = "Required. The ID to use for the subscription. For the requirements on this format, see the documentation of the product_id field on the Subscription resource."]
+                pub fn product_id(mut self, value: impl Into<String>) -> Self {
+                    self.product_id = Some(value.into());
+                    self
+                }
+                #[doc = "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02."]
+                pub fn regions_version_version(mut self, value: impl Into<String>) -> Self {
+                    self.regions_version_version = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                    output.push_str("androidpublisher/v3/applications/");
+                    {
+                        let var_as_str = &self.package_name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/subscriptions");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("productId", &self.product_id)]);
+                    req = req.query(&[("regionsVersion.version", &self.regions_version_version)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [SubscriptionsActions::delete()](struct.SubscriptionsActions.html#method.delete)"]
+            #[derive(Debug, Clone)]
+            pub struct DeleteRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                package_name: String,
+                product_id: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> DeleteRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                pub async fn execute(self) -> Result<(), crate::Error> {
+                    let req = self._request(&self._path()).await?;
+                    req.send().await?.error_for_status()?;
+                    Ok(())
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                    output.push_str("androidpublisher/v3/applications/");
+                    {
+                        let var_as_str = &self.package_name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/subscriptions/");
+                    {
+                        let var_as_str = &self.product_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [SubscriptionsActions::get()](struct.SubscriptionsActions.html#method.get)"]
+            #[derive(Debug, Clone)]
+            pub struct GetRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                package_name: String,
+                product_id: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> GetRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                    output.push_str("androidpublisher/v3/applications/");
+                    {
+                        let var_as_str = &self.package_name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/subscriptions/");
+                    {
+                        let var_as_str = &self.product_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [SubscriptionsActions::list()](struct.SubscriptionsActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                package_name: String,
+                page_size: ::std::option::Option<i32>,
+                page_token: ::std::option::Option<String>,
+                show_archived: ::std::option::Option<bool>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "A page token, received from a previous `ListSubscriptions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptions` must match the call that provided the page token."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "Whether archived subscriptions should be included in the response. Defaults to false."]
+                pub fn show_archived(mut self, value: bool) -> Self {
+                    self.show_archived = Some(value);
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = "\nExecute the request and yield each item in the `subscriptions` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                pub fn stream_subscriptions<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_subscriptions_with_fields(fields)
+                }
+                #[doc = "\nExecute the request and yield each item in the `subscriptions` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                pub fn stream_subscriptions_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<crate::schemas::Subscription, crate::Error>> + 'a
+                {
+                    self.stream_subscriptions_with_fields(None::<String>)
+                }
+                #[doc = "\nExecute the request and yield each item in the `subscriptions` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                pub fn stream_subscriptions_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<crate::schemas::Subscription, crate::Error>> + 'a
+                {
+                    self.stream_subscriptions_with_fields(Some("*"))
+                }
+                #[doc = "\nExecute the request and yield each item in the `subscriptions` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                pub fn stream_subscriptions_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                    struct Page<T> {
+                        #[serde(rename = "nextPageToken")]
+                        pub next_page_token: ::std::option::Option<String>,
+                        #[serde(rename = "subscriptions")]
+                        pub items: Vec<T>,
+                    }
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
+                        fn next_page_token(&self) -> ::std::option::Option<String> {
+                            self.next_page_token.to_owned()
+                        }
+                    }
+                    impl<T> crate::stream::IntoPageItems for Page<T> {
+                        type Items = Vec<T>;
+                        fn into_page_items(self) -> Self::Items {
+                            self.items
+                        }
+                    }
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "subscriptions").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::stream::page_item_stream::<_, Page<T>>(self)
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                pub fn stream<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String>
+                        + ::serde::de::DeserializeOwned
+                        + ::google_field_selector::FieldSelector
+                        + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_with_fields(fields)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the default set of fields from the server."]
+                pub fn stream_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::ListSubscriptionsResponse, crate::Error>,
+                > + 'a {
+                    self.stream_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests all fields from the server."]
+                pub fn stream_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<crate::schemas::ListSubscriptionsResponse, crate::Error>,
+                > + 'a {
+                    self.stream_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                pub fn stream_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::stream::page_stream(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::ListSubscriptionsResponse, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::ListSubscriptionsResponse, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                    output.push_str("androidpublisher/v3/applications/");
+                    {
+                        let var_as_str = &self.package_name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/subscriptions");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("showArchived", &self.show_archived)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[async_trait::async_trait]
+            impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                {
+                    self._execute().await
+                }
+            }
+            #[doc = "Created via [SubscriptionsActions::patch()](struct.SubscriptionsActions.html#method.patch)"]
+            #[derive(Debug, Clone)]
+            pub struct PatchRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::Subscription,
+                package_name: String,
+                product_id: String,
+                regions_version_version: ::std::option::Option<String>,
+                update_mask: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> PatchRequestBuilder<'a> {
+                #[doc = "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02."]
+                pub fn regions_version_version(mut self, value: impl Into<String>) -> Self {
+                    self.regions_version_version = Some(value.into());
+                    self
+                }
+                #[doc = "Required. The list of fields to be updated."]
+                pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                    self.update_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Subscription, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                    output.push_str("androidpublisher/v3/applications/");
+                    {
+                        let var_as_str = &self.package_name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/subscriptions/");
+                    {
+                        let var_as_str = &self.product_id;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                    req = req.query(&[("regionsVersion.version", &self.regions_version_version)]);
+                    req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            pub mod base_plans {
+                pub mod params {}
+                pub struct BasePlansActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> BasePlansActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Activates a base plan. Once activated, base plans will be available to new subscribers."]
+                    pub fn activate(
+                        &self,
+                        request: crate::schemas::ActivateBasePlanRequest,
+                        package_name: impl Into<String>,
+                        product_id: impl Into<String>,
+                        base_plan_id: impl Into<String>,
+                    ) -> ActivateRequestBuilder {
+                        ActivateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            package_name: package_name.into(),
+                            product_id: product_id.into(),
+                            base_plan_id: base_plan_id.into(),
+                        }
+                    }
+                    #[doc = "Deactivates a base plan. Once deactivated, the base plan will become unavailable to new subscribers, but existing subscribers will maintain their subscription"]
+                    pub fn deactivate(
+                        &self,
+                        request: crate::schemas::DeactivateBasePlanRequest,
+                        package_name: impl Into<String>,
+                        product_id: impl Into<String>,
+                        base_plan_id: impl Into<String>,
+                    ) -> DeactivateRequestBuilder {
+                        DeactivateRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            package_name: package_name.into(),
+                            product_id: product_id.into(),
+                            base_plan_id: base_plan_id.into(),
+                        }
+                    }
+                    #[doc = "Deletes a base plan. Can only be done for draft base plans. This action is irreversible."]
+                    pub fn delete(
+                        &self,
+                        package_name: impl Into<String>,
+                        product_id: impl Into<String>,
+                        base_plan_id: impl Into<String>,
+                    ) -> DeleteRequestBuilder {
+                        DeleteRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            package_name: package_name.into(),
+                            product_id: product_id.into(),
+                            base_plan_id: base_plan_id.into(),
+                        }
+                    }
+                    #[doc = "Migrates subscribers who are receiving an historical subscription price to the currently-offered price for the specified region. Requests will cause price change notifications to be sent to users who are currently receiving an historical price older than the supplied timestamp. Subscribers who do not agree to the new price will have their subscription ended at the next renewal."]
+                    pub fn migrate_prices(
+                        &self,
+                        request: crate::schemas::MigrateBasePlanPricesRequest,
+                        package_name: impl Into<String>,
+                        product_id: impl Into<String>,
+                        base_plan_id: impl Into<String>,
+                    ) -> MigratePricesRequestBuilder {
+                        MigratePricesRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            package_name: package_name.into(),
+                            product_id: product_id.into(),
+                            base_plan_id: base_plan_id.into(),
+                        }
+                    }
+                    #[doc = "Actions that can be performed on the offers resource"]                    pub fn offers (& self) -> crate :: resources :: monetization :: subscriptions :: base_plans :: offers :: OffersActions{
+                        crate :: resources :: monetization :: subscriptions :: base_plans :: offers :: OffersActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
+                    }
+                }
+                #[doc = "Created via [BasePlansActions::activate()](struct.BasePlansActions.html#method.activate)"]
+                #[derive(Debug, Clone)]
+                pub struct ActivateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::ActivateBasePlanRequest,
+                    package_name: String,
+                    product_id: String,
+                    base_plan_id: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> ActivateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Subscription, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Subscription, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                        output.push_str("androidpublisher/v3/applications/");
+                        {
+                            let var_as_str = &self.package_name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/subscriptions/");
+                        {
+                            let var_as_str = &self.product_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/basePlans/");
+                        {
+                            let var_as_str = &self.base_plan_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str(":activate");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [BasePlansActions::deactivate()](struct.BasePlansActions.html#method.deactivate)"]
+                #[derive(Debug, Clone)]
+                pub struct DeactivateRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::DeactivateBasePlanRequest,
+                    package_name: String,
+                    product_id: String,
+                    base_plan_id: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeactivateRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Subscription, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Subscription, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                        output.push_str("androidpublisher/v3/applications/");
+                        {
+                            let var_as_str = &self.package_name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/subscriptions/");
+                        {
+                            let var_as_str = &self.product_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/basePlans/");
+                        {
+                            let var_as_str = &self.base_plan_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str(":deactivate");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [BasePlansActions::delete()](struct.BasePlansActions.html#method.delete)"]
+                #[derive(Debug, Clone)]
+                pub struct DeleteRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    package_name: String,
+                    product_id: String,
+                    base_plan_id: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> DeleteRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    pub async fn execute(self) -> Result<(), crate::Error> {
+                        let req = self._request(&self._path()).await?;
+                        req.send().await?.error_for_status()?;
+                        Ok(())
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                        output.push_str("androidpublisher/v3/applications/");
+                        {
+                            let var_as_str = &self.package_name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/subscriptions/");
+                        {
+                            let var_as_str = &self.product_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/basePlans/");
+                        {
+                            let var_as_str = &self.base_plan_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [BasePlansActions::migrate_prices()](struct.BasePlansActions.html#method.migrate_prices)"]
+                #[derive(Debug, Clone)]
+                pub struct MigratePricesRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::MigrateBasePlanPricesRequest,
+                    package_name: String,
+                    product_id: String,
+                    base_plan_id: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> MigratePricesRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::MigrateBasePlanPricesResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::MigrateBasePlanPricesResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                        output.push_str("androidpublisher/v3/applications/");
+                        {
+                            let var_as_str = &self.package_name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/subscriptions/");
+                        {
+                            let var_as_str = &self.product_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str("/basePlans/");
+                        {
+                            let var_as_str = &self.base_plan_id;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::SIMPLE,
+                            ));
+                        }
+                        output.push_str(":migratePrices");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                pub mod offers {
+                    pub mod params {}
+                    pub struct OffersActions<'a> {
+                        pub(crate) reqwest: &'a reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    }
+                    impl<'a> OffersActions<'a> {
+                        fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                            self.auth
+                        }
+                        #[doc = "Activates a subscription offer. Once activated, subscription offers will be available to new subscribers."]
+                        pub fn activate(
+                            &self,
+                            request: crate::schemas::ActivateSubscriptionOfferRequest,
+                            package_name: impl Into<String>,
+                            product_id: impl Into<String>,
+                            base_plan_id: impl Into<String>,
+                            offer_id: impl Into<String>,
+                        ) -> ActivateRequestBuilder {
+                            ActivateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                package_name: package_name.into(),
+                                product_id: product_id.into(),
+                                base_plan_id: base_plan_id.into(),
+                                offer_id: offer_id.into(),
+                            }
+                        }
+                        #[doc = "Creates a new subscription offer. Only auto-renewing base plans can have subscription offers. The offer state will be DRAFT until it is activated."]
+                        pub fn create(
+                            &self,
+                            request: crate::schemas::SubscriptionOffer,
+                            package_name: impl Into<String>,
+                            product_id: impl Into<String>,
+                            base_plan_id: impl Into<String>,
+                        ) -> CreateRequestBuilder {
+                            CreateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                package_name: package_name.into(),
+                                product_id: product_id.into(),
+                                base_plan_id: base_plan_id.into(),
+                                offer_id: None,
+                                regions_version_version: None,
+                            }
+                        }
+                        #[doc = "Deactivates a subscription offer. Once deactivated, existing subscribers will maintain their subscription, but the offer will become unavailable to new subscribers."]
+                        pub fn deactivate(
+                            &self,
+                            request: crate::schemas::DeactivateSubscriptionOfferRequest,
+                            package_name: impl Into<String>,
+                            product_id: impl Into<String>,
+                            base_plan_id: impl Into<String>,
+                            offer_id: impl Into<String>,
+                        ) -> DeactivateRequestBuilder {
+                            DeactivateRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                package_name: package_name.into(),
+                                product_id: product_id.into(),
+                                base_plan_id: base_plan_id.into(),
+                                offer_id: offer_id.into(),
+                            }
+                        }
+                        #[doc = "Deletes a subscription offer. Can only be done for draft offers. This action is irreversible."]
+                        pub fn delete(
+                            &self,
+                            package_name: impl Into<String>,
+                            product_id: impl Into<String>,
+                            base_plan_id: impl Into<String>,
+                            offer_id: impl Into<String>,
+                        ) -> DeleteRequestBuilder {
+                            DeleteRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                package_name: package_name.into(),
+                                product_id: product_id.into(),
+                                base_plan_id: base_plan_id.into(),
+                                offer_id: offer_id.into(),
+                            }
+                        }
+                        #[doc = "Reads a single offer"]
+                        pub fn get(
+                            &self,
+                            package_name: impl Into<String>,
+                            product_id: impl Into<String>,
+                            base_plan_id: impl Into<String>,
+                            offer_id: impl Into<String>,
+                        ) -> GetRequestBuilder {
+                            GetRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                package_name: package_name.into(),
+                                product_id: product_id.into(),
+                                base_plan_id: base_plan_id.into(),
+                                offer_id: offer_id.into(),
+                            }
+                        }
+                        #[doc = "Lists all offers under a given subscription."]
+                        pub fn list(
+                            &self,
+                            package_name: impl Into<String>,
+                            product_id: impl Into<String>,
+                            base_plan_id: impl Into<String>,
+                        ) -> ListRequestBuilder {
+                            ListRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                package_name: package_name.into(),
+                                product_id: product_id.into(),
+                                base_plan_id: base_plan_id.into(),
+                                page_size: None,
+                                page_token: None,
+                            }
+                        }
+                        #[doc = "Updates an existing subscription offer."]
+                        pub fn patch(
+                            &self,
+                            request: crate::schemas::SubscriptionOffer,
+                            package_name: impl Into<String>,
+                            product_id: impl Into<String>,
+                            base_plan_id: impl Into<String>,
+                            offer_id: impl Into<String>,
+                        ) -> PatchRequestBuilder {
+                            PatchRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                package_name: package_name.into(),
+                                product_id: product_id.into(),
+                                base_plan_id: base_plan_id.into(),
+                                offer_id: offer_id.into(),
+                                regions_version_version: None,
+                                update_mask: None,
+                            }
+                        }
+                    }
+                    #[doc = "Created via [OffersActions::activate()](struct.OffersActions.html#method.activate)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ActivateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::ActivateSubscriptionOfferRequest,
+                        package_name: String,
+                        product_id: String,
+                        base_plan_id: String,
+                        offer_id: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ActivateRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                            output.push_str("androidpublisher/v3/applications/");
+                            {
+                                let var_as_str = &self.package_name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/subscriptions/");
+                            {
+                                let var_as_str = &self.product_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/basePlans/");
+                            {
+                                let var_as_str = &self.base_plan_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/offers/");
+                            {
+                                let var_as_str = &self.offer_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str(":activate");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [OffersActions::create()](struct.OffersActions.html#method.create)"]
+                    #[derive(Debug, Clone)]
+                    pub struct CreateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::SubscriptionOffer,
+                        package_name: String,
+                        product_id: String,
+                        base_plan_id: String,
+                        offer_id: ::std::option::Option<String>,
+                        regions_version_version: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> CreateRequestBuilder<'a> {
+                        #[doc = "Required. The ID to use for the offer. For the requirements on this format, see the documentation of the offer_id field on the SubscriptionOffer resource."]
+                        pub fn offer_id(mut self, value: impl Into<String>) -> Self {
+                            self.offer_id = Some(value.into());
+                            self
+                        }
+                        #[doc = "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02."]
+                        pub fn regions_version_version(mut self, value: impl Into<String>) -> Self {
+                            self.regions_version_version = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                            output.push_str("androidpublisher/v3/applications/");
+                            {
+                                let var_as_str = &self.package_name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/subscriptions/");
+                            {
+                                let var_as_str = &self.product_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/basePlans/");
+                            {
+                                let var_as_str = &self.base_plan_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/offers");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("offerId", &self.offer_id)]);
+                            req = req.query(&[(
+                                "regionsVersion.version",
+                                &self.regions_version_version,
+                            )]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [OffersActions::deactivate()](struct.OffersActions.html#method.deactivate)"]
+                    #[derive(Debug, Clone)]
+                    pub struct DeactivateRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::DeactivateSubscriptionOfferRequest,
+                        package_name: String,
+                        product_id: String,
+                        base_plan_id: String,
+                        offer_id: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> DeactivateRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                            output.push_str("androidpublisher/v3/applications/");
+                            {
+                                let var_as_str = &self.package_name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/subscriptions/");
+                            {
+                                let var_as_str = &self.product_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/basePlans/");
+                            {
+                                let var_as_str = &self.base_plan_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/offers/");
+                            {
+                                let var_as_str = &self.offer_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str(":deactivate");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [OffersActions::delete()](struct.OffersActions.html#method.delete)"]
+                    #[derive(Debug, Clone)]
+                    pub struct DeleteRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        package_name: String,
+                        product_id: String,
+                        base_plan_id: String,
+                        offer_id: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> DeleteRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        pub async fn execute(self) -> Result<(), crate::Error> {
+                            let req = self._request(&self._path()).await?;
+                            req.send().await?.error_for_status()?;
+                            Ok(())
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                            output.push_str("androidpublisher/v3/applications/");
+                            {
+                                let var_as_str = &self.package_name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/subscriptions/");
+                            {
+                                let var_as_str = &self.product_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/basePlans/");
+                            {
+                                let var_as_str = &self.base_plan_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/offers/");
+                            {
+                                let var_as_str = &self.offer_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [OffersActions::get()](struct.OffersActions.html#method.get)"]
+                    #[derive(Debug, Clone)]
+                    pub struct GetRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        package_name: String,
+                        product_id: String,
+                        base_plan_id: String,
+                        offer_id: String,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> GetRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                            output.push_str("androidpublisher/v3/applications/");
+                            {
+                                let var_as_str = &self.package_name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/subscriptions/");
+                            {
+                                let var_as_str = &self.product_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/basePlans/");
+                            {
+                                let var_as_str = &self.base_plan_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/offers/");
+                            {
+                                let var_as_str = &self.offer_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [OffersActions::list()](struct.OffersActions.html#method.list)"]
+                    #[derive(Debug, Clone)]
+                    pub struct ListRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        package_name: String,
+                        product_id: String,
+                        base_plan_id: String,
+                        page_size: ::std::option::Option<i32>,
+                        page_token: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> ListRequestBuilder<'a> {
+                        #[doc = "The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000."]
+                        pub fn page_size(mut self, value: i32) -> Self {
+                            self.page_size = Some(value);
+                            self
+                        }
+                        #[doc = "A page token, received from a previous `ListSubscriptionsOffers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptionOffers` must match the call that provided the page token."]
+                        pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                            self.page_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `subscriptionOffers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                        pub fn stream_subscription_offers<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_subscription_offers_with_fields(fields)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `subscriptionOffers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                        pub fn stream_subscription_offers_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::SubscriptionOffer, crate::Error>,
+                        > + 'a {
+                            self.stream_subscription_offers_with_fields(None::<String>)
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `subscriptionOffers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                        pub fn stream_subscription_offers_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<crate::schemas::SubscriptionOffer, crate::Error>,
+                        > + 'a {
+                            self.stream_subscription_offers_with_fields(Some("*"))
+                        }
+                        #[doc = "\nExecute the request and yield each item in the `subscriptionOffers` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                        pub fn stream_subscription_offers_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                            struct Page<T> {
+                                #[serde(rename = "nextPageToken")]
+                                pub next_page_token: ::std::option::Option<String>,
+                                #[serde(rename = "subscriptionOffers")]
+                                pub items: Vec<T>,
+                            }
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
+                                fn next_page_token(&self) -> ::std::option::Option<String> {
+                                    self.next_page_token.to_owned()
+                                }
+                            }
+                            impl<T> crate::stream::IntoPageItems for Page<T> {
+                                type Items = Vec<T>;
+                                fn into_page_items(self) -> Self::Items {
+                                    self.items
+                                }
+                            }
+                            self.fields = Some({
+                                let mut selector =
+                                    concat!("nextPageToken,", "subscriptionOffers").to_owned();
+                                let items_fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                if !items_fields.is_empty() {
+                                    selector.push_str("(");
+                                    selector.push_str(items_fields);
+                                    selector.push_str(")");
+                                }
+                                selector
+                            });
+                            crate::stream::page_item_stream::<_, Page<T>>(self)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                        pub fn stream<T>(
+                            self,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String>
+                                + ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector
+                                + 'a,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.stream_with_fields(fields)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests the default set of fields from the server."]
+                        pub fn stream_with_default_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::ListSubscriptionOffersResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(None::<&str>)
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                        #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                        #[doc = r" repeated until no page token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Requests all fields from the server."]
+                        pub fn stream_with_all_fields(
+                            self,
+                        ) -> impl ::futures::Stream<
+                            Item = Result<
+                                crate::schemas::ListSubscriptionOffersResponse,
+                                crate::Error,
+                            >,
+                        > + 'a {
+                            self.stream_with_fields(Some("*"))
+                        }
+                        #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                        #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                        #[doc = r" token is returned."]
+                        #[doc = r""]
+                        #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                        #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                        #[doc = r""]
+                        #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                        pub fn stream_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                            F: AsRef<str>,
+                        {
+                            let mut fields =
+                                fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                            if !fields.is_empty() {
+                                match fields.chars().rev().nth(0) {
+                                    Some(',') | None => {}
+                                    _ => fields.push_str(","),
+                                }
+                                fields.push_str("nextPageToken");
+                                self.fields = Some(fields);
+                            }
+                            crate::stream::page_stream(self)
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListSubscriptionOffersResponse, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::ListSubscriptionOffersResponse, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                            output.push_str("androidpublisher/v3/applications/");
+                            {
+                                let var_as_str = &self.package_name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/subscriptions/");
+                            {
+                                let var_as_str = &self.product_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/basePlans/");
+                            {
+                                let var_as_str = &self.base_plan_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/offers");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                            req = req.query(&[("pageSize", &self.page_size)]);
+                            req = req.query(&[("pageToken", &self.page_token)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[async_trait::async_trait]
+                    impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
+                        fn set_page_token(&mut self, value: String) {
+                            self.page_token = value.into();
+                        }
+                        async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                        {
+                            self._execute().await
+                        }
+                    }
+                    #[doc = "Created via [OffersActions::patch()](struct.OffersActions.html#method.patch)"]
+                    #[derive(Debug, Clone)]
+                    pub struct PatchRequestBuilder<'a> {
+                        pub(crate) reqwest: &'a ::reqwest::Client,
+                        pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        request: crate::schemas::SubscriptionOffer,
+                        package_name: String,
+                        product_id: String,
+                        base_plan_id: String,
+                        offer_id: String,
+                        regions_version_version: ::std::option::Option<String>,
+                        update_mask: ::std::option::Option<String>,
+                        access_token: ::std::option::Option<String>,
+                        alt: ::std::option::Option<crate::params::Alt>,
+                        callback: ::std::option::Option<String>,
+                        fields: ::std::option::Option<String>,
+                        key: ::std::option::Option<String>,
+                        oauth_token: ::std::option::Option<String>,
+                        pretty_print: ::std::option::Option<bool>,
+                        quota_user: ::std::option::Option<String>,
+                        upload_protocol: ::std::option::Option<String>,
+                        upload_type: ::std::option::Option<String>,
+                        xgafv: ::std::option::Option<crate::params::Xgafv>,
+                    }
+                    impl<'a> PatchRequestBuilder<'a> {
+                        #[doc = "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02."]
+                        pub fn regions_version_version(mut self, value: impl Into<String>) -> Self {
+                            self.regions_version_version = Some(value.into());
+                            self
+                        }
+                        #[doc = "Required. The list of fields to be updated."]
+                        pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                            self.update_mask = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::SubscriptionOffer, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                            output.push_str("androidpublisher/v3/applications/");
+                            {
+                                let var_as_str = &self.package_name;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/subscriptions/");
+                            {
+                                let var_as_str = &self.product_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/basePlans/");
+                            {
+                                let var_as_str = &self.base_plan_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output.push_str("/offers/");
+                            {
+                                let var_as_str = &self.offer_id;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::SIMPLE,
+                                ));
+                            }
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                            req = req.query(&[(
+                                "regionsVersion.version",
+                                &self.regions_version_version,
+                            )]);
+                            req = req.query(&[("updateMask", &self.update_mask)]);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                }
             }
         }
     }
@@ -17958,6 +24838,15 @@ pub mod resources {
                 &self,
             ) -> crate::resources::purchases::subscriptions::SubscriptionsActions {
                 crate::resources::purchases::subscriptions::SubscriptionsActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+            #[doc = "Actions that can be performed on the subscriptionsv_2 resource"]
+            pub fn subscriptionsv_2(
+                &self,
+            ) -> crate::resources::purchases::subscriptionsv_2::Subscriptionsv2Actions {
+                crate::resources::purchases::subscriptionsv_2::Subscriptionsv2Actions {
                     reqwest: &self.reqwest,
                     auth: self.auth_ref(),
                 }
@@ -19357,6 +26246,211 @@ pub mod resources {
                     path: &str,
                 ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                     let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+        }
+        pub mod subscriptionsv_2 {
+            pub mod params {}
+            pub struct Subscriptionsv2Actions<'a> {
+                pub(crate) reqwest: &'a reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> Subscriptionsv2Actions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Get metadata about a subscription"]
+                pub fn get(
+                    &self,
+                    package_name: impl Into<String>,
+                    token: impl Into<String>,
+                ) -> GetRequestBuilder {
+                    GetRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        package_name: package_name.into(),
+                        token: token.into(),
+                    }
+                }
+            }
+            #[doc = "Created via [Subscriptionsv2Actions::get()](struct.Subscriptionsv2Actions.html#method.get)"]
+            #[derive(Debug, Clone)]
+            pub struct GetRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                package_name: String,
+                token: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> GetRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::SubscriptionPurchaseV2, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::SubscriptionPurchaseV2, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://androidpublisher.googleapis.com/".to_owned();
+                    output.push_str("androidpublisher/v3/applications/");
+                    {
+                        let var_as_str = &self.package_name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output.push_str("/purchases/subscriptionsv2/tokens/");
+                    {
+                        let var_as_str = &self.token;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::SIMPLE,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                     req = req.query(&[("access_token", &self.access_token)]);
                     req = req.query(&[("alt", &self.alt)]);
                     req = req.query(&[("callback", &self.callback)]);
@@ -21564,7 +28658,7 @@ pub mod resources {
                     #[serde(rename = "users")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -21597,7 +28691,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -21645,7 +28739,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -21760,12 +28854,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -22224,16 +29319,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 pub struct ResumableUpload {
@@ -22338,13 +29435,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -22352,7 +29452,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -22379,7 +29479,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

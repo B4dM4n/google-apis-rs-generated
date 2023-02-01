@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("displayvideo1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230126")
             .about("Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -165,6 +165,30 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Lists Google audiences. The order is defined by the order_by parameter.");
             google_audiences0 = google_audiences0.subcommand(mcmd);
         }
+        let mut guaranteed_orders0 = SubCommand::with_name("guaranteed_orders")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, edit_guaranteed_order_read_accessors, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new guaranteed order. Returns the newly created guaranteed order if successful.");
+            guaranteed_orders0 = guaranteed_orders0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("edit_guaranteed_order_read_accessors")
+                .about("Edits read advertisers of a guaranteed order.");
+            guaranteed_orders0 = guaranteed_orders0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a guaranteed order.");
+            guaranteed_orders0 = guaranteed_orders0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists guaranteed orders that are accessible to the current user. The order is defined by the order_by parameter. If a filter by entity_status is not specified, guaranteed orders with entity status `ENTITY_STATUS_ARCHIVED` will not be included in the results.");
+            guaranteed_orders0 = guaranteed_orders0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing guaranteed order. Returns the updated guaranteed order if successful.");
+            guaranteed_orders0 = guaranteed_orders0.subcommand(mcmd);
+        }
         let mut inventory_source_groups0 = SubCommand::with_name("inventory_source_groups")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
@@ -190,13 +214,27 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut inventory_sources0 = SubCommand::with_name("inventory_sources")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about(
+                "methods: create, edit_inventory_source_read_write_accessors, get, list and patch",
+            );
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new inventory source. Returns the newly created inventory source if successful.");
+            inventory_sources0 = inventory_sources0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("edit_inventory_source_read_write_accessors").about("Edits read/write accessors of an inventory source. Returns the updated read_write_accessors for the inventory source.");
+            inventory_sources0 = inventory_sources0.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Gets an inventory source.");
             inventory_sources0 = inventory_sources0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists inventory sources that are accessible to the current user. The order is defined by the order_by parameter. If a filter by entity_status is not specified, inventory sources with entity status `ENTITY_STATUS_ARCHIVED` will not be included in the results.");
+            inventory_sources0 = inventory_sources0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing inventory source. Returns the updated inventory source if successful.");
             inventory_sources0 = inventory_sources0.subcommand(mcmd);
         }
         let mut media0 = SubCommand::with_name("media")
@@ -397,7 +435,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: bulk_edit_line_item_assigned_targeting_options, bulk_list_line_item_assigned_targeting_options, create, delete, generate_default, get, list and patch");
         {
-            let mcmd = SubCommand::with_name("bulk_edit_line_item_assigned_targeting_options").about("Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
+            let mcmd = SubCommand::with_name("bulk_edit_line_item_assigned_targeting_options").about("Bulk edits targeting options under a single line item. The operation will delete the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.delete_requests and then create the assigned targeting options provided in BulkEditLineItemAssignedTargetingOptionsRequest.create_requests. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
             line_items1 = line_items1.subcommand(mcmd);
         }
         {
@@ -428,7 +466,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             line_items1 = line_items1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("patch").about("Updates an existing line item. Returns the updated line item if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing line item. Returns the updated line item if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdateLineItems * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
             line_items1 = line_items1.subcommand(mcmd);
         }
         let mut location_lists1 = SubCommand::with_name("location_lists")
@@ -774,11 +812,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get and list");
         {
-            let mcmd = SubCommand::with_name("create").about("Assigns a targeting option to a line item. Returns the assigned targeting option if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
+            let mcmd = SubCommand::with_name("create").about("Assigns a targeting option to a line item. Returns the assigned targeting option if successful. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdate * UpdateLineItem * DeleteLineItemAssignedTargetingOption");
             assigned_targeting_options3 = assigned_targeting_options3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete").about("Deletes an assigned targeting option from a line item. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditLineItemAssignedTargetingOptions * UpdateLineItem * CreateLineItemAssignedTargetingOption * DeleteLineItemAssignedTargetingOption");
+            let mcmd = SubCommand::with_name("delete").about("Deletes an assigned targeting option from a line item. Requests to this endpoint cannot be made concurrently with the following requests updating the same line item: * BulkEditAssignedTargetingOptions * BulkUpdate * UpdateLineItem * CreateLineItemAssignedTargetingOption");
             assigned_targeting_options3 = assigned_targeting_options3.subcommand(mcmd);
         }
         {
@@ -827,6 +865,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         app = app.subcommand(media0);
         app = app.subcommand(inventory_sources0);
         app = app.subcommand(inventory_source_groups0);
+        app = app.subcommand(guaranteed_orders0);
         app = app.subcommand(google_audiences0);
         app = app.subcommand(floodlight_groups0);
         app = app.subcommand(first_and_third_party_audiences0);

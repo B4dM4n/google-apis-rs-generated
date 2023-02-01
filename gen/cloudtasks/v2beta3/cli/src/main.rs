@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudtasks2_beta3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220401")
+            .version("0.1.0-20230105")
             .about("Manages the execution of large numbers of distributed requests.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -98,7 +98,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut tasks3 = SubCommand::with_name("tasks")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and run");
+            .about("methods: buffer, create, delete, get, list and run");
+        {
+            let mcmd = SubCommand::with_name("buffer").about("Creates and buffers a new task without the need to explicitly define a Task message. The queue must have HTTP target. To create the task with a custom ID, use the following format and set TASK_ID to your desired ID: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer To create the task with an automatically generated ID, use the following format: projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer. Note: This feature is in its experimental stage. You must request access to the API through the [Cloud Tasks BufferTask Experiment Signup form](https://forms.gle/X8Zr5hiXH5tTGFqh8).");
+            tasks3 = tasks3.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create").about("Creates a task and adds it to a queue. Tasks cannot be updated after creation; there is no UpdateTask command. * The maximum task size is 100KB.");
             tasks3 = tasks3.subcommand(mcmd);

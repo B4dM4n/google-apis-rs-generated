@@ -7,7 +7,7 @@
   "canonicalName": null,
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20220407",
+  "revision": "20230126",
   "title": "Cloud Datastore API",
   "description": "Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application. ",
   "ownerDomain": "google.com",

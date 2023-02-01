@@ -7,16 +7,16 @@
   "canonicalName": "Identity Toolkit",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20200615",
+  "revision": "20230124",
   "title": "Identity Toolkit API",
-  "description": "The Google Identity Toolkit API lets you use open standards to verify a\n    user's identity.",
+  "description": "The Google Identity Toolkit API lets you use open standards to verify a user's identity.",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
     "x16": "http://www.google.com/images/icons/product/search-16.gif",
     "x32": "http://www.google.com/images/icons/product/search-32.gif"
   },
-  "documentationLink": "https://firebase.google.com/docs/auth/",
+  "documentationLink": "https://cloud.google.com/identity-platform",
   "protocol": "rest",
   "baseUrl": "https://identitytoolkit.googleapis.com/",
   "basePath": "",
@@ -46,6 +46,20 @@
         "v1 error format",
         "v2 error format"
       ],
+      "repeated": false
+    },
+    "access_token": {
+      "description": "OAuth access token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
       "repeated": false
     },
     "alt": {
@@ -100,6 +114,20 @@
     },
     "key": {
       "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "oauth_token": {
+      "description": "OAuth 2.0 token for the current user.",
       "default": null,
       "location": "query",
       "required": false,
@@ -173,7 +201,7 @@
     "oauth2": {
       "scopes": {
         "https://www.googleapis.com/auth/cloud-platform": {
-          "description": "View and manage your data across Google Cloud Platform services"
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
         },
         "https://www.googleapis.com/auth/firebase": {
           "description": "View and administer all your Firebase data and settings"
@@ -182,6 +210,128 @@
     }
   },
   "schemas": {
+    "GoogleCloudIdentitytoolkitV1Argon2Parameters": {
+      "id": "GoogleCloudIdentitytoolkitV1Argon2Parameters",
+      "description": "The parameters for Argon2 hashing algorithm.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "associatedData": {
+          "description": "The additional associated data, if provided, is appended to the hash value to provide an additional layer of security. A base64-encoded string if specified via JSON.",
+          "type": "string",
+          "format": "byte",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hashLengthBytes": {
+          "description": "Required. The desired hash length in bytes. Minimum is 4 and maximum is 1024.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hashType": {
+          "description": "Required. Must not be HASH_TYPE_UNSPECIFIED.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "HASH_TYPE_UNSPECIFIED",
+            "ARGON2_D",
+            "ARGON2_ID",
+            "ARGON2_I"
+          ],
+          "enumDescriptions": [
+            "The hash type is not specified.",
+            "An Argon2 variant, Argon2d.",
+            "An Argon2 variant, Argonid. Recommended.",
+            "An Argon2 variant, Argon2i."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "iterations": {
+          "description": "Required. The number of iterations to perform. Minimum is 1, maximum is 16.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "memoryCostKib": {
+          "description": "Required. The memory cost in kibibytes. Maximum is 32768.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parallelism": {
+          "description": "Required. The degree of parallelism, also called threads or lanes. Minimum is 1, maximum is 16.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "The version of the Argon2 algorithm. This defaults to VERSION_13 if not specified.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "VERSION_UNSPECIFIED",
+            "VERSION_10",
+            "VERSION_13"
+          ],
+          "enumDescriptions": [
+            "The version is not specified.",
+            "The previous version, 0x10.",
+            "The current version, 0x13. The default value for version."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudIdentitytoolkitV1AutoRetrievalInfo": {
+      "id": "GoogleCloudIdentitytoolkitV1AutoRetrievalInfo",
+      "description": "The information required to auto-retrieve an SMS.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appSignatureHash": {
+          "description": "The Android app's signature hash for Google Play Service's SMS Retriever API.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudIdentitytoolkitV1BatchDeleteAccountsRequest": {
       "id": "GoogleCloudIdentitytoolkitV1BatchDeleteAccountsRequest",
       "description": "Request message for BatchDeleteAccounts.",
@@ -191,7 +341,7 @@
       "enumDescriptions": [],
       "properties": {
         "force": {
-          "description": "Whether to force deleting accounts that are not in disabled state.\nIf false, only disabled accounts will be deleted, and accounts that are not\ndisabled will be added to the `errors`.",
+          "description": "Whether to force deleting accounts that are not in disabled state. If false, only disabled accounts will be deleted, and accounts that are not disabled will be added to the `errors`.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -219,7 +369,7 @@
           }
         },
         "tenantId": {
-          "description": "If the accounts belong to an Identity Platform tenant, the ID of the\ntenant. If the accounts belong to an default Identity Platform project, the\nfield is not needed.",
+          "description": "If the accounts belong to an Identity Platform tenant, the ID of the tenant. If the accounts belong to an default Identity Platform project, the field is not needed.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -317,7 +467,7 @@
           "items": null
         },
         "authFlowType": {
-          "description": "Used for the Google provider. The type of the authentication flow to be\nused. If present, this should be `CODE_FLOW` to specify the authorization\ncode flow. Otherwise, the default ID Token flow will be used.",
+          "description": "Used for the Google provider. The type of the authentication flow to be used. If present, this should be `CODE_FLOW` to specify the authorization code flow. Otherwise, the default ID Token flow will be used.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -327,7 +477,7 @@
           "items": null
         },
         "context": {
-          "description": "An opaque string used to maintain contextual information between the\nauthentication request and the callback from the IdP.",
+          "description": "An opaque string used to maintain contextual information between the authentication request and the callback from the IdP.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -337,7 +487,7 @@
           "items": null
         },
         "continueUri": {
-          "description": "A valid URL for the IdP to redirect the user back to. The URL cannot\ncontain fragments or the reserved `state` query parameter.",
+          "description": "A valid URL for the IdP to redirect the user back to. The URL cannot contain fragments or the reserved `state` query parameter.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -347,7 +497,7 @@
           "items": null
         },
         "customParameter": {
-          "description": "Additional customized query parameters to be added to the authorization\nURI. The following parameters are reserved and cannot be added:\n`client_id`, `response_type`, `scope`, `redirect_uri`, `state`.\n\nFor the Microsoft provider, the Azure AD tenant to sign-in to can be\nspecified in the `tenant` custom parameter.",
+          "description": "Additional customized query parameters to be added to the authorization URI. The following parameters are reserved and cannot be added: `client_id`, `response_type`, `scope`, `redirect_uri`, `state`. For the Microsoft provider, the Azure AD tenant to sign-in to can be specified in the `tenant` custom parameter.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -366,7 +516,7 @@
           "items": null
         },
         "hostedDomain": {
-          "description": "Used for the Google provider. The G Suite hosted domain of the user in\norder to restrict sign-in to users at that domain.",
+          "description": "Used for the Google provider. The G Suite hosted domain of the user in order to restrict sign-in to users at that domain.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -376,7 +526,7 @@
           "items": null
         },
         "identifier": {
-          "description": "The email identifier of the user account to fetch associated providers for.\nAt least one of the fields `identifier` and `provider_id` must be set.\n\nThe length of the email address should be less than 256 characters and in\nthe format of `name@domain.tld`. The email address should also match the\n[RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production.",
+          "description": "The email identifier of the user account to fetch associated providers for. At least one of the fields `identifier` and `provider_id` must be set. The length of the email address should be less than 256 characters and in the format of `name@domain.tld`. The email address should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -396,7 +546,7 @@
           "items": null
         },
         "oauthScope": {
-          "description": "Additional space-delimited OAuth 2.0 scopes specifying the scope of the\nauthentication request with the IdP. Used for OAuth 2.0 IdPs.\n\nFor the Google provider, the authorization code flow will be used if this\nfield is set.",
+          "description": "Additional space-delimited OAuth 2.0 scopes specifying the scope of the authentication request with the IdP. Used for OAuth 2.0 IdPs. For the Google provider, the authorization code flow will be used if this field is set.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -426,7 +576,7 @@
           "items": null
         },
         "providerId": {
-          "description": "The provider ID of the IdP for the user to sign in with. This should be a\nprovider ID enabled for sign-in, which is either from the list of\n[default supported\nIdPs](https://cloud.google.com/identity-platform/docs/reference/rest/v2/defaultSupportedIdps/list),\nor of the format `oidc.*` or `saml.*`. Some examples are `google.com`,\n`facebook.com`, `oidc.testapp`, and `saml.testapp`. At least one of the\nfields `identifier` and `provider_id` must be set.",
+          "description": "The provider ID of the IdP for the user to sign in with. This should be a provider ID enabled for sign-in, which is either from the list of [default supported IdPs](https://cloud.google.com/identity-platform/docs/reference/rest/v2/defaultSupportedIdps/list), or of the format `oidc.*` or `saml.*`. Some examples are `google.com`, `facebook.com`, `oidc.testapp`, and `saml.testapp`. At least one of the fields `identifier` and `provider_id` must be set.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -436,7 +586,7 @@
           "items": null
         },
         "sessionId": {
-          "description": "A session ID that can be verified against in SignInWithIdp to prevent\nsession fixation attacks. If absent, a random string will be generated and\nreturned as the session ID.",
+          "description": "A session ID that can be verified against in SignInWithIdp to prevent session fixation attacks. If absent, a random string will be generated and returned as the session ID.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -446,7 +596,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the Identity Platform tenant to create an authorization URI or\nlookup an email identifier for. If not set, the operation will be performed\nin the default Identity Platform instance in the project.",
+          "description": "The ID of the Identity Platform tenant to create an authorization URI or lookup an email identifier for. If not set, the operation will be performed in the default Identity Platform instance in the project.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -486,7 +636,7 @@
           }
         },
         "authUri": {
-          "description": "The authorization URI for the requested provider. Present only when a\nprovider ID is set in the request.",
+          "description": "The authorization URI for the requested provider. Present only when a provider ID is set in the request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -496,7 +646,7 @@
           "items": null
         },
         "captchaRequired": {
-          "description": "Whether a CAPTCHA is needed because there have been too many failed login\nattempts by the user. Present only when a registered email identifier is\nset in the request.",
+          "description": "Whether a CAPTCHA is needed because there have been too many failed login attempts by the user. Present only when a registered email identifier is set in the request.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -506,7 +656,7 @@
           "items": null
         },
         "forExistingProvider": {
-          "description": "Whether the user has previously signed in with the provider ID in the\nrequest. Present only when a registered email identifier is set in the\nrequest.",
+          "description": "Whether the user has previously signed in with the provider ID in the request. Present only when a registered email identifier is set in the request.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -536,7 +686,7 @@
           "items": null
         },
         "registered": {
-          "description": "Whether the email identifier represents an existing account. Present only\nwhen an email identifier is set in the request.",
+          "description": "Whether the email identifier represents an existing account. Present only when an email identifier is set in the request.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -546,7 +696,7 @@
           "items": null
         },
         "sessionId": {
-          "description": "The session ID from the request, or a random string generated by\nCreateAuthUri if absent. It is used to prevent session fixation attacks.",
+          "description": "The session ID from the request, or a random string generated by CreateAuthUri if absent. It is used to prevent session fixation attacks.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -556,7 +706,7 @@
           "items": null
         },
         "signinMethods": {
-          "description": "The list of sign-in methods that the user has previously used. Each element\nis one of `password`, `emailLink`, or the provider ID of an IdP. Present\nonly when a registered email identifier is set in the request.",
+          "description": "The list of sign-in methods that the user has previously used. Each element is one of `password`, `emailLink`, or the provider ID of an IdP. Present only when a registered email identifier is set in the request.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -606,7 +756,7 @@
           "items": null
         },
         "validDuration": {
-          "description": "The number of seconds until the session cookie expires. Specify a duration\nin seconds, between five minutes and fourteen days, inclusively.",
+          "description": "The number of seconds until the session cookie expires. Specify a duration in seconds, between five minutes and fourteen days, inclusively.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -628,7 +778,7 @@
       "enumDescriptions": [],
       "properties": {
         "sessionCookie": {
-          "description": "The session cookie that has been created from the Identity Platform\nID token specified in the request. It is in the form of a JSON Web Token\n(JWT). Always present.",
+          "description": "The session cookie that has been created from the Identity Platform ID token specified in the request. It is in the form of a JSON Web Token (JWT). Always present.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -660,7 +810,7 @@
           "items": null
         },
         "idToken": {
-          "description": "The Identity Platform ID token of the account to delete. Require to be\nspecified for requests from end users that lack Google OAuth 2.0\ncredential. Authenticated requests bearing a Google OAuth2 credential with\nproper permissions may pass local_id to specify the account to delete\nalternatively.",
+          "description": "The Identity Platform ID token of the account to delete. Require to be specified for requests from end users that lack Google OAuth 2.0 credential. Authenticated requests bearing a Google OAuth2 credential with proper permissions may pass local_id to specify the account to delete alternatively.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -670,7 +820,7 @@
           "items": null
         },
         "localId": {
-          "description": "The ID of user account to delete. Specifying this field requires a Google\nOAuth 2.0 credential with proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).\nRequests from users lacking the credential should pass an ID token instead.",
+          "description": "The ID of user account to delete. Specifying this field requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control). Requests from users lacking the credential should pass an ID token instead.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -680,7 +830,7 @@
           "items": null
         },
         "targetProjectId": {
-          "description": "The ID of the project which the account belongs to. Should only be\nspecified in authenticated requests that specify local_id of an account.",
+          "description": "The ID of the project which the account belongs to. Should only be specified in authenticated requests that specify local_id of an account.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -690,7 +840,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the tenant that the account belongs to, if applicable. Only\nrequire to be specified for authenticated requests bearing a Google\nOAuth 2.0 credential that specify local_id of an account that belongs to an\nIdentity Platform tenant.",
+          "description": "The ID of the tenant that the account belongs to, if applicable. Only require to be specified for authenticated requests bearing a Google OAuth 2.0 credential that specify local_id of an account that belongs to an Identity Platform tenant.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -744,7 +894,7 @@
           "items": null
         },
         "nextPageToken": {
-          "description": "If there are more accounts to be downloaded, a token that can be passed\nback to DownloadAccount to get more accounts. Otherwise, this is blank.",
+          "description": "If there are more accounts to be downloaded, a token that can be passed back to DownloadAccount to get more accounts. Otherwise, this is blank.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -754,7 +904,7 @@
           "items": null
         },
         "users": {
-          "description": "All accounts belonging to the project/tenant limited by max_results in the\nrequest.",
+          "description": "All accounts belonging to the project/tenant limited by max_results in the request.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -856,7 +1006,7 @@
           "items": null
         },
         "locale": {
-          "description": "Value is in III language code format (e.g. \"zh-CN\", \"es\"). Both ‘-’  and\n‘_’ separators are accepted.",
+          "description": "Value is in III language code format (e.g. \"zh-CN\", \"es\"). Both '-' and '_' separators are accepted.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -891,7 +1041,7 @@
     },
     "GoogleCloudIdentitytoolkitV1ErrorInfo": {
       "id": "GoogleCloudIdentitytoolkitV1ErrorInfo",
-      "description": "Error information explaining why an account cannot be uploaded.\nbatch upload.",
+      "description": "Error information explaining why an account cannot be uploaded. batch upload.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -930,7 +1080,7 @@
       "enumDescriptions": [],
       "properties": {
         "providerId": {
-          "description": "The ID of supported identity providers. This should be a provider ID\nenabled for sign-in, which is either from the list of [default supported\nIdPs](https://cloud.google.com/identity-platform/docs/reference/rest/v2/defaultSupportedIdps/list),\nor of the format `oidc.*` or `saml.*`. Some examples are `google.com`,\n`facebook.com`, `oidc.testapp`, and `saml.testapp`.",
+          "description": "The ID of supported identity providers. This should be a provider ID enabled for sign-in, which is either from the list of [default supported IdPs](https://cloud.google.com/identity-platform/docs/reference/rest/v2/defaultSupportedIdps/list), or of the format `oidc.*` or `saml.*`. Some examples are `google.com`, `facebook.com`, `oidc.testapp`, and `saml.testapp`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -940,7 +1090,7 @@
           "items": null
         },
         "rawId": {
-          "description": "The user ID of the account at the third-party Identity Provider specified\nby `provider_id`.",
+          "description": "The user ID of the account at the third-party Identity Provider specified by `provider_id`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -972,7 +1122,7 @@
           "items": null
         },
         "email": {
-          "description": "The email address of one or more accounts to fetch. The length of email\nshould be less than 256 characters and in the format of `name@domain.tld`.\nThe email should also match the [RFC\n822](https://tools.ietf.org/html/rfc822) addr-spec production. Should only\nbe specified by authenticated requests from a developer.",
+          "description": "The email address of one or more accounts to fetch. The length of email should be less than 256 characters and in the format of `name@domain.tld`. The email should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production. Should only be specified by authenticated requests from a developer.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -990,7 +1140,7 @@
           }
         },
         "federatedUserId": {
-          "description": "The federated user identifier of one or more accounts to fetch. Should only\nbe specified by authenticated requests bearing a Google OAuth 2.0\ncredential with proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The federated user identifier of one or more accounts to fetch. Should only be specified by authenticated requests bearing a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1002,7 +1152,7 @@
           }
         },
         "idToken": {
-          "description": "The Identity Platform ID token of the account to fetch. Require to be\nspecified for requests from end users.",
+          "description": "The Identity Platform ID token of the account to fetch. Require to be specified for requests from end users.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1012,7 +1162,7 @@
           "items": null
         },
         "initialEmail": {
-          "description": "The initial email of one or more accounts to fetch. The length of email\nshould be less than 256 characters and in the format of `name@domain.tld`.\nThe email should also match the [RFC\n822](https://tools.ietf.org/html/rfc822) addr-spec production. Should only\nbe specified by authenticated requests from a developer.",
+          "description": "The initial email of one or more accounts to fetch. The length of email should be less than 256 characters and in the format of `name@domain.tld`. The email should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production. Should only be specified by authenticated requests from a developer.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1030,7 +1180,7 @@
           }
         },
         "localId": {
-          "description": "The ID of one or more accounts to fetch. Should only be specified by\nauthenticated requests bearing a Google OAuth 2.0 credential with proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The ID of one or more accounts to fetch. Should only be specified by authenticated requests bearing a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1048,7 +1198,7 @@
           }
         },
         "phoneNumber": {
-          "description": "The phone number of one or more accounts to fetch. Should only be specified\nby authenticated requests from a developer and should be in E.164 format,\nfor example, +15555555555.",
+          "description": "The phone number of one or more accounts to fetch. Should only be specified by authenticated requests from a developer and should be in E.164 format, for example, +15555555555.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1066,7 +1216,7 @@
           }
         },
         "targetProjectId": {
-          "description": "The ID of the Google Cloud project that the account or the Identity\nPlatform tenant specified by `tenant_id` belongs to. Should only be\nspecified by authenticated requests bearing a Google OAuth 2.0 credential\nwith proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The ID of the Google Cloud project that the account or the Identity Platform tenant specified by `tenant_id` belongs to. Should only be specified by authenticated requests bearing a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1076,7 +1226,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the tenant that the account belongs to. Should only\nbe specified by authenticated requests from a developer.",
+          "description": "The ID of the tenant that the account belongs to. Should only be specified by authenticated requests from a developer.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1108,7 +1258,7 @@
           "items": null
         },
         "users": {
-          "description": "The information of specific user account(s) matching the parameters in the\nrequest.",
+          "description": "The information of specific user account(s) matching the parameters in the request.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1132,7 +1282,7 @@
       "enumDescriptions": [],
       "properties": {
         "androidInstallApp": {
-          "description": "If an associated android app can handle the OOB code, whether or not to\ninstall the android app on the device where the link is opened if the app\nis not already installed.",
+          "description": "If an associated android app can handle the OOB code, whether or not to install the android app on the device where the link is opened if the app is not already installed.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1142,7 +1292,7 @@
           "items": null
         },
         "androidMinimumVersion": {
-          "description": "If an associated android app can handle the OOB code, the minimum version\nof the app. If the version on the device is lower than this version then\nthe user is taken to Google Play Store to upgrade the app.",
+          "description": "If an associated android app can handle the OOB code, the minimum version of the app. If the version on the device is lower than this version then the user is taken to Google Play Store to upgrade the app.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1152,7 +1302,7 @@
           "items": null
         },
         "androidPackageName": {
-          "description": "If an associated android app can handle the OOB code, the Android package\nname of the android app that will handle the callback when this OOB code is\nused. This will allow the correct app to open if it is already installed,\nor allow Google Play Store to open to the correct app if it is not yet\ninstalled.",
+          "description": "If an associated android app can handle the OOB code, the Android package name of the android app that will handle the callback when this OOB code is used. This will allow the correct app to open if it is already installed, or allow Google Play Store to open to the correct app if it is not yet installed.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1162,7 +1312,7 @@
           "items": null
         },
         "canHandleCodeInApp": {
-          "description": "When set to true, the OOB code link will be be sent as a Universal Link or\nan Android App Link and will be opened by the corresponding app if\ninstalled. If not set, or set to false, the OOB code will be sent to the\nweb widget first and then on continue will redirect to the app if\ninstalled.",
+          "description": "When set to true, the OOB code link will be be sent as a Universal Link or an Android App Link and will be opened by the corresponding app if installed. If not set, or set to false, the OOB code will be sent to the web widget first and then on continue will redirect to the app if installed.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1172,7 +1322,7 @@
           "items": null
         },
         "captchaResp": {
-          "description": "For a PASSWORD_RESET request, a reCaptcha response is required when the\nsystem detects possible abuse activity. In those cases, this is the\nresponse from the reCaptcha challenge used to verify the caller.",
+          "description": "For a PASSWORD_RESET request, a reCaptcha response is required when the system detects possible abuse activity. In those cases, this is the response from the reCaptcha challenge used to verify the caller.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1192,7 +1342,7 @@
           "items": null
         },
         "continueUrl": {
-          "description": "The Url to continue after user clicks the link sent in email. This is the\nurl that will allow the web widget to handle the OOB code.",
+          "description": "The Url to continue after user clicks the link sent in email. This is the url that will allow the web widget to handle the OOB code.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1202,7 +1352,7 @@
           "items": null
         },
         "dynamicLinkDomain": {
-          "description": "In order to ensure that the url used can be easily opened up in iOS or\nandroid, we create a [Firebase Dynamic\nLink](https://firebase.google.com/docs/dynamic-links). Most Identity\nPlatform projects will only have one Dynamic Link domain enabled, and can\nleave this field blank.  This field contains a specified Dynamic Link\ndomain for projects that have multiple enabled.",
+          "description": "In order to ensure that the url used can be easily opened up in iOS or android, we create a [Firebase Dynamic Link](https://firebase.google.com/docs/dynamic-links). Most Identity Platform projects will only have one Dynamic Link domain enabled, and can leave this field blank. This field contains a specified Dynamic Link domain for projects that have multiple enabled.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1212,7 +1362,7 @@
           "items": null
         },
         "email": {
-          "description": "The account's email address to send the OOB code to, and generally the\nemail address of the account that needs to be updated. Required for\nPASSWORD_RESET, EMAIL_SIGNIN, and VERIFY_EMAIL.",
+          "description": "The account's email address to send the OOB code to, and generally the email address of the account that needs to be updated. Required for PASSWORD_RESET, EMAIL_SIGNIN, and VERIFY_EMAIL. Only required for VERIFY_AND_CHANGE_EMAIL requests when return_oob_link is set to true. In this case, it is the original email of the user.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1222,7 +1372,7 @@
           "items": null
         },
         "iOSAppStoreId": {
-          "description": "If an associated iOS app can handle the OOB code, the App Store id of this\napp. This will allow App Store to open to the correct app if the app is not\nyet installed.",
+          "description": "If an associated iOS app can handle the OOB code, the App Store id of this app. This will allow App Store to open to the correct app if the app is not yet installed.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1232,7 +1382,7 @@
           "items": null
         },
         "iOSBundleId": {
-          "description": "If an associated iOS app can handle the OOB code, the iOS bundle id of\nthis app. This will allow the correct app to open if it is already\ninstalled.",
+          "description": "If an associated iOS app can handle the OOB code, the iOS bundle id of this app. This will allow the correct app to open if it is already installed.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1242,7 +1392,7 @@
           "items": null
         },
         "idToken": {
-          "description": null,
+          "description": "An ID token for the account. It is required for VERIFY_AND_CHANGE_EMAIL and VERIFY_EMAIL requests unless return_oob_link is set to true.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1252,7 +1402,7 @@
           "items": null
         },
         "newEmail": {
-          "description": null,
+          "description": "The email address the account is being updated to. Required only for VERIFY_AND_CHANGE_EMAIL requests.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1262,7 +1412,7 @@
           "items": null
         },
         "requestType": {
-          "description": "Required. The type of out-of-band (OOB) code to send. Depending on this value, other\nfields in this request will be required and/or have different meanings.\nThere are 3 different OOB codes that can be sent:\n* PASSWORD_RESET\n* EMAIL_SIGNIN\n* VERIFY_EMAIL",
+          "description": "Required. The type of out-of-band (OOB) code to send. Depending on this value, other fields in this request will be required and/or have different meanings. There are 4 different OOB codes that can be sent: * PASSWORD_RESET * EMAIL_SIGNIN * VERIFY_EMAIL * VERIFY_AND_CHANGE_EMAIL",
           "type": "string",
           "format": null,
           "enum": [
@@ -1284,7 +1434,7 @@
             "verify the account's email address by sending an email",
             "",
             "sign in with email only",
-            "",
+            "This flow sends an email to the specified new email, and when applied by clicking the link in the email changes the account's email to the new email. Used when the account must have verified email at all times, such as MFA accounts.",
             ""
           ],
           "properties": {},
@@ -1292,7 +1442,7 @@
           "items": null
         },
         "returnOobLink": {
-          "description": "Whether the confirmation link containing the OOB code should be returned in\nthe response (no email is sent). Used when a developer wants to construct\nthe email template and send it on their own. By default this is false; to\nspecify this field, and to set it to true, it requires a Google OAuth 2.0\ncredential with proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control)",
+          "description": "Whether the confirmation link containing the OOB code should be returned in the response (no email is sent). Used when a developer wants to construct the email template and send it on their own. By default this is false; to specify this field, and to set it to true, it requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control)",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1302,7 +1452,7 @@
           "items": null
         },
         "targetProjectId": {
-          "description": "The Project ID of the Identity Platform project which the account belongs\nto. To specify this field, it requires a Google OAuth 2.0 credential with\nproper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The Project ID of the Identity Platform project which the account belongs to. To specify this field, it requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1344,7 +1494,7 @@
       "enumDescriptions": [],
       "properties": {
         "email": {
-          "description": "If return_oob_link is false in the request, the email address the\nverification was sent to.",
+          "description": "If return_oob_link is false in the request, the email address the verification was sent to.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1374,7 +1524,7 @@
           "items": null
         },
         "oobLink": {
-          "description": "If return_oob_link is true in the request, the OOB link to be sent to the\nuser. This returns the constructed link including\n[Firebase Dynamic Link](https://firebase.google.com/docs/dynamic-links)\nrelated parameters.",
+          "description": "If return_oob_link is true in the request, the OOB link to be sent to the user. This returns the constructed link including [Firebase Dynamic Link](https://firebase.google.com/docs/dynamic-links) related parameters.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1396,7 +1546,7 @@
       "enumDescriptions": [],
       "properties": {
         "allowPasswordUser": {
-          "description": "Whether to allow password account sign up. This field is only returned for\nauthenticated calls from a developer.",
+          "description": "Whether to allow password account sign up. This field is only returned for authenticated calls from a developer.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1406,7 +1556,7 @@
           "items": null
         },
         "apiKey": {
-          "description": "Google Cloud API key. This field is only returned for authenticated calls\nfrom a developer.",
+          "description": "Google Cloud API key. This field is only returned for authenticated calls from a developer.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1434,11 +1584,11 @@
           }
         },
         "changeEmailTemplate": {
-          "description": "Email template for change email. This field is only returned for\nauthenticated calls from a developer.",
+          "description": "Email template for change email. This field is only returned for authenticated calls from a developer.",
           "$ref": "GoogleCloudIdentitytoolkitV1EmailTemplate"
         },
         "dynamicLinksDomain": {
-          "description": "The Firebase Dynamic Links domain used to construct links for redirects to\nnative apps.",
+          "description": "The Firebase Dynamic Links domain used to construct links for redirects to native apps.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1448,7 +1598,7 @@
           "items": null
         },
         "enableAnonymousUser": {
-          "description": "Whether anonymous user is enabled. This field is only returned for\nauthenticated calls from a developer.",
+          "description": "Whether anonymous user is enabled. This field is only returned for authenticated calls from a developer.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1458,7 +1608,7 @@
           "items": null
         },
         "idpConfig": {
-          "description": "OAuth2 provider config. This field is only returned for authenticated calls\nfrom a developer.",
+          "description": "OAuth2 provider config. This field is only returned for authenticated calls from a developer.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1470,7 +1620,7 @@
           }
         },
         "legacyResetPasswordTemplate": {
-          "description": "Reset password email template for legacy Firebase V1 app. This field is\nonly returned for authenticated calls from a developer.",
+          "description": "Reset password email template for legacy Firebase V1 app. This field is only returned for authenticated calls from a developer.",
           "$ref": "GoogleCloudIdentitytoolkitV1EmailTemplate"
         },
         "projectId": {
@@ -1484,15 +1634,15 @@
           "items": null
         },
         "resetPasswordTemplate": {
-          "description": "Email template for reset password. This field is only returned for\nauthenticated calls from a developer.",
+          "description": "Email template for reset password. This field is only returned for authenticated calls from a developer.",
           "$ref": "GoogleCloudIdentitytoolkitV1EmailTemplate"
         },
         "revertSecondFactorAdditionTemplate": {
-          "description": "Email template for reverting second factor additions. This field is only\nreturned for authenticated calls from a developer.",
+          "description": "Email template for reverting second factor additions. This field is only returned for authenticated calls from a developer.",
           "$ref": "GoogleCloudIdentitytoolkitV1EmailTemplate"
         },
         "useEmailSending": {
-          "description": "Whether to use email sending. This field is only returned for authenticated\ncalls from a developer.",
+          "description": "Whether to use email sending. This field is only returned for authenticated calls from a developer.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -1502,7 +1652,7 @@
           "items": null
         },
         "verifyEmailTemplate": {
-          "description": "Email template for verify email. This field is only returned for\nauthenticated calls from a developer.",
+          "description": "Email template for verify email. This field is only returned for authenticated calls from a developer.",
           "$ref": "GoogleCloudIdentitytoolkitV1EmailTemplate"
         }
       },
@@ -1527,8 +1677,18 @@
           "additionalProperties": null,
           "items": null
         },
+        "producerProjectNumber": {
+          "description": "The producer project number used to generate PIA tokens",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "recaptchaSiteKey": {
-          "description": "The reCAPTCHA v2 site key used to invoke the reCAPTCHA service. Always\npresent.",
+          "description": "The reCAPTCHA v2 site key used to invoke the reCAPTCHA service. Always present.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1560,7 +1720,7 @@
       "enumDescriptions": [],
       "properties": {
         "keys": {
-          "description": "Public keys of the session cookie signer, formatted as\n[JSON Web Keys (JWK)](https://tools.ietf.org/html/rfc7517).",
+          "description": "Public keys of the session cookie signer, formatted as [JSON Web Keys (JWK)](https://tools.ietf.org/html/rfc7517).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1604,7 +1764,7 @@
           "items": null
         },
         "experimentPercent": {
-          "description": "Percent of users who will be prompted/redirected federated login for this\nIdP",
+          "description": "Percent of users who will be prompted/redirected federated login for this IdP",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -1690,7 +1850,7 @@
       "enumDescriptions": [],
       "properties": {
         "idToken": {
-          "description": "The Identity Platform ID token. It will be verified and then converted to a\nnew SAMLResponse.",
+          "description": "The Identity Platform ID token. It will be verified and then converted to a new SAMLResponse.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1710,7 +1870,7 @@
           "items": null
         },
         "samlAppEntityId": {
-          "description": "SAML app entity id specified in Google Admin Console for each app.\nIf developers wants to redirect to third party app rather than GSuite apps,\nprobably they need this. When it's used, we'll return a RelayState\nincluding a SAMLRequest which can be used to trigger a SP-initiated SAML\nflow to redirect to the real app.",
+          "description": "SAML app entity id specified in Google Admin Console for each app. If developers want to redirect to a third-party app rather than a G Suite app, they'll probably they need this. When it's used, we'll return a RelayState. This includes a SAMLRequest, which can be used to trigger a SP-initiated SAML flow to redirect to the real app.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1807,7 +1967,7 @@
     },
     "GoogleCloudIdentitytoolkitV1MfaEnrollment": {
       "id": "GoogleCloudIdentitytoolkitV1MfaEnrollment",
-      "description": "Information on which multi-factor authentication (MFA) providers are enabled\nfor an account.",
+      "description": "Information on which multi-factor authentication (MFA) providers are enabled for an account.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1844,7 +2004,7 @@
           "items": null
         },
         "phoneInfo": {
-          "description": "Normally this will show the phone number associated with this enrollment.\nIn some situations, such as after a first factor sign in, it will only\nshow the obfuscated version of the associated phone number.",
+          "description": "Normally this will show the phone number associated with this enrollment. In some situations, such as after a first factor sign in, it will only show the obfuscated version of the associated phone number.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1925,7 +2085,7 @@
     },
     "GoogleCloudIdentitytoolkitV1OpenIdConnectKey": {
       "id": "GoogleCloudIdentitytoolkitV1OpenIdConnectKey",
-      "description": "Represents a public key of the session cookie signer, formatted as a\n[JSON Web Key (JWK)](https://tools.ietf.org/html/rfc7517).",
+      "description": "Represents a public key of the session cookie signer, formatted as a [JSON Web Key (JWK)](https://tools.ietf.org/html/rfc7517).",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1942,7 +2102,7 @@
           "items": null
         },
         "e": {
-          "description": "Exponent for the RSA public key, it is represented as the base64url\nencoding of the value's big endian representation.",
+          "description": "Exponent for the RSA public key, it is represented as the base64url encoding of the value's big endian representation.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1972,7 +2132,7 @@
           "items": null
         },
         "n": {
-          "description": "Modulus for the RSA public key, it is represented as the base64url\nencoding of the value's big endian representation.",
+          "description": "Modulus for the RSA public key, it is represented as the base64url encoding of the value's big endian representation.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2074,7 +2234,7 @@
           "items": null
         },
         "screenName": {
-          "description": "The user's screen_name at Twitter or login name at Github.",
+          "description": "The user's screen_name at Twitter or login name at GitHub.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2096,7 +2256,7 @@
       "enumDescriptions": [],
       "properties": {
         "expression": {
-          "description": "Query conditions used to filter results. If more than one is passed, only\nthe first SqlExpression is evaluated.",
+          "description": "Query conditions used to filter results. If more than one is passed, only the first SqlExpression is evaluated.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2108,7 +2268,7 @@
           }
         },
         "limit": {
-          "description": "The maximum number of accounts to return with an upper limit of __500__.\nDefaults to _500_.\nOnly valid when `return_user_info` is set to `true`.",
+          "description": "The maximum number of accounts to return with an upper limit of __500__. Defaults to _500_. Only valid when `return_user_info` is set to `true`.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2118,7 +2278,7 @@
           "items": null
         },
         "offset": {
-          "description": "The number of accounts to skip from the beginning of matching records.\nOnly valid when `return_user_info` is set to `true`.",
+          "description": "The number of accounts to skip from the beginning of matching records. Only valid when `return_user_info` is set to `true`.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2128,7 +2288,7 @@
           "items": null
         },
         "order": {
-          "description": "The order for sorting query result.\nDefaults to __ascending__ order.\nOnly valid when `return_user_info` is set to `true`.",
+          "description": "The order for sorting query result. Defaults to __ascending__ order. Only valid when `return_user_info` is set to `true`.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2146,7 +2306,7 @@
           "items": null
         },
         "returnUserInfo": {
-          "description": "If `true`, this request will return the accounts matching the query. If\n`false`, only the __count__ of accounts matching the query will be\nreturned. Defaults to `true`.",
+          "description": "If `true`, this request will return the accounts matching the query. If `false`, only the __count__ of accounts matching the query will be returned. Defaults to `true`.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -2156,7 +2316,7 @@
           "items": null
         },
         "sortBy": {
-          "description": "The field to use for sorting user accounts.\nDefaults to `USER_ID`.\nNote: when `phone_number` is specified in `expression`, the result ignores\nthe sorting.\nOnly valid when `return_user_info` is set to `true`.",
+          "description": "The field to use for sorting user accounts. Defaults to `USER_ID`. Note: when `phone_number` is specified in `expression`, the result ignores the sorting. Only valid when `return_user_info` is set to `true`.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2202,7 +2362,7 @@
       "enumDescriptions": [],
       "properties": {
         "recordsCount": {
-          "description": "If `return_user_info` in the request is true, this is the number of\nreturned accounts in this message. Otherwise, this is the total number of\naccounts matching the query.",
+          "description": "If `return_user_info` in the request is true, this is the number of returned accounts in this message. Otherwise, this is the total number of accounts matching the query.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2212,7 +2372,7 @@
           "items": null
         },
         "userInfo": {
-          "description": "If `return_user_info` in the request is true, this is the accounts\nmatching the query.",
+          "description": "If `return_user_info` in the request is true, this is the accounts matching the query.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2236,7 +2396,7 @@
       "enumDescriptions": [],
       "properties": {
         "email": {
-          "description": "The email of the account to be modified. Specify this and the old password\nin order to change an account's password without using an out-of-band code.",
+          "description": "The email of the account to be modified. Specify this and the old password in order to change an account's password without using an out-of-band code.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2246,7 +2406,7 @@
           "items": null
         },
         "newPassword": {
-          "description": "The new password to be set for this account. Specifying this field will\nresult in a change to the account and consume the out-of-band code if one\nwas specified and it was of type PASSWORD_RESET.",
+          "description": "The new password to be set for this account. Specifying this field will result in a change to the account and consume the out-of-band code if one was specified and it was of type PASSWORD_RESET.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2256,7 +2416,7 @@
           "items": null
         },
         "oldPassword": {
-          "description": "The current password of the account to be modified. Specify this and email\nto change an account's password without using an out-of-band code.",
+          "description": "The current password of the account to be modified. Specify this and email to change an account's password without using an out-of-band code.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2266,7 +2426,7 @@
           "items": null
         },
         "oobCode": {
-          "description": "An out-of-band (OOB) code generated by GetOobCode request. Specify only\nthis parameter (or only this parameter and a tenant ID) to get the\nout-of-band code's type in the response without mutating the account's\nstate. Only a PASSWORD_RESET out-of-band code can be consumed via this\nmethod.",
+          "description": "An out-of-band (OOB) code generated by GetOobCode request. Specify only this parameter (or only this parameter and a tenant ID) to get the out-of-band code's type in the response without mutating the account's state. Only a PASSWORD_RESET out-of-band code can be consumed via this method.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2354,7 +2514,7 @@
             "verify the account's email address by sending an email",
             "",
             "sign in with email only",
-            "",
+            "This flow sends an email to the specified new email, and when applied by clicking the link in the email changes the account's email to the new email. Used when the account must have verified email at all times, such as MFA accounts.",
             ""
           ],
           "properties": {},
@@ -2367,14 +2527,18 @@
     },
     "GoogleCloudIdentitytoolkitV1SendVerificationCodeRequest": {
       "id": "GoogleCloudIdentitytoolkitV1SendVerificationCodeRequest",
-      "description": "Request message for SendVerificationCode. At least one of\n(`ios_receipt` and `ios_secret`), `recaptcha_token`, or a spatula header\nfor an Android device must be specified to verify the verification code is\nbeing sent on behalf of a real app and not an emulator.",
+      "description": "Request message for SendVerificationCode. At least one of (`ios_receipt` and `ios_secret`), `recaptcha_token`, or `safety_net_token` must be specified to verify the verification code is being sent on behalf of a real app and not an emulator.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "autoRetrievalInfo": {
+          "description": "Android only. Used by Google Play Services to identify the app for auto-retrieval.",
+          "$ref": "GoogleCloudIdentitytoolkitV1AutoRetrievalInfo"
+        },
         "iosReceipt": {
-          "description": "Receipt of successful iOS app token validation.\nAt least one of (`ios_receipt` and `ios_secret`), `recaptcha_token`, or a\nspatula header for an Android device must be specified to verify the\nverification code is being sent on behalf of a real app and not an\nemulator. This should come from the response of\nverifyIosClient. If present, the caller\nshould also provide the `ios_secret`, as well as a bundle ID in the\n`x-ios-bundle-identifier` header, which must match the bundle ID from the\nverifyIosClient request.",
+          "description": "Receipt of successful iOS app token validation. At least one of (`ios_receipt` and `ios_secret`), `recaptcha_token`, or `safety_net_token` must be specified to verify the verification code is being sent on behalf of a real app and not an emulator. This should come from the response of verifyIosClient. If present, the caller should also provide the `ios_secret`, as well as a bundle ID in the `x-ios-bundle-identifier` header, which must match the bundle ID from the verifyIosClient request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2384,7 +2548,7 @@
           "items": null
         },
         "iosSecret": {
-          "description": "Secret delivered to iOS app as a push notification. Should be passed with\nan `ios_receipt` as well as the `x-ios-bundle-identifier` header.",
+          "description": "Secret delivered to iOS app as a push notification. Should be passed with an `ios_receipt` as well as the `x-ios-bundle-identifier` header.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2404,7 +2568,17 @@
           "items": null
         },
         "recaptchaToken": {
-          "description": "Recaptcha token for app verification.  At least one of (`ios_receipt` and\n`ios_secret`), `recaptcha_token`, or a spatula header for an Android device\nmust be specified to verify the verification code is being sent on behalf\nof a real app and not an emulator. The recaptcha should be generated by\ncalling getRecaptchaParams and the\nrecaptcha token will be generated on user completion of the recaptcha\nchallenge.",
+          "description": "Recaptcha token for app verification. At least one of (`ios_receipt` and `ios_secret`), `recaptcha_token`, or `safety_net_token` must be specified to verify the verification code is being sent on behalf of a real app and not an emulator. The recaptcha should be generated by calling getRecaptchaParams and the recaptcha token will be generated on user completion of the recaptcha challenge.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "safetyNetToken": {
+          "description": "Android only. Used to assert application identity in place of a recaptcha token. At least one of (`ios_receipt` and `ios_secret`), `recaptcha_token`, or `safety_net_token` must be specified to verify the verification code is being sent on behalf of a real app and not an emulator. A SafetyNet Token can be generated via the [SafetyNet Android Attestation API](https://developer.android.com/training/safetynet/attestation.html), with the Base64 encoding of the `phone_number` field as the nonce.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2436,7 +2610,7 @@
       "enumDescriptions": [],
       "properties": {
         "sessionInfo": {
-          "description": "Encrypted session information. This can be used in\nsignInWithPhoneNumber to authenticate\nthe phone number.",
+          "description": "Encrypted session information. This can be used in signInWithPhoneNumber to authenticate the phone number.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2468,7 +2642,7 @@
           "items": null
         },
         "captchaResponse": {
-          "description": "The response from reCaptcha challenge. This is required when the system\ndetects possible abuse activities.",
+          "description": "The response from reCaptcha challenge. This is required when the system detects possible abuse activities.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2488,7 +2662,7 @@
           "items": null
         },
         "customAttributes": {
-          "description": "JSON formatted custom attributes to be stored in the Identity Platform ID\ntoken. Specifying this field requires a Google OAuth 2.0 credential with\nproper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "JSON formatted custom attributes to be stored in the Identity Platform ID token. Specifying this field requires a Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2512,15 +2686,7 @@
           "type": "array",
           "format": null,
           "enum": [],
-          "enumDescriptions": [
-            "User attribute name is not specified.",
-            "User attribute key name is email.",
-            "User attribute key name is displayName.",
-            "User attribute key name is provider.",
-            "User attribute key name is photoURL.",
-            "User attribute key name is password.",
-            "User attribute key name is rawUserInfo."
-          ],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": {
@@ -2535,7 +2701,15 @@
               "PASSWORD",
               "RAW_USER_INFO"
             ],
-            "enumDescriptions": [],
+            "enumDescriptions": [
+              "User attribute name is not specified.",
+              "User attribute key name is email.",
+              "User attribute key name is displayName.",
+              "User attribute key name is provider.",
+              "User attribute key name is photoURL.",
+              "User attribute key name is password.",
+              "User attribute key name is rawUserInfo."
+            ],
             "properties": {},
             "additionalProperties": null,
             "items": null
@@ -2560,7 +2734,7 @@
           }
         },
         "disableUser": {
-          "description": "If true, marks the account as disabled, meaning the user will no longer\nbe able to sign-in.",
+          "description": "If true, marks the account as disabled, meaning the user will no longer be able to sign-in.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -2570,7 +2744,7 @@
           "items": null
         },
         "displayName": {
-          "description": "The user's new display name to be updated in the account's attributes.\nThe length of the display name must be less than or equal to 256\ncharacters.",
+          "description": "The user's new display name to be updated in the account's attributes. The length of the display name must be less than or equal to 256 characters.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2580,7 +2754,7 @@
           "items": null
         },
         "email": {
-          "description": "The user's new email to be updated in the account's attributes. The length\nof email should be less than 256 characters and in the format of\n`name@domain.tld`. The email should also match the\n[RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production.",
+          "description": "The user's new email to be updated in the account's attributes. The length of email should be less than 256 characters and in the format of `name@domain.tld`. The email should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2590,7 +2764,7 @@
           "items": null
         },
         "emailVerified": {
-          "description": "Whether the user's email has been verified. Specifying this field requires\na Google OAuth 2.0 credential with proper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "Whether the user's email has been verified. Specifying this field requires a Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -2600,7 +2774,7 @@
           "items": null
         },
         "idToken": {
-          "description": "A valid Identity Platform ID token. Required when attempting to change\nuser-related information.",
+          "description": "A valid Identity Platform ID token. Required when attempting to change user-related information.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2630,11 +2804,11 @@
           "items": null
         },
         "linkProviderUserInfo": {
-          "description": "The provider to be linked to the user's account. Specifying this field\nrequires a Google OAuth 2.0 credential with proper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The provider to be linked to the user's account. Specifying this field requires a Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control).",
           "$ref": "GoogleCloudIdentitytoolkitV1ProviderUserInfo"
         },
         "localId": {
-          "description": "The ID of the user. Specifying this field requires a Google OAuth\n2.0 credential with proper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).\nFor requests from end-users, an ID token should be passed instead.",
+          "description": "The ID of the user. Specifying this field requires a Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control). For requests from end-users, an ID token should be passed instead.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2644,11 +2818,11 @@
           "items": null
         },
         "mfa": {
-          "description": "The multi-factor authentication related information to be set on the user's\naccount. This will overwrite any previous multi-factor related information\non the account. Specifying this field requires a Google OAuth 2.0\ncredential with proper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The multi-factor authentication related information to be set on the user's account. This will overwrite any previous multi-factor related information on the account. Specifying this field requires a Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control).",
           "$ref": "GoogleCloudIdentitytoolkitV1MfaInfo"
         },
         "oobCode": {
-          "description": "The out-of-band code to be applied on the user's account.\nThe following out-of-band code types are supported:\n* VERIFY_EMAIL\n* RECOVER_EMAIL\n* REVERT_SECOND_FACTOR_ADDITION\n* VERIFY_AND_CHANGE_EMAIL",
+          "description": "The out-of-band code to be applied on the user's account. The following out-of-band code types are supported: * VERIFY_EMAIL * RECOVER_EMAIL * REVERT_SECOND_FACTOR_ADDITION * VERIFY_AND_CHANGE_EMAIL",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2658,7 +2832,7 @@
           "items": null
         },
         "password": {
-          "description": "The user's new password to be updated in the account's attributes. The\nThe password must be at least 6 characters long.",
+          "description": "The user's new password to be updated in the account's attributes. The password must be at least 6 characters long.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2678,7 +2852,7 @@
           "items": null
         },
         "photoUrl": {
-          "description": "The user's new photo URL for the account's profile photo to be updated in\nthe account's attributes. The length of the URL must be less than or equal\nto 2048 characters.",
+          "description": "The user's new photo URL for the account's profile photo to be updated in the account's attributes. The length of the URL must be less than or equal to 2048 characters.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2716,7 +2890,7 @@
           "items": null
         },
         "targetProjectId": {
-          "description": "The project ID for the project that the account belongs to. Specifying this\nfield requires Google OAuth 2.0 credential with proper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).\nRequests from end users should pass an Identity Platform ID token instead.",
+          "description": "The project ID for the project that the account belongs to. Specifying this field requires Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control). Requests from end users should pass an Identity Platform ID token instead.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2726,7 +2900,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The tenant ID of the Identity Platform tenant that the account belongs to.\nRequests from end users should pass an Identity Platform ID token rather\nthan setting this field.",
+          "description": "The tenant ID of the Identity Platform tenant that the account belongs to. Requests from end users should pass an Identity Platform ID token rather than setting this field.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2736,7 +2910,7 @@
           "items": null
         },
         "upgradeToFederatedLogin": {
-          "description": "Whether the account should be restricted to only using federated\nlogin.",
+          "description": "Whether the account should be restricted to only using federated login.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -2746,7 +2920,7 @@
           "items": null
         },
         "validSince": {
-          "description": "Specifies the minimum timestamp in seconds for an Identity Platform ID\ntoken to be considered valid.",
+          "description": "Specifies the minimum timestamp in seconds for an Identity Platform ID token to be considered valid.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -2768,7 +2942,7 @@
       "enumDescriptions": [],
       "properties": {
         "displayName": {
-          "description": null,
+          "description": "The account's display name.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2778,7 +2952,7 @@
           "items": null
         },
         "email": {
-          "description": null,
+          "description": "The account's email address.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2808,7 +2982,7 @@
           "items": null
         },
         "idToken": {
-          "description": "An Identity Platform ID token for the account. This is used for legacy user\nsign up.",
+          "description": "An Identity Platform ID token for the account. This is used for legacy user sign up.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2848,7 +3022,7 @@
           "items": null
         },
         "passwordHash": {
-          "description": null,
+          "description": "Deprecated. No actual password hash is currently returned.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2858,7 +3032,7 @@
           "items": null
         },
         "photoUrl": {
-          "description": null,
+          "description": "The user's photo URL for the account's profile photo.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2932,7 +3106,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the Identity Platform tenant the user is signing in to. If\npresent, the ID should match the tenant_id in the token.",
+          "description": "The ID of the Identity Platform tenant the user is signing in to. If present, the ID should match the tenant_id in the token.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2942,7 +3116,7 @@
           "items": null
         },
         "token": {
-          "description": "Required. The custom Auth token asserted by the developer. The token should be a\n[JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519) that includes\nthe claims listed in the\n[API\nreference](https://cloud.google.com/identity-platform/docs/reference/rest/client/)\nunder the \"Custom Token Claims\" section.",
+          "description": "Required. The custom Auth token asserted by the developer. The token should be a [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519) that includes the claims listed in the [API reference](https://cloud.google.com/identity-platform/docs/reference/rest/client/) under the \"Custom Token Claims\" section.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3026,7 +3200,7 @@
       "enumDescriptions": [],
       "properties": {
         "email": {
-          "description": "Required. The email address the sign-in link was sent to. The length of\nemail should be less than 256 characters and in the format of\n`name@domain.tld`. The email should also match the [RFC\n822](https://tools.ietf.org/html/rfc822) addr-spec production.",
+          "description": "Required. The email address the sign-in link was sent to. The length of email should be less than 256 characters and in the format of `name@domain.tld`. The email should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3036,7 +3210,7 @@
           "items": null
         },
         "idToken": {
-          "description": "A valid ID token for an Identity Platform account. If passed, this request\nwill link the email address to the user represented by this ID\ntoken and enable sign-in with email link on the account for the future.",
+          "description": "A valid ID token for an Identity Platform account. If passed, this request will link the email address to the user represented by this ID token and enable sign-in with email link on the account for the future.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3056,7 +3230,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the Identity Platform tenant the user is signing in to. If not\nset, the user will sign in to the default Identity Platform project.",
+          "description": "The ID of the Identity Platform tenant the user is signing in to. If not set, the user will sign in to the default Identity Platform project.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3138,7 +3312,7 @@
           "items": null
         },
         "mfaInfo": {
-          "description": "Info on which multi-factor authentication providers are enabled. Present if\nthe user needs to complete the sign-in using multi-factor authentication.",
+          "description": "Info on which multi-factor authentication providers are enabled. Present if the user needs to complete the sign-in using multi-factor authentication.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3150,7 +3324,7 @@
           }
         },
         "mfaPendingCredential": {
-          "description": "An opaque string that functions as proof that the user has\nsuccessfully passed the first factor check.",
+          "description": "An opaque string that functions as proof that the user has successfully passed the first factor check.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3192,7 +3366,7 @@
           "items": null
         },
         "idToken": {
-          "description": "A valid ID token for an Identity Platform account. If present, this request\nwill link the Game Center player ID to the account represented by this ID\ntoken.",
+          "description": "A valid ID token for an Identity Platform account. If present, this request will link the Game Center player ID to the account represented by this ID token.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3212,7 +3386,7 @@
           "items": null
         },
         "publicKeyUrl": {
-          "description": "Required. The URL to fetch the Apple public key in order to verify the given\nsignature is signed by Apple.",
+          "description": "Required. The URL to fetch the Apple public key in order to verify the given signature is signed by Apple.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3252,7 +3426,7 @@
           "items": null
         },
         "timestamp": {
-          "description": "Required. The time when the signature was created by Apple, in milliseconds since the\nepoch.",
+          "description": "Required. The time when the signature was created by Apple, in milliseconds since the epoch.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -3376,7 +3550,7 @@
           "items": null
         },
         "idToken": {
-          "description": "A valid Identity Platform ID token. If passed, the user's account at the\nIdP will be linked to the account represented by this ID token.",
+          "description": "A valid Identity Platform ID token. If passed, the user's account at the IdP will be linked to the account represented by this ID token.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3396,7 +3570,7 @@
           "items": null
         },
         "pendingToken": {
-          "description": "An opaque string from a previous SignInWithIdp response. If set, it can be\nused to repeat the sign-in operation from the previous SignInWithIdp\noperation.",
+          "description": "An opaque string from a previous SignInWithIdp response. If set, it can be used to repeat the sign-in operation from the previous SignInWithIdp operation.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3406,7 +3580,7 @@
           "items": null
         },
         "postBody": {
-          "description": "If the user is signing in with an authorization response obtained via a\nprevious CreateAuthUri authorization request, this is the body of the HTTP\nPOST callback from the IdP, if present.\n\nOtherwise, if the user is signing in with a manually provided IdP\ncredential, this should be a URL-encoded form that contains the credential\n(e.g. an ID token or access token for OAuth 2.0 IdPs) and the provider ID\nof the IdP that issued the credential.\n\nFor example, if the user is signing in to the Google provider using a\nGoogle ID token, this should be set to\n`id_token=[GOOGLE_ID_TOKEN]&providerId=google.com`, where\n`[GOOGLE_ID_TOKEN]` should be replaced with the Google ID token.\n\nIf the user is signing in to the Facebook provider using a Facebook access\ntoken, this should be set to\n`access_token=[FACEBOOK_ACCESS_TOKEN]&providerId=facebook.com`, where\n`[FACEBOOK_ACCESS_TOKEN]` should be replaced with the Facebook access\ntoken.\n\nIf the user is signing in to the Twitter provider using a Twitter OAuth 1.0\ncredential, this should be set to\n`access_token=[TWITTER_ACCESS_TOKEN]&oauth_token_secret=[TWITTER_TOKEN_SECRET]&providerId=twitter.com`,\nwhere `[TWITTER_ACCESS_TOKEN]` and `[TWITTER_TOKEN_SECRET]` should be\nreplaced with the Twitter OAuth access token and Twitter OAuth token secret\nrespectively.",
+          "description": "If the user is signing in with an authorization response obtained via a previous CreateAuthUri authorization request, this is the body of the HTTP POST callback from the IdP, if present. Otherwise, if the user is signing in with a manually provided IdP credential, this should be a URL-encoded form that contains the credential (e.g. an ID token or access token for OAuth 2.0 IdPs) and the provider ID of the IdP that issued the credential. For example, if the user is signing in to the Google provider using a Google ID token, this should be set to `id_token=[GOOGLE_ID_TOKEN]&providerId=google.com`, where `[GOOGLE_ID_TOKEN]` should be replaced with the Google ID token. If the user is signing in to the Facebook provider using a Facebook authentication token, this should be set to `id_token=[FACEBOOK_AUTHENTICATION_TOKEN]&providerId=facebook.com&nonce= [NONCE]`, where `[FACEBOOK_AUTHENTICATION_TOKEN]` should be replaced with the Facebook authentication token. Nonce is required for validating the token. The request will fail if no nonce is provided. If the user is signing in to the Facebook provider using a Facebook access token, this should be set to `access_token=[FACEBOOK_ACCESS_TOKEN]&providerId=facebook.com`, where `[FACEBOOK_ACCESS_TOKEN]` should be replaced with the Facebook access token. If the user is signing in to the Twitter provider using a Twitter OAuth 1.0 credential, this should be set to `access_token=[TWITTER_ACCESS_TOKEN]&oauth_token_secret=[TWITTER_TOKEN_SECRET]&providerId=twitter.com`, where `[TWITTER_ACCESS_TOKEN]` and `[TWITTER_TOKEN_SECRET]` should be replaced with the Twitter OAuth access token and Twitter OAuth token secret respectively.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3416,7 +3590,7 @@
           "items": null
         },
         "requestUri": {
-          "description": "Required. The URL to which the IdP redirects the user back. This can be set to\n`http://localhost` if the user is signing in with a manually provided IdP\ncredential.",
+          "description": "Required. The URL to which the IdP redirects the user back. This can be set to `http://localhost` if the user is signing in with a manually provided IdP credential.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3426,7 +3600,7 @@
           "items": null
         },
         "returnIdpCredential": {
-          "description": "Whether or not to return OAuth credentials from the IdP on the following\nerrors: `FEDERATED_USER_ID_ALREADY_LINKED` and `EMAIL_EXISTS`.",
+          "description": "Whether or not to return OAuth credentials from the IdP on the following errors: `FEDERATED_USER_ID_ALREADY_LINKED` and `EMAIL_EXISTS`.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -3436,7 +3610,7 @@
           "items": null
         },
         "returnRefreshToken": {
-          "description": "Whether or not to return the OAuth refresh token from the IdP, if\navailable.",
+          "description": "Whether or not to return the OAuth refresh token from the IdP, if available.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -3456,7 +3630,7 @@
           "items": null
         },
         "sessionId": {
-          "description": "The session ID returned from a previous CreateAuthUri call. This field is\nverified against that session ID to prevent session fixation attacks.\nRequired if the user is signing in with an authorization response from a\nprevious CreateAuthUri authorization request.",
+          "description": "The session ID returned from a previous CreateAuthUri call. This field is verified against that session ID to prevent session fixation attacks. Required if the user is signing in with an authorization response from a previous CreateAuthUri authorization request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3466,7 +3640,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the Identity Platform tenant the user is signing in to. If not\nset, the user will sign in to the default Identity Platform project.",
+          "description": "The ID of the Identity Platform tenant the user is signing in to. If not set, the user will sign in to the default Identity Platform project.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3488,7 +3662,7 @@
       "enumDescriptions": [],
       "properties": {
         "context": {
-          "description": "The opaque string set in CreateAuthUri that is used to maintain contextual\ninformation between the authentication request and the callback from the\nIdP.",
+          "description": "The opaque string set in CreateAuthUri that is used to maintain contextual information between the authentication request and the callback from the IdP.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3528,7 +3702,7 @@
           "items": null
         },
         "emailRecycled": {
-          "description": "Whether or not there is an existing Identity Platform user account with the\nsame email address but linked to a different account at the same IdP. Only\npresent if the \"One account per email address\" setting is enabled and the\nemail address at the IdP is verified.",
+          "description": "Whether or not there is an existing Identity Platform user account with the same email address but linked to a different account at the same IdP. Only present if the \"One account per email address\" setting is enabled and the email address at the IdP is verified.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -3548,7 +3722,7 @@
           "items": null
         },
         "errorMessage": {
-          "description": "The error message returned if `return_idp_credential` is set to `true` and\neither the `FEDERATED_USER_ID_ALREADY_LINKED` or `EMAIL_EXISTS` error is\nencountered. This field's value is either\n`FEDERATED_USER_ID_ALREADY_LINKED` or `EMAIL_EXISTS`.",
+          "description": "The error message returned if `return_idp_credential` is set to `true` and either the `FEDERATED_USER_ID_ALREADY_LINKED` or `EMAIL_EXISTS` error is encountered. This field's value is either `FEDERATED_USER_ID_ALREADY_LINKED` or `EMAIL_EXISTS`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3618,7 +3792,7 @@
           "items": null
         },
         "isNewUser": {
-          "description": "Whether or not a new Identity Platform account was created for the\nauthenticated user.",
+          "description": "Whether or not a new Identity Platform account was created for the authenticated user.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -3658,7 +3832,7 @@
           "items": null
         },
         "localId": {
-          "description": "The ID of the authenticated Identity Platform user. Always present in the\nresponse.",
+          "description": "The ID of the authenticated Identity Platform user. Always present in the response.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3668,7 +3842,7 @@
           "items": null
         },
         "mfaInfo": {
-          "description": "Info on which multi-factor authentication providers are enabled for the\naccount. Present if the user needs to complete the sign-in using\nmulti-factor authentication.",
+          "description": "Info on which multi-factor authentication providers are enabled for the account. Present if the user needs to complete the sign-in using multi-factor authentication.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3680,7 +3854,7 @@
           }
         },
         "mfaPendingCredential": {
-          "description": "An opaque string that functions as proof that the user has successfully\npassed the first factor authentication.",
+          "description": "An opaque string that functions as proof that the user has successfully passed the first factor authentication.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3690,7 +3864,7 @@
           "items": null
         },
         "needConfirmation": {
-          "description": "Whether or not there is an existing Identity Platform user account with the\nsame email address as the current account signed in at the IdP, and the\naccount's email addresss is not verified at the IdP. The user will need to\nsign in to the existing Identity Platform account and then link the current\ncredential from the IdP to it. Only present if the \"One account per email\naddress\" setting is enabled.",
+          "description": "Whether or not there is an existing Identity Platform user account with the same email address as the current account signed in at the IdP, and the account's email addresss is not verified at the IdP. The user will need to sign in to the existing Identity Platform account and then link the current credential from the IdP to it. Only present if the \"One account per email address\" setting is enabled.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -3730,7 +3904,7 @@
           "items": null
         },
         "oauthAuthorizationCode": {
-          "description": "The OAuth 2.0 authorization code, if available. Only present for the Google\nprovider.",
+          "description": "The OAuth 2.0 authorization code, if available. Only present for the Google provider.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3760,7 +3934,7 @@
           "items": null
         },
         "oauthRefreshToken": {
-          "description": "The OAuth 2.0 refresh token from the IdP, if available and\n`return_refresh_token` is set to `true`.",
+          "description": "The OAuth 2.0 refresh token from the IdP, if available and `return_refresh_token` is set to `true`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3770,7 +3944,7 @@
           "items": null
         },
         "oauthTokenSecret": {
-          "description": "The OAuth 1.0 token secret from the IdP, if available. Only present for the\nTwitter provider.",
+          "description": "The OAuth 1.0 token secret from the IdP, if available. Only present for the Twitter provider.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3780,7 +3954,7 @@
           "items": null
         },
         "originalEmail": {
-          "description": "The main (top-level) email address of the user's Identity Platform account,\nif different from the email address at the IdP. Only present if the \"One\naccount per email address\" setting is enabled.",
+          "description": "The main (top-level) email address of the user's Identity Platform account, if different from the email address at the IdP. Only present if the \"One account per email address\" setting is enabled.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3790,7 +3964,7 @@
           "items": null
         },
         "pendingToken": {
-          "description": "An opaque string that can be used as a credential from the IdP the user is\nsigning into. The pending token obtained here can be set in a future\nSignInWithIdp request to sign the same user in with the IdP again.",
+          "description": "An opaque string that can be used as a credential from the IdP the user is signing into. The pending token obtained here can be set in a future SignInWithIdp request to sign the same user in with the IdP again.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3810,7 +3984,7 @@
           "items": null
         },
         "providerId": {
-          "description": "The provider ID of the IdP that the user is signing in to. Always present\nin the response.",
+          "description": "The provider ID of the IdP that the user is signing in to. Always present in the response.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3820,7 +3994,7 @@
           "items": null
         },
         "rawUserInfo": {
-          "description": "The stringified JSON response containing all the data corresponding to the\nuser's account at the IdP.",
+          "description": "The stringified JSON response containing all the data corresponding to the user's account at the IdP.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3840,7 +4014,7 @@
           "items": null
         },
         "screenName": {
-          "description": "The screen name for the user's account at the Twitter IdP or the login name\nfor the user's account at the Github IdP.",
+          "description": "The screen name for the user's account at the Twitter IdP or the login name for the user's account at the GitHub IdP.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3870,7 +4044,7 @@
           "items": null
         },
         "verifiedProvider": {
-          "description": "A list of provider IDs that the user can sign in to in order to resolve a\n`need_confirmation` error. Only present if `need_confirmation` is set to\n`true`.",
+          "description": "A list of provider IDs that the user can sign in to in order to resolve a `need_confirmation` error. Only present if `need_confirmation` is set to `true`.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -3910,7 +4084,7 @@
           "items": null
         },
         "captchaResponse": {
-          "description": "The response from a reCaptcha challenge. A recaptcha response is required\nwhen the service detects possible abuse activity.",
+          "description": "The reCAPTCHA token provided by the reCAPTCHA client-side integration. reCAPTCHA Enterprise uses it for risk assessment. Required when reCAPTCHA Enterprise is enabled.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3930,7 +4104,7 @@
           "items": null
         },
         "email": {
-          "description": "Required. The email the user is signing in with. The length of email\nshould be less than 256 characters and in the format of `name@domain.tld`.\nThe email should also match the\n[RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production.",
+          "description": "Required. The email the user is signing in with. The length of email should be less than 256 characters and in the format of `name@domain.tld`. The email should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3990,7 +4164,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the Identity Platform tenant the user is signing in to. If not\nset, the user will sign in to the default Identity Platform instance in the\nproject.",
+          "description": "The ID of the Identity Platform tenant the user is signing in to. If not set, the user will sign in to the default Identity Platform instance in the project.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4072,7 +4246,7 @@
           "items": null
         },
         "mfaInfo": {
-          "description": "Info on which multi-factor authentication providers are enabled for the\naccount. Present if the user needs to complete the sign-in using\nmulti-factor authentication.",
+          "description": "Info on which multi-factor authentication providers are enabled for the account. Present if the user needs to complete the sign-in using multi-factor authentication.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -4084,7 +4258,7 @@
           }
         },
         "mfaPendingCredential": {
-          "description": "An opaque string that functions as proof that the user has successfully\npassed the first factor authentication.",
+          "description": "An opaque string that functions as proof that the user has successfully passed the first factor authentication.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4176,7 +4350,7 @@
           "items": null
         },
         "idToken": {
-          "description": "A valid ID token for an Identity Platform account. If passed, this request\nwill link the phone number to the user represented by this ID token if the\nphone number is not in use, or will reauthenticate the user if the phone\nnumber is already linked to the user.",
+          "description": "A valid ID token for an Identity Platform account. If passed, this request will link the phone number to the user represented by this ID token if the phone number is not in use, or will reauthenticate the user if the phone number is already linked to the user.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4208,7 +4382,7 @@
           "items": null
         },
         "phoneNumber": {
-          "description": "The user's phone number to sign in with. This is necessary in the case of\nuing a temporary proof, in which case it must match the phone number that\nwas authenticated in the request that generated the temporary proof.\nThis field is ignored if a session info is passed.",
+          "description": "The user's phone number to sign in with. This is necessary in the case of uing a temporary proof, in which case it must match the phone number that was authenticated in the request that generated the temporary proof. This field is ignored if a session info is passed.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4218,7 +4392,7 @@
           "items": null
         },
         "sessionInfo": {
-          "description": "Encrypted session information from the response of\nsendVerificationCode. In the case of\nauthenticating with an SMS code this must be specified, but in the case of\nusing a temporary proof it can be unspecified.",
+          "description": "Encrypted session information from the response of sendVerificationCode. In the case of authenticating with an SMS code this must be specified, but in the case of using a temporary proof it can be unspecified.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4228,7 +4402,7 @@
           "items": null
         },
         "temporaryProof": {
-          "description": "A proof of the phone number verification, provided from a previous\nsignInWithPhoneNumber request. If this\nis passed, the caller must also pass in the phone_number field the phone\nnumber that was verified in the previous request.",
+          "description": "A proof of the phone number verification, provided from a previous signInWithPhoneNumber request. If this is passed, the caller must also pass in the phone_number field the phone number that was verified in the previous request.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4238,7 +4412,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the Identity Platform tenant the user is signing in to. If not\nset, the user will sign in to the default Identity Platform project.",
+          "description": "The ID of the Identity Platform tenant the user is signing in to. If not set, the user will sign in to the default Identity Platform project.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4300,7 +4474,7 @@
           "items": null
         },
         "localId": {
-          "description": "The id of the authenticated user. Present in the case of a\nsuccessful authentication. In the case when the phone could be verified but\nthe account operation could not be performed, a temporary proof will be\nreturned instead.",
+          "description": "The id of the authenticated user. Present in the case of a successful authentication. In the case when the phone could be verified but the account operation could not be performed, a temporary proof will be returned instead.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4330,7 +4504,7 @@
           "items": null
         },
         "temporaryProof": {
-          "description": "A proof of the phone number verification, provided if a phone\nauthentication is successful but the user operation fails. This happens\nwhen the request tries to link a phone number to a user with an ID\ntoken or reauthenticate with an ID token but the phone number is linked to\na different user.",
+          "description": "A proof of the phone number verification, provided if a phone authentication is successful but the user operation fails. This happens when the request tries to link a phone number to a user with an ID token or reauthenticate with an ID token but the phone number is linked to a different user.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4392,7 +4566,7 @@
           "items": null
         },
         "captchaResponse": {
-          "description": "The response from a reCaptcha challenge. A reCaptcha response is required\nwhen the service detects potential abuse activity.",
+          "description": "The reCAPTCHA token provided by the reCAPTCHA client-side integration. reCAPTCHA Enterprise uses it for assessment. Required when reCAPTCHA enterprise is enabled.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4402,7 +4576,7 @@
           "items": null
         },
         "disabled": {
-          "description": "Whether the user will be disabled upon creation.  Disabled accounts are\ninaccessible except for requests bearing a Google OAuth2 credential with\nproper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "Whether the user will be disabled upon creation. Disabled accounts are inaccessible except for requests bearing a Google OAuth2 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -4422,7 +4596,7 @@
           "items": null
         },
         "email": {
-          "description": "The email to assign to the created user. The length of the email should be\nless than 256 characters and in the format of `name@domain.tld`. The email\nshould also match the [RFC 822](https://tools.ietf.org/html/rfc822)\naddr-spec production. An anonymous user will be created if not provided.",
+          "description": "The email to assign to the created user. The length of the email should be less than 256 characters and in the format of `name@domain.tld`. The email should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec production. An anonymous user will be created if not provided.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4432,7 +4606,7 @@
           "items": null
         },
         "emailVerified": {
-          "description": "Whether the user's email is verified. Specifying this field requires a\nGoogle OAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "Whether the user's email is verified. Specifying this field requires a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -4442,7 +4616,7 @@
           "items": null
         },
         "idToken": {
-          "description": "A valid ID token for an Identity Platform user. If set, this request\nwill link the authentication credential to the user represented by this ID\ntoken. For a non-admin request, both the `email` and `password` fields must\nbe set. For an admin request, `local_id` must not be set.",
+          "description": "A valid ID token for an Identity Platform user. If set, this request will link the authentication credential to the user represented by this ID token. For a non-admin request, both the `email` and `password` fields must be set. For an admin request, `local_id` must not be set.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4462,7 +4636,7 @@
           "items": null
         },
         "localId": {
-          "description": "The ID of the user to create. The ID must be unique within the project that\nthe user is being created under. Specifying this field requires a Google\nOAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The ID of the user to create. The ID must be unique within the project that the user is being created under. Specifying this field requires a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4484,7 +4658,7 @@
           }
         },
         "password": {
-          "description": "The password to assign to the created user. The password must be\nbe at least 6 characters long. If set, the `email` field must also be set.",
+          "description": "The password to assign to the created user. The password must be be at least 6 characters long. If set, the `email` field must also be set.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4494,7 +4668,7 @@
           "items": null
         },
         "phoneNumber": {
-          "description": "The phone number of the user to create. Specifying this field requires a\nGoogle OAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The phone number of the user to create. Specifying this field requires a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4514,7 +4688,7 @@
           "items": null
         },
         "targetProjectId": {
-          "description": "The project ID of the project which the user should belong to. Specifying\nthis field requires a Google OAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).\nIf this is not set, the target project is inferred from the scope\nassociated to the Bearer access token.",
+          "description": "The project ID of the project which the user should belong to. Specifying this field requires a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control). If this is not set, the target project is inferred from the scope associated to the Bearer access token.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4524,7 +4698,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "The ID of the Identity Platform tenant to create a user under. If not set,\nthe user will be created under the default Identity Platform project.",
+          "description": "The ID of the Identity Platform tenant to create a user under. If not set, the user will be created under the default Identity Platform project.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4576,7 +4750,7 @@
           "items": null
         },
         "idToken": {
-          "description": "An Identity Platform ID token for the created user. This field is only\nset for non-admin requests.",
+          "description": "An Identity Platform ID token for the created user. This field is only set for non-admin requests.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4606,7 +4780,7 @@
           "items": null
         },
         "refreshToken": {
-          "description": "An Identity Platform refresh token for the created user. This field is only\nset for non-admin requests.",
+          "description": "An Identity Platform refresh token for the created user. This field is only set for non-admin requests.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4628,7 +4802,7 @@
       "enumDescriptions": [],
       "properties": {
         "email": {
-          "description": "A case insensitive string that the account's email should match. Only\none of `email`, `phone_number`, or `user_id` should be specified in a\nSqlExpression.\nIf more than one is specified, only the first (in that order) will be\napplied.",
+          "description": "A case insensitive string that the account's email should match. Only one of `email`, `phone_number`, or `user_id` should be specified in a SqlExpression. If more than one is specified, only the first (in that order) will be applied.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4638,7 +4812,7 @@
           "items": null
         },
         "phoneNumber": {
-          "description": "A string that the account's phone number should match. Only one of\n`email`, `phone_number`, or `user_id` should be specified in a\nSqlExpression.\nIf more than one is specified, only the first (in that order) will be\napplied.",
+          "description": "A string that the account's phone number should match. Only one of `email`, `phone_number`, or `user_id` should be specified in a SqlExpression. If more than one is specified, only the first (in that order) will be applied.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4648,7 +4822,7 @@
           "items": null
         },
         "userId": {
-          "description": "A string that the account's local ID should match. Only one of\n`email`, `phone_number`, or `user_id` should be specified in a\nSqlExpression\nIf more than one is specified, only the first (in that order) will be\napplied.",
+          "description": "A string that the account's local ID should match. Only one of `email`, `phone_number`, or `user_id` should be specified in a SqlExpression If more than one is specified, only the first (in that order) will be applied.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4670,7 +4844,7 @@
       "enumDescriptions": [],
       "properties": {
         "allowOverwrite": {
-          "description": "Whether to overwrite an existing account in Identity Platform with a\nmatching `local_id` in the request. If true, the existing account will be\noverwritten. If false, an error will be returned.",
+          "description": "Whether to overwrite an existing account in Identity Platform with a matching `local_id` in the request. If true, the existing account will be overwritten. If false, an error will be returned.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -4679,8 +4853,12 @@
           "additionalProperties": null,
           "items": null
         },
+        "argon2Parameters": {
+          "description": "The parameters for Argon2 hashing algorithm.",
+          "$ref": "GoogleCloudIdentitytoolkitV1Argon2Parameters"
+        },
         "blockSize": {
-          "description": "The block size parameter used by the STANDARD_SCRYPT hashing function. This\nparameter, along with parallelization and cpu_mem_cost help tune the\nresources needed to hash a password, and should be tuned as processor\nspeeds and memory technologies advance.",
+          "description": "The block size parameter used by the STANDARD_SCRYPT hashing function. This parameter, along with parallelization and cpu_mem_cost help tune the resources needed to hash a password, and should be tuned as processor speeds and memory technologies advance.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4690,7 +4868,7 @@
           "items": null
         },
         "cpuMemCost": {
-          "description": "The CPU memory cost parameter to be used by the STANDARD_SCRYPT hashing\nfunction. This parameter, along with block_size and cpu_mem_cost help tune\nthe resources needed to hash a password, and should be tuned as processor\nspeeds and memory technologies advance.",
+          "description": "The CPU memory cost parameter to be used by the STANDARD_SCRYPT hashing function. This parameter, along with block_size and cpu_mem_cost help tune the resources needed to hash a password, and should be tuned as processor speeds and memory technologies advance.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4700,7 +4878,7 @@
           "items": null
         },
         "delegatedProjectNumber": {
-          "description": "If true, the service will do the following list of checks before an account\nis uploaded:\n* Duplicate emails\n* Duplicate federated IDs\n* Federated ID provider validation\nIf the duplication exists within the list of accounts to be uploaded, it\nwill prevent the entire list from being uploaded. If the email or federated\nID is a duplicate of a user already within the project/tenant, the account\nwill not be uploaded, but the rest of the accounts will be unaffected.\nIf false, these checks will be skipped.",
+          "description": null,
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -4710,7 +4888,7 @@
           "items": null
         },
         "dkLen": {
-          "description": "The desired key length for the STANDARD_SCRYPT hashing function.  Must be\nat least 1.",
+          "description": "The desired key length for the STANDARD_SCRYPT hashing function. Must be at least 1.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4720,7 +4898,7 @@
           "items": null
         },
         "hashAlgorithm": {
-          "description": "Required. The hashing function used to hash the account passwords. Must be one of the\nfollowing:\n* HMAC_SHA256\n* HMAC_SHA1\n* HMAC_MD5\n* SCRYPT\n* PBKDF_SHA1\n* MD5\n* HMAC_SHA512\n* SHA1\n* BCRYPT\n* PBKDF2_SHA256\n* SHA256\n* SHA512\n* STANDARD_SCRYPT",
+          "description": "Required. The hashing function used to hash the account passwords. Must be one of the following: * HMAC_SHA256 * HMAC_SHA1 * HMAC_MD5 * SCRYPT * PBKDF_SHA1 * MD5 * HMAC_SHA512 * SHA1 * BCRYPT * PBKDF2_SHA256 * SHA256 * SHA512 * STANDARD_SCRYPT * ARGON2",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4730,7 +4908,7 @@
           "items": null
         },
         "memoryCost": {
-          "description": "Memory cost for hash calculation. Only required when the hashing function\nis SCRYPT.",
+          "description": "Memory cost for hash calculation. Only required when the hashing function is SCRYPT.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4740,7 +4918,7 @@
           "items": null
         },
         "parallelization": {
-          "description": "The parallelization cost parameter to be used by the STANDARD_SCRYPT\nhashing function. This parameter, along with block_size and cpu_mem_cost\nhelp tune the resources needed to hash a password, and should be tuned as\nprocessor speeds and memory technologies advance.",
+          "description": "The parallelization cost parameter to be used by the STANDARD_SCRYPT hashing function. This parameter, along with block_size and cpu_mem_cost help tune the resources needed to hash a password, and should be tuned as processor speeds and memory technologies advance.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4768,7 +4946,7 @@
           "items": null
         },
         "rounds": {
-          "description": "The number of rounds used for hash calculation. Only required for the\nfollowing hashing functions:\n* MD5\n* SHA1\n* SHA256\n* SHA512\n* PBKDF_SHA1\n* PBKDF2_SHA256\n* SCRYPT",
+          "description": "The number of rounds used for hash calculation. Only required for the following hashing functions: * MD5 * SHA1 * SHA256 * SHA512 * PBKDF_SHA1 * PBKDF2_SHA256 * SCRYPT",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -4778,7 +4956,7 @@
           "items": null
         },
         "saltSeparator": {
-          "description": "One or more bytes to be inserted between the salt and plain text password.\nFor stronger security, this should be a single non-printable character.",
+          "description": "One or more bytes to be inserted between the salt and plain text password. For stronger security, this should be a single non-printable character.",
           "type": "string",
           "format": "byte",
           "enum": [],
@@ -4788,7 +4966,7 @@
           "items": null
         },
         "sanityCheck": {
-          "description": null,
+          "description": "If true, the service will do the following list of checks before an account is uploaded: * Duplicate emails * Duplicate federated IDs * Federated ID provider validation If the duplication exists within the list of accounts to be uploaded, it will prevent the entire list from being uploaded. If the email or federated ID is a duplicate of a user already within the project/tenant, the account will not be uploaded, but the rest of the accounts will be unaffected. If false, these checks will be skipped.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -4798,7 +4976,7 @@
           "items": null
         },
         "signerKey": {
-          "description": "The signer key used to hash the password. Required for the following\nhashing functions:\n* SCRYPT,\n* HMAC_MD5,\n* HMAC_SHA1,\n* HMAC_SHA256,\n* HMAC_SHA512",
+          "description": "The signer key used to hash the password. Required for the following hashing functions: * SCRYPT, * HMAC_MD5, * HMAC_SHA1, * HMAC_SHA256, * HMAC_SHA512",
           "type": "string",
           "format": "byte",
           "enum": [],
@@ -4818,7 +4996,7 @@
           "items": null
         },
         "users": {
-          "description": "A list of accounts to upload.",
+          "description": "A list of accounts to upload. `local_id` is required for each user; everything else is optional.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -4886,7 +5064,7 @@
           "items": null
         },
         "customAttributes": {
-          "description": "Custom claims to be added to any ID tokens minted for the account. Should\nbe at most 1,000 characters in length and in valid JSON format.",
+          "description": "Custom claims to be added to any ID tokens minted for the account. Should be at most 1,000 characters in length and in valid JSON format.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4906,7 +5084,7 @@
           "items": null
         },
         "dateOfBirth": {
-          "description": "Output only. The date of birth set for the account. This account attribute is not used\nby Identity Platform. It is available for informational purposes only.",
+          "description": "Output only. The date of birth set for the account. This account attribute is not used by Identity Platform. It is available for informational purposes only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4916,7 +5094,7 @@
           "items": null
         },
         "disabled": {
-          "description": "Whether the account is disabled. Disabled accounts are inaccessible except\nfor requests bearing a Google OAuth2 credential with proper permissions.",
+          "description": "Whether the account is disabled. Disabled accounts are inaccessible except for requests bearing a Google OAuth2 credential with proper permissions.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -4926,7 +5104,7 @@
           "items": null
         },
         "displayName": {
-          "description": "The display name of the account. This account attribute is not used by\nIdentity Platform. It is available for informational purposes only.",
+          "description": "The display name of the account. This account attribute is not used by Identity Platform. It is available for informational purposes only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4936,7 +5114,7 @@
           "items": null
         },
         "email": {
-          "description": "The account's email address. The length of the email should be less than\n256 characters and in the format of `name@domain.tld`. The email should\nalso match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec.",
+          "description": "The account's email address. The length of the email should be less than 256 characters and in the format of `name@domain.tld`. The email should also match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4966,7 +5144,7 @@
           "items": null
         },
         "initialEmail": {
-          "description": "The first email address associated with this account. The account's initial\nemail cannot be changed once set and is used to recover access to this\naccount if lost via the RECOVER_EMAIL flow in GetOobCode. Should match the\n[RFC 822](https://tools.ietf.org/html/rfc822) addr-spec.",
+          "description": "The first email address associated with this account. The account's initial email cannot be changed once set and is used to recover access to this account if lost via the RECOVER_EMAIL flow in GetOobCode. Should match the [RFC 822](https://tools.ietf.org/html/rfc822) addr-spec.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -4976,7 +5154,7 @@
           "items": null
         },
         "language": {
-          "description": "Output only. The language preference of the account. This account attribute is not used\nby Identity Platform. It is available for informational purposes only.",
+          "description": "Output only. The language preference of the account. This account attribute is not used by Identity Platform. It is available for informational purposes only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5016,7 +5194,7 @@
           "items": null
         },
         "mfaInfo": {
-          "description": "Information on which multi-factor authentication providers are enabled for\nthis account.",
+          "description": "Information on which multi-factor authentication providers are enabled for this account.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -5028,7 +5206,7 @@
           }
         },
         "passwordHash": {
-          "description": "The account's hashed password. Only accessible by requests bearing a Google\nOAuth2 credential with proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+          "description": "The account's hashed password. Only accessible by requests bearing a Google OAuth2 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
           "type": "string",
           "format": "byte",
           "enum": [],
@@ -5038,7 +5216,7 @@
           "items": null
         },
         "passwordUpdatedAt": {
-          "description": "The timestamp, in milliseconds from the epoch of 1970-01-01T00:00:00Z, when\nthe account's password was last updated.",
+          "description": "The timestamp, in milliseconds from the epoch of 1970-01-01T00:00:00Z, when the account's password was last updated.",
           "type": "number",
           "format": "double",
           "enum": [],
@@ -5058,7 +5236,7 @@
           "items": null
         },
         "photoUrl": {
-          "description": "The URL of the account's profile photo. This account attribute is not used\nby Identity Platform. It is available for informational purposes only.",
+          "description": "The URL of the account's profile photo. This account attribute is not used by Identity Platform. It is available for informational purposes only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5080,7 +5258,7 @@
           }
         },
         "rawPassword": {
-          "description": "Input only. Plain text password used to update a account's password. This field is\nonly ever used as input in a request. Identity Platform uses\ncryptographically secure hashing when managing passwords and will never\nstore or transmit a user's password in plain text.",
+          "description": "Input only. Plain text password used to update a account's password. This field is only ever used as input in a request. Identity Platform uses cryptographically secure hashing when managing passwords and will never store or transmit a user's password in plain text.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5090,7 +5268,7 @@
           "items": null
         },
         "salt": {
-          "description": "The account's password salt. Only accessible by requests bearing a Google\nOAuth2 credential with proper permissions.",
+          "description": "The account's password salt. Only accessible by requests bearing a Google OAuth2 credential with proper permissions.",
           "type": "string",
           "format": "byte",
           "enum": [],
@@ -5100,7 +5278,7 @@
           "items": null
         },
         "screenName": {
-          "description": "Output only. This account's screen name at Twitter or login name at Github.",
+          "description": "Output only. This account's screen name at Twitter or login name at GitHub.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5110,7 +5288,7 @@
           "items": null
         },
         "tenantId": {
-          "description": "ID of the tenant this account belongs to. Only set if this account belongs\nto a tenant.",
+          "description": "ID of the tenant this account belongs to. Only set if this account belongs to a tenant.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5120,7 +5298,7 @@
           "items": null
         },
         "timeZone": {
-          "description": "Output only. The time zone preference of the account. This account attribute is not used\nby Identity Platform. It is available for informational purposes only.",
+          "description": "Output only. The time zone preference of the account. This account attribute is not used by Identity Platform. It is available for informational purposes only.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5130,7 +5308,7 @@
           "items": null
         },
         "validSince": {
-          "description": "Oldest timestamp, in seconds since epoch, that an ID token should be\nconsidered valid. All ID tokens issued before this time are considered\ninvalid.",
+          "description": "Oldest timestamp, in seconds since epoch, that an ID token should be considered valid. All ID tokens issued before this time are considered invalid.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -5140,7 +5318,7 @@
           "items": null
         },
         "version": {
-          "description": "The version of the account's password. Only accessible by requests bearing\na Google OAuth2 credential with proper permissions.",
+          "description": "The version of the account's password. Only accessible by requests bearing a Google OAuth2 credential with proper permissions.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -5162,7 +5340,7 @@
       "enumDescriptions": [],
       "properties": {
         "appToken": {
-          "description": "A device token that the iOS client gets after registering to APNs (Apple\nPush Notification service).",
+          "description": "A device token that the iOS client gets after registering to APNs (Apple Push Notification service).",
           "type": "string",
           "format": null,
           "enum": [],
@@ -5172,7 +5350,7 @@
           "items": null
         },
         "isSandbox": {
-          "description": "Whether the app token is in the iOS sandbox. If false, the app token is in\nthe production environment.",
+          "description": "Whether the app token is in the iOS sandbox. If false, the app token is in the production environment.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -5204,7 +5382,7 @@
           "items": null
         },
         "suggestedTimeout": {
-          "description": "Suggested time that the client should wait in seconds for delivery of the\npush notification.",
+          "description": "Suggested time that the client should wait in seconds for delivery of the push notification.",
           "type": "string",
           "format": "int64",
           "enum": [],
@@ -5226,7 +5404,7 @@
           "id": "identitytoolkit.accounts.createAuthUri",
           "path": "v1/accounts:createAuthUri",
           "httpMethod": "POST",
-          "description": "If an email identifier is specified, checks and returns if any user account\nis registered with the email. If there is a registered account, fetches all\nproviders associated with the account's email.\n\nIf the provider ID of an Identity Provider (IdP) is specified, creates an\nauthorization URI for the IdP. The user can be directed to this URI to sign\nin with the IdP.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "If an email identifier is specified, checks and returns if any user account is registered with the email. If there is a registered account, fetches all providers associated with the account's email. If the provider ID of an Identity Provider (IdP) is specified, creates an authorization URI for the IdP. The user can be directed to this URI to sign in with the IdP. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5292,7 +5470,7 @@
           "id": "identitytoolkit.accounts.lookup",
           "path": "v1/accounts:lookup",
           "httpMethod": "POST",
-          "description": "Gets account information for all matched accounts. For an end user request,\nretrieves the account of the end user. For an admin request with Google\nOAuth 2.0 credential, retrieves one or multiple account(s) with matching\ncriteria.",
+          "description": "Gets account information for all matched accounts. For an end user request, retrieves the account of the end user. For an admin request with Google OAuth 2.0 credential, retrieves one or multiple account(s) with matching criteria.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5314,7 +5492,7 @@
           "id": "identitytoolkit.accounts.resetPassword",
           "path": "v1/accounts:resetPassword",
           "httpMethod": "POST",
-          "description": "Resets the password of an account either using an out-of-band code\ngenerated by sendOobCode or by specifying the\nemail and password of the account to be modified. Can also check the\npurpose of an out-of-band code without consuming it.",
+          "description": "Resets the password of an account either using an out-of-band code generated by sendOobCode or by specifying the email and password of the account to be modified. Can also check the purpose of an out-of-band code without consuming it.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5336,7 +5514,7 @@
           "id": "identitytoolkit.accounts.sendOobCode",
           "path": "v1/accounts:sendOobCode",
           "httpMethod": "POST",
-          "description": "Sends an out-of-band confirmation code for an account. Requests from a\nauthenticated request can optionally return a link including the OOB code\ninstead of sending it.",
+          "description": "Sends an out-of-band confirmation code for an account. Requests from a authenticated request can optionally return a link including the OOB code instead of sending it.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5358,7 +5536,7 @@
           "id": "identitytoolkit.accounts.sendVerificationCode",
           "path": "v1/accounts:sendVerificationCode",
           "httpMethod": "POST",
-          "description": "Sends a SMS verification code for phone number sign-in.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Sends a SMS verification code for phone number sign-in. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5380,7 +5558,7 @@
           "id": "identitytoolkit.accounts.signInWithCustomToken",
           "path": "v1/accounts:signInWithCustomToken",
           "httpMethod": "POST",
-          "description": "Signs in or signs up a user by exchanging a custom Auth token. Upon a\nsuccessful sign-in or sign-up, a new Identity Platform ID token and refresh\ntoken are issued for the user.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Signs in or signs up a user by exchanging a custom Auth token. Upon a successful sign-in or sign-up, a new Identity Platform ID token and refresh token are issued for the user. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5402,7 +5580,7 @@
           "id": "identitytoolkit.accounts.signInWithEmailLink",
           "path": "v1/accounts:signInWithEmailLink",
           "httpMethod": "POST",
-          "description": "Signs in or signs up a user with a out-of-band code from an email link. If\na user does not exist with the given email address, a user record will be\ncreated. If the sign-in succeeds, an Identity Platform ID and refresh token\nare issued for the authenticated user.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Signs in or signs up a user with a out-of-band code from an email link. If a user does not exist with the given email address, a user record will be created. If the sign-in succeeds, an Identity Platform ID and refresh token are issued for the authenticated user. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5424,7 +5602,7 @@
           "id": "identitytoolkit.accounts.signInWithGameCenter",
           "path": "v1/accounts:signInWithGameCenter",
           "httpMethod": "POST",
-          "description": "Signs in or signs up a user with iOS Game Center credentials. If the\nsign-in succeeds, a new Identity Platform ID token and refresh token are\nissued for the authenticated user. The bundle ID is required in the request\nheader as `x-ios-bundle-identifier`.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Signs in or signs up a user with iOS Game Center credentials. If the sign-in succeeds, a new Identity Platform ID token and refresh token are issued for the authenticated user. The bundle ID is required in the request header as `x-ios-bundle-identifier`. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5446,7 +5624,7 @@
           "id": "identitytoolkit.accounts.signInWithIdp",
           "path": "v1/accounts:signInWithIdp",
           "httpMethod": "POST",
-          "description": "Signs in or signs up a user using credentials from an Identity Provider\n(IdP). This is done by manually providing an IdP credential, or by\nproviding the authorization response obtained via the authorization\nrequest from CreateAuthUri. If the sign-in succeeds, a new Identity\nPlatform ID token and refresh token are issued for the authenticated user.\n\nA new Identity Platform user account will be created if the user has not\npreviously signed in to the IdP with the same account. In addition, when\nthe \"One account per email address\" setting is enabled, there should not\nbe an existing Identity Platform user account with the same email address\nfor a new user account to be created.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Signs in or signs up a user using credentials from an Identity Provider (IdP). This is done by manually providing an IdP credential, or by providing the authorization response obtained via the authorization request from CreateAuthUri. If the sign-in succeeds, a new Identity Platform ID token and refresh token are issued for the authenticated user. A new Identity Platform user account will be created if the user has not previously signed in to the IdP with the same account. In addition, when the \"One account per email address\" setting is enabled, there should not be an existing Identity Platform user account with the same email address for a new user account to be created. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5468,7 +5646,7 @@
           "id": "identitytoolkit.accounts.signInWithPassword",
           "path": "v1/accounts:signInWithPassword",
           "httpMethod": "POST",
-          "description": "Signs in a user with email and password. If the sign-in succeeds, a new\nIdentity Platform ID token and refresh token are issued for the\nauthenticated user.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Signs in a user with email and password. If the sign-in succeeds, a new Identity Platform ID token and refresh token are issued for the authenticated user. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5490,7 +5668,7 @@
           "id": "identitytoolkit.accounts.signInWithPhoneNumber",
           "path": "v1/accounts:signInWithPhoneNumber",
           "httpMethod": "POST",
-          "description": "Completes a phone number authentication attempt. If a user already\nexists with the given phone number, an ID token is minted for that user.\nOtherwise, a new user is created and associated with the phone number.\nThis method may also be used to link a phone number to an existing user.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Completes a phone number authentication attempt. If a user already exists with the given phone number, an ID token is minted for that user. Otherwise, a new user is created and associated with the phone number. This method may also be used to link a phone number to an existing user. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5512,7 +5690,7 @@
           "id": "identitytoolkit.accounts.signUp",
           "path": "v1/accounts:signUp",
           "httpMethod": "POST",
-          "description": "Signs up a new email and password user or anonymous user, or upgrades an\nanonymous user to email and password. For an admin request with a Google\nOAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control),\ncreates a new anonymous, email and password, or phone number user.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. For an admin request with a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control), creates a new anonymous, email and password, or phone number user. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5534,7 +5712,7 @@
           "id": "identitytoolkit.accounts.update",
           "path": "v1/accounts:update",
           "httpMethod": "POST",
-          "description": "Updates account-related information for the specified user by setting\nspecific fields or applying action codes. Requests from administrators\nand end users are supported.",
+          "description": "Updates account-related information for the specified user by setting specific fields or applying action codes. Requests from administrators and end users are supported.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5556,7 +5734,7 @@
           "id": "identitytoolkit.accounts.verifyIosClient",
           "path": "v1/accounts:verifyIosClient",
           "httpMethod": "POST",
-          "description": "Verifies an iOS client is a real iOS device. If the request is valid, a\nreciept will be sent in the response and a secret will be sent via\nApple Push Notification Service. The client should send both of them back\nto certain Identity Platform APIs in a later call (for example,\n/accounts:sendVerificationCode), in order to verify the client. The bundle\nID is required in the request header as `x-ios-bundle-identifier`.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Verifies an iOS client is a real iOS device. If the request is valid, a receipt will be sent in the response and a secret will be sent via Apple Push Notification Service. The client should send both of them back to certain Identity Platform APIs in a later call (for example, /accounts:sendVerificationCode), in order to verify the client. The bundle ID is required in the request header as `x-ios-bundle-identifier`. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {},
           "parameterOrder": [],
           "request": {
@@ -5585,10 +5763,10 @@
               "id": "identitytoolkit.projects.accounts.batchCreate",
               "path": "v1/projects/{+targetProjectId}/accounts:batchCreate",
               "httpMethod": "POST",
-              "description": "Uploads multiple accounts into the Google Cloud project. If there is a\nproblem uploading one or more of the accounts, the rest will be uploaded,\nand a list of the errors will be returned. To use this method requires a\nGoogle OAuth 2.0 credential with proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+              "description": "Uploads multiple accounts into the Google Cloud project. If there is a problem uploading one or more of the accounts, the rest will be uploaded, and a list of the errors will be returned. To use this method requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
               "parameters": {
                 "targetProjectId": {
-                  "description": "The Project ID of the Identity Platform project which the account belongs\nto.",
+                  "description": "The Project ID of the Identity Platform project which the account belongs to.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5625,10 +5803,10 @@
               "id": "identitytoolkit.projects.accounts.batchDelete",
               "path": "v1/projects/{+targetProjectId}/accounts:batchDelete",
               "httpMethod": "POST",
-              "description": "Batch deletes multiple accounts. For accounts that fail to be deleted,\nerror info is contained in the response. The method ignores accounts that\ndo not exist or are duplicated in the request.\n\nThis method requires a Google OAuth 2.0 credential with proper permissions.\n(https://cloud.google.com/identity-platform/docs/access-control)",
+              "description": "Batch deletes multiple accounts. For accounts that fail to be deleted, error info is contained in the response. The method ignores accounts that do not exist or are duplicated in the request. This method requires a Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control).",
               "parameters": {
                 "targetProjectId": {
-                  "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the\nIdentity Platform tenant belongs to. Otherwise, the ID of the Google Cloud\nproject that accounts belong to.",
+                  "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the Identity Platform tenant belongs to. Otherwise, the ID of the Google Cloud project that accounts belong to.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5665,7 +5843,7 @@
               "id": "identitytoolkit.projects.accounts.batchGet",
               "path": "v1/projects/{+targetProjectId}/accounts:batchGet",
               "httpMethod": "GET",
-              "description": "Download account information for all accounts on the project in a paginated\nmanner. To use this method requires a Google OAuth 2.0 credential with\nproper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control)..\nFurthermore, additional permissions are needed to get password hash,\npassword salt, and password version from accounts; otherwise these fields\nare redacted.",
+              "description": "Download account information for all accounts on the project in a paginated manner. To use this method requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).. Furthermore, additional permissions are needed to get password hash, password salt, and password version from accounts; otherwise these fields are redacted.",
               "parameters": {
                 "delegatedProjectNumber": {
                   "description": null,
@@ -5682,7 +5860,7 @@
                   "repeated": false
                 },
                 "maxResults": {
-                  "description": "The maximum number of results to return. Must be at least 1 and no greater\nthan 1000.  By default, it is 20.",
+                  "description": "The maximum number of results to return. Must be at least 1 and no greater than 1000. By default, it is 20.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -5710,7 +5888,7 @@
                   "repeated": false
                 },
                 "targetProjectId": {
-                  "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the\nIdentity Platform tenant belongs to. Otherwise, the ID of the Google Cloud\nproject that the accounts belong to.",
+                  "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the Identity Platform tenant belongs to. Otherwise, the ID of the Google Cloud project that the accounts belong to.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5724,7 +5902,7 @@
                   "repeated": false
                 },
                 "tenantId": {
-                  "description": "The ID of the Identity Platform tenant the accounts belongs to. If not\nspecified, accounts on the Identity Platform project are returned.",
+                  "description": "The ID of the Identity Platform tenant the accounts belongs to. If not specified, accounts on the Identity Platform project are returned.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -5762,7 +5940,7 @@
               "description": "Deletes a user's account.",
               "parameters": {
                 "targetProjectId": {
-                  "description": "The ID of the project which the account belongs to. Should only be\nspecified in authenticated requests that specify local_id of an account.",
+                  "description": "The ID of the project which the account belongs to. Should only be specified in authenticated requests that specify local_id of an account.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5798,10 +5976,10 @@
               "id": "identitytoolkit.projects.accounts.lookup",
               "path": "v1/projects/{+targetProjectId}/accounts:lookup",
               "httpMethod": "POST",
-              "description": "Gets account information for all matched accounts. For an end user request,\nretrieves the account of the end user. For an admin request with Google\nOAuth 2.0 credential, retrieves one or multiple account(s) with matching\ncriteria.",
+              "description": "Gets account information for all matched accounts. For an end user request, retrieves the account of the end user. For an admin request with Google OAuth 2.0 credential, retrieves one or multiple account(s) with matching criteria.",
               "parameters": {
                 "targetProjectId": {
-                  "description": "The ID of the Google Cloud project that the account or the Identity\nPlatform tenant specified by `tenant_id` belongs to. Should only be\nspecified by authenticated requests bearing a Google OAuth 2.0 credential\nwith proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+                  "description": "The ID of the Google Cloud project that the account or the Identity Platform tenant specified by `tenant_id` belongs to. Should only be specified by authenticated requests bearing a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5837,7 +6015,7 @@
               "id": "identitytoolkit.projects.accounts.query",
               "path": "v1/projects/{+targetProjectId}/accounts:query",
               "httpMethod": "POST",
-              "description": "Looks up user accounts within a project or a tenant based on conditions\nin the request.",
+              "description": "Looks up user accounts within a project or a tenant based on conditions in the request.",
               "parameters": {
                 "targetProjectId": {
                   "description": "The ID of the project to which the result is scoped.",
@@ -5877,10 +6055,10 @@
               "id": "identitytoolkit.projects.accounts.sendOobCode",
               "path": "v1/projects/{+targetProjectId}/accounts:sendOobCode",
               "httpMethod": "POST",
-              "description": "Sends an out-of-band confirmation code for an account. Requests from a\nauthenticated request can optionally return a link including the OOB code\ninstead of sending it.",
+              "description": "Sends an out-of-band confirmation code for an account. Requests from a authenticated request can optionally return a link including the OOB code instead of sending it.",
               "parameters": {
                 "targetProjectId": {
-                  "description": "The Project ID of the Identity Platform project which the account belongs\nto. To specify this field, it requires a Google OAuth 2.0 credential with\nproper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+                  "description": "The Project ID of the Identity Platform project which the account belongs to. To specify this field, it requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5916,10 +6094,10 @@
               "id": "identitytoolkit.projects.accounts.update",
               "path": "v1/projects/{+targetProjectId}/accounts:update",
               "httpMethod": "POST",
-              "description": "Updates account-related information for the specified user by setting\nspecific fields or applying action codes. Requests from administrators\nand end users are supported.",
+              "description": "Updates account-related information for the specified user by setting specific fields or applying action codes. Requests from administrators and end users are supported.",
               "parameters": {
                 "targetProjectId": {
-                  "description": "The project ID for the project that the account belongs to. Specifying this\nfield requires Google OAuth 2.0 credential with proper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).\nRequests from end users should pass an Identity Platform ID token instead.",
+                  "description": "The project ID for the project that the account belongs to. Specifying this field requires Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control). Requests from end users should pass an Identity Platform ID token instead.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -5962,10 +6140,10 @@
                   "id": "identitytoolkit.projects.tenants.accounts.batchCreate",
                   "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts:batchCreate",
                   "httpMethod": "POST",
-                  "description": "Uploads multiple accounts into the Google Cloud project. If there is a\nproblem uploading one or more of the accounts, the rest will be uploaded,\nand a list of the errors will be returned. To use this method requires a\nGoogle OAuth 2.0 credential with proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+                  "description": "Uploads multiple accounts into the Google Cloud project. If there is a problem uploading one or more of the accounts, the rest will be uploaded, and a list of the errors will be returned. To use this method requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
                   "parameters": {
                     "targetProjectId": {
-                      "description": "The Project ID of the Identity Platform project which the account belongs\nto.",
+                      "description": "The Project ID of the Identity Platform project which the account belongs to.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6017,10 +6195,10 @@
                   "id": "identitytoolkit.projects.tenants.accounts.batchDelete",
                   "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts:batchDelete",
                   "httpMethod": "POST",
-                  "description": "Batch deletes multiple accounts. For accounts that fail to be deleted,\nerror info is contained in the response. The method ignores accounts that\ndo not exist or are duplicated in the request.\n\nThis method requires a Google OAuth 2.0 credential with proper permissions.\n(https://cloud.google.com/identity-platform/docs/access-control)",
+                  "description": "Batch deletes multiple accounts. For accounts that fail to be deleted, error info is contained in the response. The method ignores accounts that do not exist or are duplicated in the request. This method requires a Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control).",
                   "parameters": {
                     "targetProjectId": {
-                      "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the\nIdentity Platform tenant belongs to. Otherwise, the ID of the Google Cloud\nproject that accounts belong to.",
+                      "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the Identity Platform tenant belongs to. Otherwise, the ID of the Google Cloud project that accounts belong to.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6034,7 +6212,7 @@
                       "repeated": false
                     },
                     "tenantId": {
-                      "description": "If the accounts belong to an Identity Platform tenant, the ID of the\ntenant. If the accounts belong to an default Identity Platform project, the\nfield is not needed.",
+                      "description": "If the accounts belong to an Identity Platform tenant, the ID of the tenant. If the accounts belong to an default Identity Platform project, the field is not needed.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6072,7 +6250,7 @@
                   "id": "identitytoolkit.projects.tenants.accounts.batchGet",
                   "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts:batchGet",
                   "httpMethod": "GET",
-                  "description": "Download account information for all accounts on the project in a paginated\nmanner. To use this method requires a Google OAuth 2.0 credential with\nproper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control)..\nFurthermore, additional permissions are needed to get password hash,\npassword salt, and password version from accounts; otherwise these fields\nare redacted.",
+                  "description": "Download account information for all accounts on the project in a paginated manner. To use this method requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).. Furthermore, additional permissions are needed to get password hash, password salt, and password version from accounts; otherwise these fields are redacted.",
                   "parameters": {
                     "delegatedProjectNumber": {
                       "description": null,
@@ -6089,7 +6267,7 @@
                       "repeated": false
                     },
                     "maxResults": {
-                      "description": "The maximum number of results to return. Must be at least 1 and no greater\nthan 1000.  By default, it is 20.",
+                      "description": "The maximum number of results to return. Must be at least 1 and no greater than 1000. By default, it is 20.",
                       "default": null,
                       "location": "query",
                       "required": false,
@@ -6117,7 +6295,7 @@
                       "repeated": false
                     },
                     "targetProjectId": {
-                      "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the\nIdentity Platform tenant belongs to. Otherwise, the ID of the Google Cloud\nproject that the accounts belong to.",
+                      "description": "If `tenant_id` is specified, the ID of the Google Cloud project that the Identity Platform tenant belongs to. Otherwise, the ID of the Google Cloud project that the accounts belong to.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6131,7 +6309,7 @@
                       "repeated": false
                     },
                     "tenantId": {
-                      "description": "The ID of the Identity Platform tenant the accounts belongs to. If not\nspecified, accounts on the Identity Platform project are returned.",
+                      "description": "The ID of the Identity Platform tenant the accounts belongs to. If not specified, accounts on the Identity Platform project are returned.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6170,7 +6348,7 @@
                   "description": "Deletes a user's account.",
                   "parameters": {
                     "targetProjectId": {
-                      "description": "The ID of the project which the account belongs to. Should only be\nspecified in authenticated requests that specify local_id of an account.",
+                      "description": "The ID of the project which the account belongs to. Should only be specified in authenticated requests that specify local_id of an account.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6184,7 +6362,7 @@
                       "repeated": false
                     },
                     "tenantId": {
-                      "description": "The ID of the tenant that the account belongs to, if applicable. Only\nrequire to be specified for authenticated requests bearing a Google\nOAuth 2.0 credential that specify local_id of an account that belongs to an\nIdentity Platform tenant.",
+                      "description": "The ID of the tenant that the account belongs to, if applicable. Only require to be specified for authenticated requests bearing a Google OAuth 2.0 credential that specify local_id of an account that belongs to an Identity Platform tenant.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6221,10 +6399,10 @@
                   "id": "identitytoolkit.projects.tenants.accounts.lookup",
                   "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts:lookup",
                   "httpMethod": "POST",
-                  "description": "Gets account information for all matched accounts. For an end user request,\nretrieves the account of the end user. For an admin request with Google\nOAuth 2.0 credential, retrieves one or multiple account(s) with matching\ncriteria.",
+                  "description": "Gets account information for all matched accounts. For an end user request, retrieves the account of the end user. For an admin request with Google OAuth 2.0 credential, retrieves one or multiple account(s) with matching criteria.",
                   "parameters": {
                     "targetProjectId": {
-                      "description": "The ID of the Google Cloud project that the account or the Identity\nPlatform tenant specified by `tenant_id` belongs to. Should only be\nspecified by authenticated requests bearing a Google OAuth 2.0 credential\nwith proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+                      "description": "The ID of the Google Cloud project that the account or the Identity Platform tenant specified by `tenant_id` belongs to. Should only be specified by authenticated requests bearing a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6238,7 +6416,7 @@
                       "repeated": false
                     },
                     "tenantId": {
-                      "description": "The ID of the tenant that the account belongs to. Should only\nbe specified by authenticated requests from a developer.",
+                      "description": "The ID of the tenant that the account belongs to. Should only be specified by authenticated requests from a developer.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6275,7 +6453,7 @@
                   "id": "identitytoolkit.projects.tenants.accounts.query",
                   "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts:query",
                   "httpMethod": "POST",
-                  "description": "Looks up user accounts within a project or a tenant based on conditions\nin the request.",
+                  "description": "Looks up user accounts within a project or a tenant based on conditions in the request.",
                   "parameters": {
                     "targetProjectId": {
                       "description": "The ID of the project to which the result is scoped.",
@@ -6330,10 +6508,10 @@
                   "id": "identitytoolkit.projects.tenants.accounts.sendOobCode",
                   "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts:sendOobCode",
                   "httpMethod": "POST",
-                  "description": "Sends an out-of-band confirmation code for an account. Requests from a\nauthenticated request can optionally return a link including the OOB code\ninstead of sending it.",
+                  "description": "Sends an out-of-band confirmation code for an account. Requests from a authenticated request can optionally return a link including the OOB code instead of sending it.",
                   "parameters": {
                     "targetProjectId": {
-                      "description": "The Project ID of the Identity Platform project which the account belongs\nto. To specify this field, it requires a Google OAuth 2.0 credential with\nproper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).",
+                      "description": "The Project ID of the Identity Platform project which the account belongs to. To specify this field, it requires a Google OAuth 2.0 credential with proper [permissions](https://cloud.google.com/identity-platform/docs/access-control).",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6384,10 +6562,10 @@
                   "id": "identitytoolkit.projects.tenants.accounts.update",
                   "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts:update",
                   "httpMethod": "POST",
-                  "description": "Updates account-related information for the specified user by setting\nspecific fields or applying action codes. Requests from administrators\nand end users are supported.",
+                  "description": "Updates account-related information for the specified user by setting specific fields or applying action codes. Requests from administrators and end users are supported.",
                   "parameters": {
                     "targetProjectId": {
-                      "description": "The project ID for the project that the account belongs to. Specifying this\nfield requires Google OAuth 2.0 credential with proper permissions\n(https://cloud.google.com/identity-platform/docs/access-control).\nRequests from end users should pass an Identity Platform ID token instead.",
+                      "description": "The project ID for the project that the account belongs to. Specifying this field requires Google OAuth 2.0 credential with proper [permissions] (https://cloud.google.com/identity-platform/docs/access-control). Requests from end users should pass an Identity Platform ID token instead.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6401,7 +6579,7 @@
                       "repeated": false
                     },
                     "tenantId": {
-                      "description": "The tenant ID of the Identity Platform tenant that the account belongs to.\nRequests from end users should pass an Identity Platform ID token rather\nthan setting this field.",
+                      "description": "The tenant ID of the Identity Platform tenant that the account belongs to. Requests from end users should pass an Identity Platform ID token rather than setting this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6442,10 +6620,10 @@
               "id": "identitytoolkit.projects.tenants.accounts",
               "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}/accounts",
               "httpMethod": "POST",
-              "description": "Signs up a new email and password user or anonymous user, or upgrades an\nanonymous user to email and password. For an admin request with a Google\nOAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control),\ncreates a new anonymous, email and password, or phone number user.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+              "description": "Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. For an admin request with a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control), creates a new anonymous, email and password, or phone number user. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
               "parameters": {
                 "targetProjectId": {
-                  "description": "The project ID of the project which the user should belong to. Specifying\nthis field requires a Google OAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).\nIf this is not set, the target project is inferred from the scope\nassociated to the Bearer access token.",
+                  "description": "The project ID of the project which the user should belong to. Specifying this field requires a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control). If this is not set, the target project is inferred from the scope associated to the Bearer access token.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -6459,7 +6637,7 @@
                   "repeated": false
                 },
                 "tenantId": {
-                  "description": "The ID of the Identity Platform tenant to create a user under. If not set,\nthe user will be created under the default Identity Platform project.",
+                  "description": "The ID of the Identity Platform tenant to create a user under. If not set, the user will be created under the default Identity Platform project.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -6496,7 +6674,7 @@
               "id": "identitytoolkit.projects.tenants.createSessionCookie",
               "path": "v1/projects/{+targetProjectId}/tenants/{+tenantId}:createSessionCookie",
               "httpMethod": "POST",
-              "description": "Creates a session cookie for the given Identity Platform ID token. The\nsession cookie is used by the client to preserve the user's login state.",
+              "description": "Creates a session cookie for the given Identity Platform ID token. The session cookie is used by the client to preserve the user's login state.",
               "parameters": {
                 "targetProjectId": {
                   "description": "The ID of the project that the account belongs to.",
@@ -6554,10 +6732,10 @@
           "id": "identitytoolkit.projects.accounts",
           "path": "v1/projects/{+targetProjectId}/accounts",
           "httpMethod": "POST",
-          "description": "Signs up a new email and password user or anonymous user, or upgrades an\nanonymous user to email and password. For an admin request with a Google\nOAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control),\ncreates a new anonymous, email and password, or phone number user.\n\nAn [API key](https://cloud.google.com/docs/authentication/api-keys) is\nrequired in the request in order to identify the Google Cloud project.",
+          "description": "Signs up a new email and password user or anonymous user, or upgrades an anonymous user to email and password. For an admin request with a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control), creates a new anonymous, email and password, or phone number user. An [API key](https://cloud.google.com/docs/authentication/api-keys) is required in the request in order to identify the Google Cloud project.",
           "parameters": {
             "targetProjectId": {
-              "description": "The project ID of the project which the user should belong to. Specifying\nthis field requires a Google OAuth 2.0 credential with the proper\n[permissions](https://cloud.google.com/identity-platform/docs/access-control).\nIf this is not set, the target project is inferred from the scope\nassociated to the Bearer access token.",
+              "description": "The project ID of the project which the user should belong to. Specifying this field requires a Google OAuth 2.0 credential with the proper [permissions](https://cloud.google.com/identity-platform/docs/access-control). If this is not set, the target project is inferred from the scope associated to the Bearer access token.",
               "default": null,
               "location": "path",
               "required": true,
@@ -6593,7 +6771,7 @@
           "id": "identitytoolkit.projects.createSessionCookie",
           "path": "v1/projects/{+targetProjectId}:createSessionCookie",
           "httpMethod": "POST",
-          "description": "Creates a session cookie for the given Identity Platform ID token. The\nsession cookie is used by the client to preserve the user's login state.",
+          "description": "Creates a session cookie for the given Identity Platform ID token. The session cookie is used by the client to preserve the user's login state.",
           "parameters": {
             "targetProjectId": {
               "description": "The ID of the project that the account belongs to.",
@@ -6632,7 +6810,7 @@
           "id": "identitytoolkit.projects.queryAccounts",
           "path": "v1/projects/{+targetProjectId}:queryAccounts",
           "httpMethod": "POST",
-          "description": "Looks up user accounts within a project or a tenant based on conditions\nin the request.",
+          "description": "Looks up user accounts within a project or a tenant based on conditions in the request.",
           "parameters": {
             "targetProjectId": {
               "description": "The ID of the project to which the result is scoped.",
@@ -6677,10 +6855,10 @@
           "id": "identitytoolkit.getProjects",
           "path": "v1/projects",
           "httpMethod": "GET",
-          "description": "Gets a project's public Identity Toolkit configuration.\n(Legacy) This method also supports authenticated calls from a developer to\nretrieve non-public configuration.",
+          "description": "Gets a project's public Identity Toolkit configuration. (Legacy) This method also supports authenticated calls from a developer to retrieve non-public configuration.",
           "parameters": {
             "androidPackageName": {
-              "description": "Android package name to check against the real android package name.\nIf this field is provided, and sha1_cert_hash is not provided, the action\nwill throw an error if this does not match the real android package name.",
+              "description": "Android package name to check against the real android package name. If this field is provided, and sha1_cert_hash is not provided, the action will throw an error if this does not match the real android package name.",
               "default": null,
               "location": "query",
               "required": false,
@@ -6694,7 +6872,7 @@
               "repeated": false
             },
             "clientId": {
-              "description": "The RP OAuth client ID. If set, a check will be performed to ensure that\nthe OAuth client is valid for the retrieved project and the request\nrejected with a client error if not valid.",
+              "description": "The RP OAuth client ID. If set, a check will be performed to ensure that the OAuth client is valid for the retrieved project and the request rejected with a client error if not valid.",
               "default": null,
               "location": "query",
               "required": false,
@@ -6708,7 +6886,7 @@
               "repeated": false
             },
             "delegatedProjectNumber": {
-              "description": "Project Number of the delegated project request. This field should only be\nused as part of the Firebase V1 migration.",
+              "description": "Project Number of the delegated project request. This field should only be used as part of the Firebase V1 migration.",
               "default": null,
               "location": "query",
               "required": false,
@@ -6721,8 +6899,22 @@
               "enumDescriptions": [],
               "repeated": false
             },
+            "firebaseAppId": {
+              "description": "The Firebase app ID, for applications that use Firebase. This can be found in the Firebase console for your project. If set, a check will be performed to ensure that the app ID is valid for the retrieved project. If not valid, the request will be rejected with a client error.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
             "iosBundleId": {
-              "description": "iOS bundle id to check against the real ios bundle id.\nIf this field is provided, the action will throw an error if this does\nnot match the real iOS bundle id.",
+              "description": "iOS bundle id to check against the real ios bundle id. If this field is provided, the action will throw an error if this does not match the real iOS bundle id.",
               "default": null,
               "location": "query",
               "required": false,
@@ -6736,7 +6928,7 @@
               "repeated": false
             },
             "projectNumber": {
-              "description": "Project number of the configuration to retrieve. This field is deprecated\nand should  not be used by new integrations.",
+              "description": "Project number of the configuration to retrieve. This field is deprecated and should not be used by new integrations.",
               "default": null,
               "location": "query",
               "required": false,
@@ -6764,7 +6956,7 @@
               "repeated": false
             },
             "sha1Cert": {
-              "description": "SHA-1 Android application cert hash. If set, a check will be performed to\nensure that the cert hash is valid for the retrieved project and\nandroid_package_name.",
+              "description": "SHA-1 Android application cert hash. If set, a check will be performed to ensure that the cert hash is valid for the retrieved project and android_package_name.",
               "default": null,
               "location": "query",
               "required": false,
@@ -6796,7 +6988,7 @@
           "id": "identitytoolkit.getPublicKeys",
           "path": "v1/publicKeys",
           "httpMethod": "GET",
-          "description": "Retrieves public keys of the legacy Identity Toolkit token signer to\nenable third parties to verify the legacy ID token. For now the X509 pem\ncert is the only format supported.",
+          "description": "Retrieves public keys of the legacy Identity Toolkit token signer to enable third parties to verify the legacy ID token. For now the X509 pem cert is the only format supported.",
           "parameters": {},
           "parameterOrder": [],
           "request": null,
@@ -6851,7 +7043,7 @@
           "id": "identitytoolkit.getSessionCookiePublicKeys",
           "path": "v1/sessionCookiePublicKeys",
           "httpMethod": "GET",
-          "description": "Retrieves the set of public keys of the session cookie JSON Web Token (JWT)\nsigner that can be used to validate the session cookie created through\ncreateSessionCookie.",
+          "description": "Retrieves the set of public keys of the session cookie JSON Web Token (JWT) signer that can be used to validate the session cookie created through createSessionCookie.",
           "parameters": {},
           "parameterOrder": [],
           "request": null,

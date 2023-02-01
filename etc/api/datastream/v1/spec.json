@@ -7,7 +7,7 @@
   "canonicalName": "Datastream",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220405",
+  "revision": "20230114",
   "title": "Datastream API",
   "description": "",
   "ownerDomain": "google.com",
@@ -233,6 +233,10 @@
         "oracleExcludedObjects": {
           "description": "Oracle data source objects to avoid backfilling.",
           "$ref": "OracleRdbms"
+        },
+        "postgresqlExcludedObjects": {
+          "description": "PostgreSQL data source objects to avoid backfilling.",
+          "$ref": "PostgresqlRdbms"
         }
       },
       "additionalProperties": null,
@@ -339,6 +343,47 @@
       "additionalProperties": null,
       "items": null
     },
+    "BigQueryDestinationConfig": {
+      "id": "BigQueryDestinationConfig",
+      "description": null,
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dataFreshness": {
+          "description": "The guaranteed data freshness (in seconds) when querying tables created by the stream. Editing this field will only affect new tables created in the future, but existing tables will not be impacted. Lower values mean that queries will return fresher data, but may result in higher cost.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "singleTargetDataset": {
+          "description": "Single destination dataset.",
+          "$ref": "SingleTargetDataset"
+        },
+        "sourceHierarchyDatasets": {
+          "description": "Source hierarchy datasets.",
+          "$ref": "SourceHierarchyDatasets"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BigQueryProfile": {
+      "id": "BigQueryProfile",
+      "description": "BigQuery warehouse profile.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "CancelOperationRequest": {
       "id": "CancelOperationRequest",
       "description": "The request message for Operations.CancelOperation.",
@@ -358,6 +403,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "bigqueryProfile": {
+          "description": "BigQuery Connection Profile configuration.",
+          "$ref": "BigQueryProfile"
+        },
         "createTime": {
           "description": "Output only. The create time of the resource.",
           "type": "string",
@@ -423,6 +472,10 @@
           "description": "Oracle ConnectionProfile configuration.",
           "$ref": "OracleProfile"
         },
+        "postgresqlProfile": {
+          "description": "PostgreSQL Connection Profile configuration.",
+          "$ref": "PostgresqlProfile"
+        },
         "privateConnectivity": {
           "description": "Private connectivity.",
           "$ref": "PrivateConnectivity"
@@ -445,6 +498,48 @@
       "additionalProperties": null,
       "items": null
     },
+    "DatasetTemplate": {
+      "id": "DatasetTemplate",
+      "description": "Dataset template used for dynamic dataset creation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "datasetIdPrefix": {
+          "description": "If supplied, every created dataset will have its name prefixed by the provided value. The prefix and name will be separated by an underscore. i.e. _.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kmsKeyName": {
+          "description": "Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table. The BigQuery Service Account associated with your project requires access to this encryption key. i.e. projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{cryptoKey}. See https://cloud.google.com/bigquery/docs/customer-managed-encryption for more information.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "location": {
+          "description": "Required. The geographic location where the dataset should reside. See https://cloud.google.com/bigquery/docs/locations for supported locations.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "DestinationConfig": {
       "id": "DestinationConfig",
       "description": "The configuration of the stream destination.",
@@ -453,6 +548,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "bigqueryDestinationConfig": {
+          "description": "BigQuery destination configuration.",
+          "$ref": "BigQueryDestinationConfig"
+        },
         "destinationConnectionProfile": {
           "description": "Required. Destination connection profile resource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`",
           "type": "string",
@@ -520,6 +619,10 @@
         "oracleRdbms": {
           "description": "Oracle RDBMS to enrich with child data objects and metadata.",
           "$ref": "OracleRdbms"
+        },
+        "postgresqlRdbms": {
+          "description": "PostgreSQL RDBMS to enrich with child data objects and metadata.",
+          "$ref": "PostgresqlRdbms"
         }
       },
       "additionalProperties": null,
@@ -540,6 +643,10 @@
         "oracleRdbms": {
           "description": "Enriched Oracle RDBMS object.",
           "$ref": "OracleRdbms"
+        },
+        "postgresqlRdbms": {
+          "description": "Enriched PostgreSQL RDBMS object.",
+          "$ref": "PostgresqlRdbms"
         }
       },
       "additionalProperties": null,
@@ -1519,6 +1626,16 @@
         "includeObjects": {
           "description": "MySQL objects to retrieve from the source.",
           "$ref": "MysqlRdbms"
+        },
+        "maxConcurrentCdcTasks": {
+          "description": "Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2082,6 +2199,20 @@
         "includeObjects": {
           "description": "Oracle objects to include in the stream.",
           "$ref": "OracleRdbms"
+        },
+        "maxConcurrentCdcTasks": {
+          "description": "Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "streamLargeObjects": {
+          "description": "Stream large object values. NOTE: This feature is currently experimental.",
+          "$ref": "StreamLargeObjects"
         }
       },
       "additionalProperties": null,
@@ -2105,6 +2236,324 @@
           "additionalProperties": null,
           "items": {
             "$ref": "OracleColumn"
+          }
+        },
+        "table": {
+          "description": "Table name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PostgresqlColumn": {
+      "id": "PostgresqlColumn",
+      "description": "PostgreSQL Column.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "column": {
+          "description": "Column name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dataType": {
+          "description": "The PostgreSQL data type.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "length": {
+          "description": "Column length.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nullable": {
+          "description": "Whether or not the column can accept a null value.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "ordinalPosition": {
+          "description": "The ordinal position of the column in the table.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "precision": {
+          "description": "Column precision.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "primaryKey": {
+          "description": "Whether or not the column represents a primary key.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "scale": {
+          "description": "Column scale.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PostgresqlObjectIdentifier": {
+      "id": "PostgresqlObjectIdentifier",
+      "description": "PostgreSQL data source object identifier.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "schema": {
+          "description": "Required. The schema name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "table": {
+          "description": "Required. The table name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PostgresqlProfile": {
+      "id": "PostgresqlProfile",
+      "description": "PostgreSQL database profile.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "database": {
+          "description": "Required. Database for the PostgreSQL connection.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hostname": {
+          "description": "Required. Hostname for the PostgreSQL connection.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "password": {
+          "description": "Required. Password for the PostgreSQL connection.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "port": {
+          "description": "Port for the PostgreSQL connection, default value is 5432.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "username": {
+          "description": "Required. Username for the PostgreSQL connection.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PostgresqlRdbms": {
+      "id": "PostgresqlRdbms",
+      "description": "PostgreSQL database structure.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "postgresqlSchemas": {
+          "description": "PostgreSQL schemas in the database server.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PostgresqlSchema"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PostgresqlSchema": {
+      "id": "PostgresqlSchema",
+      "description": "PostgreSQL schema.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "postgresqlTables": {
+          "description": "Tables in the schema.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PostgresqlTable"
+          }
+        },
+        "schema": {
+          "description": "Schema name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PostgresqlSourceConfig": {
+      "id": "PostgresqlSourceConfig",
+      "description": "PostgreSQL data source configuration",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "excludeObjects": {
+          "description": "PostgreSQL objects to exclude from the stream.",
+          "$ref": "PostgresqlRdbms"
+        },
+        "includeObjects": {
+          "description": "PostgreSQL objects to include in the stream.",
+          "$ref": "PostgresqlRdbms"
+        },
+        "publication": {
+          "description": "Required. The name of the publication that includes the set of all tables that are defined in the stream's include_objects.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "replicationSlot": {
+          "description": "Required. Immutable. The name of the logical replication slot that's configured with the pgoutput plugin.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PostgresqlTable": {
+      "id": "PostgresqlTable",
+      "description": "PostgreSQL table.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "postgresqlColumns": {
+          "description": "PostgreSQL columns in the schema. When unspecified as part of include/exclude objects, includes/excludes everything.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PostgresqlColumn"
           }
         },
         "table": {
@@ -2337,6 +2786,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "SingleTargetDataset": {
+      "id": "SingleTargetDataset",
+      "description": "A single target dataset to which all data will be streamed.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "datasetId": {
+          "description": "The dataset ID of the target dataset.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SourceConfig": {
       "id": "SourceConfig",
       "description": "The configuration of the stream source.",
@@ -2353,6 +2824,10 @@
           "description": "Oracle data source configuration.",
           "$ref": "OracleSourceConfig"
         },
+        "postgresqlSourceConfig": {
+          "description": "PostgreSQL data source configuration.",
+          "$ref": "PostgresqlSourceConfig"
+        },
         "sourceConnectionProfile": {
           "description": "Required. Source connection profile resoource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`",
           "type": "string",
@@ -2362,6 +2837,22 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SourceHierarchyDatasets": {
+      "id": "SourceHierarchyDatasets",
+      "description": "Destination datasets are created so that hierarchy of the destination data objects matches the source hierarchy.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "datasetTemplate": {
+          "description": null,
+          "$ref": "DatasetTemplate"
         }
       },
       "additionalProperties": null,
@@ -2382,6 +2873,10 @@
         "oracleIdentifier": {
           "description": "Oracle data source object identifier.",
           "$ref": "OracleObjectIdentifier"
+        },
+        "postgresqlIdentifier": {
+          "description": "PostgreSQL data source object identifier.",
+          "$ref": "PostgresqlObjectIdentifier"
         }
       },
       "additionalProperties": null,
@@ -2650,6 +3145,17 @@
       "additionalProperties": null,
       "items": null
     },
+    "StreamLargeObjects": {
+      "id": "StreamLargeObjects",
+      "description": "Configuration to stream large object values.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "StreamObject": {
       "id": "StreamObject",
       "description": "A specific stream object (e.g a specific DB table).",
@@ -2888,7 +3394,7 @@
       "enumDescriptions": [],
       "properties": {
         "subnet": {
-          "description": "Required. A free subnet for peering. (CIDR of /29) TODO(b/172995841) add validators.",
+          "description": "Required. A free subnet for peering. (CIDR of /29)",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3792,6 +4298,20 @@
                   "httpMethod": "POST",
                   "description": "Use this method to create a private connectivity configuration.",
                   "parameters": {
+                    "force": {
+                      "description": "Optional. If set to true, will skip validations.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
                     "parent": {
                       "description": "Required. The parent that owns the collection of PrivateConnections.",
                       "default": null,

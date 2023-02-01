@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Video Intelligence",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220303",
+  "revision": "20230126",
   "title": "Cloud Video Intelligence API",
   "description": "Detects objects, explicit content, and scene changes in videos. It also specifies the region for annotation and transcribes speech to text. Supports both asynchronous API and streaming API.",
   "ownerDomain": "google.com",
@@ -8292,7 +8292,7 @@
     },
     "GoogleProtobuf_Empty": {
       "id": "GoogleProtobuf_Empty",
-      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } The JSON representation for `Empty` is empty JSON object `{}`.",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
       "type": "object",
       "format": null,
       "enum": [],

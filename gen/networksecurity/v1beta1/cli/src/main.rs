@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("networksecurity1_beta1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220309")
+            .version("0.1.0-20230106")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -33,9 +33,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .help("Provide more output to aid with debugging")
                 .multiple(false)
                 .takes_value(false));
+        let mut organizations0 = SubCommand::with_name("organizations")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: locations");
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: locations");
+        let mut locations1 = SubCommand::with_name("locations")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: operations");
         let mut locations1 = SubCommand::with_name("locations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
@@ -47,6 +53,40 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
+        }
+        let mut operations2 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: cancel, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("cancel").about("Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
+            operations2 = operations2.subcommand(mcmd);
+        }
+        let mut address_groups2 = SubCommand::with_name("address_groups")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            address_groups2 = address_groups2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            address_groups2 = address_groups2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            address_groups2 = address_groups2.subcommand(mcmd);
         }
         let mut authorization_policies2 = SubCommand::with_name("authorization_policies")
                         .setting(AppSettings::ColoredHelp)
@@ -189,8 +229,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(client_tls_policies2);
         locations1 = locations1.subcommand(authorization_policies2);
+        locations1 = locations1.subcommand(address_groups2);
+        locations1 = locations1.subcommand(operations2);
         projects0 = projects0.subcommand(locations1);
+        organizations0 = organizations0.subcommand(locations1);
         app = app.subcommand(projects0);
+        app = app.subcommand(organizations0);
 
         Self { app }
     }

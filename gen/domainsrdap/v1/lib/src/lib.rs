@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [autnum](resources/autnum/struct.AutnumActions.html)\n  * [*get*](resources/autnum/struct.GetRequestBuilder.html)\n* [domain](resources/domain/struct.DomainActions.html)\n  * [*get*](resources/domain/struct.GetRequestBuilder.html)\n* [entity](resources/entity/struct.EntityActions.html)\n  * [*get*](resources/entity/struct.GetRequestBuilder.html)\n* [ip](resources/ip/struct.IpActions.html)\n  * [*get*](resources/ip/struct.GetRequestBuilder.html)\n* [nameserver](resources/nameserver/struct.NameserverActions.html)\n  * [*get*](resources/nameserver/struct.GetRequestBuilder.html)\n* [v_1](resources/v_1/struct.V1Actions.html)\n  * [*getDomains*](resources/v_1/struct.GetDomainsRequestBuilder.html), [*getEntities*](resources/v_1/struct.GetEntitiesRequestBuilder.html), [*getHelp*](resources/v_1/struct.GetHelpRequestBuilder.html), [*getIp*](resources/v_1/struct.GetIpRequestBuilder.html), [*getNameservers*](resources/v_1/struct.GetNameserversRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
@@ -2555,15 +2556,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

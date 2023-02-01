@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [files](resources/files/struct.FilesActions.html)\n  * [*annotate*](resources/files/struct.AnnotateRequestBuilder.html), [*asyncBatchAnnotate*](resources/files/struct.AsyncBatchAnnotateRequestBuilder.html)\n* [images](resources/images/struct.ImagesActions.html)\n  * [*annotate*](resources/images/struct.AnnotateRequestBuilder.html), [*asyncBatchAnnotate*](resources/images/struct.AsyncBatchAnnotateRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [files](resources/projects/files/struct.FilesActions.html)\n    * [*annotate*](resources/projects/files/struct.AnnotateRequestBuilder.html), [*asyncBatchAnnotate*](resources/projects/files/struct.AsyncBatchAnnotateRequestBuilder.html)\n  * [images](resources/projects/images/struct.ImagesActions.html)\n    * [*annotate*](resources/projects/images/struct.AnnotateRequestBuilder.html), [*asyncBatchAnnotate*](resources/projects/images/struct.AsyncBatchAnnotateRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [files](resources/projects/locations/files/struct.FilesActions.html)\n      * [*annotate*](resources/projects/locations/files/struct.AnnotateRequestBuilder.html), [*asyncBatchAnnotate*](resources/projects/locations/files/struct.AsyncBatchAnnotateRequestBuilder.html)\n    * [images](resources/projects/locations/images/struct.ImagesActions.html)\n      * [*annotate*](resources/projects/locations/images/struct.AnnotateRequestBuilder.html), [*asyncBatchAnnotate*](resources/projects/locations/images/struct.AsyncBatchAnnotateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -8233,7 +8234,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_results: ::std::option::Option<i32>,
-        #[doc = "Model to use for the feature. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”."]
+        #[doc = "Model to use for the feature. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”. `DOCUMENT_TEXT_DETECTION` and `TEXT_DETECTION` also support “builtin/weekly” for the bleeding edge release updated weekly."]
         #[serde(
             rename = "model",
             default,
@@ -10397,6 +10398,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1TextDetectionParams {
+        #[doc = "A list of advanced OCR options to fine-tune OCR behavior."]
+        #[serde(
+            rename = "advancedOcrOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub advanced_ocr_options: ::std::option::Option<Vec<String>>,
         #[doc = "By default, Cloud Vision API only includes confidence score for DOCUMENT_TEXT_DETECTION result. Set the flag to true to include confidence score for TEXT_DETECTION as well."]
         #[serde(
             rename = "enableTextDetectionConfidenceScore",
@@ -24496,15 +24504,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

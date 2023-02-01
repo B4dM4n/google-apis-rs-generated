@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Profiler",
   "fullyEncodeReservedExpansion": true,
   "version": "v2",
-  "revision": "20220416",
+  "revision": "20230123",
   "title": "Stackdriver Profiler API",
   "description": "Manages continuous profiling information.",
   "ownerDomain": "google.com",
@@ -303,7 +303,7 @@
           "items": null
         },
         "target": {
-          "description": "Target is the service name used to group related deployments: * Service name for App Engine Flex / Standard. * Cluster and container name for GKE. * User-specified string for direct Compute Engine profiling (e.g. Java). * Job name for Dataflow. Validation regex: `^[a-z]([-a-z0-9_.]{0,253}[a-z0-9])?$`.",
+          "description": "Target is the service name used to group related deployments: * Service name for App Engine Flex / Standard. * Cluster and container name for GKE. * User-specified string for direct Compute Engine profiling (e.g. Java). * Job name for Dataflow. Validation regex: `^[a-z0-9]([-a-z0-9_.]{0,253}[a-z0-9])?$`.",
           "type": "string",
           "format": null,
           "enum": [],

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [locations](resources/locations/struct.LocationsActions.html)\n  * [place_action_links](resources/locations/place_action_links/struct.PlaceActionLinksActions.html)\n    * [*create*](resources/locations/place_action_links/struct.CreateRequestBuilder.html), [*delete*](resources/locations/place_action_links/struct.DeleteRequestBuilder.html), [*get*](resources/locations/place_action_links/struct.GetRequestBuilder.html), [*list*](resources/locations/place_action_links/struct.ListRequestBuilder.html), [*patch*](resources/locations/place_action_links/struct.PatchRequestBuilder.html)\n* [place_action_type_metadata](resources/place_action_type_metadata/struct.PlaceActionTypeMetadataActions.html)\n  * [*list*](resources/place_action_type_metadata/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
@@ -63,7 +64,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPlaceActionLinksResponse {
+    impl crate::GetNextPageToken<String> for ListPlaceActionLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -107,7 +108,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListPlaceActionTypeMetadataResponse {
+    impl crate::GetNextPageToken<String> for ListPlaceActionTypeMetadataResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -209,6 +210,8 @@ pub mod schemas {
         OnlineAppointment,
         #[doc = "Not specified."]
         PlaceActionTypeUnspecified,
+        #[doc = "The action type is shopping, that can be delivery and/or pickup."]
+        ShopOnline,
     }
     impl PlaceActionLinkPlaceActionType {
         pub fn as_str(self) -> &'static str {
@@ -222,6 +225,7 @@ pub mod schemas {
                 PlaceActionLinkPlaceActionType::PlaceActionTypeUnspecified => {
                     "PLACE_ACTION_TYPE_UNSPECIFIED"
                 }
+                PlaceActionLinkPlaceActionType::ShopOnline => "SHOP_ONLINE",
             }
         }
     }
@@ -243,6 +247,7 @@ pub mod schemas {
                 "PLACE_ACTION_TYPE_UNSPECIFIED" => {
                     PlaceActionLinkPlaceActionType::PlaceActionTypeUnspecified
                 }
+                "SHOP_ONLINE" => PlaceActionLinkPlaceActionType::ShopOnline,
                 _ => return Err(()),
             })
         }
@@ -276,6 +281,7 @@ pub mod schemas {
                 "PLACE_ACTION_TYPE_UNSPECIFIED" => {
                     PlaceActionLinkPlaceActionType::PlaceActionTypeUnspecified
                 }
+                "SHOP_ONLINE" => PlaceActionLinkPlaceActionType::ShopOnline,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -426,6 +432,8 @@ pub mod schemas {
         OnlineAppointment,
         #[doc = "Not specified."]
         PlaceActionTypeUnspecified,
+        #[doc = "The action type is shopping, that can be delivery and/or pickup."]
+        ShopOnline,
     }
     impl PlaceActionTypeMetadataPlaceActionType {
         pub fn as_str(self) -> &'static str {
@@ -439,6 +447,7 @@ pub mod schemas {
                 PlaceActionTypeMetadataPlaceActionType::PlaceActionTypeUnspecified => {
                     "PLACE_ACTION_TYPE_UNSPECIFIED"
                 }
+                PlaceActionTypeMetadataPlaceActionType::ShopOnline => "SHOP_ONLINE",
             }
         }
     }
@@ -460,6 +469,7 @@ pub mod schemas {
                 "PLACE_ACTION_TYPE_UNSPECIFIED" => {
                     PlaceActionTypeMetadataPlaceActionType::PlaceActionTypeUnspecified
                 }
+                "SHOP_ONLINE" => PlaceActionTypeMetadataPlaceActionType::ShopOnline,
                 _ => return Err(()),
             })
         }
@@ -493,6 +503,7 @@ pub mod schemas {
                 "PLACE_ACTION_TYPE_UNSPECIFIED" => {
                     PlaceActionTypeMetadataPlaceActionType::PlaceActionTypeUnspecified
                 }
+                "SHOP_ONLINE" => PlaceActionTypeMetadataPlaceActionType::ShopOnline,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -1456,7 +1467,7 @@ pub mod resources {
                         #[serde(rename = "placeActionLinks")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -1491,7 +1502,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -1541,7 +1552,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -1659,12 +1670,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -2007,7 +2019,7 @@ pub mod resources {
                     #[serde(rename = "placeActionTypeMetadata")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -2041,7 +2053,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -2091,7 +2103,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2202,12 +2214,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -2497,16 +2510,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -2526,13 +2541,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -2540,7 +2558,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -2567,7 +2585,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

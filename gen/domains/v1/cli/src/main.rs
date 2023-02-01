@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("domains1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220321")
+            .version("0.1.0-20230123")
             .about("Enables management and configuration of domain names.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -61,7 +61,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut registrations2 = SubCommand::with_name("registrations")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: configure_contact_settings, configure_dns_settings, configure_management_settings, delete, export, get, get_iam_policy, list, patch, register, reset_authorization_code, retrieve_authorization_code, retrieve_register_parameters, retrieve_transfer_parameters, search_domains, set_iam_policy, test_iam_permissions and transfer");
+                        .about("methods: configure_contact_settings, configure_dns_settings, configure_management_settings, delete, export, get, get_iam_policy, import, list, patch, register, reset_authorization_code, retrieve_authorization_code, retrieve_importable_domains, retrieve_register_parameters, retrieve_transfer_parameters, search_domains, set_iam_policy, test_iam_permissions and transfer");
         {
             let mcmd = SubCommand::with_name("configure_contact_settings").about("Updates a `Registration`'s contact settings. Some changes require confirmation by the domain's registrant contact .");
             registrations2 = registrations2.subcommand(mcmd);
@@ -94,6 +94,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             registrations2 = registrations2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("import").about("Imports a domain name from [Google Domains](https://domains.google/) for use in Cloud Domains. To transfer a domain from another registrar, use the `TransferDomain` method instead. Since individual users can own domains in Google Domains, the calling user must have ownership permission on the domain.");
+            registrations2 = registrations2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists the `Registration` resources in a project.");
             registrations2 = registrations2.subcommand(mcmd);
@@ -115,11 +119,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             registrations2 = registrations2.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("retrieve_importable_domains").about("Lists domain names from [Google Domains](https://domains.google/) that can be imported to Cloud Domains using the `ImportDomain` method. Since individual users can own domains in Google Domains, the list of domains returned depends on the individual user making the call. Domains already managed by Cloud Domains are not returned.");
+            registrations2 = registrations2.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("retrieve_register_parameters").about("Gets parameters needed to register a new domain name, including price and up-to-date availability. Use the returned values to call `RegisterDomain`.");
             registrations2 = registrations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("retrieve_transfer_parameters").about("Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For domains managed by Google Domains, transferring to Cloud Domains is not supported. Use the returned values to call `TransferDomain`.");
+            let mcmd = SubCommand::with_name("retrieve_transfer_parameters").about("Gets parameters needed to transfer a domain name from another registrar to Cloud Domains. For domains already managed by [Google Domains](https://domains.google/), use `ImportDomain` instead. Use the returned values to call `TransferDomain`.");
             registrations2 = registrations2.subcommand(mcmd);
         }
         {
@@ -135,7 +143,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             registrations2 = registrations2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("transfer").about("Transfers a domain name from another registrar to Cloud Domains. For domains managed by Google Domains, transferring to Cloud Domains is not supported. Before calling this method, go to the domain's current registrar to unlock the domain for transfer and retrieve the domain's transfer authorization code. Then call `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to build a call to this method. A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take several days to complete the transfer process. The registrant can often speed up this process by approving the transfer through the current registrar, either by clicking a link in an email from the registrar or by visiting the registrar's website. A few minutes after transfer approval, the resource transitions to state `ACTIVE`, indicating that the transfer was successful. If the transfer is rejected or the request expires without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete the resource and retry the transfer.");
+            let mcmd = SubCommand::with_name("transfer").about("Transfers a domain name from another registrar to Cloud Domains. For domains already managed by [Google Domains](https://domains.google/), use `ImportDomain` instead. Before calling this method, go to the domain's current registrar to unlock the domain for transfer and retrieve the domain's transfer authorization code. Then call `RetrieveTransferParameters` to confirm that the domain is unlocked and to get values needed to build a call to this method. A successful call creates a `Registration` resource in state `TRANSFER_PENDING`. It can take several days to complete the transfer process. The registrant can often speed up this process by approving the transfer through the current registrar, either by clicking a link in an email from the registrar or by visiting the registrar's website. A few minutes after transfer approval, the resource transitions to state `ACTIVE`, indicating that the transfer was successful. If the transfer is rejected or the request expires without being approved, the resource can end up in state `TRANSFER_FAILED`. If transfer fails, you can safely delete the resource and retry the transfer.");
             registrations2 = registrations2.subcommand(mcmd);
         }
         locations1 = locations1.subcommand(registrations2);

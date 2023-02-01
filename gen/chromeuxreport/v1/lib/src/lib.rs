@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [records](resources/records/struct.RecordsActions.html)\n  * [*queryRecord*](resources/records/struct.QueryRecordRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
@@ -31,6 +32,89 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Bin {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CollectionPeriod {
+        #[doc = "The first day in the collection period, inclusive."]
+        #[serde(
+            rename = "firstDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub first_date: ::std::option::Option<crate::schemas::Date>,
+        #[doc = "The last day in the collection period, inclusive."]
+        #[serde(
+            rename = "lastDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_date: ::std::option::Option<crate::schemas::Date>,
+    }
+    impl ::google_field_selector::FieldSelector for CollectionPeriod {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CollectionPeriod {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Date {
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
+        #[serde(
+            rename = "day",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub day: ::std::option::Option<i32>,
+        #[doc = "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day."]
+        #[serde(
+            rename = "month",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub month: ::std::option::Option<i32>,
+        #[doc = "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year."]
+        #[serde(
+            rename = "year",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub year: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for Date {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Date {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -177,7 +261,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub histogram: ::std::option::Option<Vec<crate::schemas::Bin>>,
-        #[doc = "Common useful percentiles of the Metric. The value type for the percentiles will be the same as the value types given for the Histogram bins."]
+        #[doc = "Commonly useful percentiles of the Metric. The value type for the percentiles will be the same as the value types given for the Histogram bins."]
         #[serde(
             rename = "percentiles",
             default,
@@ -242,7 +326,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub form_factor: ::std::option::Option<crate::schemas::QueryRequestFormFactor>,
-        #[doc = "The metrics that should be included in the response. If none are specified then any metrics found will be returned. Allowed values: \\[“first_contentful_paint”, “first_input_delay”, “largest_contentful_paint”, “cumulative_layout_shift”\\]"]
+        #[doc = "The metrics that should be included in the response. If none are specified then any metrics found will be returned. Allowed values: \\[“first_contentful_paint”, “first_input_delay”, “largest_contentful_paint”, “cumulative_layout_shift”, “experimental_time_to_first_byte”, “experimental_interaction_to_next_paint”\\]"]
         #[serde(
             rename = "metrics",
             default,
@@ -384,6 +468,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Record {
+        #[doc = "The collection period indicates when the data reflected in this record was collected."]
+        #[serde(
+            rename = "collectionPeriod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub collection_period: ::std::option::Option<crate::schemas::CollectionPeriod>,
         #[doc = "Key defines all of the unique querying parameters needed to look up a user experience record."]
         #[serde(
             rename = "key",
@@ -391,7 +482,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<crate::schemas::Key>,
-        #[doc = "Metrics is the map of user experience data available for the record defined in the key field. Metrics are keyed on the metric name. Allowed key values: \\[“first_contentful_paint”, “first_input_delay”, “largest_contentful_paint”, “cumulative_layout_shift”\\]"]
+        #[doc = "Metrics is the map of user experience data available for the record defined in the key field. Metrics are keyed on the metric name. Allowed key values: \\[“first_contentful_paint”, “first_input_delay”, “largest_contentful_paint”, “cumulative_layout_shift”, “experimental_time_to_first_byte”, “experimental_interaction_to_next_paint”\\]"]
         #[serde(
             rename = "metrics",
             default,
@@ -1102,15 +1193,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

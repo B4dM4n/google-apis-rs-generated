@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("spanner1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220413")
+            .version("0.1.0-20230126")
             .about("Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,7 +35,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: instance_configs and instances");
+            .about("sub-resources: instance_config_operations, instance_configs and instances");
         let mut scans0 = SubCommand::with_name("scans")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -44,9 +44,24 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Return available scans given a Database-specific resource name.");
             scans0 = scans0.subcommand(mcmd);
         }
+        let mut instance_config_operations1 = SubCommand::with_name("instance_config_operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list");
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists the user-managed instance config long-running operations in the given project. An instance config operation has a name of the form `projects//instanceConfigs//operations/`. The long-running operation metadata field type `metadata.type_url` describes the type of the metadata. Operations returned include those that have completed/failed/canceled within the last 7 days, and pending operations. Operations returned are ordered by `operation.metadata.value.start_time` in descending order starting from the most recently started operation.");
+            instance_config_operations1 = instance_config_operations1.subcommand(mcmd);
+        }
         let mut instance_configs1 = SubCommand::with_name("instance_configs")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get and list");
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates an instance config and begins preparing it to be used. The returned long-running operation can be used to track the progress of preparing the new instance config. The instance config name is assigned by the caller. If the named instance config already exists, `CreateInstanceConfig` returns `ALREADY_EXISTS`. Immediately after the request returns: * The instance config is readable via the API, with all requested attributes. The instance config's reconciling field is set to true. Its state is `CREATING`. While the operation is pending: * Cancelling the operation renders the instance config immediately unreadable via the API. * Except for deleting the creating resource, all other attempts to modify the instance config are rejected. Upon completion of the returned operation: * Instances can be created using the instance configuration. * The instance config's reconciling field becomes false. Its state becomes `READY`. The returned long-running operation will have a name of the format `/operations/` and can be used to track creation of the instance config. The metadata field type is CreateInstanceConfigMetadata. The response field type is InstanceConfig, if successful. Authorization requires `spanner.instanceConfigs.create` permission on the resource parent.");
+            instance_configs1 = instance_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes the instance config. Deletion is only allowed when no instances are using the configuration. If any instances are using the config, returns `FAILED_PRECONDITION`. Only user managed configurations can be deleted. Authorization requires `spanner.instanceConfigs.delete` permission on the resource name.");
+            instance_configs1 = instance_configs1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get")
                 .about("Gets information about a particular instance configuration.");
@@ -55,6 +70,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists the supported instance configurations for a given project.");
+            instance_configs1 = instance_configs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an instance config. The returned long-running operation can be used to track the progress of updating the instance. If the named instance config does not exist, returns `NOT_FOUND`. Only user managed configurations can be updated. Immediately after the request returns: * The instance config's reconciling field is set to true. While the operation is pending: * Cancelling the operation sets its metadata's cancel_time. The operation is guaranteed to succeed at undoing all changes, after which point it terminates with a `CANCELLED` status. * All other attempts to modify the instance config are rejected. * Reading the instance config via the API continues to give the pre-request values. Upon completion of the returned operation: * Creating instances using the instance configuration uses the new values. * The instance config's new values are readable via the API. * The instance config's reconciling field becomes false. The returned long-running operation will have a name of the format `/operations/` and can be used to track the instance config modification. The metadata field type is UpdateInstanceConfigMetadata. The response field type is InstanceConfig, if successful. Authorization requires `spanner.instanceConfigs.update` permission on the resource name.");
             instance_configs1 = instance_configs1.subcommand(mcmd);
         }
         let mut instances1 = SubCommand::with_name("instances")
@@ -124,7 +143,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: copy, create, delete, get, get_iam_policy, list, patch, set_iam_policy and test_iam_permissions");
         {
-            let mcmd = SubCommand::with_name("copy").about("Starts copying a Cloud Spanner Backup. The returned backup long-running operation will have a name of the format `projects//instances//backups//operations/` and can be used to track copying of the backup. The operation is associated with the destination backup. The metadata field type is CopyBackupMetadata. The response field type is Backup, if successful. Cancelling the returned operation will stop the copying and delete the backup. Concurrent CopyBackup requests can run on the same source backup.");
+            let mcmd = SubCommand::with_name("copy").about("Starts copying a Cloud Spanner Backup. The returned backup long-running operation will have a name of the format `projects//instances//backups//operations/` and can be used to track copying of the backup. The operation is associated with the destination backup. The metadata field type is CopyBackupMetadata. The response field type is Backup, if successful. Cancelling the returned operation will stop the copying and delete the destination backup. Concurrent CopyBackup requests can run on the same source backup.");
             backups2 = backups2.subcommand(mcmd);
         }
         {
@@ -257,6 +276,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations3 = operations3.subcommand(mcmd);
         }
+        let mut database_roles3 = SubCommand::with_name("database_roles")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: list and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists Cloud Spanner database roles.");
+            database_roles3 = database_roles3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that the caller has on the specified database or backup resource. Attempting this RPC on a non-existent Cloud Spanner database will result in a NOT_FOUND error if the user has `spanner.databases.list` permission on the containing Cloud Spanner instance. Otherwise returns an empty set of permissions. Calling this method on a backup that does not exist will result in a NOT_FOUND error if the user has `spanner.backups.list` permission on the containing instance.");
+            database_roles3 = database_roles3.subcommand(mcmd);
+        }
         let mut operations3 = SubCommand::with_name("operations")
             .setting(AppSettings::ColoredHelp)
             .about("methods: cancel, delete, get and list");
@@ -342,6 +372,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         databases2 = databases2.subcommand(sessions3);
         databases2 = databases2.subcommand(operations3);
+        databases2 = databases2.subcommand(database_roles3);
         backups2 = backups2.subcommand(operations3);
         instances1 = instances1.subcommand(operations2);
         instances1 = instances1.subcommand(databases2);
@@ -351,6 +382,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         instance_configs1 = instance_configs1.subcommand(operations2);
         projects0 = projects0.subcommand(instances1);
         projects0 = projects0.subcommand(instance_configs1);
+        projects0 = projects0.subcommand(instance_config_operations1);
         app = app.subcommand(scans0);
         app = app.subcommand(projects0);
 

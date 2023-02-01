@@ -7,7 +7,7 @@
   "canonicalName": "Fact Check Tools",
   "fullyEncodeReservedExpansion": true,
   "version": "v1alpha1",
-  "revision": "20220425",
+  "revision": "20230129",
   "title": "Fact Check Tools API",
   "description": "",
   "ownerDomain": "google.com",

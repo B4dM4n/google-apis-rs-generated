@@ -7,7 +7,7 @@
   "canonicalName": "Dialogflow",
   "fullyEncodeReservedExpansion": true,
   "version": "v3",
-  "revision": "20220417",
+  "revision": "20230130",
   "title": "Dialogflow API",
   "description": "Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).",
   "ownerDomain": "google.com",
@@ -212,7 +212,7 @@
   "schemas": {
     "GoogleCloudDialogflowCxV3AdvancedSettings": {
       "id": "GoogleCloudDialogflowCxV3AdvancedSettings",
-      "description": "Hierarchical advanced settings for agent/flow/page/fulfillment/parameter. Settings exposed at lower level overrides the settings exposed at higher level. Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.",
+      "description": "Hierarchical advanced settings for agent/flow/page/fulfillment/parameter. Settings exposed at lower level overrides the settings exposed at higher level. Overriding occurs at the sub-setting level. For example, the playback_interruption_settings at fulfillment level only overrides the playback_interruption_settings at the agent level, leaving other settings at the agent level unchanged. DTMF settings does not override each other. DTMF settings set at different levels define DTMF detections running in parallel. Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -331,7 +331,7 @@
           "items": null
         },
         "locked": {
-          "description": "Indiciates whether the agent is locked for changes. If the agent is locked, modifications to the agent will be rejected except for RestoreAgent.",
+          "description": "Indicates whether the agent is locked for changes. If the agent is locked, modifications to the agent will be rejected except for RestoreAgent.",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -837,6 +837,22 @@
             "additionalProperties": null,
             "items": null
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDialogflowCxV3ConversationSignals": {
+      "id": "GoogleCloudDialogflowCxV3ConversationSignals",
+      "description": "This message is used to hold all the Conversation Signals data, which will be converted to JSON and exported to BigQuery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "turnSignals": {
+          "description": "Required. Turn signals for the current turn.",
+          "$ref": "GoogleCloudDialogflowCxV3TurnSignals"
         }
       },
       "additionalProperties": null,
@@ -1606,6 +1622,10 @@
           "items": {
             "$ref": "GoogleCloudDialogflowCxV3EnvironmentVersionConfig"
           }
+        },
+        "webhookConfig": {
+          "description": "The webhook configuration for this environment.",
+          "$ref": "GoogleCloudDialogflowCxV3EnvironmentWebhookConfig"
         }
       },
       "additionalProperties": null,
@@ -1678,6 +1698,30 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDialogflowCxV3EnvironmentWebhookConfig": {
+      "id": "GoogleCloudDialogflowCxV3EnvironmentWebhookConfig",
+      "description": "Configuration for webhooks.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "webhookOverrides": {
+          "description": "The list of webhooks to override for the agent environment. The webhook must exist in the agent. You can override fields in `generic_web_service` and `service_directory`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDialogflowCxV3Webhook"
+          }
         }
       },
       "additionalProperties": null,
@@ -2173,11 +2217,13 @@
           "format": null,
           "enum": [
             "DATA_FORMAT_UNSPECIFIED",
-            "BLOB"
+            "BLOB",
+            "JSON_PACKAGE"
           ],
           "enumDescriptions": [
             "Unspecified format.",
-            "Agent content will be exported as raw bytes."
+            "Agent content will be exported as raw bytes.",
+            "Agent content will be exported in JSON Package format."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -4762,6 +4808,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "channel": {
+          "description": "The channel which this query is for. If specified, only the ResponseMessage associated with the channel will be returned. If no ResponseMessage is associated with the channel, it falls back to the ResponseMessage with unspecified channel. If unspecified, the ResponseMessage with unspecified channel will be returned.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "currentPage": {
           "description": "The unique identifier of the page to override the current page in the session. Format: `projects//locations//agents//flows//pages/`. If `current_page` is specified, the previous state of the session will be ignored by Dialogflow, including the previous page and the previous session parameters. In most cases, current_page and parameters should be configured together to direct a session to a specific state.",
           "type": "string",
@@ -4900,7 +4956,7 @@
           "$ref": "GoogleCloudDialogflowCxV3Page"
         },
         "diagnosticInfo": {
-          "description": "The free-form diagnostic info. For example, this field could contain webhook call latency. The string keys of the Struct's fields map can change without notice.",
+          "description": "The free-form diagnostic info. For example, this field could contain webhook call latency. The fields of this data can change without notice, so you should not write code that depends on its structure. One of the fields is called \"Alternative Matched Intents\", which may aid with debugging. The following describes these intent results: - The list is empty if no intent was matched to end-user input. - Only intents that are referenced in the currently active flow are included. - The matched intent is included. - Other intents that could have matched end-user input, but did not match because they are referenced by intent routes that are out of [scope](https://cloud.google.com/dialogflow/cx/docs/concept/handler#scope), are included. - Other intents referenced by intent routes in scope that matched end-user input, but had a lower confidence score.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -5124,6 +5180,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "channel": {
+          "description": "The channel which the response is associated with. Clients can specify the channel via QueryParameters.channel, and only associated channel response will be returned.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "conversationSuccess": {
           "description": "Indicates that the conversation succeeded.",
           "$ref": "GoogleCloudDialogflowCxV3ResponseMessageConversationSuccess"
@@ -5740,6 +5806,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "audioExportSettings": {
+          "description": "Controls audio export settings for post-conversation analytics when ingesting audio to conversations via Participants.AnalyzeContent or Participants.StreamingAnalyzeContent. If retention_strategy is set to REMOVE_AFTER_CONVERSATION or audio_export_settings.gcs_bucket is empty, audio export is disabled. If audio export is enabled, audio is recorded and saved to audio_export_settings.gcs_bucket, subject to retention policy of audio_export_settings.gcs_bucket. This setting won't effect audio input for implicit sessions via Sessions.DetectIntent or Sessions.StreamingDetectIntent.",
+          "$ref": "GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings"
+        },
         "deidentifyTemplate": {
           "description": "[DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this template to define de-identification configuration for the content. The `DLP De-identify Templates Reader` role is needed on the Dialogflow service identity service account (has the form `service-PROJECT_NUMBER@gcp-sa-dialogflow.iam.gserviceaccount.com`) for your agent's project. If empty, Dialogflow replaces sensitive info with `[redacted]` text. The template name will have one of the following formats: `projects//locations//deidentifyTemplates/` OR `organizations//locations//deidentifyTemplates/` Note: `deidentify_template` must be located in the same region as the `SecuritySettings`.",
           "type": "string",
@@ -5841,9 +5911,71 @@
           "items": null
         },
         "retentionWindowDays": {
-          "description": "Retains data in interaction logging for the specified number of days. This does not apply to Cloud logging, which is owned by the user - not Dialogflow. User must set a value lower than Dialogflow's default 365d TTL. Setting a value higher than that has no effect. A missing value or setting to 0 also means we use Dialogflow's default TTL. Note: Interaction logging is a limited access feature. Talk to your Google representative to check availability for you.",
+          "description": "Retains the data for the specified number of days. User must set a value lower than Dialogflow's default 365d TTL (30 days for Agent Assist traffic), higher value will be ignored and use default. Setting a value higher than that has no effect. A missing value or setting to 0 also means we use default TTL.",
           "type": "integer",
           "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings": {
+      "id": "GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings",
+      "description": "Settings for exporting audio.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "audioExportPattern": {
+          "description": "Filename pattern for exported audio.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "audioFormat": {
+          "description": "File format for exported audio file. Currently only in telephony recordings.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "AUDIO_FORMAT_UNSPECIFIED",
+            "MULAW",
+            "MP3",
+            "OGG"
+          ],
+          "enumDescriptions": [
+            "Unspecified. Do not use.",
+            "G.711 mu-law PCM with 8kHz sample rate.",
+            "MP3 file format.",
+            "OGG Vorbis."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "enableAudioRedaction": {
+          "description": "Enable audio redaction if it is true.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gcsBucket": {
+          "description": "Cloud Storage bucket to export audio record to. Setting this field would grant the Storage Object Creator role to the Dialogflow Service Agent. API caller that tries to modify this field should have the permission of storage.buckets.setIamPolicy.",
+          "type": "string",
+          "format": null,
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -6764,6 +6896,122 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDialogflowCxV3TurnSignals": {
+      "id": "GoogleCloudDialogflowCxV3TurnSignals",
+      "description": "Collection of all signals that were extracted for a single turn of the conversation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "agentEscalated": {
+          "description": "Whether agent responded with LiveAgentHandoff fulfillment.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dtmfUsed": {
+          "description": "Whether user was using DTMF input.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "failureReasons": {
+          "description": "Failure reasons of the turn.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "FAILURE_REASON_UNSPECIFIED",
+              "FAILED_INTENT",
+              "FAILED_WEBHOOK"
+            ],
+            "enumDescriptions": [
+              "Failure reason is not assigned.",
+              "Whether NLU failed to recognize user intent.",
+              "Whether webhook failed during the turn."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "noMatch": {
+          "description": "Whether NLU predicted NO_MATCH.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "noUserInput": {
+          "description": "Whether user provided no input.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reachedEndPage": {
+          "description": "Whether turn resulted in End Session page.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userEscalated": {
+          "description": "Whether user was specifically asking for a live agent.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "webhookStatuses": {
+          "description": "Human-readable statuses of the webhooks triggered during this turn.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDialogflowCxV3UpdateDocumentOperationMetadata": {
       "id": "GoogleCloudDialogflowCxV3UpdateDocumentOperationMetadata",
       "description": "Metadata for UpdateDocument operation.",
@@ -7287,7 +7535,7 @@
     },
     "GoogleCloudDialogflowCxV3WebhookRequest": {
       "id": "GoogleCloudDialogflowCxV3WebhookRequest",
-      "description": "The request message for a webhook call. The request is sent as a JSON object and the field names will be presented in camel cases.",
+      "description": "The request message for a webhook call. The request is sent as a JSON object and the field names will be presented in camel cases. You may see undocumented fields in an actual request. These fields are used internally by Dialogflow and should be ignored.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -7822,6 +8070,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDialogflowCxV3beta1ConversationSignals": {
+      "id": "GoogleCloudDialogflowCxV3beta1ConversationSignals",
+      "description": "This message is used to hold all the Conversation Signals data, which will be converted to JSON and exported to BigQuery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "turnSignals": {
+          "description": "Required. Turn signals for the current turn.",
+          "$ref": "GoogleCloudDialogflowCxV3beta1TurnSignals"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDialogflowCxV3beta1ConversationTurn": {
       "id": "GoogleCloudDialogflowCxV3beta1ConversationTurn",
       "description": "One interaction between a human and virtual agent. The human provides some input and the virtual agent provides a response.",
@@ -8182,6 +8446,10 @@
           "items": {
             "$ref": "GoogleCloudDialogflowCxV3beta1EnvironmentVersionConfig"
           }
+        },
+        "webhookConfig": {
+          "description": "The webhook configuration for this environment.",
+          "$ref": "GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig"
         }
       },
       "additionalProperties": null,
@@ -8254,6 +8522,30 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig": {
+      "id": "GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig",
+      "description": "Configuration for webhooks.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "webhookOverrides": {
+          "description": "The list of webhooks to override for the agent environment. The webhook must exist in the agent. You can override fields in `generic_web_service` and `service_directory`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudDialogflowCxV3beta1Webhook"
+          }
         }
       },
       "additionalProperties": null,
@@ -9561,6 +9853,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "channel": {
+          "description": "The channel which the response is associated with. Clients can specify the channel via QueryParameters.channel, and only associated channel response will be returned.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "conversationSuccess": {
           "description": "Indicates that the conversation succeeded.",
           "$ref": "GoogleCloudDialogflowCxV3beta1ResponseMessageConversationSuccess"
@@ -10399,6 +10701,122 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDialogflowCxV3beta1TurnSignals": {
+      "id": "GoogleCloudDialogflowCxV3beta1TurnSignals",
+      "description": "Collection of all signals that were extracted for a single turn of the conversation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "agentEscalated": {
+          "description": "Whether agent responded with LiveAgentHandoff fulfillment.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dtmfUsed": {
+          "description": "Whether user was using DTMF input.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "failureReasons": {
+          "description": "Failure reasons of the turn.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "FAILURE_REASON_UNSPECIFIED",
+              "FAILED_INTENT",
+              "FAILED_WEBHOOK"
+            ],
+            "enumDescriptions": [
+              "Failure reason is not assigned.",
+              "Whether NLU failed to recognize user intent.",
+              "Whether webhook failed during the turn."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "noMatch": {
+          "description": "Whether NLU predicted NO_MATCH.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "noUserInput": {
+          "description": "Whether user provided no input.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reachedEndPage": {
+          "description": "Whether turn resulted in End Session page.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userEscalated": {
+          "description": "Whether user was specifically asking for a live agent.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "webhookStatuses": {
+          "description": "Human-readable statuses of the webhooks triggered during this turn.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDialogflowCxV3beta1UpdateDocumentOperationMetadata": {
       "id": "GoogleCloudDialogflowCxV3beta1UpdateDocumentOperationMetadata",
       "description": "Metadata for UpdateDocument operation.",
@@ -10415,9 +10833,148 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDialogflowCxV3beta1Webhook": {
+      "id": "GoogleCloudDialogflowCxV3beta1Webhook",
+      "description": "Webhooks host the developer's business logic. During a session, webhooks allow the developer to use the data extracted by Dialogflow's natural language processing to generate dynamic responses, validate collected data, or trigger actions on the backend.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disabled": {
+          "description": "Indicates whether the webhook is disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "Required. The human-readable name of the webhook, unique within the agent.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "genericWebService": {
+          "description": "Configuration for a generic web service.",
+          "$ref": "GoogleCloudDialogflowCxV3beta1WebhookGenericWebService"
+        },
+        "name": {
+          "description": "The unique identifier of the webhook. Required for the Webhooks.UpdateWebhook method. Webhooks.CreateWebhook populates the name automatically. Format: `projects//locations//agents//webhooks/`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serviceDirectory": {
+          "description": "Configuration for a [Service Directory](https://cloud.google.com/service-directory) service.",
+          "$ref": "GoogleCloudDialogflowCxV3beta1WebhookServiceDirectoryConfig"
+        },
+        "timeout": {
+          "description": "Webhook execution timeout. Execution is considered failed if Dialogflow doesn't receive a response from webhook at the end of the timeout period. Defaults to 5 seconds, maximum allowed timeout is 30 seconds.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDialogflowCxV3beta1WebhookGenericWebService": {
+      "id": "GoogleCloudDialogflowCxV3beta1WebhookGenericWebService",
+      "description": "Represents configuration for a generic web service.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "allowedCaCerts": {
+          "description": "Optional. Specifies a list of allowed custom CA certificates (in DER format) for HTTPS verification. This overrides the default SSL trust store. If this is empty or unspecified, Dialogflow will use Google's default trust store to verify certificates. N.B. Make sure the HTTPS server certificates are signed with \"subject alt name\". For instance a certificate can be self-signed using the following command, ``` openssl x509 -req -days 200 -in example.com.csr \\ -signkey example.com.key \\ -out example.com.crt \\ -extfile <(printf \"\\nsubjectAltName='DNS:www.example.com'\") ```",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": "byte",
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "password": {
+          "description": "The password for HTTP Basic authentication.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "requestHeaders": {
+          "description": "The HTTP request headers to send together with webhook requests.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "uri": {
+          "description": "Required. The webhook URI for receiving POST requests. It must use https protocol.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "username": {
+          "description": "The user name for HTTP Basic authentication.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDialogflowCxV3beta1WebhookRequest": {
       "id": "GoogleCloudDialogflowCxV3beta1WebhookRequest",
-      "description": "The request message for a webhook call. The request is sent as a JSON object and the field names will be presented in camel cases.",
+      "description": "The request message for a webhook call. The request is sent as a JSON object and the field names will be presented in camel cases. You may see undocumented fields in an actual request. These fields are used internally by Dialogflow and should be ignored.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -10784,6 +11341,32 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDialogflowCxV3beta1WebhookServiceDirectoryConfig": {
+      "id": "GoogleCloudDialogflowCxV3beta1WebhookServiceDirectoryConfig",
+      "description": "Represents configuration for a [Service Directory](https://cloud.google.com/service-directory) service.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "genericWebService": {
+          "description": "Generic Service configuration of this webhook.",
+          "$ref": "GoogleCloudDialogflowCxV3beta1WebhookGenericWebService"
+        },
+        "service": {
+          "description": "Required. The name of [Service Directory](https://cloud.google.com/service-directory) service. Format: `projects//locations//namespaces//services/`. `Location ID` of the service directory must be the same as the location of the agent.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDialogflowV2AnnotatedMessagePart": {
       "id": "GoogleCloudDialogflowV2AnnotatedMessagePart",
       "description": "Represents a part of a message possibly annotated with an entity. The part can be an entity or purely a part of the message between two entities or message start/end.",
@@ -11053,9 +11636,9 @@
           ],
           "enumDescriptions": [
             "Unspecified feature type.",
-            "Run article suggestion model.",
-            "Run FAQ model.",
-            "Run smart reply model."
+            "Run article suggestion model for chat.",
+            "Run FAQ model for chat.",
+            "Run smart reply model for chat."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -11279,7 +11862,18 @@
       "format": null,
       "enum": [],
       "enumDescriptions": [],
-      "properties": {},
+      "properties": {
+        "conversationDataset": {
+          "description": "The resource name of the conversation dataset that will be created. Format: `projects//locations//conversationDatasets/`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
       "additionalProperties": null,
       "items": null
     },
@@ -13899,7 +14493,7 @@
           "items": null
         },
         "cancelsSlotFilling": {
-          "description": "Indicates whether the conversational query triggers a cancellation for slot filling.",
+          "description": "Indicates whether the conversational query triggers a cancellation for slot filling. For more information, see the [cancel slot filling documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel).",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -14063,7 +14657,7 @@
     },
     "GoogleCloudDialogflowV2Sentiment": {
       "id": "GoogleCloudDialogflowV2Sentiment",
-      "description": "The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text.",
+      "description": "The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text. See: https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values for how to interpret the result.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -14221,9 +14815,9 @@
           ],
           "enumDescriptions": [
             "Unspecified feature type.",
-            "Run article suggestion model.",
-            "Run FAQ model.",
-            "Run smart reply model."
+            "Run article suggestion model for chat.",
+            "Run FAQ model for chat.",
+            "Run smart reply model for chat."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -14853,13 +15447,15 @@
             "TYPE_UNSPECIFIED",
             "ARTICLE_SUGGESTION",
             "FAQ",
-            "SMART_REPLY"
+            "SMART_REPLY",
+            "CONVERSATION_SUMMARIZATION"
           ],
           "enumDescriptions": [
             "Unspecified feature type.",
-            "Run article suggestion model.",
+            "Run article suggestion model for chat.",
             "Run FAQ model.",
-            "Run smart reply model."
+            "Run smart reply model for chat.",
+            "Run conversation summarization model for chat."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -17882,7 +18478,7 @@
           "items": null
         },
         "cancelsSlotFilling": {
-          "description": "Indicates whether the conversational query triggers a cancellation for slot filling.",
+          "description": "Indicates whether the conversational query triggers a cancellation for slot filling. For more information, see the [cancel slot filling documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel).",
           "type": "boolean",
           "format": null,
           "enum": [],
@@ -18050,7 +18646,7 @@
     },
     "GoogleCloudDialogflowV2beta1Sentiment": {
       "id": "GoogleCloudDialogflowV2beta1Sentiment",
-      "description": "The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text.",
+      "description": "The sentiment, such as positive/negative feeling or association, for a unit of analysis, such as the query text. See: https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values for how to interpret the result.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -18204,13 +18800,15 @@
             "TYPE_UNSPECIFIED",
             "ARTICLE_SUGGESTION",
             "FAQ",
-            "SMART_REPLY"
+            "SMART_REPLY",
+            "CONVERSATION_SUMMARIZATION"
           ],
           "enumDescriptions": [
             "Unspecified feature type.",
-            "Run article suggestion model.",
+            "Run article suggestion model for chat.",
             "Run FAQ model.",
-            "Run smart reply model."
+            "Run smart reply model for chat.",
+            "Run conversation summarization model for chat."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -18585,6 +19183,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDialogflowV3alpha1ConversationSignals": {
+      "id": "GoogleCloudDialogflowV3alpha1ConversationSignals",
+      "description": "This message is used to hold all the Conversation Signals data, which will be converted to JSON and exported to BigQuery.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "turnSignals": {
+          "description": "Required. Turn signals for the current turn.",
+          "$ref": "GoogleCloudDialogflowV3alpha1TurnSignals"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDialogflowV3alpha1CreateDocumentOperationMetadata": {
       "id": "GoogleCloudDialogflowV3alpha1CreateDocumentOperationMetadata",
       "description": "Metadata for CreateDocument operation.",
@@ -18700,6 +19314,132 @@
         "genericMetadata": {
           "description": "The generic information of the operation.",
           "$ref": "GoogleCloudDialogflowV3alpha1GenericKnowledgeOperationMetadata"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDialogflowV3alpha1TurnSignals": {
+      "id": "GoogleCloudDialogflowV3alpha1TurnSignals",
+      "description": "Collection of all signals that were extracted for a single turn of the conversation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "agentEscalated": {
+          "description": "Whether agent responded with LiveAgentHandoff fulfillment.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dtmfUsed": {
+          "description": "Whether user was using DTMF input.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "failureReasons": {
+          "description": "Failure reasons of the turn.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "FAILURE_REASON_UNSPECIFIED",
+              "FAILED_INTENT",
+              "FAILED_WEBHOOK"
+            ],
+            "enumDescriptions": [
+              "Failure reason is not assigned.",
+              "Whether NLU failed to recognize user intent.",
+              "Whether webhook failed during the turn."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "noMatch": {
+          "description": "Whether NLU predicted NO_MATCH.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "noUserInput": {
+          "description": "Whether user provided no input.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reachedEndPage": {
+          "description": "Whether turn resulted in End Session page.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "triggeredAbandonmentEvent": {
+          "description": "Whether agent has triggered the event corresponding to user abandoning the conversation.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userEscalated": {
+          "description": "Whether user was specifically asking for a live agent.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "webhookStatuses": {
+          "description": "Human-readable statuses of the webhooks triggered during this turn.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         }
       },
       "additionalProperties": null,

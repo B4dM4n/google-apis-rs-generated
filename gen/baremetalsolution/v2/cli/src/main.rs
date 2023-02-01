@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("baremetalsolution2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220418")
+            .version("0.1.0-20230113")
             .about("Provides ways to manage Bare Metal Solution hardware installed in a regional extension located near a Google Cloud data center.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -57,8 +57,26 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instance_provisioning_settings2 = instance_provisioning_settings2.subcommand(mcmd);
         }
         let mut instances2 = SubCommand::with_name("instances")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: get, list, patch, reset, start and stop");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, detach_lun, disable_interactive_serial_console, enable_interactive_serial_console, get, list, patch, reset, start and stop");
+        {
+            let mcmd = SubCommand::with_name("create").about("Create an Instance.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("detach_lun").about("Detach LUN from Instance.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("disable_interactive_serial_console")
+                .about("Disable the interactive serial console feature on an instance.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("enable_interactive_serial_console")
+                .about("Enable the interactive serial console feature on an instance.");
+            instances2 = instances2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Get details about a single server.");
             instances2 = instances2.subcommand(mcmd);
@@ -106,7 +124,16 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut nfs_shares2 = SubCommand::with_name("nfs_shares")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get, list and patch");
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Create an NFS share.");
+            nfs_shares2 = nfs_shares2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete")
+                .about("Delete an NFS share. The underlying volume is automatically deleted.");
+            nfs_shares2 = nfs_shares2.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("get").about("Get details of a single NFS share.");
             nfs_shares2 = nfs_shares2.subcommand(mcmd);
@@ -119,6 +146,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd =
                 SubCommand::with_name("patch").about("Update details of a single NFS share.");
             nfs_shares2 = nfs_shares2.subcommand(mcmd);
+        }
+        let mut operations2 = SubCommand::with_name("operations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get");
+        {
+            let mcmd = SubCommand::with_name("get").about("Get details about an operation. This method used only to work around CCFE lack of passthrough LRO support (b/221498758).");
+            operations2 = operations2.subcommand(mcmd);
         }
         let mut provisioning_configs2 = SubCommand::with_name("provisioning_configs")
             .setting(AppSettings::ColoredHelp)
@@ -148,37 +182,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("List the budget details to provision resources on a given project.");
             provisioning_quotas2 = provisioning_quotas2.subcommand(mcmd);
         }
-        let mut snapshot_schedule_policies2 = SubCommand::with_name("snapshot_schedule_policies")
+        let mut ssh_keys2 = SubCommand::with_name("ssh_keys")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and patch");
+            .about("methods: create, delete and list");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Create a snapshot schedule policy in the specified project.");
-            snapshot_schedule_policies2 = snapshot_schedule_policies2.subcommand(mcmd);
+            let mcmd = SubCommand::with_name("create").about("Register a public SSH key in the specified project for use with the interactive serial console feature.");
+            ssh_keys2 = ssh_keys2.subcommand(mcmd);
         }
         {
-            let mcmd =
-                SubCommand::with_name("delete").about("Delete a named snapshot schedule policy.");
-            snapshot_schedule_policies2 = snapshot_schedule_policies2.subcommand(mcmd);
+            let mcmd = SubCommand::with_name("delete")
+                .about("Deletes a public SSH key registered in the specified project.");
+            ssh_keys2 = ssh_keys2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get")
-                .about("Get details of a single snapshot schedule policy.");
-            snapshot_schedule_policies2 = snapshot_schedule_policies2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("list")
-                .about("List snapshot schedule policies in a given project and location.");
-            snapshot_schedule_policies2 = snapshot_schedule_policies2.subcommand(mcmd);
-        }
-        {
-            let mcmd = SubCommand::with_name("patch")
-                .about("Update a snapshot schedule policy in the specified project.");
-            snapshot_schedule_policies2 = snapshot_schedule_policies2.subcommand(mcmd);
+            let mcmd = SubCommand::with_name("list").about("Lists the public SSH keys registered for the specified project. These SSH keys are used only for the interactive serial console feature.");
+            ssh_keys2 = ssh_keys2.subcommand(mcmd);
         }
         let mut volumes2 = SubCommand::with_name("volumes")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get, list and patch");
+            .about("methods: get, list, patch and resize");
         {
             let mcmd =
                 SubCommand::with_name("get").about("Get details of a single storage volume.");
@@ -192,6 +214,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd =
                 SubCommand::with_name("patch").about("Update details of a single storage volume.");
+            volumes2 = volumes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("resize").about("Emergency Volume resize.");
             volumes2 = volumes2.subcommand(mcmd);
         }
         let mut luns3 = SubCommand::with_name("luns")
@@ -211,36 +237,32 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and restore_volume_snapshot");
         {
-            let mcmd = SubCommand::with_name("create")
-                .about("Create a storage volume snapshot in a containing volume.");
+            let mcmd = SubCommand::with_name("create").about("Takes a snapshot of a boot volume. Returns INVALID_ARGUMENT if called for a non-boot volume.");
             snapshots3 = snapshots3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Deletes a storage volume snapshot for a given volume.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes a volume snapshot. Returns INVALID_ARGUMENT if called for a non-boot volume.");
             snapshots3 = snapshots3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get")
-                .about("Get details of a single storage volume snapshot.");
+            let mcmd = SubCommand::with_name("get").about("Returns the specified snapshot resource. Returns INVALID_ARGUMENT if called for a non-boot volume.");
             snapshots3 = snapshots3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("List storage volume snapshots for given storage volume.");
+            let mcmd = SubCommand::with_name("list").about("Retrieves the list of snapshots for the specified volume. Returns a response with an empty list of snapshots if called for a non-boot volume.");
             snapshots3 = snapshots3.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("restore_volume_snapshot")
-                .about("Restore a storage volume snapshot to its containing volume.");
+            let mcmd = SubCommand::with_name("restore_volume_snapshot").about("Uses the specified snapshot to restore its parent volume. Returns INVALID_ARGUMENT if called for a non-boot volume.");
             snapshots3 = snapshots3.subcommand(mcmd);
         }
         volumes2 = volumes2.subcommand(snapshots3);
         volumes2 = volumes2.subcommand(luns3);
         locations1 = locations1.subcommand(volumes2);
-        locations1 = locations1.subcommand(snapshot_schedule_policies2);
+        locations1 = locations1.subcommand(ssh_keys2);
         locations1 = locations1.subcommand(provisioning_quotas2);
         locations1 = locations1.subcommand(provisioning_configs2);
+        locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(nfs_shares2);
         locations1 = locations1.subcommand(networks2);
         locations1 = locations1.subcommand(instances2);

@@ -7,7 +7,7 @@
   "canonicalName": "Pubsub",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20230124",
   "title": "Cloud Pub/Sub API",
   "description": "Provides reliable, many-to-many, asynchronous messaging between applications. ",
   "ownerDomain": "google.com",
@@ -240,6 +240,80 @@
       "additionalProperties": null,
       "items": null
     },
+    "BigQueryConfig": {
+      "id": "BigQueryConfig",
+      "description": "Configuration for a BigQuery subscription.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dropUnknownFields": {
+          "description": "When true and use_topic_schema is true, any fields that are a part of the topic schema that are not part of the BigQuery table schema are dropped when writing to BigQuery. Otherwise, the schemas must be kept in sync and any messages with extra fields are not written and remain in the subscription's backlog.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "Output only. An output-only field that indicates whether or not the subscription can receive messages.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "ACTIVE",
+            "PERMISSION_DENIED",
+            "NOT_FOUND",
+            "SCHEMA_MISMATCH"
+          ],
+          "enumDescriptions": [
+            "Default value. This value is unused.",
+            "The subscription can actively send messages to BigQuery",
+            "Cannot write to the BigQuery table because of permission denied errors. This can happen if - Pub/Sub SA has not been granted the [appropriate BigQuery IAM permissions](https://cloud.google.com/pubsub/docs/create-subscription#assign_bigquery_service_account) - bigquery.googleapis.com API is not enabled for the project ([instructions](https://cloud.google.com/service-usage/docs/enable-disable))",
+            "Cannot write to the BigQuery table because it does not exist.",
+            "Cannot write to the BigQuery table due to a schema mismatch."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "table": {
+          "description": "The name of the table to which to write data, of the form {projectId}.{datasetId}.{tableId}",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useTopicSchema": {
+          "description": "When true, use the topic's schema as the columns to write to in BigQuery, if it exists.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "writeMetadata": {
+          "description": "When true, write the subscription name, message_id, publish_time, attributes, and ordering_key to additional columns in the table. The subscription name, message_id, and publish_time fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Binding": {
       "id": "Binding",
       "description": "Associates `members`, or principals, with a `role`.",
@@ -253,7 +327,7 @@
           "$ref": "Expr"
         },
         "members": {
-          "description": "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
+          "description": "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -284,6 +358,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "CommitSchemaRequest": {
+      "id": "CommitSchemaRequest",
+      "description": "Request for CommitSchema method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "schema": {
+          "description": "Required. The schema revision to commit.",
+          "$ref": "Schema"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "CreateSnapshotRequest": {
       "id": "CreateSnapshotRequest",
       "description": "Request for the `CreateSnapshot` method.",
@@ -293,7 +383,7 @@
       "enumDescriptions": [],
       "properties": {
         "labels": {
-          "description": "See Creating and managing labels.",
+          "description": "See [Creating and managing labels](https://cloud.google.com/pubsub/docs/labels).",
           "type": "object",
           "format": null,
           "enum": [],
@@ -448,6 +538,40 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListSchemaRevisionsResponse": {
+      "id": "ListSchemaRevisionsResponse",
+      "description": "Response for the `ListSchemaRevisions` method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "A token that can be sent as `page_token` to retrieve the next page. If this field is empty, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "schemas": {
+          "description": "The revisions of the schema.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Schema"
+          }
         }
       },
       "additionalProperties": null,
@@ -997,7 +1121,7 @@
       "enumDescriptions": [],
       "properties": {
         "receivedMessages": {
-          "description": "Received Pub/Sub messages. The list will be empty if there are no more messages available in the backlog. For JSON, the response can be entirely empty. The Pub/Sub system may return fewer than the `maxMessages` requested even if there are more messages available in the backlog.",
+          "description": "Received Pub/Sub messages. The list will be empty if there are no more messages available in the backlog, or if no messages could be returned before the request timeout. For JSON, the response can be entirely empty. The Pub/Sub system may return fewer than the `maxMessages` requested even if there are more messages available in the backlog.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1021,7 +1145,7 @@
       "enumDescriptions": [],
       "properties": {
         "attributes": {
-          "description": "Endpoint configuration attributes that can be used to control different aspects of the message delivery. The only currently supported attribute is `x-goog-version`, which you can use to change the format of the pushed message. This attribute indicates the version of the data expected by the endpoint. This controls the shape of the pushed message (i.e., its fields and metadata). If not present during the `CreateSubscription` call, it will default to the version of the Pub/Sub API used to make such call. If not present in a `ModifyPushConfig` call, its value will not be changed. `GetSubscription` calls will always return a valid version, even if the subscription was created without this attribute. The only supported values for the `x-goog-version` attribute are: * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API. * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API. For example: attributes { \"x-goog-version\": \"v1\" } ",
+          "description": "Endpoint configuration attributes that can be used to control different aspects of the message delivery. The only currently supported attribute is `x-goog-version`, which you can use to change the format of the pushed message. This attribute indicates the version of the data expected by the endpoint. This controls the shape of the pushed message (i.e., its fields and metadata). If not present during the `CreateSubscription` call, it will default to the version of the Pub/Sub API used to make such call. If not present in a `ModifyPushConfig` call, its value will not be changed. `GetSubscription` calls will always return a valid version, even if the subscription was created without this attribute. The only supported values for the `x-goog-version` attribute are: * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API. * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API. For example: `attributes { \"x-goog-version\": \"v1\" }`",
           "type": "object",
           "format": null,
           "enum": [],
@@ -1125,6 +1249,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "RollbackSchemaRequest": {
+      "id": "RollbackSchemaRequest",
+      "description": "Request for the `RollbackSchema` method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "revisionId": {
+          "description": "Required. The revision ID to roll back to. It must be a revision of the same schema. Example: c7cfa2a8",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Schema": {
       "id": "Schema",
       "description": "A schema resource.",
@@ -1217,6 +1363,26 @@
             "JSON encoding",
             "Binary encoding, as defined by the schema type. For some schema types, binary encoding may not be available."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "firstRevisionId": {
+          "description": "The minimum (inclusive) revision allowed for validating messages. If empty or not present, allow any revision to be validated against last_revision or any revision created before.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lastRevisionId": {
+          "description": "The maximum (inclusive) revision allowed for validating messages. If empty or not present, allow any revision to be validated against first_revision or any revision created after.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -1357,14 +1523,14 @@
     },
     "Subscription": {
       "id": "Subscription",
-      "description": "A subscription resource.",
+      "description": "A subscription resource. If none of `push_config` or `bigquery_config` is set, then the subscriber will pull and ack messages using API methods. At most one of these fields may be set.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "ackDeadlineSeconds": {
-          "description": "The approximate amount of time (on a best-effort basis) Pub/Sub waits for the subscriber to acknowledge receipt before resending the message. In the interval after the message is delivered and before it is acknowledged, it is considered to be *outstanding*. During that time period, the message will not be redelivered (on a best-effort basis). For pull subscriptions, this value is used as the initial value for the ack deadline. To override this value for a given message, call `ModifyAckDeadline` with the corresponding `ack_id` if using non-streaming pull or send the `ack_id` in a `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds (10 minutes). If this parameter is 0, a default value of 10 seconds is used. For push delivery, this value is also used to set the request timeout for the call to the push endpoint. If the subscriber never acknowledges the message, the Pub/Sub system will eventually redeliver the message.",
+          "description": "The approximate amount of time (on a best-effort basis) Pub/Sub waits for the subscriber to acknowledge receipt before resending the message. In the interval after the message is delivered and before it is acknowledged, it is considered to be _outstanding_. During that time period, the message will not be redelivered (on a best-effort basis). For pull subscriptions, this value is used as the initial value for the ack deadline. To override this value for a given message, call `ModifyAckDeadline` with the corresponding `ack_id` if using non-streaming pull or send the `ack_id` in a `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds (10 minutes). If this parameter is 0, a default value of 10 seconds is used. For push delivery, this value is also used to set the request timeout for the call to the push endpoint. If the subscriber never acknowledges the message, the Pub/Sub system will eventually redeliver the message.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -1372,6 +1538,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "bigqueryConfig": {
+          "description": "If delivery to BigQuery is used with this subscription, this field is used to configure it.",
+          "$ref": "BigQueryConfig"
         },
         "deadLetterPolicy": {
           "description": "A policy that specifies the conditions for dead lettering messages in this subscription. If dead_letter_policy is not set, dead lettering is disabled. The Cloud Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription.",
@@ -1422,7 +1592,7 @@
           "items": null
         },
         "labels": {
-          "description": "See Creating and managing labels.",
+          "description": "See [Creating and managing labels](https://cloud.google.com/pubsub/docs/labels).",
           "type": "object",
           "format": null,
           "enum": [],
@@ -1461,7 +1631,7 @@
           "items": null
         },
         "pushConfig": {
-          "description": "If push delivery is used with this subscription, this field is used to configure it. At most one of `pushConfig` and `bigQueryConfig` can be set. If both are empty, then the subscriber will pull and ack messages using API methods.",
+          "description": "If push delivery is used with this subscription, this field is used to configure it.",
           "$ref": "PushConfig"
         },
         "retainAckedMessages": {
@@ -1836,6 +2006,46 @@
         "schemas": {
           "resources": {},
           "methods": {
+            "commit": {
+              "id": "pubsub.projects.schemas.commit",
+              "path": "v1/{+name}:commit",
+              "httpMethod": "POST",
+              "description": "Commits a new schema revision to an existing schema.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The name of the schema we are revising. Format is `projects/{project}/schemas/{schema}`.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/schemas/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "CommitSchemaRequest"
+              },
+              "response": {
+                "$ref": "Schema"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/pubsub"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
             "create": {
               "id": "pubsub.projects.schemas.create",
               "path": "v1/{+parent}/schemas",
@@ -1928,6 +2138,58 @@
               "supportsMediaUpload": false,
               "mediaUpload": null
             },
+            "deleteRevision": {
+              "id": "pubsub.projects.schemas.deleteRevision",
+              "path": "v1/{+name}:deleteRevision",
+              "httpMethod": "DELETE",
+              "description": "Deletes a specific schema revision.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The name of the schema revision to be deleted, with a revision ID explicitly included. Example: `projects/123/schemas/my-schema@c7cfa2a8`",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/schemas/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "revisionId": {
+                  "description": "Required. The revision ID to roll back to. It must be a revision of the same schema. Example: c7cfa2a8",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "Schema"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/pubsub"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
             "get": {
               "id": "pubsub.projects.schemas.get",
               "path": "v1/{+name}",
@@ -2009,7 +2271,7 @@
                   "repeated": false
                 },
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -2128,6 +2390,134 @@
               "supportsMediaUpload": false,
               "mediaUpload": null
             },
+            "listRevisions": {
+              "id": "pubsub.projects.schemas.listRevisions",
+              "path": "v1/{+name}:listRevisions",
+              "httpMethod": "GET",
+              "description": "Lists all schema revisions for the named schema.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The name of the schema to list revisions for.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/schemas/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageSize": {
+                  "description": "The maximum number of revisions to return per page.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "The page token, received from a previous ListSchemaRevisions call. Provide this to retrieve the subsequent page.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "view": {
+                  "description": "The set of Schema fields to return in the response. If not set, returns Schemas with `name` and `type`, but not `definition`. Set to `FULL` to retrieve all fields.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [
+                    "SCHEMA_VIEW_UNSPECIFIED",
+                    "BASIC",
+                    "FULL"
+                  ],
+                  "enumDescriptions": [
+                    "The default / unset value. The API will default to the BASIC view.",
+                    "Include the name and type of the schema, but not the definition.",
+                    "Include all Schema object fields."
+                  ],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "ListSchemaRevisionsResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/pubsub"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "rollback": {
+              "id": "pubsub.projects.schemas.rollback",
+              "path": "v1/{+name}:rollback",
+              "httpMethod": "POST",
+              "description": "Creates a new schema revision that is a copy of the provided revision_id.",
+              "parameters": {
+                "name": {
+                  "description": "Required. The schema being rolled back with revision id.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^projects/[^/]+/schemas/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": {
+                "$ref": "RollbackSchemaRequest"
+              },
+              "response": {
+                "$ref": "Schema"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/cloud-platform",
+                "https://www.googleapis.com/auth/pubsub"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
             "setIamPolicy": {
               "id": "pubsub.projects.schemas.setIamPolicy",
               "path": "v1/{+resource}:setIamPolicy",
@@ -2135,7 +2525,7 @@
               "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -2175,7 +2565,7 @@
               "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -2300,7 +2690,7 @@
               "description": "Creates a snapshot from the requested subscription. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. If the snapshot already exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription, conforming to the [resource name format] (https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is populated in the returned Snapshot object. Note that for REST API requests, you must specify a name in the request.",
               "parameters": {
                 "name": {
-                  "description": "Required. User-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. See the resource name rules. Format is `projects/{project}/snapshots/{snap}`.",
+                  "description": "Required. User-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. See the [resource name rules](https://cloud.google.com/pubsub/docs/admin#resource_names). Format is `projects/{project}/snapshots/{snap}`.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -2430,7 +2820,7 @@
                   "repeated": false
                 },
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -2574,7 +2964,7 @@
               "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -2614,7 +3004,7 @@
               "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -2867,7 +3257,7 @@
                   "repeated": false
                 },
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3088,7 +3478,7 @@
               "id": "pubsub.projects.subscriptions.pull",
               "path": "v1/{+subscription}:pull",
               "httpMethod": "POST",
-              "description": "Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many concurrent pull requests pending for the given subscription.",
+              "description": "Pulls messages from the server.",
               "parameters": {
                 "subscription": {
                   "description": "Required. The subscription from which messages should be pulled. Format is `projects/{project}/subscriptions/{sub}`.",
@@ -3171,7 +3561,7 @@
               "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3211,7 +3601,7 @@
               "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3529,7 +3919,7 @@
                   "repeated": false
                 },
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3713,7 +4103,7 @@
               "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,
@@ -3753,7 +4143,7 @@
               "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
               "parameters": {
                 "resource": {
-                  "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                  "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                   "default": null,
                   "location": "path",
                   "required": true,

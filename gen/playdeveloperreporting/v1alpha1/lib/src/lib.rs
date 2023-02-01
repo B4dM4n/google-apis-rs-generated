@@ -1,5 +1,10 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [anomalies](resources/anomalies/struct.AnomaliesActions.html)\n  * [*list*](resources/anomalies/struct.ListRequestBuilder.html)\n* [vitals](resources/vitals/struct.VitalsActions.html)\n  * [anrrate](resources/vitals/anrrate/struct.AnrrateActions.html)\n    * [*get*](resources/vitals/anrrate/struct.GetRequestBuilder.html), [*query*](resources/vitals/anrrate/struct.QueryRequestBuilder.html)\n  * [crashrate](resources/vitals/crashrate/struct.CrashrateActions.html)\n    * [*get*](resources/vitals/crashrate/struct.GetRequestBuilder.html), [*query*](resources/vitals/crashrate/struct.QueryRequestBuilder.html)\n  * [errors](resources/vitals/errors/struct.ErrorsActions.html)\n    * [counts](resources/vitals/errors/counts/struct.CountsActions.html)\n      * [*get*](resources/vitals/errors/counts/struct.GetRequestBuilder.html), [*query*](resources/vitals/errors/counts/struct.QueryRequestBuilder.html)\n    * [issues](resources/vitals/errors/issues/struct.IssuesActions.html)\n      * [*search*](resources/vitals/errors/issues/struct.SearchRequestBuilder.html)\n    * [reports](resources/vitals/errors/reports/struct.ReportsActions.html)\n      * [*search*](resources/vitals/errors/reports/struct.SearchRequestBuilder.html)\n  * [excessivewakeuprate](resources/vitals/excessivewakeuprate/struct.ExcessivewakeuprateActions.html)\n    * [*get*](resources/vitals/excessivewakeuprate/struct.GetRequestBuilder.html), [*query*](resources/vitals/excessivewakeuprate/struct.QueryRequestBuilder.html)\n  * [stuckbackgroundwakelockrate](resources/vitals/stuckbackgroundwakelockrate/struct.StuckbackgroundwakelockrateActions.html)\n    * [*get*](resources/vitals/stuckbackgroundwakelockrate/struct.GetRequestBuilder.html), [*query*](resources/vitals/stuckbackgroundwakelockrate/struct.QueryRequestBuilder.html)\n"]
-pub mod scopes {}
+pub mod scopes {
+    #[doc = "See metrics and data about the apps in your Google Play Developer account\n\n`https://www.googleapis.com/auth/playdeveloperreporting`"]
+    pub const PLAYDEVELOPERREPORTING: &str =
+        "https://www.googleapis.com/auth/playdeveloperreporting";
+}
 pub mod schemas {
     #[derive(
         Debug,
@@ -185,6 +190,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub string_value: ::std::option::Option<String>,
+        #[doc = "Optional. Human-friendly label for the value, always in English. For example, ‘Spain’ for the ‘ES’ country code. Whereas the dimension value is stable, this value label is subject to change. Do not assume that the (value, value_label) relationship is stable. For example, the ISO country code ‘MK’ changed its name recently to ‘North Macedonia’."]
+        #[serde(
+            rename = "valueLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value_label: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for GooglePlayDeveloperReportingV1Alpha1DimensionValue {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -754,7 +766,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePlayDeveloperReportingV1Alpha1ListAnomaliesResponse {
+    impl crate::GetNextPageToken<String> for GooglePlayDeveloperReportingV1Alpha1ListAnomaliesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -938,7 +950,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePlayDeveloperReportingV1Alpha1QueryAnrRateMetricSetRequest {
-        #[doc = "Dimensions to slice the metrics by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States)."]
+        #[doc = "Dimensions to slice the metrics by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States). * `deviceRamBucket` (int64): RAM of the device, in MB, in buckets (3GB, 4GB, etc.). * `deviceSocMake` (string): Make of the device’s primary system-on-chip, e.g., Samsung. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MANUFACTURER) * `deviceSocModel` (string): Model of the device’s primary system-on-chip, e.g., “Exynos 2100”. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MODEL) * `deviceCpuMake` (string): Make of the device’s CPU, e.g., Qualcomm. * `deviceCpuModel` (string): Model of the device’s CPU, e.g., “Kryo 240”. * `deviceGpuMake` (string): Make of the device’s GPU, e.g., ARM. * `deviceGpuModel` (string): Model of the device’s GPU, e.g., Mali. * `deviceGpuVersion` (string): Version of the device’s GPU, e.g., T750. * `deviceVulkanVersion` (string): Vulkan version of the device, e.g., “4198400”. * `deviceGlEsVersion` (string): OpenGL ES version of the device, e.g., “196610”. * `deviceScreenSize` (string): Screen size of the device, e.g., NORMAL, LARGE. * `deviceScreenDpi` (string): Screen density of the device, e.g., mdpi, hdpi."]
         #[serde(
             rename = "dimensions",
             default,
@@ -952,7 +964,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "Metrics to aggregate. **Supported metrics:** * `anrRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that experienced at least one ANR. If your app exhibits an ANR rate equal to or higher than the threshold, it’s in the bottom 25% of the top 1,000 apps on Google Play (by number of installs). * `anrRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `anrRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `anrRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `anrRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `anrRate` metric. A user is counted in this metric if they used the app in the foreground during the aggregation period. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
+        #[doc = "Metrics to aggregate. **Supported metrics:** * `anrRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that experienced at least one ANR. * `anrRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `anrRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `anrRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `anrRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `userPerceivedAnrRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that experienced at least one user-perceived ANR. User-perceived ANRs are currently those of ‘Input dispatching’ type. * `userPerceivedAnrRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `userPerceivedAnrRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `userPerceivedAnrRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `userPerceivedAnrRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `anrRate` and `userPerceivedAnrRate` metrics. A user is counted in this metric if they used the app in the foreground during the aggregation period. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
         #[serde(
             rename = "metrics",
             default,
@@ -1040,7 +1052,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePlayDeveloperReportingV1Alpha1QueryAnrRateMetricSetResponse {
+    impl crate::GetNextPageToken<String>
+        for GooglePlayDeveloperReportingV1Alpha1QueryAnrRateMetricSetResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1058,7 +1072,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePlayDeveloperReportingV1Alpha1QueryCrashRateMetricSetRequest {
-        #[doc = "Dimensions to slice the metrics by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States)."]
+        #[doc = "Dimensions to slice the metrics by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States). * `deviceRamBucket` (int64): RAM of the device, in MB, in buckets (3GB, 4GB, etc.). * `deviceSocMake` (string): Make of the device’s primary system-on-chip, e.g., Samsung. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MANUFACTURER) * `deviceSocModel` (string): Model of the device’s primary system-on-chip, e.g., “Exynos 2100”. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MODEL) * `deviceCpuMake` (string): Make of the device’s CPU, e.g., Qualcomm. * `deviceCpuModel` (string): Model of the device’s CPU, e.g., “Kryo 240”. * `deviceGpuMake` (string): Make of the device’s GPU, e.g., ARM. * `deviceGpuModel` (string): Model of the device’s GPU, e.g., Mali. * `deviceGpuVersion` (string): Version of the device’s GPU, e.g., T750. * `deviceVulkanVersion` (string): Vulkan version of the device, e.g., “4198400”. * `deviceGlEsVersion` (string): OpenGL ES version of the device, e.g., “196610”. * `deviceScreenSize` (string): Screen size of the device, e.g., NORMAL, LARGE. * `deviceScreenDpi` (string): Screen density of the device, e.g., mdpi, hdpi."]
         #[serde(
             rename = "dimensions",
             default,
@@ -1072,7 +1086,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "Metrics to aggregate. **Supported metrics:** * `crashRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that experienced at least one crash. If your app exhibits a crash rate equal to or higher than the threshold, it’s in the bottom 25% of the top 1,000 apps on Google Play (by number of installs). * `crashRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `crashRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `crashRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `crashRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `crashRate` metric. A user is counted in this metric if they used the app in the foreground during the aggregation period. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
+        #[doc = "Metrics to aggregate. **Supported metrics:** * `crashRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that experienced at least one crash. * `crashRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `crashRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `crashRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `crashRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `userPerceivedCrashRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that experienced at least one crash while they were actively using your app (a user-perceived crash). An app is considered to be in active use if it is displaying any activity or executing any foreground service. * `userPerceivedCrashRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `userPerceivedCrashRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `userPerceivedCrashRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `userPerceivedCrashRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `crashRate` and `userPerceivedCrashRate` metrics. A user is counted in this metric if they used the app actively during the aggregation period. An app is considered to be in active use if it is displaying any activity or executing any foreground service. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
         #[serde(
             rename = "metrics",
             default,
@@ -1160,7 +1174,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GooglePlayDeveloperReportingV1Alpha1QueryCrashRateMetricSetResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -1180,7 +1194,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePlayDeveloperReportingV1Alpha1QueryErrorCountMetricSetRequest {
-        #[doc = "Dimensions to slice the data by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): identifier of the device’s form factor, e.g., PHONE. * `reportType` (string): the type of error. The value should correspond to one of the possible values in ErrorType. * `issueId` (string): the id an error was assigned to. The value should correspond to the `{issue}` component of the issue name."]
+        #[doc = "Dimensions to slice the data by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): identifier of the device’s form factor, e.g., PHONE. * `reportType` (string): the type of error. The value should correspond to one of the possible values in ErrorType. * `issueId` (string): the id an error was assigned to. The value should correspond to the `{issue}` component of the issue name. * `deviceRamBucket` (int64): RAM of the device, in MB, in buckets (3GB, 4GB, etc.). * `deviceSocMake` (string): Make of the device’s primary system-on-chip, e.g., Samsung. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MANUFACTURER) * `deviceSocModel` (string): Model of the device’s primary system-on-chip, e.g., “Exynos 2100”. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MODEL) * `deviceCpuMake` (string): Make of the device’s CPU, e.g., Qualcomm. * `deviceCpuModel` (string): Model of the device’s CPU, e.g., “Kryo 240”. * `deviceGpuMake` (string): Make of the device’s GPU, e.g., ARM. * `deviceGpuModel` (string): Model of the device’s GPU, e.g., Mali. * `deviceGpuVersion` (string): Version of the device’s GPU, e.g., T750. * `deviceVulkanVersion` (string): Vulkan version of the device, e.g., “4198400”. * `deviceGlEsVersion` (string): OpenGL ES version of the device, e.g., “196610”. * `deviceScreenSize` (string): Screen size of the device, e.g., NORMAL, LARGE. * `deviceScreenDpi` (string): Screen density of the device, e.g., mdpi, hdpi."]
         #[serde(
             rename = "dimensions",
             default,
@@ -1282,7 +1296,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GooglePlayDeveloperReportingV1Alpha1QueryErrorCountMetricSetResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -1302,7 +1316,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePlayDeveloperReportingV1Alpha1QueryExcessiveWakeupRateMetricSetRequest {
-        #[doc = "Dimensions to slice the data by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States)."]
+        #[doc = "Dimensions to slice the data by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States). * `deviceRamBucket` (int64): RAM of the device, in MB, in buckets (3GB, 4GB, etc.). * `deviceSocMake` (string): Make of the device’s primary system-on-chip, e.g., Samsung. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MANUFACTURER) * `deviceSocModel` (string): Model of the device’s primary system-on-chip, e.g., “Exynos 2100”. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MODEL) * `deviceCpuMake` (string): Make of the device’s CPU, e.g., Qualcomm. * `deviceCpuModel` (string): Model of the device’s CPU, e.g., “Kryo 240”. * `deviceGpuMake` (string): Make of the device’s GPU, e.g., ARM. * `deviceGpuModel` (string): Model of the device’s GPU, e.g., Mali. * `deviceGpuVersion` (string): Version of the device’s GPU, e.g., T750. * `deviceVulkanVersion` (string): Vulkan version of the device, e.g., “4198400”. * `deviceGlEsVersion` (string): OpenGL ES version of the device, e.g., “196610”. * `deviceScreenSize` (string): Screen size of the device, e.g., NORMAL, LARGE. * `deviceScreenDpi` (string): Screen density of the device, e.g., mdpi, hdpi."]
         #[serde(
             rename = "dimensions",
             default,
@@ -1316,7 +1330,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "Metrics to aggregate. **Supported metrics:** * `excessiveWakeupRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that had more than 10 wakeups per hour. If your app exhibits an excessive wakeup rate equal to or higher than the threshold, it’s in the bottom 25% of the top 1,000 apps on Google Play (by number of installs). * `excessiveWakeupRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `excessiveWakeupRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `excessiveWakeupRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `excessiveWakeupRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `excessiveWakeupRate` metric. A user is counted in this metric if they app was doing any work on the device, i.e., not just active foreground usage but also background work. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
+        #[doc = "Metrics to aggregate. **Supported metrics:** * `excessiveWakeupRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that had more than 10 wakeups per hour. * `excessiveWakeupRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `excessiveWakeupRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `excessiveWakeupRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `excessiveWakeupRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `excessiveWakeupRate` metric. A user is counted in this metric if they app was doing any work on the device, i.e., not just active foreground usage but also background work. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
         #[serde(
             rename = "metrics",
             default,
@@ -1404,7 +1418,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GooglePlayDeveloperReportingV1Alpha1QueryExcessiveWakeupRateMetricSetResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -1424,7 +1438,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePlayDeveloperReportingV1Alpha1QueryStuckBackgroundWakelockRateMetricSetRequest {
-        #[doc = "Dimensions to slice the data by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States)."]
+        #[doc = "Dimensions to slice the data by. **Supported dimensions:** * `apiLevel` (string): the API level of Android that was running on the user’s device. * `versionCode` (int64): version of the app that was running on the user’s device. * `deviceModel` (string): unique identifier of the user’s device model. * `deviceType` (string): the type (also known as form factor) of the user’s device. * `countryCode` (string): the country or region of the user’s device based on their IP address, represented as a 2-letter ISO-3166 code (e.g. US for the United States). * `deviceRamBucket` (int64): RAM of the device, in MB, in buckets (3GB, 4GB, etc.). * `deviceSocMake` (string): Make of the device’s primary system-on-chip, e.g., Samsung. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MANUFACTURER) * `deviceSocModel` (string): Model of the device’s primary system-on-chip, e.g., “Exynos 2100”. [Reference](https://developer.android.com/reference/android/os/Build#SOC_MODEL) * `deviceCpuMake` (string): Make of the device’s CPU, e.g., Qualcomm. * `deviceCpuModel` (string): Model of the device’s CPU, e.g., “Kryo 240”. * `deviceGpuMake` (string): Make of the device’s GPU, e.g., ARM. * `deviceGpuModel` (string): Model of the device’s GPU, e.g., Mali. * `deviceGpuVersion` (string): Version of the device’s GPU, e.g., T750. * `deviceVulkanVersion` (string): Vulkan version of the device, e.g., “4198400”. * `deviceGlEsVersion` (string): OpenGL ES version of the device, e.g., “196610”. * `deviceScreenSize` (string): Screen size of the device, e.g., NORMAL, LARGE. * `deviceScreenDpi` (string): Screen density of the device, e.g., mdpi, hdpi."]
         #[serde(
             rename = "dimensions",
             default,
@@ -1438,7 +1452,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "Metrics to aggregate. **Supported metrics:** * `stuckBgWakelockRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that had a wakelock held in the background for longer than 1 hour. If your app exhibits a stuck background wakelock rate equal to or higher than the threshold, it’s in the bottom 25% of the top 1,000 apps on Google Play (by number of installs). * `stuckBgWakelockRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `stuckBgWakelockRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `stuckBgWakelockRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `stuckBgWakelockRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `stuckBgWakelockRate` metric. A user is counted in this metric if they app was doing any work on the device, i.e., not just active foreground usage but also background work. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
+        #[doc = "Metrics to aggregate. **Supported metrics:** * `stuckBgWakelockRate` (`google.type.Decimal`): Percentage of distinct users in the aggregation period that had a wakelock held in the background for longer than 1 hour. * `stuckBgWakelockRate7dUserWeighted` (`google.type.Decimal`): Rolling average value of `stuckBgWakelockRate` in the last 7 days. The daily values are weighted by the count of distinct users for the day. * `stuckBgWakelockRate28dUserWeighted` (`google.type.Decimal`): Rolling average value of `stuckBgWakelockRate` in the last 28 days. The daily values are weighted by the count of distinct users for the day. * `distinctUsers` (`google.type.Decimal`): Count of distinct users in the aggregation period that were used as normalization value for the `stuckBgWakelockRate` metric. A user is counted in this metric if they app was doing any work on the device, i.e., not just active foreground usage but also background work. Care must be taken not to aggregate this count further, as it may result in users being counted multiple times."]
         #[serde(
             rename = "metrics",
             default,
@@ -1526,7 +1540,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GooglePlayDeveloperReportingV1Alpha1QueryStuckBackgroundWakelockRateMetricSetResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -1577,7 +1591,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePlayDeveloperReportingV1Alpha1SearchErrorIssuesResponse {
+    impl crate::GetNextPageToken<String>
+        for GooglePlayDeveloperReportingV1Alpha1SearchErrorIssuesResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1626,7 +1642,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePlayDeveloperReportingV1Alpha1SearchErrorReportsResponse {
+    impl crate::GetNextPageToken<String>
+        for GooglePlayDeveloperReportingV1Alpha1SearchErrorReportsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1805,42 +1823,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeDateTime {
-        #[doc = "Required. Day of month. Must be from 1 to 31 and valid for the year and month."]
+        #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
         #[serde(
             rename = "day",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub day: ::std::option::Option<i32>,
-        #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+        #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hours: ::std::option::Option<i32>,
-        #[doc = "Required. Minutes of hour of day. Must be from 0 to 59."]
+        #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
         #[serde(
             rename = "minutes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minutes: ::std::option::Option<i32>,
-        #[doc = "Required. Month of year. Must be from 1 to 12."]
+        #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
         #[serde(
             rename = "month",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub month: ::std::option::Option<i32>,
-        #[doc = "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+        #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
         #[serde(
             rename = "nanos",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nanos: ::std::option::Option<i32>,
-        #[doc = "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+        #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
         #[serde(
             rename = "seconds",
             default,
@@ -1892,7 +1910,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeDecimal {
-        #[doc = "The decimal value, as a string. The string representation consists of an optional sign, `+` (`U+002B`) or `-` (`U+002D`), followed by a sequence of zero or more decimal digits (“the integer”), optionally followed by a fraction, optionally followed by an exponent. The fraction consists of a decimal point followed by zero or more decimal digits. The string must contain at least one digit in either the integer or the fraction. The number formed by the sign, the integer and the fraction is referred to as the significand. The exponent consists of the character `e` (`U+0065`) or `E` (`U+0045`) followed by one or more decimal digits. Services **should** normalize decimal values before storing them by: - Removing an explicitly-provided `+` sign (`+2.5` -> `2.5`). - Replacing a zero-length integer value with `0` (`.5` -> `0.5`). - Coercing the exponent character to lower-case (`2.5E8` -> `2.5e8`). - Removing an explicitly-provided zero exponent (`2.5e0` -> `2.5`). Services **may** perform additional normalization based on its own needs and the internal decimal implementation selected, such as shifting the decimal point and exponent value together (example: `2.5e-1` \\<-> `0.25`). Additionally, services **may** preserve trailing zeroes in the fraction to indicate increased precision, but are not required to do so. Note that only the `.` character is supported to divide the integer and the fraction; `,` **should not** be supported regardless of locale. Additionally, thousand separators **should not** be supported. If a service does support them, values **must** be normalized. The ENBF grammar is: DecimalString = \\[Sign\\] Significand \\[Exponent\\]; Sign = ‘+’ | ‘-’; Significand = Digits ‘.’ | \\[Digits\\] ‘.’ Digits; Exponent = (‘e’ | ‘E’) \\[Sign\\] Digits; Digits = { ‘0’ | ‘1’ | ‘2’ | ‘3’ | ‘4’ | ‘5’ | ‘6’ | ‘7’ | ‘8’ | ‘9’ }; Services **should** clearly document the range of supported values, the maximum supported precision (total number of digits), and, if applicable, the scale (number of digits after the decimal point), as well as how it behaves when receiving out-of-bounds values. Services **may** choose to accept values passed as input even when the value has a higher precision or scale than the service supports, and **should** round the value to fit the supported scale. Alternatively, the service **may** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if precision would be lost. Services **should** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if the service receives a value outside of the supported range."]
+        #[doc = "The decimal value, as a string. The string representation consists of an optional sign, `+` (`U+002B`) or `-` (`U+002D`), followed by a sequence of zero or more decimal digits (“the integer”), optionally followed by a fraction, optionally followed by an exponent. An empty string **should** be interpreted as `0`. The fraction consists of a decimal point followed by zero or more decimal digits. The string must contain at least one digit in either the integer or the fraction. The number formed by the sign, the integer and the fraction is referred to as the significand. The exponent consists of the character `e` (`U+0065`) or `E` (`U+0045`) followed by one or more decimal digits. Services **should** normalize decimal values before storing them by: - Removing an explicitly-provided `+` sign (`+2.5` -> `2.5`). - Replacing a zero-length integer value with `0` (`.5` -> `0.5`). - Coercing the exponent character to upper-case, with explicit sign (`2.5e8` -> `2.5E+8`). - Removing an explicitly-provided zero exponent (`2.5E0` -> `2.5`). Services **may** perform additional normalization based on its own needs and the internal decimal implementation selected, such as shifting the decimal point and exponent value together (example: `2.5E-1` \\<-> `0.25`). Additionally, services **may** preserve trailing zeroes in the fraction to indicate increased precision, but are not required to do so. Note that only the `.` character is supported to divide the integer and the fraction; `,` **should not** be supported regardless of locale. Additionally, thousand separators **should not** be supported. If a service does support them, values **must** be normalized. The ENBF grammar is: DecimalString = ‘’ | \\[Sign\\] Significand \\[Exponent\\]; Sign = ‘+’ | ‘-’; Significand = Digits ‘.’ | \\[Digits\\] ‘.’ Digits; Exponent = (‘e’ | ‘E’) \\[Sign\\] Digits; Digits = { ‘0’ | ‘1’ | ‘2’ | ‘3’ | ‘4’ | ‘5’ | ‘6’ | ‘7’ | ‘8’ | ‘9’ }; Services **should** clearly document the range of supported values, the maximum supported precision (total number of digits), and, if applicable, the scale (number of digits after the decimal point), as well as how it behaves when receiving out-of-bounds values. Services **may** choose to accept values passed as input even when the value has a higher precision or scale than the service supports, and **should** round the value to fit the supported scale. Alternatively, the service **may** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if precision would be lost. Services **should** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC) if the service receives a value outside of the supported range."]
         #[serde(
             rename = "value",
             default,
@@ -2305,7 +2323,7 @@ pub mod resources {
                     #[serde(rename = "anomalies")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -2338,7 +2356,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -2394,7 +2412,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2516,12 +2534,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -3792,32 +3811,32 @@ pub mod resources {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "Required. Day of month. Must be from 1 to 31 and valid for the year and month."]
+                    #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
                     pub fn interval_end_time_day(mut self, value: i32) -> Self {
                         self.interval_end_time_day = Some(value);
                         self
                     }
-                    #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+                    #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
                     pub fn interval_end_time_hours(mut self, value: i32) -> Self {
                         self.interval_end_time_hours = Some(value);
                         self
                     }
-                    #[doc = "Required. Minutes of hour of day. Must be from 0 to 59."]
+                    #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
                     pub fn interval_end_time_minutes(mut self, value: i32) -> Self {
                         self.interval_end_time_minutes = Some(value);
                         self
                     }
-                    #[doc = "Required. Month of year. Must be from 1 to 12."]
+                    #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
                     pub fn interval_end_time_month(mut self, value: i32) -> Self {
                         self.interval_end_time_month = Some(value);
                         self
                     }
-                    #[doc = "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+                    #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
                     pub fn interval_end_time_nanos(mut self, value: i32) -> Self {
                         self.interval_end_time_nanos = Some(value);
                         self
                     }
-                    #[doc = "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+                    #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
                     pub fn interval_end_time_seconds(mut self, value: i32) -> Self {
                         self.interval_end_time_seconds = Some(value);
                         self
@@ -3851,32 +3870,32 @@ pub mod resources {
                         self.interval_end_time_year = Some(value);
                         self
                     }
-                    #[doc = "Required. Day of month. Must be from 1 to 31 and valid for the year and month."]
+                    #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
                     pub fn interval_start_time_day(mut self, value: i32) -> Self {
                         self.interval_start_time_day = Some(value);
                         self
                     }
-                    #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+                    #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
                     pub fn interval_start_time_hours(mut self, value: i32) -> Self {
                         self.interval_start_time_hours = Some(value);
                         self
                     }
-                    #[doc = "Required. Minutes of hour of day. Must be from 0 to 59."]
+                    #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
                     pub fn interval_start_time_minutes(mut self, value: i32) -> Self {
                         self.interval_start_time_minutes = Some(value);
                         self
                     }
-                    #[doc = "Required. Month of year. Must be from 1 to 12."]
+                    #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
                     pub fn interval_start_time_month(mut self, value: i32) -> Self {
                         self.interval_start_time_month = Some(value);
                         self
                     }
-                    #[doc = "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+                    #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
                     pub fn interval_start_time_nanos(mut self, value: i32) -> Self {
                         self.interval_start_time_nanos = Some(value);
                         self
                     }
-                    #[doc = "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+                    #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
                     pub fn interval_start_time_seconds(mut self, value: i32) -> Self {
                         self.interval_start_time_seconds = Some(value);
                         self
@@ -4020,7 +4039,7 @@ pub mod resources {
                             #[serde(rename = "errorIssues")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4055,7 +4074,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4095,7 +4114,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4271,12 +4290,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for SearchRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -4382,32 +4402,32 @@ pub mod resources {
                         self.filter = Some(value.into());
                         self
                     }
-                    #[doc = "Required. Day of month. Must be from 1 to 31 and valid for the year and month."]
+                    #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
                     pub fn interval_end_time_day(mut self, value: i32) -> Self {
                         self.interval_end_time_day = Some(value);
                         self
                     }
-                    #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+                    #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
                     pub fn interval_end_time_hours(mut self, value: i32) -> Self {
                         self.interval_end_time_hours = Some(value);
                         self
                     }
-                    #[doc = "Required. Minutes of hour of day. Must be from 0 to 59."]
+                    #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
                     pub fn interval_end_time_minutes(mut self, value: i32) -> Self {
                         self.interval_end_time_minutes = Some(value);
                         self
                     }
-                    #[doc = "Required. Month of year. Must be from 1 to 12."]
+                    #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
                     pub fn interval_end_time_month(mut self, value: i32) -> Self {
                         self.interval_end_time_month = Some(value);
                         self
                     }
-                    #[doc = "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+                    #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
                     pub fn interval_end_time_nanos(mut self, value: i32) -> Self {
                         self.interval_end_time_nanos = Some(value);
                         self
                     }
-                    #[doc = "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+                    #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
                     pub fn interval_end_time_seconds(mut self, value: i32) -> Self {
                         self.interval_end_time_seconds = Some(value);
                         self
@@ -4441,32 +4461,32 @@ pub mod resources {
                         self.interval_end_time_year = Some(value);
                         self
                     }
-                    #[doc = "Required. Day of month. Must be from 1 to 31 and valid for the year and month."]
+                    #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
                     pub fn interval_start_time_day(mut self, value: i32) -> Self {
                         self.interval_start_time_day = Some(value);
                         self
                     }
-                    #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+                    #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
                     pub fn interval_start_time_hours(mut self, value: i32) -> Self {
                         self.interval_start_time_hours = Some(value);
                         self
                     }
-                    #[doc = "Required. Minutes of hour of day. Must be from 0 to 59."]
+                    #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
                     pub fn interval_start_time_minutes(mut self, value: i32) -> Self {
                         self.interval_start_time_minutes = Some(value);
                         self
                     }
-                    #[doc = "Required. Month of year. Must be from 1 to 12."]
+                    #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
                     pub fn interval_start_time_month(mut self, value: i32) -> Self {
                         self.interval_start_time_month = Some(value);
                         self
                     }
-                    #[doc = "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+                    #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
                     pub fn interval_start_time_nanos(mut self, value: i32) -> Self {
                         self.interval_start_time_nanos = Some(value);
                         self
                     }
-                    #[doc = "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+                    #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
                     pub fn interval_start_time_seconds(mut self, value: i32) -> Self {
                         self.interval_start_time_seconds = Some(value);
                         self
@@ -4610,7 +4630,7 @@ pub mod resources {
                             #[serde(rename = "errorReports")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4645,7 +4665,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4685,7 +4705,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4861,12 +4881,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for SearchRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5858,16 +5879,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -5887,13 +5910,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -5901,7 +5927,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -5928,7 +5954,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

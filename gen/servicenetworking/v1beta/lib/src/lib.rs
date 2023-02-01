@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*get*](resources/operations/struct.GetRequestBuilder.html)\n* [services](resources/services/struct.ServicesActions.html)\n  * [*addSubnetwork*](resources/services/struct.AddSubnetworkRequestBuilder.html), [*searchRange*](resources/services/struct.SearchRangeRequestBuilder.html), [*updateConnections*](resources/services/struct.UpdateConnectionsRequestBuilder.html)\n  * [connections](resources/services/connections/struct.ConnectionsActions.html)\n    * [*create*](resources/services/connections/struct.CreateRequestBuilder.html), [*list*](resources/services/connections/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -608,6 +609,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub jwt_audience: ::std::option::Option<String>,
+        #[doc = "Deprecated, do not use."]
+        #[serde(
+            rename = "minDeadline",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub min_deadline: ::std::option::Option<f64>,
         #[doc = "The number of seconds to wait for the completion of a long running operation. The default is no deadline."]
         #[serde(
             rename = "operationDeadline",
@@ -808,6 +816,381 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ClientLibrarySettings {
+        #[doc = "Settings for C++ client libraries."]
+        #[serde(
+            rename = "cppSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cpp_settings: ::std::option::Option<crate::schemas::CppSettings>,
+        #[doc = "Settings for .NET client libraries."]
+        #[serde(
+            rename = "dotnetSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dotnet_settings: ::std::option::Option<crate::schemas::DotnetSettings>,
+        #[doc = "Settings for Go client libraries."]
+        #[serde(
+            rename = "goSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub go_settings: ::std::option::Option<crate::schemas::GoSettings>,
+        #[doc = "Settings for legacy Java features, supported in the Service YAML."]
+        #[serde(
+            rename = "javaSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub java_settings: ::std::option::Option<crate::schemas::JavaSettings>,
+        #[doc = "Launch stage of this version of the API."]
+        #[serde(
+            rename = "launchStage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub launch_stage: ::std::option::Option<crate::schemas::ClientLibrarySettingsLaunchStage>,
+        #[doc = "Settings for Node client libraries."]
+        #[serde(
+            rename = "nodeSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub node_settings: ::std::option::Option<crate::schemas::NodeSettings>,
+        #[doc = "Settings for PHP client libraries."]
+        #[serde(
+            rename = "phpSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub php_settings: ::std::option::Option<crate::schemas::PhpSettings>,
+        #[doc = "Settings for Python client libraries."]
+        #[serde(
+            rename = "pythonSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub python_settings: ::std::option::Option<crate::schemas::PythonSettings>,
+        #[doc = "When using transport=rest, the client request will encode enums as numbers rather than strings."]
+        #[serde(
+            rename = "restNumericEnums",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rest_numeric_enums: ::std::option::Option<bool>,
+        #[doc = "Settings for Ruby client libraries."]
+        #[serde(
+            rename = "rubySettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ruby_settings: ::std::option::Option<crate::schemas::RubySettings>,
+        #[doc = "Version of the API to apply these settings to."]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ClientLibrarySettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClientLibrarySettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ClientLibrarySettingsLaunchStage {
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests – just like they would in normal production cases."]
+        Alpha,
+        #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
+        Beta,
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
+        Deprecated,
+        #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
+        EarlyAccess,
+        #[doc = "GA features are open to all developers and are considered stable and fully qualified for production use."]
+        Ga,
+        #[doc = "Do not use this default value."]
+        LaunchStageUnspecified,
+        #[doc = "Prelaunch features are hidden from users and are only visible internally."]
+        Prelaunch,
+        #[doc = "The feature is not yet implemented. Users can not use it."]
+        Unimplemented,
+    }
+    impl ClientLibrarySettingsLaunchStage {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ClientLibrarySettingsLaunchStage::Alpha => "ALPHA",
+                ClientLibrarySettingsLaunchStage::Beta => "BETA",
+                ClientLibrarySettingsLaunchStage::Deprecated => "DEPRECATED",
+                ClientLibrarySettingsLaunchStage::EarlyAccess => "EARLY_ACCESS",
+                ClientLibrarySettingsLaunchStage::Ga => "GA",
+                ClientLibrarySettingsLaunchStage::LaunchStageUnspecified => {
+                    "LAUNCH_STAGE_UNSPECIFIED"
+                }
+                ClientLibrarySettingsLaunchStage::Prelaunch => "PRELAUNCH",
+                ClientLibrarySettingsLaunchStage::Unimplemented => "UNIMPLEMENTED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ClientLibrarySettingsLaunchStage {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ClientLibrarySettingsLaunchStage {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ClientLibrarySettingsLaunchStage, ()> {
+            Ok(match s {
+                "ALPHA" => ClientLibrarySettingsLaunchStage::Alpha,
+                "BETA" => ClientLibrarySettingsLaunchStage::Beta,
+                "DEPRECATED" => ClientLibrarySettingsLaunchStage::Deprecated,
+                "EARLY_ACCESS" => ClientLibrarySettingsLaunchStage::EarlyAccess,
+                "GA" => ClientLibrarySettingsLaunchStage::Ga,
+                "LAUNCH_STAGE_UNSPECIFIED" => {
+                    ClientLibrarySettingsLaunchStage::LaunchStageUnspecified
+                }
+                "PRELAUNCH" => ClientLibrarySettingsLaunchStage::Prelaunch,
+                "UNIMPLEMENTED" => ClientLibrarySettingsLaunchStage::Unimplemented,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ClientLibrarySettingsLaunchStage {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ClientLibrarySettingsLaunchStage {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ClientLibrarySettingsLaunchStage {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALPHA" => ClientLibrarySettingsLaunchStage::Alpha,
+                "BETA" => ClientLibrarySettingsLaunchStage::Beta,
+                "DEPRECATED" => ClientLibrarySettingsLaunchStage::Deprecated,
+                "EARLY_ACCESS" => ClientLibrarySettingsLaunchStage::EarlyAccess,
+                "GA" => ClientLibrarySettingsLaunchStage::Ga,
+                "LAUNCH_STAGE_UNSPECIFIED" => {
+                    ClientLibrarySettingsLaunchStage::LaunchStageUnspecified
+                }
+                "PRELAUNCH" => ClientLibrarySettingsLaunchStage::Prelaunch,
+                "UNIMPLEMENTED" => ClientLibrarySettingsLaunchStage::Unimplemented,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ClientLibrarySettingsLaunchStage {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ClientLibrarySettingsLaunchStage {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CloudSQLConfig {
+        #[doc = "Peering service used for peering with the Cloud SQL project."]
+        #[serde(
+            rename = "service",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service: ::std::option::Option<String>,
+        #[doc = "The name of the umbrella network in the Cloud SQL umbrella project."]
+        #[serde(
+            rename = "umbrellaNetwork",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub umbrella_network: ::std::option::Option<String>,
+        #[doc = "The project number of the Cloud SQL umbrella project."]
+        #[serde(
+            rename = "umbrellaProject",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub umbrella_project: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for CloudSQLConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CloudSQLConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CommonLanguageSettings {
+        #[doc = "The destination where API teams want this client library to be published."]
+        #[serde(
+            rename = "destinations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destinations:
+            ::std::option::Option<Vec<crate::schemas::CommonLanguageSettingsDestinationsItems>>,
+        #[doc = "Link to automatically generated reference documentation. Example: https://cloud.google.com/nodejs/docs/reference/asset/latest"]
+        #[serde(
+            rename = "referenceDocsUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reference_docs_uri: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for CommonLanguageSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CommonLanguageSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CommonLanguageSettingsDestinationsItems {
+        #[doc = "Client libraries will neither be generated nor published to package managers."]
+        ClientLibraryDestinationUnspecified,
+        #[doc = "Generate the client library in a repo under github.com/googleapis, but don’t publish it to package managers."]
+        Github,
+        #[doc = "Publish the library to package managers like nuget.org and npmjs.com."]
+        PackageManager,
+    }
+    impl CommonLanguageSettingsDestinationsItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                CommonLanguageSettingsDestinationsItems::ClientLibraryDestinationUnspecified => {
+                    "CLIENT_LIBRARY_DESTINATION_UNSPECIFIED"
+                }
+                CommonLanguageSettingsDestinationsItems::Github => "GITHUB",
+                CommonLanguageSettingsDestinationsItems::PackageManager => "PACKAGE_MANAGER",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CommonLanguageSettingsDestinationsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CommonLanguageSettingsDestinationsItems {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<CommonLanguageSettingsDestinationsItems, ()> {
+            Ok(match s {
+                "CLIENT_LIBRARY_DESTINATION_UNSPECIFIED" => {
+                    CommonLanguageSettingsDestinationsItems::ClientLibraryDestinationUnspecified
+                }
+                "GITHUB" => CommonLanguageSettingsDestinationsItems::Github,
+                "PACKAGE_MANAGER" => CommonLanguageSettingsDestinationsItems::PackageManager,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for CommonLanguageSettingsDestinationsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CommonLanguageSettingsDestinationsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CommonLanguageSettingsDestinationsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CLIENT_LIBRARY_DESTINATION_UNSPECIFIED" => {
+                    CommonLanguageSettingsDestinationsItems::ClientLibraryDestinationUnspecified
+                }
+                "GITHUB" => CommonLanguageSettingsDestinationsItems::Github,
+                "PACKAGE_MANAGER" => CommonLanguageSettingsDestinationsItems::PackageManager,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CommonLanguageSettingsDestinationsItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CommonLanguageSettingsDestinationsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Connection {
         #[doc = "The name of service consumer’s VPC network that’s connected with service producer network, in the following format: `projects/{project}/global/networks/{network}`. `{project}` is a project number, such as in `12345` that includes the VPC service consumer’s VPC network. `{network}` is the name of the service consumer’s VPC network."]
         #[serde(
@@ -861,6 +1244,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConsumerConfig {
+        #[doc = "Represents one or multiple Cloud SQL configurations."]
+        #[serde(
+            rename = "cloudsqlConfigs",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cloudsql_configs: ::std::option::Option<Vec<crate::schemas::CloudSQLConfig>>,
         #[doc = "Export custom routes flag value for peering from consumer to producer."]
         #[serde(
             rename = "consumerExportCustomRoutes",
@@ -1099,6 +1489,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Control {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CppSettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for CppSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CppSettings {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1478,7 +1899,45 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct DotnetSettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for DotnetSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DotnetSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Endpoint {
+        #[doc = "Unimplemented. Dot not use. DEPRECATED: This field is no longer supported. Instead of using aliases, please specify multiple google.api.Endpoint for each of the intended aliases. Additional names that this endpoint will be hosted on."]
+        #[serde(
+            rename = "aliases",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aliases: ::std::option::Option<Vec<String>>,
         #[doc = "Allowing [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing), aka cross-domain traffic, would allow the backends served from this endpoint to receive and respond to HTTP OPTIONS requests. The response will be used by the browser to determine whether the subsequent cross-origin request is allowed to proceed."]
         #[serde(
             rename = "allowCors",
@@ -1996,6 +2455,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoSettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for GoSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudServicenetworkingV1BetaConnection {
         #[doc = "The name of service consumer’s VPC network that’s connected with service producer network, in the following format: `projects/{project}/global/networks/{network}`. `{project}` is a project number, such as in `12345` that includes the VPC service consumer’s VPC network. `{network}` is the name of the service consumer’s VPC network."]
         #[serde(
@@ -2265,6 +2755,52 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for HttpRule {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct JavaSettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+        #[doc = "The package name to use in Java. Clobbers the java_package option set in the protobuf. This should be used **only** by APIs who have already set the language_settings.java.package_name“ field in gapic.yaml. API teams should use the protobuf java_package option where possible. Example of a YAML configuration:: publishing: java_settings: library_package: com.google.cloud.pubsub.v1"]
+        #[serde(
+            rename = "libraryPackage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub library_package: ::std::option::Option<String>,
+        #[doc = "Configure the Java class name to use instead of the service’s for its corresponding generated GAPIC client. Keys are fully-qualified service names as they appear in the protobuf (including the full the language_settings.java.interface_names“ field in gapic.yaml. API teams should otherwise use the service name as it appears in the protobuf. Example of a YAML configuration:: publishing: java_settings: service_class_names: - google.pubsub.v1.Publisher: TopicAdmin - google.pubsub.v1.Subscriber: SubscriptionAdmin"]
+        #[serde(
+            rename = "serviceClassNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service_class_names:
+            ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for JavaSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for JavaSettings {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2603,6 +3139,49 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct LongRunning {
+        #[doc = "Initial delay after which the first poll request will be made. Default value: 5 seconds."]
+        #[serde(
+            rename = "initialPollDelay",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub initial_poll_delay: ::std::option::Option<String>,
+        #[doc = "Maximum time between two subsequent poll requests. Default value: 45 seconds."]
+        #[serde(
+            rename = "maxPollDelay",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_poll_delay: ::std::option::Option<String>,
+        #[doc = "Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5."]
+        #[serde(
+            rename = "pollDelayMultiplier",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub poll_delay_multiplier: ::std::option::Option<f32>,
+        #[doc = "Total polling timeout. Default value: 5 minutes."]
+        #[serde(
+            rename = "totalPollTimeout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_poll_timeout: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for LongRunning {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for LongRunning {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Method {
         #[doc = "The simple name of this method."]
@@ -2732,6 +3311,35 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for MethodSyntax {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct MethodSettings {
+        #[doc = "Describes settings to use for long-running operations when generating API methods for RPCs. Complements RPCs that use the annotations in google/longrunning/operations.proto. Example of a YAML configuration:: publishing: method_behavior: - selector: CreateAdDomain long_running: initial_poll_delay: seconds: 60 # 1 minute poll_delay_multiplier: 1.5 max_poll_delay: seconds: 360 # 6 minutes total_poll_timeout: seconds: 54000 # 90 minutes"]
+        #[serde(
+            rename = "longRunning",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub long_running: ::std::option::Option<crate::schemas::LongRunning>,
+        #[doc = "The fully qualified name of the method, for which the options below apply. This is used to find the method to apply the options."]
+        #[serde(
+            rename = "selector",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub selector: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for MethodSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MethodSettings {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3608,6 +4216,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct NodeSettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for NodeSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NodeSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct OauthRequirements {
         #[doc = "The list of publicly documented OAuth scopes that are allowed access. An OAuth token containing any of these scopes will be accepted. Example: canonical_scopes: https://www.googleapis.com/auth/calendar, https://www.googleapis.com/auth/calendar.read"]
         #[serde(
@@ -3847,6 +4486,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct PhpSettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for PhpSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PhpSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct PolicyBinding {
         #[doc = "Required. Member to bind the role with. See /iam/docs/reference/rest/v1/Policy#Binding for how to format each member. Eg. - user:myuser@mydomain.com - serviceAccount:my-service-account@app.gserviceaccount.com"]
         #[serde(
@@ -3874,6 +4544,207 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Publishing {
+        #[doc = "Used as a tracking tag when collecting data about the APIs developer relations artifacts like docs, packages delivered to package managers, etc. Example: “speech”."]
+        #[serde(
+            rename = "apiShortName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_short_name: ::std::option::Option<String>,
+        #[doc = "GitHub teams to be added to CODEOWNERS in the directory in GitHub containing source code for the client libraries for this API."]
+        #[serde(
+            rename = "codeownerGithubTeams",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub codeowner_github_teams: ::std::option::Option<Vec<String>>,
+        #[doc = "A prefix used in sample code when demarking regions to be included in documentation."]
+        #[serde(
+            rename = "docTagPrefix",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub doc_tag_prefix: ::std::option::Option<String>,
+        #[doc = "Link to product home page. Example: https://cloud.google.com/asset-inventory/docs/overview"]
+        #[serde(
+            rename = "documentationUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub documentation_uri: ::std::option::Option<String>,
+        #[doc = "GitHub label to apply to issues and pull requests opened for this API."]
+        #[serde(
+            rename = "githubLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub github_label: ::std::option::Option<String>,
+        #[doc = "Client library settings. If the same version string appears multiple times in this list, then the last one wins. Settings from earlier settings with the same version string are discarded."]
+        #[serde(
+            rename = "librarySettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub library_settings: ::std::option::Option<Vec<crate::schemas::ClientLibrarySettings>>,
+        #[doc = "A list of API method settings, e.g. the behavior for methods that use the long-running operation pattern."]
+        #[serde(
+            rename = "methodSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub method_settings: ::std::option::Option<Vec<crate::schemas::MethodSettings>>,
+        #[doc = "Link to a place that API users can report issues. Example: https://issuetracker.google.com/issues/new?component=190865&template=1161103"]
+        #[serde(
+            rename = "newIssueUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub new_issue_uri: ::std::option::Option<String>,
+        #[doc = "For whom the client library is being published."]
+        #[serde(
+            rename = "organization",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub organization: ::std::option::Option<crate::schemas::PublishingOrganization>,
+    }
+    impl ::google_field_selector::FieldSelector for Publishing {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Publishing {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PublishingOrganization {
+        #[doc = "Ads (Advertising) Org."]
+        Ads,
+        #[doc = "Not useful."]
+        ClientLibraryOrganizationUnspecified,
+        #[doc = "Google Cloud Platform Org."]
+        Cloud,
+        #[doc = "Photos Org."]
+        Photos,
+        #[doc = "Street View Org."]
+        StreetView,
+    }
+    impl PublishingOrganization {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PublishingOrganization::Ads => "ADS",
+                PublishingOrganization::ClientLibraryOrganizationUnspecified => {
+                    "CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED"
+                }
+                PublishingOrganization::Cloud => "CLOUD",
+                PublishingOrganization::Photos => "PHOTOS",
+                PublishingOrganization::StreetView => "STREET_VIEW",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PublishingOrganization {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PublishingOrganization {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PublishingOrganization, ()> {
+            Ok(match s {
+                "ADS" => PublishingOrganization::Ads,
+                "CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED" => {
+                    PublishingOrganization::ClientLibraryOrganizationUnspecified
+                }
+                "CLOUD" => PublishingOrganization::Cloud,
+                "PHOTOS" => PublishingOrganization::Photos,
+                "STREET_VIEW" => PublishingOrganization::StreetView,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PublishingOrganization {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PublishingOrganization {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PublishingOrganization {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ADS" => PublishingOrganization::Ads,
+                "CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED" => {
+                    PublishingOrganization::ClientLibraryOrganizationUnspecified
+                }
+                "CLOUD" => PublishingOrganization::Cloud,
+                "PHOTOS" => PublishingOrganization::Photos,
+                "STREET_VIEW" => PublishingOrganization::StreetView,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PublishingOrganization {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PublishingOrganization {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PythonSettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for PythonSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PythonSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -3886,14 +4757,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Quota {
-        #[doc = "List of `QuotaLimit` definitions for the service."]
+        #[doc = "List of QuotaLimit definitions for the service."]
         #[serde(
             rename = "limits",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub limits: ::std::option::Option<Vec<crate::schemas::QuotaLimit>>,
-        #[doc = "List of `MetricRule` definitions, each one mapping a selected method to one or more metrics."]
+        #[doc = "List of MetricRule definitions, each one mapping a selected method to one or more metrics."]
         #[serde(
             rename = "metricRules",
             default,
@@ -4206,6 +5077,37 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RubySettings {
+        #[doc = "Some settings."]
+        #[serde(
+            rename = "common",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common: ::std::option::Option<crate::schemas::CommonLanguageSettings>,
+    }
+    impl ::google_field_selector::FieldSelector for RubySettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RubySettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SearchRangeRequest {
         #[doc = "Required. The prefix length of the IP range. Use usual CIDR range notation. For example, ‘30’ to find unused x.x.x.x/30 CIDR range. Actual range will be determined using allocated range for the consumer peered network and returned in the result."]
         #[serde(
@@ -4413,6 +5315,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub producer_project_id: ::std::option::Option<String>,
+        #[doc = "Settings for [Google Cloud Client libraries](https://cloud.google.com/apis/docs/cloud-client-libraries) generated from APIs defined as protocol buffers."]
+        #[serde(
+            rename = "publishing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub publishing: ::std::option::Option<crate::schemas::Publishing>,
         #[doc = "Quota configuration."]
         #[serde(
             rename = "quota",
@@ -6629,15 +7538,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

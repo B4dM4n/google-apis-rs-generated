@@ -7,7 +7,7 @@
   "canonicalName": "Games Configuration",
   "fullyEncodeReservedExpansion": null,
   "version": "v1configuration",
-  "revision": "20220420",
+  "revision": "20230120",
   "title": "Google Play Game Services Publishing API",
   "description": "The Google Play Game Services Publishing API allows developers to configure their games in Game Services.",
   "ownerDomain": "google.com",
@@ -499,66 +499,6 @@
       "additionalProperties": null,
       "items": null
     },
-    "ImageConfiguration": {
-      "id": "ImageConfiguration",
-      "description": "An image configuration resource.",
-      "type": "object",
-      "format": null,
-      "enum": [],
-      "enumDescriptions": [],
-      "properties": {
-        "imageType": {
-          "description": "The image type for the image.",
-          "type": "string",
-          "format": null,
-          "enum": [
-            "IMAGE_TYPE_UNSPECIFIED",
-            "ACHIEVEMENT_ICON",
-            "LEADERBOARD_ICON"
-          ],
-          "enumDescriptions": [
-            "Default value. This value is unused.",
-            "The icon image for an achievement resource.",
-            "The icon image for a leaderboard resource."
-          ],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "kind": {
-          "description": "Uniquely identifies the type of this resource. Value is always the fixed string `gamesConfiguration#imageConfiguration`.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "resourceId": {
-          "description": "The resource ID of resource which the image belongs to.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        },
-        "url": {
-          "description": "The url for this image.",
-          "type": "string",
-          "format": null,
-          "enum": [],
-          "enumDescriptions": [],
-          "properties": {},
-          "additionalProperties": null,
-          "items": null
-        }
-      },
-      "additionalProperties": null,
-      "items": null
-    },
     "LeaderboardConfiguration": {
       "id": "LeaderboardConfiguration",
       "description": "An leaderboard configuration resource.",
@@ -1036,83 +976,6 @@
           "supportsSubscription": false,
           "supportsMediaUpload": false,
           "mediaUpload": null
-        }
-      }
-    },
-    "imageConfigurations": {
-      "resources": {},
-      "methods": {
-        "upload": {
-          "id": "gamesConfiguration.imageConfigurations.upload",
-          "path": "games/v1configuration/images/{resourceId}/imageType/{imageType}",
-          "httpMethod": "POST",
-          "description": "Uploads an image for a resource with the given ID and image type.",
-          "parameters": {
-            "imageType": {
-              "description": "Selects which image in a resource for this method.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [
-                "IMAGE_TYPE_UNSPECIFIED",
-                "ACHIEVEMENT_ICON",
-                "LEADERBOARD_ICON"
-              ],
-              "enumDescriptions": [
-                "Default value. This value is unused.",
-                "The icon image for an achievement resource.",
-                "The icon image for a leaderboard resource."
-              ],
-              "repeated": false
-            },
-            "resourceId": {
-              "description": "The ID of the resource used by this method.",
-              "default": null,
-              "location": "path",
-              "required": true,
-              "type": "string",
-              "format": null,
-              "minimum": null,
-              "maximum": null,
-              "pattern": null,
-              "enum": [],
-              "enumDescriptions": [],
-              "repeated": false
-            }
-          },
-          "parameterOrder": [
-            "resourceId",
-            "imageType"
-          ],
-          "request": null,
-          "response": {
-            "$ref": "ImageConfiguration"
-          },
-          "scopes": [
-            "https://www.googleapis.com/auth/androidpublisher"
-          ],
-          "supportsMediaDownload": false,
-          "useMediaDownloadService": false,
-          "supportsSubscription": false,
-          "supportsMediaUpload": true,
-          "mediaUpload": {
-            "accept": [
-              "image/*"
-            ],
-            "maxSize": "15728640",
-            "protocols": {
-              "simple": {
-                "multipart": true,
-                "path": "/upload/games/v1configuration/images/{resourceId}/imageType/{imageType}"
-              },
-              "resumable": null
-            }
-          }
         }
       }
     },

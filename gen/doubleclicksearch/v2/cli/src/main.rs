@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("doubleclicksearch2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220420")
+            .version("0.1.0-20230124")
             .about("The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -35,9 +35,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .takes_value(false));
         let mut conversion0 = SubCommand::with_name("conversion")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: get, insert, update and update_availability");
+            .about("methods: get, get_by_customer_id, insert, update and update_availability");
         {
             let mcmd = SubCommand::with_name("get")
+                .about("Retrieves a list of conversions from a DoubleClick Search engine account.");
+            conversion0 = conversion0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_by_customer_id")
                 .about("Retrieves a list of conversions from a DoubleClick Search engine account.");
             conversion0 = conversion0.subcommand(mcmd);
         }

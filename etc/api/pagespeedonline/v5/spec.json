@@ -7,7 +7,7 @@
   "canonicalName": "Pagespeed Insights",
   "fullyEncodeReservedExpansion": true,
   "version": "v5",
-  "revision": "20220422",
+  "revision": "20230130",
   "title": "PageSpeed Insights API",
   "description": "The PageSpeed Insights API lets you analyze the performance of your website with a simple API. It offers tailored suggestions for how you can optimize your site, and lets you easily integrate PageSpeed Insights analysis into your development tools and workflow. ",
   "ownerDomain": "google.com",

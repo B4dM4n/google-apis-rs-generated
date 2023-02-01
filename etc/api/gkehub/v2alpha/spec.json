@@ -7,7 +7,7 @@
   "canonicalName": "GKE Hub",
   "fullyEncodeReservedExpansion": true,
   "version": "v2alpha",
-  "revision": "20220415",
+  "revision": "20230119",
   "title": "GKE Hub API",
   "description": "",
   "ownerDomain": "google.com",

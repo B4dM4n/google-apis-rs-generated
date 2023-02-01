@@ -7,7 +7,7 @@
   "canonicalName": "Artifact Registry",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220401",
+  "revision": "20230123",
   "title": "Artifact Registry API",
   "description": "Store and manage build artifacts in a scalable and integrated service built on Google infrastructure.",
   "ownerDomain": "google.com",
@@ -290,6 +290,36 @@
       "additionalProperties": null,
       "items": null
     },
+    "BatchDeleteVersionsMetadata": {
+      "id": "BatchDeleteVersionsMetadata",
+      "description": "The metadata of an LRO from deleting multiple versions.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "failedVersions": {
+          "description": "The versions the operation failed to delete.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Binding": {
       "id": "Binding",
       "description": "Associates `members`, or principals, with a `role`.",
@@ -303,7 +333,7 @@
           "$ref": "Expr"
         },
         "members": {
-          "description": "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
+          "description": "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
           "type": "array",
           "format": null,
           "enum": [],
@@ -399,6 +429,16 @@
             "additionalProperties": null,
             "items": null
           }
+        },
+        "updateTime": {
+          "description": "Output only. The time when the docker image was last updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "uploadTime": {
           "description": "Time the image was uploaded.",
@@ -847,6 +887,38 @@
       "additionalProperties": null,
       "items": null
     },
+    "KfpArtifact": {
+      "id": "KfpArtifact",
+      "description": "A detailed representation of a GooGet artifact.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Output only. Resource name of the KFP artifact. Since users don't directly interact with this resource, the name will be derived from the associated version. For example, when version = \".../versions/sha256:abcdef...\", the name will be \".../kfpArtifacts/sha256:abcdef...\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "The version associated with the KFP artifact. Must follow the Semantic Versioning standard.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListDockerImagesResponse": {
       "id": "ListDockerImagesResponse",
       "description": "The response from listing docker images.",
@@ -949,6 +1021,74 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListMavenArtifactsResponse": {
+      "id": "ListMavenArtifactsResponse",
+      "description": "The response from listing maven artifacts.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "mavenArtifacts": {
+          "description": "The maven artifacts returned.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "MavenArtifact"
+          }
+        },
+        "nextPageToken": {
+          "description": "The token to retrieve the next page of artifacts, or empty if there are no more artifacts to return.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListNpmPackagesResponse": {
+      "id": "ListNpmPackagesResponse",
+      "description": "The response from listing npm packages.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The token to retrieve the next page of artifacts, or empty if there are no more artifacts to return.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "npmPackages": {
+          "description": "The npm packages returned.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "NpmPackage"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListPackagesResponse": {
       "id": "ListPackagesResponse",
       "description": "The response from listing packages.",
@@ -977,6 +1117,40 @@
           "additionalProperties": null,
           "items": {
             "$ref": "Package"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListPythonPackagesResponse": {
+      "id": "ListPythonPackagesResponse",
+      "description": "The response from listing python packages.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The token to retrieve the next page of artifacts, or empty if there are no more artifacts to return.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pythonPackages": {
+          "description": "The python packages returned.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "PythonPackage"
           }
         }
       },
@@ -1165,6 +1339,88 @@
       "additionalProperties": null,
       "items": null
     },
+    "MavenArtifact": {
+      "id": "MavenArtifact",
+      "description": "MavenArtifact represents a maven artifact.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "artifactId": {
+          "description": "Artifact ID for the artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "createTime": {
+          "description": "Output only. Time the artifact was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "groupId": {
+          "description": "Group ID for the artifact. Example: com.google.guava",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Required. registry_location, project_id, repository_name and maven_artifact forms a unique artifact For example, \"projects/test-project/locations/us-west4/repositories/test-repo/mavenArtifacts/ com.google.guava:guava:31.0-jre\", where \"us-west4\" is the registry_location, \"test-project\" is the project_id, \"test-repo\" is the repository_name and \"com.google.guava:guava:31.0-jre\" is the maven artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pomUri": {
+          "description": "Required. URL to access the pom file of the artifact. Example: us-west4-maven.pkg.dev/test-project/test-repo/com/google/guava/guava/31.0/guava-31.0.pom",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateTime": {
+          "description": "Output only. Time the artifact was updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "Version of this artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "MavenRepositoryConfig": {
       "id": "MavenRepositoryConfig",
       "description": "MavenRepositoryConfig is maven related repository details. Provides additional configuration details for repositories of the maven format type.",
@@ -1197,6 +1453,86 @@
             "RELEASE - repository will accept only Release versions.",
             "SNAPSHOT - repository will accept only Snapshot versions."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "NpmPackage": {
+      "id": "NpmPackage",
+      "description": "NpmPackage represents an npm artifact.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createTime": {
+          "description": "Output only. Time the package was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Required. registry_location, project_id, repository_name and npm_package forms a unique package For example, \"projects/test-project/locations/us-west4/repositories/test-repo/npmPackages/ npm_test:1.0.0\", where \"us-west4\" is the registry_location, \"test-project\" is the project_id, \"test-repo\" is the repository_name and npm_test:1.0.0\" is the npm package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "packageName": {
+          "description": "Package for the artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "tags": {
+          "description": "Tags attached to this package.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "updateTime": {
+          "description": "Output only. Time the package was updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "Version of this package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -1428,6 +1764,78 @@
       "additionalProperties": null,
       "items": null
     },
+    "PythonPackage": {
+      "id": "PythonPackage",
+      "description": "PythonPackage represents a python artifact.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createTime": {
+          "description": "Output only. Time the package was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Required. registry_location, project_id, repository_name and python_package forms a unique package name:`projects//locations//repository//pythonPackages/`. For example, \"projects/test-project/locations/us-west4/repositories/test-repo/pythonPackages/ python_package:1.0.0\", where \"us-west4\" is the registry_location, \"test-project\" is the project_id, \"test-repo\" is the repository_name and python_package:1.0.0\" is the python package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "packageName": {
+          "description": "Package for the artifact.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateTime": {
+          "description": "Output only. Time the package was updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "uri": {
+          "description": "Required. URL to access the package. Example: us-west4-python.pkg.dev/test-project/test-repo/python_package/file-name-1.0.0.tar.gz",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "version": {
+          "description": "Version of this package.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Repository": {
       "id": "Repository",
       "description": "A Repository for storing artifacts with a specific format.",
@@ -1467,7 +1875,8 @@
             "NPM",
             "APT",
             "YUM",
-            "PYTHON"
+            "PYTHON",
+            "KFP"
           ],
           "enumDescriptions": [
             "Unspecified package format.",
@@ -1476,7 +1885,8 @@
             "NPM package format.",
             "APT package format.",
             "YUM package format.",
-            "Python package format."
+            "Python package format.",
+            "Kubeflow Pipelines package format."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1525,6 +1935,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "satisfiesPzs": {
+          "description": "Output only. If set, the repository satisfies physical zone separation.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "sizeBytes": {
           "description": "Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.",
           "type": "string",
@@ -1558,7 +1978,7 @@
       "enumDescriptions": [],
       "properties": {
         "policy": {
-          "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them.",
+          "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
           "$ref": "Policy"
         }
       },
@@ -1665,7 +2085,7 @@
       "enumDescriptions": [],
       "properties": {
         "permissions": {
-          "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+          "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
           "type": "array",
           "format": null,
           "enum": [],
@@ -1732,6 +2152,17 @@
       "additionalProperties": null,
       "items": null
     },
+    "UploadAptArtifactMetadata": {
+      "id": "UploadAptArtifactMetadata",
+      "description": "The operation metadata for uploading artifacts.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "UploadAptArtifactRequest": {
       "id": "UploadAptArtifactRequest",
       "description": "The request to upload an artifact.",
@@ -1767,6 +2198,73 @@
       "additionalProperties": null,
       "items": null
     },
+    "UploadKfpArtifactMediaResponse": {
+      "id": "UploadKfpArtifactMediaResponse",
+      "description": "The response to upload an artifact.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "operation": {
+          "description": "Operation that will be returned to the user.",
+          "$ref": "Operation"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UploadKfpArtifactMetadata": {
+      "id": "UploadKfpArtifactMetadata",
+      "description": "The operation metadata for uploading KFP artifacts.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "UploadKfpArtifactRequest": {
+      "id": "UploadKfpArtifactRequest",
+      "description": "The request to upload an artifact.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "description": {
+          "description": "Description of the package version.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "tags": {
+          "description": "Tags to be created with the version.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "UploadYumArtifactMediaResponse": {
       "id": "UploadYumArtifactMediaResponse",
       "description": "The response to upload an artifact.",
@@ -1780,6 +2278,17 @@
           "$ref": "Operation"
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UploadYumArtifactMetadata": {
+      "id": "UploadYumArtifactMetadata",
+      "description": "The operation metadata for uploading artifacts.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -1847,7 +2356,7 @@
           "items": null
         },
         "metadata": {
-          "description": "Output only. Repository-specific Metadata stored against this version. The fields returned are defined by the underlying repository-specific resource. Currently, the only resource in use is DockerImage",
+          "description": "Output only. Repository-specific Metadata stored against this version. The fields returned are defined by the underlying repository-specific resource. Currently, the resources could be: DockerImage MavenArtifact",
           "type": "object",
           "format": null,
           "enum": [],
@@ -2154,6 +2663,20 @@
                       "httpMethod": "GET",
                       "description": "Lists docker images.",
                       "parameters": {
+                        "orderBy": {
+                          "description": "The field to order the results by.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
                         "pageSize": {
                           "description": "The maximum number of artifacts to return.",
                           "default": null,
@@ -2340,6 +2863,280 @@
                       "request": null,
                       "response": {
                         "$ref": "ListFilesResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform",
+                        "https://www.googleapis.com/auth/cloud-platform.read-only"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                },
+                "kfpArtifacts": {
+                  "resources": {},
+                  "methods": {
+                    "upload": {
+                      "id": "artifactregistry.projects.locations.repositories.kfpArtifacts.upload",
+                      "path": "v1/{+parent}/kfpArtifacts:create",
+                      "httpMethod": "POST",
+                      "description": "Directly uploads a KFP artifact. The returned Operation will complete once the resource is uploaded. Package, Version, and File resources will be created based on the uploaded artifact. Uploaded artifacts that conflict with existing resources will be overwritten.",
+                      "parameters": {
+                        "parent": {
+                          "description": "The resource name of the repository where the KFP artifact will be uploaded.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/repositories/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": {
+                        "$ref": "UploadKfpArtifactRequest"
+                      },
+                      "response": {
+                        "$ref": "UploadKfpArtifactMediaResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": true,
+                      "mediaUpload": {
+                        "accept": [
+                          "*/*"
+                        ],
+                        "maxSize": null,
+                        "protocols": {
+                          "simple": {
+                            "multipart": true,
+                            "path": "/upload/v1/{+parent}/kfpArtifacts:create"
+                          },
+                          "resumable": null
+                        }
+                      }
+                    }
+                  }
+                },
+                "mavenArtifacts": {
+                  "resources": {},
+                  "methods": {
+                    "get": {
+                      "id": "artifactregistry.projects.locations.repositories.mavenArtifacts.get",
+                      "path": "v1/{+name}",
+                      "httpMethod": "GET",
+                      "description": "Gets a maven artifact.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. The name of the maven artifact.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/repositories/[^/]+/mavenArtifacts/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "MavenArtifact"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform",
+                        "https://www.googleapis.com/auth/cloud-platform.read-only"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "artifactregistry.projects.locations.repositories.mavenArtifacts.list",
+                      "path": "v1/{+parent}/mavenArtifacts",
+                      "httpMethod": "GET",
+                      "description": "Lists maven artifacts.",
+                      "parameters": {
+                        "pageSize": {
+                          "description": "The maximum number of artifacts to return.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "The next_page_token value returned from a previous list request, if any.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. The name of the parent resource whose maven artifacts will be listed.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/repositories/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListMavenArtifactsResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform",
+                        "https://www.googleapis.com/auth/cloud-platform.read-only"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                },
+                "npmPackages": {
+                  "resources": {},
+                  "methods": {
+                    "get": {
+                      "id": "artifactregistry.projects.locations.repositories.npmPackages.get",
+                      "path": "v1/{+name}",
+                      "httpMethod": "GET",
+                      "description": "Gets a npm package.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. The name of the npm package.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/repositories/[^/]+/npmPackages/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "NpmPackage"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform",
+                        "https://www.googleapis.com/auth/cloud-platform.read-only"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "artifactregistry.projects.locations.repositories.npmPackages.list",
+                      "path": "v1/{+parent}/npmPackages",
+                      "httpMethod": "GET",
+                      "description": "Lists npm packages.",
+                      "parameters": {
+                        "pageSize": {
+                          "description": "The maximum number of artifacts to return.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "The next_page_token value returned from a previous list request, if any.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. The name of the parent resource whose npm packages will be listed.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/repositories/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListNpmPackagesResponse"
                       },
                       "scopes": [
                         "https://www.googleapis.com/auth/cloud-platform",
@@ -2984,6 +3781,115 @@
                     }
                   }
                 },
+                "pythonPackages": {
+                  "resources": {},
+                  "methods": {
+                    "get": {
+                      "id": "artifactregistry.projects.locations.repositories.pythonPackages.get",
+                      "path": "v1/{+name}",
+                      "httpMethod": "GET",
+                      "description": "Gets a python package.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. The name of the python package.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/repositories/[^/]+/pythonPackages/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "PythonPackage"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform",
+                        "https://www.googleapis.com/auth/cloud-platform.read-only"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "artifactregistry.projects.locations.repositories.pythonPackages.list",
+                      "path": "v1/{+parent}/pythonPackages",
+                      "httpMethod": "GET",
+                      "description": "Lists python packages.",
+                      "parameters": {
+                        "pageSize": {
+                          "description": "The maximum number of artifacts to return.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "The next_page_token value returned from a previous list request, if any.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "parent": {
+                          "description": "Required. The name of the parent resource whose python packages will be listed.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/repositories/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListPythonPackagesResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform",
+                        "https://www.googleapis.com/auth/cloud-platform.read-only"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                },
                 "yumArtifacts": {
                   "resources": {},
                   "methods": {
@@ -3230,7 +4136,7 @@
                       "repeated": false
                     },
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -3387,7 +4293,7 @@
                   "description": "Updates the IAM policy for a given resource.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -3426,7 +4332,7 @@
                   "description": "Tests if the caller has a list of permissions on a resource.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,

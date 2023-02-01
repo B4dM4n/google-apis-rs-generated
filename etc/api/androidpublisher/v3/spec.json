@@ -7,9 +7,9 @@
   "canonicalName": "Android Publisher",
   "fullyEncodeReservedExpansion": null,
   "version": "v3",
-  "revision": "20220427",
+  "revision": "20230201",
   "title": "Google Play Android Developer API",
-  "description": "Lets Android application developers access their Google Play accounts.",
+  "description": "Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. ",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -207,6 +207,44 @@
     }
   },
   "schemas": {
+    "AcquisitionTargetingRule": {
+      "id": "AcquisitionTargetingRule",
+      "description": "Represents a targeting rule of the form: User never had {scope} before.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "scope": {
+          "description": "Required. The scope of subscriptions this rule considers. Only allows \"this subscription\" and \"any subscription in app\".",
+          "$ref": "TargetingRuleScope"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ActivateBasePlanRequest": {
+      "id": "ActivateBasePlanRequest",
+      "description": "Request message for ActivateBasePlan.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "ActivateSubscriptionOfferRequest": {
+      "id": "ActivateSubscriptionOfferRequest",
+      "description": "Request message for ActivateSubscriptionOffer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "Apk": {
       "id": "Apk",
       "description": "Information about an APK. The resource for ApksService.",
@@ -415,6 +453,209 @@
       "additionalProperties": null,
       "items": null
     },
+    "ArchiveSubscriptionRequest": {
+      "id": "ArchiveSubscriptionRequest",
+      "description": "Request message for ArchiveSubscription.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "AutoRenewingBasePlanType": {
+      "id": "AutoRenewingBasePlanType",
+      "description": "Represents a base plan that automatically renews at the end of its subscription period.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "billingPeriodDuration": {
+          "description": "Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "gracePeriodDuration": {
+          "description": "Grace period of the subscription, specified in ISO 8601 format. Acceptable values are P0D (zero days), P3D (3 days), P7D (7 days), P14D (14 days), and P30D (30 days). If not specified, a default value will be used based on the recurring period duration.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "legacyCompatible": {
+          "description": "Whether the renewing base plan is backward compatible. The backward compatible base plan is returned by the Google Play Billing Library deprecated method querySkuDetailsAsync(). Only one renewing base plan can be marked as legacy compatible for a given subscription.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "legacyCompatibleSubscriptionOfferId": {
+          "description": "Subscription offer id which is legacy compatible. The backward compatible subscription offer is returned by the Google Play Billing Library deprecated method querySkuDetailsAsync(). Only one subscription offer can be marked as legacy compatible for a given renewing base plan. To have no Subscription offer as legacy compatible set this field as empty string.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "prorationMode": {
+          "description": "The proration mode for the base plan determines what happens when a user switches to this plan from another base plan. If unspecified, defaults to CHARGE_ON_NEXT_BILLING_DATE.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SUBSCRIPTION_PRORATION_MODE_UNSPECIFIED",
+            "SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE",
+            "SUBSCRIPTION_PRORATION_MODE_CHARGE_FULL_PRICE_IMMEDIATELY"
+          ],
+          "enumDescriptions": [
+            "Unspecified mode.",
+            "Users will be charged for their new base plan at the end of their current billing period.",
+            "Users will be charged for their new base plan immediately and in full. Any remaining period of their existing subscription will be used to extend the duration of the new billing plan."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "resubscribeState": {
+          "description": "Whether users should be able to resubscribe to this base plan in Google Play surfaces. Defaults to RESUBSCRIBE_STATE_ACTIVE if not specified.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "RESUBSCRIBE_STATE_UNSPECIFIED",
+            "RESUBSCRIBE_STATE_ACTIVE",
+            "RESUBSCRIBE_STATE_INACTIVE"
+          ],
+          "enumDescriptions": [
+            "Unspecified state.",
+            "Resubscribe is active.",
+            "Resubscribe is inactive."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "AutoRenewingPlan": {
+      "id": "AutoRenewingPlan",
+      "description": "Information related to an auto renewing plan.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "autoRenewEnabled": {
+          "description": "If the subscription is currently set to auto-renew, e.g. the user has not canceled the subscription",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "priceChangeDetails": {
+          "description": "The information of the last price change for the item since subscription signup.",
+          "$ref": "SubscriptionItemPriceChangeDetails"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "BasePlan": {
+      "id": "BasePlan",
+      "description": "A single base plan for a subscription.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "autoRenewingBasePlanType": {
+          "description": "Set when the base plan automatically renews at a regular interval.",
+          "$ref": "AutoRenewingBasePlanType"
+        },
+        "basePlanId": {
+          "description": "Required. Immutable. The unique identifier of this base plan. Must be unique within the subscription, and conform with RFC-1034. That is, this ID can only contain lower-case letters (a-z), numbers (0-9), and hyphens (-), and be at most 63 characters.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "offerTags": {
+          "description": "List of up to 20 custom tags specified for this base plan, and returned to the app through the billing library. Subscription offers for this base plan will also receive these offer tags in the billing library.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OfferTag"
+          }
+        },
+        "otherRegionsConfig": {
+          "description": "Pricing information for any new locations Play may launch in the future. If omitted, the BasePlan will not be automatically available any new locations Play may launch in the future.",
+          "$ref": "OtherRegionsBasePlanConfig"
+        },
+        "prepaidBasePlanType": {
+          "description": "Set when the base plan does not automatically renew at the end of the billing period.",
+          "$ref": "PrepaidBasePlanType"
+        },
+        "regionalConfigs": {
+          "description": "Region-specific information for this base plan.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "RegionalBasePlanConfig"
+          }
+        },
+        "state": {
+          "description": "Output only. The state of the base plan, i.e. whether it's active. Draft and inactive base plans can be activated or deleted. Active base plans can be made inactive. Inactive base plans can be canceled. This field cannot be changed by updating the resource. Use the dedicated endpoints instead.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "DRAFT",
+            "ACTIVE",
+            "INACTIVE"
+          ],
+          "enumDescriptions": [
+            "Unspecified state.",
+            "The base plan is currently in a draft state, and hasn't been activated. It can be safely deleted at this point.",
+            "The base plan is active and available for new subscribers.",
+            "The base plan is inactive and only available for existing subscribers."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Bundle": {
       "id": "Bundle",
       "description": "Information about an app bundle. The resource for BundlesService.",
@@ -486,6 +727,80 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CancelSurveyResult": {
+      "id": "CancelSurveyResult",
+      "description": "Result of the cancel survey when the subscription was canceled by the user.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "reason": {
+          "description": "The reason the user selected in the cancel survey.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CANCEL_SURVEY_REASON_UNSPECIFIED",
+            "CANCEL_SURVEY_REASON_NOT_ENOUGH_USAGE",
+            "CANCEL_SURVEY_REASON_TECHNICAL_ISSUES",
+            "CANCEL_SURVEY_REASON_COST_RELATED",
+            "CANCEL_SURVEY_REASON_FOUND_BETTER_APP",
+            "CANCEL_SURVEY_REASON_OTHERS"
+          ],
+          "enumDescriptions": [
+            "Unspecified cancel survey reason.",
+            "Not enough usage of the subscription.",
+            "Technical issues while using the app.",
+            "Cost related issues.",
+            "The user found a better app.",
+            "Other reasons."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "reasonUserInput": {
+          "description": "Only set for CANCEL_SURVEY_REASON_OTHERS. This is the user's freeform response to the survey.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CanceledStateContext": {
+      "id": "CanceledStateContext",
+      "description": "Information specific to a subscription in canceled state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "developerInitiatedCancellation": {
+          "description": "Subscription was canceled by the developer.",
+          "$ref": "DeveloperInitiatedCancellation"
+        },
+        "replacementCancellation": {
+          "description": "Subscription was replaced by a new subscription.",
+          "$ref": "ReplacementCancellation"
+        },
+        "systemInitiatedCancellation": {
+          "description": "Subscription was canceled by the system, for example because of a billing problem.",
+          "$ref": "SystemInitiatedCancellation"
+        },
+        "userInitiatedCancellation": {
+          "description": "Subscription was canceled by user.",
+          "$ref": "UserInitiatedCancellation"
         }
       },
       "additionalProperties": null,
@@ -646,6 +961,28 @@
       "additionalProperties": null,
       "items": null
     },
+    "DeactivateBasePlanRequest": {
+      "id": "DeactivateBasePlanRequest",
+      "description": "Request message for DeactivateBasePlan.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeactivateSubscriptionOfferRequest": {
+      "id": "DeactivateSubscriptionOfferRequest",
+      "description": "Request message for DeactivateSubscriptionOffer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "DeobfuscationFile": {
       "id": "DeobfuscationFile",
       "description": "Represents a deobfuscation file.",
@@ -715,6 +1052,17 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "DeveloperInitiatedCancellation": {
+      "id": "DeveloperInitiatedCancellation",
+      "description": "Information specific to cancellations initiated by developers.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -1205,6 +1553,48 @@
         "expansionFile": {
           "description": "The uploaded expansion file configuration.",
           "$ref": "ExpansionFile"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ExternalAccountIdentifiers": {
+      "id": "ExternalAccountIdentifiers",
+      "description": "User account identifier in the third-party service.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "externalAccountId": {
+          "description": "User account identifier in the third-party service. Only present if account linking happened as part of the subscription purchase flow.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "obfuscatedExternalAccountId": {
+          "description": "An obfuscated version of the id that is uniquely associated with the user's account in your app. Present for the following purchases: * If account linking happened as part of the subscription purchase flow. * It was specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedaccountid when the purchase was made.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "obfuscatedExternalProfileId": {
+          "description": "An obfuscated version of the id that is uniquely associated with the user's profile in your app. Only present if specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedprofileid when the purchase was made.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2198,6 +2588,74 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListSubscriptionOffersResponse": {
+      "id": "ListSubscriptionOffersResponse",
+      "description": "Response message for ListSubscriptionOffers.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "subscriptionOffers": {
+          "description": "The subscription offers from the specified subscription.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SubscriptionOffer"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ListSubscriptionsResponse": {
+      "id": "ListSubscriptionsResponse",
+      "description": "Response message for ListSubscriptions.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "subscriptions": {
+          "description": "The subscriptions from the specified app.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Subscription"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "ListUsersResponse": {
       "id": "ListUsersResponse",
       "description": "A response containing one or more users with access to an account.",
@@ -2403,6 +2861,45 @@
       "additionalProperties": null,
       "items": null
     },
+    "MigrateBasePlanPricesRequest": {
+      "id": "MigrateBasePlanPricesRequest",
+      "description": "Request message for MigrateBasePlanPrices.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "regionalPriceMigrations": {
+          "description": "Required. The regional prices to update.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "RegionalPriceMigrationConfig"
+          }
+        },
+        "regionsVersion": {
+          "description": "Required. The version of the available regions being used for the regional_price_migrations.",
+          "$ref": "RegionsVersion"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "MigrateBasePlanPricesResponse": {
+      "id": "MigrateBasePlanPricesResponse",
+      "description": "Response message for MigrateBasePlanPrices.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "Money": {
       "id": "Money",
       "description": "Represents an amount of money with its currency type.",
@@ -2445,6 +2942,180 @@
       "additionalProperties": null,
       "items": null
     },
+    "OfferDetails": {
+      "id": "OfferDetails",
+      "description": "Offer details information related to a purchase line item.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "basePlanId": {
+          "description": "The base plan ID. Present for all base plan and offers.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "offerId": {
+          "description": "The offer ID. Only present for discounted offers.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "offerTags": {
+          "description": "The latest offer tags associated with the offer. It includes tags inherited from the base plan.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OfferTag": {
+      "id": "OfferTag",
+      "description": "Represents a custom tag specified for base plans and subscription offers.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "tag": {
+          "description": "Must conform with RFC-1034. That is, this string can only contain lower-case letters (a-z), numbers (0-9), and hyphens (-), and be at most 20 characters.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OtherRegionsBasePlanConfig": {
+      "id": "OtherRegionsBasePlanConfig",
+      "description": "Pricing information for any new locations Play may launch in.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "eurPrice": {
+          "description": "Required. Price in EUR to use for any new locations Play may launch in.",
+          "$ref": "Money"
+        },
+        "newSubscriberAvailability": {
+          "description": "Whether the base plan is available for new subscribers in any new locations Play may launch in. If not specified, this will default to false.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "usdPrice": {
+          "description": "Required. Price in USD to use for any new locations Play may launch in.",
+          "$ref": "Money"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OtherRegionsSubscriptionOfferConfig": {
+      "id": "OtherRegionsSubscriptionOfferConfig",
+      "description": "Configuration for any new locations Play may launch in specified on a subscription offer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "otherRegionsNewSubscriberAvailability": {
+          "description": "Whether the subscription offer in any new locations Play may launch in the future. If not specified, this will default to false.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OtherRegionsSubscriptionOfferPhaseConfig": {
+      "id": "OtherRegionsSubscriptionOfferPhaseConfig",
+      "description": "Configuration for any new locations Play may launch in for a single offer phase.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "absoluteDiscounts": {
+          "description": "The absolute amount of money subtracted from the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a $1 absolute discount for a phase of a duration of 3 months would correspond to a price of $2. The resulting price may not be smaller than the minimum price allowed for any new locations Play may launch in.",
+          "$ref": "OtherRegionsSubscriptionOfferPhasePrices"
+        },
+        "otherRegionsPrices": {
+          "description": "The absolute price the user pays for this offer phase. The price must not be smaller than the minimum price allowed for any new locations Play may launch in.",
+          "$ref": "OtherRegionsSubscriptionOfferPhasePrices"
+        },
+        "relativeDiscount": {
+          "description": "The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in any new locations Play may launch in.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "OtherRegionsSubscriptionOfferPhasePrices": {
+      "id": "OtherRegionsSubscriptionOfferPhasePrices",
+      "description": "Pricing information for any new locations Play may launch in.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "eurPrice": {
+          "description": "Required. Price in EUR to use for any new locations Play may launch in.",
+          "$ref": "Money"
+        },
+        "usdPrice": {
+          "description": "Required. Price in USD to use for any new locations Play may launch in.",
+          "$ref": "Money"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "PageInfo": {
       "id": "PageInfo",
       "description": "Information about the current page. List operations that supports paging return only one \"page\" of results. This protocol buffer message describes the page that has been returned.",
@@ -2477,6 +3148,90 @@
           "description": "Total number of results available on the backend ! The total number of results in the result set.",
           "type": "integer",
           "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PausedStateContext": {
+      "id": "PausedStateContext",
+      "description": "Information specific to a subscription in paused state.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "autoResumeTime": {
+          "description": "Time at which the subscription will be automatically resumed.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PrepaidBasePlanType": {
+      "id": "PrepaidBasePlanType",
+      "description": "Represents a base plan that does not automatically renew at the end of the base plan, and must be manually renewed by the user.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "billingPeriodDuration": {
+          "description": "Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "timeExtension": {
+          "description": "Whether users should be able to extend this prepaid base plan in Google Play surfaces. Defaults to TIME_EXTENSION_ACTIVE if not specified.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "TIME_EXTENSION_UNSPECIFIED",
+            "TIME_EXTENSION_ACTIVE",
+            "TIME_EXTENSION_INACTIVE"
+          ],
+          "enumDescriptions": [
+            "Unspecified state.",
+            "Time extension is active. Users are allowed to top-up or extend their prepaid plan.",
+            "Time extension is inactive. Users cannot top-up or extend their prepaid plan."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PrepaidPlan": {
+      "id": "PrepaidPlan",
+      "description": "Information related to a prepaid plan.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "allowExtendAfterTime": {
+          "description": "If present, this is the time after which top up purchases are allowed for the prepaid plan. Will not be present for expired prepaid plans.",
+          "type": "string",
+          "format": "google-datetime",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -2598,7 +3353,7 @@
           "items": null
         },
         "productId": {
-          "description": "The inapp product SKU.",
+          "description": "The inapp product SKU. May not be present.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2628,7 +3383,7 @@
           "items": null
         },
         "purchaseToken": {
-          "description": "The purchase token generated to identify this purchase.",
+          "description": "The purchase token generated to identify this purchase. May not be present.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2648,7 +3403,7 @@
           "items": null
         },
         "quantity": {
-          "description": "The quantity associated with the purchase of the inapp product.",
+          "description": "The quantity associated with the purchase of the inapp product. If not present, the quantity is 1.",
           "type": "integer",
           "format": "int32",
           "enum": [],
@@ -2693,6 +3448,146 @@
       "additionalProperties": null,
       "items": null
     },
+    "RegionalBasePlanConfig": {
+      "id": "RegionalBasePlanConfig",
+      "description": "Configuration for a base plan specific to a region.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "newSubscriberAvailability": {
+          "description": "Whether the base plan in the specified region is available for new subscribers. Existing subscribers will not have their subscription canceled if this value is set to false. If not specified, this will default to false.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "price": {
+          "description": "The price of the base plan in the specified region. Must be set if the base plan is available to new subscribers. Must be set in the currency that is linked to the specified region.",
+          "$ref": "Money"
+        },
+        "regionCode": {
+          "description": "Required. Region code this configuration applies to, as defined by ISO 3166-2, e.g. \"US\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RegionalPriceMigrationConfig": {
+      "id": "RegionalPriceMigrationConfig",
+      "description": "Configuration for a price migration.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "oldestAllowedPriceVersionTime": {
+          "description": "Required. The cutoff time for historical prices that subscribers can remain paying. Subscribers who are on a price that was created before this cutoff time will be migrated to the currently-offered price. These subscribers will receive a notification that they will be paying a different price. Subscribers who do not agree to the new price will have their subscription ended at the next renewal.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "regionCode": {
+          "description": "Required. Region code this configuration applies to, as defined by ISO 3166-2, e.g. \"US\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RegionalSubscriptionOfferConfig": {
+      "id": "RegionalSubscriptionOfferConfig",
+      "description": "Configuration for a subscription offer in a single region.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "newSubscriberAvailability": {
+          "description": "Whether the subscription offer in the specified region is available for new subscribers. Existing subscribers will not have their subscription cancelled if this value is set to false. If not specified, this will default to false.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "regionCode": {
+          "description": "Required. Immutable. Region code this configuration applies to, as defined by ISO 3166-2, e.g. \"US\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RegionalSubscriptionOfferPhaseConfig": {
+      "id": "RegionalSubscriptionOfferPhaseConfig",
+      "description": "Configuration for a single phase of a subscription offer in a single region.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "absoluteDiscount": {
+          "description": "The absolute amount of money subtracted from the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a $1 absolute discount for a phase of a duration of 3 months would correspond to a price of $2. The resulting price may not be smaller than the minimum price allowed for this region.",
+          "$ref": "Money"
+        },
+        "price": {
+          "description": "The absolute price the user pays for this offer phase. The price must not be smaller than the minimum price allowed for this region.",
+          "$ref": "Money"
+        },
+        "regionCode": {
+          "description": "Required. Immutable. The region to which this config applies.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "relativeDiscount": {
+          "description": "The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in this region.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "RegionalTaxRateInfo": {
       "id": "RegionalTaxRateInfo",
       "description": "Specified details about taxation in a given geographical region.",
@@ -2707,6 +3602,32 @@
           "format": null,
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "streamingTaxType": {
+          "description": "To collect communications or amusement taxes in the United States, choose the appropriate tax category. [Learn more](https://support.google.com/googleplay/android-developer/answer/10463498#streaming_tax).",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STREAMING_TAX_TYPE_UNSPECIFIED",
+            "STREAMING_TAX_TYPE_TELCO_VIDEO_RENTAL",
+            "STREAMING_TAX_TYPE_TELCO_VIDEO_SALES",
+            "STREAMING_TAX_TYPE_TELCO_VIDEO_MULTI_CHANNEL",
+            "STREAMING_TAX_TYPE_TELCO_AUDIO_RENTAL",
+            "STREAMING_TAX_TYPE_TELCO_AUDIO_SALES",
+            "STREAMING_TAX_TYPE_TELCO_AUDIO_MULTI_CHANNEL"
+          ],
+          "enumDescriptions": [
+            "No telecommunications tax collected.",
+            "US-specific telecommunications tax tier for video streaming, on demand, rentals / subscriptions / pay-per-view.",
+            "US-specific telecommunications tax tier for video streaming of pre-recorded content like movies, tv shows.",
+            "US-specific telecommunications tax tier for video streaming of multi-channel programming.",
+            "US-specific telecommunications tax tier for audio streaming, rental / subscription.",
+            "US-specific telecommunications tax tier for audio streaming, sale / permanent download.",
+            "US-specific telecommunications tax tier for multi channel audio streaming like radio."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -2736,6 +3657,39 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RegionsVersion": {
+      "id": "RegionsVersion",
+      "description": "The version of the available regions being used for the specified resource.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "version": {
+          "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ReplacementCancellation": {
+      "id": "ReplacementCancellation",
+      "description": "Information specific to cancellations caused by subscription replacement.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -2879,6 +3833,138 @@
       "additionalProperties": null,
       "items": null
     },
+    "SubscribeWithGoogleInfo": {
+      "id": "SubscribeWithGoogleInfo",
+      "description": "Information associated with purchases made with 'Subscribe with Google'.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "emailAddress": {
+          "description": "The email address of the user when the subscription was purchased.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "familyName": {
+          "description": "The family name of the user when the subscription was purchased.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "givenName": {
+          "description": "The given name of the user when the subscription was purchased.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "profileId": {
+          "description": "The Google profile id of the user when the subscription was purchased.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "profileName": {
+          "description": "The profile name of the user when the subscription was purchased.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Subscription": {
+      "id": "Subscription",
+      "description": "A single subscription for an app.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "archived": {
+          "description": "Output only. Whether this subscription is archived. Archived subscriptions are not available to any subscriber any longer, cannot be updated, and are not returned in list requests unless the show archived flag is passed in.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "basePlans": {
+          "description": "The set of base plans for this subscription. Represents the prices and duration of the subscription if no other offers apply.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "BasePlan"
+          }
+        },
+        "listings": {
+          "description": "Required. List of localized listings for this subscription. Must contain at least an entry for the default language of the parent app.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SubscriptionListing"
+          }
+        },
+        "packageName": {
+          "description": "Immutable. Package name of the parent app.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "productId": {
+          "description": "Immutable. Unique product ID of the product. Unique within the parent app. Product IDs must be composed of lower-case letters (a-z), numbers (0-9), underscores (_) and dots (.). It must start with a lower-case letter or number, and be between 1 and 40 (inclusive) characters in length.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "taxAndComplianceSettings": {
+          "description": "Details about taxes and legal compliance.",
+          "$ref": "SubscriptionTaxAndComplianceSettings"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SubscriptionCancelSurveyResult": {
       "id": "SubscriptionCancelSurveyResult",
       "description": "Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey).",
@@ -2938,6 +4024,314 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SubscriptionItemPriceChangeDetails": {
+      "id": "SubscriptionItemPriceChangeDetails",
+      "description": "Price change related information of a subscription item.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "expectedNewPriceChargeTime": {
+          "description": "The renewal time at which the price change will become effective for the user. This is subject to change(to a future time) due to cases where the renewal time shifts like pause.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "newPrice": {
+          "description": "New recurring price for the subscription item.",
+          "$ref": "Money"
+        },
+        "priceChangeMode": {
+          "description": "Price change mode specifies how the subscription item price is changing.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "PRICE_CHANGE_MODE_UNSPECIFIED",
+            "PRICE_DECREASE",
+            "PRICE_INCREASE"
+          ],
+          "enumDescriptions": [
+            "Price change mode unspecified. This value should never be set.",
+            "If the subscription price is decreasing.",
+            "If the subscription price is increasing and the user needs to accept it."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "priceChangeState": {
+          "description": "State the price change is currently in.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "PRICE_CHANGE_STATE_UNSPECIFIED",
+            "OUTSTANDING",
+            "CONFIRMED",
+            "APPLIED"
+          ],
+          "enumDescriptions": [
+            "Price change state unspecified. This value should not be used.",
+            "Waiting for the user to agree for the price change.",
+            "The price change is confirmed to happen for the user.",
+            "The price change is applied, i.e. the user has started being charged the new price."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SubscriptionListing": {
+      "id": "SubscriptionListing",
+      "description": "The consumer-visible metadata of a subscription.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "benefits": {
+          "description": "A list of benefits shown to the user on platforms such as the Play Store and in restoration flows in the language of this listing. Plain text. Ordered list of at most four benefits.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "description": {
+          "description": "The description of this subscription in the language of this listing. Maximum length - 80 characters. Plain text.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "languageCode": {
+          "description": "Required. The language of this listing, as defined by BCP-47, e.g. \"en-US\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "title": {
+          "description": "Required. The title of this subscription in the language of this listing. Plain text.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SubscriptionOffer": {
+      "id": "SubscriptionOffer",
+      "description": "A single, temporary offer",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "basePlanId": {
+          "description": "Required. Immutable. The ID of the base plan to which this offer is an extension.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "offerId": {
+          "description": "Required. Immutable. Unique ID of this subscription offer. Must be unique within the base plan.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "offerTags": {
+          "description": "List of up to 20 custom tags specified for this offer, and returned to the app through the billing library.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "OfferTag"
+          }
+        },
+        "otherRegionsConfig": {
+          "description": "The configuration for any new locations Play may launch in the future.",
+          "$ref": "OtherRegionsSubscriptionOfferConfig"
+        },
+        "packageName": {
+          "description": "Required. Immutable. The package name of the app the parent subscription belongs to.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "phases": {
+          "description": "Required. The phases of this subscription offer. Must contain at least one entry, and may contain at most five. Users will always receive all these phases in the specified order. Phases may not be added, removed, or reordered after initial creation.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SubscriptionOfferPhase"
+          }
+        },
+        "productId": {
+          "description": "Required. Immutable. The ID of the parent subscription this offer belongs to.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "regionalConfigs": {
+          "description": "Required. The region-specific configuration of this offer. Must contain at least one entry.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "RegionalSubscriptionOfferConfig"
+          }
+        },
+        "state": {
+          "description": "Output only. The current state of this offer. Can be changed using Activate and Deactivate actions. NB: the base plan state supersedes this state, so an active offer may not be available if the base plan is not active.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "DRAFT",
+            "ACTIVE",
+            "INACTIVE"
+          ],
+          "enumDescriptions": [
+            "Default value, should never be used.",
+            "The subscription offer is not and has never been available to users.",
+            "The subscription offer is available to new and existing users.",
+            "The subscription offer is not available to new users. Existing users retain access."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "targeting": {
+          "description": "The requirements that users need to fulfil to be eligible for this offer. Represents the requirements that Play will evaluate to decide whether an offer should be returned. Developers may further filter these offers themselves.",
+          "$ref": "SubscriptionOfferTargeting"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SubscriptionOfferPhase": {
+      "id": "SubscriptionOfferPhase",
+      "description": "A single phase of a subscription offer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "duration": {
+          "description": "Required. The duration of a single recurrence of this phase. Specified in ISO 8601 format.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "otherRegionsConfig": {
+          "description": "Pricing information for any new locations Play may launch in.",
+          "$ref": "OtherRegionsSubscriptionOfferPhaseConfig"
+        },
+        "recurrenceCount": {
+          "description": "Required. The number of times this phase repeats. If this offer phase is not free, each recurrence charges the user the price of this offer phase.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "regionalConfigs": {
+          "description": "Required. The region-specific configuration of this offer phase. This list must contain exactly one entry for each region for which the subscription offer has a regional config.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "RegionalSubscriptionOfferPhaseConfig"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SubscriptionOfferTargeting": {
+      "id": "SubscriptionOfferTargeting",
+      "description": "Defines the rule a user needs to satisfy to receive this offer.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "acquisitionRule": {
+          "description": "Offer targeting rule for new user acquisition.",
+          "$ref": "AcquisitionTargetingRule"
+        },
+        "upgradeRule": {
+          "description": "Offer targeting rule for upgrading users' existing plans.",
+          "$ref": "UpgradeTargetingRule"
         }
       },
       "additionalProperties": null,
@@ -3253,6 +4647,190 @@
       "additionalProperties": null,
       "items": null
     },
+    "SubscriptionPurchaseLineItem": {
+      "id": "SubscriptionPurchaseLineItem",
+      "description": "Item-level info for a subscription purchase.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "autoRenewingPlan": {
+          "description": "The item is auto renewing.",
+          "$ref": "AutoRenewingPlan"
+        },
+        "expiryTime": {
+          "description": "Time at which the subscription expired or will expire unless the access is extended (ex. renews).",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "offerDetails": {
+          "description": "The offer details for this item.",
+          "$ref": "OfferDetails"
+        },
+        "prepaidPlan": {
+          "description": "The item is prepaid.",
+          "$ref": "PrepaidPlan"
+        },
+        "productId": {
+          "description": "The purchased product ID (for example, 'monthly001').",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SubscriptionPurchaseV2": {
+      "id": "SubscriptionPurchaseV2",
+      "description": "Indicates the status of a user's subscription purchase.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "acknowledgementState": {
+          "description": "The acknowledgement state of the subscription.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ACKNOWLEDGEMENT_STATE_UNSPECIFIED",
+            "ACKNOWLEDGEMENT_STATE_PENDING",
+            "ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED"
+          ],
+          "enumDescriptions": [
+            "Unspecified acknowledgement state.",
+            "The subscription is not acknowledged yet.",
+            "The subscription is acknowledged."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canceledStateContext": {
+          "description": "Additional context around canceled subscriptions. Only present if the subscription currently has subscription_state SUBSCRIPTION_STATE_CANCELED.",
+          "$ref": "CanceledStateContext"
+        },
+        "externalAccountIdentifiers": {
+          "description": "User account identifier in the third-party service.",
+          "$ref": "ExternalAccountIdentifiers"
+        },
+        "kind": {
+          "description": "This kind represents a SubscriptionPurchaseV2 object in the androidpublisher service.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "latestOrderId": {
+          "description": "The order id of the latest order associated with the purchase of the subscription. For autoRenewing subscription, this is the order id of signup order if it is not renewed yet, or the last recurring order id (success, pending, or declined order). For prepaid subscription, this is the order id associated with the queried purchase token.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lineItems": {
+          "description": "Item-level info for a subscription purchase. The items in the same purchase should be either all with AutoRenewingPlan or all with PrepaidPlan.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "SubscriptionPurchaseLineItem"
+          }
+        },
+        "linkedPurchaseToken": {
+          "description": "The purchase token of the old subscription if this subscription is one of the following: * Re-signup of a canceled but non-lapsed subscription * Upgrade/downgrade from a previous subscription. * Convert from prepaid to auto renewing subscription. * Convert from an auto renewing subscription to prepaid. * Topup a prepaid subscription.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pausedStateContext": {
+          "description": "Additional context around paused subscriptions. Only present if the subscription currently has subscription_state SUBSCRIPTION_STATE_PAUSED.",
+          "$ref": "PausedStateContext"
+        },
+        "regionCode": {
+          "description": "ISO 3166-1 alpha-2 billing country/region code of the user at the time the subscription was granted.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "startTime": {
+          "description": "Time at which the subscription was granted. Not set for pending subscriptions (subscription was created but awaiting payment during signup).",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "subscribeWithGoogleInfo": {
+          "description": "User profile associated with purchases made with 'Subscribe with Google'.",
+          "$ref": "SubscribeWithGoogleInfo"
+        },
+        "subscriptionState": {
+          "description": "The current state of the subscription.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "SUBSCRIPTION_STATE_UNSPECIFIED",
+            "SUBSCRIPTION_STATE_PENDING",
+            "SUBSCRIPTION_STATE_ACTIVE",
+            "SUBSCRIPTION_STATE_PAUSED",
+            "SUBSCRIPTION_STATE_IN_GRACE_PERIOD",
+            "SUBSCRIPTION_STATE_ON_HOLD",
+            "SUBSCRIPTION_STATE_CANCELED",
+            "SUBSCRIPTION_STATE_EXPIRED"
+          ],
+          "enumDescriptions": [
+            "Unspecified subscription state.",
+            "Subscription was created but awaiting payment during signup. In this state, all items are awaiting payment.",
+            "Subscription is active. - (1) If the subscription is an auto renewing plan, at least one item is auto_renew_enabled and not expired. - (2) If the subscription is a prepaid plan, at least one item is not expired.",
+            "Subscription is paused. The state is only available when the subscription is an auto renewing plan. In this state, all items are in paused state.",
+            "Subscription is in grace period. The state is only available when the subscription is an auto renewing plan. In this state, all items are in grace period.",
+            "Subscription is on hold (suspended). The state is only available when the subscription is an auto renewing plan. In this state, all items are on hold.",
+            "Subscription is canceled but not expired yet. The state is only available when the subscription is an auto renewing plan. All items have auto_renew_enabled set to false.",
+            "Subscription is expired. All items have expiry_time in the past."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "testPurchase": {
+          "description": "Only present if this subscription purchase is a test purchase.",
+          "$ref": "TestPurchase"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "SubscriptionPurchasesAcknowledgeRequest": {
       "id": "SubscriptionPurchasesAcknowledgeRequest",
       "description": "Request for the purchases.subscriptions.acknowledge API.",
@@ -3399,6 +4977,50 @@
           "items": null
         }
       },
+      "additionalProperties": null,
+      "items": null
+    },
+    "SystemInitiatedCancellation": {
+      "id": "SystemInitiatedCancellation",
+      "description": "Information specific to cancellations initiated by Google system.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "TargetingRuleScope": {
+      "id": "TargetingRuleScope",
+      "description": "Defines the scope of subscriptions which a targeting rule can match to target offers to users based on past or current entitlement.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "specificSubscriptionInApp": {
+          "description": "The scope of the current targeting rule is the subscription with the specified subscription ID. Must be a subscription within the same parent app.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "TestPurchase": {
+      "id": "TestPurchase",
+      "description": "Whether this subscription purchase is a test purchase.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
       "additionalProperties": null,
       "items": null
     },
@@ -3728,6 +5350,42 @@
       "additionalProperties": null,
       "items": null
     },
+    "UpgradeTargetingRule": {
+      "id": "UpgradeTargetingRule",
+      "description": "Represents a targeting rule of the form: User currently has {scope} [with billing period {billing_period}].",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "billingPeriodDuration": {
+          "description": "The specific billing period duration, specified in ISO 8601 format, that a user must be currently subscribed to to be eligible for this rule. If not specified, users subscribed to any billing period are matched.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "oncePerUser": {
+          "description": "Limit this offer to only once per user. If set to true, a user can never be eligible for this offer again if they ever subscribed to this offer.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "scope": {
+          "description": "Required. The scope of subscriptions this rule considers. Only allows \"this subscription\" and \"specific subscription in app\".",
+          "$ref": "TargetingRuleScope"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "User": {
       "id": "User",
       "description": "A user resource.",
@@ -3974,6 +5632,32 @@
           "description": "Number of users who have given this review a thumbs up.",
           "type": "integer",
           "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "UserInitiatedCancellation": {
+      "id": "UserInitiatedCancellation",
+      "description": "Information specific to cancellations initiated by users.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "cancelSurveyResult": {
+          "description": "Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey).",
+          "$ref": "CancelSurveyResult"
+        },
+        "cancelTime": {
+          "description": "The time at which the subscription was canceled by the user. The user might still have access to the subscription after this time. Use line_items.expiry_time to determine if a user still has access.",
+          "type": "string",
+          "format": "google-datetime",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -4594,6 +6278,20 @@
                   "enumDescriptions": [],
                   "repeated": false
                 },
+                "deviceTierConfigId": {
+                  "description": "Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or \"LATEST\" for last uploaded DTC.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
                 "editId": {
                   "description": "Identifier of the edit.",
                   "default": null,
@@ -4824,7 +6522,7 @@
                 "accept": [
                   "application/octet-stream"
                 ],
-                "maxSize": "629145600",
+                "maxSize": "838860800",
                 "protocols": {
                   "simple": {
                     "multipart": true,
@@ -7695,7 +9393,1315 @@
       }
     },
     "monetization": {
-      "resources": {},
+      "resources": {
+        "subscriptions": {
+          "resources": {
+            "basePlans": {
+              "resources": {
+                "offers": {
+                  "resources": {},
+                  "methods": {
+                    "activate": {
+                      "id": "androidpublisher.monetization.subscriptions.basePlans.offers.activate",
+                      "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers/{offerId}:activate",
+                      "httpMethod": "POST",
+                      "description": "Activates a subscription offer. Once activated, subscription offers will be available to new subscribers.",
+                      "parameters": {
+                        "basePlanId": {
+                          "description": "Required. The parent base plan (ID) of the offer to activate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "offerId": {
+                          "description": "Required. The unique offer ID of the offer to activate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "packageName": {
+                          "description": "Required. The parent app (package name) of the offer to activate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "productId": {
+                          "description": "Required. The parent subscription (ID) of the offer to activate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "packageName",
+                        "productId",
+                        "basePlanId",
+                        "offerId"
+                      ],
+                      "request": {
+                        "$ref": "ActivateSubscriptionOfferRequest"
+                      },
+                      "response": {
+                        "$ref": "SubscriptionOffer"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/androidpublisher"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "create": {
+                      "id": "androidpublisher.monetization.subscriptions.basePlans.offers.create",
+                      "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers",
+                      "httpMethod": "POST",
+                      "description": "Creates a new subscription offer. Only auto-renewing base plans can have subscription offers. The offer state will be DRAFT until it is activated.",
+                      "parameters": {
+                        "basePlanId": {
+                          "description": "Required. The parent base plan (ID) for which the offer should be created. Must be equal to the base_plan_id field on the SubscriptionOffer resource.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "offerId": {
+                          "description": "Required. The ID to use for the offer. For the requirements on this format, see the documentation of the offer_id field on the SubscriptionOffer resource.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "packageName": {
+                          "description": "Required. The parent app (package name) for which the offer should be created. Must be equal to the package_name field on the Subscription resource.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "productId": {
+                          "description": "Required. The parent subscription (ID) for which the offer should be created. Must be equal to the product_id field on the SubscriptionOffer resource.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "regionsVersion.version": {
+                          "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "packageName",
+                        "productId",
+                        "basePlanId"
+                      ],
+                      "request": {
+                        "$ref": "SubscriptionOffer"
+                      },
+                      "response": {
+                        "$ref": "SubscriptionOffer"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/androidpublisher"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "deactivate": {
+                      "id": "androidpublisher.monetization.subscriptions.basePlans.offers.deactivate",
+                      "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers/{offerId}:deactivate",
+                      "httpMethod": "POST",
+                      "description": "Deactivates a subscription offer. Once deactivated, existing subscribers will maintain their subscription, but the offer will become unavailable to new subscribers.",
+                      "parameters": {
+                        "basePlanId": {
+                          "description": "Required. The parent base plan (ID) of the offer to deactivate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "offerId": {
+                          "description": "Required. The unique offer ID of the offer to deactivate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "packageName": {
+                          "description": "Required. The parent app (package name) of the offer to deactivate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "productId": {
+                          "description": "Required. The parent subscription (ID) of the offer to deactivate.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "packageName",
+                        "productId",
+                        "basePlanId",
+                        "offerId"
+                      ],
+                      "request": {
+                        "$ref": "DeactivateSubscriptionOfferRequest"
+                      },
+                      "response": {
+                        "$ref": "SubscriptionOffer"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/androidpublisher"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "delete": {
+                      "id": "androidpublisher.monetization.subscriptions.basePlans.offers.delete",
+                      "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers/{offerId}",
+                      "httpMethod": "DELETE",
+                      "description": "Deletes a subscription offer. Can only be done for draft offers. This action is irreversible.",
+                      "parameters": {
+                        "basePlanId": {
+                          "description": "Required. The parent base plan (ID) of the offer to delete.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "offerId": {
+                          "description": "Required. The unique offer ID of the offer to delete.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "packageName": {
+                          "description": "Required. The parent app (package name) of the offer to delete.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "productId": {
+                          "description": "Required. The parent subscription (ID) of the offer to delete.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "packageName",
+                        "productId",
+                        "basePlanId",
+                        "offerId"
+                      ],
+                      "request": null,
+                      "response": null,
+                      "scopes": [
+                        "https://www.googleapis.com/auth/androidpublisher"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "get": {
+                      "id": "androidpublisher.monetization.subscriptions.basePlans.offers.get",
+                      "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers/{offerId}",
+                      "httpMethod": "GET",
+                      "description": "Reads a single offer",
+                      "parameters": {
+                        "basePlanId": {
+                          "description": "Required. The parent base plan (ID) of the offer to get.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "offerId": {
+                          "description": "Required. The unique offer ID of the offer to get.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "packageName": {
+                          "description": "Required. The parent app (package name) of the offer to get.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "productId": {
+                          "description": "Required. The parent subscription (ID) of the offer to get.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "packageName",
+                        "productId",
+                        "basePlanId",
+                        "offerId"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "SubscriptionOffer"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/androidpublisher"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "list": {
+                      "id": "androidpublisher.monetization.subscriptions.basePlans.offers.list",
+                      "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers",
+                      "httpMethod": "GET",
+                      "description": "Lists all offers under a given subscription.",
+                      "parameters": {
+                        "basePlanId": {
+                          "description": "Required. The parent base plan (ID) for which the offers should be read. May be specified as '-' to read all offers under a subscription.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "packageName": {
+                          "description": "Required. The parent app (package name) for which the subscriptions should be read.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageSize": {
+                          "description": "The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "integer",
+                          "format": "int32",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "pageToken": {
+                          "description": "A page token, received from a previous `ListSubscriptionsOffers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptionOffers` must match the call that provided the page token.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "productId": {
+                          "description": "Required. The parent subscription (ID) for which the offers should be read.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "packageName",
+                        "productId",
+                        "basePlanId"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "ListSubscriptionOffersResponse"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/androidpublisher"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "patch": {
+                      "id": "androidpublisher.monetization.subscriptions.basePlans.offers.patch",
+                      "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers/{offerId}",
+                      "httpMethod": "PATCH",
+                      "description": "Updates an existing subscription offer.",
+                      "parameters": {
+                        "basePlanId": {
+                          "description": "Required. Immutable. The ID of the base plan to which this offer is an extension.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "offerId": {
+                          "description": "Required. Immutable. Unique ID of this subscription offer. Must be unique within the base plan.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "packageName": {
+                          "description": "Required. Immutable. The package name of the app the parent subscription belongs to.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "productId": {
+                          "description": "Required. Immutable. The ID of the parent subscription this offer belongs to.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "regionsVersion.version": {
+                          "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "updateMask": {
+                          "description": "Required. The list of fields to be updated.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": "google-fieldmask",
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "packageName",
+                        "productId",
+                        "basePlanId",
+                        "offerId"
+                      ],
+                      "request": {
+                        "$ref": "SubscriptionOffer"
+                      },
+                      "response": {
+                        "$ref": "SubscriptionOffer"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/androidpublisher"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    }
+                  }
+                }
+              },
+              "methods": {
+                "activate": {
+                  "id": "androidpublisher.monetization.subscriptions.basePlans.activate",
+                  "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}:activate",
+                  "httpMethod": "POST",
+                  "description": "Activates a base plan. Once activated, base plans will be available to new subscribers.",
+                  "parameters": {
+                    "basePlanId": {
+                      "description": "Required. The unique base plan ID of the base plan to activate.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "packageName": {
+                      "description": "Required. The parent app (package name) of the base plan to activate.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "productId": {
+                      "description": "Required. The parent subscription (ID) of the base plan to activate.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "packageName",
+                    "productId",
+                    "basePlanId"
+                  ],
+                  "request": {
+                    "$ref": "ActivateBasePlanRequest"
+                  },
+                  "response": {
+                    "$ref": "Subscription"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/androidpublisher"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "deactivate": {
+                  "id": "androidpublisher.monetization.subscriptions.basePlans.deactivate",
+                  "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}:deactivate",
+                  "httpMethod": "POST",
+                  "description": "Deactivates a base plan. Once deactivated, the base plan will become unavailable to new subscribers, but existing subscribers will maintain their subscription",
+                  "parameters": {
+                    "basePlanId": {
+                      "description": "Required. The unique base plan ID of the base plan to deactivate.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "packageName": {
+                      "description": "Required. The parent app (package name) of the base plan to deactivate.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "productId": {
+                      "description": "Required. The parent subscription (ID) of the base plan to deactivate.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "packageName",
+                    "productId",
+                    "basePlanId"
+                  ],
+                  "request": {
+                    "$ref": "DeactivateBasePlanRequest"
+                  },
+                  "response": {
+                    "$ref": "Subscription"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/androidpublisher"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "delete": {
+                  "id": "androidpublisher.monetization.subscriptions.basePlans.delete",
+                  "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}",
+                  "httpMethod": "DELETE",
+                  "description": "Deletes a base plan. Can only be done for draft base plans. This action is irreversible.",
+                  "parameters": {
+                    "basePlanId": {
+                      "description": "Required. The unique offer ID of the base plan to delete.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "packageName": {
+                      "description": "Required. The parent app (package name) of the base plan to delete.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "productId": {
+                      "description": "Required. The parent subscription (ID) of the base plan to delete.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "packageName",
+                    "productId",
+                    "basePlanId"
+                  ],
+                  "request": null,
+                  "response": null,
+                  "scopes": [
+                    "https://www.googleapis.com/auth/androidpublisher"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "migratePrices": {
+                  "id": "androidpublisher.monetization.subscriptions.basePlans.migratePrices",
+                  "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}:migratePrices",
+                  "httpMethod": "POST",
+                  "description": "Migrates subscribers who are receiving an historical subscription price to the currently-offered price for the specified region. Requests will cause price change notifications to be sent to users who are currently receiving an historical price older than the supplied timestamp. Subscribers who do not agree to the new price will have their subscription ended at the next renewal.",
+                  "parameters": {
+                    "basePlanId": {
+                      "description": "Required. The unique base plan ID of the base plan to update prices on.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "packageName": {
+                      "description": "Required. Package name of the parent app. Must be equal to the package_name field on the Subscription resource.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "productId": {
+                      "description": "Required. The ID of the subscription to update. Must be equal to the product_id field on the Subscription resource.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "packageName",
+                    "productId",
+                    "basePlanId"
+                  ],
+                  "request": {
+                    "$ref": "MigrateBasePlanPricesRequest"
+                  },
+                  "response": {
+                    "$ref": "MigrateBasePlanPricesResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/androidpublisher"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {
+            "archive": {
+              "id": "androidpublisher.monetization.subscriptions.archive",
+              "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}:archive",
+              "httpMethod": "POST",
+              "description": "Archives a subscription. Can only be done if at least one base plan was active in the past, and no base plan is available for new or existing subscribers currently. This action is irreversible, and the subscription ID will remain reserved.",
+              "parameters": {
+                "packageName": {
+                  "description": "Required. The parent app (package name) of the app of the subscription to delete.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "productId": {
+                  "description": "Required. The unique product ID of the subscription to delete.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName",
+                "productId"
+              ],
+              "request": {
+                "$ref": "ArchiveSubscriptionRequest"
+              },
+              "response": {
+                "$ref": "Subscription"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "create": {
+              "id": "androidpublisher.monetization.subscriptions.create",
+              "path": "androidpublisher/v3/applications/{packageName}/subscriptions",
+              "httpMethod": "POST",
+              "description": "Creates a new subscription. Newly added base plans will remain in draft state until activated.",
+              "parameters": {
+                "packageName": {
+                  "description": "Required. The parent app (package name) for which the subscription should be created. Must be equal to the package_name field on the Subscription resource.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "productId": {
+                  "description": "Required. The ID to use for the subscription. For the requirements on this format, see the documentation of the product_id field on the Subscription resource.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "regionsVersion.version": {
+                  "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName"
+              ],
+              "request": {
+                "$ref": "Subscription"
+              },
+              "response": {
+                "$ref": "Subscription"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "delete": {
+              "id": "androidpublisher.monetization.subscriptions.delete",
+              "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}",
+              "httpMethod": "DELETE",
+              "description": "Deletes a subscription. A subscription can only be deleted if it has never had a base plan published.",
+              "parameters": {
+                "packageName": {
+                  "description": "Required. The parent app (package name) of the app of the subscription to delete.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "productId": {
+                  "description": "Required. The unique product ID of the subscription to delete.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName",
+                "productId"
+              ],
+              "request": null,
+              "response": null,
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "get": {
+              "id": "androidpublisher.monetization.subscriptions.get",
+              "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}",
+              "httpMethod": "GET",
+              "description": "Reads a single subscription.",
+              "parameters": {
+                "packageName": {
+                  "description": "Required. The parent app (package name) of the subscription to get.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "productId": {
+                  "description": "Required. The unique product ID of the subscription to get.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName",
+                "productId"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "Subscription"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "list": {
+              "id": "androidpublisher.monetization.subscriptions.list",
+              "path": "androidpublisher/v3/applications/{packageName}/subscriptions",
+              "httpMethod": "GET",
+              "description": "Lists all subscriptions under a given app.",
+              "parameters": {
+                "packageName": {
+                  "description": "Required. The parent app (package name) for which the subscriptions should be read.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageSize": {
+                  "description": "The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "A page token, received from a previous `ListSubscriptions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptions` must match the call that provided the page token.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "showArchived": {
+                  "description": "Whether archived subscriptions should be included in the response. Defaults to false.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "boolean",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "ListSubscriptionsResponse"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "patch": {
+              "id": "androidpublisher.monetization.subscriptions.patch",
+              "path": "androidpublisher/v3/applications/{packageName}/subscriptions/{productId}",
+              "httpMethod": "PATCH",
+              "description": "Updates an existing subscription.",
+              "parameters": {
+                "packageName": {
+                  "description": "Immutable. Package name of the parent app.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "productId": {
+                  "description": "Immutable. Unique product ID of the product. Unique within the parent app. Product IDs must be composed of lower-case letters (a-z), numbers (0-9), underscores (_) and dots (.). It must start with a lower-case letter or number, and be between 1 and 40 (inclusive) characters in length.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "regionsVersion.version": {
+                  "description": "Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/02.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "updateMask": {
+                  "description": "Required. The list of fields to be updated.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": "google-fieldmask",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName",
+                "productId"
+              ],
+              "request": {
+                "$ref": "Subscription"
+              },
+              "response": {
+                "$ref": "Subscription"
+              },
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        }
+      },
       "methods": {
         "convertRegionPrices": {
           "id": "androidpublisher.monetization.convertRegionPrices",
@@ -8340,6 +11346,63 @@
               ],
               "request": null,
               "response": null,
+              "scopes": [
+                "https://www.googleapis.com/auth/androidpublisher"
+              ],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        },
+        "subscriptionsv2": {
+          "resources": {},
+          "methods": {
+            "get": {
+              "id": "androidpublisher.purchases.subscriptionsv2.get",
+              "path": "androidpublisher/v3/applications/{packageName}/purchases/subscriptionsv2/tokens/{token}",
+              "httpMethod": "GET",
+              "description": "Get metadata about a subscription",
+              "parameters": {
+                "packageName": {
+                  "description": "The package of the application for which this subscription was purchased (for example, 'com.some.thing').",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "token": {
+                  "description": "Required. The token provided to the user's device when the subscription was purchased.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "packageName",
+                "token"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "SubscriptionPurchaseV2"
+              },
               "scopes": [
                 "https://www.googleapis.com/auth/androidpublisher"
               ],

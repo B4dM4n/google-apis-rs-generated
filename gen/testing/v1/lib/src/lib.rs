@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [application_detail_service](resources/application_detail_service/struct.ApplicationDetailServiceActions.html)\n  * [*getApkDetails*](resources/application_detail_service/struct.GetApkDetailsRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [test_matrices](resources/projects/test_matrices/struct.TestMatricesActions.html)\n    * [*cancel*](resources/projects/test_matrices/struct.CancelRequestBuilder.html), [*create*](resources/projects/test_matrices/struct.CreateRequestBuilder.html), [*get*](resources/projects/test_matrices/struct.GetRequestBuilder.html)\n* [test_environment_catalog](resources/test_environment_catalog/struct.TestEnvironmentCatalogActions.html)\n  * [*get*](resources/test_environment_catalog/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -457,6 +458,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Version-specific information of an Android model."]
+        #[serde(
+            rename = "perVersionInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub per_version_info: ::std::option::Option<Vec<crate::schemas::PerAndroidVersionInfo>>,
         #[doc = "Screen density in DPI. This corresponds to ro.sf.lcd_density"]
         #[serde(
             rename = "screenDensity",
@@ -1117,6 +1125,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_sdk_version: ::std::option::Option<i32>,
+        #[doc = "Meta-data tags defined in the manifest."]
+        #[serde(
+            rename = "metadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metadata: ::std::option::Option<Vec<crate::schemas::Metadata>>,
         #[doc = "Minimum API level required for the application to run."]
         #[serde(
             rename = "minSdkVersion",
@@ -1138,6 +1153,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target_sdk_version: ::std::option::Option<i32>,
+        #[doc = "Feature usage tags defined in the manifest."]
+        #[serde(
+            rename = "usesFeature",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub uses_feature: ::std::option::Option<Vec<crate::schemas::UsesFeature>>,
         #[doc = "Permissions declared to be used by the application"]
         #[serde(
             rename = "usesPermission",
@@ -1145,6 +1167,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uses_permission: ::std::option::Option<Vec<String>>,
+        #[doc = "Version number used internally by the app."]
+        #[serde(
+            rename = "versionCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub version_code: ::std::option::Option<i64>,
+        #[doc = "Version number shown to users."]
+        #[serde(
+            rename = "versionName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version_name: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for ApkManifest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2201,6 +2238,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "Version-specific information of an iOS model."]
+        #[serde(
+            rename = "perVersionInfo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub per_version_info: ::std::option::Option<Vec<crate::schemas::PerIosVersionInfo>>,
         #[doc = "Screen density in DPI."]
         #[serde(
             rename = "screenDensity",
@@ -2670,7 +2714,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ManualSharding {
-        #[doc = "Required. Group of packages, classes, and/or test methods to be run for each shard. When any physical devices are selected, the number of test_targets_for_shard must be >= 1 and \\<= 50. When no physical devices are selected, the number must be >= 1 and \\<= 500."]
+        #[doc = "Required. Group of packages, classes, and/or test methods to be run for each manually-created shard. You must specify at least one shard if this field is present. When you select one or more physical devices, the number of repeated test_targets_for_shard must be \\<= 50. When you select one or more ARM virtual devices, it must be \\<= 100. When you select only x86 virtual devices, it must be \\<= 500."]
         #[serde(
             rename = "testTargetsForShard",
             default,
@@ -2684,6 +2728,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ManualSharding {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Metadata {
+        #[doc = "The android:name value"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "The android:value value"]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Metadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Metadata {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2824,6 +2906,273 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Orientation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PerAndroidVersionInfo {
+        #[doc = "The number of online devices for an Android version."]
+        #[serde(
+            rename = "deviceCapacity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device_capacity:
+            ::std::option::Option<crate::schemas::PerAndroidVersionInfoDeviceCapacity>,
+        #[doc = "An Android version."]
+        #[serde(
+            rename = "versionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PerAndroidVersionInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PerAndroidVersionInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PerAndroidVersionInfoDeviceCapacity {
+        #[doc = "Devices that are high in capacity (The lab has a large number of these devices). These devices are generally suggested for running a large number of simultaneous tests (e.g. more than 100 tests). Please note that high capacity devices do not guarantee short wait times due to several factors: 1. Traffic (how heavily they are used at any given moment) 2. High capacity devices are prioritized for certain usages, which may cause user tests to be slower than selecting other similar device types."]
+        DeviceCapacityHigh,
+        #[doc = "Devices that are low in capacity (The lab has a small number of these devices). These devices may be used if users need to test on this specific device model and version. Please note that due to low capacity, the tests may take much longer to finish, especially if a large number of tests are invoked at once. These devices are not suitable for test sharding."]
+        DeviceCapacityLow,
+        #[doc = "Devices that are medium in capacity (The lab has a decent number of these devices, though not as many as high capacity devices). These devices are suitable for fewer test runs (e.g. fewer than 100 tests) and only for low shard counts (e.g. less than 10 shards)."]
+        DeviceCapacityMedium,
+        #[doc = "Devices that are completely missing from the lab. These devices are unavailable either temporarily or permanently and should not be requested. If the device is also marked as deprecated, this state is very likely permanent."]
+        DeviceCapacityNone,
+        #[doc = "The value of device capacity is unknown or unset."]
+        DeviceCapacityUnspecified,
+    }
+    impl PerAndroidVersionInfoDeviceCapacity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PerAndroidVersionInfoDeviceCapacity::DeviceCapacityHigh => "DEVICE_CAPACITY_HIGH",
+                PerAndroidVersionInfoDeviceCapacity::DeviceCapacityLow => "DEVICE_CAPACITY_LOW",
+                PerAndroidVersionInfoDeviceCapacity::DeviceCapacityMedium => {
+                    "DEVICE_CAPACITY_MEDIUM"
+                }
+                PerAndroidVersionInfoDeviceCapacity::DeviceCapacityNone => "DEVICE_CAPACITY_NONE",
+                PerAndroidVersionInfoDeviceCapacity::DeviceCapacityUnspecified => {
+                    "DEVICE_CAPACITY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PerAndroidVersionInfoDeviceCapacity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PerAndroidVersionInfoDeviceCapacity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PerAndroidVersionInfoDeviceCapacity, ()> {
+            Ok(match s {
+                "DEVICE_CAPACITY_HIGH" => PerAndroidVersionInfoDeviceCapacity::DeviceCapacityHigh,
+                "DEVICE_CAPACITY_LOW" => PerAndroidVersionInfoDeviceCapacity::DeviceCapacityLow,
+                "DEVICE_CAPACITY_MEDIUM" => {
+                    PerAndroidVersionInfoDeviceCapacity::DeviceCapacityMedium
+                }
+                "DEVICE_CAPACITY_NONE" => PerAndroidVersionInfoDeviceCapacity::DeviceCapacityNone,
+                "DEVICE_CAPACITY_UNSPECIFIED" => {
+                    PerAndroidVersionInfoDeviceCapacity::DeviceCapacityUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PerAndroidVersionInfoDeviceCapacity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PerAndroidVersionInfoDeviceCapacity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PerAndroidVersionInfoDeviceCapacity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DEVICE_CAPACITY_HIGH" => PerAndroidVersionInfoDeviceCapacity::DeviceCapacityHigh,
+                "DEVICE_CAPACITY_LOW" => PerAndroidVersionInfoDeviceCapacity::DeviceCapacityLow,
+                "DEVICE_CAPACITY_MEDIUM" => {
+                    PerAndroidVersionInfoDeviceCapacity::DeviceCapacityMedium
+                }
+                "DEVICE_CAPACITY_NONE" => PerAndroidVersionInfoDeviceCapacity::DeviceCapacityNone,
+                "DEVICE_CAPACITY_UNSPECIFIED" => {
+                    PerAndroidVersionInfoDeviceCapacity::DeviceCapacityUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PerAndroidVersionInfoDeviceCapacity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PerAndroidVersionInfoDeviceCapacity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PerIosVersionInfo {
+        #[doc = "The number of online devices for an iOS version."]
+        #[serde(
+            rename = "deviceCapacity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device_capacity: ::std::option::Option<crate::schemas::PerIosVersionInfoDeviceCapacity>,
+        #[doc = "An iOS version."]
+        #[serde(
+            rename = "versionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PerIosVersionInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PerIosVersionInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PerIosVersionInfoDeviceCapacity {
+        #[doc = "Devices that are high in capacity (The lab has a large number of these devices). These devices are generally suggested for running a large number of simultaneous tests (e.g. more than 100 tests). Please note that high capacity devices do not guarantee short wait times due to several factors: 1. Traffic (how heavily they are used at any given moment) 2. High capacity devices are prioritized for certain usages, which may cause user tests to be slower than selecting other similar device types."]
+        DeviceCapacityHigh,
+        #[doc = "Devices that are low in capacity (The lab has a small number of these devices). These devices may be used if users need to test on this specific device model and version. Please note that due to low capacity, the tests may take much longer to finish, especially if a large number of tests are invoked at once. These devices are not suitable for test sharding."]
+        DeviceCapacityLow,
+        #[doc = "Devices that are medium in capacity (The lab has a decent number of these devices, though not as many as high capacity devices). These devices are suitable for fewer test runs (e.g. fewer than 100 tests) and only for low shard counts (e.g. less than 10 shards)."]
+        DeviceCapacityMedium,
+        #[doc = "Devices that are completely missing from the lab. These devices are unavailable either temporarily or permanently and should not be requested. If the device is also marked as deprecated, this state is very likely permanent."]
+        DeviceCapacityNone,
+        #[doc = "The value of device capacity is unknown or unset."]
+        DeviceCapacityUnspecified,
+    }
+    impl PerIosVersionInfoDeviceCapacity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PerIosVersionInfoDeviceCapacity::DeviceCapacityHigh => "DEVICE_CAPACITY_HIGH",
+                PerIosVersionInfoDeviceCapacity::DeviceCapacityLow => "DEVICE_CAPACITY_LOW",
+                PerIosVersionInfoDeviceCapacity::DeviceCapacityMedium => "DEVICE_CAPACITY_MEDIUM",
+                PerIosVersionInfoDeviceCapacity::DeviceCapacityNone => "DEVICE_CAPACITY_NONE",
+                PerIosVersionInfoDeviceCapacity::DeviceCapacityUnspecified => {
+                    "DEVICE_CAPACITY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PerIosVersionInfoDeviceCapacity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PerIosVersionInfoDeviceCapacity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PerIosVersionInfoDeviceCapacity, ()> {
+            Ok(match s {
+                "DEVICE_CAPACITY_HIGH" => PerIosVersionInfoDeviceCapacity::DeviceCapacityHigh,
+                "DEVICE_CAPACITY_LOW" => PerIosVersionInfoDeviceCapacity::DeviceCapacityLow,
+                "DEVICE_CAPACITY_MEDIUM" => PerIosVersionInfoDeviceCapacity::DeviceCapacityMedium,
+                "DEVICE_CAPACITY_NONE" => PerIosVersionInfoDeviceCapacity::DeviceCapacityNone,
+                "DEVICE_CAPACITY_UNSPECIFIED" => {
+                    PerIosVersionInfoDeviceCapacity::DeviceCapacityUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PerIosVersionInfoDeviceCapacity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PerIosVersionInfoDeviceCapacity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PerIosVersionInfoDeviceCapacity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DEVICE_CAPACITY_HIGH" => PerIosVersionInfoDeviceCapacity::DeviceCapacityHigh,
+                "DEVICE_CAPACITY_LOW" => PerIosVersionInfoDeviceCapacity::DeviceCapacityLow,
+                "DEVICE_CAPACITY_MEDIUM" => PerIosVersionInfoDeviceCapacity::DeviceCapacityMedium,
+                "DEVICE_CAPACITY_NONE" => PerIosVersionInfoDeviceCapacity::DeviceCapacityNone,
+                "DEVICE_CAPACITY_UNSPECIFIED" => {
+                    PerIosVersionInfoDeviceCapacity::DeviceCapacityUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PerIosVersionInfoDeviceCapacity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PerIosVersionInfoDeviceCapacity {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3737,6 +4086,8 @@ pub mod schemas {
         MalformedTestApk,
         #[doc = "The zipped XCTest was malformed. The zip did not contain a single .xctestrun file and the contents of the DerivedData/Build/Products directory."]
         MalformedXcTestZip,
+        #[doc = "The matrix expanded to contain too many executions."]
+        MatrixTooLarge,
         #[doc = "The application doesn’t register the game loop URL scheme."]
         MissingUrlScheme,
         #[doc = "APK contains no code. See also https://developer.android.com/guide/topics/manifest/application-element.html#code"]
@@ -3763,14 +4114,20 @@ pub mod schemas {
         ScenarioLabelNotDeclared,
         #[doc = "The request contains a scenario number that was not declared in the manifest."]
         ScenarioNotDeclared,
+        #[doc = "A required cloud service api is not activated. See: https://firebase.google.com/docs/test-lab/android/continuous#requirements"]
+        ServiceNotActivated,
         #[doc = "There is no test loop intent filter, or the one that is given is not formatted correctly."]
         TestLoopIntentFilterNotFound,
         #[doc = "XC tests which run on physical devices must have “IsAppHostedTestBundle” == “true” in the xctestrun file."]
         TestNotAppHosted,
         #[doc = "The APK is marked as “testOnly”. Deprecated and not currently used."]
         TestOnlyApk,
+        #[doc = "Not enough test quota to run the executions in this matrix."]
+        TestQuotaExceeded,
         #[doc = "The test package and app package are the same."]
         TestSameAsApp,
+        #[doc = "There was an unknown permission issue running this test."]
+        UnknownPermissionError,
         #[doc = "One or more of the test targets defined in the .xctestrun file specifies “UseDestinationArtifacts”, which is disallowed."]
         UseDestinationArtifacts,
     }
@@ -3800,6 +4157,7 @@ pub mod schemas {
                 TestMatrixInvalidMatrixDetails::MalformedIpa => "MALFORMED_IPA",
                 TestMatrixInvalidMatrixDetails::MalformedTestApk => "MALFORMED_TEST_APK",
                 TestMatrixInvalidMatrixDetails::MalformedXcTestZip => "MALFORMED_XC_TEST_ZIP",
+                TestMatrixInvalidMatrixDetails::MatrixTooLarge => "MATRIX_TOO_LARGE",
                 TestMatrixInvalidMatrixDetails::MissingUrlScheme => "MISSING_URL_SCHEME",
                 TestMatrixInvalidMatrixDetails::NoCodeApk => "NO_CODE_APK",
                 TestMatrixInvalidMatrixDetails::NoInstrumentation => "NO_INSTRUMENTATION",
@@ -3817,12 +4175,17 @@ pub mod schemas {
                     "SCENARIO_LABEL_NOT_DECLARED"
                 }
                 TestMatrixInvalidMatrixDetails::ScenarioNotDeclared => "SCENARIO_NOT_DECLARED",
+                TestMatrixInvalidMatrixDetails::ServiceNotActivated => "SERVICE_NOT_ACTIVATED",
                 TestMatrixInvalidMatrixDetails::TestLoopIntentFilterNotFound => {
                     "TEST_LOOP_INTENT_FILTER_NOT_FOUND"
                 }
                 TestMatrixInvalidMatrixDetails::TestNotAppHosted => "TEST_NOT_APP_HOSTED",
                 TestMatrixInvalidMatrixDetails::TestOnlyApk => "TEST_ONLY_APK",
+                TestMatrixInvalidMatrixDetails::TestQuotaExceeded => "TEST_QUOTA_EXCEEDED",
                 TestMatrixInvalidMatrixDetails::TestSameAsApp => "TEST_SAME_AS_APP",
+                TestMatrixInvalidMatrixDetails::UnknownPermissionError => {
+                    "UNKNOWN_PERMISSION_ERROR"
+                }
                 TestMatrixInvalidMatrixDetails::UseDestinationArtifacts => {
                     "USE_DESTINATION_ARTIFACTS"
                 }
@@ -3861,6 +4224,7 @@ pub mod schemas {
                 "MALFORMED_IPA" => TestMatrixInvalidMatrixDetails::MalformedIpa,
                 "MALFORMED_TEST_APK" => TestMatrixInvalidMatrixDetails::MalformedTestApk,
                 "MALFORMED_XC_TEST_ZIP" => TestMatrixInvalidMatrixDetails::MalformedXcTestZip,
+                "MATRIX_TOO_LARGE" => TestMatrixInvalidMatrixDetails::MatrixTooLarge,
                 "MISSING_URL_SCHEME" => TestMatrixInvalidMatrixDetails::MissingUrlScheme,
                 "NO_CODE_APK" => TestMatrixInvalidMatrixDetails::NoCodeApk,
                 "NO_INSTRUMENTATION" => TestMatrixInvalidMatrixDetails::NoInstrumentation,
@@ -3878,12 +4242,17 @@ pub mod schemas {
                     TestMatrixInvalidMatrixDetails::ScenarioLabelNotDeclared
                 }
                 "SCENARIO_NOT_DECLARED" => TestMatrixInvalidMatrixDetails::ScenarioNotDeclared,
+                "SERVICE_NOT_ACTIVATED" => TestMatrixInvalidMatrixDetails::ServiceNotActivated,
                 "TEST_LOOP_INTENT_FILTER_NOT_FOUND" => {
                     TestMatrixInvalidMatrixDetails::TestLoopIntentFilterNotFound
                 }
                 "TEST_NOT_APP_HOSTED" => TestMatrixInvalidMatrixDetails::TestNotAppHosted,
                 "TEST_ONLY_APK" => TestMatrixInvalidMatrixDetails::TestOnlyApk,
+                "TEST_QUOTA_EXCEEDED" => TestMatrixInvalidMatrixDetails::TestQuotaExceeded,
                 "TEST_SAME_AS_APP" => TestMatrixInvalidMatrixDetails::TestSameAsApp,
+                "UNKNOWN_PERMISSION_ERROR" => {
+                    TestMatrixInvalidMatrixDetails::UnknownPermissionError
+                }
                 "USE_DESTINATION_ARTIFACTS" => {
                     TestMatrixInvalidMatrixDetails::UseDestinationArtifacts
                 }
@@ -3934,6 +4303,7 @@ pub mod schemas {
                 "MALFORMED_IPA" => TestMatrixInvalidMatrixDetails::MalformedIpa,
                 "MALFORMED_TEST_APK" => TestMatrixInvalidMatrixDetails::MalformedTestApk,
                 "MALFORMED_XC_TEST_ZIP" => TestMatrixInvalidMatrixDetails::MalformedXcTestZip,
+                "MATRIX_TOO_LARGE" => TestMatrixInvalidMatrixDetails::MatrixTooLarge,
                 "MISSING_URL_SCHEME" => TestMatrixInvalidMatrixDetails::MissingUrlScheme,
                 "NO_CODE_APK" => TestMatrixInvalidMatrixDetails::NoCodeApk,
                 "NO_INSTRUMENTATION" => TestMatrixInvalidMatrixDetails::NoInstrumentation,
@@ -3951,12 +4321,17 @@ pub mod schemas {
                     TestMatrixInvalidMatrixDetails::ScenarioLabelNotDeclared
                 }
                 "SCENARIO_NOT_DECLARED" => TestMatrixInvalidMatrixDetails::ScenarioNotDeclared,
+                "SERVICE_NOT_ACTIVATED" => TestMatrixInvalidMatrixDetails::ServiceNotActivated,
                 "TEST_LOOP_INTENT_FILTER_NOT_FOUND" => {
                     TestMatrixInvalidMatrixDetails::TestLoopIntentFilterNotFound
                 }
                 "TEST_NOT_APP_HOSTED" => TestMatrixInvalidMatrixDetails::TestNotAppHosted,
                 "TEST_ONLY_APK" => TestMatrixInvalidMatrixDetails::TestOnlyApk,
+                "TEST_QUOTA_EXCEEDED" => TestMatrixInvalidMatrixDetails::TestQuotaExceeded,
                 "TEST_SAME_AS_APP" => TestMatrixInvalidMatrixDetails::TestSameAsApp,
+                "UNKNOWN_PERMISSION_ERROR" => {
+                    TestMatrixInvalidMatrixDetails::UnknownPermissionError
+                }
                 "USE_DESTINATION_ARTIFACTS" => {
                     TestMatrixInvalidMatrixDetails::UseDestinationArtifacts
                 }
@@ -4591,7 +4966,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UniformSharding {
-        #[doc = "Required. Total number of shards. When any physical devices are selected, the number must be >= 1 and \\<= 50. When no physical devices are selected, the number must be >= 1 and \\<= 500."]
+        #[doc = "Required. The total number of shards to create. This must always be a positive number that is no greater than the total number of test cases. When you select one or more physical devices, the number of shards must be \\<= 50. When you select one or more ARM virtual devices, it must be \\<= 100. When you select only x86 virtual devices, it must be \\<= 500."]
         #[serde(
             rename = "numShards",
             default,
@@ -4605,6 +4980,44 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for UniformSharding {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct UsesFeature {
+        #[doc = "The android:required value"]
+        #[serde(
+            rename = "isRequired",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub is_required: ::std::option::Option<bool>,
+        #[doc = "The android:name value"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for UsesFeature {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for UsesFeature {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6238,15 +6651,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

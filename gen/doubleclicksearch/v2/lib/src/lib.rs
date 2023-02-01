@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [conversion](resources/conversion/struct.ConversionActions.html)\n  * [*get*](resources/conversion/struct.GetRequestBuilder.html), [*insert*](resources/conversion/struct.InsertRequestBuilder.html), [*update*](resources/conversion/struct.UpdateRequestBuilder.html), [*updateAvailability*](resources/conversion/struct.UpdateAvailabilityRequestBuilder.html)\n* [reports](resources/reports/struct.ReportsActions.html)\n  * [*generate*](resources/reports/struct.GenerateRequestBuilder.html), [*get*](resources/reports/struct.GetRequestBuilder.html), [*getFile*](resources/reports/struct.GetFileRequestBuilder.html), [*getIdMappingFile*](resources/reports/struct.GetIdMappingFileRequestBuilder.html), [*request*](resources/reports/struct.RequestRequestBuilder.html)\n* [saved_columns](resources/saved_columns/struct.SavedColumnsActions.html)\n  * [*list*](resources/saved_columns/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [conversion](resources/conversion/struct.ConversionActions.html)\n  * [*get*](resources/conversion/struct.GetRequestBuilder.html), [*getByCustomerId*](resources/conversion/struct.GetByCustomerIdRequestBuilder.html), [*insert*](resources/conversion/struct.InsertRequestBuilder.html), [*update*](resources/conversion/struct.UpdateRequestBuilder.html), [*updateAvailability*](resources/conversion/struct.UpdateAvailabilityRequestBuilder.html)\n* [reports](resources/reports/struct.ReportsActions.html)\n  * [*generate*](resources/reports/struct.GenerateRequestBuilder.html), [*get*](resources/reports/struct.GetRequestBuilder.html), [*getFile*](resources/reports/struct.GetFileRequestBuilder.html), [*getIdMappingFile*](resources/reports/struct.GetIdMappingFileRequestBuilder.html), [*request*](resources/reports/struct.RequestRequestBuilder.html)\n* [saved_columns](resources/saved_columns/struct.SavedColumnsActions.html)\n  * [*list*](resources/saved_columns/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your advertising data in DoubleClick Search\n\n`https://www.googleapis.com/auth/doubleclicksearch`"]
     pub const DOUBLECLICKSEARCH: &str = "https://www.googleapis.com/auth/doubleclicksearch";
@@ -41,6 +42,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub availability_timestamp: ::std::option::Option<i64>,
+        #[doc = "Customer ID of a client account in the new Search Ads 360 experience."]
+        #[serde(
+            rename = "customerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_id: ::std::option::Option<String>,
         #[doc = "The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID)."]
         #[serde(
             rename = "segmentationId",
@@ -198,6 +206,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_metric: ::std::option::Option<Vec<crate::schemas::CustomMetric>>,
+        #[doc = "Customer ID of a client account in the new Search Ads 360 experience."]
+        #[serde(
+            rename = "customerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_id: ::std::option::Option<String>,
         #[doc = "The type of device on which the conversion occurred."]
         #[serde(
             rename = "deviceType",
@@ -1366,6 +1381,44 @@ pub mod resources {
                     ad_id: None,
                     campaign_id: None,
                     criterion_id: None,
+                    customer_id: None,
+                }
+            }
+            #[doc = "Retrieves a list of conversions from a DoubleClick Search engine account."]
+            pub fn get_by_customer_id(
+                &self,
+                customer_id: impl Into<String>,
+                end_date: i32,
+                row_count: i32,
+                start_date: i32,
+                start_row: u32,
+            ) -> GetByCustomerIdRequestBuilder {
+                GetByCustomerIdRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    customer_id: customer_id.into(),
+                    end_date,
+                    row_count,
+                    start_date,
+                    start_row,
+                    ad_group_id: None,
+                    ad_id: None,
+                    advertiser_id: None,
+                    agency_id: None,
+                    campaign_id: None,
+                    criterion_id: None,
+                    engine_account_id: None,
                 }
             }
             #[doc = "Inserts a batch of new conversions into DoubleClick Search."]
@@ -1445,6 +1498,7 @@ pub mod resources {
             ad_id: ::std::option::Option<i64>,
             campaign_id: ::std::option::Option<i64>,
             criterion_id: ::std::option::Option<i64>,
+            customer_id: ::std::option::Option<String>,
             access_token: ::std::option::Option<String>,
             alt: ::std::option::Option<crate::params::Alt>,
             callback: ::std::option::Option<String>,
@@ -1476,6 +1530,11 @@ pub mod resources {
             #[doc = "Numeric ID of the criterion."]
             pub fn criterion_id(mut self, value: i64) -> Self {
                 self.criterion_id = Some(value);
+                self
+            }
+            #[doc = "Customer ID of a client account in the new Search Ads 360 experience."]
+            pub fn customer_id(mut self, value: impl Into<String>) -> Self {
+                self.customer_id = Some(value.into());
                 self
             }
             #[doc = "OAuth access token."]
@@ -1627,6 +1686,225 @@ pub mod resources {
                 req = req.query(&[("adId", &self.ad_id)]);
                 req = req.query(&[("campaignId", &self.campaign_id)]);
                 req = req.query(&[("criterionId", &self.criterion_id)]);
+                req = req.query(&[("customerId", &self.customer_id)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [ConversionActions::get_by_customer_id()](struct.ConversionActions.html#method.get_by_customer_id)"]
+        #[derive(Debug, Clone)]
+        pub struct GetByCustomerIdRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            customer_id: String,
+            end_date: i32,
+            row_count: i32,
+            start_date: i32,
+            start_row: u32,
+            ad_group_id: ::std::option::Option<i64>,
+            ad_id: ::std::option::Option<i64>,
+            advertiser_id: ::std::option::Option<i64>,
+            agency_id: ::std::option::Option<i64>,
+            campaign_id: ::std::option::Option<i64>,
+            criterion_id: ::std::option::Option<i64>,
+            engine_account_id: ::std::option::Option<i64>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetByCustomerIdRequestBuilder<'a> {
+            #[doc = "Numeric ID of the ad group."]
+            pub fn ad_group_id(mut self, value: i64) -> Self {
+                self.ad_group_id = Some(value);
+                self
+            }
+            #[doc = "Numeric ID of the ad."]
+            pub fn ad_id(mut self, value: i64) -> Self {
+                self.ad_id = Some(value);
+                self
+            }
+            #[doc = "Numeric ID of the advertiser."]
+            pub fn advertiser_id(mut self, value: i64) -> Self {
+                self.advertiser_id = Some(value);
+                self
+            }
+            #[doc = "Numeric ID of the agency."]
+            pub fn agency_id(mut self, value: i64) -> Self {
+                self.agency_id = Some(value);
+                self
+            }
+            #[doc = "Numeric ID of the campaign."]
+            pub fn campaign_id(mut self, value: i64) -> Self {
+                self.campaign_id = Some(value);
+                self
+            }
+            #[doc = "Numeric ID of the criterion."]
+            pub fn criterion_id(mut self, value: i64) -> Self {
+                self.criterion_id = Some(value);
+                self
+            }
+            #[doc = "Numeric ID of the engine account."]
+            pub fn engine_account_id(mut self, value: i64) -> Self {
+                self.engine_account_id = Some(value);
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::ConversionList, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::ConversionList, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://doubleclicksearch.googleapis.com/".to_owned();
+                output.push_str("doubleclicksearch/v2/customer/");
+                {
+                    let var_as_str = &self.customer_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/conversion");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("endDate", &self.end_date)]);
+                req = req.query(&[("rowCount", &self.row_count)]);
+                req = req.query(&[("startDate", &self.start_date)]);
+                req = req.query(&[("startRow", &self.start_row)]);
+                req = req.query(&[("adGroupId", &self.ad_group_id)]);
+                req = req.query(&[("adId", &self.ad_id)]);
+                req = req.query(&[("advertiserId", &self.advertiser_id)]);
+                req = req.query(&[("agencyId", &self.agency_id)]);
+                req = req.query(&[("campaignId", &self.campaign_id)]);
+                req = req.query(&[("criterionId", &self.criterion_id)]);
+                req = req.query(&[("engineAccountId", &self.engine_account_id)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("callback", &self.callback)]);
@@ -3548,15 +3826,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("tpu2_alpha1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220412")
+            .version("0.1.0-20230105")
             .about("TPU API provides customers with access to Google TPU technology.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -66,10 +66,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             accelerator_types2 = accelerator_types2.subcommand(mcmd);
         }
         let mut nodes2 = SubCommand::with_name("nodes")
-            .setting(AppSettings::ColoredHelp)
-            .about(
-                "methods: create, delete, get, get_guest_attributes, list, patch, start and stop",
-            );
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: create, delete, get, get_guest_attributes, list, patch, simulate_maintenance_event, start and stop");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a node.");
             nodes2 = nodes2.subcommand(mcmd);
@@ -94,6 +92,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd =
                 SubCommand::with_name("patch").about("Updates the configurations of a node.");
+            nodes2 = nodes2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("simulate_maintenance_event")
+                .about("Simulates a maintenance event.");
             nodes2 = nodes2.subcommand(mcmd);
         }
         {
@@ -124,6 +127,27 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
+        let mut queued_resources2 = SubCommand::with_name("queued_resources")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and list");
+        {
+            let mcmd =
+                SubCommand::with_name("create").about("Creates a QueuedResource TPU instance.");
+            queued_resources2 = queued_resources2.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("delete").about("Deletes a QueuedResource TPU instance.");
+            queued_resources2 = queued_resources2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a queued resource.");
+            queued_resources2 = queued_resources2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists queued resources.");
+            queued_resources2 = queued_resources2.subcommand(mcmd);
+        }
         let mut runtime_versions2 = SubCommand::with_name("runtime_versions")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
@@ -137,6 +161,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             runtime_versions2 = runtime_versions2.subcommand(mcmd);
         }
         locations1 = locations1.subcommand(runtime_versions2);
+        locations1 = locations1.subcommand(queued_resources2);
         locations1 = locations1.subcommand(operations2);
         locations1 = locations1.subcommand(nodes2);
         locations1 = locations1.subcommand(accelerator_types2);

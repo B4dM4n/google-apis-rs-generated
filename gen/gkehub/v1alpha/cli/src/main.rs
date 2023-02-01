@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("gkehub1_alpha")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230119")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -123,7 +123,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut memberships2 = SubCommand::with_name("memberships")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, generate_connect_manifest, get, get_iam_policy, list, list_admin, patch, set_iam_policy and test_iam_permissions");
+                        .about("methods: create, delete, generate_connect_manifest, get, get_iam_policy, list, list_admin, patch, set_iam_policy, test_iam_permissions and validate_create");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a new Membership. **This is currently only supported for GKE clusters on Google Cloud**. To register other clusters, follow the instructions at https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.");
             memberships2 = memberships2.subcommand(mcmd);
@@ -163,6 +163,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            memberships2 = memberships2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("validate_create").about("ValidateCreateMembership is a preflight check for CreateMembership. It checks the following: 1. Caller has the required `gkehub.memberships.create` permission. 2. The membership_id is still available.");
             memberships2 = memberships2.subcommand(mcmd);
         }
         let mut operations2 = SubCommand::with_name("operations")

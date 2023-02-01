@@ -7,9 +7,9 @@
   "canonicalName": "My Business Account Management",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220426",
+  "revision": "20230131",
   "title": "My Business Account Management API",
-  "description": "The My Business Account Management API provides an interface for managing access to a location on Google.",
+  "description": "The My Business Account Management API provides an interface for managing access to a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -271,7 +271,7 @@
           "items": null
         },
         "primaryOwner": {
-          "description": "Required. Input only. The resource name of the account which will be the primary owner of the account being created. It should be of the form `accounts/{account_id}/`.",
+          "description": "Required. Input only. The resource name of the account which will be the primary owner of the account being created. It should be of the form `accounts/{account_id}`.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -376,6 +376,16 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "account": {
+          "description": "Immutable. The name of the Account resource that this Admin refers to. Used when calling locations.admins.create to invite a LocationGroup as an admin. If both this field and `admin` are set on `CREATE` requests, this field takes precedence and the email address in `admin` will be ignored. Format: `accounts/{account}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "admin": {
           "description": "Optional. The name of the admin. When making the initial invitation, this is the invitee's email address. On `GET` calls, the user's email address is returned if the invitation is still pending. Otherwise, it contains the user's first and last names. This field is only needed to be set during admin creation.",
           "type": "string",
@@ -668,7 +678,7 @@
     },
     "PostalAddress": {
       "id": "PostalAddress",
-      "description": "Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an i18n-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478",
+      "description": "Represents a postal address, e.g. for postal delivery or payments addresses. Given a postal address, a postal service can deliver items to a premise, P.O. Box or similar. It is not intended to model geographical locations (roads, towns, mountains). In typical usage an address would be created via user input or from importing existing data, depending on the type of process. Advice on address input / editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput) - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, please see: https://support.google.com/business/answer/6397478",
       "type": "object",
       "format": null,
       "enum": [],
@@ -1231,7 +1241,7 @@
               "repeated": false
             },
             "pageSize": {
-              "description": "Optional. How many accounts to fetch per page. The minimum supported page_size is 2. The default and maximum is 20.",
+              "description": "Optional. How many accounts to fetch per page. The default and maximum is 20.",
               "default": null,
               "location": "query",
               "required": false,

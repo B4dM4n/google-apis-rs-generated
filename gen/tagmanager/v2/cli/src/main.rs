@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("tagmanager2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220423")
+            .version("0.1.0-20230130")
             .about("This API allows clients to access and modify container and tag configuration.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -50,8 +50,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             accounts0 = accounts0.subcommand(mcmd);
         }
         let mut containers1 = SubCommand::with_name("containers")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and update");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: combine, create, delete, get, list, lookup, move_tag_id, snippet and update");
+        {
+            let mcmd = SubCommand::with_name("combine").about("Combines Containers.");
+            containers1 = containers1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create").about("Creates a Container.");
             containers1 = containers1.subcommand(mcmd);
@@ -67,6 +71,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists all Containers that belongs to a GTM Account.");
+            containers1 = containers1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("lookup").about("Looks up a Container by destination ID.");
+            containers1 = containers1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("move_tag_id").about("Move Tag ID out of a Container.");
+            containers1 = containers1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("snippet").about("Gets the tagging snippet for a Container.");
             containers1 = containers1.subcommand(mcmd);
         }
         {
@@ -100,6 +119,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update")
                 .about("Updates a user's Account & Container access.");
             user_permissions1 = user_permissions1.subcommand(mcmd);
+        }
+        let mut destinations2 = SubCommand::with_name("destinations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get, link and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a Destination.");
+            destinations2 = destinations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("link").about("Adds a Destination to this Container and removes it from the Container to which it is currently linked.");
+            destinations2 = destinations2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists all Destinations linked to a GTM Container.");
+            destinations2 = destinations2.subcommand(mcmd);
         }
         let mut environments2 = SubCommand::with_name("environments")
             .setting(AppSettings::ColoredHelp)
@@ -310,6 +345,30 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update").about("Updates a GTM Folder.");
             folders3 = folders3.subcommand(mcmd);
         }
+        let mut gtag_config3 = SubCommand::with_name("gtag_config")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and update");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a Google tag config.");
+            gtag_config3 = gtag_config3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a Google tag config.");
+            gtag_config3 = gtag_config3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a Google tag config.");
+            gtag_config3 = gtag_config3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists all Google tag configs in a Container.");
+            gtag_config3 = gtag_config3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update").about("Updates a Google tag config.");
+            gtag_config3 = gtag_config3.subcommand(mcmd);
+        }
         let mut tags3 = SubCommand::with_name("tags")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list, revert and update");
@@ -459,6 +518,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         workspaces2 = workspaces2.subcommand(triggers3);
         workspaces2 = workspaces2.subcommand(templates3);
         workspaces2 = workspaces2.subcommand(tags3);
+        workspaces2 = workspaces2.subcommand(gtag_config3);
         workspaces2 = workspaces2.subcommand(folders3);
         workspaces2 = workspaces2.subcommand(clients3);
         workspaces2 = workspaces2.subcommand(built_in_variables3);
@@ -466,6 +526,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         containers1 = containers1.subcommand(versions2);
         containers1 = containers1.subcommand(version_headers2);
         containers1 = containers1.subcommand(environments2);
+        containers1 = containers1.subcommand(destinations2);
         accounts0 = accounts0.subcommand(user_permissions1);
         accounts0 = accounts0.subcommand(containers1);
         app = app.subcommand(accounts0);

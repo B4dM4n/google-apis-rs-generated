@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [managed_short_links](resources/managed_short_links/struct.ManagedShortLinksActions.html)\n  * [*create*](resources/managed_short_links/struct.CreateRequestBuilder.html)\n* [short_links](resources/short_links/struct.ShortLinksActions.html)\n  * [*create*](resources/short_links/struct.CreateRequestBuilder.html)\n* [v_1](resources/v_1/struct.V1Actions.html)\n  * [*getLinkStats*](resources/v_1/struct.GetLinkStatsRequestBuilder.html), [*installAttribution*](resources/v_1/struct.InstallAttributionRequestBuilder.html), [*reopenAttribution*](resources/v_1/struct.ReopenAttributionRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and administer all your Firebase data and settings\n\n`https://www.googleapis.com/auth/firebase`"]
@@ -3781,15 +3782,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [info_types](resources/info_types/struct.InfoTypesActions.html)\n  * [*list*](resources/info_types/struct.ListRequestBuilder.html)\n* [locations](resources/locations/struct.LocationsActions.html)\n  * [info_types](resources/locations/info_types/struct.InfoTypesActions.html)\n    * [*list*](resources/locations/info_types/struct.ListRequestBuilder.html)\n* [organizations](resources/organizations/struct.OrganizationsActions.html)\n  * [deidentify_templates](resources/organizations/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n    * [*create*](resources/organizations/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/deidentify_templates/struct.PatchRequestBuilder.html)\n  * [inspect_templates](resources/organizations/inspect_templates/struct.InspectTemplatesActions.html)\n    * [*create*](resources/organizations/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/inspect_templates/struct.PatchRequestBuilder.html)\n  * [locations](resources/organizations/locations/struct.LocationsActions.html)\n    * [deidentify_templates](resources/organizations/locations/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n      * [*create*](resources/organizations/locations/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/deidentify_templates/struct.PatchRequestBuilder.html)\n    * [dlp_jobs](resources/organizations/locations/dlp_jobs/struct.DlpJobsActions.html)\n      * [*list*](resources/organizations/locations/dlp_jobs/struct.ListRequestBuilder.html)\n    * [inspect_templates](resources/organizations/locations/inspect_templates/struct.InspectTemplatesActions.html)\n      * [*create*](resources/organizations/locations/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/inspect_templates/struct.PatchRequestBuilder.html)\n    * [job_triggers](resources/organizations/locations/job_triggers/struct.JobTriggersActions.html)\n      * [*create*](resources/organizations/locations/job_triggers/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/job_triggers/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/job_triggers/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/job_triggers/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/job_triggers/struct.PatchRequestBuilder.html)\n    * [stored_info_types](resources/organizations/locations/stored_info_types/struct.StoredInfoTypesActions.html)\n      * [*create*](resources/organizations/locations/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/locations/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/locations/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/organizations/locations/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/organizations/locations/stored_info_types/struct.PatchRequestBuilder.html)\n  * [stored_info_types](resources/organizations/stored_info_types/struct.StoredInfoTypesActions.html)\n    * [*create*](resources/organizations/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/organizations/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/organizations/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/organizations/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/organizations/stored_info_types/struct.PatchRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [content](resources/projects/content/struct.ContentActions.html)\n    * [*deidentify*](resources/projects/content/struct.DeidentifyRequestBuilder.html), [*inspect*](resources/projects/content/struct.InspectRequestBuilder.html), [*reidentify*](resources/projects/content/struct.ReidentifyRequestBuilder.html)\n  * [deidentify_templates](resources/projects/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n    * [*create*](resources/projects/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/deidentify_templates/struct.PatchRequestBuilder.html)\n  * [dlp_jobs](resources/projects/dlp_jobs/struct.DlpJobsActions.html)\n    * [*cancel*](resources/projects/dlp_jobs/struct.CancelRequestBuilder.html), [*create*](resources/projects/dlp_jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/dlp_jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/dlp_jobs/struct.GetRequestBuilder.html), [*list*](resources/projects/dlp_jobs/struct.ListRequestBuilder.html)\n  * [image](resources/projects/image/struct.ImageActions.html)\n    * [*redact*](resources/projects/image/struct.RedactRequestBuilder.html)\n  * [inspect_templates](resources/projects/inspect_templates/struct.InspectTemplatesActions.html)\n    * [*create*](resources/projects/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/inspect_templates/struct.PatchRequestBuilder.html)\n  * [job_triggers](resources/projects/job_triggers/struct.JobTriggersActions.html)\n    * [*activate*](resources/projects/job_triggers/struct.ActivateRequestBuilder.html), [*create*](resources/projects/job_triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/job_triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/job_triggers/struct.GetRequestBuilder.html), [*list*](resources/projects/job_triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/job_triggers/struct.PatchRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [content](resources/projects/locations/content/struct.ContentActions.html)\n      * [*deidentify*](resources/projects/locations/content/struct.DeidentifyRequestBuilder.html), [*inspect*](resources/projects/locations/content/struct.InspectRequestBuilder.html), [*reidentify*](resources/projects/locations/content/struct.ReidentifyRequestBuilder.html)\n    * [deidentify_templates](resources/projects/locations/deidentify_templates/struct.DeidentifyTemplatesActions.html)\n      * [*create*](resources/projects/locations/deidentify_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/deidentify_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/deidentify_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/deidentify_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/deidentify_templates/struct.PatchRequestBuilder.html)\n    * [dlp_jobs](resources/projects/locations/dlp_jobs/struct.DlpJobsActions.html)\n      * [*cancel*](resources/projects/locations/dlp_jobs/struct.CancelRequestBuilder.html), [*create*](resources/projects/locations/dlp_jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/dlp_jobs/struct.DeleteRequestBuilder.html), [*finish*](resources/projects/locations/dlp_jobs/struct.FinishRequestBuilder.html), [*get*](resources/projects/locations/dlp_jobs/struct.GetRequestBuilder.html), [*hybridInspect*](resources/projects/locations/dlp_jobs/struct.HybridInspectRequestBuilder.html), [*list*](resources/projects/locations/dlp_jobs/struct.ListRequestBuilder.html)\n    * [image](resources/projects/locations/image/struct.ImageActions.html)\n      * [*redact*](resources/projects/locations/image/struct.RedactRequestBuilder.html)\n    * [inspect_templates](resources/projects/locations/inspect_templates/struct.InspectTemplatesActions.html)\n      * [*create*](resources/projects/locations/inspect_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/inspect_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/inspect_templates/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/inspect_templates/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/inspect_templates/struct.PatchRequestBuilder.html)\n    * [job_triggers](resources/projects/locations/job_triggers/struct.JobTriggersActions.html)\n      * [*activate*](resources/projects/locations/job_triggers/struct.ActivateRequestBuilder.html), [*create*](resources/projects/locations/job_triggers/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/job_triggers/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/job_triggers/struct.GetRequestBuilder.html), [*hybridInspect*](resources/projects/locations/job_triggers/struct.HybridInspectRequestBuilder.html), [*list*](resources/projects/locations/job_triggers/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/job_triggers/struct.PatchRequestBuilder.html)\n    * [stored_info_types](resources/projects/locations/stored_info_types/struct.StoredInfoTypesActions.html)\n      * [*create*](resources/projects/locations/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/stored_info_types/struct.PatchRequestBuilder.html)\n  * [stored_info_types](resources/projects/stored_info_types/struct.StoredInfoTypesActions.html)\n    * [*create*](resources/projects/stored_info_types/struct.CreateRequestBuilder.html), [*delete*](resources/projects/stored_info_types/struct.DeleteRequestBuilder.html), [*get*](resources/projects/stored_info_types/struct.GetRequestBuilder.html), [*list*](resources/projects/stored_info_types/struct.ListRequestBuilder.html), [*patch*](resources/projects/stored_info_types/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -17,7 +18,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2Action {
-        #[doc = "Enable email notification for project owners and editors on job’s completion/failure."]
+        #[doc = "Create a de-identified copy of the input data."]
+        #[serde(
+            rename = "deidentify",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deidentify: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2Deidentify>,
+        #[doc = "Sends an email when the job completes. The email goes to IAM project owners and technical [Essential Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts)."]
         #[serde(
             rename = "jobNotificationEmails",
             default,
@@ -25,7 +33,7 @@ pub mod schemas {
         )]
         pub job_notification_emails:
             ::std::option::Option<crate::schemas::GooglePrivacyDlpV2JobNotificationEmails>,
-        #[doc = "Publish a notification to a pubsub topic."]
+        #[doc = "Publish a notification to a Pub/Sub topic."]
         #[serde(
             rename = "pubSub",
             default,
@@ -95,6 +103,54 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2ActivateJobTriggerRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2AllInfoTypes {}
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2AllInfoTypes {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2AllInfoTypes {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2AllText {}
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2AllText {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2AllText {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -958,7 +1014,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub masking_character: ::std::option::Option<String>,
-        #[doc = "Number of characters to mask. If not set, all matching chars will be masked. Skipped characters do not count towards this tally."]
+        #[doc = "Number of characters to mask. If not set, all matching chars will be masked. Skipped characters do not count towards this tally. If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP masks all but a number of characters. For example, suppose you have the following values: - `masking_character` is `*` - `number_to_mask` is `-4` - `reverse_order` is `false` - `CharsToIgnore` includes `-` - Input string is `1234-5678-9012-3456` The resulting de-identified string is `****-****-****-3456`. Cloud DLP masks all but the last four characters. If `reverse_order` is `true`, all but the first four characters are masked as `1234-****-****-****`."]
         #[serde(
             rename = "numberToMask",
             default,
@@ -1700,7 +1756,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2Container {
-        #[doc = "A string representation of the full container name. Examples: - BigQuery: ‘Project:DataSetId.TableId’ - Google Cloud Storage: ‘gs://Bucket/folders/filename.txt’"]
+        #[doc = "A string representation of the full container name. Examples: - BigQuery: ‘Project:DataSetId.TableId’ - Cloud Storage: ‘gs://Bucket/folders/filename.txt’"]
         #[serde(
             rename = "fullPath",
             default,
@@ -1714,35 +1770,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "Container type, for example BigQuery or Google Cloud Storage."]
+        #[doc = "Container type, for example BigQuery or Cloud Storage."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "The rest of the path after the root. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the relative path is `table_id` - Google Cloud Storage file `gs://bucket/folder/filename.txt`, the relative path is `folder/filename.txt`"]
+        #[doc = "The rest of the path after the root. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the relative path is `table_id` - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative path is `folder/filename.txt`"]
         #[serde(
             rename = "relativePath",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub relative_path: ::std::option::Option<String>,
-        #[doc = "The root of the container. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the root is `dataset_id` - For Google Cloud Storage file `gs://bucket/folder/filename.txt`, the root is `gs://bucket`"]
+        #[doc = "The root of the container. Examples: - For BigQuery table `project_id:dataset_id.table_id`, the root is `dataset_id` - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root is `gs://bucket`"]
         #[serde(
             rename = "rootPath",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub root_path: ::std::option::Option<String>,
-        #[doc = "Findings container modification timestamp, if applicable. For Google Cloud Storage contains last file modification timestamp. For BigQuery table contains last_modified_time property. For Datastore - not populated."]
+        #[doc = "Findings container modification timestamp, if applicable. For Cloud Storage, this field contains the last file modification timestamp. For a BigQuery table, this field contains the last_modified_time property. For Datastore, this field isn’t populated."]
         #[serde(
             rename = "updateTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub update_time: ::std::option::Option<String>,
-        #[doc = "Findings container version, if available (“generation” for Google Cloud Storage)."]
+        #[doc = "Findings container version, if available (“generation” for Cloud Storage)."]
         #[serde(
             rename = "version",
             default,
@@ -1809,21 +1865,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2ContentLocation {
-        #[doc = "Name of the container where the finding is located. The top level name is the source file name or table name. Names of some common storage containers are formatted as follows: * BigQuery tables: `{project_id}:{dataset_id}.{table_id}` * Cloud Storage files: `gs://{bucket}/{path}` * Datastore namespace: {namespace} Nested names could be absent if the embedded object has no string identifier (for an example an image contained within a document)."]
+        #[doc = "Name of the container where the finding is located. The top level name is the source file name or table name. Names of some common storage containers are formatted as follows: * BigQuery tables: `{project_id}:{dataset_id}.{table_id}` * Cloud Storage files: `gs://{bucket}/{path}` * Datastore namespace: {namespace} Nested names could be absent if the embedded object has no string identifier (for example, an image contained within a document)."]
         #[serde(
             rename = "containerName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub container_name: ::std::option::Option<String>,
-        #[doc = "Findings container modification timestamp, if applicable. For Google Cloud Storage contains last file modification timestamp. For BigQuery table contains last_modified_time property. For Datastore - not populated."]
+        #[doc = "Finding container modification timestamp, if applicable. For Cloud Storage, this field contains the last file modification timestamp. For a BigQuery table, this field contains the last_modified_time property. For Datastore, this field isn’t populated."]
         #[serde(
             rename = "containerTimestamp",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub container_timestamp: ::std::option::Option<String>,
-        #[doc = "Findings container version, if available (“generation” for Google Cloud Storage)."]
+        #[doc = "Finding container version, if available (“generation” for Cloud Storage)."]
         #[serde(
             rename = "containerVersion",
             default,
@@ -2100,7 +2156,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2CryptoDeterministicConfig {
-        #[doc = "A context may be used for higher security and maintaining referential integrity such that the same identifier in two different contexts will be given a distinct surrogate. The context is appended to plaintext value being encrypted. On decryption the provided context is validated against the value used during encryption. If a context was provided during encryption, same context must be provided during decryption as well. If the context is not set, plaintext would be used as is for encryption. If the context is set but: 1. there is no record present when transforming a given value or 2. the field is not present when transforming a given value, plaintext would be used as is for encryption. Note that case (1) is expected when an `InfoTypeTransformation` is applied to both structured and non-structured `ContentItem`s."]
+        #[doc = "A context may be used for higher security and maintaining referential integrity such that the same identifier in two different contexts will be given a distinct surrogate. The context is appended to plaintext value being encrypted. On decryption the provided context is validated against the value used during encryption. If a context was provided during encryption, same context must be provided during decryption as well. If the context is not set, plaintext would be used as is for encryption. If the context is set but: 1. there is no record present when transforming a given value or 2. the field is not present when transforming a given value, plaintext would be used as is for encryption. Note that case (1) is expected when an `InfoTypeTransformation` is applied to both structured and unstructured `ContentItem`s."]
         #[serde(
             rename = "context",
             default,
@@ -2231,7 +2287,7 @@ pub mod schemas {
         pub common_alphabet: ::std::option::Option<
             crate::schemas::GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet,
         >,
-        #[doc = "The ‘tweak’, a context may be used for higher security since the same identifier in two different contexts won’t be given the same surrogate. If the context is not set, a default tweak will be used. If the context is set but: 1. there is no record present when transforming a given value or 1. the field is not present when transforming a given value, a default tweak will be used. Note that case (1) is expected when an `InfoTypeTransformation` is applied to both structured and non-structured `ContentItem`s. Currently, the referenced field may be of value type integer or string. The tweak is constructed as a sequence of bytes in big endian byte order such that: - a 64 bit integer is encoded followed by a single byte of value 1 - a string is encoded in UTF-8 format followed by a single byte of value 2"]
+        #[doc = "The ‘tweak’, a context may be used for higher security since the same identifier in two different contexts won’t be given the same surrogate. If the context is not set, a default tweak will be used. If the context is set but: 1. there is no record present when transforming a given value or 1. the field is not present when transforming a given value, a default tweak will be used. Note that case (1) is expected when an `InfoTypeTransformation` is applied to both structured and unstructured `ContentItem`s. Currently, the referenced field may be of value type integer or string. The tweak is constructed as a sequence of bytes in big endian byte order such that: - a 64 bit integer is encoded followed by a single byte of value 1 - a string is encoded in UTF-8 format followed by a single byte of value 2"]
         #[serde(
             rename = "context",
             default,
@@ -2517,13 +2573,15 @@ pub mod schemas {
     pub enum GooglePrivacyDlpV2CustomInfoTypeLikelihood {
         #[doc = "Default value; same as POSSIBLE."]
         LikelihoodUnspecified,
+        #[doc = "Low chance of a false positive."]
         Likely,
-        #[doc = "Some matching elements."]
+        #[doc = "Some matching signals. The default value."]
         Possible,
+        #[doc = "High chance of a false positive."]
         Unlikely,
-        #[doc = "Many matching elements."]
+        #[doc = "Confidence level is high. Lowest chance of a false positive."]
         VeryLikely,
-        #[doc = "Few matching elements."]
+        #[doc = "Highest chance of a false positive."]
         VeryUnlikely,
     }
     impl GooglePrivacyDlpV2CustomInfoTypeLikelihood {
@@ -2983,7 +3041,7 @@ pub mod schemas {
         RiskHigh,
         #[doc = "Low risk - Lower indication of sensitive data that appears to have additional access restrictions in place or no indication of sensitive data found."]
         RiskLow,
-        #[doc = "Medium risk - Sensitive data may be present but additional access or fine grain access restrictions appears to be present. Consider limiting access even further or transforming data to mask."]
+        #[doc = "Medium risk - Sensitive data may be present but additional access or fine grain access restrictions appear to be present. Consider limiting access even further or transform data to mask."]
         RiskModerate,
         #[doc = "Unused."]
         RiskScoreUnspecified,
@@ -3345,9 +3403,203 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2Deidentify {
+        #[doc = "Required. User settable Cloud Storage bucket and folders to store de-identified files. This field must be set for cloud storage deidentification. The output Cloud Storage bucket must be different from the input bucket. De-identified files will overwrite files in the output path. Form of: gs://bucket/folder/ or gs://bucket"]
+        #[serde(
+            rename = "cloudStorageOutput",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cloud_storage_output: ::std::option::Option<String>,
+        #[doc = "List of user-specified file type groups to transform. If specified, only the files with these filetypes will be transformed. If empty, all supported files will be transformed. Supported types may be automatically added over time. If a file type is set in this field that isn’t supported by the Deidentify action then the job will fail and will not be successfully created/started. Currently the only filetypes supported are: IMAGES, TEXT_FILES, CSV, TSV."]
+        #[serde(
+            rename = "fileTypesToTransform",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_types_to_transform: ::std::option::Option<
+            Vec<crate::schemas::GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems>,
+        >,
+        #[doc = "User specified deidentify templates and configs for structured, unstructured, and image files."]
+        #[serde(
+            rename = "transformationConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transformation_config:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2TransformationConfig>,
+        #[doc = "Config for storing transformation details. This is separate from the de-identified content, and contains metadata about the successful transformations and/or failures that occurred while de-identifying. This needs to be set in order for users to access information about the status of each transformation (see TransformationDetails message for more information about what is noted)."]
+        #[serde(
+            rename = "transformationDetailsStorageConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transformation_details_storage_config: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2TransformationDetailsStorageConfig,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2Deidentify {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2Deidentify {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems {
+        #[doc = "Included file extensions: avro"]
+        Avro,
+        #[doc = "Includes all file extensions not covered by another entry. Binary scanning attempts to convert the content of the file to utf_8 to scan the file. If you wish to avoid this fall back, specify one or more of the other FileType’s in your storage scan."]
+        BinaryFile,
+        #[doc = "Included file extensions: csv"]
+        Csv,
+        #[doc = "Excel files >30 MB will be scanned as binary files. Included file extensions: xlsx, xlsm, xltx, xltm"]
+        Excel,
+        #[doc = "Includes all files."]
+        FileTypeUnspecified,
+        #[doc = "Included file extensions: bmp, gif, jpg, jpeg, jpe, png. bytes_limit_per_file has no effect on image files. Image inspection is restricted to ‘global’, ‘us’, ‘asia’, and ‘europe’."]
+        Image,
+        #[doc = "PDF files >30 MB will be scanned as binary files. Included file extensions: pdf"]
+        Pdf,
+        #[doc = "Powerpoint files >30 MB will be scanned as binary files. Included file extensions: pptx, pptm, potx, potm, pot"]
+        Powerpoint,
+        #[doc = "Included file extensions: asc,asp, aspx, brf, c, cc,cfm, cgi, cpp, csv, cxx, c++, cs, css, dart, dat, dot, eml,, epbub, ged, go, h, hh, hpp, hxx, h++, hs, html, htm, mkd, markdown, m, ml, mli, perl, pl, plist, pm, php, phtml, pht, properties, py, pyw, rb, rbw, rs, rss, rc, scala, sh, sql, swift, tex, shtml, shtm, xhtml, lhs, ics, ini, java, js, json, kix, kml, ocaml, md, txt, text, tsv, vb, vcard, vcs, wml, xcodeproj, xml, xsl, xsd, yml, yaml."]
+        TextFile,
+        #[doc = "Included file extensions: tsv"]
+        Tsv,
+        #[doc = "Word files >30 MB will be scanned as binary files. Included file extensions: docx, dotx, docm, dotm"]
+        Word,
+    }
+    impl GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Avro => "AVRO",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::BinaryFile => "BINARY_FILE",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Csv => "CSV",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Excel => "EXCEL",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::FileTypeUnspecified => {
+                    "FILE_TYPE_UNSPECIFIED"
+                }
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Image => "IMAGE",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Pdf => "PDF",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Powerpoint => "POWERPOINT",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::TextFile => "TEXT_FILE",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Tsv => "TSV",
+                GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Word => "WORD",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems, ()>
+        {
+            Ok(match s {
+                "AVRO" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Avro,
+                "BINARY_FILE" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::BinaryFile,
+                "CSV" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Csv,
+                "EXCEL" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Excel,
+                "FILE_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::FileTypeUnspecified
+                }
+                "IMAGE" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Image,
+                "PDF" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Pdf,
+                "POWERPOINT" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Powerpoint,
+                "TEXT_FILE" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::TextFile,
+                "TSV" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Tsv,
+                "WORD" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Word,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AVRO" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Avro,
+                "BINARY_FILE" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::BinaryFile,
+                "CSV" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Csv,
+                "EXCEL" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Excel,
+                "FILE_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::FileTypeUnspecified
+                }
+                "IMAGE" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Image,
+                "PDF" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Pdf,
+                "POWERPOINT" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Powerpoint,
+                "TEXT_FILE" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::TextFile,
+                "TSV" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Tsv,
+                "WORD" => GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems::Word,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GooglePrivacyDlpV2DeidentifyFileTypesToTransformItems
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2DeidentifyConfig {
+        #[doc = "Treat the dataset as an image and redact."]
+        #[serde(
+            rename = "imageTransformations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub image_transformations:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2ImageTransformations>,
         #[doc = "Treat the dataset as free-form text and apply the same free text transformation everywhere."]
         #[serde(
             rename = "infoTypeTransformations",
@@ -3416,7 +3668,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inspect_template_name: ::std::option::Option<String>,
-        #[doc = "The item to de-identify. Will be treated as text."]
+        #[doc = "The item to de-identify. Will be treated as text. This value must be of type Table if your deidentify_config is a RecordTransformations object."]
         #[serde(
             rename = "item",
             default,
@@ -3923,9 +4175,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GooglePrivacyDlpV2DlpJobState {
-        #[doc = "The job is currently accepting findings via hybridInspect. A hybrid job in ACTIVE state may continue to have findings added to it through calling of hybridInspect. After the job has finished no more calls to hybridInspect may be made. ACTIVE jobs can transition to DONE."]
+        #[doc = "The job is currently accepting findings via hybridInspect. A hybrid job in ACTIVE state may continue to have findings added to it through the calling of hybridInspect. After the job has finished no more calls to hybridInspect may be made. ACTIVE jobs can transition to DONE."]
         Active,
-        #[doc = "The job was canceled before it could complete."]
+        #[doc = "The job was canceled before it could be completed."]
         Canceled,
         #[doc = "The job is no longer running."]
         Done,
@@ -4119,6 +4371,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GooglePrivacyDlpV2ExcludeByHotword {
+        #[doc = "Regular expression pattern defining what qualifies as a hotword."]
+        #[serde(
+            rename = "hotwordRegex",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub hotword_regex: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2Regex>,
+        #[doc = "Range of characters within which the entire hotword must reside. The total length of the window cannot exceed 1000 characters. The windowBefore property in proximity should be set to 1 if the hotword needs to be included in a column header."]
+        #[serde(
+            rename = "proximity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub proximity: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2Proximity>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2ExcludeByHotword {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2ExcludeByHotword {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GooglePrivacyDlpV2ExcludeInfoTypes {
         #[doc = "InfoType list in ExclusionRule rule drops a finding when it overlaps or contained within with a finding of an infoType from this list. For example, for `InspectionRuleSet.info_types` containing “PHONE_NUMBER”`and`exclusion_rule`containing`exclude_info_types.info_types\\` with “EMAIL_ADDRESS” the phone number findings are dropped if they overlap with EMAIL_ADDRESS finding. That leads to “555-222-2222@example.org” to generate only a single finding, namely email address."]
         #[serde(
@@ -4158,6 +4448,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dictionary: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2Dictionary>,
+        #[doc = "Drop if the hotword rule is contained in the proximate context. For tabular data, the context includes the column name."]
+        #[serde(
+            rename = "excludeByHotword",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exclude_by_hotword:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2ExcludeByHotword>,
         #[doc = "Set of infoTypes for which findings would affect this rule."]
         #[serde(
             rename = "excludeInfoTypes",
@@ -4673,13 +4971,15 @@ pub mod schemas {
     pub enum GooglePrivacyDlpV2FindingLikelihood {
         #[doc = "Default value; same as POSSIBLE."]
         LikelihoodUnspecified,
+        #[doc = "Low chance of a false positive."]
         Likely,
-        #[doc = "Some matching elements."]
+        #[doc = "Some matching signals. The default value."]
         Possible,
+        #[doc = "High chance of a false positive."]
         Unlikely,
-        #[doc = "Many matching elements."]
+        #[doc = "Confidence level is high. Lowest chance of a false positive."]
         VeryLikely,
-        #[doc = "Few matching elements."]
+        #[doc = "Highest chance of a false positive."]
         VeryUnlikely,
     }
     impl GooglePrivacyDlpV2FindingLikelihood {
@@ -4898,7 +5198,7 @@ pub mod schemas {
         )]
         pub likelihood_adjustment:
             ::std::option::Option<crate::schemas::GooglePrivacyDlpV2LikelihoodAdjustment>,
-        #[doc = "Proximity of the finding within which the entire hotword must reside. The total length of the window cannot exceed 1000 characters. Note that the finding itself will be included in the window, so that hotwords may be used to match substrings of the finding itself. For example, the certainty of a phone number regex “(\\d{3}) \\d{3}-\\d{4}” could be adjusted upwards if the area code is known to be the local area code of a company office using the hotword regex “(xxx)”, where “xxx” is the area code in question."]
+        #[doc = "Range of characters within which the entire hotword must reside. The total length of the window cannot exceed 1000 characters. The finding itself will be included in the window, so that hotwords can be used to match substrings of the finding itself. Suppose you want Cloud DLP to promote the likelihood of the phone number regex “(\\d{3}) \\d{3}-\\d{4}” if the area code is known to be the area code of a company’s office. In this case, use the hotword regex “(xxx)”, where “xxx” is the area code in question. For tabular data, if you want to modify the likelihood of an entire column of findngs, see \\[Hotword example: Set the match likelihood of a table column\\] (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values)."]
         #[serde(
             rename = "proximity",
             default,
@@ -5244,6 +5544,72 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2ImageTransformation {
+        #[doc = "Apply transformation to all findings not specified in other ImageTransformation’s selected_info_types. Only one instance is allowed within the ImageTransformations message."]
+        #[serde(
+            rename = "allInfoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub all_info_types: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2AllInfoTypes>,
+        #[doc = "Apply transformation to all text that doesn’t match an infoType. Only one instance is allowed within the ImageTransformations message."]
+        #[serde(
+            rename = "allText",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub all_text: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2AllText>,
+        #[doc = "The color to use when redacting content from an image. If not specified, the default is black."]
+        #[serde(
+            rename = "redactionColor",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub redaction_color: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2Color>,
+        #[doc = "Apply transformation to the selected info_types."]
+        #[serde(
+            rename = "selectedInfoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub selected_info_types:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2SelectedInfoTypes>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2ImageTransformation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2ImageTransformation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2ImageTransformations {
+        #[serde(
+            rename = "transforms",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transforms:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2ImageTransformation>>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2ImageTransformations {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2ImageTransformations {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -5256,7 +5622,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2InfoType {
-        #[doc = "Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type. When sending Cloud DLP results to Data Catalog, infoType names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`."]
+        #[doc = "Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type. When sending Cloud DLP results to Data Catalog, infoType names should conform to the pattern `[A-Za-z0-9$_-]{1,64}`."]
         #[serde(
             rename = "name",
             default,
@@ -5293,7 +5659,566 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GooglePrivacyDlpV2InfoTypeCategory {
+        #[doc = "The group of relevant businesses where this infoType is commonly used"]
+        #[serde(
+            rename = "industryCategory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub industry_category: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory,
+        >,
+        #[doc = "The region or country that issued the ID or document represented by the infoType."]
+        #[serde(
+            rename = "locationCategory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub location_category: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2InfoTypeCategoryLocationCategory,
+        >,
+        #[doc = "The class of identifiers where this infoType belongs"]
+        #[serde(
+            rename = "typeCategory",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub type_category:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2InfoTypeCategoryTypeCategory>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2InfoTypeCategory {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2InfoTypeCategory {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        #[doc = "The infoType is typically used in the finance industry."]
+        Finance,
+        #[doc = "The infoType is typically used in the health industry."]
+        Health,
+        #[doc = "Unused industry"]
+        IndustryUnspecified,
+        #[doc = "The infoType is typically used in the telecommunications industry."]
+        Telecommunications,
+    }
+    impl GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Finance => "FINANCE",
+                GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Health => "HEALTH",
+                GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::IndustryUnspecified => {
+                    "INDUSTRY_UNSPECIFIED"
+                }
+                GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Telecommunications => {
+                    "TELECOMMUNICATIONS"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory, ()> {
+            Ok(match s {
+                "FINANCE" => GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Finance,
+                "HEALTH" => GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Health,
+                "INDUSTRY_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::IndustryUnspecified
+                }
+                "TELECOMMUNICATIONS" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Telecommunications
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FINANCE" => GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Finance,
+                "HEALTH" => GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Health,
+                "INDUSTRY_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::IndustryUnspecified
+                }
+                "TELECOMMUNICATIONS" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory::Telecommunications
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2InfoTypeCategoryIndustryCategory {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        #[doc = "The infoType is typically used in Argentina."]
+        Argentina,
+        #[doc = "The infoType is typically used in Australia."]
+        Australia,
+        #[doc = "The infoType is typically used in Belgium."]
+        Belgium,
+        #[doc = "The infoType is typically used in Brazil."]
+        Brazil,
+        #[doc = "The infoType is typically used in Canada."]
+        Canada,
+        #[doc = "The infoType is typically used in Chile."]
+        Chile,
+        #[doc = "The infoType is typically used in China."]
+        China,
+        #[doc = "The infoType is typically used in Colombia."]
+        Colombia,
+        #[doc = "The infoType is typically used in Denmark."]
+        Denmark,
+        #[doc = "The infoType is typically used in Finland."]
+        Finland,
+        #[doc = "The infoType is typically used in France."]
+        France,
+        #[doc = "The infoType is typically used in Germany."]
+        Germany,
+        #[doc = "The infoType is not issued by or tied to a specific region, but is used almost everywhere."]
+        Global,
+        #[doc = "The infoType is typically used in Hong Kong."]
+        HongKong,
+        #[doc = "The infoType is typically used in India."]
+        India,
+        #[doc = "The infoType is typically used in Indonesia."]
+        Indonesia,
+        #[doc = "The infoType is typically used in Google internally."]
+        Internal,
+        #[doc = "The infoType is typically used in Ireland."]
+        Ireland,
+        #[doc = "The infoType is typically used in Israel."]
+        Israel,
+        #[doc = "The infoType is typically used in Italy."]
+        Italy,
+        #[doc = "The infoType is typically used in Japan."]
+        Japan,
+        #[doc = "The infoType is typically used in Korea."]
+        Korea,
+        #[doc = "Unused location"]
+        LocationUnspecified,
+        #[doc = "The infoType is typically used in Mexico."]
+        Mexico,
+        #[doc = "The infoType is typically used in New Zealand."]
+        NewZealand,
+        #[doc = "The infoType is typically used in Norway."]
+        Norway,
+        #[doc = "The infoType is typically used in Paraguay."]
+        Paraguay,
+        #[doc = "The infoType is typically used in Peru."]
+        Peru,
+        #[doc = "The infoType is typically used in Poland."]
+        Poland,
+        #[doc = "The infoType is typically used in Portugal."]
+        Portugal,
+        #[doc = "The infoType is typically used in Singapore."]
+        Singapore,
+        #[doc = "The infoType is typically used in South Africa."]
+        SouthAfrica,
+        #[doc = "The infoType is typically used in Spain."]
+        Spain,
+        #[doc = "The infoType is typically used in Sweden."]
+        Sweden,
+        #[doc = "The infoType is typically used in Taiwan."]
+        Taiwan,
+        #[doc = "The infoType is typically used in Thailand."]
+        Thailand,
+        #[doc = "The infoType is typically used in the Netherlands."]
+        TheNetherlands,
+        #[doc = "The infoType is typically used in Turkey."]
+        Turkey,
+        #[doc = "The infoType is typically used in the United Kingdom."]
+        UnitedKingdom,
+        #[doc = "The infoType is typically used in the United States."]
+        UnitedStates,
+        #[doc = "The infoType is typically used in Uruguay."]
+        Uruguay,
+        #[doc = "The infoType is typically used in Venezuela."]
+        Venezuela,
+    }
+    impl GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Argentina => "ARGENTINA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Australia => "AUSTRALIA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Belgium => "BELGIUM",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Brazil => "BRAZIL",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Canada => "CANADA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Chile => "CHILE",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::China => "CHINA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Colombia => "COLOMBIA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Denmark => "DENMARK",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Finland => "FINLAND",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::France => "FRANCE",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Germany => "GERMANY",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Global => "GLOBAL",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::HongKong => "HONG_KONG",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::India => "INDIA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Indonesia => "INDONESIA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Internal => "INTERNAL",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Ireland => "IRELAND",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Israel => "ISRAEL",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Italy => "ITALY",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Japan => "JAPAN",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Korea => "KOREA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::LocationUnspecified => {
+                    "LOCATION_UNSPECIFIED"
+                }
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Mexico => "MEXICO",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::NewZealand => "NEW_ZEALAND",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Norway => "NORWAY",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Paraguay => "PARAGUAY",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Peru => "PERU",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Poland => "POLAND",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Portugal => "PORTUGAL",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Singapore => "SINGAPORE",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::SouthAfrica => "SOUTH_AFRICA",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Spain => "SPAIN",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Sweden => "SWEDEN",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Taiwan => "TAIWAN",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Thailand => "THAILAND",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::TheNetherlands => {
+                    "THE_NETHERLANDS"
+                }
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Turkey => "TURKEY",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::UnitedKingdom => {
+                    "UNITED_KINGDOM"
+                }
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::UnitedStates => "UNITED_STATES",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Uruguay => "URUGUAY",
+                GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Venezuela => "VENEZUELA",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2InfoTypeCategoryLocationCategory, ()> {
+            Ok(match s {
+                "ARGENTINA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Argentina,
+                "AUSTRALIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Australia,
+                "BELGIUM" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Belgium,
+                "BRAZIL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Brazil,
+                "CANADA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Canada,
+                "CHILE" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Chile,
+                "CHINA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::China,
+                "COLOMBIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Colombia,
+                "DENMARK" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Denmark,
+                "FINLAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Finland,
+                "FRANCE" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::France,
+                "GERMANY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Germany,
+                "GLOBAL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Global,
+                "HONG_KONG" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::HongKong,
+                "INDIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::India,
+                "INDONESIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Indonesia,
+                "INTERNAL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Internal,
+                "IRELAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Ireland,
+                "ISRAEL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Israel,
+                "ITALY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Italy,
+                "JAPAN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Japan,
+                "KOREA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Korea,
+                "LOCATION_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::LocationUnspecified
+                }
+                "MEXICO" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Mexico,
+                "NEW_ZEALAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::NewZealand,
+                "NORWAY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Norway,
+                "PARAGUAY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Paraguay,
+                "PERU" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Peru,
+                "POLAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Poland,
+                "PORTUGAL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Portugal,
+                "SINGAPORE" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Singapore,
+                "SOUTH_AFRICA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::SouthAfrica,
+                "SPAIN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Spain,
+                "SWEDEN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Sweden,
+                "TAIWAN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Taiwan,
+                "THAILAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Thailand,
+                "THE_NETHERLANDS" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::TheNetherlands
+                }
+                "TURKEY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Turkey,
+                "UNITED_KINGDOM" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::UnitedKingdom
+                }
+                "UNITED_STATES" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::UnitedStates,
+                "URUGUAY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Uruguay,
+                "VENEZUELA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Venezuela,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ARGENTINA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Argentina,
+                "AUSTRALIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Australia,
+                "BELGIUM" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Belgium,
+                "BRAZIL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Brazil,
+                "CANADA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Canada,
+                "CHILE" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Chile,
+                "CHINA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::China,
+                "COLOMBIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Colombia,
+                "DENMARK" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Denmark,
+                "FINLAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Finland,
+                "FRANCE" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::France,
+                "GERMANY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Germany,
+                "GLOBAL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Global,
+                "HONG_KONG" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::HongKong,
+                "INDIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::India,
+                "INDONESIA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Indonesia,
+                "INTERNAL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Internal,
+                "IRELAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Ireland,
+                "ISRAEL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Israel,
+                "ITALY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Italy,
+                "JAPAN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Japan,
+                "KOREA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Korea,
+                "LOCATION_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::LocationUnspecified
+                }
+                "MEXICO" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Mexico,
+                "NEW_ZEALAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::NewZealand,
+                "NORWAY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Norway,
+                "PARAGUAY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Paraguay,
+                "PERU" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Peru,
+                "POLAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Poland,
+                "PORTUGAL" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Portugal,
+                "SINGAPORE" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Singapore,
+                "SOUTH_AFRICA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::SouthAfrica,
+                "SPAIN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Spain,
+                "SWEDEN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Sweden,
+                "TAIWAN" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Taiwan,
+                "THAILAND" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Thailand,
+                "THE_NETHERLANDS" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::TheNetherlands
+                }
+                "TURKEY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Turkey,
+                "UNITED_KINGDOM" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::UnitedKingdom
+                }
+                "UNITED_STATES" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::UnitedStates,
+                "URUGUAY" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Uruguay,
+                "VENEZUELA" => GooglePrivacyDlpV2InfoTypeCategoryLocationCategory::Venezuela,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2InfoTypeCategoryLocationCategory {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        #[doc = "Information that is not sensitive on its own, but provides details about the circumstances surrounding an entity or an event."]
+        ContextualInformation,
+        #[doc = "Confidential or secret information, for example, a password."]
+        Credential,
+        #[doc = "Attributes that can partially identify someone, especially in combination with other attributes, like age, height, and gender."]
+        Demographic,
+        #[doc = "A document, for example, a resume or source code."]
+        Document,
+        #[doc = "An identification document issued by a government."]
+        GovernmentId,
+        #[doc = "Personally identifiable information, for example, a name or phone number"]
+        Pii,
+        #[doc = "Personally identifiable information that is especially sensitive, for example, a passport number."]
+        Spii,
+        #[doc = "Unused type"]
+        TypeUnspecified,
+    }
+    impl GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::ContextualInformation => {
+                    "CONTEXTUAL_INFORMATION"
+                }
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Credential => "CREDENTIAL",
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Demographic => "DEMOGRAPHIC",
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Document => "DOCUMENT",
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::GovernmentId => "GOVERNMENT_ID",
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Pii => "PII",
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Spii => "SPII",
+                GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::TypeUnspecified => {
+                    "TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2InfoTypeCategoryTypeCategory, ()> {
+            Ok(match s {
+                "CONTEXTUAL_INFORMATION" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::ContextualInformation
+                }
+                "CREDENTIAL" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Credential,
+                "DEMOGRAPHIC" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Demographic,
+                "DOCUMENT" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Document,
+                "GOVERNMENT_ID" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::GovernmentId,
+                "PII" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Pii,
+                "SPII" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Spii,
+                "TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::TypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CONTEXTUAL_INFORMATION" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::ContextualInformation
+                }
+                "CREDENTIAL" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Credential,
+                "DEMOGRAPHIC" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Demographic,
+                "DOCUMENT" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Document,
+                "GOVERNMENT_ID" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::GovernmentId,
+                "PII" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Pii,
+                "SPII" => GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::Spii,
+                "TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2InfoTypeCategoryTypeCategory::TypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2InfoTypeCategoryTypeCategory {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GooglePrivacyDlpV2InfoTypeDescription {
+        #[doc = "The category of the infoType."]
+        #[serde(
+            rename = "categories",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub categories:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2InfoTypeCategory>>,
         #[doc = "Description of the infotype. Translated when language is provided in the request."]
         #[serde(
             rename = "description",
@@ -5315,6 +6240,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The default sensitivity of the infoType."]
+        #[serde(
+            rename = "sensitivityScore",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sensitivity_score:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2SensitivityScore>,
         #[doc = "Which parts of the API supports this InfoType."]
         #[serde(
             rename = "supportedBy",
@@ -5324,6 +6257,14 @@ pub mod schemas {
         pub supported_by: ::std::option::Option<
             Vec<crate::schemas::GooglePrivacyDlpV2InfoTypeDescriptionSupportedByItems>,
         >,
+        #[doc = "A list of available versions for the infotype."]
+        #[serde(
+            rename = "versions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub versions:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2VersionDescription>>,
     }
     impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2InfoTypeDescription {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5520,6 +6461,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2InfoTypeSummary {
+        #[doc = "Not populated for predicted infotypes."]
+        #[serde(
+            rename = "estimatedPrevalence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub estimated_prevalence: ::std::option::Option<i32>,
         #[doc = "The infoType."]
         #[serde(
             rename = "infoType",
@@ -5642,7 +6590,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub info_types: ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2InfoType>>,
-        #[doc = "Configuration to control the number of findings returned. This is not used for data profiling."]
+        #[doc = "Configuration to control the number of findings returned. This is not used for data profiling. When redacting sensitive data from images, finding limits don’t apply. They can cause unexpected or inconsistent results, where only some data is redacted. Don’t include finding limits in RedactImage requests. Otherwise, Cloud DLP returns an error."]
         #[serde(
             rename = "limits",
             default,
@@ -5764,13 +6712,15 @@ pub mod schemas {
     pub enum GooglePrivacyDlpV2InspectConfigMinLikelihood {
         #[doc = "Default value; same as POSSIBLE."]
         LikelihoodUnspecified,
+        #[doc = "Low chance of a false positive."]
         Likely,
-        #[doc = "Some matching elements."]
+        #[doc = "Some matching signals. The default value."]
         Possible,
+        #[doc = "High chance of a false positive."]
         Unlikely,
-        #[doc = "Many matching elements."]
+        #[doc = "Confidence level is high. Lowest chance of a false positive."]
         VeryLikely,
-        #[doc = "Few matching elements."]
+        #[doc = "Highest chance of a false positive."]
         VeryUnlikely,
     }
     impl GooglePrivacyDlpV2InspectConfigMinLikelihood {
@@ -6991,7 +7941,7 @@ pub mod schemas {
         )]
         pub cloud_storage_file_set:
             ::std::option::Option<crate::schemas::GooglePrivacyDlpV2CloudStorageFileSet>,
-        #[doc = "Location to store dictionary artifacts in Google Cloud Storage. These files will only be accessible by project owners and the DLP API. If any of these artifacts are modified, the dictionary is considered invalid and can no longer be used."]
+        #[doc = "Location to store dictionary artifacts in Cloud Storage. These files will only be accessible by project owners and the DLP API. If any of these artifacts are modified, the dictionary is considered invalid and can no longer be used."]
         #[serde(
             rename = "outputPath",
             default,
@@ -7109,13 +8059,15 @@ pub mod schemas {
     pub enum GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood {
         #[doc = "Default value; same as POSSIBLE."]
         LikelihoodUnspecified,
+        #[doc = "Low chance of a false positive."]
         Likely,
-        #[doc = "Some matching elements."]
+        #[doc = "Some matching signals. The default value."]
         Possible,
+        #[doc = "High chance of a false positive."]
         Unlikely,
-        #[doc = "Many matching elements."]
+        #[doc = "Confidence level is high. Lowest chance of a false positive."]
         VeryLikely,
-        #[doc = "Few matching elements."]
+        #[doc = "Highest chance of a false positive."]
         VeryUnlikely,
     }
     impl GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood {
@@ -7243,7 +8195,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePrivacyDlpV2ListDeidentifyTemplatesResponse {
+    impl crate::GetNextPageToken<String> for GooglePrivacyDlpV2ListDeidentifyTemplatesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7275,7 +8227,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePrivacyDlpV2ListDlpJobsResponse {
+    impl crate::GetNextPageToken<String> for GooglePrivacyDlpV2ListDlpJobsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7351,7 +8303,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePrivacyDlpV2ListInspectTemplatesResponse {
+    impl crate::GetNextPageToken<String> for GooglePrivacyDlpV2ListInspectTemplatesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7383,7 +8335,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePrivacyDlpV2ListJobTriggersResponse {
+    impl crate::GetNextPageToken<String> for GooglePrivacyDlpV2ListJobTriggersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7416,7 +8368,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GooglePrivacyDlpV2ListStoredInfoTypesResponse {
+    impl crate::GetNextPageToken<String> for GooglePrivacyDlpV2ListStoredInfoTypesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7694,6 +8646,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2OtherInfoTypeSummary {
+        #[doc = "Approximate percentage of non-null rows that contained data detected by this infotype."]
+        #[serde(
+            rename = "estimatedPrevalence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub estimated_prevalence: ::std::option::Option<i32>,
         #[doc = "The other infoType."]
         #[serde(
             rename = "infoType",
@@ -7734,7 +8693,7 @@ pub mod schemas {
         pub output_schema: ::std::option::Option<
             crate::schemas::GooglePrivacyDlpV2OutputStorageConfigOutputSchema,
         >,
-        #[doc = "Store findings in an existing table or a new table in an existing dataset. If table_id is not set a new one will be generated for you with the following format: dlp_googleapis_yyyy_mm_dd\\_\\[dlp_job_id\\]. Pacific timezone will be used for generating the date details. For Inspect, each column in an existing output table must have the same name, type, and mode of a field in the `Finding` object. For Risk, an existing output table should be the output of a previous Risk analysis job run on the same source table, with the same privacy metric and quasi-identifiers. Risk jobs that analyze the same table but compute a different privacy metric, or use different sets of quasi-identifiers, cannot store their results in the same table."]
+        #[doc = "Store findings in an existing table or a new table in an existing dataset. If table_id is not set a new one will be generated for you with the following format: dlp_googleapis_yyyy_mm_dd\\_\\[dlp_job_id\\]. Pacific time zone will be used for generating the date details. For Inspect, each column in an existing output table must have the same name, type, and mode of a field in the `Finding` object. For Risk, an existing output table should be the output of a previous Risk analysis job run on the same source table, with the same privacy metric and quasi-identifiers. Risk jobs that analyze the same table but compute a different privacy metric, or use different sets of quasi-identifiers, cannot store their results in the same table."]
         #[serde(
             rename = "table",
             default,
@@ -7762,7 +8721,7 @@ pub mod schemas {
         BigQueryColumns,
         #[doc = "Schema tailored to findings from scanning Google Datastore."]
         DatastoreColumns,
-        #[doc = "Schema tailored to findings from scanning Google Cloud Storage."]
+        #[doc = "Schema tailored to findings from scanning Cloud Storage."]
         GcsColumns,
         #[doc = "Unused."]
         OutputSchemaUnspecified,
@@ -8176,7 +9135,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub window_after: ::std::option::Option<i32>,
-        #[doc = "Number of characters before the finding to consider."]
+        #[doc = "Number of characters before the finding to consider. For tabular data, if you want to modify the likelihood of an entire column of findngs, set this to 1. For more information, see \\[Hotword example: Set the match likelihood of a table column\\] (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values)."]
         #[serde(
             rename = "windowBefore",
             default,
@@ -9188,6 +10147,51 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2RecordTransformation {
+        #[doc = "Findings container modification timestamp, if applicable."]
+        #[serde(
+            rename = "containerTimestamp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub container_timestamp: ::std::option::Option<String>,
+        #[doc = "Container version, if available (“generation” for Cloud Storage)."]
+        #[serde(
+            rename = "containerVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub container_version: ::std::option::Option<String>,
+        #[doc = "For record transformations, provide a field."]
+        #[serde(
+            rename = "fieldId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_id: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2FieldId>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2RecordTransformation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2RecordTransformation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2RecordTransformations {
@@ -9780,7 +10784,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2Schedule {
-        #[doc = "With this option a job is started a regular periodic basis. For example: every day (86400 seconds). A scheduled start time will be skipped if the previous execution has not ended when its scheduled time occurs. This value must be set to a time duration greater than or equal to 1 day and can be no longer than 60 days."]
+        #[doc = "With this option a job is started on a regular periodic basis. For example: every day (86400 seconds). A scheduled start time will be skipped if the previous execution has not ended when its scheduled time occurs. This value must be set to a time duration greater than or equal to 1 day and can be no longer than 60 days."]
         #[serde(
             rename = "recurrencePeriodDuration",
             default,
@@ -9794,6 +10798,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2Schedule {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2SelectedInfoTypes {
+        #[doc = "Required. InfoTypes to apply the transformation to. Required. Provided InfoType must be unique within the ImageTransformations message."]
+        #[serde(
+            rename = "infoTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub info_types: ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2InfoType>>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2SelectedInfoTypes {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2SelectedInfoTypes {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -9989,7 +11024,7 @@ pub mod schemas {
         )]
         pub big_query_options:
             ::std::option::Option<crate::schemas::GooglePrivacyDlpV2BigQueryOptions>,
-        #[doc = "Google Cloud Storage options."]
+        #[doc = "Cloud Storage options."]
         #[serde(
             rename = "cloudStorageOptions",
             default,
@@ -10204,7 +11239,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Errors that occurred when creating this storedInfoType version, or anomalies detected in the storedInfoType data that render it unusable. Only the five most recent errors will be displayed, with the most recent error appearing first. For example, some of the data for stored custom dictionaries is put in the user’s Google Cloud Storage bucket, and if this data is modified or deleted by the user or another system, the dictionary becomes invalid. If any errors occur, fix the problem indicated by the error message and use the UpdateStoredInfoType API method to create another version of the storedInfoType to continue using it, reusing the same `config` if it was not the source of the error."]
+        #[doc = "Errors that occurred when creating this storedInfoType version, or anomalies detected in the storedInfoType data that render it unusable. Only the five most recent errors will be displayed, with the most recent error appearing first. For example, some of the data for stored custom dictionaries is put in the user’s Cloud Storage bucket, and if this data is modified or deleted by the user or another system, the dictionary becomes invalid. If any errors occur, fix the problem indicated by the error message and use the UpdateStoredInfoType API method to create another version of the storedInfoType to continue using it, reusing the same `config` if it was not the source of the error."]
         #[serde(
             rename = "errors",
             default,
@@ -10693,7 +11728,7 @@ pub mod schemas {
         pub resource_visibility: ::std::option::Option<
             crate::schemas::GooglePrivacyDlpV2TableDataProfileResourceVisibility,
         >,
-        #[doc = "Number of rows in the table when the profile was generated."]
+        #[doc = "Number of rows in the table when the profile was generated. This will not be populated for BigLake tables."]
         #[serde(
             rename = "rowCount",
             default,
@@ -11304,7 +12339,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2TimespanConfig {
-        #[doc = "When the job is started by a JobTrigger we will automatically figure out a valid start_time to avoid scanning files that have not been modified since the last time the JobTrigger executed. This will be based on the time of the execution of the last run of the JobTrigger."]
+        #[doc = "When the job is started by a JobTrigger we will automatically figure out a valid start_time to avoid scanning files that have not been modified since the last time the JobTrigger executed. This will be based on the time of the execution of the last run of the JobTrigger or the timespan end_time used in the last run of the JobTrigger."]
         #[serde(
             rename = "enableAutoPopulationOfTimespanConfig",
             default,
@@ -11325,7 +12360,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_time: ::std::option::Option<String>,
-        #[doc = "Specification of the field containing the timestamp of scanned items. Used for data sources like Datastore and BigQuery. For BigQuery: If this value is not specified and the table was modified between the given start and end times, the entire table will be scanned. If this value is specified, then rows are filtered based on the given start and end times. Rows with a `NULL` value in the provided BigQuery column are skipped. Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`, `TIMESTAMP`, and `DATETIME`. For Datastore: If this value is specified, then entities are filtered based on the given start and end times. If an entity does not contain the provided timestamp property or contains empty or invalid values, then it is included. Valid data types of the provided timestamp property are: `TIMESTAMP`."]
+        #[doc = "Specification of the field containing the timestamp of scanned items. Used for data sources like Datastore and BigQuery. *For BigQuery* If this value is not specified and the table was modified between the given start and end times, the entire table will be scanned. If this value is specified, then rows are filtered based on the given start and end times. Rows with a `NULL` value in the provided BigQuery column are skipped. Valid data types of the provided BigQuery column are: `INTEGER`, `DATE`, `TIMESTAMP`, and `DATETIME`. If your BigQuery table is [partitioned at ingestion time](https://cloud.google.com/bigquery/docs/partitioned-tables#ingestion_time), you can use any of the following pseudo-columns as your timestamp field. When used with Cloud DLP, these pseudo-column names are case sensitive. - \\_PARTITIONTIME - \\_PARTITIONDATE - \\_PARTITION_LOAD_TIME *For Datastore* If this value is specified, then entities are filtered based on the given start and end times. If an entity does not contain the provided timestamp property or contains empty or invalid values, then it is included. Valid data types of the provided timestamp property are: `TIMESTAMP`. See the [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan) related to this operation."]
         #[serde(
             rename = "timestampField",
             default,
@@ -11339,6 +12374,376 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TimespanConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2TransformationConfig {
+        #[doc = "De-identify template. If this template is specified, it will serve as the default de-identify template. This template cannot contain `record_transformations` since it can be used for unstructured content such as free-form text files. If this template is not set, a default `ReplaceWithInfoTypeConfig` will be used to de-identify unstructured content."]
+        #[serde(
+            rename = "deidentifyTemplate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub deidentify_template: ::std::option::Option<String>,
+        #[doc = "Image redact template. If this template is specified, it will serve as the de-identify template for images. If this template is not set, all findings in the image will be redacted with a black box."]
+        #[serde(
+            rename = "imageRedactTemplate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub image_redact_template: ::std::option::Option<String>,
+        #[doc = "Structured de-identify template. If this template is specified, it will serve as the de-identify template for structured content such as delimited files and tables. If this template is not set but the `deidentify_template` is set, then `deidentify_template` will also apply to the structured content. If neither template is set, a default `ReplaceWithInfoTypeConfig` will be used to de-identify structured content."]
+        #[serde(
+            rename = "structuredDeidentifyTemplate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub structured_deidentify_template: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TransformationConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2TransformationDescription {
+        #[doc = "A human-readable string representation of the `RecordCondition` corresponding to this transformation. Set if a `RecordCondition` was used to determine whether or not to apply this transformation. Examples: * (age_field > 85) * (age_field \\<= 18) * (zip_field exists) * (zip_field == 01234) && (city_field != “Springville”) * (zip_field == 01234) && (age_field \\<= 18) && (city_field exists)"]
+        #[serde(
+            rename = "condition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub condition: ::std::option::Option<String>,
+        #[doc = "A description of the transformation. This is empty for a RECORD_SUPPRESSION, or is the output of calling toString() on the `PrimitiveTransformation` protocol buffer message for any other type of transformation."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Set if the transformation was limited to a specific `InfoType`."]
+        #[serde(
+            rename = "infoType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub info_type: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2InfoType>,
+        #[doc = "The transformation type."]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2TransformationDescriptionType>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TransformationDescription {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationDescription {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2TransformationDescriptionType {
+        #[doc = "Bucketing"]
+        Bucketing,
+        #[doc = "Character mask"]
+        CharacterMask,
+        #[doc = "Deterministic crypto"]
+        CryptoDeterministicConfig,
+        #[doc = "Crypto hash"]
+        CryptoHash,
+        #[doc = "FFX-FPE"]
+        CryptoReplaceFfxFpe,
+        #[doc = "Date shift"]
+        DateShift,
+        #[doc = "Fixed size bucketing"]
+        FixedSizeBucketing,
+        #[doc = "Record suppression"]
+        RecordSuppression,
+        #[doc = "Redact"]
+        Redact,
+        #[doc = "Redact image"]
+        RedactImage,
+        #[doc = "Replace value using a dictionary."]
+        ReplaceDictionary,
+        #[doc = "Replace value"]
+        ReplaceValue,
+        #[doc = "Replace with info type"]
+        ReplaceWithInfoType,
+        #[doc = "Time part"]
+        TimePart,
+        #[doc = "Unused"]
+        TransformationTypeUnspecified,
+    }
+    impl GooglePrivacyDlpV2TransformationDescriptionType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GooglePrivacyDlpV2TransformationDescriptionType::Bucketing => "BUCKETING",
+                GooglePrivacyDlpV2TransformationDescriptionType::CharacterMask => "CHARACTER_MASK",
+                GooglePrivacyDlpV2TransformationDescriptionType::CryptoDeterministicConfig => {
+                    "CRYPTO_DETERMINISTIC_CONFIG"
+                }
+                GooglePrivacyDlpV2TransformationDescriptionType::CryptoHash => "CRYPTO_HASH",
+                GooglePrivacyDlpV2TransformationDescriptionType::CryptoReplaceFfxFpe => {
+                    "CRYPTO_REPLACE_FFX_FPE"
+                }
+                GooglePrivacyDlpV2TransformationDescriptionType::DateShift => "DATE_SHIFT",
+                GooglePrivacyDlpV2TransformationDescriptionType::FixedSizeBucketing => {
+                    "FIXED_SIZE_BUCKETING"
+                }
+                GooglePrivacyDlpV2TransformationDescriptionType::RecordSuppression => {
+                    "RECORD_SUPPRESSION"
+                }
+                GooglePrivacyDlpV2TransformationDescriptionType::Redact => "REDACT",
+                GooglePrivacyDlpV2TransformationDescriptionType::RedactImage => "REDACT_IMAGE",
+                GooglePrivacyDlpV2TransformationDescriptionType::ReplaceDictionary => {
+                    "REPLACE_DICTIONARY"
+                }
+                GooglePrivacyDlpV2TransformationDescriptionType::ReplaceValue => "REPLACE_VALUE",
+                GooglePrivacyDlpV2TransformationDescriptionType::ReplaceWithInfoType => {
+                    "REPLACE_WITH_INFO_TYPE"
+                }
+                GooglePrivacyDlpV2TransformationDescriptionType::TimePart => "TIME_PART",
+                GooglePrivacyDlpV2TransformationDescriptionType::TransformationTypeUnspecified => {
+                    "TRANSFORMATION_TYPE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2TransformationDescriptionType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2TransformationDescriptionType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2TransformationDescriptionType, ()> {
+            Ok(match s {
+                "BUCKETING" => GooglePrivacyDlpV2TransformationDescriptionType::Bucketing,
+                "CHARACTER_MASK" => GooglePrivacyDlpV2TransformationDescriptionType::CharacterMask,
+                "CRYPTO_DETERMINISTIC_CONFIG" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::CryptoDeterministicConfig
+                }
+                "CRYPTO_HASH" => GooglePrivacyDlpV2TransformationDescriptionType::CryptoHash,
+                "CRYPTO_REPLACE_FFX_FPE" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::CryptoReplaceFfxFpe
+                }
+                "DATE_SHIFT" => GooglePrivacyDlpV2TransformationDescriptionType::DateShift,
+                "FIXED_SIZE_BUCKETING" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::FixedSizeBucketing
+                }
+                "RECORD_SUPPRESSION" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::RecordSuppression
+                }
+                "REDACT" => GooglePrivacyDlpV2TransformationDescriptionType::Redact,
+                "REDACT_IMAGE" => GooglePrivacyDlpV2TransformationDescriptionType::RedactImage,
+                "REPLACE_DICTIONARY" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::ReplaceDictionary
+                }
+                "REPLACE_VALUE" => GooglePrivacyDlpV2TransformationDescriptionType::ReplaceValue,
+                "REPLACE_WITH_INFO_TYPE" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::ReplaceWithInfoType
+                }
+                "TIME_PART" => GooglePrivacyDlpV2TransformationDescriptionType::TimePart,
+                "TRANSFORMATION_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::TransformationTypeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2TransformationDescriptionType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2TransformationDescriptionType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2TransformationDescriptionType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BUCKETING" => GooglePrivacyDlpV2TransformationDescriptionType::Bucketing,
+                "CHARACTER_MASK" => GooglePrivacyDlpV2TransformationDescriptionType::CharacterMask,
+                "CRYPTO_DETERMINISTIC_CONFIG" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::CryptoDeterministicConfig
+                }
+                "CRYPTO_HASH" => GooglePrivacyDlpV2TransformationDescriptionType::CryptoHash,
+                "CRYPTO_REPLACE_FFX_FPE" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::CryptoReplaceFfxFpe
+                }
+                "DATE_SHIFT" => GooglePrivacyDlpV2TransformationDescriptionType::DateShift,
+                "FIXED_SIZE_BUCKETING" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::FixedSizeBucketing
+                }
+                "RECORD_SUPPRESSION" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::RecordSuppression
+                }
+                "REDACT" => GooglePrivacyDlpV2TransformationDescriptionType::Redact,
+                "REDACT_IMAGE" => GooglePrivacyDlpV2TransformationDescriptionType::RedactImage,
+                "REPLACE_DICTIONARY" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::ReplaceDictionary
+                }
+                "REPLACE_VALUE" => GooglePrivacyDlpV2TransformationDescriptionType::ReplaceValue,
+                "REPLACE_WITH_INFO_TYPE" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::ReplaceWithInfoType
+                }
+                "TIME_PART" => GooglePrivacyDlpV2TransformationDescriptionType::TimePart,
+                "TRANSFORMATION_TYPE_UNSPECIFIED" => {
+                    GooglePrivacyDlpV2TransformationDescriptionType::TransformationTypeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TransformationDescriptionType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationDescriptionType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GooglePrivacyDlpV2TransformationDetails {
+        #[doc = "The top level name of the container where the transformation is located (this will be the source file name or table name)."]
+        #[serde(
+            rename = "containerName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub container_name: ::std::option::Option<String>,
+        #[doc = "The name of the job that completed the transformation."]
+        #[serde(
+            rename = "resourceName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_name: ::std::option::Option<String>,
+        #[doc = "Status of the transformation, if transformation was not successful, this will specify what caused it to fail, otherwise it will show that the transformation was successful."]
+        #[serde(
+            rename = "statusDetails",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status_details:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2TransformationResultStatus>,
+        #[doc = "Description of transformation. This would only contain more than one element if there were multiple matching transformations and which one to apply was ambiguous. Not set for states that contain no transformation, currently only state that contains no transformation is TransformationResultStateType.METADATA_UNRETRIEVABLE."]
+        #[serde(
+            rename = "transformation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transformation:
+            ::std::option::Option<Vec<crate::schemas::GooglePrivacyDlpV2TransformationDescription>>,
+        #[doc = "The precise location of the transformed content in the original container."]
+        #[serde(
+            rename = "transformationLocation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub transformation_location:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2TransformationLocation>,
+        #[doc = "The number of bytes that were transformed. If transformation was unsuccessful or did not take place because there was no content to transform, this will be zero."]
+        #[serde(
+            rename = "transformedBytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub transformed_bytes: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TransformationDetails {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationDetails {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2TransformationDetailsStorageConfig {
+        #[doc = "The BigQuery table in which to store the output. This may be an existing table or in a new table in an existing dataset. If table_id is not set a new one will be generated for you with the following format: dlp_googleapis_transformation_details_yyyy_mm_dd\\_\\[dlp_job_id\\]. Pacific time zone will be used for generating the date details."]
+        #[serde(
+            rename = "table",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub table: ::std::option::Option<crate::schemas::GooglePrivacyDlpV2BigQueryTable>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GooglePrivacyDlpV2TransformationDetailsStorageConfig
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationDetailsStorageConfig {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -11383,6 +12788,149 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GooglePrivacyDlpV2TransformationLocation {
+        #[doc = "Information about the functionality of the container where this finding occurred, if available."]
+        #[serde(
+            rename = "containerType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub container_type: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2TransformationLocationContainerType,
+        >,
+        #[doc = "For infotype transformations, link to the corresponding findings ID so that location information does not need to be duplicated. Each findings ID correlates to an entry in the findings output table, this table only gets created when users specify to save findings (add the save findings action to the request)."]
+        #[serde(
+            rename = "findingId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub finding_id: ::std::option::Option<String>,
+        #[doc = "For record transformations, provide a field and container information."]
+        #[serde(
+            rename = "recordTransformation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub record_transformation:
+            ::std::option::Option<crate::schemas::GooglePrivacyDlpV2RecordTransformation>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TransformationLocation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationLocation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2TransformationLocationContainerType {
+        TransformBody,
+        TransformMetadata,
+        TransformTable,
+        TransformUnknownContainer,
+    }
+    impl GooglePrivacyDlpV2TransformationLocationContainerType {
+        pub fn as_str(self) -> &'static str {
+            match self { GooglePrivacyDlpV2TransformationLocationContainerType :: TransformBody => "TRANSFORM_BODY" , GooglePrivacyDlpV2TransformationLocationContainerType :: TransformMetadata => "TRANSFORM_METADATA" , GooglePrivacyDlpV2TransformationLocationContainerType :: TransformTable => "TRANSFORM_TABLE" , GooglePrivacyDlpV2TransformationLocationContainerType :: TransformUnknownContainer => "TRANSFORM_UNKNOWN_CONTAINER" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2TransformationLocationContainerType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2TransformationLocationContainerType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2TransformationLocationContainerType, ()>
+        {
+            Ok(match s {
+                "TRANSFORM_BODY" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformBody
+                }
+                "TRANSFORM_METADATA" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformMetadata
+                }
+                "TRANSFORM_TABLE" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformTable
+                }
+                "TRANSFORM_UNKNOWN_CONTAINER" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformUnknownContainer
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2TransformationLocationContainerType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2TransformationLocationContainerType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GooglePrivacyDlpV2TransformationLocationContainerType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TRANSFORM_BODY" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformBody
+                }
+                "TRANSFORM_METADATA" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformMetadata
+                }
+                "TRANSFORM_TABLE" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformTable
+                }
+                "TRANSFORM_UNKNOWN_CONTAINER" => {
+                    GooglePrivacyDlpV2TransformationLocationContainerType::TransformUnknownContainer
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GooglePrivacyDlpV2TransformationLocationContainerType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GooglePrivacyDlpV2TransformationLocationContainerType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GooglePrivacyDlpV2TransformationOverview {
@@ -11409,6 +12957,104 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationOverview {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GooglePrivacyDlpV2TransformationResultStatus {
+        #[doc = "Detailed error codes and messages"]
+        #[serde(
+            rename = "details",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub details: ::std::option::Option<crate::schemas::GoogleRpcStatus>,
+        #[doc = "Transformation result status type, this will be either SUCCESS, or it will be the reason for why the transformation was not completely successful."]
+        #[serde(
+            rename = "resultStatusType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub result_status_type: ::std::option::Option<
+            crate::schemas::GooglePrivacyDlpV2TransformationResultStatusResultStatusType,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2TransformationResultStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2TransformationResultStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GooglePrivacyDlpV2TransformationResultStatusResultStatusType {
+        #[doc = "This will be set when a BigQuery transformation was successful but could not be stored back in BigQuery because the transformed row exceeds BigQuery’s max row size."]
+        BigqueryMaxRowSizeExceeded,
+        #[doc = "This will be set when a finding could not be transformed (i.e. outside user set bucket range)."]
+        InvalidTransform,
+        #[doc = "This will be set when there is a finding in the custom metadata of a file, but at the write time of the transformed file, this key / value pair is unretrievable."]
+        MetadataUnretrievable,
+        StateTypeUnspecified,
+        #[doc = "This will be set when the transformation and storing of it is successful."]
+        Success,
+    }
+    impl GooglePrivacyDlpV2TransformationResultStatusResultStatusType {
+        pub fn as_str(self) -> &'static str {
+            match self { GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: BigqueryMaxRowSizeExceeded => "BIGQUERY_MAX_ROW_SIZE_EXCEEDED" , GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: InvalidTransform => "INVALID_TRANSFORM" , GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: MetadataUnretrievable => "METADATA_UNRETRIEVABLE" , GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: StateTypeUnspecified => "STATE_TYPE_UNSPECIFIED" , GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: Success => "SUCCESS" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GooglePrivacyDlpV2TransformationResultStatusResultStatusType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GooglePrivacyDlpV2TransformationResultStatusResultStatusType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GooglePrivacyDlpV2TransformationResultStatusResultStatusType, ()>
+        {
+            Ok (match s { "BIGQUERY_MAX_ROW_SIZE_EXCEEDED" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: BigqueryMaxRowSizeExceeded , "INVALID_TRANSFORM" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: InvalidTransform , "METADATA_UNRETRIEVABLE" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: MetadataUnretrievable , "STATE_TYPE_UNSPECIFIED" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: StateTypeUnspecified , "SUCCESS" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: Success , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GooglePrivacyDlpV2TransformationResultStatusResultStatusType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GooglePrivacyDlpV2TransformationResultStatusResultStatusType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GooglePrivacyDlpV2TransformationResultStatusResultStatusType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "BIGQUERY_MAX_ROW_SIZE_EXCEEDED" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: BigqueryMaxRowSizeExceeded , "INVALID_TRANSFORM" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: InvalidTransform , "METADATA_UNRETRIEVABLE" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: MetadataUnretrievable , "STATE_TYPE_UNSPECIFIED" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: StateTypeUnspecified , "SUCCESS" => GooglePrivacyDlpV2TransformationResultStatusResultStatusType :: Success , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GooglePrivacyDlpV2TransformationResultStatusResultStatusType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GooglePrivacyDlpV2TransformationResultStatusResultStatusType
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -11937,6 +13583,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GooglePrivacyDlpV2VersionDescription {
+        #[doc = "Description of the version."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Name of the version"]
+        #[serde(
+            rename = "version",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GooglePrivacyDlpV2VersionDescription {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GooglePrivacyDlpV2VersionDescription {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GooglePrivacyDlpV2WordList {
         #[doc = "Words or phrases defining the dictionary. The dictionary must contain at least one phrase and every phrase must contain at least 2 characters that are letters or digits. \\[required\\]"]
         #[serde(
@@ -12325,7 +14009,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Returns a list of the sensitive information types that the DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more."]
+            #[doc = "Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -12559,7 +14243,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Returns a list of the sensitive information types that the DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more."]
+                #[doc = "Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -12828,7 +14512,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
+                #[doc = "Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
                 pub fn create(
                     &self,
                     request: crate::schemas::GooglePrivacyDlpV2CreateDeidentifyTemplateRequest,
@@ -13453,12 +15137,12 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
                 }
-                #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -13566,7 +15250,7 @@ pub mod resources {
                         #[serde(rename = "deidentifyTemplates")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -13602,7 +15286,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -13658,7 +15342,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13781,12 +15465,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -13966,7 +15651,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
+                #[doc = "Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
                 pub fn create(
                     &self,
                     request: crate::schemas::GooglePrivacyDlpV2CreateInspectTemplateRequest,
@@ -14591,12 +16276,12 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
                 }
-                #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -14698,7 +16383,7 @@ pub mod resources {
                         #[serde(rename = "inspectTemplates")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -14733,7 +16418,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -14789,7 +16474,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -14912,12 +16597,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -15137,7 +16823,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
+                    #[doc = "Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GooglePrivacyDlpV2CreateDeidentifyTemplateRequest,
@@ -15764,12 +17450,12 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                    #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -15879,7 +17565,7 @@ pub mod resources {
                             #[serde(rename = "deidentifyTemplates")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -15915,7 +17601,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -15971,7 +17657,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -16095,12 +17781,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -16413,7 +18100,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The resource name of the trigger that created job. - ’end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - ’end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \"2017-12-12T00:00:00+00:00\" The length of this field should be no more than 500 characters."]
+                    #[doc = "Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The name of the trigger that created the job. - ’end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - ’end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \"2017-12-12T00:00:00+00:00\" The length of this field should be no more than 500 characters."]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self
@@ -16423,7 +18110,7 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to time the job was created. - `end_time`: corresponds to time the job ended. - `name`: corresponds to job’s name. - `state`: corresponds to `state`"]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to the time the job was created. - `end_time`: corresponds to the time the job ended. - `name`: corresponds to the job’s name. - `state`: corresponds to `state`"]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
@@ -16540,7 +18227,7 @@ pub mod resources {
                             #[serde(rename = "jobs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -16575,7 +18262,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -16631,7 +18318,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -16753,12 +18440,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -16774,7 +18462,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
+                    #[doc = "Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GooglePrivacyDlpV2CreateInspectTemplateRequest,
@@ -17401,12 +19089,12 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                    #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -17516,7 +19204,7 @@ pub mod resources {
                             #[serde(rename = "inspectTemplates")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -17552,7 +19240,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -17608,7 +19296,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -17732,12 +19420,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -18635,7 +20324,7 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the JobTrigger was created. - `update_time`: corresponds to time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to JobTrigger’s name. - `display_name`: corresponds to JobTrigger’s display name. - `status`: corresponds to JobTrigger’s status."]
+                    #[doc = "Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the JobTrigger was created. - `update_time`: corresponds to the time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to the JobTrigger’s name. - `display_name`: corresponds to the JobTrigger’s display name. - `status`: corresponds to JobTrigger’s status."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
@@ -18752,7 +20441,7 @@ pub mod resources {
                             #[serde(rename = "jobTriggers")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -18787,7 +20476,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -18843,7 +20532,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -18969,12 +20658,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -19781,12 +21471,12 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to the time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                    #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -19896,7 +21586,7 @@ pub mod resources {
                             #[serde(rename = "storedInfoTypes")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -19932,7 +21622,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -19988,7 +21678,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -20112,12 +21802,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -20923,12 +22614,12 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
+                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to the time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
                 }
-                #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -21030,7 +22721,7 @@ pub mod resources {
                         #[serde(rename = "storedInfoTypes")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -21065,7 +22756,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -21121,7 +22812,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -21244,12 +22935,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -22086,7 +23778,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
+                #[doc = "Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
                 pub fn create(
                     &self,
                     request: crate::schemas::GooglePrivacyDlpV2CreateDeidentifyTemplateRequest,
@@ -22711,12 +24403,12 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
                 }
-                #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -22824,7 +24516,7 @@ pub mod resources {
                         #[serde(rename = "deidentifyTemplates")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -22860,7 +24552,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -22916,7 +24608,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -23039,12 +24731,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -23349,7 +25042,7 @@ pub mod resources {
                         parent: parent.into(),
                     }
                 }
-                #[doc = "Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be cancelled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more."]
+                #[doc = "Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be canceled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
                         reqwest: &self.reqwest,
@@ -24089,7 +25782,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The resource name of the trigger that created job. - ’end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - ’end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \"2017-12-12T00:00:00+00:00\" The length of this field should be no more than 500 characters."]
+                #[doc = "Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The name of the trigger that created the job. - ’end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - ’end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \"2017-12-12T00:00:00+00:00\" The length of this field should be no more than 500 characters."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -24099,7 +25792,7 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to time the job was created. - `end_time`: corresponds to time the job ended. - `name`: corresponds to job’s name. - `state`: corresponds to `state`"]
+                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to the time the job was created. - `end_time`: corresponds to the time the job ended. - `name`: corresponds to the job’s name. - `state`: corresponds to `state`"]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
@@ -24214,7 +25907,7 @@ pub mod resources {
                         #[serde(rename = "jobs")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -24249,7 +25942,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -24305,7 +25998,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -24426,12 +26119,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -24648,7 +26342,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
+                #[doc = "Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
                 pub fn create(
                     &self,
                     request: crate::schemas::GooglePrivacyDlpV2CreateInspectTemplateRequest,
@@ -25273,12 +26967,12 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
                 }
-                #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -25380,7 +27074,7 @@ pub mod resources {
                         #[serde(rename = "inspectTemplates")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -25415,7 +27109,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -25471,7 +27165,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -25594,12 +27288,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -26681,7 +28376,7 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the JobTrigger was created. - `update_time`: corresponds to time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to JobTrigger’s name. - `display_name`: corresponds to JobTrigger’s display name. - `status`: corresponds to JobTrigger’s status."]
+                #[doc = "Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the JobTrigger was created. - `update_time`: corresponds to the time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to the JobTrigger’s name. - `display_name`: corresponds to the JobTrigger’s display name. - `status`: corresponds to JobTrigger’s status."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
@@ -26796,7 +28491,7 @@ pub mod resources {
                         #[serde(rename = "jobTriggers")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -26831,7 +28526,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -26887,7 +28582,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -27008,12 +28703,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -27849,7 +29545,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
+                    #[doc = "Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GooglePrivacyDlpV2CreateDeidentifyTemplateRequest,
@@ -28476,12 +30172,12 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                    #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -28591,7 +30287,7 @@ pub mod resources {
                             #[serde(rename = "deidentifyTemplates")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -28627,7 +30323,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -28683,7 +30379,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -28807,12 +30503,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -29120,7 +30817,7 @@ pub mod resources {
                             parent: parent.into(),
                         }
                     }
-                    #[doc = "Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be cancelled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more."]
+                    #[doc = "Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be canceled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more."]
                     pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                         DeleteRequestBuilder {
                             reqwest: &self.reqwest,
@@ -30243,7 +31940,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The resource name of the trigger that created job. - ’end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - ’end_time` - Corresponds to time the job finished. - 'start_time` - Corresponds to time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \"2017-12-12T00:00:00+00:00\" The length of this field should be no more than 500 characters."]
+                    #[doc = "Allows filtering. Supported syntax: * Filter expressions are made up of one or more restrictions. * Restrictions can be combined by `AND` or `OR` logical operators. A sequence of restrictions implicitly uses `AND`. * A restriction has the form of `{field} {operator} {value}`. * Supported fields/values for inspect jobs: - `state` - PENDING|RUNNING|CANCELED|FINISHED|FAILED - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY - `trigger_name` - The name of the trigger that created the job. - ’end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * Supported fields for risk analysis jobs: - `state` - RUNNING|CANCELED|FINISHED|FAILED - ’end_time` - Corresponds to the time the job finished. - 'start_time` - Corresponds to the time the job finished. * The operator must be `=` or `!=`. Examples: * inspected_storage = cloud_storage AND state = done * inspected_storage = cloud_storage OR inspected_storage = bigquery * inspected_storage = cloud_storage AND (state = done OR state = canceled) * end_time > \"2017-12-12T00:00:00+00:00\" The length of this field should be no more than 500 characters."]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self
@@ -30253,7 +31950,7 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to time the job was created. - `end_time`: corresponds to time the job ended. - `name`: corresponds to job’s name. - `state`: corresponds to `state`"]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to the time the job was created. - `end_time`: corresponds to the time the job ended. - `name`: corresponds to the job’s name. - `state`: corresponds to `state`"]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
@@ -30370,7 +32067,7 @@ pub mod resources {
                             #[serde(rename = "jobs")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -30405,7 +32102,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -30461,7 +32158,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -30583,12 +32280,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -30805,7 +32503,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
+                    #[doc = "Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GooglePrivacyDlpV2CreateInspectTemplateRequest,
@@ -31432,12 +33130,12 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the template was created. - `update_time`: corresponds to time the template was last updated. - `name`: corresponds to template’s name. - `display_name`: corresponds to template’s display name."]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template’s name. - `display_name`: corresponds to the template’s display name."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                    #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -31547,7 +33245,7 @@ pub mod resources {
                             #[serde(rename = "inspectTemplates")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -31583,7 +33281,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -31639,7 +33337,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -31763,12 +33461,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -33044,7 +34743,7 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to time the JobTrigger was created. - `update_time`: corresponds to time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to JobTrigger’s name. - `display_name`: corresponds to JobTrigger’s display name. - `status`: corresponds to JobTrigger’s status."]
+                    #[doc = "Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the JobTrigger was created. - `update_time`: corresponds to the time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to the JobTrigger’s name. - `display_name`: corresponds to the JobTrigger’s display name. - `status`: corresponds to JobTrigger’s status."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
@@ -33161,7 +34860,7 @@ pub mod resources {
                             #[serde(rename = "jobTriggers")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -33196,7 +34895,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -33252,7 +34951,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -33378,12 +35077,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -34190,12 +35890,12 @@ pub mod resources {
                         self.location_id = Some(value.into());
                         self
                     }
-                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
+                    #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to the time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                    #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -34305,7 +36005,7 @@ pub mod resources {
                             #[serde(rename = "storedInfoTypes")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -34341,7 +36041,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -34397,7 +36097,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -34521,12 +36221,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -35332,12 +37033,12 @@ pub mod resources {
                     self.location_id = Some(value.into());
                     self
                 }
-                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
+                #[doc = "Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case-insensitive, default sorting order is ascending, redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to the time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type’s display name."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
                 }
-                #[doc = "Size of the page, can be limited by server. If zero server returns a page of max size 100."]
+                #[doc = "Size of the page, can be limited by the server. If zero server returns a page of max size 100."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -35439,7 +37140,7 @@ pub mod resources {
                         #[serde(rename = "storedInfoTypes")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -35474,7 +37175,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -35530,7 +37231,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -35653,12 +37354,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -36113,16 +37815,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -36142,13 +37846,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -36156,7 +37863,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -36183,7 +37890,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -7,9 +7,9 @@
   "canonicalName": "Play Integrity",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230131",
   "title": "Google Play Integrity API",
-  "description": "Play Integrity",
+  "description": "The Play Integrity API helps you check that you're interacting with your genuine app on a genuine Android device powered by Google Play services. The Play Integrity API has replaced SafetyNet Attestation and Android Device Verification.",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -207,6 +207,42 @@
     }
   },
   "schemas": {
+    "AccountActivity": {
+      "id": "AccountActivity",
+      "description": "Contains a signal helping apps differentiating between likely genuine users and likely non-genuine traffic (such as accounts being used for fraud, accounts used by automated traffic, or accounts used in device farms) based on the presence and volume of Play store activity.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "activityLevel": {
+          "description": "Required. Indicates the activity level of the account.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "ACTIVITY_LEVEL_UNSPECIFIED",
+            "UNEVALUATED",
+            "UNUSUAL",
+            "UNKNOWN",
+            "TYPICAL_BASIC",
+            "TYPICAL_STRONG"
+          ],
+          "enumDescriptions": [
+            "Activity level has not been set.",
+            "Account activity level is not evaluated because one of the prerequisite conditions is not met (e.g., device is not trusted, the user does not have Play app license)",
+            "Google Play store activity is unusual for at least one of the user accounts on the device. Google Play recommends checking that this is a real user.",
+            "Google Play does not have sufficient activity for the user account on the device. The account may be new, or it may lack activity on Google Play.",
+            "Google Play store activity is typical for the user account or accounts on the device.",
+            "Google Play store activity is typical for the user account or accounts on the device, with harder to replicate signals."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "AccountDetails": {
       "id": "AccountDetails",
       "description": "Contains the account information such as the licensing status for the user in the scope.",
@@ -215,6 +251,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "accountActivity": {
+          "description": "Details about the account activity for the user in the scope.",
+          "$ref": "AccountActivity"
+        },
         "appLicensingVerdict": {
           "description": "Required. Details about the licensing status of the user for the app in the scope.",
           "type": "string",
@@ -268,7 +308,7 @@
           "items": null
         },
         "certificateSha256Digest": {
-          "description": "Hex fingerprint of the application signing certificate. e.g. “ABCE1F....” Set iff app_recognition_verdict != UNEVALUATED.",
+          "description": "The SHA256 hash of the requesting app's signing certificates (base64 web-safe encoded). Set iff app_recognition_verdict != UNEVALUATED.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -398,7 +438,17 @@
       "enumDescriptions": [],
       "properties": {
         "nonce": {
-          "description": "Required. Nonce that was provided in the request (which is base64 web-safe no-wrap).",
+          "description": "Nonce that was provided in the request (which is base64 web-safe no-wrap).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "requestHash": {
+          "description": "Request hash that was provided in the request.",
           "type": "string",
           "format": null,
           "enum": [],

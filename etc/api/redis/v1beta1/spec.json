@@ -7,7 +7,7 @@
   "canonicalName": "Cloud Redis",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta1",
-  "revision": "20220331",
+  "revision": "20230131",
   "title": "Google Cloud Memorystore for Redis API",
   "description": "Creates and manages Redis instances on the Google Cloud Platform.",
   "ownerDomain": "google.com",
@@ -496,6 +496,24 @@
           "additionalProperties": null,
           "items": null
         },
+        "availableMaintenanceVersions": {
+          "description": "Optional. The available maintenance versions that an instance could update to.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "connectMode": {
           "description": "Optional. The network connect mode of the Redis instance. If not provided, the connect mode defaults to DIRECT_PEERING.",
           "type": "string",
@@ -526,6 +544,16 @@
         },
         "currentLocationId": {
           "description": "Output only. The current zone where the Redis primary node is located. In basic tier, this will always be the same as [location_id]. In standard tier, this can be the zone of any node in the instance.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "customerManagedKey": {
+          "description": "Optional. The KMS key reference that the customer provides when trying to create the instance.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -590,6 +618,16 @@
         "maintenanceSchedule": {
           "description": "Output only. Date and time of upcoming maintenance events which have been scheduled.",
           "$ref": "MaintenanceSchedule"
+        },
+        "maintenanceVersion": {
+          "description": "Optional. The self service update maintenance version. The version is date based such as \"20210712_00_00\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "memorySizeGb": {
           "description": "Required. Redis memory size in GiB.",
@@ -795,6 +833,30 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "suspensionReasons": {
+          "description": "Optional. reasons that causes instance in \"SUSPENDED\" state.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "SUSPENSION_REASON_UNSPECIFIED",
+              "CUSTOMER_MANAGED_KEY_ISSUE"
+            ],
+            "enumDescriptions": [
+              "Not set.",
+              "Something wrong with the CMEK key provided by customer."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
         },
         "tier": {
           "description": "Required. The service tier of the instance.",
@@ -1338,7 +1400,7 @@
             "Snapshot every 1 hour.",
             "Snapshot every 6 hours.",
             "Snapshot every 12 hours.",
-            "Snapshot every 24 horus."
+            "Snapshot every 24 hours."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1350,6 +1412,46 @@
           "format": "google-datetime",
           "enum": [],
           "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "ReconciliationOperationMetadata": {
+      "id": "ReconciliationOperationMetadata",
+      "description": "Operation metadata returned by the CLH during resource state reconciliation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deleteResource": {
+          "description": "DEPRECATED. Use exclusive_action instead.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "exclusiveAction": {
+          "description": "Excluisive action returned by the CLH.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "UNKNOWN_REPAIR_ACTION",
+            "DELETE",
+            "RETRY"
+          ],
+          "enumDescriptions": [
+            "Unknown repair action.",
+            "The resource has to be deleted. When using this bit, the CLH should fail the operation. DEPRECATED. Instead use DELETE_RESOURCE OperationSignal in SideChannel. For more information - go/ccfe-delete-on-upsert, go/ccfe-reconciliation-protocol-ug#apply_delete",
+            "This resource could not be repaired but the repair should be tried again at a later time. This can happen if there is a dependency that needs to be resolved first- e.g. if a parent resource must be repaired before a child resource."
+          ],
           "properties": {},
           "additionalProperties": null,
           "items": null

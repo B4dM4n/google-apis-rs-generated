@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [namespaces](resources/namespaces/struct.NamespacesActions.html)\n  * [authorizeddomains](resources/namespaces/authorizeddomains/struct.AuthorizeddomainsActions.html)\n    * [*list*](resources/namespaces/authorizeddomains/struct.ListRequestBuilder.html)\n  * [configurations](resources/namespaces/configurations/struct.ConfigurationsActions.html)\n    * [*get*](resources/namespaces/configurations/struct.GetRequestBuilder.html), [*list*](resources/namespaces/configurations/struct.ListRequestBuilder.html)\n  * [domainmappings](resources/namespaces/domainmappings/struct.DomainmappingsActions.html)\n    * [*create*](resources/namespaces/domainmappings/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/domainmappings/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/domainmappings/struct.GetRequestBuilder.html), [*list*](resources/namespaces/domainmappings/struct.ListRequestBuilder.html)\n  * [executions](resources/namespaces/executions/struct.ExecutionsActions.html)\n    * [*delete*](resources/namespaces/executions/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/executions/struct.GetRequestBuilder.html), [*list*](resources/namespaces/executions/struct.ListRequestBuilder.html)\n  * [jobs](resources/namespaces/jobs/struct.JobsActions.html)\n    * [*create*](resources/namespaces/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/jobs/struct.GetRequestBuilder.html), [*list*](resources/namespaces/jobs/struct.ListRequestBuilder.html), [*replaceJob*](resources/namespaces/jobs/struct.ReplaceJobRequestBuilder.html), [*run*](resources/namespaces/jobs/struct.RunRequestBuilder.html)\n  * [revisions](resources/namespaces/revisions/struct.RevisionsActions.html)\n    * [*delete*](resources/namespaces/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/revisions/struct.GetRequestBuilder.html), [*list*](resources/namespaces/revisions/struct.ListRequestBuilder.html)\n  * [routes](resources/namespaces/routes/struct.RoutesActions.html)\n    * [*get*](resources/namespaces/routes/struct.GetRequestBuilder.html), [*list*](resources/namespaces/routes/struct.ListRequestBuilder.html)\n  * [services](resources/namespaces/services/struct.ServicesActions.html)\n    * [*create*](resources/namespaces/services/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/services/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/services/struct.GetRequestBuilder.html), [*list*](resources/namespaces/services/struct.ListRequestBuilder.html), [*replaceService*](resources/namespaces/services/struct.ReplaceServiceRequestBuilder.html)\n  * [tasks](resources/namespaces/tasks/struct.TasksActions.html)\n    * [*get*](resources/namespaces/tasks/struct.GetRequestBuilder.html), [*list*](resources/namespaces/tasks/struct.ListRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [authorizeddomains](resources/projects/authorizeddomains/struct.AuthorizeddomainsActions.html)\n    * [*list*](resources/projects/authorizeddomains/struct.ListRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [authorizeddomains](resources/projects/locations/authorizeddomains/struct.AuthorizeddomainsActions.html)\n      * [*list*](resources/projects/locations/authorizeddomains/struct.ListRequestBuilder.html)\n    * [configurations](resources/projects/locations/configurations/struct.ConfigurationsActions.html)\n      * [*get*](resources/projects/locations/configurations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/configurations/struct.ListRequestBuilder.html)\n    * [domainmappings](resources/projects/locations/domainmappings/struct.DomainmappingsActions.html)\n      * [*create*](resources/projects/locations/domainmappings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/domainmappings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/domainmappings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/domainmappings/struct.ListRequestBuilder.html)\n    * [jobs](resources/projects/locations/jobs/struct.JobsActions.html)\n      * [*getIamPolicy*](resources/projects/locations/jobs/struct.GetIamPolicyRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/jobs/struct.TestIamPermissionsRequestBuilder.html)\n    * [revisions](resources/projects/locations/revisions/struct.RevisionsActions.html)\n      * [*delete*](resources/projects/locations/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/revisions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/revisions/struct.ListRequestBuilder.html)\n    * [routes](resources/projects/locations/routes/struct.RoutesActions.html)\n      * [*get*](resources/projects/locations/routes/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/routes/struct.ListRequestBuilder.html)\n    * [services](resources/projects/locations/services/struct.ServicesActions.html)\n      * [*create*](resources/projects/locations/services/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/services/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/services/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/services/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/services/struct.ListRequestBuilder.html), [*replaceService*](resources/projects/locations/services/struct.ReplaceServiceRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/services/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/services/struct.TestIamPermissionsRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [namespaces](resources/namespaces/struct.NamespacesActions.html)\n  * [authorizeddomains](resources/namespaces/authorizeddomains/struct.AuthorizeddomainsActions.html)\n    * [*list*](resources/namespaces/authorizeddomains/struct.ListRequestBuilder.html)\n  * [configurations](resources/namespaces/configurations/struct.ConfigurationsActions.html)\n    * [*get*](resources/namespaces/configurations/struct.GetRequestBuilder.html), [*list*](resources/namespaces/configurations/struct.ListRequestBuilder.html)\n  * [domainmappings](resources/namespaces/domainmappings/struct.DomainmappingsActions.html)\n    * [*create*](resources/namespaces/domainmappings/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/domainmappings/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/domainmappings/struct.GetRequestBuilder.html), [*list*](resources/namespaces/domainmappings/struct.ListRequestBuilder.html)\n  * [executions](resources/namespaces/executions/struct.ExecutionsActions.html)\n    * [*cancel*](resources/namespaces/executions/struct.CancelRequestBuilder.html), [*delete*](resources/namespaces/executions/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/executions/struct.GetRequestBuilder.html), [*list*](resources/namespaces/executions/struct.ListRequestBuilder.html)\n  * [jobs](resources/namespaces/jobs/struct.JobsActions.html)\n    * [*create*](resources/namespaces/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/jobs/struct.GetRequestBuilder.html), [*list*](resources/namespaces/jobs/struct.ListRequestBuilder.html), [*replaceJob*](resources/namespaces/jobs/struct.ReplaceJobRequestBuilder.html), [*run*](resources/namespaces/jobs/struct.RunRequestBuilder.html)\n  * [revisions](resources/namespaces/revisions/struct.RevisionsActions.html)\n    * [*delete*](resources/namespaces/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/revisions/struct.GetRequestBuilder.html), [*list*](resources/namespaces/revisions/struct.ListRequestBuilder.html)\n  * [routes](resources/namespaces/routes/struct.RoutesActions.html)\n    * [*get*](resources/namespaces/routes/struct.GetRequestBuilder.html), [*list*](resources/namespaces/routes/struct.ListRequestBuilder.html)\n  * [services](resources/namespaces/services/struct.ServicesActions.html)\n    * [*create*](resources/namespaces/services/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/services/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/services/struct.GetRequestBuilder.html), [*list*](resources/namespaces/services/struct.ListRequestBuilder.html), [*replaceService*](resources/namespaces/services/struct.ReplaceServiceRequestBuilder.html)\n  * [tasks](resources/namespaces/tasks/struct.TasksActions.html)\n    * [*get*](resources/namespaces/tasks/struct.GetRequestBuilder.html), [*list*](resources/namespaces/tasks/struct.ListRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [authorizeddomains](resources/projects/authorizeddomains/struct.AuthorizeddomainsActions.html)\n    * [*list*](resources/projects/authorizeddomains/struct.ListRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [authorizeddomains](resources/projects/locations/authorizeddomains/struct.AuthorizeddomainsActions.html)\n      * [*list*](resources/projects/locations/authorizeddomains/struct.ListRequestBuilder.html)\n    * [configurations](resources/projects/locations/configurations/struct.ConfigurationsActions.html)\n      * [*get*](resources/projects/locations/configurations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/configurations/struct.ListRequestBuilder.html)\n    * [domainmappings](resources/projects/locations/domainmappings/struct.DomainmappingsActions.html)\n      * [*create*](resources/projects/locations/domainmappings/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/domainmappings/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/domainmappings/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/domainmappings/struct.ListRequestBuilder.html)\n    * [jobs](resources/projects/locations/jobs/struct.JobsActions.html)\n      * [*getIamPolicy*](resources/projects/locations/jobs/struct.GetIamPolicyRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/jobs/struct.TestIamPermissionsRequestBuilder.html)\n    * [revisions](resources/projects/locations/revisions/struct.RevisionsActions.html)\n      * [*delete*](resources/projects/locations/revisions/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/revisions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/revisions/struct.ListRequestBuilder.html)\n    * [routes](resources/projects/locations/routes/struct.RoutesActions.html)\n      * [*get*](resources/projects/locations/routes/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/routes/struct.ListRequestBuilder.html)\n    * [services](resources/projects/locations/services/struct.ServicesActions.html)\n      * [*create*](resources/projects/locations/services/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/services/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/services/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/services/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/services/struct.ListRequestBuilder.html), [*replaceService*](resources/projects/locations/services/struct.ReplaceServiceRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/services/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/services/struct.TestIamPermissionsRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -249,7 +250,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -282,6 +283,30 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct CancelExecutionRequest {}
+    impl ::google_field_selector::FieldSelector for CancelExecutionRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CancelExecutionRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
@@ -301,7 +326,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Specify whether the ConfigMap must be defined"]
+        #[doc = "Specify whether the ConfigMap must be defined."]
         #[serde(
             rename = "optional",
             default,
@@ -332,28 +357,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConfigMapKeySelector {
-        #[doc = "The key to select."]
+        #[doc = "Required. Not supported by Cloud Run."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the “name” field instead."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "localObjectReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub local_object_reference: ::std::option::Option<crate::schemas::LocalObjectReference>,
-        #[doc = "The ConfigMap to select from."]
+        #[doc = "Required. Not supported by Cloud Run."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Specify whether the ConfigMap or its key must be defined"]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "optional",
             default,
@@ -526,14 +551,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConfigurationStatus {
-        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world."]
+        #[doc = "Conditions communicate information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world."]
         #[serde(
             rename = "conditions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV1Condition>>,
-        #[doc = "LatestCreatedRevisionName is the last revision that was created from this Configuration. It might not be ready yet, for that use LatestReadyRevisionName."]
+        #[doc = "LatestCreatedRevisionName is the last revision that was created from this Configuration. It might not be ready yet, so for the latest ready revision, use LatestReadyRevisionName."]
         #[serde(
             rename = "latestCreatedRevisionName",
             default,
@@ -578,118 +603,119 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Container {
-        #[doc = "(Optional) Arguments to the entrypoint. The docker image’s CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container’s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell"]
+        #[doc = "Arguments to the entrypoint. The docker image’s CMD is used if this is not provided. Variable references are not supported in Cloud Run."]
         #[serde(
             rename = "args",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub args: ::std::option::Option<Vec<String>>,
+        #[doc = "Entrypoint array. Not executed within a shell. The docker image’s ENTRYPOINT is used if this is not provided. Variable references are not supported in Cloud Run."]
         #[serde(
             rename = "command",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub command: ::std::option::Option<Vec<String>>,
-        #[doc = "(Optional) List of environment variables to set in the container."]
+        #[doc = "List of environment variables to set in the container. EnvVar with duplicate names are generally allowed; if referencing a secret, the name must be unique for the container. For non-secret EnvVar names, the Container will only get the last-declared one."]
         #[serde(
             rename = "env",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub env: ::std::option::Option<Vec<crate::schemas::EnvVar>>,
-        #[doc = "(Optional) List of sources to populate environment variables in the container. The keys defined within a source must be a C_IDENTIFIER. All invalid keys will be reported as an event when the container is starting. When a key exists in multiple sources, the value associated with the last source will take precedence. Values defined by an Env with a duplicate key will take precedence. Cannot be updated."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "envFrom",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub env_from: ::std::option::Option<Vec<crate::schemas::EnvFromSource>>,
-        #[doc = "Only supports containers from Google Container Registry or Artifact Registry URL of the Container image. More info: https://kubernetes.io/docs/concepts/containers/images"]
+        #[doc = "Required. Name of the container image in Dockerhub, Google Artifact Registry, or Google Container Registry. If the host is not provided, Dockerhub is assumed. More info: https://kubernetes.io/docs/concepts/containers/images"]
         #[serde(
             rename = "image",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image: ::std::option::Option<String>,
-        #[doc = "(Optional) Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. More info: https://kubernetes.io/docs/concepts/containers/images#updating-images"]
+        #[doc = "Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. More info: https://kubernetes.io/docs/concepts/containers/images#updating-images"]
         #[serde(
             rename = "imagePullPolicy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_pull_policy: ::std::option::Option<String>,
-        #[doc = "(Optional) Periodic probe of container liveness. Container will be restarted if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[doc = "Periodic probe of container liveness. Container will be restarted if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
         #[serde(
             rename = "livenessProbe",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub liveness_probe: ::std::option::Option<crate::schemas::Probe>,
-        #[doc = "(Optional) Name of the container specified as a DNS_LABEL. Currently unused in Cloud Run. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names"]
+        #[doc = "Name of the container specified as a DNS_LABEL (RFC 1123). More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-label-names"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible. If omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on."]
+        #[doc = "List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible. If omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on."]
         #[serde(
             rename = "ports",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ports: ::std::option::Option<Vec<crate::schemas::ContainerPort>>,
-        #[doc = "(Optional) Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "readinessProbe",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub readiness_probe: ::std::option::Option<crate::schemas::Probe>,
-        #[doc = "(Optional) Compute Resources required by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources"]
+        #[doc = "Compute Resources required by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources"]
         #[serde(
             rename = "resources",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resources: ::std::option::Option<crate::schemas::ResourceRequirements>,
-        #[doc = "(Optional) Security options the pod should run with. More info: https://kubernetes.io/docs/concepts/policy/security-context/ More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "securityContext",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub security_context: ::std::option::Option<crate::schemas::SecurityContext>,
-        #[doc = "(Optional) Startup probe of application within the container. All other probes are disabled if a startup probe is provided, until it succeeds. Container will not be added to service endpoints if the probe fails. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[doc = "Startup probe of application within the container. All other probes are disabled if a startup probe is provided, until it succeeds. Container will not receive traffic if the probe fails. If not provided, a default startup probe with TCP socket action is used. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
         #[serde(
             rename = "startupProbe",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub startup_probe: ::std::option::Option<crate::schemas::Probe>,
-        #[doc = "(Optional) Path at which the file to which the container’s termination message will be written is mounted into the container’s filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log."]
+        #[doc = "Path at which the file to which the container’s termination message will be written is mounted into the container’s filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log."]
         #[serde(
             rename = "terminationMessagePath",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub termination_message_path: ::std::option::Option<String>,
-        #[doc = "(Optional) Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated."]
+        #[doc = "Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated."]
         #[serde(
             rename = "terminationMessagePolicy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub termination_message_policy: ::std::option::Option<String>,
-        #[doc = "(Optional) Volume to mount into the container’s filesystem. Only supports SecretVolumeSources. Pod volumes to mount into the container’s filesystem."]
+        #[doc = "Volume to mount into the container’s filesystem. Only supports SecretVolumeSources. Pod volumes to mount into the container’s filesystem."]
         #[serde(
             rename = "volumeMounts",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub volume_mounts: ::std::option::Option<Vec<crate::schemas::VolumeMount>>,
-        #[doc = "(Optional) Container’s working directory. If not specified, the container runtime’s default will be used, which might be configured in the container image."]
+        #[doc = "Container’s working directory. If not specified, the container runtime’s default will be used, which might be configured in the container image."]
         #[serde(
             rename = "workingDir",
             default,
@@ -720,21 +746,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ContainerPort {
-        #[doc = "(Optional) Port number the container listens on. This must be a valid port number, 0 \\< x \\< 65536."]
+        #[doc = "Port number the container listens on. This must be a valid port number, 0 \\< x \\< 65536."]
         #[serde(
             rename = "containerPort",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub container_port: ::std::option::Option<i32>,
-        #[doc = "(Optional) If specified, used to specify which protocol to use. Allowed values are “http1” and “h2c”."]
+        #[doc = "If specified, used to specify which protocol to use. Allowed values are “http1” and “h2c”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Protocol for port. Must be “TCP”. Defaults to “TCP”."]
+        #[doc = "Protocol for port. Must be “TCP”. Defaults to “TCP”."]
         #[serde(
             rename = "protocol",
             default,
@@ -748,44 +774,6 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ContainerPort {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct ContainerStatus {
-        #[doc = "ImageDigest holds the resolved digest for the image specified, regardless of whether a tag or digest was originally specified in the Container object."]
-        #[serde(
-            rename = "imageDigest",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub image_digest: ::std::option::Option<String>,
-        #[doc = "The name of the container, if specified."]
-        #[serde(
-            rename = "name",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub name: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector for ContainerStatus {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for ContainerStatus {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -897,7 +885,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DomainMappingSpecCertificateMode {
-        #[doc = "Automatically provisions an HTTPS certificate via GoogleCA or LetsEncrypt."]
+        #[doc = "Automatically provisions an HTTPS certificate via GoogleCA."]
         Automatic,
         CertificateModeUnspecified,
         #[doc = "Do not provision an HTTPS certificate."]
@@ -1017,7 +1005,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_records: ::std::option::Option<Vec<crate::schemas::ResourceRecord>>,
-        #[doc = "Optional. Cloud Run fully managed: not supported Cloud Run on GKE: supported Holds the URL that will serve the traffic of the DomainMapping."]
+        #[doc = "Optional. Not supported by Cloud Run."]
         #[serde(
             rename = "url",
             default,
@@ -1048,21 +1036,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EnvFromSource {
-        #[doc = "(Optional) The ConfigMap to select from"]
+        #[doc = "The ConfigMap to select from"]
         #[serde(
             rename = "configMapRef",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config_map_ref: ::std::option::Option<crate::schemas::ConfigMapEnvSource>,
-        #[doc = "(Optional) An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER."]
+        #[doc = "An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER."]
         #[serde(
             rename = "prefix",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub prefix: ::std::option::Option<String>,
-        #[doc = "(Optional) The Secret to select from"]
+        #[doc = "The Secret to select from"]
         #[serde(
             rename = "secretRef",
             default,
@@ -1093,21 +1081,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EnvVar {
-        #[doc = "Name of the environment variable. Must be a C_IDENTIFIER."]
+        #[doc = "Required. Name of the environment variable. Must be a C_IDENTIFIER."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any route environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to “”."]
+        #[doc = "Value of the environment variable. Defaults to “”. Variable references are not supported in Cloud Run."]
         #[serde(
             rename = "value",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub value: ::std::option::Option<String>,
-        #[doc = "(Optional) Source for the environment variable’s value. Only supports secret_key_ref. Source for the environment variable’s value. Cannot be used if value is not empty."]
+        #[doc = "Source for the environment variable’s value. Only supports secret_key_ref. Cannot be used if value is not empty."]
         #[serde(
             rename = "valueFrom",
             default,
@@ -1138,14 +1126,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EnvVarSource {
-        #[doc = "(Optional) Not supported by Cloud Run Selects a key of a ConfigMap."]
+        #[doc = "Not supported by Cloud Run. Not supported in Cloud Run."]
         #[serde(
             rename = "configMapKeyRef",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config_map_key_ref: ::std::option::Option<crate::schemas::ConfigMapKeySelector>,
-        #[doc = "(Optional) Selects a key (version) of a secret in Secret Manager."]
+        #[doc = "Selects a key (version) of a secret in Secret Manager."]
         #[serde(
             rename = "secretKeyRef",
             default,
@@ -1176,7 +1164,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExecAction {
-        #[doc = "(Optional) Command is the command line to execute inside the container, the working directory for the command is root (‘/’) in the container’s filesystem. The command is simply exec’d, it is not run inside a shell, so traditional shell instructions (‘\\|’, etc) won’t work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy."]
+        #[doc = "Command is the command line to execute inside the container, the working directory for the command is root (‘/’) in the container’s filesystem. The command is simply exec’d, it is not run inside a shell, so traditional shell instructions (‘\\|’, etc) won’t work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy."]
         #[serde(
             rename = "command",
             default,
@@ -1207,35 +1195,35 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Execution {
-        #[doc = "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources +optional"]
+        #[doc = "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional"]
+        #[doc = "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
+        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"]
         #[serde(
             rename = "metadata",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ObjectMeta>,
-        #[doc = "Optional. Specification of the desired behavior of an execution. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Optional. Specification of the desired behavior of an execution. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "spec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spec: ::std::option::Option<crate::schemas::ExecutionSpec>,
-        #[doc = "Output only. Current status of an execution. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Output only. Current status of an execution. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "status",
             default,
@@ -1266,6 +1254,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExecutionReference {
+        #[doc = "Optional. Completion timestamp of the execution."]
+        #[serde(
+            rename = "completionTimestamp",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub completion_timestamp: ::std::option::Option<String>,
         #[doc = "Optional. Creation timestamp of the execution."]
         #[serde(
             rename = "creationTimestamp",
@@ -1304,21 +1299,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExecutionSpec {
-        #[doc = "Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be \\<= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed remaining, i.e. when the work left to do is less than max parallelism. +optional"]
+        #[doc = "Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be \\<= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed, i.e. when the work left to do is less than max parallelism."]
         #[serde(
             rename = "parallelism",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parallelism: ::std::option::Option<i32>,
-        #[doc = "Optional. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional"]
+        #[doc = "Optional. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution."]
         #[serde(
             rename = "taskCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub task_count: ::std::option::Option<i32>,
-        #[doc = "Optional. Describes the task(s) that will be created when executing an execution."]
+        #[doc = "Optional. The template used to create tasks for this execution."]
         #[serde(
             rename = "template",
             default,
@@ -1349,28 +1344,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExecutionStatus {
-        #[doc = "Optional. The number of tasks which reached phase Cancelled. +optional"]
+        #[doc = "Optional. The number of tasks which reached phase Cancelled."]
         #[serde(
             rename = "cancelledCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cancelled_count: ::std::option::Option<i32>,
-        #[doc = "Optional. Represents time when the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional"]
+        #[doc = "Optional. Represents the time that the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional"]
         #[serde(
             rename = "completionTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub completion_time: ::std::option::Option<String>,
-        #[doc = "Optional. The latest available observations of an execution’s current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional"]
+        #[doc = "Optional. Conditions communicate information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. Execution-specific conditions include: * `ResourcesAvailable`: `True` when underlying resources have been provisioned. * `Started`: `True` when the execution has started to execute. * `Completed`: `True` when the execution has succeeded. `False` when the execution has failed."]
         #[serde(
             rename = "conditions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV1Condition>>,
-        #[doc = "Optional. The number of tasks which reached phase Failed. +optional"]
+        #[doc = "Optional. The number of tasks which reached phase Failed."]
         #[serde(
             rename = "failedCount",
             default,
@@ -1391,28 +1386,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub observed_generation: ::std::option::Option<i32>,
-        #[doc = "Optional. The number of tasks which have retried at least once. +optional"]
+        #[doc = "Optional. The number of tasks which have retried at least once."]
         #[serde(
             rename = "retriedCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retried_count: ::std::option::Option<i32>,
-        #[doc = "Optional. The number of actively running tasks. +optional"]
+        #[doc = "Optional. The number of actively running tasks."]
         #[serde(
             rename = "runningCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub running_count: ::std::option::Option<i32>,
-        #[doc = "Optional. Represents time when the execution started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional"]
+        #[doc = "Optional. Represents the time that the execution started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC."]
         #[serde(
             rename = "startTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_time: ::std::option::Option<String>,
-        #[doc = "Optional. The number of tasks which reached phase Succeeded. +optional"]
+        #[doc = "Optional. The number of tasks which reached phase Succeeded."]
         #[serde(
             rename = "succeededCount",
             default,
@@ -1547,21 +1542,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message: ::std::option::Option<String>,
-        #[doc = "type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: * “Ready”: True when the Resource is ready."]
+        #[doc = "type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: * “Ready” or “Completed”: True when the Resource is ready."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "Optional. One-word CamelCase reason for the condition’s last transition."]
+        #[doc = "Optional. One-word CamelCase reason for the condition’s last transition. These are intended to be stable, unique values which the client may use to trigger error handling logic, whereas messages which may be changed later by the server."]
         #[serde(
             rename = "reason",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reason: ::std::option::Option<String>,
-        #[doc = "Optional. How to interpret failures of this condition, one of Error, Warning, Info"]
+        #[doc = "Optional. How to interpret this condition. One of Error, Warning, or Info. Conditions of severity Info do not contribute to resource readiness."]
         #[serde(
             rename = "severity",
             default,
@@ -1633,29 +1628,67 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Grpcaction {
+        #[doc = "Port number of the gRPC service. Number must be in the range 1 to 65535."]
+        #[serde(
+            rename = "port",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub port: ::std::option::Option<i32>,
+        #[doc = "Service is the name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC."]
+        #[serde(
+            rename = "service",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Grpcaction {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Grpcaction {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct HttpgetAction {
-        #[doc = "(Optional) Host name to connect to, defaults to the pod IP. You probably want to set “Host” in httpHeaders instead."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "host",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub host: ::std::option::Option<String>,
-        #[doc = "(Optional) Custom headers to set in the request. HTTP allows repeated headers."]
+        #[doc = "Custom headers to set in the request. HTTP allows repeated headers."]
         #[serde(
             rename = "httpHeaders",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub http_headers: ::std::option::Option<Vec<crate::schemas::Httpheader>>,
-        #[doc = "(Optional) Path to access on the HTTP server."]
+        #[doc = "Path to access on the HTTP server."]
         #[serde(
             rename = "path",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "(Optional) Scheme to use for connecting to the host. Defaults to HTTP."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "scheme",
             default,
@@ -1686,7 +1719,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Httpheader {
-        #[doc = "The header field name"]
+        #[doc = "Required. The header field name"]
         #[serde(
             rename = "name",
             default,
@@ -1724,35 +1757,35 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Job {
-        #[doc = "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources +optional"]
+        #[doc = "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional"]
+        #[doc = "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
+        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"]
         #[serde(
             rename = "metadata",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ObjectMeta>,
-        #[doc = "Optional. Specification of the desired behavior of a job. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Optional. Specification of the desired behavior of a job. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "spec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spec: ::std::option::Option<crate::schemas::JobSpec>,
-        #[doc = "Output only. Current status of a job. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Output only. Current status of a job. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "status",
             default,
@@ -1814,20 +1847,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatus {
-        #[doc = "The latest available observations of a job’s current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/"]
+        #[doc = "Conditions communicate information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. Job-specific conditions include: * `Ready`: `True` when the job is ready to be executed."]
         #[serde(
             rename = "conditions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV1Condition>>,
-        #[doc = "Status information for each of the specified containers. The status includes the resolved digest for specified images, which occurs during creation of the job."]
-        #[serde(
-            rename = "containerStatuses",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub container_statuses: ::std::option::Option<Vec<crate::schemas::ContainerStatus>>,
         #[doc = "Number of executions created for this job."]
         #[serde(
             rename = "executionCount",
@@ -1873,7 +1899,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct KeyToPath {
-        #[doc = "The Cloud Secret Manager secret version. Can be ‘latest’ for the latest value or an integer for a specific version. The key to project."]
+        #[doc = "The Cloud Secret Manager secret version. Can be ‘latest’ for the latest value, or an integer or a secret alias for a specific version. The key to project."]
         #[serde(
             rename = "key",
             default,
@@ -1943,7 +1969,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAuthorizedDomainsResponse {
+    impl crate::GetNextPageToken<String> for ListAuthorizedDomainsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2211,7 +2237,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2229,21 +2255,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListMeta {
-        #[doc = "continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response."]
+        #[doc = "Continuation token is a value emitted when the count of items is larger than the user/system limit. To retrieve the next page of items, pass the value of `continue` as the next request’s `page_token`."]
         #[serde(
             rename = "continue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#continue: ::std::option::Option<String>,
-        #[doc = "String that identifies the server’s internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency +optional"]
+        #[doc = "Opaque string that identifies the server’s internal version of this object. It can be used by clients to determine when objects have changed. If the message is passed back to the server, it must be left unmodified. https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency"]
         #[serde(
             rename = "resourceVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_version: ::std::option::Option<String>,
-        #[doc = "SelfLink is a URL representing this object. Populated by the system. Read-only. +optional"]
+        #[doc = "URL representing this object."]
         #[serde(
             rename = "selfLink",
             default,
@@ -2392,7 +2418,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListServicesResponse {
-        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
+        #[doc = "The API version for this call; returns “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2406,7 +2432,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Service>>,
-        #[doc = "The kind of this resource, in this case “ServiceList”."]
+        #[doc = "The kind of this resource; returns “ServiceList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2420,7 +2446,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ListMeta>,
-        #[doc = "Locations that could not be reached."]
+        #[doc = "For calls against the global endpoint, returns the list of Cloud locations that could not be reached. For regional calls, this field is not used."]
         #[serde(
             rename = "unreachable",
             default,
@@ -2499,7 +2525,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LocalObjectReference {
-        #[doc = "(Optional) Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names"]
+        #[doc = "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names"]
         #[serde(
             rename = "name",
             default,
@@ -2579,105 +2605,105 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ObjectMeta {
-        #[doc = "(Optional) Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations"]
+        #[doc = "Unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. In Cloud Run, annotations with ‘run.googleapis.com/’ and ‘autoscaling.knative.dev’ are restricted, and the accepted annotations will be different depending on the resource type. * `autoscaling.knative.dev/maxScale`: Revision. * `autoscaling.knative.dev/minScale`: Revision. * `run.googleapis.com/binary-authorization-breakglass`: Service, Job, * `run.googleapis.com/binary-authorization`: Service, Job, Execution. * `run.googleapis.com/client-name`: All resources. * `run.googleapis.com/cloudsql-instances`: Revision, Execution. * `run.googleapis.com/cpu-throttling`: Revision. * `run.googleapis.com/custom-audiences`: Service. * `run.googleapis.com/description`: Service. * `run.googleapis.com/encryption-key-shutdown-hours`: Revision * `run.googleapis.com/encryption-key`: Revision, Execution. * `run.googleapis.com/execution-environment`: Revision, Execution. * `run.googleapis.com/gc-traffic-tags`: Service. * `run.googleapis.com/ingress`: Service. * `run.googleapis.com/network-interfaces`: Revision, Execution. * `run.googleapis.com/post-key-revocation-action-type`: Revision. * `run.googleapis.com/secrets`: Revision, Execution. * `run.googleapis.com/secure-session-agent`: Revision. * `run.googleapis.com/sessionAffinity`: Revision. * `run.googleapis.com/startup-cpu-boost`: Revision. * `run.googleapis.com/vpc-access-connector`: Revision, Execution. * `run.googleapis.com/vpc-access-egress`: Revision, Execution. Execution. More info: https://kubernetes.io/docs/user-guide/annotations"]
         #[serde(
             rename = "annotations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotations: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "(Optional) Not supported by Cloud Run The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request."]
+        #[doc = "Not supported by Cloud Run"]
         #[serde(
             rename = "clusterName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cluster_name: ::std::option::Option<String>,
-        #[doc = "(Optional) CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC. Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata"]
+        #[doc = "UTC timestamp representing the server time when this object was created. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata"]
         #[serde(
             rename = "creationTimestamp",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creation_timestamp: ::std::option::Option<String>,
-        #[doc = "(Optional) Not supported by Cloud Run Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only."]
+        #[doc = "Not supported by Cloud Run"]
         #[serde(
             rename = "deletionGracePeriodSeconds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deletion_grace_period_seconds: ::std::option::Option<i32>,
-        #[doc = "(Optional) Not supported by Cloud Run DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not reachable by name) after the time in this field, once the finalizers list is empty. As long as the finalizers list contains items, deletion is blocked. Once the deletionTimestamp is set, this value may not be unset or be set further into the future, although it may be shortened or the resource may be deleted prior to this time. For example, a user may request that a pod is deleted in 30 seconds. The Kubelet will react by sending a graceful termination signal to the containers in the pod. After that 30 seconds, the Kubelet will send a hard termination signal (SIGKILL) to the container and after cleanup, remove the pod from the API. In the presence of network partitions, this object may still exist after this timestamp, until an administrator or automated process can determine the resource is fully terminated. If not set, graceful deletion of the object has not been requested. Populated by the system when a graceful deletion is requested. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata"]
+        #[doc = "The read-only soft deletion timestamp for this resource. In Cloud Run, users are not able to set this field. Instead, they must call the corresponding Delete API."]
         #[serde(
             rename = "deletionTimestamp",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deletion_timestamp: ::std::option::Option<String>,
-        #[doc = "(Optional) Not supported by Cloud Run Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. +patchStrategy=merge"]
+        #[doc = "Not supported by Cloud Run"]
         #[serde(
             rename = "finalizers",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub finalizers: ::std::option::Option<Vec<String>>,
-        #[doc = "(Optional) Not supported by Cloud Run GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header). Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#idempotency string generateName = 2;"]
+        #[doc = "Not supported by Cloud Run"]
         #[serde(
             rename = "generateName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub generate_name: ::std::option::Option<String>,
-        #[doc = "(Optional) A sequence number representing a specific generation of the desired state. Populated by the system. Read-only."]
+        #[doc = "A system-provided sequence number representing a specific generation of the desired state."]
         #[serde(
             rename = "generation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub generation: ::std::option::Option<i32>,
-        #[doc = "(Optional) Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and routes. More info: https://kubernetes.io/docs/user-guide/labels"]
+        #[doc = "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and routes. More info: https://kubernetes.io/docs/user-guide/labels"]
         #[serde(
             rename = "labels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Name must be unique within a namespace, within a Cloud Run region. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/user-guide/identifiers#names +optional"]
+        #[doc = "Required. The name of the resource. In Cloud Run, name is required when creating top-level resources (Service, Job), must be unique within a Cloud Run project/region, and cannot be changed once created. More info: https://kubernetes.io/docs/user-guide/identifiers#names"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Namespace defines the space within each name must be unique, within a Cloud Run region. In Cloud Run the namespace must be equal to either the project ID or project number."]
+        #[doc = "Required. Defines the space within each name must be unique within a Cloud Run region. In Cloud Run, it must be project ID or number."]
         #[serde(
             rename = "namespace",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub namespace: ::std::option::Option<String>,
-        #[doc = "(Optional) Not supported by Cloud Run List of objects that own this object. If ALL objects in the list have been deleted, this object will be garbage collected."]
+        #[doc = "Not supported by Cloud Run"]
         #[serde(
             rename = "ownerReferences",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub owner_references: ::std::option::Option<Vec<crate::schemas::OwnerReference>>,
-        #[doc = "Optional. An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server or omit the value to disable conflict-detection. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients or omitted. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"]
+        #[doc = "Opaque, system-generated value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server or omit the value to disable conflict-detection. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"]
         #[serde(
             rename = "resourceVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_version: ::std::option::Option<String>,
-        #[doc = "(Optional) SelfLink is a URL representing this object. Populated by the system. Read-only. string selfLink = 4;"]
+        #[doc = "URL representing this object."]
         #[serde(
             rename = "selfLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "(Optional) UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/user-guide/identifiers#uids"]
+        #[doc = "Unique, system-generated identifier for this resource. More info: https://kubernetes.io/docs/user-guide/identifiers#uids"]
         #[serde(
             rename = "uid",
             default,
@@ -2708,42 +2734,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OwnerReference {
-        #[doc = "API version of the referent."]
+        #[doc = "This is not supported or used by Cloud Run."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "If true, AND if the owner has the “foregroundDeletion” finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. Defaults to false. To set this field, a user needs “delete” permission of the owner, otherwise 422 (Unprocessable Entity) will be returned. +optional"]
+        #[doc = "This is not supported or used by Cloud Run."]
         #[serde(
             rename = "blockOwnerDeletion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub block_owner_deletion: ::std::option::Option<bool>,
-        #[doc = "If true, this reference points to the managing controller. +optional"]
+        #[doc = "This is not supported or used by Cloud Run."]
         #[serde(
             rename = "controller",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub controller: ::std::option::Option<bool>,
-        #[doc = "Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"]
+        #[doc = "This is not supported or used by Cloud Run."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Name of the referent. More info: https://kubernetes.io/docs/user-guide/identifiers#names"]
+        #[doc = "This is not supported or used by Cloud Run."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "UID of the referent. More info: https://kubernetes.io/docs/user-guide/identifiers#uids"]
+        #[doc = "This is not supported or used by Cloud Run."]
         #[serde(
             rename = "uid",
             default,
@@ -2826,56 +2852,63 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Probe {
-        #[doc = "(Optional) One and only one of the following should be specified. Exec specifies the action to take. A field inlined from the Handler message."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "exec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub exec: ::std::option::Option<crate::schemas::ExecAction>,
-        #[doc = "(Optional) Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1."]
+        #[doc = "Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1."]
         #[serde(
             rename = "failureThreshold",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub failure_threshold: ::std::option::Option<i32>,
-        #[doc = "(Optional) HTTPGet specifies the http request to perform. A field inlined from the Handler message."]
+        #[doc = "GRPCAction specifies an action involving a GRPC port."]
+        #[serde(
+            rename = "grpc",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub grpc: ::std::option::Option<crate::schemas::Grpcaction>,
+        #[doc = "HTTPGet specifies the http request to perform."]
         #[serde(
             rename = "httpGet",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub http_get: ::std::option::Option<crate::schemas::HttpgetAction>,
-        #[doc = "(Optional) Number of seconds after the container has started before liveness probes are initiated. Defaults to 0 seconds. Minimum value is 0. Max value for liveness probe is 3600. Max value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[doc = "Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
         #[serde(
             rename = "initialDelaySeconds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub initial_delay_seconds: ::std::option::Option<i32>,
-        #[doc = "(Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Max value for liveness probe is 3600. Max value for startup probe is 240. Must be greater or equal than timeout_seconds."]
+        #[doc = "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds."]
         #[serde(
             rename = "periodSeconds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub period_seconds: ::std::option::Option<i32>,
-        #[doc = "(Optional) Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness and startup Probes."]
+        #[doc = "Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set."]
         #[serde(
             rename = "successThreshold",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub success_threshold: ::std::option::Option<i32>,
-        #[doc = "(Optional) TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported A field inlined from the Handler message."]
+        #[doc = "TCPSocket specifies an action involving a TCP port."]
         #[serde(
             rename = "tcpSocket",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tcp_socket: ::std::option::Option<crate::schemas::TcpsocketAction>,
-        #[doc = "(Optional) Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
+        #[doc = "Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes"]
         #[serde(
             rename = "timeoutSeconds",
             default,
@@ -3032,14 +3065,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceRequirements {
-        #[doc = "(Optional) Only memory and CPU are supported. Limits describes the maximum amount of compute resources allowed. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
+        #[doc = "Only memory and CPU are supported. Limits describes the maximum amount of compute resources allowed. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
         #[serde(
             rename = "limits",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub limits: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "(Optional) Only memory and CPU are supported. Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
+        #[doc = "Only memory and CPU are supported. Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
         #[serde(
             rename = "requests",
             default,
@@ -3129,28 +3162,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RevisionSpec {
-        #[doc = "ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. Cloud Run fully managed: supported, defaults to 80 Cloud Run for Anthos: supported, defaults to 0, which means concurrency to the application is not limited, and the system decides the target concurrency for the autoscaler."]
+        #[doc = "ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. If not specified, defaults to 80."]
         #[serde(
             rename = "containerConcurrency",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub container_concurrency: ::std::option::Option<i32>,
-        #[doc = "Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. In Cloud Run, only a single container may be provided. The runtime contract is documented here: https://github.com/knative/serving/blob/main/docs/runtime-contract.md"]
+        #[doc = "Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. In Cloud Run, only a single container may be provided. The runtime contract is documented here: https://github.com/knative/specs/blob/main/specs/serving/runtime-contract.md"]
         #[serde(
             rename = "containers",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub containers: ::std::option::Option<Vec<crate::schemas::Container>>,
-        #[doc = "Indicates whether information about services should be injected into pod’s environment variables, matching the syntax of Docker links. Cloud Run fully managed: Not supported. Cloud Run for Anthos: supported, defaults to true."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "enableServiceLinks",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_service_links: ::std::option::Option<bool>,
-        #[doc = "ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod Cloud Run fully managed: Not supported. Cloud Run for Anthos: supported."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "imagePullSecrets",
             default,
@@ -3164,7 +3197,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_account_name: ::std::option::Option<String>,
-        #[doc = "TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Cloud Run fully managed: defaults to 300 seconds (5 minutes). Maximum allowed value is 3600 seconds (1 hour). Cloud Run for Anthos: defaults to 300 seconds (5 minutes). Maximum allowed value is configurable by the cluster operator."]
+        #[doc = "TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Cloud Run: defaults to 300 seconds (5 minutes). Maximum allowed value is 3600 seconds (1 hour)."]
         #[serde(
             rename = "timeoutSeconds",
             default,
@@ -3201,7 +3234,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RevisionStatus {
-        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. As a Revision is being prepared, it will incrementally update conditions. Revision-specific conditions include: * “ResourcesAvailable”: True when underlying resources have been provisioned. * “ContainerHealthy”: True when the Revision readiness check completes. * “Active”: True when the Revision may receive traffic."]
+        #[doc = "Conditions communicate information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. As a Revision is being prepared, it will incrementally update conditions. Revision-specific conditions include: * `ResourcesAvailable`: `True` when underlying resources have been provisioned. * `ContainerHealthy`: `True` when the Revision readiness check completes. * `Active`: `True` when the Revision may receive traffic."]
         #[serde(
             rename = "conditions",
             default,
@@ -3402,14 +3435,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV1Condition>>,
-        #[doc = "ObservedGeneration is the ‘Generation’ of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition’s status is True or False. Note that providing a trafficTarget that only has a configurationName will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new “latest ready” revisions from the Configuration are processed without an update to the Route’s spec."]
+        #[doc = "ObservedGeneration is the ‘Generation’ of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition’s status is True or False. Note that providing a TrafficTarget that has latest_revision=True will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new “latest ready” revisions from the Configuration are processed without an update to the Route’s spec."]
         #[serde(
             rename = "observedGeneration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub observed_generation: ::std::option::Option<i32>,
-        #[doc = "Traffic holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that we last observed."]
+        #[doc = "Traffic holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that was last observed."]
         #[serde(
             rename = "traffic",
             default,
@@ -3485,7 +3518,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Specify whether the Secret must be defined"]
+        #[doc = "Specify whether the Secret must be defined"]
         #[serde(
             rename = "optional",
             default,
@@ -3516,7 +3549,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecretKeySelector {
-        #[doc = "A Cloud Secret Manager secret version. Must be ‘latest’ for the latest version or an integer for a specific version. The key of the secret to select from. Must be a valid secret key."]
+        #[doc = "Required. A Cloud Secret Manager secret version. Must be ‘latest’ for the latest version, an integer for a specific version, or a version alias. The key of the secret to select from. Must be a valid secret key."]
         #[serde(
             rename = "key",
             default,
@@ -3537,7 +3570,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Specify whether the Secret or its key must be defined"]
+        #[doc = "Specify whether the Secret or its key must be defined."]
         #[serde(
             rename = "optional",
             default,
@@ -3568,21 +3601,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecretVolumeSource {
-        #[doc = "Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set."]
+        #[doc = "Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set."]
         #[serde(
             rename = "defaultMode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_mode: ::std::option::Option<i32>,
-        #[doc = "(Optional) If unspecified, the volume will expose a file whose name is the secret_name. If specified, the key will be used as the version to fetch from Cloud Secret Manager and the path will be the name of the file exposed in the volume. When items are defined, they must specify a key and a path. If unspecified, each key-value pair in the Data field of the referenced Secret will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified that is not present in the Secret, the volume setup will error unless it is marked optional."]
+        #[doc = "A list of secret versions to mount in the volume. If no items are specified, the volume will expose a file with the same name as the secret name. The contents of the file will be the data in the latest version of the secret. If items are specified, the key will be used as the version to fetch from Cloud Secret Manager and the path will be the name of the file exposed in the volume. When items are defined, they must specify both a key and a path."]
         #[serde(
             rename = "items",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::KeyToPath>>,
-        #[doc = "(Optional) Specify whether the Secret or its keys must be defined."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "optional",
             default,
@@ -3620,7 +3653,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecurityContext {
-        #[doc = "(Optional) The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence."]
+        #[doc = "The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence."]
         #[serde(
             rename = "runAsUser",
             default,
@@ -3651,35 +3684,35 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Service {
-        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
+        #[doc = "The API version for this call. It must be “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "The kind of resource, in this case “Service”."]
+        #[doc = "The kind of resource. It must be “Service”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Metadata associated with this Service, including name, namespace, labels, and annotations. Cloud Run (fully managed) uses the following annotation keys to configure features on a Service: * `run.googleapis.com/ingress` sets the ingress settings for the Service. See [the ingress settings documentation](/run/docs/securing/ingress) for details on configuring ingress settings. * `run.googleapis.com/ingress-status` is output-only and contains the currently active ingress settings for the Service. `run.googleapis.com/ingress-status` may differ from `run.googleapis.com/ingress` while the system is processing a change to `run.googleapis.com/ingress` or if the system failed to process a change to `run.googleapis.com/ingress`. When the system has processed all changes successfully `run.googleapis.com/ingress-status` and `run.googleapis.com/ingress` are equal."]
+        #[doc = "Metadata associated with this Service, including name, namespace, labels, and annotations. In Cloud Run, annotations with ‘run.googleapis.com/’ and ‘autoscaling.knative.dev’ are restricted, and the accepted annotations will be different depending on the resource type. The following Cloud Run-specific annotations are accepted in Service.metadata.annotations. * `run.googleapis.com/binary-authorization-breakglass` * `run.googleapis.com/binary-authorization` * `run.googleapis.com/client-name` * `run.googleapis.com/custom-audiences` * `run.googleapis.com/description` * `run.googleapis.com/gc-traffic-tags` * `run.googleapis.com/ingress` * `run.googleapis.com/ingress` sets the ingress settings for the Service. See [the ingress settings documentation](/run/docs/securing/ingress) for details on configuring ingress settings. * `run.googleapis.com/ingress-status` is output-only and contains the currently active ingress settings for the Service. `run.googleapis.com/ingress-status` may differ from `run.googleapis.com/ingress` while the system is processing a change to `run.googleapis.com/ingress` or if the system failed to process a change to `run.googleapis.com/ingress`. When the system has processed all changes successfully `run.googleapis.com/ingress-status` and `run.googleapis.com/ingress` are equal."]
         #[serde(
             rename = "metadata",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ObjectMeta>,
-        #[doc = "Spec holds the desired state of the Service (from the client)."]
+        #[doc = "Holds the desired state of the Service (from the client)."]
         #[serde(
             rename = "spec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spec: ::std::option::Option<crate::schemas::ServiceSpec>,
-        #[doc = "Status communicates the observed state of the Service (from the controller)."]
+        #[doc = "Communicates the system-controlled state of the Service."]
         #[serde(
             rename = "status",
             default,
@@ -3710,14 +3743,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ServiceSpec {
-        #[doc = "Template holds the latest specification for the Revision to be stamped out."]
+        #[doc = "Holds the latest specification for the Revision to be stamped out."]
         #[serde(
             rename = "template",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub template: ::std::option::Option<crate::schemas::RevisionTemplate>,
-        #[doc = "Traffic specifies how to distribute traffic over a collection of Knative Revisions and Configurations."]
+        #[doc = "Specifies how to distribute traffic over a collection of Knative Revisions and Configurations to the Service’s main URL."]
         #[serde(
             rename = "traffic",
             default,
@@ -3748,49 +3781,49 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ServiceStatus {
-        #[doc = "From RouteStatus. Similar to url, information on where the service is available on HTTP."]
+        #[doc = "Similar to url, information on where the service is available on HTTP."]
         #[serde(
             rename = "address",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub address: ::std::option::Option<crate::schemas::Addressable>,
-        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. Service-specific conditions include: * “ConfigurationsReady”: true when the underlying Configuration is ready. * “RoutesReady”: true when the underlying Route is ready. * “Ready”: true when both the underlying Route and Configuration are ready."]
+        #[doc = "Conditions communicate information about ongoing/complete reconciliation processes that bring the `spec` inline with the observed state of the world. Service-specific conditions include: * `ConfigurationsReady`: `True` when the underlying Configuration is ready. * `RoutesReady`: `True` when the underlying Route is ready. * `Ready`: `True` when all underlying resources are ready."]
         #[serde(
             rename = "conditions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV1Condition>>,
-        #[doc = "From ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created from this Service’s Configuration. It might not be ready yet, for that use LatestReadyRevisionName."]
+        #[doc = "Name of the last revision that was created from this Service’s Configuration. It might not be ready yet, for that use LatestReadyRevisionName."]
         #[serde(
             rename = "latestCreatedRevisionName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_created_revision_name: ::std::option::Option<String>,
-        #[doc = "From ConfigurationStatus. LatestReadyRevisionName holds the name of the latest Revision stamped out from this Service’s Configuration that has had its “Ready” condition become “True”."]
+        #[doc = "Name of the latest Revision from this Service’s Configuration that has had its `Ready` condition become `True`."]
         #[serde(
             rename = "latestReadyRevisionName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_ready_revision_name: ::std::option::Option<String>,
-        #[doc = "ObservedGeneration is the ‘Generation’ of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition’s status is True or False."]
+        #[doc = "Returns the generation last fully processed by the system. This will only match metadata.generation when reconciliation is complete. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition’s status is True or False."]
         #[serde(
             rename = "observedGeneration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub observed_generation: ::std::option::Option<i32>,
-        #[doc = "From RouteStatus. Traffic holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that we last observed."]
+        #[doc = "Holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that we last observed."]
         #[serde(
             rename = "traffic",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub traffic: ::std::option::Option<Vec<crate::schemas::TrafficTarget>>,
-        #[doc = "From RouteStatus. URL holds the url that will distribute traffic over the provided traffic targets. It generally has the form https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app"]
+        #[doc = "URL that will distribute traffic over the provided traffic targets. It generally has the form https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app"]
         #[serde(
             rename = "url",
             default,
@@ -3859,42 +3892,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Status {
-        #[doc = "Suggested HTTP return code for this status, 0 if not set. +optional"]
+        #[doc = "Suggested HTTP return code for this status, 0 if not set."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<i32>,
-        #[doc = "Extended data associated with the reason. Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type. +optional"]
+        #[doc = "Extended data associated with the reason. Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type."]
         #[serde(
             rename = "details",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub details: ::std::option::Option<crate::schemas::StatusDetails>,
-        #[doc = "A human-readable description of the status of this operation. +optional"]
+        #[doc = "A human-readable description of the status of this operation."]
         #[serde(
             rename = "message",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message: ::std::option::Option<String>,
-        #[doc = "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional"]
+        #[doc = "Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"]
         #[serde(
             rename = "metadata",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ListMeta>,
-        #[doc = "A machine-readable description of why this operation is in the “Failure” status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it. +optional"]
+        #[doc = "A machine-readable description of why this operation is in the “Failure” status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."]
         #[serde(
             rename = "reason",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reason: ::std::option::Option<String>,
-        #[doc = "Status of the operation. One of: “Success” or “Failure”. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Status of the operation. One of: “Success” or “Failure”. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "status",
             default,
@@ -3925,21 +3958,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StatusCause {
-        #[doc = "The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed. Fields may appear more than once in an array of causes due to fields having multiple errors. Optional. Examples: “name” - the field “name” on the current resource “items\\[0\\].name” - the field “name” on the first array entry in “items” +optional"]
+        #[doc = "The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed. Fields may appear more than once in an array of causes due to fields having multiple errors. Examples: “name” - the field “name” on the current resource “items\\[0\\].name” - the field “name” on the first array entry in “items”"]
         #[serde(
             rename = "field",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field: ::std::option::Option<String>,
-        #[doc = "A human-readable description of the cause of the error. This field may be presented as-is to a reader. +optional"]
+        #[doc = "A human-readable description of the cause of the error. This field may be presented as-is to a reader."]
         #[serde(
             rename = "message",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message: ::std::option::Option<String>,
-        #[doc = "A machine-readable description of the cause of the error. If this value is empty there is no information available. +optional"]
+        #[doc = "A machine-readable description of the cause of the error. If this value is empty there is no information available."]
         #[serde(
             rename = "reason",
             default,
@@ -3970,42 +4003,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StatusDetails {
-        #[doc = "The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes. +optional"]
+        #[doc = "The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes."]
         #[serde(
             rename = "causes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub causes: ::std::option::Option<Vec<crate::schemas::StatusCause>>,
-        #[doc = "The group attribute of the resource associated with the status StatusReason. +optional"]
+        #[doc = "The group attribute of the resource associated with the status StatusReason."]
         #[serde(
             rename = "group",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub group: ::std::option::Option<String>,
-        #[doc = "The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional"]
+        #[doc = "The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described). +optional"]
+        #[doc = "The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described)."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action. +optional"]
+        #[doc = "If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action."]
         #[serde(
             rename = "retryAfterSeconds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retry_after_seconds: ::std::option::Option<i32>,
-        #[doc = "UID of the resource. (when there is a single resource which can be described). More info: https://kubernetes.io/docs/user-guide/identifiers#uids +optional"]
+        #[doc = "UID of the resource. (when there is a single resource which can be described). More info: https://kubernetes.io/docs/user-guide/identifiers#uids"]
         #[serde(
             rename = "uid",
             default,
@@ -4025,35 +4058,35 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Task {
-        #[doc = "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources +optional"]
+        #[doc = "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources"]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional"]
+        #[doc = "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
+        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata"]
         #[serde(
             rename = "metadata",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ObjectMeta>,
-        #[doc = "Optional. Specification of the desired behavior of an execution. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Optional. Specification of the desired behavior of a task. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "spec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spec: ::std::option::Option<crate::schemas::TaskSpec>,
-        #[doc = "Output only. Current status of an execution. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Output only. Current status of a task. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "status",
             default,
@@ -4125,14 +4158,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_retries: ::std::option::Option<i32>,
-        #[doc = "Optional. Email address of the IAM service account associated with the task of a job execution. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project’s default service account. +optional"]
+        #[doc = "Optional. Email address of the IAM service account associated with the task of a job execution. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project’s default service account."]
         #[serde(
             rename = "serviceAccountName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_account_name: ::std::option::Option<String>,
-        #[doc = "Optional. Optional duration in seconds the task may be active before the system will actively try to mark it failed and kill associated containers. This applies per attempt of a task, meaning each retry can run for the full timeout. +optional"]
+        #[doc = "Optional. Duration in seconds the task may be active before the system will actively try to mark it failed and kill associated containers. This applies per attempt of a task, meaning each retry can run for the full timeout."]
         #[serde(
             rename = "timeoutSeconds",
             default,
@@ -4140,7 +4173,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub timeout_seconds: ::std::option::Option<i64>,
-        #[doc = "Optional. List of volumes that can be mounted by containers belonging to the task. More info: https://kubernetes.io/docs/concepts/storage/volumes +optional"]
+        #[doc = "Optional. List of volumes that can be mounted by containers belonging to the task. More info: https://kubernetes.io/docs/concepts/storage/volumes"]
         #[serde(
             rename = "volumes",
             default,
@@ -4160,14 +4193,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct TaskStatus {
-        #[doc = "Optional. Represents time when the task was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional"]
+        #[doc = "Optional. Represents time when the task was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC."]
         #[serde(
             rename = "completionTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub completion_time: ::std::option::Option<String>,
-        #[doc = "Optional. The latest available observations of a task’s current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional"]
+        #[doc = "Optional. Conditions communicate information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. Task-specific conditions include: * `Started`: `True` when the task has started to execute. * `Completed`: `True` when the task has succeeded. `False` when the task has failed."]
         #[serde(
             rename = "conditions",
             default,
@@ -4181,7 +4214,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "Optional. Result of the last attempt of this task. +optional"]
+        #[doc = "Optional. Result of the last attempt of this task."]
         #[serde(
             rename = "lastAttemptResult",
             default,
@@ -4195,21 +4228,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub log_uri: ::std::option::Option<String>,
-        #[doc = "Optional. The ‘generation’ of the execution that was last processed by the controller."]
+        #[doc = "Optional. The ‘generation’ of the task that was last processed by the controller."]
         #[serde(
             rename = "observedGeneration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub observed_generation: ::std::option::Option<i32>,
-        #[doc = "Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit. +optional"]
+        #[doc = "Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit."]
         #[serde(
             rename = "retried",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retried: ::std::option::Option<i32>,
-        #[doc = "Optional. Represents time when the task started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional"]
+        #[doc = "Optional. Represents time when the task started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC."]
         #[serde(
             rename = "startTime",
             default,
@@ -4240,7 +4273,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TaskTemplateSpec {
-        #[doc = "Optional. Specification of the desired behavior of the task. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Optional. Specification of the desired behavior of the task. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status"]
         #[serde(
             rename = "spec",
             default,
@@ -4271,14 +4304,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TcpsocketAction {
-        #[doc = "(Optional) Optional: Host name to connect to, defaults to the pod IP."]
+        #[doc = "Not supported by Cloud Run."]
         #[serde(
             rename = "host",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub host: ::std::option::Option<String>,
-        #[doc = "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto’s inability to properly support the IntOrString golang type."]
+        #[doc = "Port number to access on the container. Number must be in the range 1 to 65535."]
         #[serde(
             rename = "port",
             default,
@@ -4371,14 +4404,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TrafficTarget {
-        #[doc = "ConfigurationName of a configuration to whose latest revision we will send this portion of traffic. When the “status.latestReadyRevisionName” of the referenced configuration changes, we will automatically migrate traffic from the prior “latest ready” revision to the new one. This field is never set in Route’s status, only its spec. This is mutually exclusive with RevisionName. Cloud Run currently supports a single ConfigurationName."]
+        #[doc = "\\[Deprecated\\] Not supported in Cloud Run. It must be empty."]
         #[serde(
             rename = "configurationName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub configuration_name: ::std::option::Option<String>,
-        #[doc = "Optional. LatestRevision may be provided to indicate that the latest ready Revision of the Configuration should be used for this traffic target. When provided LatestRevision must be true if RevisionName is empty; it must be false when RevisionName is non-empty."]
+        #[doc = "Uses the “status.latestReadyRevisionName” of the Service to determine the traffic target. When it changes, traffic will automatically migrate from the prior “latest ready” revision to the new one. This field must be false if RevisionName is set. This field defaults to true otherwise. If the field is set to true on Status, this means that the Revision was resolved from the Service’s latest ready revision."]
         #[serde(
             rename = "latestRevision",
             default,
@@ -4392,14 +4425,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub percent: ::std::option::Option<i32>,
-        #[doc = "RevisionName of a specific revision to which to send this portion of traffic. This is mutually exclusive with ConfigurationName."]
+        #[doc = "Points this traffic target to a specific Revision. This field is mutually exclusive with latest_revision."]
         #[serde(
             rename = "revisionName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub revision_name: ::std::option::Option<String>,
-        #[doc = "Optional. Tag is used to expose a dedicated url for referencing this target exclusively."]
+        #[doc = "Tag is used to expose a dedicated url for referencing this target exclusively."]
         #[serde(
             rename = "tag",
             default,
@@ -4437,6 +4470,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Volume {
+        #[doc = "Not supported in Cloud Run."]
         #[serde(
             rename = "configMap",
             default,
@@ -4450,6 +4484,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The secret’s value will be presented as the content of a file whose name is defined in the item path. If no items are defined, the name of the file is the secretName."]
         #[serde(
             rename = "secret",
             default,
@@ -4480,28 +4515,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VolumeMount {
-        #[doc = "Path within the container at which the volume should be mounted. Must not contain ‘:’."]
+        #[doc = "Required. Path within the container at which the volume should be mounted. Must not contain ‘:’."]
         #[serde(
             rename = "mountPath",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mount_path: ::std::option::Option<String>,
-        #[doc = "The name of the volume. There must be a corresponding Volume with the same name."]
+        #[doc = "Required. The name of the volume. There must be a corresponding Volume with the same name."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Only true is accepted. Defaults to true."]
+        #[doc = "Only true is accepted for Secret Volumes. Defaults to true for Secrets Volumes."]
         #[serde(
             rename = "readOnly",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub read_only: ::std::option::Option<bool>,
-        #[doc = "(Optional) Path within the volume from which the container’s volume should be mounted. Defaults to “” (volume’s root)."]
+        #[doc = "Path within the volume from which the container’s volume should be mounted. Defaults to “” (volume’s root)."]
         #[serde(
             rename = "subPath",
             default,
@@ -4946,7 +4981,7 @@ pub mod resources {
                         #[serde(rename = "domains")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -4981,7 +5016,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -5031,7 +5066,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5148,12 +5183,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -5401,12 +5437,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
+                #[doc = "Not supported by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
                 }
-                #[doc = "Not currently used by Cloud Run."]
+                #[doc = "Not supported by Cloud Run."]
                 pub fn include_uninitialized(mut self, value: bool) -> Self {
                     self.include_uninitialized = Some(value);
                     self
@@ -5416,7 +5452,7 @@ pub mod resources {
                     self.label_selector = Some(value.into());
                     self
                 }
-                #[doc = "Optional. The maximum number of records that should be returned."]
+                #[doc = "Optional. The maximum number of the records that should be returned."]
                 pub fn limit(mut self, value: i32) -> Self {
                     self.limit = Some(value);
                     self
@@ -5426,12 +5462,12 @@ pub mod resources {
                     self.r#continue = Some(value.into());
                     self
                 }
-                #[doc = "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run."]
+                #[doc = "Not supported by Cloud Run."]
                 pub fn resource_version(mut self, value: impl Into<String>) -> Self {
                     self.resource_version = Some(value.into());
                     self
                 }
-                #[doc = "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run."]
+                #[doc = "Not supported by Cloud Run."]
                 pub fn watch(mut self, value: bool) -> Self {
                     self.watch = Some(value);
                     self
@@ -5665,7 +5701,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "List domain mappings."]
+                #[doc = "List all domain mappings."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -5900,7 +5936,7 @@ pub mod resources {
                     self.kind = Some(value.into());
                     self
                 }
-                #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
+                #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/architecture/garbage-collection/ for more information."]
                 pub fn propagation_policy(mut self, value: impl Into<String>) -> Self {
                     self.propagation_policy = Some(value.into());
                     self
@@ -6433,6 +6469,30 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Cancel an execution."]
+                pub fn cancel(
+                    &self,
+                    request: crate::schemas::CancelExecutionRequest,
+                    name: impl Into<String>,
+                ) -> CancelRequestBuilder {
+                    CancelRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
                 #[doc = "Delete an execution."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
@@ -6501,6 +6561,169 @@ pub mod resources {
                     }
                 }
             }
+            #[doc = "Created via [ExecutionsActions::cancel()](struct.ExecutionsActions.html#method.cancel)"]
+            #[derive(Debug, Clone)]
+            pub struct CancelRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::CancelExecutionRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CancelRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::Execution, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::Execution, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://run.googleapis.com/".to_owned();
+                    output.push_str("apis/run.googleapis.com/v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":cancel");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
             #[doc = "Created via [ExecutionsActions::delete()](struct.ExecutionsActions.html#method.delete)"]
             #[derive(Debug, Clone)]
             pub struct DeleteRequestBuilder<'a> {
@@ -6533,7 +6756,7 @@ pub mod resources {
                     self.kind = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
+                #[doc = "Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see https://kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
                 pub fn propagation_policy(mut self, value: impl Into<String>) -> Self {
                     self.propagation_policy = Some(value.into());
                     self
@@ -6868,12 +7091,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn include_uninitialized(mut self, value: bool) -> Self {
                     self.include_uninitialized = Some(value);
                     self
@@ -6883,7 +7106,7 @@ pub mod resources {
                     self.label_selector = Some(value.into());
                     self
                 }
-                #[doc = "Optional. The maximum number of records that should be returned."]
+                #[doc = "Optional. The maximum number of the records that should be returned."]
                 pub fn limit(mut self, value: i32) -> Self {
                     self.limit = Some(value);
                     self
@@ -6893,12 +7116,12 @@ pub mod resources {
                     self.r#continue = Some(value.into());
                     self
                 }
-                #[doc = "Optional. The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn resource_version(mut self, value: impl Into<String>) -> Self {
                     self.resource_version = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn watch(mut self, value: bool) -> Self {
                     self.watch = Some(value);
                     self
@@ -7733,12 +7956,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn include_uninitialized(mut self, value: bool) -> Self {
                     self.include_uninitialized = Some(value);
                     self
@@ -7758,12 +7981,12 @@ pub mod resources {
                     self.r#continue = Some(value.into());
                     self
                 }
-                #[doc = "Optional. The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn resource_version(mut self, value: impl Into<String>) -> Self {
                     self.resource_version = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn watch(mut self, value: bool) -> Self {
                     self.watch = Some(value);
                     self
@@ -8360,7 +8583,7 @@ pub mod resources {
                     self.kind = Some(value.into());
                     self
                 }
-                #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
+                #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see https://kubernetes.io/docs/concepts/architecture/garbage-collection/ for more information."]
                 pub fn propagation_policy(mut self, value: impl Into<String>) -> Self {
                     self.propagation_policy = Some(value.into());
                     self
@@ -9318,7 +9541,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Create a service."]
+                #[doc = "Creates a new Service. Service creation will trigger a new deployment. Use GetService, and check service.status to determine if the Service is ready."]
                 pub fn create(
                     &self,
                     request: crate::schemas::Service,
@@ -9343,7 +9566,7 @@ pub mod resources {
                         dry_run: None,
                     }
                 }
-                #[doc = "Delete a service. This will cause the Service to stop serving traffic and will delete the child entities like Routes, Configurations and Revisions."]
+                #[doc = "Deletes the provided service. This will cause the Service to stop serving traffic and will delete all associated Revisions."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9366,7 +9589,7 @@ pub mod resources {
                         propagation_policy: None,
                     }
                 }
-                #[doc = "Get information about a service."]
+                #[doc = "Gets information about a service."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9385,7 +9608,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "List services."]
+                #[doc = "Lists services for the given project and region."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -9411,7 +9634,7 @@ pub mod resources {
                         watch: None,
                     }
                 }
-                #[doc = "Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the ‘status’ match the requested ‘spec’. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
+                #[doc = "Replaces a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the ‘status’ match the requested ‘spec’. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
                 pub fn replace_service(
                     &self,
                     request: crate::schemas::Service,
@@ -9458,7 +9681,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> CreateRequestBuilder<'a> {
-                #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all` LINT.ThenChange(//depot/google3/google/cloud/serverless/v1/internal_service.proto:create_internal_service_request)"]
+                #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`"]
                 pub fn dry_run(mut self, value: impl Into<String>) -> Self {
                     self.dry_run = Some(value.into());
                     self
@@ -9630,7 +9853,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
-                #[doc = "Cloud Run currently ignores this parameter."]
+                #[doc = "Not supported, and ignored by Cloud Run."]
                 pub fn api_version(mut self, value: impl Into<String>) -> Self {
                     self.api_version = Some(value.into());
                     self
@@ -9640,12 +9863,12 @@ pub mod resources {
                     self.dry_run = Some(value.into());
                     self
                 }
-                #[doc = "Cloud Run currently ignores this parameter."]
+                #[doc = "Not supported, and ignored by Cloud Run."]
                 pub fn kind(mut self, value: impl Into<String>) -> Self {
                     self.kind = Some(value.into());
                     self
                 }
-                #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
+                #[doc = "Not supported, and ignored by Cloud Run."]
                 pub fn propagation_policy(mut self, value: impl Into<String>) -> Self {
                     self.propagation_policy = Some(value.into());
                     self
@@ -9981,12 +10204,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
+                #[doc = "Not supported, and ignored by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
                 }
-                #[doc = "Not currently used by Cloud Run."]
+                #[doc = "Not supported, and ignored by Cloud Run."]
                 pub fn include_uninitialized(mut self, value: bool) -> Self {
                     self.include_uninitialized = Some(value);
                     self
@@ -9996,22 +10219,22 @@ pub mod resources {
                     self.label_selector = Some(value.into());
                     self
                 }
-                #[doc = "Optional. The maximum number of records that should be returned."]
+                #[doc = "The maximum number of records that should be returned."]
                 pub fn limit(mut self, value: i32) -> Self {
                     self.limit = Some(value);
                     self
                 }
-                #[doc = "Optional. Encoded string to continue paging."]
+                #[doc = "Encoded string to continue paging."]
                 pub fn r#continue(mut self, value: impl Into<String>) -> Self {
                     self.r#continue = Some(value.into());
                     self
                 }
-                #[doc = "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run."]
+                #[doc = "Not supported, and ignored by Cloud Run."]
                 pub fn resource_version(mut self, value: impl Into<String>) -> Self {
                     self.resource_version = Some(value.into());
                     self
                 }
-                #[doc = "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run."]
+                #[doc = "Not supported, and ignored by Cloud Run."]
                 pub fn watch(mut self, value: bool) -> Self {
                     self.watch = Some(value);
                     self
@@ -10186,7 +10409,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ReplaceServiceRequestBuilder<'a> {
-                #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all` LINT.ThenChange(//depot/google3/google/cloud/serverless/v1/internal_service.proto:replace_internal_service_request)"]
+                #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`"]
                 pub fn dry_run(mut self, value: impl Into<String>) -> Self {
                     self.dry_run = Some(value.into());
                     self
@@ -10577,17 +10800,17 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn include_uninitialized(mut self, value: bool) -> Self {
                     self.include_uninitialized = Some(value);
                     self
                 }
-                #[doc = "Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn."]
+                #[doc = "Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn. For example, to list all tasks of execution “foo” in succeeded state: `run.googleapis.com/execution=foo,run.googleapis.com/runningState=Succeeded`. Supported states are: * `Pending`: Initial state of all tasks. The task has not yet started but eventually will. * `Running`: Container instances for this task are running or will be running shortly. * `Succeeded`: No more container instances to run for the task, and the last attempt succeeded. * `Failed`: No more container instances to run for the task, and the last attempt failed. This task has run out of retry attempts. * `Cancelled`: Task was running but got stopped because its parent execution has been aborted. * `Abandoned`: The task has not yet started and never will because its parent execution has been aborted."]
                 pub fn label_selector(mut self, value: impl Into<String>) -> Self {
                     self.label_selector = Some(value.into());
                     self
@@ -10602,12 +10825,12 @@ pub mod resources {
                     self.r#continue = Some(value.into());
                     self
                 }
-                #[doc = "Optional. The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn resource_version(mut self, value: impl Into<String>) -> Self {
                     self.resource_version = Some(value.into());
                     self
                 }
-                #[doc = "Optional. Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run."]
+                #[doc = "Optional. Not supported by Cloud Run."]
                 pub fn watch(mut self, value: bool) -> Self {
                     self.watch = Some(value);
                     self
@@ -10946,7 +11169,7 @@ pub mod resources {
                         #[serde(rename = "domains")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -10981,7 +11204,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -11031,7 +11254,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -11148,12 +11371,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -11378,7 +11602,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -11413,7 +11637,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -11463,7 +11687,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -11579,12 +11803,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -11746,7 +11971,7 @@ pub mod resources {
                             #[serde(rename = "domains")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -11781,7 +12006,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -11831,7 +12056,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -11949,12 +12174,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -12202,12 +12428,12 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
+                    #[doc = "Not supported by Cloud Run."]
                     pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                         self.field_selector = Some(value.into());
                         self
                     }
-                    #[doc = "Not currently used by Cloud Run."]
+                    #[doc = "Not supported by Cloud Run."]
                     pub fn include_uninitialized(mut self, value: bool) -> Self {
                         self.include_uninitialized = Some(value);
                         self
@@ -12217,7 +12443,7 @@ pub mod resources {
                         self.label_selector = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. The maximum number of records that should be returned."]
+                    #[doc = "Optional. The maximum number of the records that should be returned."]
                     pub fn limit(mut self, value: i32) -> Self {
                         self.limit = Some(value);
                         self
@@ -12227,12 +12453,12 @@ pub mod resources {
                         self.r#continue = Some(value.into());
                         self
                     }
-                    #[doc = "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run."]
+                    #[doc = "Not supported by Cloud Run."]
                     pub fn resource_version(mut self, value: impl Into<String>) -> Self {
                         self.resource_version = Some(value.into());
                         self
                     }
-                    #[doc = "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run."]
+                    #[doc = "Not supported by Cloud Run."]
                     pub fn watch(mut self, value: bool) -> Self {
                         self.watch = Some(value);
                         self
@@ -12466,7 +12692,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "List domain mappings."]
+                    #[doc = "List all domain mappings."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -12701,7 +12927,7 @@ pub mod resources {
                         self.kind = Some(value.into());
                         self
                     }
-                    #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
+                    #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/architecture/garbage-collection/ for more information."]
                     pub fn propagation_policy(mut self, value: impl Into<String>) -> Self {
                         self.propagation_policy = Some(value.into());
                         self
@@ -13923,7 +14149,7 @@ pub mod resources {
                         self.kind = Some(value.into());
                         self
                     }
-                    #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
+                    #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see https://kubernetes.io/docs/concepts/architecture/garbage-collection/ for more information."]
                     pub fn propagation_policy(mut self, value: impl Into<String>) -> Self {
                         self.propagation_policy = Some(value.into());
                         self
@@ -14885,7 +15111,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Create a service."]
+                    #[doc = "Creates a new Service. Service creation will trigger a new deployment. Use GetService, and check service.status to determine if the Service is ready."]
                     pub fn create(
                         &self,
                         request: crate::schemas::Service,
@@ -14910,7 +15136,7 @@ pub mod resources {
                             dry_run: None,
                         }
                     }
-                    #[doc = "Delete a service. This will cause the Service to stop serving traffic and will delete the child entities like Routes, Configurations and Revisions."]
+                    #[doc = "Deletes the provided service. This will cause the Service to stop serving traffic and will delete all associated Revisions."]
                     pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                         DeleteRequestBuilder {
                             reqwest: &self.reqwest,
@@ -14933,7 +15159,7 @@ pub mod resources {
                             propagation_policy: None,
                         }
                     }
-                    #[doc = "Get information about a service."]
+                    #[doc = "Gets information about a service."]
                     pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                         GetRequestBuilder {
                             reqwest: &self.reqwest,
@@ -14952,7 +15178,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Get the IAM Access Control policy currently in effect for the given Cloud Run service. This result does not include any inherited policies."]
+                    #[doc = "Gets the IAM Access Control policy currently in effect for the given Cloud Run service. This result does not include any inherited policies."]
                     pub fn get_iam_policy(
                         &self,
                         resource: impl Into<String>,
@@ -14975,7 +15201,7 @@ pub mod resources {
                             options_requested_policy_version: None,
                         }
                     }
-                    #[doc = "List services."]
+                    #[doc = "Lists services for the given project and region."]
                     pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -15001,7 +15227,7 @@ pub mod resources {
                             watch: None,
                         }
                     }
-                    #[doc = "Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the ‘status’ match the requested ‘spec’. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
+                    #[doc = "Replaces a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the ‘status’ match the requested ‘spec’. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
                     pub fn replace_service(
                         &self,
                         request: crate::schemas::Service,
@@ -15096,7 +15322,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all` LINT.ThenChange(//depot/google3/google/cloud/serverless/v1/internal_service.proto:create_internal_service_request)"]
+                    #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`"]
                     pub fn dry_run(mut self, value: impl Into<String>) -> Self {
                         self.dry_run = Some(value.into());
                         self
@@ -15268,7 +15494,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> DeleteRequestBuilder<'a> {
-                    #[doc = "Cloud Run currently ignores this parameter."]
+                    #[doc = "Not supported, and ignored by Cloud Run."]
                     pub fn api_version(mut self, value: impl Into<String>) -> Self {
                         self.api_version = Some(value.into());
                         self
@@ -15278,12 +15504,12 @@ pub mod resources {
                         self.dry_run = Some(value.into());
                         self
                     }
-                    #[doc = "Cloud Run currently ignores this parameter."]
+                    #[doc = "Not supported, and ignored by Cloud Run."]
                     pub fn kind(mut self, value: impl Into<String>) -> Self {
                         self.kind = Some(value.into());
                         self
                     }
-                    #[doc = "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information."]
+                    #[doc = "Not supported, and ignored by Cloud Run."]
                     pub fn propagation_policy(mut self, value: impl Into<String>) -> Self {
                         self.propagation_policy = Some(value.into());
                         self
@@ -15790,12 +16016,12 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
+                    #[doc = "Not supported, and ignored by Cloud Run."]
                     pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                         self.field_selector = Some(value.into());
                         self
                     }
-                    #[doc = "Not currently used by Cloud Run."]
+                    #[doc = "Not supported, and ignored by Cloud Run."]
                     pub fn include_uninitialized(mut self, value: bool) -> Self {
                         self.include_uninitialized = Some(value);
                         self
@@ -15805,22 +16031,22 @@ pub mod resources {
                         self.label_selector = Some(value.into());
                         self
                     }
-                    #[doc = "Optional. The maximum number of records that should be returned."]
+                    #[doc = "The maximum number of records that should be returned."]
                     pub fn limit(mut self, value: i32) -> Self {
                         self.limit = Some(value);
                         self
                     }
-                    #[doc = "Optional. Encoded string to continue paging."]
+                    #[doc = "Encoded string to continue paging."]
                     pub fn r#continue(mut self, value: impl Into<String>) -> Self {
                         self.r#continue = Some(value.into());
                         self
                     }
-                    #[doc = "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run."]
+                    #[doc = "Not supported, and ignored by Cloud Run."]
                     pub fn resource_version(mut self, value: impl Into<String>) -> Self {
                         self.resource_version = Some(value.into());
                         self
                     }
-                    #[doc = "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run."]
+                    #[doc = "Not supported, and ignored by Cloud Run."]
                     pub fn watch(mut self, value: bool) -> Self {
                         self.watch = Some(value);
                         self
@@ -15997,7 +16223,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ReplaceServiceRequestBuilder<'a> {
-                    #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all` LINT.ThenChange(//depot/google3/google/cloud/serverless/v1/internal_service.proto:replace_internal_service_request)"]
+                    #[doc = "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`"]
                     pub fn dry_run(mut self, value: impl Into<String>) -> Self {
                         self.dry_run = Some(value.into());
                         self
@@ -16760,16 +16986,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -16789,13 +17017,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -16803,7 +17034,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -16830,7 +17061,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

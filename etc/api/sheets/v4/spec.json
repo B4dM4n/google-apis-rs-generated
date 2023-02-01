@@ -7,7 +7,7 @@
   "canonicalName": "Sheets",
   "fullyEncodeReservedExpansion": true,
   "version": "v4",
-  "revision": "20220419",
+  "revision": "20230124",
   "title": "Google Sheets API",
   "description": "Reads and writes Google Sheets.",
   "ownerDomain": "google.com",
@@ -768,7 +768,7 @@
       "enumDescriptions": [],
       "properties": {
         "firstBandColor": {
-          "description": "The first color that is alternating. (Required)",
+          "description": "The first color that is alternating. (Required) Deprecated: Use first_band_color_style.",
           "$ref": "Color"
         },
         "firstBandColorStyle": {
@@ -776,7 +776,7 @@
           "$ref": "ColorStyle"
         },
         "footerColor": {
-          "description": "The color of the last row or column. If this field is not set, the last row or column is filled with either first_band_color or second_band_color, depending on the color of the previous row or column.",
+          "description": "The color of the last row or column. If this field is not set, the last row or column is filled with either first_band_color or second_band_color, depending on the color of the previous row or column. Deprecated: Use footer_color_style.",
           "$ref": "Color"
         },
         "footerColorStyle": {
@@ -784,7 +784,7 @@
           "$ref": "ColorStyle"
         },
         "headerColor": {
-          "description": "The color of the first row or column. If this field is set, the first row or column is filled with this color and the colors alternate between first_band_color and second_band_color starting from the second row or column. Otherwise, the first row or column is filled with first_band_color and the colors proceed to alternate as they normally would.",
+          "description": "The color of the first row or column. If this field is set, the first row or column is filled with this color and the colors alternate between first_band_color and second_band_color starting from the second row or column. Otherwise, the first row or column is filled with first_band_color and the colors proceed to alternate as they normally would. Deprecated: Use header_color_style.",
           "$ref": "Color"
         },
         "headerColorStyle": {
@@ -792,7 +792,7 @@
           "$ref": "ColorStyle"
         },
         "secondBandColor": {
-          "description": "The second color that is alternating. (Required)",
+          "description": "The second color that is alternating. (Required) Deprecated: Use second_band_color_style.",
           "$ref": "Color"
         },
         "secondBandColorStyle": {
@@ -840,7 +840,7 @@
           "items": null
         },
         "negativeColor": {
-          "description": "Color to be used, in case baseline value represents a negative change for key value. This field is optional.",
+          "description": "Color to be used, in case baseline value represents a negative change for key value. This field is optional. Deprecated: Use negative_color_style.",
           "$ref": "Color"
         },
         "negativeColorStyle": {
@@ -852,7 +852,7 @@
           "$ref": "TextPosition"
         },
         "positiveColor": {
-          "description": "Color to be used, in case baseline value represents a positive change for key value. This field is optional.",
+          "description": "Color to be used, in case baseline value represents a positive change for key value. This field is optional. Deprecated: Use positive_color_style.",
           "$ref": "Color"
         },
         "positiveColorStyle": {
@@ -956,7 +956,7 @@
       "enumDescriptions": [],
       "properties": {
         "color": {
-          "description": "The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used.",
+          "description": "The color for elements (such as bars, lines, and points) associated with this series. If empty, a default color is used. Deprecated: Use color_style.",
           "$ref": "Color"
         },
         "colorStyle": {
@@ -1287,7 +1287,7 @@
       "enumDescriptions": [],
       "properties": {
         "color": {
-          "description": "Color of the series data point. If empty, the series default is used.",
+          "description": "Color of the series data point. If empty, the series default is used. Deprecated: Use color_style.",
           "$ref": "Color"
         },
         "colorStyle": {
@@ -2233,7 +2233,7 @@
       "enumDescriptions": [],
       "properties": {
         "color": {
-          "description": "The color of the border.",
+          "description": "The color of the border. Deprecated: Use color_style.",
           "$ref": "Color"
         },
         "colorStyle": {
@@ -2319,7 +2319,7 @@
       "enumDescriptions": [],
       "properties": {
         "bubbleBorderColor": {
-          "description": "The bubble border color.",
+          "description": "The bubble border color. Deprecated: Use bubble_border_color_style.",
           "$ref": "Color"
         },
         "bubbleBorderColorStyle": {
@@ -2603,7 +2603,7 @@
       "enumDescriptions": [],
       "properties": {
         "backgroundColor": {
-          "description": "The background color of the cell.",
+          "description": "The background color of the cell. Deprecated: Use background_color_style.",
           "$ref": "Color"
         },
         "backgroundColorStyle": {
@@ -2635,7 +2635,7 @@
           "items": null
         },
         "hyperlinkDisplayType": {
-          "description": "How a hyperlink, if it exists, should be displayed in the cell.",
+          "description": "If one exists, how a hyperlink should be displayed in the cell.",
           "type": "string",
           "format": null,
           "enum": [
@@ -2679,11 +2679,11 @@
           "items": null
         },
         "textFormat": {
-          "description": "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here will clear the cell's existing links. Setting the link field in a TextFormatRun will take precedence over the cell-level link.",
+          "description": "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here clears the cell's existing links. Setting the link field in a TextFormatRun takes precedence over the cell-level link.",
           "$ref": "TextFormat"
         },
         "textRotation": {
-          "description": "The rotation applied to text in a cell",
+          "description": "The rotation applied to text in the cell.",
           "$ref": "TextRotation"
         },
         "verticalAlignment": {
@@ -3027,7 +3027,7 @@
           "items": null
         },
         "backgroundColor": {
-          "description": "The background color of the entire chart. Not applicable to Org charts.",
+          "description": "The background color of the entire chart. Not applicable to Org charts. Deprecated: Use background_color_style.",
           "$ref": "Color"
         },
         "backgroundColorStyle": {
@@ -3306,7 +3306,7 @@
       "enumDescriptions": [],
       "properties": {
         "rgbColor": {
-          "description": "RGB color.",
+          "description": "RGB color. The [`alpha`](/sheets/api/reference/rest/v4/spreadsheets/other#Color.FIELDS.alpha) value in the [`Color`](/sheets/api/reference/rest/v4/spreadsheets/other#color) object isn't generally supported.",
           "$ref": "Color"
         },
         "themeColor": {
@@ -5520,7 +5520,7 @@
       "enumDescriptions": [],
       "properties": {
         "color": {
-          "description": "The color of the border.",
+          "description": "The color of the border. Deprecated: Use color_style.",
           "$ref": "Color"
         },
         "colorStyle": {
@@ -5708,7 +5708,7 @@
           }
         },
         "visibleBackgroundColor": {
-          "description": "The background fill color to filter by; only cells with this fill color are shown. Mutually exclusive with visible_foreground_color.",
+          "description": "The background fill color to filter by; only cells with this fill color are shown. Mutually exclusive with visible_foreground_color. Deprecated: Use visible_background_color_style.",
           "$ref": "Color"
         },
         "visibleBackgroundColorStyle": {
@@ -5716,7 +5716,7 @@
           "$ref": "ColorStyle"
         },
         "visibleForegroundColor": {
-          "description": "The foreground color to filter by; only cells with this foreground color are shown. Mutually exclusive with visible_background_color.",
+          "description": "The foreground color to filter by; only cells with this foreground color are shown. Mutually exclusive with visible_background_color. Deprecated: Use visible_foreground_color_style.",
           "$ref": "Color"
         },
         "visibleForegroundColorStyle": {
@@ -6441,7 +6441,7 @@
       "enumDescriptions": [],
       "properties": {
         "barColor": {
-          "description": "The color of the column representing this series in each bucket. This field is optional.",
+          "description": "The color of the column representing this series in each bucket. This field is optional. Deprecated: Use bar_color_style.",
           "$ref": "Color"
         },
         "barColorStyle": {
@@ -6525,7 +6525,7 @@
       "enumDescriptions": [],
       "properties": {
         "color": {
-          "description": "The color this interpolation point should use.",
+          "description": "The color this interpolation point should use. Deprecated: Use color_style.",
           "$ref": "Color"
         },
         "colorStyle": {
@@ -6997,7 +6997,7 @@
           "$ref": "ChartData"
         },
         "nodeColor": {
-          "description": "The color of the org chart nodes.",
+          "description": "The color of the org chart nodes. Deprecated: Use node_color_style.",
           "$ref": "Color"
         },
         "nodeColorStyle": {
@@ -7029,7 +7029,7 @@
           "$ref": "ChartData"
         },
         "selectedNodeColor": {
-          "description": "The color of the selected org chart nodes.",
+          "description": "The color of the selected org chart nodes. Deprecated: Use selected_node_color_style.",
           "$ref": "Color"
         },
         "selectedNodeColorStyle": {
@@ -8862,7 +8862,7 @@
           "items": null
         },
         "tabColor": {
-          "description": "The color of the tab in the UI.",
+          "description": "The color of the tab in the UI. Deprecated: Use tab_color_style.",
           "$ref": "Color"
         },
         "tabColorStyle": {
@@ -8932,7 +8932,7 @@
           "items": null
         },
         "backgroundColor": {
-          "description": "The background color of the slicer.",
+          "description": "The background color of the slicer. Deprecated: Use background_color_style.",
           "$ref": "Color"
         },
         "backgroundColorStyle": {
@@ -9032,7 +9032,7 @@
       "enumDescriptions": [],
       "properties": {
         "backgroundColor": {
-          "description": "The background fill color to sort by; cells with this fill color are sorted to the top. Mutually exclusive with foreground_color.",
+          "description": "The background fill color to sort by; cells with this fill color are sorted to the top. Mutually exclusive with foreground_color. Deprecated: Use background_color_style.",
           "$ref": "Color"
         },
         "backgroundColorStyle": {
@@ -9054,7 +9054,7 @@
           "items": null
         },
         "foregroundColor": {
-          "description": "The foreground color to sort by; cells with this foreground color are sorted to the top. Mutually exclusive with background_color.",
+          "description": "The foreground color to sort by; cells with this foreground color are sorted to the top. Mutually exclusive with background_color. Deprecated: Use foreground_color_style.",
           "$ref": "Color"
         },
         "foregroundColorStyle": {
@@ -9370,7 +9370,7 @@
           "items": null
         },
         "foregroundColor": {
-          "description": "The foreground color of the text.",
+          "description": "The foreground color of the text. Deprecated: Use foreground_color_style.",
           "$ref": "Color"
         },
         "foregroundColorStyle": {
@@ -9666,7 +9666,7 @@
       "enumDescriptions": [],
       "properties": {
         "maxValueColor": {
-          "description": "The background color for cells with a color value greater than or equal to maxValue. Defaults to #109618 if not specified.",
+          "description": "The background color for cells with a color value greater than or equal to maxValue. Defaults to #109618 if not specified. Deprecated: Use max_value_color_style.",
           "$ref": "Color"
         },
         "maxValueColorStyle": {
@@ -9674,7 +9674,7 @@
           "$ref": "ColorStyle"
         },
         "midValueColor": {
-          "description": "The background color for cells with a color value at the midpoint between minValue and maxValue. Defaults to #efe6dc if not specified.",
+          "description": "The background color for cells with a color value at the midpoint between minValue and maxValue. Defaults to #efe6dc if not specified. Deprecated: Use mid_value_color_style.",
           "$ref": "Color"
         },
         "midValueColorStyle": {
@@ -9682,7 +9682,7 @@
           "$ref": "ColorStyle"
         },
         "minValueColor": {
-          "description": "The background color for cells with a color value less than or equal to minValue. Defaults to #dc3912 if not specified.",
+          "description": "The background color for cells with a color value less than or equal to minValue. Defaults to #dc3912 if not specified. Deprecated: Use min_value_color_style.",
           "$ref": "Color"
         },
         "minValueColorStyle": {
@@ -9690,7 +9690,7 @@
           "$ref": "ColorStyle"
         },
         "noDataColor": {
-          "description": "The background color for cells that have no color data associated with them. Defaults to #000000 if not specified.",
+          "description": "The background color for cells that have no color data associated with them. Defaults to #000000 if not specified. Deprecated: Use no_data_color_style.",
           "$ref": "Color"
         },
         "noDataColorStyle": {
@@ -9718,7 +9718,7 @@
           "$ref": "TreemapChartColorScale"
         },
         "headerColor": {
-          "description": "The background color for header cells.",
+          "description": "The background color for header cells. Deprecated: Use header_color_style.",
           "$ref": "Color"
         },
         "headerColorStyle": {
@@ -10692,7 +10692,7 @@
       "enumDescriptions": [],
       "properties": {
         "color": {
-          "description": "The color of the column.",
+          "description": "The color of the column. Deprecated: Use color_style.",
           "$ref": "Color"
         },
         "colorStyle": {
@@ -11638,7 +11638,7 @@
                   "repeated": false
                 },
                 "majorDimension": {
-                  "description": "The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=A1:B2,majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=A1:B2,majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.",
+                  "description": "The major dimension that results should use. For example, if the spreadsheet data in Sheet1 is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=Sheet1!A1:B2?majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=Sheet1!A1:B2?majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.",
                   "default": null,
                   "location": "query",
                   "required": false,
@@ -11938,7 +11938,7 @@
           "id": "sheets.spreadsheets.get",
           "path": "v4/spreadsheets/{spreadsheetId}",
           "httpMethod": "GET",
-          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges.",
+          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a [field mask](https://developers.google.com/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges.",
           "parameters": {
             "includeGridData": {
               "description": "True if grid data should be returned. This parameter is ignored if a field mask was set in the request.",
@@ -12007,7 +12007,7 @@
           "id": "sheets.spreadsheets.getByDataFilter",
           "path": "v4/spreadsheets/{spreadsheetId}:getByDataFilter",
           "httpMethod": "POST",
-          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data one of 2 ways: * Specify a field mask listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want.",
+          "description": "Returns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data one of 2 ways: * Specify a [field mask](https://developers.google.com/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want.",
           "parameters": {
             "spreadsheetId": {
               "description": "The spreadsheet to request.",

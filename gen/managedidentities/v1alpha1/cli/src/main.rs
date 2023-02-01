@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("managedidentities1_alpha1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220216")
+            .version("0.1.0-20221227")
             .about("The Managed Service for Microsoft Active Directory API is used for managing a highly available, hardened service running Microsoft Active Directory (AD).")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -53,10 +53,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: domains, operations and peerings");
         let mut domains3 = SubCommand::with_name("domains")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: attach_trust, create, delete, detach_trust, get, get_iam_policy, get_ldapssettings, list, patch, reconfigure_trust, reset_admin_password, restore, set_iam_policy, test_iam_permissions, update_ldapssettings and validate_trust");
+                        .about("methods: attach_trust, check_migration_permission, create, delete, detach_trust, disable_migration, domain_join_machine, enable_migration, extend_schema, get, get_iam_policy, get_ldapssettings, list, patch, reconfigure_trust, reset_admin_password, restore, set_iam_policy, test_iam_permissions, update_ldapssettings and validate_trust");
         {
             let mcmd = SubCommand::with_name("attach_trust")
                 .about("Adds AD trust in a given domain. Operation");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("check_migration_permission")
+                .about("AuditMigration API gets the current state of DomainMigration");
             domains3 = domains3.subcommand(mcmd);
         }
         {
@@ -72,6 +77,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd =
                 SubCommand::with_name("detach_trust").about("Removes identified trust. Operation");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("disable_migration").about("Disable Domain Migration");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("domain_join_machine")
+                .about("DomainJoinMachine API joins a Compute Engine VM to the domain");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("enable_migration").about("Enable Domain Migration");
+            domains3 = domains3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("extend_schema").about("Extend Schema for Domain");
             domains3 = domains3.subcommand(mcmd);
         }
         {

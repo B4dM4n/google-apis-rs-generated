@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("documentai1_beta3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220409")
+            .version("0.1.0-20230127")
             .about("Service to parse structured information from unstructured or semi-structured documents using state-of-the-art Google AI such as natural language, computer vision, translation, and AutoML.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -67,6 +67,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.");
             operations2 = operations2.subcommand(mcmd);
         }
+        let mut processor_types2 = SubCommand::with_name("processor_types")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a processor type detail.");
+            processor_types2 = processor_types2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists the processor types that exist.");
+            processor_types2 = processor_types2.subcommand(mcmd);
+        }
         let mut processors2 = SubCommand::with_name("processors")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: batch_process, create, delete, disable, enable, get, list, process and set_default_processor_version");
@@ -115,8 +126,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             human_review_config3 = human_review_config3.subcommand(mcmd);
         }
         let mut processor_versions3 = SubCommand::with_name("processor_versions")
-            .setting(AppSettings::ColoredHelp)
-            .about("methods: batch_process, delete, deploy, get, list, process and undeploy");
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: batch_process, delete, deploy, evaluate_processor_version, get, list, process, train and undeploy");
         {
             let mcmd = SubCommand::with_name("batch_process").about("LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format.");
             processor_versions3 = processor_versions3.subcommand(mcmd);
@@ -127,6 +138,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("deploy").about("Deploys the processor version.");
+            processor_versions3 = processor_versions3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("evaluate_processor_version").about("Evaluates a ProcessorVersion against annotated documents, producing an Evaluation.");
             processor_versions3 = processor_versions3.subcommand(mcmd);
         }
         {
@@ -142,12 +157,30 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             processor_versions3 = processor_versions3.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("train").about("Trains a new processor version. Operation metadata is returned as cloud_documentai_core.TrainProcessorVersionMetadata.");
+            processor_versions3 = processor_versions3.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("undeploy").about("Undeploys the processor version.");
             processor_versions3 = processor_versions3.subcommand(mcmd);
         }
+        let mut evaluations4 = SubCommand::with_name("evaluations")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Retrieves a specific evaluation.");
+            evaluations4 = evaluations4.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Retrieves a set of evaluations for a given processor version.");
+            evaluations4 = evaluations4.subcommand(mcmd);
+        }
+        processor_versions3 = processor_versions3.subcommand(evaluations4);
         processors2 = processors2.subcommand(processor_versions3);
         processors2 = processors2.subcommand(human_review_config3);
         locations1 = locations1.subcommand(processors2);
+        locations1 = locations1.subcommand(processor_types2);
         locations1 = locations1.subcommand(operations2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);

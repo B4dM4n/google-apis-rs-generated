@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("appengine1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230123")
             .about("Provisions and manages developers' App Engine applications.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -52,6 +52,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("repair").about("Recreates the required App Engine features for the specified App Engine application, for example a Cloud Storage bucket or App Engine service account. Use this method if you receive an error message about a missing feature, for example, Error retrieving the App Engine service account. If you have deleted your App Engine service account, this will not be able to recreate it. Instead, you should attempt to use the IAM undelete API if possible at https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts/undelete?apix_params=%7B\"name\"%3A\"projects%2F-%2FserviceAccounts%2Funique_id\"%2C\"resource\"%3A%7B%7D%7D . If the deletion was recent, the numeric ID can be found in the Cloud Console Activity Log.");
             apps0 = apps0.subcommand(mcmd);
         }
+        let mut projects0 = SubCommand::with_name("projects")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: locations");
         let mut authorized_certificates1 = SubCommand::with_name("authorized_certificates")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, delete, get, list and patch");
@@ -159,6 +162,9 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Updates the configuration of the specified service.");
             services1 = services1.subcommand(mcmd);
         }
+        let mut locations1 = SubCommand::with_name("locations")
+            .setting(AppSettings::ColoredHelp)
+            .about("sub-resources: applications");
         let mut ingress_rules2 = SubCommand::with_name("ingress_rules")
             .setting(AppSettings::ColoredHelp)
             .about("methods: batch_update, create, delete, get, list and patch");
@@ -214,6 +220,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("patch").about("Updates the specified Version resource. You can specify the following fields depending on the App Engine environment and type of scaling that the version resource uses:Standard environment instance_class (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.instance_class)automatic scaling in the standard environment: automatic_scaling.min_idle_instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling) automatic_scaling.max_idle_instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling) automaticScaling.standard_scheduler_settings.max_instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings) automaticScaling.standard_scheduler_settings.min_instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings) automaticScaling.standard_scheduler_settings.target_cpu_utilization (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings) automaticScaling.standard_scheduler_settings.target_throughput_utilization (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StandardSchedulerSettings)basic scaling or manual scaling in the standard environment: serving_status (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.serving_status) manual_scaling.instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#manualscaling)Flexible environment serving_status (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.serving_status)automatic scaling in the flexible environment: automatic_scaling.min_total_instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling) automatic_scaling.max_total_instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling) automatic_scaling.cool_down_period_sec (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling) automatic_scaling.cpu_utilization.target_utilization (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#Version.FIELDS.automatic_scaling)manual scaling in the flexible environment: manual_scaling.instances (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#manualscaling)");
             versions2 = versions2.subcommand(mcmd);
         }
+        let mut applications2 = SubCommand::with_name("applications")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets information about an application.");
+            applications2 = applications2.subcommand(mcmd);
+        }
         let mut instances3 = SubCommand::with_name("instances")
             .setting(AppSettings::ColoredHelp)
             .about("methods: debug, delete, get and list");
@@ -234,8 +247,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             instances3 = instances3.subcommand(mcmd);
         }
         versions2 = versions2.subcommand(instances3);
+        locations1 = locations1.subcommand(applications2);
         services1 = services1.subcommand(versions2);
         firewall1 = firewall1.subcommand(ingress_rules2);
+        projects0 = projects0.subcommand(locations1);
         apps0 = apps0.subcommand(services1);
         apps0 = apps0.subcommand(operations1);
         apps0 = apps0.subcommand(locations1);
@@ -243,6 +258,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         apps0 = apps0.subcommand(domain_mappings1);
         apps0 = apps0.subcommand(authorized_domains1);
         apps0 = apps0.subcommand(authorized_certificates1);
+        app = app.subcommand(projects0);
         app = app.subcommand(apps0);
 
         Self { app }

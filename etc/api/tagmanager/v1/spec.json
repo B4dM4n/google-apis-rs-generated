@@ -7,7 +7,7 @@
   "canonicalName": "Tag Manager",
   "fullyEncodeReservedExpansion": null,
   "version": "v1",
-  "revision": "20220423",
+  "revision": "20230130",
   "title": "Tag Manager API",
   "description": "This API allows clients to access and modify container and tag configuration.",
   "ownerDomain": "google.com",

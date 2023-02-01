@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [products](resources/accounts/products/struct.ProductsActions.html)\n    * [*delete*](resources/accounts/products/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/products/struct.GetRequestBuilder.html), [*list*](resources/accounts/products/struct.ListRequestBuilder.html), [*update*](resources/accounts/products/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage your product listings for Google Manufacturer Center\n\n`https://www.googleapis.com/auth/manufacturercenter`"]
@@ -5,16 +6,7 @@ pub mod scopes {
 }
 pub mod schemas {
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Attributes {
         #[doc = "The additional images of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#addlimage."]
@@ -108,6 +100,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gender: ::std::option::Option<String>,
+        #[doc = "Grocery Attributes. See more at https://support.google.com/manufacturers/answer/12098458#grocery."]
+        #[serde(
+            rename = "grocery",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub grocery: ::std::option::Option<crate::schemas::Grocery>,
         #[doc = "The Global Trade Item Number (GTIN) of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#gtin."]
         #[serde(
             rename = "gtin",
@@ -150,6 +149,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mpn: ::std::option::Option<String>,
+        #[doc = "Nutrition Attributes. See more at https://support.google.com/manufacturers/answer/12098458#food-servings."]
+        #[serde(
+            rename = "nutrition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nutrition: ::std::option::Option<crate::schemas::Nutrition>,
         #[doc = "The pattern of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#pattern."]
         #[serde(
             rename = "pattern",
@@ -549,6 +555,113 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for FeatureDescription {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct FloatUnit {
+        #[doc = "amount."]
+        #[serde(
+            rename = "amount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub amount: ::std::option::Option<f64>,
+        #[doc = "unit."]
+        #[serde(
+            rename = "unit",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub unit: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for FloatUnit {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for FloatUnit {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Grocery {
+        #[doc = "Active ingredients."]
+        #[serde(
+            rename = "activeIngredients",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub active_ingredients: ::std::option::Option<String>,
+        #[doc = "Alcohol by volume."]
+        #[serde(
+            rename = "alcoholByVolume",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alcohol_by_volume: ::std::option::Option<f64>,
+        #[doc = "Allergens."]
+        #[serde(
+            rename = "allergens",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allergens: ::std::option::Option<String>,
+        #[doc = "Derived nutrition claim."]
+        #[serde(
+            rename = "derivedNutritionClaim",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub derived_nutrition_claim: ::std::option::Option<Vec<String>>,
+        #[doc = "Directions."]
+        #[serde(
+            rename = "directions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub directions: ::std::option::Option<String>,
+        #[doc = "Indications."]
+        #[serde(
+            rename = "indications",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub indications: ::std::option::Option<String>,
+        #[doc = "Ingredients."]
+        #[serde(
+            rename = "ingredients",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ingredients: ::std::option::Option<String>,
+        #[doc = "Nutrition claim."]
+        #[serde(
+            rename = "nutritionClaim",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nutrition_claim: ::std::option::Option<Vec<String>>,
+        #[doc = "Storage instructions."]
+        #[serde(
+            rename = "storageInstructions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub storage_instructions: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Grocery {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Grocery {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1038,16 +1151,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ListProductsResponse {
         #[doc = "The token for the retrieval of the next page of product statuses."]
@@ -1075,9 +1179,326 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListProductsResponse {
+    impl crate::GetNextPageToken<String> for ListProductsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct Nutrition {
+        #[doc = "Added sugars."]
+        #[serde(
+            rename = "addedSugars",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub added_sugars: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Added sugars daily percentage."]
+        #[serde(
+            rename = "addedSugarsDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub added_sugars_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Calcium."]
+        #[serde(
+            rename = "calcium",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub calcium: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Calcium daily percentage."]
+        #[serde(
+            rename = "calciumDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub calcium_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Cholesterol."]
+        #[serde(
+            rename = "cholesterol",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cholesterol: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Cholesterol daily percentage."]
+        #[serde(
+            rename = "cholesterolDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cholesterol_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Dietary fiber."]
+        #[serde(
+            rename = "dietaryFiber",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dietary_fiber: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Dietary fiber daily percentage."]
+        #[serde(
+            rename = "dietaryFiberDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dietary_fiber_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Mandatory Nutrition Facts. Energy."]
+        #[serde(
+            rename = "energy",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub energy: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Energy from fat."]
+        #[serde(
+            rename = "energyFromFat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub energy_from_fat: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Folate daily percentage."]
+        #[serde(
+            rename = "folateDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub folate_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Folate folic acid."]
+        #[serde(
+            rename = "folateFolicAcid",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub folate_folic_acid: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Folate mcg DFE."]
+        #[serde(
+            rename = "folateMcgDfe",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub folate_mcg_dfe: ::std::option::Option<f64>,
+        #[doc = "Iron."]
+        #[serde(
+            rename = "iron",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub iron: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Iron daily percentage."]
+        #[serde(
+            rename = "ironDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub iron_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Monounsaturated fat."]
+        #[serde(
+            rename = "monounsaturatedFat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub monounsaturated_fat: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Nutrition fact measure."]
+        #[serde(
+            rename = "nutritionFactMeasure",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nutrition_fact_measure: ::std::option::Option<String>,
+        #[doc = "Polyols."]
+        #[serde(
+            rename = "polyols",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub polyols: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Polyunsaturated fat."]
+        #[serde(
+            rename = "polyunsaturatedFat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub polyunsaturated_fat: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Potassium."]
+        #[serde(
+            rename = "potassium",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub potassium: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Potassium daily percentage."]
+        #[serde(
+            rename = "potassiumDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub potassium_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Prepared size description."]
+        #[serde(
+            rename = "preparedSizeDescription",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub prepared_size_description: ::std::option::Option<String>,
+        #[doc = "Protein."]
+        #[serde(
+            rename = "protein",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protein: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Protein daily percentage."]
+        #[serde(
+            rename = "proteinDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub protein_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Saturated fat."]
+        #[serde(
+            rename = "saturatedFat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub saturated_fat: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Saturated fat daily percentage."]
+        #[serde(
+            rename = "saturatedFatDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub saturated_fat_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Food Serving Size. Serving size description."]
+        #[serde(
+            rename = "servingSizeDescription",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_size_description: ::std::option::Option<String>,
+        #[doc = "Serving size measure."]
+        #[serde(
+            rename = "servingSizeMeasure",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub serving_size_measure: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Servings per container."]
+        #[serde(
+            rename = "servingsPerContainer",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub servings_per_container: ::std::option::Option<String>,
+        #[doc = "Sodium."]
+        #[serde(
+            rename = "sodium",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sodium: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Sodium daily percentage."]
+        #[serde(
+            rename = "sodiumDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sodium_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Starch."]
+        #[serde(
+            rename = "starch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub starch: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Total carbohydrate."]
+        #[serde(
+            rename = "totalCarbohydrate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_carbohydrate: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Total carbohydrate daily percentage."]
+        #[serde(
+            rename = "totalCarbohydrateDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_carbohydrate_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Total fat."]
+        #[serde(
+            rename = "totalFat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_fat: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Total fat daily percentage."]
+        #[serde(
+            rename = "totalFatDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_fat_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Total sugars."]
+        #[serde(
+            rename = "totalSugars",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_sugars: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Total sugars daily percentage."]
+        #[serde(
+            rename = "totalSugarsDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_sugars_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Trans fat."]
+        #[serde(
+            rename = "transFat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub trans_fat: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Trans fat daily percentage."]
+        #[serde(
+            rename = "transFatDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub trans_fat_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Vitamin D."]
+        #[serde(
+            rename = "vitaminD",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vitamin_d: ::std::option::Option<crate::schemas::FloatUnit>,
+        #[doc = "Vitamin D daily percentage."]
+        #[serde(
+            rename = "vitaminDDailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub vitamin_d_daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Voluntary nutrition fact."]
+        #[serde(
+            rename = "voluntaryNutritionFact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub voluntary_nutrition_fact:
+            ::std::option::Option<Vec<crate::schemas::VoluntaryNutritionFact>>,
+    }
+    impl ::google_field_selector::FieldSelector for Nutrition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Nutrition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -1119,16 +1540,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Product {
         #[doc = "Attributes of the product uploaded to the Manufacturer Center. Manually edited attributes are taken into account."]
@@ -1239,6 +1651,42 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for ProductDetail {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct VoluntaryNutritionFact {
+        #[doc = "Daily percentage."]
+        #[serde(
+            rename = "dailyPercentage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub daily_percentage: ::std::option::Option<f64>,
+        #[doc = "Name."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Value."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<crate::schemas::FloatUnit>,
+    }
+    impl ::google_field_selector::FieldSelector for VoluntaryNutritionFact {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for VoluntaryNutritionFact {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2200,7 +2648,7 @@ pub mod resources {
                         #[serde(rename = "products")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -2235,7 +2683,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -2285,7 +2733,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2403,12 +2851,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -2870,16 +3319,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -2899,13 +3350,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -2913,7 +3367,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -2940,7 +3394,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

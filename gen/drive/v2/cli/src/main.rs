@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("drive2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220417")
+            .version("0.1.0-20230122")
             .about("Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -164,7 +164,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut files0 = SubCommand::with_name("files")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: copy, delete, empty_trash, export, generate_ids, get, insert, list, patch, touch, trash, untrash, update and watch");
+                        .about("methods: copy, delete, empty_trash, export, generate_ids, get, insert, list, list_labels, modify_labels, patch, touch, trash, untrash, update and watch");
         {
             let mcmd = SubCommand::with_name("copy")
                 .about("Creates a copy of the specified file. Folders cannot be copied.");
@@ -200,6 +200,15 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         {
             let mcmd = SubCommand::with_name("list").about("Lists the user's files.");
+            files0 = files0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list_labels").about("Lists the labels on a file.");
+            files0 = files0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("modify_labels")
+                .about("Modifies the set of labels on a file.");
             files0 = files0.subcommand(mcmd);
         }
         {

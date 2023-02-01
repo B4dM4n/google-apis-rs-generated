@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("youtube3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230131")
             .about("The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -176,7 +176,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut live_broadcasts0 = SubCommand::with_name("live_broadcasts")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: bind, delete, insert, list, transition and update");
+            .about("methods: bind, delete, insert, insert_cuepoint, list, transition and update");
         {
             let mcmd = SubCommand::with_name("bind").about("Bind a broadcast to a stream.");
             live_broadcasts0 = live_broadcasts0.subcommand(mcmd);
@@ -188,6 +188,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("insert")
                 .about("Inserts a new stream for the authenticated user.");
+            live_broadcasts0 = live_broadcasts0.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("insert_cuepoint").about("Insert cuepoints in a broadcast");
             live_broadcasts0 = live_broadcasts0.subcommand(mcmd);
         }
         {

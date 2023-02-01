@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("paymentsresellersubscription1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220426")
+            .version("0.1.0-20230131")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -40,14 +40,18 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Used by partners to list products that can be resold to their customers. It should be called directly by the partner using service accounts.");
+            let mcmd = SubCommand::with_name("list").about("To retrieve the products that can be resold by the partner. It should be autenticated with a service account.");
             products1 = products1.subcommand(mcmd);
         }
         let mut promotions1 = SubCommand::with_name("promotions")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: list");
+            .about("methods: find_eligible and list");
         {
-            let mcmd = SubCommand::with_name("list").about("Used by partners to list promotions, such as free trial, that can be applied on subscriptions. It should be called directly by the partner using service accounts.");
+            let mcmd = SubCommand::with_name("find_eligible").about("To find eligible promotions for the current user. The API requires user authorization via OAuth. The user is inferred from the authenticated OAuth credential.");
+            promotions1 = promotions1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("To retrieve the promotions, such as free trial, that can be used by the partner. It should be autenticated with a service account.");
             promotions1 = promotions1.subcommand(mcmd);
         }
         let mut subscriptions1 = SubCommand::with_name("subscriptions")
@@ -66,7 +70,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("extend").about("Used by partners to extend a subscription service for their customers on an ongoing basis for the subscription to remain active and renewable. It should be called directly by the partner using service accounts.");
+            let mcmd = SubCommand::with_name("extend").about("[Deprecated] New partners should be on auto-extend by default. Used by partners to extend a subscription service for their customers on an ongoing basis for the subscription to remain active and renewable. It should be called directly by the partner using service accounts.");
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
         {

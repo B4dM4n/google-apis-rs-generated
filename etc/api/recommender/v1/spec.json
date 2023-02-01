@@ -7,7 +7,7 @@
   "canonicalName": "Recommender",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220417",
+  "revision": "20230130",
   "title": "Recommender API",
   "description": "",
   "ownerDomain": "google.com",
@@ -250,14 +250,18 @@
             "COST",
             "SECURITY",
             "PERFORMANCE",
-            "MANAGEABILITY"
+            "MANAGEABILITY",
+            "SUSTAINABILITY",
+            "RELIABILITY"
           ],
           "enumDescriptions": [
             "Default unspecified category. Don't use directly.",
             "Indicates a potential increase or decrease in cost.",
             "Indicates a potential increase or decrease in security.",
             "Indicates a potential increase or decrease in performance.",
-            "Indicates a potential increase or decrease in manageability."
+            "Indicates a potential increase or decrease in manageability.",
+            "Indicates a potential increase or decrease in sustainability.",
+            "Indicates a potential increase or decrease in reliability."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -267,9 +271,17 @@
           "description": "Use with CategoryType.COST",
           "$ref": "GoogleCloudRecommenderV1CostProjection"
         },
+        "reliabilityProjection": {
+          "description": "Use with CategoryType.RELAIBILITY",
+          "$ref": "GoogleCloudRecommenderV1ReliabilityProjection"
+        },
         "securityProjection": {
           "description": "Use with CategoryType.SECURITY",
           "$ref": "GoogleCloudRecommenderV1SecurityProjection"
+        },
+        "sustainabilityProjection": {
+          "description": "Use with CategoryType.SUSTAINABILITY",
+          "$ref": "GoogleCloudRecommenderV1SustainabilityProjection"
         }
       },
       "additionalProperties": null,
@@ -277,7 +289,7 @@
     },
     "GoogleCloudRecommenderV1Insight": {
       "id": "GoogleCloudRecommenderV1Insight",
-      "description": "An insight along with the information used to derive the insight. The insight may have associated recomendations as well.",
+      "description": "An insight along with the information used to derive the insight. The insight may have associated recommendations as well.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -304,14 +316,18 @@
             "COST",
             "SECURITY",
             "PERFORMANCE",
-            "MANAGEABILITY"
+            "MANAGEABILITY",
+            "SUSTAINABILITY",
+            "RELIABILITY"
           ],
           "enumDescriptions": [
             "Unspecified category.",
             "The insight is related to cost.",
             "The insight is related to security.",
             "The insight is related to performance.",
-            "This insight is related to manageability."
+            "This insight is related to manageability.",
+            "The insight is related to sustainability.",
+            "This insight is related to reliability."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -517,6 +533,122 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudRecommenderV1InsightTypeConfig": {
+      "id": "GoogleCloudRecommenderV1InsightTypeConfig",
+      "description": "Configuration for an InsightType.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "annotations": {
+          "description": "Allows clients to store small amounts of arbitrary data. Annotations must follow the Kubernetes syntax. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "displayName": {
+          "description": "A user-settable field to provide a human-readable name to be used in user interfaces.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "etag": {
+          "description": "Fingerprint of the InsightTypeConfig. Provides optimistic locking when updating.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "insightTypeGenerationConfig": {
+          "description": "InsightTypeGenerationConfig which configures the generation of insights for this insight type.",
+          "$ref": "GoogleCloudRecommenderV1InsightTypeGenerationConfig"
+        },
+        "name": {
+          "description": "Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionId": {
+          "description": "Output only. Immutable. The revision ID of the config. A new revision is committed whenever the config is changed in any way. The format is an 8-character hexadecimal string.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateTime": {
+          "description": "Last time when the config was updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudRecommenderV1InsightTypeGenerationConfig": {
+      "id": "GoogleCloudRecommenderV1InsightTypeGenerationConfig",
+      "description": "A configuration to customize the generation of insights. Eg, customizing the lookback period considered when generating a insight.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "params": {
+          "description": "Parameters for this InsightTypeGenerationConfig. These configs can be used by or are applied to all subtypes.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudRecommenderV1ListInsightsResponse": {
       "id": "GoogleCloudRecommenderV1ListInsightsResponse",
       "description": "Response to the `ListInsights` method.",
@@ -661,6 +793,28 @@
             "additionalProperties": null,
             "items": null
           },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudRecommenderV1MarkRecommendationDismissedRequest": {
+      "id": "GoogleCloudRecommenderV1MarkRecommendationDismissedRequest",
+      "description": "Request for the `MarkRecommendationDismissed` Method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "etag": {
+          "description": "Fingerprint of the Recommendation. Provides optimistic locking.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
           "items": null
         }
       },
@@ -1141,6 +1295,181 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudRecommenderV1RecommenderConfig": {
+      "id": "GoogleCloudRecommenderV1RecommenderConfig",
+      "description": "Configuration for a Recommender.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "annotations": {
+          "description": "Allows clients to store small amounts of arbitrary data. Annotations must follow the Kubernetes syntax. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "displayName": {
+          "description": "A user-settable field to provide a human-readable name to be used in user interfaces.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "etag": {
+          "description": "Fingerprint of the RecommenderConfig. Provides optimistic locking when updating.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Name of recommender config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "recommenderGenerationConfig": {
+          "description": "RecommenderGenerationConfig which configures the Generation of recommendations for this recommender.",
+          "$ref": "GoogleCloudRecommenderV1RecommenderGenerationConfig"
+        },
+        "revisionId": {
+          "description": "Output only. Immutable. The revision ID of the config. A new revision is committed whenever the config is changed in any way. The format is an 8-character hexadecimal string.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateTime": {
+          "description": "Last time when the config was updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudRecommenderV1RecommenderGenerationConfig": {
+      "id": "GoogleCloudRecommenderV1RecommenderGenerationConfig",
+      "description": "A Configuration to customize the generation of recommendations. Eg, customizing the lookback period considered when generating a recommendation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "params": {
+          "description": "Parameters for this RecommenderGenerationConfig. These configs can be used by or are applied to all subtypes.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudRecommenderV1ReliabilityProjection": {
+      "id": "GoogleCloudRecommenderV1ReliabilityProjection",
+      "description": "Contains information on the impact of a reliability recommendation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "details": {
+          "description": "Per-recommender projection.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "risks": {
+          "description": "Reliability risks mitigated by this recommendation.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "RISK_TYPE_UNSPECIFIED",
+              "SERVICE_DISRUPTION",
+              "DATA_LOSS",
+              "ACCESS_DENY"
+            ],
+            "enumDescriptions": [
+              "Default unspecified risk. Don't use directly.",
+              "Potential service downtime.",
+              "Potential data loss.",
+              "Potential access denial. The service is still up but some or all clients can't access it."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudRecommenderV1SecurityProjection": {
       "id": "GoogleCloudRecommenderV1SecurityProjection",
       "description": "Contains various ways of describing the impact on Security.",
@@ -1166,6 +1495,38 @@
             "additionalProperties": null,
             "items": null
           },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudRecommenderV1SustainabilityProjection": {
+      "id": "GoogleCloudRecommenderV1SustainabilityProjection",
+      "description": "Contains metadata about how much sustainability a recommendation can save or incur.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "duration": {
+          "description": "Duration for which this sustainability applies.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kgCO2e": {
+          "description": "Carbon Footprint generated in kg of CO2 equivalent. Chose kg_c_o2e so that the name renders correctly in camelCase (kgCO2e).",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
           "items": null
         }
       },
@@ -1405,7 +1766,112 @@
                   }
                 }
               },
-              "methods": {}
+              "methods": {
+                "getConfig": {
+                  "id": "recommender.billingAccounts.locations.insightTypes.getConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the requested InsightTypeConfig. There is only one instance of the config for each InsightType.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the InsightTypeConfig to get. Acceptable formats: * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^billingAccounts/[^/]+/locations/[^/]+/insightTypes/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "updateConfig": {
+                  "id": "recommender.billingAccounts.locations.insightTypes.updateConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates an InsightTypeConfig change. This will create a new revision of the config.",
+                  "parameters": {
+                    "name": {
+                      "description": "Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^billingAccounts/[^/]+/locations/[^/]+/insightTypes/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "The list of fields to be updated.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "validateOnly": {
+                      "description": "If true, validate the request and preview the change, but do not actually update it.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
             },
             "recommenders": {
               "resources": {
@@ -1567,6 +2033,45 @@
                       "supportsMediaUpload": false,
                       "mediaUpload": null
                     },
+                    "markDismissed": {
+                      "id": "recommender.billingAccounts.locations.recommenders.recommendations.markDismissed",
+                      "path": "v1/{+name}:markDismissed",
+                      "httpMethod": "POST",
+                      "description": "Mark the Recommendation State as Dismissed. Users can use this method to indicate to the Recommender API that an ACTIVE recommendation has to be marked back as DISMISSED. MarkRecommendationDismissed can be applied to recommendations in ACTIVE state. Requires the recommender.*.update IAM permission for the specified recommender.",
+                      "parameters": {
+                        "name": {
+                          "description": "Name of the recommendation.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^billingAccounts/[^/]+/locations/[^/]+/recommenders/[^/]+/recommendations/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": {
+                        "$ref": "GoogleCloudRecommenderV1MarkRecommendationDismissedRequest"
+                      },
+                      "response": {
+                        "$ref": "GoogleCloudRecommenderV1Recommendation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
                     "markFailed": {
                       "id": "recommender.billingAccounts.locations.recommenders.recommendations.markFailed",
                       "path": "v1/{+name}:markFailed",
@@ -1648,7 +2153,112 @@
                   }
                 }
               },
-              "methods": {}
+              "methods": {
+                "getConfig": {
+                  "id": "recommender.billingAccounts.locations.recommenders.getConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the requested Recommender Config. There is only one instance of the config for each Recommender.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the Recommendation Config to get. Acceptable formats: * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^billingAccounts/[^/]+/locations/[^/]+/recommenders/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "updateConfig": {
+                  "id": "recommender.billingAccounts.locations.recommenders.updateConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates a Recommender Config. This will create a new revision of the config.",
+                  "parameters": {
+                    "name": {
+                      "description": "Name of recommender config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^billingAccounts/[^/]+/locations/[^/]+/recommenders/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "The list of fields to be updated.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "validateOnly": {
+                      "description": "If true, validate the request and preview the change, but do not actually update it.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
             }
           },
           "methods": {}
@@ -1985,6 +2595,45 @@
                       "supportsMediaUpload": false,
                       "mediaUpload": null
                     },
+                    "markDismissed": {
+                      "id": "recommender.folders.locations.recommenders.recommendations.markDismissed",
+                      "path": "v1/{+name}:markDismissed",
+                      "httpMethod": "POST",
+                      "description": "Mark the Recommendation State as Dismissed. Users can use this method to indicate to the Recommender API that an ACTIVE recommendation has to be marked back as DISMISSED. MarkRecommendationDismissed can be applied to recommendations in ACTIVE state. Requires the recommender.*.update IAM permission for the specified recommender.",
+                      "parameters": {
+                        "name": {
+                          "description": "Name of the recommendation.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^folders/[^/]+/locations/[^/]+/recommenders/[^/]+/recommendations/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": {
+                        "$ref": "GoogleCloudRecommenderV1MarkRecommendationDismissedRequest"
+                      },
+                      "response": {
+                        "$ref": "GoogleCloudRecommenderV1Recommendation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
                     "markFailed": {
                       "id": "recommender.folders.locations.recommenders.recommendations.markFailed",
                       "path": "v1/{+name}:markFailed",
@@ -2241,7 +2890,112 @@
                   }
                 }
               },
-              "methods": {}
+              "methods": {
+                "getConfig": {
+                  "id": "recommender.organizations.locations.insightTypes.getConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the requested InsightTypeConfig. There is only one instance of the config for each InsightType.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the InsightTypeConfig to get. Acceptable formats: * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/insightTypes/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "updateConfig": {
+                  "id": "recommender.organizations.locations.insightTypes.updateConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates an InsightTypeConfig change. This will create a new revision of the config.",
+                  "parameters": {
+                    "name": {
+                      "description": "Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/insightTypes/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "The list of fields to be updated.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "validateOnly": {
+                      "description": "If true, validate the request and preview the change, but do not actually update it.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
             },
             "recommenders": {
               "resources": {
@@ -2403,6 +3157,45 @@
                       "supportsMediaUpload": false,
                       "mediaUpload": null
                     },
+                    "markDismissed": {
+                      "id": "recommender.organizations.locations.recommenders.recommendations.markDismissed",
+                      "path": "v1/{+name}:markDismissed",
+                      "httpMethod": "POST",
+                      "description": "Mark the Recommendation State as Dismissed. Users can use this method to indicate to the Recommender API that an ACTIVE recommendation has to be marked back as DISMISSED. MarkRecommendationDismissed can be applied to recommendations in ACTIVE state. Requires the recommender.*.update IAM permission for the specified recommender.",
+                      "parameters": {
+                        "name": {
+                          "description": "Name of the recommendation.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^organizations/[^/]+/locations/[^/]+/recommenders/[^/]+/recommendations/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": {
+                        "$ref": "GoogleCloudRecommenderV1MarkRecommendationDismissedRequest"
+                      },
+                      "response": {
+                        "$ref": "GoogleCloudRecommenderV1Recommendation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
                     "markFailed": {
                       "id": "recommender.organizations.locations.recommenders.recommendations.markFailed",
                       "path": "v1/{+name}:markFailed",
@@ -2484,7 +3277,112 @@
                   }
                 }
               },
-              "methods": {}
+              "methods": {
+                "getConfig": {
+                  "id": "recommender.organizations.locations.recommenders.getConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the requested Recommender Config. There is only one instance of the config for each Recommender.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the Recommendation Config to get. Acceptable formats: * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/recommenders/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "updateConfig": {
+                  "id": "recommender.organizations.locations.recommenders.updateConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates a Recommender Config. This will create a new revision of the config.",
+                  "parameters": {
+                    "name": {
+                      "description": "Name of recommender config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/recommenders/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "The list of fields to be updated.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "validateOnly": {
+                      "description": "If true, validate the request and preview the change, but do not actually update it.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
             }
           },
           "methods": {}
@@ -2659,7 +3557,112 @@
                   }
                 }
               },
-              "methods": {}
+              "methods": {
+                "getConfig": {
+                  "id": "recommender.projects.locations.insightTypes.getConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the requested InsightTypeConfig. There is only one instance of the config for each InsightType.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the InsightTypeConfig to get. Acceptable formats: * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config` * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/insightTypes/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "updateConfig": {
+                  "id": "recommender.projects.locations.insightTypes.updateConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates an InsightTypeConfig change. This will create a new revision of the config.",
+                  "parameters": {
+                    "name": {
+                      "description": "Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/insightTypes/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "The list of fields to be updated.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "validateOnly": {
+                      "description": "If true, validate the request and preview the change, but do not actually update it.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1InsightTypeConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
             },
             "recommenders": {
               "resources": {
@@ -2821,6 +3824,45 @@
                       "supportsMediaUpload": false,
                       "mediaUpload": null
                     },
+                    "markDismissed": {
+                      "id": "recommender.projects.locations.recommenders.recommendations.markDismissed",
+                      "path": "v1/{+name}:markDismissed",
+                      "httpMethod": "POST",
+                      "description": "Mark the Recommendation State as Dismissed. Users can use this method to indicate to the Recommender API that an ACTIVE recommendation has to be marked back as DISMISSED. MarkRecommendationDismissed can be applied to recommendations in ACTIVE state. Requires the recommender.*.update IAM permission for the specified recommender.",
+                      "parameters": {
+                        "name": {
+                          "description": "Name of the recommendation.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/recommenders/[^/]+/recommendations/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": {
+                        "$ref": "GoogleCloudRecommenderV1MarkRecommendationDismissedRequest"
+                      },
+                      "response": {
+                        "$ref": "GoogleCloudRecommenderV1Recommendation"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
                     "markFailed": {
                       "id": "recommender.projects.locations.recommenders.recommendations.markFailed",
                       "path": "v1/{+name}:markFailed",
@@ -2902,7 +3944,112 @@
                   }
                 }
               },
-              "methods": {}
+              "methods": {
+                "getConfig": {
+                  "id": "recommender.projects.locations.recommenders.getConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the requested Recommender Config. There is only one instance of the config for each Recommender.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Name of the Recommendation Config to get. Acceptable formats: * `projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config` * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/recommenders/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "updateConfig": {
+                  "id": "recommender.projects.locations.recommenders.updateConfig",
+                  "path": "v1/{+name}",
+                  "httpMethod": "PATCH",
+                  "description": "Updates a Recommender Config. This will create a new revision of the config.",
+                  "parameters": {
+                    "name": {
+                      "description": "Name of recommender config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/recommenders/[^/]+/config$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "updateMask": {
+                      "description": "The list of fields to be updated.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": "google-fieldmask",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "validateOnly": {
+                      "description": "If true, validate the request and preview the change, but do not actually update it.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "response": {
+                    "$ref": "GoogleCloudRecommenderV1RecommenderConfig"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
             }
           },
           "methods": {}

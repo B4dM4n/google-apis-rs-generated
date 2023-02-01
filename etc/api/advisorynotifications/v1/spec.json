@@ -1,0 +1,703 @@
+{
+  "kind": "discovery#restDescription",
+  "etag": null,
+  "discoveryVersion": "v1",
+  "id": "advisorynotifications:v1",
+  "name": "advisorynotifications",
+  "canonicalName": "Advisorynotifications",
+  "fullyEncodeReservedExpansion": true,
+  "version": "v1",
+  "revision": "20230121",
+  "title": "Advisory Notifications API",
+  "description": "",
+  "ownerDomain": "google.com",
+  "ownerName": "Google",
+  "icons": {
+    "x16": "http://www.google.com/images/icons/product/search-16.gif",
+    "x32": "http://www.google.com/images/icons/product/search-32.gif"
+  },
+  "documentationLink": "https://cloud.google.com/advisory-notifications",
+  "protocol": "rest",
+  "baseUrl": "https://advisorynotifications.googleapis.com/",
+  "basePath": "",
+  "rootUrl": "https://advisorynotifications.googleapis.com/",
+  "servicePath": "",
+  "batchPath": "batch",
+  "version_module": true,
+  "packagePath": null,
+  "labels": null,
+  "features": null,
+  "parameters": {
+    "$.xgafv": {
+      "description": "V1 error format.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "1",
+        "2"
+      ],
+      "enumDescriptions": [
+        "v1 error format",
+        "v2 error format"
+      ],
+      "repeated": false
+    },
+    "access_token": {
+      "description": "OAuth access token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "alt": {
+      "description": "Data format for response.",
+      "default": "json",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "json",
+        "media",
+        "proto"
+      ],
+      "enumDescriptions": [
+        "Responses with Content-Type of application/json",
+        "Media download with context-dependent Content-Type",
+        "Responses with Content-Type of application/x-protobuf"
+      ],
+      "repeated": false
+    },
+    "callback": {
+      "description": "JSONP",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "fields": {
+      "description": "Selector specifying which fields to include in a partial response.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "key": {
+      "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "oauth_token": {
+      "description": "OAuth 2.0 token for the current user.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "prettyPrint": {
+      "description": "Returns response with indentations and line breaks.",
+      "default": "true",
+      "location": "query",
+      "required": false,
+      "type": "boolean",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "quotaUser": {
+      "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "uploadType": {
+      "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "upload_protocol": {
+      "description": "Upload protocol for media (e.g. \"raw\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    }
+  },
+  "auth": {
+    "oauth2": {
+      "scopes": {
+        "https://www.googleapis.com/auth/cloud-platform": {
+          "description": "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account."
+        }
+      }
+    }
+  },
+  "schemas": {
+    "GoogleCloudAdvisorynotificationsV1Attachment": {
+      "id": "GoogleCloudAdvisorynotificationsV1Attachment",
+      "description": "Attachment with specific information about the issue.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "csv": {
+          "description": "A CSV file attachment. Max size is 10 MB.",
+          "$ref": "GoogleCloudAdvisorynotificationsV1Csv"
+        },
+        "displayName": {
+          "description": "The title of the attachment.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1Csv": {
+      "id": "GoogleCloudAdvisorynotificationsV1Csv",
+      "description": "A representation of a CSV file attachment, as a list of column headers and a list of data rows.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dataRows": {
+          "description": "The list of data rows in a CSV file, as string arrays rather than as a single comma-separated string.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudAdvisorynotificationsV1CsvCsvRow"
+          }
+        },
+        "headers": {
+          "description": "The list of headers for data columns in a CSV file.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1CsvCsvRow": {
+      "id": "GoogleCloudAdvisorynotificationsV1CsvCsvRow",
+      "description": "A representation of a single data row in a CSV file.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "entries": {
+          "description": "The data entries in a CSV file row, as a string array rather than a single comma-separated string.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1ListNotificationsResponse": {
+      "id": "GoogleCloudAdvisorynotificationsV1ListNotificationsResponse",
+      "description": "Response of ListNotifications endpoint.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "notifications": {
+          "description": "List of notifications under a given parent.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudAdvisorynotificationsV1Notification"
+          }
+        },
+        "totalSize": {
+          "description": "Estimation of a total number of notifications.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1Message": {
+      "id": "GoogleCloudAdvisorynotificationsV1Message",
+      "description": "A message which contains notification details.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "attachments": {
+          "description": "The attachments to download.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudAdvisorynotificationsV1Attachment"
+          }
+        },
+        "body": {
+          "description": "The message content.",
+          "$ref": "GoogleCloudAdvisorynotificationsV1MessageBody"
+        },
+        "createTime": {
+          "description": "The Message creation timestamp.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "localizationTime": {
+          "description": "Time when Message was localized",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1MessageBody": {
+      "id": "GoogleCloudAdvisorynotificationsV1MessageBody",
+      "description": "A message body containing text.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "text": {
+          "description": "The text content of the message body.",
+          "$ref": "GoogleCloudAdvisorynotificationsV1Text"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1Notification": {
+      "id": "GoogleCloudAdvisorynotificationsV1Notification",
+      "description": "A notification object for notifying customers about security and privacy issues.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createTime": {
+          "description": "Output only. Time the notification was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "messages": {
+          "description": "A list of messages in the notification.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleCloudAdvisorynotificationsV1Message"
+          }
+        },
+        "name": {
+          "description": "The resource name of the notification. Format: organizations/{organization}/locations/{location}/notifications/{notification}.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "subject": {
+          "description": "The subject line of the notification.",
+          "$ref": "GoogleCloudAdvisorynotificationsV1Subject"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1Subject": {
+      "id": "GoogleCloudAdvisorynotificationsV1Subject",
+      "description": "A subject line of a notification.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "text": {
+          "description": "The text content.",
+          "$ref": "GoogleCloudAdvisorynotificationsV1Text"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudAdvisorynotificationsV1Text": {
+      "id": "GoogleCloudAdvisorynotificationsV1Text",
+      "description": "A text object containing the English text and its localized copies.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "enText": {
+          "description": "The English copy.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "localizationState": {
+          "description": "Status of the localization.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LOCALIZATION_STATE_UNSPECIFIED",
+            "LOCALIZATION_STATE_NOT_APPLICABLE",
+            "LOCALIZATION_STATE_PENDING",
+            "LOCALIZATION_STATE_COMPLETED"
+          ],
+          "enumDescriptions": [
+            "Not used.",
+            "Localization is not applicable for requested language. This can happen when: - The requested language was not supported by Advisory Notifications at the time of localization (including notifications created before the localization feature was launched). - The requested language is English, so only the English text is returned.",
+            "Localization for requested language is in progress, and not ready yet.",
+            "Localization for requested language is completed."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "localizedText": {
+          "description": "The requested localized copy (if applicable).",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    }
+  },
+  "resources": {
+    "organizations": {
+      "resources": {
+        "locations": {
+          "resources": {
+            "notifications": {
+              "resources": {},
+              "methods": {
+                "get": {
+                  "id": "advisorynotifications.organizations.locations.notifications.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets a notification.",
+                  "parameters": {
+                    "languageCode": {
+                      "description": "ISO code for requested localization language. If unset, will be interpereted as \"en\". If the requested language is valid, but not supported for this notification, English will be returned with an \"Not applicable\" LocalizationState. If the ISO code is invalid (i.e. not a real language), this RPC will throw an error.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "name": {
+                      "description": "Required. A name of the notification to retrieve. Format: organizations/{organization}/locations/{location}/notifications/{notification}.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^organizations/[^/]+/locations/[^/]+/notifications/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudAdvisorynotificationsV1Notification"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "advisorynotifications.organizations.locations.notifications.list",
+                  "path": "v1/{+parent}/notifications",
+                  "httpMethod": "GET",
+                  "description": "Lists notifications under a given parent.",
+                  "parameters": {
+                    "languageCode": {
+                      "description": "ISO code for requested localization language. If unset, will be interpereted as \"en\". If the requested language is valid, but not supported for this notification, English will be returned with an \"Not applicable\" LocalizationState. If the ISO code is invalid (i.e. not a real language), this RPC will throw an error.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "The maximum number of notifications to return. The service may return fewer than this value. If unspecified or equal to 0, at most 50 notifications will be returned. The maximum value is 50; values above 50 will be coerced to 50.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "A page token returned from a previous request. When paginating, all other parameters provided in the request must match the call that returned the page token.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. The parent, which owns this collection of notifications. Must be of the form \"organizations/{organization}/locations/{location}\".",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^organizations/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "view": {
+                      "description": "Specifies which parts of the notification resource should be returned in the response.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [
+                        "NOTIFICATION_VIEW_UNSPECIFIED",
+                        "BASIC",
+                        "FULL"
+                      ],
+                      "enumDescriptions": [
+                        "Not specified, equivalent to BASIC.",
+                        "Server responses only include title, creation time and Notification ID. Note: for internal use responses also include the last update time, the latest message text and whether notification has attachments.",
+                        "Include everything."
+                      ],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleCloudAdvisorynotificationsV1ListNotificationsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {}
+        }
+      },
+      "methods": {}
+    }
+  },
+  "methods": {}
+}

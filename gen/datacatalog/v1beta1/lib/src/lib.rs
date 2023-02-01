@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [catalog](resources/catalog/struct.CatalogActions.html)\n  * [*search*](resources/catalog/struct.SearchRequestBuilder.html)\n* [entries](resources/entries/struct.EntriesActions.html)\n  * [*lookup*](resources/entries/struct.LookupRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [entry_groups](resources/projects/locations/entry_groups/struct.EntryGroupsActions.html)\n      * [*create*](resources/projects/locations/entry_groups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/entry_groups/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/entry_groups/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/entry_groups/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/entry_groups/struct.TestIamPermissionsRequestBuilder.html)\n      * [entries](resources/projects/locations/entry_groups/entries/struct.EntriesActions.html)\n        * [*create*](resources/projects/locations/entry_groups/entries/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/entries/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/entry_groups/entries/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/entry_groups/entries/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/entries/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/entries/struct.PatchRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/entry_groups/entries/struct.TestIamPermissionsRequestBuilder.html)\n        * [tags](resources/projects/locations/entry_groups/entries/tags/struct.TagsActions.html)\n          * [*create*](resources/projects/locations/entry_groups/entries/tags/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/entries/tags/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/entries/tags/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/entries/tags/struct.PatchRequestBuilder.html)\n      * [tags](resources/projects/locations/entry_groups/tags/struct.TagsActions.html)\n        * [*create*](resources/projects/locations/entry_groups/tags/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/entry_groups/tags/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/entry_groups/tags/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/entry_groups/tags/struct.PatchRequestBuilder.html)\n    * [tag_templates](resources/projects/locations/tag_templates/struct.TagTemplatesActions.html)\n      * [*create*](resources/projects/locations/tag_templates/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/tag_templates/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/tag_templates/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/tag_templates/struct.GetIamPolicyRequestBuilder.html), [*patch*](resources/projects/locations/tag_templates/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/tag_templates/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/tag_templates/struct.TestIamPermissionsRequestBuilder.html)\n      * [fields](resources/projects/locations/tag_templates/fields/struct.FieldsActions.html)\n        * [*create*](resources/projects/locations/tag_templates/fields/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/tag_templates/fields/struct.DeleteRequestBuilder.html), [*patch*](resources/projects/locations/tag_templates/fields/struct.PatchRequestBuilder.html), [*rename*](resources/projects/locations/tag_templates/fields/struct.RenameRequestBuilder.html)\n        * [enum_values](resources/projects/locations/tag_templates/fields/enum_values/struct.EnumValuesActions.html)\n          * [*rename*](resources/projects/locations/tag_templates/fields/enum_values/struct.RenameRequestBuilder.html)\n    * [taxonomies](resources/projects/locations/taxonomies/struct.TaxonomiesActions.html)\n      * [*create*](resources/projects/locations/taxonomies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/taxonomies/struct.DeleteRequestBuilder.html), [*export*](resources/projects/locations/taxonomies/struct.ExportRequestBuilder.html), [*get*](resources/projects/locations/taxonomies/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/taxonomies/struct.GetIamPolicyRequestBuilder.html), [*import*](resources/projects/locations/taxonomies/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/taxonomies/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/taxonomies/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/taxonomies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/taxonomies/struct.TestIamPermissionsRequestBuilder.html)\n      * [policy_tags](resources/projects/locations/taxonomies/policy_tags/struct.PolicyTagsActions.html)\n        * [*create*](resources/projects/locations/taxonomies/policy_tags/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/taxonomies/policy_tags/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/taxonomies/policy_tags/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/taxonomies/policy_tags/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/taxonomies/policy_tags/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/taxonomies/policy_tags/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/taxonomies/policy_tags/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/taxonomies/policy_tags/struct.TestIamPermissionsRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -24,7 +25,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -1221,7 +1222,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDatacatalogV1Beta1ListEntriesResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDatacatalogV1Beta1ListEntriesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1267,7 +1268,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDatacatalogV1Beta1ListEntryGroupsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDatacatalogV1Beta1ListEntryGroupsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1313,7 +1314,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDatacatalogV1Beta1ListPolicyTagsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDatacatalogV1Beta1ListPolicyTagsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1347,7 +1348,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDatacatalogV1Beta1ListTagsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDatacatalogV1Beta1ListTagsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1393,7 +1394,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDatacatalogV1Beta1ListTaxonomiesResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDatacatalogV1Beta1ListTaxonomiesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1723,7 +1724,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDatacatalogV1Beta1SearchCatalogResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDatacatalogV1Beta1SearchCatalogResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2405,6 +2406,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_tag_count: ::std::option::Option<i32>,
+        #[doc = "Output only. Identity of the service which owns the Taxonomy. This field is only populated when the taxonomy is created by a GCP service. Currently only ‘DATAPLEX’ is supported."]
+        #[serde(
+            rename = "service",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub service:
+            ::std::option::Option<crate::schemas::GoogleCloudDatacatalogV1Beta1TaxonomyService>,
         #[doc = "Output only. Timestamps about this taxonomy. Only create_time and update_time are used."]
         #[serde(
             rename = "taxonomyTimestamps",
@@ -2484,6 +2493,141 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDatacatalogV1Beta1TaxonomyActivatedPolicyTypesItems
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDatacatalogV1Beta1TaxonomyService {
+        #[doc = "P4SA Identity of the service."]
+        #[serde(
+            rename = "identity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub identity: ::std::option::Option<String>,
+        #[doc = "The GCP service name."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name:
+            ::std::option::Option<crate::schemas::GoogleCloudDatacatalogV1Beta1TaxonomyServiceName>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1Beta1TaxonomyService {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDatacatalogV1Beta1TaxonomyService {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        #[doc = "Dataplex."]
+        ManagingSystemDataplex,
+        #[doc = "Other"]
+        ManagingSystemOther,
+        #[doc = "Default value"]
+        ManagingSystemUnspecified,
+    }
+    impl GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemDataplex => {
+                    "MANAGING_SYSTEM_DATAPLEX"
+                }
+                GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemOther => {
+                    "MANAGING_SYSTEM_OTHER"
+                }
+                GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemUnspecified => {
+                    "MANAGING_SYSTEM_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDatacatalogV1Beta1TaxonomyServiceName, ()> {
+            Ok(match s {
+                "MANAGING_SYSTEM_DATAPLEX" => {
+                    GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemDataplex
+                }
+                "MANAGING_SYSTEM_OTHER" => {
+                    GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemOther
+                }
+                "MANAGING_SYSTEM_UNSPECIFIED" => {
+                    GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MANAGING_SYSTEM_DATAPLEX" => {
+                    GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemDataplex
+                }
+                "MANAGING_SYSTEM_OTHER" => {
+                    GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemOther
+                }
+                "MANAGING_SYSTEM_UNSPECIFIED" => {
+                    GoogleCloudDatacatalogV1Beta1TaxonomyServiceName::ManagingSystemUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDatacatalogV1Beta1TaxonomyServiceName {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2596,6 +2740,181 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDatacatalogV1ImportEntriesMetadata {
+        #[doc = "Partial errors that are encountered during the ImportEntries operation. There is no guarantee that all the encountered errors are reported. However, if no errors are reported, it means that no errors were encountered."]
+        #[serde(
+            rename = "errors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub errors: ::std::option::Option<Vec<crate::schemas::Status>>,
+        #[doc = "State of the import operation."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<
+            crate::schemas::GoogleCloudDatacatalogV1ImportEntriesMetadataState,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1ImportEntriesMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDatacatalogV1ImportEntriesMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        #[doc = "The import of entries has been finished."]
+        ImportDone,
+        #[doc = "The import of entries is in progress."]
+        ImportInProgress,
+        #[doc = "The import of entries has been abandoned in favor of a newer request."]
+        ImportObsolete,
+        #[doc = "The dump with entries has been queued for import."]
+        ImportQueued,
+        #[doc = "Default value. This value is unused."]
+        ImportStateUnspecified,
+    }
+    impl GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportDone => "IMPORT_DONE",
+                GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportInProgress => {
+                    "IMPORT_IN_PROGRESS"
+                }
+                GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportObsolete => {
+                    "IMPORT_OBSOLETE"
+                }
+                GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportQueued => "IMPORT_QUEUED",
+                GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportStateUnspecified => {
+                    "IMPORT_STATE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDatacatalogV1ImportEntriesMetadataState, ()> {
+            Ok(match s {
+                "IMPORT_DONE" => GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportDone,
+                "IMPORT_IN_PROGRESS" => {
+                    GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportInProgress
+                }
+                "IMPORT_OBSOLETE" => {
+                    GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportObsolete
+                }
+                "IMPORT_QUEUED" => GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportQueued,
+                "IMPORT_STATE_UNSPECIFIED" => {
+                    GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportStateUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IMPORT_DONE" => GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportDone,
+                "IMPORT_IN_PROGRESS" => {
+                    GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportInProgress
+                }
+                "IMPORT_OBSOLETE" => {
+                    GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportObsolete
+                }
+                "IMPORT_QUEUED" => GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportQueued,
+                "IMPORT_STATE_UNSPECIFIED" => {
+                    GoogleCloudDatacatalogV1ImportEntriesMetadataState::ImportStateUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDatacatalogV1ImportEntriesMetadataState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDatacatalogV1ImportEntriesResponse {
+        #[doc = "Number of entries deleted as a result of import operation."]
+        #[serde(
+            rename = "deletedEntriesCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub deleted_entries_count: ::std::option::Option<i64>,
+        #[doc = "Cumulative number of entries created and entries updated as a result of import operation."]
+        #[serde(
+            rename = "upsertedEntriesCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub upserted_entries_count: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDatacatalogV1ImportEntriesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDatacatalogV1ImportEntriesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -2668,6 +2987,41 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SetIamPolicyRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct Status {
+        #[doc = "The status code, which should be an enum value of google.rpc.Code."]
+        #[serde(
+            rename = "code",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub code: ::std::option::Option<i32>,
+        #[doc = "A list of messages that carry the error details. There is a common set of message types for APIs to use."]
+        #[serde(
+            rename = "details",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub details:
+            ::std::option::Option<Vec<::std::collections::BTreeMap<String, ::serde_json::Value>>>,
+        #[doc = "A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Status {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Status {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4396,7 +4750,7 @@ pub mod resources {
                             #[serde(rename = "entryGroups")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4431,7 +4785,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4487,7 +4841,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4609,12 +4963,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6092,7 +6447,7 @@ pub mod resources {
                                 #[serde(rename = "entries")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -6128,7 +6483,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -6184,7 +6539,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -6309,12 +6664,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -7225,7 +7581,7 @@ pub mod resources {
                                     #[serde(rename = "tags")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -7261,7 +7617,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -7317,7 +7673,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -7441,12 +7799,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -8190,7 +8549,7 @@ pub mod resources {
                                 #[serde(rename = "tags")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -8226,7 +8585,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -8282,7 +8641,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -8406,12 +8765,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -11083,6 +11443,7 @@ pub mod resources {
                             upload_type: None,
                             xgafv: None,
                             parent: parent.into(),
+                            filter: None,
                             page_size: None,
                             page_token: None,
                         }
@@ -12172,6 +12533,7 @@ pub mod resources {
                     pub(crate) reqwest: &'a ::reqwest::Client,
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                     parent: String,
+                    filter: ::std::option::Option<String>,
                     page_size: ::std::option::Option<i32>,
                     page_token: ::std::option::Option<String>,
                     access_token: ::std::option::Option<String>,
@@ -12187,6 +12549,11 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "Supported field for filter is ‘service’ and value is ‘dataplex’. Eg: service=dataplex."]
+                    pub fn filter(mut self, value: impl Into<String>) -> Self {
+                        self.filter = Some(value.into());
+                        self
+                    }
                     #[doc = "The maximum number of items to return. Must be a value between 1 and 1000. If not set, defaults to 50."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
@@ -12297,7 +12664,7 @@ pub mod resources {
                             #[serde(rename = "taxonomies")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -12332,7 +12699,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -12388,7 +12755,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -12486,6 +12853,7 @@ pub mod resources {
                         path: &str,
                     ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                         let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("filter", &self.filter)]);
                         req = req.query(&[("pageSize", &self.page_size)]);
                         req = req.query(&[("pageToken", &self.page_token)]);
                         req = req.query(&[("access_token", &self.access_token)]);
@@ -12510,12 +12878,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -14007,7 +14376,7 @@ pub mod resources {
                                 #[serde(rename = "policyTags")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -14044,7 +14413,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -14100,7 +14469,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -14224,12 +14593,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -15031,16 +15401,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -15060,13 +15432,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -15074,7 +15449,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -15101,7 +15476,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

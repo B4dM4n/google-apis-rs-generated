@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [detections](resources/detections/struct.DetectionsActions.html)\n  * [*detect*](resources/detections/struct.DetectRequestBuilder.html), [*list*](resources/detections/struct.ListRequestBuilder.html)\n* [languages](resources/languages/struct.LanguagesActions.html)\n  * [*list*](resources/languages/struct.ListRequestBuilder.html)\n* [translations](resources/translations/struct.TranslationsActions.html)\n  * [*list*](resources/translations/struct.ListRequestBuilder.html), [*translate*](resources/translations/struct.TranslateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your data across Google Cloud Platform services\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -1936,15 +1937,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

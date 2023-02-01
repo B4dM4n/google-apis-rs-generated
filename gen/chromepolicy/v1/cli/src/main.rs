@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("chromepolicy1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230131")
             .about("The Chrome Policy API is a suite of services that allows Chrome administrators to control the policies applied to their managed Chrome OS devices and Chrome browsers.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -64,6 +64,47 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Gets a list of policy schemas that match a specified filter value for a given customer.");
             policy_schemas1 = policy_schemas1.subcommand(mcmd);
         }
+        let mut groups2 = SubCommand::with_name("groups")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: batch_delete, batch_modify, list_group_priority_ordering and update_group_priority_ordering");
+        {
+            let mcmd = SubCommand::with_name("batch_delete").about("Delete multiple policy values that are applied to a specific group. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status.");
+            groups2 = groups2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("batch_modify").about("Modify multiple policy values that are applied to a specific group. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status.");
+            groups2 = groups2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list_group_priority_ordering").about("Retrieve a group priority ordering for an app. The target app must be supplied in `additionalTargetKeyNames` in the PolicyTargetKey. On failure the request will return the error details as part of the google.rpc.Status.");
+            groups2 = groups2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("update_group_priority_ordering").about("Update a group priority ordering for an app. The target app must be supplied in `additionalTargetKeyNames` in the PolicyTargetKey. On failure the request will return the error details as part of the google.rpc.Status.");
+            groups2 = groups2.subcommand(mcmd);
+        }
+        let mut networks2 = SubCommand::with_name("networks")
+                        .setting(AppSettings::ColoredHelp)
+                        .about("methods: define_certificate, define_network, remove_certificate and remove_network");
+        {
+            let mcmd = SubCommand::with_name("define_certificate")
+                .about("Creates a certificate at a specified OU for a customer.");
+            networks2 = networks2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("define_network").about("Define a new network.");
+            networks2 = networks2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("remove_certificate")
+                .about("Remove an existing certificate by guid.");
+            networks2 = networks2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("remove_network")
+                .about("Remove an existing network by guid.");
+            networks2 = networks2.subcommand(mcmd);
+        }
         let mut orgunits2 = SubCommand::with_name("orgunits")
             .setting(AppSettings::ColoredHelp)
             .about("methods: batch_inherit and batch_modify");
@@ -76,6 +117,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             orgunits2 = orgunits2.subcommand(mcmd);
         }
         policies1 = policies1.subcommand(orgunits2);
+        policies1 = policies1.subcommand(networks2);
+        policies1 = policies1.subcommand(groups2);
         customers0 = customers0.subcommand(policy_schemas1);
         customers0 = customers0.subcommand(policies1);
         app = app.subcommand(media0);

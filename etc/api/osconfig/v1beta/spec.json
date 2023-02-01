@@ -7,7 +7,7 @@
   "canonicalName": "OS Config",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220415",
+  "revision": "20230129",
   "title": "OS Config API",
   "description": "OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.",
   "ownerDomain": "google.com",

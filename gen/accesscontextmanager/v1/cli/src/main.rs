@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("accesscontextmanager1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220422")
+            .version("0.1.0-20230126")
             .about("An API for setting attribute based access control to requests to GCP services.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -129,6 +129,31 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns the IAM permissions that the caller has on the specified Access Context Manager resource. The resource can be an AccessPolicy, AccessLevel, or ServicePerimeter. This method does not support other resources.");
             access_levels1 = access_levels1.subcommand(mcmd);
         }
+        let mut authorized_orgs_descs1 = SubCommand::with_name("authorized_orgs_descs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a authorized orgs desc. The long-running operation from this RPC has a successful status after the authorized orgs desc propagates to long-lasting storage. If a authorized orgs desc contains errors, an error response is returned for the first error encountered. The name of this `AuthorizedOrgsDesc` will be assigned during creation.");
+            authorized_orgs_descs1 = authorized_orgs_descs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a authorized orgs desc based on the resource name. The long-running operation from this RPC has a successful status after the authorized orgs desc is removed from long-lasting storage.");
+            authorized_orgs_descs1 = authorized_orgs_descs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get")
+                .about("Gets a authorized orgs desc based on the resource name.");
+            authorized_orgs_descs1 = authorized_orgs_descs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists all authorized orgs descs for an access policy.");
+            authorized_orgs_descs1 = authorized_orgs_descs1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a authorized orgs desc. The long-running operation from this RPC has a successful status after the authorized orgs desc propagates to long-lasting storage. If a authorized orgs desc contains errors, an error response is returned for the first error encountered. Only the organization list in `AuthorizedOrgsDesc` can be updated. The name, authorization_type, asset_type and authorization_direction cannot be updated.");
+            authorized_orgs_descs1 = authorized_orgs_descs1.subcommand(mcmd);
+        }
         let mut service_perimeters1 = SubCommand::with_name("service_perimeters")
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: commit, create, delete, get, list, patch, replace_all and test_iam_permissions");
@@ -193,6 +218,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         organizations0 = organizations0.subcommand(gcp_user_access_bindings1);
         access_policies0 = access_policies0.subcommand(service_perimeters1);
+        access_policies0 = access_policies0.subcommand(authorized_orgs_descs1);
         access_policies0 = access_policies0.subcommand(access_levels1);
         app = app.subcommand(organizations0);
         app = app.subcommand(operations0);

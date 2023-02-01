@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [account_summaries](resources/account_summaries/struct.AccountSummariesActions.html)\n  * [*list*](resources/account_summaries/struct.ListRequestBuilder.html)\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [*delete*](resources/accounts/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/struct.GetRequestBuilder.html), [*getDataSharingSettings*](resources/accounts/struct.GetDataSharingSettingsRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*patch*](resources/accounts/struct.PatchRequestBuilder.html), [*provisionAccountTicket*](resources/accounts/struct.ProvisionAccountTicketRequestBuilder.html), [*searchChangeHistoryEvents*](resources/accounts/struct.SearchChangeHistoryEventsRequestBuilder.html)\n  * [user_links](resources/accounts/user_links/struct.UserLinksActions.html)\n    * [*audit*](resources/accounts/user_links/struct.AuditRequestBuilder.html), [*batchCreate*](resources/accounts/user_links/struct.BatchCreateRequestBuilder.html), [*batchDelete*](resources/accounts/user_links/struct.BatchDeleteRequestBuilder.html), [*batchGet*](resources/accounts/user_links/struct.BatchGetRequestBuilder.html), [*batchUpdate*](resources/accounts/user_links/struct.BatchUpdateRequestBuilder.html), [*create*](resources/accounts/user_links/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/user_links/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/user_links/struct.GetRequestBuilder.html), [*list*](resources/accounts/user_links/struct.ListRequestBuilder.html), [*patch*](resources/accounts/user_links/struct.PatchRequestBuilder.html)\n* [properties](resources/properties/struct.PropertiesActions.html)\n  * [*acknowledgeUserDataCollection*](resources/properties/struct.AcknowledgeUserDataCollectionRequestBuilder.html), [*create*](resources/properties/struct.CreateRequestBuilder.html), [*delete*](resources/properties/struct.DeleteRequestBuilder.html), [*get*](resources/properties/struct.GetRequestBuilder.html), [*getDataRetentionSettings*](resources/properties/struct.GetDataRetentionSettingsRequestBuilder.html), [*getGoogleSignalsSettings*](resources/properties/struct.GetGoogleSignalsSettingsRequestBuilder.html), [*list*](resources/properties/struct.ListRequestBuilder.html), [*patch*](resources/properties/struct.PatchRequestBuilder.html), [*updateDataRetentionSettings*](resources/properties/struct.UpdateDataRetentionSettingsRequestBuilder.html), [*updateGoogleSignalsSettings*](resources/properties/struct.UpdateGoogleSignalsSettingsRequestBuilder.html)\n  * [conversion_events](resources/properties/conversion_events/struct.ConversionEventsActions.html)\n    * [*create*](resources/properties/conversion_events/struct.CreateRequestBuilder.html), [*delete*](resources/properties/conversion_events/struct.DeleteRequestBuilder.html), [*get*](resources/properties/conversion_events/struct.GetRequestBuilder.html), [*list*](resources/properties/conversion_events/struct.ListRequestBuilder.html)\n  * [custom_dimensions](resources/properties/custom_dimensions/struct.CustomDimensionsActions.html)\n    * [*archive*](resources/properties/custom_dimensions/struct.ArchiveRequestBuilder.html), [*create*](resources/properties/custom_dimensions/struct.CreateRequestBuilder.html), [*get*](resources/properties/custom_dimensions/struct.GetRequestBuilder.html), [*list*](resources/properties/custom_dimensions/struct.ListRequestBuilder.html), [*patch*](resources/properties/custom_dimensions/struct.PatchRequestBuilder.html)\n  * [custom_metrics](resources/properties/custom_metrics/struct.CustomMetricsActions.html)\n    * [*archive*](resources/properties/custom_metrics/struct.ArchiveRequestBuilder.html), [*create*](resources/properties/custom_metrics/struct.CreateRequestBuilder.html), [*get*](resources/properties/custom_metrics/struct.GetRequestBuilder.html), [*list*](resources/properties/custom_metrics/struct.ListRequestBuilder.html), [*patch*](resources/properties/custom_metrics/struct.PatchRequestBuilder.html)\n  * [data_streams](resources/properties/data_streams/struct.DataStreamsActions.html)\n    * [*create*](resources/properties/data_streams/struct.CreateRequestBuilder.html), [*delete*](resources/properties/data_streams/struct.DeleteRequestBuilder.html), [*get*](resources/properties/data_streams/struct.GetRequestBuilder.html), [*getGlobalSiteTag*](resources/properties/data_streams/struct.GetGlobalSiteTagRequestBuilder.html), [*list*](resources/properties/data_streams/struct.ListRequestBuilder.html), [*patch*](resources/properties/data_streams/struct.PatchRequestBuilder.html)\n    * [measurement_protocol_secrets](resources/properties/data_streams/measurement_protocol_secrets/struct.MeasurementProtocolSecretsActions.html)\n      * [*create*](resources/properties/data_streams/measurement_protocol_secrets/struct.CreateRequestBuilder.html), [*delete*](resources/properties/data_streams/measurement_protocol_secrets/struct.DeleteRequestBuilder.html), [*get*](resources/properties/data_streams/measurement_protocol_secrets/struct.GetRequestBuilder.html), [*list*](resources/properties/data_streams/measurement_protocol_secrets/struct.ListRequestBuilder.html), [*patch*](resources/properties/data_streams/measurement_protocol_secrets/struct.PatchRequestBuilder.html)\n  * [display_video_360_advertiser_link_proposals](resources/properties/display_video_360_advertiser_link_proposals/struct.DisplayVideo360AdvertiserLinkProposalsActions.html)\n    * [*approve*](resources/properties/display_video_360_advertiser_link_proposals/struct.ApproveRequestBuilder.html), [*cancel*](resources/properties/display_video_360_advertiser_link_proposals/struct.CancelRequestBuilder.html), [*create*](resources/properties/display_video_360_advertiser_link_proposals/struct.CreateRequestBuilder.html), [*delete*](resources/properties/display_video_360_advertiser_link_proposals/struct.DeleteRequestBuilder.html), [*get*](resources/properties/display_video_360_advertiser_link_proposals/struct.GetRequestBuilder.html), [*list*](resources/properties/display_video_360_advertiser_link_proposals/struct.ListRequestBuilder.html)\n  * [display_video_360_advertiser_links](resources/properties/display_video_360_advertiser_links/struct.DisplayVideo360AdvertiserLinksActions.html)\n    * [*create*](resources/properties/display_video_360_advertiser_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/display_video_360_advertiser_links/struct.DeleteRequestBuilder.html), [*get*](resources/properties/display_video_360_advertiser_links/struct.GetRequestBuilder.html), [*list*](resources/properties/display_video_360_advertiser_links/struct.ListRequestBuilder.html), [*patch*](resources/properties/display_video_360_advertiser_links/struct.PatchRequestBuilder.html)\n  * [firebase_links](resources/properties/firebase_links/struct.FirebaseLinksActions.html)\n    * [*create*](resources/properties/firebase_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/firebase_links/struct.DeleteRequestBuilder.html), [*list*](resources/properties/firebase_links/struct.ListRequestBuilder.html)\n  * [google_ads_links](resources/properties/google_ads_links/struct.GoogleAdsLinksActions.html)\n    * [*create*](resources/properties/google_ads_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/google_ads_links/struct.DeleteRequestBuilder.html), [*list*](resources/properties/google_ads_links/struct.ListRequestBuilder.html), [*patch*](resources/properties/google_ads_links/struct.PatchRequestBuilder.html)\n  * [user_links](resources/properties/user_links/struct.UserLinksActions.html)\n    * [*audit*](resources/properties/user_links/struct.AuditRequestBuilder.html), [*batchCreate*](resources/properties/user_links/struct.BatchCreateRequestBuilder.html), [*batchDelete*](resources/properties/user_links/struct.BatchDeleteRequestBuilder.html), [*batchGet*](resources/properties/user_links/struct.BatchGetRequestBuilder.html), [*batchUpdate*](resources/properties/user_links/struct.BatchUpdateRequestBuilder.html), [*create*](resources/properties/user_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/user_links/struct.DeleteRequestBuilder.html), [*get*](resources/properties/user_links/struct.GetRequestBuilder.html), [*list*](resources/properties/user_links/struct.ListRequestBuilder.html), [*patch*](resources/properties/user_links/struct.PatchRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [account_summaries](resources/account_summaries/struct.AccountSummariesActions.html)\n  * [*list*](resources/account_summaries/struct.ListRequestBuilder.html)\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [*delete*](resources/accounts/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/struct.GetRequestBuilder.html), [*getDataSharingSettings*](resources/accounts/struct.GetDataSharingSettingsRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*patch*](resources/accounts/struct.PatchRequestBuilder.html), [*provisionAccountTicket*](resources/accounts/struct.ProvisionAccountTicketRequestBuilder.html), [*searchChangeHistoryEvents*](resources/accounts/struct.SearchChangeHistoryEventsRequestBuilder.html)\n  * [user_links](resources/accounts/user_links/struct.UserLinksActions.html)\n    * [*audit*](resources/accounts/user_links/struct.AuditRequestBuilder.html), [*batchCreate*](resources/accounts/user_links/struct.BatchCreateRequestBuilder.html), [*batchDelete*](resources/accounts/user_links/struct.BatchDeleteRequestBuilder.html), [*batchGet*](resources/accounts/user_links/struct.BatchGetRequestBuilder.html), [*batchUpdate*](resources/accounts/user_links/struct.BatchUpdateRequestBuilder.html), [*create*](resources/accounts/user_links/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/user_links/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/user_links/struct.GetRequestBuilder.html), [*list*](resources/accounts/user_links/struct.ListRequestBuilder.html), [*patch*](resources/accounts/user_links/struct.PatchRequestBuilder.html)\n* [properties](resources/properties/struct.PropertiesActions.html)\n  * [*acknowledgeUserDataCollection*](resources/properties/struct.AcknowledgeUserDataCollectionRequestBuilder.html), [*create*](resources/properties/struct.CreateRequestBuilder.html), [*delete*](resources/properties/struct.DeleteRequestBuilder.html), [*fetchAutomatedGa4ConfigurationOptOut*](resources/properties/struct.FetchAutomatedGa4ConfigurationOptOutRequestBuilder.html), [*get*](resources/properties/struct.GetRequestBuilder.html), [*getAttributionSettings*](resources/properties/struct.GetAttributionSettingsRequestBuilder.html), [*getDataRetentionSettings*](resources/properties/struct.GetDataRetentionSettingsRequestBuilder.html), [*getGoogleSignalsSettings*](resources/properties/struct.GetGoogleSignalsSettingsRequestBuilder.html), [*list*](resources/properties/struct.ListRequestBuilder.html), [*patch*](resources/properties/struct.PatchRequestBuilder.html), [*runAccessReport*](resources/properties/struct.RunAccessReportRequestBuilder.html), [*setAutomatedGa4ConfigurationOptOut*](resources/properties/struct.SetAutomatedGa4ConfigurationOptOutRequestBuilder.html), [*updateAttributionSettings*](resources/properties/struct.UpdateAttributionSettingsRequestBuilder.html), [*updateDataRetentionSettings*](resources/properties/struct.UpdateDataRetentionSettingsRequestBuilder.html), [*updateGoogleSignalsSettings*](resources/properties/struct.UpdateGoogleSignalsSettingsRequestBuilder.html)\n  * [audiences](resources/properties/audiences/struct.AudiencesActions.html)\n    * [*archive*](resources/properties/audiences/struct.ArchiveRequestBuilder.html), [*create*](resources/properties/audiences/struct.CreateRequestBuilder.html), [*get*](resources/properties/audiences/struct.GetRequestBuilder.html), [*list*](resources/properties/audiences/struct.ListRequestBuilder.html), [*patch*](resources/properties/audiences/struct.PatchRequestBuilder.html)\n  * [big_query_links](resources/properties/big_query_links/struct.BigQueryLinksActions.html)\n    * [*get*](resources/properties/big_query_links/struct.GetRequestBuilder.html), [*list*](resources/properties/big_query_links/struct.ListRequestBuilder.html)\n  * [conversion_events](resources/properties/conversion_events/struct.ConversionEventsActions.html)\n    * [*create*](resources/properties/conversion_events/struct.CreateRequestBuilder.html), [*delete*](resources/properties/conversion_events/struct.DeleteRequestBuilder.html), [*get*](resources/properties/conversion_events/struct.GetRequestBuilder.html), [*list*](resources/properties/conversion_events/struct.ListRequestBuilder.html)\n  * [custom_dimensions](resources/properties/custom_dimensions/struct.CustomDimensionsActions.html)\n    * [*archive*](resources/properties/custom_dimensions/struct.ArchiveRequestBuilder.html), [*create*](resources/properties/custom_dimensions/struct.CreateRequestBuilder.html), [*get*](resources/properties/custom_dimensions/struct.GetRequestBuilder.html), [*list*](resources/properties/custom_dimensions/struct.ListRequestBuilder.html), [*patch*](resources/properties/custom_dimensions/struct.PatchRequestBuilder.html)\n  * [custom_metrics](resources/properties/custom_metrics/struct.CustomMetricsActions.html)\n    * [*archive*](resources/properties/custom_metrics/struct.ArchiveRequestBuilder.html), [*create*](resources/properties/custom_metrics/struct.CreateRequestBuilder.html), [*get*](resources/properties/custom_metrics/struct.GetRequestBuilder.html), [*list*](resources/properties/custom_metrics/struct.ListRequestBuilder.html), [*patch*](resources/properties/custom_metrics/struct.PatchRequestBuilder.html)\n  * [data_streams](resources/properties/data_streams/struct.DataStreamsActions.html)\n    * [*create*](resources/properties/data_streams/struct.CreateRequestBuilder.html), [*delete*](resources/properties/data_streams/struct.DeleteRequestBuilder.html), [*get*](resources/properties/data_streams/struct.GetRequestBuilder.html), [*getGlobalSiteTag*](resources/properties/data_streams/struct.GetGlobalSiteTagRequestBuilder.html), [*list*](resources/properties/data_streams/struct.ListRequestBuilder.html), [*patch*](resources/properties/data_streams/struct.PatchRequestBuilder.html)\n    * [measurement_protocol_secrets](resources/properties/data_streams/measurement_protocol_secrets/struct.MeasurementProtocolSecretsActions.html)\n      * [*create*](resources/properties/data_streams/measurement_protocol_secrets/struct.CreateRequestBuilder.html), [*delete*](resources/properties/data_streams/measurement_protocol_secrets/struct.DeleteRequestBuilder.html), [*get*](resources/properties/data_streams/measurement_protocol_secrets/struct.GetRequestBuilder.html), [*list*](resources/properties/data_streams/measurement_protocol_secrets/struct.ListRequestBuilder.html), [*patch*](resources/properties/data_streams/measurement_protocol_secrets/struct.PatchRequestBuilder.html)\n  * [display_video_360_advertiser_link_proposals](resources/properties/display_video_360_advertiser_link_proposals/struct.DisplayVideo360AdvertiserLinkProposalsActions.html)\n    * [*approve*](resources/properties/display_video_360_advertiser_link_proposals/struct.ApproveRequestBuilder.html), [*cancel*](resources/properties/display_video_360_advertiser_link_proposals/struct.CancelRequestBuilder.html), [*create*](resources/properties/display_video_360_advertiser_link_proposals/struct.CreateRequestBuilder.html), [*delete*](resources/properties/display_video_360_advertiser_link_proposals/struct.DeleteRequestBuilder.html), [*get*](resources/properties/display_video_360_advertiser_link_proposals/struct.GetRequestBuilder.html), [*list*](resources/properties/display_video_360_advertiser_link_proposals/struct.ListRequestBuilder.html)\n  * [display_video_360_advertiser_links](resources/properties/display_video_360_advertiser_links/struct.DisplayVideo360AdvertiserLinksActions.html)\n    * [*create*](resources/properties/display_video_360_advertiser_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/display_video_360_advertiser_links/struct.DeleteRequestBuilder.html), [*get*](resources/properties/display_video_360_advertiser_links/struct.GetRequestBuilder.html), [*list*](resources/properties/display_video_360_advertiser_links/struct.ListRequestBuilder.html), [*patch*](resources/properties/display_video_360_advertiser_links/struct.PatchRequestBuilder.html)\n  * [firebase_links](resources/properties/firebase_links/struct.FirebaseLinksActions.html)\n    * [*create*](resources/properties/firebase_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/firebase_links/struct.DeleteRequestBuilder.html), [*list*](resources/properties/firebase_links/struct.ListRequestBuilder.html)\n  * [google_ads_links](resources/properties/google_ads_links/struct.GoogleAdsLinksActions.html)\n    * [*create*](resources/properties/google_ads_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/google_ads_links/struct.DeleteRequestBuilder.html), [*list*](resources/properties/google_ads_links/struct.ListRequestBuilder.html), [*patch*](resources/properties/google_ads_links/struct.PatchRequestBuilder.html)\n  * [search_ads_360_links](resources/properties/search_ads_360_links/struct.SearchAds360LinksActions.html)\n    * [*create*](resources/properties/search_ads_360_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/search_ads_360_links/struct.DeleteRequestBuilder.html), [*get*](resources/properties/search_ads_360_links/struct.GetRequestBuilder.html), [*list*](resources/properties/search_ads_360_links/struct.ListRequestBuilder.html), [*patch*](resources/properties/search_ads_360_links/struct.PatchRequestBuilder.html)\n  * [user_links](resources/properties/user_links/struct.UserLinksActions.html)\n    * [*audit*](resources/properties/user_links/struct.AuditRequestBuilder.html), [*batchCreate*](resources/properties/user_links/struct.BatchCreateRequestBuilder.html), [*batchDelete*](resources/properties/user_links/struct.BatchDeleteRequestBuilder.html), [*batchGet*](resources/properties/user_links/struct.BatchGetRequestBuilder.html), [*batchUpdate*](resources/properties/user_links/struct.BatchUpdateRequestBuilder.html), [*create*](resources/properties/user_links/struct.CreateRequestBuilder.html), [*delete*](resources/properties/user_links/struct.DeleteRequestBuilder.html), [*get*](resources/properties/user_links/struct.GetRequestBuilder.html), [*list*](resources/properties/user_links/struct.ListRequestBuilder.html), [*patch*](resources/properties/user_links/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Edit Google Analytics management entities\n\n`https://www.googleapis.com/auth/analytics.edit`"]
     pub const ANALYTICS_EDIT: &str = "https://www.googleapis.com/auth/analytics.edit";
@@ -12,6 +13,1090 @@ pub mod scopes {
     pub const ANALYTICS_READONLY: &str = "https://www.googleapis.com/auth/analytics.readonly";
 }
 pub mod schemas {
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessBetweenFilter {
+        #[doc = "Begins with this number."]
+        #[serde(
+            rename = "fromValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub from_value:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaNumericValue>,
+        #[doc = "Ends with this number."]
+        #[serde(
+            rename = "toValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub to_value:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaNumericValue>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessBetweenFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessBetweenFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessDateRange {
+        #[doc = "The inclusive end date for the query in the format `YYYY-MM-DD`. Cannot be before `startDate`. The format `NdaysAgo`, `yesterday`, or `today` is also accepted, and in that case, the date is inferred based on the current time in the request’s time zone."]
+        #[serde(
+            rename = "endDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub end_date: ::std::option::Option<String>,
+        #[doc = "The inclusive start date for the query in the format `YYYY-MM-DD`. Cannot be after `endDate`. The format `NdaysAgo`, `yesterday`, or `today` is also accepted, and in that case, the date is inferred based on the current time in the request’s time zone."]
+        #[serde(
+            rename = "startDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub start_date: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessDateRange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessDateRange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessDimension {
+        #[doc = "The API name of the dimension. See [Data Access Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema) for the list of dimensions supported in this API. Dimensions are referenced by name in `dimensionFilter` and `orderBys`."]
+        #[serde(
+            rename = "dimensionName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessDimension {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessDimension {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessDimensionHeader {
+        #[doc = "The dimension’s name; for example ‘userEmail’."]
+        #[serde(
+            rename = "dimensionName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessDimensionHeader {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessDimensionHeader {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessDimensionValue {
+        #[doc = "The dimension value. For example, this value may be ‘France’ for the ‘country’ dimension."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessDimensionValue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessDimensionValue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessFilter {
+        #[doc = "A filter for two values."]
+        #[serde(
+            rename = "betweenFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub between_filter:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessBetweenFilter>,
+        #[doc = "The dimension name or metric name."]
+        #[serde(
+            rename = "fieldName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_name: ::std::option::Option<String>,
+        #[doc = "A filter for in list values."]
+        #[serde(
+            rename = "inListFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub in_list_filter:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessInListFilter>,
+        #[doc = "A filter for numeric or date values."]
+        #[serde(
+            rename = "numericFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub numeric_filter:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessNumericFilter>,
+        #[doc = "Strings related filter."]
+        #[serde(
+            rename = "stringFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub string_filter:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessStringFilter>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessFilterExpression {
+        #[doc = "A primitive filter. In the same FilterExpression, all of the filter’s field names need to be either all dimensions or all metrics."]
+        #[serde(
+            rename = "accessFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub access_filter:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessFilter>,
+        #[doc = "Each of the FilterExpressions in the and_group has an AND relationship."]
+        #[serde(
+            rename = "andGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub and_group: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessFilterExpressionList,
+        >,
+        #[doc = "The FilterExpression is NOT of not_expression."]
+        #[serde(
+            rename = "notExpression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub not_expression: ::std::option::Option<
+            Box<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessFilterExpression>,
+        >,
+        #[doc = "Each of the FilterExpressions in the or_group has an OR relationship."]
+        #[serde(
+            rename = "orGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub or_group: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessFilterExpressionList,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessFilterExpression {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessFilterExpression {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessFilterExpressionList {
+        #[doc = "A list of filter expressions."]
+        #[serde(
+            rename = "expressions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expressions: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessFilterExpression>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAccessFilterExpressionList
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAccessFilterExpressionList
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessInListFilter {
+        #[doc = "If true, the string value is case sensitive."]
+        #[serde(
+            rename = "caseSensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_sensitive: ::std::option::Option<bool>,
+        #[doc = "The list of string values. Must be non-empty."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessInListFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessInListFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessMetric {
+        #[doc = "The API name of the metric. See [Data Access Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema) for the list of metrics supported in this API. Metrics are referenced by name in `metricFilter` & `orderBys`."]
+        #[serde(
+            rename = "metricName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessMetric {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessMetric {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessMetricHeader {
+        #[doc = "The metric’s name; for example ‘accessCount’."]
+        #[serde(
+            rename = "metricName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessMetricHeader {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessMetricHeader {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessMetricValue {
+        #[doc = "The measurement value. For example, this value may be ‘13’."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessMetricValue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessMetricValue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessNumericFilter {
+        #[doc = "The operation type for this filter."]
+        #[serde(
+            rename = "operation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub operation: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation,
+        >,
+        #[doc = "A numeric value or a date value."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaNumericValue>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessNumericFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessNumericFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation {
+        #[doc = "Equal"]
+        Equal,
+        #[doc = "Greater than"]
+        GreaterThan,
+        #[doc = "Greater than or equal"]
+        GreaterThanOrEqual,
+        #[doc = "Less than"]
+        LessThan,
+        #[doc = "Less than or equal"]
+        LessThanOrEqual,
+        #[doc = "Unspecified."]
+        OperationUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::Equal => "EQUAL",
+                GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::GreaterThan => {
+                    "GREATER_THAN"
+                }
+                GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::GreaterThanOrEqual => {
+                    "GREATER_THAN_OR_EQUAL"
+                }
+                GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::LessThan => "LESS_THAN",
+                GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::LessThanOrEqual => {
+                    "LESS_THAN_OR_EQUAL"
+                }
+                GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::OperationUnspecified => {
+                    "OPERATION_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation, ()>
+        {
+            Ok(match s {
+                "EQUAL" => GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::Equal,
+                "GREATER_THAN" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::GreaterThan
+                }
+                "GREATER_THAN_OR_EQUAL" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::GreaterThanOrEqual
+                }
+                "LESS_THAN" => GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::LessThan,
+                "LESS_THAN_OR_EQUAL" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::LessThanOrEqual
+                }
+                "OPERATION_UNSPECIFIED" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::OperationUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EQUAL" => GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::Equal,
+                "GREATER_THAN" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::GreaterThan
+                }
+                "GREATER_THAN_OR_EQUAL" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::GreaterThanOrEqual
+                }
+                "LESS_THAN" => GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::LessThan,
+                "LESS_THAN_OR_EQUAL" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::LessThanOrEqual
+                }
+                "OPERATION_UNSPECIFIED" => {
+                    GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation::OperationUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAccessNumericFilterOperation
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessOrderBy {
+        #[doc = "If true, sorts by descending order. If false or unspecified, sorts in ascending order."]
+        #[serde(
+            rename = "desc",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub desc: ::std::option::Option<bool>,
+        #[doc = "Sorts results by a dimension’s values."]
+        #[serde(
+            rename = "dimension",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderBy,
+        >,
+        #[doc = "Sorts results by a metric’s values."]
+        #[serde(
+            rename = "metric",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessOrderByMetricOrderBy,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessOrderBy {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessOrderBy {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderBy {
+        #[doc = "A dimension name in the request to order by."]
+        #[serde(
+            rename = "dimensionName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_name: ::std::option::Option<String>,
+        #[doc = "Controls the rule for dimension value ordering."]
+        #[serde(
+            rename = "orderType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub order_type: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderBy
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderBy
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType {
+        #[doc = "Alphanumeric sort by Unicode code point. For example, “2” \\< “A” \\< “X” \\< “b” \\< “z”."]
+        Alphanumeric,
+        #[doc = "Case insensitive alphanumeric sort by lower case Unicode code point. For example, “2” \\< “A” \\< “b” \\< “X” \\< “z”."]
+        CaseInsensitiveAlphanumeric,
+        #[doc = "Dimension values are converted to numbers before sorting. For example in NUMERIC sort, “25” \\< “100”, and in `ALPHANUMERIC` sort, “100” \\< “25”. Non-numeric dimension values all have equal ordering value below all numeric values."]
+        Numeric,
+        #[doc = "Unspecified."]
+        OrderTypeUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: Alphanumeric => "ALPHANUMERIC" , GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: CaseInsensitiveAlphanumeric => "CASE_INSENSITIVE_ALPHANUMERIC" , GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: Numeric => "NUMERIC" , GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: OrderTypeUnspecified => "ORDER_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType,
+            (),
+        > {
+            Ok (match s { "ALPHANUMERIC" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: Alphanumeric , "CASE_INSENSITIVE_ALPHANUMERIC" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: CaseInsensitiveAlphanumeric , "NUMERIC" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: Numeric , "ORDER_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: OrderTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ALPHANUMERIC" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: Alphanumeric , "CASE_INSENSITIVE_ALPHANUMERIC" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: CaseInsensitiveAlphanumeric , "NUMERIC" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: Numeric , "ORDER_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType :: OrderTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByDimensionOrderByOrderType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessOrderByMetricOrderBy {
+        #[doc = "A metric name in the request to order by."]
+        #[serde(
+            rename = "metricName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByMetricOrderBy
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAccessOrderByMetricOrderBy
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessQuota {
+        #[doc = "Properties can use up to 50 concurrent requests."]
+        #[serde(
+            rename = "concurrentRequests",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub concurrent_requests:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessQuotaStatus>,
+        #[doc = "Properties and cloud project pairs can have up to 50 server errors per hour."]
+        #[serde(
+            rename = "serverErrorsPerProjectPerHour",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub server_errors_per_project_per_hour:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessQuotaStatus>,
+        #[doc = "Properties can use 250,000 tokens per day. Most requests consume fewer than 10 tokens."]
+        #[serde(
+            rename = "tokensPerDay",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tokens_per_day:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessQuotaStatus>,
+        #[doc = "Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas."]
+        #[serde(
+            rename = "tokensPerHour",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tokens_per_hour:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessQuotaStatus>,
+        #[doc = "Properties can use up to 25% of their tokens per project per hour. This amounts to Analytics 360 Properties can use 12,500 tokens per project per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas."]
+        #[serde(
+            rename = "tokensPerProjectPerHour",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub tokens_per_project_per_hour:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessQuotaStatus>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessQuota {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessQuota {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessQuotaStatus {
+        #[doc = "Quota consumed by this request."]
+        #[serde(
+            rename = "consumed",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub consumed: ::std::option::Option<i32>,
+        #[doc = "Quota remaining after this request."]
+        #[serde(
+            rename = "remaining",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remaining: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessQuotaStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessQuotaStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessRow {
+        #[doc = "List of dimension values. These values are in the same order as specified in the request."]
+        #[serde(
+            rename = "dimensionValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_values: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessDimensionValue>,
+        >,
+        #[doc = "List of metric values. These values are in the same order as specified in the request."]
+        #[serde(
+            rename = "metricValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_values: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessMetricValue>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessRow {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessRow {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAccessStringFilter {
+        #[doc = "If true, the string value is case sensitive."]
+        #[serde(
+            rename = "caseSensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_sensitive: ::std::option::Option<bool>,
+        #[doc = "The match type for this filter."]
+        #[serde(
+            rename = "matchType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub match_type: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType,
+        >,
+        #[doc = "The string value used for the matching."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAccessStringFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAccessStringFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType {
+        #[doc = "Begins with the string value."]
+        BeginsWith,
+        #[doc = "Contains the string value."]
+        Contains,
+        #[doc = "Ends with the string value."]
+        EndsWith,
+        #[doc = "Exact match of the string value."]
+        Exact,
+        #[doc = "Full match for the regular expression with the string value."]
+        FullRegexp,
+        #[doc = "Unspecified"]
+        MatchTypeUnspecified,
+        #[doc = "Partial match for the regular expression with the string value."]
+        PartialRegexp,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::BeginsWith => "BEGINS_WITH",
+                GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::Contains => "CONTAINS",
+                GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::EndsWith => "ENDS_WITH",
+                GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::Exact => "EXACT",
+                GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::FullRegexp => "FULL_REGEXP",
+                GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::MatchTypeUnspecified => {
+                    "MATCH_TYPE_UNSPECIFIED"
+                }
+                GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::PartialRegexp => {
+                    "PARTIAL_REGEXP"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType, ()>
+        {
+            Ok(match s {
+                "BEGINS_WITH" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::BeginsWith,
+                "CONTAINS" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::Contains,
+                "ENDS_WITH" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::EndsWith,
+                "EXACT" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::Exact,
+                "FULL_REGEXP" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::FullRegexp,
+                "MATCH_TYPE_UNSPECIFIED" => {
+                    GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::MatchTypeUnspecified
+                }
+                "PARTIAL_REGEXP" => {
+                    GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::PartialRegexp
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BEGINS_WITH" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::BeginsWith,
+                "CONTAINS" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::Contains,
+                "ENDS_WITH" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::EndsWith,
+                "EXACT" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::Exact,
+                "FULL_REGEXP" => GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::FullRegexp,
+                "MATCH_TYPE_UNSPECIFIED" => {
+                    GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::MatchTypeUnspecified
+                }
+                "PARTIAL_REGEXP" => {
+                    GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType::PartialRegexp
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAccessStringFilterMatchType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -272,6 +1357,30 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleAnalyticsAdminV1AlphaArchiveAudienceRequest {}
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaArchiveAudienceRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaArchiveAudienceRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleAnalyticsAdminV1AlphaArchiveCustomDimensionRequest {}
     impl ::google_field_selector::FieldSelector
         for GoogleAnalyticsAdminV1AlphaArchiveCustomDimensionRequest
@@ -311,6 +1420,1408 @@ pub mod schemas {
     impl ::google_field_selector::ToFieldType
         for GoogleAnalyticsAdminV1AlphaArchiveCustomMetricRequest
     {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAttributionSettings { # [doc = "Required. The lookback window configuration for acquisition conversion events. The default window size is 30 days."] # [serde (rename = "acquisitionConversionEventLookbackWindow" , default , skip_serializing_if = "std::option::Option::is_none")] pub acquisition_conversion_event_lookback_window : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow > , # [doc = "Output only. Resource name of this attribution settings resource. Format: properties/{property_id}/attributionSettings Example: “properties/1000/attributionSettings”"] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Required. The lookback window for all other, non-acquisition conversion events. The default window size is 90 days."] # [serde (rename = "otherConversionEventLookbackWindow" , default , skip_serializing_if = "std::option::Option::is_none")] pub other_conversion_event_lookback_window : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow > , # [doc = "Required. The reporting attribution model used to calculate conversion credit in this property’s reports. Changing the attribution model will apply to both historical and future data. These changes will be reflected in reports with conversion and revenue data. User and session data will be unaffected."] # [serde (rename = "reportingAttributionModel" , default , skip_serializing_if = "std::option::Option::is_none")] pub reporting_attribution_model : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel > , }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAttributionSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAttributionSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow {
+        #[doc = "30-day lookback window."]
+        AcquisitionConversionEventLookbackWindow30Days,
+        #[doc = "7-day lookback window."]
+        AcquisitionConversionEventLookbackWindow7Days,
+        #[doc = "Lookback window size unspecified."]
+        AcquisitionConversionEventLookbackWindowUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindow30Days => "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS" , GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindow7Days => "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS" , GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindowUnspecified => "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow,
+            (),
+        > {
+            Ok (match s { "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindow30Days , "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindow7Days , "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindowUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindow30Days , "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_7_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindow7Days , "ACQUISITION_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow :: AcquisitionConversionEventLookbackWindowUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsAcquisitionConversionEventLookbackWindow
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow {
+        #[doc = "30-day lookback window."]
+        OtherConversionEventLookbackWindow30Days,
+        #[doc = "60-day lookback window."]
+        OtherConversionEventLookbackWindow60Days,
+        #[doc = "90-day lookback window."]
+        OtherConversionEventLookbackWindow90Days,
+        #[doc = "Lookback window size unspecified."]
+        OtherConversionEventLookbackWindowUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow30Days => "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS" , GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow60Days => "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS" , GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow90Days => "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS" , GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindowUnspecified => "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow,
+            (),
+        > {
+            Ok (match s { "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow30Days , "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow60Days , "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow90Days , "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindowUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_30_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow30Days , "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_60_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow60Days , "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_90_DAYS" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindow90Days , "OTHER_CONVERSION_EVENT_LOOKBACK_WINDOW_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow :: OtherConversionEventLookbackWindowUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsOtherConversionEventLookbackWindow
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel {
+        #[doc = "Attributes 100% of the conversion value to the last Google Ads channel that the customer clicked through before converting."]
+        AdsPreferredLastClick,
+        #[doc = "Data-driven attribution distributes credit for the conversion based on data for each conversion event. Each Data-driven model is specific to each advertiser and each conversion event."]
+        CrossChannelDataDriven,
+        #[doc = "Gives all credit for the conversion to the first channel that a customer clicked (or engaged view through for YouTube) before converting."]
+        CrossChannelFirstClick,
+        #[doc = "Ignores direct traffic and attributes 100% of the conversion value to the last channel that the customer clicked through (or engaged view through for YouTube) before converting."]
+        CrossChannelLastClick,
+        #[doc = "Distributes the credit for the conversion equally across all the channels a customer clicked (or engaged view through for YouTube) before converting."]
+        CrossChannelLinear,
+        #[doc = "Attributes 40% credit to the first and last interaction, and the remaining 20% credit is distributed evenly to the middle interactions."]
+        CrossChannelPositionBased,
+        #[doc = "Gives more credit to the touchpoints that happened closer in time to the conversion."]
+        CrossChannelTimeDecay,
+        #[doc = "Reporting attribution model unspecified."]
+        ReportingAttributionModelUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: AdsPreferredLastClick => "ADS_PREFERRED_LAST_CLICK" , GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelDataDriven => "CROSS_CHANNEL_DATA_DRIVEN" , GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelFirstClick => "CROSS_CHANNEL_FIRST_CLICK" , GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelLastClick => "CROSS_CHANNEL_LAST_CLICK" , GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelLinear => "CROSS_CHANNEL_LINEAR" , GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelPositionBased => "CROSS_CHANNEL_POSITION_BASED" , GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelTimeDecay => "CROSS_CHANNEL_TIME_DECAY" , GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: ReportingAttributionModelUnspecified => "REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel,
+            (),
+        > {
+            Ok (match s { "ADS_PREFERRED_LAST_CLICK" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: AdsPreferredLastClick , "CROSS_CHANNEL_DATA_DRIVEN" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelDataDriven , "CROSS_CHANNEL_FIRST_CLICK" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelFirstClick , "CROSS_CHANNEL_LAST_CLICK" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelLastClick , "CROSS_CHANNEL_LINEAR" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelLinear , "CROSS_CHANNEL_POSITION_BASED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelPositionBased , "CROSS_CHANNEL_TIME_DECAY" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelTimeDecay , "REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: ReportingAttributionModelUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "ADS_PREFERRED_LAST_CLICK" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: AdsPreferredLastClick , "CROSS_CHANNEL_DATA_DRIVEN" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelDataDriven , "CROSS_CHANNEL_FIRST_CLICK" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelFirstClick , "CROSS_CHANNEL_LAST_CLICK" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelLastClick , "CROSS_CHANNEL_LINEAR" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelLinear , "CROSS_CHANNEL_POSITION_BASED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelPositionBased , "CROSS_CHANNEL_TIME_DECAY" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: CrossChannelTimeDecay , "REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel :: ReportingAttributionModelUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAttributionSettingsReportingAttributionModel
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudience {
+        #[doc = "Output only. It is automatically set by GA to false if this is an NPA Audience and is excluded from ads personalization."]
+        #[serde(
+            rename = "adsPersonalizationEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ads_personalization_enabled: ::std::option::Option<bool>,
+        #[doc = "Required. The description of the Audience."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Required. The display name of the Audience."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Optional. Specifies an event to log when a user joins the Audience. If not set, no event is logged when a user joins the Audience."]
+        #[serde(
+            rename = "eventTrigger",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_trigger:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceEventTrigger>,
+        #[doc = "Immutable. Specifies how long an exclusion lasts for users that meet the exclusion filter. It is applied to all EXCLUDE filter clauses and is ignored when there is no EXCLUDE filter clause in the Audience."]
+        #[serde(
+            rename = "exclusionDurationMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub exclusion_duration_mode: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode,
+        >,
+        #[doc = "Required. Immutable. Unordered list. Filter clauses that define the Audience. All clauses will be AND’ed together."]
+        #[serde(
+            rename = "filterClauses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter_clauses: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterClause>,
+        >,
+        #[doc = "Required. Immutable. The duration a user should stay in an Audience. It cannot be set to more than 540 days."]
+        #[serde(
+            rename = "membershipDurationDays",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub membership_duration_days: ::std::option::Option<i32>,
+        #[doc = "Output only. The resource name for this Audience resource. Format: properties/{propertyId}/audiences/{audienceId}"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAudience {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudience {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode {
+        #[doc = "Not specified."]
+        AudienceExclusionDurationModeUnspecified,
+        #[doc = "Exclude users from the Audience if they’ve ever met the filter clause."]
+        ExcludePermanently,
+        #[doc = "Exclude users from the Audience during periods when they meet the filter clause."]
+        ExcludeTemporarily,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: AudienceExclusionDurationModeUnspecified => "AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED" , GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: ExcludePermanently => "EXCLUDE_PERMANENTLY" , GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: ExcludeTemporarily => "EXCLUDE_TEMPORARILY" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode, ()>
+        {
+            Ok (match s { "AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: AudienceExclusionDurationModeUnspecified , "EXCLUDE_PERMANENTLY" => GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: ExcludePermanently , "EXCLUDE_TEMPORARILY" => GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: ExcludeTemporarily , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUDIENCE_EXCLUSION_DURATION_MODE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: AudienceExclusionDurationModeUnspecified , "EXCLUDE_PERMANENTLY" => GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: ExcludePermanently , "EXCLUDE_TEMPORARILY" => GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode :: ExcludeTemporarily , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceExclusionDurationMode
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilter {
+        #[doc = "Optional. Indicates whether this filter needs dynamic evaluation or not. If set to true, users join the Audience if they ever met the condition (static evaluation). If unset or set to false, user evaluation for an Audience is dynamic; users are added to an Audience when they meet the conditions and then removed when they no longer meet them. This can only be set when Audience scope is ACROSS_ALL_SESSIONS."]
+        #[serde(
+            rename = "atAnyPointInTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub at_any_point_in_time: ::std::option::Option<bool>,
+        #[doc = "A filter for numeric or date values between certain values on a dimension or metric."]
+        #[serde(
+            rename = "betweenFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub between_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterBetweenFilter,
+        >,
+        #[doc = "Required. Immutable. The dimension name or metric name to filter."]
+        #[serde(
+            rename = "fieldName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_name: ::std::option::Option<String>,
+        #[doc = "Optional. If set, specifies the time window for which to evaluate data in number of days. If not set, then audience data is evaluated against lifetime data (i.e., infinite time window). For example, if set to 1 day, only the current day’s data is evaluated. The reference point is the current day when at_any_point_in_time is unset or false. It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be greater than 60 days."]
+        #[serde(
+            rename = "inAnyNDayPeriod",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub in_any_n_day_period: ::std::option::Option<i32>,
+        #[doc = "A filter for a string dimension that matches a particular list of options."]
+        #[serde(
+            rename = "inListFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub in_list_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterInListFilter,
+        >,
+        #[doc = "A filter for numeric or date values on a dimension or metric."]
+        #[serde(
+            rename = "numericFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub numeric_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilter,
+        >,
+        #[doc = "A filter for a string-type dimension that matches a particular pattern."]
+        #[serde(
+            rename = "stringFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub string_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilter,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilter
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilter
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterBetweenFilter {
+        #[doc = "Required. Begins with this number, inclusive."]
+        #[serde(
+            rename = "fromValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub from_value: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericValue,
+        >,
+        #[doc = "Required. Ends with this number, inclusive."]
+        #[serde(
+            rename = "toValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub to_value: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericValue,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterBetweenFilter
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterBetweenFilter
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterInListFilter {
+        #[doc = "Optional. If true, the match is case-sensitive. If false, the match is case-insensitive."]
+        #[serde(
+            rename = "caseSensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_sensitive: ::std::option::Option<bool>,
+        #[doc = "Required. The list of possible string values to match against. Must be non-empty."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterInListFilter
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterInListFilter
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilter { # [doc = "Required. The operation applied to a numeric filter."] # [serde (rename = "operation" , default , skip_serializing_if = "std::option::Option::is_none")] pub operation : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation > , # [doc = "Required. The numeric or date value to match against."] # [serde (rename = "value" , default , skip_serializing_if = "std::option::Option::is_none")] pub value : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericValue > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilter
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilter
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation {
+        #[doc = "Equal."]
+        Equal,
+        #[doc = "Greater than."]
+        GreaterThan,
+        #[doc = "Less than."]
+        LessThan,
+        #[doc = "Unspecified."]
+        OperationUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: Equal => "EQUAL" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: GreaterThan => "GREATER_THAN" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: LessThan => "LESS_THAN" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: OperationUnspecified => "OPERATION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation,
+            (),
+        > {
+            Ok (match s { "EQUAL" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: Equal , "GREATER_THAN" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: GreaterThan , "LESS_THAN" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: LessThan , "OPERATION_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: OperationUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "EQUAL" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: Equal , "GREATER_THAN" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: GreaterThan , "LESS_THAN" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: LessThan , "OPERATION_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation :: OperationUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericFilterOperation
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericValue {
+        #[doc = "Double value."]
+        #[serde(
+            rename = "doubleValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub double_value: ::std::option::Option<f64>,
+        #[doc = "Integer value."]
+        #[serde(
+            rename = "int64Value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub int_64_value: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericValue
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterNumericValue
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilter { # [doc = "Optional. If true, the match is case-sensitive. If false, the match is case-insensitive."] # [serde (rename = "caseSensitive" , default , skip_serializing_if = "std::option::Option::is_none")] pub case_sensitive : :: std :: option :: Option < bool > , # [doc = "Required. The match type for the string filter."] # [serde (rename = "matchType" , default , skip_serializing_if = "std::option::Option::is_none")] pub match_type : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType > , # [doc = "Required. The string value to be matched against."] # [serde (rename = "value" , default , skip_serializing_if = "std::option::Option::is_none")] pub value : :: std :: option :: Option < String > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilter
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilter
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType {
+        #[doc = "Begins with the string value."]
+        BeginsWith,
+        #[doc = "Contains the string value."]
+        Contains,
+        #[doc = "Ends with the string value."]
+        EndsWith,
+        #[doc = "Exact match of the string value."]
+        Exact,
+        #[doc = "Full regular expression matches with the string value."]
+        FullRegexp,
+        #[doc = "Unspecified"]
+        MatchTypeUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: BeginsWith => "BEGINS_WITH" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: Contains => "CONTAINS" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: EndsWith => "ENDS_WITH" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: Exact => "EXACT" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: FullRegexp => "FULL_REGEXP" , GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: MatchTypeUnspecified => "MATCH_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType,
+            (),
+        > {
+            Ok (match s { "BEGINS_WITH" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: BeginsWith , "CONTAINS" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: Contains , "ENDS_WITH" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: EndsWith , "EXACT" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: Exact , "FULL_REGEXP" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: FullRegexp , "MATCH_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: MatchTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "BEGINS_WITH" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: BeginsWith , "CONTAINS" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: Contains , "ENDS_WITH" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: EndsWith , "EXACT" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: Exact , "FULL_REGEXP" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: FullRegexp , "MATCH_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType :: MatchTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilterStringFilterMatchType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceEventFilter {
+        #[doc = "Required. Immutable. The name of the event to match against."]
+        #[serde(
+            rename = "eventName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_name: ::std::option::Option<String>,
+        #[doc = "Optional. If specified, this filter matches events that match both the single event name and the parameter filter expressions. AudienceEventFilter inside the parameter filter expression cannot be set (i.e., nested event filters are not supported). This should be a single and_group of dimension_or_metric_filter or not_expression; ANDs of ORs are not supported. Also, if it includes a filter for “eventCount”, only that one will be considered; all the other filters will be ignored."]
+        #[serde(
+            rename = "eventParameterFilterExpression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_parameter_filter_expression: ::std::option::Option<
+            Box<crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterExpression>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAudienceEventFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudienceEventFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceEventTrigger {
+        #[doc = "Required. The event name that will be logged."]
+        #[serde(
+            rename = "eventName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_name: ::std::option::Option<String>,
+        #[doc = "Required. When to log the event."]
+        #[serde(
+            rename = "logCondition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub log_condition: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAudienceEventTrigger {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudienceEventTrigger {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition {
+        #[doc = "The event should be logged only when a user is joined."]
+        AudienceJoined,
+        #[doc = "The event should be logged whenever the Audience condition is met, even if the user is already a member of the Audience."]
+        AudienceMembershipRenewed,
+        #[doc = "Log condition is not specified."]
+        LogConditionUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: AudienceJoined => "AUDIENCE_JOINED" , GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: AudienceMembershipRenewed => "AUDIENCE_MEMBERSHIP_RENEWED" , GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: LogConditionUnspecified => "LOG_CONDITION_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition, ()>
+        {
+            Ok (match s { "AUDIENCE_JOINED" => GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: AudienceJoined , "AUDIENCE_MEMBERSHIP_RENEWED" => GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: AudienceMembershipRenewed , "LOG_CONDITION_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: LogConditionUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUDIENCE_JOINED" => GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: AudienceJoined , "AUDIENCE_MEMBERSHIP_RENEWED" => GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: AudienceMembershipRenewed , "LOG_CONDITION_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition :: LogConditionUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceEventTriggerLogCondition
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceFilterClause {
+        #[doc = "Required. Specifies whether this is an include or exclude filter clause."]
+        #[serde(
+            rename = "clauseType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub clause_type: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType,
+        >,
+        #[doc = "Filters that must occur in a specific order for the user to be a member of the Audience."]
+        #[serde(
+            rename = "sequenceFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sequence_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceSequenceFilter,
+        >,
+        #[doc = "A simple filter that a user must satisfy to be a member of the Audience."]
+        #[serde(
+            rename = "simpleFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub simple_filter:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceSimpleFilter>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAudienceFilterClause {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudienceFilterClause {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType {
+        #[doc = "Unspecified clause type."]
+        AudienceClauseTypeUnspecified,
+        #[doc = "Users will be excluded from the Audience if the filter clause is met."]
+        Exclude,
+        #[doc = "Users will be included in the Audience if the filter clause is met."]
+        Include,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: AudienceClauseTypeUnspecified => "AUDIENCE_CLAUSE_TYPE_UNSPECIFIED" , GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: Exclude => "EXCLUDE" , GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: Include => "INCLUDE" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType, ()>
+        {
+            Ok (match s { "AUDIENCE_CLAUSE_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: AudienceClauseTypeUnspecified , "EXCLUDE" => GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: Exclude , "INCLUDE" => GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: Include , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUDIENCE_CLAUSE_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: AudienceClauseTypeUnspecified , "EXCLUDE" => GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: Exclude , "INCLUDE" => GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType :: Include , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceFilterClauseClauseType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceFilterExpression {
+        #[doc = "A list of expressions to be AND’ed together. It can only contain AudienceFilterExpressions with or_group. This must be set for the top level AudienceFilterExpression."]
+        #[serde(
+            rename = "andGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub and_group: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterExpressionList,
+        >,
+        #[doc = "A filter on a single dimension or metric. This cannot be set on the top level AudienceFilterExpression."]
+        #[serde(
+            rename = "dimensionOrMetricFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_or_metric_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceDimensionOrMetricFilter,
+        >,
+        #[doc = "Creates a filter that matches a specific event. This cannot be set on the top level AudienceFilterExpression."]
+        #[serde(
+            rename = "eventFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub event_filter: ::std::option::Option<
+            Box<crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceEventFilter>,
+        >,
+        #[doc = "A filter expression to be NOT’ed (i.e., inverted, complemented). It can only include a dimension_or_metric_filter. This cannot be set on the top level AudienceFilterExpression."]
+        #[serde(
+            rename = "notExpression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub not_expression: ::std::option::Option<
+            Box<crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterExpression>,
+        >,
+        #[doc = "A list of expressions to OR’ed together. It cannot contain AudienceFilterExpressions with and_group or or_group."]
+        #[serde(
+            rename = "orGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub or_group: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterExpressionList,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceFilterExpression
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudienceFilterExpression {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceFilterExpressionList {
+        #[doc = "A list of Audience filter expressions."]
+        #[serde(
+            rename = "filterExpressions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter_expressions: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterExpression>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceFilterExpressionList
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceFilterExpressionList
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceSequenceFilter { # [doc = "Required. Immutable. Specifies the scope for this filter."] # [serde (rename = "scope" , default , skip_serializing_if = "std::option::Option::is_none")] pub scope : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope > , # [doc = "Optional. Defines the time period in which the whole sequence must occur."] # [serde (rename = "sequenceMaximumDuration" , default , skip_serializing_if = "std::option::Option::is_none")] pub sequence_maximum_duration : :: std :: option :: Option < String > , # [doc = "Required. An ordered sequence of steps. A user must complete each step in order to join the sequence filter."] # [serde (rename = "sequenceSteps" , default , skip_serializing_if = "std::option::Option::is_none")] pub sequence_steps : :: std :: option :: Option < Vec < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStep > > , }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope {
+        #[doc = "User joins the Audience if the filter condition is met by any event across any session."]
+        AudienceFilterScopeAcrossAllSessions,
+        #[doc = "Scope is not specified."]
+        AudienceFilterScopeUnspecified,
+        #[doc = "User joins the Audience if the filter condition is met within one event."]
+        AudienceFilterScopeWithinSameEvent,
+        #[doc = "User joins the Audience if the filter condition is met within one session."]
+        AudienceFilterScopeWithinSameSession,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeAcrossAllSessions => "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" , GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeUnspecified => "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" , GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeWithinSameEvent => "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" , GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeWithinSameSession => "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope, ()>
+        {
+            Ok (match s { "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeAcrossAllSessions , "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeUnspecified , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeWithinSameEvent , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeWithinSameSession , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeAcrossAllSessions , "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeUnspecified , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeWithinSameEvent , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope :: AudienceFilterScopeWithinSameSession , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterScope
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStep { # [doc = "Optional. When set, this step must be satisfied within the constraint_duration of the previous step (i.e., t\\[i\\] - t\\[i-1\\] \\<= constraint_duration). If not set, there is no duration requirement (the duration is effectively unlimited). It is ignored for the first step."] # [serde (rename = "constraintDuration" , default , skip_serializing_if = "std::option::Option::is_none")] pub constraint_duration : :: std :: option :: Option < String > , # [doc = "Required. Immutable. A logical expression of Audience dimension, metric, or event filters in each step."] # [serde (rename = "filterExpression" , default , skip_serializing_if = "std::option::Option::is_none")] pub filter_expression : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAudienceFilterExpression > , # [doc = "Optional. If true, the event satisfying this step must be the very next event after the event satisfying the last step. If unset or false, this step indirectly follows the prior step; for example, there may be events between the prior step and this step. It is ignored for the first step."] # [serde (rename = "immediatelyFollows" , default , skip_serializing_if = "std::option::Option::is_none")] pub immediately_follows : :: std :: option :: Option < bool > , # [doc = "Required. Immutable. Specifies the scope for this step."] # [serde (rename = "scope" , default , skip_serializing_if = "std::option::Option::is_none")] pub scope : :: std :: option :: Option < crate :: schemas :: GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStep
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStep
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope {
+        #[doc = "User joins the Audience if the filter condition is met by any event across any session."]
+        AudienceFilterScopeAcrossAllSessions,
+        #[doc = "Scope is not specified."]
+        AudienceFilterScopeUnspecified,
+        #[doc = "User joins the Audience if the filter condition is met within one event."]
+        AudienceFilterScopeWithinSameEvent,
+        #[doc = "User joins the Audience if the filter condition is met within one session."]
+        AudienceFilterScopeWithinSameSession,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeAcrossAllSessions => "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" , GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeUnspecified => "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" , GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeWithinSameEvent => "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" , GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeWithinSameSession => "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope,
+            (),
+        > {
+            Ok (match s { "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeAcrossAllSessions , "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeUnspecified , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeWithinSameEvent , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeWithinSameSession , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeAcrossAllSessions , "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeUnspecified , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeWithinSameEvent , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" => GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope :: AudienceFilterScopeWithinSameSession , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaAudienceSequenceFilterAudienceSequenceStepScope
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaAudienceSimpleFilter {
+        #[doc = "Required. Immutable. A logical expression of Audience dimension, metric, or event filters."]
+        #[serde(
+            rename = "filterExpression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter_expression: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceFilterExpression,
+        >,
+        #[doc = "Required. Immutable. Specifies the scope for this filter."]
+        #[serde(
+            rename = "scope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub scope: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
+        #[doc = "User joins the Audience if the filter condition is met by any event across any session."]
+        AudienceFilterScopeAcrossAllSessions,
+        #[doc = "Scope is not specified."]
+        AudienceFilterScopeUnspecified,
+        #[doc = "User joins the Audience if the filter condition is met within one event."]
+        AudienceFilterScopeWithinSameEvent,
+        #[doc = "User joins the Audience if the filter condition is met within one session."]
+        AudienceFilterScopeWithinSameSession,
+    }
+    impl GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeAcrossAllSessions => "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" , GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeUnspecified => "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" , GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeWithinSameEvent => "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" , GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeWithinSameSession => "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope, ()>
+        {
+            Ok (match s { "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeAcrossAllSessions , "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeUnspecified , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeWithinSameEvent , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeWithinSameSession , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AUDIENCE_FILTER_SCOPE_ACROSS_ALL_SESSIONS" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeAcrossAllSessions , "AUDIENCE_FILTER_SCOPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeUnspecified , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_EVENT" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeWithinSameEvent , "AUDIENCE_FILTER_SCOPE_WITHIN_SAME_SESSION" => GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope :: AudienceFilterScopeWithinSameSession , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaAudienceSimpleFilterScope {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -444,7 +2955,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaAuditUserLinksResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaAuditUserLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -681,6 +3192,86 @@ pub mod schemas {
         PartialOrd,
         Ord,
         Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaBigQueryLink {
+        #[doc = "Output only. Time when the link was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "If set true, enables daily data export to the linked Google Cloud project."]
+        #[serde(
+            rename = "dailyExportEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub daily_export_enabled: ::std::option::Option<bool>,
+        #[doc = "The list of event names that will be excluded from exports."]
+        #[serde(
+            rename = "excludedEvents",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub excluded_events: ::std::option::Option<Vec<String>>,
+        #[doc = "The list of streams under the parent property for which data will be exported. Format: properties/{property_id}/dataStreams/{stream_id} Example: \\[‘properties/1000/dataStreams/2000’\\]"]
+        #[serde(
+            rename = "exportStreams",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub export_streams: ::std::option::Option<Vec<String>>,
+        #[doc = "If set true, exported data will include advertising identifiers for mobile app streams."]
+        #[serde(
+            rename = "includeAdvertisingId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub include_advertising_id: ::std::option::Option<bool>,
+        #[doc = "Output only. Resource name of this BigQuery link. Format: ‘properties/{property_id}/bigQueryLinks/{bigquery_link_id}’ Format: ‘properties/1234/bigQueryLinks/abc567’"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Immutable. The linked Google Cloud project. When creating a BigQueryLink, you may provide this resource name using either a project number or project ID. Once this resource has been created, the returned project will always have a project that contains a project number. Format: ‘projects/{project number}’ Example: ‘projects/1234’"]
+        #[serde(
+            rename = "project",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project: ::std::option::Option<String>,
+        #[doc = "If set true, enables streaming export to the linked Google Cloud project."]
+        #[serde(
+            rename = "streamingExportEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub streaming_export_enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaBigQueryLink {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaBigQueryLink {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
         Copy,
         Default,
         :: serde :: Deserialize,
@@ -871,6 +3462,22 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account: ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccount>,
+        #[doc = "A snapshot of AttributionSettings resource in change history."]
+        #[serde(
+            rename = "attributionSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub attribution_settings:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAttributionSettings>,
+        #[doc = "A snapshot of a BigQuery link resource in change history."]
+        #[serde(
+            rename = "bigqueryLink",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bigquery_link:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaBigQueryLink>,
         #[doc = "A snapshot of a ConversionEvent resource in change history."]
         #[serde(
             rename = "conversionEvent",
@@ -929,6 +3536,14 @@ pub mod schemas {
         pub display_video_360_advertiser_link_proposal: ::std::option::Option<
             crate::schemas::GoogleAnalyticsAdminV1AlphaDisplayVideo360AdvertiserLinkProposal,
         >,
+        #[doc = "A snapshot of an ExpandedDataSet resource in change history."]
+        #[serde(
+            rename = "expandedDataSet",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expanded_data_set:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSet>,
         #[doc = "A snapshot of a FirebaseLink resource in change history."]
         #[serde(
             rename = "firebaseLink",
@@ -969,6 +3584,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub property: ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaProperty>,
+        #[doc = "A snapshot of a SearchAds360Link resource in change history."]
+        #[serde(
+            rename = "searchAds360Link",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search_ads_360_link:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link>,
     }
     impl ::google_field_selector::FieldSelector
         for GoogleAnalyticsAdminV1AlphaChangeHistoryChangeChangeHistoryResource
@@ -2415,6 +5038,454 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleAnalyticsAdminV1AlphaExpandedDataSet {
+        #[doc = "Output only. Time when expanded data set began (or will begin) collecing data."]
+        #[serde(
+            rename = "dataCollectionStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_collection_start_time: ::std::option::Option<String>,
+        #[doc = "Optional. The description of the ExpandedDataSet. Max 50 chars."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Immutable. A logical expression of ExpandedDataSet filters applied to dimension included in the ExpandedDataSet. This filter is used to reduce the number of rows and thus the change of encountering `other row`."]
+        #[serde(
+            rename = "dimensionFilterExpression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_filter_expression: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpression,
+        >,
+        #[doc = "Immutable. The list of dimensions included in the ExpandedDataSet. See the [API Dimensions](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#dimensions) for the list of dimension names."]
+        #[serde(
+            rename = "dimensionNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_names: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The display name of the ExpandedDataSet. Max 200 chars."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Immutable. The list of metrics included in the ExpandedDataSet. See the [API Metrics](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#metrics) for the list of dimension names."]
+        #[serde(
+            rename = "metricNames",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_names: ::std::option::Option<Vec<String>>,
+        #[doc = "Output only. The resource name for this ExpandedDataSet resource. Format: properties/{property_id}/expandedDataSets/{expanded_data_set}"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaExpandedDataSet {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaExpandedDataSet {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaExpandedDataSetFilter {
+        #[doc = "Required. The dimension name to filter."]
+        #[serde(
+            rename = "fieldName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_name: ::std::option::Option<String>,
+        #[doc = "A filter for a string dimension that matches a particular list of options."]
+        #[serde(
+            rename = "inListFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub in_list_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterInListFilter,
+        >,
+        #[doc = "A filter for a string-type dimension that matches a particular pattern."]
+        #[serde(
+            rename = "stringFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub string_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilter,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilter {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilter {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpression {
+        #[doc = "A list of expressions to be AND’ed together. It must contain a ExpandedDataSetFilterExpression with either not_expression or dimension_filter. This must be set for the top level ExpandedDataSetFilterExpression."]
+        #[serde(
+            rename = "andGroup",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub and_group: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpressionList,
+        >,
+        #[doc = "A filter on a single dimension. This cannot be set on the top level ExpandedDataSetFilterExpression."]
+        #[serde(
+            rename = "filter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter:
+            ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilter>,
+        #[doc = "A filter expression to be NOT’ed (i.e., inverted, complemented). It must include a dimension_filter. This cannot be set on the top level ExpandedDataSetFilterExpression."]
+        #[serde(
+            rename = "notExpression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub not_expression: ::std::option::Option<
+            Box<crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpression>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpression
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpression
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpressionList {
+        #[doc = "A list of ExpandedDataSet filter expressions."]
+        #[serde(
+            rename = "filterExpressions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub filter_expressions: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpression>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpressionList
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterExpressionList
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterInListFilter {
+        #[doc = "Optional. If true, the match is case-sensitive. If false, the match is case-insensitive. Must be true."]
+        #[serde(
+            rename = "caseSensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_sensitive: ::std::option::Option<bool>,
+        #[doc = "Required. The list of possible string values to match against. Must be non-empty."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterInListFilter
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterInListFilter
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilter {
+        #[doc = "Optional. If true, the match is case-sensitive. If false, the match is case-insensitive. Must be true when match_type is EXACT. Must be false when match_type is CONTAINS."]
+        #[serde(
+            rename = "caseSensitive",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub case_sensitive: ::std::option::Option<bool>,
+        #[doc = "Required. The match type for the string filter."]
+        #[serde(
+            rename = "matchType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub match_type: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType,
+        >,
+        #[doc = "Required. The string value to be matched against."]
+        #[serde(
+            rename = "value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilter
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilter
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType {
+        #[doc = "Contains the string value."]
+        Contains,
+        #[doc = "Exact match of the string value."]
+        Exact,
+        #[doc = "Unspecified"]
+        MatchTypeUnspecified,
+    }
+    impl GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: Contains => "CONTAINS" , GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: Exact => "EXACT" , GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: MatchTypeUnspecified => "MATCH_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType,
+            (),
+        > {
+            Ok (match s { "CONTAINS" => GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: Contains , "EXACT" => GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: Exact , "MATCH_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: MatchTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "CONTAINS" => GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: Contains , "EXACT" => GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: Exact , "MATCH_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType :: MatchTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaExpandedDataSetFilterStringFilterMatchType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutRequest {
+        #[doc = "Required. The UA property to get the opt out status. Note this request uses the internal property ID, not the tracking ID of the form UA-XXXXXX-YY. Format: properties/{internalWebPropertyId} Example: properties/1234"]
+        #[serde(
+            rename = "property",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub property: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutResponse {
+        #[doc = "The opt out status for the UA property."]
+        #[serde(
+            rename = "optOut",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub opt_out: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleAnalyticsAdminV1AlphaFirebaseLink {
         #[doc = "Output only. Time when this FirebaseLink was originally created."]
         #[serde(
@@ -2958,7 +6029,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListAccountSummariesResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListAccountSummariesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3002,7 +6073,88 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListAccountsResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListAccountsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaListAudiencesResponse {
+        #[doc = "List of Audiences."]
+        #[serde(
+            rename = "audiences",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub audiences:
+            ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAudience>>,
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaListAudiencesResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaListAudiencesResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListAudiencesResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse {
+        #[doc = "List of BigQueryLinks."]
+        #[serde(
+            rename = "bigqueryLinks",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub bigquery_links:
+            ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaBigQueryLink>>,
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3050,7 +6202,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListConversionEventsResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListConversionEventsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3098,7 +6250,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListCustomDimensionsResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListCustomDimensionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3144,7 +6296,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListCustomMetricsResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListCustomMetricsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3188,7 +6340,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListDataStreamsResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListDataStreamsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3237,7 +6389,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GoogleAnalyticsAdminV1AlphaListDisplayVideo360AdvertiserLinkProposalsResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -3288,7 +6440,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken
+    impl crate::GetNextPageToken<String>
         for GoogleAnalyticsAdminV1AlphaListDisplayVideo360AdvertiserLinksResponse
     {
         fn next_page_token(&self) -> ::std::option::Option<String> {
@@ -3336,7 +6488,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListFirebaseLinksResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListFirebaseLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3384,7 +6536,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListGoogleAdsLinksResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListGoogleAdsLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3433,7 +6585,9 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListMeasurementProtocolSecretsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleAnalyticsAdminV1AlphaListMeasurementProtocolSecretsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3477,7 +6631,55 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListPropertiesResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListPropertiesResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse {
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "List of SearchAds360Links."]
+        #[serde(
+            rename = "searchAds360Links",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search_ads_360_links:
+            ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3521,7 +6723,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaListUserLinksResponse {
+    impl crate::GetNextPageToken<String> for GoogleAnalyticsAdminV1AlphaListUserLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3569,6 +6771,36 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaMeasurementProtocolSecret {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaNumericValue {
+        #[doc = "Double value"]
+        #[serde(
+            rename = "doubleValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub double_value: ::std::option::Option<f64>,
+        #[doc = "Integer value"]
+        #[serde(
+            rename = "int64Value",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub int_64_value: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaNumericValue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaNumericValue {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -4249,6 +7481,237 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaRunAccessReportRequest {
+        #[doc = "Date ranges of access records to read. If multiple date ranges are requested, each response row will contain a zero based date range index. If two date ranges overlap, the access records for the overlapping days is included in the response rows for both date ranges. Requests are allowed up to 2 date ranges."]
+        #[serde(
+            rename = "dateRanges",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub date_ranges:
+            ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessDateRange>>,
+        #[doc = "Dimension filters allow you to restrict report response to specific dimension values which match the filter. For example, filtering on access records of a single user. To learn more, see [Fundamentals of Dimension Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters) for examples. Metrics cannot be used in this filter."]
+        #[serde(
+            rename = "dimensionFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessFilterExpression,
+        >,
+        #[doc = "The dimensions requested and displayed in the response. Requests are allowed up to 9 dimensions."]
+        #[serde(
+            rename = "dimensions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimensions:
+            ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessDimension>>,
+        #[doc = "The number of rows to return. If unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for. `limit` must be positive. The API may return fewer rows than the requested `limit`, if there aren’t as many remaining rows as the `limit`. For instance, there are fewer than 300 possible values for the dimension `country`, so when reporting on only `country`, you can’t get more than 300 rows, even if you set `limit` to a higher value. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination)."]
+        #[serde(
+            rename = "limit",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub limit: ::std::option::Option<i64>,
+        #[doc = "Metric filters allow you to restrict report response to specific metric values which match the filter. Metric filters are applied after aggregating the report’s rows, similar to SQL having-clause. Dimensions cannot be used in this filter."]
+        #[serde(
+            rename = "metricFilter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_filter: ::std::option::Option<
+            crate::schemas::GoogleAnalyticsAdminV1AlphaAccessFilterExpression,
+        >,
+        #[doc = "The metrics requested and displayed in the response. Requests are allowed up to 10 metrics."]
+        #[serde(
+            rename = "metrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metrics:
+            ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessMetric>>,
+        #[doc = "The row count of the start row. The first row is counted as row 0. If offset is unspecified, it is treated as 0. If offset is zero, then this method will return the first page of results with `limit` entries. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination)."]
+        #[serde(
+            rename = "offset",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub offset: ::std::option::Option<i64>,
+        #[doc = "Specifies how rows are ordered in the response."]
+        #[serde(
+            rename = "orderBys",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub order_bys:
+            ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessOrderBy>>,
+        #[doc = "Toggles whether to return the current state of this Analytics Property’s quota. Quota is returned in [AccessQuota](#AccessQuota)."]
+        #[serde(
+            rename = "returnEntityQuota",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub return_entity_quota: ::std::option::Option<bool>,
+        #[doc = "This request’s time zone if specified. If unspecified, the property’s time zone is used. The request’s time zone is used to interpret the start & end dates of the report. Formatted as strings from the IANA Time Zone database (https://www.iana.org/time-zones); for example “America/New_York” or “Asia/Tokyo”."]
+        #[serde(
+            rename = "timeZone",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_zone: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaRunAccessReportRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaRunAccessReportRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaRunAccessReportResponse {
+        #[doc = "The header for a column in the report that corresponds to a specific dimension. The number of DimensionHeaders and ordering of DimensionHeaders matches the dimensions present in rows."]
+        #[serde(
+            rename = "dimensionHeaders",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dimension_headers: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessDimensionHeader>,
+        >,
+        #[doc = "The header for a column in the report that corresponds to a specific metric. The number of MetricHeaders and ordering of MetricHeaders matches the metrics present in rows."]
+        #[serde(
+            rename = "metricHeaders",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metric_headers: ::std::option::Option<
+            Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessMetricHeader>,
+        >,
+        #[doc = "The quota state for this Analytics property including this request."]
+        #[serde(
+            rename = "quota",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub quota: ::std::option::Option<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessQuota>,
+        #[doc = "The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination)."]
+        #[serde(
+            rename = "rowCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub row_count: ::std::option::Option<i32>,
+        #[doc = "Rows of dimension value combinations and metric values in the report."]
+        #[serde(
+            rename = "rows",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rows: ::std::option::Option<Vec<crate::schemas::GoogleAnalyticsAdminV1AlphaAccessRow>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaRunAccessReportResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaRunAccessReportResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaSearchAds360Link {
+        #[doc = "Enables personalized advertising features with this integration. If this field is not set on create, it will be defaulted to true."]
+        #[serde(
+            rename = "adsPersonalizationEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ads_personalization_enabled: ::std::option::Option<bool>,
+        #[doc = "Output only. The display name of the Search Ads 360 Advertiser. Allows users to easily identify the linked resource."]
+        #[serde(
+            rename = "advertiserDisplayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub advertiser_display_name: ::std::option::Option<String>,
+        #[doc = "Immutable. This field represents the Advertiser ID of the Search Ads 360 Advertiser. that has been linked."]
+        #[serde(
+            rename = "advertiserId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub advertiser_id: ::std::option::Option<String>,
+        #[doc = "Immutable. Enables the import of campaign data from Search Ads 360 into the GA4 property. After link creation, this can only be updated from the Search Ads 360 product. If this field is not set on create, it will be defaulted to true."]
+        #[serde(
+            rename = "campaignDataSharingEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub campaign_data_sharing_enabled: ::std::option::Option<bool>,
+        #[doc = "Immutable. Enables the import of cost data from Search Ads 360 to the GA4 property. This can only be enabled if campaign_data_sharing_enabled is enabled. After link creation, this can only be updated from the Search Ads 360 product. If this field is not set on create, it will be defaulted to true."]
+        #[serde(
+            rename = "costDataSharingEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub cost_data_sharing_enabled: ::std::option::Option<bool>,
+        #[doc = "Output only. The resource name for this SearchAds360Link resource. Format: properties/{propertyId}/searchAds360Links/{linkId} Note: linkId is not the Search Ads 360 advertiser ID"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Enables export of site stats with this integration. If this field is not set on create, it will be defaulted to true."]
+        #[serde(
+            rename = "siteStatsSharingEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub site_stats_sharing_enabled: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleAnalyticsAdminV1AlphaSearchAds360Link {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleAnalyticsAdminV1AlphaSearchAds360Link {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -4355,8 +7818,12 @@ pub mod schemas {
     pub enum GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems {
         #[doc = "Account resource"]
         Account,
+        #[doc = "AttributionSettings resource"]
+        AttributionSettings,
         #[doc = "Resource type unknown or not specified."]
         ChangeHistoryResourceTypeUnspecified,
+        #[doc = "ChannelGroup resource"]
+        ChannelGroup,
         #[doc = "ConversionEvent resource"]
         ConversionEvent,
         #[doc = "CustomDimension resource"]
@@ -4371,6 +7838,8 @@ pub mod schemas {
         DisplayVideo360AdvertiserLink,
         #[doc = "DisplayVideo360AdvertiserLinkProposal resource"]
         DisplayVideo360AdvertiserLinkProposal,
+        #[doc = "ExpandedDataSet resource"]
+        ExpandedDataSet,
         #[doc = "FirebaseLink resource"]
         FirebaseLink,
         #[doc = "GoogleAdsLink resource"]
@@ -4381,10 +7850,12 @@ pub mod schemas {
         MeasurementProtocolSecret,
         #[doc = "Property resource"]
         Property,
+        #[doc = "SearchAds360Link resource"]
+        SearchAds360Link,
     }
     impl GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems {
         pub fn as_str(self) -> &'static str {
-            match self { GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Account => "ACCOUNT" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChangeHistoryResourceTypeUnspecified => "CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ConversionEvent => "CONVERSION_EVENT" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomDimension => "CUSTOM_DIMENSION" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomMetric => "CUSTOM_METRIC" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataRetentionSettings => "DATA_RETENTION_SETTINGS" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataStream => "DATA_STREAM" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLink => "DISPLAY_VIDEO_360_ADVERTISER_LINK" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLinkProposal => "DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: FirebaseLink => "FIREBASE_LINK" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleAdsLink => "GOOGLE_ADS_LINK" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleSignalsSettings => "GOOGLE_SIGNALS_SETTINGS" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: MeasurementProtocolSecret => "MEASUREMENT_PROTOCOL_SECRET" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Property => "PROPERTY" , }
+            match self { GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Account => "ACCOUNT" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: AttributionSettings => "ATTRIBUTION_SETTINGS" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChangeHistoryResourceTypeUnspecified => "CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChannelGroup => "CHANNEL_GROUP" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ConversionEvent => "CONVERSION_EVENT" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomDimension => "CUSTOM_DIMENSION" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomMetric => "CUSTOM_METRIC" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataRetentionSettings => "DATA_RETENTION_SETTINGS" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataStream => "DATA_STREAM" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLink => "DISPLAY_VIDEO_360_ADVERTISER_LINK" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLinkProposal => "DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ExpandedDataSet => "EXPANDED_DATA_SET" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: FirebaseLink => "FIREBASE_LINK" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleAdsLink => "GOOGLE_ADS_LINK" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleSignalsSettings => "GOOGLE_SIGNALS_SETTINGS" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: MeasurementProtocolSecret => "MEASUREMENT_PROTOCOL_SECRET" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Property => "PROPERTY" , GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: SearchAds360Link => "SEARCH_ADS_360_LINK" , }
         }
     }
     impl ::std::convert::AsRef<str>
@@ -4404,7 +7875,7 @@ pub mod schemas {
             GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems,
             (),
         > {
-            Ok (match s { "ACCOUNT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Account , "CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChangeHistoryResourceTypeUnspecified , "CONVERSION_EVENT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ConversionEvent , "CUSTOM_DIMENSION" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomDimension , "CUSTOM_METRIC" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomMetric , "DATA_RETENTION_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataRetentionSettings , "DATA_STREAM" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataStream , "DISPLAY_VIDEO_360_ADVERTISER_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLink , "DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLinkProposal , "FIREBASE_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: FirebaseLink , "GOOGLE_ADS_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleAdsLink , "GOOGLE_SIGNALS_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleSignalsSettings , "MEASUREMENT_PROTOCOL_SECRET" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: MeasurementProtocolSecret , "PROPERTY" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Property , _ => return Err (()) , })
+            Ok (match s { "ACCOUNT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Account , "ATTRIBUTION_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: AttributionSettings , "CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChangeHistoryResourceTypeUnspecified , "CHANNEL_GROUP" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChannelGroup , "CONVERSION_EVENT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ConversionEvent , "CUSTOM_DIMENSION" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomDimension , "CUSTOM_METRIC" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomMetric , "DATA_RETENTION_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataRetentionSettings , "DATA_STREAM" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataStream , "DISPLAY_VIDEO_360_ADVERTISER_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLink , "DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLinkProposal , "EXPANDED_DATA_SET" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ExpandedDataSet , "FIREBASE_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: FirebaseLink , "GOOGLE_ADS_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleAdsLink , "GOOGLE_SIGNALS_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleSignalsSettings , "MEASUREMENT_PROTOCOL_SECRET" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: MeasurementProtocolSecret , "PROPERTY" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Property , "SEARCH_ADS_360_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: SearchAds360Link , _ => return Err (()) , })
         }
     }
     impl ::std::fmt::Display
@@ -4432,7 +7903,7 @@ pub mod schemas {
             D: ::serde::de::Deserializer<'de>,
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok (match value { "ACCOUNT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Account , "CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChangeHistoryResourceTypeUnspecified , "CONVERSION_EVENT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ConversionEvent , "CUSTOM_DIMENSION" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomDimension , "CUSTOM_METRIC" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomMetric , "DATA_RETENTION_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataRetentionSettings , "DATA_STREAM" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataStream , "DISPLAY_VIDEO_360_ADVERTISER_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLink , "DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLinkProposal , "FIREBASE_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: FirebaseLink , "GOOGLE_ADS_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleAdsLink , "GOOGLE_SIGNALS_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleSignalsSettings , "MEASUREMENT_PROTOCOL_SECRET" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: MeasurementProtocolSecret , "PROPERTY" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Property , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+            Ok (match value { "ACCOUNT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Account , "ATTRIBUTION_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: AttributionSettings , "CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChangeHistoryResourceTypeUnspecified , "CHANNEL_GROUP" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ChannelGroup , "CONVERSION_EVENT" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ConversionEvent , "CUSTOM_DIMENSION" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomDimension , "CUSTOM_METRIC" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: CustomMetric , "DATA_RETENTION_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataRetentionSettings , "DATA_STREAM" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DataStream , "DISPLAY_VIDEO_360_ADVERTISER_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLink , "DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: DisplayVideo360AdvertiserLinkProposal , "EXPANDED_DATA_SET" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: ExpandedDataSet , "FIREBASE_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: FirebaseLink , "GOOGLE_ADS_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleAdsLink , "GOOGLE_SIGNALS_SETTINGS" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: GoogleSignalsSettings , "MEASUREMENT_PROTOCOL_SECRET" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: MeasurementProtocolSecret , "PROPERTY" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: Property , "SEARCH_ADS_360_LINK" => GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsRequestResourceTypeItems :: SearchAds360Link , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
         }
     }
     impl ::google_field_selector::FieldSelector
@@ -4493,9 +7964,81 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsResponse {
+    impl crate::GetNextPageToken<String>
+        for GoogleAnalyticsAdminV1AlphaSearchChangeHistoryEventsResponse
+    {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutRequest {
+        #[doc = "The status to set."]
+        #[serde(
+            rename = "optOut",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub opt_out: ::std::option::Option<bool>,
+        #[doc = "Required. The UA property to set the opt out status. Note this request uses the internal property ID, not the tracking ID of the form UA-XXXXXX-YY. Format: properties/{internalWebPropertyId} Example: properties/1234"]
+        #[serde(
+            rename = "property",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub property: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutResponse {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -4955,7 +8498,7 @@ pub mod resources {
                     #[serde(rename = "accountSummaries")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -4988,7 +8531,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -5044,7 +8587,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5157,12 +8700,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -5950,7 +9494,7 @@ pub mod resources {
                     #[serde(rename = "accounts")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -5983,7 +9527,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -6039,7 +9583,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6149,12 +9693,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -8363,7 +11908,7 @@ pub mod resources {
                         #[serde(rename = "userLinks")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -8398,7 +11943,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -8454,7 +11999,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8575,12 +12120,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -8807,7 +12353,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Marks target Property as soft-deleted (ie: “trashed”) and returns it. This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI. If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found, or is not an GA4 Property."]
+            #[doc = "Marks target Property as soft-deleted (ie: “trashed”) and returns it. This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI. If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found, or is not a GA4 Property."]
             pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8826,9 +12372,53 @@ pub mod resources {
                     name: name.into(),
                 }
             }
+            #[doc = "Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property."]
+            pub fn fetch_automated_ga_4_configuration_opt_out(
+                &self,
+                request : crate :: schemas :: GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutRequest,
+            ) -> FetchAutomatedGa4ConfigurationOptOutRequestBuilder {
+                FetchAutomatedGa4ConfigurationOptOutRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                }
+            }
             #[doc = "Lookup for a single “GA4” Property."]
             pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                }
+            }
+            #[doc = "Lookup for a AttributionSettings singleton."]
+            pub fn get_attribution_settings(
+                &self,
+                name: impl Into<String>,
+            ) -> GetAttributionSettingsRequestBuilder {
+                GetAttributionSettingsRequestBuilder {
                     reqwest: &self.reqwest,
                     auth: self.auth_ref(),
                     access_token: None,
@@ -8936,6 +12526,77 @@ pub mod resources {
                     update_mask: None,
                 }
             }
+            #[doc = "Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years. Data Access Reports can be requested for a property. The property must be in Google Analytics 360. This method is only available to Administrators. These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase & Admob that can retrieve data from Google Analytics through a linkage. These records don’t include property configuration changes like adding a stream or changing a property’s time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents)."]
+            pub fn run_access_report(
+                &self,
+                request: crate::schemas::GoogleAnalyticsAdminV1AlphaRunAccessReportRequest,
+                entity: impl Into<String>,
+            ) -> RunAccessReportRequestBuilder {
+                RunAccessReportRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    entity: entity.into(),
+                }
+            }
+            #[doc = "Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property."]
+            pub fn set_automated_ga_4_configuration_opt_out(
+                &self,
+                request : crate :: schemas :: GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutRequest,
+            ) -> SetAutomatedGa4ConfigurationOptOutRequestBuilder {
+                SetAutomatedGa4ConfigurationOptOutRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                }
+            }
+            #[doc = "Updates attribution settings on a property."]
+            pub fn update_attribution_settings(
+                &self,
+                request: crate::schemas::GoogleAnalyticsAdminV1AlphaAttributionSettings,
+                name: impl Into<String>,
+            ) -> UpdateAttributionSettingsRequestBuilder {
+                UpdateAttributionSettingsRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    name: name.into(),
+                    update_mask: None,
+                }
+            }
             #[doc = "Updates the singleton data retention settings for this property."]
             pub fn update_data_retention_settings(
                 &self,
@@ -8984,6 +12645,22 @@ pub mod resources {
                     xgafv: None,
                     name: name.into(),
                     update_mask: None,
+                }
+            }
+            #[doc = "Actions that can be performed on the audiences resource"]
+            pub fn audiences(&self) -> crate::resources::properties::audiences::AudiencesActions {
+                crate::resources::properties::audiences::AudiencesActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+            #[doc = "Actions that can be performed on the big_query_links resource"]
+            pub fn big_query_links(
+                &self,
+            ) -> crate::resources::properties::big_query_links::BigQueryLinksActions {
+                crate::resources::properties::big_query_links::BigQueryLinksActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
                 }
             }
             #[doc = "Actions that can be performed on the conversion_events resource"]
@@ -9044,6 +12721,16 @@ pub mod resources {
                 &self,
             ) -> crate::resources::properties::google_ads_links::GoogleAdsLinksActions {
                 crate::resources::properties::google_ads_links::GoogleAdsLinksActions {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                }
+            }
+            #[doc = "Actions that can be performed on the search_ads_360_links resource"]
+            pub fn search_ads_360_links(
+                &self,
+            ) -> crate::resources::properties::search_ads_360_links::SearchAds360LinksActions
+            {
+                crate::resources::properties::search_ads_360_links::SearchAds360LinksActions {
                     reqwest: &self.reqwest,
                     auth: self.auth_ref(),
                 }
@@ -9544,6 +13231,139 @@ pub mod resources {
                 Ok(req)
             }
         }
+        #[doc = "Created via [PropertiesActions::fetch_automated_ga_4_configuration_opt_out()](struct.PropertiesActions.html#method.fetch_automated_ga_4_configuration_opt_out)"]
+        #[derive(Debug, Clone)]
+        pub struct FetchAutomatedGa4ConfigurationOptOutRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutRequest , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+        impl<'a> FetchAutomatedGa4ConfigurationOptOutRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]            pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutResponse , crate :: Error >{
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]            pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleAnalyticsAdminV1AlphaFetchAutomatedGa4ConfigurationOptOutResponse , crate :: Error >{
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                output.push_str("v1alpha/properties:fetchAutomatedGa4ConfigurationOptOut");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
         #[doc = "Created via [PropertiesActions::get()](struct.PropertiesActions.html#method.get)"]
         #[derive(Debug, Clone)]
         pub struct GetRequestBuilder<'a> {
@@ -9645,6 +13465,168 @@ pub mod resources {
             pub async fn execute_with_all_fields(
                 self,
             ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaProperty, crate::Error>
+            {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                output.push_str("v1alpha/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [PropertiesActions::get_attribution_settings()](struct.PropertiesActions.html#method.get_attribution_settings)"]
+        #[derive(Debug, Clone)]
+        pub struct GetAttributionSettingsRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            name: String,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> GetAttributionSettingsRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAttributionSettings, crate::Error>
+            {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAttributionSettings, crate::Error>
             {
                 self.execute_with_fields(Some("*")).await
             }
@@ -10172,7 +14154,7 @@ pub mod resources {
                     #[serde(rename = "properties")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -10205,7 +14187,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -10261,7 +14243,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -10376,12 +14358,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -10494,6 +14477,479 @@ pub mod resources {
             pub async fn execute_with_all_fields(
                 self,
             ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaProperty, crate::Error>
+            {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                output.push_str("v1alpha/");
+                {
+                    let var_as_str = &self.name;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                req = req.query(&[("updateMask", &self.update_mask)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [PropertiesActions::run_access_report()](struct.PropertiesActions.html#method.run_access_report)"]
+        #[derive(Debug, Clone)]
+        pub struct RunAccessReportRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::GoogleAnalyticsAdminV1AlphaRunAccessReportRequest,
+            entity: String,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> RunAccessReportRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<
+                crate::schemas::GoogleAnalyticsAdminV1AlphaRunAccessReportResponse,
+                crate::Error,
+            > {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<
+                crate::schemas::GoogleAnalyticsAdminV1AlphaRunAccessReportResponse,
+                crate::Error,
+            > {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                output.push_str("v1alpha/");
+                {
+                    let var_as_str = &self.entity;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::RESERVED,
+                    ));
+                }
+                output.push_str(":runAccessReport");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [PropertiesActions::set_automated_ga_4_configuration_opt_out()](struct.PropertiesActions.html#method.set_automated_ga_4_configuration_opt_out)"]
+        #[derive(Debug, Clone)]
+        pub struct SetAutomatedGa4ConfigurationOptOutRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutRequest , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+        impl<'a> SetAutomatedGa4ConfigurationOptOutRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]            pub async fn execute_with_default_fields (self) -> Result < crate :: schemas :: GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutResponse , crate :: Error >{
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]            pub async fn execute_with_all_fields (self) -> Result < crate :: schemas :: GoogleAnalyticsAdminV1AlphaSetAutomatedGa4ConfigurationOptOutResponse , crate :: Error >{
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                output.push_str("v1alpha/properties:setAutomatedGa4ConfigurationOptOut");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[doc = "Created via [PropertiesActions::update_attribution_settings()](struct.PropertiesActions.html#method.update_attribution_settings)"]
+        #[derive(Debug, Clone)]
+        pub struct UpdateAttributionSettingsRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::GoogleAnalyticsAdminV1AlphaAttributionSettings,
+            name: String,
+            update_mask: ::std::option::Option<String>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> UpdateAttributionSettingsRequestBuilder<'a> {
+            #[doc = "Required. The list of fields to be updated. Field names must be in snake case (e.g., “field_to_update”). Omitted fields will not be updated. To replace the entire entity, use one path with the string “\\*” to match all fields."]
+            pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                self.update_mask = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAttributionSettings, crate::Error>
+            {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAttributionSettings, crate::Error>
             {
                 self.execute_with_fields(Some("*")).await
             }
@@ -10905,6 +15361,1710 @@ pub mod resources {
                     .map_err(|err| crate::Error::OAuth2(err))?;
                 req = req.bearer_auth(access_token);
                 Ok(req)
+            }
+        }
+        pub mod audiences {
+            pub mod params {}
+            pub struct AudiencesActions<'a> {
+                pub(crate) reqwest: &'a reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> AudiencesActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Archives an Audience on a property."]
+                pub fn archive(
+                    &self,
+                    request: crate::schemas::GoogleAnalyticsAdminV1AlphaArchiveAudienceRequest,
+                    name: impl Into<String>,
+                ) -> ArchiveRequestBuilder {
+                    ArchiveRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Creates an Audience."]
+                pub fn create(
+                    &self,
+                    request: crate::schemas::GoogleAnalyticsAdminV1AlphaAudience,
+                    parent: impl Into<String>,
+                ) -> CreateRequestBuilder {
+                    CreateRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                    }
+                }
+                #[doc = "Lookup for a single Audience. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions."]
+                pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                    GetRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Lists Audiences on a property. Audiences created before 2020 may not be supported. Default audiences will not show filter definitions."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+                #[doc = "Updates an Audience on a property."]
+                pub fn patch(
+                    &self,
+                    request: crate::schemas::GoogleAnalyticsAdminV1AlphaAudience,
+                    name: impl Into<String>,
+                ) -> PatchRequestBuilder {
+                    PatchRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                        update_mask: None,
+                    }
+                }
+            }
+            #[doc = "Created via [AudiencesActions::archive()](struct.AudiencesActions.html#method.archive)"]
+            #[derive(Debug, Clone)]
+            pub struct ArchiveRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleAnalyticsAdminV1AlphaArchiveAudienceRequest,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ArchiveRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str(":archive");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AudiencesActions::create()](struct.AudiencesActions.html#method.create)"]
+            #[derive(Debug, Clone)]
+            pub struct CreateRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleAnalyticsAdminV1AlphaAudience,
+                parent: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CreateRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAudience, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAudience, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/audiences");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AudiencesActions::get()](struct.AudiencesActions.html#method.get)"]
+            #[derive(Debug, Clone)]
+            pub struct GetRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> GetRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAudience, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAudience, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [AudiencesActions::list()](struct.AudiencesActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                page_size: ::std::option::Option<i32>,
+                page_token: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum)."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "A page token, received from a previous `ListAudiences` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAudiences` must match the call that provided the page token."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = "\nExecute the request and yield each item in the `audiences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                pub fn stream_audiences<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_audiences_with_fields(fields)
+                }
+                #[doc = "\nExecute the request and yield each item in the `audiences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                pub fn stream_audiences_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaAudience,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_audiences_with_fields(None::<String>)
+                }
+                #[doc = "\nExecute the request and yield each item in the `audiences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                pub fn stream_audiences_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaAudience,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_audiences_with_fields(Some("*"))
+                }
+                #[doc = "\nExecute the request and yield each item in the `audiences` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                pub fn stream_audiences_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                    struct Page<T> {
+                        #[serde(rename = "nextPageToken")]
+                        pub next_page_token: ::std::option::Option<String>,
+                        #[serde(rename = "audiences")]
+                        pub items: Vec<T>,
+                    }
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
+                        fn next_page_token(&self) -> ::std::option::Option<String> {
+                            self.next_page_token.to_owned()
+                        }
+                    }
+                    impl<T> crate::stream::IntoPageItems for Page<T> {
+                        type Items = Vec<T>;
+                        fn into_page_items(self) -> Self::Items {
+                            self.items
+                        }
+                    }
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "audiences").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::stream::page_item_stream::<_, Page<T>>(self)
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                pub fn stream<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String>
+                        + ::serde::de::DeserializeOwned
+                        + ::google_field_selector::FieldSelector
+                        + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_with_fields(fields)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the default set of fields from the server."]
+                pub fn stream_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaListAudiencesResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests all fields from the server."]
+                pub fn stream_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaListAudiencesResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                pub fn stream_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::stream::page_stream(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleAnalyticsAdminV1AlphaListAudiencesResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleAnalyticsAdminV1AlphaListAudiencesResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/audiences");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[async_trait::async_trait]
+            impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                {
+                    self._execute().await
+                }
+            }
+            #[doc = "Created via [AudiencesActions::patch()](struct.AudiencesActions.html#method.patch)"]
+            #[derive(Debug, Clone)]
+            pub struct PatchRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleAnalyticsAdminV1AlphaAudience,
+                name: String,
+                update_mask: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> PatchRequestBuilder<'a> {
+                #[doc = "Required. The list of fields to be updated. Field names must be in snake case (e.g., “field_to_update”). Omitted fields will not be updated. To replace the entire entity, use one path with the string “\\*” to match all fields."]
+                pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                    self.update_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAudience, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaAudience, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                    req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+        }
+        pub mod big_query_links {
+            pub mod params {}
+            pub struct BigQueryLinksActions<'a> {
+                pub(crate) reqwest: &'a reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> BigQueryLinksActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Lookup for a single BigQuery Link."]
+                pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                    GetRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Lists BigQuery Links on a property."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+            }
+            #[doc = "Created via [BigQueryLinksActions::get()](struct.BigQueryLinksActions.html#method.get)"]
+            #[derive(Debug, Clone)]
+            pub struct GetRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> GetRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaBigQueryLink, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaBigQueryLink, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [BigQueryLinksActions::list()](struct.BigQueryLinksActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                page_size: ::std::option::Option<i32>,
+                page_token: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The maximum number of resources to return. The service may return fewer than this value, even if there are additional pages. If unspecified, at most 50 resources will be returned. The maximum value is 200; (higher values will be coerced to the maximum)"]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "A page token, received from a previous `ListBigQueryLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBigQueryLinks` must match the call that provided the page token."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = "\nExecute the request and yield each item in the `bigqueryLinks` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                pub fn stream_bigquery_links<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_bigquery_links_with_fields(fields)
+                }
+                #[doc = "\nExecute the request and yield each item in the `bigqueryLinks` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                pub fn stream_bigquery_links_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaBigQueryLink,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_bigquery_links_with_fields(None::<String>)
+                }
+                #[doc = "\nExecute the request and yield each item in the `bigqueryLinks` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                pub fn stream_bigquery_links_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaBigQueryLink,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_bigquery_links_with_fields(Some("*"))
+                }
+                #[doc = "\nExecute the request and yield each item in the `bigqueryLinks` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                pub fn stream_bigquery_links_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                    struct Page<T> {
+                        #[serde(rename = "nextPageToken")]
+                        pub next_page_token: ::std::option::Option<String>,
+                        #[serde(rename = "bigqueryLinks")]
+                        pub items: Vec<T>,
+                    }
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
+                        fn next_page_token(&self) -> ::std::option::Option<String> {
+                            self.next_page_token.to_owned()
+                        }
+                    }
+                    impl<T> crate::stream::IntoPageItems for Page<T> {
+                        type Items = Vec<T>;
+                        fn into_page_items(self) -> Self::Items {
+                            self.items
+                        }
+                    }
+                    self.fields = Some({
+                        let mut selector = concat!("nextPageToken,", "bigqueryLinks").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::stream::page_item_stream::<_, Page<T>>(self)
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                pub fn stream<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String>
+                        + ::serde::de::DeserializeOwned
+                        + ::google_field_selector::FieldSelector
+                        + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_with_fields(fields)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the default set of fields from the server."]
+                pub fn stream_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests all fields from the server."]
+                pub fn stream_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                pub fn stream_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::stream::page_stream(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleAnalyticsAdminV1AlphaListBigQueryLinksResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/bigQueryLinks");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[async_trait::async_trait]
+            impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                {
+                    self._execute().await
+                }
             }
         }
         pub mod conversion_events {
@@ -11617,7 +17777,7 @@ pub mod resources {
                         #[serde(rename = "conversionEvents")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -11652,7 +17812,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -11708,7 +17868,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -11829,12 +17989,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -12583,7 +18744,7 @@ pub mod resources {
                         #[serde(rename = "customDimensions")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -12618,7 +18779,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -12674,7 +18835,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -12795,12 +18956,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -13720,7 +19882,7 @@ pub mod resources {
                         #[serde(rename = "customMetrics")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -13755,7 +19917,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -13811,7 +19973,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13932,12 +20094,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -15036,7 +21199,7 @@ pub mod resources {
                         #[serde(rename = "dataStreams")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -15071,7 +21234,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -15127,7 +21290,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -15248,12 +21411,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -16176,7 +22340,7 @@ pub mod resources {
                             #[serde(rename = "measurementProtocolSecrets")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -16212,7 +22376,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -16252,7 +22416,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -16362,12 +22526,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -17543,7 +23708,7 @@ pub mod resources {
                         #[serde(rename = "displayVideo360AdvertiserLinkProposals")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -17580,7 +23745,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -17620,7 +23785,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -17729,12 +23894,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -18483,7 +24649,7 @@ pub mod resources {
                         #[serde(rename = "displayVideo360AdvertiserLinks")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -18519,7 +24685,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -18559,7 +24725,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -18668,12 +24834,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -19280,7 +25447,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "A page token, received from a previous `ListFirebaseLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListProperties` must match the call that provided the page token."]
+                #[doc = "A page token, received from a previous `ListFirebaseLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListFirebaseLinks` must match the call that provided the page token."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -19383,7 +25550,7 @@ pub mod resources {
                         #[serde(rename = "firebaseLinks")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -19418,7 +25585,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -19474,7 +25641,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -19595,12 +25762,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -20160,7 +26328,7 @@ pub mod resources {
                         #[serde(rename = "googleAdsLinks")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -20195,7 +26363,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -20251,7 +26419,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -20372,12 +26540,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -20490,6 +26659,1137 @@ pub mod resources {
                 pub async fn execute_with_all_fields(
                     self,
                 ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaGoogleAdsLink, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::PATCH, path);
+                    req = req.query(&[("updateMask", &self.update_mask)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+        }
+        pub mod search_ads_360_links {
+            pub mod params {}
+            pub struct SearchAds360LinksActions<'a> {
+                pub(crate) reqwest: &'a reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            }
+            impl<'a> SearchAds360LinksActions<'a> {
+                fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                    self.auth
+                }
+                #[doc = "Creates a SearchAds360Link."]
+                pub fn create(
+                    &self,
+                    request: crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link,
+                    parent: impl Into<String>,
+                ) -> CreateRequestBuilder {
+                    CreateRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                    }
+                }
+                #[doc = "Deletes a SearchAds360Link on a property."]
+                pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                    DeleteRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Look up a single SearchAds360Link"]
+                pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                    GetRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                    }
+                }
+                #[doc = "Lists all SearchAds360Links on a property."]
+                pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                    ListRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        page_size: None,
+                        page_token: None,
+                    }
+                }
+                #[doc = "Updates a SearchAds360Link on a property."]
+                pub fn patch(
+                    &self,
+                    request: crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link,
+                    name: impl Into<String>,
+                ) -> PatchRequestBuilder {
+                    PatchRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                        update_mask: None,
+                    }
+                }
+            }
+            #[doc = "Created via [SearchAds360LinksActions::create()](struct.SearchAds360LinksActions.html#method.create)"]
+            #[derive(Debug, Clone)]
+            pub struct CreateRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link,
+                parent: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CreateRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/searchAds360Links");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [SearchAds360LinksActions::delete()](struct.SearchAds360LinksActions.html#method.delete)"]
+            #[derive(Debug, Clone)]
+            pub struct DeleteRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> DeleteRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error> {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleProtobufEmpty, crate::Error> {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [SearchAds360LinksActions::get()](struct.SearchAds360LinksActions.html#method.get)"]
+            #[derive(Debug, Clone)]
+            pub struct GetRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> GetRequestBuilder<'a> {
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [SearchAds360LinksActions::list()](struct.SearchAds360LinksActions.html#method.list)"]
+            #[derive(Debug, Clone)]
+            pub struct ListRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                parent: String,
+                page_size: ::std::option::Option<i32>,
+                page_token: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> ListRequestBuilder<'a> {
+                #[doc = "The maximum number of resources to return. If unspecified, at most 50 resources will be returned. The maximum value is 200 (higher values will be coerced to the maximum)."]
+                pub fn page_size(mut self, value: i32) -> Self {
+                    self.page_size = Some(value);
+                    self
+                }
+                #[doc = "A page token, received from a previous `ListSearchAds360Links` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSearchAds360Links` must match the call that provided the page token."]
+                pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                    self.page_token = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = "\nExecute the request and yield each item in the `searchAds360Links` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                pub fn stream_search_ads_360_links<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_search_ads_360_links_with_fields(fields)
+                }
+                #[doc = "\nExecute the request and yield each item in the `searchAds360Links` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                pub fn stream_search_ads_360_links_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_search_ads_360_links_with_fields(None::<String>)
+                }
+                #[doc = "\nExecute the request and yield each item in the `searchAds360Links` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                pub fn stream_search_ads_360_links_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_search_ads_360_links_with_fields(Some("*"))
+                }
+                #[doc = "\nExecute the request and yield each item in the `searchAds360Links` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                pub fn stream_search_ads_360_links_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                    struct Page<T> {
+                        #[serde(rename = "nextPageToken")]
+                        pub next_page_token: ::std::option::Option<String>,
+                        #[serde(rename = "searchAds360Links")]
+                        pub items: Vec<T>,
+                    }
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
+                        fn next_page_token(&self) -> ::std::option::Option<String> {
+                            self.next_page_token.to_owned()
+                        }
+                    }
+                    impl<T> crate::stream::IntoPageItems for Page<T> {
+                        type Items = Vec<T>;
+                        fn into_page_items(self) -> Self::Items {
+                            self.items
+                        }
+                    }
+                    self.fields = Some({
+                        let mut selector =
+                            concat!("nextPageToken,", "searchAds360Links").to_owned();
+                        let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                        if !items_fields.is_empty() {
+                            selector.push_str("(");
+                            selector.push_str(items_fields);
+                            selector.push_str(")");
+                        }
+                        selector
+                    });
+                    crate::stream::page_item_stream::<_, Page<T>>(self)
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                pub fn stream<T>(
+                    self,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String>
+                        + ::serde::de::DeserializeOwned
+                        + ::google_field_selector::FieldSelector
+                        + 'a,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.stream_with_fields(fields)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests the default set of fields from the server."]
+                pub fn stream_with_default_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(None::<&str>)
+                }
+                #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                #[doc = r" repeated until no page token is returned."]
+                #[doc = r""]
+                #[doc = r" Requests all fields from the server."]
+                pub fn stream_with_all_fields(
+                    self,
+                ) -> impl ::futures::Stream<
+                    Item = Result<
+                        crate::schemas::GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse,
+                        crate::Error,
+                    >,
+                > + 'a {
+                    self.stream_with_fields(Some("*"))
+                }
+                #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                #[doc = r" token is returned."]
+                #[doc = r""]
+                #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                #[doc = r""]
+                #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                pub fn stream_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                    F: AsRef<str>,
+                {
+                    let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                    if !fields.is_empty() {
+                        match fields.chars().rev().nth(0) {
+                            Some(',') | None => {}
+                            _ => fields.push_str(","),
+                        }
+                        fields.push_str("nextPageToken");
+                        self.fields = Some(fields);
+                    }
+                    crate::stream::page_stream(self)
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<
+                    crate::schemas::GoogleAnalyticsAdminV1AlphaListSearchAds360LinksResponse,
+                    crate::Error,
+                > {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://analyticsadmin.googleapis.com/".to_owned();
+                    output.push_str("v1alpha/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/searchAds360Links");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                    req = req.query(&[("pageSize", &self.page_size)]);
+                    req = req.query(&[("pageToken", &self.page_token)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[async_trait::async_trait]
+            impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
+                fn set_page_token(&mut self, value: String) {
+                    self.page_token = value.into();
+                }
+                async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                {
+                    self._execute().await
+                }
+            }
+            #[doc = "Created via [SearchAds360LinksActions::patch()](struct.SearchAds360LinksActions.html#method.patch)"]
+            #[derive(Debug, Clone)]
+            pub struct PatchRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link,
+                name: String,
+                update_mask: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> PatchRequestBuilder<'a> {
+                #[doc = "Required. The list of fields to be updated. Omitted fields will not be updated. To replace the entire entity, use one path with the string “\\*” to match all fields."]
+                pub fn update_mask(mut self, value: impl Into<String>) -> Self {
+                    self.update_mask = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleAnalyticsAdminV1AlphaSearchAds360Link, crate::Error>
                 {
                     self.execute_with_fields(Some("*")).await
                 }
@@ -22258,7 +29558,7 @@ pub mod resources {
                         #[serde(rename = "userLinks")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -22293,7 +29593,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -22349,7 +29649,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -22470,12 +29770,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -22930,16 +30231,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -22959,13 +30262,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -22973,7 +30279,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -23000,7 +30306,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

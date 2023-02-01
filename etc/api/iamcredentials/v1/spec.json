@@ -7,7 +7,7 @@
   "canonicalName": "IAM Credentials",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220414",
+  "revision": "20230120",
   "title": "IAM Service Account Credentials API",
   "description": "Creates short-lived credentials for impersonating IAM service accounts. To enable this API, you must enable the IAM API (iam.googleapis.com). ",
   "ownerDomain": "google.com",

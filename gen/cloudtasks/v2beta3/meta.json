@@ -1,10 +1,10 @@
 {
   "cli_generator": {
     "git_hash": "2f9d54b",
-    "ymd_date": "2022-04-29"
+    "ymd_date": "2023-02-01"
   },
   "api_generator": {
-    "git_hash": "2f9d54b",
-    "ymd_date": "2022-04-29"
+    "git_hash": "ac85400",
+    "ymd_date": "2023-02-01"
   }
 }

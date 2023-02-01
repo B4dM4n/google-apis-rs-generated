@@ -1,6 +1,6 @@
 [package]
 name = "google-chat1"
-version = "0.1.0-20220420"
+version = "0.1.0-20230129"
 authors = ["Glenn Griffin <ggriffiniii@gmail.com"]
 edition = "2018"
 # for now, let's not even accidentally publish these

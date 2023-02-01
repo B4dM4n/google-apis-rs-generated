@@ -7,7 +7,7 @@
   "canonicalName": "Contactcenterinsights",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20230121",
   "title": "Contact Center AI Insights API",
   "description": "",
   "ownerDomain": "google.com",
@@ -219,6 +219,10 @@
           "description": "Output only. The result of the analysis, which is populated when the analysis finishes.",
           "$ref": "GoogleCloudContactcenterinsightsV1AnalysisResult"
         },
+        "annotatorSelector": {
+          "description": "To select the annotators to run and the phrase matchers to use (if any). If not specified, all annotators will be run.",
+          "$ref": "GoogleCloudContactcenterinsightsV1AnnotatorSelector"
+        },
         "createTime": {
           "description": "Output only. The time at which the analysis was created, which occurs when the long-running operation completes.",
           "type": "string",
@@ -390,6 +394,124 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudContactcenterinsightsV1AnnotatorSelector": {
+      "id": "GoogleCloudContactcenterinsightsV1AnnotatorSelector",
+      "description": "Selector of all available annotators and phrase matchers to run.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issueModels": {
+          "description": "The issue model to run. If not provided, the most recently deployed topic model will be used. The provided issue model will only be used for inference if the issue model is deployed and if run_issue_model_annotator is set to true. If more than one issue model is provided, only the first provided issue model will be used for inference.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "phraseMatchers": {
+          "description": "The list of phrase matchers to run. If not provided, all active phrase matchers will be used. If inactive phrase matchers are provided, they will not be used. Phrase matchers will be run only if run_phrase_matcher_annotator is set to true. Format: projects/{project}/locations/{location}/phraseMatchers/{phrase_matcher}",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "runEntityAnnotator": {
+          "description": "Whether to run the entity annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runIntentAnnotator": {
+          "description": "Whether to run the intent annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runInterruptionAnnotator": {
+          "description": "Whether to run the interruption annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runIssueModelAnnotator": {
+          "description": "Whether to run the issue model annotator. A model should have already been deployed for this to take effect.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runPhraseMatcherAnnotator": {
+          "description": "Whether to run the active phrase matcher annotator(s).",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runSentimentAnnotator": {
+          "description": "Whether to run the sentiment annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runSilenceAnnotator": {
+          "description": "Whether to run the silence annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudContactcenterinsightsV1AnswerFeedback": {
       "id": "GoogleCloudContactcenterinsightsV1AnswerFeedback",
       "description": "The feedback that the customer has about a certain answer in the conversation.",
@@ -480,7 +602,7 @@
           "items": null
         },
         "queryRecord": {
-          "description": "Name of the query record. Format: projects/{project}/locations/{location}/queryRecords/{query_record}",
+          "description": "The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record}",
           "type": "string",
           "format": null,
           "enum": [],
@@ -513,6 +635,150 @@
           "description": "Article URI.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsMetadata": {
+      "id": "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsMetadata",
+      "description": "The metadata for a bulk analyze conversations operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "completedAnalysesCount": {
+          "description": "The number of requested analyses that have completed successfully so far.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "createTime": {
+          "description": "The time the operation was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "endTime": {
+          "description": "The time the operation finished running.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "failedAnalysesCount": {
+          "description": "The number of requested analyses that have failed so far.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "request": {
+          "description": "The original request for bulk analyze.",
+          "$ref": "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest"
+        },
+        "totalRequestedAnalysesCount": {
+          "description": "Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest": {
+      "id": "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest",
+      "description": "The request to analyze conversations in bulk.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "analysisPercentage": {
+          "description": "Required. Percentage of selected conversation to analyze, between [0, 100].",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "annotatorSelector": {
+          "description": "To select the annotators to run and the phrase matchers to use (if any). If not specified, all annotators will be run.",
+          "$ref": "GoogleCloudContactcenterinsightsV1AnnotatorSelector"
+        },
+        "filter": {
+          "description": "Required. Filter used to select the subset of conversations to analyze.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parent": {
+          "description": "Required. The parent resource to create analyses in.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsResponse": {
+      "id": "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsResponse",
+      "description": "The response for a bulk analyze conversations operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "failedAnalysisCount": {
+          "description": "Count of failed analyses.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "successfulAnalysisCount": {
+          "description": "Count of successful analyses.",
+          "type": "integer",
+          "format": "int32",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -762,6 +1028,10 @@
         "interruptionData": {
           "description": "Data specifying an interruption.",
           "$ref": "GoogleCloudContactcenterinsightsV1InterruptionData"
+        },
+        "issueMatchData": {
+          "description": "Data specifying an issue match.",
+          "$ref": "GoogleCloudContactcenterinsightsV1IssueMatchData"
         },
         "phraseMatchData": {
           "description": "Data specifying a phrase match.",
@@ -1323,6 +1593,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "annotatorSelector": {
+          "description": "Output only. The annotator selector used for the analysis (if any).",
+          "$ref": "GoogleCloudContactcenterinsightsV1AnnotatorSelector"
+        },
         "conversation": {
           "description": "Output only. The Conversation that this Analysis Operation belongs to.",
           "type": "string",
@@ -2004,7 +2278,7 @@
           "items": null
         },
         "queryRecord": {
-          "description": "Name of the query record. Format: projects/{project}/locations/{location}/queryRecords/{query_record}.",
+          "description": "The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record}",
           "type": "string",
           "format": null,
           "enum": [],
@@ -2072,6 +2346,173 @@
     "GoogleCloudContactcenterinsightsV1HoldData": {
       "id": "GoogleCloudContactcenterinsightsV1HoldData",
       "description": "The data for a hold annotation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1IngestConversationsMetadata": {
+      "id": "GoogleCloudContactcenterinsightsV1IngestConversationsMetadata",
+      "description": "The metadata for an IngestConversations operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createTime": {
+          "description": "Output only. The time the operation was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "endTime": {
+          "description": "Output only. The time the operation finished running.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "partialErrors": {
+          "description": "Output only. Partial errors during ingest operation that might cause the operation output to be incomplete.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleRpcStatus"
+          }
+        },
+        "request": {
+          "description": "Output only. The original request for ingest.",
+          "$ref": "GoogleCloudContactcenterinsightsV1IngestConversationsRequest"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1IngestConversationsRequest": {
+      "id": "GoogleCloudContactcenterinsightsV1IngestConversationsRequest",
+      "description": "The request to ingest conversations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "conversationConfig": {
+          "description": "Configuration that applies to all conversations.",
+          "$ref": "GoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfig"
+        },
+        "gcsSource": {
+          "description": "A cloud storage bucket source.",
+          "$ref": "GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSource"
+        },
+        "parent": {
+          "description": "Required. The parent resource for new conversations.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "transcriptObjectConfig": {
+          "description": "Configuration for when `source` contains conversation transcripts.",
+          "$ref": "GoogleCloudContactcenterinsightsV1IngestConversationsRequestTranscriptObjectConfig"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfig": {
+      "id": "GoogleCloudContactcenterinsightsV1IngestConversationsRequestConversationConfig",
+      "description": "Configuration that applies to all conversations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "agentId": {
+          "description": "An opaque, user-specified string representing the human agent who handled the conversations.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSource": {
+      "id": "GoogleCloudContactcenterinsightsV1IngestConversationsRequestGcsSource",
+      "description": "Configuration for Cloud Storage bucket sources.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bucketUri": {
+          "description": "Required. The Cloud Storage bucket containing source objects.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1IngestConversationsRequestTranscriptObjectConfig": {
+      "id": "GoogleCloudContactcenterinsightsV1IngestConversationsRequestTranscriptObjectConfig",
+      "description": "Configuration for processing transcript objects.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "medium": {
+          "description": "Required. The medium transcript objects represent.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MEDIUM_UNSPECIFIED",
+            "PHONE_CALL",
+            "CHAT"
+          ],
+          "enumDescriptions": [
+            "Default value, if unspecified will default to PHONE_CALL.",
+            "The format for conversations that took place over the phone.",
+            "The format for conversations that took place over chat."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1IngestConversationsResponse": {
+      "id": "GoogleCloudContactcenterinsightsV1IngestConversationsResponse",
+      "description": "The response to an IngestConversations operation.",
       "type": "object",
       "format": null,
       "enum": [],
@@ -2183,6 +2624,24 @@
           "additionalProperties": null,
           "items": null
         },
+        "sampleUtterances": {
+          "description": "Output only. Resource names of the sample representative utterances that match to this issue.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "updateTime": {
           "description": "Output only. The most recent time that this issue was updated.",
           "type": "string",
@@ -2239,6 +2698,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudContactcenterinsightsV1IssueMatchData": {
+      "id": "GoogleCloudContactcenterinsightsV1IssueMatchData",
+      "description": "The data for an issue match annotation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issueAssignment": {
+          "description": "Information about the issue's assignment.",
+          "$ref": "GoogleCloudContactcenterinsightsV1IssueAssignment"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudContactcenterinsightsV1IssueModel": {
       "id": "GoogleCloudContactcenterinsightsV1IssueModel",
       "description": "The issue model resource.",
@@ -2270,6 +2745,16 @@
         "inputDataConfig": {
           "description": "Configs for the input data that used to create the issue model.",
           "$ref": "GoogleCloudContactcenterinsightsV1IssueModelInputDataConfig"
+        },
+        "issueCount": {
+          "description": "Output only. Number of issues in this issue model.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "name": {
           "description": "Immutable. The resource name of the issue model. Format: projects/{project}/locations/{location}/issueModels/{issue_model}",
@@ -3137,6 +3622,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "annotatorSelector": {
+          "description": "To select the annotators to run and the phrase matchers to use (if any). If not specified, all annotators will be run.",
+          "$ref": "GoogleCloudContactcenterinsightsV1AnnotatorSelector"
+        },
         "runtimeIntegrationAnalysisPercentage": {
           "description": "Percentage of conversations created using Dialogflow runtime integration to analyze automatically, between [0, 100].",
           "type": "number",
@@ -3200,7 +3689,7 @@
           "items": null
         },
         "queryRecord": {
-          "description": "Name of the query record. Format: projects/{project}/locations/{location}/queryRecords/{query_record}",
+          "description": "The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record}",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3261,7 +3750,7 @@
           "items": null
         },
         "queryRecord": {
-          "description": "Name of the query record. Format: projects/{project}/locations/{location}/queryRecords/{query_record}",
+          "description": "The name of the answer record. Format: projects/{project}/locations/{location}/answerRecords/{answer_record}",
           "type": "string",
           "format": null,
           "enum": [],
@@ -3402,9 +3891,271 @@
           "items": null
         },
         "value": {
-          "description": "String with specific view properties.",
+          "description": "String with specific view properties, must be non-empty.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector",
+      "description": "Selector of all available annotators and phrase matchers to run.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "issueModels": {
+          "description": "The issue model to run. If not provided, the most recently deployed topic model will be used. The provided issue model will only be used for inference if the issue model is deployed and if run_issue_model_annotator is set to true. If more than one issue model is provided, only the first provided issue model will be used for inference.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "phraseMatchers": {
+          "description": "The list of phrase matchers to run. If not provided, all active phrase matchers will be used. If inactive phrase matchers are provided, they will not be used. Phrase matchers will be run only if run_phrase_matcher_annotator is set to true. Format: projects/{project}/locations/{location}/phraseMatchers/{phrase_matcher}",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "runEntityAnnotator": {
+          "description": "Whether to run the entity annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runIntentAnnotator": {
+          "description": "Whether to run the intent annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runInterruptionAnnotator": {
+          "description": "Whether to run the interruption annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runIssueModelAnnotator": {
+          "description": "Whether to run the issue model annotator. A model should have already been deployed for this to take effect.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runPhraseMatcherAnnotator": {
+          "description": "Whether to run the active phrase matcher annotator(s).",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runSentimentAnnotator": {
+          "description": "Whether to run the sentiment annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "runSilenceAnnotator": {
+          "description": "Whether to run the silence annotator.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsMetadata": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsMetadata",
+      "description": "The metadata for a bulk analyze conversations operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "completedAnalysesCount": {
+          "description": "The number of requested analyses that have completed successfully so far.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "createTime": {
+          "description": "The time the operation was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "endTime": {
+          "description": "The time the operation finished running.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "failedAnalysesCount": {
+          "description": "The number of requested analyses that have failed so far.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "request": {
+          "description": "The original request for bulk analyze.",
+          "$ref": "GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsRequest"
+        },
+        "totalRequestedAnalysesCount": {
+          "description": "Total number of analyses requested. Computed by the number of conversations returned by `filter` multiplied by `analysis_percentage` in the request.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsRequest": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsRequest",
+      "description": "The request to analyze conversations in bulk.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "analysisPercentage": {
+          "description": "Required. Percentage of selected conversation to analyze, between [0, 100].",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "annotatorSelector": {
+          "description": "To select the annotators to run and the phrase matchers to use (if any). If not specified, all annotators will be run.",
+          "$ref": "GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector"
+        },
+        "filter": {
+          "description": "Required. Filter used to select the subset of conversations to analyze.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parent": {
+          "description": "Required. The parent resource to create analyses in.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsResponse": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1BulkAnalyzeConversationsResponse",
+      "description": "The response for a bulk analyze conversations operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "failedAnalysisCount": {
+          "description": "Count of failed analyses.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "successfulAnalysisCount": {
+          "description": "Count of successful analyses.",
+          "type": "integer",
+          "format": "int32",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -3423,6 +4174,10 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "annotatorSelector": {
+          "description": "Output only. The annotator selector used for the analysis (if any).",
+          "$ref": "GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector"
+        },
         "conversation": {
           "description": "Output only. The Conversation that this Analysis Operation belongs to.",
           "type": "string",
@@ -3811,6 +4566,173 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadata": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadata",
+      "description": "The metadata for an IngestConversations operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createTime": {
+          "description": "Output only. The time the operation was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "endTime": {
+          "description": "Output only. The time the operation finished running.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "partialErrors": {
+          "description": "Output only. Partial errors during ingest operation that might cause the operation output to be incomplete.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleRpcStatus"
+          }
+        },
+        "request": {
+          "description": "Output only. The original request for ingest.",
+          "$ref": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequest"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequest": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequest",
+      "description": "The request to ingest conversations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "conversationConfig": {
+          "description": "Configuration that applies to all conversations.",
+          "$ref": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestConversationConfig"
+        },
+        "gcsSource": {
+          "description": "A cloud storage bucket source.",
+          "$ref": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestGcsSource"
+        },
+        "parent": {
+          "description": "Required. The parent resource for new conversations.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "transcriptObjectConfig": {
+          "description": "Configuration for when `source` contains conversation transcripts.",
+          "$ref": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestTranscriptObjectConfig"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestConversationConfig": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestConversationConfig",
+      "description": "Configuration that applies to all conversations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "agentId": {
+          "description": "An opaque, user-specified string representing the human agent who handled the conversations.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestGcsSource": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestGcsSource",
+      "description": "Configuration for Cloud Storage bucket sources.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "bucketUri": {
+          "description": "Required. The Cloud Storage bucket containing source objects.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestTranscriptObjectConfig": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestTranscriptObjectConfig",
+      "description": "Configuration for processing transcript objects.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "medium": {
+          "description": "Required. The medium transcript objects represent.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MEDIUM_UNSPECIFIED",
+            "PHONE_CALL",
+            "CHAT"
+          ],
+          "enumDescriptions": [
+            "Default value, if unspecified will default to PHONE_CALL.",
+            "The format for conversations that took place over the phone.",
+            "The format for conversations that took place over chat."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsResponse": {
+      "id": "GoogleCloudContactcenterinsightsV1alpha1IngestConversationsResponse",
+      "description": "The response to an IngestConversations operation.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudContactcenterinsightsV1alpha1IssueModel": {
       "id": "GoogleCloudContactcenterinsightsV1alpha1IssueModel",
       "description": "The issue model resource.",
@@ -3842,6 +4764,16 @@
         "inputDataConfig": {
           "description": "Configs for the input data that used to create the issue model.",
           "$ref": "GoogleCloudContactcenterinsightsV1alpha1IssueModelInputDataConfig"
+        },
+        "issueCount": {
+          "description": "Output only. Number of issues in this issue model.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         },
         "name": {
           "description": "Immutable. The resource name of the issue model. Format: projects/{project}/locations/{location}/issueModels/{issue_model}",
@@ -4486,6 +5418,45 @@
                 }
               },
               "methods": {
+                "bulkAnalyze": {
+                  "id": "contactcenterinsights.projects.locations.conversations.bulkAnalyze",
+                  "path": "v1/{+parent}/conversations:bulkAnalyze",
+                  "httpMethod": "POST",
+                  "description": "Analyzes multiple conversations in a single request.",
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource to create analyses in.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
                 "calculateStats": {
                   "id": "contactcenterinsights.projects.locations.conversations.calculateStats",
                   "path": "v1/{+location}/conversations:calculateStats",
@@ -4690,6 +5661,45 @@
                   "request": null,
                   "response": {
                     "$ref": "GoogleCloudContactcenterinsightsV1Conversation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "ingest": {
+                  "id": "contactcenterinsights.projects.locations.conversations.ingest",
+                  "path": "v1/{+parent}/conversations:ingest",
+                  "httpMethod": "POST",
+                  "description": "Imports conversations and processes them according to the user's configuration.",
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent resource for new conversations.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "GoogleCloudContactcenterinsightsV1IngestConversationsRequest"
+                  },
+                  "response": {
+                    "$ref": "GoogleLongrunningOperation"
                   },
                   "scopes": [
                     "https://www.googleapis.com/auth/cloud-platform"
@@ -4905,6 +5915,43 @@
                 "issues": {
                   "resources": {},
                   "methods": {
+                    "delete": {
+                      "id": "contactcenterinsights.projects.locations.issueModels.issues.delete",
+                      "path": "v1/{+name}",
+                      "httpMethod": "DELETE",
+                      "description": "Deletes an issue.",
+                      "parameters": {
+                        "name": {
+                          "description": "Required. The name of the issue to delete.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/issueModels/[^/]+/issues/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "name"
+                      ],
+                      "request": null,
+                      "response": {
+                        "$ref": "GoogleProtobufEmpty"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
                     "get": {
                       "id": "contactcenterinsights.projects.locations.issueModels.issues.get",
                       "path": "v1/{+name}",

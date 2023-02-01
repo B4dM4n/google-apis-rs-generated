@@ -7,7 +7,7 @@
   "canonicalName": "Data Catalog",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220415",
+  "revision": "20230117",
   "title": "Google Cloud Data Catalog API",
   "description": "A fully managed and highly scalable data discovery and metadata management service. ",
   "ownerDomain": "google.com",
@@ -220,7 +220,7 @@
           "$ref": "Expr"
         },
         "members": {
-          "description": "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
+          "description": "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. ",
           "type": "array",
           "format": null,
           "enum": [],
@@ -604,6 +604,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "defaultValue": {
+          "description": "Optional. Default value for the column.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "description": {
           "description": "Optional. Description of the column. Default value is an empty string. The description must be a UTF-8 string with the maximum size of 2000 bytes.",
           "type": "string",
@@ -614,10 +624,56 @@
           "additionalProperties": null,
           "items": null
         },
+        "gcRule": {
+          "description": "Optional. Garbage collection policy for the column or column family. Applies to systems like Cloud Bigtable.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "highestIndexingType": {
+          "description": "Optional. Most important inclusion of this column.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "INDEXING_TYPE_UNSPECIFIED",
+            "INDEXING_TYPE_NONE",
+            "INDEXING_TYPE_NON_UNIQUE",
+            "INDEXING_TYPE_UNIQUE",
+            "INDEXING_TYPE_PRIMARY_KEY"
+          ],
+          "enumDescriptions": [
+            "Unspecified.",
+            "Column not a part of an index.",
+            "Column Part of non unique index.",
+            "Column part of unique index.",
+            "Column part of the primary key."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lookerColumnSpec": {
+          "description": "Looker specific column info of this column.",
+          "$ref": "GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec"
+        },
         "mode": {
           "description": "Optional. A column's mode indicates whether values in this column are required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported. Default mode is `NULLABLE`.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "ordinalPosition": {
+          "description": "Optional. Ordinal position",
+          "type": "integer",
+          "format": "int32",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -640,6 +696,64 @@
           "description": "Required. Type of the column. Must be a UTF-8 string with the maximum size of 128 bytes.",
           "type": "string",
           "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec": {
+      "id": "GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec",
+      "description": "Column info specific to Looker System.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "type": {
+          "description": "Looker specific column type of this column.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LOOKER_COLUMN_TYPE_UNSPECIFIED",
+            "DIMENSION",
+            "DIMENSION_GROUP",
+            "FILTER",
+            "MEASURE",
+            "PAREMETER"
+          ],
+          "enumDescriptions": [
+            "Unspecified.",
+            "Dimension.",
+            "Dimension group - parent for Dimension.",
+            "Filter.",
+            "Measure.",
+            "Parameter."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1CommonUsageStats": {
+      "id": "GoogleCloudDatacatalogV1CommonUsageStats",
+      "description": "Common statistics on the entry's usage. They can be set on any system.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "viewCount": {
+          "description": "View count in source system.",
+          "type": "string",
+          "format": "int64",
           "enum": [],
           "enumDescriptions": [],
           "properties": {},
@@ -784,14 +898,14 @@
     },
     "GoogleCloudDatacatalogV1DataSourceConnectionSpec": {
       "id": "GoogleCloudDatacatalogV1DataSourceConnectionSpec",
-      "description": "Specification that applies to a data source connection. Valid only for entries with the `DATA_SOURCE_CONNECTION` type.",
+      "description": "Specification that applies to a data source connection. Valid only for entries with the `DATA_SOURCE_CONNECTION` type. Only one of internal specs can be set at the time, and cannot be changed later.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "bigqueryConnectionSpec": {
-          "description": "Fields specific to BigQuery connections.",
+          "description": "Output only. Fields specific to BigQuery connections.",
           "$ref": "GoogleCloudDatacatalogV1BigQueryConnectionSpec"
         }
       },
@@ -806,8 +920,12 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "databaseViewSpec": {
+          "description": "Spec what aplies to tables that are actually views. Not set for \"real\" tables.",
+          "$ref": "GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpec"
+        },
         "dataplexTable": {
-          "description": "Fields specific to a Dataplex table and present only in the Dataplex table entries.",
+          "description": "Output only. Fields specific to a Dataplex table and present only in the Dataplex table entries.",
           "$ref": "GoogleCloudDatacatalogV1DataplexTableSpec"
         },
         "type": {
@@ -823,6 +941,56 @@
             "Default unknown table type.",
             "Native table.",
             "External table."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpec": {
+      "id": "GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpec",
+      "description": "Specification that applies to database view.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "baseTable": {
+          "description": "Name of a singular table this view reflects one to one.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sqlQuery": {
+          "description": "SQL query used to generate this view.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "viewType": {
+          "description": "Type of this view.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "VIEW_TYPE_UNSPECIFIED",
+            "STANDARD_VIEW",
+            "MATERIALIZED_VIEW"
+          ],
+          "enumDescriptions": [
+            "Default unknown view type.",
+            "Standard view.",
+            "Materialized view."
           ],
           "properties": {},
           "additionalProperties": null,
@@ -879,14 +1047,18 @@
             "BIGQUERY",
             "CLOUD_PUBSUB",
             "DATAPROC_METASTORE",
-            "DATAPLEX"
+            "DATAPLEX",
+            "CLOUD_SQL",
+            "LOOKER"
           ],
           "enumDescriptions": [
             "Default unknown system.",
             "BigQuery.",
             "Cloud Pub/Sub.",
             "Dataproc Metastore.",
-            "Dataplex."
+            "Dataplex.",
+            "Cloud Sql",
+            "Looker"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1005,11 +1177,11 @@
       "enumDescriptions": [],
       "properties": {
         "bigqueryDateShardedSpec": {
-          "description": "Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).",
+          "description": "Output only. Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).",
           "$ref": "GoogleCloudDatacatalogV1BigQueryDateShardedSpec"
         },
         "bigqueryTableSpec": {
-          "description": "Specification that applies to a BigQuery table. Valid only for entries with the `TABLE` type.",
+          "description": "Output only. Specification that applies to a BigQuery table. Valid only for entries with the `TABLE` type.",
           "$ref": "GoogleCloudDatacatalogV1BigQueryTableSpec"
         },
         "businessContext": {
@@ -1025,7 +1197,7 @@
           "$ref": "GoogleCloudDatacatalogV1DataSourceConnectionSpec"
         },
         "databaseTableSpec": {
-          "description": "Specification that applies to a table resource. Valid only for entries with the `TABLE` type.",
+          "description": "Specification that applies to a table resource. Valid only for entries with the `TABLE` or `EXPLORE` type.",
           "$ref": "GoogleCloudDatacatalogV1DatabaseTableSpec"
         },
         "description": {
@@ -1039,7 +1211,7 @@
           "items": null
         },
         "displayName": {
-          "description": "Display name of an entry. The name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and can't start or end with spaces. The maximum size is 200 bytes when encoded in UTF-8. Default value is an empty string.",
+          "description": "Display name of an entry. The maximum size is 500 bytes when encoded in UTF-8. Default value is an empty string.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1075,14 +1247,18 @@
             "BIGQUERY",
             "CLOUD_PUBSUB",
             "DATAPROC_METASTORE",
-            "DATAPLEX"
+            "DATAPLEX",
+            "CLOUD_SQL",
+            "LOOKER"
           ],
           "enumDescriptions": [
             "Default unknown system.",
             "BigQuery.",
             "Cloud Pub/Sub.",
             "Dataproc Metastore.",
-            "Dataplex."
+            "Dataplex.",
+            "Cloud Sql",
+            "Looker"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -1117,6 +1293,10 @@
           "additionalProperties": null,
           "items": null
         },
+        "lookerSystemSpec": {
+          "description": "Specification that applies to Looker sysstem. Only settable when `user_specified_system` is equal to `LOOKER`",
+          "$ref": "GoogleCloudDatacatalogV1LookerSystemSpec"
+        },
         "name": {
           "description": "Output only. The resource name of an entry in URL format. Note: The entry itself and its child resources might not be stored in the location specified in its name.",
           "type": "string",
@@ -1140,8 +1320,12 @@
           "$ref": "GoogleCloudDatacatalogV1Schema"
         },
         "sourceSystemTimestamps": {
-          "description": "Timestamps from the underlying resource, not from the Data Catalog entry. Output only when the entry has a type listed in the `EntryType` enum. For entries with `user_specified_type`, this field is optional and defaults to an empty timestamp.",
+          "description": "Timestamps from the underlying resource, not from the Data Catalog entry. Output only when the entry has a system listed in the `IntegratedSystem` enum. For entries with `user_specified_system`, this field is optional and defaults to an empty timestamp.",
           "$ref": "GoogleCloudDatacatalogV1SystemTimestamps"
+        },
+        "sqlDatabaseSystemSpec": {
+          "description": "Specification that applies to a relational database system. Only settable when `user_specified_system` is equal to `SQL_DATABASE`",
+          "$ref": "GoogleCloudDatacatalogV1SqlDatabaseSystemSpec"
         },
         "type": {
           "description": "The type of the entry. Only used for entries with types listed in the `EntryType` enum. Currently, only `FILESET` enum value is allowed. All other entries created in Data Catalog must use the `user_specified_type`.",
@@ -1159,11 +1343,15 @@
             "ROUTINE",
             "LAKE",
             "ZONE",
-            "SERVICE"
+            "SERVICE",
+            "DATABASE_SCHEMA",
+            "DASHBOARD",
+            "EXPLORE",
+            "LOOK"
           ],
           "enumDescriptions": [
             "Default unknown type.",
-            "Output only. The entry type that has a GoogleSQL schema, including logical views.",
+            "The entry type that has a GoogleSQL schema, including logical views.",
             "Output only. The type of models. For more information, see [Supported models in BigQuery ML] (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in).",
             "An entry type for streaming entries. For example, a Pub/Sub topic.",
             "An entry type for a set of files or objects. For example, a Cloud Storage fileset.",
@@ -1173,14 +1361,18 @@
             "Output only. Routine, for example, a BigQuery routine.",
             "A Dataplex lake.",
             "A Dataplex zone.",
-            "A service, for example, a Dataproc Metastore service."
+            "A service, for example, a Dataproc Metastore service.",
+            "Schema within a relational database.",
+            "A Dashboard, for example from Looker.",
+            "A Looker Explore. For more information, see [Looker Explore API] (https://developers.looker.com/api/explorer/4.0/methods/LookmlModel/lookml_model_explore).",
+            "A Looker Look. For more information, see [Looker Look API] (https://developers.looker.com/api/explorer/4.0/methods/Look)."
           ],
           "properties": {},
           "additionalProperties": null,
           "items": null
         },
         "usageSignal": {
-          "description": "Output only. Resource usage statistics.",
+          "description": "Resource usage statistics.",
           "$ref": "GoogleCloudDatacatalogV1UsageSignal"
         },
         "userSpecifiedSystem": {
@@ -1479,6 +1671,106 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoogleCloudDatacatalogV1ImportEntriesMetadata": {
+      "id": "GoogleCloudDatacatalogV1ImportEntriesMetadata",
+      "description": "Metadata message for long-running operation returned by the ImportEntries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "errors": {
+          "description": "Partial errors that are encountered during the ImportEntries operation. There is no guarantee that all the encountered errors are reported. However, if no errors are reported, it means that no errors were encountered.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Status"
+          }
+        },
+        "state": {
+          "description": "State of the import operation.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "IMPORT_STATE_UNSPECIFIED",
+            "IMPORT_QUEUED",
+            "IMPORT_IN_PROGRESS",
+            "IMPORT_DONE",
+            "IMPORT_OBSOLETE"
+          ],
+          "enumDescriptions": [
+            "Default value. This value is unused.",
+            "The dump with entries has been queued for import.",
+            "The import of entries is in progress.",
+            "The import of entries has been finished.",
+            "The import of entries has been abandoned in favor of a newer request."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1ImportEntriesRequest": {
+      "id": "GoogleCloudDatacatalogV1ImportEntriesRequest",
+      "description": "Request message for ImportEntries method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "gcsBucketPath": {
+          "description": "Path to a Cloud Storage bucket that contains a dump ready for ingestion.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1ImportEntriesResponse": {
+      "id": "GoogleCloudDatacatalogV1ImportEntriesResponse",
+      "description": "Response message for long-running operation returned by the ImportEntries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "deletedEntriesCount": {
+          "description": "Number of entries deleted as a result of import operation.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "upsertedEntriesCount": {
+          "description": "Cumulative number of entries created and entries updated as a result of import operation.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "GoogleCloudDatacatalogV1ImportTaxonomiesRequest": {
       "id": "GoogleCloudDatacatalogV1ImportTaxonomiesRequest",
       "description": "Request message for ImportTaxonomies.",
@@ -1712,6 +2004,78 @@
           "items": {
             "$ref": "GoogleCloudDatacatalogV1Taxonomy"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1LookerSystemSpec": {
+      "id": "GoogleCloudDatacatalogV1LookerSystemSpec",
+      "description": "Specification that applies to entries that are part `LOOKER` system (user_specified_type)",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "parentInstanceDisplayName": {
+          "description": "Name of the parent Looker Instance. Empty if it does not exist.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parentInstanceId": {
+          "description": "ID of the parent Looker Instance. Empty if it does not exist. Example value: `someinstance.looker.com`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parentModelDisplayName": {
+          "description": "Name of the parent Model. Empty if it does not exist.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parentModelId": {
+          "description": "ID of the parent Model. Empty if it does not exist.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parentViewDisplayName": {
+          "description": "Name of the parent View. Empty if it does not exist.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "parentViewId": {
+          "description": "ID of the parent View. Empty if it does not exist.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -2449,14 +2813,18 @@
             "BIGQUERY",
             "CLOUD_PUBSUB",
             "DATAPROC_METASTORE",
-            "DATAPLEX"
+            "DATAPLEX",
+            "CLOUD_SQL",
+            "LOOKER"
           ],
           "enumDescriptions": [
             "Default unknown system.",
             "BigQuery.",
             "Cloud Pub/Sub.",
             "Dataproc Metastore.",
-            "Dataplex."
+            "Dataplex.",
+            "Cloud Sql",
+            "Looker"
           ],
           "properties": {},
           "additionalProperties": null,
@@ -2653,6 +3021,48 @@
           "items": {
             "$ref": "GoogleCloudDatacatalogV1SerializedPolicyTag"
           }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1SqlDatabaseSystemSpec": {
+      "id": "GoogleCloudDatacatalogV1SqlDatabaseSystemSpec",
+      "description": "Specification that applies to entries that are part `SQL_DATABASE` system (user_specified_type)",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "databaseVersion": {
+          "description": "Version of the database engine.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "instanceHost": {
+          "description": "Host of the SQL database enum InstanceHost { UNDEFINED = 0; SELF_HOSTED = 1; CLOUD_SQL = 2; AMAZON_RDS = 3; AZURE_SQL = 4; } Host of the enclousing database instance.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "sqlEngine": {
+          "description": "SQL Database Engine. enum SqlEngine { UNDEFINED = 0; MY_SQL = 1; POSTGRE_SQL = 2; SQL_SERVER = 3; } Engine of the enclosing database instance.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -3150,9 +3560,53 @@
           "additionalProperties": null,
           "items": null
         },
+        "service": {
+          "description": "Output only. Identity of the service which owns the Taxonomy. This field is only populated when the taxonomy is created by a GCP service. Currently only 'DATAPLEX' is supported.",
+          "$ref": "GoogleCloudDatacatalogV1TaxonomyService"
+        },
         "taxonomyTimestamps": {
           "description": "Output only. Creation and modification timestamps of this taxonomy.",
           "$ref": "GoogleCloudDatacatalogV1SystemTimestamps"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleCloudDatacatalogV1TaxonomyService": {
+      "id": "GoogleCloudDatacatalogV1TaxonomyService",
+      "description": "The source system of the Taxonomy.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "identity": {
+          "description": "P4SA Identity of the service.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "The GCP service name.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "MANAGING_SYSTEM_UNSPECIFIED",
+            "MANAGING_SYSTEM_DATAPLEX",
+            "MANAGING_SYSTEM_OTHER"
+          ],
+          "enumDescriptions": [
+            "Default value",
+            "Dataplex.",
+            "Other"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -3188,6 +3642,29 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "commonUsageWithinTimeRange": {
+          "description": "Common usage statistics over each of the predefined time ranges. Supported time ranges are `{\"24H\", \"7D\", \"30D\", \"Lifetime\"}`.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "$ref": "GoogleCloudDatacatalogV1CommonUsageStats"
+          },
+          "items": null
+        },
+        "favoriteCount": {
+          "description": "Favorite count in the source system.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "updateTime": {
           "description": "The end timestamp of the duration of usage statistics.",
           "type": "string",
@@ -3199,7 +3676,7 @@
           "items": null
         },
         "usageWithinTimeRange": {
-          "description": "Usage statistics over each of the predefined time ranges. Supported time ranges are `{\"24H\", \"7D\", \"30D\"}`.",
+          "description": "Output only. BigQuery usage statistics over each of the predefined time ranges. Supported time ranges are `{\"24H\", \"7D\", \"30D\"}`.",
           "type": "object",
           "format": null,
           "enum": [],
@@ -3289,6 +3766,114 @@
       "additionalProperties": null,
       "items": null
     },
+    "ListOperationsResponse": {
+      "id": "ListOperationsResponse",
+      "description": "The response message for Operations.ListOperations.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "nextPageToken": {
+          "description": "The standard List next-page token.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "operations": {
+          "description": "A list of operations that matches the specified filter in the request.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Operation"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Operation": {
+      "id": "Operation",
+      "description": "This resource represents a long-running operation that is the result of a network API call.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "done": {
+          "description": "If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "error": {
+          "description": "The error result of the operation in case of failure or cancellation.",
+          "$ref": "Status"
+        },
+        "metadata": {
+          "description": "Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        },
+        "name": {
+          "description": "The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "response": {
+          "description": "The normal response of the operation in case of success. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": "Properties of the object. Contains field @type with type URL.",
+            "type": "any",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Policy": {
       "id": "Policy",
       "description": "An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources. A `Policy` is a collection of `bindings`. A `binding` binds one or more `members`, or principals, to a single `role`. Principals can be user accounts, service accounts, Google groups, and domains (such as G Suite). A `role` is a named list of permissions; each `role` can be an IAM predefined role or a user-created custom role. For some types of Google Cloud resources, a `binding` can also specify a `condition`, which is a logical expression that allows access to a resource only if the expression evaluates to `true`. A condition can add constraints based on attributes of the request, the resource, or both. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). **JSON example:** { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01T00:00:00.000Z')\", } } ], \"etag\": \"BwWWja0YfJA=\", \"version\": 3 } **YAML example:** bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the [IAM documentation](https://cloud.google.com/iam/docs/).",
@@ -3344,6 +3929,65 @@
         "policy": {
           "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
           "$ref": "Policy"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Status": {
+      "id": "Status",
+      "description": "The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "code": {
+          "description": "The status code, which should be an enum value of google.rpc.Code.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "details": {
+          "description": "A list of messages that carry the error details. There is a common set of message types for APIs to use.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "object",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": {
+              "description": "Properties of the object. Contains field @type with type URL.",
+              "type": "any",
+              "format": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "properties": {},
+              "additionalProperties": null,
+              "items": null
+            },
+            "items": null
+          }
+        },
+        "message": {
+          "description": "A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
         }
       },
       "additionalProperties": null,
@@ -3849,7 +4493,7 @@
                       "description": "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view it. * An empty policy if the resource exists but doesn't have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn't get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.",
                       "parameters": {
                         "resource": {
-                          "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                           "default": null,
                           "location": "path",
                           "required": true,
@@ -3871,6 +4515,45 @@
                       },
                       "response": {
                         "$ref": "Policy"
+                      },
+                      "scopes": [
+                        "https://www.googleapis.com/auth/cloud-platform"
+                      ],
+                      "supportsMediaDownload": false,
+                      "useMediaDownloadService": false,
+                      "supportsSubscription": false,
+                      "supportsMediaUpload": false,
+                      "mediaUpload": null
+                    },
+                    "import": {
+                      "id": "datacatalog.projects.locations.entryGroups.entries.import",
+                      "path": "v1/{+parent}/entries:import",
+                      "httpMethod": "POST",
+                      "description": "Imports entries from some source (e.g. dump in a Cloud Storage bucket) to the Data Catalog. Dump here is a snapshot of the third-party system state, that needs to be ingested in the Data Catalog. Import of entries is a sync operation that reconciles state of the third-party system and Data Catalog. ImportEntries is a long-running operation done in the background, so this method returns long-running operation resource. The resource can be queried with Operations.GetOperation which contains metadata and response.",
+                      "parameters": {
+                        "parent": {
+                          "description": "Required. Target entry group for ingested entries.",
+                          "default": null,
+                          "location": "path",
+                          "required": true,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": "^projects/[^/]+/locations/[^/]+/entryGroups/[^/]+$",
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        }
+                      },
+                      "parameterOrder": [
+                        "parent"
+                      ],
+                      "request": {
+                        "$ref": "GoogleCloudDatacatalogV1ImportEntriesRequest"
+                      },
+                      "response": {
+                        "$ref": "Operation"
                       },
                       "scopes": [
                         "https://www.googleapis.com/auth/cloud-platform"
@@ -4137,7 +4820,7 @@
                       "description": "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method.",
                       "parameters": {
                         "resource": {
-                          "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                           "default": null,
                           "location": "path",
                           "required": true,
@@ -4573,7 +5256,7 @@
                   "description": "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view it. * An empty policy if the resource exists but doesn't have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn't get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -4730,7 +5413,7 @@
                   "description": "Sets an access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates - Entry groups Note: This method sets policies only within Data Catalog and can't be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -4769,7 +5452,7 @@
                   "description": "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -4791,6 +5474,201 @@
                   },
                   "response": {
                     "$ref": "TestIamPermissionsResponse"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "operations": {
+              "resources": {},
+              "methods": {
+                "cancel": {
+                  "id": "datacatalog.projects.locations.operations.cancel",
+                  "path": "v1/{+name}:cancel",
+                  "httpMethod": "POST",
+                  "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
+                  "parameters": {
+                    "name": {
+                      "description": "The name of the operation resource to be cancelled.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "Empty"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "delete": {
+                  "id": "datacatalog.projects.locations.operations.delete",
+                  "path": "v1/{+name}",
+                  "httpMethod": "DELETE",
+                  "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+                  "parameters": {
+                    "name": {
+                      "description": "The name of the operation resource to be deleted.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "Empty"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "get": {
+                  "id": "datacatalog.projects.locations.operations.get",
+                  "path": "v1/{+name}",
+                  "httpMethod": "GET",
+                  "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+                  "parameters": {
+                    "name": {
+                      "description": "The name of the operation resource.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "Operation"
+                  },
+                  "scopes": [
+                    "https://www.googleapis.com/auth/cloud-platform"
+                  ],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "datacatalog.projects.locations.operations.list",
+                  "path": "v1/{+name}/operations",
+                  "httpMethod": "GET",
+                  "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.",
+                  "parameters": {
+                    "filter": {
+                      "description": "The standard list filter.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "name": {
+                      "description": "The name of the operation's parent resource.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^projects/[^/]+/locations/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageSize": {
+                      "description": "The standard list page size.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "The standard list page token.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "ListOperationsResponse"
                   },
                   "scopes": [
                     "https://www.googleapis.com/auth/cloud-platform"
@@ -5201,7 +6079,7 @@
                   "description": "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view it. * An empty policy if the resource exists but doesn't have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn't get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -5293,7 +6171,7 @@
                   "description": "Sets an access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates - Entry groups Note: This method sets policies only within Data Catalog and can't be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -5332,7 +6210,7 @@
                   "description": "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -5491,7 +6369,7 @@
                       "description": "Gets the IAM policy for a policy tag or a taxonomy.",
                       "parameters": {
                         "resource": {
-                          "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                           "default": null,
                           "location": "path",
                           "required": true,
@@ -5648,7 +6526,7 @@
                       "description": "Sets the IAM policy for a policy tag or a taxonomy.",
                       "parameters": {
                         "resource": {
-                          "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                           "default": null,
                           "location": "path",
                           "required": true,
@@ -5687,7 +6565,7 @@
                       "description": "Returns your permissions on a specified policy tag or taxonomy.",
                       "parameters": {
                         "resource": {
-                          "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                           "default": null,
                           "location": "path",
                           "required": true,
@@ -5908,7 +6786,7 @@
                   "description": "Gets the IAM policy for a policy tag or a taxonomy.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -5985,6 +6863,20 @@
                   "httpMethod": "GET",
                   "description": "Lists all taxonomies in a project in a particular location that you have a permission to view.",
                   "parameters": {
+                    "filter": {
+                      "description": "Supported field for filter is 'service' and value is 'dataplex'. Eg: service=dataplex.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
                     "pageSize": {
                       "description": "The maximum number of items to return. Must be a value between 1 and 1000 inclusively. If not set, defaults to 50.",
                       "default": null,
@@ -6143,7 +7035,7 @@
                   "description": "Sets the IAM policy for a policy tag or a taxonomy.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy is being specified. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,
@@ -6182,7 +7074,7 @@
                   "description": "Returns your permissions on a specified policy tag or taxonomy.",
                   "parameters": {
                     "resource": {
-                      "description": "REQUIRED: The resource for which the policy detail is being requested. See the operation documentation for the appropriate value for this field.",
+                      "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
                       "default": null,
                       "location": "path",
                       "required": true,

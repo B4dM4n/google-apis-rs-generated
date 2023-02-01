@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("authorizedbuyersmarketplace1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220426")
+            .version("0.1.0-20230131")
             .about("The Authorized Buyers Marketplace API lets buyers programmatically discover inventory; propose, retrieve and negotiate deals with publishers.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -128,7 +128,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             finalized_deals1 = finalized_deals1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_ready_to_serve").about("Sets the given finalized deal as ready to serve. By default, deals are ready to serve as soon as they're finalized. A bidder can opt out of this feature by asking to be included in an allowlist. Once opted out, finalized deals belonging to the bidder and its child seats will not start serving until this method is called. This method is useful to the bidders who prefer to not receive bid requests before the creative is ready. This method only applies to programmatic guaranteed deals.");
+            let mcmd = SubCommand::with_name("set_ready_to_serve").about("Sets the given finalized deal as ready to serve. By default, deals are set as ready to serve as soon as they're finalized. If you want to opt out of the default behavior, and manually indicate that deals are ready to serve, ask your Technical Account Manager to add you to the allowlist. If you choose to use this method, finalized deals belonging to the bidder and its child seats don't start serving until after you call `setReadyToServe`, and after the deals become active. For example, you can use this method to delay receiving bid requests until your creative is ready. This method only applies to programmatic guaranteed deals.");
             finalized_deals1 = finalized_deals1.subcommand(mcmd);
         }
         let mut proposals1 = SubCommand::with_name("proposals")
@@ -172,7 +172,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             publisher_profiles1 = publisher_profiles1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists publisher profiles");
+            let mcmd = SubCommand::with_name("list").about("Lists publisher profiles. The returned publisher profiles aren't in any defined order. The order of the results might change. A new publisher profile can appear in any place in the list of returned results.");
             publisher_profiles1 = publisher_profiles1.subcommand(mcmd);
         }
         let mut users2 = SubCommand::with_name("users")

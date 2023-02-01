@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*getBiReservation*](resources/projects/locations/struct.GetBiReservationRequestBuilder.html), [*searchAllAssignments*](resources/projects/locations/struct.SearchAllAssignmentsRequestBuilder.html), [*searchAssignments*](resources/projects/locations/struct.SearchAssignmentsRequestBuilder.html), [*updateBiReservation*](resources/projects/locations/struct.UpdateBiReservationRequestBuilder.html)\n    * [capacity_commitments](resources/projects/locations/capacity_commitments/struct.CapacityCommitmentsActions.html)\n      * [*create*](resources/projects/locations/capacity_commitments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/capacity_commitments/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/capacity_commitments/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/capacity_commitments/struct.ListRequestBuilder.html), [*merge*](resources/projects/locations/capacity_commitments/struct.MergeRequestBuilder.html), [*patch*](resources/projects/locations/capacity_commitments/struct.PatchRequestBuilder.html), [*split*](resources/projects/locations/capacity_commitments/struct.SplitRequestBuilder.html)\n    * [reservations](resources/projects/locations/reservations/struct.ReservationsActions.html)\n      * [*create*](resources/projects/locations/reservations/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/reservations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/reservations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/reservations/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/reservations/struct.PatchRequestBuilder.html)\n      * [assignments](resources/projects/locations/reservations/assignments/struct.AssignmentsActions.html)\n        * [*create*](resources/projects/locations/reservations/assignments/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/reservations/assignments/struct.DeleteRequestBuilder.html), [*list*](resources/projects/locations/reservations/assignments/struct.ListRequestBuilder.html), [*move*](resources/projects/locations/reservations/assignments/struct.MoveRequestBuilder.html), [*patch*](resources/projects/locations/reservations/assignments/struct.PatchRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your data in Google BigQuery and see the email address for your Google Account\n\n`https://www.googleapis.com/auth/bigquery`"]
@@ -60,6 +61,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum AssignmentJobType {
+        #[doc = "Background jobs that BigQuery runs for the customers in the background."]
+        Background,
         #[doc = "Invalid type. Requests with this value will be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`."]
         JobTypeUnspecified,
         #[doc = "BigQuery ML jobs that use services external to BigQuery for model training. These jobs will not utilize idle slots from other reservations."]
@@ -72,6 +75,7 @@ pub mod schemas {
     impl AssignmentJobType {
         pub fn as_str(self) -> &'static str {
             match self {
+                AssignmentJobType::Background => "BACKGROUND",
                 AssignmentJobType::JobTypeUnspecified => "JOB_TYPE_UNSPECIFIED",
                 AssignmentJobType::MlExternal => "ML_EXTERNAL",
                 AssignmentJobType::Pipeline => "PIPELINE",
@@ -88,6 +92,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<AssignmentJobType, ()> {
             Ok(match s {
+                "BACKGROUND" => AssignmentJobType::Background,
                 "JOB_TYPE_UNSPECIFIED" => AssignmentJobType::JobTypeUnspecified,
                 "ML_EXTERNAL" => AssignmentJobType::MlExternal,
                 "PIPELINE" => AssignmentJobType::Pipeline,
@@ -116,6 +121,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "BACKGROUND" => AssignmentJobType::Background,
                 "JOB_TYPE_UNSPECIFIED" => AssignmentJobType::JobTypeUnspecified,
                 "ML_EXTERNAL" => AssignmentJobType::MlExternal,
                 "PIPELINE" => AssignmentJobType::Pipeline,
@@ -227,6 +233,46 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct Autoscale {
+        #[doc = "Output only. The slot capacity added to this reservation when autoscale happens. Will be between \\[0, max_slots\\]."]
+        #[serde(
+            rename = "currentSlots",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub current_slots: ::std::option::Option<i64>,
+        #[doc = "Number of slots to be scaled when needed."]
+        #[serde(
+            rename = "maxSlots",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_slots: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for Autoscale {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Autoscale {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct BiReservation {
         #[doc = "The resource name of the singleton BI reservation. Reservation names have the form `projects/{project_id}/locations/{location_id}/biReservation`."]
         #[serde(
@@ -284,6 +330,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub commitment_start_time: ::std::option::Option<String>,
+        #[doc = "Edition of the capacity commitment."]
+        #[serde(
+            rename = "edition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub edition: ::std::option::Option<crate::schemas::CapacityCommitmentEdition>,
         #[doc = "Output only. For FAILED commitment plan, provides the reason of failure."]
         #[serde(
             rename = "failureStatus",
@@ -346,6 +399,77 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum CapacityCommitmentEdition {
+        #[doc = "Default value, only for legacy reservations and capacity commitments."]
+        EditionUnspecified,
+        #[doc = "Enterprise edition."]
+        Enterprise,
+    }
+    impl CapacityCommitmentEdition {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                CapacityCommitmentEdition::EditionUnspecified => "EDITION_UNSPECIFIED",
+                CapacityCommitmentEdition::Enterprise => "ENTERPRISE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for CapacityCommitmentEdition {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for CapacityCommitmentEdition {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<CapacityCommitmentEdition, ()> {
+            Ok(match s {
+                "EDITION_UNSPECIFIED" => CapacityCommitmentEdition::EditionUnspecified,
+                "ENTERPRISE" => CapacityCommitmentEdition::Enterprise,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for CapacityCommitmentEdition {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for CapacityCommitmentEdition {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for CapacityCommitmentEdition {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EDITION_UNSPECIFIED" => CapacityCommitmentEdition::EditionUnspecified,
+                "ENTERPRISE" => CapacityCommitmentEdition::Enterprise,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for CapacityCommitmentEdition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for CapacityCommitmentEdition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CapacityCommitmentPlan {
         #[doc = "Annual commitments have a committed period of 365 days after becoming ACTIVE. After that they are converted to a new commitment based on the renewal_plan."]
         Annual,
@@ -355,6 +479,8 @@ pub mod schemas {
         Flex,
         #[doc = "Monthly commitments have a committed period of 30 days after becoming ACTIVE. After that, they are not in a committed period anymore and can be removed any time."]
         Monthly,
+        #[doc = "Should only be used for `renewal_plan` and is only meaningful if edition is specified to values other than EDITION_UNSPECIFIED. Otherwise CreateCapacityCommitmentRequest or UpdateCapacityCommitmentRequest will be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. If the renewal_plan is NONE, capacity commitment will be removed at the end of its commitment period."]
+        None,
         #[doc = "Trial commitments have a committed period of 182 days after becoming ACTIVE. After that, they are converted to a new commitment based on the `renewal_plan`. Default `renewal_plan` for Trial commitment is Flex so that it can be deleted right after committed period ends."]
         Trial,
     }
@@ -365,6 +491,7 @@ pub mod schemas {
                 CapacityCommitmentPlan::CommitmentPlanUnspecified => "COMMITMENT_PLAN_UNSPECIFIED",
                 CapacityCommitmentPlan::Flex => "FLEX",
                 CapacityCommitmentPlan::Monthly => "MONTHLY",
+                CapacityCommitmentPlan::None => "NONE",
                 CapacityCommitmentPlan::Trial => "TRIAL",
             }
         }
@@ -382,6 +509,7 @@ pub mod schemas {
                 "COMMITMENT_PLAN_UNSPECIFIED" => CapacityCommitmentPlan::CommitmentPlanUnspecified,
                 "FLEX" => CapacityCommitmentPlan::Flex,
                 "MONTHLY" => CapacityCommitmentPlan::Monthly,
+                "NONE" => CapacityCommitmentPlan::None,
                 "TRIAL" => CapacityCommitmentPlan::Trial,
                 _ => return Err(()),
             })
@@ -411,6 +539,7 @@ pub mod schemas {
                 "COMMITMENT_PLAN_UNSPECIFIED" => CapacityCommitmentPlan::CommitmentPlanUnspecified,
                 "FLEX" => CapacityCommitmentPlan::Flex,
                 "MONTHLY" => CapacityCommitmentPlan::Monthly,
+                "NONE" => CapacityCommitmentPlan::None,
                 "TRIAL" => CapacityCommitmentPlan::Trial,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -441,6 +570,8 @@ pub mod schemas {
         Flex,
         #[doc = "Monthly commitments have a committed period of 30 days after becoming ACTIVE. After that, they are not in a committed period anymore and can be removed any time."]
         Monthly,
+        #[doc = "Should only be used for `renewal_plan` and is only meaningful if edition is specified to values other than EDITION_UNSPECIFIED. Otherwise CreateCapacityCommitmentRequest or UpdateCapacityCommitmentRequest will be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. If the renewal_plan is NONE, capacity commitment will be removed at the end of its commitment period."]
+        None,
         #[doc = "Trial commitments have a committed period of 182 days after becoming ACTIVE. After that, they are converted to a new commitment based on the `renewal_plan`. Default `renewal_plan` for Trial commitment is Flex so that it can be deleted right after committed period ends."]
         Trial,
     }
@@ -453,6 +584,7 @@ pub mod schemas {
                 }
                 CapacityCommitmentRenewalPlan::Flex => "FLEX",
                 CapacityCommitmentRenewalPlan::Monthly => "MONTHLY",
+                CapacityCommitmentRenewalPlan::None => "NONE",
                 CapacityCommitmentRenewalPlan::Trial => "TRIAL",
             }
         }
@@ -472,6 +604,7 @@ pub mod schemas {
                 }
                 "FLEX" => CapacityCommitmentRenewalPlan::Flex,
                 "MONTHLY" => CapacityCommitmentRenewalPlan::Monthly,
+                "NONE" => CapacityCommitmentRenewalPlan::None,
                 "TRIAL" => CapacityCommitmentRenewalPlan::Trial,
                 _ => return Err(()),
             })
@@ -503,6 +636,7 @@ pub mod schemas {
                 }
                 "FLEX" => CapacityCommitmentRenewalPlan::Flex,
                 "MONTHLY" => CapacityCommitmentRenewalPlan::Monthly,
+                "NONE" => CapacityCommitmentRenewalPlan::None,
                 "TRIAL" => CapacityCommitmentRenewalPlan::Trial,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -666,7 +800,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAssignmentsResponse {
+    impl crate::GetNextPageToken<String> for ListAssignmentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -698,7 +832,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCapacityCommitmentsResponse {
+    impl crate::GetNextPageToken<String> for ListCapacityCommitmentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -741,7 +875,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListReservationsResponse {
+    impl crate::GetNextPageToken<String> for ListReservationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -821,7 +955,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Reservation {
-        #[doc = "Maximum number of queries that are allowed to run concurrently in this reservation. This is a soft limit due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency will be automatically set based on the reservation size."]
+        #[doc = "The configuration parameters for the auto scaling feature. Note this is an alpha feature."]
+        #[serde(
+            rename = "autoscale",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub autoscale: ::std::option::Option<crate::schemas::Autoscale>,
+        #[doc = "Job concurrency target which sets a soft upper bound on the number of jobs that can run concurrently in this reservation. This is a soft target due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency target will be automatically computed by the system. NOTE: this field is exposed as `target_job_concurrency` in the Information Schema, DDL and BQ CLI."]
         #[serde(
             rename = "concurrency",
             default,
@@ -836,6 +977,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creation_time: ::std::option::Option<String>,
+        #[doc = "Edition of the reservation."]
+        #[serde(
+            rename = "edition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub edition: ::std::option::Option<crate::schemas::ReservationEdition>,
         #[doc = "If false, any query or pipeline job using this reservation will use idle slots from other reservations within the same admin project. If true, a query or pipeline job using this reservation will execute with the slot capacity specified in the slot_capacity field at most."]
         #[serde(
             rename = "ignoreIdleSlots",
@@ -857,7 +1005,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Minimum slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false. If the new reservation’s slot capacity exceeds the project’s slot capacity or if total slot capacity of the new reservation and its siblings exceeds the project’s slot capacity, the request will fail with `google.rpc.Code.RESOURCE_EXHAUSTED`. NOTE: for reservations in US or EU multi-regions, slot capacity constraints are checked separately for default and auxiliary regions. See multi_region_auxiliary flag for more details."]
+        #[doc = "Minimum slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false. If total slot_capacity of the reservation and its siblings exceeds the total slot_count of all capacity commitments, the request will fail with `google.rpc.Code.RESOURCE_EXHAUSTED`. NOTE: for reservations in US or EU multi-regions, slot capacity constraints are checked separately for default and auxiliary regions. See multi_region_auxiliary flag for more details."]
         #[serde(
             rename = "slotCapacity",
             default,
@@ -879,6 +1027,77 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Reservation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ReservationEdition {
+        #[doc = "Default value, only for legacy reservations and capacity commitments."]
+        EditionUnspecified,
+        #[doc = "Enterprise edition."]
+        Enterprise,
+    }
+    impl ReservationEdition {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ReservationEdition::EditionUnspecified => "EDITION_UNSPECIFIED",
+                ReservationEdition::Enterprise => "ENTERPRISE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ReservationEdition {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ReservationEdition {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ReservationEdition, ()> {
+            Ok(match s {
+                "EDITION_UNSPECIFIED" => ReservationEdition::EditionUnspecified,
+                "ENTERPRISE" => ReservationEdition::Enterprise,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ReservationEdition {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ReservationEdition {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ReservationEdition {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EDITION_UNSPECIFIED" => ReservationEdition::EditionUnspecified,
+                "ENTERPRISE" => ReservationEdition::Enterprise,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ReservationEdition {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ReservationEdition {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -921,7 +1140,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SearchAllAssignmentsResponse {
+    impl crate::GetNextPageToken<String> for SearchAllAssignmentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -964,7 +1183,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SearchAssignmentsResponse {
+    impl crate::GetNextPageToken<String> for SearchAssignmentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1716,7 +1935,7 @@ pub mod resources {
                         #[serde(rename = "assignments")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -1751,7 +1970,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -1801,7 +2020,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -1919,12 +2138,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for SearchAllAssignmentsRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -2056,7 +2276,7 @@ pub mod resources {
                         #[serde(rename = "assignments")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -2091,7 +2311,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -2141,7 +2361,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -2259,12 +2479,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for SearchAssignmentsRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -3244,7 +3465,7 @@ pub mod resources {
                             #[serde(rename = "capacityCommitments")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -3280,7 +3501,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -3336,7 +3557,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -3454,12 +3675,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -4704,7 +4926,7 @@ pub mod resources {
                             #[serde(rename = "reservations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4739,7 +4961,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4789,7 +5011,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4907,12 +5129,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5674,7 +5897,7 @@ pub mod resources {
                                 #[serde(rename = "assignments")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -5711,7 +5934,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -5761,7 +5984,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -5882,12 +6105,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -6522,16 +6746,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6551,13 +6777,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6565,7 +6794,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6592,7 +6821,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

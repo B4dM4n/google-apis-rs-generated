@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("memcache1_beta2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220404")
+            .version("0.1.0-20230111")
             .about("Google Cloud Memorystore for Memcached API is used for creating and managing Memcached instances in GCP.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -50,7 +50,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut instances2 = SubCommand::with_name("instances")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: apply_parameters, apply_software_update, create, delete, get, list, patch and update_parameters");
+                        .about("methods: apply_parameters, apply_software_update, create, delete, get, list, patch, reschedule_maintenance and update_parameters");
         {
             let mcmd = SubCommand::with_name("apply_parameters").about("`ApplyParameters` restarts the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.");
             instances2 = instances2.subcommand(mcmd);
@@ -80,6 +80,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("patch")
                 .about("Updates an existing Instance in a given project and location.");
+            instances2 = instances2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("reschedule_maintenance")
+                .about("Performs the apply phase of the RescheduleMaintenance verb.");
             instances2 = instances2.subcommand(mcmd);
         }
         {

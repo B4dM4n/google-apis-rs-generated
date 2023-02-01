@@ -7,7 +7,7 @@
   "canonicalName": "Firebase ML",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230125",
   "title": "Firebase ML API",
   "description": "Access custom machine learning models hosted via Firebase ML.",
   "ownerDomain": "google.com",

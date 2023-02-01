@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("admin1_datatransfer")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220325")
+            .version("0.1.0-20230124")
             .about("Admin SDK lets administrators of enterprise domains to view and manage resources like user, groups etc. It also provides audit and usage reports of domain.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -55,7 +55,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             transfers0 = transfers0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("insert").about("Inserts a data transfer request.");
+            let mcmd = SubCommand::with_name("insert").about("Inserts a data transfer request. See the [Transfer parameters](/admin-sdk/data-transfer/v1/parameters) reference for specific application requirements.");
             transfers0 = transfers0.subcommand(mcmd);
         }
         {

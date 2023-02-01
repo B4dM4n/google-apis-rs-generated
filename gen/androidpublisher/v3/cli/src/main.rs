@@ -15,8 +15,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("androidpublisher3")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220427")
-            .about("Lets Android application developers access their Google Play accounts.")
+            .version("0.1.0-20230201")
+            .about("Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
                 .long("scope")
@@ -149,7 +149,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut purchases0 = SubCommand::with_name("purchases")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: products, subscriptions and voidedpurchases");
+            .about("sub-resources: products, subscriptions, subscriptionsv_2 and voidedpurchases");
         let mut reviews0 = SubCommand::with_name("reviews")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get, list and reply");
@@ -378,6 +378,34 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update").about("Updates a track.");
             tracks1 = tracks1.subcommand(mcmd);
         }
+        let mut subscriptions1 = SubCommand::with_name("subscriptions")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: archive, create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("archive").about("Archives a subscription. Can only be done if at least one base plan was active in the past, and no base plan is available for new or existing subscribers currently. This action is irreversible, and the subscription ID will remain reserved.");
+            subscriptions1 = subscriptions1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new subscription. Newly added base plans will remain in draft state until activated.");
+            subscriptions1 = subscriptions1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a subscription. A subscription can only be deleted if it has never had a base plan published.");
+            subscriptions1 = subscriptions1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Reads a single subscription.");
+            subscriptions1 = subscriptions1.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists all subscriptions under a given app.");
+            subscriptions1 = subscriptions1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates an existing subscription.");
+            subscriptions1 = subscriptions1.subcommand(mcmd);
+        }
         let mut products1 = SubCommand::with_name("products")
             .setting(AppSettings::ColoredHelp)
             .about("methods: acknowledge and get");
@@ -421,6 +449,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("revoke").about("Refunds and immediately revokes a user's subscription purchase. Access to the subscription will be terminated immediately and it will stop recurring.");
             subscriptions1 = subscriptions1.subcommand(mcmd);
         }
+        let mut subscriptionsv_21 = SubCommand::with_name("subscriptionsv_2")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get");
+        {
+            let mcmd = SubCommand::with_name("get").about("Get metadata about a subscription");
+            subscriptionsv_21 = subscriptionsv_21.subcommand(mcmd);
+        }
         let mut voidedpurchases1 = SubCommand::with_name("voidedpurchases")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -450,10 +485,66 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Returns the list of previously created system APK variants.");
             variants1 = variants1.subcommand(mcmd);
         }
+        let mut base_plans2 = SubCommand::with_name("base_plans")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: activate, deactivate, delete and migrate_prices");
+        {
+            let mcmd = SubCommand::with_name("activate").about("Activates a base plan. Once activated, base plans will be available to new subscribers.");
+            base_plans2 = base_plans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("deactivate").about("Deactivates a base plan. Once deactivated, the base plan will become unavailable to new subscribers, but existing subscribers will maintain their subscription");
+            base_plans2 = base_plans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a base plan. Can only be done for draft base plans. This action is irreversible.");
+            base_plans2 = base_plans2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("migrate_prices").about("Migrates subscribers who are receiving an historical subscription price to the currently-offered price for the specified region. Requests will cause price change notifications to be sent to users who are currently receiving an historical price older than the supplied timestamp. Subscribers who do not agree to the new price will have their subscription ended at the next renewal.");
+            base_plans2 = base_plans2.subcommand(mcmd);
+        }
+        let mut offers3 = SubCommand::with_name("offers")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: activate, create, deactivate, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("activate").about("Activates a subscription offer. Once activated, subscription offers will be available to new subscribers.");
+            offers3 = offers3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a new subscription offer. Only auto-renewing base plans can have subscription offers. The offer state will be DRAFT until it is activated.");
+            offers3 = offers3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("deactivate").about("Deactivates a subscription offer. Once deactivated, existing subscribers will maintain their subscription, but the offer will become unavailable to new subscribers.");
+            offers3 = offers3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a subscription offer. Can only be done for draft offers. This action is irreversible.");
+            offers3 = offers3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Reads a single offer");
+            offers3 = offers3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("list").about("Lists all offers under a given subscription.");
+            offers3 = offers3.subcommand(mcmd);
+        }
+        {
+            let mcmd =
+                SubCommand::with_name("patch").about("Updates an existing subscription offer.");
+            offers3 = offers3.subcommand(mcmd);
+        }
+        base_plans2 = base_plans2.subcommand(offers3);
+        subscriptions1 = subscriptions1.subcommand(base_plans2);
         systemapks0 = systemapks0.subcommand(variants1);
         purchases0 = purchases0.subcommand(voidedpurchases1);
+        purchases0 = purchases0.subcommand(subscriptionsv_21);
         purchases0 = purchases0.subcommand(subscriptions1);
         purchases0 = purchases0.subcommand(products1);
+        monetization0 = monetization0.subcommand(subscriptions1);
         edits0 = edits0.subcommand(tracks1);
         edits0 = edits0.subcommand(testers1);
         edits0 = edits0.subcommand(listings1);

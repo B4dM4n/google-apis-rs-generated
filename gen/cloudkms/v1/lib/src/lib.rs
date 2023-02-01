@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*generateRandomBytes*](resources/projects/locations/struct.GenerateRandomBytesRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [ekm_connections](resources/projects/locations/ekm_connections/struct.EkmConnectionsActions.html)\n      * [*create*](resources/projects/locations/ekm_connections/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/ekm_connections/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/ekm_connections/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/ekm_connections/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/ekm_connections/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/ekm_connections/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/ekm_connections/struct.TestIamPermissionsRequestBuilder.html)\n    * [key_rings](resources/projects/locations/key_rings/struct.KeyRingsActions.html)\n      * [*create*](resources/projects/locations/key_rings/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/struct.TestIamPermissionsRequestBuilder.html)\n      * [crypto_keys](resources/projects/locations/key_rings/crypto_keys/struct.CryptoKeysActions.html)\n        * [*create*](resources/projects/locations/key_rings/crypto_keys/struct.CreateRequestBuilder.html), [*decrypt*](resources/projects/locations/key_rings/crypto_keys/struct.DecryptRequestBuilder.html), [*encrypt*](resources/projects/locations/key_rings/crypto_keys/struct.EncryptRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/crypto_keys/struct.TestIamPermissionsRequestBuilder.html), [*updatePrimaryVersion*](resources/projects/locations/key_rings/crypto_keys/struct.UpdatePrimaryVersionRequestBuilder.html)\n        * [crypto_key_versions](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CryptoKeyVersionsActions.html)\n          * [*asymmetricDecrypt*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricDecryptRequestBuilder.html), [*asymmetricSign*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricSignRequestBuilder.html), [*create*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CreateRequestBuilder.html), [*destroy*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.DestroyRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetRequestBuilder.html), [*getPublicKey*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetPublicKeyRequestBuilder.html), [*import*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ListRequestBuilder.html), [*macSign*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.MacSignRequestBuilder.html), [*macVerify*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.MacVerifyRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.PatchRequestBuilder.html), [*restore*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.RestoreRequestBuilder.html)\n      * [import_jobs](resources/projects/locations/key_rings/import_jobs/struct.ImportJobsActions.html)\n        * [*create*](resources/projects/locations/key_rings/import_jobs/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/import_jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/import_jobs/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/import_jobs/struct.TestIamPermissionsRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*generateRandomBytes*](resources/projects/locations/struct.GenerateRandomBytesRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [ekm_config](resources/projects/locations/ekm_config/struct.EkmConfigActions.html)\n      * [*getIamPolicy*](resources/projects/locations/ekm_config/struct.GetIamPolicyRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/ekm_config/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/ekm_config/struct.TestIamPermissionsRequestBuilder.html)\n    * [ekm_connections](resources/projects/locations/ekm_connections/struct.EkmConnectionsActions.html)\n      * [*create*](resources/projects/locations/ekm_connections/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/ekm_connections/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/ekm_connections/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/ekm_connections/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/ekm_connections/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/ekm_connections/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/ekm_connections/struct.TestIamPermissionsRequestBuilder.html)\n    * [key_rings](resources/projects/locations/key_rings/struct.KeyRingsActions.html)\n      * [*create*](resources/projects/locations/key_rings/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/struct.TestIamPermissionsRequestBuilder.html)\n      * [crypto_keys](resources/projects/locations/key_rings/crypto_keys/struct.CryptoKeysActions.html)\n        * [*create*](resources/projects/locations/key_rings/crypto_keys/struct.CreateRequestBuilder.html), [*decrypt*](resources/projects/locations/key_rings/crypto_keys/struct.DecryptRequestBuilder.html), [*encrypt*](resources/projects/locations/key_rings/crypto_keys/struct.EncryptRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/struct.ListRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/crypto_keys/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/crypto_keys/struct.TestIamPermissionsRequestBuilder.html), [*updatePrimaryVersion*](resources/projects/locations/key_rings/crypto_keys/struct.UpdatePrimaryVersionRequestBuilder.html)\n        * [crypto_key_versions](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CryptoKeyVersionsActions.html)\n          * [*asymmetricDecrypt*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricDecryptRequestBuilder.html), [*asymmetricSign*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.AsymmetricSignRequestBuilder.html), [*create*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.CreateRequestBuilder.html), [*destroy*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.DestroyRequestBuilder.html), [*get*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetRequestBuilder.html), [*getPublicKey*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.GetPublicKeyRequestBuilder.html), [*import*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ImportRequestBuilder.html), [*list*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.ListRequestBuilder.html), [*macSign*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.MacSignRequestBuilder.html), [*macVerify*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.MacVerifyRequestBuilder.html), [*patch*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.PatchRequestBuilder.html), [*restore*](resources/projects/locations/key_rings/crypto_keys/crypto_key_versions/struct.RestoreRequestBuilder.html)\n      * [import_jobs](resources/projects/locations/key_rings/import_jobs/struct.ImportJobsActions.html)\n        * [*create*](resources/projects/locations/key_rings/import_jobs/struct.CreateRequestBuilder.html), [*get*](resources/projects/locations/key_rings/import_jobs/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/projects/locations/key_rings/import_jobs/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/projects/locations/key_rings/import_jobs/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/projects/locations/key_rings/import_jobs/struct.TestIamPermissionsRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -584,7 +585,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -1066,8 +1067,16 @@ pub mod schemas {
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA1 signing with a 160 bit key."]
+        HmacSha1,
+        #[doc = "HMAC-SHA224 signing with a 224 bit key."]
+        HmacSha224,
         #[doc = "HMAC-SHA256 signing with a 256 bit key."]
         HmacSha256,
+        #[doc = "HMAC-SHA384 signing with a 384 bit key."]
+        HmacSha384,
+        #[doc = "HMAC-SHA512 signing with a 512 bit key."]
+        HmacSha512,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
         RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
@@ -1120,7 +1129,11 @@ pub mod schemas {
                 CryptoKeyVersionAlgorithm::GoogleSymmetricEncryption => {
                     "GOOGLE_SYMMETRIC_ENCRYPTION"
                 }
+                CryptoKeyVersionAlgorithm::HmacSha1 => "HMAC_SHA1",
+                CryptoKeyVersionAlgorithm::HmacSha224 => "HMAC_SHA224",
                 CryptoKeyVersionAlgorithm::HmacSha256 => "HMAC_SHA256",
+                CryptoKeyVersionAlgorithm::HmacSha384 => "HMAC_SHA384",
+                CryptoKeyVersionAlgorithm::HmacSha512 => "HMAC_SHA512",
                 CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha1 => "RSA_DECRYPT_OAEP_2048_SHA1",
                 CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha256 => {
                     "RSA_DECRYPT_OAEP_2048_SHA256"
@@ -1171,7 +1184,11 @@ pub mod schemas {
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA1" => CryptoKeyVersionAlgorithm::HmacSha1,
+                "HMAC_SHA224" => CryptoKeyVersionAlgorithm::HmacSha224,
                 "HMAC_SHA256" => CryptoKeyVersionAlgorithm::HmacSha256,
+                "HMAC_SHA384" => CryptoKeyVersionAlgorithm::HmacSha384,
+                "HMAC_SHA512" => CryptoKeyVersionAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha256
@@ -1234,7 +1251,11 @@ pub mod schemas {
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA1" => CryptoKeyVersionAlgorithm::HmacSha1,
+                "HMAC_SHA224" => CryptoKeyVersionAlgorithm::HmacSha224,
                 "HMAC_SHA256" => CryptoKeyVersionAlgorithm::HmacSha256,
+                "HMAC_SHA384" => CryptoKeyVersionAlgorithm::HmacSha384,
+                "HMAC_SHA512" => CryptoKeyVersionAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => {
                     CryptoKeyVersionAlgorithm::RsaDecryptOaep2048Sha256
@@ -1532,8 +1553,16 @@ pub mod schemas {
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA1 signing with a 160 bit key."]
+        HmacSha1,
+        #[doc = "HMAC-SHA224 signing with a 224 bit key."]
+        HmacSha224,
         #[doc = "HMAC-SHA256 signing with a 256 bit key."]
         HmacSha256,
+        #[doc = "HMAC-SHA384 signing with a 384 bit key."]
+        HmacSha384,
+        #[doc = "HMAC-SHA512 signing with a 512 bit key."]
+        HmacSha512,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
         RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
@@ -1588,7 +1617,11 @@ pub mod schemas {
                 CryptoKeyVersionTemplateAlgorithm::GoogleSymmetricEncryption => {
                     "GOOGLE_SYMMETRIC_ENCRYPTION"
                 }
+                CryptoKeyVersionTemplateAlgorithm::HmacSha1 => "HMAC_SHA1",
+                CryptoKeyVersionTemplateAlgorithm::HmacSha224 => "HMAC_SHA224",
                 CryptoKeyVersionTemplateAlgorithm::HmacSha256 => "HMAC_SHA256",
+                CryptoKeyVersionTemplateAlgorithm::HmacSha384 => "HMAC_SHA384",
+                CryptoKeyVersionTemplateAlgorithm::HmacSha512 => "HMAC_SHA512",
                 CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha1 => {
                     "RSA_DECRYPT_OAEP_2048_SHA1"
                 }
@@ -1663,7 +1696,11 @@ pub mod schemas {
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionTemplateAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA1" => CryptoKeyVersionTemplateAlgorithm::HmacSha1,
+                "HMAC_SHA224" => CryptoKeyVersionTemplateAlgorithm::HmacSha224,
                 "HMAC_SHA256" => CryptoKeyVersionTemplateAlgorithm::HmacSha256,
+                "HMAC_SHA384" => CryptoKeyVersionTemplateAlgorithm::HmacSha384,
+                "HMAC_SHA512" => CryptoKeyVersionTemplateAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha1
                 }
@@ -1750,7 +1787,11 @@ pub mod schemas {
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     CryptoKeyVersionTemplateAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA1" => CryptoKeyVersionTemplateAlgorithm::HmacSha1,
+                "HMAC_SHA224" => CryptoKeyVersionTemplateAlgorithm::HmacSha224,
                 "HMAC_SHA256" => CryptoKeyVersionTemplateAlgorithm::HmacSha256,
+                "HMAC_SHA384" => CryptoKeyVersionTemplateAlgorithm::HmacSha384,
+                "HMAC_SHA512" => CryptoKeyVersionTemplateAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => {
                     CryptoKeyVersionTemplateAlgorithm::RsaDecryptOaep2048Sha1
                 }
@@ -2198,7 +2239,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "This checksum is computed by the server based on the value of other fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding."]
+        #[doc = "Optional. Etag of the currently stored EkmConnection."]
         #[serde(
             rename = "etag",
             default,
@@ -2740,13 +2781,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub import_job: ::std::option::Option<String>,
-        #[doc = "Wrapped key material produced with RSA_OAEP_3072_SHA1_AES_256 or RSA_OAEP_4096_SHA1_AES_256. This field contains the concatenation of two wrapped keys: 1. An ephemeral AES-256 wrapping key wrapped with the public_key using RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an empty label. 2. The key to be imported, wrapped with the ephemeral AES-256 key using AES-KWP (RFC 5649). If importing symmetric key material, it is expected that the unwrapped key contains plain bytes. If importing asymmetric key material, it is expected that the unwrapped key is in PKCS#8-encoded DER format (the PrivateKeyInfo structure from RFC 5208). This format is the same as the format produced by PKCS#11 mechanism CKM_RSA_AES_KEY_WRAP."]
+        #[doc = "Optional. This field has the same meaning as wrapped_key. Prefer to use that field in new work. Either that field or this field (but not both) must be specified."]
         #[serde(
             rename = "rsaAesWrappedKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rsa_aes_wrapped_key: ::std::option::Option<::google_api_bytes::Bytes>,
+        #[doc = "Optional. The wrapped key material to import. Before wrapping, key material must be formatted. If importing symmetric key material, the expected key material format is plain bytes. If importing asymmetric key material, the expected key material format is PKCS#8-encoded DER (the PrivateKeyInfo structure from RFC 5208). When wrapping with import methods (RSA_OAEP_3072_SHA1_AES_256 or RSA_OAEP_4096_SHA1_AES_256 or RSA_OAEP_3072_SHA256_AES_256 or RSA_OAEP_4096_SHA256_AES_256), this field must contain the concatenation of: 1. An ephemeral AES-256 wrapping key wrapped with the public_key using RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an empty label. 2. The formatted key to be imported, wrapped with the ephemeral AES-256 key using AES-KWP (RFC 5649). This format is the same as the format produced by PKCS#11 mechanism CKM_RSA_AES_KEY_WRAP. When wrapping with import methods (RSA_OAEP_3072_SHA256 or RSA_OAEP_4096_SHA256), this field must contain the formatted key to be imported, wrapped with the public_key using RSAES-OAEP with SHA-256, MGF1 with SHA-256, and an empty label."]
+        #[serde(
+            rename = "wrappedKey",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub wrapped_key: ::std::option::Option<::google_api_bytes::Bytes>,
     }
     impl ::google_field_selector::FieldSelector for ImportCryptoKeyVersionRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2772,8 +2820,16 @@ pub mod schemas {
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA1 signing with a 160 bit key."]
+        HmacSha1,
+        #[doc = "HMAC-SHA224 signing with a 224 bit key."]
+        HmacSha224,
         #[doc = "HMAC-SHA256 signing with a 256 bit key."]
         HmacSha256,
+        #[doc = "HMAC-SHA384 signing with a 384 bit key."]
+        HmacSha384,
+        #[doc = "HMAC-SHA512 signing with a 512 bit key."]
+        HmacSha512,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
         RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
@@ -2828,7 +2884,11 @@ pub mod schemas {
                 ImportCryptoKeyVersionRequestAlgorithm::GoogleSymmetricEncryption => {
                     "GOOGLE_SYMMETRIC_ENCRYPTION"
                 }
+                ImportCryptoKeyVersionRequestAlgorithm::HmacSha1 => "HMAC_SHA1",
+                ImportCryptoKeyVersionRequestAlgorithm::HmacSha224 => "HMAC_SHA224",
                 ImportCryptoKeyVersionRequestAlgorithm::HmacSha256 => "HMAC_SHA256",
+                ImportCryptoKeyVersionRequestAlgorithm::HmacSha384 => "HMAC_SHA384",
+                ImportCryptoKeyVersionRequestAlgorithm::HmacSha512 => "HMAC_SHA512",
                 ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha1 => {
                     "RSA_DECRYPT_OAEP_2048_SHA1"
                 }
@@ -2909,7 +2969,11 @@ pub mod schemas {
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     ImportCryptoKeyVersionRequestAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA1" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha1,
+                "HMAC_SHA224" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha224,
                 "HMAC_SHA256" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha256,
+                "HMAC_SHA384" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha384,
+                "HMAC_SHA512" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha1
                 }
@@ -3002,7 +3066,11 @@ pub mod schemas {
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => {
                     ImportCryptoKeyVersionRequestAlgorithm::GoogleSymmetricEncryption
                 }
+                "HMAC_SHA1" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha1,
+                "HMAC_SHA224" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha224,
                 "HMAC_SHA256" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha256,
+                "HMAC_SHA384" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha384,
+                "HMAC_SHA512" => ImportCryptoKeyVersionRequestAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => {
                     ImportCryptoKeyVersionRequestAlgorithm::RsaDecryptOaep2048Sha1
                 }
@@ -3176,15 +3244,27 @@ pub mod schemas {
         ImportMethodUnspecified,
         #[doc = "This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping scheme defined in the PKCS #11 standard. In summary, this involves wrapping the raw key with an ephemeral AES key, and wrapping the ephemeral AES key with a 3072 bit RSA key. For more details, see [RSA AES key wrap mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908)."]
         RsaOaep3072Sha1Aes256,
+        #[doc = "This ImportMethod represents RSAES-OAEP with a 3072 bit RSA key. The key material to be imported is wrapped directly with the RSA key. Due to technical limitations of RSA wrapping, this method cannot be used to wrap RSA keys for import."]
+        RsaOaep3072Sha256,
+        #[doc = "This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping scheme defined in the PKCS #11 standard. In summary, this involves wrapping the raw key with an ephemeral AES key, and wrapping the ephemeral AES key with a 3072 bit RSA key. For more details, see [RSA AES key wrap mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908)."]
+        RsaOaep3072Sha256Aes256,
         #[doc = "This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping scheme defined in the PKCS #11 standard. In summary, this involves wrapping the raw key with an ephemeral AES key, and wrapping the ephemeral AES key with a 4096 bit RSA key. For more details, see [RSA AES key wrap mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908)."]
         RsaOaep4096Sha1Aes256,
+        #[doc = "This ImportMethod represents RSAES-OAEP with a 4096 bit RSA key. The key material to be imported is wrapped directly with the RSA key. Due to technical limitations of RSA wrapping, this method cannot be used to wrap RSA keys for import."]
+        RsaOaep4096Sha256,
+        #[doc = "This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping scheme defined in the PKCS #11 standard. In summary, this involves wrapping the raw key with an ephemeral AES key, and wrapping the ephemeral AES key with a 4096 bit RSA key. For more details, see [RSA AES key wrap mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908)."]
+        RsaOaep4096Sha256Aes256,
     }
     impl ImportJobImportMethod {
         pub fn as_str(self) -> &'static str {
             match self {
                 ImportJobImportMethod::ImportMethodUnspecified => "IMPORT_METHOD_UNSPECIFIED",
                 ImportJobImportMethod::RsaOaep3072Sha1Aes256 => "RSA_OAEP_3072_SHA1_AES_256",
+                ImportJobImportMethod::RsaOaep3072Sha256 => "RSA_OAEP_3072_SHA256",
+                ImportJobImportMethod::RsaOaep3072Sha256Aes256 => "RSA_OAEP_3072_SHA256_AES_256",
                 ImportJobImportMethod::RsaOaep4096Sha1Aes256 => "RSA_OAEP_4096_SHA1_AES_256",
+                ImportJobImportMethod::RsaOaep4096Sha256 => "RSA_OAEP_4096_SHA256",
+                ImportJobImportMethod::RsaOaep4096Sha256Aes256 => "RSA_OAEP_4096_SHA256_AES_256",
             }
         }
     }
@@ -3199,7 +3279,11 @@ pub mod schemas {
             Ok(match s {
                 "IMPORT_METHOD_UNSPECIFIED" => ImportJobImportMethod::ImportMethodUnspecified,
                 "RSA_OAEP_3072_SHA1_AES_256" => ImportJobImportMethod::RsaOaep3072Sha1Aes256,
+                "RSA_OAEP_3072_SHA256" => ImportJobImportMethod::RsaOaep3072Sha256,
+                "RSA_OAEP_3072_SHA256_AES_256" => ImportJobImportMethod::RsaOaep3072Sha256Aes256,
                 "RSA_OAEP_4096_SHA1_AES_256" => ImportJobImportMethod::RsaOaep4096Sha1Aes256,
+                "RSA_OAEP_4096_SHA256" => ImportJobImportMethod::RsaOaep4096Sha256,
+                "RSA_OAEP_4096_SHA256_AES_256" => ImportJobImportMethod::RsaOaep4096Sha256Aes256,
                 _ => return Err(()),
             })
         }
@@ -3226,7 +3310,11 @@ pub mod schemas {
             Ok(match value {
                 "IMPORT_METHOD_UNSPECIFIED" => ImportJobImportMethod::ImportMethodUnspecified,
                 "RSA_OAEP_3072_SHA1_AES_256" => ImportJobImportMethod::RsaOaep3072Sha1Aes256,
+                "RSA_OAEP_3072_SHA256" => ImportJobImportMethod::RsaOaep3072Sha256,
+                "RSA_OAEP_3072_SHA256_AES_256" => ImportJobImportMethod::RsaOaep3072Sha256Aes256,
                 "RSA_OAEP_4096_SHA1_AES_256" => ImportJobImportMethod::RsaOaep4096Sha1Aes256,
+                "RSA_OAEP_4096_SHA256" => ImportJobImportMethod::RsaOaep4096Sha256,
+                "RSA_OAEP_4096_SHA256_AES_256" => ImportJobImportMethod::RsaOaep4096Sha256Aes256,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
                         "invalid enum for #name: {}",
@@ -3629,7 +3717,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCryptoKeyVersionsResponse {
+    impl crate::GetNextPageToken<String> for ListCryptoKeyVersionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3679,7 +3767,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCryptoKeysResponse {
+    impl crate::GetNextPageToken<String> for ListCryptoKeysResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3729,7 +3817,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListEkmConnectionsResponse {
+    impl crate::GetNextPageToken<String> for ListEkmConnectionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3779,7 +3867,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListImportJobsResponse {
+    impl crate::GetNextPageToken<String> for ListImportJobsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3829,7 +3917,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListKeyRingsResponse {
+    impl crate::GetNextPageToken<String> for ListKeyRingsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3861,7 +3949,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4483,8 +4571,16 @@ pub mod schemas {
         ExternalSymmetricEncryption,
         #[doc = "Creates symmetric encryption keys."]
         GoogleSymmetricEncryption,
+        #[doc = "HMAC-SHA1 signing with a 160 bit key."]
+        HmacSha1,
+        #[doc = "HMAC-SHA224 signing with a 224 bit key."]
+        HmacSha224,
         #[doc = "HMAC-SHA256 signing with a 256 bit key."]
         HmacSha256,
+        #[doc = "HMAC-SHA384 signing with a 384 bit key."]
+        HmacSha384,
+        #[doc = "HMAC-SHA512 signing with a 512 bit key."]
+        HmacSha512,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA1 digest."]
         RsaDecryptOaep2048Sha1,
         #[doc = "RSAES-OAEP 2048 bit key with a SHA256 digest."]
@@ -4533,7 +4629,11 @@ pub mod schemas {
                 PublicKeyAlgorithm::EcSignSecp256K1Sha256 => "EC_SIGN_SECP256K1_SHA256",
                 PublicKeyAlgorithm::ExternalSymmetricEncryption => "EXTERNAL_SYMMETRIC_ENCRYPTION",
                 PublicKeyAlgorithm::GoogleSymmetricEncryption => "GOOGLE_SYMMETRIC_ENCRYPTION",
+                PublicKeyAlgorithm::HmacSha1 => "HMAC_SHA1",
+                PublicKeyAlgorithm::HmacSha224 => "HMAC_SHA224",
                 PublicKeyAlgorithm::HmacSha256 => "HMAC_SHA256",
+                PublicKeyAlgorithm::HmacSha384 => "HMAC_SHA384",
+                PublicKeyAlgorithm::HmacSha512 => "HMAC_SHA512",
                 PublicKeyAlgorithm::RsaDecryptOaep2048Sha1 => "RSA_DECRYPT_OAEP_2048_SHA1",
                 PublicKeyAlgorithm::RsaDecryptOaep2048Sha256 => "RSA_DECRYPT_OAEP_2048_SHA256",
                 PublicKeyAlgorithm::RsaDecryptOaep3072Sha1 => "RSA_DECRYPT_OAEP_3072_SHA1",
@@ -4572,7 +4672,11 @@ pub mod schemas {
                 "EC_SIGN_SECP256K1_SHA256" => PublicKeyAlgorithm::EcSignSecp256K1Sha256,
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::ExternalSymmetricEncryption,
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::GoogleSymmetricEncryption,
+                "HMAC_SHA1" => PublicKeyAlgorithm::HmacSha1,
+                "HMAC_SHA224" => PublicKeyAlgorithm::HmacSha224,
                 "HMAC_SHA256" => PublicKeyAlgorithm::HmacSha256,
+                "HMAC_SHA384" => PublicKeyAlgorithm::HmacSha384,
+                "HMAC_SHA512" => PublicKeyAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha256,
                 "RSA_DECRYPT_OAEP_3072_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep3072Sha1,
@@ -4623,7 +4727,11 @@ pub mod schemas {
                 "EC_SIGN_SECP256K1_SHA256" => PublicKeyAlgorithm::EcSignSecp256K1Sha256,
                 "EXTERNAL_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::ExternalSymmetricEncryption,
                 "GOOGLE_SYMMETRIC_ENCRYPTION" => PublicKeyAlgorithm::GoogleSymmetricEncryption,
+                "HMAC_SHA1" => PublicKeyAlgorithm::HmacSha1,
+                "HMAC_SHA224" => PublicKeyAlgorithm::HmacSha224,
                 "HMAC_SHA256" => PublicKeyAlgorithm::HmacSha256,
+                "HMAC_SHA384" => PublicKeyAlgorithm::HmacSha384,
+                "HMAC_SHA512" => PublicKeyAlgorithm::HmacSha512,
                 "RSA_DECRYPT_OAEP_2048_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha1,
                 "RSA_DECRYPT_OAEP_2048_SHA256" => PublicKeyAlgorithm::RsaDecryptOaep2048Sha256,
                 "RSA_DECRYPT_OAEP_3072_SHA1" => PublicKeyAlgorithm::RsaDecryptOaep3072Sha1,
@@ -5266,6 +5374,16 @@ pub mod resources {
                         page_token: None,
                     }
                 }
+                #[doc = "Actions that can be performed on the ekm_config resource"]
+                pub fn ekm_config(
+                    &self,
+                ) -> crate::resources::projects::locations::ekm_config::EkmConfigActions
+                {
+                    crate::resources::projects::locations::ekm_config::EkmConfigActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
                 #[doc = "Actions that can be performed on the ekm_connections resource"]
                 pub fn ekm_connections(
                     &self,
@@ -5739,7 +5857,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -5774,7 +5892,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -5824,7 +5942,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -5940,14 +6058,597 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
+                }
+            }
+            pub mod ekm_config {
+                pub mod params {}
+                pub struct EkmConfigActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> EkmConfigActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."]
+                    pub fn get_iam_policy(
+                        &self,
+                        resource: impl Into<String>,
+                    ) -> GetIamPolicyRequestBuilder {
+                        GetIamPolicyRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            resource: resource.into(),
+                            options_requested_policy_version: None,
+                        }
+                    }
+                    #[doc = "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."]
+                    pub fn set_iam_policy(
+                        &self,
+                        request: crate::schemas::SetIamPolicyRequest,
+                        resource: impl Into<String>,
+                    ) -> SetIamPolicyRequestBuilder {
+                        SetIamPolicyRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            resource: resource.into(),
+                        }
+                    }
+                    #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may “fail open” without warning."]
+                    pub fn test_iam_permissions(
+                        &self,
+                        request: crate::schemas::TestIamPermissionsRequest,
+                        resource: impl Into<String>,
+                    ) -> TestIamPermissionsRequestBuilder {
+                        TestIamPermissionsRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            request,
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            resource: resource.into(),
+                        }
+                    }
+                }
+                #[doc = "Created via [EkmConfigActions::get_iam_policy()](struct.EkmConfigActions.html#method.get_iam_policy)"]
+                #[derive(Debug, Clone)]
+                pub struct GetIamPolicyRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    resource: String,
+                    options_requested_policy_version: ::std::option::Option<i32>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetIamPolicyRequestBuilder<'a> {
+                    #[doc = "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
+                    pub fn options_requested_policy_version(mut self, value: i32) -> Self {
+                        self.options_requested_policy_version = Some(value);
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.resource;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":getIamPolicy");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[(
+                            "options.requestedPolicyVersion",
+                            &self.options_requested_policy_version,
+                        )]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [EkmConfigActions::set_iam_policy()](struct.EkmConfigActions.html#method.set_iam_policy)"]
+                #[derive(Debug, Clone)]
+                pub struct SetIamPolicyRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::SetIamPolicyRequest,
+                    resource: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> SetIamPolicyRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::Policy, crate::Error> {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.resource;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":setIamPolicy");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [EkmConfigActions::test_iam_permissions()](struct.EkmConfigActions.html#method.test_iam_permissions)"]
+                #[derive(Debug, Clone)]
+                pub struct TestIamPermissionsRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    request: crate::schemas::TestIamPermissionsRequest,
+                    resource: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> TestIamPermissionsRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<crate::schemas::TestIamPermissionsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<crate::schemas::TestIamPermissionsResponse, crate::Error>
+                    {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        let req = req.json(&self.request);
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://cloudkms.googleapis.com/".to_owned();
+                        output.push_str("v1/");
+                        {
+                            let var_as_str = &self.resource;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str(":testIamPermissions");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
                 }
             }
             pub mod ekm_connections {
@@ -6762,7 +7463,7 @@ pub mod resources {
                             #[serde(rename = "ekmConnections")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -6798,7 +7499,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -6848,7 +7549,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -6968,12 +7669,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -8267,7 +8969,7 @@ pub mod resources {
                             #[serde(rename = "keyRings")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -8302,7 +9004,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -8352,7 +9054,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -8472,12 +9174,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -10125,7 +10828,7 @@ pub mod resources {
                                 #[serde(rename = "cryptoKeys")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -10162,7 +10865,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -10212,7 +10915,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -10335,12 +11038,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -12686,7 +13390,7 @@ pub mod resources {
                                     #[serde(rename = "cryptoKeyVersions")]
                                     pub items: Vec<T>,
                                 }
-                                impl<T> crate::GetNextPageToken for Page<T> {
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
                                     fn next_page_token(&self) -> ::std::option::Option<String> {
                                         self.next_page_token.to_owned()
                                     }
@@ -12723,7 +13427,7 @@ pub mod resources {
                                 self,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken
+                                T: crate::GetNextPageToken<String>
                                     + ::serde::de::DeserializeOwned
                                     + ::google_field_selector::FieldSelector
                                     + 'a,
@@ -12779,7 +13483,9 @@ pub mod resources {
                                 fields: ::std::option::Option<F>,
                             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
                                 F: AsRef<str>,
                             {
                                 let mut fields =
@@ -12902,12 +13608,13 @@ pub mod resources {
                         }
                         #[async_trait::async_trait]
                         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
                             fn set_page_token(&mut self, value: String) {
                                 self.page_token = value.into();
                             }
                             async fn execute<T>(&mut self) -> Result<T, crate::Error>
                             where
-                                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                             {
                                 self._execute().await
                             }
@@ -14385,7 +15092,7 @@ pub mod resources {
                                 #[serde(rename = "importJobs")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -14422,7 +15129,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -14472,7 +15179,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -14594,12 +15301,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -15224,16 +15932,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -15253,13 +15963,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -15267,7 +15980,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -15294,7 +16007,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

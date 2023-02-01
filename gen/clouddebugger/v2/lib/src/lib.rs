@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [controller](resources/controller/struct.ControllerActions.html)\n  * [debuggees](resources/controller/debuggees/struct.DebuggeesActions.html)\n    * [*register*](resources/controller/debuggees/struct.RegisterRequestBuilder.html)\n    * [breakpoints](resources/controller/debuggees/breakpoints/struct.BreakpointsActions.html)\n      * [*list*](resources/controller/debuggees/breakpoints/struct.ListRequestBuilder.html), [*update*](resources/controller/debuggees/breakpoints/struct.UpdateRequestBuilder.html)\n* [debugger](resources/debugger/struct.DebuggerActions.html)\n  * [debuggees](resources/debugger/debuggees/struct.DebuggeesActions.html)\n    * [*list*](resources/debugger/debuggees/struct.ListRequestBuilder.html)\n    * [breakpoints](resources/debugger/debuggees/breakpoints/struct.BreakpointsActions.html)\n      * [*delete*](resources/debugger/debuggees/breakpoints/struct.DeleteRequestBuilder.html), [*get*](resources/debugger/debuggees/breakpoints/struct.GetRequestBuilder.html), [*list*](resources/debugger/debuggees/breakpoints/struct.ListRequestBuilder.html), [*set*](resources/debugger/debuggees/breakpoints/struct.SetRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -4141,15 +4142,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

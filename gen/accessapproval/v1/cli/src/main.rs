@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("accessapproval1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230127")
             .about("An API for controlling access to data by Google personnel.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -95,7 +95,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut approval_requests1 = SubCommand::with_name("approval_requests")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: approve, dismiss, get and list");
+            .about("methods: approve, dismiss, get, invalidate and list");
         {
             let mcmd = SubCommand::with_name("approve").about("Approves a request and returns the updated ApprovalRequest. Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state.");
             approval_requests1 = approval_requests1.subcommand(mcmd);
@@ -108,6 +108,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("get").about(
                 "Gets an approval request. Returns NOT_FOUND if the request does not exist.",
             );
+            approval_requests1 = approval_requests1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("invalidate").about("Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval. Returns FAILED_PRECONDITION if the request exists but is not in an approved state.");
             approval_requests1 = approval_requests1.subcommand(mcmd);
         }
         {
@@ -116,7 +120,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut approval_requests1 = SubCommand::with_name("approval_requests")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: approve, dismiss, get and list");
+            .about("methods: approve, dismiss, get, invalidate and list");
         {
             let mcmd = SubCommand::with_name("approve").about("Approves a request and returns the updated ApprovalRequest. Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state.");
             approval_requests1 = approval_requests1.subcommand(mcmd);
@@ -129,6 +133,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("get").about(
                 "Gets an approval request. Returns NOT_FOUND if the request does not exist.",
             );
+            approval_requests1 = approval_requests1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("invalidate").about("Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval. Returns FAILED_PRECONDITION if the request exists but is not in an approved state.");
             approval_requests1 = approval_requests1.subcommand(mcmd);
         }
         {
@@ -137,7 +145,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut approval_requests1 = SubCommand::with_name("approval_requests")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: approve, dismiss, get and list");
+            .about("methods: approve, dismiss, get, invalidate and list");
         {
             let mcmd = SubCommand::with_name("approve").about("Approves a request and returns the updated ApprovalRequest. Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request exists but is not in a pending state.");
             approval_requests1 = approval_requests1.subcommand(mcmd);
@@ -150,6 +158,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("get").about(
                 "Gets an approval request. Returns NOT_FOUND if the request does not exist.",
             );
+            approval_requests1 = approval_requests1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("invalidate").about("Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest. NOTE: This does not deny access to the resource if another request has been made and approved. It only invalidates a single approval. Returns FAILED_PRECONDITION if the request exists but is not in an approved state.");
             approval_requests1 = approval_requests1.subcommand(mcmd);
         }
         {

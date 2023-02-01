@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("androidenterprise1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220426")
+            .version("0.1.0-20230131")
             .about("Manages the deployment of apps to Android Enterprise devices.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -63,13 +63,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut enterprises0 = SubCommand::with_name("enterprises")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: acknowledge_notification_set, complete_signup, create_web_token, enroll, generate_signup_url, get, get_service_account, get_store_layout, list, pull_notification_set, send_test_push_notification, set_account, set_store_layout and unenroll");
+                        .about("methods: acknowledge_notification_set, complete_signup, create_enrollment_token, create_web_token, enroll, generate_signup_url, get, get_service_account, get_store_layout, list, pull_notification_set, send_test_push_notification, set_account, set_store_layout and unenroll");
         {
             let mcmd = SubCommand::with_name("acknowledge_notification_set").about("Acknowledges notifications that were received from Enterprises.PullNotificationSet to prevent subsequent calls from returning the same notifications.");
             enterprises0 = enterprises0.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("complete_signup").about("Completes the signup flow, by specifying the Completion token and Enterprise token. This request must not be called multiple times for a given Enterprise Token.");
+            enterprises0 = enterprises0.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create_enrollment_token").about("Returns a token for device enrollment. The DPC can encode this token within the QR/NFC/zero-touch enrollment payload or fetch it before calling the on-device API to authenticate the user. The token can be generated for each device or reused across multiple devices.");
             enterprises0 = enterprises0.subcommand(mcmd);
         }
         {
@@ -130,43 +134,37 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: delete, get, list and update");
         {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Removes an entitlement to an app for a user.");
+            let mcmd = SubCommand::with_name("delete").about("Removes an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             entitlements0 = entitlements0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get").about("Retrieves details of an entitlement.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves details of an entitlement. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             entitlements0 = entitlements0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list")
-                .about("Lists all entitlements for the specified user. Only the ID is set.");
+            let mcmd = SubCommand::with_name("list").about("Lists all entitlements for the specified user. Only the ID is set. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             entitlements0 = entitlements0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("update")
-                .about("Adds or updates an entitlement to an app for a user.");
+            let mcmd = SubCommand::with_name("update").about("Adds or updates an entitlement to an app for a user. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             entitlements0 = entitlements0.subcommand(mcmd);
         }
         let mut grouplicenses0 = SubCommand::with_name("grouplicenses")
             .setting(AppSettings::ColoredHelp)
             .about("methods: get and list");
         {
-            let mcmd = SubCommand::with_name("get")
-                .about("Retrieves details of an enterprise's group license for a product.");
+            let mcmd = SubCommand::with_name("get").about("Retrieves details of an enterprise's group license for a product. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             grouplicenses0 = grouplicenses0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about(
-                "Retrieves IDs of all products for which the enterprise has a group license.",
-            );
+            let mcmd = SubCommand::with_name("list").about("Retrieves IDs of all products for which the enterprise has a group license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             grouplicenses0 = grouplicenses0.subcommand(mcmd);
         }
         let mut grouplicenseusers0 = SubCommand::with_name("grouplicenseusers")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
         {
-            let mcmd = SubCommand::with_name("list").about("Retrieves the IDs of the users who have been granted entitlements under the license.");
+            let mcmd = SubCommand::with_name("list").about("Retrieves the IDs of the users who have been granted entitlements under the license. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             grouplicenseusers0 = grouplicenseusers0.subcommand(mcmd);
         }
         let mut installs0 = SubCommand::with_name("installs")
@@ -255,11 +253,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                         .setting(AppSettings::ColoredHelp)
                         .about("methods: approve, generate_approval_url, get, get_app_restrictions_schema, get_permissions, list and unapprove");
         {
-            let mcmd = SubCommand::with_name("approve").about(" Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. ");
+            let mcmd = SubCommand::with_name("approve").about(" Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. ");
             products0 = products0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("generate_approval_url").about("Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day.");
+            let mcmd = SubCommand::with_name("generate_approval_url").about("Generates a URL that can be rendered in an iframe to display the permissions (if any) of a product. An enterprise admin must view these permissions and accept them on behalf of their organization in order to approve that product. Admins should accept the displayed permissions by interacting with a separate UI element in the EMM console, which in turn should trigger the use of this URL as the approvalUrlInfo.approvalUrl property in a Products.approve call to approve the product. This URL can only be used to display permissions for up to 1 day. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. ");
             products0 = products0.subcommand(mcmd);
         }
         {
@@ -277,13 +275,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             products0 = products0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Finds approved products that match a query, or all approved products if there is no query.");
+            let mcmd = SubCommand::with_name("list").about("Finds approved products that match a query, or all approved products if there is no query. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. ");
             products0 = products0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("unapprove").about(
-                "Unapproves the specified product (and the relevant app permissions, if any)",
-            );
+            let mcmd = SubCommand::with_name("unapprove").about("Unapproves the specified product (and the relevant app permissions, if any) **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             products0 = products0.subcommand(mcmd);
         }
         let mut serviceaccountkeys0 = SubCommand::with_name("serviceaccountkeys")
@@ -366,8 +362,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             users0 = users0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("get_available_product_set")
-                .about("Retrieves the set of products a user is entitled to access.");
+            let mcmd = SubCommand::with_name("get_available_product_set").about("Retrieves the set of products a user is entitled to access. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             users0 = users0.subcommand(mcmd);
         }
         {
@@ -383,7 +378,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             users0 = users0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("set_available_product_set").about("Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted.");
+            let mcmd = SubCommand::with_name("set_available_product_set").about("Modifies the set of products that a user is entitled to access (referred to as *whitelisted* products). Only products that are approved or products that were previously approved (products with revoked approval) can be whitelisted. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.");
             users0 = users0.subcommand(mcmd);
         }
         {

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("orgpolicy2")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220425")
+            .version("0.1.0-20230131")
             .about("The Org Policy API allows users to configure governance rules on their GCP resources across the Cloud Resource Hierarchy.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: constraints and policies");
         let mut organizations0 = SubCommand::with_name("organizations")
             .setting(AppSettings::ColoredHelp)
-            .about("sub-resources: constraints and policies");
+            .about("sub-resources: constraints, custom_constraints and policies");
         let mut projects0 = SubCommand::with_name("projects")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: constraints and policies");
@@ -85,6 +85,29 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists `Constraints` that could be applied on the specified resource.");
             constraints1 = constraints1.subcommand(mcmd);
+        }
+        let mut custom_constraints1 = SubCommand::with_name("custom_constraints")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get, list and patch");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates a CustomConstraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint already exists on the given organization.");
+            custom_constraints1 = custom_constraints1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a Custom Constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist.");
+            custom_constraints1 = custom_constraints1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a CustomConstraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the CustomConstraint does not exist.");
+            custom_constraints1 = custom_constraints1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Retrieves all of the `CustomConstraints` that exist on a particular organization resource.");
+            custom_constraints1 = custom_constraints1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("patch").about("Updates a Custom Constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist. Note: the supplied policy will perform a full overwrite of all fields.");
+            custom_constraints1 = custom_constraints1.subcommand(mcmd);
         }
         let mut policies1 = SubCommand::with_name("policies")
             .setting(AppSettings::ColoredHelp)
@@ -153,6 +176,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         projects0 = projects0.subcommand(policies1);
         projects0 = projects0.subcommand(constraints1);
         organizations0 = organizations0.subcommand(policies1);
+        organizations0 = organizations0.subcommand(custom_constraints1);
         organizations0 = organizations0.subcommand(constraints1);
         folders0 = folders0.subcommand(policies1);
         folders0 = folders0.subcommand(constraints1);

@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*allocateIds*](resources/projects/struct.AllocateIdsRequestBuilder.html), [*beginTransaction*](resources/projects/struct.BeginTransactionRequestBuilder.html), [*commit*](resources/projects/struct.CommitRequestBuilder.html), [*lookup*](resources/projects/struct.LookupRequestBuilder.html), [*reserveIds*](resources/projects/struct.ReserveIdsRequestBuilder.html), [*rollback*](resources/projects/struct.RollbackRequestBuilder.html), [*runQuery*](resources/projects/struct.RunQueryRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*allocateIds*](resources/projects/struct.AllocateIdsRequestBuilder.html), [*beginTransaction*](resources/projects/struct.BeginTransactionRequestBuilder.html), [*commit*](resources/projects/struct.CommitRequestBuilder.html), [*lookup*](resources/projects/struct.LookupRequestBuilder.html), [*reserveIds*](resources/projects/struct.ReserveIdsRequestBuilder.html), [*rollback*](resources/projects/struct.RollbackRequestBuilder.html), [*runAggregationQuery*](resources/projects/struct.RunAggregationQueryRequestBuilder.html), [*runQuery*](resources/projects/struct.RunQueryRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -6,6 +7,236 @@ pub mod scopes {
     pub const DATASTORE: &str = "https://www.googleapis.com/auth/datastore";
 }
 pub mod schemas {
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Aggregation {
+        #[doc = "Optional. Optional name of the property to store the result of the aggregation. If not provided, Datastore will pick a default name following the format `property_`. For example: `AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) OVER ( ... );` becomes: `AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS property_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) AS property_2 OVER ( ... );` Requires: * Must be unique across all aggregation aliases. * Conform to entity property name limitations."]
+        #[serde(
+            rename = "alias",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub alias: ::std::option::Option<String>,
+        #[doc = "Count aggregator."]
+        #[serde(
+            rename = "count",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub count: ::std::option::Option<crate::schemas::Count>,
+    }
+    impl ::google_field_selector::FieldSelector for Aggregation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Aggregation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct AggregationQuery {
+        #[doc = "Optional. Series of aggregations to apply over the results of the `nested_query`. Requires: * A minimum of one and maximum of five aggregations per query."]
+        #[serde(
+            rename = "aggregations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregations: ::std::option::Option<Vec<crate::schemas::Aggregation>>,
+        #[doc = "Nested query for aggregation"]
+        #[serde(
+            rename = "nestedQuery",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub nested_query: ::std::option::Option<crate::schemas::Query>,
+    }
+    impl ::google_field_selector::FieldSelector for AggregationQuery {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AggregationQuery {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct AggregationResult {
+        #[doc = "The result of the aggregation functions, ex: `COUNT(*) AS total_entities`. The key is the alias assigned to the aggregation function on input and the size of this map equals the number of aggregation functions in the query."]
+        #[serde(
+            rename = "aggregateProperties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregate_properties:
+            ::std::option::Option<::std::collections::BTreeMap<String, crate::schemas::Value>>,
+    }
+    impl ::google_field_selector::FieldSelector for AggregationResult {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AggregationResult {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct AggregationResultBatch {
+        #[doc = "The aggregation results for this batch."]
+        #[serde(
+            rename = "aggregationResults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregation_results: ::std::option::Option<Vec<crate::schemas::AggregationResult>>,
+        #[doc = "The state of the query after the current batch. Only COUNT(\\*) aggregations are supported in the initial launch. Therefore, expected result type is limited to `NO_MORE_RESULTS`."]
+        #[serde(
+            rename = "moreResults",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub more_results: ::std::option::Option<crate::schemas::AggregationResultBatchMoreResults>,
+        #[doc = "Read timestamp this batch was returned from. In a single transaction, subsequent query result batches for the same query can have a greater timestamp. Each batch’s read timestamp is valid for all preceding batches."]
+        #[serde(
+            rename = "readTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_time: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for AggregationResultBatch {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AggregationResultBatch {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AggregationResultBatchMoreResults {
+        #[doc = "The query is finished, but there may be more results after the end cursor."]
+        MoreResultsAfterCursor,
+        #[doc = "The query is finished, but there may be more results after the limit."]
+        MoreResultsAfterLimit,
+        #[doc = "Unspecified. This value is never used."]
+        MoreResultsTypeUnspecified,
+        #[doc = "The query is finished, and there are no more results."]
+        NoMoreResults,
+        #[doc = "There may be additional batches to fetch from this query."]
+        NotFinished,
+    }
+    impl AggregationResultBatchMoreResults {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                AggregationResultBatchMoreResults::MoreResultsAfterCursor => {
+                    "MORE_RESULTS_AFTER_CURSOR"
+                }
+                AggregationResultBatchMoreResults::MoreResultsAfterLimit => {
+                    "MORE_RESULTS_AFTER_LIMIT"
+                }
+                AggregationResultBatchMoreResults::MoreResultsTypeUnspecified => {
+                    "MORE_RESULTS_TYPE_UNSPECIFIED"
+                }
+                AggregationResultBatchMoreResults::NoMoreResults => "NO_MORE_RESULTS",
+                AggregationResultBatchMoreResults::NotFinished => "NOT_FINISHED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AggregationResultBatchMoreResults {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AggregationResultBatchMoreResults {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<AggregationResultBatchMoreResults, ()> {
+            Ok(match s {
+                "MORE_RESULTS_AFTER_CURSOR" => {
+                    AggregationResultBatchMoreResults::MoreResultsAfterCursor
+                }
+                "MORE_RESULTS_AFTER_LIMIT" => {
+                    AggregationResultBatchMoreResults::MoreResultsAfterLimit
+                }
+                "MORE_RESULTS_TYPE_UNSPECIFIED" => {
+                    AggregationResultBatchMoreResults::MoreResultsTypeUnspecified
+                }
+                "NO_MORE_RESULTS" => AggregationResultBatchMoreResults::NoMoreResults,
+                "NOT_FINISHED" => AggregationResultBatchMoreResults::NotFinished,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AggregationResultBatchMoreResults {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AggregationResultBatchMoreResults {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AggregationResultBatchMoreResults {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MORE_RESULTS_AFTER_CURSOR" => {
+                    AggregationResultBatchMoreResults::MoreResultsAfterCursor
+                }
+                "MORE_RESULTS_AFTER_LIMIT" => {
+                    AggregationResultBatchMoreResults::MoreResultsAfterLimit
+                }
+                "MORE_RESULTS_TYPE_UNSPECIFIED" => {
+                    AggregationResultBatchMoreResults::MoreResultsTypeUnspecified
+                }
+                "NO_MORE_RESULTS" => AggregationResultBatchMoreResults::NoMoreResults,
+                "NOT_FINISHED" => AggregationResultBatchMoreResults::NotFinished,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AggregationResultBatchMoreResults {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AggregationResultBatchMoreResults {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -313,7 +544,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CompositeFilter {
-        #[doc = "The list of filters to combine. Must contain at least one filter."]
+        #[doc = "The list of filters to combine. Requires: * At least one filter is present."]
         #[serde(
             rename = "filters",
             default,
@@ -410,6 +641,38 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Count {
+        #[doc = "Optional. Optional constraint on the maximum number of entities to count. This provides a way to set an upper bound on the number of entities to scan, limiting latency and cost. Unspecified is interpreted as no bound. If a zero value is provided, a count result of zero should always be expected. High-Level Example: `AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k );` Requires: * Must be non-negative when present."]
+        #[serde(
+            rename = "upTo",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub up_to: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for Count {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Count {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Entity {
@@ -443,6 +706,13 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct EntityResult {
+        #[doc = "The time at which the entity was created. This field is set for `FULL` entity results. If this entity is missing, this field will not be set."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
         #[doc = "A cursor that points to the position after the result entity. Set only when the `EntityResult` is part of a `QueryResultBatch` message."]
         #[serde(
             rename = "cursor",
@@ -2533,6 +2803,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conflict_detected: ::std::option::Option<bool>,
+        #[doc = "The create time of the entity. This field will not be set after a ‘delete’."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
         #[doc = "The automatically allocated key. Set only when the mutation allocated a key."]
         #[serde(
             rename = "key",
@@ -2625,14 +2902,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "The kind of the entity. A kind matching regex `__.*__` is reserved/read-only. A kind must not contain more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`."]
+        #[doc = "The kind of the entity. A kind matching regex `__.*__` is reserved/read-only. A kind must not contain more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`. Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are encoded as `__bytes__` where \\`` is the base-64 encoding of the bytes."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The name of the entity. A name matching regex `__.*__` is reserved/read-only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`."]
+        #[doc = "The name of the entity. A name matching regex `__.*__` is reserved/read-only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be `\"\"`. Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are encoded as `__bytes__` where \\`` is the base-64 encoding of the bytes."]
         #[serde(
             rename = "name",
             default,
@@ -2725,7 +3002,7 @@ pub mod schemas {
         GreaterThan,
         #[doc = "The given `property` is greater than or equal to the given `value`. Requires: * That `property` comes first in `order_by`."]
         GreaterThanOrEqual,
-        #[doc = "Limit the result set to the given entity and its descendants. Requires: * That `value` is an entity key."]
+        #[doc = "Limit the result set to the given entity and its descendants. Requires: * That `value` is an entity key. * No other `HAS_ANCESTOR` is in the same query."]
         HasAncestor,
         #[doc = "The given `property` is equal to at least one value in the given array. Requires: * That `value` is a non-empty `ArrayValue` with at most 10 values. * No other `IN` or `NOT_IN` is in the same query."]
         In,
@@ -3347,7 +3624,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReadOptions {
-        #[doc = "The non-transactional read consistency to use. Cannot be set to `STRONG` for global queries."]
+        #[doc = "The non-transactional read consistency to use."]
         #[serde(
             rename = "readConsistency",
             default,
@@ -3505,7 +3782,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReserveIdsRequest {
-        #[doc = "If not empty, the ID of the database against which to make the request."]
+        #[doc = "The ID of the database against which to make the request. ‘(default)’ is not allowed; please use empty string ‘’ to refer the default database."]
         #[serde(
             rename = "databaseId",
             default,
@@ -3612,8 +3889,80 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct RunAggregationQueryRequest {
+        #[doc = "The query to run."]
+        #[serde(
+            rename = "aggregationQuery",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregation_query: ::std::option::Option<crate::schemas::AggregationQuery>,
+        #[doc = "The GQL query to run. This query must be an aggregation query."]
+        #[serde(
+            rename = "gqlQuery",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gql_query: ::std::option::Option<crate::schemas::GqlQuery>,
+        #[doc = "Entities are partitioned into subsets, identified by a partition ID. Queries are scoped to a single partition. This partition ID is normalized with the standard default context partition ID."]
+        #[serde(
+            rename = "partitionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub partition_id: ::std::option::Option<crate::schemas::PartitionId>,
+        #[doc = "The options for this query."]
+        #[serde(
+            rename = "readOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_options: ::std::option::Option<crate::schemas::ReadOptions>,
+    }
+    impl ::google_field_selector::FieldSelector for RunAggregationQueryRequest {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RunAggregationQueryRequest {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct RunAggregationQueryResponse {
+        #[doc = "A batch of aggregation results. Always present."]
+        #[serde(
+            rename = "batch",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub batch: ::std::option::Option<crate::schemas::AggregationResultBatch>,
+        #[doc = "The parsed form of the `GqlQuery` from the request, if it was set."]
+        #[serde(
+            rename = "query",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub query: ::std::option::Option<crate::schemas::AggregationQuery>,
+    }
+    impl ::google_field_selector::FieldSelector for RunAggregationQueryResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RunAggregationQueryResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct RunQueryRequest {
-        #[doc = "The GQL query to run."]
+        #[doc = "The GQL query to run. This query must be a non-aggregation query."]
         #[serde(
             rename = "gqlQuery",
             default,
@@ -4211,6 +4560,30 @@ pub mod resources {
                 project_id: impl Into<String>,
             ) -> RollbackRequestBuilder {
                 RollbackRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    request,
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    project_id: project_id.into(),
+                }
+            }
+            #[doc = "Runs an aggregation query."]
+            pub fn run_aggregation_query(
+                &self,
+                request: crate::schemas::RunAggregationQueryRequest,
+                project_id: impl Into<String>,
+            ) -> RunAggregationQueryRequestBuilder {
+                RunAggregationQueryRequestBuilder {
                     reqwest: &self.reqwest,
                     auth: self.auth_ref(),
                     request,
@@ -5231,6 +5604,169 @@ pub mod resources {
                 Ok(req)
             }
         }
+        #[doc = "Created via [ProjectsActions::run_aggregation_query()](struct.ProjectsActions.html#method.run_aggregation_query)"]
+        #[derive(Debug, Clone)]
+        pub struct RunAggregationQueryRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            request: crate::schemas::RunAggregationQueryRequest,
+            project_id: String,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> RunAggregationQueryRequestBuilder<'a> {
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::RunAggregationQueryResponse, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::RunAggregationQueryResponse, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                let req = req.json(&self.request);
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://datastore.googleapis.com/".to_owned();
+                output.push_str("v1beta3/projects/");
+                {
+                    let var_as_str = &self.project_id;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str(":runAggregationQuery");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
         #[doc = "Created via [ProjectsActions::run_query()](struct.ProjectsActions.html#method.run_query)"]
         #[derive(Debug, Clone)]
         pub struct RunQueryRequestBuilder<'a> {
@@ -5679,15 +6215,17 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }

@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [databases](resources/projects/databases/struct.DatabasesActions.html)\n    * [*exportDocuments*](resources/projects/databases/struct.ExportDocumentsRequestBuilder.html), [*get*](resources/projects/databases/struct.GetRequestBuilder.html), [*importDocuments*](resources/projects/databases/struct.ImportDocumentsRequestBuilder.html), [*list*](resources/projects/databases/struct.ListRequestBuilder.html), [*patch*](resources/projects/databases/struct.PatchRequestBuilder.html)\n    * [collection_groups](resources/projects/databases/collection_groups/struct.CollectionGroupsActions.html)\n      * [fields](resources/projects/databases/collection_groups/fields/struct.FieldsActions.html)\n        * [*get*](resources/projects/databases/collection_groups/fields/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/collection_groups/fields/struct.ListRequestBuilder.html), [*patch*](resources/projects/databases/collection_groups/fields/struct.PatchRequestBuilder.html)\n      * [indexes](resources/projects/databases/collection_groups/indexes/struct.IndexesActions.html)\n        * [*create*](resources/projects/databases/collection_groups/indexes/struct.CreateRequestBuilder.html), [*delete*](resources/projects/databases/collection_groups/indexes/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/collection_groups/indexes/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/collection_groups/indexes/struct.ListRequestBuilder.html)\n    * [documents](resources/projects/databases/documents/struct.DocumentsActions.html)\n      * [*batchGet*](resources/projects/databases/documents/struct.BatchGetRequestBuilder.html), [*batchWrite*](resources/projects/databases/documents/struct.BatchWriteRequestBuilder.html), [*beginTransaction*](resources/projects/databases/documents/struct.BeginTransactionRequestBuilder.html), [*commit*](resources/projects/databases/documents/struct.CommitRequestBuilder.html), [*createDocument*](resources/projects/databases/documents/struct.CreateDocumentRequestBuilder.html), [*delete*](resources/projects/databases/documents/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/documents/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/documents/struct.ListRequestBuilder.html), [*listCollectionIds*](resources/projects/databases/documents/struct.ListCollectionIdsRequestBuilder.html), [*listDocuments*](resources/projects/databases/documents/struct.ListDocumentsRequestBuilder.html), [*listen*](resources/projects/databases/documents/struct.ListenRequestBuilder.html), [*partitionQuery*](resources/projects/databases/documents/struct.PartitionQueryRequestBuilder.html), [*patch*](resources/projects/databases/documents/struct.PatchRequestBuilder.html), [*rollback*](resources/projects/databases/documents/struct.RollbackRequestBuilder.html), [*runAggregationQuery*](resources/projects/databases/documents/struct.RunAggregationQueryRequestBuilder.html), [*runQuery*](resources/projects/databases/documents/struct.RunQueryRequestBuilder.html), [*write*](resources/projects/databases/documents/struct.WriteRequestBuilder.html)\n    * [operations](resources/projects/databases/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/databases/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/databases/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/operations/struct.ListRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [databases](resources/projects/databases/struct.DatabasesActions.html)\n    * [*create*](resources/projects/databases/struct.CreateRequestBuilder.html), [*delete*](resources/projects/databases/struct.DeleteRequestBuilder.html), [*exportDocuments*](resources/projects/databases/struct.ExportDocumentsRequestBuilder.html), [*get*](resources/projects/databases/struct.GetRequestBuilder.html), [*importDocuments*](resources/projects/databases/struct.ImportDocumentsRequestBuilder.html), [*list*](resources/projects/databases/struct.ListRequestBuilder.html), [*patch*](resources/projects/databases/struct.PatchRequestBuilder.html)\n    * [collection_groups](resources/projects/databases/collection_groups/struct.CollectionGroupsActions.html)\n      * [fields](resources/projects/databases/collection_groups/fields/struct.FieldsActions.html)\n        * [*get*](resources/projects/databases/collection_groups/fields/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/collection_groups/fields/struct.ListRequestBuilder.html), [*patch*](resources/projects/databases/collection_groups/fields/struct.PatchRequestBuilder.html)\n      * [indexes](resources/projects/databases/collection_groups/indexes/struct.IndexesActions.html)\n        * [*create*](resources/projects/databases/collection_groups/indexes/struct.CreateRequestBuilder.html), [*delete*](resources/projects/databases/collection_groups/indexes/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/collection_groups/indexes/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/collection_groups/indexes/struct.ListRequestBuilder.html)\n    * [documents](resources/projects/databases/documents/struct.DocumentsActions.html)\n      * [*batchGet*](resources/projects/databases/documents/struct.BatchGetRequestBuilder.html), [*batchWrite*](resources/projects/databases/documents/struct.BatchWriteRequestBuilder.html), [*beginTransaction*](resources/projects/databases/documents/struct.BeginTransactionRequestBuilder.html), [*commit*](resources/projects/databases/documents/struct.CommitRequestBuilder.html), [*createDocument*](resources/projects/databases/documents/struct.CreateDocumentRequestBuilder.html), [*delete*](resources/projects/databases/documents/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/documents/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/documents/struct.ListRequestBuilder.html), [*listCollectionIds*](resources/projects/databases/documents/struct.ListCollectionIdsRequestBuilder.html), [*listDocuments*](resources/projects/databases/documents/struct.ListDocumentsRequestBuilder.html), [*listen*](resources/projects/databases/documents/struct.ListenRequestBuilder.html), [*partitionQuery*](resources/projects/databases/documents/struct.PartitionQueryRequestBuilder.html), [*patch*](resources/projects/databases/documents/struct.PatchRequestBuilder.html), [*rollback*](resources/projects/databases/documents/struct.RollbackRequestBuilder.html), [*runAggregationQuery*](resources/projects/databases/documents/struct.RunAggregationQueryRequestBuilder.html), [*runQuery*](resources/projects/databases/documents/struct.RunQueryRequestBuilder.html), [*write*](resources/projects/databases/documents/struct.WriteRequestBuilder.html)\n    * [operations](resources/projects/databases/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/databases/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/databases/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/databases/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/databases/operations/struct.ListRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -19,7 +20,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Aggregation {
-        #[doc = "Required. The name of the field to store the result of the aggregation into. Requires: * Must be present. * Must be unique across all aggregation aliases. * Conform to existing document field name limitations."]
+        #[doc = "Optional. Optional name of the field to store the result of the aggregation into. If not provided, Firestore will pick a default name following the format `field_`. For example: `AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) OVER ( ... );` becomes: `AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS field_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) AS field_2 OVER ( ... );` Requires: * Must be unique across all aggregation aliases. * Conform to document field name limitations."]
         #[serde(
             rename = "alias",
             default,
@@ -518,13 +519,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Count {
-        #[doc = "Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. High-Level Example: `SELECT COUNT_UP_TO(1000) FROM ( SELECT * FROM k );` Requires: * Must be greater than zero when present."]
+        #[doc = "Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. Unspecified is interpreted as no bound. High-Level Example: `AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k );` Requires: * Must be greater than zero when present."]
         #[serde(
             rename = "upTo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub up_to: ::std::option::Option<i32>,
+        #[serde(with = "crate::parsed_string")]
+        pub up_to: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for Count {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1053,6 +1055,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FieldReference {
+        #[doc = "The relative path of the document being referenced. Requires: * Conform to document field name limitations."]
         #[serde(
             rename = "fieldPath",
             default,
@@ -1592,6 +1595,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
+        #[doc = "Which namespace ids are being exported."]
+        #[serde(
+            rename = "namespaceIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub namespace_ids: ::std::option::Option<Vec<String>>,
         #[doc = "The state of the export operation."]
         #[serde(
             rename = "operationState",
@@ -1601,7 +1611,7 @@ pub mod schemas {
         pub operation_state: ::std::option::Option<
             crate::schemas::GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState,
         >,
-        #[doc = "Where the entities are being exported to."]
+        #[doc = "Where the documents are being exported to."]
         #[serde(
             rename = "outputUriPrefix",
             default,
@@ -1737,6 +1747,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub collection_ids: ::std::option::Option<Vec<String>>,
+        #[doc = "An empty list represents all namespaces. This is the preferred usage for databases that don’t use namespaces. An empty string element represents the default namespace. This should be used if the database has data in non-default namespaces, but doesn’t want to include them. Each namespace in this list must be unique."]
+        #[serde(
+            rename = "namespaceIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub namespace_ids: ::std::option::Option<Vec<String>>,
         #[doc = "The output URI. Currently only supports Google Cloud Storage URIs of the form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the name of the Google Cloud Storage bucket and `NAMESPACE_PATH` is an optional Google Cloud Storage namespace path. When choosing a name, be sure to consider Google Cloud Storage naming guidelines: https://cloud.google.com/storage/docs/naming. If the URI is a bucket (without a namespace path), a prefix will be generated based on the start time."]
         #[serde(
             rename = "outputUriPrefix",
@@ -1813,6 +1830,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
+        #[doc = "The TTL configuration for this `Field`. Setting or unsetting this will enable or disable the TTL for documents that have this `Field`."]
+        #[serde(
+            rename = "ttlConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ttl_config: ::std::option::Option<crate::schemas::GoogleFirestoreAdminV1TtlConfig>,
     }
     impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1Field {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1890,6 +1914,14 @@ pub mod schemas {
         pub state: ::std::option::Option<
             crate::schemas::GoogleFirestoreAdminV1FieldOperationMetadataState,
         >,
+        #[doc = "Describes the deltas of TTL configuration."]
+        #[serde(
+            rename = "ttlConfigDelta",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ttl_config_delta:
+            ::std::option::Option<crate::schemas::GoogleFirestoreAdminV1TtlConfigDelta>,
     }
     impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1FieldOperationMetadata {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2044,6 +2076,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_uri_prefix: ::std::option::Option<String>,
+        #[doc = "Which namespace ids are being imported."]
+        #[serde(
+            rename = "namespaceIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub namespace_ids: ::std::option::Option<Vec<String>>,
         #[doc = "The state of the import operation."]
         #[serde(
             rename = "operationState",
@@ -2189,6 +2228,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_uri_prefix: ::std::option::Option<String>,
+        #[doc = "An empty list represents all namespaces. This is the preferred usage for databases that don’t use namespaces. An empty string element represents the default namespace. This should be used if the database has data in non-default namespaces, but doesn’t want to include them. Each namespace in this list must be unique."]
+        #[serde(
+            rename = "namespaceIds",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub namespace_ids: ::std::option::Option<Vec<String>>,
     }
     impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1ImportDocumentsRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -2213,7 +2259,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleFirestoreAdminV1Index {
-        #[doc = "The fields supported by this index. For composite indexes, this is always 2 or more fields. The last field entry is always for the field path `__name__`. If, on creation, `__name__` was not specified as the last field, it will be added automatically with the same direction as that of the last field defined. If the final field in a composite index is not directional, the `__name__` will be ordered ASCENDING (unless explicitly specified). For single field indexes, this will always be exactly one entry with a field path equal to the field path of the associated field."]
+        #[doc = "The API scope supported by this index."]
+        #[serde(
+            rename = "apiScope",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub api_scope: ::std::option::Option<crate::schemas::GoogleFirestoreAdminV1IndexApiScope>,
+        #[doc = "The fields supported by this index. For composite indexes, this requires a minimum of 2 and a maximum of 100 fields. The last field entry is always for the field path `__name__`. If, on creation, `__name__` was not specified as the last field, it will be added automatically with the same direction as that of the last field defined. If the final field in a composite index is not directional, the `__name__` will be ordered ASCENDING (unless explicitly specified). For single field indexes, this will always be exactly one entry with a field path equal to the field path of the associated field."]
         #[serde(
             rename = "fields",
             default,
@@ -2254,11 +2307,84 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleFirestoreAdminV1IndexApiScope {
+        #[doc = "The index can be used by both Firestore Native and Firestore in Datastore Mode query API. This is the default."]
+        AnyApi,
+        #[doc = "The index can only be used by the Firestore in Datastore Mode query API."]
+        DatastoreModeApi,
+    }
+    impl GoogleFirestoreAdminV1IndexApiScope {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleFirestoreAdminV1IndexApiScope::AnyApi => "ANY_API",
+                GoogleFirestoreAdminV1IndexApiScope::DatastoreModeApi => "DATASTORE_MODE_API",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleFirestoreAdminV1IndexApiScope {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleFirestoreAdminV1IndexApiScope {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleFirestoreAdminV1IndexApiScope, ()> {
+            Ok(match s {
+                "ANY_API" => GoogleFirestoreAdminV1IndexApiScope::AnyApi,
+                "DATASTORE_MODE_API" => GoogleFirestoreAdminV1IndexApiScope::DatastoreModeApi,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleFirestoreAdminV1IndexApiScope {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleFirestoreAdminV1IndexApiScope {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleFirestoreAdminV1IndexApiScope {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ANY_API" => GoogleFirestoreAdminV1IndexApiScope::AnyApi,
+                "DATASTORE_MODE_API" => GoogleFirestoreAdminV1IndexApiScope::DatastoreModeApi,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1IndexApiScope {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleFirestoreAdminV1IndexApiScope {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleFirestoreAdminV1IndexQueryScope {
         #[doc = "Indexes with a collection query scope specified allow queries against a collection that is the child of a specific document, specified at query time, and that has the collection id specified by the index."]
         Collection,
         #[doc = "Indexes with a collection group query scope specified allow queries against all collections that has the collection id specified by the index."]
         CollectionGroup,
+        #[doc = "Include all the collections’s ancestor in the index. Only available for Datastore Mode databases."]
+        CollectionRecursive,
         #[doc = "The query scope is unspecified. Not a valid option."]
         QueryScopeUnspecified,
     }
@@ -2267,6 +2393,9 @@ pub mod schemas {
             match self {
                 GoogleFirestoreAdminV1IndexQueryScope::Collection => "COLLECTION",
                 GoogleFirestoreAdminV1IndexQueryScope::CollectionGroup => "COLLECTION_GROUP",
+                GoogleFirestoreAdminV1IndexQueryScope::CollectionRecursive => {
+                    "COLLECTION_RECURSIVE"
+                }
                 GoogleFirestoreAdminV1IndexQueryScope::QueryScopeUnspecified => {
                     "QUERY_SCOPE_UNSPECIFIED"
                 }
@@ -2284,6 +2413,9 @@ pub mod schemas {
             Ok(match s {
                 "COLLECTION" => GoogleFirestoreAdminV1IndexQueryScope::Collection,
                 "COLLECTION_GROUP" => GoogleFirestoreAdminV1IndexQueryScope::CollectionGroup,
+                "COLLECTION_RECURSIVE" => {
+                    GoogleFirestoreAdminV1IndexQueryScope::CollectionRecursive
+                }
                 "QUERY_SCOPE_UNSPECIFIED" => {
                     GoogleFirestoreAdminV1IndexQueryScope::QueryScopeUnspecified
                 }
@@ -2313,6 +2445,9 @@ pub mod schemas {
             Ok(match value {
                 "COLLECTION" => GoogleFirestoreAdminV1IndexQueryScope::Collection,
                 "COLLECTION_GROUP" => GoogleFirestoreAdminV1IndexQueryScope::CollectionGroup,
+                "COLLECTION_RECURSIVE" => {
+                    GoogleFirestoreAdminV1IndexQueryScope::CollectionRecursive
+                }
                 "QUERY_SCOPE_UNSPECIFIED" => {
                     GoogleFirestoreAdminV1IndexQueryScope::QueryScopeUnspecified
                 }
@@ -3039,7 +3174,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleFirestoreAdminV1ListFieldsResponse {
+    impl crate::GetNextPageToken<String> for GoogleFirestoreAdminV1ListFieldsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3082,7 +3217,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleFirestoreAdminV1ListIndexesResponse {
+    impl crate::GetNextPageToken<String> for GoogleFirestoreAdminV1ListIndexesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3147,6 +3282,234 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleFirestoreAdminV1Progress {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleFirestoreAdminV1TtlConfig {
+        #[doc = "Output only. The state of the TTL configuration."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<crate::schemas::GoogleFirestoreAdminV1TtlConfigState>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1TtlConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleFirestoreAdminV1TtlConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleFirestoreAdminV1TtlConfigState {
+        #[doc = "The TTL is active for all documents."]
+        Active,
+        #[doc = "The TTL is being applied. There is an active long-running operation to track the change. Newly written documents will have TTLs applied as requested. Requested TTLs on existing documents are still being processed. When TTLs on all existing documents have been processed, the state will move to ‘ACTIVE’."]
+        Creating,
+        #[doc = "The TTL configuration could not be enabled for all existing documents. Newly written documents will continue to have their TTL applied. The LRO returned when last attempting to enable TTL for this `Field` has failed, and may have more details."]
+        NeedsRepair,
+        #[doc = "The state is unspecified or unknown."]
+        StateUnspecified,
+    }
+    impl GoogleFirestoreAdminV1TtlConfigState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleFirestoreAdminV1TtlConfigState::Active => "ACTIVE",
+                GoogleFirestoreAdminV1TtlConfigState::Creating => "CREATING",
+                GoogleFirestoreAdminV1TtlConfigState::NeedsRepair => "NEEDS_REPAIR",
+                GoogleFirestoreAdminV1TtlConfigState::StateUnspecified => "STATE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleFirestoreAdminV1TtlConfigState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleFirestoreAdminV1TtlConfigState {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<GoogleFirestoreAdminV1TtlConfigState, ()> {
+            Ok(match s {
+                "ACTIVE" => GoogleFirestoreAdminV1TtlConfigState::Active,
+                "CREATING" => GoogleFirestoreAdminV1TtlConfigState::Creating,
+                "NEEDS_REPAIR" => GoogleFirestoreAdminV1TtlConfigState::NeedsRepair,
+                "STATE_UNSPECIFIED" => GoogleFirestoreAdminV1TtlConfigState::StateUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleFirestoreAdminV1TtlConfigState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleFirestoreAdminV1TtlConfigState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleFirestoreAdminV1TtlConfigState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ACTIVE" => GoogleFirestoreAdminV1TtlConfigState::Active,
+                "CREATING" => GoogleFirestoreAdminV1TtlConfigState::Creating,
+                "NEEDS_REPAIR" => GoogleFirestoreAdminV1TtlConfigState::NeedsRepair,
+                "STATE_UNSPECIFIED" => GoogleFirestoreAdminV1TtlConfigState::StateUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1TtlConfigState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleFirestoreAdminV1TtlConfigState {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleFirestoreAdminV1TtlConfigDelta {
+        #[doc = "Specifies how the TTL configuration is changing."]
+        #[serde(
+            rename = "changeType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub change_type:
+            ::std::option::Option<crate::schemas::GoogleFirestoreAdminV1TtlConfigDeltaChangeType>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1TtlConfigDelta {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleFirestoreAdminV1TtlConfigDelta {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        #[doc = "The TTL config is being added."]
+        Add,
+        #[doc = "The type of change is not specified or known."]
+        ChangeTypeUnspecified,
+        #[doc = "The TTL config is being removed."]
+        Remove,
+    }
+    impl GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleFirestoreAdminV1TtlConfigDeltaChangeType::Add => "ADD",
+                GoogleFirestoreAdminV1TtlConfigDeltaChangeType::ChangeTypeUnspecified => {
+                    "CHANGE_TYPE_UNSPECIFIED"
+                }
+                GoogleFirestoreAdminV1TtlConfigDeltaChangeType::Remove => "REMOVE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleFirestoreAdminV1TtlConfigDeltaChangeType, ()> {
+            Ok(match s {
+                "ADD" => GoogleFirestoreAdminV1TtlConfigDeltaChangeType::Add,
+                "CHANGE_TYPE_UNSPECIFIED" => {
+                    GoogleFirestoreAdminV1TtlConfigDeltaChangeType::ChangeTypeUnspecified
+                }
+                "REMOVE" => GoogleFirestoreAdminV1TtlConfigDeltaChangeType::Remove,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ADD" => GoogleFirestoreAdminV1TtlConfigDeltaChangeType::Add,
+                "CHANGE_TYPE_UNSPECIFIED" => {
+                    GoogleFirestoreAdminV1TtlConfigDeltaChangeType::ChangeTypeUnspecified
+                }
+                "REMOVE" => GoogleFirestoreAdminV1TtlConfigDeltaChangeType::Remove,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleFirestoreAdminV1TtlConfigDeltaChangeType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3226,7 +3589,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3337,6 +3700,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_token: ::std::option::Option<String>,
+        #[doc = "Reads documents as they were at the given time. This may not be older than 270 seconds."]
+        #[serde(
+            rename = "readTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_time: ::std::option::Option<String>,
     }
     impl ::google_field_selector::FieldSelector for ListCollectionIdsRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -3386,7 +3756,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCollectionIdsResponse {
+    impl crate::GetNextPageToken<String> for ListCollectionIdsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3402,7 +3772,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub documents: ::std::option::Option<Vec<crate::schemas::Document>>,
-        #[doc = "The next page token."]
+        #[doc = "A token to retrieve the next page of documents. If this field is omitted, there are no subsequent pages."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -3420,7 +3790,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListDocumentsResponse {
+    impl crate::GetNextPageToken<String> for ListDocumentsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3452,7 +3822,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3753,6 +4123,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub partition_count: ::std::option::Option<i64>,
+        #[doc = "Reads documents as they were at the given time. This may not be older than 270 seconds."]
+        #[serde(
+            rename = "readTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub read_time: ::std::option::Option<String>,
         #[doc = "A structured query. Query must specify collection with all descendants and be ordered by name ascending. Other filters, order bys, limits, offsets, and start/end cursors are not supported."]
         #[serde(
             rename = "structuredQuery",
@@ -3800,7 +4177,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for PartitionQueryResponse {
+    impl crate::GetNextPageToken<String> for PartitionQueryResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4051,7 +4428,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub read_time: ::std::option::Option<String>,
-        #[doc = "A single aggregation result. Not present when reporting partial progress or when the query produced zero results."]
+        #[doc = "A single aggregation result. Not present when reporting partial progress."]
         #[serde(
             rename = "result",
             default,
@@ -4130,6 +4507,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub document: ::std::option::Option<crate::schemas::Document>,
+        #[doc = "If present, Firestore has completely finished the request and no more documents will be returned."]
+        #[serde(
+            rename = "done",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub done: ::std::option::Option<bool>,
         #[doc = "The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their `read_time` and this one. If the query returns no results, a response with `read_time` and no `document` will be sent, and this represents the time at which the query was run."]
         #[serde(
             rename = "readTime",
@@ -4201,7 +4585,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct StructuredAggregationQuery {
-        #[doc = "Optional. Series of aggregations to apply on top of the `structured_query`."]
+        #[doc = "Optional. Series of aggregations to apply over the results of the `structured_query`. Requires: * A minimum of one and maximum of five aggregations per query."]
         #[serde(
             rename = "aggregations",
             default,
@@ -4230,7 +4614,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct StructuredQuery {
-        #[doc = "A end point for the query results."]
+        #[doc = "A potential prefix of a position in the result set to end the query at. This is similar to `START_AT` but with it controlling the end position rather than the start position. Requires: * The number of values cannot be greater than the number of fields specified in the `ORDER BY` clause."]
         #[serde(
             rename = "endAt",
             default,
@@ -4244,21 +4628,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub from: ::std::option::Option<Vec<crate::schemas::CollectionSelector>>,
-        #[doc = "The maximum number of results to return. Applies after all other constraints. Must be >= 0 if specified."]
+        #[doc = "The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified."]
         #[serde(
             rename = "limit",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub limit: ::std::option::Option<i32>,
-        #[doc = "The number of results to skip. Applies before limit, but after all other constraints. Must be >= 0 if specified."]
+        #[doc = "The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified."]
         #[serde(
             rename = "offset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offset: ::std::option::Option<i32>,
-        #[doc = "The order to apply to the query results. Firestore guarantees a stable ordering through the following rules: * Any field required to appear in `order_by`, that is not already specified in `order_by`, is appended to the order in field name order by default. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or ‘ASCENDING’ if no order was specified. For example: * `SELECT * FROM Foo ORDER BY A` becomes `SELECT * FROM Foo ORDER BY A, __name__` * `SELECT * FROM Foo ORDER BY A DESC` becomes `SELECT * FROM Foo ORDER BY A DESC, __name__ DESC` * `SELECT * FROM Foo WHERE A > 1` becomes `SELECT * FROM Foo WHERE A > 1 ORDER BY A, __name__`"]
+        #[doc = "The order to apply to the query results. Firestore allows callers to provide a full ordering, a partial ordering, or no ordering at all. In all cases, Firestore guarantees a stable ordering through the following rules: * The `order_by` is required to reference all fields used with an inequality filter. * All fields that are required to be in the `order_by` but are not already present are appended in lexicographical ordering of the field name. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or ‘ASCENDING’ if no order was specified. For example: * `ORDER BY a` becomes `ORDER BY a ASC, __name__ ASC` * `ORDER BY a DESC` becomes `ORDER BY a DESC, __name__ DESC` * `WHERE a > 1` becomes `WHERE a > 1 ORDER BY a ASC, __name__ ASC` * `WHERE __name__ > ... AND a > 1` becomes `WHERE __name__ > ... AND a > 1 ORDER BY a ASC, __name__ ASC`"]
         #[serde(
             rename = "orderBy",
             default,
@@ -4279,7 +4663,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub select: ::std::option::Option<crate::schemas::Projection>,
-        #[doc = "A starting point for the query results."]
+        #[doc = "A potential prefix of a position in the result set to start the query at. The ordering of the result set is based on the `ORDER BY` clause of the original query. `SELECT * FROM k WHERE a = 1 AND b > 2 ORDER BY b ASC, __name__ ASC;` This query’s results are ordered by `(b ASC, __name__ ASC)`. Cursors can reference either the full ordering or a prefix of the location, though it cannot reference more fields than what are in the provided `ORDER BY`. Continuing off the example above, attaching the following start cursors will have varying impact: - `START BEFORE (2, /k/123)`: start the query right before `a = 1 AND b > 2 AND __name__ > /k/123`. - `START AFTER (10)`: start the query right after `a = 1 AND b > 10`. Unlike `OFFSET` which requires scanning over the first N results to skip, a start cursor allows the query to begin at a logical position. This position is not required to match an actual result, it will scan forward from this position to find the next document. Requires: * The number of values cannot be greater than the number of fields specified in the `ORDER BY` clause."]
         #[serde(
             rename = "startAt",
             default,
@@ -5198,6 +5582,54 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
+                #[doc = "Create a database."]
+                pub fn create(
+                    &self,
+                    request: crate::schemas::GoogleFirestoreAdminV1Database,
+                    parent: impl Into<String>,
+                ) -> CreateRequestBuilder {
+                    CreateRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        request,
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        parent: parent.into(),
+                        database_id: None,
+                    }
+                }
+                #[doc = "Deletes a database."]
+                pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
+                    DeleteRequestBuilder {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                        access_token: None,
+                        alt: None,
+                        callback: None,
+                        fields: None,
+                        key: None,
+                        oauth_token: None,
+                        pretty_print: None,
+                        quota_user: None,
+                        upload_protocol: None,
+                        upload_type: None,
+                        xgafv: None,
+                        name: name.into(),
+                        allow_missing: None,
+                        etag: None,
+                        free_id: None,
+                        validate_only: None,
+                    }
+                }
                 #[doc = "Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage. For more details on export behavior and output format, refer to: https://cloud.google.com/firestore/docs/manage-data/export-import"]
                 pub fn export_documents(
                     &self,
@@ -5335,6 +5767,368 @@ pub mod resources {
                         reqwest: &self.reqwest,
                         auth: self.auth_ref(),
                     }
+                }
+            }
+            #[doc = "Created via [DatabasesActions::create()](struct.DatabasesActions.html#method.create)"]
+            #[derive(Debug, Clone)]
+            pub struct CreateRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                request: crate::schemas::GoogleFirestoreAdminV1Database,
+                parent: String,
+                database_id: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> CreateRequestBuilder<'a> {
+                #[doc = "Required. The ID to use for the database, which will become the final component of the database’s resource name. This value should be 4-63 characters. Valid characters are /a-z-/ with first character a letter and the last a letter or a number. Must not be UUID-like /\\[0-9a-f\\]{8}(-\\[0-9a-f\\]{4}){3}-\\[0-9a-f\\]{12}/. “(default)” database id is also valid."]
+                pub fn database_id(mut self, value: impl Into<String>) -> Self {
+                    self.database_id = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    let req = req.json(&self.request);
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firestore.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.parent;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output.push_str("/databases");
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                    req = req.query(&[("databaseId", &self.database_id)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
+                }
+            }
+            #[doc = "Created via [DatabasesActions::delete()](struct.DatabasesActions.html#method.delete)"]
+            #[derive(Debug, Clone)]
+            pub struct DeleteRequestBuilder<'a> {
+                pub(crate) reqwest: &'a ::reqwest::Client,
+                pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                name: String,
+                allow_missing: ::std::option::Option<bool>,
+                etag: ::std::option::Option<String>,
+                free_id: ::std::option::Option<bool>,
+                validate_only: ::std::option::Option<bool>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
+            }
+            impl<'a> DeleteRequestBuilder<'a> {
+                #[doc = "If set to true and the Database is not found, the request will succeed but no action will be taken."]
+                pub fn allow_missing(mut self, value: bool) -> Self {
+                    self.allow_missing = Some(value);
+                    self
+                }
+                #[doc = "The current etag of the Database. If an etag is provided and does not match the current etag of the database, deletion will be blocked and a FAILED_PRECONDITION error will be returned."]
+                pub fn etag(mut self, value: impl Into<String>) -> Self {
+                    self.etag = Some(value.into());
+                    self
+                }
+                #[doc = "If set, will free the database_id associated with this database. uid will be used as the resource id to identify this deleted database."]
+                pub fn free_id(mut self, value: bool) -> Self {
+                    self.free_id = Some(value);
+                    self
+                }
+                #[doc = "If set, validate the request and preview the response, but do not actually delete the database."]
+                pub fn validate_only(mut self, value: bool) -> Self {
+                    self.validate_only = Some(value);
+                    self
+                }
+                #[doc = "OAuth access token."]
+                pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                    self.access_token = Some(value.into());
+                    self
+                }
+                #[doc = "JSONP"]
+                pub fn callback(mut self, value: impl Into<String>) -> Self {
+                    self.callback = Some(value.into());
+                    self
+                }
+                #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                pub fn key(mut self, value: impl Into<String>) -> Self {
+                    self.key = Some(value.into());
+                    self
+                }
+                #[doc = "OAuth 2.0 token for the current user."]
+                pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                    self.oauth_token = Some(value.into());
+                    self
+                }
+                #[doc = "Returns response with indentations and line breaks."]
+                pub fn pretty_print(mut self, value: bool) -> Self {
+                    self.pretty_print = Some(value);
+                    self
+                }
+                #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                    self.quota_user = Some(value.into());
+                    self
+                }
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                    self.upload_protocol = Some(value.into());
+                    self
+                }
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                    self.upload_type = Some(value.into());
+                    self
+                }
+                #[doc = "V1 error format."]
+                pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                    self.xgafv = Some(value);
+                    self
+                }
+                #[doc = r" Execute the given operation. The fields requested are"]
+                #[doc = r" determined by the FieldSelector attribute of the return type."]
+                #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                #[doc = r" are not generic over the return type and deserialize the"]
+                #[doc = r" response into an auto-generated struct will all possible"]
+                #[doc = r" fields."]
+                pub async fn execute<T>(self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                {
+                    let fields = ::google_field_selector::to_string::<T>();
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
+                        None
+                    } else {
+                        Some(fields)
+                    };
+                    self.execute_with_fields(fields).await
+                }
+                #[doc = r" Execute the given operation. This will not provide any"]
+                #[doc = r" `fields` selector indicating that the server will determine"]
+                #[doc = r" the fields returned. This typically includes the most common"]
+                #[doc = r" fields, but it will not include every possible attribute of"]
+                #[doc = r" the response resource."]
+                pub async fn execute_with_default_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                {
+                    self.execute_with_fields(None::<&str>).await
+                }
+                #[doc = r" Execute the given operation. This will provide a `fields`"]
+                #[doc = r" selector of `*`. This will include every attribute of the"]
+                #[doc = r" response resource and should be limited to use during"]
+                #[doc = r" development or debugging."]
+                pub async fn execute_with_all_fields(
+                    self,
+                ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                {
+                    self.execute_with_fields(Some("*")).await
+                }
+                #[doc = r" Execute the given operation. This will use the `fields`"]
+                #[doc = r" selector provided and will deserialize the response into"]
+                #[doc = r" whatever return value is provided."]
+                pub async fn execute_with_fields<T, F>(
+                    mut self,
+                    fields: ::std::option::Option<F>,
+                ) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                    F: Into<String>,
+                {
+                    self.fields = fields.map(Into::into);
+                    self._execute().await
+                }
+                async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                where
+                    T: ::serde::de::DeserializeOwned,
+                {
+                    let req = self._request(&self._path()).await?;
+                    Ok(req.send().await?.error_for_status()?.json().await?)
+                }
+                fn _path(&self) -> String {
+                    let mut output = "https://firestore.googleapis.com/".to_owned();
+                    output.push_str("v1/");
+                    {
+                        let var_as_str = &self.name;
+                        output.extend(::percent_encoding::utf8_percent_encode(
+                            &var_as_str,
+                            crate::RESERVED,
+                        ));
+                    }
+                    output
+                }
+                async fn _request(
+                    &self,
+                    path: &str,
+                ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                    let mut req = self.reqwest.request(::reqwest::Method::DELETE, path);
+                    req = req.query(&[("allowMissing", &self.allow_missing)]);
+                    req = req.query(&[("etag", &self.etag)]);
+                    req = req.query(&[("freeId", &self.free_id)]);
+                    req = req.query(&[("validateOnly", &self.validate_only)]);
+                    req = req.query(&[("access_token", &self.access_token)]);
+                    req = req.query(&[("alt", &self.alt)]);
+                    req = req.query(&[("callback", &self.callback)]);
+                    req = req.query(&[("fields", &self.fields)]);
+                    req = req.query(&[("key", &self.key)]);
+                    req = req.query(&[("oauth_token", &self.oauth_token)]);
+                    req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                    req = req.query(&[("quotaUser", &self.quota_user)]);
+                    req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                    req = req.query(&[("uploadType", &self.upload_type)]);
+                    req = req.query(&[("$.xgafv", &self.xgafv)]);
+                    let access_token = self
+                        .auth
+                        .access_token()
+                        .await
+                        .map_err(|err| crate::Error::OAuth2(err))?;
+                    req = req.bearer_auth(access_token);
+                    Ok(req)
                 }
             }
             #[doc = "Created via [DatabasesActions::export_documents()](struct.DatabasesActions.html#method.export_documents)"]
@@ -6558,7 +7352,7 @@ pub mod resources {
                                 #[serde(rename = "fields")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -6594,7 +7388,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -6650,7 +7444,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -6775,12 +7569,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -7684,7 +8479,7 @@ pub mod resources {
                                 #[serde(rename = "indexes")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -7720,7 +8515,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -7776,7 +8571,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -7901,12 +8696,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -9591,32 +10387,32 @@ pub mod resources {
                         self.mask_field_paths = Some(value.into());
                         self
                     }
-                    #[doc = "The order to sort results by. For example: `priority desc, name`."]
+                    #[doc = "Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "The maximum number of documents to return."]
+                    #[doc = "Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "The `next_page_token` value returned from a previous List request, if any."]
+                    #[doc = "Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
                     }
-                    #[doc = "Reads documents as they were at the given time. This may not be older than 270 seconds."]
+                    #[doc = "Perform the read at the provided time. This may not be older than 270 seconds."]
                     pub fn read_time(mut self, value: impl Into<String>) -> Self {
                         self.read_time = Some(value.into());
                         self
                     }
-                    #[doc = "If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`."]
+                    #[doc = "If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`."]
                     pub fn show_missing(mut self, value: bool) -> Self {
                         self.show_missing = Some(value);
                         self
                     }
-                    #[doc = "Reads documents in a transaction."]
+                    #[doc = "Perform the read as part of an already active transaction."]
                     pub fn transaction(mut self, value: impl Into<Vec<u8>>) -> Self {
                         let v: Vec<u8> = value.into();
                         self.transaction = Some(v.into());
@@ -9714,7 +10510,7 @@ pub mod resources {
                             #[serde(rename = "documents")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -9749,7 +10545,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -9799,7 +10595,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -9931,12 +10727,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -10138,32 +10935,32 @@ pub mod resources {
                         self.mask_field_paths = Some(value.into());
                         self
                     }
-                    #[doc = "The order to sort results by. For example: `priority desc, name`."]
+                    #[doc = "Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`."]
                     pub fn order_by(mut self, value: impl Into<String>) -> Self {
                         self.order_by = Some(value.into());
                         self
                     }
-                    #[doc = "The maximum number of documents to return."]
+                    #[doc = "Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "The `next_page_token` value returned from a previous List request, if any."]
+                    #[doc = "Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
                     }
-                    #[doc = "Reads documents as they were at the given time. This may not be older than 270 seconds."]
+                    #[doc = "Perform the read at the provided time. This may not be older than 270 seconds."]
                     pub fn read_time(mut self, value: impl Into<String>) -> Self {
                         self.read_time = Some(value.into());
                         self
                     }
-                    #[doc = "If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`."]
+                    #[doc = "If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`."]
                     pub fn show_missing(mut self, value: bool) -> Self {
                         self.show_missing = Some(value);
                         self
                     }
-                    #[doc = "Reads documents in a transaction."]
+                    #[doc = "Perform the read as part of an already active transaction."]
                     pub fn transaction(mut self, value: impl Into<Vec<u8>>) -> Self {
                         let v: Vec<u8> = value.into();
                         self.transaction = Some(v.into());
@@ -10261,7 +11058,7 @@ pub mod resources {
                             #[serde(rename = "documents")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -10296,7 +11093,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -10346,7 +11143,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -10478,12 +11275,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListDocumentsRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -12388,7 +13186,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -12423,7 +13221,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -12479,7 +13277,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -12598,12 +13396,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -12949,7 +13748,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -12984,7 +13783,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -13034,7 +13833,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13150,12 +13949,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -13446,16 +14246,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -13475,13 +14277,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -13489,7 +14294,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -13516,7 +14321,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

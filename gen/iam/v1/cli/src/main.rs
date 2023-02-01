@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("iam1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220413")
+            .version("0.1.0-20230119")
             .about("Manages identity and access control for Google Cloud Platform resources, including the creation of service accounts, which you can use to authenticate to Google and make API calls. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -253,7 +253,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             keys2 = keys2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("disable").about("Disable a ServiceAccountKey. A disabled service account key can be enabled through EnableServiceAccountKey.");
+            let mcmd = SubCommand::with_name("disable").about("Disable a ServiceAccountKey. A disabled service account key can be re-enabled with EnableServiceAccountKey.");
             keys2 = keys2.subcommand(mcmd);
         }
         {

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("realtimebidding1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220426")
+            .version("0.1.0-20230131")
             .about("Allows external bidders to manage their RTB integration with Google. This includes managing bidder endpoints, QPS quotas, configuring what ad inventory to receive via pretargeting, submitting creatives for verification, and accessing creative metadata such as approval status.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -64,7 +64,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .setting(AppSettings::ColoredHelp)
             .about("methods: list and watch");
         {
-            let mcmd = SubCommand::with_name("list").about("Lists creatives.");
+            let mcmd = SubCommand::with_name("list").about("Lists creatives as they are at the time of the initial request. This call may take multiple hours to complete. For large, paginated requests, this method returns a snapshot of creatives at the time of request for the first page. `lastStatusUpdate` and `creativeServingDecision` may be outdated for creatives on sequential pages. We recommend [Google Cloud Pub/Sub](//cloud.google.com/pubsub/docs/overview) to view the latest status.");
             creatives1 = creatives1.subcommand(mcmd);
         }
         {
@@ -152,6 +152,28 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 SubCommand::with_name("suspend").about("Suspends a pretargeting configuration.");
             pretargeting_configs1 = pretargeting_configs1.subcommand(mcmd);
         }
+        let mut publisher_connections1 = SubCommand::with_name("publisher_connections")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: batch_approve, batch_reject, get and list");
+        {
+            let mcmd = SubCommand::with_name("batch_approve")
+                .about("Batch approves multiple publisher connections.");
+            publisher_connections1 = publisher_connections1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("batch_reject")
+                .about("Batch rejects multiple publisher connections.");
+            publisher_connections1 = publisher_connections1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets a publisher connection.");
+            publisher_connections1 = publisher_connections1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists publisher connections for a given bidder.");
+            publisher_connections1 = publisher_connections1.subcommand(mcmd);
+        }
         let mut creatives1 = SubCommand::with_name("creatives")
             .setting(AppSettings::ColoredHelp)
             .about("methods: create, get, list and patch");
@@ -164,7 +186,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             creatives1 = creatives1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists creatives.");
+            let mcmd = SubCommand::with_name("list").about("Lists creatives as they are at the time of the initial request. This call may take multiple hours to complete. For large, paginated requests, this method returns a snapshot of creatives at the time of request for the first page. `lastStatusUpdate` and `creativeServingDecision` may be outdated for creatives on sequential pages. We recommend [Google Cloud Pub/Sub](//cloud.google.com/pubsub/docs/overview) to view the latest status.");
             creatives1 = creatives1.subcommand(mcmd);
         }
         {
@@ -207,6 +229,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         buyers0 = buyers0.subcommand(user_lists1);
         buyers0 = buyers0.subcommand(creatives1);
+        bidders0 = bidders0.subcommand(publisher_connections1);
         bidders0 = bidders0.subcommand(pretargeting_configs1);
         bidders0 = bidders0.subcommand(endpoints1);
         bidders0 = bidders0.subcommand(creatives1);

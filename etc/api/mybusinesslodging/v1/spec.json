@@ -7,9 +7,9 @@
   "canonicalName": "My Business Lodging",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220426",
+  "revision": "20230131",
   "title": "My Business Lodging API",
-  "description": "The My Business Lodging API enables managing lodging business information on Google.",
+  "description": "The My Business Lodging API enables managing lodging business information on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.",
   "ownerDomain": "google.com",
   "ownerName": "Google",
   "icons": {
@@ -1691,6 +1691,36 @@
         },
         "kidsClubException": {
           "description": "Kids club exception.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "EXCEPTION_UNSPECIFIED",
+            "UNDER_CONSTRUCTION",
+            "DEPENDENT_ON_SEASON",
+            "DEPENDENT_ON_DAY_OF_WEEK"
+          ],
+          "enumDescriptions": [
+            "Default unspecified exception. Use this only if a more specific exception does not match.",
+            "Amenity or service is unavailable due to ongoing work orders.",
+            "Amenity or service availability is seasonal.",
+            "Amenity or service availability depends on the day of the week."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kidsFriendly": {
+          "description": "Kids friendly. The hotel has one or more special features for families with children, such as reduced rates, child-sized beds, kids' club, babysitting service, or suitable place to play on premises.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "kidsFriendlyException": {
+          "description": "Kids friendly exception.",
           "type": "string",
           "format": null,
           "enum": [
@@ -7276,7 +7306,7 @@
           }
         },
         "leedCertification": {
-          "description": "LEED certification.",
+          "description": "LEED certification. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC.",
           "type": "string",
           "format": null,
           "enum": [
@@ -7300,7 +7330,7 @@
           "items": null
         },
         "leedCertificationException": {
-          "description": "LEED certification exception.",
+          "description": "LEED certification exception. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC.",
           "type": "string",
           "format": null,
           "enum": [
@@ -9141,7 +9171,7 @@
               "description": "Returns the Google updated Lodging of a specific location.",
               "parameters": {
                 "name": {
-                  "description": "Required. Google identifier for this location in the form: `accounts/{account_id}/locations/{location_id}/lodging`",
+                  "description": "Required. Google identifier for this location in the form: `locations/{location_id}/lodging`",
                   "default": null,
                   "location": "path",
                   "required": true,

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("clouddeploy1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220413")
+            .version("0.1.0-20230118")
             .about("")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -151,7 +151,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut releases3 = SubCommand::with_name("releases")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, get and list");
+            .about("methods: abandon, create, get and list");
+        {
+            let mcmd = SubCommand::with_name("abandon")
+                .about("Abandons a Release in the Delivery Pipeline.");
+            releases3 = releases3.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("create")
                 .about("Creates a new Release in a given project and location.");
@@ -168,7 +173,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut rollouts4 = SubCommand::with_name("rollouts")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: approve, create, get and list");
+            .about("methods: approve, create, get, list and retry_job");
         {
             let mcmd = SubCommand::with_name("approve").about("Approves a Rollout.");
             rollouts4 = rollouts4.subcommand(mcmd);
@@ -187,6 +192,24 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 .about("Lists Rollouts in a given project and location.");
             rollouts4 = rollouts4.subcommand(mcmd);
         }
+        {
+            let mcmd =
+                SubCommand::with_name("retry_job").about("Retries the specified Job in a Rollout.");
+            rollouts4 = rollouts4.subcommand(mcmd);
+        }
+        let mut job_runs5 = SubCommand::with_name("job_runs")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get and list");
+        {
+            let mcmd = SubCommand::with_name("get").about("Gets details of a single JobRun.");
+            job_runs5 = job_runs5.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Lists JobRuns in a given project and location.");
+            job_runs5 = job_runs5.subcommand(mcmd);
+        }
+        rollouts4 = rollouts4.subcommand(job_runs5);
         releases3 = releases3.subcommand(rollouts4);
         delivery_pipelines2 = delivery_pipelines2.subcommand(releases3);
         locations1 = locations1.subcommand(targets2);

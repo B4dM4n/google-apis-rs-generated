@@ -1,0 +1,4924 @@
+{
+  "kind": "discovery#restDescription",
+  "etag": null,
+  "discoveryVersion": "v1",
+  "id": "drivelabels:v2beta",
+  "name": "drivelabels",
+  "canonicalName": "Drive Labels",
+  "fullyEncodeReservedExpansion": true,
+  "version": "v2beta",
+  "revision": "20230125",
+  "title": "Drive Labels API",
+  "description": "An API for managing Drive Labels",
+  "ownerDomain": "google.com",
+  "ownerName": "Google",
+  "icons": {
+    "x16": "http://www.google.com/images/icons/product/search-16.gif",
+    "x32": "http://www.google.com/images/icons/product/search-32.gif"
+  },
+  "documentationLink": "https://developers.google.com/drive/labels",
+  "protocol": "rest",
+  "baseUrl": "https://drivelabels.googleapis.com/",
+  "basePath": "",
+  "rootUrl": "https://drivelabels.googleapis.com/",
+  "servicePath": "",
+  "batchPath": "batch",
+  "version_module": true,
+  "packagePath": null,
+  "labels": null,
+  "features": null,
+  "parameters": {
+    "$.xgafv": {
+      "description": "V1 error format.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "1",
+        "2"
+      ],
+      "enumDescriptions": [
+        "v1 error format",
+        "v2 error format"
+      ],
+      "repeated": false
+    },
+    "access_token": {
+      "description": "OAuth access token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "alt": {
+      "description": "Data format for response.",
+      "default": "json",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [
+        "json",
+        "media",
+        "proto"
+      ],
+      "enumDescriptions": [
+        "Responses with Content-Type of application/json",
+        "Media download with context-dependent Content-Type",
+        "Responses with Content-Type of application/x-protobuf"
+      ],
+      "repeated": false
+    },
+    "callback": {
+      "description": "JSONP",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "fields": {
+      "description": "Selector specifying which fields to include in a partial response.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "key": {
+      "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "oauth_token": {
+      "description": "OAuth 2.0 token for the current user.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "prettyPrint": {
+      "description": "Returns response with indentations and line breaks.",
+      "default": "true",
+      "location": "query",
+      "required": false,
+      "type": "boolean",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "quotaUser": {
+      "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "uploadType": {
+      "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    },
+    "upload_protocol": {
+      "description": "Upload protocol for media (e.g. \"raw\", \"multipart\").",
+      "default": null,
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "format": null,
+      "minimum": null,
+      "maximum": null,
+      "pattern": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "repeated": false
+    }
+  },
+  "auth": null,
+  "schemas": {
+    "GoogleAppsDriveLabelsV2betaBadgeColors": {
+      "id": "GoogleAppsDriveLabelsV2betaBadgeColors",
+      "description": "The color derived from BadgeConfig and changed to the closest recommended supported color.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "backgroundColor": {
+          "description": "Output only. Badge background that pairs with the foreground.",
+          "$ref": "GoogleTypeColor"
+        },
+        "foregroundColor": {
+          "description": "Output only. Badge foreground that pairs with the background.",
+          "$ref": "GoogleTypeColor"
+        },
+        "soloColor": {
+          "description": "Output only. Color that can be used for text without a background.",
+          "$ref": "GoogleTypeColor"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaBadgeConfig": {
+      "id": "GoogleAppsDriveLabelsV2betaBadgeConfig",
+      "description": "Badge status of the label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "color": {
+          "description": "The color of the badge. When not specified, no badge is rendered. The background, foreground, and solo (light and dark mode) colors set here are changed in the Drive UI into the closest recommended supported color.",
+          "$ref": "GoogleTypeColor"
+        },
+        "priorityOverride": {
+          "description": "Override the default global priority of this badge. When set to 0, the default priority heuristic is used.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaBatchDeleteLabelPermissionsRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaBatchDeleteLabelPermissionsRequest",
+      "description": "Deletes one of more Label Permissions.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "requests": {
+          "description": "Required. The request message specifying the resources to update.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaDeleteLabelPermissionRequest"
+          }
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access. If this is set, the use_admin_access field in the DeleteLabelPermissionRequest messages must either be empty or match this field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsRequest",
+      "description": "Updates one or more Label Permissions.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "requests": {
+          "description": "Required. The request message specifying the resources to update.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaUpdateLabelPermissionRequest"
+          }
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access. If this is set, the use_admin_access field in the UpdateLabelPermissionRequest messages must either be empty or match this field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsResponse",
+      "description": "Response for updating one or more Label Permissions.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "permissions": {
+          "description": "Required. Permissions updated.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDateLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaDateLimits",
+      "description": "Limits for date Field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxValue": {
+          "description": "Maximum value for the date Field type.",
+          "$ref": "GoogleTypeDate"
+        },
+        "minValue": {
+          "description": "Minimum value for the date Field type.",
+          "$ref": "GoogleTypeDate"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeleteLabelPermissionRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeleteLabelPermissionRequest",
+      "description": "Deletes a Label Permission. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "name": {
+          "description": "Required. Label Permission resource name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequest",
+      "description": "The set of requests for updating aspects of a Label. If any request is not valid, no requests will be applied.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "languageCode": {
+          "description": "The BCP-47 language code to use for evaluating localized Field labels when `include_label_in_response` is `true`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "requests": {
+          "description": "A list of updates to apply to the Label. Requests will be applied in the order they are specified.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestRequest"
+          }
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "view": {
+          "description": "When specified, only certain fields belonging to the indicated view will be returned.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LABEL_VIEW_BASIC",
+            "LABEL_VIEW_FULL"
+          ],
+          "enumDescriptions": [
+            "Implies the field mask: `name,id,revision_id,label_type,properties.*`",
+            "All possible fields."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "writeControl": {
+          "description": "Provides control over how write requests are executed.",
+          "$ref": "GoogleAppsDriveLabelsV2betaWriteControl"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateFieldRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateFieldRequest",
+      "description": "Request to create a Field within a Label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "field": {
+          "description": "Required. Field to create.",
+          "$ref": "GoogleAppsDriveLabelsV2betaField"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateSelectionChoiceRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateSelectionChoiceRequest",
+      "description": "Request to create a Selection Choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "choice": {
+          "description": "Required. The Choice to create.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoice"
+        },
+        "fieldId": {
+          "description": "Required. The Selection Field in which a Choice will be created.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteFieldRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteFieldRequest",
+      "description": "Request to delete the Field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "id": {
+          "description": "Required. ID of the Field to delete.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteSelectionChoiceRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteSelectionChoiceRequest",
+      "description": "Request to delete a Choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldId": {
+          "description": "Required. The Selection Field from which a Choice will be deleted.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Required. Choice to delete.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableFieldRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableFieldRequest",
+      "description": "Request to disable the Field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disabledPolicy": {
+          "description": "Required. Field Disabled Policy.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLifecycleDisabledPolicy"
+        },
+        "id": {
+          "description": "Required. Key of the Field to disable.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateMask": {
+          "description": "The fields that should be updated. At least one field must be specified. The root `disabled_policy` is implied and should not be specified. A single `*` can be used as short-hand for updating every field.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableSelectionChoiceRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableSelectionChoiceRequest",
+      "description": "Request to disable a Choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disabledPolicy": {
+          "description": "Required. The disabled policy to update.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLifecycleDisabledPolicy"
+        },
+        "fieldId": {
+          "description": "Required. The Selection Field in which a Choice will be disabled.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Required. Choice to disable.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateMask": {
+          "description": "The fields that should be updated. At least one field must be specified. The root `disabled_policy` is implied and should not be specified. A single `*` can be used as short-hand for updating every field.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableFieldRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableFieldRequest",
+      "description": "Request to enable the Field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "id": {
+          "description": "Required. ID of the Field to enable.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableSelectionChoiceRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableSelectionChoiceRequest",
+      "description": "Request to enable a Choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldId": {
+          "description": "Required. The Selection Field in which a Choice will be enabled.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Required. Choice to enable.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestRequest",
+      "description": "A single kind of update to apply to a Label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createField": {
+          "description": "Creates a new Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateFieldRequest"
+        },
+        "createSelectionChoice": {
+          "description": "Creates Choice within a Selection field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestCreateSelectionChoiceRequest"
+        },
+        "deleteField": {
+          "description": "Deletes a Field from the label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteFieldRequest"
+        },
+        "deleteSelectionChoice": {
+          "description": "Delete a Choice within a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDeleteSelectionChoiceRequest"
+        },
+        "disableField": {
+          "description": "Disables the Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableFieldRequest"
+        },
+        "disableSelectionChoice": {
+          "description": "Disable a Choice within a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestDisableSelectionChoiceRequest"
+        },
+        "enableField": {
+          "description": "Enables the Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableFieldRequest"
+        },
+        "enableSelectionChoice": {
+          "description": "Enable a Choice within a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestEnableSelectionChoiceRequest"
+        },
+        "updateField": {
+          "description": "Updates basic properties of a Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldPropertiesRequest"
+        },
+        "updateFieldType": {
+          "description": "Update Field type and/or type options.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldTypeRequest"
+        },
+        "updateLabel": {
+          "description": "Updates the Label properties.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateLabelPropertiesRequest"
+        },
+        "updateSelectionChoiceProperties": {
+          "description": "Update a Choice properties within a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateSelectionChoicePropertiesRequest"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldPropertiesRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldPropertiesRequest",
+      "description": "Request to update Field properties.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "id": {
+          "description": "Required. The Field to update.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "properties": {
+          "description": "Required. Basic Field properties.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldProperties"
+        },
+        "updateMask": {
+          "description": "The fields that should be updated. At least one field must be specified. The root `properties` is implied and should not be specified. A single `*` can be used as short-hand for updating every field.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldTypeRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateFieldTypeRequest",
+      "description": "Request to change the type of a Field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dateOptions": {
+          "description": "Update field to Date.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldDateOptions"
+        },
+        "id": {
+          "description": "Required. The Field to update.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "integerOptions": {
+          "description": "Update field to Integer.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldIntegerOptions"
+        },
+        "longTextOptions": {
+          "description": "Update field to Long Text.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldLongTextOptions"
+        },
+        "selectionOptions": {
+          "description": "Update field to Selection.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptions"
+        },
+        "textOptions": {
+          "description": "Update field to Text.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldTextOptions"
+        },
+        "updateMask": {
+          "description": "The fields that should be updated. At least one field must be specified. The root of `type_options` is implied and should not be specified. A single `*` can be used as short-hand for updating every field.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "userOptions": {
+          "description": "Update field to User.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldUserOptions"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateLabelPropertiesRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateLabelPropertiesRequest",
+      "description": "Updates basic properties of a Label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "properties": {
+          "description": "Required. Label properties to update.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelProperties"
+        },
+        "updateMask": {
+          "description": "The fields that should be updated. At least one field must be specified. The root `label_properties` is implied and should not be specified. A single `*` can be used as short-hand for updating every field.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateSelectionChoicePropertiesRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequestUpdateSelectionChoicePropertiesRequest",
+      "description": "Request to update a Choice properties.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldId": {
+          "description": "Required. The Selection Field to update.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "Required. The Choice to update.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "properties": {
+          "description": "Required. The Choice properties to update.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceProperties"
+        },
+        "updateMask": {
+          "description": "The fields that should be updated. At least one field must be specified. The root `properties` is implied and should not be specified. A single `*` can be used as short-hand for updating every field.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponse",
+      "description": "Response for Label update.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "responses": {
+          "description": "The reply of the updates. This maps 1:1 with the updates, although responses to some requests may be empty.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseResponse"
+          }
+        },
+        "updatedLabel": {
+          "description": "The label after updates were applied. This is only set if [BatchUpdateLabelResponse2.include_label_in_response] is `true` and there were no errors.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateFieldResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateFieldResponse",
+      "description": "Response following Field create.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "id": {
+          "description": "The field of the created field. When left blank in a create request, a key will be autogenerated and can be identified here.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "priority": {
+          "description": "The priority of the created field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateSelectionChoiceResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateSelectionChoiceResponse",
+      "description": "Response following Selection Choice create.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldId": {
+          "description": "The server-generated id of the field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "id": {
+          "description": "The server-generated ID of the created choice within the Field",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteFieldResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteFieldResponse",
+      "description": "Response following Field delete.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteSelectionChoiceResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteSelectionChoiceResponse",
+      "description": "Response following Choice delete.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableFieldResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableFieldResponse",
+      "description": "Response following Field disable.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableSelectionChoiceResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableSelectionChoiceResponse",
+      "description": "Response following Choice disable.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableFieldResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableFieldResponse",
+      "description": "Response following Field enable.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableSelectionChoiceResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableSelectionChoiceResponse",
+      "description": "Response following Choice enable.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseResponse",
+      "description": "A single response from an update.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "createField": {
+          "description": "Creates a new Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateFieldResponse"
+        },
+        "createSelectionChoice": {
+          "description": "Creates a new selection list option to add to a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseCreateSelectionChoiceResponse"
+        },
+        "deleteField": {
+          "description": "Deletes a Field from the label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteFieldResponse"
+        },
+        "deleteSelectionChoice": {
+          "description": "Deletes a Choice from a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDeleteSelectionChoiceResponse"
+        },
+        "disableField": {
+          "description": "Disables Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableFieldResponse"
+        },
+        "disableSelectionChoice": {
+          "description": "Disables a Choice within a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseDisableSelectionChoiceResponse"
+        },
+        "enableField": {
+          "description": "Enables Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableFieldResponse"
+        },
+        "enableSelectionChoice": {
+          "description": "Enables a Choice within a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseEnableSelectionChoiceResponse"
+        },
+        "updateField": {
+          "description": "Updates basic properties of a Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldPropertiesResponse"
+        },
+        "updateFieldType": {
+          "description": "Update Field type and/or type options.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldTypeResponse"
+        },
+        "updateLabel": {
+          "description": "Updated basic properties of a Label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateLabelPropertiesResponse"
+        },
+        "updateSelectionChoiceProperties": {
+          "description": "Updates a Choice within a Selection Field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldPropertiesResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldPropertiesResponse",
+      "description": "Response following update to Field properties.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "priority": {
+          "description": "The priority of the updated field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldTypeResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateFieldTypeResponse",
+      "description": "Response following update to Field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateLabelPropertiesResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateLabelPropertiesResponse",
+      "description": "Response following update to Label properties.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse",
+      "description": "Response following update to Selection Choice properties.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "priority": {
+          "description": "The priority of the updated choice. The priority may change from what was specified to assure contiguous priorities between choices (1-n).",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaDisableLabelRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaDisableLabelRequest",
+      "description": "Request to deprecate a published Label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disabledPolicy": {
+          "description": "Disabled policy to use.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLifecycleDisabledPolicy"
+        },
+        "languageCode": {
+          "description": "The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updateMask": {
+          "description": "The fields that should be updated. At least one field must be specified. The root `disabled_policy` is implied and should not be specified. A single `*` can be used as short-hand for updating every field.",
+          "type": "string",
+          "format": "google-fieldmask",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "writeControl": {
+          "description": "Provides control over how write requests are executed. Defaults to unset, which means last write wins.",
+          "$ref": "GoogleAppsDriveLabelsV2betaWriteControl"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaEnableLabelRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaEnableLabelRequest",
+      "description": "Request to enable a label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "languageCode": {
+          "description": "The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "writeControl": {
+          "description": "Provides control over how write requests are executed. Defaults to unset, which means last write wins.",
+          "$ref": "GoogleAppsDriveLabelsV2betaWriteControl"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaField": {
+      "id": "GoogleAppsDriveLabelsV2betaField",
+      "description": "Defines a field that has a display name, data type, and other configuration options. This field defines the kind of metadata that may be set on a Drive item.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appliedCapabilities": {
+          "description": "Output only. The capabilities this user has on this field and its value when the label is applied on Drive items.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldAppliedCapabilities"
+        },
+        "createTime": {
+          "description": "Output only. The time this field was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "creator": {
+          "description": "Output only. The user who created this field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "dateOptions": {
+          "description": "Date field options.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldDateOptions"
+        },
+        "disableTime": {
+          "description": "Output only. The time this field was disabled. This value has no meaning when the field is not disabled.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "disabler": {
+          "description": "Output only. The user who disabled this field. This value has no meaning when the field is not disabled.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "displayHints": {
+          "description": "Output only. UI display hints for rendering a field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldDisplayHints"
+        },
+        "id": {
+          "description": "Output only. The key of a field, unique within a label or library. This value is autogenerated. Matches the regex: `([a-zA-Z0-9])+`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "integerOptions": {
+          "description": "Integer field options.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldIntegerOptions"
+        },
+        "lifecycle": {
+          "description": "Output only. The lifecycle of this field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLifecycle"
+        },
+        "lockStatus": {
+          "description": "Output only. The LockStatus of this field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLockStatus"
+        },
+        "properties": {
+          "description": "The basic properties of the field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldProperties"
+        },
+        "publisher": {
+          "description": "Output only. The user who published this field. This value has no meaning when the field is not published.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "queryKey": {
+          "description": "Output only. The key to use when constructing Drive search queries to find files based on values defined for this field on files. For example, \"`{query_key}` > 2001-01-01\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "schemaCapabilities": {
+          "description": "Output only. The capabilities this user has when editing this field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSchemaCapabilities"
+        },
+        "selectionOptions": {
+          "description": "Selection field options.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptions"
+        },
+        "textOptions": {
+          "description": "Text field options.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldTextOptions"
+        },
+        "updateTime": {
+          "description": "Output only. The time this field was updated.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updater": {
+          "description": "Output only. The user who modified this field.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "userOptions": {
+          "description": "User field options.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldUserOptions"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldAppliedCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldAppliedCapabilities",
+      "description": "The capabilities related to this field on applied metadata.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canRead": {
+          "description": "Whether the user can read related applied metadata on items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canSearch": {
+          "description": "Whether the user can search for Drive items referencing this field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canWrite": {
+          "description": "Whether the user can set this field on Drive items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldDateOptions": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldDateOptions",
+      "description": "Options for the date field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dateFormat": {
+          "description": "Output only. ICU date format.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "dateFormatType": {
+          "description": "Localized date formatting option. Field values are rendered in this format according to their locale.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "DATE_FORMAT_UNSPECIFIED",
+            "LONG_DATE",
+            "SHORT_DATE"
+          ],
+          "enumDescriptions": [
+            "Date format unspecified.",
+            "Includes full month name. For example, January 12, 1999 (MMMM d, y)",
+            "Short, numeric, representation. For example, 12/13/99 (M/d/yy)"
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxValue": {
+          "description": "Output only. Maximum valid value (year, month, day).",
+          "$ref": "GoogleTypeDate"
+        },
+        "minValue": {
+          "description": "Output only. Minimum valid value (year, month, day).",
+          "$ref": "GoogleTypeDate"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldDisplayHints": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldDisplayHints",
+      "description": "UI display hints for rendering a field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disabled": {
+          "description": "Whether the field should be shown in the UI as disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hiddenInSearch": {
+          "description": "This field should be hidden in the search menu when searching for Drive items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "required": {
+          "description": "Whether the field should be shown as required in the UI.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shownInApply": {
+          "description": "This field should be shown in the apply menu when applying values to a Drive item.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldIntegerOptions": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldIntegerOptions",
+      "description": "Options for the Integer field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxValue": {
+          "description": "Output only. The maximum valid value for the integer field.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minValue": {
+          "description": "Output only. The minimum valid value for the integer field.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldLimits",
+      "description": "Field constants governing the structure of a Field; such as, the maximum title length, minimum and maximum field values or length, etc.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "dateLimits": {
+          "description": "Date Field limits.",
+          "$ref": "GoogleAppsDriveLabelsV2betaDateLimits"
+        },
+        "integerLimits": {
+          "description": "Integer Field limits.",
+          "$ref": "GoogleAppsDriveLabelsV2betaIntegerLimits"
+        },
+        "longTextLimits": {
+          "description": "Long text Field limits.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLongTextLimits"
+        },
+        "maxDescriptionLength": {
+          "description": "Limits for Field description, also called help text.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxDisplayNameLength": {
+          "description": "Limits for Field title.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxIdLength": {
+          "description": "Max length for the id.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "selectionLimits": {
+          "description": "Selection Field limits.",
+          "$ref": "GoogleAppsDriveLabelsV2betaSelectionLimits"
+        },
+        "textLimits": {
+          "description": "The relevant limits for the specified Field.Type. Text Field limits.",
+          "$ref": "GoogleAppsDriveLabelsV2betaTextLimits"
+        },
+        "userLimits": {
+          "description": "User Field limits.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserLimits"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldListOptions": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldListOptions",
+      "description": "Options for a multi-valued variant of an associated field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxEntries": {
+          "description": "Maximum number of entries permitted.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldLongTextOptions": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldLongTextOptions",
+      "description": "Options the Long Text field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxLength": {
+          "description": "Output only. The maximum valid length of values for the text field.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minLength": {
+          "description": "Output only. The minimum valid length of values for the text field.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldProperties": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldProperties",
+      "description": "The basic properties of the field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "displayName": {
+          "description": "Required. The display text to show in the UI identifying this field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "insertBeforeField": {
+          "description": "Input only. Insert or move this field before the indicated field. If empty, the field is placed at the end of the list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "required": {
+          "description": "Whether the field should be marked as required.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldSchemaCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldSchemaCapabilities",
+      "description": "The capabilities related to this field when editing the field.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canDelete": {
+          "description": "Whether the user can delete this field. The user must have permission and the field must be deprecated.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canDisable": {
+          "description": "Whether the user can disable this field. The user must have permission and this field must not already be disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canEnable": {
+          "description": "Whether the user can enable this field. The user must have permission and this field must be disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canUpdate": {
+          "description": "Whether the user can change this field.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldSelectionOptions": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldSelectionOptions",
+      "description": "Options for the selection field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "choices": {
+          "description": "The options available for this selection field. The list order is consistent, and modified with `insert_before_choice`.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoice"
+          }
+        },
+        "listOptions": {
+          "description": "When specified, indicates this field supports a list of values. Once the field is published, this cannot be changed.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldListOptions"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoice": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoice",
+      "description": "Selection field choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appliedCapabilities": {
+          "description": "Output only. The capabilities related to this choice on applied metadata.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceAppliedCapabilities"
+        },
+        "createTime": {
+          "description": "Output only. The time this choice was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "creator": {
+          "description": "Output only. The user who created this choice.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "disableTime": {
+          "description": "Output only. The time this choice was disabled. This value has no meaning when the choice is not disabled.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "disabler": {
+          "description": "Output only. The user who disabled this choice. This value has no meaning when the option is not disabled.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "displayHints": {
+          "description": "Output only. UI display hints for rendering a choice.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceDisplayHints"
+        },
+        "id": {
+          "description": "The unique value of the choice. This ID is autogenerated. Matches the regex: `([a-zA-Z0-9_])+`.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lifecycle": {
+          "description": "Output only. Lifecycle of the choice.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLifecycle"
+        },
+        "lockStatus": {
+          "description": "Output only. The LockStatus of this choice.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLockStatus"
+        },
+        "properties": {
+          "description": "Basic properties of the choice.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceProperties"
+        },
+        "publishTime": {
+          "description": "Output only. The time this choice was published. This value has no meaning when the choice is not published.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "publisher": {
+          "description": "Output only. The user who published this choice. This value has no meaning when the choice is not published.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "schemaCapabilities": {
+          "description": "Output only. The capabilities related to this option when editing the option.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceSchemaCapabilities"
+        },
+        "updateTime": {
+          "description": "Output only. The time this choice was updated last.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "updater": {
+          "description": "Output only. The user who updated this choice last.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceAppliedCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceAppliedCapabilities",
+      "description": "The capabilities related to this choice on applied metadata.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canRead": {
+          "description": "Whether the user can read related applied metadata on items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canSearch": {
+          "description": "Whether the user can use this choice in search queries.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canSelect": {
+          "description": "Whether the user can select this choice on an item.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceDisplayHints": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceDisplayHints",
+      "description": "UI display hints for rendering an option.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "badgeColors": {
+          "description": "The colors to use for the badge. Changed to Google Material colors based on the chosen `properties.badge_config.color`.",
+          "$ref": "GoogleAppsDriveLabelsV2betaBadgeColors"
+        },
+        "badgePriority": {
+          "description": "The priority of this badge. Used to compare and sort between multiple badges. A lower number means the badge should be shown first. When a badging configuration is not present, this will be 0. Otherwise, this will be set to `BadgeConfig.priority_override` or the default heuristic which prefers creation date of the label, and field and option priority.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "darkBadgeColors": {
+          "description": "The dark-mode color to use for the badge. Changed to Google Material colors based on the chosen `properties.badge_config.color`.",
+          "$ref": "GoogleAppsDriveLabelsV2betaBadgeColors"
+        },
+        "disabled": {
+          "description": "Whether the option should be shown in the UI as disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hiddenInSearch": {
+          "description": "This option should be hidden in the search menu when searching for Drive items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shownInApply": {
+          "description": "This option should be shown in the apply menu when applying values to a Drive item.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceProperties": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceProperties",
+      "description": "Basic properties of the choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "badgeConfig": {
+          "description": "The badge configuration for this choice. When set, the label that owns this choice is considered a \"badged label\".",
+          "$ref": "GoogleAppsDriveLabelsV2betaBadgeConfig"
+        },
+        "description": {
+          "description": "The description of this label.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "displayName": {
+          "description": "Required. The display text to show in the UI identifying this field.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "insertBeforeChoice": {
+          "description": "Input only. Insert or move this choice before the indicated choice. If empty, the choice is placed at the end of the list.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceSchemaCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldSelectionOptionsChoiceSchemaCapabilities",
+      "description": "The capabilities related to this choice when editing the choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canDelete": {
+          "description": "Whether the user can delete this choice.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canDisable": {
+          "description": "Whether the user can disable this choice.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canEnable": {
+          "description": "Whether the user can enable this choice.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canUpdate": {
+          "description": "Whether the user can update this choice.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldTextOptions": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldTextOptions",
+      "description": "Options for the Text field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxLength": {
+          "description": "Output only. The maximum valid length of values for the text field.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minLength": {
+          "description": "Output only. The minimum valid length of values for the text field.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaFieldUserOptions": {
+      "id": "GoogleAppsDriveLabelsV2betaFieldUserOptions",
+      "description": "Options for the user field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "listOptions": {
+          "description": "When specified, indicates that this field supports a list of values. Once the field is published, this cannot be changed.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldListOptions"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaIntegerLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaIntegerLimits",
+      "description": "Limits for integer Field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxValue": {
+          "description": "Maximum value for an integer Field type.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minValue": {
+          "description": "Minimum value for an integer Field type.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabel": {
+      "id": "GoogleAppsDriveLabelsV2betaLabel",
+      "description": "A label defines a taxonomy that can be applied to Drive items in order to organize and search across items. Labels can be simple strings, or can contain fields that describe additional metadata that can be further used to organize and search Drive items.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "appliedCapabilities": {
+          "description": "Output only. The capabilities related to this label on applied metadata.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelAppliedCapabilities"
+        },
+        "appliedLabelPolicy": {
+          "description": "Output only. Behavior of this label when it's applied to Drive items.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelAppliedLabelPolicy"
+        },
+        "createTime": {
+          "description": "Output only. The time this label was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "creator": {
+          "description": "Output only. The user who created this label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "disableTime": {
+          "description": "Output only. The time this label was disabled. This value has no meaning when the label is not disabled.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "disabler": {
+          "description": "Output only. The user who disabled this label. This value has no meaning when the label is not disabled.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "displayHints": {
+          "description": "Output only. UI display hints for rendering the label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelDisplayHints"
+        },
+        "fields": {
+          "description": "List of fields in descending priority order.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaField"
+          }
+        },
+        "id": {
+          "description": "Output only. Globally unique identifier of this label. ID makes up part of the label `name`, but unlike `name`, ID is consistent between revisions. Matches the regex: `([a-zA-Z0-9])+`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "labelType": {
+          "description": "Required. The type of label.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LABEL_TYPE_UNSPECIFIED",
+            "SHARED",
+            "ADMIN"
+          ],
+          "enumDescriptions": [
+            "Unknown label type.",
+            "Shared labels may be shared with users to apply to Drive items.",
+            "Admin-owned label. Only creatable and editable by admins. Supports some additional admin-only features."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "learnMoreUri": {
+          "description": "Custom URL to present to users to allow them to learn more about this label and how it should be used.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "lifecycle": {
+          "description": "Output only. The lifecycle state of the label including whether it's published, deprecated, and has draft changes.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLifecycle"
+        },
+        "lockStatus": {
+          "description": "Output only. The LockStatus of this label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLockStatus"
+        },
+        "name": {
+          "description": "Output only. Resource name of the label. Will be in the form of either: `labels/{id}` or `labels/{id}@{revision_id}` depending on the request. See `id` and `revision_id` below.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "properties": {
+          "description": "Required. The basic properties of the label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelProperties"
+        },
+        "publishTime": {
+          "description": "Output only. The time this label was published. This value has no meaning when the label is not published.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "publisher": {
+          "description": "Output only. The user who published this label. This value has no meaning when the label is not published.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "revisionCreateTime": {
+          "description": "Output only. The time this label revision was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "revisionCreator": {
+          "description": "Output only. The user who created this label revision.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "revisionId": {
+          "description": "Output only. Revision ID of the label. Revision ID might be part of the label `name` depending on the request issued. A new revision is created whenever revisioned properties of a label are changed. Matches the regex: `([a-zA-Z0-9])+`",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "schemaCapabilities": {
+          "description": "Output only. The capabilities the user has on this label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelSchemaCapabilities"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelAppliedCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelAppliedCapabilities",
+      "description": "The capabilities a user has on this label's applied metadata.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canApply": {
+          "description": "Whether the user can apply this label to items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canRead": {
+          "description": "Whether the user can read applied metadata related to this label.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canRemove": {
+          "description": "Whether the user can remove this label from items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelAppliedLabelPolicy": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelAppliedLabelPolicy",
+      "description": "Behavior of this label when it's applied to Drive items.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "copyMode": {
+          "description": "Indicates how the applied label and field values should be copied when a Drive item is copied.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "COPY_MODE_UNSPECIFIED",
+            "DO_NOT_COPY",
+            "ALWAYS_COPY",
+            "COPY_APPLIABLE"
+          ],
+          "enumDescriptions": [
+            "Copy mode unspecified.",
+            "The applied label and field values are not copied by default when the Drive item it's applied to is copied.",
+            "The applied label and field values are always copied when the Drive item it's applied to is copied. Only admins can use this mode.",
+            "The applied label and field values are copied if the label is appliable by the user making the copy."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelDisplayHints": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelDisplayHints",
+      "description": "UI display hints for rendering the label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disabled": {
+          "description": "Whether the label should be shown in the UI as disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "hiddenInSearch": {
+          "description": "This label should be hidden in the search menu when searching for Drive items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "priority": {
+          "description": "Order to display label in a list.",
+          "type": "string",
+          "format": "int64",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "shownInApply": {
+          "description": "This label should be shown in the apply menu when applying values to a Drive item.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelLimits",
+      "description": "Label constraints governing the structure of a Label; such as, the maximum number of Fields allowed and maximum length of the label title.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "fieldLimits": {
+          "description": "The limits for Fields.",
+          "$ref": "GoogleAppsDriveLabelsV2betaFieldLimits"
+        },
+        "maxDeletedFields": {
+          "description": "The maximum number of published Fields that can be deleted.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxDescriptionLength": {
+          "description": "The maximum number of characters allowed for the description.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxDraftRevisions": {
+          "description": "The maximum number of draft revisions that will be kept before deleting old drafts.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxFields": {
+          "description": "The maximum number of Fields allowed within the label.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxTitleLength": {
+          "description": "The maximum number of characters allowed for the title.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Resource name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelLock": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelLock",
+      "description": "A Lock that can be applied to a Label, Field, or Choice.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "capabilities": {
+          "description": "Output only. The user's capabilities on this LabelLock.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelLockCapabilities"
+        },
+        "choiceId": {
+          "description": "The ID of the Selection Field Choice that should be locked. If present, `field_id` must also be present.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "createTime": {
+          "description": "Output only. The time this LabelLock was created.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "creator": {
+          "description": "Output only. The user whose credentials were used to create the LabelLock. This will not be present if no user was responsible for creating the LabelLock.",
+          "$ref": "GoogleAppsDriveLabelsV2betaUserInfo"
+        },
+        "deleteTime": {
+          "description": "Output only. A timestamp indicating when this LabelLock was scheduled for deletion. This will be present only if this LabelLock is in the DELETING state.",
+          "type": "string",
+          "format": "google-datetime",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "fieldId": {
+          "description": "The ID of the Field that should be locked. Empty if the whole Label should be locked.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Output only. Resource name of this LabelLock.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "Output only. This LabelLock's state.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "ACTIVE",
+            "DELETING"
+          ],
+          "enumDescriptions": [
+            "Unknown state.",
+            "The LabelLock is active and is being enforced by the server.",
+            "The LabelLock is being deleted. The LabelLock will continue to be enforced by the server until it has been fully removed."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelLockCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelLockCapabilities",
+      "description": "A description of a user's capabilities on a LabelLock.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canViewPolicy": {
+          "description": "True if the user is authorized to view the policy.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelPermission": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelPermission",
+      "description": "The permission that applies to a principal (user, group, audience) on a label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "audience": {
+          "description": "Audience to grant a role to. The magic value of `audiences/default` may be used to apply the role to the default audience in the context of the organization that owns the Label.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "email": {
+          "description": "Specifies the email address for a user or group pricinpal. Not populated for audience principals. User and Group permissions may only be inserted using email address. On update requests, if email address is specified, no principal should be specified.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "group": {
+          "description": "Group resource name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Resource name of this permission.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "person": {
+          "description": "Person resource name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "role": {
+          "description": "The role the principal should have.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LABEL_ROLE_UNSPECIFIED",
+            "READER",
+            "APPLIER",
+            "ORGANIZER",
+            "EDITOR"
+          ],
+          "enumDescriptions": [
+            "Unknown role.",
+            "A reader can read the label and associated metadata applied to Drive items.",
+            "An applier can write associated metadata on Drive items in which they also have write access to. Implies `READER`.",
+            "An organizer can pin this label in shared drives they manage and add new appliers to the label.",
+            "Editors can make any update including deleting the label which also deletes the associated Drive item metadata. Implies `APPLIER`."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelProperties": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelProperties",
+      "description": "Basic properties of the label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "description": {
+          "description": "The description of the label.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "title": {
+          "description": "Required. Title of the label.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLabelSchemaCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaLabelSchemaCapabilities",
+      "description": "The capabilities related to this label when editing the label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canDelete": {
+          "description": "Whether the user can delete this label. The user must have permission and the label must be disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canDisable": {
+          "description": "Whether the user can disable this label. The user must have permission and this label must not already be disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canEnable": {
+          "description": "Whether the user can enable this label. The user must have permission and this label must be disabled.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canUpdate": {
+          "description": "Whether the user can change this label.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLifecycle": {
+      "id": "GoogleAppsDriveLabelsV2betaLifecycle",
+      "description": "The lifecycle state of an object, such as label, field, or choice. The lifecycle enforces the following transitions: * `UNPUBLISHED_DRAFT` (starting state) * `UNPUBLISHED_DRAFT` -> `PUBLISHED` * `UNPUBLISHED_DRAFT` -> (Deleted) * `PUBLISHED` -> `DISABLED` * `DISABLED` -> `PUBLISHED` * `DISABLED` -> (Deleted) The published and disabled states have some distinct characteristics: * Published—Some kinds of changes might be made to an object in this state, in which case `has_unpublished_changes` will be true. Also, some kinds of changes are not permitted. Generally, any change that would invalidate or cause new restrictions on existing metadata related to the label are rejected. * Disabled—When disabled, the configured `DisabledPolicy` takes effect.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "disabledPolicy": {
+          "description": "The policy that governs how to show a disabled label, field, or selection choice.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLifecycleDisabledPolicy"
+        },
+        "hasUnpublishedChanges": {
+          "description": "Output only. Whether the object associated with this lifecycle has unpublished changes.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "state": {
+          "description": "Output only. The state of the object associated with this lifecycle.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "STATE_UNSPECIFIED",
+            "UNPUBLISHED_DRAFT",
+            "PUBLISHED",
+            "DISABLED",
+            "DELETED"
+          ],
+          "enumDescriptions": [
+            "Unknown State.",
+            "The initial state of an object. Once published, the object can never return to this state. Once an object is published, certain kinds of changes are no longer permitted.",
+            "The object has been published. The object might have unpublished draft changes as indicated by `has_unpublished_changes`.",
+            "The object has been published and has since been disabled. The object might have unpublished draft changes as indicated by `has_unpublished_changes`.",
+            "The object has been deleted."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLifecycleDisabledPolicy": {
+      "id": "GoogleAppsDriveLabelsV2betaLifecycleDisabledPolicy",
+      "description": "The policy that governs how to treat a disabled label, field, or selection choice in different contexts.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "hideInSearch": {
+          "description": "Whether to hide this disabled object in the search menu for Drive items. * When `false`, the object is generally shown in the UI as disabled but it appears in the search results when searching for Drive items. * When `true`, the object is generally hidden in the UI when searching for Drive items.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "showInApply": {
+          "description": "Whether to show this disabled object in the apply menu on Drive items. * When `true`, the object is generally shown in the UI as disabled and is unselectable. * When `false`, the object is generally hidden in the UI.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaListLabelLocksResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaListLabelLocksResponse",
+      "description": "The response to a ListLabelLocksRequest.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "labelLocks": {
+          "description": "LabelLocks.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabelLock"
+          }
+        },
+        "nextPageToken": {
+          "description": "The token of the next page in the response.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaListLabelPermissionsResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaListLabelPermissionsResponse",
+      "description": "Response for listing the permissions on a Label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "labelPermissions": {
+          "description": "Label permissions.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+          }
+        },
+        "nextPageToken": {
+          "description": "The token of the next page in the response.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaListLabelsResponse": {
+      "id": "GoogleAppsDriveLabelsV2betaListLabelsResponse",
+      "description": "Response for listing Labels.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "labels": {
+          "description": "Labels.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          }
+        },
+        "nextPageToken": {
+          "description": "The token of the next page in the response.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaListLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaListLimits",
+      "description": "Limits for list-variant of a Field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxEntries": {
+          "description": "Maximum number of values allowed for the Field type.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLockStatus": {
+      "id": "GoogleAppsDriveLabelsV2betaLockStatus",
+      "description": "Contains information about whether a label component should be considered locked.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "locked": {
+          "description": "Output only. Indicates whether this label component is the (direct) target of a LabelLock. A label component can be implicitly locked even if it's not the direct target of a LabelLock, in which case this field is set to false.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaLongTextLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaLongTextLimits",
+      "description": "Limits for long text Field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxLength": {
+          "description": "Maximum length allowed for a long text Field type.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minLength": {
+          "description": "Minimum length allowed for a long text Field type.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaPublishLabelRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaPublishLabelRequest",
+      "description": "Request to publish a label.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "languageCode": {
+          "description": "The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "writeControl": {
+          "description": "Provides control over how write requests are executed. Defaults to unset, which means last write wins.",
+          "$ref": "GoogleAppsDriveLabelsV2betaWriteControl"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaSelectionLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaSelectionLimits",
+      "description": "Limits for selection Field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "listLimits": {
+          "description": "Limits for list-variant of a Field type.",
+          "$ref": "GoogleAppsDriveLabelsV2betaListLimits"
+        },
+        "maxChoices": {
+          "description": "The max number of choices.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxDeletedChoices": {
+          "description": "Maximum number of deleted choices.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxDisplayNameLength": {
+          "description": "Maximum length for display name.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxIdLength": {
+          "description": "Maximum ID length for a selection options.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaTextLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaTextLimits",
+      "description": "Limits for text Field type.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "maxLength": {
+          "description": "Maximum length allowed for a text Field type.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "minLength": {
+          "description": "Minimum length allowed for a text Field type.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaUpdateLabelCopyModeRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaUpdateLabelCopyModeRequest",
+      "description": "Request to update the `CopyMode` of the given Label. Changes to this policy are not revisioned, do not require publishing, and take effect immediately. \\",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "copyMode": {
+          "description": "Required. Indicates how the applied Label, and Field values should be copied when a Drive item is copied.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "COPY_MODE_UNSPECIFIED",
+            "DO_NOT_COPY",
+            "ALWAYS_COPY",
+            "COPY_APPLIABLE"
+          ],
+          "enumDescriptions": [
+            "Copy mode unspecified.",
+            "The applied label and field values are not copied by default when the Drive item it's applied to is copied.",
+            "The applied label and field values are always copied when the Drive item it's applied to is copied. Only admins can use this mode.",
+            "The applied label and field values are copied if the label is appliable by the user making the copy."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "languageCode": {
+          "description": "The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "view": {
+          "description": "When specified, only certain fields belonging to the indicated view will be returned.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LABEL_VIEW_BASIC",
+            "LABEL_VIEW_FULL"
+          ],
+          "enumDescriptions": [
+            "Implies the field mask: `name,id,revision_id,label_type,properties.*`",
+            "All possible fields."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaUpdateLabelPermissionRequest": {
+      "id": "GoogleAppsDriveLabelsV2betaUpdateLabelPermissionRequest",
+      "description": "Updates a Label Permission. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "labelPermission": {
+          "description": "Required. The permission to create or update on the Label.",
+          "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+        },
+        "parent": {
+          "description": "Required. The parent Label resource name.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "useAdminAccess": {
+          "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaUserCapabilities": {
+      "id": "GoogleAppsDriveLabelsV2betaUserCapabilities",
+      "description": "The capabilities of a user.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "canAccessLabelManager": {
+          "description": "Output only. Whether the user is allowed access to the label manager.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canAdministrateLabels": {
+          "description": "Output only. Whether the user is an administrator for the shared labels feature.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canCreateAdminLabels": {
+          "description": "Output only. Whether the user is allowed to create new admin labels.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "canCreateSharedLabels": {
+          "description": "Output only. Whether the user is allowed to create new shared labels.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "name": {
+          "description": "Output only. Resource name for the user capabilities.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaUserInfo": {
+      "id": "GoogleAppsDriveLabelsV2betaUserInfo",
+      "description": "Information about a user.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "person": {
+          "description": "The identifier for this user that can be used with the People API to get more information. For example, people/12345678.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaUserLimits": {
+      "id": "GoogleAppsDriveLabelsV2betaUserLimits",
+      "description": "Limits for Field.Type.USER.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "listLimits": {
+          "description": "Limits for list-variant of a Field type.",
+          "$ref": "GoogleAppsDriveLabelsV2betaListLimits"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleAppsDriveLabelsV2betaWriteControl": {
+      "id": "GoogleAppsDriveLabelsV2betaWriteControl",
+      "description": "Provides control over how write requests are executed. When not specified, the last write wins.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "requiredRevisionId": {
+          "description": "The revision_id of the label that the write request will be applied to. If this is not the latest revision of the label, the request will not be processed and will return a 400 Bad Request error.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleProtobufEmpty": {
+      "id": "GoogleProtobufEmpty",
+      "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {},
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleTypeColor": {
+      "id": "GoogleTypeColor",
+      "description": "Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to/from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't carry information about the absolute color space that should be used to interpret the RGB value (e.g. sRGB, Adobe RGB, DCI-P3, BT.2020, etc.). By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most 1e-5. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ...",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "alpha": {
+          "description": "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "blue": {
+          "description": "The amount of blue in the color as a value in the interval [0, 1].",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "green": {
+          "description": "The amount of green in the color as a value in the interval [0, 1].",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "red": {
+          "description": "The amount of red in the color as a value in the interval [0, 1].",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "GoogleTypeDate": {
+      "id": "GoogleTypeDate",
+      "description": "Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "day": {
+          "description": "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "month": {
+          "description": "Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "year": {
+          "description": "Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.",
+          "type": "integer",
+          "format": "int32",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    }
+  },
+  "resources": {
+    "labels": {
+      "resources": {
+        "locks": {
+          "resources": {},
+          "methods": {
+            "list": {
+              "id": "drivelabels.labels.locks.list",
+              "path": "v2beta/{+parent}/locks",
+              "httpMethod": "GET",
+              "description": "Lists the LabelLocks on a Label.",
+              "parameters": {
+                "pageSize": {
+                  "description": "Maximum number of Locks to return per page. Default: 100. Max: 200.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "The token of the page to return.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "parent": {
+                  "description": "Required. Label on which Locks are applied. Format: labels/{label}",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^labels/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleAppsDriveLabelsV2betaListLabelLocksResponse"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        },
+        "permissions": {
+          "resources": {},
+          "methods": {
+            "batchDelete": {
+              "id": "drivelabels.labels.permissions.batchDelete",
+              "path": "v2beta/{+parent}/permissions:batchDelete",
+              "httpMethod": "POST",
+              "description": "Deletes Label permissions. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+              "parameters": {
+                "parent": {
+                  "description": "Required. The parent Label resource name shared by all permissions being deleted. Format: labels/{label} If this is set, the parent field in the UpdateLabelPermissionRequest messages must either be empty or match this field.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^labels/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": {
+                "$ref": "GoogleAppsDriveLabelsV2betaBatchDeleteLabelPermissionsRequest"
+              },
+              "response": {
+                "$ref": "GoogleProtobufEmpty"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "batchUpdate": {
+              "id": "drivelabels.labels.permissions.batchUpdate",
+              "path": "v2beta/{+parent}/permissions:batchUpdate",
+              "httpMethod": "POST",
+              "description": "Updates Label permissions. If a permission for the indicated principal doesn't exist, a new Label Permission is created, otherwise the existing permission is updated. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+              "parameters": {
+                "parent": {
+                  "description": "Required. The parent Label resource name shared by all permissions being updated. Format: labels/{label} If this is set, the parent field in the UpdateLabelPermissionRequest messages must either be empty or match this field.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^labels/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": {
+                "$ref": "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsRequest"
+              },
+              "response": {
+                "$ref": "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsResponse"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "create": {
+              "id": "drivelabels.labels.permissions.create",
+              "path": "v2beta/{+parent}/permissions",
+              "httpMethod": "POST",
+              "description": "Updates a Label's permissions. If a permission for the indicated principal doesn't exist, a new Label Permission is created, otherwise the existing permission is updated. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+              "parameters": {
+                "parent": {
+                  "description": "Required. The parent Label resource name on the Label Permission is created. Format: labels/{label}",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^labels/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "useAdminAccess": {
+                  "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "boolean",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": {
+                "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+              },
+              "response": {
+                "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "delete": {
+              "id": "drivelabels.labels.permissions.delete",
+              "path": "v2beta/{+name}",
+              "httpMethod": "DELETE",
+              "description": "Deletes a Label's permission. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+              "parameters": {
+                "name": {
+                  "description": "Required. Label Permission resource name.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^labels/[^/]+/permissions/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "useAdminAccess": {
+                  "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "boolean",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "name"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleProtobufEmpty"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            },
+            "list": {
+              "id": "drivelabels.labels.permissions.list",
+              "path": "v2beta/{+parent}/permissions",
+              "httpMethod": "GET",
+              "description": "Lists a Label's permissions.",
+              "parameters": {
+                "pageSize": {
+                  "description": "Maximum number of permissions to return per page. Default: 50. Max: 200.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "integer",
+                  "format": "int32",
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "pageToken": {
+                  "description": "The token of the page to return.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "parent": {
+                  "description": "Required. The parent Label resource name on which Label Permission are listed. Format: labels/{label}",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^labels/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "useAdminAccess": {
+                  "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "boolean",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": null,
+              "response": {
+                "$ref": "GoogleAppsDriveLabelsV2betaListLabelPermissionsResponse"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        },
+        "revisions": {
+          "resources": {
+            "locks": {
+              "resources": {},
+              "methods": {
+                "list": {
+                  "id": "drivelabels.labels.revisions.locks.list",
+                  "path": "v2beta/{+parent}/locks",
+                  "httpMethod": "GET",
+                  "description": "Lists the LabelLocks on a Label.",
+                  "parameters": {
+                    "pageSize": {
+                      "description": "Maximum number of Locks to return per page. Default: 100. Max: 200.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "The token of the page to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. Label on which Locks are applied. Format: labels/{label}",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^labels/[^/]+/revisions/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleAppsDriveLabelsV2betaListLabelLocksResponse"
+                  },
+                  "scopes": [],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            },
+            "permissions": {
+              "resources": {},
+              "methods": {
+                "batchDelete": {
+                  "id": "drivelabels.labels.revisions.permissions.batchDelete",
+                  "path": "v2beta/{+parent}/permissions:batchDelete",
+                  "httpMethod": "POST",
+                  "description": "Deletes Label permissions. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent Label resource name shared by all permissions being deleted. Format: labels/{label} If this is set, the parent field in the UpdateLabelPermissionRequest messages must either be empty or match this field.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^labels/[^/]+/revisions/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "GoogleAppsDriveLabelsV2betaBatchDeleteLabelPermissionsRequest"
+                  },
+                  "response": {
+                    "$ref": "GoogleProtobufEmpty"
+                  },
+                  "scopes": [],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "batchUpdate": {
+                  "id": "drivelabels.labels.revisions.permissions.batchUpdate",
+                  "path": "v2beta/{+parent}/permissions:batchUpdate",
+                  "httpMethod": "POST",
+                  "description": "Updates Label permissions. If a permission for the indicated principal doesn't exist, a new Label Permission is created, otherwise the existing permission is updated. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent Label resource name shared by all permissions being updated. Format: labels/{label} If this is set, the parent field in the UpdateLabelPermissionRequest messages must either be empty or match this field.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^labels/[^/]+/revisions/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsRequest"
+                  },
+                  "response": {
+                    "$ref": "GoogleAppsDriveLabelsV2betaBatchUpdateLabelPermissionsResponse"
+                  },
+                  "scopes": [],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "create": {
+                  "id": "drivelabels.labels.revisions.permissions.create",
+                  "path": "v2beta/{+parent}/permissions",
+                  "httpMethod": "POST",
+                  "description": "Updates a Label's permissions. If a permission for the indicated principal doesn't exist, a new Label Permission is created, otherwise the existing permission is updated. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+                  "parameters": {
+                    "parent": {
+                      "description": "Required. The parent Label resource name on the Label Permission is created. Format: labels/{label}",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^labels/[^/]+/revisions/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "useAdminAccess": {
+                      "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": {
+                    "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+                  },
+                  "response": {
+                    "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+                  },
+                  "scopes": [],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "delete": {
+                  "id": "drivelabels.labels.revisions.permissions.delete",
+                  "path": "v2beta/{+name}",
+                  "httpMethod": "DELETE",
+                  "description": "Deletes a Label's permission. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+                  "parameters": {
+                    "name": {
+                      "description": "Required. Label Permission resource name.",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^labels/[^/]+/revisions/[^/]+/permissions/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "useAdminAccess": {
+                      "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "name"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleProtobufEmpty"
+                  },
+                  "scopes": [],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                },
+                "list": {
+                  "id": "drivelabels.labels.revisions.permissions.list",
+                  "path": "v2beta/{+parent}/permissions",
+                  "httpMethod": "GET",
+                  "description": "Lists a Label's permissions.",
+                  "parameters": {
+                    "pageSize": {
+                      "description": "Maximum number of permissions to return per page. Default: 50. Max: 200.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "integer",
+                      "format": "int32",
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "pageToken": {
+                      "description": "The token of the page to return.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "parent": {
+                      "description": "Required. The parent Label resource name on which Label Permission are listed. Format: labels/{label}",
+                      "default": null,
+                      "location": "path",
+                      "required": true,
+                      "type": "string",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": "^labels/[^/]+/revisions/[^/]+$",
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    },
+                    "useAdminAccess": {
+                      "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+                      "default": null,
+                      "location": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "format": null,
+                      "minimum": null,
+                      "maximum": null,
+                      "pattern": null,
+                      "enum": [],
+                      "enumDescriptions": [],
+                      "repeated": false
+                    }
+                  },
+                  "parameterOrder": [
+                    "parent"
+                  ],
+                  "request": null,
+                  "response": {
+                    "$ref": "GoogleAppsDriveLabelsV2betaListLabelPermissionsResponse"
+                  },
+                  "scopes": [],
+                  "supportsMediaDownload": false,
+                  "useMediaDownloadService": false,
+                  "supportsSubscription": false,
+                  "supportsMediaUpload": false,
+                  "mediaUpload": null
+                }
+              }
+            }
+          },
+          "methods": {
+            "updatePermissions": {
+              "id": "drivelabels.labels.revisions.updatePermissions",
+              "path": "v2beta/{+parent}/permissions",
+              "httpMethod": "PATCH",
+              "description": "Updates a Label's permissions. If a permission for the indicated principal doesn't exist, a new Label Permission is created, otherwise the existing permission is updated. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+              "parameters": {
+                "parent": {
+                  "description": "Required. The parent Label resource name.",
+                  "default": null,
+                  "location": "path",
+                  "required": true,
+                  "type": "string",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": "^labels/[^/]+/revisions/[^/]+$",
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                },
+                "useAdminAccess": {
+                  "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+                  "default": null,
+                  "location": "query",
+                  "required": false,
+                  "type": "boolean",
+                  "format": null,
+                  "minimum": null,
+                  "maximum": null,
+                  "pattern": null,
+                  "enum": [],
+                  "enumDescriptions": [],
+                  "repeated": false
+                }
+              },
+              "parameterOrder": [
+                "parent"
+              ],
+              "request": {
+                "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+              },
+              "response": {
+                "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+              },
+              "scopes": [],
+              "supportsMediaDownload": false,
+              "useMediaDownloadService": false,
+              "supportsSubscription": false,
+              "supportsMediaUpload": false,
+              "mediaUpload": null
+            }
+          }
+        }
+      },
+      "methods": {
+        "create": {
+          "id": "drivelabels.labels.create",
+          "path": "v2beta/labels",
+          "httpMethod": "POST",
+          "description": "Creates a new Label.",
+          "parameters": {
+            "languageCode": {
+              "description": "The BCP-47 language code to use for evaluating localized Field labels in response. When not specified, values in the default configured language will be used.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "useAdminAccess": {
+              "description": "Set to `true` in order to use the user's admin privileges. The server will verify the user is an admin before allowing access.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          },
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delete": {
+          "id": "drivelabels.labels.delete",
+          "path": "v2beta/{+name}",
+          "httpMethod": "DELETE",
+          "description": "Permanently deletes a Label and related metadata on Drive Items. Once deleted, the Label and related Drive item metadata will be deleted. Only draft Labels, and disabled Labels may be deleted.",
+          "parameters": {
+            "name": {
+              "description": "Required. Label resource name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "useAdminAccess": {
+              "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "writeControl.requiredRevisionId": {
+              "description": "The revision_id of the label that the write request will be applied to. If this is not the latest revision of the label, the request will not be processed and will return a 400 Bad Request error.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "GoogleProtobufEmpty"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "delta": {
+          "id": "drivelabels.labels.delta",
+          "path": "v2beta/{+name}:delta",
+          "httpMethod": "POST",
+          "description": "Updates a single Label by applying a set of update requests resulting in a new draft revision. The batch update is all-or-nothing: If any of the update requests are invalid, no changes are applied. The resulting draft revision must be published before the changes may be used with Drive Items.",
+          "parameters": {
+            "name": {
+              "description": "Required. The resource name of the Label to update.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelRequest"
+          },
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaDeltaUpdateLabelResponse"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "disable": {
+          "id": "drivelabels.labels.disable",
+          "path": "v2beta/{+name}:disable",
+          "httpMethod": "POST",
+          "description": "Disable a published Label. Disabling a Label will result in a new disabled published revision based on the current published revision. If there is a draft revision, a new disabled draft revision will be created based on the latest draft revision. Older draft revisions will be deleted. Once disabled, a label may be deleted with `DeleteLabel`.",
+          "parameters": {
+            "name": {
+              "description": "Required. Label resource name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "GoogleAppsDriveLabelsV2betaDisableLabelRequest"
+          },
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "enable": {
+          "id": "drivelabels.labels.enable",
+          "path": "v2beta/{+name}:enable",
+          "httpMethod": "POST",
+          "description": "Enable a disabled Label and restore it to its published state. This will result in a new published revision based on the current disabled published revision. If there is an existing disabled draft revision, a new revision will be created based on that draft and will be enabled.",
+          "parameters": {
+            "name": {
+              "description": "Required. Label resource name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "GoogleAppsDriveLabelsV2betaEnableLabelRequest"
+          },
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "get": {
+          "id": "drivelabels.labels.get",
+          "path": "v2beta/{+name}",
+          "httpMethod": "GET",
+          "description": "Get a label by its resource name. Resource name may be any of: * `labels/{id}` - See `labels/{id}@latest` * `labels/{id}@latest` - Gets the latest revision of the label. * `labels/{id}@published` - Gets the current published revision of the label. * `labels/{id}@{revision_id}` - Gets the label at the specified revision ID.",
+          "parameters": {
+            "languageCode": {
+              "description": "The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language are used.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "name": {
+              "description": "Required. Label resource name. May be any of: * `labels/{id}` (equivalent to labels/{id}@latest) * `labels/{id}@latest` * `labels/{id}@published` * `labels/{id}@{revision_id}`",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "useAdminAccess": {
+              "description": "Set to `true` in order to use the user's admin credentials. The server verifies that the user is an admin for the label before allowing access.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "view": {
+              "description": "When specified, only certain fields belonging to the indicated view are returned.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [
+                "LABEL_VIEW_BASIC",
+                "LABEL_VIEW_FULL"
+              ],
+              "enumDescriptions": [
+                "Implies the field mask: `name,id,revision_id,label_type,properties.*`",
+                "All possible fields."
+              ],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "list": {
+          "id": "drivelabels.labels.list",
+          "path": "v2beta/labels",
+          "httpMethod": "GET",
+          "description": "List labels.",
+          "parameters": {
+            "languageCode": {
+              "description": "The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language are used.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "minimumRole": {
+              "description": "Specifies the level of access the user must have on the returned Labels. The minimum role a user must have on a label. Defaults to `READER`.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [
+                "LABEL_ROLE_UNSPECIFIED",
+                "READER",
+                "APPLIER",
+                "ORGANIZER",
+                "EDITOR"
+              ],
+              "enumDescriptions": [
+                "Unknown role.",
+                "A reader can read the label and associated metadata applied to Drive items.",
+                "An applier can write associated metadata on Drive items in which they also have write access to. Implies `READER`.",
+                "An organizer can pin this label in shared drives they manage and add new appliers to the label.",
+                "Editors can make any update including deleting the label which also deletes the associated Drive item metadata. Implies `APPLIER`."
+              ],
+              "repeated": false
+            },
+            "pageSize": {
+              "description": "Maximum number of labels to return per page. Default: 50. Max: 200.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "pageToken": {
+              "description": "The token of the page to return.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "publishedOnly": {
+              "description": "Whether to include only published labels in the results. * When `true`, only the current published label revisions are returned. Disabled labels are included. Returned label resource names reference the published revision (`labels/{id}/{revision_id}`). * When `false`, the current label revisions are returned, which might not be published. Returned label resource names don't reference a specific revision (`labels/{id}`).",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "useAdminAccess": {
+              "description": "Set to `true` in order to use the user's admin credentials. This will return all Labels within the customer.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "view": {
+              "description": "When specified, only certain fields belonging to the indicated view are returned.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [
+                "LABEL_VIEW_BASIC",
+                "LABEL_VIEW_FULL"
+              ],
+              "enumDescriptions": [
+                "Implies the field mask: `name,id,revision_id,label_type,properties.*`",
+                "All possible fields."
+              ],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaListLabelsResponse"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "publish": {
+          "id": "drivelabels.labels.publish",
+          "path": "v2beta/{+name}:publish",
+          "httpMethod": "POST",
+          "description": "Publish all draft changes to the Label. Once published, the Label may not return to its draft state. See `google.apps.drive.labels.v2.Lifecycle` for more information. Publishing a Label will result in a new published revision. All previous draft revisions will be deleted. Previous published revisions will be kept but are subject to automated deletion as needed. Once published, some changes are no longer permitted. Generally, any change that would invalidate or cause new restrictions on existing metadata related to the Label will be rejected. For example, the following changes to a Label will be rejected after the Label is published: * The label cannot be directly deleted. It must be disabled first, then deleted. * Field.FieldType cannot be changed. * Changes to Field validation options cannot reject something that was previously accepted. * Reducing the max entries.",
+          "parameters": {
+            "name": {
+              "description": "Required. Label resource name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "GoogleAppsDriveLabelsV2betaPublishLabelRequest"
+          },
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "updateLabelCopyMode": {
+          "id": "drivelabels.labels.updateLabelCopyMode",
+          "path": "v2beta/{+name}:updateLabelCopyMode",
+          "httpMethod": "POST",
+          "description": "Updates a Label's `CopyMode`. Changes to this policy are not revisioned, do not require publishing, and take effect immediately.",
+          "parameters": {
+            "name": {
+              "description": "Required. The resource name of the Label to update.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": {
+            "$ref": "GoogleAppsDriveLabelsV2betaUpdateLabelCopyModeRequest"
+          },
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabel"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        },
+        "updatePermissions": {
+          "id": "drivelabels.labels.updatePermissions",
+          "path": "v2beta/{+parent}/permissions",
+          "httpMethod": "PATCH",
+          "description": "Updates a Label's permissions. If a permission for the indicated principal doesn't exist, a new Label Permission is created, otherwise the existing permission is updated. Permissions affect the Label resource as a whole, are not revisioned, and do not require publishing.",
+          "parameters": {
+            "parent": {
+              "description": "Required. The parent Label resource name.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^labels/[^/]+$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            },
+            "useAdminAccess": {
+              "description": "Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the Label before allowing access.",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "boolean",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "parent"
+          ],
+          "request": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+          },
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabelPermission"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "limits": {
+      "resources": {},
+      "methods": {
+        "getLabel": {
+          "id": "drivelabels.limits.getLabel",
+          "path": "v2beta/limits/label",
+          "httpMethod": "GET",
+          "description": "Get the constraints on the structure of a Label; such as, the maximum number of Fields allowed and maximum length of the label title.",
+          "parameters": {
+            "name": {
+              "description": "Required. Label revision resource name Must be: \"limits/label\"",
+              "default": null,
+              "location": "query",
+              "required": false,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": null,
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [],
+          "request": null,
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaLabelLimits"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    },
+    "users": {
+      "resources": {},
+      "methods": {
+        "getCapabilities": {
+          "id": "drivelabels.users.getCapabilities",
+          "path": "v2beta/{+name}",
+          "httpMethod": "GET",
+          "description": "Gets the user capabilities.",
+          "parameters": {
+            "name": {
+              "description": "Required. The resource name of the user. Only \"users/me/capabilities\" is supported.",
+              "default": null,
+              "location": "path",
+              "required": true,
+              "type": "string",
+              "format": null,
+              "minimum": null,
+              "maximum": null,
+              "pattern": "^users/[^/]+/capabilities$",
+              "enum": [],
+              "enumDescriptions": [],
+              "repeated": false
+            }
+          },
+          "parameterOrder": [
+            "name"
+          ],
+          "request": null,
+          "response": {
+            "$ref": "GoogleAppsDriveLabelsV2betaUserCapabilities"
+          },
+          "scopes": [],
+          "supportsMediaDownload": false,
+          "useMediaDownloadService": false,
+          "supportsSubscription": false,
+          "supportsMediaUpload": false,
+          "mediaUpload": null
+        }
+      }
+    }
+  },
+  "methods": {}
+}

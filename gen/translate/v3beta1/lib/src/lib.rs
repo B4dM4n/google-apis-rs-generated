@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*detectLanguage*](resources/projects/struct.DetectLanguageRequestBuilder.html), [*getSupportedLanguages*](resources/projects/struct.GetSupportedLanguagesRequestBuilder.html), [*translateText*](resources/projects/struct.TranslateTextRequestBuilder.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*batchTranslateDocument*](resources/projects/locations/struct.BatchTranslateDocumentRequestBuilder.html), [*batchTranslateText*](resources/projects/locations/struct.BatchTranslateTextRequestBuilder.html), [*detectLanguage*](resources/projects/locations/struct.DetectLanguageRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*getSupportedLanguages*](resources/projects/locations/struct.GetSupportedLanguagesRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html), [*translateDocument*](resources/projects/locations/struct.TranslateDocumentRequestBuilder.html), [*translateText*](resources/projects/locations/struct.TranslateTextRequestBuilder.html)\n    * [glossaries](resources/projects/locations/glossaries/struct.GlossariesActions.html)\n      * [*create*](resources/projects/locations/glossaries/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/glossaries/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/glossaries/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/glossaries/struct.ListRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*delete*](resources/projects/locations/operations/struct.DeleteRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html), [*wait*](resources/projects/locations/operations/struct.WaitRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -50,7 +51,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchDocumentOutputConfig {
-        #[doc = "Google Cloud Storage destination for output content. For every single input document (for example, gs://a/b/c.\\[extension\\]), we generate at most 2 * n output files. (n is the # of target_language_codes in the BatchTranslateDocumentRequest). While the input documents are being processed, we write/update an index file `index.csv` under `gcs_destination.output_uri_prefix` (for example, gs://translation_output/index.csv) The index file is generated/updated as new files are being translated. The format is: input_document,target_language_code,translation_output,error_output, glossary_translation_output,glossary_error_output `input_document` is one file we matched using gcs_source.input_uri. `target_language_code` is provided in the request. `translation_output` contains the translations. (details provided below) `error_output` contains the error message during processing of the file. Both translations_file and errors_file could be empty strings if we have no content to output. `glossary_translation_output` and `glossary_error_output` are the translated output/error when we apply glossaries. They could also be empty if we have no content to output. Once a row is present in index.csv, the input/output matching never changes. Callers should also expect all the content in input_file are processed and ready to be consumed (that is, no partial output file is written). Since index.csv will be keeping updated during the process, please make sure there is no custom retention policy applied on the output bucket that may avoid file updating. (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy) The naming format of translation output files follows (for target language code \\[trg\\]): `translation_output`: gs://translation_output/a_b_c\\_\\[trg\\]*translation.\\[extension\\] `glossary_translation_output`: gs://translation_test/a_b_c*\\[trg\\]*glossary_translation.\\[extension\\] The output document will maintain the same file format as the input document. The naming format of error output files follows (for target language code \\[trg\\]): `error_output`: gs://translation_test/a_b_c*\\[trg\\]*errors.txt `glossary_error_output`: gs://translation_test/a_b_c*\\[trg\\]\\_glossary_translation.txt The error output is a txt file containing error details."]
+        #[doc = "Google Cloud Storage destination for output content. For every single input document (for example, gs://a/b/c.\\[extension\\]), we generate at most 2 * n output files. (n is the # of target_language_codes in the BatchTranslateDocumentRequest). While the input documents are being processed, we write/update an index file `index.csv` under `gcs_destination.output_uri_prefix` (for example, gs://translation_output/index.csv) The index file is generated/updated as new files are being translated. The format is: input_document,target_language_code,translation_output,error_output, glossary_translation_output,glossary_error_output `input_document` is one file we matched using gcs_source.input_uri. `target_language_code` is provided in the request. `translation_output` contains the translations. (details provided below) `error_output` contains the error message during processing of the file. Both translations_file and errors_file could be empty strings if we have no content to output. `glossary_translation_output` and `glossary_error_output` are the translated output/error when we apply glossaries. They could also be empty if we have no content to output. Once a row is present in index.csv, the input/output matching never changes. Callers should also expect all the content in input_file are processed and ready to be consumed (that is, no partial output file is written). Since index.csv will be keeping updated during the process, please make sure there is no custom retention policy applied on the output bucket that may avoid file updating. (https://cloud.google.com/storage/docs/bucket-lock#retention-policy) The naming format of translation output files follows (for target language code \\[trg\\]): `translation_output`: gs://translation_output/a_b_c\\_\\[trg\\]*translation.\\[extension\\] `glossary_translation_output`: gs://translation_test/a_b_c*\\[trg\\]*glossary_translation.\\[extension\\] The output document will maintain the same file format as the input document. The naming format of error output files follows (for target language code \\[trg\\]): `error_output`: gs://translation_test/a_b_c*\\[trg\\]*errors.txt `glossary_error_output`: gs://translation_test/a_b_c*\\[trg\\]\\_glossary_translation.txt The error output is a txt file containing error details."]
         #[serde(
             rename = "gcsDestination",
             default,
@@ -81,6 +82,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchTranslateDocumentRequest {
+        #[doc = "Optional. This flag is to support user customized attribution. If not provided, the default is `Machine Translated by Google`. Customized attribution should follow rules in https://cloud.google.com/translate/attribution#attribution_and_logos"]
+        #[serde(
+            rename = "customizedAttribution",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customized_attribution: ::std::option::Option<String>,
         #[doc = "Optional."]
         #[serde(
             rename = "formatConversions",
@@ -118,7 +126,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub output_config: ::std::option::Option<crate::schemas::BatchDocumentOutputConfig>,
-        #[doc = "Required. The BCP-47 language code of the input document if known, for example, “en-US” or “sr-Latn”. Supported language codes are listed in Language Support (https://cloud.google.com/translate/docs/languages)."]
+        #[doc = "Required. The BCP-47 language code of the input document if known, for example, “en-US” or “sr-Latn”. Supported language codes are listed in [Language Support](https://cloud.google.com/translate/docs/languages)."]
         #[serde(
             rename = "sourceLanguageCode",
             default,
@@ -645,7 +653,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GlossaryInputConfig {
-        #[doc = "Required. Google Cloud Storage location of glossary data. File format is determined based on the filename extension. API returns \\[google.rpc.Code.INVALID_ARGUMENT\\] for unsupported URI-s and file formats. Wildcards are not allowed. This must be a single file in one of the following formats: For unidirectional glossaries: - TSV/CSV (`.tsv`/`.csv`): 2 column file, tab- or comma-separated. The first column is source text. The second column is target text. The file must not contain headers. That is, the first row is data, not column names. - TMX (`.tmx`): TMX file with parallel data defining source/target term pairs. For equivalent term sets glossaries: - CSV (`.csv`): Multi-column CSV file defining equivalent glossary terms in multiple languages. The format is defined for Google Translation Toolkit and documented in [Use a glossary](https://support.google.com/translatortoolkit/answer/6306379?hl=en)."]
+        #[doc = "Required. Google Cloud Storage location of glossary data. File format is determined based on the filename extension. API returns \\[google.rpc.Code.INVALID_ARGUMENT\\] for unsupported URI-s and file formats. Wildcards are not allowed. This must be a single file in one of the following formats: For unidirectional glossaries: - TSV/CSV (`.tsv`/`.csv`): 2 column file, tab- or comma-separated. The first column is source text. The second column is target text. The file must not contain headers. That is, the first row is data, not column names. - TMX (`.tmx`): TMX file with parallel data defining source/target term pairs. For equivalent term sets glossaries: - CSV (`.csv`): Multi-column CSV file defining equivalent glossary terms in multiple languages. See documentation for more information - [glossaries](https://cloud.google.com/translate/docs/advanced/glossary)."]
         #[serde(
             rename = "gcsSource",
             default,
@@ -808,7 +816,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListGlossariesResponse {
+    impl crate::GetNextPageToken<String> for ListGlossariesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -840,7 +848,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListLocationsResponse {
+    impl crate::GetNextPageToken<String> for ListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -872,7 +880,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListOperationsResponse {
+    impl crate::GetNextPageToken<String> for ListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -989,7 +997,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OutputConfig {
-        #[doc = "Google Cloud Storage destination for output content. For every single input file (for example, gs://a/b/c.\\[extension\\]), we generate at most 2 * n output files. (n is the # of target_language_codes in the BatchTranslateTextRequest). Output files (tsv) generated are compliant with RFC 4180 except that record delimiters are ‘\\\\n’ instead of ‘\\\\r\\n’. We don’t provide any way to change record delimiters. While the input files are being processed, we write/update an index file ‘index.csv’ under ‘output_uri_prefix’ (for example, gs://translation-test/index.csv) The index file is generated/updated as new files are being translated. The format is: input_file,target_language_code,translations_file,errors_file, glossary_translations_file,glossary_errors_file input_file is one file we matched using gcs_source.input_uri. target_language_code is provided in the request. translations_file contains the translations. (details provided below) errors_file contains the errors during processing of the file. (details below). Both translations_file and errors_file could be empty strings if we have no content to output. glossary_translations_file and glossary_errors_file are always empty strings if the input_file is tsv. They could also be empty if we have no content to output. Once a row is present in index.csv, the input/output matching never changes. Callers should also expect all the content in input_file are processed and ready to be consumed (that is, no partial output file is written). Since index.csv will be keeping updated during the process, please make sure there is no custom retention policy applied on the output bucket that may avoid file updating. (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy) The format of translations_file (for target language code ‘trg’) is: gs://translation_test/a_b_c\\_‘trg’*translations.\\[extension\\] If the input file extension is tsv, the output has the following columns: Column 1: ID of the request provided in the input, if it’s not provided in the input, then the input row number is used (0-based). Column 2: source sentence. Column 3: translation without applying a glossary. Empty string if there is an error. Column 4 (only present if a glossary is provided in the request): translation after applying the glossary. Empty string if there is an error applying the glossary. Could be same string as column 3 if there is no glossary applied. If input file extension is a txt or html, the translation is directly written to the output file. If glossary is requested, a separate glossary_translations_file has format of gs://translation_test/a_b_c*‘trg’*glossary_translations.\\[extension\\] The format of errors file (for target language code ‘trg’) is: gs://translation_test/a_b_c*‘trg’*errors.\\[extension\\] If the input file extension is tsv, errors_file contains the following: Column 1: ID of the request provided in the input, if it’s not provided in the input, then the input row number is used (0-based). Column 2: source sentence. Column 3: Error detail for the translation. Could be empty. Column 4 (only present if a glossary is provided in the request): Error when applying the glossary. If the input file extension is txt or html, glossary_error_file will be generated that contains error details. glossary_error_file has format of gs://translation_test/a_b_c*‘trg’\\_glossary_errors.\\[extension\\]"]
+        #[doc = "Google Cloud Storage destination for output content. For every single input file (for example, gs://a/b/c.\\[extension\\]), we generate at most 2 * n output files. (n is the # of target_language_codes in the BatchTranslateTextRequest). Output files (tsv) generated are compliant with RFC 4180 except that record delimiters are ‘\\\\n’ instead of ‘\\\\r\\n’. We don’t provide any way to change record delimiters. While the input files are being processed, we write/update an index file ‘index.csv’ under ‘output_uri_prefix’ (for example, gs://translation-test/index.csv) The index file is generated/updated as new files are being translated. The format is: input_file,target_language_code,translations_file,errors_file, glossary_translations_file,glossary_errors_file input_file is one file we matched using gcs_source.input_uri. target_language_code is provided in the request. translations_file contains the translations. (details provided below) errors_file contains the errors during processing of the file. (details below). Both translations_file and errors_file could be empty strings if we have no content to output. glossary_translations_file and glossary_errors_file are always empty strings if the input_file is tsv. They could also be empty if we have no content to output. Once a row is present in index.csv, the input/output matching never changes. Callers should also expect all the content in input_file are processed and ready to be consumed (that is, no partial output file is written). Since index.csv will be keeping updated during the process, please make sure there is no custom retention policy applied on the output bucket that may avoid file updating. (https://cloud.google.com/storage/docs/bucket-lock#retention-policy) The format of translations_file (for target language code ‘trg’) is: `gs://translation_test/a_b_c_'trg'_translations.[extension]` If the input file extension is tsv, the output has the following columns: Column 1: ID of the request provided in the input, if it’s not provided in the input, then the input row number is used (0-based). Column 2: source sentence. Column 3: translation without applying a glossary. Empty string if there is an error. Column 4 (only present if a glossary is provided in the request): translation after applying the glossary. Empty string if there is an error applying the glossary. Could be same string as column 3 if there is no glossary applied. If input file extension is a txt or html, the translation is directly written to the output file. If glossary is requested, a separate glossary_translations_file has format of gs://translation_test/a_b_c\\_‘trg’*glossary_translations.\\[extension\\] The format of errors file (for target language code ‘trg’) is: gs://translation_test/a_b_c*‘trg’*errors.\\[extension\\] If the input file extension is tsv, errors_file contains the following: Column 1: ID of the request provided in the input, if it’s not provided in the input, then the input row number is used (0-based). Column 2: source sentence. Column 3: Error detail for the translation. Could be empty. Column 4 (only present if a glossary is provided in the request): Error when applying the glossary. If the input file extension is txt or html, glossary_error_file will be generated that contains error details. glossary_error_file has format of gs://translation_test/a_b_c*‘trg’\\_glossary_errors.\\[extension\\]"]
         #[serde(
             rename = "gcsDestination",
             default,
@@ -1138,6 +1146,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TranslateDocumentRequest {
+        #[doc = "Optional. This flag is to support user customized attribution. If not provided, the default is `Machine Translated by Google`. Customized attribution should follow rules in https://cloud.google.com/translate/attribution#attribution_and_logos"]
+        #[serde(
+            rename = "customizedAttribution",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customized_attribution: ::std::option::Option<String>,
         #[doc = "Required. Input configurations."]
         #[serde(
             rename = "documentInputConfig",
@@ -1152,6 +1167,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub document_output_config: ::std::option::Option<crate::schemas::DocumentOutputConfig>,
+        #[doc = "Optional. If true, use the text removal server to remove the shadow text on background image for native pdf translation."]
+        #[serde(
+            rename = "enableShadowRemovalNativePdf",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_shadow_removal_native_pdf: ::std::option::Option<bool>,
         #[doc = "Optional. Glossary to be applied. The glossary must be within the same region (have the same location-id) as the model, otherwise an INVALID_ARGUMENT (400) error is returned."]
         #[serde(
             rename = "glossaryConfig",
@@ -1159,6 +1181,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub glossary_config: ::std::option::Option<crate::schemas::TranslateTextGlossaryConfig>,
+        #[doc = "Optional. is_translate_native_pdf_only field for external customers. If true, the page limit of online native pdf translation is 300 and only native pdf pages will be translated."]
+        #[serde(
+            rename = "isTranslateNativePdfOnly",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub is_translate_native_pdf_only: ::std::option::Option<bool>,
         #[doc = "Optional. The labels with user-defined metadata for the request. Label keys and values can be no longer than 63 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter. See https://cloud.google.com/translate/docs/advanced/labels for more information."]
         #[serde(
             rename = "labels",
@@ -3423,7 +3452,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -3458,7 +3487,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -3508,7 +3537,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3624,12 +3653,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4669,7 +4699,7 @@ pub mod resources {
                             #[serde(rename = "glossaries")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4704,7 +4734,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4754,7 +4784,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4873,12 +4903,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5615,7 +5646,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -5650,7 +5681,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -5700,7 +5731,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -5819,12 +5850,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -6279,16 +6311,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6308,13 +6342,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6322,7 +6359,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6349,7 +6386,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [datasets](resources/datasets/struct.DatasetsActions.html)\n  * [*delete*](resources/datasets/struct.DeleteRequestBuilder.html), [*get*](resources/datasets/struct.GetRequestBuilder.html), [*insert*](resources/datasets/struct.InsertRequestBuilder.html), [*list*](resources/datasets/struct.ListRequestBuilder.html), [*patch*](resources/datasets/struct.PatchRequestBuilder.html), [*update*](resources/datasets/struct.UpdateRequestBuilder.html)\n* [jobs](resources/jobs/struct.JobsActions.html)\n  * [*cancel*](resources/jobs/struct.CancelRequestBuilder.html), [*delete*](resources/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/jobs/struct.GetRequestBuilder.html), [*getQueryResults*](resources/jobs/struct.GetQueryResultsRequestBuilder.html), [*insert*](resources/jobs/struct.InsertRequestBuilder.html), [*list*](resources/jobs/struct.ListRequestBuilder.html), [*query*](resources/jobs/struct.QueryRequestBuilder.html)\n* [models](resources/models/struct.ModelsActions.html)\n  * [*delete*](resources/models/struct.DeleteRequestBuilder.html), [*get*](resources/models/struct.GetRequestBuilder.html), [*list*](resources/models/struct.ListRequestBuilder.html), [*patch*](resources/models/struct.PatchRequestBuilder.html)\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*getServiceAccount*](resources/projects/struct.GetServiceAccountRequestBuilder.html), [*list*](resources/projects/struct.ListRequestBuilder.html)\n* [routines](resources/routines/struct.RoutinesActions.html)\n  * [*delete*](resources/routines/struct.DeleteRequestBuilder.html), [*get*](resources/routines/struct.GetRequestBuilder.html), [*insert*](resources/routines/struct.InsertRequestBuilder.html), [*list*](resources/routines/struct.ListRequestBuilder.html), [*update*](resources/routines/struct.UpdateRequestBuilder.html)\n* [row_access_policies](resources/row_access_policies/struct.RowAccessPoliciesActions.html)\n  * [*getIamPolicy*](resources/row_access_policies/struct.GetIamPolicyRequestBuilder.html), [*list*](resources/row_access_policies/struct.ListRequestBuilder.html), [*setIamPolicy*](resources/row_access_policies/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/row_access_policies/struct.TestIamPermissionsRequestBuilder.html)\n* [tabledata](resources/tabledata/struct.TabledataActions.html)\n  * [*insertAll*](resources/tabledata/struct.InsertAllRequestBuilder.html), [*list*](resources/tabledata/struct.ListRequestBuilder.html)\n* [tables](resources/tables/struct.TablesActions.html)\n  * [*delete*](resources/tables/struct.DeleteRequestBuilder.html), [*get*](resources/tables/struct.GetRequestBuilder.html), [*getIamPolicy*](resources/tables/struct.GetIamPolicyRequestBuilder.html), [*insert*](resources/tables/struct.InsertRequestBuilder.html), [*list*](resources/tables/struct.ListRequestBuilder.html), [*patch*](resources/tables/struct.PatchRequestBuilder.html), [*setIamPolicy*](resources/tables/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/tables/struct.TestIamPermissionsRequestBuilder.html), [*update*](resources/tables/struct.UpdateRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your data in Google BigQuery and see the email address for your Google Account\n\n`https://www.googleapis.com/auth/bigquery`"]
@@ -1285,6 +1286,13 @@ pub mod schemas {
     pub struct BiEngineStatistics {
         #[doc = "\\[Output-only\\] Specifies which mode of BI Engine acceleration was performed (if any)."]
         #[serde(
+            rename = "accelerationMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub acceleration_mode: ::std::option::Option<String>,
+        #[doc = "\\[Output-only\\] Specifies which mode of BI Engine acceleration was performed (if any)."]
+        #[serde(
             rename = "biEngineMode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
@@ -1663,7 +1671,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Cloud Platform resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
         #[serde(
             rename = "members",
             default,
@@ -2218,6 +2226,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub null_marker: ::std::option::Option<String>,
+        #[doc = "\\[Optional\\] Preserves the embedded ASCII control characters (the first 32 characters in the ASCII-table, from ‘\\\\x00’ to ‘\\\\x1F’) when loading from CSV. Only applicable to CSV, ignored for other formats."]
+        #[serde(
+            rename = "preserveAsciiControlCharacters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub preserve_ascii_control_characters: ::std::option::Option<bool>,
         #[doc = "\\[Optional\\] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote (‘“’). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true."]
         #[serde(
             rename = "quote",
@@ -2240,6 +2255,37 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for CsvOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct DataMaskingStatistics {
+        #[doc = "\\[Output-only\\] \\[Preview\\] Whether any accessed data was protected by data masking. The actual evaluation is done by accessStats.masked_field_count > 0. Since this is only used for the discovery_doc generation purpose, as long as the type (boolean) matches, client library can leverage this. The actual evaluation of the variable is done else-where."]
+        #[serde(
+            rename = "dataMaskingApplied",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_masking_applied: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for DataMaskingStatistics {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DataMaskingStatistics {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2428,7 +2474,7 @@ pub mod schemas {
         pub max_time_travel_hours: ::std::option::Option<i64>,
         #[doc = "\\[Output-only\\] Reserved for future use."]
         #[serde(
-            rename = "satisfiesPZS",
+            rename = "satisfiesPzs",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
@@ -2440,6 +2486,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
+        #[doc = "\\[Optional\\] Storage billing model to be used for all tables in the dataset. Can be set to PHYSICAL. Default is LOGICAL."]
+        #[serde(
+            rename = "storageBillingModel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub storage_billing_model: ::std::option::Option<String>,
         #[doc = "\\[Optional\\]The tags associated with this dataset. Tag keys are globally unique."]
         #[serde(
             rename = "tags",
@@ -2623,6 +2676,8 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DatasetAccessEntryTargetTypesItems {
+        #[doc = "This entry applies to routines in the dataset."]
+        Routines,
         #[doc = "Do not use. You must set a target type explicitly."]
         TargetTypeUnspecified,
         #[doc = "This entry applies to views in the dataset."]
@@ -2631,6 +2686,7 @@ pub mod schemas {
     impl DatasetAccessEntryTargetTypesItems {
         pub fn as_str(self) -> &'static str {
             match self {
+                DatasetAccessEntryTargetTypesItems::Routines => "ROUTINES",
                 DatasetAccessEntryTargetTypesItems::TargetTypeUnspecified => {
                     "TARGET_TYPE_UNSPECIFIED"
                 }
@@ -2647,6 +2703,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<DatasetAccessEntryTargetTypesItems, ()> {
             Ok(match s {
+                "ROUTINES" => DatasetAccessEntryTargetTypesItems::Routines,
                 "TARGET_TYPE_UNSPECIFIED" => {
                     DatasetAccessEntryTargetTypesItems::TargetTypeUnspecified
                 }
@@ -2675,6 +2732,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "ROUTINES" => DatasetAccessEntryTargetTypesItems::Routines,
                 "TARGET_TYPE_UNSPECIFIED" => {
                     DatasetAccessEntryTargetTypesItems::TargetTypeUnspecified
                 }
@@ -2750,7 +2808,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DatasetList {
+    impl crate::GetNextPageToken<String> for DatasetList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -3704,6 +3762,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_bad_records: ::std::option::Option<i32>,
+        #[doc = "\\[Optional\\] Metadata Cache Mode for the table. Set this to enable caching of metadata from external data source."]
+        #[serde(
+            rename = "metadataCacheMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metadata_cache_mode: ::std::option::Option<String>,
+        #[doc = "ObjectMetadata is used to create Object Tables. Object Tables contain a listing of objects (with their metadata) found at the source_uris. If ObjectMetadata is set, source_format should be omitted. Currently SIMPLE is the only supported Object Metadata type."]
+        #[serde(
+            rename = "objectMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub object_metadata: ::std::option::Option<String>,
         #[doc = "Additional properties to set if sourceFormat is set to Parquet."]
         #[serde(
             rename = "parquetOptions",
@@ -3711,6 +3783,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parquet_options: ::std::option::Option<crate::schemas::ParquetOptions>,
+        #[doc = "\\[Optional\\] Provide a referencing file with the expected table schema. Enabled for the format: AVRO, PARQUET, ORC."]
+        #[serde(
+            rename = "referenceFileSchemaUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reference_file_schema_uri: ::std::option::Option<String>,
         #[doc = "\\[Optional\\] The schema for the data. Schema is required for CSV and JSON formats. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats."]
         #[serde(
             rename = "schema",
@@ -4457,6 +4536,58 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct IndexUnusedReason {
+        #[doc = "\\[Output-only\\] Specifies the base table involved in the reason that no search index was used."]
+        #[serde(
+            rename = "base_table",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_table: ::std::option::Option<crate::schemas::TableReference>,
+        #[doc = "\\[Output-only\\] Specifies the high-level reason for the scenario when no search index was used."]
+        #[serde(
+            rename = "code",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub code: ::std::option::Option<String>,
+        #[doc = "\\[Output-only\\] Specifies the name of the unused search index, if available."]
+        #[serde(
+            rename = "index_name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub index_name: ::std::option::Option<String>,
+        #[doc = "\\[Output-only\\] Free form human-readable reason for the scenario when no search index was used."]
+        #[serde(
+            rename = "message",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub message: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for IndexUnusedReason {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for IndexUnusedReason {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct IntArray {
         #[doc = "Elements in the int array."]
         #[serde(
@@ -4968,6 +5099,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub clustering: ::std::option::Option<crate::schemas::Clustering>,
+        #[doc = "Connection properties."]
+        #[serde(
+            rename = "connectionProperties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connection_properties: ::std::option::Option<Vec<crate::schemas::ConnectionProperty>>,
         #[doc = "\\[Optional\\] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a ‘notFound’ error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion."]
         #[serde(
             rename = "createDisposition",
@@ -4975,6 +5113,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_disposition: ::std::option::Option<String>,
+        #[doc = "If true, creates a new session, where session id will be a server generated random id. If false, runs query with an existing session_id passed in ConnectionProperty, otherwise runs the load job in non-session mode."]
+        #[serde(
+            rename = "createSession",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_session: ::std::option::Option<bool>,
         #[doc = "\\[Optional\\] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is \\[“NUMERIC”, “BIGNUMERIC”\\]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, \\[“BIGNUMERIC”, “NUMERIC”\\] is the same as \\[“NUMERIC”, “BIGNUMERIC”\\] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to \\[“NUMERIC”, “STRING”\\] for ORC and \\[“NUMERIC”\\] for the other file formats."]
         #[serde(
             rename = "decimalTargetTypes",
@@ -5090,6 +5235,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub range_partitioning: ::std::option::Option<crate::schemas::RangePartitioning>,
+        #[doc = "User provided referencing file with the expected reader schema, Available for the format: AVRO, PARQUET, ORC."]
+        #[serde(
+            rename = "referenceFileSchemaUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reference_file_schema_uri: ::std::option::Option<String>,
         #[doc = "\\[Optional\\] The schema for the destination table. The schema can be omitted if the destination table already exists, or if you’re loading data from Google Cloud Datastore."]
         #[serde(
             rename = "schema",
@@ -5479,7 +5631,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for JobList {
+    impl crate::GetNextPageToken<String> for JobList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5631,6 +5783,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
+        #[doc = "\\[Output-only\\] Statistics for data masking. Present only for query and extract jobs."]
+        #[serde(
+            rename = "dataMaskingStatistics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub data_masking_statistics: ::std::option::Option<crate::schemas::DataMaskingStatistics>,
         #[doc = "\\[Output-only\\] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state."]
         #[serde(
             rename = "endTime",
@@ -5804,28 +5963,28 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct JobStatistics2 {
-        #[doc = "BI Engine specific Statistics. \\[Output-only\\] BI Engine specific Statistics."]
+        #[doc = "BI Engine specific Statistics. \\[Output only\\] BI Engine specific Statistics."]
         #[serde(
             rename = "biEngineStatistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bi_engine_statistics: ::std::option::Option<crate::schemas::BiEngineStatistics>,
-        #[doc = "\\[Output-only\\] Billing tier for the job."]
+        #[doc = "\\[Output only\\] Billing tier for the job."]
         #[serde(
             rename = "billingTier",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub billing_tier: ::std::option::Option<i32>,
-        #[doc = "\\[Output-only\\] Whether the query result was fetched from the query cache."]
+        #[doc = "\\[Output only\\] Whether the query result was fetched from the query cache."]
         #[serde(
             rename = "cacheHit",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cache_hit: ::std::option::Option<bool>,
-        #[doc = "\\[Output-only\\] \\[Preview\\] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries."]
+        #[doc = "\\[Output only\\] \\[Preview\\] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries."]
         #[serde(
             rename = "ddlAffectedRowAccessPolicyCount",
             default,
@@ -5833,7 +5992,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub ddl_affected_row_access_policy_count: ::std::option::Option<i64>,
-        #[doc = "\\[Output-only\\] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information."]
+        #[doc = "\\[Output only\\] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information."]
         #[serde(
             rename = "ddlDestinationTable",
             default,
@@ -5847,7 +6006,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_operation_performed: ::std::option::Option<String>,
-        #[doc = "\\[Output-only\\] The DDL target dataset. Present only for CREATE/ALTER/DROP SCHEMA queries."]
+        #[doc = "\\[Output only\\] The DDL target dataset. Present only for CREATE/ALTER/DROP SCHEMA queries."]
         #[serde(
             rename = "ddlTargetDataset",
             default,
@@ -5861,7 +6020,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_target_routine: ::std::option::Option<crate::schemas::RoutineReference>,
-        #[doc = "\\[Output-only\\] \\[Preview\\] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries."]
+        #[doc = "\\[Output only\\] \\[Preview\\] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries."]
         #[serde(
             rename = "ddlTargetRowAccessPolicy",
             default,
@@ -5869,21 +6028,21 @@ pub mod schemas {
         )]
         pub ddl_target_row_access_policy:
             ::std::option::Option<crate::schemas::RowAccessPolicyReference>,
-        #[doc = "\\[Output-only\\] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries."]
+        #[doc = "\\[Output only\\] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries."]
         #[serde(
             rename = "ddlTargetTable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_target_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "\\[Output-only\\] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
+        #[doc = "\\[Output only\\] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
         #[serde(
             rename = "dmlStats",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dml_stats: ::std::option::Option<crate::schemas::DmlStatistics>,
-        #[doc = "\\[Output-only\\] The original estimate of bytes processed for the job."]
+        #[doc = "\\[Output only\\] The original estimate of bytes processed for the job."]
         #[serde(
             rename = "estimatedBytesProcessed",
             default,
@@ -5891,28 +6050,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub estimated_bytes_processed: ::std::option::Option<i64>,
-        #[doc = "\\[Output-only\\] Statistics of a BigQuery ML training job."]
+        #[doc = "\\[Output only\\] Statistics of a BigQuery ML training job."]
         #[serde(
             rename = "mlStatistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ml_statistics: ::std::option::Option<crate::schemas::MlStatistics>,
-        #[doc = "\\[Output-only, Beta\\] Information about create model query job progress."]
+        #[doc = "\\[Output only, Beta\\] Information about create model query job progress."]
         #[serde(
             rename = "modelTraining",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_training: ::std::option::Option<crate::schemas::BigQueryModelTraining>,
-        #[doc = "\\[Output-only, Beta\\] Deprecated; do not use."]
+        #[doc = "\\[Output only, Beta\\] Deprecated; do not use."]
         #[serde(
             rename = "modelTrainingCurrentIteration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_training_current_iteration: ::std::option::Option<i32>,
-        #[doc = "\\[Output-only, Beta\\] Deprecated; do not use."]
+        #[doc = "\\[Output only, Beta\\] Deprecated; do not use."]
         #[serde(
             rename = "modelTrainingExpectedTotalIteration",
             default,
@@ -5920,7 +6079,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub model_training_expected_total_iteration: ::std::option::Option<i64>,
-        #[doc = "\\[Output-only\\] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
+        #[doc = "\\[Output only\\] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
         #[serde(
             rename = "numDmlAffectedRows",
             default,
@@ -5928,28 +6087,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_dml_affected_rows: ::std::option::Option<i64>,
-        #[doc = "\\[Output-only\\] Describes execution plan for the query."]
+        #[doc = "\\[Output only\\] Describes execution plan for the query."]
         #[serde(
             rename = "queryPlan",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query_plan: ::std::option::Option<Vec<crate::schemas::ExplainQueryStage>>,
-        #[doc = "\\[Output-only\\] Referenced routines (persistent user-defined functions and stored procedures) for the job."]
+        #[doc = "\\[Output only\\] Referenced routines (persistent user-defined functions and stored procedures) for the job."]
         #[serde(
             rename = "referencedRoutines",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referenced_routines: ::std::option::Option<Vec<crate::schemas::RoutineReference>>,
-        #[doc = "\\[Output-only\\] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list."]
+        #[doc = "\\[Output only\\] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list."]
         #[serde(
             rename = "referencedTables",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referenced_tables: ::std::option::Option<Vec<crate::schemas::TableReference>>,
-        #[doc = "\\[Output-only\\] Job resource usage breakdown by reservation."]
+        #[doc = "\\[Output only\\] Job resource usage breakdown by reservation."]
         #[serde(
             rename = "reservationUsage",
             default,
@@ -5957,13 +6116,27 @@ pub mod schemas {
         )]
         pub reservation_usage:
             ::std::option::Option<Vec<crate::schemas::JobStatistics2ReservationUsageItems>>,
-        #[doc = "\\[Output-only\\] The schema of the results. Present only for successful dry run of non-legacy SQL queries."]
+        #[doc = "\\[Output only\\] The schema of the results. Present only for successful dry run of non-legacy SQL queries."]
         #[serde(
             rename = "schema",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema: ::std::option::Option<crate::schemas::TableSchema>,
+        #[doc = "\\[Output only\\] Search query specific statistics."]
+        #[serde(
+            rename = "searchStatistics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub search_statistics: ::std::option::Option<crate::schemas::SearchStatistics>,
+        #[doc = "\\[Output only\\] Statistics of a Spark procedure job."]
+        #[serde(
+            rename = "sparkStatistics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_statistics: ::std::option::Option<crate::schemas::SparkStatistics>,
         #[doc = "The type of query statement, if valid. Possible values (new values might be added in the future): “SELECT”: SELECT query. “INSERT”: INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “UPDATE”: UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “DELETE”: DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “MERGE”: MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “ALTER_TABLE”: ALTER TABLE query. “ALTER_VIEW”: ALTER VIEW query. “ASSERT”: ASSERT condition AS ‘description’. “CREATE_FUNCTION”: CREATE FUNCTION query. “CREATE_MODEL”: CREATE \\[OR REPLACE\\] MODEL … AS SELECT … . “CREATE_PROCEDURE”: CREATE PROCEDURE query. “CREATE_TABLE”: CREATE \\[OR REPLACE\\] TABLE without AS SELECT. “CREATE_TABLE_AS_SELECT”: CREATE \\[OR REPLACE\\] TABLE … AS SELECT … . “CREATE_VIEW”: CREATE \\[OR REPLACE\\] VIEW … AS SELECT … . “DROP_FUNCTION” : DROP FUNCTION query. “DROP_PROCEDURE”: DROP PROCEDURE query. “DROP_TABLE”: DROP TABLE query. “DROP_VIEW”: DROP VIEW query."]
         #[serde(
             rename = "statementType",
@@ -5971,14 +6144,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub statement_type: ::std::option::Option<String>,
-        #[doc = "\\[Output-only\\] \\[Beta\\] Describes a timeline of job execution."]
+        #[doc = "\\[Output only\\] \\[Beta\\] Describes a timeline of job execution."]
         #[serde(
             rename = "timeline",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timeline: ::std::option::Option<Vec<crate::schemas::QueryTimelineSample>>,
-        #[doc = "\\[Output-only\\] Total bytes billed for the job."]
+        #[doc = "\\[Output only\\] Total bytes billed for the job."]
         #[serde(
             rename = "totalBytesBilled",
             default,
@@ -5986,7 +6159,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_bytes_billed: ::std::option::Option<i64>,
-        #[doc = "\\[Output-only\\] Total bytes processed for the job."]
+        #[doc = "\\[Output only\\] Total bytes processed for the job."]
         #[serde(
             rename = "totalBytesProcessed",
             default,
@@ -5994,14 +6167,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_bytes_processed: ::std::option::Option<i64>,
-        #[doc = "\\[Output-only\\] For dry-run jobs, totalBytesProcessed is an estimate and this field specifies the accuracy of the estimate. Possible values can be: UNKNOWN: accuracy of the estimate is unknown. PRECISE: estimate is precise. LOWER_BOUND: estimate is lower bound of what the query would cost. UPPER_BOUND: estimate is upper bound of what the query would cost."]
+        #[doc = "\\[Output only\\] For dry-run jobs, totalBytesProcessed is an estimate and this field specifies the accuracy of the estimate. Possible values can be: UNKNOWN: accuracy of the estimate is unknown. PRECISE: estimate is precise. LOWER_BOUND: estimate is lower bound of what the query would cost. UPPER_BOUND: estimate is upper bound of what the query would cost."]
         #[serde(
             rename = "totalBytesProcessedAccuracy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub total_bytes_processed_accuracy: ::std::option::Option<String>,
-        #[doc = "\\[Output-only\\] Total number of partitions processed from all partitioned tables referenced in the job."]
+        #[doc = "\\[Output only\\] Total number of partitions processed from all partitioned tables referenced in the job."]
         #[serde(
             rename = "totalPartitionsProcessed",
             default,
@@ -6009,7 +6182,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_partitions_processed: ::std::option::Option<i64>,
-        #[doc = "\\[Output-only\\] Slot-milliseconds for the job."]
+        #[doc = "\\[Output only\\] Slot-milliseconds for the job."]
         #[serde(
             rename = "totalSlotMs",
             default,
@@ -6017,6 +6190,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_slot_ms: ::std::option::Option<i64>,
+        #[doc = "\\[Output-only\\] Total bytes transferred for cross-cloud queries such as Cross Cloud Transfer and CREATE TABLE AS SELECT (CTAS)."]
+        #[serde(
+            rename = "transferredBytes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub transferred_bytes: ::std::option::Option<i64>,
         #[doc = "Standard SQL only: list of undeclared query parameters detected during a dry run validation."]
         #[serde(
             rename = "undeclaredQueryParameters",
@@ -6048,14 +6229,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatistics2ReservationUsageItems {
-        #[doc = "\\[Output-only\\] Reservation name or “unreserved” for on-demand resources usage."]
+        #[doc = "\\[Output only\\] Reservation name or “unreserved” for on-demand resources usage."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "\\[Output-only\\] Slot-milliseconds the job spent in the given reservation."]
+        #[doc = "\\[Output only\\] Slot-milliseconds the job spent in the given reservation."]
         #[serde(
             rename = "slotMs",
             default,
@@ -6293,7 +6474,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListModelsResponse {
+    impl crate::GetNextPageToken<String> for ListModelsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6318,7 +6499,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_page_token: ::std::option::Option<String>,
-        #[doc = "Routines in the requested dataset. Unless read_mask is set in the request, only the following fields are populated: etag, project_id, dataset_id, routine_id, routine_type, creation_time, last_modified_time, and language."]
+        #[doc = "Routines in the requested dataset. Unless read_mask is set in the request, only the following fields are populated: etag, project_id, dataset_id, routine_id, routine_type, creation_time, last_modified_time, language, and remote_function_options."]
         #[serde(
             rename = "routines",
             default,
@@ -6336,7 +6517,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRoutinesResponse {
+    impl crate::GetNextPageToken<String> for ListRoutinesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6379,7 +6560,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRowAccessPoliciesResponse {
+    impl crate::GetNextPageToken<String> for ListRowAccessPoliciesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -6428,6 +6609,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MaterializedViewDefinition {
+        #[doc = "\\[Optional\\] Allow non incremental materialized view definition. The default value is “false”."]
+        #[serde(
+            rename = "allow_non_incremental_definition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allow_non_incremental_definition: ::std::option::Option<bool>,
         #[doc = "\\[Optional\\] \\[TrustedTester\\] Enable automatic refresh of the materialized view when the base table is updated. The default value is “true”."]
         #[serde(
             rename = "enableRefresh",
@@ -6443,6 +6631,13 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub last_refresh_time: ::std::option::Option<i64>,
+        #[doc = "\\[Optional\\] Max staleness of data that could be returned when materizlized view is queried (formatted as Google SQL Interval type)."]
+        #[serde(
+            rename = "maxStaleness",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_staleness: ::std::option::Option<::google_api_bytes::Bytes>,
         #[doc = "\\[Required\\] A query whose result is persisted."]
         #[serde(
             rename = "query",
@@ -6635,7 +6830,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub optimal_trial_ids: ::std::option::Option<Vec<i64>>,
-        #[doc = "Output only. Information for all training runs in increasing order of start_time."]
+        #[doc = "Information for all training runs in increasing order of start_time."]
         #[serde(
             rename = "trainingRuns",
             default,
@@ -6671,6 +6866,10 @@ pub mod schemas {
         BoostedTreeRegressor,
         #[doc = "DNN classifier model."]
         DnnClassifier,
+        #[doc = "Wide-and-deep classifier model."]
+        DnnLinearCombinedClassifier,
+        #[doc = "Wide-and-deep regressor model."]
+        DnnLinearCombinedRegressor,
         #[doc = "DNN regressor model."]
         DnnRegressor,
         #[doc = "K-means clustering model."]
@@ -6684,6 +6883,10 @@ pub mod schemas {
         ModelTypeUnspecified,
         #[doc = "Prinpical Component Analysis model."]
         Pca,
+        #[doc = "Random Forest classifier model."]
+        RandomForestClassifier,
+        #[doc = "Random Forest regressor model."]
+        RandomForestRegressor,
         #[doc = "An imported TensorFlow model."]
         Tensorflow,
     }
@@ -6698,6 +6901,8 @@ pub mod schemas {
                 ModelModelType::BoostedTreeClassifier => "BOOSTED_TREE_CLASSIFIER",
                 ModelModelType::BoostedTreeRegressor => "BOOSTED_TREE_REGRESSOR",
                 ModelModelType::DnnClassifier => "DNN_CLASSIFIER",
+                ModelModelType::DnnLinearCombinedClassifier => "DNN_LINEAR_COMBINED_CLASSIFIER",
+                ModelModelType::DnnLinearCombinedRegressor => "DNN_LINEAR_COMBINED_REGRESSOR",
                 ModelModelType::DnnRegressor => "DNN_REGRESSOR",
                 ModelModelType::Kmeans => "KMEANS",
                 ModelModelType::LinearRegression => "LINEAR_REGRESSION",
@@ -6705,6 +6910,8 @@ pub mod schemas {
                 ModelModelType::MatrixFactorization => "MATRIX_FACTORIZATION",
                 ModelModelType::ModelTypeUnspecified => "MODEL_TYPE_UNSPECIFIED",
                 ModelModelType::Pca => "PCA",
+                ModelModelType::RandomForestClassifier => "RANDOM_FOREST_CLASSIFIER",
+                ModelModelType::RandomForestRegressor => "RANDOM_FOREST_REGRESSOR",
                 ModelModelType::Tensorflow => "TENSORFLOW",
             }
         }
@@ -6726,6 +6933,8 @@ pub mod schemas {
                 "BOOSTED_TREE_CLASSIFIER" => ModelModelType::BoostedTreeClassifier,
                 "BOOSTED_TREE_REGRESSOR" => ModelModelType::BoostedTreeRegressor,
                 "DNN_CLASSIFIER" => ModelModelType::DnnClassifier,
+                "DNN_LINEAR_COMBINED_CLASSIFIER" => ModelModelType::DnnLinearCombinedClassifier,
+                "DNN_LINEAR_COMBINED_REGRESSOR" => ModelModelType::DnnLinearCombinedRegressor,
                 "DNN_REGRESSOR" => ModelModelType::DnnRegressor,
                 "KMEANS" => ModelModelType::Kmeans,
                 "LINEAR_REGRESSION" => ModelModelType::LinearRegression,
@@ -6733,6 +6942,8 @@ pub mod schemas {
                 "MATRIX_FACTORIZATION" => ModelModelType::MatrixFactorization,
                 "MODEL_TYPE_UNSPECIFIED" => ModelModelType::ModelTypeUnspecified,
                 "PCA" => ModelModelType::Pca,
+                "RANDOM_FOREST_CLASSIFIER" => ModelModelType::RandomForestClassifier,
+                "RANDOM_FOREST_REGRESSOR" => ModelModelType::RandomForestRegressor,
                 "TENSORFLOW" => ModelModelType::Tensorflow,
                 _ => return Err(()),
             })
@@ -6766,6 +6977,8 @@ pub mod schemas {
                 "BOOSTED_TREE_CLASSIFIER" => ModelModelType::BoostedTreeClassifier,
                 "BOOSTED_TREE_REGRESSOR" => ModelModelType::BoostedTreeRegressor,
                 "DNN_CLASSIFIER" => ModelModelType::DnnClassifier,
+                "DNN_LINEAR_COMBINED_CLASSIFIER" => ModelModelType::DnnLinearCombinedClassifier,
+                "DNN_LINEAR_COMBINED_REGRESSOR" => ModelModelType::DnnLinearCombinedRegressor,
                 "DNN_REGRESSOR" => ModelModelType::DnnRegressor,
                 "KMEANS" => ModelModelType::Kmeans,
                 "LINEAR_REGRESSION" => ModelModelType::LinearRegression,
@@ -6773,6 +6986,8 @@ pub mod schemas {
                 "MATRIX_FACTORIZATION" => ModelModelType::MatrixFactorization,
                 "MODEL_TYPE_UNSPECIFIED" => ModelModelType::ModelTypeUnspecified,
                 "PCA" => ModelModelType::Pca,
+                "RANDOM_FOREST_CLASSIFIER" => ModelModelType::RandomForestClassifier,
+                "RANDOM_FOREST_REGRESSOR" => ModelModelType::RandomForestRegressor,
                 "TENSORFLOW" => ModelModelType::Tensorflow,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -7132,7 +7347,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ProjectList {
+    impl crate::GetNextPageToken<String> for ProjectList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7699,7 +7914,15 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub elapsed_ms: ::std::option::Option<i64>,
-        #[doc = "Total parallel units of work remaining for the active stages."]
+        #[doc = "Units of work that can be scheduled immediately. Providing additional slots for these units of work will speed up the query, provided no other query in the reservation needs additional slots."]
+        #[serde(
+            rename = "estimatedRunnableUnits",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub estimated_runnable_units: ::std::option::Option<i64>,
+        #[doc = "Total units of work remaining for the query. This number can be revised (increased or decreased) while the query is running."]
         #[serde(
             rename = "pendingUnits",
             default,
@@ -7917,6 +8140,60 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct RemoteFunctionOptions {
+        #[doc = "Fully qualified name of the user-provided connection object which holds the authentication information to send requests to the remote service. Format: `\"projects/{projectId}/locations/{locationId}/connections/{connectionId}\"`"]
+        #[serde(
+            rename = "connection",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connection: ::std::option::Option<String>,
+        #[doc = "Endpoint of the user-provided remote service, e.g. `https://us-east1-my_gcf_project.cloudfunctions.net/remote_add`"]
+        #[serde(
+            rename = "endpoint",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub endpoint: ::std::option::Option<String>,
+        #[doc = "Max number of rows in each batch sent to the remote service. If absent or if 0, BigQuery dynamically decides the number of rows in a batch."]
+        #[serde(
+            rename = "maxBatchingRows",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_batching_rows: ::std::option::Option<i64>,
+        #[doc = "User-defined context as a set of key/value pairs, which will be sent as function invocation context together with batched arguments in the requests to the remote service. The total number of bytes of keys and values must be less than 8KB."]
+        #[serde(
+            rename = "userDefinedContext",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub user_defined_context:
+            ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+    }
+    impl ::google_field_selector::FieldSelector for RemoteFunctionOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for RemoteFunctionOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Routine {
         #[doc = "Optional."]
         #[serde(
@@ -7968,7 +8245,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub imported_libraries: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. Defaults to “SQL”."]
+        #[doc = "Optional. Defaults to “SQL” if remote_function_options field is absent, not set otherwise."]
         #[serde(
             rename = "language",
             default,
@@ -7983,7 +8260,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub last_modified_time: ::std::option::Option<i64>,
-        #[doc = "Optional. Can be set only if routine_type = “TABLE_VALUED_FUNCTION”. If absent, the return table type is inferred from definition_body at query time in each query that references this routine. If present, then the columns in the evaluated table result will be cast to match the column types specificed in return table type, at query time."]
+        #[doc = "Optional. Remote function specific options."]
+        #[serde(
+            rename = "remoteFunctionOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remote_function_options: ::std::option::Option<crate::schemas::RemoteFunctionOptions>,
+        #[doc = "Optional. Can be set only if routine_type = “TABLE_VALUED_FUNCTION”. If absent, the return table type is inferred from definition_body at query time in each query that references this routine. If present, then the columns in the evaluated table result will be cast to match the column types specified in return table type, at query time."]
         #[serde(
             rename = "returnTableType",
             default,
@@ -8011,6 +8295,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub routine_type: ::std::option::Option<crate::schemas::RoutineRoutineType>,
+        #[doc = "Optional. Spark specific options."]
+        #[serde(
+            rename = "sparkOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_options: ::std::option::Option<crate::schemas::SparkOptions>,
         #[doc = "Optional. Can be set for procedures only. If true (default), the definition body will be validated in the creation and the updates of the procedure. For procedures with an argument of ANY TYPE, the definition body validtion is not supported at creation/update time, and thus this field must be set to false explicitly."]
         #[serde(
             rename = "strictMode",
@@ -8116,6 +8407,8 @@ pub mod schemas {
         #[doc = "JavaScript language."]
         Javascript,
         LanguageUnspecified,
+        #[doc = "Python language."]
+        Python,
         #[doc = "SQL language."]
         Sql,
     }
@@ -8124,6 +8417,7 @@ pub mod schemas {
             match self {
                 RoutineLanguage::Javascript => "JAVASCRIPT",
                 RoutineLanguage::LanguageUnspecified => "LANGUAGE_UNSPECIFIED",
+                RoutineLanguage::Python => "PYTHON",
                 RoutineLanguage::Sql => "SQL",
             }
         }
@@ -8139,6 +8433,7 @@ pub mod schemas {
             Ok(match s {
                 "JAVASCRIPT" => RoutineLanguage::Javascript,
                 "LANGUAGE_UNSPECIFIED" => RoutineLanguage::LanguageUnspecified,
+                "PYTHON" => RoutineLanguage::Python,
                 "SQL" => RoutineLanguage::Sql,
                 _ => return Err(()),
             })
@@ -8166,6 +8461,7 @@ pub mod schemas {
             Ok(match value {
                 "JAVASCRIPT" => RoutineLanguage::Javascript,
                 "LANGUAGE_UNSPECIFIED" => RoutineLanguage::LanguageUnspecified,
+                "PYTHON" => RoutineLanguage::Python,
                 "SQL" => RoutineLanguage::Sql,
                 _ => {
                     return Err(::serde::de::Error::custom(format!(
@@ -8608,6 +8904,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct SearchStatistics {
+        #[doc = "When index_usage_mode is UNUSED or PARTIALLY_USED, this field explains why index was not used in all or part of the search query. If index_usage_mode is FULLLY_USED, this field is not populated."]
+        #[serde(
+            rename = "indexUnusedReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub index_unused_reason: ::std::option::Option<Vec<crate::schemas::IndexUnusedReason>>,
+        #[doc = "Specifies index usage mode for the query."]
+        #[serde(
+            rename = "indexUsageMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub index_usage_mode: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SearchStatistics {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SearchStatistics {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct SessionInfo {
         #[doc = "\\[Output-only\\] // \\[Preview\\] Id of the session."]
         #[serde(
@@ -8640,7 +8974,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetIamPolicyRequest {
-        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud Platform services (such as Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -8699,6 +9033,183 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for SnapshotDefinition {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SparkLoggingInfo {
+        #[doc = "\\[Output-only\\] Project ID used for logging"]
+        #[serde(
+            rename = "project_id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub project_id: ::std::option::Option<String>,
+        #[doc = "\\[Output-only\\] Resource type used for logging"]
+        #[serde(
+            rename = "resource_type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resource_type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkLoggingInfo {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkLoggingInfo {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SparkOptions {
+        #[doc = "Archive files to be extracted into the working directory of each executor. For more information about Apache Spark, see [Apache Spark](https://spark.apache.org/docs/latest/index.html)."]
+        #[serde(
+            rename = "archiveUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub archive_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Fully qualified name of the user-provided Spark connection object. Format: `\"projects/{project_id}/locations/{location_id}/connections/{connection_id}\"`"]
+        #[serde(
+            rename = "connection",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub connection: ::std::option::Option<String>,
+        #[doc = "Custom container image for the runtime environment."]
+        #[serde(
+            rename = "containerImage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub container_image: ::std::option::Option<String>,
+        #[doc = "Files to be placed in the working directory of each executor. For more information about Apache Spark, see [Apache Spark](https://spark.apache.org/docs/latest/index.html)."]
+        #[serde(
+            rename = "fileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "JARs to include on the driver and executor CLASSPATH. For more information about Apache Spark, see [Apache Spark](https://spark.apache.org/docs/latest/index.html)."]
+        #[serde(
+            rename = "jarUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub jar_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "The main file/jar URI of the Spark application. Exactly one of the definition_body field and the main_file_uri field must be set for Python. Exactly one of main_class and main_file_uri field should be set for Java/Scala language type."]
+        #[serde(
+            rename = "mainFileUri",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub main_file_uri: ::std::option::Option<String>,
+        #[doc = "Configuration properties as a set of key/value pairs, which will be passed on to the Spark application. For more information, see [Apache Spark](https://spark.apache.org/docs/latest/index.html)."]
+        #[serde(
+            rename = "properties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub properties: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "Python files to be placed on the PYTHONPATH for PySpark application. Supported file types: `.py`, `.egg`, and `.zip`. For more information about Apache Spark, see [Apache Spark](https://spark.apache.org/docs/latest/index.html)."]
+        #[serde(
+            rename = "pyFileUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub py_file_uris: ::std::option::Option<Vec<String>>,
+        #[doc = "Runtime version. If not specified, the default runtime version is used."]
+        #[serde(
+            rename = "runtimeVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub runtime_version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct SparkStatistics {
+        #[doc = "\\[Output-only\\] Endpoints generated for the Spark job."]
+        #[serde(
+            rename = "endpoints",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub endpoints: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
+        #[doc = "\\[Output-only\\] Logging info is used to generate a link to Cloud Logging."]
+        #[serde(
+            rename = "logging_info",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub logging_info: ::std::option::Option<crate::schemas::SparkLoggingInfo>,
+        #[doc = "\\[Output-only\\] Spark job id if a Spark job is created successfully."]
+        #[serde(
+            rename = "spark_job_id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_job_id: ::std::option::Option<String>,
+        #[doc = "\\[Output-only\\] Location where the Spark job is executed."]
+        #[serde(
+            rename = "spark_job_location",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub spark_job_location: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for SparkStatistics {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for SparkStatistics {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -9193,6 +9704,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub materialized_view: ::std::option::Option<crate::schemas::MaterializedViewDefinition>,
+        #[doc = "\\[Optional\\] Max staleness of data that could be returned when table or materialized view is queried (formatted as Google SQL Interval type)."]
+        #[serde(
+            rename = "maxStaleness",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub max_staleness: ::std::option::Option<::google_api_bytes::Bytes>,
         #[doc = "\\[Output-only, Beta\\] Present iff this table represents a ML model. Describes the training information for the model, and it is required to run ‘PREDICT’ queries."]
         #[serde(
             rename = "model",
@@ -9620,11 +10138,18 @@ pub mod schemas {
         pub categories: ::std::option::Option<crate::schemas::TableFieldSchemaCategories>,
         #[doc = "Optional. Collation specification of the field. It only can be set on string type field."]
         #[serde(
-            rename = "collationSpec",
+            rename = "collation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub collation_spec: ::std::option::Option<String>,
+        pub collation: ::std::option::Option<String>,
+        #[doc = "Optional. A SQL expression to specify the default value for this field. It can only be set for top level fields (columns). You can use struct or array expression to specify default value for the entire struct or array. The valid SQL expressions are: - Literals for all data types, including STRUCT and ARRAY. - Following functions: - CURRENT_TIMESTAMP - CURRENT_TIME - CURRENT_DATE - CURRENT_DATETIME - GENERATE_UUID - RAND - SESSION_USER - ST_GEOGPOINT - Struct or array composed with the above allowed functions, for example, \\[CURRENT_DATE(), DATE ‘2020-01-01’\\]"]
+        #[serde(
+            rename = "defaultValueExpression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub default_value_expression: ::std::option::Option<String>,
         #[doc = "\\[Optional\\] The field description. The maximum length is 1,024 characters."]
         #[serde(
             rename = "description",
@@ -9822,7 +10347,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for TableList {
+    impl crate::GetNextPageToken<String> for TableList {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -10077,7 +10602,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as ‘*’ or ‘storage.*’) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -10233,6 +10758,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub clean_spikes_and_dips: ::std::option::Option<bool>,
+        #[doc = "Enums for color space, used for processing images in Object Table. See more details at https://www.tensorflow.org/io/tutorials/colorspace."]
+        #[serde(
+            rename = "colorSpace",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub color_space: ::std::option::Option<crate::schemas::TrainingOptionsColorSpace>,
         #[doc = "Subsample ratio of columns for each level for boosted tree models."]
         #[serde(
             rename = "colsampleBylevel",
@@ -10473,6 +11005,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_parallel_trials: ::std::option::Option<i64>,
+        #[doc = "Get truncated length by last n points in time series. Use separately from time_series_length_fraction and min_time_series_length."]
+        #[serde(
+            rename = "maxTimeSeriesLength",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub max_time_series_length: ::std::option::Option<i64>,
         #[doc = "Maximum depth of a tree for boosted tree models."]
         #[serde(
             rename = "maxTreeDepth",
@@ -10495,6 +11035,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_split_loss: ::std::option::Option<f64>,
+        #[doc = "Set fast trend ARIMA_PLUS model minimum training length. Use in pair with time_series_length_fraction."]
+        #[serde(
+            rename = "minTimeSeriesLength",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub min_time_series_length: ::std::option::Option<i64>,
         #[doc = "Minimum sum of instance weight needed in a child for boosted tree models."]
         #[serde(
             rename = "minTreeChildWeight",
@@ -10564,7 +11112,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub preserve_input_structs: ::std::option::Option<bool>,
-        #[doc = "Number of paths for the sampled shapley explain method."]
+        #[doc = "Number of paths for the sampled Shapley explain method."]
         #[serde(
             rename = "sampledShapleyNumPaths",
             default,
@@ -10600,6 +11148,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_series_id_columns: ::std::option::Option<Vec<String>>,
+        #[doc = "Get truncated length by fraction in time series."]
+        #[serde(
+            rename = "timeSeriesLengthFraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub time_series_length_fraction: ::std::option::Option<f64>,
         #[doc = "Column to be designated as time series timestamp for ARIMA model."]
         #[serde(
             rename = "timeSeriesTimestampColumn",
@@ -10614,6 +11169,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tree_method: ::std::option::Option<crate::schemas::TrainingOptionsTreeMethod>,
+        #[doc = "The smoothing window size for the trend component of the time series."]
+        #[serde(
+            rename = "trendSmoothingWindowSize",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub trend_smoothing_window_size: ::std::option::Option<i64>,
         #[doc = "User column specified for matrix factorization models."]
         #[serde(
             rename = "userColumn",
@@ -10718,6 +11281,97 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for TrainingOptionsBoosterType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum TrainingOptionsColorSpace {
+        #[doc = "Unspecified color space"]
+        ColorSpaceUnspecified,
+        #[doc = "GRAYSCALE"]
+        Grayscale,
+        #[doc = "HSV"]
+        Hsv,
+        #[doc = "RGB"]
+        Rgb,
+        #[doc = "YIQ"]
+        Yiq,
+        #[doc = "YUV"]
+        Yuv,
+    }
+    impl TrainingOptionsColorSpace {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                TrainingOptionsColorSpace::ColorSpaceUnspecified => "COLOR_SPACE_UNSPECIFIED",
+                TrainingOptionsColorSpace::Grayscale => "GRAYSCALE",
+                TrainingOptionsColorSpace::Hsv => "HSV",
+                TrainingOptionsColorSpace::Rgb => "RGB",
+                TrainingOptionsColorSpace::Yiq => "YIQ",
+                TrainingOptionsColorSpace::Yuv => "YUV",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for TrainingOptionsColorSpace {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for TrainingOptionsColorSpace {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<TrainingOptionsColorSpace, ()> {
+            Ok(match s {
+                "COLOR_SPACE_UNSPECIFIED" => TrainingOptionsColorSpace::ColorSpaceUnspecified,
+                "GRAYSCALE" => TrainingOptionsColorSpace::Grayscale,
+                "HSV" => TrainingOptionsColorSpace::Hsv,
+                "RGB" => TrainingOptionsColorSpace::Rgb,
+                "YIQ" => TrainingOptionsColorSpace::Yiq,
+                "YUV" => TrainingOptionsColorSpace::Yuv,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for TrainingOptionsColorSpace {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for TrainingOptionsColorSpace {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for TrainingOptionsColorSpace {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "COLOR_SPACE_UNSPECIFIED" => TrainingOptionsColorSpace::ColorSpaceUnspecified,
+                "GRAYSCALE" => TrainingOptionsColorSpace::Grayscale,
+                "HSV" => TrainingOptionsColorSpace::Hsv,
+                "RGB" => TrainingOptionsColorSpace::Rgb,
+                "YIQ" => TrainingOptionsColorSpace::Yiq,
+                "YUV" => TrainingOptionsColorSpace::Yuv,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for TrainingOptionsColorSpace {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for TrainingOptionsColorSpace {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -12190,7 +12844,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TrainingRun {
-        #[doc = "Global explanation contains the explanation of top features on the class level. Applies to classification models only."]
+        #[doc = "Output only. Global explanation contains the explanation of top features on the class level. Applies to classification models only."]
         #[serde(
             rename = "classLevelGlobalExplanations",
             default,
@@ -12198,21 +12852,21 @@ pub mod schemas {
         )]
         pub class_level_global_explanations:
             ::std::option::Option<Vec<crate::schemas::GlobalExplanation>>,
-        #[doc = "Data split result of the training run. Only set when the input data is actually split."]
+        #[doc = "Output only. Data split result of the training run. Only set when the input data is actually split."]
         #[serde(
             rename = "dataSplitResult",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_split_result: ::std::option::Option<crate::schemas::DataSplitResult>,
-        #[doc = "The evaluation metrics over training/eval data that were computed at the end of training."]
+        #[doc = "Output only. The evaluation metrics over training/eval data that were computed at the end of training."]
         #[serde(
             rename = "evaluationMetrics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub evaluation_metrics: ::std::option::Option<crate::schemas::EvaluationMetrics>,
-        #[doc = "Global explanation contains the explanation of top features on the model level. Applies to both regression and classification models."]
+        #[doc = "Output only. Global explanation contains the explanation of top features on the model level. Applies to both regression and classification models."]
         #[serde(
             rename = "modelLevelGlobalExplanation",
             default,
@@ -12220,35 +12874,43 @@ pub mod schemas {
         )]
         pub model_level_global_explanation:
             ::std::option::Option<crate::schemas::GlobalExplanation>,
-        #[doc = "Output of each iteration run, results.size() \\<= max_iterations."]
+        #[doc = "Output only. Output of each iteration run, results.size() \\<= max_iterations."]
         #[serde(
             rename = "results",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub results: ::std::option::Option<Vec<crate::schemas::IterationResult>>,
-        #[doc = "The start time of this training run."]
+        #[doc = "Output only. The start time of this training run."]
         #[serde(
             rename = "startTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_time: ::std::option::Option<String>,
-        #[doc = "Options that were used for this training run, includes user specified and default options that were used."]
+        #[doc = "Output only. Options that were used for this training run, includes user specified and default options that were used."]
         #[serde(
             rename = "trainingOptions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub training_options: ::std::option::Option<crate::schemas::TrainingOptions>,
-        #[doc = "The model id in Vertex AI Model Registry for this training run"]
+        #[doc = "Output only. The start time of this training run, in milliseconds since epoch."]
+        #[serde(
+            rename = "trainingStartTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub training_start_time: ::std::option::Option<i64>,
+        #[doc = "The model id in the [Vertex AI Model Registry](https://cloud.google.com/vertex-ai/docs/model-registry/introduction) for this training run."]
         #[serde(
             rename = "vertexAiModelId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vertex_ai_model_id: ::std::option::Option<String>,
-        #[doc = "The model version in Vertex AI Model Registry for this training run"]
+        #[doc = "Output only. The model version in the [Vertex AI Model Registry](https://cloud.google.com/vertex-ai/docs/model-registry/introduction) for this training run."]
         #[serde(
             rename = "vertexAiModelVersion",
             default,
@@ -13161,7 +13823,7 @@ pub mod resources {
                     #[serde(rename = "datasets")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -13194,7 +13856,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -13242,7 +13904,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -13355,12 +14017,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -14901,7 +15564,7 @@ pub mod resources {
                     #[serde(rename = "jobs")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -14934,7 +15597,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -14982,7 +15645,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -15101,12 +15764,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -15692,7 +16356,7 @@ pub mod resources {
                     #[serde(rename = "models")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -15725,7 +16389,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -15775,7 +16439,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -15894,12 +16558,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -16333,7 +16998,7 @@ pub mod resources {
                     #[serde(rename = "projects")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -16366,7 +17031,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -16414,7 +17079,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -16517,12 +17182,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -17161,7 +17827,7 @@ pub mod resources {
                     #[serde(rename = "routines")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -17194,7 +17860,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -17244,7 +17910,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -17365,12 +18031,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -17856,7 +18523,7 @@ pub mod resources {
                     #[serde(rename = "rowAccessPolicies")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -17889,7 +18556,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -17939,7 +18606,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -18066,12 +18733,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -18740,7 +19408,89 @@ pub mod resources {
         }
     }
     pub mod tables {
-        pub mod params {}
+        pub mod params {
+            #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+            pub enum GetView {
+                #[doc = "Includes basic table information including schema and partitioning specification. This view does not include storage statistics such as numRows or numBytes. This view is significantly more efficient and should be used to support high query rates."]
+                Basic,
+                #[doc = "Includes all table information, including storage statistics. It returns same information as STORAGE_STATS view, but may contain additional information in the future."]
+                Full,
+                #[doc = "Includes all information in the BASIC view as well as storage statistics (numBytes, numLongTermBytes, numRows and lastModifiedTime)."]
+                StorageStats,
+                #[doc = "The default value. Default to the STORAGE_STATS view."]
+                TableMetadataViewUnspecified,
+            }
+            impl GetView {
+                pub fn as_str(self) -> &'static str {
+                    match self {
+                        GetView::Basic => "BASIC",
+                        GetView::Full => "FULL",
+                        GetView::StorageStats => "STORAGE_STATS",
+                        GetView::TableMetadataViewUnspecified => "TABLE_METADATA_VIEW_UNSPECIFIED",
+                    }
+                }
+            }
+            impl ::std::convert::AsRef<str> for GetView {
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+            impl ::std::str::FromStr for GetView {
+                type Err = ();
+                fn from_str(s: &str) -> ::std::result::Result<GetView, ()> {
+                    Ok(match s {
+                        "BASIC" => GetView::Basic,
+                        "FULL" => GetView::Full,
+                        "STORAGE_STATS" => GetView::StorageStats,
+                        "TABLE_METADATA_VIEW_UNSPECIFIED" => GetView::TableMetadataViewUnspecified,
+                        _ => return Err(()),
+                    })
+                }
+            }
+            impl ::std::fmt::Display for GetView {
+                fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    f.write_str(self.as_str())
+                }
+            }
+            impl ::serde::Serialize for GetView {
+                fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+                where
+                    S: ::serde::ser::Serializer,
+                {
+                    serializer.serialize_str(self.as_str())
+                }
+            }
+            impl<'de> ::serde::Deserialize<'de> for GetView {
+                fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+                where
+                    D: ::serde::de::Deserializer<'de>,
+                {
+                    let value: &'de str = <&str>::deserialize(deserializer)?;
+                    Ok(match value {
+                        "BASIC" => GetView::Basic,
+                        "FULL" => GetView::Full,
+                        "STORAGE_STATS" => GetView::StorageStats,
+                        "TABLE_METADATA_VIEW_UNSPECIFIED" => GetView::TableMetadataViewUnspecified,
+                        _ => {
+                            return Err(::serde::de::Error::custom(format!(
+                                "invalid enum for #name: {}",
+                                value
+                            )))
+                        }
+                    })
+                }
+            }
+            impl ::google_field_selector::FieldSelector for GetView {
+                fn fields() -> Vec<::google_field_selector::Field> {
+                    Vec::new()
+                }
+            }
+            impl ::google_field_selector::ToFieldType for GetView {
+                fn field_type() -> ::google_field_selector::FieldType {
+                    ::google_field_selector::FieldType::Leaf
+                }
+            }
+        }
         pub struct TablesActions<'a> {
             pub(crate) reqwest: &'a reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
@@ -18792,6 +19542,7 @@ pub mod resources {
                     dataset_id: dataset_id.into(),
                     table_id: table_id.into(),
                     selected_fields: None,
+                    view: None,
                 }
             }
             #[doc = "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."]
@@ -19054,6 +19805,7 @@ pub mod resources {
             dataset_id: String,
             table_id: String,
             selected_fields: ::std::option::Option<String>,
+            view: ::std::option::Option<crate::resources::tables::params::GetView>,
             alt: ::std::option::Option<crate::params::Alt>,
             fields: ::std::option::Option<String>,
             key: ::std::option::Option<String>,
@@ -19066,6 +19818,11 @@ pub mod resources {
             #[doc = "List of fields to return (comma-separated). If unspecified, all fields are returned"]
             pub fn selected_fields(mut self, value: impl Into<String>) -> Self {
                 self.selected_fields = Some(value.into());
+                self
+            }
+            #[doc = "Specifies the view that determines which table information is returned. By default, basic table information and storage statistics (STORAGE_STATS) are returned."]
+            pub fn view(mut self, value: crate::resources::tables::params::GetView) -> Self {
+                self.view = Some(value);
                 self
             }
             #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -19186,6 +19943,7 @@ pub mod resources {
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("selectedFields", &self.selected_fields)]);
+                req = req.query(&[("view", &self.view)]);
                 req = req.query(&[("alt", &self.alt)]);
                 req = req.query(&[("fields", &self.fields)]);
                 req = req.query(&[("key", &self.key)]);
@@ -19580,7 +20338,7 @@ pub mod resources {
                     #[serde(rename = "tables")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -19613,7 +20371,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -19661,7 +20419,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -19780,12 +20538,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -20661,16 +21420,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 pub struct ResumableUpload {
@@ -20775,13 +21536,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -20789,7 +21553,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -20816,7 +21580,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

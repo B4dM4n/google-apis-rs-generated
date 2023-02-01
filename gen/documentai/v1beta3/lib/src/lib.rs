@@ -1,32 +1,12 @@
-#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*fetchProcessorTypes*](resources/projects/locations/struct.FetchProcessorTypesRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [processors](resources/projects/locations/processors/struct.ProcessorsActions.html)\n      * [*batchProcess*](resources/projects/locations/processors/struct.BatchProcessRequestBuilder.html), [*create*](resources/projects/locations/processors/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/processors/struct.DeleteRequestBuilder.html), [*disable*](resources/projects/locations/processors/struct.DisableRequestBuilder.html), [*enable*](resources/projects/locations/processors/struct.EnableRequestBuilder.html), [*get*](resources/projects/locations/processors/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/processors/struct.ListRequestBuilder.html), [*process*](resources/projects/locations/processors/struct.ProcessRequestBuilder.html), [*setDefaultProcessorVersion*](resources/projects/locations/processors/struct.SetDefaultProcessorVersionRequestBuilder.html)\n      * [human_review_config](resources/projects/locations/processors/human_review_config/struct.HumanReviewConfigActions.html)\n        * [*reviewDocument*](resources/projects/locations/processors/human_review_config/struct.ReviewDocumentRequestBuilder.html)\n      * [processor_versions](resources/projects/locations/processors/processor_versions/struct.ProcessorVersionsActions.html)\n        * [*batchProcess*](resources/projects/locations/processors/processor_versions/struct.BatchProcessRequestBuilder.html), [*delete*](resources/projects/locations/processors/processor_versions/struct.DeleteRequestBuilder.html), [*deploy*](resources/projects/locations/processors/processor_versions/struct.DeployRequestBuilder.html), [*get*](resources/projects/locations/processors/processor_versions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/processors/processor_versions/struct.ListRequestBuilder.html), [*process*](resources/projects/locations/processors/processor_versions/struct.ProcessRequestBuilder.html), [*undeploy*](resources/projects/locations/processors/processor_versions/struct.UndeployRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [locations](resources/projects/locations/struct.LocationsActions.html)\n    * [*fetchProcessorTypes*](resources/projects/locations/struct.FetchProcessorTypesRequestBuilder.html), [*get*](resources/projects/locations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/struct.ListRequestBuilder.html)\n    * [operations](resources/projects/locations/operations/struct.OperationsActions.html)\n      * [*cancel*](resources/projects/locations/operations/struct.CancelRequestBuilder.html), [*get*](resources/projects/locations/operations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/operations/struct.ListRequestBuilder.html)\n    * [processor_types](resources/projects/locations/processor_types/struct.ProcessorTypesActions.html)\n      * [*get*](resources/projects/locations/processor_types/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/processor_types/struct.ListRequestBuilder.html)\n    * [processors](resources/projects/locations/processors/struct.ProcessorsActions.html)\n      * [*batchProcess*](resources/projects/locations/processors/struct.BatchProcessRequestBuilder.html), [*create*](resources/projects/locations/processors/struct.CreateRequestBuilder.html), [*delete*](resources/projects/locations/processors/struct.DeleteRequestBuilder.html), [*disable*](resources/projects/locations/processors/struct.DisableRequestBuilder.html), [*enable*](resources/projects/locations/processors/struct.EnableRequestBuilder.html), [*get*](resources/projects/locations/processors/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/processors/struct.ListRequestBuilder.html), [*process*](resources/projects/locations/processors/struct.ProcessRequestBuilder.html), [*setDefaultProcessorVersion*](resources/projects/locations/processors/struct.SetDefaultProcessorVersionRequestBuilder.html)\n      * [human_review_config](resources/projects/locations/processors/human_review_config/struct.HumanReviewConfigActions.html)\n        * [*reviewDocument*](resources/projects/locations/processors/human_review_config/struct.ReviewDocumentRequestBuilder.html)\n      * [processor_versions](resources/projects/locations/processors/processor_versions/struct.ProcessorVersionsActions.html)\n        * [*batchProcess*](resources/projects/locations/processors/processor_versions/struct.BatchProcessRequestBuilder.html), [*delete*](resources/projects/locations/processors/processor_versions/struct.DeleteRequestBuilder.html), [*deploy*](resources/projects/locations/processors/processor_versions/struct.DeployRequestBuilder.html), [*evaluateProcessorVersion*](resources/projects/locations/processors/processor_versions/struct.EvaluateProcessorVersionRequestBuilder.html), [*get*](resources/projects/locations/processors/processor_versions/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/processors/processor_versions/struct.ListRequestBuilder.html), [*process*](resources/projects/locations/processors/processor_versions/struct.ProcessRequestBuilder.html), [*train*](resources/projects/locations/processors/processor_versions/struct.TrainRequestBuilder.html), [*undeploy*](resources/projects/locations/processors/processor_versions/struct.UndeployRequestBuilder.html)\n        * [evaluations](resources/projects/locations/processors/processor_versions/evaluations/struct.EvaluationsActions.html)\n          * [*get*](resources/projects/locations/processors/processor_versions/evaluations/struct.GetRequestBuilder.html), [*list*](resources/projects/locations/processors/processor_versions/evaluations/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
 }
 pub mod schemas {
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadata {
-        #[doc = "The basic metadata of the long running operation."]
-        #[serde(
-            rename = "commonMetadata",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub common_metadata: ::std::option::Option<
-            crate::schemas::GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata,
-        >,
-    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadata { # [doc = "The basic metadata of the long running operation."] # [serde (rename = "commonMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub common_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata > , # [doc = "Total number of documents that failed to be deleted in storage."] # [serde (rename = "errorDocumentCount" , default , skip_serializing_if = "std::option::Option::is_none")] pub error_document_count : :: std :: option :: Option < i32 > , # [doc = "The list of response details of each document."] # [serde (rename = "individualBatchDeleteStatuses" , default , skip_serializing_if = "std::option::Option::is_none")] pub individual_batch_delete_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus > > , # [doc = "Total number of documents deleting from dataset."] # [serde (rename = "totalDocumentCount" , default , skip_serializing_if = "std::option::Option::is_none")] pub total_document_count : :: std :: option :: Option < i32 > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadata
     {
@@ -36,6 +16,38 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus {
+        #[doc = "The document id of the document."]
+        #[serde(
+            rename = "documentId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_id:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiUiv1Beta3DocumentId>,
+        #[doc = "The status of deleting the document in storage."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::GoogleRpcStatus>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -531,43 +543,6 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudDocumentaiUiv1Beta3DeleteDataLabelingJobOperationMetadata {
-        #[doc = "The basic metadata of the long running operation."]
-        #[serde(
-            rename = "commonMetadata",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub common_metadata: ::std::option::Option<
-            crate::schemas::GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudDocumentaiUiv1Beta3DeleteDataLabelingJobOperationMetadata
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudDocumentaiUiv1Beta3DeleteDataLabelingJobOperationMetadata
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
     pub struct GoogleCloudDocumentaiUiv1Beta3DeleteLabelerPoolOperationMetadata {
         #[doc = "The basic metadata of the long running operation."]
         #[serde(
@@ -820,6 +795,14 @@ pub mod schemas {
         >,
         #[doc = "Points to a specific revision of the document if set."]
         #[serde(
+            rename = "revisionRef",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub revision_ref:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiUiv1Beta3RevisionRef>,
+        #[doc = "Points to a specific revision of the document if set."]
+        #[serde(
             rename = "revisionReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
@@ -850,7 +833,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiUiv1Beta3DocumentIdGCSManagedDocumentId {
-        #[doc = "Optional. Id of the document (indexed) managed by Content Warehouse."]
+        #[doc = "Id of the document (indexed) managed by Content Warehouse."]
         #[serde(
             rename = "cwDocId",
             default,
@@ -1016,6 +999,194 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadata { # [doc = "The basic metadata of the long running operation."] # [serde (rename = "commonMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub common_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata > , # [doc = "The list of response details of each document."] # [serde (rename = "individualExportStatuses" , default , skip_serializing_if = "std::option::Option::is_none")] pub individual_export_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataIndividualExportStatus > > , # [doc = "The list of statistics for each dataset split type."] # [serde (rename = "splitExportStats" , default , skip_serializing_if = "std::option::Option::is_none")] pub split_export_stats : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStat > > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataIndividualExportStatus {
+        #[doc = "The path to source docproto of the document."]
+        #[serde(
+            rename = "documentId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_id:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiUiv1Beta3DocumentId>,
+        #[doc = "The output_gcs_destination of the exported document if it was successful, otherwise empty."]
+        #[serde(
+            rename = "outputGcsDestination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_gcs_destination: ::std::option::Option<String>,
+        #[doc = "The status of the exporting of the document."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::GoogleRpcStatus>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataIndividualExportStatus
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataIndividualExportStatus
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStat { # [doc = "The dataset split type."] # [serde (rename = "splitType" , default , skip_serializing_if = "std::option::Option::is_none")] pub split_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType > , # [doc = "Total number of documents with the given dataset split type to be exported."] # [serde (rename = "totalDocumentCount" , default , skip_serializing_if = "std::option::Option::is_none")] pub total_document_count : :: std :: option :: Option < i32 > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStat
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStat
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType {
+        #[doc = "Identifies the test documents."]
+        DatasetSplitTest,
+        #[doc = "Identifies the train documents."]
+        DatasetSplitTrain,
+        #[doc = "Default value if the enum is not set. go/protodosdonts#do-include-an-unspecified-value-in-an-enum"]
+        DatasetSplitTypeUnspecified,
+        #[doc = "Identifies the unassigned documents."]
+        DatasetSplitUnassigned,
+    }
+    impl GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTest => "DATASET_SPLIT_TEST" , GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTrain => "DATASET_SPLIT_TRAIN" , GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTypeUnspecified => "DATASET_SPLIT_TYPE_UNSPECIFIED" , GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitUnassigned => "DATASET_SPLIT_UNASSIGNED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType,
+            (),
+        > {
+            Ok (match s { "DATASET_SPLIT_TEST" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTest , "DATASET_SPLIT_TRAIN" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTrain , "DATASET_SPLIT_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTypeUnspecified , "DATASET_SPLIT_UNASSIGNED" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitUnassigned , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "DATASET_SPLIT_TEST" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTest , "DATASET_SPLIT_TRAIN" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTrain , "DATASET_SPLIT_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitTypeUnspecified , "DATASET_SPLIT_UNASSIGNED" => GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType :: DatasetSplitUnassigned , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsMetadataSplitExportStatSplitType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Copy,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ExportDocumentsResponse {}
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ExportDocumentsResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -1089,7 +1260,7 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadata { # [doc = "The basic metadata of the long running operation."] # [serde (rename = "commonMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub common_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata > , # [doc = "The list of response details of each document."] # [serde (rename = "individualImportStatuses" , default , skip_serializing_if = "std::option::Option::is_none")] pub individual_import_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadataIndividualImportStatus > > , }
+    pub struct GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadata { # [doc = "The basic metadata of the long running operation."] # [serde (rename = "commonMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub common_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata > , # [doc = "Validation statuses of the batch documents import config."] # [serde (rename = "importConfigValidationResults" , default , skip_serializing_if = "std::option::Option::is_none")] pub import_config_validation_results : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadataImportConfigValidationResult > > , # [doc = "The list of response details of each document."] # [serde (rename = "individualImportStatuses" , default , skip_serializing_if = "std::option::Option::is_none")] pub individual_import_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadataIndividualImportStatus > > , # [doc = "Total number of the documents that are qualified for importing."] # [serde (rename = "totalDocumentCount" , default , skip_serializing_if = "std::option::Option::is_none")] pub total_document_count : :: std :: option :: Option < i32 > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadata
     {
@@ -1099,6 +1270,37 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadataImportConfigValidationResult {
+        #[doc = "The source Cloud Storage URI specified in the import config."]
+        #[serde(
+            rename = "inputGcsSource",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub input_gcs_source: ::std::option::Option<String>,
+        #[doc = "The validation status of import config."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status: ::std::option::Option<crate::schemas::GoogleRpcStatus>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadataImportConfigValidationResult
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ImportDocumentsMetadataImportConfigValidationResult
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -1170,9 +1372,20 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadata {
-        #[doc = "The basic metadata of the long running operation."]
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ImportProcessorVersionMetadata {
+        #[doc = "The basic metadata for the long running operation."]
         #[serde(
             rename = "commonMetadata",
             default,
@@ -1181,16 +1394,58 @@ pub mod schemas {
         pub common_metadata: ::std::option::Option<
             crate::schemas::GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata,
         >,
-        #[doc = "Returns the newly added document Cloud Storage prefix if the documents are founded in Cloud Storage while not in Document Service storage."]
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ImportProcessorVersionMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ImportProcessorVersionMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ImportProcessorVersionResponse {
+        #[doc = "The destination processor version name."]
         #[serde(
-            rename = "newlyAddedDocuments",
+            rename = "processorVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
-        pub newly_added_documents: ::std::option::Option<
-            Vec<crate::schemas::GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataUpdatedDocument>,
-        >,
+        pub processor_version: ::std::option::Option<String>,
     }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ImportProcessorVersionResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ImportProcessorVersionResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadata { # [doc = "The basic metadata of the long running operation."] # [serde (rename = "commonMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub common_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3CommonOperationMetadata > , # [doc = "The list of dataset resync statuses. Not checked when `dataset_documents` is specified in ResyncRequest."] # [serde (rename = "datasetResyncStatuses" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset_resync_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatus > > , # [doc = "The list of document resync statuses. The same document could have multiple `individual_document_resync_statuses` if it has multiple inconsistencies."] # [serde (rename = "individualDocumentResyncStatuses" , default , skip_serializing_if = "std::option::Option::is_none")] pub individual_document_resync_statuses : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatus > > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadata
     {
@@ -1204,43 +1459,73 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataUpdatedDocument {
-        #[doc = "The prefix of cloud storage, identifies the destination document which should be updated by resync pipeline."]
-        #[serde(
-            rename = "destinationPrefix",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub destination_prefix: ::std::option::Option<String>,
-        #[doc = "The prefix of cloud storage, identifies the original document which should be updated by resync pipeline."]
-        #[serde(
-            rename = "sourcePrefix",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub source_prefix: ::std::option::Option<String>,
-        #[doc = "The final status of the documents which should be updated by resync pipeline."]
-        #[serde(
-            rename = "status",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub status: ::std::option::Option<crate::schemas::GoogleRpcStatus>,
-    }
+    pub struct GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatus { # [doc = "The type of the inconsistency of the dataset."] # [serde (rename = "datasetInconsistencyType" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset_inconsistency_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType > , # [doc = "The status of resyncing the dataset with regards to the detected inconsistency. Empty if `validate_only` is true in the request."] # [serde (rename = "status" , default , skip_serializing_if = "std::option::Option::is_none")] pub status : :: std :: option :: Option < crate :: schemas :: GoogleRpcStatus > , }
     impl ::google_field_selector::FieldSelector
-        for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataUpdatedDocument
+        for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatus
     {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
         }
     }
     impl ::google_field_selector::ToFieldType
-        for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataUpdatedDocument
+        for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatus
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType
+    {
+        #[doc = "The marker file under the dataset folder is not found."]
+        DatasetInconsistencyTypeNoStorageMarker,
+        #[doc = "Default value."]
+        DatasetInconsistencyTypeUnspecified,
+    }
+    impl GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { pub fn as_str (self) -> & 'static str { match self { GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType :: DatasetInconsistencyTypeNoStorageMarker => "DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER" , GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType :: DatasetInconsistencyTypeUnspecified => "DATASET_INCONSISTENCY_TYPE_UNSPECIFIED" , } } }
+    impl :: std :: convert :: AsRef < str > for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { fn as_ref (& self) -> & str { self . as_str () } }
+    impl :: std :: str :: FromStr for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { type Err = () ; fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType , () > { Ok (match s { "DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType :: DatasetInconsistencyTypeNoStorageMarker , "DATASET_INCONSISTENCY_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType :: DatasetInconsistencyTypeUnspecified , _ => return Err (()) , }) } }
+    impl :: std :: fmt :: Display for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { fn fmt (& self , f : & mut std :: fmt :: Formatter < '_ >) -> :: std :: fmt :: Result { f . write_str (self . as_str ()) } }
+    impl :: serde :: Serialize for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { fn serialize < S > (& self , serializer : S) -> :: std :: result :: Result < S :: Ok , S :: Error > where S : :: serde :: ser :: Serializer { serializer . serialize_str (self . as_str ()) } }
+    impl < 'de > :: serde :: Deserialize < 'de > for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { fn deserialize < D > (deserializer : D) -> :: std :: result :: Result < Self , D :: Error > where D : :: serde :: de :: Deserializer < 'de > , { let value : & 'de str = < & str > :: deserialize (deserializer) ? ; Ok (match value { "DATASET_INCONSISTENCY_TYPE_NO_STORAGE_MARKER" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType :: DatasetInconsistencyTypeNoStorageMarker , "DATASET_INCONSISTENCY_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType :: DatasetInconsistencyTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , }) } }
+    impl :: google_field_selector :: FieldSelector for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { fn fields () -> Vec < :: google_field_selector :: Field > { Vec :: new () } }
+    impl :: google_field_selector :: ToFieldType for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataDatasetResyncStatusDatasetInconsistencyType { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatus { # [doc = "The document identifier."] # [serde (rename = "documentId" , default , skip_serializing_if = "std::option::Option::is_none")] pub document_id : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3DocumentId > , # [doc = "The type of document inconsistency."] # [serde (rename = "documentInconsistencyType" , default , skip_serializing_if = "std::option::Option::is_none")] pub document_inconsistency_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType > , # [doc = "The status of resyncing the document with regards to the detected inconsistency. Empty if `validate_only` is true in the request."] # [serde (rename = "status" , default , skip_serializing_if = "std::option::Option::is_none")] pub status : :: std :: option :: Option < crate :: schemas :: GoogleRpcStatus > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatus
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatus
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType
+    {
+        #[doc = "The document proto is invalid."]
+        DocumentInconsistencyTypeInvalidDocproto,
+        #[doc = "Indexed docproto metadata is mismatched."]
+        DocumentInconsistencyTypeMismatchedMetadata,
+        #[doc = "The page image or thumbnails are missing."]
+        DocumentInconsistencyTypeNoPageImage,
+        #[doc = "Default value."]
+        DocumentInconsistencyTypeUnspecified,
+    }
+    impl GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { pub fn as_str (self) -> & 'static str { match self { GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeInvalidDocproto => "DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO" , GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeMismatchedMetadata => "DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA" , GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeNoPageImage => "DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE" , GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeUnspecified => "DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED" , } } }
+    impl :: std :: convert :: AsRef < str > for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { fn as_ref (& self) -> & str { self . as_str () } }
+    impl :: std :: str :: FromStr for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { type Err = () ; fn from_str (s : & str) -> :: std :: result :: Result < GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType , () > { Ok (match s { "DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeInvalidDocproto , "DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeMismatchedMetadata , "DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeNoPageImage , "DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeUnspecified , _ => return Err (()) , }) } }
+    impl :: std :: fmt :: Display for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { fn fmt (& self , f : & mut std :: fmt :: Formatter < '_ >) -> :: std :: fmt :: Result { f . write_str (self . as_str ()) } }
+    impl :: serde :: Serialize for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { fn serialize < S > (& self , serializer : S) -> :: std :: result :: Result < S :: Ok , S :: Error > where S : :: serde :: ser :: Serializer { serializer . serialize_str (self . as_str ()) } }
+    impl < 'de > :: serde :: Deserialize < 'de > for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { fn deserialize < D > (deserializer : D) -> :: std :: result :: Result < Self , D :: Error > where D : :: serde :: de :: Deserializer < 'de > , { let value : & 'de str = < & str > :: deserialize (deserializer) ? ; Ok (match value { "DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeInvalidDocproto , "DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeMismatchedMetadata , "DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeNoPageImage , "DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType :: DocumentInconsistencyTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , }) } }
+    impl :: google_field_selector :: FieldSelector for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { fn fields () -> Vec < :: google_field_selector :: Field > { Vec :: new () } }
+    impl :: google_field_selector :: ToFieldType for GoogleCloudDocumentaiUiv1Beta3ResyncDatasetMetadataIndividualDocumentResyncStatusDocumentInconsistencyType { fn field_type () -> :: google_field_selector :: FieldType { :: google_field_selector :: FieldType :: Leaf } }
     #[derive(
         Debug,
         Clone,
@@ -1279,15 +1564,174 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudDocumentaiUiv1Beta3RevisionReference {
-        #[doc = "Read the revision generated by the processor version, returns error if it does not exist."]
+    pub struct GoogleCloudDocumentaiUiv1Beta3RevisionRef {
+        #[doc = "Reads the revision generated by the processor version. The format takes the full resource name of processor version. `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`"]
         #[serde(
             rename = "latestProcessorVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_processor_version: ::std::option::Option<String>,
-        #[doc = "Read the revision by the predefined case."]
+        #[doc = "Reads the revision by the predefined case."]
+        #[serde(
+            rename = "revisionCase",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub revision_case: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase,
+        >,
+        #[doc = "Reads the revision given by the id."]
+        #[serde(
+            rename = "revisionId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub revision_id: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiUiv1Beta3RevisionRef {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiUiv1Beta3RevisionRef {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase {
+        #[doc = "The first (OCR) revision."]
+        BaseOcrRevision,
+        #[doc = "The latest revision made by a human."]
+        LatestHumanReview,
+        #[doc = "The latest revision based on timestamp."]
+        LatestTimestamp,
+        #[doc = "Unspecified case, fallback to read the LATEST_HUMAN_REVIEW."]
+        RevisionCaseUnspecified,
+    }
+    impl GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::BaseOcrRevision => {
+                    "BASE_OCR_REVISION"
+                }
+                GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::LatestHumanReview => {
+                    "LATEST_HUMAN_REVIEW"
+                }
+                GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::LatestTimestamp => {
+                    "LATEST_TIMESTAMP"
+                }
+                GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::RevisionCaseUnspecified => {
+                    "REVISION_CASE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase, ()>
+        {
+            Ok(match s {
+                "BASE_OCR_REVISION" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::BaseOcrRevision
+                }
+                "LATEST_HUMAN_REVIEW" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::LatestHumanReview
+                }
+                "LATEST_TIMESTAMP" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::LatestTimestamp
+                }
+                "REVISION_CASE_UNSPECIFIED" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::RevisionCaseUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "BASE_OCR_REVISION" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::BaseOcrRevision
+                }
+                "LATEST_HUMAN_REVIEW" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::LatestHumanReview
+                }
+                "LATEST_TIMESTAMP" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::LatestTimestamp
+                }
+                "REVISION_CASE_UNSPECIFIED" => {
+                    GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase::RevisionCaseUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiUiv1Beta3RevisionRefRevisionCase
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiUiv1Beta3RevisionReference {
+        #[doc = "Reads the revision generated by the processor version."]
+        #[serde(
+            rename = "latestProcessorVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub latest_processor_version: ::std::option::Option<String>,
+        #[doc = "Reads the revision by the predefined case."]
         #[serde(
             rename = "revisionCase",
             default,
@@ -1296,7 +1740,7 @@ pub mod schemas {
         pub revision_case: ::std::option::Option<
             crate::schemas::GoogleCloudDocumentaiUiv1Beta3RevisionReferenceRevisionCase,
         >,
-        #[doc = "Read the revision given by the id, returns error if it does not exist."]
+        #[doc = "Reads the revision given by the id."]
         #[serde(
             rename = "revisionId",
             default,
@@ -1320,7 +1764,7 @@ pub mod schemas {
         LatestHumanReview,
         #[doc = "The latest revision based on timestamp."]
         LatestTimestamp,
-        #[doc = "Unspecified case, fallback to read the first (OCR) revision."]
+        #[doc = "Unspecified case, fallback to read the LATEST_HUMAN_REVIEW."]
         RevisionCaseUnspecified,
     }
     impl GoogleCloudDocumentaiUiv1Beta3RevisionReferenceRevisionCase {
@@ -1717,214 +2161,6 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudDocumentaiV1Alpha1AnalyzeHitlDataMetadata {
-        #[doc = "The basic metadata of the long running operation."]
-        #[serde(
-            rename = "commonMetadata",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub common_metadata: ::std::option::Option<
-            crate::schemas::GoogleCloudDocumentaiV1Alpha1CommonOperationMetadata,
-        >,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudDocumentaiV1Alpha1AnalyzeHitlDataMetadata
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Alpha1AnalyzeHitlDataMetadata {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-    )]
-    pub struct GoogleCloudDocumentaiV1Alpha1CommonOperationMetadata {
-        #[doc = "The creation time of the operation."]
-        #[serde(
-            rename = "createTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub create_time: ::std::option::Option<String>,
-        #[doc = "A related resource to this operation."]
-        #[serde(
-            rename = "resource",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub resource: ::std::option::Option<String>,
-        #[doc = "The state of the operation."]
-        #[serde(
-            rename = "state",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub state: ::std::option::Option<
-            crate::schemas::GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState,
-        >,
-        #[doc = "A message providing more details about the current state of processing."]
-        #[serde(
-            rename = "stateMessage",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub state_message: ::std::option::Option<String>,
-        #[doc = "The last update time of the operation."]
-        #[serde(
-            rename = "updateTime",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub update_time: ::std::option::Option<String>,
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadata
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadata {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
-    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
-    pub enum GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState {
-        #[doc = "Operation is cancelled."]
-        Cancelled,
-        #[doc = "Operation is being cancelled."]
-        Cancelling,
-        #[doc = "Operation failed."]
-        Failed,
-        #[doc = "Operation is still running."]
-        Running,
-        #[doc = "Unspecified state."]
-        StateUnspecified,
-        #[doc = "Operation succeeded."]
-        Succeeded,
-    }
-    impl GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState {
-        pub fn as_str(self) -> &'static str {
-            match self {
-                GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Cancelled => "CANCELLED",
-                GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Cancelling => {
-                    "CANCELLING"
-                }
-                GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Failed => "FAILED",
-                GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Running => "RUNNING",
-                GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::StateUnspecified => {
-                    "STATE_UNSPECIFIED"
-                }
-                GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Succeeded => "SUCCEEDED",
-            }
-        }
-    }
-    impl ::std::convert::AsRef<str> for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState {
-        fn as_ref(&self) -> &str {
-            self.as_str()
-        }
-    }
-    impl ::std::str::FromStr for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState {
-        type Err = ();
-        fn from_str(
-            s: &str,
-        ) -> ::std::result::Result<GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState, ()>
-        {
-            Ok(match s {
-                "CANCELLED" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Cancelled,
-                "CANCELLING" => {
-                    GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Cancelling
-                }
-                "FAILED" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Failed,
-                "RUNNING" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Running,
-                "STATE_UNSPECIFIED" => {
-                    GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::StateUnspecified
-                }
-                "SUCCEEDED" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Succeeded,
-                _ => return Err(()),
-            })
-        }
-    }
-    impl ::std::fmt::Display for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            f.write_str(self.as_str())
-        }
-    }
-    impl ::serde::Serialize for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState {
-        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
-        where
-            S: ::serde::ser::Serializer,
-        {
-            serializer.serialize_str(self.as_str())
-        }
-    }
-    impl<'de> ::serde::Deserialize<'de> for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState {
-        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
-        where
-            D: ::serde::de::Deserializer<'de>,
-        {
-            let value: &'de str = <&str>::deserialize(deserializer)?;
-            Ok(match value {
-                "CANCELLED" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Cancelled,
-                "CANCELLING" => {
-                    GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Cancelling
-                }
-                "FAILED" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Failed,
-                "RUNNING" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Running,
-                "STATE_UNSPECIFIED" => {
-                    GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::StateUnspecified
-                }
-                "SUCCEEDED" => GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState::Succeeded,
-                _ => {
-                    return Err(::serde::de::Error::custom(format!(
-                        "invalid enum for #name: {}",
-                        value
-                    )))
-                }
-            })
-        }
-    }
-    impl ::google_field_selector::FieldSelector
-        for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState
-    {
-        fn fields() -> Vec<::google_field_selector::Field> {
-            Vec::new()
-        }
-    }
-    impl ::google_field_selector::ToFieldType
-        for GoogleCloudDocumentaiV1Alpha1CommonOperationMetadataState
-    {
-        fn field_type() -> ::google_field_selector::FieldType {
-            ::google_field_selector::FieldType::Leaf
-        }
-    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDocumentaiV1BatchProcessMetadata {
         #[doc = "The creation time of the operation."]
@@ -2104,7 +2340,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub output_gcs_destination: ::std::option::Option<String>,
-        #[doc = "The status of the processing of the document."]
+        #[doc = "The status processing the document."]
         #[serde(
             rename = "status",
             default,
@@ -2146,6 +2382,51 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1BatchProcessResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta1Barcode {
+        #[doc = "Format of a barcode. The supported formats are: - `CODE_128`: Code 128 type. - `CODE_39`: Code 39 type. - `CODE_93`: Code 93 type. - `CODABAR`: Codabar type. - `DATA_MATRIX`: 2D Data Matrix type. - `ITF`: ITF type. - `EAN_13`: EAN-13 type. - `EAN_8`: EAN-8 type. - `QR_CODE`: 2D QR code type. - `UPC_A`: UPC-A type. - `UPC_E`: UPC-E type. - `PDF417`: PDF417 type. - `AZTEC`: 2D Aztec code type. - `DATABAR`: GS1 DataBar code type."]
+        #[serde(
+            rename = "format",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub format: ::std::option::Option<String>,
+        #[doc = "Raw value encoded in the barcode. For example: `'MEBKM:TITLE:Google;URL:https://www.google.com;;'`."]
+        #[serde(
+            rename = "rawValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub raw_value: ::std::option::Option<String>,
+        #[doc = "Value format describes the format of the value that a barcode encodes. The supported formats are: - `CONTACT_INFO`: Contact information. - `EMAIL`: Email address. - `ISBN`: ISBN identifier. - `PHONE`: Phone number. - `PRODUCT`: Product. - `SMS`: SMS message. - `TEXT`: Text string. - `URL`: URL address. - `WIFI`: Wifi information. - `GEO`: Geo-localization. - `CALENDAR_EVENT`: Calendar event. - `DRIVER_LICENSE`: Driver’s license."]
+        #[serde(
+            rename = "valueFormat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value_format: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta1Barcode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta1Barcode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -2291,7 +2572,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "Placeholder. A list of text corrections made to \\[Document.text\\]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
+        #[doc = "Placeholder. A list of text corrections made to Document.text. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
         #[serde(
             rename = "textChanges",
             default,
@@ -2300,7 +2581,7 @@ pub mod schemas {
         pub text_changes: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentTextChange>,
         >,
-        #[doc = "Placeholder. Styles for the Document.text."]
+        #[doc = "Styles for the Document.text."]
         #[serde(
             rename = "textStyles",
             default,
@@ -2330,7 +2611,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta1DocumentEntity {
-        #[doc = "Optional. Confidence of detected Schema entity. Range \\[0, 1\\]."]
+        #[doc = "Optional. Confidence of detected Schema entity. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -2351,20 +2632,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_id: ::std::option::Option<String>,
-        #[doc = "Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity is not present in the document, this field will be empty."]
+        #[doc = "Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`."]
         #[serde(
             rename = "mentionText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_text: ::std::option::Option<String>,
-        #[doc = "Optional. This attribute indicates that the processing didn’t actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor."]
-        #[serde(
-            rename = "nonPresent",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub non_present: ::std::option::Option<bool>,
         #[doc = "Optional. Normalized entity value. Absent if the extracted value could not be converted or the type (e.g. address) is not supported for certain parsers. This field is also only populated for certain supported document types."]
         #[serde(
             rename = "normalizedValue",
@@ -2484,7 +2758,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub money_value: ::std::option::Option<crate::schemas::GoogleTypeMoney>,
-        #[doc = "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate float or int normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format."]
+        #[doc = "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format."]
         #[serde(
             rename = "text",
             default,
@@ -2564,6 +2838,15 @@ pub mod schemas {
         pub blocks: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageBlock>,
         >,
+        #[doc = "A list of detected barcodes."]
+        #[serde(
+            rename = "detectedBarcodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detected_barcodes: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageDetectedBarcode>,
+        >,
         #[doc = "A list of detected languages together with confidence."]
         #[serde(
             rename = "detectedLanguages",
@@ -2599,6 +2882,15 @@ pub mod schemas {
         )]
         pub image:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageImage>,
+        #[doc = "Image Quality Scores."]
+        #[serde(
+            rename = "imageQualityScores",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub image_quality_scores: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScores,
+        >,
         #[doc = "Layout for the page."]
         #[serde(
             rename = "layout",
@@ -2732,7 +3024,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1BoundingPoly>,
-        #[doc = "Optional. Confidence of detected page element, if applicable. Range \\[0, 1\\]."]
+        #[doc = "Optional. Confidence of detected page element, if applicable. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -2755,7 +3047,7 @@ pub mod schemas {
         pub layout_type: ::std::option::Option<
             crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageAnchorPageRefLayoutType,
         >,
-        #[doc = "Required. Index into the Document.pages element, for example using Document.pages to locate the related page element. This field is skipped when its value is the default 0. See https://developers.google.com/protocol-buffers/docs/proto3#json."]
+        #[doc = "Required. Index into the Document.pages element, for example using `Document.pages` to locate the related page element. This field is skipped when its value is the default `0`. See https://developers.google.com/protocol-buffers/docs/proto3#json."]
         #[serde(
             rename = "page",
             default,
@@ -2901,15 +3193,49 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta1DocumentPageDetectedBarcode {
+        #[doc = "Detailed barcode information of the DetectedBarcode."]
+        #[serde(
+            rename = "barcode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub barcode: ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1Barcode>,
+        #[doc = "Layout for DetectedBarcode."]
+        #[serde(
+            rename = "layout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub layout:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageLayout>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta1DocumentPageDetectedBarcode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta1DocumentPageDetectedBarcode
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta1DocumentPageDetectedLanguage {
-        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
+        #[doc = "Confidence of detected language. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -3027,7 +3353,7 @@ pub mod schemas {
         pub value_detected_languages: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageDetectedLanguage>,
         >,
-        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - “unfilled_checkbox” - “filled_checkbox”"]
+        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the `field_value` is normal text) - `unfilled_checkbox` - `filled_checkbox`"]
         #[serde(
             rename = "valueType",
             default,
@@ -3100,6 +3426,57 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScores { # [doc = "A list of detected defects."] # [serde (rename = "detectedDefects" , default , skip_serializing_if = "std::option::Option::is_none")] pub detected_defects : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScoresDetectedDefect > > , # [doc = "The overall quality score. Range `[0, 1]` where 1 is perfect quality."] # [serde (rename = "qualityScore" , default , skip_serializing_if = "std::option::Option::is_none")] pub quality_score : :: std :: option :: Option < f32 > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScores
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScores
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScoresDetectedDefect {
+        #[doc = "Confidence of detected defect. Range `[0, 1]` where 1 indicates strong confidence of that the defect exists."]
+        #[serde(
+            rename = "confidence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence: ::std::option::Option<f32>,
+        #[doc = "Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare`"]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScoresDetectedDefect
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta1DocumentPageImageQualityScoresDetectedDefect
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta1DocumentPageLayout {
         #[doc = "The bounding polygon for the Layout."]
         #[serde(
@@ -3109,7 +3486,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1BoundingPoly>,
-        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range \\[0, 1\\]."]
+        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -3415,6 +3792,14 @@ pub mod schemas {
         )]
         pub layout:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageLayout>,
+        #[doc = "The history of this table."]
+        #[serde(
+            rename = "provenance",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub provenance:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentProvenance>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta1DocumentPageTable {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4131,6 +4516,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::GoogleTypeColor>,
+        #[doc = "Font family such as `Arial`, `Times New Roman`. https://www.w3schools.com/cssref/pr_font_font-family.asp"]
+        #[serde(
+            rename = "fontFamily",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub font_family: ::std::option::Option<String>,
         #[doc = "Font size."]
         #[serde(
             rename = "fontSize",
@@ -4758,6 +5150,51 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta2Barcode {
+        #[doc = "Format of a barcode. The supported formats are: - `CODE_128`: Code 128 type. - `CODE_39`: Code 39 type. - `CODE_93`: Code 93 type. - `CODABAR`: Codabar type. - `DATA_MATRIX`: 2D Data Matrix type. - `ITF`: ITF type. - `EAN_13`: EAN-13 type. - `EAN_8`: EAN-8 type. - `QR_CODE`: 2D QR code type. - `UPC_A`: UPC-A type. - `UPC_E`: UPC-E type. - `PDF417`: PDF417 type. - `AZTEC`: 2D Aztec code type. - `DATABAR`: GS1 DataBar code type."]
+        #[serde(
+            rename = "format",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub format: ::std::option::Option<String>,
+        #[doc = "Raw value encoded in the barcode. For example: `'MEBKM:TITLE:Google;URL:https://www.google.com;;'`."]
+        #[serde(
+            rename = "rawValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub raw_value: ::std::option::Option<String>,
+        #[doc = "Value format describes the format of the value that a barcode encodes. The supported formats are: - `CONTACT_INFO`: Contact information. - `EMAIL`: Email address. - `ISBN`: ISBN identifier. - `PHONE`: Phone number. - `PRODUCT`: Product. - `SMS`: SMS message. - `TEXT`: Text string. - `URL`: URL address. - `WIFI`: Wifi information. - `GEO`: Geo-localization. - `CALENDAR_EVENT`: Calendar event. - `DRIVER_LICENSE`: Driver’s license."]
+        #[serde(
+            rename = "valueFormat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value_format: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta2Barcode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta2Barcode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta2BatchProcessDocumentsResponse {
         #[doc = "Responses for each individual document."]
         #[serde(
@@ -4895,7 +5332,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "Placeholder. A list of text corrections made to \\[Document.text\\]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
+        #[doc = "Placeholder. A list of text corrections made to Document.text. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
         #[serde(
             rename = "textChanges",
             default,
@@ -4904,7 +5341,7 @@ pub mod schemas {
         pub text_changes: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentTextChange>,
         >,
-        #[doc = "Placeholder. Styles for the Document.text."]
+        #[doc = "Styles for the Document.text."]
         #[serde(
             rename = "textStyles",
             default,
@@ -4934,7 +5371,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta2DocumentEntity {
-        #[doc = "Optional. Confidence of detected Schema entity. Range \\[0, 1\\]."]
+        #[doc = "Optional. Confidence of detected Schema entity. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -4955,20 +5392,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_id: ::std::option::Option<String>,
-        #[doc = "Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity is not present in the document, this field will be empty."]
+        #[doc = "Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`."]
         #[serde(
             rename = "mentionText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_text: ::std::option::Option<String>,
-        #[doc = "Optional. This attribute indicates that the processing didn’t actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor."]
-        #[serde(
-            rename = "nonPresent",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub non_present: ::std::option::Option<bool>,
         #[doc = "Optional. Normalized entity value. Absent if the extracted value could not be converted or the type (e.g. address) is not supported for certain parsers. This field is also only populated for certain supported document types."]
         #[serde(
             rename = "normalizedValue",
@@ -5088,7 +5518,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub money_value: ::std::option::Option<crate::schemas::GoogleTypeMoney>,
-        #[doc = "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate float or int normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format."]
+        #[doc = "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format."]
         #[serde(
             rename = "text",
             default,
@@ -5204,6 +5634,15 @@ pub mod schemas {
         pub blocks: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageBlock>,
         >,
+        #[doc = "A list of detected barcodes."]
+        #[serde(
+            rename = "detectedBarcodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detected_barcodes: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageDetectedBarcode>,
+        >,
         #[doc = "A list of detected languages together with confidence."]
         #[serde(
             rename = "detectedLanguages",
@@ -5239,6 +5678,15 @@ pub mod schemas {
         )]
         pub image:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageImage>,
+        #[doc = "Image Quality Scores."]
+        #[serde(
+            rename = "imageQualityScores",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub image_quality_scores: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScores,
+        >,
         #[doc = "Layout for the page."]
         #[serde(
             rename = "layout",
@@ -5372,7 +5820,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2BoundingPoly>,
-        #[doc = "Optional. Confidence of detected page element, if applicable. Range \\[0, 1\\]."]
+        #[doc = "Optional. Confidence of detected page element, if applicable. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -5395,7 +5843,7 @@ pub mod schemas {
         pub layout_type: ::std::option::Option<
             crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageAnchorPageRefLayoutType,
         >,
-        #[doc = "Required. Index into the Document.pages element, for example using Document.pages to locate the related page element. This field is skipped when its value is the default 0. See https://developers.google.com/protocol-buffers/docs/proto3#json."]
+        #[doc = "Required. Index into the Document.pages element, for example using `Document.pages` to locate the related page element. This field is skipped when its value is the default `0`. See https://developers.google.com/protocol-buffers/docs/proto3#json."]
         #[serde(
             rename = "page",
             default,
@@ -5541,15 +5989,49 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta2DocumentPageDetectedBarcode {
+        #[doc = "Detailed barcode information of the DetectedBarcode."]
+        #[serde(
+            rename = "barcode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub barcode: ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2Barcode>,
+        #[doc = "Layout for DetectedBarcode."]
+        #[serde(
+            rename = "layout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub layout:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageLayout>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta2DocumentPageDetectedBarcode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta2DocumentPageDetectedBarcode
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta2DocumentPageDetectedLanguage {
-        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
+        #[doc = "Confidence of detected language. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -5667,7 +6149,7 @@ pub mod schemas {
         pub value_detected_languages: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageDetectedLanguage>,
         >,
-        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - “unfilled_checkbox” - “filled_checkbox”"]
+        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the `field_value` is normal text) - `unfilled_checkbox` - `filled_checkbox`"]
         #[serde(
             rename = "valueType",
             default,
@@ -5740,6 +6222,57 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScores { # [doc = "A list of detected defects."] # [serde (rename = "detectedDefects" , default , skip_serializing_if = "std::option::Option::is_none")] pub detected_defects : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScoresDetectedDefect > > , # [doc = "The overall quality score. Range `[0, 1]` where 1 is perfect quality."] # [serde (rename = "qualityScore" , default , skip_serializing_if = "std::option::Option::is_none")] pub quality_score : :: std :: option :: Option < f32 > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScores
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScores
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScoresDetectedDefect {
+        #[doc = "Confidence of detected defect. Range `[0, 1]` where 1 indicates strong confidence of that the defect exists."]
+        #[serde(
+            rename = "confidence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence: ::std::option::Option<f32>,
+        #[doc = "Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare`"]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScoresDetectedDefect
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta2DocumentPageImageQualityScoresDetectedDefect
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta2DocumentPageLayout {
         #[doc = "The bounding polygon for the Layout."]
         #[serde(
@@ -5749,7 +6282,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2BoundingPoly>,
-        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range \\[0, 1\\]."]
+        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -6055,6 +6588,14 @@ pub mod schemas {
         )]
         pub layout:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageLayout>,
+        #[doc = "The history of this table."]
+        #[serde(
+            rename = "provenance",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub provenance:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentProvenance>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta2DocumentPageTable {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -6771,6 +7312,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::GoogleTypeColor>,
+        #[doc = "Font family such as `Arial`, `Times New Roman`. https://www.w3schools.com/cssref/pr_font_font-family.asp"]
+        #[serde(
+            rename = "fontFamily",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub font_family: ::std::option::Option<String>,
         #[doc = "Font size."]
         #[serde(
             rename = "fontSize",
@@ -7405,6 +7953,51 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta3Barcode {
+        #[doc = "Format of a barcode. The supported formats are: - `CODE_128`: Code 128 type. - `CODE_39`: Code 39 type. - `CODE_93`: Code 93 type. - `CODABAR`: Codabar type. - `DATA_MATRIX`: 2D Data Matrix type. - `ITF`: ITF type. - `EAN_13`: EAN-13 type. - `EAN_8`: EAN-8 type. - `QR_CODE`: 2D QR code type. - `UPC_A`: UPC-A type. - `UPC_E`: UPC-E type. - `PDF417`: PDF417 type. - `AZTEC`: 2D Aztec code type. - `DATABAR`: GS1 DataBar code type."]
+        #[serde(
+            rename = "format",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub format: ::std::option::Option<String>,
+        #[doc = "Raw value encoded in the barcode. For example: `'MEBKM:TITLE:Google;URL:https://www.google.com;;'`."]
+        #[serde(
+            rename = "rawValue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub raw_value: ::std::option::Option<String>,
+        #[doc = "Value format describes the format of the value that a barcode encodes. The supported formats are: - `CONTACT_INFO`: Contact information. - `EMAIL`: Email address. - `ISBN`: ISBN identifier. - `PHONE`: Phone number. - `PRODUCT`: Product. - `SMS`: SMS message. - `TEXT`: Text string. - `URL`: URL address. - `WIFI`: Wifi information. - `GEO`: Geo-localization. - `CALENDAR_EVENT`: Calendar event. - `DRIVER_LICENSE`: Driver’s license."]
+        #[serde(
+            rename = "valueFormat",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub value_format: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3Barcode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3Barcode {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta3BatchDocumentsInputConfig {
         #[doc = "The set of documents individually specified on Cloud Storage."]
         #[serde(
@@ -7414,7 +8007,7 @@ pub mod schemas {
         )]
         pub gcs_documents:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3GcsDocuments>,
-        #[doc = "The set of documents that match the specified Cloud Storage \\[gcs_prefix\\]."]
+        #[doc = "The set of documents that match the specified Cloud Storage `gcs_prefix`."]
         #[serde(
             rename = "gcsPrefix",
             default,
@@ -7589,7 +8182,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub output_gcs_destination: ::std::option::Option<String>,
-        #[doc = "The status of the processing of the document."]
+        #[doc = "The status processing the document."]
         #[serde(
             rename = "status",
             default,
@@ -7659,6 +8252,14 @@ pub mod schemas {
         pub output_config: ::std::option::Option<
             crate::schemas::GoogleCloudDocumentaiV1Beta3BatchProcessRequestBatchOutputConfig,
         >,
+        #[doc = "Inference-time options for the process API"]
+        #[serde(
+            rename = "processOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub process_options:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessOptions>,
         #[doc = "Whether Human Review feature should be skipped for this request. Default to false."]
         #[serde(
             rename = "skipHumanReview",
@@ -8307,7 +8908,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "Placeholder. A list of text corrections made to \\[Document.text\\]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
+        #[doc = "Placeholder. A list of text corrections made to Document.text. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
         #[serde(
             rename = "textChanges",
             default,
@@ -8316,7 +8917,7 @@ pub mod schemas {
         pub text_changes: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentTextChange>,
         >,
-        #[doc = "Placeholder. Styles for the Document.text."]
+        #[doc = "Styles for the Document.text."]
         #[serde(
             rename = "textStyles",
             default,
@@ -8346,7 +8947,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta3DocumentEntity {
-        #[doc = "Optional. Confidence of detected Schema entity. Range \\[0, 1\\]."]
+        #[doc = "Optional. Confidence of detected Schema entity. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -8367,20 +8968,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_id: ::std::option::Option<String>,
-        #[doc = "Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity is not present in the document, this field will be empty."]
+        #[doc = "Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`."]
         #[serde(
             rename = "mentionText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_text: ::std::option::Option<String>,
-        #[doc = "Optional. This attribute indicates that the processing didn’t actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor."]
-        #[serde(
-            rename = "nonPresent",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub non_present: ::std::option::Option<bool>,
         #[doc = "Optional. Normalized entity value. Absent if the extracted value could not be converted or the type (e.g. address) is not supported for certain parsers. This field is also only populated for certain supported document types."]
         #[serde(
             rename = "normalizedValue",
@@ -8500,7 +9094,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub money_value: ::std::option::Option<crate::schemas::GoogleTypeMoney>,
-        #[doc = "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate float or int normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format."]
+        #[doc = "Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format."]
         #[serde(
             rename = "text",
             default,
@@ -8612,15 +9206,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfig {
-        #[doc = "The Cloud Storage uri (a directory) of the output."]
-        #[serde(
-            rename = "gcsUri",
-            default,
-            skip_serializing_if = "std::option::Option::is_none"
-        )]
-        pub gcs_uri: ::std::option::Option<String>,
-    }
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfig { # [doc = "Specifies which fields to include in the output documents. Only supports top level document and pages field so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`."] # [serde (rename = "fieldMask" , default , skip_serializing_if = "std::option::Option::is_none")] pub field_mask : :: std :: option :: Option < String > , # [doc = "The Cloud Storage uri (a directory) of the output."] # [serde (rename = "gcsUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub gcs_uri : :: std :: option :: Option < String > , # [doc = "Specifies the sharding config for the output document."] # [serde (rename = "shardingConfig" , default , skip_serializing_if = "std::option::Option::is_none")] pub sharding_config : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfigShardingConfig > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfig
     {
@@ -8630,6 +9216,48 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfig
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfigShardingConfig {
+        #[doc = "The number of overlapping pages between consecutive shards."]
+        #[serde(
+            rename = "pagesOverlap",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pages_overlap: ::std::option::Option<i32>,
+        #[doc = "The number of pages per shard."]
+        #[serde(
+            rename = "pagesPerShard",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pages_per_shard: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfigShardingConfig
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3DocumentOutputConfigGcsOutputConfigShardingConfig
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -8647,6 +9275,15 @@ pub mod schemas {
         )]
         pub blocks: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageBlock>,
+        >,
+        #[doc = "A list of detected barcodes."]
+        #[serde(
+            rename = "detectedBarcodes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detected_barcodes: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageDetectedBarcode>,
         >,
         #[doc = "A list of detected languages together with confidence."]
         #[serde(
@@ -8683,6 +9320,15 @@ pub mod schemas {
         )]
         pub image:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageImage>,
+        #[doc = "Image Quality Scores."]
+        #[serde(
+            rename = "imageQualityScores",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub image_quality_scores: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScores,
+        >,
         #[doc = "Layout for the page."]
         #[serde(
             rename = "layout",
@@ -8816,7 +9462,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3BoundingPoly>,
-        #[doc = "Optional. Confidence of detected page element, if applicable. Range \\[0, 1\\]."]
+        #[doc = "Optional. Confidence of detected page element, if applicable. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -8839,7 +9485,7 @@ pub mod schemas {
         pub layout_type: ::std::option::Option<
             crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageAnchorPageRefLayoutType,
         >,
-        #[doc = "Required. Index into the Document.pages element, for example using Document.pages to locate the related page element. This field is skipped when its value is the default 0. See https://developers.google.com/protocol-buffers/docs/proto3#json."]
+        #[doc = "Required. Index into the Document.pages element, for example using `Document.pages` to locate the related page element. This field is skipped when its value is the default `0`. See https://developers.google.com/protocol-buffers/docs/proto3#json."]
         #[serde(
             rename = "page",
             default,
@@ -8985,15 +9631,49 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentPageDetectedBarcode {
+        #[doc = "Detailed barcode information of the DetectedBarcode."]
+        #[serde(
+            rename = "barcode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub barcode: ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3Barcode>,
+        #[doc = "Layout for DetectedBarcode."]
+        #[serde(
+            rename = "layout",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub layout:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageLayout>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentPageDetectedBarcode
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3DocumentPageDetectedBarcode
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta3DocumentPageDetectedLanguage {
-        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
+        #[doc = "Confidence of detected language. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -9111,7 +9791,7 @@ pub mod schemas {
         pub value_detected_languages: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageDetectedLanguage>,
         >,
-        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - “unfilled_checkbox” - “filled_checkbox”"]
+        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the `field_value` is normal text) - `unfilled_checkbox` - `filled_checkbox`"]
         #[serde(
             rename = "valueType",
             default,
@@ -9184,6 +9864,57 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScores { # [doc = "A list of detected defects."] # [serde (rename = "detectedDefects" , default , skip_serializing_if = "std::option::Option::is_none")] pub detected_defects : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScoresDetectedDefect > > , # [doc = "The overall quality score. Range `[0, 1]` where 1 is perfect quality."] # [serde (rename = "qualityScore" , default , skip_serializing_if = "std::option::Option::is_none")] pub quality_score : :: std :: option :: Option < f32 > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScores
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScores
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScoresDetectedDefect {
+        #[doc = "Confidence of detected defect. Range `[0, 1]` where 1 indicates strong confidence of that the defect exists."]
+        #[serde(
+            rename = "confidence",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence: ::std::option::Option<f32>,
+        #[doc = "Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare`"]
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub r#type: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScoresDetectedDefect
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3DocumentPageImageQualityScoresDetectedDefect
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta3DocumentPageLayout {
         #[doc = "The bounding polygon for the Layout."]
         #[serde(
@@ -9193,7 +9924,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3BoundingPoly>,
-        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range \\[0, 1\\]."]
+        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`."]
         #[serde(
             rename = "confidence",
             default,
@@ -9499,6 +10230,14 @@ pub mod schemas {
         )]
         pub layout:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentPageLayout>,
+        #[doc = "The history of this table."]
+        #[serde(
+            rename = "provenance",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub provenance:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentProvenance>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3DocumentPageTable {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -10161,6 +10900,321 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentSchema {
+        #[doc = "Description of the schema."]
+        #[serde(
+            rename = "description",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub description: ::std::option::Option<String>,
+        #[doc = "Display name to show to users."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "Entity types of the schema."]
+        #[serde(
+            rename = "entityTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_types: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityType>,
+        >,
+        #[doc = "Metadata of the schema."]
+        #[serde(
+            rename = "metadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metadata: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentSchemaMetadata,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3DocumentSchema {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3DocumentSchema {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityType {
+        #[doc = "The entity type that this type is derived from. For now, one and only one should be set."]
+        #[serde(
+            rename = "baseTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_types: ::std::option::Option<Vec<String>>,
+        #[doc = "User defined name for the type."]
+        #[serde(
+            rename = "displayName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub display_name: ::std::option::Option<String>,
+        #[doc = "If specified, lists all the possible values for this entity. This should not be more than a handful of values. If the number of values is >10 or could change frequently use the `EntityType.value_ontology` field and specify a list of all possible values in a value ontology file."]
+        #[serde(
+            rename = "enumValues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enum_values: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeEnumValues,
+        >,
+        #[doc = "Name of the type. It must be unique within the schema file and cannot be a ‘Common Type’. Besides that we use the following naming conventions: - *use `snake_casing`* - name matching is case-sensitive - Maximum 64 characters. - Must start with a letter. - Allowed characters: ASCII letters `[a-z0-9_-]`. (For backward compatibility internal infrastructure and tooling can handle any ascii character) - The `/` is sometimes used to denote a property of a type. For example `line_item/amount`. This convention is deprecated, but will still be honored for backward compatibility."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+        #[doc = "Describing the nested structure, or composition of an entity."]
+        #[serde(
+            rename = "properties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub properties: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeProperty>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeEnumValues {
+        #[doc = "The individual values that this enum values type can include."]
+        #[serde(
+            rename = "values",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub values: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeEnumValues
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeEnumValues
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeProperty { # [doc = "The name of the property. Follows the same guidelines as the EntityType name."] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Occurrence type limits the number of instances an entity type appears in the document."] # [serde (rename = "occurrenceType" , default , skip_serializing_if = "std::option::Option::is_none")] pub occurrence_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType > , # [doc = "A reference to the value type of the property. This type is subject to the same conventions as the `Entity.base_types` field."] # [serde (rename = "valueType" , default , skip_serializing_if = "std::option::Option::is_none")] pub value_type : :: std :: option :: Option < String > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeProperty
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypeProperty
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType {
+        #[doc = "Unspecified occurrence type."]
+        OccurrenceTypeUnspecified,
+        #[doc = "The entity type will appear zero or multiple times."]
+        OptionalMultiple,
+        #[doc = "There will be zero or one instance of this entity type."]
+        OptionalOnce,
+        #[doc = "The entity type will appear once or more times."]
+        RequiredMultiple,
+        #[doc = "The entity type will only appear exactly once."]
+        RequiredOnce,
+    }
+    impl GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OccurrenceTypeUnspecified => "OCCURRENCE_TYPE_UNSPECIFIED" , GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OptionalMultiple => "OPTIONAL_MULTIPLE" , GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OptionalOnce => "OPTIONAL_ONCE" , GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: RequiredMultiple => "REQUIRED_MULTIPLE" , GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: RequiredOnce => "REQUIRED_ONCE" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType,
+            (),
+        > {
+            Ok (match s { "OCCURRENCE_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OccurrenceTypeUnspecified , "OPTIONAL_MULTIPLE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OptionalMultiple , "OPTIONAL_ONCE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OptionalOnce , "REQUIRED_MULTIPLE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: RequiredMultiple , "REQUIRED_ONCE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: RequiredOnce , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "OCCURRENCE_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OccurrenceTypeUnspecified , "OPTIONAL_MULTIPLE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OptionalMultiple , "OPTIONAL_ONCE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: OptionalOnce , "REQUIRED_MULTIPLE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: RequiredMultiple , "REQUIRED_ONCE" => GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType :: RequiredOnce , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3DocumentSchemaEntityTypePropertyOccurrenceType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3DocumentSchemaMetadata {
+        #[doc = "If true, on a given page, there can be multiple `document` annotations covering it."]
+        #[serde(
+            rename = "documentAllowMultipleLabels",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_allow_multiple_labels: ::std::option::Option<bool>,
+        #[doc = "If true, a `document` entity type can be applied to subdocument ( splitting). Otherwise, it can only be applied to the entire document (classification)."]
+        #[serde(
+            rename = "documentSplitter",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_splitter: ::std::option::Option<bool>,
+        #[doc = "If set, all the nested entities must be prefixed with the parents."]
+        #[serde(
+            rename = "prefixedNamingOnProperties",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub prefixed_naming_on_properties: ::std::option::Option<bool>,
+        #[doc = "If set, we will skip the naming format validation in the schema. So the string values in `DocumentSchema.EntityType.name` and `DocumentSchema.EntityType.Property.name` will not be checked."]
+        #[serde(
+            rename = "skipNamingValidation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub skip_naming_validation: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3DocumentSchemaMetadata {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3DocumentSchemaMetadata {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta3DocumentShardInfo {
         #[doc = "Total number of shards."]
         #[serde(
@@ -10215,6 +11269,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::GoogleTypeColor>,
+        #[doc = "Font family such as `Arial`, `Times New Roman`. https://www.w3schools.com/cssref/pr_font_font-family.asp"]
+        #[serde(
+            rename = "fontFamily",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub font_family: ::std::option::Option<String>,
         #[doc = "Font size."]
         #[serde(
             rename = "fontSize",
@@ -10522,6 +11583,558 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionMetadata {
+        #[doc = "The basic metadata of the long running operation."]
+        #[serde(
+            rename = "commonMetadata",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub common_metadata: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3CommonOperationMetadata,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionRequest {
+        #[doc = "Optional. The documents used in the evaluation. If unspecified, use the processor’s dataset as evaluation input."]
+        #[serde(
+            rename = "evaluationDocuments",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation_documents: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3BatchDocumentsInputConfig,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionResponse {
+        #[doc = "The resource name of the created evaluation."]
+        #[serde(
+            rename = "evaluation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3Evaluation {
+        #[doc = "Metrics for all the entities in aggregate."]
+        #[serde(
+            rename = "allEntitiesMetrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub all_entities_metrics: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetrics,
+        >,
+        #[doc = "The time that the evaluation was created."]
+        #[serde(
+            rename = "createTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub create_time: ::std::option::Option<String>,
+        #[doc = "Counters for the documents used in the evaluation."]
+        #[serde(
+            rename = "documentCounters",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_counters:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationCounters>,
+        #[doc = "Metrics across confidence levels, for different entities."]
+        #[serde(
+            rename = "entityMetrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub entity_metrics: ::std::option::Option<
+            ::std::collections::BTreeMap<
+                String,
+                crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetrics,
+            >,
+        >,
+        #[doc = "The KMS key name used for encryption."]
+        #[serde(
+            rename = "kmsKeyName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key_name: ::std::option::Option<String>,
+        #[doc = "The KMS key version with which data is encrypted."]
+        #[serde(
+            rename = "kmsKeyVersionName",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub kms_key_version_name: ::std::option::Option<String>,
+        #[doc = "The resource name of the evaluation. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}/evaluations/{evaluation}`"]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3Evaluation {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3Evaluation {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluationConfidenceLevelMetrics {
+        #[doc = "The confidence level."]
+        #[serde(
+            rename = "confidenceLevel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence_level: ::std::option::Option<f32>,
+        #[doc = "The metrics at the specific confidence level."]
+        #[serde(
+            rename = "metrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metrics:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationMetrics>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3EvaluationConfidenceLevelMetrics
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3EvaluationConfidenceLevelMetrics
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluationCounters {
+        #[doc = "How many documents were used in the evaluation."]
+        #[serde(
+            rename = "evaluatedDocumentsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluated_documents_count: ::std::option::Option<i32>,
+        #[doc = "How many documents were not included in the evaluation as Document AI failed to process them."]
+        #[serde(
+            rename = "failedDocumentsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub failed_documents_count: ::std::option::Option<i32>,
+        #[doc = "How many documents were sent for evaluation."]
+        #[serde(
+            rename = "inputDocumentsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub input_documents_count: ::std::option::Option<i32>,
+        #[doc = "How many documents were not included in the evaluation as they didn’t pass validation."]
+        #[serde(
+            rename = "invalidDocumentsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub invalid_documents_count: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3EvaluationCounters {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3EvaluationCounters {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluationMetrics {
+        #[doc = "The calculated f1 score."]
+        #[serde(
+            rename = "f1Score",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub f_1_score: ::std::option::Option<f32>,
+        #[doc = "The amount of false negatives."]
+        #[serde(
+            rename = "falseNegativesCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub false_negatives_count: ::std::option::Option<i32>,
+        #[doc = "The amount of false positives."]
+        #[serde(
+            rename = "falsePositivesCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub false_positives_count: ::std::option::Option<i32>,
+        #[doc = "The amount of documents with a ground truth occurrence."]
+        #[serde(
+            rename = "groundTruthDocumentCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ground_truth_document_count: ::std::option::Option<i32>,
+        #[doc = "The amount of occurrences in ground truth documents."]
+        #[serde(
+            rename = "groundTruthOccurrencesCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ground_truth_occurrences_count: ::std::option::Option<i32>,
+        #[doc = "The calculated precision."]
+        #[serde(
+            rename = "precision",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub precision: ::std::option::Option<f32>,
+        #[doc = "The amount of documents with a predicted occurrence."]
+        #[serde(
+            rename = "predictedDocumentCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_document_count: ::std::option::Option<i32>,
+        #[doc = "The amount of occurrences in predicted documents."]
+        #[serde(
+            rename = "predictedOccurrencesCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_occurrences_count: ::std::option::Option<i32>,
+        #[doc = "The calculated recall."]
+        #[serde(
+            rename = "recall",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub recall: ::std::option::Option<f32>,
+        #[doc = "The amount of documents that had an occurrence of this label."]
+        #[serde(
+            rename = "totalDocumentsCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub total_documents_count: ::std::option::Option<i32>,
+        #[doc = "The amount of true positives."]
+        #[serde(
+            rename = "truePositivesCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub true_positives_count: ::std::option::Option<i32>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3EvaluationMetrics {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3EvaluationMetrics {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetrics {
+        #[doc = "The calculated area under the precision recall curve (AUPRC), computed by integrating over all confidence thresholds."]
+        #[serde(
+            rename = "auprc",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auprc: ::std::option::Option<f32>,
+        #[doc = "The AUPRC for metrics with fuzzy matching disabled, i.e., exact matching only."]
+        #[serde(
+            rename = "auprcExact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub auprc_exact: ::std::option::Option<f32>,
+        #[doc = "Metrics across confidence levels with fuzzy matching enabled."]
+        #[serde(
+            rename = "confidenceLevelMetrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence_level_metrics: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationConfidenceLevelMetrics>,
+        >,
+        #[doc = "Metrics across confidence levels with only exact matching."]
+        #[serde(
+            rename = "confidenceLevelMetricsExact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub confidence_level_metrics_exact: ::std::option::Option<
+            Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationConfidenceLevelMetrics>,
+        >,
+        #[doc = "The Estimated Calibration Error (ECE) of the confidence of the predicted entities."]
+        #[serde(
+            rename = "estimatedCalibrationError",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub estimated_calibration_error: ::std::option::Option<f32>,
+        #[doc = "The ECE for the predicted entities with fuzzy matching disabled, i.e., exact matching only."]
+        #[serde(
+            rename = "estimatedCalibrationErrorExact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub estimated_calibration_error_exact: ::std::option::Option<f32>,
+        #[doc = "The metrics type for the label."]
+        #[serde(
+            rename = "metricsType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub metrics_type: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetrics
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetrics
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType {
+        #[doc = "Indicates whether metrics for this particular label type represent an aggregate of metrics for other types instead of being based on actual TP/FP/FN values for the label type. Metrics for parent (i.e., non-leaf) entity types are an aggregate of metrics for their children."]
+        Aggregate,
+        #[doc = "The metrics type is unspecified. By default, metrics without a particular specification are for leaf entity types (i.e., top-level entity types without child types, or child types which are not parent types themselves)."]
+        MetricsTypeUnspecified,
+    }
+    impl GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType {
+        pub fn as_str(self) -> &'static str {
+            match self { GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType :: Aggregate => "AGGREGATE" , GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType :: MetricsTypeUnspecified => "METRICS_TYPE_UNSPECIFIED" , }
+        }
+    }
+    impl ::std::convert::AsRef<str>
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType
+    {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType
+    {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<
+            GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType,
+            (),
+        > {
+            Ok (match s { "AGGREGATE" => GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType :: Aggregate , "METRICS_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType :: MetricsTypeUnspecified , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType
+    {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType
+    {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de>
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType
+    {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AGGREGATE" => GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType :: Aggregate , "METRICS_TYPE_UNSPECIFIED" => GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType :: MetricsTypeUnspecified , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3EvaluationMultiConfidenceMetricsMetricsType
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3EvaluationReference {
+        #[doc = "An aggregate of the statistics for the evaluation with fuzzy matching on."]
+        #[serde(
+            rename = "aggregateMetrics",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregate_metrics:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationMetrics>,
+        #[doc = "An aggregate of the statistics for the evaluation with fuzzy matching off."]
+        #[serde(
+            rename = "aggregateMetricsExact",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregate_metrics_exact:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationMetrics>,
+        #[doc = "The resource name of the evaluation."]
+        #[serde(
+            rename = "evaluation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluation: ::std::option::Option<String>,
+        #[doc = "The resource name of the Long Running Operation for the evaluation."]
+        #[serde(
+            rename = "operation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub operation: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3EvaluationReference {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3EvaluationReference {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct GoogleCloudDocumentaiV1Beta3FetchProcessorTypesResponse {
         #[doc = "The list of processor types."]
         #[serde(
@@ -10795,6 +12408,43 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse {
+        #[doc = "The evaluations requested."]
+        #[serde(
+            rename = "evaluations",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub evaluations:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3Evaluation>>,
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
         Debug,
         Clone,
         PartialEq,
@@ -10805,6 +12455,45 @@ pub mod schemas {
         Default,
         :: serde :: Deserialize,
         :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse {
+        #[doc = "Points to the next page, otherwise empty."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+        #[doc = "The processor types."]
+        #[serde(
+            rename = "processorTypes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub processor_types:
+            ::std::option::Option<Vec<crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessorType>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta3ListProcessorVersionsResponse {
         #[doc = "Points to the next processor, otherwise empty."]
@@ -10838,7 +12527,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDocumentaiV1Beta3ListProcessorVersionsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDocumentaiV1Beta3ListProcessorVersionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -10882,7 +12571,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudDocumentaiV1Beta3ListProcessorsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudDocumentaiV1Beta3ListProcessorsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -10916,6 +12605,69 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3OcrConfig {
+        #[doc = "Enables special handling for PDFs with existing text information. Results in better text extraction quality in such PDF inputs."]
+        #[serde(
+            rename = "enableNativePdfParsing",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable_native_pdf_parsing: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3OcrConfig {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3OcrConfig {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3ProcessOptions {
+        #[doc = "Only applicable to “Document OCR Processor”. Returns error if set on other processor types."]
+        #[serde(
+            rename = "ocrConfig",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub ocr_config:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3OcrConfig>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3ProcessOptions {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3ProcessOptions {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDocumentaiV1Beta3ProcessRequest {
         #[doc = "The document payload, the \\[content\\] and \\[mime_type\\] fields must be set."]
@@ -10925,6 +12677,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub document: ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3Document>,
+        #[doc = "Specifies which fields to include in ProcessResponse’s document. Only supports top level document and pages field so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`."]
+        #[serde(
+            rename = "fieldMask",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub field_mask: ::std::option::Option<String>,
         #[doc = "An inline document proto."]
         #[serde(
             rename = "inlineDocument",
@@ -10933,6 +12692,14 @@ pub mod schemas {
         )]
         pub inline_document:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3Document>,
+        #[doc = "Inference-time options for the process API"]
+        #[serde(
+            rename = "processOptions",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub process_options:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessOptions>,
         #[doc = "A raw document content (bytes)."]
         #[serde(
             rename = "rawDocument",
@@ -11049,7 +12816,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub process_endpoint: ::std::option::Option<String>,
-        #[doc = "The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc. To get a list of processors types, see FetchProcessorTypes."]
+        #[doc = "The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc. To get a list of processors types, see FetchProcessorTypes."]
         #[serde(
             rename = "type",
             default,
@@ -11077,17 +12844,17 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudDocumentaiV1Beta3ProcessorState {
-        #[doc = "The processor is being created, will become either ENABLED (for successful creation) or FAILED (for failed ones). Once a processor is in this state, it can then be used for document processing, but the feature dependencies of the processor might not be fully created yet."]
+        #[doc = "The processor is being created, will become either `ENABLED` (for successful creation) or `FAILED` (for failed ones). Once a processor is in this state, it can then be used for document processing, but the feature dependencies of the processor might not be fully created yet."]
         Creating,
         #[doc = "The processor is being deleted, will be removed if successful."]
         Deleting,
         #[doc = "The processor is disabled."]
         Disabled,
-        #[doc = "The processor is being disabled, will become DISABLED if successful."]
+        #[doc = "The processor is being disabled, will become `DISABLED` if successful."]
         Disabling,
         #[doc = "The processor is enabled, i.e., has an enabled version which can currently serve processing requests and all the feature dependencies have been successfully initialized."]
         Enabled,
-        #[doc = "The processor is being enabled, will become ENABLED if successful."]
+        #[doc = "The processor is being enabled, will become `ENABLED` if successful."]
         Enabling,
         #[doc = "The processor failed during creation or initialization of feature dependencies. The user should delete the processor and recreate one as all the functionalities of the processor are disabled."]
         Failed,
@@ -11223,20 +12990,27 @@ pub mod schemas {
         pub launch_stage: ::std::option::Option<
             crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessorTypeLaunchStage,
         >,
-        #[doc = "The resource name of the processor type. Format: projects/{project}/processorTypes/{processor_type}"]
+        #[doc = "The resource name of the processor type. Format: `projects/{project}/processorTypes/{processor_type}`"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The type of the processor, e.g., “invoice_parsing”."]
+        #[doc = "The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
+        #[doc = "A set of Cloud Storage URIs of sample documents for this processor."]
+        #[serde(
+            rename = "sampleDocumentUris",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub sample_document_uris: ::std::option::Option<Vec<String>>,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3ProcessorType {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -11402,16 +13176,7 @@ pub mod schemas {
         }
     }
     #[derive(
-        Debug,
-        Clone,
-        PartialEq,
-        Hash,
-        PartialOrd,
-        Ord,
-        Eq,
-        Default,
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta3ProcessorVersion {
         #[doc = "The time the processor version was created."]
@@ -11437,6 +13202,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
+        #[doc = "The schema of the processor version. Describes the output."]
+        #[serde(
+            rename = "documentSchema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_schema:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentSchema>,
         #[doc = "Denotes that this ProcessorVersion is managed by google."]
         #[serde(
             rename = "googleManaged",
@@ -11458,6 +13231,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kms_key_version_name: ::std::option::Option<String>,
+        #[doc = "The most recently invoked evaluation for the processor version."]
+        #[serde(
+            rename = "latestEvaluation",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub latest_evaluation:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3EvaluationReference>,
         #[doc = "The resource name of the processor version. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`"]
         #[serde(
             rename = "name",
@@ -11656,7 +13437,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "An IANA MIME type (RFC6838) indicating the nature and format of the \\[content\\]."]
+        #[doc = "An IANA MIME type (RFC6838) indicating the nature and format of the content."]
         #[serde(
             rename = "mimeType",
             default,
@@ -11833,6 +13614,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub document: ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3Document>,
+        #[doc = "The document schema of the human review task."]
+        #[serde(
+            rename = "documentSchema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_schema:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentSchema>,
         #[doc = "Whether the validation should be performed on the ad-hoc review request."]
         #[serde(
             rename = "enableSchemaValidation",
@@ -11959,13 +13748,29 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta3ReviewDocumentResponse {
-        #[doc = "The Cloud Storage uri for the human reviewed document."]
+        #[doc = "The Cloud Storage uri for the human reviewed document if the review is succeeded."]
         #[serde(
             rename = "gcsDestination",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_destination: ::std::option::Option<String>,
+        #[doc = "The reason why the review is rejected by reviewer."]
+        #[serde(
+            rename = "rejectionReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rejection_reason: ::std::option::Option<String>,
+        #[doc = "The state of the review operation."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState,
+        >,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -11973,6 +13778,95 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState {
+        #[doc = "The review operation is rejected by the reviewer."]
+        Rejected,
+        #[doc = "The default value. This value is used if the state is omitted."]
+        StateUnspecified,
+        #[doc = "The review operation is succeeded."]
+        Succeeded,
+    }
+    impl GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::Rejected => "REJECTED",
+                GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::StateUnspecified => {
+                    "STATE_UNSPECIFIED"
+                }
+                GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::Succeeded => "SUCCEEDED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState, ()>
+        {
+            Ok(match s {
+                "REJECTED" => GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::Rejected,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::StateUnspecified
+                }
+                "SUCCEEDED" => GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::Succeeded,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "REJECTED" => GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::Rejected,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::StateUnspecified
+                }
+                "SUCCEEDED" => GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState::Succeeded,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3ReviewDocumentResponseState
+    {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -12027,7 +13921,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta3SetDefaultProcessorVersionRequest {
-        #[doc = "Required. The resource name of child ProcessorVersion to use as default."]
+        #[doc = "Required. The resource name of child ProcessorVersion to use as default. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{version}`"]
         #[serde(
             rename = "defaultProcessorVersion",
             default,
@@ -12072,6 +13966,199 @@ pub mod schemas {
     }
     impl ::google_field_selector::ToFieldType
         for GoogleCloudDocumentaiV1Beta3SetDefaultProcessorVersionResponse
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadata { # [doc = "The basic metadata of the long running operation."] # [serde (rename = "commonMetadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub common_metadata : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiV1Beta3CommonOperationMetadata > , # [doc = "The test dataset validation information."] # [serde (rename = "testDatasetValidation" , default , skip_serializing_if = "std::option::Option::is_none")] pub test_dataset_validation : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadataDatasetValidation > , # [doc = "The training dataset validation information."] # [serde (rename = "trainingDatasetValidation" , default , skip_serializing_if = "std::option::Option::is_none")] pub training_dataset_validation : :: std :: option :: Option < crate :: schemas :: GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadataDatasetValidation > , }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadata
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadata
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
+    pub struct GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadataDatasetValidation {
+        #[doc = "The total number of dataset errors."]
+        #[serde(
+            rename = "datasetErrorCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_error_count: ::std::option::Option<i32>,
+        #[doc = "Error information for the dataset as a whole. A maximum of 10 dataset errors will be returned. A single dataset error is terminal for training."]
+        #[serde(
+            rename = "datasetErrors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub dataset_errors: ::std::option::Option<Vec<crate::schemas::GoogleRpcStatus>>,
+        #[doc = "The total number of document errors."]
+        #[serde(
+            rename = "documentErrorCount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_error_count: ::std::option::Option<i32>,
+        #[doc = "Error information pertaining to specific documents. A maximum of 10 document errors will be returned. Any document with errors will not be used throughout training."]
+        #[serde(
+            rename = "documentErrors",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_errors: ::std::option::Option<Vec<crate::schemas::GoogleRpcStatus>>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadataDatasetValidation
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionMetadataDatasetValidation
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequest {
+        #[doc = "Optional. The processor version to use as a base for training. This processor version must be a child of `parent`. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`."]
+        #[serde(
+            rename = "baseProcessorVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub base_processor_version: ::std::option::Option<String>,
+        #[doc = "Optional. The schema the processor version will be trained with."]
+        #[serde(
+            rename = "documentSchema",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub document_schema:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3DocumentSchema>,
+        #[doc = "Optional. The input data used to train the `ProcessorVersion`."]
+        #[serde(
+            rename = "inputData",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub input_data: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequestInputData,
+        >,
+        #[doc = "Required. The processor version to be created."]
+        #[serde(
+            rename = "processorVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub processor_version:
+            ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessorVersion>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequest
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequest
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequestInputData {
+        #[doc = "The documents used for testing the trained version."]
+        #[serde(
+            rename = "testDocuments",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub test_documents: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3BatchDocumentsInputConfig,
+        >,
+        #[doc = "The documents used for training the new version."]
+        #[serde(
+            rename = "trainingDocuments",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub training_documents: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1Beta3BatchDocumentsInputConfig,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequestInputData
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequestInputData
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleCloudDocumentaiV1Beta3TrainProcessorVersionResponse {
+        #[doc = "The resource name of the processor version produced by training."]
+        #[serde(
+            rename = "processorVersion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub processor_version: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionResponse
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for GoogleCloudDocumentaiV1Beta3TrainProcessorVersionResponse
     {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
@@ -12817,13 +14904,29 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1ReviewDocumentResponse {
-        #[doc = "The Cloud Storage uri for the human reviewed document."]
+        #[doc = "The Cloud Storage uri for the human reviewed document if the review is succeeded."]
         #[serde(
             rename = "gcsDestination",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_destination: ::std::option::Option<String>,
+        #[doc = "The reason why the review is rejected by reviewer."]
+        #[serde(
+            rename = "rejectionReason",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub rejection_reason: ::std::option::Option<String>,
+        #[doc = "The state of the review operation."]
+        #[serde(
+            rename = "state",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub state: ::std::option::Option<
+            crate::schemas::GoogleCloudDocumentaiV1ReviewDocumentResponseState,
+        >,
     }
     impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1ReviewDocumentResponse {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -12831,6 +14934,90 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1ReviewDocumentResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        #[doc = "The review operation is rejected by the reviewer."]
+        Rejected,
+        #[doc = "The default value. This value is used if the state is omitted."]
+        StateUnspecified,
+        #[doc = "The review operation is succeeded."]
+        Succeeded,
+    }
+    impl GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                GoogleCloudDocumentaiV1ReviewDocumentResponseState::Rejected => "REJECTED",
+                GoogleCloudDocumentaiV1ReviewDocumentResponseState::StateUnspecified => {
+                    "STATE_UNSPECIFIED"
+                }
+                GoogleCloudDocumentaiV1ReviewDocumentResponseState::Succeeded => "SUCCEEDED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<GoogleCloudDocumentaiV1ReviewDocumentResponseState, ()> {
+            Ok(match s {
+                "REJECTED" => GoogleCloudDocumentaiV1ReviewDocumentResponseState::Rejected,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudDocumentaiV1ReviewDocumentResponseState::StateUnspecified
+                }
+                "SUCCEEDED" => GoogleCloudDocumentaiV1ReviewDocumentResponseState::Succeeded,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "REJECTED" => GoogleCloudDocumentaiV1ReviewDocumentResponseState::Rejected,
+                "STATE_UNSPECIFIED" => {
+                    GoogleCloudDocumentaiV1ReviewDocumentResponseState::StateUnspecified
+                }
+                "SUCCEEDED" => GoogleCloudDocumentaiV1ReviewDocumentResponseState::Succeeded,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for GoogleCloudDocumentaiV1ReviewDocumentResponseState {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleCloudDocumentaiV1ReviewDocumentResponseState {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -12990,7 +15177,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleCloudLocationListLocationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleCloudLocationListLocationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -13071,7 +15258,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for GoogleLongrunningListOperationsResponse {
+    impl crate::GetNextPageToken<String> for GoogleLongrunningListOperationsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -13286,42 +15473,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeDateTime {
-        #[doc = "Required. Day of month. Must be from 1 to 31 and valid for the year and month."]
+        #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
         #[serde(
             rename = "day",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub day: ::std::option::Option<i32>,
-        #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+        #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hours: ::std::option::Option<i32>,
-        #[doc = "Required. Minutes of hour of day. Must be from 0 to 59."]
+        #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
         #[serde(
             rename = "minutes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minutes: ::std::option::Option<i32>,
-        #[doc = "Required. Month of year. Must be from 1 to 12."]
+        #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
         #[serde(
             rename = "month",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub month: ::std::option::Option<i32>,
-        #[doc = "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+        #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
         #[serde(
             rename = "nanos",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nanos: ::std::option::Option<i32>,
-        #[doc = "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+        #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
         #[serde(
             rename = "seconds",
             default,
@@ -13828,6 +16015,16 @@ pub mod resources {
                         auth: self.auth_ref(),
                     }
                 }
+                #[doc = "Actions that can be performed on the processor_types resource"]
+                pub fn processor_types(
+                    &self,
+                ) -> crate::resources::projects::locations::processor_types::ProcessorTypesActions
+                {
+                    crate::resources::projects::locations::processor_types::ProcessorTypesActions {
+                        reqwest: &self.reqwest,
+                        auth: self.auth_ref(),
+                    }
+                }
                 #[doc = "Actions that can be performed on the processors resource"]
                 pub fn processors(
                     &self,
@@ -14297,7 +16494,7 @@ pub mod resources {
                         #[serde(rename = "locations")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -14332,7 +16529,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -14388,7 +16585,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -14506,12 +16703,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -15043,7 +17241,7 @@ pub mod resources {
                             #[serde(rename = "operations")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -15078,7 +17276,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -15134,7 +17332,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -15252,12 +17450,587 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                    {
+                        self._execute().await
+                    }
+                }
+            }
+            pub mod processor_types {
+                pub mod params {}
+                pub struct ProcessorTypesActions<'a> {
+                    pub(crate) reqwest: &'a reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                }
+                impl<'a> ProcessorTypesActions<'a> {
+                    fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                        self.auth
+                    }
+                    #[doc = "Gets a processor type detail."]
+                    pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                        GetRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            name: name.into(),
+                        }
+                    }
+                    #[doc = "Lists the processor types that exist."]
+                    pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                        ListRequestBuilder {
+                            reqwest: &self.reqwest,
+                            auth: self.auth_ref(),
+                            access_token: None,
+                            alt: None,
+                            callback: None,
+                            fields: None,
+                            key: None,
+                            oauth_token: None,
+                            pretty_print: None,
+                            quota_user: None,
+                            upload_protocol: None,
+                            upload_type: None,
+                            xgafv: None,
+                            parent: parent.into(),
+                            page_size: None,
+                            page_token: None,
+                        }
+                    }
+                }
+                #[doc = "Created via [ProcessorTypesActions::get()](struct.ProcessorTypesActions.html#method.get)"]
+                #[derive(Debug, Clone)]
+                pub struct GetRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    name: String,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> GetRequestBuilder<'a> {
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessorType,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessorType,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://documentai.googleapis.com/".to_owned();
+                        output.push_str("v1beta3/");
+                        {
+                            let var_as_str = &self.name;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[doc = "Created via [ProcessorTypesActions::list()](struct.ProcessorTypesActions.html#method.list)"]
+                #[derive(Debug, Clone)]
+                pub struct ListRequestBuilder<'a> {
+                    pub(crate) reqwest: &'a ::reqwest::Client,
+                    pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                    parent: String,
+                    page_size: ::std::option::Option<i32>,
+                    page_token: ::std::option::Option<String>,
+                    access_token: ::std::option::Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    callback: ::std::option::Option<String>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    upload_protocol: ::std::option::Option<String>,
+                    upload_type: ::std::option::Option<String>,
+                    xgafv: ::std::option::Option<crate::params::Xgafv>,
+                }
+                impl<'a> ListRequestBuilder<'a> {
+                    #[doc = "The maximum number of processor types to return. If unspecified, at most 100 processor types will be returned. The maximum value is 500; values above 500 will be coerced to 500."]
+                    pub fn page_size(mut self, value: i32) -> Self {
+                        self.page_size = Some(value);
+                        self
+                    }
+                    #[doc = "Used to retrieve the next page of results, empty if at the end of the list."]
+                    pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                        self.page_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth access token."]
+                    pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                        self.access_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "JSONP"]
+                    pub fn callback(mut self, value: impl Into<String>) -> Self {
+                        self.callback = Some(value.into());
+                        self
+                    }
+                    #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                    pub fn key(mut self, value: impl Into<String>) -> Self {
+                        self.key = Some(value.into());
+                        self
+                    }
+                    #[doc = "OAuth 2.0 token for the current user."]
+                    pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                        self.oauth_token = Some(value.into());
+                        self
+                    }
+                    #[doc = "Returns response with indentations and line breaks."]
+                    pub fn pretty_print(mut self, value: bool) -> Self {
+                        self.pretty_print = Some(value);
+                        self
+                    }
+                    #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                    pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                        self.quota_user = Some(value.into());
+                        self
+                    }
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                    pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                        self.upload_protocol = Some(value.into());
+                        self
+                    }
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                    pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                        self.upload_type = Some(value.into());
+                        self
+                    }
+                    #[doc = "V1 error format."]
+                    pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                        self.xgafv = Some(value);
+                        self
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `processorTypes` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                    pub fn stream_processor_types<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_processor_types_with_fields(fields)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `processorTypes` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                    pub fn stream_processor_types_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessorType,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_processor_types_with_fields(None::<String>)
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `processorTypes` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                    pub fn stream_processor_types_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleCloudDocumentaiV1Beta3ProcessorType,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_processor_types_with_fields(Some("*"))
+                    }
+                    #[doc = "\nExecute the request and yield each item in the `processorTypes` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                    pub fn stream_processor_types_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                        struct Page<T> {
+                            #[serde(rename = "nextPageToken")]
+                            pub next_page_token: ::std::option::Option<String>,
+                            #[serde(rename = "processorTypes")]
+                            pub items: Vec<T>,
+                        }
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
+                            fn next_page_token(&self) -> ::std::option::Option<String> {
+                                self.next_page_token.to_owned()
+                            }
+                        }
+                        impl<T> crate::stream::IntoPageItems for Page<T> {
+                            type Items = Vec<T>;
+                            fn into_page_items(self) -> Self::Items {
+                                self.items
+                            }
+                        }
+                        self.fields = Some({
+                            let mut selector =
+                                concat!("nextPageToken,", "processorTypes").to_owned();
+                            let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                            if !items_fields.is_empty() {
+                                selector.push_str("(");
+                                selector.push_str(items_fields);
+                                selector.push_str(")");
+                            }
+                            selector
+                        });
+                        crate::stream::page_item_stream::<_, Page<T>>(self)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                    pub fn stream<T>(
+                        self,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String>
+                            + ::serde::de::DeserializeOwned
+                            + ::google_field_selector::FieldSelector
+                            + 'a,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.stream_with_fields(fields)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests the default set of fields from the server."]
+                    pub fn stream_with_default_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(None::<&str>)
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                    #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                    #[doc = r" repeated until no page token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Requests all fields from the server."]
+                    pub fn stream_with_all_fields(
+                        self,
+                    ) -> impl ::futures::Stream<
+                        Item = Result<
+                            crate::schemas::GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse,
+                            crate::Error,
+                        >,
+                    > + 'a {
+                        self.stream_with_fields(Some("*"))
+                    }
+                    #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                    #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                    #[doc = r" token is returned."]
+                    #[doc = r""]
+                    #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                    #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                    #[doc = r""]
+                    #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                    pub fn stream_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                        F: AsRef<str>,
+                    {
+                        let mut fields =
+                            fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                        if !fields.is_empty() {
+                            match fields.chars().rev().nth(0) {
+                                Some(',') | None => {}
+                                _ => fields.push_str(","),
+                            }
+                            fields.push_str("nextPageToken");
+                            self.fields = Some(fields);
+                        }
+                        crate::stream::page_stream(self)
+                    }
+                    #[doc = r" Execute the given operation. The fields requested are"]
+                    #[doc = r" determined by the FieldSelector attribute of the return type."]
+                    #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                    #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                    #[doc = r" are not generic over the return type and deserialize the"]
+                    #[doc = r" response into an auto-generated struct will all possible"]
+                    #[doc = r" fields."]
+                    pub async fn execute<T>(self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+                    {
+                        let fields = ::google_field_selector::to_string::<T>();
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
+                            None
+                        } else {
+                            Some(fields)
+                        };
+                        self.execute_with_fields(fields).await
+                    }
+                    #[doc = r" Execute the given operation. This will not provide any"]
+                    #[doc = r" `fields` selector indicating that the server will determine"]
+                    #[doc = r" the fields returned. This typically includes the most common"]
+                    #[doc = r" fields, but it will not include every possible attribute of"]
+                    #[doc = r" the response resource."]
+                    pub async fn execute_with_default_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(None::<&str>).await
+                    }
+                    #[doc = r" Execute the given operation. This will provide a `fields`"]
+                    #[doc = r" selector of `*`. This will include every attribute of the"]
+                    #[doc = r" response resource and should be limited to use during"]
+                    #[doc = r" development or debugging."]
+                    pub async fn execute_with_all_fields(
+                        self,
+                    ) -> Result<
+                        crate::schemas::GoogleCloudDocumentaiV1Beta3ListProcessorTypesResponse,
+                        crate::Error,
+                    > {
+                        self.execute_with_fields(Some("*")).await
+                    }
+                    #[doc = r" Execute the given operation. This will use the `fields`"]
+                    #[doc = r" selector provided and will deserialize the response into"]
+                    #[doc = r" whatever return value is provided."]
+                    pub async fn execute_with_fields<T, F>(
+                        mut self,
+                        fields: ::std::option::Option<F>,
+                    ) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                        F: Into<String>,
+                    {
+                        self.fields = fields.map(Into::into);
+                        self._execute().await
+                    }
+                    async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: ::serde::de::DeserializeOwned,
+                    {
+                        let req = self._request(&self._path()).await?;
+                        Ok(req.send().await?.error_for_status()?.json().await?)
+                    }
+                    fn _path(&self) -> String {
+                        let mut output = "https://documentai.googleapis.com/".to_owned();
+                        output.push_str("v1beta3/");
+                        {
+                            let var_as_str = &self.parent;
+                            output.extend(::percent_encoding::utf8_percent_encode(
+                                &var_as_str,
+                                crate::RESERVED,
+                            ));
+                        }
+                        output.push_str("/processorTypes");
+                        output
+                    }
+                    async fn _request(
+                        &self,
+                        path: &str,
+                    ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                        let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                        req = req.query(&[("pageSize", &self.page_size)]);
+                        req = req.query(&[("pageToken", &self.page_token)]);
+                        req = req.query(&[("access_token", &self.access_token)]);
+                        req = req.query(&[("alt", &self.alt)]);
+                        req = req.query(&[("callback", &self.callback)]);
+                        req = req.query(&[("fields", &self.fields)]);
+                        req = req.query(&[("key", &self.key)]);
+                        req = req.query(&[("oauth_token", &self.oauth_token)]);
+                        req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                        req = req.query(&[("quotaUser", &self.quota_user)]);
+                        req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                        req = req.query(&[("uploadType", &self.upload_type)]);
+                        req = req.query(&[("$.xgafv", &self.xgafv)]);
+                        let access_token = self
+                            .auth
+                            .access_token()
+                            .await
+                            .map_err(|err| crate::Error::OAuth2(err))?;
+                        req = req.bearer_auth(access_token);
+                        Ok(req)
+                    }
+                }
+                #[async_trait::async_trait]
+                impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
+                    fn set_page_token(&mut self, value: String) {
+                        self.page_token = value.into();
+                    }
+                    async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                    where
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -16598,7 +19371,7 @@ pub mod resources {
                             #[serde(rename = "processors")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -16633,7 +19406,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -16689,7 +19462,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -16811,12 +19584,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -17419,6 +20193,30 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
+                        #[doc = "Evaluates a ProcessorVersion against annotated documents, producing an Evaluation."]
+                        pub fn evaluate_processor_version(
+                            &self,
+                            request : crate :: schemas :: GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionRequest,
+                            processor_version: impl Into<String>,
+                        ) -> EvaluateProcessorVersionRequestBuilder {
+                            EvaluateProcessorVersionRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                processor_version: processor_version.into(),
+                            }
+                        }
                         #[doc = "Gets a processor version detail."]
                         pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                             GetRequestBuilder {
@@ -17483,6 +20281,30 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
+                        #[doc = "Trains a new processor version. Operation metadata is returned as cloud_documentai_core.TrainProcessorVersionMetadata."]
+                        pub fn train(
+                            &self,
+                            request : crate :: schemas :: GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequest,
+                            parent: impl Into<String>,
+                        ) -> TrainRequestBuilder {
+                            TrainRequestBuilder {
+                                reqwest: &self.reqwest,
+                                auth: self.auth_ref(),
+                                request,
+                                access_token: None,
+                                alt: None,
+                                callback: None,
+                                fields: None,
+                                key: None,
+                                oauth_token: None,
+                                pretty_print: None,
+                                quota_user: None,
+                                upload_protocol: None,
+                                upload_type: None,
+                                xgafv: None,
+                                parent: parent.into(),
+                            }
+                        }
                         #[doc = "Undeploys the processor version."]
                         pub fn undeploy(
                             &self,
@@ -17506,6 +20328,9 @@ pub mod resources {
                                 xgafv: None,
                                 name: name.into(),
                             }
+                        }
+                        #[doc = "Actions that can be performed on the evaluations resource"]                        pub fn evaluations (& self) -> crate :: resources :: projects :: locations :: processors :: processor_versions :: evaluations :: EvaluationsActions{
+                            crate :: resources :: projects :: locations :: processors :: processor_versions :: evaluations :: EvaluationsActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
                         }
                     }
                     #[doc = "Created via [ProcessorVersionsActions::batch_process()](struct.ProcessorVersionsActions.html#method.batch_process)"]
@@ -17990,6 +20815,157 @@ pub mod resources {
                             Ok(req)
                         }
                     }
+                    #[doc = "Created via [ProcessorVersionsActions::evaluate_processor_version()](struct.ProcessorVersionsActions.html#method.evaluate_processor_version)"]
+                    #[derive(Debug, Clone)]
+                    pub struct EvaluateProcessorVersionRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudDocumentaiV1Beta3EvaluateProcessorVersionRequest , processor_version : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                    impl<'a> EvaluateProcessorVersionRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://documentai.googleapis.com/".to_owned();
+                            output.push_str("v1beta3/");
+                            {
+                                let var_as_str = &self.processor_version;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str(":evaluateProcessorVersion");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
                     #[doc = "Created via [ProcessorVersionsActions::get()](struct.ProcessorVersionsActions.html#method.get)"]
                     #[derive(Debug, Clone)]
                     pub struct GetRequestBuilder<'a> {
@@ -18289,7 +21265,7 @@ pub mod resources {
                                 #[serde(rename = "processorVersions")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -18326,7 +21302,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -18366,7 +21342,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -18478,12 +21454,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -18631,6 +21608,157 @@ pub mod resources {
                                 ));
                             }
                             output.push_str(":process");
+                            output
+                        }
+                        async fn _request(
+                            &self,
+                            path: &str,
+                        ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                        {
+                            let mut req = self.reqwest.request(::reqwest::Method::POST, path);
+                            req = req.query(&[("access_token", &self.access_token)]);
+                            req = req.query(&[("alt", &self.alt)]);
+                            req = req.query(&[("callback", &self.callback)]);
+                            req = req.query(&[("fields", &self.fields)]);
+                            req = req.query(&[("key", &self.key)]);
+                            req = req.query(&[("oauth_token", &self.oauth_token)]);
+                            req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                            req = req.query(&[("quotaUser", &self.quota_user)]);
+                            req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                            req = req.query(&[("uploadType", &self.upload_type)]);
+                            req = req.query(&[("$.xgafv", &self.xgafv)]);
+                            let access_token = self
+                                .auth
+                                .access_token()
+                                .await
+                                .map_err(|err| crate::Error::OAuth2(err))?;
+                            req = req.bearer_auth(access_token);
+                            Ok(req)
+                        }
+                    }
+                    #[doc = "Created via [ProcessorVersionsActions::train()](struct.ProcessorVersionsActions.html#method.train)"]
+                    #[derive(Debug, Clone)]
+                    pub struct TrainRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , request : crate :: schemas :: GoogleCloudDocumentaiV1Beta3TrainProcessorVersionRequest , parent : String , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
+                    impl<'a> TrainRequestBuilder<'a> {
+                        #[doc = "OAuth access token."]
+                        pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                            self.access_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "JSONP"]
+                        pub fn callback(mut self, value: impl Into<String>) -> Self {
+                            self.callback = Some(value.into());
+                            self
+                        }
+                        #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                        pub fn key(mut self, value: impl Into<String>) -> Self {
+                            self.key = Some(value.into());
+                            self
+                        }
+                        #[doc = "OAuth 2.0 token for the current user."]
+                        pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                            self.oauth_token = Some(value.into());
+                            self
+                        }
+                        #[doc = "Returns response with indentations and line breaks."]
+                        pub fn pretty_print(mut self, value: bool) -> Self {
+                            self.pretty_print = Some(value);
+                            self
+                        }
+                        #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                        pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                            self.quota_user = Some(value.into());
+                            self
+                        }
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                        pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                            self.upload_protocol = Some(value.into());
+                            self
+                        }
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                        pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                            self.upload_type = Some(value.into());
+                            self
+                        }
+                        #[doc = "V1 error format."]
+                        pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                            self.xgafv = Some(value);
+                            self
+                        }
+                        #[doc = r" Execute the given operation. The fields requested are"]
+                        #[doc = r" determined by the FieldSelector attribute of the return type."]
+                        #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                        #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                        #[doc = r" are not generic over the return type and deserialize the"]
+                        #[doc = r" response into an auto-generated struct will all possible"]
+                        #[doc = r" fields."]
+                        pub async fn execute<T>(self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned
+                                + ::google_field_selector::FieldSelector,
+                        {
+                            let fields = ::google_field_selector::to_string::<T>();
+                            let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                None
+                            } else {
+                                Some(fields)
+                            };
+                            self.execute_with_fields(fields).await
+                        }
+                        #[doc = r" Execute the given operation. This will not provide any"]
+                        #[doc = r" `fields` selector indicating that the server will determine"]
+                        #[doc = r" the fields returned. This typically includes the most common"]
+                        #[doc = r" fields, but it will not include every possible attribute of"]
+                        #[doc = r" the response resource."]
+                        pub async fn execute_with_default_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(None::<&str>).await
+                        }
+                        #[doc = r" Execute the given operation. This will provide a `fields`"]
+                        #[doc = r" selector of `*`. This will include every attribute of the"]
+                        #[doc = r" response resource and should be limited to use during"]
+                        #[doc = r" development or debugging."]
+                        pub async fn execute_with_all_fields(
+                            self,
+                        ) -> Result<crate::schemas::GoogleLongrunningOperation, crate::Error>
+                        {
+                            self.execute_with_fields(Some("*")).await
+                        }
+                        #[doc = r" Execute the given operation. This will use the `fields`"]
+                        #[doc = r" selector provided and will deserialize the response into"]
+                        #[doc = r" whatever return value is provided."]
+                        pub async fn execute_with_fields<T, F>(
+                            mut self,
+                            fields: ::std::option::Option<F>,
+                        ) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                            F: Into<String>,
+                        {
+                            self.fields = fields.map(Into::into);
+                            self._execute().await
+                        }
+                        async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                        where
+                            T: ::serde::de::DeserializeOwned,
+                        {
+                            let req = self._request(&self._path()).await?;
+                            let req = req.json(&self.request);
+                            Ok(req.send().await?.error_for_status()?.json().await?)
+                        }
+                        fn _path(&self) -> String {
+                            let mut output = "https://documentai.googleapis.com/".to_owned();
+                            output.push_str("v1beta3/");
+                            {
+                                let var_as_str = &self.parent;
+                                output.extend(::percent_encoding::utf8_percent_encode(
+                                    &var_as_str,
+                                    crate::RESERVED,
+                                ));
+                            }
+                            output.push_str("/processorVersions:train");
                             output
                         }
                         async fn _request(
@@ -18808,6 +21936,571 @@ pub mod resources {
                                 .map_err(|err| crate::Error::OAuth2(err))?;
                             req = req.bearer_auth(access_token);
                             Ok(req)
+                        }
+                    }
+                    pub mod evaluations {
+                        pub mod params {}
+                        pub struct EvaluationsActions<'a> {
+                            pub(crate) reqwest: &'a reqwest::Client,
+                            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                        }
+                        impl<'a> EvaluationsActions<'a> {
+                            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                                self.auth
+                            }
+                            #[doc = "Retrieves a specific evaluation."]
+                            pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
+                                GetRequestBuilder {
+                                    reqwest: &self.reqwest,
+                                    auth: self.auth_ref(),
+                                    access_token: None,
+                                    alt: None,
+                                    callback: None,
+                                    fields: None,
+                                    key: None,
+                                    oauth_token: None,
+                                    pretty_print: None,
+                                    quota_user: None,
+                                    upload_protocol: None,
+                                    upload_type: None,
+                                    xgafv: None,
+                                    name: name.into(),
+                                }
+                            }
+                            #[doc = "Retrieves a set of evaluations for a given processor version."]
+                            pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
+                                ListRequestBuilder {
+                                    reqwest: &self.reqwest,
+                                    auth: self.auth_ref(),
+                                    access_token: None,
+                                    alt: None,
+                                    callback: None,
+                                    fields: None,
+                                    key: None,
+                                    oauth_token: None,
+                                    pretty_print: None,
+                                    quota_user: None,
+                                    upload_protocol: None,
+                                    upload_type: None,
+                                    xgafv: None,
+                                    parent: parent.into(),
+                                    page_size: None,
+                                    page_token: None,
+                                }
+                            }
+                        }
+                        #[doc = "Created via [EvaluationsActions::get()](struct.EvaluationsActions.html#method.get)"]
+                        #[derive(Debug, Clone)]
+                        pub struct GetRequestBuilder<'a> {
+                            pub(crate) reqwest: &'a ::reqwest::Client,
+                            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                            name: String,
+                            access_token: ::std::option::Option<String>,
+                            alt: ::std::option::Option<crate::params::Alt>,
+                            callback: ::std::option::Option<String>,
+                            fields: ::std::option::Option<String>,
+                            key: ::std::option::Option<String>,
+                            oauth_token: ::std::option::Option<String>,
+                            pretty_print: ::std::option::Option<bool>,
+                            quota_user: ::std::option::Option<String>,
+                            upload_protocol: ::std::option::Option<String>,
+                            upload_type: ::std::option::Option<String>,
+                            xgafv: ::std::option::Option<crate::params::Xgafv>,
+                        }
+                        impl<'a> GetRequestBuilder<'a> {
+                            #[doc = "OAuth access token."]
+                            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                                self.access_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "JSONP"]
+                            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                                self.callback = Some(value.into());
+                                self
+                            }
+                            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                            pub fn key(mut self, value: impl Into<String>) -> Self {
+                                self.key = Some(value.into());
+                                self
+                            }
+                            #[doc = "OAuth 2.0 token for the current user."]
+                            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                                self.oauth_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "Returns response with indentations and line breaks."]
+                            pub fn pretty_print(mut self, value: bool) -> Self {
+                                self.pretty_print = Some(value);
+                                self
+                            }
+                            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                                self.quota_user = Some(value.into());
+                                self
+                            }
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                                self.upload_protocol = Some(value.into());
+                                self
+                            }
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                                self.upload_type = Some(value.into());
+                                self
+                            }
+                            #[doc = "V1 error format."]
+                            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                                self.xgafv = Some(value);
+                                self
+                            }
+                            #[doc = r" Execute the given operation. The fields requested are"]
+                            #[doc = r" determined by the FieldSelector attribute of the return type."]
+                            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                            #[doc = r" are not generic over the return type and deserialize the"]
+                            #[doc = r" response into an auto-generated struct will all possible"]
+                            #[doc = r" fields."]
+                            pub async fn execute<T>(self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned
+                                    + ::google_field_selector::FieldSelector,
+                            {
+                                let fields = ::google_field_selector::to_string::<T>();
+                                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                    None
+                                } else {
+                                    Some(fields)
+                                };
+                                self.execute_with_fields(fields).await
+                            }
+                            #[doc = r" Execute the given operation. This will not provide any"]
+                            #[doc = r" `fields` selector indicating that the server will determine"]
+                            #[doc = r" the fields returned. This typically includes the most common"]
+                            #[doc = r" fields, but it will not include every possible attribute of"]
+                            #[doc = r" the response resource."]
+                            pub async fn execute_with_default_fields(
+                                self,
+                            ) -> Result<
+                                crate::schemas::GoogleCloudDocumentaiV1Beta3Evaluation,
+                                crate::Error,
+                            > {
+                                self.execute_with_fields(None::<&str>).await
+                            }
+                            #[doc = r" Execute the given operation. This will provide a `fields`"]
+                            #[doc = r" selector of `*`. This will include every attribute of the"]
+                            #[doc = r" response resource and should be limited to use during"]
+                            #[doc = r" development or debugging."]
+                            pub async fn execute_with_all_fields(
+                                self,
+                            ) -> Result<
+                                crate::schemas::GoogleCloudDocumentaiV1Beta3Evaluation,
+                                crate::Error,
+                            > {
+                                self.execute_with_fields(Some("*")).await
+                            }
+                            #[doc = r" Execute the given operation. This will use the `fields`"]
+                            #[doc = r" selector provided and will deserialize the response into"]
+                            #[doc = r" whatever return value is provided."]
+                            pub async fn execute_with_fields<T, F>(
+                                mut self,
+                                fields: ::std::option::Option<F>,
+                            ) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                                F: Into<String>,
+                            {
+                                self.fields = fields.map(Into::into);
+                                self._execute().await
+                            }
+                            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                            {
+                                let req = self._request(&self._path()).await?;
+                                Ok(req.send().await?.error_for_status()?.json().await?)
+                            }
+                            fn _path(&self) -> String {
+                                let mut output = "https://documentai.googleapis.com/".to_owned();
+                                output.push_str("v1beta3/");
+                                {
+                                    let var_as_str = &self.name;
+                                    output.extend(::percent_encoding::utf8_percent_encode(
+                                        &var_as_str,
+                                        crate::RESERVED,
+                                    ));
+                                }
+                                output
+                            }
+                            async fn _request(
+                                &self,
+                                path: &str,
+                            ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                            {
+                                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                                req = req.query(&[("access_token", &self.access_token)]);
+                                req = req.query(&[("alt", &self.alt)]);
+                                req = req.query(&[("callback", &self.callback)]);
+                                req = req.query(&[("fields", &self.fields)]);
+                                req = req.query(&[("key", &self.key)]);
+                                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                                req = req.query(&[("quotaUser", &self.quota_user)]);
+                                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                                req = req.query(&[("uploadType", &self.upload_type)]);
+                                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                                let access_token = self
+                                    .auth
+                                    .access_token()
+                                    .await
+                                    .map_err(|err| crate::Error::OAuth2(err))?;
+                                req = req.bearer_auth(access_token);
+                                Ok(req)
+                            }
+                        }
+                        #[doc = "Created via [EvaluationsActions::list()](struct.EvaluationsActions.html#method.list)"]
+                        #[derive(Debug, Clone)]
+                        pub struct ListRequestBuilder<'a> {
+                            pub(crate) reqwest: &'a ::reqwest::Client,
+                            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+                            parent: String,
+                            page_size: ::std::option::Option<i32>,
+                            page_token: ::std::option::Option<String>,
+                            access_token: ::std::option::Option<String>,
+                            alt: ::std::option::Option<crate::params::Alt>,
+                            callback: ::std::option::Option<String>,
+                            fields: ::std::option::Option<String>,
+                            key: ::std::option::Option<String>,
+                            oauth_token: ::std::option::Option<String>,
+                            pretty_print: ::std::option::Option<bool>,
+                            quota_user: ::std::option::Option<String>,
+                            upload_protocol: ::std::option::Option<String>,
+                            upload_type: ::std::option::Option<String>,
+                            xgafv: ::std::option::Option<crate::params::Xgafv>,
+                        }
+                        impl<'a> ListRequestBuilder<'a> {
+                            #[doc = "The standard list page size. If unspecified, at most 5 evaluations will be returned. The maximum value is 100; values above 100 will be coerced to 100."]
+                            pub fn page_size(mut self, value: i32) -> Self {
+                                self.page_size = Some(value);
+                                self
+                            }
+                            #[doc = "A page token, received from a previous `ListEvaluations` call. Provide this to retrieve the subsequent page."]
+                            pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                                self.page_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "OAuth access token."]
+                            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                                self.access_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "JSONP"]
+                            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                                self.callback = Some(value.into());
+                                self
+                            }
+                            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+                            pub fn key(mut self, value: impl Into<String>) -> Self {
+                                self.key = Some(value.into());
+                                self
+                            }
+                            #[doc = "OAuth 2.0 token for the current user."]
+                            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                                self.oauth_token = Some(value.into());
+                                self
+                            }
+                            #[doc = "Returns response with indentations and line breaks."]
+                            pub fn pretty_print(mut self, value: bool) -> Self {
+                                self.pretty_print = Some(value);
+                                self
+                            }
+                            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+                            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                                self.quota_user = Some(value.into());
+                                self
+                            }
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+                            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                                self.upload_protocol = Some(value.into());
+                                self
+                            }
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+                            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                                self.upload_type = Some(value.into());
+                                self
+                            }
+                            #[doc = "V1 error format."]
+                            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                                self.xgafv = Some(value);
+                                self
+                            }
+                            #[doc = "\nExecute the request and yield each item in the `evaluations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+                            pub fn stream_evaluations<T>(
+                                self,
+                            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                            where
+                                T: ::serde::de::DeserializeOwned
+                                    + ::google_field_selector::FieldSelector
+                                    + 'a,
+                            {
+                                let fields = ::google_field_selector::to_string::<T>();
+                                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                    None
+                                } else {
+                                    Some(fields)
+                                };
+                                self.stream_evaluations_with_fields(fields)
+                            }
+                            #[doc = "\nExecute the request and yield each item in the `evaluations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+                            pub fn stream_evaluations_with_default_fields(
+                                self,
+                            ) -> impl ::futures::Stream<
+                                Item = Result<
+                                    crate::schemas::GoogleCloudDocumentaiV1Beta3Evaluation,
+                                    crate::Error,
+                                >,
+                            > + 'a {
+                                self.stream_evaluations_with_fields(None::<String>)
+                            }
+                            #[doc = "\nExecute the request and yield each item in the `evaluations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+                            pub fn stream_evaluations_with_all_fields(
+                                self,
+                            ) -> impl ::futures::Stream<
+                                Item = Result<
+                                    crate::schemas::GoogleCloudDocumentaiV1Beta3Evaluation,
+                                    crate::Error,
+                                >,
+                            > + 'a {
+                                self.stream_evaluations_with_fields(Some("*"))
+                            }
+                            #[doc = "\nExecute the request and yield each item in the `evaluations` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+                            pub fn stream_evaluations_with_fields<T, F>(
+                                mut self,
+                                fields: ::std::option::Option<F>,
+                            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                            where
+                                T: ::serde::de::DeserializeOwned + 'a,
+                                F: AsRef<str>,
+                            {
+                                #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                                struct Page<T> {
+                                    #[serde(rename = "nextPageToken")]
+                                    pub next_page_token: ::std::option::Option<String>,
+                                    #[serde(rename = "evaluations")]
+                                    pub items: Vec<T>,
+                                }
+                                impl<T> crate::GetNextPageToken<String> for Page<T> {
+                                    fn next_page_token(&self) -> ::std::option::Option<String> {
+                                        self.next_page_token.to_owned()
+                                    }
+                                }
+                                impl<T> crate::stream::IntoPageItems for Page<T> {
+                                    type Items = Vec<T>;
+                                    fn into_page_items(self) -> Self::Items {
+                                        self.items
+                                    }
+                                }
+                                self.fields = Some({
+                                    let mut selector =
+                                        concat!("nextPageToken,", "evaluations").to_owned();
+                                    let items_fields =
+                                        fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                                    if !items_fields.is_empty() {
+                                        selector.push_str("(");
+                                        selector.push_str(items_fields);
+                                        selector.push_str(")");
+                                    }
+                                    selector
+                                });
+                                crate::stream::page_item_stream::<_, Page<T>>(self)
+                            }
+                            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                            #[doc = r" token is returned."]
+                            #[doc = r""]
+                            #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+                            #[doc = r""]
+                            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                            #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+                            pub fn stream<T>(
+                                self,
+                            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                            where
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + ::google_field_selector::FieldSelector
+                                    + 'a,
+                            {
+                                let fields = ::google_field_selector::to_string::<T>();
+                                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                    None
+                                } else {
+                                    Some(fields)
+                                };
+                                self.stream_with_fields(fields)
+                            }
+                            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                            #[doc = r" repeated until no page token is returned."]
+                            #[doc = r""]
+                            #[doc = r" Requests the default set of fields from the server."]                            pub fn stream_with_default_fields (self) -> impl :: futures :: Stream < Item = Result < crate :: schemas :: GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse , crate :: Error >> + 'a{
+                                self.stream_with_fields(None::<&str>)
+                            }
+                            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+                            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+                            #[doc = r" repeated until no page token is returned."]
+                            #[doc = r""]
+                            #[doc = r" Requests all fields from the server."]                            pub fn stream_with_all_fields (self) -> impl :: futures :: Stream < Item = Result < crate :: schemas :: GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse , crate :: Error >> + 'a{
+                                self.stream_with_fields(Some("*"))
+                            }
+                            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+                            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+                            #[doc = r" token is returned."]
+                            #[doc = r""]
+                            #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+                            #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+                            #[doc = r""]
+                            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+                            pub fn stream_with_fields<T, F>(
+                                mut self,
+                                fields: ::std::option::Option<F>,
+                            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+                            where
+                                T: crate::GetNextPageToken<String>
+                                    + ::serde::de::DeserializeOwned
+                                    + 'a,
+                                F: AsRef<str>,
+                            {
+                                let mut fields =
+                                    fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                                if !fields.is_empty() {
+                                    match fields.chars().rev().nth(0) {
+                                        Some(',') | None => {}
+                                        _ => fields.push_str(","),
+                                    }
+                                    fields.push_str("nextPageToken");
+                                    self.fields = Some(fields);
+                                }
+                                crate::stream::page_stream(self)
+                            }
+                            #[doc = r" Execute the given operation. The fields requested are"]
+                            #[doc = r" determined by the FieldSelector attribute of the return type."]
+                            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+                            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+                            #[doc = r" are not generic over the return type and deserialize the"]
+                            #[doc = r" response into an auto-generated struct will all possible"]
+                            #[doc = r" fields."]
+                            pub async fn execute<T>(self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned
+                                    + ::google_field_selector::FieldSelector,
+                            {
+                                let fields = ::google_field_selector::to_string::<T>();
+                                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                                    None
+                                } else {
+                                    Some(fields)
+                                };
+                                self.execute_with_fields(fields).await
+                            }
+                            #[doc = r" Execute the given operation. This will not provide any"]
+                            #[doc = r" `fields` selector indicating that the server will determine"]
+                            #[doc = r" the fields returned. This typically includes the most common"]
+                            #[doc = r" fields, but it will not include every possible attribute of"]
+                            #[doc = r" the response resource."]
+                            pub async fn execute_with_default_fields(
+                                self,
+                            ) -> Result<
+                                crate::schemas::GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse,
+                                crate::Error,
+                            > {
+                                self.execute_with_fields(None::<&str>).await
+                            }
+                            #[doc = r" Execute the given operation. This will provide a `fields`"]
+                            #[doc = r" selector of `*`. This will include every attribute of the"]
+                            #[doc = r" response resource and should be limited to use during"]
+                            #[doc = r" development or debugging."]
+                            pub async fn execute_with_all_fields(
+                                self,
+                            ) -> Result<
+                                crate::schemas::GoogleCloudDocumentaiV1Beta3ListEvaluationsResponse,
+                                crate::Error,
+                            > {
+                                self.execute_with_fields(Some("*")).await
+                            }
+                            #[doc = r" Execute the given operation. This will use the `fields`"]
+                            #[doc = r" selector provided and will deserialize the response into"]
+                            #[doc = r" whatever return value is provided."]
+                            pub async fn execute_with_fields<T, F>(
+                                mut self,
+                                fields: ::std::option::Option<F>,
+                            ) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                                F: Into<String>,
+                            {
+                                self.fields = fields.map(Into::into);
+                                self._execute().await
+                            }
+                            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+                            where
+                                T: ::serde::de::DeserializeOwned,
+                            {
+                                let req = self._request(&self._path()).await?;
+                                Ok(req.send().await?.error_for_status()?.json().await?)
+                            }
+                            fn _path(&self) -> String {
+                                let mut output = "https://documentai.googleapis.com/".to_owned();
+                                output.push_str("v1beta3/");
+                                {
+                                    let var_as_str = &self.parent;
+                                    output.extend(::percent_encoding::utf8_percent_encode(
+                                        &var_as_str,
+                                        crate::RESERVED,
+                                    ));
+                                }
+                                output.push_str("/evaluations");
+                                output
+                            }
+                            async fn _request(
+                                &self,
+                                path: &str,
+                            ) -> Result<::reqwest::RequestBuilder, crate::Error>
+                            {
+                                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                                req = req.query(&[("pageSize", &self.page_size)]);
+                                req = req.query(&[("pageToken", &self.page_token)]);
+                                req = req.query(&[("access_token", &self.access_token)]);
+                                req = req.query(&[("alt", &self.alt)]);
+                                req = req.query(&[("callback", &self.callback)]);
+                                req = req.query(&[("fields", &self.fields)]);
+                                req = req.query(&[("key", &self.key)]);
+                                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                                req = req.query(&[("quotaUser", &self.quota_user)]);
+                                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                                req = req.query(&[("uploadType", &self.upload_type)]);
+                                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                                let access_token = self
+                                    .auth
+                                    .access_token()
+                                    .await
+                                    .map_err(|err| crate::Error::OAuth2(err))?;
+                                req = req.bearer_auth(access_token);
+                                Ok(req)
+                            }
+                        }
+                        #[async_trait::async_trait]
+                        impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                            type PageToken = String;
+                            fn set_page_token(&mut self, value: String) {
+                                self.page_token = value.into();
+                            }
+                            async fn execute<T>(&mut self) -> Result<T, crate::Error>
+                            where
+                                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+                            {
+                                self._execute().await
+                            }
                         }
                     }
                 }
@@ -19098,16 +22791,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -19127,13 +22822,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -19141,7 +22839,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -19168,7 +22866,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

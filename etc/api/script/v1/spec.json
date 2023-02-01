@@ -7,7 +7,7 @@
   "canonicalName": "Script",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220425",
+  "revision": "20230121",
   "title": "Apps Script API",
   "description": "Manages and executes Google Apps Script projects. ",
   "ownerDomain": "google.com",

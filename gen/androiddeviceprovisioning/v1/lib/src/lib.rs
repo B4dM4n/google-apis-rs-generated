@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [customers](resources/customers/struct.CustomersActions.html)\n  * [*list*](resources/customers/struct.ListRequestBuilder.html)\n  * [configurations](resources/customers/configurations/struct.ConfigurationsActions.html)\n    * [*create*](resources/customers/configurations/struct.CreateRequestBuilder.html), [*delete*](resources/customers/configurations/struct.DeleteRequestBuilder.html), [*get*](resources/customers/configurations/struct.GetRequestBuilder.html), [*list*](resources/customers/configurations/struct.ListRequestBuilder.html), [*patch*](resources/customers/configurations/struct.PatchRequestBuilder.html)\n  * [devices](resources/customers/devices/struct.DevicesActions.html)\n    * [*applyConfiguration*](resources/customers/devices/struct.ApplyConfigurationRequestBuilder.html), [*get*](resources/customers/devices/struct.GetRequestBuilder.html), [*list*](resources/customers/devices/struct.ListRequestBuilder.html), [*removeConfiguration*](resources/customers/devices/struct.RemoveConfigurationRequestBuilder.html), [*unclaim*](resources/customers/devices/struct.UnclaimRequestBuilder.html)\n  * [dpcs](resources/customers/dpcs/struct.DpcsActions.html)\n    * [*list*](resources/customers/dpcs/struct.ListRequestBuilder.html)\n* [operations](resources/operations/struct.OperationsActions.html)\n  * [*get*](resources/operations/struct.GetRequestBuilder.html)\n* [partners](resources/partners/struct.PartnersActions.html)\n  * [customers](resources/partners/customers/struct.CustomersActions.html)\n    * [*create*](resources/partners/customers/struct.CreateRequestBuilder.html), [*list*](resources/partners/customers/struct.ListRequestBuilder.html)\n  * [devices](resources/partners/devices/struct.DevicesActions.html)\n    * [*claim*](resources/partners/devices/struct.ClaimRequestBuilder.html), [*claimAsync*](resources/partners/devices/struct.ClaimAsyncRequestBuilder.html), [*findByIdentifier*](resources/partners/devices/struct.FindByIdentifierRequestBuilder.html), [*findByOwner*](resources/partners/devices/struct.FindByOwnerRequestBuilder.html), [*get*](resources/partners/devices/struct.GetRequestBuilder.html), [*metadata*](resources/partners/devices/struct.MetadataRequestBuilder.html), [*unclaim*](resources/partners/devices/struct.UnclaimRequestBuilder.html), [*unclaimAsync*](resources/partners/devices/struct.UnclaimAsyncRequestBuilder.html), [*updateMetadataAsync*](resources/partners/devices/struct.UpdateMetadataAsyncRequestBuilder.html)\n  * [vendors](resources/partners/vendors/struct.VendorsActions.html)\n    * [*list*](resources/partners/vendors/struct.ListRequestBuilder.html)\n    * [customers](resources/partners/vendors/customers/struct.CustomersActions.html)\n      * [*list*](resources/partners/vendors/customers/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
@@ -14,7 +15,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ClaimDeviceRequest {
-        #[doc = "Required. The ID of the customer for whom the device is being claimed."]
+        #[doc = "The ID of the customer for whom the device is being claimed."]
         #[serde(
             rename = "customerId",
             default,
@@ -36,6 +37,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub device_metadata: ::std::option::Option<crate::schemas::DeviceMetadata>,
+        #[doc = "The Google Workspace customer ID."]
+        #[serde(
+            rename = "googleWorkspaceCustomerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_workspace_customer_id: ::std::option::Option<String>,
+        #[doc = "Optional. Must and can only be set for Chrome OS devices."]
+        #[serde(
+            rename = "preProvisioningToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pre_provisioning_token: ::std::option::Option<String>,
         #[doc = "Required. The section type of the device’s provisioning record."]
         #[serde(
             rename = "sectionType",
@@ -43,6 +58,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub section_type: ::std::option::Option<crate::schemas::ClaimDeviceRequestSectionType>,
+        #[doc = "Optional. Must and can only be set when DeviceProvisioningSectionType is SECTION_TYPE_SIM_LOCK. The unique identifier of the SimLock profile (go/simlock/profiles)."]
+        #[serde(
+            rename = "simlockProfileId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub simlock_profile_id: ::std::option::Option<i64>,
     }
     impl ::google_field_selector::FieldSelector for ClaimDeviceRequest {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -235,6 +258,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub company_name: ::std::option::Option<String>,
+        #[doc = "Output only. The Google Workspace account associated with this customer. Only used for customer Companies."]
+        #[serde(
+            rename = "googleWorkspaceAccount",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_workspace_account: ::std::option::Option<crate::schemas::GoogleWorkspaceAccount>,
         #[doc = "Input only. The preferred locale of the customer represented as a BCP47 language code. This field is validated on input and requests containing unsupported language codes will be rejected. Supported language codes: Arabic (ar) Chinese (Hong Kong) (zh-HK) Chinese (Simplified) (zh-CN) Chinese (Traditional) (zh-TW) Czech (cs) Danish (da) Dutch (nl) English (UK) (en-GB) English (US) (en-US) Filipino (fil) Finnish (fi) French (fr) German (de) Hebrew (iw) Hindi (hi) Hungarian (hu) Indonesian (id) Italian (it) Japanese (ja) Korean (ko) Norwegian (Bokmal) (no) Polish (pl) Portuguese (Brazil) (pt-BR) Portuguese (Portugal) (pt-PT) Russian (ru) Spanish (es) Spanish (Latin America) (es-419) Swedish (sv) Thai (th) Turkish (tr) Ukrainian (uk) Vietnamese (vi)"]
         #[serde(
             rename = "languageCode",
@@ -595,7 +625,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CustomerListCustomersResponse {
+    impl crate::GetNextPageToken<String> for CustomerListCustomersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -638,7 +668,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for CustomerListDevicesResponse {
+    impl crate::GetNextPageToken<String> for CustomerListDevicesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -823,6 +853,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_service: ::std::option::Option<crate::schemas::DeviceClaimAdditionalService>,
+        #[doc = "The ID of the Google Workspace account that owns the Chrome OS device."]
+        #[serde(
+            rename = "googleWorkspaceCustomerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_workspace_customer_id: ::std::option::Option<String>,
         #[doc = "The ID of the Customer that purchased the device."]
         #[serde(
             rename = "ownerCompanyId",
@@ -1037,6 +1074,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeviceIdentifier {
+        #[doc = "An identifier provided by OEMs, carried through the production and sales process. Only applicable to Chrome OS devices."]
+        #[serde(
+            rename = "chromeOsAttestedDeviceId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub chrome_os_attested_device_id: ::std::option::Option<String>,
+        #[doc = "The type of the device"]
+        #[serde(
+            rename = "deviceType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub device_type: ::std::option::Option<crate::schemas::DeviceIdentifierDeviceType>,
         #[doc = "The device’s IMEI number. Validated on input."]
         #[serde(
             rename = "imei",
@@ -1044,7 +1095,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub imei: ::std::option::Option<String>,
-        #[doc = "The device manufacturer’s name. Matches the device’s built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names)."]
+        #[doc = "The device manufacturer’s name. Matches the device’s built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [Android manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names)."]
         #[serde(
             rename = "manufacturer",
             default,
@@ -1058,7 +1109,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub meid: ::std::option::Option<String>,
-        #[doc = "The device model’s name. Matches the device’s built-in value returned from `android.os.Build.MODEL`. Allowed values are listed in [models](/zero-touch/resources/manufacturer-names#model-names)."]
+        #[doc = "The device model’s name. Allowed values are listed in [Android models](/zero-touch/resources/manufacturer-names#model-names) and [Chrome OS models](https://support.google.com/chrome/a/answer/10130175#identify_compatible)."]
         #[serde(
             rename = "model",
             default,
@@ -1079,6 +1130,82 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for DeviceIdentifier {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum DeviceIdentifierDeviceType {
+        #[doc = "Android device"]
+        DeviceTypeAndroid,
+        #[doc = "Chrome OS device"]
+        DeviceTypeChromeOs,
+        #[doc = "Device type is not specified."]
+        DeviceTypeUnspecified,
+    }
+    impl DeviceIdentifierDeviceType {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                DeviceIdentifierDeviceType::DeviceTypeAndroid => "DEVICE_TYPE_ANDROID",
+                DeviceIdentifierDeviceType::DeviceTypeChromeOs => "DEVICE_TYPE_CHROME_OS",
+                DeviceIdentifierDeviceType::DeviceTypeUnspecified => "DEVICE_TYPE_UNSPECIFIED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for DeviceIdentifierDeviceType {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for DeviceIdentifierDeviceType {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<DeviceIdentifierDeviceType, ()> {
+            Ok(match s {
+                "DEVICE_TYPE_ANDROID" => DeviceIdentifierDeviceType::DeviceTypeAndroid,
+                "DEVICE_TYPE_CHROME_OS" => DeviceIdentifierDeviceType::DeviceTypeChromeOs,
+                "DEVICE_TYPE_UNSPECIFIED" => DeviceIdentifierDeviceType::DeviceTypeUnspecified,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for DeviceIdentifierDeviceType {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for DeviceIdentifierDeviceType {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for DeviceIdentifierDeviceType {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "DEVICE_TYPE_ANDROID" => DeviceIdentifierDeviceType::DeviceTypeAndroid,
+                "DEVICE_TYPE_CHROME_OS" => DeviceIdentifierDeviceType::DeviceTypeChromeOs,
+                "DEVICE_TYPE_UNSPECIFIED" => DeviceIdentifierDeviceType::DeviceTypeUnspecified,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for DeviceIdentifierDeviceType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for DeviceIdentifierDeviceType {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -1182,7 +1309,7 @@ pub mod schemas {
         pub processing_status: ::std::option::Option<
             crate::schemas::DevicesLongRunningOperationMetadataProcessingStatus,
         >,
-        #[doc = "The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesnt always mean the operation completed—check for the inclusion of a `done` field."]
+        #[doc = "The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesn’t always mean the operation completed—check for the inclusion of a `done` field."]
         #[serde(
             rename = "progress",
             default,
@@ -1462,7 +1589,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for FindDevicesByDeviceIdentifierResponse {
+    impl crate::GetNextPageToken<String> for FindDevicesByDeviceIdentifierResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1480,13 +1607,20 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FindDevicesByOwnerRequest {
-        #[doc = "Required. The list of customer IDs to search for."]
+        #[doc = "The list of customer IDs to search for."]
         #[serde(
             rename = "customerId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub customer_id: ::std::option::Option<Vec<i64>>,
+        #[doc = "The list of IDs of Google Workspace accounts to search for."]
+        #[serde(
+            rename = "googleWorkspaceCustomerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_workspace_customer_id: ::std::option::Option<Vec<String>>,
         #[doc = "Required. The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive."]
         #[serde(
             rename = "limit",
@@ -1654,9 +1788,47 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for FindDevicesByOwnerResponse {
+    impl crate::GetNextPageToken<String> for FindDevicesByOwnerResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct GoogleWorkspaceAccount {
+        #[doc = "Required. The customer ID."]
+        #[serde(
+            rename = "customerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_id: ::std::option::Option<String>,
+        #[doc = "Output only. The pre-provisioning tokens previously used to claim devices."]
+        #[serde(
+            rename = "preProvisioningTokens",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pre_provisioning_tokens: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for GoogleWorkspaceAccount {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for GoogleWorkspaceAccount {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
         }
     }
     #[derive(
@@ -1704,7 +1876,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCustomersResponse {
+    impl crate::GetNextPageToken<String> for ListCustomersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1754,7 +1926,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListVendorCustomersResponse {
+    impl crate::GetNextPageToken<String> for ListVendorCustomersResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1804,7 +1976,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListVendorsResponse {
+    impl crate::GetNextPageToken<String> for ListVendorsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1924,7 +2096,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PartnerClaim {
-        #[doc = "Required. The ID of the customer for whom the device is being claimed."]
+        #[doc = "The ID of the customer for whom the device is being claimed."]
         #[serde(
             rename = "customerId",
             default,
@@ -1946,6 +2118,20 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub device_metadata: ::std::option::Option<crate::schemas::DeviceMetadata>,
+        #[doc = "The Google Workspace customer ID."]
+        #[serde(
+            rename = "googleWorkspaceCustomerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub google_workspace_customer_id: ::std::option::Option<String>,
+        #[doc = "Optional. Must and can only be set for Chrome OS devices."]
+        #[serde(
+            rename = "preProvisioningToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pre_provisioning_token: ::std::option::Option<String>,
         #[doc = "Required. The section type of the device’s provisioning record."]
         #[serde(
             rename = "sectionType",
@@ -2235,10 +2421,14 @@ pub mod schemas {
         SingleDeviceStatusInvalidDeviceIdentifier,
         #[doc = "Invalid section type."]
         SingleDeviceStatusInvalidSectionType,
+        #[doc = "Invalid pre-provisioning token."]
+        SingleDeviceStatusInvalidToken,
         #[doc = "Other error. We know/expect this error, but there’s no defined error code for the error."]
         SingleDeviceStatusOtherError,
         #[doc = "Permission denied."]
         SingleDeviceStatusPermissionDenied,
+        #[doc = "Revoked pre-provisioning token."]
+        SingleDeviceStatusRevokedToken,
         #[doc = "This section is claimed by another company."]
         SingleDeviceStatusSectionNotYours,
         #[doc = "Success."]
@@ -2257,11 +2447,17 @@ pub mod schemas {
                 PerDeviceStatusInBatchStatus::SingleDeviceStatusInvalidSectionType => {
                     "SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE"
                 }
+                PerDeviceStatusInBatchStatus::SingleDeviceStatusInvalidToken => {
+                    "SINGLE_DEVICE_STATUS_INVALID_TOKEN"
+                }
                 PerDeviceStatusInBatchStatus::SingleDeviceStatusOtherError => {
                     "SINGLE_DEVICE_STATUS_OTHER_ERROR"
                 }
                 PerDeviceStatusInBatchStatus::SingleDeviceStatusPermissionDenied => {
                     "SINGLE_DEVICE_STATUS_PERMISSION_DENIED"
+                }
+                PerDeviceStatusInBatchStatus::SingleDeviceStatusRevokedToken => {
+                    "SINGLE_DEVICE_STATUS_REVOKED_TOKEN"
                 }
                 PerDeviceStatusInBatchStatus::SingleDeviceStatusSectionNotYours => {
                     "SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS"
@@ -2293,11 +2489,17 @@ pub mod schemas {
                 "SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusInvalidSectionType
                 }
+                "SINGLE_DEVICE_STATUS_INVALID_TOKEN" => {
+                    PerDeviceStatusInBatchStatus::SingleDeviceStatusInvalidToken
+                }
                 "SINGLE_DEVICE_STATUS_OTHER_ERROR" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusOtherError
                 }
                 "SINGLE_DEVICE_STATUS_PERMISSION_DENIED" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusPermissionDenied
+                }
+                "SINGLE_DEVICE_STATUS_REVOKED_TOKEN" => {
+                    PerDeviceStatusInBatchStatus::SingleDeviceStatusRevokedToken
                 }
                 "SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusSectionNotYours
@@ -2341,11 +2543,17 @@ pub mod schemas {
                 "SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusInvalidSectionType
                 }
+                "SINGLE_DEVICE_STATUS_INVALID_TOKEN" => {
+                    PerDeviceStatusInBatchStatus::SingleDeviceStatusInvalidToken
+                }
                 "SINGLE_DEVICE_STATUS_OTHER_ERROR" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusOtherError
                 }
                 "SINGLE_DEVICE_STATUS_PERMISSION_DENIED" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusPermissionDenied
+                }
+                "SINGLE_DEVICE_STATUS_REVOKED_TOKEN" => {
+                    PerDeviceStatusInBatchStatus::SingleDeviceStatusRevokedToken
                 }
                 "SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS" => {
                     PerDeviceStatusInBatchStatus::SingleDeviceStatusSectionNotYours
@@ -3064,7 +3272,7 @@ pub mod resources {
                     #[serde(rename = "customers")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -3097,7 +3305,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -3147,7 +3355,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3254,12 +3462,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -4764,7 +4973,7 @@ pub mod resources {
                         #[serde(rename = "devices")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -4799,7 +5008,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -4849,7 +5058,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -4966,12 +5175,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -6061,7 +6271,7 @@ pub mod resources {
                         #[serde(rename = "customers")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -6096,7 +6306,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -6146,7 +6356,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -6262,12 +6472,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -6398,7 +6609,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Updates reseller metadata associated with the device."]
+                #[doc = "Updates reseller metadata associated with the device. Android devices only."]
                 pub fn metadata(
                     &self,
                     request: crate::schemas::UpdateDeviceMetadataRequest,
@@ -6472,7 +6683,7 @@ pub mod resources {
                         partner_id,
                     }
                 }
-                #[doc = "Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations)."]
+                #[doc = "Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). Android Devices only."]
                 pub fn update_metadata_async(
                     &self,
                     request: crate::schemas::UpdateDeviceMetadataInBatchRequest,
@@ -8147,7 +8358,7 @@ pub mod resources {
                         #[serde(rename = "vendors")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -8182,7 +8393,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -8232,7 +8443,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8347,12 +8558,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -8512,7 +8724,7 @@ pub mod resources {
                             #[serde(rename = "customers")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -8547,7 +8759,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -8597,7 +8809,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -8716,12 +8928,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -9013,16 +9226,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -9042,13 +9257,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -9056,7 +9274,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -9083,7 +9301,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

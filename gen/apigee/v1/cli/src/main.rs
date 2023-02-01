@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("apigee1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220407")
+            .version("0.1.0-20230104")
             .about("Use the Apigee API to programmatically develop and manage APIs with a set of RESTful operations. Develop and secure API proxies, deploy and undeploy API proxy revisions, monitor APIs, configure environments, manage users, and more. Note: This product is available as a free trial for a time period of 60 days.")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,14 +38,13 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: issuers");
         let mut organizations0 = SubCommand::with_name("organizations")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_deployed_ingress_config, get_runtime_config, get_sync_authorization, list, set_addons, set_sync_authorization and update");
+                        .about("methods: create, delete, get, get_deployed_ingress_config, get_project_mapping, get_runtime_config, get_sync_authorization, list, set_addons, set_sync_authorization and update");
         {
             let mcmd = SubCommand::with_name("create").about("Creates an Apigee organization. See [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).");
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Delete an Apigee organization. Only supported for SubscriptionType TRIAL.");
+            let mcmd = SubCommand::with_name("delete").about("Delete an Apigee organization. For organizations with BillingType EVALUATION, an immediate deletion is performed. For paid organizations, a soft-deletion is performed. The organization can be restored within the soft-deletion period which can be controlled using the retention field in the request.");
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
@@ -58,6 +57,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("get_project_mapping")
+                .about("Gets the project ID and region for an Apigee organization.");
+            organizations0 = organizations0.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("get_runtime_config")
                 .about("Get runtime config for an organization.");
             organizations0 = organizations0.subcommand(mcmd);
@@ -67,7 +71,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("list").about("Lists the Apigee organizations and associated GCP projects that you have permission to access. See [Understanding organizations](https://cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure).");
+            let mcmd = SubCommand::with_name("list").about("Lists the Apigee organizations and associated Google Cloud projects that you have permission to access. See [Understanding organizations](https://cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure).");
             organizations0 = organizations0.subcommand(mcmd);
         }
         {
@@ -263,7 +267,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut envgroups1 = SubCommand::with_name("envgroups")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: create, delete, get, list and patch");
+            .about("methods: create, delete, get, get_deployed_ingress_config, list and patch");
         {
             let mcmd = SubCommand::with_name("create").about("Creates a new environment group.");
             envgroups1 = envgroups1.subcommand(mcmd);
@@ -277,6 +281,11 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             envgroups1 = envgroups1.subcommand(mcmd);
         }
         {
+            let mcmd = SubCommand::with_name("get_deployed_ingress_config")
+                .about("Gets the deployed ingress configuration for an environment group.");
+            envgroups1 = envgroups1.subcommand(mcmd);
+        }
+        {
             let mcmd = SubCommand::with_name("list").about("Lists all environment groups.");
             envgroups1 = envgroups1.subcommand(mcmd);
         }
@@ -286,19 +295,22 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         }
         let mut environments1 = SubCommand::with_name("environments")
                         .setting(AppSettings::ColoredHelp)
-                        .about("methods: create, delete, get, get_debugmask, get_deployed_config, get_iam_policy, get_trace_config, set_iam_policy, subscribe, test_iam_permissions, unsubscribe, update, update_debugmask, update_environment and update_trace_config");
+                        .about("methods: create, delete, get, get_api_security_runtime_config, get_debugmask, get_deployed_config, get_iam_policy, get_trace_config, modify_environment, set_iam_policy, subscribe, test_iam_permissions, unsubscribe, update, update_debugmask, update_environment and update_trace_config");
         {
             let mcmd =
                 SubCommand::with_name("create").about("Creates an environment in an organization.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("delete")
-                .about("Deletes an environment from an organization.");
+            let mcmd = SubCommand::with_name("delete").about("Deletes an environment from an organization. **Warning: You must delete all key value maps and key value entries before you delete an environment.** Otherwise, if you re-create the environment the key value map entry operations will encounter encryption/decryption discrepancies.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
             let mcmd = SubCommand::with_name("get").about("Gets environment details.");
+            environments1 = environments1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_api_security_runtime_config").about("Gets the API Security runtime configuration for an environment. This named ApiSecurityRuntimeConfig to prevent conflicts with ApiSecurityConfig from addon config.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
@@ -318,6 +330,10 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("get_trace_config")
                 .about("Get distributed trace configuration in an environment.");
+            environments1 = environments1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("modify_environment").about("Updates properties for an Apigee environment with patch semantics using a field mask. **Note:** Not supported for Apigee hybrid.");
             environments1 = environments1.subcommand(mcmd);
         }
         {
@@ -377,6 +393,30 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Return a list of Asynchronous Queries at host level.");
             host_queries1 = host_queries1.subcommand(mcmd);
+        }
+        let mut host_security_reports1 = SubCommand::with_name("host_security_reports")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, get, get_result, get_result_view and list");
+        {
+            let mcmd = SubCommand::with_name("create").about("Submit a query at host level to be processed in the background. If the submission of the query succeeds, the API returns a 201 status and an ID that refer to the query. In addition to the HTTP status 201, the `state` of \"enqueued\" means that the request succeeded.");
+            host_security_reports1 = host_security_reports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get status of a query submitted at host level. If the query is still in progress, the `state` is set to \"running\" After the query has completed successfully, `state` is set to \"completed\"");
+            host_security_reports1 = host_security_reports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_result").about("After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`");
+            host_security_reports1 = host_security_reports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_result_view").about("After the query is completed, use this API to view the query result when result size is small.");
+            host_security_reports1 = host_security_reports1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list")
+                .about("Return a list of Security Reports at host level.");
+            host_security_reports1 = host_security_reports1.subcommand(mcmd);
         }
         let mut host_stats1 = SubCommand::with_name("host_stats")
             .setting(AppSettings::ColoredHelp)
@@ -469,6 +509,23 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update")
                 .about("Update an existing custom report definition");
             reports1 = reports1.subcommand(mcmd);
+        }
+        let mut security_profiles1 = SubCommand::with_name("security_profiles")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get, list and list_revisions");
+        {
+            let mcmd = SubCommand::with_name("get").about("GetSecurityProfile gets the specified security profile. Returns NOT_FOUND if security profile is not present for the specified organization.");
+            security_profiles1 = security_profiles1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("ListSecurityProfiles lists all the security profiles associated with the org including attached and unattached profiles.");
+            security_profiles1 = security_profiles1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list_revisions").about(
+                "ListSecurityProfileRevisions lists all the revisions of the security profile.",
+            );
+            security_profiles1 = security_profiles1.subcommand(mcmd);
         }
         let mut sharedflows1 = SubCommand::with_name("sharedflows")
             .setting(AppSettings::ColoredHelp)
@@ -617,7 +674,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             apps2 = apps2.subcommand(mcmd);
         }
         {
-            let mcmd = SubCommand::with_name("generate_key_pair_or_update_developer_app_status").about("Manages access to a developer app by enabling you to: * Approve or revoke a developer app * Generate a new consumer key and secret for a developer app To approve or revoke a developer app, set the `action` query parameter to `approved` or `revoked`, respectively, and the `Content-Type` header to `application/octet-stream`. If a developer app is revoked, none of its API keys are valid for API calls even though the keys are still `approved`. If successful, the API call returns the following HTTP status code: `204 No Content` To generate a new consumer key and secret for a developer app, pass the new key/secret details. Rather than replace an existing key, this API generates a new key. In this case, multiple key pairs may be associated with a single developer app. Each key pair has an independent status (`approved` or `revoked`) and expiration time. Any approved, non-expired key can be used in an API call. For example, if you're using API key rotation, you can generate new keys with expiration times that overlap keys that are going to expire. You might also generate a new consumer key/secret if the security of the original key/secret is compromised. The `keyExpiresIn` property defines the expiration time for the API key in milliseconds. If you don't set this property or set it to `-1`, the API key never expires. **Notes**: * When generating a new key/secret, this API replaces the existing attributes, notes, and callback URLs with those specified in the request. Include or exclude any existing information that you want to retain or delete, respectively. * To migrate existing consumer keys and secrets to hybrid from another system, see the CreateDeveloperAppKey API.");
+            let mcmd = SubCommand::with_name("generate_key_pair_or_update_developer_app_status").about("Manages access to a developer app by enabling you to: * Approve or revoke a developer app * Generate a new consumer key and secret for a developer app To approve or revoke a developer app, set the `action` query parameter to `approve` or `revoke`, respectively, and the `Content-Type` header to `application/octet-stream`. If a developer app is revoked, none of its API keys are valid for API calls even though the keys are still approved. If successful, the API call returns the following HTTP status code: `204 No Content` To generate a new consumer key and secret for a developer app, pass the new key/secret details. Rather than replace an existing key, this API generates a new key. In this case, multiple key pairs may be associated with a single developer app. Each key pair has an independent status (`approve` or `revoke`) and expiration time. Any approved, non-expired key can be used in an API call. For example, if you're using API key rotation, you can generate new keys with expiration times that overlap keys that are going to expire. You might also generate a new consumer key/secret if the security of the original key/secret is compromised. The `keyExpiresIn` property defines the expiration time for the API key in milliseconds. If you don't set this property or set it to `-1`, the API key never expires. **Notes**: * When generating a new key/secret, this API replaces the existing attributes, notes, and callback URLs with those specified in the request. Include or exclude any existing information that you want to retain or delete, respectively. * To migrate existing consumer keys and secrets to hybrid from another system, see the CreateDeveloperAppKey API.");
             apps2 = apps2.subcommand(mcmd);
         }
         {
@@ -889,6 +946,42 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("update").about("Updates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files).");
             resourcefiles2 = resourcefiles2.subcommand(mcmd);
         }
+        let mut security_reports2 = SubCommand::with_name("security_reports")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, get, get_result, get_result_view and list");
+        {
+            let mcmd = SubCommand::with_name("create").about("Submit a report request to be processed in the background. If the submission succeeds, the API returns a 200 status and an ID that refer to the report request. In addition to the HTTP status 200, the `state` of \"enqueued\" means that the request succeeded.");
+            security_reports2 = security_reports2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get security report status If the query is still in progress, the `state` is set to \"running\" After the query has completed successfully, `state` is set to \"completed\"");
+            security_reports2 = security_reports2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_result").about("After the query is completed, use this API to retrieve the results as file. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`");
+            security_reports2 = security_reports2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get_result_view").about("After the query is completed, use this API to view the query result when result size is small.");
+            security_reports2 = security_reports2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Return a list of Security Reports");
+            security_reports2 = security_reports2.subcommand(mcmd);
+        }
+        let mut security_stats2 = SubCommand::with_name("security_stats")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: query_tabular_stats and query_time_series_stats");
+        {
+            let mcmd = SubCommand::with_name("query_tabular_stats")
+                .about("Retrieve security statistics as tabular rows.");
+            security_stats2 = security_stats2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("query_time_series_stats")
+                .about("Retrieve security statistics as a collection of time series.");
+            security_stats2 = security_stats2.subcommand(mcmd);
+        }
         let mut sharedflows2 = SubCommand::with_name("sharedflows")
             .setting(AppSettings::ColoredHelp)
             .about("sub-resources: deployments and revisions");
@@ -983,6 +1076,40 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list").about("Lists the NAT addresses for an Apigee instance. **Note:** Not supported for Apigee hybrid.");
             nat_addresses2 = nat_addresses2.subcommand(mcmd);
         }
+        let mut entries2 = SubCommand::with_name("entries")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries2 = entries2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher.");
+            entries2 = entries2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries2 = entries2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries2 = entries2.subcommand(mcmd);
+        }
+        let mut environments2 = SubCommand::with_name("environments")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: compute_environment_scores, create and delete");
+        {
+            let mcmd = SubCommand::with_name("compute_environment_scores").about("ComputeEnvironmentScores calculates scores for requested time range for the specified security profile and environment.");
+            environments2 = environments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("create").about("CreateSecurityProfileEnvironmentAssociation creates profile environment association i.e. attaches environment to security profile.");
+            environments2 = environments2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("DeleteSecurityProfileEnvironmentAssociation removes profile environment association i.e. detaches environment from security profile.");
+            environments2 = environments2.subcommand(mcmd);
+        }
         let mut deployments2 = SubCommand::with_name("deployments")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -1029,6 +1156,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         {
             let mcmd = SubCommand::with_name("patch").about("Updates a category on the portal.");
             apicategories2 = apicategories2.subcommand(mcmd);
+        }
+        let mut entries3 = SubCommand::with_name("entries")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
         }
         let mut deployments3 = SubCommand::with_name("deployments")
             .setting(AppSettings::ColoredHelp)
@@ -1157,6 +1303,25 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
                 SubCommand::with_name("update").about("Updates the certificate in an alias.");
             aliases3 = aliases3.subcommand(mcmd);
         }
+        let mut entries3 = SubCommand::with_name("entries")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: create, delete, get and list");
+        {
+            let mcmd = SubCommand::with_name("create").about("Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("get").about("Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("list").about("Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher.");
+            entries3 = entries3.subcommand(mcmd);
+        }
         let mut deployments3 = SubCommand::with_name("deployments")
             .setting(AppSettings::ColoredHelp)
             .about("methods: list");
@@ -1282,6 +1447,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         trace_config2 = trace_config2.subcommand(overrides3);
         sharedflows2 = sharedflows2.subcommand(revisions3);
         sharedflows2 = sharedflows2.subcommand(deployments3);
+        keyvaluemaps2 = keyvaluemaps2.subcommand(entries3);
         keystores2 = keystores2.subcommand(aliases3);
         apis2 = apis2.subcommand(revisions3);
         apis2 = apis2.subcommand(deployments3);
@@ -1290,9 +1456,12 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         apps2 = apps2.subcommand(keys3);
         apps2 = apps2.subcommand(attributes3);
         revisions2 = revisions2.subcommand(deployments3);
+        keyvaluemaps2 = keyvaluemaps2.subcommand(entries3);
         sites1 = sites1.subcommand(apicategories2);
         sharedflows1 = sharedflows1.subcommand(revisions2);
         sharedflows1 = sharedflows1.subcommand(deployments2);
+        security_profiles1 = security_profiles1.subcommand(environments2);
+        keyvaluemaps1 = keyvaluemaps1.subcommand(entries2);
         instances1 = instances1.subcommand(nat_addresses2);
         instances1 = instances1.subcommand(canaryevaluations2);
         instances1 = instances1.subcommand(attachments2);
@@ -1300,6 +1469,8 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         environments1 = environments1.subcommand(targetservers2);
         environments1 = environments1.subcommand(stats2);
         environments1 = environments1.subcommand(sharedflows2);
+        environments1 = environments1.subcommand(security_stats2);
+        environments1 = environments1.subcommand(security_reports2);
         environments1 = environments1.subcommand(resourcefiles2);
         environments1 = environments1.subcommand(references2);
         environments1 = environments1.subcommand(queries2);
@@ -1325,12 +1496,14 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         analytics1 = analytics1.subcommand(datastores2);
         organizations0 = organizations0.subcommand(sites1);
         organizations0 = organizations0.subcommand(sharedflows1);
+        organizations0 = organizations0.subcommand(security_profiles1);
         organizations0 = organizations0.subcommand(reports1);
         organizations0 = organizations0.subcommand(optimized_host_stats1);
         organizations0 = organizations0.subcommand(operations1);
         organizations0 = organizations0.subcommand(keyvaluemaps1);
         organizations0 = organizations0.subcommand(instances1);
         organizations0 = organizations0.subcommand(host_stats1);
+        organizations0 = organizations0.subcommand(host_security_reports1);
         organizations0 = organizations0.subcommand(host_queries1);
         organizations0 = organizations0.subcommand(environments1);
         organizations0 = organizations0.subcommand(envgroups1);

@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("firestore1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220407")
+            .version("0.1.0-20230126")
             .about("Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -38,7 +38,17 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             .about("sub-resources: databases and locations");
         let mut databases1 = SubCommand::with_name("databases")
             .setting(AppSettings::ColoredHelp)
-            .about("methods: export_documents, get, import_documents, list and patch");
+            .about(
+                "methods: create, delete, export_documents, get, import_documents, list and patch",
+            );
+        {
+            let mcmd = SubCommand::with_name("create").about("Create a database.");
+            databases1 = databases1.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("delete").about("Deletes a database.");
+            databases1 = databases1.subcommand(mcmd);
+        }
         {
             let mcmd = SubCommand::with_name("export_documents").about("Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage. For more details on export behavior and output format, refer to: https://cloud.google.com/firestore/docs/manage-data/export-import");
             databases1 = databases1.subcommand(mcmd);

@@ -7,7 +7,7 @@
   "canonicalName": "Service Consumer Management",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220421",
+  "revision": "20230131",
   "title": "Service Consumer Management API",
   "description": "Manages the service consumers of a Service Infrastructure service.",
   "ownerDomain": "google.com",
@@ -651,6 +651,16 @@
           "additionalProperties": null,
           "items": null
         },
+        "minDeadline": {
+          "description": "Deprecated, do not use.",
+          "type": "number",
+          "format": "double",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
         "operationDeadline": {
           "description": "The number of seconds to wait for the completion of a long running operation. The default is no deadline.",
           "type": "number",
@@ -800,6 +810,146 @@
       "additionalProperties": null,
       "items": null
     },
+    "ClientLibrarySettings": {
+      "id": "ClientLibrarySettings",
+      "description": "Details about how and where to publish client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "cppSettings": {
+          "description": "Settings for C++ client libraries.",
+          "$ref": "CppSettings"
+        },
+        "dotnetSettings": {
+          "description": "Settings for .NET client libraries.",
+          "$ref": "DotnetSettings"
+        },
+        "goSettings": {
+          "description": "Settings for Go client libraries.",
+          "$ref": "GoSettings"
+        },
+        "javaSettings": {
+          "description": "Settings for legacy Java features, supported in the Service YAML.",
+          "$ref": "JavaSettings"
+        },
+        "launchStage": {
+          "description": "Launch stage of this version of the API.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "LAUNCH_STAGE_UNSPECIFIED",
+            "UNIMPLEMENTED",
+            "PRELAUNCH",
+            "EARLY_ACCESS",
+            "ALPHA",
+            "BETA",
+            "GA",
+            "DEPRECATED"
+          ],
+          "enumDescriptions": [
+            "Do not use this default value.",
+            "The feature is not yet implemented. Users can not use it.",
+            "Prelaunch features are hidden from users and are only visible internally.",
+            "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released.",
+            "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases.",
+            "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases.",
+            "GA features are open to all developers and are considered stable and fully qualified for production use.",
+            "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "nodeSettings": {
+          "description": "Settings for Node client libraries.",
+          "$ref": "NodeSettings"
+        },
+        "phpSettings": {
+          "description": "Settings for PHP client libraries.",
+          "$ref": "PhpSettings"
+        },
+        "pythonSettings": {
+          "description": "Settings for Python client libraries.",
+          "$ref": "PythonSettings"
+        },
+        "restNumericEnums": {
+          "description": "When using transport=rest, the client request will encode enums as numbers rather than strings.",
+          "type": "boolean",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "rubySettings": {
+          "description": "Settings for Ruby client libraries.",
+          "$ref": "RubySettings"
+        },
+        "version": {
+          "description": "Version of the API to apply these settings to.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CommonLanguageSettings": {
+      "id": "CommonLanguageSettings",
+      "description": "Required information for every language.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "destinations": {
+          "description": "The destination where API teams want this client library to be published.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [
+              "CLIENT_LIBRARY_DESTINATION_UNSPECIFIED",
+              "GITHUB",
+              "PACKAGE_MANAGER"
+            ],
+            "enumDescriptions": [
+              "Client libraries will neither be generated nor published to package managers.",
+              "Generate the client library in a repo under github.com/googleapis, but don't publish it to package managers.",
+              "Publish the library to package managers like nuget.org and npmjs.com."
+            ],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "referenceDocsUri": {
+          "description": "Link to automatically generated reference documentation. Example: https://cloud.google.com/nodejs/docs/reference/asset/latest",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Context": {
       "id": "Context",
       "description": "`Context` defines which contexts an API requests. Example: context: rules: - selector: \"*\" requested: - google.rpc.context.ProjectContext - google.rpc.context.OriginContext The above specifies that all methods in the API request `google.rpc.context.ProjectContext` and `google.rpc.context.OriginContext`. Available context types are defined in package `google.rpc.context`. This also provides mechanism to allowlist any protobuf message extension that can be sent in grpc metadata using “x-goog-ext--bin” and “x-goog-ext--jspb” format. For example, list any service specific protobuf types that can appear in grpc metadata as follows in your yaml file: Example: context: rules: - selector: \"google.example.library.v1.LibraryService.CreateBook\" allowed_request_extensions: - google.foo.v1.NewExtension allowed_response_extensions: - google.foo.v1.NewExtension You can also specify extension ID instead of fully qualified extension name here.",
@@ -920,7 +1070,7 @@
     },
     "Control": {
       "id": "Control",
-      "description": "Selects and configures the service controller used by the service. The service controller handles two things: - **What is allowed:** for each API request, Chemist checks the project status, activation status, abuse status, billing status, service status, location restrictions, VPC Service Controls, SuperQuota, and other policies. - **What has happened:** for each API response, Chemist reports the telemetry data to analytics, auditing, billing, eventing, logging, monitoring, sawmill, and tracing. Chemist also accepts telemetry data not associated with API traffic, such as billing metrics. Example: control: environment: servicecontrol.googleapis.com",
+      "description": "Selects and configures the service controller used by the service. Example: control: environment: servicecontrol.googleapis.com",
       "type": "object",
       "format": null,
       "enum": [],
@@ -935,6 +1085,22 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "CppSettings": {
+      "id": "CppSettings",
+      "description": "Settings for C++ client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
         }
       },
       "additionalProperties": null,
@@ -1208,6 +1374,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "DotnetSettings": {
+      "id": "DotnetSettings",
+      "description": "Settings for Dotnet client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Empty": {
       "id": "Empty",
       "description": "A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical example is to use it as the request or the response type of an API method. For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }",
@@ -1227,6 +1409,24 @@
       "enum": [],
       "enumDescriptions": [],
       "properties": {
+        "aliases": {
+          "description": "Unimplemented. Dot not use. DEPRECATED: This field is no longer supported. Instead of using aliases, please specify multiple google.api.Endpoint for each of the intended aliases. Additional names that this endpoint will be hosted on.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
         "allowCors": {
           "description": "Allowing [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing), aka cross-domain traffic, would allow the backends served from this endpoint to receive and respond to HTTP OPTIONS requests. The response will be used by the browser to determine whether the subsequent cross-origin request is allowed to proceed.",
           "type": "boolean",
@@ -1535,6 +1735,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "GoSettings": {
+      "id": "GoSettings",
+      "description": "Settings for Go client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Http": {
       "id": "Http",
       "description": "Defines the HTTP configuration for an API service. It contains a list of HttpRule, each specifying the mapping of an RPC method to one or more HTTP REST API methods.",
@@ -1671,6 +1887,51 @@
           "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "JavaSettings": {
+      "id": "JavaSettings",
+      "description": "Settings for Java client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
+        },
+        "libraryPackage": {
+          "description": "The package name to use in Java. Clobbers the java_package option set in the protobuf. This should be used **only** by APIs who have already set the language_settings.java.package_name\" field in gapic.yaml. API teams should use the protobuf java_package option where possible. Example of a YAML configuration:: publishing: java_settings: library_package: com.google.cloud.pubsub.v1",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "serviceClassNames": {
+          "description": "Configure the Java class name to use instead of the service's for its corresponding generated GAPIC client. Keys are fully-qualified service names as they appear in the protobuf (including the full the language_settings.java.interface_names\" field in gapic.yaml. API teams should otherwise use the service name as it appears in the protobuf. Example of a YAML configuration:: publishing: java_settings: service_class_names: - google.pubsub.v1.Publisher: TopicAdmin - google.pubsub.v1.Subscriber: SubscriptionAdmin",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
           "items": null
         }
       },
@@ -1977,6 +2238,58 @@
       "additionalProperties": null,
       "items": null
     },
+    "LongRunning": {
+      "id": "LongRunning",
+      "description": "Describes settings to use when generating API methods that use the long-running operation pattern. All default values below are from those used in the client library generators (e.g. [Java](https://github.com/googleapis/gapic-generator-java/blob/04c2faa191a9b5a10b92392fe8482279c4404803/src/main/java/com/google/api/generator/gapic/composer/common/RetrySettingsComposer.java)).",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "initialPollDelay": {
+          "description": "Initial delay after which the first poll request will be made. Default value: 5 seconds.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "maxPollDelay": {
+          "description": "Maximum time between two subsequent poll requests. Default value: 45 seconds.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "pollDelayMultiplier": {
+          "description": "Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5.",
+          "type": "number",
+          "format": "float",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "totalPollTimeout": {
+          "description": "Total polling timeout. Default value: 5 minutes.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Method": {
       "id": "Method",
       "description": "Method represents a method of an API interface.",
@@ -2059,6 +2372,32 @@
             "Syntax `proto2`.",
             "Syntax `proto3`."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "MethodSettings": {
+      "id": "MethodSettings",
+      "description": "Describes the generator configuration for a method.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "longRunning": {
+          "description": "Describes settings to use for long-running operations when generating API methods for RPCs. Complements RPCs that use the annotations in google/longrunning/operations.proto. Example of a YAML configuration:: publishing: method_behavior: - selector: CreateAdDomain long_running: initial_poll_delay: seconds: 60 # 1 minute poll_delay_multiplier: 1.5 max_poll_delay: seconds: 360 # 6 minutes total_poll_timeout: seconds: 54000 # 90 minutes",
+          "$ref": "LongRunning"
+        },
+        "selector": {
+          "description": "The fully qualified name of the method, for which the options below apply. This is used to find the method to apply the options.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -2538,6 +2877,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "NodeSettings": {
+      "id": "NodeSettings",
+      "description": "Settings for Node client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "OAuthRequirements": {
       "id": "OAuthRequirements",
       "description": "OAuth scopes are a way to define data and permissions on data. For example, there are scopes defined for \"Read-only access to Google Calendar\" and \"Access to Cloud Platform\". Users can consent to a scope for an application, giving it permission to access that data on their behalf. OAuth scope specifications should be fairly coarse grained; a user will need to see and understand the text description of what your scope means. In most cases: use one or at most two OAuth scopes for an entire family of products. If your product has multiple APIs, you should probably be sharing the OAuth scope across all of those APIs. When you need finer grained OAuth consent screens: talk with your product management about how developers will use them in practice. Please note that even though each of the canonical scopes is enough for a request to be accepted and passed to the backend, a request can still fail due to the backend requiring additional scopes or permissions.",
@@ -2719,6 +3074,22 @@
       "additionalProperties": null,
       "items": null
     },
+    "PhpSettings": {
+      "id": "PhpSettings",
+      "description": "Settings for Php client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "PolicyBinding": {
       "id": "PolicyBinding",
       "description": "Translates to IAM Policy bindings (without auditing at this level)",
@@ -2759,16 +3130,158 @@
       "additionalProperties": null,
       "items": null
     },
+    "Publishing": {
+      "id": "Publishing",
+      "description": "This message configures the settings for publishing [Google Cloud Client libraries](https://cloud.google.com/apis/docs/cloud-client-libraries) generated from the service config.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "apiShortName": {
+          "description": "Used as a tracking tag when collecting data about the APIs developer relations artifacts like docs, packages delivered to package managers, etc. Example: \"speech\".",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "codeownerGithubTeams": {
+          "description": "GitHub teams to be added to CODEOWNERS in the directory in GitHub containing source code for the client libraries for this API.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          }
+        },
+        "docTagPrefix": {
+          "description": "A prefix used in sample code when demarking regions to be included in documentation.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "documentationUri": {
+          "description": "Link to product home page. Example: https://cloud.google.com/asset-inventory/docs/overview",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "githubLabel": {
+          "description": "GitHub label to apply to issues and pull requests opened for this API.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "librarySettings": {
+          "description": "Client library settings. If the same version string appears multiple times in this list, then the last one wins. Settings from earlier settings with the same version string are discarded.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "ClientLibrarySettings"
+          }
+        },
+        "methodSettings": {
+          "description": "A list of API method settings, e.g. the behavior for methods that use the long-running operation pattern.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "MethodSettings"
+          }
+        },
+        "newIssueUri": {
+          "description": "Link to a place that API users can report issues. Example: https://issuetracker.google.com/issues/new?component=190865&template=1161103",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "organization": {
+          "description": "For whom the client library is being published.",
+          "type": "string",
+          "format": null,
+          "enum": [
+            "CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED",
+            "CLOUD",
+            "ADS",
+            "PHOTOS",
+            "STREET_VIEW"
+          ],
+          "enumDescriptions": [
+            "Not useful.",
+            "Google Cloud Platform Org.",
+            "Ads (Advertising) Org.",
+            "Photos Org.",
+            "Street View Org."
+          ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "PythonSettings": {
+      "id": "PythonSettings",
+      "description": "Settings for Python client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "Quota": {
       "id": "Quota",
-      "description": "Quota configuration helps to achieve fairness and budgeting in service usage. The metric based quota configuration works this way: - The service configuration defines a set of metrics. - For API calls, the quota.metric_rules maps methods to metrics with corresponding costs. - The quota.limits defines limits on the metrics, which will be used for quota checks at runtime. An example quota configuration in yaml format: quota: limits: - name: apiWriteQpsPerProject metric: library.googleapis.com/write_calls unit: \"1/min/{project}\" # rate limit for consumer projects values: STANDARD: 10000 # The metric rules bind all methods to the read_calls metric, # except for the UpdateBook and DeleteBook methods. These two methods # are mapped to the write_calls metric, with the UpdateBook method # consuming at twice rate as the DeleteBook method. metric_rules: - selector: \"*\" metric_costs: library.googleapis.com/read_calls: 1 - selector: google.example.library.v1.LibraryService.UpdateBook metric_costs: library.googleapis.com/write_calls: 2 - selector: google.example.library.v1.LibraryService.DeleteBook metric_costs: library.googleapis.com/write_calls: 1 Corresponding Metric definition: metrics: - name: library.googleapis.com/read_calls display_name: Read requests metric_kind: DELTA value_type: INT64 - name: library.googleapis.com/write_calls display_name: Write requests metric_kind: DELTA value_type: INT64 ",
+      "description": "Quota configuration helps to achieve fairness and budgeting in service usage. The metric based quota configuration works this way: - The service configuration defines a set of metrics. - For API calls, the quota.metric_rules maps methods to metrics with corresponding costs. - The quota.limits defines limits on the metrics, which will be used for quota checks at runtime. An example quota configuration in yaml format: quota: limits: - name: apiWriteQpsPerProject metric: library.googleapis.com/write_calls unit: \"1/min/{project}\" # rate limit for consumer projects values: STANDARD: 10000 (The metric rules bind all methods to the read_calls metric, except for the UpdateBook and DeleteBook methods. These two methods are mapped to the write_calls metric, with the UpdateBook method consuming at twice rate as the DeleteBook method.) metric_rules: - selector: \"*\" metric_costs: library.googleapis.com/read_calls: 1 - selector: google.example.library.v1.LibraryService.UpdateBook metric_costs: library.googleapis.com/write_calls: 2 - selector: google.example.library.v1.LibraryService.DeleteBook metric_costs: library.googleapis.com/write_calls: 1 Corresponding Metric definition: metrics: - name: library.googleapis.com/read_calls display_name: Read requests metric_kind: DELTA value_type: INT64 - name: library.googleapis.com/write_calls display_name: Write requests metric_kind: DELTA value_type: INT64 ",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "limits": {
-          "description": "List of `QuotaLimit` definitions for the service.",
+          "description": "List of QuotaLimit definitions for the service.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2780,7 +3293,7 @@
           }
         },
         "metricRules": {
-          "description": "List of `MetricRule` definitions, each one mapping a selected method to one or more metrics.",
+          "description": "List of MetricRule definitions, each one mapping a selected method to one or more metrics.",
           "type": "array",
           "format": null,
           "enum": [],
@@ -2933,6 +3446,22 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "RubySettings": {
+      "id": "RubySettings",
+      "description": "Settings for Ruby client libraries.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "common": {
+          "description": "Some settings.",
+          "$ref": "CommonLanguageSettings"
         }
       },
       "additionalProperties": null,
@@ -3131,6 +3660,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "publishing": {
+          "description": "Settings for [Google Cloud Client libraries](https://cloud.google.com/apis/docs/cloud-client-libraries) generated from APIs defined as protocol buffers.",
+          "$ref": "Publishing"
         },
         "quota": {
           "description": "Quota configuration.",
@@ -3574,7 +4107,7 @@
           }
         },
         "tenantProjectPolicy": {
-          "description": "Describes ownership and policies for the new tenant project. Required.",
+          "description": "Describes ownership and policies for the new tenant project.",
           "$ref": "TenantProjectPolicy"
         }
       },
@@ -3583,14 +4116,14 @@
     },
     "TenantProjectPolicy": {
       "id": "TenantProjectPolicy",
-      "description": "Describes policy settings that need to be applied to a newly created tenant project.",
+      "description": "Describes policy settings that can be applied to a newly created tenant project.",
       "type": "object",
       "format": null,
       "enum": [],
       "enumDescriptions": [],
       "properties": {
         "policyBindings": {
-          "description": "Policy bindings to be applied to the tenant project, in addition to the 'roles/owner' role granted to the Service Consumer Management service account. At least one binding must have the role `roles/owner`.",
+          "description": "Policy bindings to be applied to the tenant project, in addition to the 'roles/owner' role granted to the Service Consumer Management service account.",
           "type": "array",
           "format": null,
           "enum": [],

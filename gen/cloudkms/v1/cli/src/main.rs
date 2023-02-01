@@ -15,7 +15,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         let mut app = App::new("cloudkms1")
             .setting(clap::AppSettings::ColoredHelp)
             .author("Sebastian Thiel <byronimo@gmail.com>")
-            .version("0.1.0-20220415")
+            .version("0.1.0-20230120")
             .about("Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications. ")
             .after_help("All documentation details can be found at <TODO figure out URL>")
             .arg(Arg::with_name("scope")
@@ -51,6 +51,21 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
             let mcmd = SubCommand::with_name("list")
                 .about("Lists information about the supported locations for this service.");
             locations1 = locations1.subcommand(mcmd);
+        }
+        let mut ekm_config2 = SubCommand::with_name("ekm_config")
+            .setting(AppSettings::ColoredHelp)
+            .about("methods: get_iam_policy, set_iam_policy and test_iam_permissions");
+        {
+            let mcmd = SubCommand::with_name("get_iam_policy").about("Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.");
+            ekm_config2 = ekm_config2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("set_iam_policy").about("Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.");
+            ekm_config2 = ekm_config2.subcommand(mcmd);
+        }
+        {
+            let mcmd = SubCommand::with_name("test_iam_permissions").about("Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.");
+            ekm_config2 = ekm_config2.subcommand(mcmd);
         }
         let mut ekm_connections2 = SubCommand::with_name("ekm_connections")
                         .setting(AppSettings::ColoredHelp)
@@ -245,6 +260,7 @@ impl<'a, 'b> Default for HeapApp<'a, 'b> {
         key_rings2 = key_rings2.subcommand(crypto_keys3);
         locations1 = locations1.subcommand(key_rings2);
         locations1 = locations1.subcommand(ekm_connections2);
+        locations1 = locations1.subcommand(ekm_config2);
         projects0 = projects0.subcommand(locations1);
         app = app.subcommand(projects0);
 

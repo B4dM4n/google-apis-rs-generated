@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [bidders](resources/bidders/struct.BiddersActions.html)\n  * [bidding_functions](resources/bidders/bidding_functions/struct.BiddingFunctionsActions.html)\n    * [*activate*](resources/bidders/bidding_functions/struct.ActivateRequestBuilder.html), [*archive*](resources/bidders/bidding_functions/struct.ArchiveRequestBuilder.html), [*create*](resources/bidders/bidding_functions/struct.CreateRequestBuilder.html), [*list*](resources/bidders/bidding_functions/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, create, edit, and delete your Authorized Buyers and Open Bidding account entities\n\n`https://www.googleapis.com/auth/realtime-bidding`"]
@@ -106,7 +107,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BiddingFunctionType {
-        #[doc = "Buyer’s interest group bidding function that can be used by Authorized Buyers in the FLEDGE simulation. See the FLEDGE explainer at https://github.com/WICG/turtledove/blob/main/FLEDGE.md#32-on-device-bidding. The function takes one argument, `inputs`, that contains an object with the following named fields of the form: `{ \"interestGroup\" : { \"ad\" : [ \"buyerCreativeId\": \"...\", # Ad creative ID \"adData\": { # JSON object } ], \"userBiddingSignals\": { . # JSON object } }, \"auctionSignals\": { \"url\": # string, \"slotVisibility\": # enum value, \"slotDimensions\": [ { \"height\": # number value \"width\": # number value } ] }, \"perBuyerSignals\": { # JSON object }, \"trustedBiddingSignals\": { # JSON object }, \"browserSignals\": { \"recent_impression_ages_secs\": [ # Array of integers. Not yet populated. ] } }` `interestGroup`: An object containing a list of `ad` objects, which contain the following named fields: - `buyerCreativeId`: The ad creative ID string. - `adData`: Any JSON value of the bidder’s choosing to contain data associated with an ad provided in `BidResponse.ad.adslot.ad_data` for the Google Authorized Buyers protocol and `BidResponse.seatbid.bid.ext.ad_data` for the OpenRTB protocol. - `userBiddingSignals`: Any JSON value of the bidder’s choosing containing interest group data that corresponds to user_bidding_signals (as in FLEDGE). This field will be populated from `BidResponse.interest_group_map.user_bidding_signals` for Google Authorized Buyers protocol and `BidResponse.ext.interest_group_map.user_bidding_signals` for the OpenRTB protocol. `auctionSignals`: Contains data from the seller. It corresponds to the auction signals data described in the FLEDGE proposal. It is an object containing the following named fields: - `url`: The string URL of the page with parameters removed. - `slotVisibility`: Enum of one of the following potential values: - NO_DETECTION = 0 - ABOVE_THE_FOLD = 1 - BELOW_THE_FOLD = 2 - `slotDimensions`: A list of objects containing containing width and height pairs in `width` and `height` fields, respectively, from `BidRequest.adslot.width` and `BidRequest.adslot.height` for the Google Authorized Buyers protocol and `BidRequest.imp.banner.format.w` and `BidRequest.imp.banner.format.h` for the OpenRTB protocol. `perBuyerSignals`: The contextual signals from the bid response that are populated in `BidResponse.interest_group_bidding.interest_group_buyers.per_buyer_signals` for the Google Authorized Buyers protocol and `BidResponse.ext.interest_group_bidding.interest_group_buyers.per_buyer_signals` for the OpenRTB protocol. These signals can be of any JSON format of your choosing, however, the buyer’s domain name must match between: - the interest group response in `BidResponse.interest_group_map.buyer_domain` for the Google Authorized Buyers protocol or in `BidResponse.ext.interest_group_map.buyer_domain` for the OpenRTB protocol. - the contextual response as a key to the map in `BidResponse.interest_group_bidding.interest_group_buyers` for the Google Authorized Buyers protocol or in `BidResponse.ext.interest_group_bidding.interest_group_buyers` for the OpenRTB protocol. In other words, there must be a match between the buyer domain of the contextual per_buyer_signals and the domain of an interest group. `trustedBiddingSignals`: The trusted bidding signals that corresponds to the trusted_bidding_signals in the FLEDGE proposal. It is provided in the interest group response as `BidResponse.interest_group_map.user_bidding_signals` for the Google Authorized Buyers protocol and `BidResponse.ext.interest_group_map.user_bidding_signals` for the OpenRTB protocol. This field can be any JSON format of your choosing. `browserSignals`: An object of simulated browser-provider signals. It is an object with a single named field, `recent_impression_ages_secs`, that contains a list of estimated number value recent impression ages in seconds for a given interest group. `recent_impression_ages_secs` is not yet populated. The function returns the string creative ID of the selected ad, the bid price CPM, and (optionally) selected product IDs. In addition, the bidding function may populate an optional debug string that may be used for remote debugging and troubleshooting of a bidder-provided bidding function. The debug string should not contain a user identifier. The maximum length of the debug string is 200 bytes. This debug string is available in `BidResponseFeedback` (https://developers.google.com/authorized-buyers/rtb/realtime-bidding-guide#bidresponsefeedback-object) and `BidFeedback` (https://developers.google.com/authorized-buyers/rtb/openrtb-guide#bidfeedback), for the Google protocol and OpenRTB protocol respectively. In addition, the debug string can be inserted into the creative HTML snippet via macro substitution if the following string is included in the snippet: “%%DEBUG_STRING%%”. Please ensure the debug string complies with [Platform Program Policies](https://support.google.com/platformspolicy/answer/3013851). Sample Bidding Function: `function biddingFunction(inputs) { ... return { \"buyerCreativeId\": \"ad_creative_id_1\", \"bidPriceCpm\": 0.3, \"productIds\": [\"product_id_1\", \"product_id_2\", \"product_id_3\"] \"debugString\": \"Bidding function executed successfully!\" } }`"]
+        #[doc = "Buyer’s interest group bidding function that can be used by Authorized Buyers in the FLEDGE simulation. See the FLEDGE explainer at https://github.com/WICG/turtledove/blob/main/FLEDGE.md#32-on-device-bidding. The function takes one argument, `inputs`, that contains an object with the following named fields of the form: `{ \"interestGroup\" : { \"ad\" : [ \"buyerCreativeId\": \"...\", # Ad creative ID \"adData\": { # JSON object } ], \"userBiddingSignals\": { . # JSON object } }, \"auctionSignals\": { \"url\": # string, \"slotVisibility\": # enum value, \"slotDimensions\": [ { \"height\": # number value \"width\": # number value } ] }, \"perBuyerSignals\": { # JSON object }, \"trustedBiddingSignals\": { # JSON object }, \"browserSignals\": { \"recent_impression_ages_secs\": [ # Array of integers. Not yet populated. ] } }` `interestGroup`: An object containing a list of `ad` objects, which contain the following named fields: - `buyerCreativeId`: The ad creative ID string. - `adData`: Any JSON value of the bidder’s choosing to contain data associated with an ad provided in `BidResponse.ad.adslot.ad_data` for the Google Authorized Buyers protocol and `BidResponse.seatbid.bid.ext.ad_data` for the OpenRTB protocol. - `userBiddingSignals`: Any JSON value of the bidder’s choosing containing interest group data that corresponds to user_bidding_signals (as in FLEDGE). This field will be populated from `BidResponse.interest_group_map.user_bidding_signals` for Google Authorized Buyers protocol and `BidResponse.ext.interest_group_map.user_bidding_signals` for the OpenRTB protocol. `auctionSignals`: Contains data from the seller. It corresponds to the auction signals data described in the FLEDGE proposal. It is an object containing the following named fields: - `url`: The string URL of the page with parameters removed. - `slotVisibility`: Enum of one of the following potential values: - NO_DETECTION = 0 - ABOVE_THE_FOLD = 1 - BELOW_THE_FOLD = 2 - `slotDimensions`: A list of objects containing containing width and height pairs in `width` and `height` fields, respectively, from `BidRequest.adslot.width` and `BidRequest.adslot.height` for the Google Authorized Buyers protocol and `BidRequest.imp.banner.format.w` and `BidRequest.imp.banner.format.h` for the OpenRTB protocol. `perBuyerSignals`: The contextual signals from the bid response that are populated in `BidResponse.interest_group_bidding.interest_group_buyers.per_buyer_signals` for the Google Authorized Buyers protocol and `BidResponse.ext.interest_group_bidding.interest_group_buyers.per_buyer_signals` for the OpenRTB protocol. These signals can be of any JSON format of your choosing, however, the buyer’s domain name must match between: - the interest group response in `BidResponse.interest_group_map.buyer_domain` for the Google Authorized Buyers protocol or in `BidResponse.ext.interest_group_map.buyer_domain` for the OpenRTB protocol. - the contextual response as a key to the map in `BidResponse.interest_group_bidding.interest_group_buyers` for the Google Authorized Buyers protocol or in `BidResponse.ext.interest_group_bidding.interest_group_buyers` for the OpenRTB protocol. In other words, there must be a match between the buyer domain of the contextual per_buyer_signals and the domain of an interest group. `trustedBiddingSignals`: The trusted bidding signals that corresponds to the trusted_bidding_signals in the FLEDGE proposal. It is provided in the interest group response as `BidResponse.interest_group_map.user_bidding_signals` for the Google Authorized Buyers protocol and `BidResponse.ext.interest_group_map.user_bidding_signals` for the OpenRTB protocol. This field can be any JSON format of your choosing. `browserSignals`: An object of simulated browser-provider signals. It is an object with a single named field, `recent_impression_ages_secs`, that contains a list of estimated number value recent impression ages in seconds for a given interest group. `recent_impression_ages_secs` is not yet populated. The function returns the string creative ID of the selected ad, the bid price CPM, and (optionally) selected product IDs. In addition, the bidding function may populate an optional debug string that may be used for remote debugging and troubleshooting of a bidder-provided bidding function. The debug string should not contain a user identifier. The maximum length of the debug string is 200 bytes. This debug string is available in `BidResponseFeedback` (https://developers.google.com/authorized-buyers/rtb/realtime-bidding-guide#bidresponsefeedback-object) and `BidFeedback` (https://developers.google.com/authorized-buyers/rtb/openrtb-guide#bidfeedback), for the Google protocol and OpenRTB protocol respectively. In addition, the debug string can be inserted into the creative HTML snippet through macro substitution if the following string is included in the snippet: “%%DEBUG_STRING%%”. Ensure the debug string complies with [Platform Program Policies](https://support.google.com/platformspolicy/answer/3013851). Sample Bidding Function: `function biddingFunction(inputs) { ... return { \"buyerCreativeId\": \"ad_creative_id_1\", \"bidPriceCpm\": 0.3, \"productIds\": [\"product_id_1\", \"product_id_2\", \"product_id_3\"] \"debugString\": \"Bidding function executed successfully!\" } }`"]
         FledgeBiddingFunction,
         #[doc = "Default value that should not be used."]
         FunctionTypeUnspecified,
@@ -190,7 +191,7 @@ pub mod schemas {
     pub enum BiddingFunctionState {
         #[doc = "An active function. Only `ACTIVE` bidding functions or ad scoring functions are made available for the server-side TURTLEDOVE simulations. Every account is limited to 10 active bidding functions per account."]
         Active,
-        #[doc = "A function that is no longer made available for invocation in a simulation and instead archived. An archived function can later be made active by activating the function via `ActivateBiddingFunction`."]
+        #[doc = "A function that is no longer made available for invocation in a simulation and instead archived. An archived function can later be made active by activating the function through `ActivateBiddingFunction`."]
         Archived,
         #[doc = "Default value that should not be used."]
         StateUnspecified,
@@ -300,7 +301,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListBiddingFunctionsResponse {
+    impl crate::GetNextPageToken<String> for ListBiddingFunctionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1223,7 +1224,7 @@ pub mod resources {
                         #[serde(rename = "biddingFunctions")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -1258,7 +1259,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -1308,7 +1309,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -1425,12 +1426,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -1721,16 +1723,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -1750,13 +1754,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -1764,7 +1771,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -1791,7 +1798,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

@@ -7,7 +7,7 @@
   "canonicalName": "Workflow Executions",
   "fullyEncodeReservedExpansion": true,
   "version": "v1",
-  "revision": "20220412",
+  "revision": "20230117",
   "title": "Workflow Executions API",
   "description": "Execute workflows created with Workflows API.",
   "ownerDomain": "google.com",
@@ -282,10 +282,20 @@
             "LOG_ERRORS_ONLY"
           ],
           "enumDescriptions": [
-            "No call logging specified.",
+            "No call logging level specified.",
             "Log all call steps within workflows, all call returns, and all exceptions raised.",
             "Log only exceptions that are raised from call steps within workflows."
           ],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "duration": {
+          "description": "Output only. Measures the duration of the execution.",
+          "type": "string",
+          "format": "google-duration",
+          "enum": [],
+          "enumDescriptions": [],
           "properties": {},
           "additionalProperties": null,
           "items": null
@@ -303,6 +313,25 @@
         "error": {
           "description": "Output only. The error which caused the execution to finish prematurely. The value is only present if the execution's state is `FAILED` or `CANCELLED`.",
           "$ref": "Error"
+        },
+        "labels": {
+          "description": "Labels associated with this execution. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores and dashes. Label keys must start with a letter. International characters are allowed.",
+          "type": "object",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": {
+            "description": null,
+            "type": "string",
+            "format": null,
+            "enum": [],
+            "enumDescriptions": [],
+            "properties": {},
+            "additionalProperties": null,
+            "items": null
+          },
+          "items": null
         },
         "name": {
           "description": "Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}",
@@ -355,6 +384,10 @@
           "properties": {},
           "additionalProperties": null,
           "items": null
+        },
+        "status": {
+          "description": "Output only. Status tracks the current steps and progress data of this execution.",
+          "$ref": "Status"
         },
         "workflowRevisionId": {
           "description": "Output only. Revision of the workflow this execution is using.",
@@ -577,6 +610,62 @@
       "additionalProperties": null,
       "items": null
     },
+    "Status": {
+      "id": "Status",
+      "description": "Represents the current status of this execution.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "currentSteps": {
+          "description": "A list of currently executing or last executed step names for the workflow execution currently running. If the workflow has succeeded or failed, this is the last attempted or executed step. Presently, if the current step is inside a subworkflow, the list only includes that step. In the future, the list will contain items for each step in the call stack, starting with the outermost step in the `main` subworkflow, and ending with the most deeply nested step.",
+          "type": "array",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": {
+            "$ref": "Step"
+          }
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
+    "Step": {
+      "id": "Step",
+      "description": "Represents a step of the workflow this execution is running.",
+      "type": "object",
+      "format": null,
+      "enum": [],
+      "enumDescriptions": [],
+      "properties": {
+        "routine": {
+          "description": "Name of a routine within the workflow.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        },
+        "step": {
+          "description": "Name of a step within the routine.",
+          "type": "string",
+          "format": null,
+          "enum": [],
+          "enumDescriptions": [],
+          "properties": {},
+          "additionalProperties": null,
+          "items": null
+        }
+      },
+      "additionalProperties": null,
+      "items": null
+    },
     "TriggerPubsubExecutionRequest": {
       "id": "TriggerPubsubExecutionRequest",
       "description": "Request for the TriggerPubsubExecution method.",
@@ -739,7 +828,7 @@
                           ],
                           "enumDescriptions": [
                             "The default / unset value.",
-                            "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, state and workflow_revision_id.",
+                            "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, duration, state and workflow_revision_id.",
                             "Includes all data."
                           ],
                           "repeated": false
@@ -767,8 +856,36 @@
                       "httpMethod": "GET",
                       "description": "Returns a list of executions which belong to the workflow with the given name. The method returns executions of all workflow revisions. Returned executions are ordered by their start time (newest first).",
                       "parameters": {
+                        "filter": {
+                          "description": "Optional. Filters applied to the [Executions.ListExecutions] results. The following fields are supported for filtering: executionID, state, startTime, endTime, duration, workflowRevisionID, stepName, and label.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
+                        "orderBy": {
+                          "description": "Optional. The orderding applied to the [Executions.ListExecutions] results. By default the ordering is based on descending start time. The following fields are supported for order by: executionID, startTime, endTime, duration, state, and workflowRevisionID.",
+                          "default": null,
+                          "location": "query",
+                          "required": false,
+                          "type": "string",
+                          "format": null,
+                          "minimum": null,
+                          "maximum": null,
+                          "pattern": null,
+                          "enum": [],
+                          "enumDescriptions": [],
+                          "repeated": false
+                        },
                         "pageSize": {
-                          "description": "Maximum number of executions to return per call. Max supported value depends on the selected Execution view: it's 10000 for BASIC and 100 for FULL. The default value used if the field is not specified is 100, regardless of the selected view. Values greater than the max value will be coerced down to it.",
+                          "description": "Maximum number of executions to return per call. Max supported value depends on the selected Execution view: it's 1000 for BASIC and 100 for FULL. The default value used if the field is not specified is 100, regardless of the selected view. Values greater than the max value will be coerced down to it.",
                           "default": null,
                           "location": "query",
                           "required": false,
@@ -826,7 +943,7 @@
                           ],
                           "enumDescriptions": [
                             "The default / unset value.",
-                            "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, state and workflow_revision_id.",
+                            "Includes only basic metadata about the execution. Following fields are returned: name, start_time, end_time, duration, state and workflow_revision_id.",
                             "Includes all data."
                           ],
                           "repeated": false

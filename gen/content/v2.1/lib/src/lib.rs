@@ -1,4 +1,5 @@
-#![doc = "# Resources and Methods\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [*authinfo*](resources/accounts/struct.AuthinfoRequestBuilder.html), [*claimwebsite*](resources/accounts/struct.ClaimwebsiteRequestBuilder.html), [*custombatch*](resources/accounts/struct.CustombatchRequestBuilder.html), [*delete*](resources/accounts/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/struct.GetRequestBuilder.html), [*insert*](resources/accounts/struct.InsertRequestBuilder.html), [*link*](resources/accounts/struct.LinkRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*listlinks*](resources/accounts/struct.ListlinksRequestBuilder.html), [*requestphoneverification*](resources/accounts/struct.RequestphoneverificationRequestBuilder.html), [*update*](resources/accounts/struct.UpdateRequestBuilder.html), [*updatelabels*](resources/accounts/struct.UpdatelabelsRequestBuilder.html), [*verifyphonenumber*](resources/accounts/struct.VerifyphonenumberRequestBuilder.html)\n  * [credentials](resources/accounts/credentials/struct.CredentialsActions.html)\n    * [*create*](resources/accounts/credentials/struct.CreateRequestBuilder.html)\n  * [labels](resources/accounts/labels/struct.LabelsActions.html)\n    * [*create*](resources/accounts/labels/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/labels/struct.DeleteRequestBuilder.html), [*list*](resources/accounts/labels/struct.ListRequestBuilder.html), [*patch*](resources/accounts/labels/struct.PatchRequestBuilder.html)\n  * [returncarrier](resources/accounts/returncarrier/struct.ReturncarrierActions.html)\n    * [*create*](resources/accounts/returncarrier/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/returncarrier/struct.DeleteRequestBuilder.html), [*list*](resources/accounts/returncarrier/struct.ListRequestBuilder.html), [*patch*](resources/accounts/returncarrier/struct.PatchRequestBuilder.html)\n* [accountsbyexternalsellerid](resources/accountsbyexternalsellerid/struct.AccountsbyexternalselleridActions.html)\n  * [*get*](resources/accountsbyexternalsellerid/struct.GetRequestBuilder.html)\n* [accountstatuses](resources/accountstatuses/struct.AccountstatusesActions.html)\n  * [*custombatch*](resources/accountstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/accountstatuses/struct.GetRequestBuilder.html), [*list*](resources/accountstatuses/struct.ListRequestBuilder.html)\n* [accountstatusesbyexternalsellerid](resources/accountstatusesbyexternalsellerid/struct.AccountstatusesbyexternalselleridActions.html)\n  * [*get*](resources/accountstatusesbyexternalsellerid/struct.GetRequestBuilder.html)\n* [accounttax](resources/accounttax/struct.AccounttaxActions.html)\n  * [*custombatch*](resources/accounttax/struct.CustombatchRequestBuilder.html), [*get*](resources/accounttax/struct.GetRequestBuilder.html), [*list*](resources/accounttax/struct.ListRequestBuilder.html), [*update*](resources/accounttax/struct.UpdateRequestBuilder.html)\n* [buyongoogleprograms](resources/buyongoogleprograms/struct.BuyongoogleprogramsActions.html)\n  * [*activate*](resources/buyongoogleprograms/struct.ActivateRequestBuilder.html), [*get*](resources/buyongoogleprograms/struct.GetRequestBuilder.html), [*onboard*](resources/buyongoogleprograms/struct.OnboardRequestBuilder.html), [*patch*](resources/buyongoogleprograms/struct.PatchRequestBuilder.html), [*pause*](resources/buyongoogleprograms/struct.PauseRequestBuilder.html), [*requestreview*](resources/buyongoogleprograms/struct.RequestreviewRequestBuilder.html)\n* [collections](resources/collections/struct.CollectionsActions.html)\n  * [*create*](resources/collections/struct.CreateRequestBuilder.html), [*delete*](resources/collections/struct.DeleteRequestBuilder.html), [*get*](resources/collections/struct.GetRequestBuilder.html), [*list*](resources/collections/struct.ListRequestBuilder.html)\n* [collectionstatuses](resources/collectionstatuses/struct.CollectionstatusesActions.html)\n  * [*get*](resources/collectionstatuses/struct.GetRequestBuilder.html), [*list*](resources/collectionstatuses/struct.ListRequestBuilder.html)\n* [csses](resources/csses/struct.CssesActions.html)\n  * [*get*](resources/csses/struct.GetRequestBuilder.html), [*list*](resources/csses/struct.ListRequestBuilder.html), [*updatelabels*](resources/csses/struct.UpdatelabelsRequestBuilder.html)\n* [datafeeds](resources/datafeeds/struct.DatafeedsActions.html)\n  * [*custombatch*](resources/datafeeds/struct.CustombatchRequestBuilder.html), [*delete*](resources/datafeeds/struct.DeleteRequestBuilder.html), [*fetchnow*](resources/datafeeds/struct.FetchnowRequestBuilder.html), [*get*](resources/datafeeds/struct.GetRequestBuilder.html), [*insert*](resources/datafeeds/struct.InsertRequestBuilder.html), [*list*](resources/datafeeds/struct.ListRequestBuilder.html), [*update*](resources/datafeeds/struct.UpdateRequestBuilder.html)\n* [datafeedstatuses](resources/datafeedstatuses/struct.DatafeedstatusesActions.html)\n  * [*custombatch*](resources/datafeedstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/datafeedstatuses/struct.GetRequestBuilder.html), [*list*](resources/datafeedstatuses/struct.ListRequestBuilder.html)\n* [freelistingsprogram](resources/freelistingsprogram/struct.FreelistingsprogramActions.html)\n  * [*get*](resources/freelistingsprogram/struct.GetRequestBuilder.html), [*requestreview*](resources/freelistingsprogram/struct.RequestreviewRequestBuilder.html)\n* [liasettings](resources/liasettings/struct.LiasettingsActions.html)\n  * [*custombatch*](resources/liasettings/struct.CustombatchRequestBuilder.html), [*get*](resources/liasettings/struct.GetRequestBuilder.html), [*getaccessiblegmbaccounts*](resources/liasettings/struct.GetaccessiblegmbaccountsRequestBuilder.html), [*list*](resources/liasettings/struct.ListRequestBuilder.html), [*listposdataproviders*](resources/liasettings/struct.ListposdataprovidersRequestBuilder.html), [*requestgmbaccess*](resources/liasettings/struct.RequestgmbaccessRequestBuilder.html), [*requestinventoryverification*](resources/liasettings/struct.RequestinventoryverificationRequestBuilder.html), [*setinventoryverificationcontact*](resources/liasettings/struct.SetinventoryverificationcontactRequestBuilder.html), [*setposdataprovider*](resources/liasettings/struct.SetposdataproviderRequestBuilder.html), [*update*](resources/liasettings/struct.UpdateRequestBuilder.html)\n* [localinventory](resources/localinventory/struct.LocalinventoryActions.html)\n  * [*custombatch*](resources/localinventory/struct.CustombatchRequestBuilder.html), [*insert*](resources/localinventory/struct.InsertRequestBuilder.html)\n* [orderinvoices](resources/orderinvoices/struct.OrderinvoicesActions.html)\n  * [*createchargeinvoice*](resources/orderinvoices/struct.CreatechargeinvoiceRequestBuilder.html), [*createrefundinvoice*](resources/orderinvoices/struct.CreaterefundinvoiceRequestBuilder.html)\n* [orderreports](resources/orderreports/struct.OrderreportsActions.html)\n  * [*listdisbursements*](resources/orderreports/struct.ListdisbursementsRequestBuilder.html), [*listtransactions*](resources/orderreports/struct.ListtransactionsRequestBuilder.html)\n* [orderreturns](resources/orderreturns/struct.OrderreturnsActions.html)\n  * [*acknowledge*](resources/orderreturns/struct.AcknowledgeRequestBuilder.html), [*createorderreturn*](resources/orderreturns/struct.CreateorderreturnRequestBuilder.html), [*get*](resources/orderreturns/struct.GetRequestBuilder.html), [*list*](resources/orderreturns/struct.ListRequestBuilder.html), [*process*](resources/orderreturns/struct.ProcessRequestBuilder.html)\n  * [labels](resources/orderreturns/labels/struct.LabelsActions.html)\n    * [*create*](resources/orderreturns/labels/struct.CreateRequestBuilder.html)\n* [orders](resources/orders/struct.OrdersActions.html)\n  * [*acknowledge*](resources/orders/struct.AcknowledgeRequestBuilder.html), [*advancetestorder*](resources/orders/struct.AdvancetestorderRequestBuilder.html), [*cancel*](resources/orders/struct.CancelRequestBuilder.html), [*cancellineitem*](resources/orders/struct.CancellineitemRequestBuilder.html), [*canceltestorderbycustomer*](resources/orders/struct.CanceltestorderbycustomerRequestBuilder.html), [*captureOrder*](resources/orders/struct.CaptureOrderRequestBuilder.html), [*createtestorder*](resources/orders/struct.CreatetestorderRequestBuilder.html), [*createtestreturn*](resources/orders/struct.CreatetestreturnRequestBuilder.html), [*get*](resources/orders/struct.GetRequestBuilder.html), [*getbymerchantorderid*](resources/orders/struct.GetbymerchantorderidRequestBuilder.html), [*gettestordertemplate*](resources/orders/struct.GettestordertemplateRequestBuilder.html), [*instorerefundlineitem*](resources/orders/struct.InstorerefundlineitemRequestBuilder.html), [*list*](resources/orders/struct.ListRequestBuilder.html), [*refunditem*](resources/orders/struct.RefunditemRequestBuilder.html), [*refundorder*](resources/orders/struct.RefundorderRequestBuilder.html), [*rejectreturnlineitem*](resources/orders/struct.RejectreturnlineitemRequestBuilder.html), [*returnrefundlineitem*](resources/orders/struct.ReturnrefundlineitemRequestBuilder.html), [*setlineitemmetadata*](resources/orders/struct.SetlineitemmetadataRequestBuilder.html), [*shiplineitems*](resources/orders/struct.ShiplineitemsRequestBuilder.html), [*updatelineitemshippingdetails*](resources/orders/struct.UpdatelineitemshippingdetailsRequestBuilder.html), [*updatemerchantorderid*](resources/orders/struct.UpdatemerchantorderidRequestBuilder.html), [*updateshipment*](resources/orders/struct.UpdateshipmentRequestBuilder.html)\n* [ordertrackingsignals](resources/ordertrackingsignals/struct.OrdertrackingsignalsActions.html)\n  * [*create*](resources/ordertrackingsignals/struct.CreateRequestBuilder.html)\n* [pos](resources/pos/struct.PosActions.html)\n  * [*custombatch*](resources/pos/struct.CustombatchRequestBuilder.html), [*delete*](resources/pos/struct.DeleteRequestBuilder.html), [*get*](resources/pos/struct.GetRequestBuilder.html), [*insert*](resources/pos/struct.InsertRequestBuilder.html), [*inventory*](resources/pos/struct.InventoryRequestBuilder.html), [*list*](resources/pos/struct.ListRequestBuilder.html), [*sale*](resources/pos/struct.SaleRequestBuilder.html)\n* [productdeliverytime](resources/productdeliverytime/struct.ProductdeliverytimeActions.html)\n  * [*create*](resources/productdeliverytime/struct.CreateRequestBuilder.html), [*delete*](resources/productdeliverytime/struct.DeleteRequestBuilder.html), [*get*](resources/productdeliverytime/struct.GetRequestBuilder.html)\n* [products](resources/products/struct.ProductsActions.html)\n  * [*custombatch*](resources/products/struct.CustombatchRequestBuilder.html), [*delete*](resources/products/struct.DeleteRequestBuilder.html), [*get*](resources/products/struct.GetRequestBuilder.html), [*insert*](resources/products/struct.InsertRequestBuilder.html), [*list*](resources/products/struct.ListRequestBuilder.html), [*update*](resources/products/struct.UpdateRequestBuilder.html)\n* [productstatuses](resources/productstatuses/struct.ProductstatusesActions.html)\n  * [*custombatch*](resources/productstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/productstatuses/struct.GetRequestBuilder.html), [*list*](resources/productstatuses/struct.ListRequestBuilder.html)\n  * [repricingreports](resources/productstatuses/repricingreports/struct.RepricingreportsActions.html)\n    * [*list*](resources/productstatuses/repricingreports/struct.ListRequestBuilder.html)\n* [promotions](resources/promotions/struct.PromotionsActions.html)\n  * [*create*](resources/promotions/struct.CreateRequestBuilder.html), [*get*](resources/promotions/struct.GetRequestBuilder.html)\n* [pubsubnotificationsettings](resources/pubsubnotificationsettings/struct.PubsubnotificationsettingsActions.html)\n  * [*get*](resources/pubsubnotificationsettings/struct.GetRequestBuilder.html), [*update*](resources/pubsubnotificationsettings/struct.UpdateRequestBuilder.html)\n* [regionalinventory](resources/regionalinventory/struct.RegionalinventoryActions.html)\n  * [*custombatch*](resources/regionalinventory/struct.CustombatchRequestBuilder.html), [*insert*](resources/regionalinventory/struct.InsertRequestBuilder.html)\n* [regions](resources/regions/struct.RegionsActions.html)\n  * [*create*](resources/regions/struct.CreateRequestBuilder.html), [*delete*](resources/regions/struct.DeleteRequestBuilder.html), [*get*](resources/regions/struct.GetRequestBuilder.html), [*list*](resources/regions/struct.ListRequestBuilder.html), [*patch*](resources/regions/struct.PatchRequestBuilder.html)\n* [reports](resources/reports/struct.ReportsActions.html)\n  * [*search*](resources/reports/struct.SearchRequestBuilder.html)\n* [repricingrules](resources/repricingrules/struct.RepricingrulesActions.html)\n  * [*create*](resources/repricingrules/struct.CreateRequestBuilder.html), [*delete*](resources/repricingrules/struct.DeleteRequestBuilder.html), [*get*](resources/repricingrules/struct.GetRequestBuilder.html), [*list*](resources/repricingrules/struct.ListRequestBuilder.html), [*patch*](resources/repricingrules/struct.PatchRequestBuilder.html)\n  * [repricingreports](resources/repricingrules/repricingreports/struct.RepricingreportsActions.html)\n    * [*list*](resources/repricingrules/repricingreports/struct.ListRequestBuilder.html)\n* [returnaddress](resources/returnaddress/struct.ReturnaddressActions.html)\n  * [*custombatch*](resources/returnaddress/struct.CustombatchRequestBuilder.html), [*delete*](resources/returnaddress/struct.DeleteRequestBuilder.html), [*get*](resources/returnaddress/struct.GetRequestBuilder.html), [*insert*](resources/returnaddress/struct.InsertRequestBuilder.html), [*list*](resources/returnaddress/struct.ListRequestBuilder.html)\n* [returnpolicy](resources/returnpolicy/struct.ReturnpolicyActions.html)\n  * [*custombatch*](resources/returnpolicy/struct.CustombatchRequestBuilder.html), [*delete*](resources/returnpolicy/struct.DeleteRequestBuilder.html), [*get*](resources/returnpolicy/struct.GetRequestBuilder.html), [*insert*](resources/returnpolicy/struct.InsertRequestBuilder.html), [*list*](resources/returnpolicy/struct.ListRequestBuilder.html)\n* [returnpolicyonline](resources/returnpolicyonline/struct.ReturnpolicyonlineActions.html)\n  * [*create*](resources/returnpolicyonline/struct.CreateRequestBuilder.html), [*delete*](resources/returnpolicyonline/struct.DeleteRequestBuilder.html), [*get*](resources/returnpolicyonline/struct.GetRequestBuilder.html), [*list*](resources/returnpolicyonline/struct.ListRequestBuilder.html), [*patch*](resources/returnpolicyonline/struct.PatchRequestBuilder.html)\n* [settlementreports](resources/settlementreports/struct.SettlementreportsActions.html)\n  * [*get*](resources/settlementreports/struct.GetRequestBuilder.html), [*list*](resources/settlementreports/struct.ListRequestBuilder.html)\n* [settlementtransactions](resources/settlementtransactions/struct.SettlementtransactionsActions.html)\n  * [*list*](resources/settlementtransactions/struct.ListRequestBuilder.html)\n* [shippingsettings](resources/shippingsettings/struct.ShippingsettingsActions.html)\n  * [*custombatch*](resources/shippingsettings/struct.CustombatchRequestBuilder.html), [*get*](resources/shippingsettings/struct.GetRequestBuilder.html), [*getsupportedcarriers*](resources/shippingsettings/struct.GetsupportedcarriersRequestBuilder.html), [*getsupportedholidays*](resources/shippingsettings/struct.GetsupportedholidaysRequestBuilder.html), [*getsupportedpickupservices*](resources/shippingsettings/struct.GetsupportedpickupservicesRequestBuilder.html), [*list*](resources/shippingsettings/struct.ListRequestBuilder.html), [*update*](resources/shippingsettings/struct.UpdateRequestBuilder.html)\n* [shoppingadsprogram](resources/shoppingadsprogram/struct.ShoppingadsprogramActions.html)\n  * [*get*](resources/shoppingadsprogram/struct.GetRequestBuilder.html), [*requestreview*](resources/shoppingadsprogram/struct.RequestreviewRequestBuilder.html)\n"]
+#![allow(rustdoc::bare_urls)]
+#![doc = "# Resources and Methods\n* [accounts](resources/accounts/struct.AccountsActions.html)\n  * [*authinfo*](resources/accounts/struct.AuthinfoRequestBuilder.html), [*claimwebsite*](resources/accounts/struct.ClaimwebsiteRequestBuilder.html), [*custombatch*](resources/accounts/struct.CustombatchRequestBuilder.html), [*delete*](resources/accounts/struct.DeleteRequestBuilder.html), [*get*](resources/accounts/struct.GetRequestBuilder.html), [*insert*](resources/accounts/struct.InsertRequestBuilder.html), [*link*](resources/accounts/struct.LinkRequestBuilder.html), [*list*](resources/accounts/struct.ListRequestBuilder.html), [*listlinks*](resources/accounts/struct.ListlinksRequestBuilder.html), [*requestphoneverification*](resources/accounts/struct.RequestphoneverificationRequestBuilder.html), [*update*](resources/accounts/struct.UpdateRequestBuilder.html), [*updatelabels*](resources/accounts/struct.UpdatelabelsRequestBuilder.html), [*verifyphonenumber*](resources/accounts/struct.VerifyphonenumberRequestBuilder.html)\n  * [credentials](resources/accounts/credentials/struct.CredentialsActions.html)\n    * [*create*](resources/accounts/credentials/struct.CreateRequestBuilder.html)\n  * [labels](resources/accounts/labels/struct.LabelsActions.html)\n    * [*create*](resources/accounts/labels/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/labels/struct.DeleteRequestBuilder.html), [*list*](resources/accounts/labels/struct.ListRequestBuilder.html), [*patch*](resources/accounts/labels/struct.PatchRequestBuilder.html)\n  * [returncarrier](resources/accounts/returncarrier/struct.ReturncarrierActions.html)\n    * [*create*](resources/accounts/returncarrier/struct.CreateRequestBuilder.html), [*delete*](resources/accounts/returncarrier/struct.DeleteRequestBuilder.html), [*list*](resources/accounts/returncarrier/struct.ListRequestBuilder.html), [*patch*](resources/accounts/returncarrier/struct.PatchRequestBuilder.html)\n* [accountstatuses](resources/accountstatuses/struct.AccountstatusesActions.html)\n  * [*custombatch*](resources/accountstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/accountstatuses/struct.GetRequestBuilder.html), [*list*](resources/accountstatuses/struct.ListRequestBuilder.html)\n* [accounttax](resources/accounttax/struct.AccounttaxActions.html)\n  * [*custombatch*](resources/accounttax/struct.CustombatchRequestBuilder.html), [*get*](resources/accounttax/struct.GetRequestBuilder.html), [*list*](resources/accounttax/struct.ListRequestBuilder.html), [*update*](resources/accounttax/struct.UpdateRequestBuilder.html)\n* [buyongoogleprograms](resources/buyongoogleprograms/struct.BuyongoogleprogramsActions.html)\n  * [*activate*](resources/buyongoogleprograms/struct.ActivateRequestBuilder.html), [*get*](resources/buyongoogleprograms/struct.GetRequestBuilder.html), [*onboard*](resources/buyongoogleprograms/struct.OnboardRequestBuilder.html), [*patch*](resources/buyongoogleprograms/struct.PatchRequestBuilder.html), [*pause*](resources/buyongoogleprograms/struct.PauseRequestBuilder.html), [*requestreview*](resources/buyongoogleprograms/struct.RequestreviewRequestBuilder.html)\n* [collections](resources/collections/struct.CollectionsActions.html)\n  * [*create*](resources/collections/struct.CreateRequestBuilder.html), [*delete*](resources/collections/struct.DeleteRequestBuilder.html), [*get*](resources/collections/struct.GetRequestBuilder.html), [*list*](resources/collections/struct.ListRequestBuilder.html)\n* [collectionstatuses](resources/collectionstatuses/struct.CollectionstatusesActions.html)\n  * [*get*](resources/collectionstatuses/struct.GetRequestBuilder.html), [*list*](resources/collectionstatuses/struct.ListRequestBuilder.html)\n* [csses](resources/csses/struct.CssesActions.html)\n  * [*get*](resources/csses/struct.GetRequestBuilder.html), [*list*](resources/csses/struct.ListRequestBuilder.html), [*updatelabels*](resources/csses/struct.UpdatelabelsRequestBuilder.html)\n* [datafeeds](resources/datafeeds/struct.DatafeedsActions.html)\n  * [*custombatch*](resources/datafeeds/struct.CustombatchRequestBuilder.html), [*delete*](resources/datafeeds/struct.DeleteRequestBuilder.html), [*fetchnow*](resources/datafeeds/struct.FetchnowRequestBuilder.html), [*get*](resources/datafeeds/struct.GetRequestBuilder.html), [*insert*](resources/datafeeds/struct.InsertRequestBuilder.html), [*list*](resources/datafeeds/struct.ListRequestBuilder.html), [*update*](resources/datafeeds/struct.UpdateRequestBuilder.html)\n* [datafeedstatuses](resources/datafeedstatuses/struct.DatafeedstatusesActions.html)\n  * [*custombatch*](resources/datafeedstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/datafeedstatuses/struct.GetRequestBuilder.html), [*list*](resources/datafeedstatuses/struct.ListRequestBuilder.html)\n* [freelistingsprogram](resources/freelistingsprogram/struct.FreelistingsprogramActions.html)\n  * [*get*](resources/freelistingsprogram/struct.GetRequestBuilder.html), [*requestreview*](resources/freelistingsprogram/struct.RequestreviewRequestBuilder.html)\n* [liasettings](resources/liasettings/struct.LiasettingsActions.html)\n  * [*custombatch*](resources/liasettings/struct.CustombatchRequestBuilder.html), [*get*](resources/liasettings/struct.GetRequestBuilder.html), [*getaccessiblegmbaccounts*](resources/liasettings/struct.GetaccessiblegmbaccountsRequestBuilder.html), [*list*](resources/liasettings/struct.ListRequestBuilder.html), [*listposdataproviders*](resources/liasettings/struct.ListposdataprovidersRequestBuilder.html), [*requestgmbaccess*](resources/liasettings/struct.RequestgmbaccessRequestBuilder.html), [*requestinventoryverification*](resources/liasettings/struct.RequestinventoryverificationRequestBuilder.html), [*setinventoryverificationcontact*](resources/liasettings/struct.SetinventoryverificationcontactRequestBuilder.html), [*setposdataprovider*](resources/liasettings/struct.SetposdataproviderRequestBuilder.html), [*update*](resources/liasettings/struct.UpdateRequestBuilder.html)\n* [localinventory](resources/localinventory/struct.LocalinventoryActions.html)\n  * [*custombatch*](resources/localinventory/struct.CustombatchRequestBuilder.html), [*insert*](resources/localinventory/struct.InsertRequestBuilder.html)\n* [orderinvoices](resources/orderinvoices/struct.OrderinvoicesActions.html)\n  * [*createchargeinvoice*](resources/orderinvoices/struct.CreatechargeinvoiceRequestBuilder.html), [*createrefundinvoice*](resources/orderinvoices/struct.CreaterefundinvoiceRequestBuilder.html)\n* [orderreports](resources/orderreports/struct.OrderreportsActions.html)\n  * [*listdisbursements*](resources/orderreports/struct.ListdisbursementsRequestBuilder.html), [*listtransactions*](resources/orderreports/struct.ListtransactionsRequestBuilder.html)\n* [orderreturns](resources/orderreturns/struct.OrderreturnsActions.html)\n  * [*acknowledge*](resources/orderreturns/struct.AcknowledgeRequestBuilder.html), [*createorderreturn*](resources/orderreturns/struct.CreateorderreturnRequestBuilder.html), [*get*](resources/orderreturns/struct.GetRequestBuilder.html), [*list*](resources/orderreturns/struct.ListRequestBuilder.html), [*process*](resources/orderreturns/struct.ProcessRequestBuilder.html)\n  * [labels](resources/orderreturns/labels/struct.LabelsActions.html)\n    * [*create*](resources/orderreturns/labels/struct.CreateRequestBuilder.html)\n* [orders](resources/orders/struct.OrdersActions.html)\n  * [*acknowledge*](resources/orders/struct.AcknowledgeRequestBuilder.html), [*advancetestorder*](resources/orders/struct.AdvancetestorderRequestBuilder.html), [*cancel*](resources/orders/struct.CancelRequestBuilder.html), [*cancellineitem*](resources/orders/struct.CancellineitemRequestBuilder.html), [*canceltestorderbycustomer*](resources/orders/struct.CanceltestorderbycustomerRequestBuilder.html), [*captureOrder*](resources/orders/struct.CaptureOrderRequestBuilder.html), [*createtestorder*](resources/orders/struct.CreatetestorderRequestBuilder.html), [*createtestreturn*](resources/orders/struct.CreatetestreturnRequestBuilder.html), [*get*](resources/orders/struct.GetRequestBuilder.html), [*getbymerchantorderid*](resources/orders/struct.GetbymerchantorderidRequestBuilder.html), [*gettestordertemplate*](resources/orders/struct.GettestordertemplateRequestBuilder.html), [*instorerefundlineitem*](resources/orders/struct.InstorerefundlineitemRequestBuilder.html), [*list*](resources/orders/struct.ListRequestBuilder.html), [*refunditem*](resources/orders/struct.RefunditemRequestBuilder.html), [*refundorder*](resources/orders/struct.RefundorderRequestBuilder.html), [*rejectreturnlineitem*](resources/orders/struct.RejectreturnlineitemRequestBuilder.html), [*returnrefundlineitem*](resources/orders/struct.ReturnrefundlineitemRequestBuilder.html), [*setlineitemmetadata*](resources/orders/struct.SetlineitemmetadataRequestBuilder.html), [*shiplineitems*](resources/orders/struct.ShiplineitemsRequestBuilder.html), [*updatelineitemshippingdetails*](resources/orders/struct.UpdatelineitemshippingdetailsRequestBuilder.html), [*updatemerchantorderid*](resources/orders/struct.UpdatemerchantorderidRequestBuilder.html), [*updateshipment*](resources/orders/struct.UpdateshipmentRequestBuilder.html)\n* [ordertrackingsignals](resources/ordertrackingsignals/struct.OrdertrackingsignalsActions.html)\n  * [*create*](resources/ordertrackingsignals/struct.CreateRequestBuilder.html)\n* [pos](resources/pos/struct.PosActions.html)\n  * [*custombatch*](resources/pos/struct.CustombatchRequestBuilder.html), [*delete*](resources/pos/struct.DeleteRequestBuilder.html), [*get*](resources/pos/struct.GetRequestBuilder.html), [*insert*](resources/pos/struct.InsertRequestBuilder.html), [*inventory*](resources/pos/struct.InventoryRequestBuilder.html), [*list*](resources/pos/struct.ListRequestBuilder.html), [*sale*](resources/pos/struct.SaleRequestBuilder.html)\n* [productdeliverytime](resources/productdeliverytime/struct.ProductdeliverytimeActions.html)\n  * [*create*](resources/productdeliverytime/struct.CreateRequestBuilder.html), [*delete*](resources/productdeliverytime/struct.DeleteRequestBuilder.html), [*get*](resources/productdeliverytime/struct.GetRequestBuilder.html)\n* [products](resources/products/struct.ProductsActions.html)\n  * [*custombatch*](resources/products/struct.CustombatchRequestBuilder.html), [*delete*](resources/products/struct.DeleteRequestBuilder.html), [*get*](resources/products/struct.GetRequestBuilder.html), [*insert*](resources/products/struct.InsertRequestBuilder.html), [*list*](resources/products/struct.ListRequestBuilder.html), [*update*](resources/products/struct.UpdateRequestBuilder.html)\n* [productstatuses](resources/productstatuses/struct.ProductstatusesActions.html)\n  * [*custombatch*](resources/productstatuses/struct.CustombatchRequestBuilder.html), [*get*](resources/productstatuses/struct.GetRequestBuilder.html), [*list*](resources/productstatuses/struct.ListRequestBuilder.html)\n  * [repricingreports](resources/productstatuses/repricingreports/struct.RepricingreportsActions.html)\n    * [*list*](resources/productstatuses/repricingreports/struct.ListRequestBuilder.html)\n* [promotions](resources/promotions/struct.PromotionsActions.html)\n  * [*create*](resources/promotions/struct.CreateRequestBuilder.html), [*get*](resources/promotions/struct.GetRequestBuilder.html)\n* [pubsubnotificationsettings](resources/pubsubnotificationsettings/struct.PubsubnotificationsettingsActions.html)\n  * [*get*](resources/pubsubnotificationsettings/struct.GetRequestBuilder.html), [*update*](resources/pubsubnotificationsettings/struct.UpdateRequestBuilder.html)\n* [quotas](resources/quotas/struct.QuotasActions.html)\n  * [*list*](resources/quotas/struct.ListRequestBuilder.html)\n* [regionalinventory](resources/regionalinventory/struct.RegionalinventoryActions.html)\n  * [*custombatch*](resources/regionalinventory/struct.CustombatchRequestBuilder.html), [*insert*](resources/regionalinventory/struct.InsertRequestBuilder.html)\n* [regions](resources/regions/struct.RegionsActions.html)\n  * [*create*](resources/regions/struct.CreateRequestBuilder.html), [*delete*](resources/regions/struct.DeleteRequestBuilder.html), [*get*](resources/regions/struct.GetRequestBuilder.html), [*list*](resources/regions/struct.ListRequestBuilder.html), [*patch*](resources/regions/struct.PatchRequestBuilder.html)\n* [reports](resources/reports/struct.ReportsActions.html)\n  * [*search*](resources/reports/struct.SearchRequestBuilder.html)\n* [repricingrules](resources/repricingrules/struct.RepricingrulesActions.html)\n  * [*create*](resources/repricingrules/struct.CreateRequestBuilder.html), [*delete*](resources/repricingrules/struct.DeleteRequestBuilder.html), [*get*](resources/repricingrules/struct.GetRequestBuilder.html), [*list*](resources/repricingrules/struct.ListRequestBuilder.html), [*patch*](resources/repricingrules/struct.PatchRequestBuilder.html)\n  * [repricingreports](resources/repricingrules/repricingreports/struct.RepricingreportsActions.html)\n    * [*list*](resources/repricingrules/repricingreports/struct.ListRequestBuilder.html)\n* [returnaddress](resources/returnaddress/struct.ReturnaddressActions.html)\n  * [*custombatch*](resources/returnaddress/struct.CustombatchRequestBuilder.html), [*delete*](resources/returnaddress/struct.DeleteRequestBuilder.html), [*get*](resources/returnaddress/struct.GetRequestBuilder.html), [*insert*](resources/returnaddress/struct.InsertRequestBuilder.html), [*list*](resources/returnaddress/struct.ListRequestBuilder.html)\n* [returnpolicy](resources/returnpolicy/struct.ReturnpolicyActions.html)\n  * [*custombatch*](resources/returnpolicy/struct.CustombatchRequestBuilder.html), [*delete*](resources/returnpolicy/struct.DeleteRequestBuilder.html), [*get*](resources/returnpolicy/struct.GetRequestBuilder.html), [*insert*](resources/returnpolicy/struct.InsertRequestBuilder.html), [*list*](resources/returnpolicy/struct.ListRequestBuilder.html)\n* [returnpolicyonline](resources/returnpolicyonline/struct.ReturnpolicyonlineActions.html)\n  * [*create*](resources/returnpolicyonline/struct.CreateRequestBuilder.html), [*delete*](resources/returnpolicyonline/struct.DeleteRequestBuilder.html), [*get*](resources/returnpolicyonline/struct.GetRequestBuilder.html), [*list*](resources/returnpolicyonline/struct.ListRequestBuilder.html), [*patch*](resources/returnpolicyonline/struct.PatchRequestBuilder.html)\n* [settlementreports](resources/settlementreports/struct.SettlementreportsActions.html)\n  * [*get*](resources/settlementreports/struct.GetRequestBuilder.html), [*list*](resources/settlementreports/struct.ListRequestBuilder.html)\n* [settlementtransactions](resources/settlementtransactions/struct.SettlementtransactionsActions.html)\n  * [*list*](resources/settlementtransactions/struct.ListRequestBuilder.html)\n* [shippingsettings](resources/shippingsettings/struct.ShippingsettingsActions.html)\n  * [*custombatch*](resources/shippingsettings/struct.CustombatchRequestBuilder.html), [*get*](resources/shippingsettings/struct.GetRequestBuilder.html), [*getsupportedcarriers*](resources/shippingsettings/struct.GetsupportedcarriersRequestBuilder.html), [*getsupportedholidays*](resources/shippingsettings/struct.GetsupportedholidaysRequestBuilder.html), [*getsupportedpickupservices*](resources/shippingsettings/struct.GetsupportedpickupservicesRequestBuilder.html), [*list*](resources/shippingsettings/struct.ListRequestBuilder.html), [*update*](resources/shippingsettings/struct.UpdateRequestBuilder.html)\n* [shoppingadsprogram](resources/shoppingadsprogram/struct.ShoppingadsprogramActions.html)\n  * [*get*](resources/shoppingadsprogram/struct.GetRequestBuilder.html), [*requestreview*](resources/shoppingadsprogram/struct.RequestreviewRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "Manage your product listings and accounts for Google Shopping\n\n`https://www.googleapis.com/auth/content`"]
     pub const CONTENT: &str = "https://www.googleapis.com/auth/content";
@@ -24,7 +25,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account_management: ::std::option::Option<String>,
-        #[doc = "Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the AdWords API. To delete an active link, or to cancel a link request, remove it from the list."]
+        #[doc = "Linked Ads accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the Ads interface or through the Google Ads API. To delete an active link, or to cancel a link request, remove it from the list."]
         #[serde(
             rename = "adsLinks",
             default,
@@ -76,7 +77,7 @@ pub mod schemas {
         )]
         pub google_my_business_link:
             ::std::option::Option<crate::schemas::AccountGoogleMyBusinessLink>,
-        #[doc = "Required for update. Merchant Center account ID."]
+        #[doc = "Required. 64-bit Merchant Center account ID."]
         #[serde(
             rename = "id",
             default,
@@ -186,7 +187,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region: ::std::option::Option<String>,
-        #[doc = "Street-level part of the address."]
+        #[doc = "Street-level part of the address. Use `\\n` to add a second line."]
         #[serde(
             rename = "streetAddress",
             default,
@@ -302,7 +303,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountBusinessInformation {
-        #[doc = "The address of the business."]
+        #[doc = "The address of the business. Use `\\n` to add a second address line."]
         #[serde(
             rename = "address",
             default,
@@ -1582,6 +1583,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub payments_manager: ::std::option::Option<bool>,
+        #[doc = "Whether user is a reporting manager."]
+        #[serde(
+            rename = "reportingManager",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub reporting_manager: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for AccountUser {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -1945,7 +1953,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -2114,7 +2122,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AccountsListLinksResponse {
+    impl crate::GetNextPageToken<String> for AccountsListLinksResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2163,7 +2171,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AccountsListResponse {
+    impl crate::GetNextPageToken<String> for AccountsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2389,7 +2397,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -2451,7 +2459,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AccountstatusesListResponse {
+    impl crate::GetNextPageToken<String> for AccountstatusesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2613,7 +2621,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -2682,7 +2690,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for AccounttaxListResponse {
+    impl crate::GetNextPageToken<String> for AccounttaxListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -2752,7 +2760,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_code: ::std::option::Option<String>,
-        #[doc = "Street-level part of the address."]
+        #[doc = "Street-level part of the address. Use `\\n` to add a second line."]
         #[serde(
             rename = "streetAddress",
             default,
@@ -2804,6 +2812,492 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for Amount {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct BestSellers {
+        #[doc = "Google product category ID to calculate the ranking for, represented in [Google’s product taxonomy](https://support.google.com/merchants/answer/6324436). If a `WHERE` condition on `best_sellers.category_id` is not specified in the query, rankings for all top-level categories are returned."]
+        #[serde(
+            rename = "categoryId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub category_id: ::std::option::Option<i64>,
+        #[doc = "Country where the ranking is calculated. A `WHERE` condition on `best_sellers.country_code` is required in the query."]
+        #[serde(
+            rename = "countryCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub country_code: ::std::option::Option<String>,
+        #[doc = "Popularity rank in the previous week or month."]
+        #[serde(
+            rename = "previousRank",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub previous_rank: ::std::option::Option<i64>,
+        #[doc = "Estimated demand in relation to the item with the highest popularity rank in the same category and country in the previous week or month."]
+        #[serde(
+            rename = "previousRelativeDemand",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub previous_relative_demand:
+            ::std::option::Option<crate::schemas::BestSellersPreviousRelativeDemand>,
+        #[doc = "Popularity on Shopping ads and free listings, in the selected category and country, based on the estimated number of units sold."]
+        #[serde(
+            rename = "rank",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub rank: ::std::option::Option<i64>,
+        #[doc = "Estimated demand in relation to the item with the highest popularity rank in the same category and country."]
+        #[serde(
+            rename = "relativeDemand",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub relative_demand: ::std::option::Option<crate::schemas::BestSellersRelativeDemand>,
+        #[doc = "Change in the estimated demand. Whether it rose, sank or remained flat."]
+        #[serde(
+            rename = "relativeDemandChange",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub relative_demand_change:
+            ::std::option::Option<crate::schemas::BestSellersRelativeDemandChange>,
+        #[doc = "Report date. The value of this field can only be one of the following: * The first day of the week (Monday) for weekly reports. * The first day of the month for monthly reports. If a `WHERE` condition on `best_sellers.report_date` is not specified in the query, the latest available weekly or monthly report is returned."]
+        #[serde(
+            rename = "reportDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_date: ::std::option::Option<crate::schemas::Date>,
+        #[doc = "Granularity of the report. The ranking can be done over a week or a month timeframe. A `WHERE` condition on `best_sellers.report_granularity` is required in the query."]
+        #[serde(
+            rename = "reportGranularity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub report_granularity: ::std::option::Option<crate::schemas::BestSellersReportGranularity>,
+    }
+    impl ::google_field_selector::FieldSelector for BestSellers {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BestSellers {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BestSellersPreviousRelativeDemand {
+        #[doc = "Demand is 21-50% of the demand of the highest ranked product clusters or brands."]
+        High,
+        #[doc = "Demand is 6-10% of the demand of the highest ranked product clusters or brands."]
+        Low,
+        #[doc = "Demand is 11-20% of the demand of the highest ranked product clusters or brands."]
+        Medium,
+        #[doc = "Relative demand is unknown."]
+        RelativeDemandUnspecified,
+        #[doc = "Demand is 51-100% of the demand of the highest ranked product clusters or brands."]
+        VeryHigh,
+        #[doc = "Demand is 0-5% of the demand of the highest ranked product clusters or brands."]
+        VeryLow,
+    }
+    impl BestSellersPreviousRelativeDemand {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BestSellersPreviousRelativeDemand::High => "HIGH",
+                BestSellersPreviousRelativeDemand::Low => "LOW",
+                BestSellersPreviousRelativeDemand::Medium => "MEDIUM",
+                BestSellersPreviousRelativeDemand::RelativeDemandUnspecified => {
+                    "RELATIVE_DEMAND_UNSPECIFIED"
+                }
+                BestSellersPreviousRelativeDemand::VeryHigh => "VERY_HIGH",
+                BestSellersPreviousRelativeDemand::VeryLow => "VERY_LOW",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BestSellersPreviousRelativeDemand {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BestSellersPreviousRelativeDemand {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BestSellersPreviousRelativeDemand, ()> {
+            Ok(match s {
+                "HIGH" => BestSellersPreviousRelativeDemand::High,
+                "LOW" => BestSellersPreviousRelativeDemand::Low,
+                "MEDIUM" => BestSellersPreviousRelativeDemand::Medium,
+                "RELATIVE_DEMAND_UNSPECIFIED" => {
+                    BestSellersPreviousRelativeDemand::RelativeDemandUnspecified
+                }
+                "VERY_HIGH" => BestSellersPreviousRelativeDemand::VeryHigh,
+                "VERY_LOW" => BestSellersPreviousRelativeDemand::VeryLow,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BestSellersPreviousRelativeDemand {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BestSellersPreviousRelativeDemand {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BestSellersPreviousRelativeDemand {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "HIGH" => BestSellersPreviousRelativeDemand::High,
+                "LOW" => BestSellersPreviousRelativeDemand::Low,
+                "MEDIUM" => BestSellersPreviousRelativeDemand::Medium,
+                "RELATIVE_DEMAND_UNSPECIFIED" => {
+                    BestSellersPreviousRelativeDemand::RelativeDemandUnspecified
+                }
+                "VERY_HIGH" => BestSellersPreviousRelativeDemand::VeryHigh,
+                "VERY_LOW" => BestSellersPreviousRelativeDemand::VeryLow,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BestSellersPreviousRelativeDemand {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BestSellersPreviousRelativeDemand {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BestSellersRelativeDemand {
+        #[doc = "Demand is 21-50% of the demand of the highest ranked product clusters or brands."]
+        High,
+        #[doc = "Demand is 6-10% of the demand of the highest ranked product clusters or brands."]
+        Low,
+        #[doc = "Demand is 11-20% of the demand of the highest ranked product clusters or brands."]
+        Medium,
+        #[doc = "Relative demand is unknown."]
+        RelativeDemandUnspecified,
+        #[doc = "Demand is 51-100% of the demand of the highest ranked product clusters or brands."]
+        VeryHigh,
+        #[doc = "Demand is 0-5% of the demand of the highest ranked product clusters or brands."]
+        VeryLow,
+    }
+    impl BestSellersRelativeDemand {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BestSellersRelativeDemand::High => "HIGH",
+                BestSellersRelativeDemand::Low => "LOW",
+                BestSellersRelativeDemand::Medium => "MEDIUM",
+                BestSellersRelativeDemand::RelativeDemandUnspecified => {
+                    "RELATIVE_DEMAND_UNSPECIFIED"
+                }
+                BestSellersRelativeDemand::VeryHigh => "VERY_HIGH",
+                BestSellersRelativeDemand::VeryLow => "VERY_LOW",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BestSellersRelativeDemand {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BestSellersRelativeDemand {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BestSellersRelativeDemand, ()> {
+            Ok(match s {
+                "HIGH" => BestSellersRelativeDemand::High,
+                "LOW" => BestSellersRelativeDemand::Low,
+                "MEDIUM" => BestSellersRelativeDemand::Medium,
+                "RELATIVE_DEMAND_UNSPECIFIED" => {
+                    BestSellersRelativeDemand::RelativeDemandUnspecified
+                }
+                "VERY_HIGH" => BestSellersRelativeDemand::VeryHigh,
+                "VERY_LOW" => BestSellersRelativeDemand::VeryLow,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BestSellersRelativeDemand {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BestSellersRelativeDemand {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BestSellersRelativeDemand {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "HIGH" => BestSellersRelativeDemand::High,
+                "LOW" => BestSellersRelativeDemand::Low,
+                "MEDIUM" => BestSellersRelativeDemand::Medium,
+                "RELATIVE_DEMAND_UNSPECIFIED" => {
+                    BestSellersRelativeDemand::RelativeDemandUnspecified
+                }
+                "VERY_HIGH" => BestSellersRelativeDemand::VeryHigh,
+                "VERY_LOW" => BestSellersRelativeDemand::VeryLow,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BestSellersRelativeDemand {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BestSellersRelativeDemand {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BestSellersRelativeDemandChange {
+        #[doc = "Relative demand is equal to previous time period."]
+        Flat,
+        #[doc = "Relative demand change is unknown."]
+        RelativeDemandChangeTypeUnspecified,
+        #[doc = "Relative demand is higher than the previous time period."]
+        Riser,
+        #[doc = "Relative demand is lower than previous time period."]
+        Sinker,
+    }
+    impl BestSellersRelativeDemandChange {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BestSellersRelativeDemandChange::Flat => "FLAT",
+                BestSellersRelativeDemandChange::RelativeDemandChangeTypeUnspecified => {
+                    "RELATIVE_DEMAND_CHANGE_TYPE_UNSPECIFIED"
+                }
+                BestSellersRelativeDemandChange::Riser => "RISER",
+                BestSellersRelativeDemandChange::Sinker => "SINKER",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BestSellersRelativeDemandChange {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BestSellersRelativeDemandChange {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BestSellersRelativeDemandChange, ()> {
+            Ok(match s {
+                "FLAT" => BestSellersRelativeDemandChange::Flat,
+                "RELATIVE_DEMAND_CHANGE_TYPE_UNSPECIFIED" => {
+                    BestSellersRelativeDemandChange::RelativeDemandChangeTypeUnspecified
+                }
+                "RISER" => BestSellersRelativeDemandChange::Riser,
+                "SINKER" => BestSellersRelativeDemandChange::Sinker,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BestSellersRelativeDemandChange {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BestSellersRelativeDemandChange {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BestSellersRelativeDemandChange {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "FLAT" => BestSellersRelativeDemandChange::Flat,
+                "RELATIVE_DEMAND_CHANGE_TYPE_UNSPECIFIED" => {
+                    BestSellersRelativeDemandChange::RelativeDemandChangeTypeUnspecified
+                }
+                "RISER" => BestSellersRelativeDemandChange::Riser,
+                "SINKER" => BestSellersRelativeDemandChange::Sinker,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BestSellersRelativeDemandChange {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BestSellersRelativeDemandChange {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum BestSellersReportGranularity {
+        #[doc = "Ranking is done over a month timeframe."]
+        Monthly,
+        #[doc = "Report granularity is unknown."]
+        ReportGranularityUnspecified,
+        #[doc = "Ranking is done over a week timeframe."]
+        Weekly,
+    }
+    impl BestSellersReportGranularity {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                BestSellersReportGranularity::Monthly => "MONTHLY",
+                BestSellersReportGranularity::ReportGranularityUnspecified => {
+                    "REPORT_GRANULARITY_UNSPECIFIED"
+                }
+                BestSellersReportGranularity::Weekly => "WEEKLY",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for BestSellersReportGranularity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for BestSellersReportGranularity {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<BestSellersReportGranularity, ()> {
+            Ok(match s {
+                "MONTHLY" => BestSellersReportGranularity::Monthly,
+                "REPORT_GRANULARITY_UNSPECIFIED" => {
+                    BestSellersReportGranularity::ReportGranularityUnspecified
+                }
+                "WEEKLY" => BestSellersReportGranularity::Weekly,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for BestSellersReportGranularity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for BestSellersReportGranularity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for BestSellersReportGranularity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MONTHLY" => BestSellersReportGranularity::Monthly,
+                "REPORT_GRANULARITY_UNSPECIFIED" => {
+                    BestSellersReportGranularity::ReportGranularityUnspecified
+                }
+                "WEEKLY" => BestSellersReportGranularity::Weekly,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for BestSellersReportGranularity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for BestSellersReportGranularity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct Brand {
+        #[doc = "Name of the brand."]
+        #[serde(
+            rename = "name",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub name: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for Brand {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for Brand {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -3642,7 +4136,7 @@ pub mod schemas {
         )]
         pub collection_level_issuses:
             ::std::option::Option<Vec<crate::schemas::CollectionStatusItemLevelIssue>>,
-        #[doc = "Date on which the collection has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, e.g. “2020-01-02T09:00:00+01:00” or “2020-01-02T09:00:00Z”"]
+        #[doc = "Date on which the collection has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example “2020-01-02T09:00:00+01:00” or “2020-01-02T09:00:00Z”"]
         #[serde(
             rename = "creationDate",
             default,
@@ -3664,7 +4158,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Date on which the collection has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, e.g. “2020-01-02T09:00:00+01:00” or “2020-01-02T09:00:00Z”"]
+        #[doc = "Date on which the collection has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example “2020-01-02T09:00:00+01:00” or “2020-01-02T09:00:00Z”"]
         #[serde(
             rename = "lastUpdateDate",
             default,
@@ -3695,6 +4189,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CollectionStatusDestinationStatus {
+        #[doc = "Country codes (ISO 3166-1 alpha-2) where the collection is approved."]
+        #[serde(
+            rename = "approvedCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub approved_countries: ::std::option::Option<Vec<String>>,
         #[doc = "The name of the destination"]
         #[serde(
             rename = "destination",
@@ -3702,7 +4203,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination: ::std::option::Option<String>,
-        #[doc = "The status for the specified destination."]
+        #[doc = "Country codes (ISO 3166-1 alpha-2) where the collection is disapproved."]
+        #[serde(
+            rename = "disapprovedCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disapproved_countries: ::std::option::Option<Vec<String>>,
+        #[doc = "Country codes (ISO 3166-1 alpha-2) where the collection is pending approval."]
+        #[serde(
+            rename = "pendingCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pending_countries: ::std::option::Option<Vec<String>>,
+        #[doc = "The status for the specified destination in the collections target country."]
         #[serde(
             rename = "status",
             default,
@@ -3733,6 +4248,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CollectionStatusItemLevelIssue {
+        #[doc = "Country codes (ISO 3166-1 alpha-2) where issue applies to the offer."]
+        #[serde(
+            rename = "applicableCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub applicable_countries: ::std::option::Option<Vec<String>>,
         #[doc = "The attribute’s name, if the issue is caused by a single attribute."]
         #[serde(
             rename = "attributeName",
@@ -4251,6 +4773,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<Vec<crate::schemas::DatafeedStatusError>>,
+        #[doc = "The feed label status is reported for."]
+        #[serde(
+            rename = "feedLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub feed_label: ::std::option::Option<String>,
         #[doc = "The number of items in the feed that were processed."]
         #[serde(
             rename = "itemsTotal",
@@ -4425,20 +4954,27 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatafeedTarget {
-        #[doc = "The country where the items in the feed will be included in the search index, represented as a CLDR territory code."]
+        #[doc = "Deprecated. Use `feedLabel` instead. The country where the items in the feed will be included in the search index, represented as a CLDR territory code."]
         #[serde(
             rename = "country",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country: ::std::option::Option<String>,
-        #[doc = "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center)."]
+        #[doc = "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center). Products that are excluded from all destinations for more than 7 days are automatically deleted."]
         #[serde(
             rename = "excludedDestinations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub excluded_destinations: ::std::option::Option<Vec<String>>,
+        #[doc = "Feed label for the DatafeedTarget. Either `country` or `feedLabel` is required. If both `feedLabel` and `country` is specified, the values must match."]
+        #[serde(
+            rename = "feedLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub feed_label: ::std::option::Option<String>,
         #[doc = "The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`."]
         #[serde(
             rename = "includedDestinations",
@@ -4453,6 +4989,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language: ::std::option::Option<String>,
+        #[doc = "The countries where the items may be displayed. Represented as a CLDR territory code. Will be ignored for “product inventory” feeds."]
+        #[serde(
+            rename = "targetCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub target_countries: ::std::option::Option<Vec<String>>,
     }
     impl ::google_field_selector::FieldSelector for DatafeedTarget {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -4621,7 +5164,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub datafeed: ::std::option::Option<crate::schemas::Datafeed>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -4714,7 +5257,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DatafeedsListResponse {
+    impl crate::GetNextPageToken<String> for DatafeedsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4771,7 +5314,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required."]
+        #[doc = "Deprecated. Use `feedLabel` instead. The country to get the datafeed status for. If this parameter is provided, then `language` must also be provided. Note that for multi-target datafeeds this parameter is required."]
         #[serde(
             rename = "country",
             default,
@@ -4786,7 +5329,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub datafeed_id: ::std::option::Option<u64>,
-        #[doc = "The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that for multi-target datafeeds this parameter is required."]
+        #[doc = "The feed label to get the datafeed status for. If this parameter is provided, then `language` must also be provided. Note that for multi-target datafeeds this parameter is required."]
+        #[serde(
+            rename = "feedLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub feed_label: ::std::option::Option<String>,
+        #[doc = "The language to get the datafeed status for. If this parameter is provided then `country` must also be provided. Note that for multi-target datafeeds this parameter is required."]
         #[serde(
             rename = "language",
             default,
@@ -4885,7 +5435,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub datafeed_status: ::std::option::Option<crate::schemas::DatafeedStatus>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -4947,7 +5497,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for DatafeedstatusesListResponse {
+    impl crate::GetNextPageToken<String> for DatafeedstatusesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -5010,42 +5560,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DateTime {
-        #[doc = "Required. Day of month. Must be from 1 to 31 and valid for the year and month."]
+        #[doc = "Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day."]
         #[serde(
             rename = "day",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub day: ::std::option::Option<i32>,
-        #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
+        #[doc = "Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hours: ::std::option::Option<i32>,
-        #[doc = "Required. Minutes of hour of day. Must be from 0 to 59."]
+        #[doc = "Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0."]
         #[serde(
             rename = "minutes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minutes: ::std::option::Option<i32>,
-        #[doc = "Required. Month of year. Must be from 1 to 12."]
+        #[doc = "Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month."]
         #[serde(
             rename = "month",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub month: ::std::option::Option<i32>,
-        #[doc = "Required. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."]
+        #[doc = "Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0."]
         #[serde(
             rename = "nanos",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nanos: ::std::option::Option<i32>,
-        #[doc = "Required. Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds."]
+        #[doc = "Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds."]
         #[serde(
             rename = "seconds",
             default,
@@ -5097,7 +5647,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeliveryArea {
-        #[doc = "Required. The country that the product can be delivered to. Submit an [unicode CLDR region](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) such as US or CH."]
+        #[doc = "Required. The country that the product can be delivered to. Submit a [unicode CLDR region](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) such as `US` or `CH`."]
         #[serde(
             rename = "countryCode",
             default,
@@ -5111,7 +5661,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_code_range: ::std::option::Option<crate::schemas::DeliveryAreaPostalCodeRange>,
-        #[doc = "A state, territory, or prefecture. This is supported for the United States, Australia, and Japan. Provide a subdivision code from the ISO 3166-2 code tables ([US](https://en.wikipedia.org/wiki/ISO_3166-2:US), [AU](https://en.wikipedia.org/wiki/ISO_3166-2:AU), or [JP](https://en.wikipedia.org/wiki/ISO_3166-2:JP)) without country prefix (for example, NY, NSW, 03)."]
+        #[doc = "A state, territory, or prefecture. This is supported for the United States, Australia, and Japan. Provide a subdivision code from the ISO 3166-2 code tables ([US](https://en.wikipedia.org/wiki/ISO_3166-2:US), [AU](https://en.wikipedia.org/wiki/ISO_3166-2:AU), or [JP](https://en.wikipedia.org/wiki/ISO_3166-2:JP)) without country prefix (for example, `\"NY\"`, `\"NSW\"`, `\"03\"`)."]
         #[serde(
             rename = "regionCode",
             default,
@@ -5142,14 +5692,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeliveryAreaPostalCodeRange {
-        #[doc = "Required. A postal code or a pattern of the form prefix\\* denoting the inclusive lower bound of the range defining the area. Examples values: “94108”, “9410\\*”, “9\\*”."]
+        #[doc = "Required. A postal code or a pattern of the form prefix\\* denoting the inclusive lower bound of the range defining the area. Examples values: `\"94108\"`, `\"9410*\"`, `\"9*\"`."]
         #[serde(
             rename = "firstPostalCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub first_postal_code: ::std::option::Option<String>,
-        #[doc = "A postal code or a pattern of the form prefix\\* denoting the inclusive upper bound of the range defining the area (for example \\[070\\* - 078\\*\\] results in the range \\[07000 - 07899\\]). It must have the same length as firstPostalCode: if firstPostalCode is a postal code then lastPostalCode must be a postal code too; if firstPostalCode is a pattern then lastPostalCode must be a pattern with the same prefix length. Ignored if not set, then the area is defined as being all the postal codes matching firstPostalCode."]
+        #[doc = "A postal code or a pattern of the form prefix\\* denoting the inclusive upper bound of the range defining the area (for example \\[070\\* - 078\\*\\] results in the range \\[07000 - 07899\\]). It must have the same length as `firstPostalCode`: if `firstPostalCode` is a postal code then `lastPostalCode` must be a postal code too; if firstPostalCode is a pattern then `lastPostalCode` must be a pattern with the same prefix length. Ignored if not set, then the area is defined as being all the postal codes matching `firstPostalCode`."]
         #[serde(
             rename = "lastPostalCode",
             default,
@@ -7185,7 +7735,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for LiasettingsListResponse {
+    impl crate::GetNextPageToken<String> for LiasettingsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7428,7 +7978,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListAccountLabelsResponse {
+    impl crate::GetNextPageToken<String> for ListAccountLabelsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7503,7 +8053,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCollectionStatusesResponse {
+    impl crate::GetNextPageToken<String> for ListCollectionStatusesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7537,7 +8087,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCollectionsResponse {
+    impl crate::GetNextPageToken<String> for ListCollectionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7580,7 +8130,50 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCssesResponse {
+    impl crate::GetNextPageToken<String> for ListCssesResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ListMethodQuotasResponse {
+        #[doc = "The current quota usage and limits per each method."]
+        #[serde(
+            rename = "methodQuotas",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub method_quotas: ::std::option::Option<Vec<crate::schemas::MethodQuota>>,
+        #[doc = "A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages."]
+        #[serde(
+            rename = "nextPageToken",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub next_page_token: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ListMethodQuotasResponse {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ListMethodQuotasResponse {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    impl crate::GetNextPageToken<String> for ListMethodQuotasResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7623,7 +8216,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRegionsResponse {
+    impl crate::GetNextPageToken<String> for ListRegionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7667,7 +8260,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRepricingProductReportsResponse {
+    impl crate::GetNextPageToken<String> for ListRepricingProductReportsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7710,7 +8303,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRepricingRuleReportsResponse {
+    impl crate::GetNextPageToken<String> for ListRepricingRuleReportsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7753,7 +8346,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListRepricingRulesResponse {
+    impl crate::GetNextPageToken<String> for ListRepricingRulesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7809,6 +8402,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub availability: ::std::option::Option<String>,
+        #[doc = "A list of custom (merchant-provided) attributes. Can also be used to submit any attribute of the feed specification in its generic form, for example, `{ \"name\": \"size type\", \"value\": \"regular\" }`."]
+        #[serde(
+            rename = "customAttributes",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub custom_attributes: ::std::option::Option<Vec<crate::schemas::CustomAttribute>>,
         #[doc = "In-store product location."]
         #[serde(
             rename = "instoreProductLocation",
@@ -8034,7 +8634,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -8341,17 +8941,64 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct MethodQuota {
+        #[doc = "The method name, for example `products.list`. Method name does not contain version because quota can be shared between different API versions of the same method."]
+        #[serde(
+            rename = "method",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub method: ::std::option::Option<String>,
+        #[doc = "The current quota limit per day, meaning the maximum number of calls for the method."]
+        #[serde(
+            rename = "quotaLimit",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub quota_limit: ::std::option::Option<i64>,
+        #[doc = "The current quota usage, meaning the number of calls already made to the method."]
+        #[serde(
+            rename = "quotaUsage",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub quota_usage: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for MethodQuota {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for MethodQuota {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Metrics {
-        #[doc = "Average order size - the average number of items in an order. **This metric cannot be segmented by product dimensions.**"]
+        #[doc = "Average order size - the average number of items in an order. **This metric cannot be segmented by product dimensions and customer_country_code.**"]
         #[serde(
             rename = "aos",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub aos: ::std::option::Option<f64>,
-        #[doc = "Average order value - the average value (total price of items) of all placed orders. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by product dimensions.**"]
+        #[doc = "Average order value in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) - the average value (total price of items) of all placed orders. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by product dimensions and customer_country_code.**"]
         #[serde(
             rename = "aovMicros",
             default,
@@ -8373,7 +9020,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conversion_rate: ::std::option::Option<f64>,
-        #[doc = "Value of conversions in micros attributed to the product, reported on the conversion date. The metric is currently available only for the FREE_PRODUCT_LISTING program. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response."]
+        #[doc = "Value of conversions in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) attributed to the product, reported on the conversion date. The metric is currently available only for the FREE_PRODUCT_LISTING program. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response."]
         #[serde(
             rename = "conversionValueMicros",
             default,
@@ -8395,7 +9042,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ctr: ::std::option::Option<f64>,
-        #[doc = "Average number of days between an order being placed and the order being fully shipped, reported on the last shipment date. **This metric cannot be segmented by product dimensions.**"]
+        #[doc = "Average number of days between an order being placed and the order being fully shipped, reported on the last shipment date. **This metric cannot be segmented by product dimensions and customer_country_code.**"]
         #[serde(
             rename = "daysToShip",
             default,
@@ -8410,21 +9057,21 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub impressions: ::std::option::Option<i64>,
-        #[doc = "Average number of days between an item being ordered and the item being"]
+        #[doc = "Average number of days between an item being ordered and the item being **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "itemDaysToShip",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_days_to_ship: ::std::option::Option<f64>,
-        #[doc = "Percentage of shipped items in relation to all finalized items (shipped or rejected by the merchant; unshipped items are not taken into account), reported on the order date. Item fill rate is lowered by merchant rejections."]
+        #[doc = "Percentage of shipped items in relation to all finalized items (shipped or rejected by the merchant; unshipped items are not taken into account), reported on the order date. Item fill rate is lowered by merchant rejections. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "itemFillRate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_fill_rate: ::std::option::Option<f64>,
-        #[doc = "Total price of ordered items. Excludes shipping, taxes (US only), and customer cancellations that happened within 30 minutes of placing the order. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response."]
+        #[doc = "Total price of ordered items in micros (1 millionth of a standard unit, 1 USD = 1000000 micros). Excludes shipping, taxes (US only), and customer cancellations that happened within 30 minutes of placing the order. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "orderedItemSalesMicros",
             default,
@@ -8432,7 +9079,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub ordered_item_sales_micros: ::std::option::Option<i64>,
-        #[doc = "Number of ordered items. Excludes customer cancellations that happened within 30 minutes of placing the order."]
+        #[doc = "Number of ordered items. Excludes customer cancellations that happened within 30 minutes of placing the order. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "orderedItems",
             default,
@@ -8440,7 +9087,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub ordered_items: ::std::option::Option<i64>,
-        #[doc = "Number of placed orders. Excludes customer cancellations that happened within 30 minutes of placing the order. **This metric cannot be segmented by product dimensions.**"]
+        #[doc = "Number of placed orders. Excludes customer cancellations that happened within 30 minutes of placing the order. **This metric cannot be segmented by product dimensions and customer_country_code.**"]
         #[serde(
             rename = "orders",
             default,
@@ -8448,7 +9095,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub orders: ::std::option::Option<i64>,
-        #[doc = "Number of ordered items canceled by the merchant, reported on the order date."]
+        #[doc = "Number of ordered items canceled by the merchant, reported on the order date. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "rejectedItems",
             default,
@@ -8456,14 +9103,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub rejected_items: ::std::option::Option<i64>,
-        #[doc = "Total price of returned items divided by the total price of shipped items, reported on the order date. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response."]
+        #[doc = "Total price of returned items divided by the total price of shipped items, reported on the order date. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "returnRate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub return_rate: ::std::option::Option<f64>,
-        #[doc = "Number of ordered items sent back for return, reported on the date when the merchant accepted the return."]
+        #[doc = "Number of ordered items sent back for return, reported on the date when the merchant accepted the return. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "returnedItems",
             default,
@@ -8471,7 +9118,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub returned_items: ::std::option::Option<i64>,
-        #[doc = "Total price of ordered items sent back for return, reported on the date when the merchant accepted the return. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response."]
+        #[doc = "Total price of ordered items sent back for return in micros (1 millionth of a standard unit, 1 USD = 1000000 micros), reported on the date when the merchant accepted the return. The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "returnsMicros",
             default,
@@ -8479,7 +9126,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub returns_micros: ::std::option::Option<i64>,
-        #[doc = "Total price of shipped items, reported on the order date. Excludes shipping and taxes (US only). The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response."]
+        #[doc = "Total price of shipped items in micros (1 millionth of a standard unit, 1 USD = 1000000 micros), reported on the order date. Excludes shipping and taxes (US only). The currency of the returned value is stored in the currency_code segment. If this metric is selected, ‘segments.currency_code’ is automatically added to the SELECT clause in the search query (unless it is explicitly selected by the user) and the currency_code segment is populated in the response. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "shippedItemSalesMicros",
             default,
@@ -8487,7 +9134,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub shipped_item_sales_micros: ::std::option::Option<i64>,
-        #[doc = "Number of shipped items, reported on the shipment date."]
+        #[doc = "Number of shipped items, reported on the shipment date. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "shippedItems",
             default,
@@ -8495,7 +9142,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub shipped_items: ::std::option::Option<i64>,
-        #[doc = "Number of fully shipped orders, reported on the last shipment date. **This metric cannot be segmented by product dimensions.**"]
+        #[doc = "Number of fully shipped orders, reported on the last shipment date. **This metric cannot be segmented by product dimensions and customer_country_code.**"]
         #[serde(
             rename = "shippedOrders",
             default,
@@ -8503,14 +9150,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub shipped_orders: ::std::option::Option<i64>,
-        #[doc = "Number of ordered items not shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped items over the days in the queried period."]
+        #[doc = "Number of ordered items not shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped items over the days in the queried period. **This metric cannot be segmented by customer_country_code.**"]
         #[serde(
             rename = "unshippedItems",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub unshipped_items: ::std::option::Option<f64>,
-        #[doc = "Number of orders not shipped or partially shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped orders over the days in the queried period. **This metric cannot be segmented by product dimensions.**"]
+        #[doc = "Number of orders not shipped or partially shipped up until the end of the queried day. If a multi-day period is specified in the search query, the returned value is the average number of unshipped orders over the days in the queried period. **This metric cannot be segmented by product dimensions and customer_country_code.**"]
         #[serde(
             rename = "unshippedOrders",
             default,
@@ -8906,7 +9553,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region: ::std::option::Option<String>,
-        #[doc = "Street-level part of the address."]
+        #[doc = "Street-level part of the address. Use `\\n` to add a second line."]
         #[serde(
             rename = "streetAddress",
             default,
@@ -10320,7 +10967,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderShipment {
-        #[doc = "The carrier handling the shipment. For supported carriers, Google includes the carrier name and tracking URL in emails to customers. For select supported carriers, Google also automatically updates the shipment status based on the provided shipment ID. *Note:* You can also use unsupported carriers, but emails to customers won’t include the carrier name or tracking URL, and there will be no automatic order status updates. Supported carriers for “US” are: - “`ups`” (United Parcel Service) *automatic status updates* - “`usps`” (United States Postal Service) *automatic status updates* - “`fedex`” (FedEx) \\*automatic status updates * - “`dhl`” (DHL eCommerce) *automatic status updates* (US only) - “`ontrac`” (OnTrac) \\*automatic status updates * - “`dhl express`” (DHL Express) - “`deliv`” (Deliv) - “`dynamex`” (TForce) - “`lasership`” (LaserShip) - “`mpx`” (Military Parcel Xpress) - “`uds`” (United Delivery Service) - “`efw`” (Estes Forwarding Worldwide) - “`jd logistics`” (JD Logistics) - “`yunexpress`” (YunExpress) - “`china post`” (China Post) - “`china ems`” (China Post Express Mail Service) - “`singapore post`” (Singapore Post) - “`pos malaysia`” (Pos Malaysia) - “`postnl`” (PostNL) - “`ptt`” (PTT Turkish Post) - “`eub`” (ePacket) - “`chukou1`” (Chukou1 Logistics) - “`bestex`” (Best Express) - “`canada post`” (Canada Post) - “`purolator`” (Purolator) - “`canpar`” (Canpar) - “`india post`” (India Post) - “`blue dart`” (Blue Dart) - “`delhivery`” (Delhivery) - “`dtdc`” (DTDC) - “`tpc india`” (TPC India) - “`lso`” (Lone Star Overnight) - “`tww`” (Team Worldwide) Supported carriers for FR are: - “`la poste`” (La Poste) \\*automatic status updates * - “`colissimo`” (Colissimo by La Poste) *automatic status updates* - “`ups`” (United Parcel Service) \\*automatic status updates * - “`chronopost`” (Chronopost by La Poste) - “`gls`” (General Logistics Systems France) - “`dpd`” (DPD Group by GeoPost) - “`bpost`” (Belgian Post Group) - “`colis prive`” (Colis Privé) - “`boxtal`” (Boxtal) - “`geodis`” (GEODIS) - “`tnt`” (TNT) - “`db schenker`” (DB Schenker) - “`aramex`” (Aramex) "]
+        #[doc = "The carrier handling the shipment. For supported carriers, Google includes the carrier name and tracking URL in emails to customers. For select supported carriers, Google also automatically updates the shipment status based on the provided shipment ID. *Note:* You can also use unsupported carriers, but emails to customers won’t include the carrier name or tracking URL, and there will be no automatic order status updates. Supported carriers for “US” are: - “`ups`” (United Parcel Service) *automatic status updates* - “`usps`” (United States Postal Service) *automatic status updates* - “`fedex`” (FedEx) \\*automatic status updates * - “`dhl`” (DHL eCommerce) *automatic status updates* (US only) - “`ontrac`” (OnTrac) \\*automatic status updates * - “`dhl express`” (DHL Express) - “`deliv`” (Deliv) - “`dynamex`” (TForce) - “`lasership`” (LaserShip) - “`mpx`” (Military Parcel Xpress) - “`uds`” (United Delivery Service) - “`efw`” (Estes Forwarding Worldwide) - “`jd logistics`” (JD Logistics) - “`yunexpress`” (YunExpress) - “`china post`” (China Post) - “`china ems`” (China Post Express Mail Service) - “`singapore post`” (Singapore Post) - “`pos malaysia`” (Pos Malaysia) - “`postnl`” (PostNL) - “`ptt`” (PTT Turkish Post) - “`eub`” (ePacket) - “`chukou1`” (Chukou1 Logistics) - “`bestex`” (Best Express) - “`canada post`” (Canada Post) - “`purolator`” (Purolator) - “`canpar`” (Canpar) - “`india post`” (India Post) - “`blue dart`” (Blue Dart) - “`delhivery`” (Delhivery) - “`dtdc`” (DTDC) - “`tpc india`” (TPC India) - “`lso`” (Lone Star Overnight) - “`tww`” (Team Worldwide) - “`deliver-it`” (Deliver-IT) - “`cdl last mile`” (CDL Last Mile) Supported carriers for FR are: - “`la poste`” (La Poste) \\*automatic status updates * - “`colissimo`” (Colissimo by La Poste) *automatic status updates* - “`ups`” (United Parcel Service) \\*automatic status updates * - “`chronopost`” (Chronopost by La Poste) - “`gls`” (General Logistics Systems France) - “`dpd`” (DPD Group by GeoPost) - “`bpost`” (Belgian Post Group) - “`colis prive`” (Colis Privé) - “`boxtal`” (Boxtal) - “`geodis`” (GEODIS) - “`tnt`” (TNT) - “`db schenker`” (DB Schenker) - “`aramex`” (Aramex) "]
         #[serde(
             rename = "carrier",
             default,
@@ -11232,7 +11879,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OrderreportsListDisbursementsResponse {
+    impl crate::GetNextPageToken<String> for OrderreportsListDisbursementsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -11282,7 +11929,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OrderreportsListTransactionsResponse {
+    impl crate::GetNextPageToken<String> for OrderreportsListTransactionsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -11542,7 +12189,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OrderreturnsListResponse {
+    impl crate::GetNextPageToken<String> for OrderreturnsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -12788,7 +13435,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for OrdersListResponse {
+    impl crate::GetNextPageToken<String> for OrdersListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -14959,6 +15606,125 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PriceCompetitiveness {
+        #[doc = "The price benchmark currency (ISO 4217 code)."]
+        #[serde(
+            rename = "benchmarkPriceCurrencyCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub benchmark_price_currency_code: ::std::option::Option<String>,
+        #[doc = "The latest available price benchmark in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) for the product’s catalog in the benchmark country."]
+        #[serde(
+            rename = "benchmarkPriceMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub benchmark_price_micros: ::std::option::Option<i64>,
+        #[doc = "The country of the price benchmark (ISO 3166 code)."]
+        #[serde(
+            rename = "countryCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub country_code: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PriceCompetitiveness {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PriceCompetitiveness {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
+    )]
+    pub struct PriceInsights {
+        #[doc = "The predicted change in clicks as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in clicks."]
+        #[serde(
+            rename = "predictedClicksChangeFraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_clicks_change_fraction: ::std::option::Option<f64>,
+        #[doc = "The predicted change in conversions as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in conversions)."]
+        #[serde(
+            rename = "predictedConversionsChangeFraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_conversions_change_fraction: ::std::option::Option<f64>,
+        #[doc = "The predicted change in gross profit as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in gross profit."]
+        #[serde(
+            rename = "predictedGrossProfitChangeFraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_gross_profit_change_fraction: ::std::option::Option<f64>,
+        #[doc = "The predicted change in impressions as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in impressions."]
+        #[serde(
+            rename = "predictedImpressionsChangeFraction",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_impressions_change_fraction: ::std::option::Option<f64>,
+        #[doc = "The predicted monthly gross profit change currency (ISO 4217 code)."]
+        #[serde(
+            rename = "predictedMonthlyGrossProfitChangeCurrencyCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub predicted_monthly_gross_profit_change_currency_code: ::std::option::Option<String>,
+        #[doc = "The predicted change in gross profit in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) after introducing the suggested price for a month compared to current active price."]
+        #[serde(
+            rename = "predictedMonthlyGrossProfitChangeMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub predicted_monthly_gross_profit_change_micros: ::std::option::Option<i64>,
+        #[doc = "The suggested price currency (ISO 4217 code)."]
+        #[serde(
+            rename = "suggestedPriceCurrencyCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub suggested_price_currency_code: ::std::option::Option<String>,
+        #[doc = "The latest suggested price in micros (1 millionth of a standard unit, 1 USD = 1000000 micros) for the product."]
+        #[serde(
+            rename = "suggestedPriceMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub suggested_price_micros: ::std::option::Option<i64>,
+    }
+    impl ::google_field_selector::FieldSelector for PriceInsights {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PriceInsights {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Product {
@@ -15165,7 +15931,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub energy_efficiency_class: ::std::option::Option<String>,
-        #[doc = "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center)."]
+        #[doc = "The list of destinations to exclude for this target (corresponds to cleared check boxes in Merchant Center). Products that are excluded from all destinations for more than 7 days are automatically deleted."]
         #[serde(
             rename = "excludedDestinations",
             default,
@@ -15186,6 +15952,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub external_seller_id: ::std::option::Option<String>,
+        #[doc = "Feed label for the item. Either `targetCountry` or `feedLabel` is required."]
+        #[serde(
+            rename = "feedLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub feed_label: ::std::option::Option<String>,
         #[doc = "Target gender of the item."]
         #[serde(
             rename = "gender",
@@ -15263,6 +16036,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
+        #[doc = "Additional URLs of lifestyle images of the item, used to explicitly identify images that showcase your item in a real-world context. See the Help Center article for more information."]
+        #[serde(
+            rename = "lifestyleImageLinks",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub lifestyle_image_links: ::std::option::Option<Vec<String>>,
         #[doc = "URL directly linking to your item’s page on your website."]
         #[serde(
             rename = "link",
@@ -15364,6 +16144,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pattern: ::std::option::Option<String>,
+        #[doc = "Publication of this item should be temporarily paused. Acceptable values are: - “`ads`” "]
+        #[serde(
+            rename = "pause",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub pause: ::std::option::Option<String>,
         #[doc = "The pick up option for the item. Acceptable values are: - “`buy`” - “`reserve`” - “`ship to store`” - “`not supported`” "]
         #[serde(
             rename = "pickupMethod",
@@ -15413,7 +16200,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_length: ::std::option::Option<crate::schemas::ProductDimension>,
-        #[doc = "Categories of the item (formatted as in products data specification)."]
+        #[doc = "Categories of the item (formatted as in product data specification)."]
         #[serde(
             rename = "productTypes",
             default,
@@ -15448,7 +16235,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sale_price: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "Date range during which the item is on sale (see products data specification )."]
+        #[doc = "Date range during which the item is on sale (see product data specification )."]
         #[serde(
             rename = "salePriceEffectiveDate",
             default,
@@ -15547,7 +16334,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub subscription_cost: ::std::option::Option<crate::schemas::ProductSubscriptionCost>,
-        #[doc = "Required. The CLDR territory code for the item."]
+        #[doc = "Required. The CLDR territory code for the item’s country of sale."]
         #[serde(
             rename = "targetCountry",
             default,
@@ -15665,8 +16452,277 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct ProductCluster {
+        #[doc = "Brand of the product cluster."]
+        #[serde(
+            rename = "brand",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub brand: ::std::option::Option<String>,
+        #[doc = "Tells if there is at least one product of the brand currently `IN_STOCK` in your product feed across multiple countries, all products are `OUT_OF_STOCK` in your product feed, or `NOT_IN_INVENTORY`. The field doesn’t take the Best Sellers report country filter into account."]
+        #[serde(
+            rename = "brandInventoryStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub brand_inventory_status:
+            ::std::option::Option<crate::schemas::ProductClusterBrandInventoryStatus>,
+        #[doc = "Product category (1st level) of the product cluster, represented in Google’s product taxonomy."]
+        #[serde(
+            rename = "categoryL1",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l1: ::std::option::Option<String>,
+        #[doc = "Product category (2nd level) of the product cluster, represented in Google’s product taxonomy."]
+        #[serde(
+            rename = "categoryL2",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l2: ::std::option::Option<String>,
+        #[doc = "Product category (3rd level) of the product cluster, represented in Google’s product taxonomy."]
+        #[serde(
+            rename = "categoryL3",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l3: ::std::option::Option<String>,
+        #[doc = "Product category (4th level) of the product cluster, represented in Google’s product taxonomy."]
+        #[serde(
+            rename = "categoryL4",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l4: ::std::option::Option<String>,
+        #[doc = "Product category (5th level) of the product cluster, represented in Google’s product taxonomy."]
+        #[serde(
+            rename = "categoryL5",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l5: ::std::option::Option<String>,
+        #[doc = "Tells whether the product cluster is `IN_STOCK` in your product feed across multiple countries, `OUT_OF_STOCK` in your product feed, or `NOT_IN_INVENTORY` at all. The field doesn’t take the Best Sellers report country filter into account."]
+        #[serde(
+            rename = "inventoryStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub inventory_status: ::std::option::Option<crate::schemas::ProductClusterInventoryStatus>,
+        #[doc = "Title of the product cluster."]
+        #[serde(
+            rename = "title",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub title: ::std::option::Option<String>,
+        #[doc = "GTINs of example variants of the product cluster."]
+        #[serde(
+            rename = "variantGtins",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub variant_gtins: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ProductCluster {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductCluster {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ProductClusterBrandInventoryStatus {
+        #[doc = "Merchant has a product for this product cluster or brand in stock."]
+        InStock,
+        #[doc = "Inventory status is unknown."]
+        InventoryStatusUnspecified,
+        #[doc = "Merchant does not have a product for this product cluster or brand in inventory."]
+        NotInInventory,
+        #[doc = "Merchant has a product for this product cluster or brand in inventory but it is currently out of stock."]
+        OutOfStock,
+    }
+    impl ProductClusterBrandInventoryStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ProductClusterBrandInventoryStatus::InStock => "IN_STOCK",
+                ProductClusterBrandInventoryStatus::InventoryStatusUnspecified => {
+                    "INVENTORY_STATUS_UNSPECIFIED"
+                }
+                ProductClusterBrandInventoryStatus::NotInInventory => "NOT_IN_INVENTORY",
+                ProductClusterBrandInventoryStatus::OutOfStock => "OUT_OF_STOCK",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ProductClusterBrandInventoryStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ProductClusterBrandInventoryStatus {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ProductClusterBrandInventoryStatus, ()> {
+            Ok(match s {
+                "IN_STOCK" => ProductClusterBrandInventoryStatus::InStock,
+                "INVENTORY_STATUS_UNSPECIFIED" => {
+                    ProductClusterBrandInventoryStatus::InventoryStatusUnspecified
+                }
+                "NOT_IN_INVENTORY" => ProductClusterBrandInventoryStatus::NotInInventory,
+                "OUT_OF_STOCK" => ProductClusterBrandInventoryStatus::OutOfStock,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ProductClusterBrandInventoryStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ProductClusterBrandInventoryStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ProductClusterBrandInventoryStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IN_STOCK" => ProductClusterBrandInventoryStatus::InStock,
+                "INVENTORY_STATUS_UNSPECIFIED" => {
+                    ProductClusterBrandInventoryStatus::InventoryStatusUnspecified
+                }
+                "NOT_IN_INVENTORY" => ProductClusterBrandInventoryStatus::NotInInventory,
+                "OUT_OF_STOCK" => ProductClusterBrandInventoryStatus::OutOfStock,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ProductClusterBrandInventoryStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductClusterBrandInventoryStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ProductClusterInventoryStatus {
+        #[doc = "Merchant has a product for this product cluster or brand in stock."]
+        InStock,
+        #[doc = "Inventory status is unknown."]
+        InventoryStatusUnspecified,
+        #[doc = "Merchant does not have a product for this product cluster or brand in inventory."]
+        NotInInventory,
+        #[doc = "Merchant has a product for this product cluster or brand in inventory but it is currently out of stock."]
+        OutOfStock,
+    }
+    impl ProductClusterInventoryStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ProductClusterInventoryStatus::InStock => "IN_STOCK",
+                ProductClusterInventoryStatus::InventoryStatusUnspecified => {
+                    "INVENTORY_STATUS_UNSPECIFIED"
+                }
+                ProductClusterInventoryStatus::NotInInventory => "NOT_IN_INVENTORY",
+                ProductClusterInventoryStatus::OutOfStock => "OUT_OF_STOCK",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ProductClusterInventoryStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ProductClusterInventoryStatus {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ProductClusterInventoryStatus, ()> {
+            Ok(match s {
+                "IN_STOCK" => ProductClusterInventoryStatus::InStock,
+                "INVENTORY_STATUS_UNSPECIFIED" => {
+                    ProductClusterInventoryStatus::InventoryStatusUnspecified
+                }
+                "NOT_IN_INVENTORY" => ProductClusterInventoryStatus::NotInInventory,
+                "OUT_OF_STOCK" => ProductClusterInventoryStatus::OutOfStock,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ProductClusterInventoryStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ProductClusterInventoryStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ProductClusterInventoryStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "IN_STOCK" => ProductClusterInventoryStatus::InStock,
+                "INVENTORY_STATUS_UNSPECIFIED" => {
+                    ProductClusterInventoryStatus::InventoryStatusUnspecified
+                }
+                "NOT_IN_INVENTORY" => ProductClusterInventoryStatus::NotInInventory,
+                "OUT_OF_STOCK" => ProductClusterInventoryStatus::OutOfStock,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ProductClusterInventoryStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductClusterInventoryStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ProductDeliveryTime {
-        #[doc = "Required. A set of associations between DeliveryAreas and DeliveryTimes. The total number of areaDeliveryTimes can be at most 100."]
+        #[doc = "Required. A set of associations between `DeliveryArea` and `DeliveryTime` entries. The total number of `areaDeliveryTimes` can be at most 100."]
         #[serde(
             rename = "areaDeliveryTimes",
             default,
@@ -15674,7 +16730,7 @@ pub mod schemas {
         )]
         pub area_delivery_times:
             ::std::option::Option<Vec<crate::schemas::ProductDeliveryTimeAreaDeliveryTime>>,
-        #[doc = "Required. The id of the product."]
+        #[doc = "Required. The `id` of the product."]
         #[serde(
             rename = "productId",
             default,
@@ -15705,14 +16761,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ProductDeliveryTimeAreaDeliveryTime {
-        #[doc = "Required. The delivery area associated with deliveryTime for this product."]
+        #[doc = "Required. The delivery area associated with `deliveryTime` for this product."]
         #[serde(
             rename = "deliveryArea",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delivery_area: ::std::option::Option<crate::schemas::DeliveryArea>,
-        #[doc = "Required. The delivery time associated with deliveryArea for this product."]
+        #[doc = "Required. The delivery time associated with `deliveryArea` for this product."]
         #[serde(
             rename = "deliveryTime",
             default,
@@ -15825,7 +16881,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ProductId {
-        #[doc = "The Content API ID of the product, in the form channel:contentLanguage:targetCountry:offerId."]
+        #[doc = "The Content API ID of the product, in the form `channel:contentLanguage:targetCountry:offerId`."]
         #[serde(
             rename = "productId",
             default,
@@ -15915,7 +16971,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location_group_name: ::std::option::Option<String>,
-        #[doc = "The numeric ID of a location that the shipping rate applies to as defined in the AdWords API."]
+        #[doc = "The numeric ID of a location that the shipping rate applies to as defined in the Google Ads API."]
         #[serde(
             rename = "locationId",
             default,
@@ -16344,7 +17400,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country: ::std::option::Option<String>,
-        #[doc = "The numeric ID of a location that the tax rate applies to as defined in the AdWords API."]
+        #[doc = "The numeric ID of a location that the tax rate applies to as defined in the Google Ads API."]
         #[serde(
             rename = "locationId",
             default,
@@ -16460,6 +17516,700 @@ pub mod schemas {
         }
     }
     #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProductView {
+        #[doc = "Aggregated destination status."]
+        #[serde(
+            rename = "aggregatedDestinationStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregated_destination_status:
+            ::std::option::Option<crate::schemas::ProductViewAggregatedDestinationStatus>,
+        #[doc = "Availability of the product."]
+        #[serde(
+            rename = "availability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub availability: ::std::option::Option<String>,
+        #[doc = "Brand of the product."]
+        #[serde(
+            rename = "brand",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub brand: ::std::option::Option<String>,
+        #[doc = "First level of the product category in [Google’s product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "categoryL1",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l1: ::std::option::Option<String>,
+        #[doc = "Second level of the product category in [Google’s product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "categoryL2",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l2: ::std::option::Option<String>,
+        #[doc = "Third level of the product category in [Google’s product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "categoryL3",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l3: ::std::option::Option<String>,
+        #[doc = "Fourth level of the product category in [Google’s product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "categoryL4",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l4: ::std::option::Option<String>,
+        #[doc = "Fifth level of the product category in [Google’s product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "categoryL5",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub category_l5: ::std::option::Option<String>,
+        #[doc = "Channel of the product (online versus local)."]
+        #[serde(
+            rename = "channel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub channel: ::std::option::Option<crate::schemas::ProductViewChannel>,
+        #[doc = "Condition of the product."]
+        #[serde(
+            rename = "condition",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub condition: ::std::option::Option<String>,
+        #[doc = "The time the merchant created the product in timestamp seconds."]
+        #[serde(
+            rename = "creationTime",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub creation_time: ::std::option::Option<String>,
+        #[doc = "Product price currency code (for example, ISO 4217). Absent if product price is not available."]
+        #[serde(
+            rename = "currencyCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub currency_code: ::std::option::Option<String>,
+        #[doc = "Expiration date for the product. Specified on insertion."]
+        #[serde(
+            rename = "expirationDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expiration_date: ::std::option::Option<crate::schemas::Date>,
+        #[doc = "GTIN of the product."]
+        #[serde(
+            rename = "gtin",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub gtin: ::std::option::Option<Vec<String>>,
+        #[doc = "The REST ID of the product, in the form of channel:contentLanguage:targetCountry:offerId. Content API methods that operate on products take this as their productId parameter. Should always be included in the SELECT clause."]
+        #[serde(
+            rename = "id",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub id: ::std::option::Option<String>,
+        #[doc = "Item group ID provided by the merchant for grouping variants together."]
+        #[serde(
+            rename = "itemGroupId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub item_group_id: ::std::option::Option<String>,
+        #[doc = "List of item issues for the product."]
+        #[serde(
+            rename = "itemIssues",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub item_issues: ::std::option::Option<Vec<crate::schemas::ProductViewItemIssue>>,
+        #[doc = "Language code of the product in BCP 47 format."]
+        #[serde(
+            rename = "languageCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub language_code: ::std::option::Option<String>,
+        #[doc = "Merchant-provided id of the product."]
+        #[serde(
+            rename = "offerId",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub offer_id: ::std::option::Option<String>,
+        #[doc = "Product price specified as micros (1 millionth of a standard unit, 1 USD = 1000000 micros) in the product currency. Absent in case the information about the price of the product is not available."]
+        #[serde(
+            rename = "priceMicros",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        #[serde(with = "crate::parsed_string")]
+        pub price_micros: ::std::option::Option<i64>,
+        #[doc = "First level of the product type in merchant’s own [product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "productTypeL1",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_type_l1: ::std::option::Option<String>,
+        #[doc = "Second level of the product type in merchant’s own [product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "productTypeL2",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_type_l2: ::std::option::Option<String>,
+        #[doc = "Third level of the product type in merchant’s own [product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "productTypeL3",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_type_l3: ::std::option::Option<String>,
+        #[doc = "Fourth level of the product type in merchant’s own [product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "productTypeL4",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_type_l4: ::std::option::Option<String>,
+        #[doc = "Fifth level of the product type in merchant’s own [product taxonomy](https://support.google.com/merchants/answer/6324436)."]
+        #[serde(
+            rename = "productTypeL5",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_type_l5: ::std::option::Option<String>,
+        #[doc = "The normalized shipping label specified in the feed"]
+        #[serde(
+            rename = "shippingLabel",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub shipping_label: ::std::option::Option<String>,
+        #[doc = "Title of the product."]
+        #[serde(
+            rename = "title",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub title: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ProductView {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductView {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ProductViewAggregatedDestinationStatus {
+        #[doc = "Undefined aggregated status."]
+        AggregatedStatusUnspecified,
+        #[doc = "Offer is eligible for all destinations."]
+        Eligible,
+        #[doc = "Offer is eligible for some (but not all) destinations."]
+        EligibleLimited,
+        #[doc = "Offer isn’t eligible, or is disapproved for all destinations."]
+        NotEligibleOrDisapproved,
+        #[doc = "Offer’s status is pending in all destinations."]
+        Pending,
+    }
+    impl ProductViewAggregatedDestinationStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ProductViewAggregatedDestinationStatus::AggregatedStatusUnspecified => {
+                    "AGGREGATED_STATUS_UNSPECIFIED"
+                }
+                ProductViewAggregatedDestinationStatus::Eligible => "ELIGIBLE",
+                ProductViewAggregatedDestinationStatus::EligibleLimited => "ELIGIBLE_LIMITED",
+                ProductViewAggregatedDestinationStatus::NotEligibleOrDisapproved => {
+                    "NOT_ELIGIBLE_OR_DISAPPROVED"
+                }
+                ProductViewAggregatedDestinationStatus::Pending => "PENDING",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ProductViewAggregatedDestinationStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ProductViewAggregatedDestinationStatus {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ProductViewAggregatedDestinationStatus, ()> {
+            Ok(match s {
+                "AGGREGATED_STATUS_UNSPECIFIED" => {
+                    ProductViewAggregatedDestinationStatus::AggregatedStatusUnspecified
+                }
+                "ELIGIBLE" => ProductViewAggregatedDestinationStatus::Eligible,
+                "ELIGIBLE_LIMITED" => ProductViewAggregatedDestinationStatus::EligibleLimited,
+                "NOT_ELIGIBLE_OR_DISAPPROVED" => {
+                    ProductViewAggregatedDestinationStatus::NotEligibleOrDisapproved
+                }
+                "PENDING" => ProductViewAggregatedDestinationStatus::Pending,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ProductViewAggregatedDestinationStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ProductViewAggregatedDestinationStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ProductViewAggregatedDestinationStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "AGGREGATED_STATUS_UNSPECIFIED" => {
+                    ProductViewAggregatedDestinationStatus::AggregatedStatusUnspecified
+                }
+                "ELIGIBLE" => ProductViewAggregatedDestinationStatus::Eligible,
+                "ELIGIBLE_LIMITED" => ProductViewAggregatedDestinationStatus::EligibleLimited,
+                "NOT_ELIGIBLE_OR_DISAPPROVED" => {
+                    ProductViewAggregatedDestinationStatus::NotEligibleOrDisapproved
+                }
+                "PENDING" => ProductViewAggregatedDestinationStatus::Pending,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ProductViewAggregatedDestinationStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductViewAggregatedDestinationStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ProductViewChannel {
+        #[doc = "Indicates that the channel is unspecified."]
+        ChannelUnspecified,
+        #[doc = "Indicates that the channel is local."]
+        Local,
+        #[doc = "Indicates that the channel is online."]
+        Online,
+    }
+    impl ProductViewChannel {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ProductViewChannel::ChannelUnspecified => "CHANNEL_UNSPECIFIED",
+                ProductViewChannel::Local => "LOCAL",
+                ProductViewChannel::Online => "ONLINE",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ProductViewChannel {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ProductViewChannel {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ProductViewChannel, ()> {
+            Ok(match s {
+                "CHANNEL_UNSPECIFIED" => ProductViewChannel::ChannelUnspecified,
+                "LOCAL" => ProductViewChannel::Local,
+                "ONLINE" => ProductViewChannel::Online,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ProductViewChannel {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ProductViewChannel {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ProductViewChannel {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "CHANNEL_UNSPECIFIED" => ProductViewChannel::ChannelUnspecified,
+                "LOCAL" => ProductViewChannel::Local,
+                "ONLINE" => ProductViewChannel::Online,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ProductViewChannel {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductViewChannel {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProductViewItemIssue {
+        #[doc = "Item issue type."]
+        #[serde(
+            rename = "issueType",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub issue_type: ::std::option::Option<crate::schemas::ProductViewItemIssueItemIssueType>,
+        #[doc = "Item issue resolution."]
+        #[serde(
+            rename = "resolution",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub resolution: ::std::option::Option<crate::schemas::ProductViewItemIssueResolution>,
+        #[doc = "Item issue severity."]
+        #[serde(
+            rename = "severity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity: ::std::option::Option<crate::schemas::ProductViewItemIssueItemIssueSeverity>,
+    }
+    impl ::google_field_selector::FieldSelector for ProductViewItemIssue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductViewItemIssue {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ProductViewItemIssueResolution {
+        #[doc = "The merchant has to fix the issue."]
+        MerchantAction,
+        #[doc = "The issue will be resolved automatically (for example, image crawl), or Google review. No merchant action is required now. Resolution might lead to another issue (for example, if crawl fails)."]
+        PendingProcessing,
+        #[doc = "Unknown resolution type."]
+        Unknown,
+    }
+    impl ProductViewItemIssueResolution {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                ProductViewItemIssueResolution::MerchantAction => "MERCHANT_ACTION",
+                ProductViewItemIssueResolution::PendingProcessing => "PENDING_PROCESSING",
+                ProductViewItemIssueResolution::Unknown => "UNKNOWN",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ProductViewItemIssueResolution {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ProductViewItemIssueResolution {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<ProductViewItemIssueResolution, ()> {
+            Ok(match s {
+                "MERCHANT_ACTION" => ProductViewItemIssueResolution::MerchantAction,
+                "PENDING_PROCESSING" => ProductViewItemIssueResolution::PendingProcessing,
+                "UNKNOWN" => ProductViewItemIssueResolution::Unknown,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for ProductViewItemIssueResolution {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ProductViewItemIssueResolution {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ProductViewItemIssueResolution {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "MERCHANT_ACTION" => ProductViewItemIssueResolution::MerchantAction,
+                "PENDING_PROCESSING" => ProductViewItemIssueResolution::PendingProcessing,
+                "UNKNOWN" => ProductViewItemIssueResolution::Unknown,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for ProductViewItemIssueResolution {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductViewItemIssueResolution {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProductViewItemIssueIssueSeverityPerDestination {
+        #[doc = "List of demoted countries in the destination."]
+        #[serde(
+            rename = "demotedCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub demoted_countries: ::std::option::Option<Vec<String>>,
+        #[doc = "Issue destination."]
+        #[serde(
+            rename = "destination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destination: ::std::option::Option<String>,
+        #[doc = "List of disapproved countries in the destination."]
+        #[serde(
+            rename = "disapprovedCountries",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub disapproved_countries: ::std::option::Option<Vec<String>>,
+    }
+    impl ::google_field_selector::FieldSelector for ProductViewItemIssueIssueSeverityPerDestination {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductViewItemIssueIssueSeverityPerDestination {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProductViewItemIssueItemIssueSeverity {
+        #[doc = "Severity of an issue aggregated for destination."]
+        #[serde(
+            rename = "aggregatedSeverity",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub aggregated_severity: ::std::option::Option<
+            crate::schemas::ProductViewItemIssueItemIssueSeverityAggregatedSeverity,
+        >,
+        #[doc = "Item issue severity for every destination."]
+        #[serde(
+            rename = "severityPerDestination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub severity_per_destination: ::std::option::Option<
+            Vec<crate::schemas::ProductViewItemIssueIssueSeverityPerDestination>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for ProductViewItemIssueItemIssueSeverity {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductViewItemIssueItemIssueSeverity {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum ProductViewItemIssueItemIssueSeverityAggregatedSeverity {
+        #[doc = "Undefined Issue severity."]
+        AggregatedIssueSeverityUnspecified,
+        #[doc = "Issue demotes the product in all selected destinations it affects."]
+        Demoted,
+        #[doc = "Issue disapproves the product in at least one of the selected destinations."]
+        Disapproved,
+        #[doc = "Issue resolution is `PENDING_PROCESSING`."]
+        Pending,
+    }
+    impl ProductViewItemIssueItemIssueSeverityAggregatedSeverity {
+        pub fn as_str(self) -> &'static str {
+            match self { ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: AggregatedIssueSeverityUnspecified => "AGGREGATED_ISSUE_SEVERITY_UNSPECIFIED" , ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Demoted => "DEMOTED" , ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Disapproved => "DISAPPROVED" , ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Pending => "PENDING" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for ProductViewItemIssueItemIssueSeverityAggregatedSeverity {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for ProductViewItemIssueItemIssueSeverityAggregatedSeverity {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<ProductViewItemIssueItemIssueSeverityAggregatedSeverity, ()>
+        {
+            Ok (match s { "AGGREGATED_ISSUE_SEVERITY_UNSPECIFIED" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: AggregatedIssueSeverityUnspecified , "DEMOTED" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Demoted , "DISAPPROVED" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Disapproved , "PENDING" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Pending , _ => return Err (()) , })
+        }
+    }
+    impl ::std::fmt::Display for ProductViewItemIssueItemIssueSeverityAggregatedSeverity {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for ProductViewItemIssueItemIssueSeverityAggregatedSeverity {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for ProductViewItemIssueItemIssueSeverityAggregatedSeverity {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok (match value { "AGGREGATED_ISSUE_SEVERITY_UNSPECIFIED" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: AggregatedIssueSeverityUnspecified , "DEMOTED" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Demoted , "DISAPPROVED" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Disapproved , "PENDING" => ProductViewItemIssueItemIssueSeverityAggregatedSeverity :: Pending , _ => return Err (:: serde :: de :: Error :: custom (format ! ("invalid enum for #name: {}" , value))) , })
+        }
+    }
+    impl ::google_field_selector::FieldSelector
+        for ProductViewItemIssueItemIssueSeverityAggregatedSeverity
+    {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType
+        for ProductViewItemIssueItemIssueSeverityAggregatedSeverity
+    {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct ProductViewItemIssueItemIssueType {
+        #[doc = "Canonical attribute name for attribute-specific issues."]
+        #[serde(
+            rename = "canonicalAttribute",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub canonical_attribute: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for ProductViewItemIssueItemIssueType {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for ProductViewItemIssueItemIssueType {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ProductWeight {
@@ -16558,7 +18308,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_id: ::std::option::Option<String>,
-        #[doc = "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged. Only defined if the method is `update`."]
+        #[doc = "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. *You must specify the update mask to delete attributes.* Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged. Only defined if the method is `update`."]
         #[serde(
             rename = "updateMask",
             default,
@@ -16616,7 +18366,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -16683,7 +18433,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ProductsListResponse {
+    impl crate::GetNextPageToken<String> for ProductsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -16846,7 +18596,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors, if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -16922,7 +18672,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ProductstatusesListResponse {
+    impl crate::GetNextPageToken<String> for ProductstatusesListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -16954,7 +18704,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brand_exclusion: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. The content language used as part of the unique identifier. Currently only en value is supported."]
+        #[doc = "Required. The content language used as part of the unique identifier. `en` content language is available for all target countries. `fr` content language is available for `CA` and `FR` target countries, and `de` content language is available for `DE` target country."]
         #[serde(
             rename = "contentLanguage",
             default,
@@ -16975,7 +18725,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub free_gift_description: ::std::option::Option<String>,
-        #[doc = "Free gift item id for the promotion."]
+        #[doc = "Free gift item ID for the promotion."]
         #[serde(
             rename = "freeGiftItemId",
             default,
@@ -16989,7 +18739,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub free_gift_value: ::std::option::Option<crate::schemas::PriceAmount>,
-        #[doc = "Generic redemption code for the promotion. To be used with the above field."]
+        #[doc = "Generic redemption code for the promotion. To be used with the `offerType` field."]
         #[serde(
             rename = "genericRedemptionCode",
             default,
@@ -17003,35 +18753,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub get_this_quantity_discounted: ::std::option::Option<i32>,
-        #[doc = "Required. Output only. The REST promotion id to uniquely identify the promotion. Content API methods that operate on promotions take this as their promotionId parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The channel field will have a value of “online”, “in_store”, or “online_in_store”."]
+        #[doc = "Required. Output only. The REST promotion ID to uniquely identify the promotion. Content API methods that operate on promotions take this as their `promotionId` parameter. The REST ID for a promotion is of the form channel:contentLanguage:targetCountry:promotionId The `channel` field has a value of `\"online\"`, `\"in_store\"`, or `\"online_in_store\"`."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Product filter by item group id for the promotion."]
+        #[doc = "Product filter by item group ID for the promotion."]
         #[serde(
             rename = "itemGroupId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_group_id: ::std::option::Option<Vec<String>>,
-        #[doc = "Product filter by item group id exclusion for the promotion."]
+        #[doc = "Product filter by item group ID exclusion for the promotion."]
         #[serde(
             rename = "itemGroupIdExclusion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_group_id_exclusion: ::std::option::Option<Vec<String>>,
-        #[doc = "Product filter by item id for the promotion."]
+        #[doc = "Product filter by item ID for the promotion."]
         #[serde(
             rename = "itemId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_id: ::std::option::Option<Vec<String>>,
-        #[doc = "Product filter by item id exclusion for the promotion."]
+        #[doc = "Product filter by item ID exclusion for the promotion."]
         #[serde(
             rename = "itemIdExclusion",
             default,
@@ -17073,7 +18823,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minimum_purchase_quantity: ::std::option::Option<i32>,
-        #[doc = "Promotion cost cap of the promotion."]
+        #[doc = "Cost cap for the promotion."]
         #[serde(
             rename = "moneyBudget",
             default,
@@ -17137,41 +18887,55 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotion_destination_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "String representation of the promotion display dates (deprecated: Use promotion_display_time_period instead)."]
+        #[doc = "String representation of the promotion display dates. Deprecated. Use `promotion_display_time_period` instead."]
         #[serde(
             rename = "promotionDisplayDates",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotion_display_dates: ::std::option::Option<String>,
-        #[doc = "TimePeriod representation of the promotion display dates."]
+        #[doc = "`TimePeriod` representation of the promotion’s display dates."]
         #[serde(
             rename = "promotionDisplayTimePeriod",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotion_display_time_period: ::std::option::Option<crate::schemas::TimePeriod>,
-        #[doc = "String representation of the promotion effective dates (deprecated: Use promotion_effective_time_period instead)."]
+        #[doc = "String representation of the promotion effective dates. Deprecated. Use `promotion_effective_time_period` instead."]
         #[serde(
             rename = "promotionEffectiveDates",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotion_effective_dates: ::std::option::Option<String>,
-        #[doc = "Required. TimePeriod representation of the promotion effective dates."]
+        #[doc = "Required. `TimePeriod` representation of the promotion’s effective dates."]
         #[serde(
             rename = "promotionEffectiveTimePeriod",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotion_effective_time_period: ::std::option::Option<crate::schemas::TimePeriod>,
-        #[doc = "Required. The user provided promotion id to uniquely identify the promotion."]
+        #[doc = "Required. The user provided promotion ID to uniquely identify the promotion."]
         #[serde(
             rename = "promotionId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotion_id: ::std::option::Option<String>,
+        #[doc = "Output only. The current status of the promotion."]
+        #[serde(
+            rename = "promotionStatus",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub promotion_status: ::std::option::Option<crate::schemas::PromotionPromotionStatus>,
+        #[doc = "URL to the page on the merchant’s site where the promotion shows. Local Inventory ads promotions throw an error if no promo url is included. URL is used to confirm that the promotion is valid and can be redeemed."]
+        #[serde(
+            rename = "promotionUrl",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub promotion_url: ::std::option::Option<String>,
         #[doc = "Required. Redemption channel for the promotion. At least one channel is required."]
         #[serde(
             rename = "redemptionChannel",
@@ -17180,14 +18944,35 @@ pub mod schemas {
         )]
         pub redemption_channel:
             ::std::option::Option<Vec<crate::schemas::PromotionRedemptionChannelItems>>,
-        #[doc = "Shipping service names for thse promotion."]
+        #[doc = "Shipping service names for the promotion."]
         #[serde(
             rename = "shippingServiceNames",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipping_service_names: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. The target country used as part of the unique identifier. Currently only US and CA are supported."]
+        #[doc = "Whether the promotion applies to all stores, or only specified stores. Local Inventory ads promotions throw an error if no store applicability is included. An INVALID_ARGUMENT error is thrown if store_applicability is set to ALL_STORES and store_code or score_code_exclusion is set to a value."]
+        #[serde(
+            rename = "storeApplicability",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub store_applicability: ::std::option::Option<crate::schemas::PromotionStoreApplicability>,
+        #[doc = "Store codes to include for the promotion."]
+        #[serde(
+            rename = "storeCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub store_code: ::std::option::Option<Vec<String>>,
+        #[doc = "Store codes to exclude for the promotion."]
+        #[serde(
+            rename = "storeCodeExclusion",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub store_code_exclusion: ::std::option::Option<Vec<String>>,
+        #[doc = "Required. The target country used as part of the unique identifier. Can be `AU`, `CA`, `DE`, `FR`, `GB`, `IN` or `US`."]
         #[serde(
             rename = "targetCountry",
             default,
@@ -17207,19 +18992,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PromotionCouponValueType {
-        #[doc = "Buy M quantity, get money off. buy_this_quantity and money_off_amount must be present."]
+        #[doc = "Buy M quantity, get money off. `buy_this_quantity` and `money_off_amount` must be present."]
         BuyMGetMoneyOff,
-        #[doc = "Buy M quantity, get N money off coupon value type. buy_this_quantity and get_this_quantity must be present. money_off_amount must also be present."]
+        #[doc = "Buy M quantity, get N money off coupon value type. `buy_this_quantity` and `get_this_quantity` must be present. `money_off_amount` must also be present."]
         BuyMGetNMoneyOff,
-        #[doc = "Buy M quantity, get N percent off coupon value type. buy_this_quantity and get_this_quantity must be present. percent_off_percentage must also be present."]
+        #[doc = "Buy M quantity, get N percent off coupon value type. `buy_this_quantity` and `get_this_quantity` must be present. `percent_off_percentage` must also be present."]
         BuyMGetNPercentOff,
-        #[doc = "Buy M quantity, get money off. buy_this_quantity and percent_off_percentage must be present."]
+        #[doc = "Buy M quantity, get money off. `buy_this_quantity` and `percent_off_percentage` must be present."]
         BuyMGetPercentOff,
         #[doc = "Indicates that the coupon value type is unspecified."]
         CouponValueTypeUnspecified,
-        #[doc = "Free gift with description only"]
+        #[doc = "Free gift with description only."]
         FreeGift,
-        #[doc = "Free gift with item id (description is optional)."]
+        #[doc = "Free gift with item ID (description is optional)."]
         FreeGiftWithItemId,
         #[doc = "Free gift with value (description is optional)."]
         FreeGiftWithValue,
@@ -17417,7 +19202,7 @@ pub mod schemas {
     pub enum PromotionProductApplicability {
         #[doc = "Applicable to all products."]
         AllProducts,
-        #[doc = "Unknown product applicability."]
+        #[doc = "Which products the promotion applies to is unknown."]
         ProductApplicabilityUnspecified,
         #[doc = "Applicable to only a single product or list of products."]
         SpecificProducts,
@@ -17573,6 +19358,323 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for PromotionRedemptionChannelItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PromotionStoreApplicability {
+        #[doc = "Promotion applies to all stores."]
+        AllStores,
+        #[doc = "Promotion applies to only the specified stores."]
+        SpecificStores,
+        #[doc = "Which store codes the promotion applies to is unknown."]
+        StoreApplicabilityUnspecified,
+    }
+    impl PromotionStoreApplicability {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PromotionStoreApplicability::AllStores => "ALL_STORES",
+                PromotionStoreApplicability::SpecificStores => "SPECIFIC_STORES",
+                PromotionStoreApplicability::StoreApplicabilityUnspecified => {
+                    "STORE_APPLICABILITY_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PromotionStoreApplicability {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PromotionStoreApplicability {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<PromotionStoreApplicability, ()> {
+            Ok(match s {
+                "ALL_STORES" => PromotionStoreApplicability::AllStores,
+                "SPECIFIC_STORES" => PromotionStoreApplicability::SpecificStores,
+                "STORE_APPLICABILITY_UNSPECIFIED" => {
+                    PromotionStoreApplicability::StoreApplicabilityUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PromotionStoreApplicability {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PromotionStoreApplicability {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PromotionStoreApplicability {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "ALL_STORES" => PromotionStoreApplicability::AllStores,
+                "SPECIFIC_STORES" => PromotionStoreApplicability::SpecificStores,
+                "STORE_APPLICABILITY_UNSPECIFIED" => {
+                    PromotionStoreApplicability::StoreApplicabilityUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PromotionStoreApplicability {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PromotionStoreApplicability {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PromotionPromotionStatus {
+        #[doc = "Date on which the promotion has been created in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example “2020-01-02T09:00:00+01:00” or “2020-01-02T09:00:00Z”"]
+        #[serde(
+            rename = "creationDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub creation_date: ::std::option::Option<String>,
+        #[doc = "The intended destinations for the promotion."]
+        #[serde(
+            rename = "destinationStatuses",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destination_statuses:
+            ::std::option::Option<Vec<crate::schemas::PromotionPromotionStatusDestinationStatus>>,
+        #[doc = "Date on which the promotion status has been last updated in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and offset, for example “2020-01-02T09:00:00+01:00” or “2020-01-02T09:00:00Z”"]
+        #[serde(
+            rename = "lastUpdateDate",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub last_update_date: ::std::option::Option<String>,
+        #[doc = "A list of issues associated with the promotion."]
+        #[serde(
+            rename = "promotionIssue",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub promotion_issue:
+            ::std::option::Option<Vec<crate::schemas::PromotionPromotionStatusPromotionIssue>>,
+    }
+    impl ::google_field_selector::FieldSelector for PromotionPromotionStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PromotionPromotionStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PromotionPromotionStatusDestinationStatus {
+        #[doc = "The name of the destination."]
+        #[serde(
+            rename = "destination",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub destination: ::std::option::Option<String>,
+        #[doc = "The status for the specified destination."]
+        #[serde(
+            rename = "status",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub status:
+            ::std::option::Option<crate::schemas::PromotionPromotionStatusDestinationStatusStatus>,
+    }
+    impl ::google_field_selector::FieldSelector for PromotionPromotionStatusDestinationStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PromotionPromotionStatusDestinationStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum PromotionPromotionStatusDestinationStatusStatus {
+        #[doc = "The promotion is no longer active."]
+        Expired,
+        #[doc = "The promotion is under review."]
+        InReview,
+        #[doc = "The promotion is approved and active."]
+        Live,
+        #[doc = "The promotion is not stopped, and all reviews are approved, but the active date is in the future."]
+        Pending,
+        #[doc = "The promotion is disapproved"]
+        Rejected,
+        #[doc = "Unknown promotion state."]
+        StateUnspecified,
+        #[doc = "The promotion is stopped by merchant."]
+        Stopped,
+    }
+    impl PromotionPromotionStatusDestinationStatusStatus {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                PromotionPromotionStatusDestinationStatusStatus::Expired => "EXPIRED",
+                PromotionPromotionStatusDestinationStatusStatus::InReview => "IN_REVIEW",
+                PromotionPromotionStatusDestinationStatusStatus::Live => "LIVE",
+                PromotionPromotionStatusDestinationStatusStatus::Pending => "PENDING",
+                PromotionPromotionStatusDestinationStatusStatus::Rejected => "REJECTED",
+                PromotionPromotionStatusDestinationStatusStatus::StateUnspecified => {
+                    "STATE_UNSPECIFIED"
+                }
+                PromotionPromotionStatusDestinationStatusStatus::Stopped => "STOPPED",
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for PromotionPromotionStatusDestinationStatusStatus {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for PromotionPromotionStatusDestinationStatusStatus {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<PromotionPromotionStatusDestinationStatusStatus, ()> {
+            Ok(match s {
+                "EXPIRED" => PromotionPromotionStatusDestinationStatusStatus::Expired,
+                "IN_REVIEW" => PromotionPromotionStatusDestinationStatusStatus::InReview,
+                "LIVE" => PromotionPromotionStatusDestinationStatusStatus::Live,
+                "PENDING" => PromotionPromotionStatusDestinationStatusStatus::Pending,
+                "REJECTED" => PromotionPromotionStatusDestinationStatusStatus::Rejected,
+                "STATE_UNSPECIFIED" => {
+                    PromotionPromotionStatusDestinationStatusStatus::StateUnspecified
+                }
+                "STOPPED" => PromotionPromotionStatusDestinationStatusStatus::Stopped,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for PromotionPromotionStatusDestinationStatusStatus {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for PromotionPromotionStatusDestinationStatusStatus {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for PromotionPromotionStatusDestinationStatusStatus {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "EXPIRED" => PromotionPromotionStatusDestinationStatusStatus::Expired,
+                "IN_REVIEW" => PromotionPromotionStatusDestinationStatusStatus::InReview,
+                "LIVE" => PromotionPromotionStatusDestinationStatusStatus::Live,
+                "PENDING" => PromotionPromotionStatusDestinationStatusStatus::Pending,
+                "REJECTED" => PromotionPromotionStatusDestinationStatusStatus::Rejected,
+                "STATE_UNSPECIFIED" => {
+                    PromotionPromotionStatusDestinationStatusStatus::StateUnspecified
+                }
+                "STOPPED" => PromotionPromotionStatusDestinationStatusStatus::Stopped,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for PromotionPromotionStatusDestinationStatusStatus {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PromotionPromotionStatusDestinationStatusStatus {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
+    pub struct PromotionPromotionStatusPromotionIssue {
+        #[doc = "Code of the issue."]
+        #[serde(
+            rename = "code",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub code: ::std::option::Option<String>,
+        #[doc = "Explanation of the issue."]
+        #[serde(
+            rename = "detail",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub detail: ::std::option::Option<String>,
+    }
+    impl ::google_field_selector::FieldSelector for PromotionPromotionStatusPromotionIssue {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for PromotionPromotionStatusPromotionIssue {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -18132,7 +20234,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if and only if the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -18168,6 +20270,20 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ReportRow {
+        #[doc = "Best Sellers fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView` or `BestSellersBrandView`."]
+        #[serde(
+            rename = "bestSellers",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub best_sellers: ::std::option::Option<crate::schemas::BestSellers>,
+        #[doc = "Brand fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersBrandView`."]
+        #[serde(
+            rename = "brand",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub brand: ::std::option::Option<crate::schemas::Brand>,
         #[doc = "Metrics requested by the merchant in the query. Metric values are only set for metrics requested explicitly in the query."]
         #[serde(
             rename = "metrics",
@@ -18175,6 +20291,34 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<crate::schemas::Metrics>,
+        #[doc = "Price Competitiveness fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceCompetitivenessProductView`."]
+        #[serde(
+            rename = "priceCompetitiveness",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price_competitiveness: ::std::option::Option<crate::schemas::PriceCompetitiveness>,
+        #[doc = "Price Insights fields requested by the merchant in the query. Field values are only set if the merchant queries `PriceInsightsProductView`."]
+        #[serde(
+            rename = "priceInsights",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub price_insights: ::std::option::Option<crate::schemas::PriceInsights>,
+        #[doc = "Product cluster fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView`."]
+        #[serde(
+            rename = "productCluster",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_cluster: ::std::option::Option<crate::schemas::ProductCluster>,
+        #[doc = "Product fields requested by the merchant in the query. Field values are only set if the merchant queries `ProductView`. Available only to selected merchants. Submit the [interest form](https://forms.gle/7Uy8htzAN8oNokz9A) to request access."]
+        #[serde(
+            rename = "productView",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub product_view: ::std::option::Option<crate::schemas::ProductView>,
         #[doc = "Segmentation dimensions requested by the merchant in the query. Dimension values are only set for dimensions requested explicitly in the query."]
         #[serde(
             rename = "segments",
@@ -20944,7 +23088,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ReturnaddressListResponse {
+    impl crate::GetNextPageToken<String> for ReturnaddressListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -21274,7 +23418,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SearchResponse {
+    impl crate::GetNextPageToken<String> for SearchResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -21334,7 +23478,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub category_l5: ::std::option::Option<String>,
-        #[doc = "Currency in which price metrics are represented, e.g., if you select `ordered_item_sales_micros`, the returned value will be represented by this currency."]
+        #[doc = "Currency in which price metrics are represented, for example, if you select `ordered_item_sales_micros`, the returned value will be represented by this currency."]
         #[serde(
             rename = "currencyCode",
             default,
@@ -21376,6 +23520,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_label_4: ::std::option::Option<String>,
+        #[doc = "Code of the country where the customer is located at the time of the event. Represented in the ISO 3166 format. If the customer country cannot be determined, a special ‘ZZ’ code is returned."]
+        #[serde(
+            rename = "customerCountryCode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub customer_country_code: ::std::option::Option<String>,
         #[doc = "Date in the merchant timezone to which metrics apply."]
         #[serde(
             rename = "date",
@@ -21425,7 +23576,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_type_l5: ::std::option::Option<String>,
-        #[doc = "Program to which metrics apply, e.g., Free Product Listing."]
+        #[doc = "Program to which metrics apply, for example, Free Product Listing."]
         #[serde(
             rename = "program",
             default,
@@ -22015,7 +24166,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SettlementreportsListResponse {
+    impl crate::GetNextPageToken<String> for SettlementreportsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -22064,7 +24215,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SettlementtransactionsListResponse {
+    impl crate::GetNextPageToken<String> for SettlementtransactionsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -22410,7 +24561,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub batch_id: ::std::option::Option<u32>,
-        #[doc = "A list of errors defined if, and only if, the request failed."]
+        #[doc = "A list of errors for failed custombatch entries. *Note:* Schema errors fail the whole request."]
         #[serde(
             rename = "errors",
             default,
@@ -22601,7 +24752,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ShippingsettingsListResponse {
+    impl crate::GetNextPageToken<String> for ShippingsettingsListResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -23357,7 +25508,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region: ::std::option::Option<String>,
-        #[doc = "Street-level part of the address."]
+        #[doc = "Street-level part of the address. Use `\\n` to add a second line."]
         #[serde(
             rename = "streetAddress",
             default,
@@ -24588,28 +26739,12 @@ impl Client {
             auth: self.auth_ref(),
         }
     }
-    #[doc = "Actions that can be performed on the accountsbyexternalsellerid resource"]
-    pub fn accountsbyexternalsellerid(
-        &self,
-    ) -> crate::resources::accountsbyexternalsellerid::AccountsbyexternalselleridActions {
-        crate::resources::accountsbyexternalsellerid::AccountsbyexternalselleridActions {
-            reqwest: &self.reqwest,
-            auth: self.auth_ref(),
-        }
-    }
     #[doc = "Actions that can be performed on the accountstatuses resource"]
     pub fn accountstatuses(&self) -> crate::resources::accountstatuses::AccountstatusesActions {
         crate::resources::accountstatuses::AccountstatusesActions {
             reqwest: &self.reqwest,
             auth: self.auth_ref(),
         }
-    }
-    #[doc = "Actions that can be performed on the accountstatusesbyexternalsellerid resource"]
-    pub fn accountstatusesbyexternalsellerid(
-        &self,
-    ) -> crate::resources::accountstatusesbyexternalsellerid::AccountstatusesbyexternalselleridActions
-    {
-        crate :: resources :: accountstatusesbyexternalsellerid :: AccountstatusesbyexternalselleridActions { reqwest : & self . reqwest , auth : self . auth_ref () , }
     }
     #[doc = "Actions that can be performed on the accounttax resource"]
     pub fn accounttax(&self) -> crate::resources::accounttax::AccounttaxActions {
@@ -24766,6 +26901,13 @@ impl Client {
         &self,
     ) -> crate::resources::pubsubnotificationsettings::PubsubnotificationsettingsActions {
         crate::resources::pubsubnotificationsettings::PubsubnotificationsettingsActions {
+            reqwest: &self.reqwest,
+            auth: self.auth_ref(),
+        }
+    }
+    #[doc = "Actions that can be performed on the quotas resource"]
+    pub fn quotas(&self) -> crate::resources::quotas::QuotasActions {
+        crate::resources::quotas::QuotasActions {
             reqwest: &self.reqwest,
             auth: self.auth_ref(),
         }
@@ -26604,7 +28746,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -26637,7 +28779,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -26687,7 +28829,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -26805,12 +28947,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -26937,7 +29080,7 @@ pub mod resources {
                     #[serde(rename = "links")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -26970,7 +29113,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -27020,7 +29163,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -27144,12 +29287,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListlinksRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -28554,7 +30698,7 @@ pub mod resources {
                         #[serde(rename = "accountLabels")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -28589,7 +30733,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -28639,7 +30783,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -28758,12 +30902,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -29671,211 +31816,6 @@ pub mod resources {
             }
         }
     }
-    pub mod accountsbyexternalsellerid {
-        pub mod params {}
-        pub struct AccountsbyexternalselleridActions<'a> {
-            pub(crate) reqwest: &'a reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-        }
-        impl<'a> AccountsbyexternalselleridActions<'a> {
-            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                self.auth
-            }
-            #[doc = "Gets data of the account with the specified external_seller_id belonging to the MCA with the specified merchant_id."]
-            pub fn get(
-                &self,
-                merchant_id: i64,
-                external_seller_id: impl Into<String>,
-            ) -> GetRequestBuilder {
-                GetRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    merchant_id,
-                    external_seller_id: external_seller_id.into(),
-                }
-            }
-        }
-        #[doc = "Created via [AccountsbyexternalselleridActions::get()](struct.AccountsbyexternalselleridActions.html#method.get)"]
-        #[derive(Debug, Clone)]
-        pub struct GetRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            merchant_id: i64,
-            external_seller_id: String,
-            access_token: ::std::option::Option<String>,
-            alt: ::std::option::Option<crate::params::Alt>,
-            callback: ::std::option::Option<String>,
-            fields: ::std::option::Option<String>,
-            key: ::std::option::Option<String>,
-            oauth_token: ::std::option::Option<String>,
-            pretty_print: ::std::option::Option<bool>,
-            quota_user: ::std::option::Option<String>,
-            upload_protocol: ::std::option::Option<String>,
-            upload_type: ::std::option::Option<String>,
-            xgafv: ::std::option::Option<crate::params::Xgafv>,
-        }
-        impl<'a> GetRequestBuilder<'a> {
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub async fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: ::std::option::Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields).await
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub async fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::Account, crate::Error> {
-                self.execute_with_fields(None::<&str>).await
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub async fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::Account, crate::Error> {
-                self.execute_with_fields(Some("*")).await
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub async fn execute_with_fields<T, F>(
-                mut self,
-                fields: ::std::option::Option<F>,
-            ) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute().await
-            }
-            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path()).await?;
-                Ok(req.send().await?.error_for_status()?.json().await?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://shoppingcontent.googleapis.com/content/v2.1/".to_owned();
-                {
-                    let var_as_string = self.merchant_id.to_string();
-                    let var_as_str = &var_as_string;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output.push_str("/accountsbyexternalsellerid/");
-                {
-                    let var_as_str = &self.external_seller_id;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output
-            }
-            async fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                let access_token = self
-                    .auth
-                    .access_token()
-                    .await
-                    .map_err(|err| crate::Error::OAuth2(err))?;
-                req = req.bearer_auth(access_token);
-                Ok(req)
-            }
-        }
-    }
     pub mod accountstatuses {
         pub mod params {}
         pub struct AccountstatusesActions<'a> {
@@ -30421,7 +32361,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -30454,7 +32394,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -30504,7 +32444,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -30623,229 +32563,15 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
-            }
-        }
-    }
-    pub mod accountstatusesbyexternalsellerid {
-        pub mod params {}
-        pub struct AccountstatusesbyexternalselleridActions<'a> {
-            pub(crate) reqwest: &'a reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-        }
-        impl<'a> AccountstatusesbyexternalselleridActions<'a> {
-            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
-                self.auth
-            }
-            #[doc = "Gets status of the account with the specified external_seller_id belonging to the MCA with the specified merchant_id."]
-            pub fn get(
-                &self,
-                merchant_id: i64,
-                external_seller_id: impl Into<String>,
-            ) -> GetRequestBuilder {
-                GetRequestBuilder {
-                    reqwest: &self.reqwest,
-                    auth: self.auth_ref(),
-                    access_token: None,
-                    alt: None,
-                    callback: None,
-                    fields: None,
-                    key: None,
-                    oauth_token: None,
-                    pretty_print: None,
-                    quota_user: None,
-                    upload_protocol: None,
-                    upload_type: None,
-                    xgafv: None,
-                    merchant_id,
-                    external_seller_id: external_seller_id.into(),
-                    destinations: None,
-                }
-            }
-        }
-        #[doc = "Created via [AccountstatusesbyexternalselleridActions::get()](struct.AccountstatusesbyexternalselleridActions.html#method.get)"]
-        #[derive(Debug, Clone)]
-        pub struct GetRequestBuilder<'a> {
-            pub(crate) reqwest: &'a ::reqwest::Client,
-            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            merchant_id: i64,
-            external_seller_id: String,
-            destinations: ::std::option::Option<Vec<String>>,
-            access_token: ::std::option::Option<String>,
-            alt: ::std::option::Option<crate::params::Alt>,
-            callback: ::std::option::Option<String>,
-            fields: ::std::option::Option<String>,
-            key: ::std::option::Option<String>,
-            oauth_token: ::std::option::Option<String>,
-            pretty_print: ::std::option::Option<bool>,
-            quota_user: ::std::option::Option<String>,
-            upload_protocol: ::std::option::Option<String>,
-            upload_type: ::std::option::Option<String>,
-            xgafv: ::std::option::Option<crate::params::Xgafv>,
-        }
-        impl<'a> GetRequestBuilder<'a> {
-            #[doc = "If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination."]
-            pub fn destinations(mut self, value: impl Into<Vec<String>>) -> Self {
-                self.destinations = Some(value.into());
-                self
-            }
-            #[doc = "OAuth access token."]
-            pub fn access_token(mut self, value: impl Into<String>) -> Self {
-                self.access_token = Some(value.into());
-                self
-            }
-            #[doc = "JSONP"]
-            pub fn callback(mut self, value: impl Into<String>) -> Self {
-                self.callback = Some(value.into());
-                self
-            }
-            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
-            pub fn key(mut self, value: impl Into<String>) -> Self {
-                self.key = Some(value.into());
-                self
-            }
-            #[doc = "OAuth 2.0 token for the current user."]
-            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
-                self.oauth_token = Some(value.into());
-                self
-            }
-            #[doc = "Returns response with indentations and line breaks."]
-            pub fn pretty_print(mut self, value: bool) -> Self {
-                self.pretty_print = Some(value);
-                self
-            }
-            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
-            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
-                self.quota_user = Some(value.into());
-                self
-            }
-            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
-            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
-                self.upload_protocol = Some(value.into());
-                self
-            }
-            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
-            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
-                self.upload_type = Some(value.into());
-                self
-            }
-            #[doc = "V1 error format."]
-            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
-                self.xgafv = Some(value);
-                self
-            }
-            #[doc = r" Execute the given operation. The fields requested are"]
-            #[doc = r" determined by the FieldSelector attribute of the return type."]
-            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
-            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
-            #[doc = r" are not generic over the return type and deserialize the"]
-            #[doc = r" response into an auto-generated struct will all possible"]
-            #[doc = r" fields."]
-            pub async fn execute<T>(self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
-            {
-                let fields = ::google_field_selector::to_string::<T>();
-                let fields: ::std::option::Option<String> = if fields.is_empty() {
-                    None
-                } else {
-                    Some(fields)
-                };
-                self.execute_with_fields(fields).await
-            }
-            #[doc = r" Execute the given operation. This will not provide any"]
-            #[doc = r" `fields` selector indicating that the server will determine"]
-            #[doc = r" the fields returned. This typically includes the most common"]
-            #[doc = r" fields, but it will not include every possible attribute of"]
-            #[doc = r" the response resource."]
-            pub async fn execute_with_default_fields(
-                self,
-            ) -> Result<crate::schemas::AccountStatus, crate::Error> {
-                self.execute_with_fields(None::<&str>).await
-            }
-            #[doc = r" Execute the given operation. This will provide a `fields`"]
-            #[doc = r" selector of `*`. This will include every attribute of the"]
-            #[doc = r" response resource and should be limited to use during"]
-            #[doc = r" development or debugging."]
-            pub async fn execute_with_all_fields(
-                self,
-            ) -> Result<crate::schemas::AccountStatus, crate::Error> {
-                self.execute_with_fields(Some("*")).await
-            }
-            #[doc = r" Execute the given operation. This will use the `fields`"]
-            #[doc = r" selector provided and will deserialize the response into"]
-            #[doc = r" whatever return value is provided."]
-            pub async fn execute_with_fields<T, F>(
-                mut self,
-                fields: ::std::option::Option<F>,
-            ) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-                F: Into<String>,
-            {
-                self.fields = fields.map(Into::into);
-                self._execute().await
-            }
-            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
-            where
-                T: ::serde::de::DeserializeOwned,
-            {
-                let req = self._request(&self._path()).await?;
-                Ok(req.send().await?.error_for_status()?.json().await?)
-            }
-            fn _path(&self) -> String {
-                let mut output = "https://shoppingcontent.googleapis.com/content/v2.1/".to_owned();
-                {
-                    let var_as_string = self.merchant_id.to_string();
-                    let var_as_str = &var_as_string;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output.push_str("/accountstatusesbyexternalsellerid/");
-                {
-                    let var_as_str = &self.external_seller_id;
-                    output.extend(::percent_encoding::utf8_percent_encode(
-                        &var_as_str,
-                        crate::SIMPLE,
-                    ));
-                }
-                output
-            }
-            async fn _request(
-                &self,
-                path: &str,
-            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
-                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
-                for value in self.destinations.iter().flatten() {
-                    req = req.query(&[("destinations", value)]);
-                }
-                req = req.query(&[("access_token", &self.access_token)]);
-                req = req.query(&[("alt", &self.alt)]);
-                req = req.query(&[("callback", &self.callback)]);
-                req = req.query(&[("fields", &self.fields)]);
-                req = req.query(&[("key", &self.key)]);
-                req = req.query(&[("oauth_token", &self.oauth_token)]);
-                req = req.query(&[("prettyPrint", &self.pretty_print)]);
-                req = req.query(&[("quotaUser", &self.quota_user)]);
-                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
-                req = req.query(&[("uploadType", &self.upload_type)]);
-                req = req.query(&[("$.xgafv", &self.xgafv)]);
-                let access_token = self
-                    .auth
-                    .access_token()
-                    .await
-                    .map_err(|err| crate::Error::OAuth2(err))?;
-                req = req.bearer_auth(access_token);
-                Ok(req)
             }
         }
     }
@@ -31394,7 +33120,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -31427,7 +33153,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -31477,7 +33203,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -31592,12 +33318,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -33433,7 +35160,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -33466,7 +35193,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -33516,7 +35243,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -33631,12 +35358,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -33988,7 +35716,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -34021,7 +35749,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -34071,7 +35799,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -34186,12 +35914,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -34566,7 +36295,7 @@ pub mod resources {
                     #[serde(rename = "csses")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -34599,7 +36328,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -34647,7 +36376,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -34762,12 +36491,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -34998,7 +36728,7 @@ pub mod resources {
                     datafeed_id,
                 }
             }
-            #[doc = "Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the Products service to update your product data."]
+            #[doc = "Invokes a fetch for the datafeed in your Merchant Center account. If you need to call this method more than once per day, we recommend you use the [Products service](https://developers.google.com/shopping-content/reference/rest/v2.1/products) to update your product data."]
             pub fn fetchnow(&self, merchant_id: u64, datafeed_id: u64) -> FetchnowRequestBuilder {
                 FetchnowRequestBuilder {
                     reqwest: &self.reqwest,
@@ -36005,7 +37735,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -36038,7 +37768,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -36088,7 +37818,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -36203,12 +37933,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -36437,6 +38168,7 @@ pub mod resources {
                     merchant_id,
                     datafeed_id,
                     country: None,
+                    feed_label: None,
                     language: None,
                 }
             }
@@ -36626,6 +38358,7 @@ pub mod resources {
             merchant_id: u64,
             datafeed_id: u64,
             country: ::std::option::Option<String>,
+            feed_label: ::std::option::Option<String>,
             language: ::std::option::Option<String>,
             access_token: ::std::option::Option<String>,
             alt: ::std::option::Option<crate::params::Alt>,
@@ -36640,12 +38373,17 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target."]
+            #[doc = "Deprecated. Use `feedLabel` instead. The country to get the datafeed status for. If this parameter is provided then `language` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target."]
             pub fn country(mut self, value: impl Into<String>) -> Self {
                 self.country = Some(value.into());
                 self
             }
-            #[doc = "The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target."]
+            #[doc = "The feed label to get the datafeed status for. If this parameter is provided then `language` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target."]
+            pub fn feed_label(mut self, value: impl Into<String>) -> Self {
+                self.feed_label = Some(value.into());
+                self
+            }
+            #[doc = "The language to get the datafeed status for. If this parameter is provided then `country` must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target."]
             pub fn language(mut self, value: impl Into<String>) -> Self {
                 self.language = Some(value.into());
                 self
@@ -36781,6 +38519,7 @@ pub mod resources {
             ) -> Result<::reqwest::RequestBuilder, crate::Error> {
                 let mut req = self.reqwest.request(::reqwest::Method::GET, path);
                 req = req.query(&[("country", &self.country)]);
+                req = req.query(&[("feedLabel", &self.feed_label)]);
                 req = req.query(&[("language", &self.language)]);
                 req = req.query(&[("access_token", &self.access_token)]);
                 req = req.query(&[("alt", &self.alt)]);
@@ -36923,7 +38662,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -36956,7 +38695,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -37006,7 +38745,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -37121,12 +38860,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -37142,7 +38882,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Retrieves the status and review eligibility for the free listing program."]
+            #[doc = "Retrieves the status and review eligibility for the free listing program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account."]
             pub fn get(&self, merchant_id: i64) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -38329,7 +40069,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -38362,7 +40102,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -38412,7 +40152,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -38527,12 +40267,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -40591,7 +42332,7 @@ pub mod resources {
                     #[serde(rename = "disbursements")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -40624,7 +42365,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -40674,7 +42415,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -40793,12 +42534,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListdisbursementsRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -40939,7 +42681,7 @@ pub mod resources {
                     #[serde(rename = "transactions")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -40972,7 +42714,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -41022,7 +42764,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -41149,12 +42891,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListtransactionsRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -42321,7 +44064,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -42354,7 +44097,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -42404,7 +44147,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -42538,12 +44281,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -45927,7 +47671,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -45960,7 +47704,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -46010,7 +47754,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -46132,12 +47876,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -49290,7 +51035,7 @@ pub mod resources {
                     product_id: product_id.into(),
                 }
             }
-            #[doc = "Gets productDeliveryTime by productId"]
+            #[doc = "Gets `productDeliveryTime` by `productId`."]
             pub fn get(
                 &self,
                 merchant_id: i64,
@@ -50654,7 +52399,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -50687,7 +52432,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -50737,7 +52482,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -50852,12 +52597,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -50884,7 +52630,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged."]
+            #[doc = "The comma-separated list of product attributes to be updated. Example: `\"title,salePrice\"`. Attributes specified in the update mask without a value specified in the body will be deleted from the product. *You must specify the update mask to delete attributes.* Only top-level product attributes can be updated. If not defined, product attributes with set values will be updated and other attributes will stay unchanged."]
             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                 self.update_mask = Some(value.into());
                 self
@@ -51592,7 +53338,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -51625,7 +53371,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -51675,7 +53421,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -51793,12 +53539,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -51985,7 +53732,7 @@ pub mod resources {
                         #[serde(rename = "repricingProductReports")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -52021,7 +53768,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -52077,7 +53824,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -52206,12 +53953,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -52228,7 +53976,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Inserts a promotion for your Merchant Center account. If the promotion already exists, then it will update the promotion instead."]
+            #[doc = "Inserts a promotion for your Merchant Center account. If the promotion already exists, then it updates the promotion instead. To \\[end or delete\\] (https://developers.google.com/shopping-content/guides/promotions#end_a_promotion) a promotion update the time period of the promotion to a time that has already passed."]
             pub fn create(
                 &self,
                 request: crate::schemas::Promotion,
@@ -52985,6 +54733,369 @@ pub mod resources {
             }
         }
     }
+    pub mod quotas {
+        pub mod params {}
+        pub struct QuotasActions<'a> {
+            pub(crate) reqwest: &'a reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+        }
+        impl<'a> QuotasActions<'a> {
+            fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
+                self.auth
+            }
+            #[doc = "Lists the daily call quota and usage per method for your Merchant Center account."]
+            pub fn list(&self, merchant_id: i64) -> ListRequestBuilder {
+                ListRequestBuilder {
+                    reqwest: &self.reqwest,
+                    auth: self.auth_ref(),
+                    access_token: None,
+                    alt: None,
+                    callback: None,
+                    fields: None,
+                    key: None,
+                    oauth_token: None,
+                    pretty_print: None,
+                    quota_user: None,
+                    upload_protocol: None,
+                    upload_type: None,
+                    xgafv: None,
+                    merchant_id,
+                    page_size: None,
+                    page_token: None,
+                }
+            }
+        }
+        #[doc = "Created via [QuotasActions::list()](struct.QuotasActions.html#method.list)"]
+        #[derive(Debug, Clone)]
+        pub struct ListRequestBuilder<'a> {
+            pub(crate) reqwest: &'a ::reqwest::Client,
+            pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
+            merchant_id: i64,
+            page_size: ::std::option::Option<i32>,
+            page_token: ::std::option::Option<String>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
+        }
+        impl<'a> ListRequestBuilder<'a> {
+            #[doc = "The maximum number of quotas to return in the response, used for paging. Defaults to 500; values above 1000 will be coerced to 1000."]
+            pub fn page_size(mut self, value: i32) -> Self {
+                self.page_size = Some(value);
+                self
+            }
+            #[doc = "Token (if provided) to retrieve the subsequent page. All other parameters must match the original call that provided the page token."]
+            pub fn page_token(mut self, value: impl Into<String>) -> Self {
+                self.page_token = Some(value.into());
+                self
+            }
+            #[doc = "OAuth access token."]
+            pub fn access_token(mut self, value: impl Into<String>) -> Self {
+                self.access_token = Some(value.into());
+                self
+            }
+            #[doc = "JSONP"]
+            pub fn callback(mut self, value: impl Into<String>) -> Self {
+                self.callback = Some(value.into());
+                self
+            }
+            #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
+            pub fn key(mut self, value: impl Into<String>) -> Self {
+                self.key = Some(value.into());
+                self
+            }
+            #[doc = "OAuth 2.0 token for the current user."]
+            pub fn oauth_token(mut self, value: impl Into<String>) -> Self {
+                self.oauth_token = Some(value.into());
+                self
+            }
+            #[doc = "Returns response with indentations and line breaks."]
+            pub fn pretty_print(mut self, value: bool) -> Self {
+                self.pretty_print = Some(value);
+                self
+            }
+            #[doc = "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters."]
+            pub fn quota_user(mut self, value: impl Into<String>) -> Self {
+                self.quota_user = Some(value.into());
+                self
+            }
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
+            pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
+                self.upload_protocol = Some(value.into());
+                self
+            }
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
+            pub fn upload_type(mut self, value: impl Into<String>) -> Self {
+                self.upload_type = Some(value.into());
+                self
+            }
+            #[doc = "V1 error format."]
+            pub fn xgafv(mut self, value: crate::params::Xgafv) -> Self {
+                self.xgafv = Some(value);
+                self
+            }
+            #[doc = "\nExecute the request and yield each item in the `methodQuotas` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the field given by the [`FieldSelector`] implementation from the server.\n\n[`FieldSelector`]: ::google_field_selector::FieldSelector\n"]
+            pub fn stream_method_quotas<T>(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector + 'a,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.stream_method_quotas_with_fields(fields)
+            }
+            #[doc = "\nExecute the request and yield each item in the `methodQuotas` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests the default set of fields from the server.\n"]
+            pub fn stream_method_quotas_with_default_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::MethodQuota, crate::Error>> + 'a
+            {
+                self.stream_method_quotas_with_fields(None::<String>)
+            }
+            #[doc = "\nExecute the request and yield each item in the `methodQuotas` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nRequests all fields from the server.\n"]
+            pub fn stream_method_quotas_with_all_fields(
+                self,
+            ) -> impl ::futures::Stream<Item = Result<crate::schemas::MethodQuota, crate::Error>> + 'a
+            {
+                self.stream_method_quotas_with_fields(Some("*"))
+            }
+            #[doc = "\nExecute the request and yield each item in the `methodQuotas` list. If the response contains a\n`nextPageToken`, the request is executed again with the new token. This process is\nrepeated until no page token is returned.\n\nOnly the given `fields` are requested from the server.\n"]
+            pub fn stream_method_quotas_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: ::serde::de::DeserializeOwned + 'a,
+                F: AsRef<str>,
+            {
+                #[derive(:: serde :: Deserialize, :: serde :: Serialize)]
+                struct Page<T> {
+                    #[serde(rename = "nextPageToken")]
+                    pub next_page_token: ::std::option::Option<String>,
+                    #[serde(rename = "methodQuotas")]
+                    pub items: Vec<T>,
+                }
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
+                    fn next_page_token(&self) -> ::std::option::Option<String> {
+                        self.next_page_token.to_owned()
+                    }
+                }
+                impl<T> crate::stream::IntoPageItems for Page<T> {
+                    type Items = Vec<T>;
+                    fn into_page_items(self) -> Self::Items {
+                        self.items
+                    }
+                }
+                self.fields = Some({
+                    let mut selector = concat!("nextPageToken,", "methodQuotas").to_owned();
+                    let items_fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("");
+                    if !items_fields.is_empty() {
+                        selector.push_str("(");
+                        selector.push_str(items_fields);
+                        selector.push_str(")");
+                    }
+                    selector
+                });
+                crate::stream::page_item_stream::<_, Page<T>>(self)
+            }
+            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+            #[doc = r" token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests the field given by the [`FieldSelector`] implementation from the server."]
+            #[doc = r""]
+            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+            #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
+            pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: crate::GetNextPageToken<String>
+                    + ::serde::de::DeserializeOwned
+                    + ::google_field_selector::FieldSelector
+                    + 'a,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.stream_with_fields(fields)
+            }
+            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+            #[doc = r" repeated until no page token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests the default set of fields from the server."]
+            pub fn stream_with_default_fields(
+                self,
+            ) -> impl ::futures::Stream<
+                Item = Result<crate::schemas::ListMethodQuotasResponse, crate::Error>,
+            > + 'a {
+                self.stream_with_fields(None::<&str>)
+            }
+            #[doc = r" Execute the request and yield the returned value. If the response contains a"]
+            #[doc = r" `nextPageToken`, the request is executed again with the new token. This process is"]
+            #[doc = r" repeated until no page token is returned."]
+            #[doc = r""]
+            #[doc = r" Requests all fields from the server."]
+            pub fn stream_with_all_fields(
+                self,
+            ) -> impl ::futures::Stream<
+                Item = Result<crate::schemas::ListMethodQuotasResponse, crate::Error>,
+            > + 'a {
+                self.stream_with_fields(Some("*"))
+            }
+            #[doc = r" Execute the request and yield the returned value. If [`next_page_token`] returns a value,"]
+            #[doc = r" the request is executed again with the new token. This process is repeated until no page"]
+            #[doc = r" token is returned."]
+            #[doc = r""]
+            #[doc = r" Only the given `fields` are requested from the server. If the list of fields is not"]
+            #[doc = r" empty, the `nextPageToken` field will be added to the list."]
+            #[doc = r""]
+            #[doc = r" [`next_page_token`]: crate::GetNextPageToken::next_page_token"]
+            pub fn stream_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
+            where
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
+                F: AsRef<str>,
+            {
+                let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
+                if !fields.is_empty() {
+                    match fields.chars().rev().nth(0) {
+                        Some(',') | None => {}
+                        _ => fields.push_str(","),
+                    }
+                    fields.push_str("nextPageToken");
+                    self.fields = Some(fields);
+                }
+                crate::stream::page_stream(self)
+            }
+            #[doc = r" Execute the given operation. The fields requested are"]
+            #[doc = r" determined by the FieldSelector attribute of the return type."]
+            #[doc = r" This allows for flexible and ergonomic partial responses. See"]
+            #[doc = r" `execute_standard` and `execute_debug` for interfaces that"]
+            #[doc = r" are not generic over the return type and deserialize the"]
+            #[doc = r" response into an auto-generated struct will all possible"]
+            #[doc = r" fields."]
+            pub async fn execute<T>(self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
+            {
+                let fields = ::google_field_selector::to_string::<T>();
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
+                    None
+                } else {
+                    Some(fields)
+                };
+                self.execute_with_fields(fields).await
+            }
+            #[doc = r" Execute the given operation. This will not provide any"]
+            #[doc = r" `fields` selector indicating that the server will determine"]
+            #[doc = r" the fields returned. This typically includes the most common"]
+            #[doc = r" fields, but it will not include every possible attribute of"]
+            #[doc = r" the response resource."]
+            pub async fn execute_with_default_fields(
+                self,
+            ) -> Result<crate::schemas::ListMethodQuotasResponse, crate::Error> {
+                self.execute_with_fields(None::<&str>).await
+            }
+            #[doc = r" Execute the given operation. This will provide a `fields`"]
+            #[doc = r" selector of `*`. This will include every attribute of the"]
+            #[doc = r" response resource and should be limited to use during"]
+            #[doc = r" development or debugging."]
+            pub async fn execute_with_all_fields(
+                self,
+            ) -> Result<crate::schemas::ListMethodQuotasResponse, crate::Error> {
+                self.execute_with_fields(Some("*")).await
+            }
+            #[doc = r" Execute the given operation. This will use the `fields`"]
+            #[doc = r" selector provided and will deserialize the response into"]
+            #[doc = r" whatever return value is provided."]
+            pub async fn execute_with_fields<T, F>(
+                mut self,
+                fields: ::std::option::Option<F>,
+            ) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+                F: Into<String>,
+            {
+                self.fields = fields.map(Into::into);
+                self._execute().await
+            }
+            async fn _execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: ::serde::de::DeserializeOwned,
+            {
+                let req = self._request(&self._path()).await?;
+                Ok(req.send().await?.error_for_status()?.json().await?)
+            }
+            fn _path(&self) -> String {
+                let mut output = "https://shoppingcontent.googleapis.com/content/v2.1/".to_owned();
+                {
+                    let var_as_string = self.merchant_id.to_string();
+                    let var_as_str = &var_as_string;
+                    output.extend(::percent_encoding::utf8_percent_encode(
+                        &var_as_str,
+                        crate::SIMPLE,
+                    ));
+                }
+                output.push_str("/quotas");
+                output
+            }
+            async fn _request(
+                &self,
+                path: &str,
+            ) -> Result<::reqwest::RequestBuilder, crate::Error> {
+                let mut req = self.reqwest.request(::reqwest::Method::GET, path);
+                req = req.query(&[("pageSize", &self.page_size)]);
+                req = req.query(&[("pageToken", &self.page_token)]);
+                req = req.query(&[("access_token", &self.access_token)]);
+                req = req.query(&[("alt", &self.alt)]);
+                req = req.query(&[("callback", &self.callback)]);
+                req = req.query(&[("fields", &self.fields)]);
+                req = req.query(&[("key", &self.key)]);
+                req = req.query(&[("oauth_token", &self.oauth_token)]);
+                req = req.query(&[("prettyPrint", &self.pretty_print)]);
+                req = req.query(&[("quotaUser", &self.quota_user)]);
+                req = req.query(&[("upload_protocol", &self.upload_protocol)]);
+                req = req.query(&[("uploadType", &self.upload_type)]);
+                req = req.query(&[("$.xgafv", &self.xgafv)]);
+                let access_token = self
+                    .auth
+                    .access_token()
+                    .await
+                    .map_err(|err| crate::Error::OAuth2(err))?;
+                req = req.bearer_auth(access_token);
+                Ok(req)
+            }
+        }
+        #[async_trait::async_trait]
+        impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
+            fn set_page_token(&mut self, value: String) {
+                self.page_token = value.into();
+            }
+            async fn execute<T>(&mut self) -> Result<T, crate::Error>
+            where
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
+            {
+                self._execute().await
+            }
+        }
+    }
     pub mod regionalinventory {
         pub mod params {}
         pub struct RegionalinventoryActions<'a> {
@@ -53017,7 +55128,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Update the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry."]
+            #[doc = "Updates the regional inventory of a product in your Merchant Center account. If a regional inventory with the same region ID already exists, this method updates that entry."]
             pub fn insert(
                 &self,
                 request: crate::schemas::RegionalInventory,
@@ -54076,7 +56187,7 @@ pub mod resources {
                     #[serde(rename = "regions")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -54109,7 +56220,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -54159,7 +56270,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -54274,12 +56385,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -55388,7 +57500,7 @@ pub mod resources {
                     #[serde(rename = "repricingRules")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -55421,7 +57533,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -55471,7 +57583,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -55588,12 +57700,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -55944,7 +58057,7 @@ pub mod resources {
                         #[serde(rename = "repricingRuleReports")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -55980,7 +58093,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -56030,7 +58143,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -56158,12 +58271,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -57027,7 +59141,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -57060,7 +59174,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -57110,7 +59224,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -57226,12 +59340,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -59392,7 +61507,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -59425,7 +61540,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -59475,7 +61590,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -59592,12 +61707,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -59771,7 +61887,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -59804,7 +61920,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -59854,7 +61970,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -59982,12 +62098,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -61099,7 +63216,7 @@ pub mod resources {
                     #[serde(rename = "resources")]
                     pub items: Vec<T>,
                 }
-                impl<T> crate::GetNextPageToken for Page<T> {
+                impl<T> crate::GetNextPageToken<String> for Page<T> {
                     fn next_page_token(&self) -> ::std::option::Option<String> {
                         self.next_page_token.to_owned()
                     }
@@ -61132,7 +63249,7 @@ pub mod resources {
             #[doc = r" [`FieldSelector`]: ::google_field_selector::FieldSelector"]
             pub fn stream<T>(self) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken
+                T: crate::GetNextPageToken<String>
                     + ::serde::de::DeserializeOwned
                     + ::google_field_selector::FieldSelector
                     + 'a,
@@ -61182,7 +63299,7 @@ pub mod resources {
                 fields: ::std::option::Option<F>,
             ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                 F: AsRef<str>,
             {
                 let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -61297,12 +63414,13 @@ pub mod resources {
         }
         #[async_trait::async_trait]
         impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+            type PageToken = String;
             fn set_page_token(&mut self, value: String) {
                 self.page_token = value.into();
             }
             async fn execute<T>(&mut self) -> Result<T, crate::Error>
             where
-                T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
             {
                 self._execute().await
             }
@@ -61490,7 +63608,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Retrieves the status and review eligibility for the Shopping Ads program."]
+            #[doc = "Retrieves the status and review eligibility for the Shopping Ads program. Returns errors and warnings if they require action to resolve, will become disapprovals, or impact impressions. Use `accountstatuses` to view all issues for an account."]
             pub fn get(&self, merchant_id: i64) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -62089,16 +64207,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -62118,13 +64238,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -62132,7 +64255,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -62159,7 +64282,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

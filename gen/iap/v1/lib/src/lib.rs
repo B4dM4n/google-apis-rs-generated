@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [brands](resources/projects/brands/struct.BrandsActions.html)\n    * [*create*](resources/projects/brands/struct.CreateRequestBuilder.html), [*get*](resources/projects/brands/struct.GetRequestBuilder.html), [*list*](resources/projects/brands/struct.ListRequestBuilder.html)\n    * [identity_aware_proxy_clients](resources/projects/brands/identity_aware_proxy_clients/struct.IdentityAwareProxyClientsActions.html)\n      * [*create*](resources/projects/brands/identity_aware_proxy_clients/struct.CreateRequestBuilder.html), [*delete*](resources/projects/brands/identity_aware_proxy_clients/struct.DeleteRequestBuilder.html), [*get*](resources/projects/brands/identity_aware_proxy_clients/struct.GetRequestBuilder.html), [*list*](resources/projects/brands/identity_aware_proxy_clients/struct.ListRequestBuilder.html), [*resetSecret*](resources/projects/brands/identity_aware_proxy_clients/struct.ResetSecretRequestBuilder.html)\n  * [iap_tunnel](resources/projects/iap_tunnel/struct.IapTunnelActions.html)\n    * [locations](resources/projects/iap_tunnel/locations/struct.LocationsActions.html)\n      * [dest_groups](resources/projects/iap_tunnel/locations/dest_groups/struct.DestGroupsActions.html)\n        * [*create*](resources/projects/iap_tunnel/locations/dest_groups/struct.CreateRequestBuilder.html), [*delete*](resources/projects/iap_tunnel/locations/dest_groups/struct.DeleteRequestBuilder.html), [*get*](resources/projects/iap_tunnel/locations/dest_groups/struct.GetRequestBuilder.html), [*list*](resources/projects/iap_tunnel/locations/dest_groups/struct.ListRequestBuilder.html), [*patch*](resources/projects/iap_tunnel/locations/dest_groups/struct.PatchRequestBuilder.html)\n* [v_1](resources/v_1/struct.V1Actions.html)\n  * [*getIamPolicy*](resources/v_1/struct.GetIamPolicyRequestBuilder.html), [*getIapSettings*](resources/v_1/struct.GetIapSettingsRequestBuilder.html), [*setIamPolicy*](resources/v_1/struct.SetIamPolicyRequestBuilder.html), [*testIamPermissions*](resources/v_1/struct.TestIamPermissionsRequestBuilder.html), [*updateIapSettings*](resources/v_1/struct.UpdateIapSettingsRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -31,6 +32,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub generate_troubleshooting_uri: ::std::option::Option<bool>,
+        #[doc = "Whether to generate remediation token on access denied events to this application."]
+        #[serde(
+            rename = "remediationTokenGenerationEnabled",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub remediation_token_generation_enabled: ::std::option::Option<bool>,
     }
     impl ::google_field_selector::FieldSelector for AccessDeniedPageSettings {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -55,6 +63,13 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccessSettings {
+        #[doc = "Settings to configure and enable allowed domains."]
+        #[serde(
+            rename = "allowedDomainsSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub allowed_domains_settings: ::std::option::Option<crate::schemas::AllowedDomainsSettings>,
         #[doc = "Configuration to allow cross-origin requests via IAP."]
         #[serde(
             rename = "corsSettings",
@@ -114,6 +129,44 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct AllowedDomainsSettings {
+        #[doc = "List of trusted domains."]
+        #[serde(
+            rename = "domains",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub domains: ::std::option::Option<Vec<String>>,
+        #[doc = "Configuration for customers to opt in for the feature."]
+        #[serde(
+            rename = "enable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable: ::std::option::Option<bool>,
+    }
+    impl ::google_field_selector::FieldSelector for AllowedDomainsSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AllowedDomainsSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct ApplicationSettings {
         #[doc = "Customization for Access Denied page."]
         #[serde(
@@ -123,6 +176,14 @@ pub mod schemas {
         )]
         pub access_denied_page_settings:
             ::std::option::Option<crate::schemas::AccessDeniedPageSettings>,
+        #[doc = "Settings to configure attribute propagation."]
+        #[serde(
+            rename = "attributePropagationSettings",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub attribute_propagation_settings:
+            ::std::option::Option<crate::schemas::AttributePropagationSettings>,
         #[doc = "The Domain value to set for cookies generated by IAP. This value is not validated by the API, but will be ignored at runtime if invalid."]
         #[serde(
             rename = "cookieDomain",
@@ -130,7 +191,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cookie_domain: ::std::option::Option<String>,
-        #[doc = "Settings to configure IAP’s behavior for a CSM mesh."]
+        #[doc = "Settings to configure IAP’s behavior for a service mesh."]
         #[serde(
             rename = "csmSettings",
             default,
@@ -160,6 +221,135 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
+    pub struct AttributePropagationSettings {
+        #[doc = "Whether the provided attribute propagation settings should be evaluated on user requests. If set to true, attributes returned from the expression will be propagated in the set output credentials."]
+        #[serde(
+            rename = "enable",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub enable: ::std::option::Option<bool>,
+        #[doc = "Raw string CEL expression. Must return a list of attributes. Maximum of 45 attributes can be selected. Expressions can select different attribute types from `attributes`: `attributes.saml_attributes`, `attributes.iap_attributes`. Limited functions are supported: - filter: .filter(, ) -> returns a subset of where is true for every item - in: in -> returns true if contains - selectByName: .selectByName() -> returns the attribute in with the given name, otherwise returns empty. - emitAs: .emitAs() -> sets the name field to the given for propagation in selected output credentials. - strict: .strict() -> ignore the `x-goog-iap-attr-` prefix for the provided attribute when propagating via the `HEADER` output credential, i.e. request headers. - append: .append() OR .append() -> append the provided or onto the end of Example expression: attributes.saml_attributes.filter(x, x.name in \\[‘test’\\]).append(attributes.iap_attributes.selectByName(‘exact’).emitAs(‘custom’).strict())"]
+        #[serde(
+            rename = "expression",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub expression: ::std::option::Option<String>,
+        #[doc = "Which output credentials attributes selected by the CEL expression should be propagated in. All attributes will be fully duplicated in each selected output credential."]
+        #[serde(
+            rename = "outputCredentials",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub output_credentials: ::std::option::Option<
+            Vec<crate::schemas::AttributePropagationSettingsOutputCredentialsItems>,
+        >,
+    }
+    impl ::google_field_selector::FieldSelector for AttributePropagationSettings {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AttributePropagationSettings {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum AttributePropagationSettingsOutputCredentialsItems {
+        #[doc = "Propagate attributes in the headers with “x-goog-iap-attr-” prefix."]
+        Header,
+        #[doc = "Propagate attributes in the JWT of the form: “additional_claims”: { “my_attribute”: \\[“value1”, “value2”\\] }"]
+        Jwt,
+        #[doc = "No output credential. This is unsupported in IAP, there must be an output credential."]
+        OutputCredentialsUnspecified,
+        #[doc = "Propagate attributes in the RCToken of the form: “additional_claims”: { “my_attribute”: \\[“value1”, “value2”\\] }"]
+        Rctoken,
+    }
+    impl AttributePropagationSettingsOutputCredentialsItems {
+        pub fn as_str(self) -> &'static str {
+            match self { AttributePropagationSettingsOutputCredentialsItems :: Header => "HEADER" , AttributePropagationSettingsOutputCredentialsItems :: Jwt => "JWT" , AttributePropagationSettingsOutputCredentialsItems :: OutputCredentialsUnspecified => "OUTPUT_CREDENTIALS_UNSPECIFIED" , AttributePropagationSettingsOutputCredentialsItems :: Rctoken => "RCTOKEN" , }
+        }
+    }
+    impl ::std::convert::AsRef<str> for AttributePropagationSettingsOutputCredentialsItems {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for AttributePropagationSettingsOutputCredentialsItems {
+        type Err = ();
+        fn from_str(
+            s: &str,
+        ) -> ::std::result::Result<AttributePropagationSettingsOutputCredentialsItems, ()> {
+            Ok(match s {
+                "HEADER" => AttributePropagationSettingsOutputCredentialsItems::Header,
+                "JWT" => AttributePropagationSettingsOutputCredentialsItems::Jwt,
+                "OUTPUT_CREDENTIALS_UNSPECIFIED" => {
+                    AttributePropagationSettingsOutputCredentialsItems::OutputCredentialsUnspecified
+                }
+                "RCTOKEN" => AttributePropagationSettingsOutputCredentialsItems::Rctoken,
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for AttributePropagationSettingsOutputCredentialsItems {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for AttributePropagationSettingsOutputCredentialsItems {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for AttributePropagationSettingsOutputCredentialsItems {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "HEADER" => AttributePropagationSettingsOutputCredentialsItems::Header,
+                "JWT" => AttributePropagationSettingsOutputCredentialsItems::Jwt,
+                "OUTPUT_CREDENTIALS_UNSPECIFIED" => {
+                    AttributePropagationSettingsOutputCredentialsItems::OutputCredentialsUnspecified
+                }
+                "RCTOKEN" => AttributePropagationSettingsOutputCredentialsItems::Rctoken,
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for AttributePropagationSettingsOutputCredentialsItems {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for AttributePropagationSettingsOutputCredentialsItems {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(
+        Debug,
+        Clone,
+        PartialEq,
+        Hash,
+        PartialOrd,
+        Ord,
+        Eq,
+        Default,
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+    )]
     pub struct Binding {
         #[doc = "The condition that is associated with this binding. If the condition evaluates to `true`, then this binding applies to the current request. If the condition evaluates to `false`, then this binding does not apply to the current request. However, a different role binding might grant the same role to one or more of the principals in this binding. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies)."]
         #[serde(
@@ -168,7 +358,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<crate::schemas::Expr>,
-        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. "]
+        #[doc = "Specifies the principals requesting access for a Google Cloud resource. `members` can have the following values: * `allUsers`: A special identifier that represents anyone who is on the internet; with or without a Google account. * `allAuthenticatedUsers`: A special identifier that represents anyone who is authenticated with a Google account or a service account. Does not include identities that come from external identity providers (IdPs) through identity federation. * `user:{emailid}`: An email address that represents a specific Google account. For example, `alice@example.com` . * `serviceAccount:{emailid}`: An email address that represents a Google service account. For example, `my-other-app@appspot.gserviceaccount.com`. * `serviceAccount:{projectid}.svc.id.goog[{namespace}/{kubernetes-sa}]`: An identifier for a [Kubernetes service account](https://cloud.google.com/kubernetes-engine/docs/how-to/kubernetes-service-accounts). For example, `my-project.svc.id.goog[my-namespace/my-kubernetes-sa]`. * `group:{emailid}`: An email address that represents a Google group. For example, `admins@example.com`. * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`. * `deleted:user:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a user that has been recently deleted. For example, `alice@example.com?uid=123456789012345678901`. If the user is recovered, this value reverts to `user:{emailid}` and the recovered user retains the role in the binding. * `deleted:serviceAccount:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a service account that has been recently deleted. For example, `my-other-app@appspot.gserviceaccount.com?uid=123456789012345678901`. If the service account is undeleted, this value reverts to `serviceAccount:{emailid}` and the undeleted service account retains the role in the binding. * `deleted:group:{emailid}?uid={uniqueid}`: An email address (plus unique identifier) representing a Google group that has been recently deleted. For example, `admins@example.com?uid=123456789012345678901`. If the group is recovered, this value reverts to `group:{emailid}` and the recovered group retains the role in the binding."]
         #[serde(
             rename = "members",
             default,
@@ -643,7 +833,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListIdentityAwareProxyClientsResponse {
+    impl crate::GetNextPageToken<String> for ListIdentityAwareProxyClientsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -686,7 +876,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListTunnelDestGroupsResponse {
+    impl crate::GetNextPageToken<String> for ListTunnelDestGroupsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -884,7 +1074,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_age: ::std::option::Option<String>,
-        #[doc = "Reauth method required by the policy."]
+        #[doc = "Reauth method requested."]
         #[serde(
             rename = "method",
             default,
@@ -911,11 +1101,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ReauthSettingsMethod {
-        #[doc = "Mimics the behavior as if the user had logged out and tried to log in again. Users with 2SV (2-step verification) enabled see their 2SV challenges if they did not opt to have their second factor responses saved. Apps Core (GSuites) admins can configure settings to disable 2SV cookies and require 2SV for all Apps Core users in their domains."]
+        #[doc = "User can use any enabled 2nd factor."]
+        EnrolledSecondFactors,
+        #[doc = "Prompts the user to log in again."]
         Login,
         #[doc = "Reauthentication disabled."]
         MethodUnspecified,
-        #[doc = "User must type their password."]
+        #[doc = "Deprecated, no longer accepted by IAP APIs."]
         Password,
         #[doc = "User must use their secure key 2nd factor device."]
         SecureKey,
@@ -923,6 +1115,7 @@ pub mod schemas {
     impl ReauthSettingsMethod {
         pub fn as_str(self) -> &'static str {
             match self {
+                ReauthSettingsMethod::EnrolledSecondFactors => "ENROLLED_SECOND_FACTORS",
                 ReauthSettingsMethod::Login => "LOGIN",
                 ReauthSettingsMethod::MethodUnspecified => "METHOD_UNSPECIFIED",
                 ReauthSettingsMethod::Password => "PASSWORD",
@@ -939,6 +1132,7 @@ pub mod schemas {
         type Err = ();
         fn from_str(s: &str) -> ::std::result::Result<ReauthSettingsMethod, ()> {
             Ok(match s {
+                "ENROLLED_SECOND_FACTORS" => ReauthSettingsMethod::EnrolledSecondFactors,
                 "LOGIN" => ReauthSettingsMethod::Login,
                 "METHOD_UNSPECIFIED" => ReauthSettingsMethod::MethodUnspecified,
                 "PASSWORD" => ReauthSettingsMethod::Password,
@@ -967,6 +1161,7 @@ pub mod schemas {
         {
             let value: &'de str = <&str>::deserialize(deserializer)?;
             Ok(match value {
+                "ENROLLED_SECOND_FACTORS" => ReauthSettingsMethod::EnrolledSecondFactors,
                 "LOGIN" => ReauthSettingsMethod::Login,
                 "METHOD_UNSPECIFIED" => ReauthSettingsMethod::MethodUnspecified,
                 "PASSWORD" => ReauthSettingsMethod::Password,
@@ -1248,21 +1443,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TunnelDestGroup {
-        #[doc = "null List of CIDRs that this group applies to."]
+        #[doc = "Unordered list. List of CIDRs that this group applies to."]
         #[serde(
             rename = "cidrs",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cidrs: ::std::option::Option<Vec<String>>,
-        #[doc = "null List of FQDNs that this group applies to."]
+        #[doc = "Unordered list. List of FQDNs that this group applies to."]
         #[serde(
             rename = "fqdns",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fqdns: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. Immutable. Identifier for the TunnelDestGroup. Must be unique within the project."]
+        #[doc = "Required. Immutable. Identifier for the TunnelDestGroup. Must be unique within the project and contain only lower case letters (a-z) and dashes (-)."]
         #[serde(
             rename = "name",
             default,
@@ -2784,7 +2979,7 @@ pub mod resources {
                             #[serde(rename = "identityAwareProxyClients")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -2820,7 +3015,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -2876,7 +3071,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -2994,12 +3189,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -3347,7 +3543,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID to use for the TunnelDestGroup, which becomes the final component of the resource name. This value must be 4-63 characters, and valid characters are `a-z-`."]
+                        #[doc = "Required. The ID to use for the TunnelDestGroup, which becomes the final component of the resource name. This value must be 4-63 characters, and valid characters are `[a-z]-`."]
                         pub fn tunnel_dest_group_id(mut self, value: impl Into<String>) -> Self {
                             self.tunnel_dest_group_id = Some(value.into());
                             self
@@ -3951,7 +4147,7 @@ pub mod resources {
                                 #[serde(rename = "tunnelDestGroups")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -3988,7 +4184,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -4044,7 +4240,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -4164,12 +4360,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -5586,16 +5783,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -5615,13 +5814,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -5629,7 +5831,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -5656,7 +5858,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

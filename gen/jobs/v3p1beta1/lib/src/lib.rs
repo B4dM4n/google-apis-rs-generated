@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [*complete*](resources/projects/struct.CompleteRequestBuilder.html)\n  * [client_events](resources/projects/client_events/struct.ClientEventsActions.html)\n    * [*create*](resources/projects/client_events/struct.CreateRequestBuilder.html)\n  * [companies](resources/projects/companies/struct.CompaniesActions.html)\n    * [*create*](resources/projects/companies/struct.CreateRequestBuilder.html), [*delete*](resources/projects/companies/struct.DeleteRequestBuilder.html), [*get*](resources/projects/companies/struct.GetRequestBuilder.html), [*list*](resources/projects/companies/struct.ListRequestBuilder.html), [*patch*](resources/projects/companies/struct.PatchRequestBuilder.html)\n  * [jobs](resources/projects/jobs/struct.JobsActions.html)\n    * [*batchDelete*](resources/projects/jobs/struct.BatchDeleteRequestBuilder.html), [*create*](resources/projects/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/jobs/struct.GetRequestBuilder.html), [*list*](resources/projects/jobs/struct.ListRequestBuilder.html), [*patch*](resources/projects/jobs/struct.PatchRequestBuilder.html), [*search*](resources/projects/jobs/struct.SearchRequestBuilder.html), [*searchForAlert*](resources/projects/jobs/struct.SearchForAlertRequestBuilder.html)\n  * [operations](resources/projects/operations/struct.OperationsActions.html)\n    * [*get*](resources/projects/operations/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -520,7 +521,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_uri: ::std::option::Option<String>,
-        #[doc = "Optional. A list of keys of filterable Job.custom_attributes, whose corresponding `string_values` are used in keyword search. Jobs with `string_values` under these specified field keys are returned if any of the values matches the search keyword. Custom field values with parenthesis, brackets and special symbols won’t be properly searchable, and those keyword queries need to be surrounded by quotes."]
+        #[doc = "Optional. This field is deprecated. Please set the searchability of the custom attribute in the Job.custom_attributes going forward. A list of keys of filterable Job.custom_attributes, whose corresponding `string_values` are used in keyword search. Jobs with `string_values` under these specified field keys are returned if any of the values matches the search keyword. Custom field values with parenthesis, brackets and special symbols won’t be properly searchable, and those keyword queries need to be surrounded by quotes."]
         #[serde(
             rename = "keywordSearchableJobCustomAttributes",
             default,
@@ -2394,7 +2395,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct HistogramQuery {
-        #[doc = "An expression specifies a histogram request against matching resources (for example, jobs) for searches. Expression syntax is a aggregation function call with histogram facets and other options. Available aggregation function calls are: * `count(string_histogram_facet)`: Count the number of matching entity, for each distinct attribute value. * `count(numeric_histogram_facet, list of buckets)`: Count the number of matching entity within each bucket. A maximum of 200 histogram buckets are supported. Data types: * Histogram facet: facet names with format a-zA-Z+. * String: string like “any string with backslash escape for quote(\").” * Number: whole number and floating point number like 10, -1 and -0.01. * List: list of elements with comma(,) separator surrounded by square brackets. For example, \\[1, 2, 3\\] and \\[“one”, “two”, “three”\\]. Built-in constants: * MIN (minimum number similar to java Double.MIN_VALUE) * MAX (maximum number similar to java Double.MAX_VALUE) Built-in functions: * bucket(start, end\\[, label\\]): bucket built-in function creates a bucket with range of start, end). Note that the end is exclusive. For example, bucket(1, MAX, “positive number”) or bucket(1, 10). Job histogram facets: * company_id: histogram by \\[Job.distributor_company_id. * company_display_name: histogram by Job.company_display_name. * employment_type: histogram by Job.employment_types. For example, “FULL_TIME”, “PART_TIME”. * company_size: histogram by CompanySize, for example, “SMALL”, “MEDIUM”, “BIG”. * publish_time_in_day: histogram by the Job.publish_time in days. Must specify list of numeric buckets in spec. * publish_time_in_month: histogram by the Job.publish_time in months. Must specify list of numeric buckets in spec. * publish_time_in_year: histogram by the Job.publish_time in years. Must specify list of numeric buckets in spec. * degree_type: histogram by the Job.degree_type. For example, “Bachelors”, “Masters”. * job_level: histogram by the Job.job_level. For example, “Entry Level”. * country: histogram by the country code of jobs. For example, “US”, “FR”. * admin1: histogram by the admin1 code of jobs, which is a global placeholder referring to the state, province, or the particular term a country uses to define the geographic structure below the country level. For example, “CA”, “IL”. * city: histogram by a combination of the “city name, admin1 code”. For example, “Mountain View, CA”, “New York, NY”. * admin1_country: histogram by a combination of the “admin1 code, country”. For example, “CA, US”, “IL, US”. * city_coordinate: histogram by the city center’s GPS coordinates (latitude and longitude). For example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, customers may need to refresh them periodically. * locale: histogram by the Job.language_code. For example, “en-US”, “fr-FR”. * language: histogram by the language subtag of the Job.language_code. For example, “en”, “fr”. * category: histogram by the JobCategory. For example, “COMPUTER_AND_IT”, “HEALTHCARE”. * base_compensation_unit: histogram by the CompensationUnit of base salary. For example, “WEEKLY”, “MONTHLY”. * base_compensation: histogram by the base salary. Must specify list of numeric buckets to group results by. * annualized_base_compensation: histogram by the base annualized salary. Must specify list of numeric buckets to group results by. * annualized_total_compensation: histogram by the total annualized salary. Must specify list of numeric buckets to group results by. * string_custom_attribute: histogram by string Job.custom_attributes. Values can be accessed via square bracket notations like string_custom_attribute\\[“key1”\\]. * numeric_custom_attribute: histogram by numeric Job.custom_attributes. Values can be accessed via square bracket notations like numeric_custom_attribute\\[“key1”\\]. Must specify list of numeric buckets to group results by. Example expressions: * count(admin1) * count(base_compensation, \\[bucket(1000, 10000), bucket(10000, 100000), bucket(100000, MAX)\\]) * count(string_custom_attribute\\[“some-string-custom-attribute”\\]) * count(numeric_custom_attribute\\[“some-numeric-custom-attribute”\\], \\[bucket(MIN, 0, “negative”), bucket(0, MAX, “non-negative”)\\])"]
+        #[doc = "An expression specifies a histogram request against matching resources (for example, jobs) for searches. Expression syntax is a aggregation function call with histogram facets and other options. Available aggregation function calls are: * `count(string_histogram_facet)`: Count the number of matching entity, for each distinct attribute value. * `count(numeric_histogram_facet, list of buckets)`: Count the number of matching entity within each bucket. A maximum of 200 histogram buckets are supported. Data types: * Histogram facet: facet names with format a-zA-Z+. * String: string like “any string with backslash escape for quote(\").” * Number: whole number and floating point number like 10, -1 and -0.01. * List: list of elements with comma(,) separator surrounded by square brackets. For example, \\[1, 2, 3\\] and \\[“one”, “two”, “three”\\]. Built-in constants: * MIN (minimum number similar to java Double.MIN_VALUE) * MAX (maximum number similar to java Double.MAX_VALUE) Built-in functions: * bucket(start, end\\[, label\\]): bucket built-in function creates a bucket with range of start, end). Note that the end is exclusive. For example, bucket(1, MAX, “positive number”) or bucket(1, 10). Job histogram facets: * company_id: histogram by \\[Job.distributor_company_id. * company_display_name: histogram by Job.company_display_name. * employment_type: histogram by Job.employment_types. For example, “FULL_TIME”, “PART_TIME”. * company_size (DEPRECATED): histogram by CompanySize, for example, “SMALL”, “MEDIUM”, “BIG”. * publish_time_in_day: histogram by the Job.publish_time in days. Must specify list of numeric buckets in spec. * publish_time_in_month: histogram by the Job.publish_time in months. Must specify list of numeric buckets in spec. * publish_time_in_year: histogram by the Job.publish_time in years. Must specify list of numeric buckets in spec. * degree_type: histogram by the Job.degree_type. For example, “Bachelors”, “Masters”. * job_level: histogram by the Job.job_level. For example, “Entry Level”. * country: histogram by the country code of jobs. For example, “US”, “FR”. * admin1: histogram by the admin1 code of jobs, which is a global placeholder referring to the state, province, or the particular term a country uses to define the geographic structure below the country level. For example, “CA”, “IL”. * city: histogram by a combination of the “city name, admin1 code”. For example, “Mountain View, CA”, “New York, NY”. * admin1_country: histogram by a combination of the “admin1 code, country”. For example, “CA, US”, “IL, US”. * city_coordinate: histogram by the city center’s GPS coordinates (latitude and longitude). For example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, customers may need to refresh them periodically. * locale: histogram by the Job.language_code. For example, “en-US”, “fr-FR”. * language: histogram by the language subtag of the Job.language_code. For example, “en”, “fr”. * category: histogram by the JobCategory. For example, “COMPUTER_AND_IT”, “HEALTHCARE”. * base_compensation_unit: histogram by the CompensationUnit of base salary. For example, “WEEKLY”, “MONTHLY”. * base_compensation: histogram by the base salary. Must specify list of numeric buckets to group results by. * annualized_base_compensation: histogram by the base annualized salary. Must specify list of numeric buckets to group results by. * annualized_total_compensation: histogram by the total annualized salary. Must specify list of numeric buckets to group results by. * string_custom_attribute: histogram by string Job.custom_attributes. Values can be accessed via square bracket notations like string_custom_attribute\\[“key1”\\]. * numeric_custom_attribute: histogram by numeric Job.custom_attributes. Values can be accessed via square bracket notations like numeric_custom_attribute\\[“key1”\\]. Must specify list of numeric buckets to group results by. Example expressions: * count(admin1) * count(base_compensation, \\[bucket(1000, 10000), bucket(10000, 100000), bucket(100000, MAX)\\]) * count(string_custom_attribute\\[“some-string-custom-attribute”\\]) * count(numeric_custom_attribute\\[“some-numeric-custom-attribute”\\], \\[bucket(MIN, 0, “negative”), bucket(0, MAX, “non-negative”)\\])"]
         #[serde(
             rename = "histogramQuery",
             default,
@@ -4020,7 +4021,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub commute_filter: ::std::option::Option<crate::schemas::CommuteFilter>,
-        #[doc = "Optional. This filter specifies the company Company.display_name of the jobs to search against. The company name must match the value exactly. Alternatively, if the value being searched for is wrapped in `SUBSTRING_MATCH([value])`, the company name must contain a case insensitive substring match of the value. Using this function may increase latency. Sample Value: `SUBSTRING_MATCH(google)` If a value isn’t specified, jobs within the search results are associated with any company. If multiple values are specified, jobs within the search results may be associated with any of the specified companies. At most 20 company display name filters are allowed."]
+        #[doc = "Optional. This filter specifies the company Company.display_name of the jobs to search against. The company name must match the value exactly. Alternatively, the value being searched for can be wrapped in different match operators. `SUBSTRING_MATCH([value])` The company name must contain a case insensitive substring match of the value. Using this function may increase latency. Sample Value: `SUBSTRING_MATCH(google)` `MULTI_WORD_TOKEN_MATCH([value])` The value will be treated as a multi word token and the company name must contain a case insensitive match of the value. Using this function may increase latency. Sample Value: `MULTI_WORD_TOKEN_MATCH(google)` If a value isn’t specified, jobs within the search results are associated with any company. If multiple values are specified, jobs within the search results may be associated with any of the specified companies. At most 20 company display name filters are allowed."]
         #[serde(
             rename = "companyDisplayNames",
             default,
@@ -4568,7 +4569,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCompaniesResponse {
+    impl crate::GetNextPageToken<String> for ListCompaniesResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4609,7 +4610,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListJobsResponse {
+    impl crate::GetNextPageToken<String> for ListJobsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -4828,8 +4829,10 @@ pub mod schemas {
     pub enum LocationFilterTelecommutePreference {
         #[doc = "Allow telecommute jobs."]
         TelecommuteAllowed,
-        #[doc = "Ignore telecommute status of jobs."]
+        #[doc = "Deprecated: Ignore telecommute status of jobs. Use TELECOMMUTE_JOBS_EXCLUDED if want to exclude telecommute jobs."]
         TelecommuteExcluded,
+        #[doc = "Exclude telecommute jobs."]
+        TelecommuteJobsExcluded,
         #[doc = "Default value if the telecommute preference is not specified."]
         TelecommutePreferenceUnspecified,
     }
@@ -4838,6 +4841,9 @@ pub mod schemas {
             match self {
                 LocationFilterTelecommutePreference::TelecommuteAllowed => "TELECOMMUTE_ALLOWED",
                 LocationFilterTelecommutePreference::TelecommuteExcluded => "TELECOMMUTE_EXCLUDED",
+                LocationFilterTelecommutePreference::TelecommuteJobsExcluded => {
+                    "TELECOMMUTE_JOBS_EXCLUDED"
+                }
                 LocationFilterTelecommutePreference::TelecommutePreferenceUnspecified => {
                     "TELECOMMUTE_PREFERENCE_UNSPECIFIED"
                 }
@@ -4855,6 +4861,9 @@ pub mod schemas {
             Ok(match s {
                 "TELECOMMUTE_ALLOWED" => LocationFilterTelecommutePreference::TelecommuteAllowed,
                 "TELECOMMUTE_EXCLUDED" => LocationFilterTelecommutePreference::TelecommuteExcluded,
+                "TELECOMMUTE_JOBS_EXCLUDED" => {
+                    LocationFilterTelecommutePreference::TelecommuteJobsExcluded
+                }
                 "TELECOMMUTE_PREFERENCE_UNSPECIFIED" => {
                     LocationFilterTelecommutePreference::TelecommutePreferenceUnspecified
                 }
@@ -4884,6 +4893,9 @@ pub mod schemas {
             Ok(match value {
                 "TELECOMMUTE_ALLOWED" => LocationFilterTelecommutePreference::TelecommuteAllowed,
                 "TELECOMMUTE_EXCLUDED" => LocationFilterTelecommutePreference::TelecommuteExcluded,
+                "TELECOMMUTE_JOBS_EXCLUDED" => {
+                    LocationFilterTelecommutePreference::TelecommuteJobsExcluded
+                }
                 "TELECOMMUTE_PREFERENCE_UNSPECIFIED" => {
                     LocationFilterTelecommutePreference::TelecommutePreferenceUnspecified
                 }
@@ -5090,7 +5102,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditionally_forced_exps: ::std::option::Option<Vec<i32>>,
-        #[doc = "If true, disable automatic enrollment selection (at all diversion points). Automatic enrollment selection means experiment selection process based on the experiment’s automatic enrollment condition. This does not disable selection of forced experiments."]
+        #[doc = "If true, disable automatic enrollment selection (at all diversion points). Automatic enrollment selection means experiment selection process based on the experiment’s automatic enrollment condition. This does not disable selection of forced experiments. Setting this field to false does not change anything in the experiment selection process."]
         #[serde(
             rename = "disableAutomaticEnrollmentSelection",
             default,
@@ -5118,14 +5130,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_exps: ::std::option::Option<Vec<i32>>,
-        #[doc = "If true, disable manual enrollment selection (at all diversion points). Manual enrollment selection means experiment selection process based on the request’s manual enrollment states (a.k.a. opt-in experiments). This does not disable selection of forced experiments."]
+        #[doc = "If true, disable manual enrollment selection (at all diversion points). Manual enrollment selection means experiment selection process based on the request’s manual enrollment states (a.k.a. opt-in experiments). This does not disable selection of forced experiments. Setting this field to false does not change anything in the experiment selection process."]
         #[serde(
             rename = "disableManualEnrollmentSelection",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_manual_enrollment_selection: ::std::option::Option<bool>,
-        #[doc = "If true, disable organic experiment selection (at all diversion points). Organic selection means experiment selection process based on traffic allocation and diversion condition evaluation. This does not disable selection of forced experiments. This is useful in cases when it is not known whether experiment selection behavior is responsible for a error or breakage. Disabling organic selection may help to isolate the cause of a given problem."]
+        #[doc = "If true, disable organic experiment selection (at all diversion points). Organic selection means experiment selection process based on traffic allocation and diversion condition evaluation. This does not disable selection of forced experiments. This is useful in cases when it is not known whether experiment selection behavior is responsible for a error or breakage. Disabling organic selection may help to isolate the cause of a given problem. Setting this field to false does not change anything in the experiment selection process."]
         #[serde(
             rename = "disableOrganicSelection",
             default,
@@ -5146,6 +5158,13 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub forced_rollouts: ::std::option::Option<::std::collections::BTreeMap<String, bool>>,
+        #[doc = "Sets different testing modes. See the documentation in the TestingMode message for more information."]
+        #[serde(
+            rename = "testingMode",
+            default,
+            skip_serializing_if = "std::option::Option::is_none"
+        )]
+        pub testing_mode: ::std::option::Option<crate::schemas::NamespacedDebugInputTestingMode>,
     }
     impl ::google_field_selector::FieldSelector for NamespacedDebugInput {
         fn fields() -> Vec<::google_field_selector::Field> {
@@ -5153,6 +5172,85 @@ pub mod schemas {
         }
     }
     impl ::google_field_selector::ToFieldType for NamespacedDebugInput {
+        fn field_type() -> ::google_field_selector::FieldType {
+            ::google_field_selector::FieldType::Leaf
+        }
+    }
+    #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
+    pub enum NamespacedDebugInputTestingMode {
+        TestingModeAllOff,
+        TestingModeAllOn,
+        TestingModeUnspecified,
+    }
+    impl NamespacedDebugInputTestingMode {
+        pub fn as_str(self) -> &'static str {
+            match self {
+                NamespacedDebugInputTestingMode::TestingModeAllOff => "TESTING_MODE_ALL_OFF",
+                NamespacedDebugInputTestingMode::TestingModeAllOn => "TESTING_MODE_ALL_ON",
+                NamespacedDebugInputTestingMode::TestingModeUnspecified => {
+                    "TESTING_MODE_UNSPECIFIED"
+                }
+            }
+        }
+    }
+    impl ::std::convert::AsRef<str> for NamespacedDebugInputTestingMode {
+        fn as_ref(&self) -> &str {
+            self.as_str()
+        }
+    }
+    impl ::std::str::FromStr for NamespacedDebugInputTestingMode {
+        type Err = ();
+        fn from_str(s: &str) -> ::std::result::Result<NamespacedDebugInputTestingMode, ()> {
+            Ok(match s {
+                "TESTING_MODE_ALL_OFF" => NamespacedDebugInputTestingMode::TestingModeAllOff,
+                "TESTING_MODE_ALL_ON" => NamespacedDebugInputTestingMode::TestingModeAllOn,
+                "TESTING_MODE_UNSPECIFIED" => {
+                    NamespacedDebugInputTestingMode::TestingModeUnspecified
+                }
+                _ => return Err(()),
+            })
+        }
+    }
+    impl ::std::fmt::Display for NamespacedDebugInputTestingMode {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            f.write_str(self.as_str())
+        }
+    }
+    impl ::serde::Serialize for NamespacedDebugInputTestingMode {
+        fn serialize<S>(&self, serializer: S) -> ::std::result::Result<S::Ok, S::Error>
+        where
+            S: ::serde::ser::Serializer,
+        {
+            serializer.serialize_str(self.as_str())
+        }
+    }
+    impl<'de> ::serde::Deserialize<'de> for NamespacedDebugInputTestingMode {
+        fn deserialize<D>(deserializer: D) -> ::std::result::Result<Self, D::Error>
+        where
+            D: ::serde::de::Deserializer<'de>,
+        {
+            let value: &'de str = <&str>::deserialize(deserializer)?;
+            Ok(match value {
+                "TESTING_MODE_ALL_OFF" => NamespacedDebugInputTestingMode::TestingModeAllOff,
+                "TESTING_MODE_ALL_ON" => NamespacedDebugInputTestingMode::TestingModeAllOn,
+                "TESTING_MODE_UNSPECIFIED" => {
+                    NamespacedDebugInputTestingMode::TestingModeUnspecified
+                }
+                _ => {
+                    return Err(::serde::de::Error::custom(format!(
+                        "invalid enum for #name: {}",
+                        value
+                    )))
+                }
+            })
+        }
+    }
+    impl ::google_field_selector::FieldSelector for NamespacedDebugInputTestingMode {
+        fn fields() -> Vec<::google_field_selector::Field> {
+            Vec::new()
+        }
+    }
+    impl ::google_field_selector::ToFieldType for NamespacedDebugInputTestingMode {
         fn field_type() -> ::google_field_selector::FieldType {
             ::google_field_selector::FieldType::Leaf
         }
@@ -6034,7 +6132,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for SearchJobsResponse {
+    impl crate::GetNextPageToken<String> for SearchJobsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -7813,7 +7911,7 @@ pub mod resources {
                         #[serde(rename = "companies")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -7848,7 +7946,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -7898,7 +7996,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -8014,12 +8112,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -9249,7 +9348,7 @@ pub mod resources {
                         #[serde(rename = "jobs")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -9284,7 +9383,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -9334,7 +9433,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -9451,12 +9550,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -10426,16 +10526,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -10455,13 +10557,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -10469,7 +10574,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -10496,7 +10601,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;

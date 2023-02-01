@@ -1,0 +1,12 @@
+    Checking google-recaptchaenterprise1 v0.1.0-20230129 (/home/fabian/Sync/Projects/Rust/google-apis-rs/generated/gen/recaptchaenterprise/v1/lib)
+error[E0124]: field `key` is already declared
+    --> recaptchaenterprise/v1/lib/src/lib.rs:4481:17
+     |
+4476 |                 key: String,
+     |                 ----------- `key` first declared here
+...
+4481 |                 key: ::std::option::Option<String>,
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ field already declared
+
+For more information about this error, try `rustc --explain E0124`.
+error: could not compile `google-recaptchaenterprise1` due to previous error

@@ -7,7 +7,7 @@
   "canonicalName": "AnalyticsData",
   "fullyEncodeReservedExpansion": true,
   "version": "v1beta",
-  "revision": "20220425",
+  "revision": "20230129",
   "title": "Google Analytics Data API",
   "description": "Accesses report data in Google Analytics.",
   "ownerDomain": "google.com",
@@ -1001,7 +1001,7 @@
           "$ref": "BetweenFilter"
         },
         "fieldName": {
-          "description": "The dimension name or metric name. Must be a name defined in dimensions or metrics.",
+          "description": "The dimension name or metric name. In most methods, dimensions & metrics can be used for the first time in this field. However in a RunPivotReportRequest, this field must be additionally specified by name in the RunPivotReportRequest's dimensions or metrics.",
           "type": "string",
           "format": null,
           "enum": [],
@@ -1887,7 +1887,11 @@
           "$ref": "QuotaStatus"
         },
         "tokensPerHour": {
-          "description": "Standard Analytics Properties can use up to 5,000 tokens per hour; Analytics 360 Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from both the hourly and daily quotas.",
+          "description": "Standard Analytics Properties can use up to 5,000 tokens per hour; Analytics 360 Properties can use 50,000 tokens per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas.",
+          "$ref": "QuotaStatus"
+        },
+        "tokensPerProjectPerHour": {
+          "description": "Analytics Properties can use up to 25% of their tokens per project per hour. This amounts to standard Analytics Properties can use up to 1,250 tokens per project per hour, and Analytics 360 Properties can use 12,500 tokens per project per hour. An API request consumes a single number of tokens, and that number is deducted from all of the hourly, daily, and per project hourly quotas.",
           "$ref": "QuotaStatus"
         }
       },
@@ -2239,7 +2243,7 @@
       "enumDescriptions": [],
       "properties": {
         "dimensionFilter": {
-          "description": "The filter clause of dimensions. Dimensions must be requested to be used in this filter. Metrics cannot be used in this filter.",
+          "description": "The filter clause of dimensions. Metrics cannot be used in this filter.",
           "$ref": "FilterExpression"
         },
         "dimensions": {
@@ -2295,7 +2299,7 @@
           }
         },
         "metricFilter": {
-          "description": "The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Metrics must be requested to be used in this filter. Dimensions cannot be used in this filter.",
+          "description": "The filter clause of metrics. Applied at post aggregation phase, similar to SQL having-clause. Dimensions cannot be used in this filter.",
           "$ref": "FilterExpression"
         },
         "metrics": {
@@ -2904,7 +2908,7 @@
           "description": "This compatibility method lists dimensions and metrics that can be added to a report request and maintain compatibility. This method fails if the request's dimensions and metrics are incompatible. In Google Analytics, reports fail if they request incompatible dimensions and/or metrics; in that case, you will need to remove dimensions and/or metrics from the incompatible report until the report is compatible. The Realtime and Core reports have different compatibility rules. This method checks compatibility for Core reports.",
           "parameters": {
             "property": {
-              "description": "A Google Analytics GA4 property identifier whose events are tracked. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). `property` should be the same value as in your `runReport` request. Example: properties/1234 Set the Property ID to 0 for compatibility checking on dimensions and metrics common to all properties. In this special mode, this method will not return custom dimensions and metrics.",
+              "description": "A Google Analytics GA4 property identifier whose events are tracked. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). `property` should be the same value as in your `runReport` request. Example: properties/1234",
               "default": null,
               "location": "path",
               "required": true,
@@ -3019,7 +3023,7 @@
           "id": "analyticsdata.properties.runRealtimeReport",
           "path": "v1beta/{+property}:runRealtimeReport",
           "httpMethod": "POST",
-          "description": "The Google Analytics Realtime API returns a customized report of realtime event data for your property. These reports show events and usage from the last 30 minutes. For a guide to constructing realtime requests & understanding responses, see [Creating a Realtime Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).",
+          "description": "Returns a customized report of realtime event data for your property. Events appear in realtime reports seconds after they have been sent to the Google Analytics. Realtime reports show events and usage data for the periods of time ranging from the present moment to 30 minutes ago (up to 60 minutes for Google Analytics 360 properties). For a guide to constructing realtime requests & understanding responses, see [Creating a Realtime Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).",
           "parameters": {
             "property": {
               "description": "A Google Analytics GA4 property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Example: properties/1234",

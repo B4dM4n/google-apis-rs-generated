@@ -1,3 +1,4 @@
+#![allow(rustdoc::bare_urls)]
 #![doc = "# Resources and Methods\n* [projects](resources/projects/struct.ProjectsActions.html)\n  * [scan_configs](resources/projects/scan_configs/struct.ScanConfigsActions.html)\n    * [*create*](resources/projects/scan_configs/struct.CreateRequestBuilder.html), [*delete*](resources/projects/scan_configs/struct.DeleteRequestBuilder.html), [*get*](resources/projects/scan_configs/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/struct.ListRequestBuilder.html), [*patch*](resources/projects/scan_configs/struct.PatchRequestBuilder.html), [*start*](resources/projects/scan_configs/struct.StartRequestBuilder.html)\n    * [scan_runs](resources/projects/scan_configs/scan_runs/struct.ScanRunsActions.html)\n      * [*get*](resources/projects/scan_configs/scan_runs/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/scan_runs/struct.ListRequestBuilder.html), [*stop*](resources/projects/scan_configs/scan_runs/struct.StopRequestBuilder.html)\n      * [crawled_urls](resources/projects/scan_configs/scan_runs/crawled_urls/struct.CrawledUrlsActions.html)\n        * [*list*](resources/projects/scan_configs/scan_runs/crawled_urls/struct.ListRequestBuilder.html)\n      * [finding_type_stats](resources/projects/scan_configs/scan_runs/finding_type_stats/struct.FindingTypeStatsActions.html)\n        * [*list*](resources/projects/scan_configs/scan_runs/finding_type_stats/struct.ListRequestBuilder.html)\n      * [findings](resources/projects/scan_configs/scan_runs/findings/struct.FindingsActions.html)\n        * [*get*](resources/projects/scan_configs/scan_runs/findings/struct.GetRequestBuilder.html), [*list*](resources/projects/scan_configs/scan_runs/findings/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
@@ -652,7 +653,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListCrawledUrlsResponse {
+    impl crate::GetNextPageToken<String> for ListCrawledUrlsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -726,7 +727,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListFindingsResponse {
+    impl crate::GetNextPageToken<String> for ListFindingsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -769,7 +770,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListScanConfigsResponse {
+    impl crate::GetNextPageToken<String> for ListScanConfigsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -812,7 +813,7 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
-    impl crate::GetNextPageToken for ListScanRunsResponse {
+    impl crate::GetNextPageToken<String> for ListScanRunsResponse {
         fn next_page_token(&self) -> ::std::option::Option<String> {
             self.next_page_token.to_owned()
         }
@@ -1911,6 +1912,8 @@ pub mod schemas {
         InternalError,
         #[doc = "Indicates a scan configuration error, usually due to outdated ScanConfig settings, such as starting_urls or the DNS configuration."]
         ScanConfigIssue,
+        #[doc = "Indicates that some of the starting web urls returned HTTP errors during the scan."]
+        StartingUrlsCrawlHttpErrors,
         #[doc = "Indicates a scan operation timeout, usually caused by a very large site."]
         TimedOutWhileScanning,
         #[doc = "Indicates that a scan encountered numerous errors from the web site pages. When available, most_common_http_error_code field indicates the most common HTTP error code encountered during the scan."]
@@ -1925,6 +1928,9 @@ pub mod schemas {
                 ScanRunErrorTraceCode::CodeUnspecified => "CODE_UNSPECIFIED",
                 ScanRunErrorTraceCode::InternalError => "INTERNAL_ERROR",
                 ScanRunErrorTraceCode::ScanConfigIssue => "SCAN_CONFIG_ISSUE",
+                ScanRunErrorTraceCode::StartingUrlsCrawlHttpErrors => {
+                    "STARTING_URLS_CRAWL_HTTP_ERRORS"
+                }
                 ScanRunErrorTraceCode::TimedOutWhileScanning => "TIMED_OUT_WHILE_SCANNING",
                 ScanRunErrorTraceCode::TooManyHttpErrors => "TOO_MANY_HTTP_ERRORS",
                 ScanRunErrorTraceCode::TooManyRedirects => "TOO_MANY_REDIRECTS",
@@ -1944,6 +1950,9 @@ pub mod schemas {
                 "CODE_UNSPECIFIED" => ScanRunErrorTraceCode::CodeUnspecified,
                 "INTERNAL_ERROR" => ScanRunErrorTraceCode::InternalError,
                 "SCAN_CONFIG_ISSUE" => ScanRunErrorTraceCode::ScanConfigIssue,
+                "STARTING_URLS_CRAWL_HTTP_ERRORS" => {
+                    ScanRunErrorTraceCode::StartingUrlsCrawlHttpErrors
+                }
                 "TIMED_OUT_WHILE_SCANNING" => ScanRunErrorTraceCode::TimedOutWhileScanning,
                 "TOO_MANY_HTTP_ERRORS" => ScanRunErrorTraceCode::TooManyHttpErrors,
                 "TOO_MANY_REDIRECTS" => ScanRunErrorTraceCode::TooManyRedirects,
@@ -1975,6 +1984,9 @@ pub mod schemas {
                 "CODE_UNSPECIFIED" => ScanRunErrorTraceCode::CodeUnspecified,
                 "INTERNAL_ERROR" => ScanRunErrorTraceCode::InternalError,
                 "SCAN_CONFIG_ISSUE" => ScanRunErrorTraceCode::ScanConfigIssue,
+                "STARTING_URLS_CRAWL_HTTP_ERRORS" => {
+                    ScanRunErrorTraceCode::StartingUrlsCrawlHttpErrors
+                }
                 "TIMED_OUT_WHILE_SCANNING" => ScanRunErrorTraceCode::TimedOutWhileScanning,
                 "TOO_MANY_HTTP_ERRORS" => ScanRunErrorTraceCode::TooManyHttpErrors,
                 "TOO_MANY_REDIRECTS" => ScanRunErrorTraceCode::TooManyRedirects,
@@ -3579,7 +3591,7 @@ pub mod resources {
                         #[serde(rename = "scanConfigs")]
                         pub items: Vec<T>,
                     }
-                    impl<T> crate::GetNextPageToken for Page<T> {
+                    impl<T> crate::GetNextPageToken<String> for Page<T> {
                         fn next_page_token(&self) -> ::std::option::Option<String> {
                             self.next_page_token.to_owned()
                         }
@@ -3614,7 +3626,7 @@ pub mod resources {
                     self,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken
+                    T: crate::GetNextPageToken<String>
                         + ::serde::de::DeserializeOwned
                         + ::google_field_selector::FieldSelector
                         + 'a,
@@ -3664,7 +3676,7 @@ pub mod resources {
                     fields: ::std::option::Option<F>,
                 ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                     F: AsRef<str>,
                 {
                     let mut fields = fields.as_ref().map(|x| x.as_ref()).unwrap_or("").to_owned();
@@ -3779,12 +3791,13 @@ pub mod resources {
             }
             #[async_trait::async_trait]
             impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                type PageToken = String;
                 fn set_page_token(&mut self, value: String) {
                     self.page_token = value.into();
                 }
                 async fn execute<T>(&mut self) -> Result<T, crate::Error>
                 where
-                    T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                    T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                 {
                     self._execute().await
                 }
@@ -4488,7 +4501,7 @@ pub mod resources {
                             #[serde(rename = "scanRuns")]
                             pub items: Vec<T>,
                         }
-                        impl<T> crate::GetNextPageToken for Page<T> {
+                        impl<T> crate::GetNextPageToken<String> for Page<T> {
                             fn next_page_token(&self) -> ::std::option::Option<String> {
                                 self.next_page_token.to_owned()
                             }
@@ -4523,7 +4536,7 @@ pub mod resources {
                         self,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken
+                        T: crate::GetNextPageToken<String>
                             + ::serde::de::DeserializeOwned
                             + ::google_field_selector::FieldSelector
                             + 'a,
@@ -4573,7 +4586,7 @@ pub mod resources {
                         fields: ::std::option::Option<F>,
                     ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                         F: AsRef<str>,
                     {
                         let mut fields =
@@ -4691,12 +4704,13 @@ pub mod resources {
                 }
                 #[async_trait::async_trait]
                 impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                    type PageToken = String;
                     fn set_page_token(&mut self, value: String) {
                         self.page_token = value.into();
                     }
                     async fn execute<T>(&mut self) -> Result<T, crate::Error>
                     where
-                        T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                        T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                     {
                         self._execute().await
                     }
@@ -5021,7 +5035,7 @@ pub mod resources {
                                 #[serde(rename = "crawledUrls")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -5058,7 +5072,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -5108,7 +5122,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -5229,12 +5243,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -5783,7 +5798,7 @@ pub mod resources {
                                 #[serde(rename = "findings")]
                                 pub items: Vec<T>,
                             }
-                            impl<T> crate::GetNextPageToken for Page<T> {
+                            impl<T> crate::GetNextPageToken<String> for Page<T> {
                                 fn next_page_token(&self) -> ::std::option::Option<String> {
                                     self.next_page_token.to_owned()
                                 }
@@ -5819,7 +5834,7 @@ pub mod resources {
                             self,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken
+                            T: crate::GetNextPageToken<String>
                                 + ::serde::de::DeserializeOwned
                                 + ::google_field_selector::FieldSelector
                                 + 'a,
@@ -5869,7 +5884,7 @@ pub mod resources {
                             fields: ::std::option::Option<F>,
                         ) -> impl ::futures::Stream<Item = Result<T, crate::Error>> + 'a
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned + 'a,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned + 'a,
                             F: AsRef<str>,
                         {
                             let mut fields =
@@ -5991,12 +6006,13 @@ pub mod resources {
                     }
                     #[async_trait::async_trait]
                     impl<'a> crate::stream::StreamableMethod for ListRequestBuilder<'a> {
+                        type PageToken = String;
                         fn set_page_token(&mut self, value: String) {
                             self.page_token = value.into();
                         }
                         async fn execute<T>(&mut self) -> Result<T, crate::Error>
                         where
-                            T: crate::GetNextPageToken + ::serde::de::DeserializeOwned,
+                            T: crate::GetNextPageToken<String> + ::serde::de::DeserializeOwned,
                         {
                             self._execute().await
                         }
@@ -6289,16 +6305,18 @@ mod parsed_string {
     }
 }
 /// Represent the ability to extract the `nextPageToken` from a response.
-pub trait GetNextPageToken {
+pub trait GetNextPageToken<T> {
     /// Get the `nextPageToken` from a response if present.
-    fn next_page_token(&self) -> ::std::option::Option<String>;
+    fn next_page_token(&self) -> ::std::option::Option<T>;
 }
 
-impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
-    fn next_page_token(&self) -> ::std::option::Option<String> {
+impl<T: ::std::convert::From<::std::string::String>> GetNextPageToken<T>
+    for ::serde_json::Map<::std::string::String, ::serde_json::Value>
+{
+    fn next_page_token(&self) -> ::std::option::Option<T> {
         self.get("nextPageToken")
             .and_then(|t| t.as_str())
-            .map(|s| s.to_owned())
+            .map(|s| s.to_owned().into())
     }
 }
 /// Traits and functions to improve streamable (multiple page) API method handling.
@@ -6318,13 +6336,16 @@ pub mod stream {
     /// multiple pages of items.
     #[async_trait::async_trait]
     pub trait StreamableMethod {
+        /// Type of the `pageToken` and `nextPageToken` fields.
+        type PageToken;
+
         /// Update the current page token of the request.
-        fn set_page_token(&mut self, value: String);
+        fn set_page_token(&mut self, value: Self::PageToken);
 
         /// Execute the request.
         async fn execute<T>(&mut self) -> Result<T, crate::Error>
         where
-            T: GetNextPageToken + ::serde::de::DeserializeOwned;
+            T: GetNextPageToken<Self::PageToken> + ::serde::de::DeserializeOwned;
     }
 
     /// Return a [`Stream`](::futures::Stream) over all pages of the given API
@@ -6332,7 +6353,7 @@ pub mod stream {
     pub fn page_stream<M, T>(method: M) -> impl ::futures::Stream<Item = Result<T, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned,
     {
         ::futures::stream::unfold((method, false), |(mut method, mut finished)| async move {
             if finished {
@@ -6359,7 +6380,7 @@ pub mod stream {
     ) -> impl ::futures::Stream<Item = Result<<T::Items as IntoIterator>::Item, crate::Error>>
     where
         M: StreamableMethod,
-        T: GetNextPageToken + ::serde::de::DeserializeOwned + IntoPageItems,
+        T: GetNextPageToken<M::PageToken> + ::serde::de::DeserializeOwned + IntoPageItems,
     {
         use ::futures::StreamExt;
         use ::futures::TryStreamExt;
